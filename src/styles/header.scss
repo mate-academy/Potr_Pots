@@ -2,11 +2,13 @@
   position: absolute;
   top: 0;
   right: $bodySidePadd;
+  z-index: 4;
   display: flex;
   align-items: center;
   transition-duration: $transDuration * 1.5;
   user-select: none;
-  @media (max-width: $screenDesktop) {
+  @media (max-width: $screenLarge) {
+    position: fixed;
     right: 0;
     height: 100vh;
     width: 0;
@@ -21,7 +23,7 @@
   &__links {
     display: flex;
     margin-right: 230px;//here
-    @media (max-width: $screenDesktop) {
+    @media (max-width: $screenLarge) {
       flex-direction: column;
       margin: 0;
     }
@@ -36,7 +38,7 @@
     &:hover {
       transform: translateY(-3px);
     }
-    @media (max-width: $screenDesktop) {
+    @media (max-width: $screenLarge) {
       padding: 15px;
       margin: 0;
       color: $colorGreyLight;
@@ -58,7 +60,7 @@
       display: inline-block;
       @extend .s3;
       color: $colorGreyLight;
-      @media (max-width: $screenDesktop) {
+      @media (max-width: $screenLarge) {
         content: "Basket";
         padding: 15px;
         
@@ -80,7 +82,7 @@
       background-color: $colorRed;
       border-radius: 50%;
     }
-    @media (max-width: $screenDesktop) {
+    @media (max-width: $screenLarge) {
       height: auto;
       width: auto;
       background: none;
@@ -95,7 +97,7 @@
     align-items: center;
     height: 140px;
     margin-top: 90px;
-    @media (max-width: $screenDesktop) {
+    @media (max-width: $screenLarge) {
       display: flex;
     }
   }

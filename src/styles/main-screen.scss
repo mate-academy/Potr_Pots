@@ -1,0 +1,140 @@
+.main-screen {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  padding: 140px 0 0 18vw;
+  @media (max-width: $screenDesktop) {
+    padding: 120px $bodySidePaddLp ;
+  }
+  @media (max-width: $screenTablet) {
+    padding: $mainScreenMenuLogo 0 0; //here
+  }
+
+  &__logo {
+    position: absolute;
+    top: 20px;
+    left: $bodySidePadd;
+    @extend .h2;
+    color: $colorDark;
+    transition-duration: $transDuration;
+    &:hover {
+      transform: scale(1.1);
+    }
+    @media (max-width: $screenTablet) {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $mainScreenMenuLogo;
+      padding-top: 10px;
+      padding-left: $bodySidePaddLp;
+      background-color: $colorGreyLight;
+    }
+  }
+
+  &__bg-rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: calc(100vw - 350px);
+    @media (max-width: $screenDesktop) {
+      width: calc(100vw - 150px);
+    }
+    @media (max-width: $screenTablet) {
+      display: none;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    top: 150px;
+    right: $bodySidePadd;
+    display: inline-block;
+    height: 35vw;
+    width: 35vw;
+    @media (max-width: $screenDesktop) {
+      top: 120px;
+      right: $bodySidePaddLp;
+      height: 40vw;
+      width: 40vw;
+    }
+    // @media (max-width: $screenTablet) {
+    //   top: 120px;
+    //   right: $bodySidePaddLp;
+    //   height: 30vw;
+    //   width: 30vw;
+    // }
+    @media (max-width: $screenMob) {
+      position: static;
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  //then will content
+  &__content-box {
+    position: relative;
+    z-index: 5;
+    @media (max-width: $screenTablet) {
+      padding: 25px 30px;
+    }
+  }
+
+  &__title {
+    color: $colorTurq;
+    &--transparent {
+      color: transparent;
+      -webkit-text-stroke-width: 0.2px;
+      -webkit-text-stroke-color: $colorTurq;
+    }
+  }
+
+  &__discount {
+    margin-left: 270px;
+    @media (max-width: $screenTablet) {
+      margin-top: 20px;
+      margin-left: 0;
+    }
+    &--bold {
+      display: block;
+    }
+  }
+
+  &__button {
+    margin: 50px 0 0 100px;
+    @media (max-width: $screenTablet) {
+      margin-top: 20px;
+      margin-left: 0;
+    }
+  }
+
+  //bottom button
+  &__go-bottom {
+    position: absolute;
+    left: $bodySidePadd + 15px;
+    top: 450px;
+    padding: 15px;
+    @extend .s5;
+    color: $colorTurq;
+    transform: rotateZ(90deg);
+    transform-origin: top left;
+    transition-duration: $transDuration;
+    @media (max-width: $screenDesktop) {
+      top: 400px;
+      left: $bodySidePaddLp + 15px;
+    }
+    @media (max-width: $screenTablet) {
+      display: none;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 44px;
+      height: 0.8em;
+      background: url(../images/main-screen/arrow.svg) center no-repeat;
+    }
+    &:hover {
+      transform: translateY(3px) rotateZ(90deg);
+    }
+  }
+}

@@ -1,13 +1,14 @@
 .header-opener {
-  position: absolute;
+  position: fixed;
   top: 8px;
   right: 30px;
+  z-index: 3;
   display: none;
   height: 50px;
   width: 50px;
   background: $colorGreyLight url("../images/menu-opener.svg") center no-repeat;
   cursor: pointer;
-  @media (max-width: $screenDesktop) {
+  @media (max-width: $screenLarge) {
     display: block;
   }
 }
@@ -16,7 +17,7 @@
   display: none;
 }
 
-.header-toggler:checked + .header {
+.header-toggler:checked ~ .header {
   width: 70vw;
   padding: 42px 10vw;
 }
