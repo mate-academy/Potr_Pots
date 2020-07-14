@@ -1,0 +1,110 @@
+.header {
+  position: absolute;
+  top: 0;
+  right: $bodySidePadd;
+  display: flex;
+  align-items: center;
+  transition-duration: $transDuration * 1.5;
+  user-select: none;
+  @media (max-width: $screenDesktop) {
+    right: 0;
+    height: 100vh;
+    width: 0;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    background-color: $colorTurq;
+    overflow: hidden;
+  }
+  
+  &__links {
+    display: flex;
+    margin-right: 230px;//here
+    @media (max-width: $screenDesktop) {
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 25px;
+    margin: 0 7px;
+    color: $colorSemiDark;
+    transition-duration: $transDuration;
+    &:hover {
+      transform: translateY(-3px);
+    }
+    @media (max-width: $screenDesktop) {
+      padding: 15px;
+      margin: 0;
+      color: $colorGreyLight;
+    }
+  }
+
+  &__bascet {
+    position: relative;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background: url(../images/header/bascet.svg) center no-repeat;
+    cursor: pointer;
+    transition-duration: $transDuration;
+    &:hover {
+      transform: translateY(-3px);
+    }
+    &::before {
+      display: inline-block;
+      @extend .s3;
+      color: $colorGreyLight;
+      @media (max-width: $screenDesktop) {
+        content: "Basket";
+        padding: 15px;
+        
+      }
+    }
+    &::after {
+      content: "20";
+      position: absolute;
+      top: 0;
+      right: -3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 1.5em;
+      width: 1.5em;
+      font-size: 12px;
+      font-family: $fontProxima;
+      color: $colorLight;
+      background-color: $colorRed;
+      border-radius: 50%;
+    }
+    @media (max-width: $screenDesktop) {
+      height: auto;
+      width: auto;
+      background: none;
+    }
+  }
+
+  //smaller screens showed only
+  &__close-box {
+    display: none;
+    align-self: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+    height: 140px;
+    margin-top: 90px;
+    @media (max-width: $screenDesktop) {
+      display: flex;
+    }
+  }
+
+  &__close-decor {
+    display: flex;
+    align-items: center;
+    color: $colorGreyLight;
+    @extend .s5;
+    transform: rotateZ(-90deg);
+  }
+}
