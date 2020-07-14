@@ -1,7 +1,7 @@
 .main-screen {
   position: relative;
   z-index: 1;
-  height: 100vh;
+  // height: 100vh;
   padding: 140px 0 0 18vw;
   @media (max-width: $screenDesktop) {
     padding: 120px $bodySidePaddLp ;
@@ -84,7 +84,7 @@
     color: $colorTurq;
     &--transparent {
       color: transparent;
-      -webkit-text-stroke-width: 0.2px;
+      -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: $colorTurq;
     }
   }
@@ -113,6 +113,7 @@
     position: absolute;
     left: $bodySidePadd + 15px;
     top: 450px;
+    z-index: 5;
     padding: 15px;
     @extend .s5;
     color: $colorTurq;
@@ -124,7 +125,12 @@
       left: $bodySidePaddLp + 15px;
     }
     @media (max-width: $screenTablet) {
-      display: none;
+      top: 120px;
+      right: -17em;
+      left: auto;
+    }
+    @media (max-width: $screenMob) {
+      top: calc(100vw + 180px);
     }
     &::after {
       content: "";
