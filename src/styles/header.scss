@@ -1,7 +1,7 @@
 .header {
   position: absolute;
   top: 0;
-  right: $bodySidePadd;
+  right: $bodySidePadding;
   z-index: 4;
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@
     overflow: hidden;
   }
   
-  &__links {
+  &__nav-links-box {
     display: flex;
     margin-right: 230px;//here
     @media (max-width: $screenLarge) {
@@ -29,7 +29,7 @@
     }
   }
 
-  &__link {
+  &__nav-link {
     display: inline-block;
     padding: 25px;
     margin: 0 7px;
@@ -45,7 +45,7 @@
     }
   }
 
-  &__bascet {
+  &__basket {
     position: relative;
     display: inline-block;
     height: 30px;
@@ -67,7 +67,7 @@
       }
     }
     &::after {
-      content: "20";
+      content: "22";
       position: absolute;
       top: 0;
       right: -3px;
@@ -77,10 +77,14 @@
       height: 1.5em;
       width: 1.5em;
       font-size: 12px;
-      font-family: $fontProxima;
+      font-family: $fontBebas;
       color: $colorLight;
       background-color: $colorRed;
       border-radius: 50%;
+      @media (max-width: $screenLarge) {
+        top: 1em;
+        right: -10px;
+      }
     }
     @media (max-width: $screenLarge) {
       height: auto;
