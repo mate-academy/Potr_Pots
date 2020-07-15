@@ -1,32 +1,30 @@
 .for-whom {
   position: relative;
-  padding: 150px $bodySidePadd;
-  @media (max-width: $screenDesktop) {
-    padding: 135px $bodySidePaddLp;
+  padding: 220px $bodySidePadd 150px;
+  @media (max-width: $screenLarge) {
+    padding: 0 $bodySidePaddLp 120px;
   }
   @media (max-width: $screenMob) {
-    padding: 100px $bodySidePaddLp;
+    padding-right: $bodySidePaddMb;
+    padding-left: $bodySidePaddMb;
   }
 
-  &__title-question {
-    margin-bottom: 35px;
+  &__heading {
+    padding-bottom: 35px;
+    @media (max-width: $screenMob) {
+      padding-bottom: 20px;
+    }
   }
 
-  &__dash {
-    display: inline-block;
-    font-family: serif;
-    font-weight: 100;
-    font-size: 1.4em;
-    transform: rotate(22deg);
-  }
-
-  //with numbers
-  &__last2-container {
+  &__bottom-row {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 80px;
     @media (max-width: $screenLarge) {
       flex-direction: column;
+    }
+    @media (max-width: $screenDesktop) {
+      margin-top: 110px;
     }
     @media (max-width: $screenMob) {
       margin-top: 70px;
@@ -34,19 +32,26 @@
   }
 
   &__item {
-    position: relative;
     display: flex;
     &--1 {
-      align-items: center;
       justify-content: space-between;
-      @media (max-width: $screenMob) {
-        flex-direction: column;
-        align-items: flex-start;
+      align-items: center;
+      padding-right: 80px;
+      @media (max-width: $screenExtraLarge) {
+        padding-right: 0;
+      }
+      @media (max-width: $screenLarge) {
+        justify-content: start;
       }
     }
     &--2 {
+      display: flex;
       flex-direction: column;
-      margin-top: 100px;
+      margin-top: 105px;
+      padding-left: 100px;
+      @media (max-width: $screenExtraLarge) {
+        padding-left: 0;
+      }
       @media (max-width: $screenLarge) {
         flex-direction: row-reverse;
         justify-content: space-between;
@@ -54,133 +59,166 @@
       }
     }
     &--3 {
-      max-width: 470px;
+      display: flex;
+      flex-direction: column;
       @media (max-width: $screenLarge) {
-        display: flex;
-        justify-content: space-between;
+        flex-direction: row;
+        align-items: flex-start;
         margin-top: 80px;
-        max-width: 100%;
+      }
+      @media (max-width: $screenDesktop) {
+        margin-top: 120px;
       }
       @media (max-width: $screenMob) {
         margin-top: 70px;
       }
     }
   }
-  
-  &__img {
+
+  &__image {
     display: inline-block;
-    object-fit: contain;
-    &--1 {
-      width: 500px;
-    }
-    &--2 {
-      width: 300px;
-    }
-    &--3 {
-      width: 100%;
-    }
-    @media (max-width: $screenLarge) {
-      max-width: 40%;
-    }
     @media (max-width: $screenMob) {
       display: none;
     }
-  }
-
-  &__number {
-    min-width: 40px;
     &--1 {
-      margin: auto 20px;
-      padding-bottom: 120px;
-      @media (max-width: $screenMob) {
-        margin: 0 0 30px;
-        padding: 0;
-      }
+      width: 37vw;
     }
     &--2 {
-      margin-bottom: 30px;
+      width: 21vw;
+      @media (max-width: $screenLarge) {
+        width: 40vw;
+      }
+      @media (max-width: $screenTablet) {
+        object-fit: contain;
+      }
     }
     &--3 {
-      @media (max-width: $screenLarge) {
-        margin: 0 15px;
-      }
-      @media (max-width: $screenMob) {
-        margin-bottom: 25px;
+      width: 33vw;
+      @media (max-width: $screenDesktop) {
+        width: 37vw;
       }
     }
   }
 
   &__text-box {
     position: relative;
+    max-width: 370px;
     &--1 {
-      margin-right: 100px;
-    }
-    @media (max-width: $screenLarge) {
-      margin: 0;
-    }
-    &--2 {
-      max-width: 370px;
-    }
-    @media (max-width: $screenMob) {
-      max-width: 100%;
-    }
-  }
-
-  &__3text-row {
-    display: flex;
-    justify-content: space-between;
-    @media (max-width: $screenMob) {
-      flex-direction: column;
-    }
-  }
-
-  &__subtitle {
-    &--1 {
-      position: absolute;
-      top: -2em;
-      left: -2em;
-    }
-    &--2 {
-      position: relative;
-      left: -2em;
-      margin: 35px 0;
-      @media (max-width: $screenLarge) {
-        left: auto;
-        right: 0;
-        text-align: right;
+      margin-left: 100px;
+      @media (max-width: $screenDesktop) {
+        margin-left: 80px;
       }
-      @media (max-width: $screenTablet) {
-        right: 3em;
+      @media (max-width: $screenMob) {
+        margin-left: 0;
+      }
+    }
+    &--2 {
+      @media (max-width: $screenLarge) {
+        margin-top: 65px;
+      }
+      @media (max-width: $screenMob) {
+        margin-top: 0;
       }
     }
     &--3 {
-      position: relative;
-      left: -2em;
-      margin: 40px 0;
-      @media (max-width: $screenLarge) {
-        left: 2em;
+      padding: 100px 0 0 100px;
+      max-width: 470px;
+      @media (max-width: $screenExtraLarge) {
+        padding-left: 0;
+        width: 370px;
       }
+      @media (max-width: $screenLarge) {
+        margin-left: 100px;
+        padding-top: 20px;
+      }
+      @media (max-width: $screenDesktop) {
+        margin-left: 70px;
+      }
+      @media (max-width: $screenMob) {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  &__short-hint {
+    position: relative;
+    margin: 40px 0;
+    &::before {
+      content: "*";
+      position: absolute;
+      left: calc(-30px - 0.5em);
+      @extend .h3;
     }
     @media (max-width: $screenMob) {
       display: none;
     }
-  }
-
-  &__text-column {
     &--1 {
-      max-width: 370px;
+      margin-top: 0;
+      @media (max-width: $screenDesktop) {
+        margin-bottom: 10px;
+        transform: translateY(-10px);
+      }
+    }
+    &--2 {
+      @media (max-width: $screenDesktop) {
+        right: 2.5em;
+      }
+      @media (max-width: $screenLarge) {
+        position: absolute;
+        top: -65px;
+        left: 37vw;
+      }
     }
     &--3 {
-      max-width: 370px;
-    }
-    @media (max-width: $screenMob) {
-      max-width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @media (max-width: $screenLarge) {
+        top: -3.2em;
+      }
     }
   }
 
-  &__item-descr {
-    color: $colorGrey;
-    margin-top: 10px;
+  &__number {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 1.7em;
+    left: -3em;
+    &::before {
+      content: "|";
+      align-self: start;
+      @extend .custom-slash;
+    }
+    @media (max-width: $screenLarge) {
+      left: -1.3em;
+    }
+    @media (max-width: $screenMob) {
+      position: static;
+      margin-bottom: 20px;
+    }
+    &--2 {
+      position: static;
+      margin-bottom: 25px;
+      @media (max-width: $screenMob) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-top: 15px;
+    color: $colorSemiDark;
+    @media (max-width: $screenMob) {
+      margin-top: 27px;
+    }
+  }
+
+  &__slash {
+    @media (max-width: $screenMob) {
+      display: none;
+    }
   }
 
   //decor
