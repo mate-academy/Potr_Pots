@@ -1,0 +1,49 @@
+.team {
+  &__heading {
+    margin-left: $bodySidePadding;
+    @media (max-width: $screenLarge) {
+      margin-left: $bodySidePaddingLp;
+    }
+    @media (max-width: $screenMob) {
+      margin-left: $bodySidePaddingMb;
+    }
+  }
+
+  &__content-box {
+    display: flex;
+    align-items: center;
+    margin: 10vw 0 0 $bodySidePadding;
+    @media (max-width: $screenLarge) {
+      justify-content: space-between;
+      margin: 13vw $bodySidePaddingLp 0 $bodySidePaddingLp;
+    }
+    @media (max-width: $screenMob) {
+      flex-direction: column-reverse;
+      margin-left: 18.75 0 0 0;
+    }
+  }
+
+  &__text {
+    width: 23vw;
+    margin-right: 57px;
+    @media (max-width: $screenLarge) {
+      width: 40vw;
+      margin-right: 47px;
+    }
+    @media (max-width: $screenMob) {
+      width: 100%;
+      margin: $bodySidePaddingMb + 5px $bodySidePaddingMb 0;
+    }
+  }
+
+  &__img {
+    width: 47vw;
+    @media (max-width: $screenLarge) {
+      width: calc(100vw - (#{$bodySidePaddingLp} * 2) - 40vw - 4vw); //here
+    }
+    @media (max-width: $screenMob) {
+      max-width: 100vw;
+      width: 100vw;
+    }
+  }
+}
