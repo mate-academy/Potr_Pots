@@ -1,4 +1,11 @@
 .team {
+  position: relative;
+  padding-bottom: 225px;
+  overflow: hidden;
+  @media (max-width: $screenMob) {
+    padding-bottom: 70px;
+  }
+
   &__heading {
     margin-left: $bodySidePadding;
     @media (max-width: $screenLarge) {
@@ -25,10 +32,14 @@
 
   &__text {
     width: 23vw;
+    margin-top: 50px; //here
     margin-right: 57px;
     @media (max-width: $screenLarge) {
       width: 40vw;
       margin-right: 47px;
+    }
+    @media (max-width: $screenDesktop) {
+      margin-top: 16vw;
     }
     @media (max-width: $screenMob) {
       width: 100%;
@@ -44,6 +55,65 @@
     @media (max-width: $screenMob) {
       max-width: 100vw;
       width: 100vw;
+    }
+  }
+
+  //decor
+  &__trapese {
+    position: absolute;
+    top: 12.5vw;
+    left: 0;
+    z-index: -1;
+    width: $teamTrapeseWidth;
+    height: $teamTrapeseHeight;
+    border-left: $teamTrapeseWidth solid $colorYellowLight;
+    border-bottom: ($teamTrapeseHeight / 5 * 2) solid transparent;
+    @media (max-width: $screenLarge) {
+      top: 15vw;
+    }
+    @media (max-width: $screenDesktop) {
+      top: 22vw;
+      height: $teamTrapeseHeight * 1.5;
+    }
+    @media (max-width: $screenMob) {
+      top: auto;
+      bottom: 0;
+      width: 100vw;
+      height: $teamTrapeseHeightMobile;
+      border-left: 100vw solid $colorYellowLight;
+      border-bottom: ($teamTrapeseHeightMobile * 0.3) solid transparent;
+    }
+  }
+
+  &__text-decor {
+    position: absolute;
+    @extend .transparent-turq;
+    font-family: $fontBebas;
+    font-size: 20vw;
+    letter-spacing: 0.15em;
+    user-select: none;
+    @media (max-width: $screenDesktop) {
+      font-size: 30vw;
+    }
+    @media (max-width: $screenMob) {
+      display: none;
+    }
+    &--martin {
+      top: 1vw;
+      right: 31vw;
+      @media (max-width: $screenLarge) {
+        top: 4vw;
+      }
+      @media (max-width: $screenDesktop) {
+        right: 10vw;
+      }
+    }
+    &--andy {
+      right: -0.15em;
+      bottom: 2vw;
+      @media (max-width: $screenTablet) {
+        bottom: 17vw;
+      }
     }
   }
 }
