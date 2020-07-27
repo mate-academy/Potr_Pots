@@ -1,0 +1,60 @@
+.mobile-slider {
+  position: relative;
+  display: none;
+  @media (max-width: $screenMob) {
+    display: block;
+  }
+
+  &--absolute {
+    position: absolute;
+    width: 100%;
+  }
+
+  &__container-of-row {
+    position: relative;
+    padding: 0 10px;
+    overflow-x: scroll;
+  }
+
+  &__row {
+    display: flex;
+    width: calc(100% * 4 + 10px);
+    padding-right: 10px;
+  }
+
+  &__slide {
+    margin: 0 5px;
+    padding: 30px 45px 60px;
+    color: $colorGreyLight;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__nav-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin: 0 2px;
+    background-color: $colorGreyLight;
+    transform: rotateZ(45deg);
+    &--active {
+      border: 1px solid $colorGreyLight;
+      background-color: $colorSemiDark;
+    }
+  }
+}

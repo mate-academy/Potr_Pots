@@ -1,68 +1,81 @@
 .title {
   font-family: $fontBebas;
-  font-size: $titleFontSize;
-  line-height: $titleFontSize;
-  font-weight: bold;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .heading {
   font-family: $fontBebas;
-  font-weight: bold;
+  text-transform: uppercase;
 
   &--1 {
     font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
   }
 
   &--2 {
-    font-size: $heading2FontSize;
+    font-size: 36px;
+    font-weight: 600;
     line-height: 150%;
+    letter-spacing: 0.15em;
   }
 
   &--3 {
-    font-size: $heading3FontSize;
+    font-size: 24px;
     line-height: 24px;
+    letter-spacing: 0.15em;
   }
 
   &--4 {
-    font-size: $heading4FontSize;
-    line-height: 130%;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
   }
 }
 
-.sub-text {
+.subText {
   font-family: $fontProxima;
   line-height: 150%;
 
-  &--1-desc {
-    font-size: $subText1DescFontSize;
-    font-weight: 600;
-  }
-
-  &--1-mob {
-    font-size: $subText1MobFontSize;
-    font-weight: 600;
+  &--1 {
+    font-size: 36px;
+    @media (max-width: $screenMob) {
+      font-size: 32px;
+    }
   }
 
   &--2 {
-    font-size: $subText2FontSize;
+    font-weight: bold;
+    font-size: 24px;
   }
 
   &--3 {
-    font-size: $subText3FontSize;
+    font-size: 16px;
   }
 
   &--4 {
-    font-size: $subText4FontSize;
-    font-weight: 600;
+    font-size: 14px;
   }
 
   &--5 {
-    font-size: $subText5FontSize;
+    font-size: 12px;
   }
 }
 
-.transparent-text {
+.transparent-turq {
   color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: $turquoise;
+  -webkit-text-stroke-color: $colorTurq;
+}
+
+.custom-slash {
+  $slash: &;
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 300;
+  transform: rotateZ(22deg) translateY(0.1em);
+  user-select: none;
 }

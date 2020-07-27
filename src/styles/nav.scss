@@ -1,17 +1,132 @@
 .nav {
+  @media (max-width: $screenLarge) {
+    display: none;
+  }
+
   &__list {
     display: flex;
+    align-items: center;
   }
-
   &__link {
     display: block;
-    padding: 15px 32px;
-    transition-duration: 1s;
-    color: $darkGrey;
-
+    color: $colorSemiDark;
+    padding: $navLinkPaddingVertical $navLinkPaddingHorizontal;
+    transition-duration: $transitionDuration;
     &:hover {
-      background-color: lightgray;
-      transform: scale(1.1);
+      transform: rotate(-3deg) scale(1.1);
+    }
+    &--basket {
+      position: relative;
+      height: 37px;
+      width: 37px;
+      padding: 0;
+      margin-left: 15vw;
+      -webkit-text-fill-color: transparent;
+      background: url(../images/header/basket.svg) bottom left no-repeat;
+      cursor: pointer;
+      &::after {
+        content: "0";
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14px;
+        width: 14px;
+
+        font-family: $fontBebas;
+        font-size: 9px;
+        -webkit-text-fill-color: $colorGreyLight;
+        background-color: $colorTurq;
+        border-radius: 50%;
+      }
     }
   }
+
+  &__mobile-opener {
+    display: none;
+    width: 43px;
+    height: 40px;
+    background: $colorGreyLight url(../images/header/header-opener.svg) center no-repeat;
+    cursor: pointer;
+    @media (max-width: $screenLarge) {
+      display: block;
+    }
+  }
+
+  &__mobile-checkbox {
+    display: none;
+  }
+}
+
+.nav-mobile {
+  position: fixed;
+  bottom: 0;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 72vw;
+  padding: 120px $bodySidePaddingMb 40px 0;
+  background-color: $colorTurq;
+  transition-timing-function: ease-in;
+  transition-duration: $transitionDuration * 1.5;
+  overflow: hidden;
+
+  &__link {
+    display: inline-block;
+    padding: $navMobileLinkPadding;
+    color: $colorGreyLight;
+    transition-duration: $transitionDuration;
+    outline: none;
+    &--basket {
+      position: relative;
+      cursor: pointer;
+      &::after {
+        content: "0";
+        position: absolute;
+        top: $navMobileLinkPadding - 6px;
+        right: -7px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14px;
+        width: 14px;
+
+        font-family: $fontBebas;
+        font-size: 9px;
+        background-color: $colorRed;
+        border-radius: 50%;
+      }
+    }
+    &:hover,
+    &:focus {
+      transform: translateX(5%);
+    }
+  }
+
+  &__closer {
+    position: absolute;
+    bottom: $bodySidePaddingLp;
+    right: $bodySidePaddingLp;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    color: $colorGreyLight;
+    transform-origin: bottom left;
+    transition-duration: $transitionDuration;
+    transform: rotate(-90deg) translateY(200%);
+    cursor: pointer;
+    &:hover {
+      transform: rotate(-90deg) translateY(200%) translateX(5%);
+    }
+  }
+}
+
+.nav__mobile-checkbox:checked ~ .nav-mobile {
+  right: 0;
+  padding-left: 80px;
 }

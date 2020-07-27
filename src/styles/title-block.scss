@@ -1,14 +1,14 @@
 .title-block {
-  padding: 140px 135px;
+  position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   max-width: 1500px;
   margin: auto;
-
+  padding: 140px $bodySidePadding;
   @media (max-width: $screenLarge) {
     justify-content: space-between;
-    padding: 120px $bodySidePaddingLaptop 60px;
+    padding: 120px $bodySidePaddingLp 60px;
   }
   @media (max-width: $screenTablet) {
     flex-direction: column-reverse;
@@ -19,9 +19,20 @@
     padding: 60px 0 100px;
   }
 
-  &__title {
-    color: $turquoise;
-
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    margin-right: 7vw;
+    @media (max-width: $screenDesktop) {
+      margin-right: 10px;
+    }
+    @media (max-width: $screenMob) {
+      padding: 0 $bodySidePaddingMb;
+    }
+  }
+  &__heading {
+    color: $colorTurq;
+    font-weight: 700;
     @media (max-width: $screenDesktop) {
       font-size: 50px;
     }
@@ -29,7 +40,6 @@
       font-size: 36px;
     }
   }
-
   &__promotion {
     align-self: flex-end;
     &--bold {
@@ -42,7 +52,6 @@
       margin-top: 20px;
     }
   }
-
   &__buy-button {
     align-self: flex-end;
     margin: 50px 5vw 0 0;
@@ -51,7 +60,7 @@
     }
   }
 
-  &__image {
+  &__photo {
     display: block;
     max-height: 35vw;
     width: 35vw;
@@ -70,6 +79,41 @@
       width: 100vw;
       height: 100vw;
       margin-bottom: 20px;
+    }
+  }
+
+  &__go-bottom {
+    position: absolute;
+    bottom: 0;
+    left: $bodySidePadding;
+    display: block;
+    color: $colorTurq;
+    transform-origin: bottom left;
+    transform: rotate(90deg) translateX(-100%);
+    transition-duration: $transitionDuration;
+    &:hover {
+      bottom: -10px;
+    }
+    @media (max-width: $screenLarge) {
+      left: $bodySidePaddingLp;
+      transform: rotate(90deg) translateX(-120%);
+    }
+    @media (max-width: $screenDesktop) {
+      left: auto;
+      right: $bodySidePaddingLp;
+      transform: rotate(90deg) translateY(-165px) translateX(-120%);
+    }
+    @media (max-width: $screenMob) {
+      display: none;
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      height: 8px;
+      width: 26px;
+      margin-left: 10px;
+      background: url(../images/title-block/arrow.svg) center no-repeat;
     }
   }
 }

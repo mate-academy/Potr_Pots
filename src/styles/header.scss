@@ -1,25 +1,25 @@
 .header {
-  display: flex;
   position: absolute;
   top: 0;
-  width: 80%;
-  justify-content: space-around;
-  margin: 13px 10%;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 20px $bodySidePadding;
+  transition-duration: $transitionDuration;
+
+  @media (max-width: $screenLarge) {
+    padding: 20px $bodySidePaddingLp;
+  }
+
+  @media (max-width: $screenMob) {
+    padding: 0 $bodySidePaddingMb;
+    background-color: $colorGreyLight;
+  }
 
   &__logo {
-    text-transform: uppercase;
-    color: $darkGrey;
-  }
-
-  &__basket {
-    cursor: pointer;
-    height: $basketSide;
-    width: $basketSide;
-    background-image: url(../images/header/basket.svg);
-  }
-
-  &__checkbox {
-    display: none;
+    color: $colorDark;
   }
 }
