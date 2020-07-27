@@ -1,5 +1,75 @@
 .title-block {
-  margin: 150px 0;
+  padding: 140px 135px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+
+  @media (max-width: $screenLarge) {
+    justify-content: space-between;
+    padding: 120px $bodySidePaddingLaptop 60px;
+  }
+  @media (max-width: $screenTablet) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  @media (max-width: $screenMob) {
+    align-items: flex-start;
+    padding: 60px 0 100px;
+  }
+
+  &__title {
+    color: $turquoise;
+
+    @media (max-width: $screenDesktop) {
+      font-size: 50px;
+    }
+    @media (max-width: $screenMob) {
+      font-size: 36px;
+    }
+  }
+
+  &__promotion {
+    align-self: flex-end;
+    &--bold {
+      display: block;
+      font-size: 26px;
+      font-weight: 700;
+    }
+    @media (max-width: $screenMob) {
+      align-self: flex-start;
+      margin-top: 20px;
+    }
+  }
+
+  &__buy-button {
+    align-self: flex-end;
+    margin: 50px 5vw 0 0;
+    @media (max-width: $screenTablet) {
+      align-self: flex-start;
+    }
+  }
+
+  &__image {
+    display: block;
+    max-height: 35vw;
+    width: 35vw;
+    object-fit: cover;
+    @media (max-width: $screenDesktop) {
+      height: 40vw;
+      width: 40vw;
+      max-height: 100vw;
+    }
+    @media (max-width: $screenTablet) {
+      width: 365px;
+      height: 365px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: $screenMob) {
+      width: 100vw;
+      height: 100vw;
+      margin-bottom: 20px;
+    }
+  }
 }
