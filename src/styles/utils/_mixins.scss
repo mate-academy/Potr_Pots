@@ -1,6 +1,161 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
+@mixin hover($_property, $_toValue, $_duration) {
+  transition: #{$_property} $_duration;
+  &:hover,
+  &:focus {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin basketCounter {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  font-family: Bebas Neue, sans-serif;
+  font-size: 9px;
+  line-height: 13px;
+  letter-spacing: 0.15em;
+  color: #f8f8f8;
+  background: #eb5757;
+}
+
+@mixin sideLink {
+  position: absolute;
+  font-family: BebasNeue-Bold, sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #828282;
+  transform: rotate(90deg);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -28px;
+    right: 105px;
+    width: 1px;
+    height: 65px;
+    background: #828282;
+    transform: rotate(90deg);
+  }
+}
+
+@mixin transparent {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $colorAqua;
+}
+
+@mixin fontLarge {
+  @include transparent;
+  font-family: BebasNeue-Bold, sans-serif;
+  font-size: 20vw;
+  line-height: 20vw;
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+@mixin font138 {
+  font-family: BebasNeue-Bold, sans-serif;
+  font-size: 138px;
+  line-height: 138px;
+  letter-spacing: 0.12em;
+  color: $colorAqua;
+}
+
+@mixin font58 {
+  font-family: BebasNeue-Bold, sans-serif;
+  font-size: 58px;
+  line-height: 58px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $colorAqua;
+}
+
+@mixin font36Bebas {
+  font-family: BebasNeue-Bold, sans-serif;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $colorBlack;
+}
+
+@mixin font36Proxima {
+  font-family: ProximaNova-Semibold, sans-serif;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: $colorGrayDark;
+}
+
+@mixin font26 {
+  font-family: ProximaNova-Bold, sans-serif;
+  font-size: 26px;
+  line-height: 32px;
+  text-transform: uppercase;
+  color: $colorGrayDark;
+}
+
+@mixin font24Proxima {
+  font-family: ProximaNova-Bold, sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $colorBlack;
+}
+
+@mixin font24Bedas {
+  font-family: BebasNeue-Bold, sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $colorGrayDark;
+}
+
+@mixin font20 {
+  font-family: ProximaNova-Bold, sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+  color: $colorGray;
+}
+
+@mixin font18 {
+  font-family: BebasNeue-Bold, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.15em;
+  color: $colorBlack;
+}
+
+@mixin font16 {
+  font-family: ProximaNova-Regular, sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  color: $colorBlack;
+}
+
+@mixin font14 {
+  font-family: ProximaNova-Bold, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: $colorGray;
+}
+
+@mixin font11 {
+  font-family: ProximaNova-Regular, sans-serif;
+  font-size: 11px;
+  line-height: 14px;
+  color: #828282;
 }

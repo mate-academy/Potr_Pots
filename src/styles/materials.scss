@@ -1,0 +1,142 @@
+.materials {
+  padding-top: 150px;
+  padding-bottom: 85px;
+
+  &__bg {
+    display: flex;
+    justify-content: center;
+    height: 75vw;
+    background: linear-gradient(
+      180deg, $colorWhiteGray 0%,
+      rgba(255, 255, 255, 0) 30.93%),
+      url(../images/photos/material-bg.jpg)
+      no-repeat,
+      center;
+    background-size: contain;
+  }
+
+  &__content-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (min-width: 1440px) {
+      width: 80vw;
+    }
+  }
+
+  &__title {
+    @include font138;
+    position: absolute;
+    top: -150px;
+    left: 0;
+  }
+
+  &__static-content {
+    width: 32vw;
+  }
+
+  &__heading {
+    @include font20;
+  }
+
+  &__hidden-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-50%);
+    z-index: 0;
+
+    &--1 {
+      top: 59vw;
+      left: 14vw;
+    }
+
+    &--2 {
+      top: 44vw;
+      left: 34vw;
+    }
+
+    &--3 {
+      top: 64vw;
+      left: 43vw;
+    }
+
+    &--4 {
+      top: 53vw;
+      left: 53vw;
+    }
+
+    &--5 {
+      top: 45vw;
+      left: 72vw;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border-radius: 50%;
+    border: 1px solid #eb5757;
+    background: #eb5757;
+    opacity: 1;
+    transition-duration: 0.5s;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: relative;
+      left: 6px;
+      width: 12px;
+      height: 1px;
+      background: $colorGrayLigth;
+    }
+
+    &::after {
+      content: "";
+      position: relative;
+      left: -6px;
+      width: 12px;
+      height: 1px;
+      background: $colorGrayLigth;
+      transform: rotate(90deg);
+      transition-duration: 1s;
+    }
+
+    &:hover {
+      border-color: rgba(36, 35, 35, 0.75);
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+    }
+
+    &:hover:after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__hidden-text {
+    height: 1px;
+    width: 300px;
+    padding: 0 45px;
+    opacity: 0;
+    color: $colorWhiteGray;
+    background: rgba(0, 0, 0, 0.41);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+    transition-duration: 1s;
+    overflow: hidden;
+  }
+
+  &__button:hover + &__hidden-text {
+    height: auto;
+    padding: 35px 45px;
+    opacity: 1;
+    z-index: 5;
+  }
+}

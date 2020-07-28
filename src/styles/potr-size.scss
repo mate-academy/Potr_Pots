@@ -1,0 +1,80 @@
+.potr-size {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 150px;
+
+  &__content-container {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 56px;
+    grid-column-gap: 100px;
+    grid-template-areas: "title title"
+      "tutorial img";
+  }
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__tutorial {
+    grid-area: tutorial;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 60px;
+    grid-column-gap: 30px;
+    grid-template-areas: "intro description"
+      "note note";
+  }
+
+  &__intro {
+    grid-area: intro;
+  }
+
+  &__description {
+    grid-area: description;
+    margin-top: 1em;
+    padding-left: 30px;
+    border-left: 1px solid #d8d8d8;
+  }
+
+  &__item {
+    &--1 {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__heading {
+    @include font18;
+    margin-bottom: 1em;
+  }
+
+  &__note {
+    grid-area: note;
+    position: relative;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -7px;
+    }
+  }
+
+  &__img-box {
+    grid-area: img;
+  }
+
+  &__side-link {
+    @include sideLink;
+    bottom: 0;
+    right: -30px;
+
+    &::before {
+      right: 165px;
+    }
+    z-index: 5;
+  }
+}

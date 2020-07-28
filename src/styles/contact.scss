@@ -1,0 +1,118 @@
+.contact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 39px;
+  padding-bottom: 150px;
+
+  &__content-container {
+    display: grid;
+    grid-template: "title ."
+      "intro ."
+      "form contacts";
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 91vw;
+    height: 45vw;
+    background: $colorYellow;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+  }
+
+  &__circle {
+    position: absolute;
+    top: -100px;
+    right: 50px;
+    width: 220px;
+    height: 220px;
+    background: url("../images/sign.svg") no-repeat center;
+    background-size: contain;
+  }
+
+  &__title {
+    grid-area: title;
+    color: $colorBlack;
+  }
+
+  &__intro {
+    grid-area: intro;
+    margin-bottom: 27px;
+  }
+
+  &__form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+  }
+
+  &__heading {
+    font-family: ProximaNova-Semibold, sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+    color: $colorBlack;
+    text-transform: none;
+  }
+
+  &__input {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-family: ProximaNova-Regular, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorBlack;
+    background-color: transparent;
+
+    &--textarea {
+      resize: none;
+    }
+
+    &::placeholder {
+      color: $colorGray;
+    }
+  }
+
+  &__button {
+    display: block;
+    align-self: center;
+    margin-top: 40px;
+    font-family: ProximaNova-Semibold, sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: $colorGrayDark;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $colorGrayDark;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      border-color: $colorRed;
+      color: $colorRed;
+    }
+  }
+
+  &__content {
+    grid-area: contacts;
+  }
+
+  &__type {
+    font-family: ProximaNova-Regular, sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__description {
+    color: $colorBlack;
+  }
+}

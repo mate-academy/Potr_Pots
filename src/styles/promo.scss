@@ -1,0 +1,112 @@
+.promo {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  padding-top: 70px;
+  padding-bottom: 120px;
+
+  &__content-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 75vw;
+    height: 32vw;
+    background: $colorYellow;
+    clip-path: polygon(0 0, 100% 0, 100% 40%, 0% 100%);
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__title {
+    z-index: 2;
+    margin-left: 110px;
+
+    @media (max-width: $screenMd) {
+      margin-left: 0;
+    }
+  }
+
+  &__offer {
+    align-self: flex-end;
+    margin-right: 20px;
+
+    @media (max-width: $screenMd) {
+      margin-right: 80px;
+    }
+  }
+
+  &__price {
+    @include font26;
+  }
+
+  &__text {
+    @include font14;
+    margin: 0;
+  }
+
+  &__img-box {
+    max-width: 35vw;
+    max-height: 35vw;
+
+    @media (max-width: $screenMd) {
+      position: absolute;
+      right: 34px;
+      z-index: 1;
+      max-width: 40vw;
+      max-height: 40vw;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__buy-button {
+    align-self: flex-end;
+    margin: 50px 80px 0 0;
+
+    @media (max-width: $screenMd) {
+      margin: 25px 90px 0 0;
+    }
+  }
+
+  &__next {
+    position: relative;
+    top: 10px;
+    left: -60px;
+    font-family: Proxima Nova, sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+    color: $colorAqua;
+    transform: rotate(90deg);
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 45px;
+      background: url("../images/arrow-blue.svg");
+      transform: rotate(-90deg);
+      top: -15px;
+      right: -35px;
+    }
+  }
+}
+
+.transparent {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $colorAqua;
+}

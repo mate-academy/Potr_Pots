@@ -1,0 +1,139 @@
+.benefits {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+  padding-bottom: 150px;
+
+  &__content-container {
+    width: 100%;
+    padding-right: 50px;
+  }
+
+  &__img-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    width: 270px;
+    background: $colorWhite;
+    transition-duration: 0.8s;
+
+    &:hover {
+      transform: perspective(600px) rotate3d(2, 3, 1, 30deg);
+    }
+
+    &--1 {
+      position: absolute;
+      top: -130px;
+      left: 300px;
+      transform: rotate(-28.9deg);
+    }
+
+    &--2 {
+      position: absolute;
+      top: -70px;
+      left: -20px;
+      transform: rotate(-15.03deg);
+    }
+
+    &--3 {
+      position: absolute;
+      top: 200px;
+      left: 140px;
+      transform: rotate(-15.2deg);
+    }
+
+    &--4 {
+      position: absolute;
+      top: 290px;
+      left: -150px;
+      z-index: 2;
+    }
+
+    &--5 {
+      position: absolute;
+      top: 460px;
+      left: 340px;
+      transform: rotate(-30.43deg);
+    }
+
+    &--6 {
+      position: absolute;
+      top: 530px;
+      left: 50px;
+      transform: rotate(-15.8deg);
+    }
+  }
+
+  &__description {
+    align-self: flex-start;
+    padding: 0 25px;
+    @include font11;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-areas: "item-1 item-2"
+      "item-3 item-3"
+      "button button"
+      "offer offer";
+    grid-row-gap: 50px;
+    grid-column-gap: 20px;
+    margin-left: 600px;
+    padding-top: 130px;
+    width: 670px;
+  }
+
+  &__item {
+    &--1 {
+      grid-area: item-1;
+    }
+
+    &--2 {
+      grid-area: item-2;
+    }
+
+    &--3 {
+      grid-area: item-3;
+    }
+  }
+
+  &__heading {
+    position: relative;
+    @include font36Proxima;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      height: 7px;
+      width: 7px;
+      transform: translateY(-50%) rotate(45deg);
+      background-color: $colorGray;
+    }
+  }
+
+  &__buy-button {
+    grid-area: button;
+    margin-top: 10px;
+    margin-left: -20px;
+  }
+
+  &__offer {
+    grid-area: offer;
+    justify-self: center;
+  }
+
+  &__sale {
+    @include font36Bebas;
+    color: $colorRed;
+  }
+
+  &__sale-text {
+    @include font24Bedas;
+    color: $colorAqua;
+  }
+}

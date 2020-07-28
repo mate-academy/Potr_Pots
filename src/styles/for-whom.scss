@@ -1,0 +1,144 @@
+.for-whom {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 120px;
+
+  &__content-container {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 100px;
+    grid-template-areas: "title title"
+      "robust robust"
+      "beautiful save-time";
+
+    @media (min-width: 1910px) {
+      width: 80vw;
+    }
+  }
+
+  &__side-link {
+    @include sideLink;
+    top: 75px;
+    right: 0;
+
+    &--bottom {
+      position: relative;
+      top: -300px;
+      right: 300px;
+      transform: rotate(-90deg);
+
+      &::before {
+        top: -28px;
+        right: 580px;
+      }
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    justify-self: start;
+    letter-spacing: 0.15em;
+    line-height: 150%;
+  }
+
+  &__pros {
+    &--robust {
+      grid-area: robust;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      grid-column-gap: 100px;
+      align-items: center;
+      padding-top: 40px;
+      width: 100%;
+    }
+
+    &--beautiful {
+      grid-area: beautiful;
+      justify-self: center;
+      padding-top: 185px;
+    }
+
+    &--save-time {
+      grid-area: save-time;
+      justify-self: end;
+      padding-top: 80px;
+    }
+  }
+
+  &__img {
+    &--robust {
+      width: 35vw;
+      margin-right: 50px;
+    }
+
+    &--beautiful {
+      width: 21vw;
+    }
+
+    &--save-time {
+      width: 33vw;
+    }
+  }
+
+  &__text {
+    max-width: 370px;
+
+    &--3 {
+      margin-left: 70px;
+    }
+  }
+
+  &__note {
+    position: relative;
+    margin: 40px 0;
+
+    &::before {
+      @include font24Proxima;
+      content: "*";
+      position: absolute;
+      top: 5px;
+      left: -40px;
+    }
+
+    &--3 {
+      margin-left: -70px;
+    }
+  }
+
+  &__heading {
+    position: relative;
+    @include font36Proxima;
+
+    &::after {
+      position: absolute;
+      bottom: -10px;
+      margin-left: 5px;
+      content: url("../images/rectangle.svg");
+    }
+
+    &--2 {
+      margin-top: 105px;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    left: -67px;
+    color: $colorBlack;
+
+    &::before {
+      position: absolute;
+      top: 3px;
+      left: -18px;
+      content: url("../images/rectangle.svg");
+    }
+
+    &--2 {
+      top: -75px;
+      left: 20px;
+    }
+  }
+}

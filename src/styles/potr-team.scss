@@ -1,0 +1,69 @@
+.potr-team {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding-bottom: 225px;
+  overflow: hidden;
+
+  &__content-container {
+    @media (min-width: 1400px) {
+      width: 80vw;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    top: 12vw;
+    left: 0;
+    width: 32vw;
+    height: 22vw;
+    background: $colorYellow;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+  }
+
+  &__title {
+    @include font58;
+    color: $colorGrayDark;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10vw;
+  }
+
+  &__img-box {
+    width: 47vw;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__description {
+    display: block;
+    width: 23vw;
+    margin-right: 90px;
+  }
+
+  &__mate {
+    @include fontLarge;
+
+    &--martin {
+      position: absolute;
+      top: 5vw;
+      left: 6vw;
+    }
+
+    &--andy {
+      position: absolute;
+      bottom: 1vw;
+      right: -3vw;
+    }
+  }
+}
