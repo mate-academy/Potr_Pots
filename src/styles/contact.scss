@@ -6,6 +6,7 @@
   padding-bottom: 150px;
 
   &__content-container {
+    position: relative;
     display: grid;
     grid-template: "title ."
       "intro ."
@@ -19,6 +20,7 @@
     left: 0;
     width: 91vw;
     height: 45vw;
+    max-height: 600px;
     background: $colorYellow;
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
   }
@@ -31,6 +33,11 @@
     height: 220px;
     background: url("../images/sign.svg") no-repeat center;
     background-size: contain;
+    transition-duration: 1s;
+
+    &:hover {
+      transform: rotate(100deg) translate(-30px);
+    }
   }
 
   &__title {
@@ -40,7 +47,9 @@
 
   &__intro {
     grid-area: intro;
-    margin-bottom: 27px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: $colorBlack;
   }
 
   &__form {
@@ -52,11 +61,11 @@
 
   &__heading {
     @include font24Proxima-S;
+    margin-top: 1em;
   }
 
   &__input {
     @include font16;
-    display: block;
     margin-top: 20px;
     padding: 10px 15px;
     outline: none;
@@ -80,7 +89,7 @@
     margin-top: 40px;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid $colorGrayDark;
+    border-bottom: 1px dotted $colorGrayDark;
     transition-duration: 0.3s;
     cursor: pointer;
     outline: none;
@@ -101,5 +110,10 @@
 
   &__description {
     color: $colorBlack;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $colorAqua;
+    }
   }
 }
