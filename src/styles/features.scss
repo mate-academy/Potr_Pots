@@ -46,10 +46,27 @@
     height: 25vw;
     overflow: hidden;
     margin-bottom: 33px;
-    transition-duration: 0.5s;
+    clip-path: polygon(
+      20% 0%,
+      80% 0%,
+      100% 0,
+      100% 100%,
+      80% 100%,
+      20% 100%,
+      0 100%,
+      0 0);
+    transition: clip-path 0.5s;
 
     &:hover {
-      border-radius: 50%;
+      clip-path: polygon(
+        20% 0%,
+        80% 0%,
+        100% 20%,
+        100% 80%,
+        80% 100%,
+        20% 100%,
+        0% 80%,
+        0% 20%);
     }
   }
 
