@@ -4,32 +4,17 @@
   justify-content: flex-end;
   align-items: center;
   max-width: 1500px;
+  height: 100vh;
   margin: auto;
   padding: 140px $bodySidePadding;
-  @media (max-width: $screenLarge) {
-    justify-content: space-between;
-    padding: 120px $bodySidePaddingLp 60px;
-  }
-  @media (max-width: $screenTablet) {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-  @media (max-width: $screenMob) {
-    align-items: flex-start;
-    padding: 60px 0 100px;
-  }
 
   &__text-box {
     display: flex;
     flex-direction: column;
-    margin-right: 7vw;
-    @media (max-width: $screenDesktop) {
-      margin-right: 10px;
-    }
-    @media (max-width: $screenMob) {
-      padding: 0 $bodySidePaddingMb;
-    }
+    justify-content: flex-end;
+    align-items: flex-end;
   }
+
   &__heading {
     color: $colorTurq;
     font-weight: 700;
@@ -40,6 +25,7 @@
       font-size: 36px;
     }
   }
+
   &__promotion {
     align-self: flex-end;
     &--bold {
@@ -52,6 +38,7 @@
       margin-top: 20px;
     }
   }
+
   &__buy-button {
     align-self: flex-end;
     margin: 50px 5vw 0 0;
@@ -65,16 +52,19 @@
     max-height: 35vw;
     width: 35vw;
     object-fit: cover;
+
     @media (max-width: $screenDesktop) {
       height: 40vw;
       width: 40vw;
       max-height: 100vw;
     }
+
     @media (max-width: $screenTablet) {
       width: 365px;
       height: 365px;
       margin-bottom: 30px;
     }
+
     @media (max-width: $screenMob) {
       width: 100vw;
       height: 100vw;
@@ -84,24 +74,19 @@
 
   &__go-bottom {
     position: absolute;
-    bottom: 0;
+    bottom: auto;
     left: $bodySidePadding;
     display: block;
     color: $colorTurq;
     transform-origin: bottom left;
     transform: rotate(90deg) translateX(-100%);
-    transition-duration: $transitionDuration;
-    &:hover {
-      bottom: -10px;
-    }
+
     @media (max-width: $screenLarge) {
       left: $bodySidePaddingLp;
-      transform: rotate(90deg) translateX(-120%);
     }
     @media (max-width: $screenDesktop) {
-      left: auto;
+      bottom: auto;
       right: $bodySidePaddingLp;
-      transform: rotate(90deg) translateY(-165px) translateX(-120%);
     }
     @media (max-width: $screenMob) {
       display: none;

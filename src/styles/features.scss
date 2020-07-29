@@ -24,6 +24,10 @@
 
   &__item {
     flex-basis: 25vw;
+    transition-duration: $transitionDuration / 2;
+    &:hover {
+      transform: scale(1.1);
+    }
     @media (max-width: $screenLarge) {
       flex-basis: 27vw;
     }
@@ -36,11 +40,6 @@
     display: inline-block;
     width: 100%;
     margin-bottom: 36px;
-    user-select: none;
-    transition-duration: $transitionDuration / 2;
-    &:hover {
-      border-radius: 50%;
-    }
   }
 
   &__item-title {
