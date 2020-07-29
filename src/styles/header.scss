@@ -1,0 +1,25 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px $bodySidePadding;
+  transition-duration: $transitionDuration;
+
+  @media (max-width: $screenLarge) {
+    padding: 20px $bodySidePaddingLp;
+  }
+
+  @media (max-width: $screenMob) {
+    padding: 0 $bodySidePaddingMb;
+    background-color: $colorGreyLight;
+  }
+
+  &__logo {
+    color: $colorDark;
+  }
+}

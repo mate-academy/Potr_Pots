@@ -1,0 +1,57 @@
+.main-container {
+  position: relative;
+  overflow: hidden;
+
+  &__top-trapese {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: $mainScreenTrapeseWidth;
+    height: $mainScreenTrapeseHeight;
+    border-left: $mainScreenTrapeseWidth solid $colorYellowLight;
+    border-bottom: ($mainScreenTrapeseHeight / 2) solid transparent;
+    @media (max-width: $screenTablet) {
+      width: 85vw;
+      border-left-width: 85vw;
+    }
+    @media (max-width: $screenMob) {
+      display: none;
+    }
+  }
+
+  &__black-decor {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 20%;
+    right: -4em;
+    height: 2em;
+    color: $decorGrayColor;
+    transform: rotateZ(90deg);
+  }
+
+  &__circle-seal {
+    position: absolute;
+    left: calc(100vw - #{$bodySidePadding} - #{$circleSealSide} / 1.5);
+    bottom: $messageUsHeight - $circleSealSide / 3 * 2;
+    width: $circleSealSide;
+    height: $circleSealSide;
+    background: url(../images/sircle-seal.svg) center no-repeat;
+    background-size: contain;
+
+    @media (max-width: $screenLarge) {
+      left: calc(100vw - #{$bodySidePaddingLp} - #{$circleSealSide} / 1.5);
+    }
+    @media (max-width: $screenTablet) {
+      bottom: $messageUsHeightTablet - $circleSealSide / 3 * 2;
+      left: calc(100vw - #{$bodySidePaddingLp} - #{$circleSealSide} / 2);
+    }
+    @media (max-width: $screenMob) {
+      bottom: $messageUsHeightMobile - $circleSealSide / 3 * 2;
+    }
+    @media (max-width: $messageUsTitleShrinkBreakpoint) {
+      bottom: $messageUsHeightExtraMobile - $circleSealSide / 3 * 2;
+    }
+  }
+}

@@ -1,0 +1,248 @@
+.for-whom {
+  position: relative;
+  padding: 140px $bodySidePadding 150px;
+  @media (max-width: $screenLarge) {
+    padding: 0 $bodySidePaddingLp 120px;
+  }
+  @media (max-width: $screenMob) {
+    padding-right: $bodySidePaddingMb;
+    padding-left: $bodySidePaddingMb;
+  }
+
+  &__heading {
+    padding-bottom: 35px;
+    @media (max-width: $screenMob) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__bottom-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+    @media (max-width: $screenLarge) {
+      flex-direction: column;
+    }
+    @media (max-width: $screenDesktop) {
+      margin-top: 110px;
+    }
+    @media (max-width: $screenMob) {
+      margin-top: 70px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    &--1 {
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 80px;
+      @media (max-width: $screenExtraLarge) {
+        padding-right: 0;
+      }
+      @media (max-width: $screenLarge) {
+        justify-content: start;
+      }
+    }
+    &--2 {
+      display: flex;
+      flex-direction: column;
+      margin-top: 105px;
+      padding-left: 100px;
+      @media (max-width: $screenExtraLarge) {
+        padding-left: 0;
+      }
+      @media (max-width: $screenLarge) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 0;
+      }
+    }
+    &--3 {
+      display: flex;
+      flex-direction: column;
+      @media (max-width: $screenLarge) {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: 80px;
+      }
+      @media (max-width: $screenDesktop) {
+        margin-top: 120px;
+      }
+      @media (max-width: $screenMob) {
+        margin-top: 70px;
+      }
+    }
+  }
+
+  &__image {
+    display: inline-block;
+    @media (max-width: $screenMob) {
+      display: none;
+    }
+    &--1 {
+      width: 37vw;
+    }
+    &--2 {
+      width: 21vw;
+      @media (max-width: $screenLarge) {
+        width: 40vw;
+      }
+      @media (max-width: $screenTablet) {
+        object-fit: contain;
+      }
+    }
+    &--3 {
+      width: 33vw;
+      @media (max-width: $screenDesktop) {
+        width: 37vw;
+      }
+    }
+  }
+
+  &__text-box {
+    position: relative;
+    max-width: 370px;
+    &--1 {
+      margin-left: 100px;
+      @media (max-width: $screenDesktop) {
+        margin-left: 80px;
+      }
+      @media (max-width: $screenMob) {
+        margin-left: 0;
+      }
+    }
+    &--2 {
+      @media (max-width: $screenLarge) {
+        margin-top: 65px;
+      }
+      @media (max-width: $screenMob) {
+        margin-top: 0;
+      }
+    }
+    &--3 {
+      padding: 100px 0 0 100px;
+      max-width: 470px;
+      @media (max-width: $screenExtraLarge) {
+        padding-left: 0;
+        width: 370px;
+      }
+      @media (max-width: $screenLarge) {
+        margin-left: 100px;
+        padding-top: 20px;
+      }
+      @media (max-width: $screenDesktop) {
+        margin-left: 70px;
+      }
+      @media (max-width: $screenMob) {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  &__short-hint {
+    position: relative;
+    margin: 40px 0;
+    &::before {
+      content: "*";
+      position: absolute;
+      left: calc(-30px - 0.5em);
+      @extend .heading--3;
+    }
+    @media (max-width: $screenMob) {
+      display: none;
+    }
+    &--1 {
+      margin-top: 0;
+      @media (max-width: $screenDesktop) {
+        margin-bottom: 10px;
+        transform: translateY(-10px);
+      }
+    }
+    &--2 {
+      @media (max-width: $screenDesktop) {
+        right: 2.5em;
+      }
+      @media (max-width: $screenLarge) {
+        position: absolute;
+        top: -65px;
+        left: 37vw;
+      }
+    }
+    &--3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @media (max-width: $screenLarge) {
+        top: -3.2em;
+      }
+    }
+  }
+
+  &__number {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 2em;
+    left: -3em;
+    &::before {
+      content: "|";
+      align-self: start;
+      @extend .custom-slash;
+    }
+    @media (max-width: $screenLarge) {
+      left: -1.7em;
+    }
+    @media (max-width: $screenMob) {
+      position: static;
+      margin-bottom: 20px;
+    }
+    &--2 {
+      position: static;
+      margin-bottom: 25px;
+      @media (max-width: $screenMob) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-top: 15px;
+    color: $colorSemiDark;
+    @media (max-width: $screenMob) {
+      margin-top: 27px;
+    }
+  }
+
+  &__slash {
+    @media (max-width: $screenMob) {
+      display: none;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: $decorGrayColor;
+    transform: rotateZ(90deg);
+
+    &--top {
+      top: 150px;
+      right: -3em;
+      @media (max-width: $screenMob) {
+        top: auto;
+        bottom: 420px;
+        right: -4em;
+      }
+    }
+    &--bottom {
+      bottom: 10em;
+      left: -4em;
+      @media (max-width: $screenMob) {
+        display: none;
+      }
+    }
+  }
+}

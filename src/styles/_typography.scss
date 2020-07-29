@@ -1,3 +1,81 @@
-h1 {
-  @extend %h1;
+.title {
+  font-family: $fontBebas;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.heading {
+  font-family: $fontBebas;
+  text-transform: uppercase;
+
+  &--1 {
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+  }
+
+  &--2 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+  }
+
+  &--3 {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+  }
+
+  &--4 {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+  }
+}
+
+.subText {
+  font-family: $fontProxima;
+  line-height: 150%;
+
+  &--1 {
+    font-size: 36px;
+    @media (max-width: $screenMob) {
+      font-size: 32px;
+    }
+  }
+
+  &--2 {
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  &--3 {
+    font-size: 16px;
+  }
+
+  &--4 {
+    font-size: 14px;
+  }
+
+  &--5 {
+    font-size: 12px;
+  }
+}
+
+.transparent-turq {
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $colorTurq;
+}
+
+.custom-slash {
+  $slash: &;
+  display: inline-block;
+  font-size: 1.5em;
+  font-weight: 300;
+  transform: rotateZ(22deg) translateY(0.1em);
+  user-select: none;
 }

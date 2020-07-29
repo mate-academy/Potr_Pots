@@ -1,0 +1,104 @@
+.title-block {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 1500px;
+  height: 100vh;
+  margin: auto;
+  padding: 140px $bodySidePadding;
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &__heading {
+    color: $colorTurq;
+    font-weight: 700;
+    @media (max-width: $screenDesktop) {
+      font-size: 50px;
+    }
+    @media (max-width: $screenMob) {
+      font-size: 36px;
+    }
+  }
+
+  &__promotion {
+    align-self: flex-end;
+    &--bold {
+      display: block;
+      font-size: 26px;
+      font-weight: 700;
+    }
+    @media (max-width: $screenMob) {
+      align-self: flex-start;
+      margin-top: 20px;
+    }
+  }
+
+  &__buy-button {
+    align-self: flex-end;
+    margin: 50px 5vw 0 0;
+    @media (max-width: $screenTablet) {
+      align-self: flex-start;
+    }
+  }
+
+  &__photo {
+    display: block;
+    max-height: 35vw;
+    width: 35vw;
+    object-fit: cover;
+
+    @media (max-width: $screenDesktop) {
+      height: 40vw;
+      width: 40vw;
+      max-height: 100vw;
+    }
+
+    @media (max-width: $screenTablet) {
+      width: 365px;
+      height: 365px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $screenMob) {
+      width: 100vw;
+      height: 100vw;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__go-bottom {
+    position: absolute;
+    bottom: auto;
+    left: $bodySidePadding;
+    display: block;
+    color: $colorTurq;
+    transform-origin: bottom left;
+    transform: rotate(90deg) translateX(-100%);
+
+    @media (max-width: $screenLarge) {
+      left: $bodySidePaddingLp;
+    }
+    @media (max-width: $screenDesktop) {
+      bottom: auto;
+      right: $bodySidePaddingLp;
+    }
+    @media (max-width: $screenMob) {
+      display: none;
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      height: 8px;
+      width: 26px;
+      margin-left: 10px;
+      background: url(../images/title-block/arrow.svg) center no-repeat;
+    }
+  }
+}
