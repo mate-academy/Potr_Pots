@@ -5,9 +5,26 @@
   padding-top: 70px;
   padding-bottom: 120px;
 
+  @media (max-width: $screenMd) {
+    padding-top: 25px;
+    padding-bottom: 90px;
+  }
+
+  @media (max-width: $screenXS) {
+    padding-top: 0;
+    padding-bottom: 70px;
+  }
+
   &__content-container {
+    position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: $screen720) {
+      flex-direction: column-reverse;
+      padding: 0;
+    }
   }
 
   &__bg {
@@ -16,29 +33,68 @@
     left: 0;
     z-index: -1;
     width: 75vw;
-    height: 32vw;
-    background: $colorYellow;
+    height: 33vw;
+    max-height: 500px;
+    background: $colorYellowLight;
     clip-path: polygon(0 0, 100% 0, 100% 40%, 0% 100%);
+
+    @media (max-width: $screenMd) {
+      width: 80vw;
+      height: 45vw;
+      clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 100%);
+    }
+
+    @media (max-width: $screenXS) {
+      display: none;
+    }
   }
 
   &__side-link {
     @include sideLink;
-    top: 800px;
+    top: 690px;
     right: 0;
+
+    @media (max-width: $screenMd) {
+      right: -15px;
+    }
+
+    @media (max-width: $screenXS) {
+      top: auto;
+      bottom: -950px;
+      right: -20px;
+    }
   }
 
   &__description {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media (max-width: $screen720) {
+      align-self: center;
+    }
+
+    @media (max-width: $screenXS) {
+      padding-left: 30px;
+      align-self: flex-start;
+    }
   }
 
   &__title {
     z-index: 2;
     margin-left: 110px;
 
-    @media (max-width: $screenMd) {
+    @media (max-width: $screenXL) {
+      margin-left: 90px;
+    }
+
+    @media (max-width: $screenLg) {
       margin-left: 0;
+    }
+
+    @media (max-width: $screenXS) {
+      align-self: flex-start;
+      padding-top: 25px;
     }
   }
 
@@ -47,7 +103,13 @@
     margin-right: 20px;
 
     @media (max-width: $screenMd) {
-      margin-right: 80px;
+      margin-right: 90px;
+    }
+
+    @media (max-width: $screenXS) {
+      align-self: flex-start;
+      margin-right: 0;
+      margin-top: 20px;
     }
   }
 
@@ -61,22 +123,41 @@
   }
 
   &__img-box {
-    max-width: 35vw;
-    max-height: 35vw;
+    width: 35vw;
+    max-width: 500px;
+    max-height: 500px;
 
     @media (max-width: $screenMd) {
       position: absolute;
       right: 34px;
       z-index: 1;
-      max-width: 40vw;
-      max-height: 40vw;
+      width: 39vw;
+      max-width: 39vw;
+      max-height: 39vw;
+    }
+
+    @media (max-width: $screen720) {
+      position: static;
+      align-self: center;
+      margin-bottom: 30px;
+      width: 300px;
+      max-width: 300px;
+      max-height: 300px;
+    }
+
+    @media (max-width: $screenXS) {
+      margin-bottom: 0;
+      width: 100vw;
+      height: 100vw;
+      max-width: 100vw;
+      max-height: 100vw;
     }
   }
 
   &__img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   &__buy-button {
@@ -86,17 +167,27 @@
     @media (max-width: $screenMd) {
       margin: 25px 90px 0 0;
     }
+
+    @media (max-width: $screenXS) {
+      align-self: flex-start;
+      margin: 25px 0 0;
+    }
   }
 
   &__next {
+    @include font12;
     position: relative;
     top: 10px;
     left: -60px;
-    font-family: Proxima Nova, sans-serif;
-    font-size: 12px;
-    line-height: 150%;
-    color: $colorAqua;
     transform: rotate(90deg);
+
+    @media (max-width: $screenXS) {
+      position: absolute;
+      top: auto;
+      left: auto;
+      bottom: 80px;
+      right: -50px;
+    }
 
     &::after {
       content: "";

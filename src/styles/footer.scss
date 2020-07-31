@@ -4,14 +4,25 @@
   height: 295px;
   padding-top: 75px;
 
+  @media (max-width: $screen720) {
+    height: auto;
+    padding: 50px 0;
+  }
+
   &__content-container {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: $screen720) {
+      justify-content: center;
+    }
   }
 
   &__item {
     &--small {
-      width: 170px;
+      @media (max-width: $screen720) {
+        display: none;
+      }
     }
 
     &--middle {
@@ -24,13 +35,41 @@
   &__heading {
     @include font24Bedas;
     color: $colorBlack;
+
+    &--small {
+      @media (max-width: $screenMd) {
+        font-size: 24px;
+      }
+    }
+
+    &--middle {
+      @media (max-width: $screenMd) {
+        font-size: 36px;
+        line-height: 36px;
+      }
+    }
+  }
+
+  &__text {
+    &--mobile-only {
+      display: none;
+
+      @media (max-width: $screen720) {
+        display: block;
+        padding-right: 5px;
+      }
+    }
   }
 
   &__networks {
     display: flex;
     justify-content: space-between;
-    width: 230px;
+    width: 220px;
     margin-bottom: 80px;
+
+    @media (max-width: $screenMd) {
+      margin-bottom: 40px;
+    }
   }
 
   &__link {

@@ -2,7 +2,11 @@
   display: flex;
   justify-content: center;
   padding-top: 30px;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
+
+  @media (max-width: $screenXS) {
+    padding-bottom: 50px;
+  }
 
   &__content-container {
     display: grid;
@@ -13,8 +17,15 @@
       "robust robust"
       "beautiful save-time";
 
-    @media (min-width: 1910px) {
-      width: 80vw;
+    @media (max-width: $screenMd) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: $screenXS) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -23,6 +34,10 @@
     justify-self: start;
     letter-spacing: 0.15em;
     line-height: 150%;
+
+    @media (max-width: $screenXS) {
+      align-self: flex-start;
+    }
   }
 
   &__pros {
@@ -30,10 +45,20 @@
       grid-area: robust;
       display: grid;
       grid-template-columns: 1fr 1.5fr;
+      grid-template-areas: "img-r text-r";
       grid-column-gap: 100px;
       align-items: center;
       padding-top: 40px;
       width: 100%;
+
+      @media (max-width: $screenMd) {
+        grid-column-gap: 5px;
+      }
+
+      @media (max-width: $screen685) {
+        display: flex;
+        flex-direction: column;
+      }
     }
 
     &--beautiful {
@@ -41,35 +66,148 @@
       grid-area: beautiful;
       justify-self: center;
       padding-top: 185px;
+
+      @media (max-width: $screenMd) {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "text-b img-b";
+        grid-column-gap: 5px;
+        align-items: center;
+        padding-top: 95px;
+        width: 100%;
+      }
+
+      @media (max-width: $screen685) {
+        display: flex;
+        flex-direction: column;
+      }
+
     }
 
     &--save-time {
       grid-area: save-time;
       justify-self: end;
       padding-top: 80px;
+
+      @media (max-width: $screenMd) {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        grid-template-rows: auto;
+        grid-template-areas: "img-s text-s";
+        grid-column-gap: 5px;
+        align-items: center;
+        padding-top: 95px;
+        width: 100%;
+      }
+
+      @media (max-width: $screen685) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: $screenXS) {
+      padding-top: 0;
+      margin-bottom: 35px;
     }
   }
 
   &__img {
+    @media (max-width: $screen685) {
+      margin-bottom: 10px;
+    }
+
     &--robust {
+      grid-area: img-r;
       width: 35vw;
+      max-width: 500px;
       margin-right: 50px;
+
+      @media (max-width: $screenMd) {
+        margin-right: 0;
+        width: 284px;
+      }
     }
 
     &--beautiful {
+      grid-area: img-b;
       width: 21vw;
+      max-width: 300px;
+
+      @media (max-width: $screenMd) {
+        width: 300px;
+      }
     }
 
     &--save-time {
+      grid-area: img-s;
       width: 33vw;
+      max-width: 470px;
+
+      @media (max-width: $screenMd) {
+        width: 284px;
+      }
+    }
+
+    @media (max-width: $screenXS) {
+      display: none;
     }
   }
 
   &__text {
-    max-width: 370px;
+    max-width: 340px;
 
-    &--3 {
+    @media (max-width: $screenXS) {
+      max-width: 370px;
+    }
+
+    &--robust {
+      grid-area: text-r;
+      max-width: 280px;
+
+      @media (max-width: $screenMd) {
+        margin-left: 70px;
+      }
+
+      @media (max-width: $screenXS) {
+        margin-left: 0;
+        max-width: 370px;
+        align-self: center;
+      }
+    }
+
+    &--beautiful {
+      grid-area: text-b;
+
+      @media (max-width: $screenMd) {
+        margin-right: 60px;
+      }
+
+      @media (max-width: $screen685) {
+        margin-right: 0;
+        margin-left: 70px;
+        max-width: 280px;
+      }
+
+      @media (max-width: $screenXS) {
+        margin-left: 0;
+        max-width: 370px;
+      }
+    }
+
+    &--save-time {
+      grid-area: text-s;
       margin-left: 70px;
+
+      @media (max-width: $screen685) {
+        max-width: 280px;
+      }
+
+      @media (max-width: $screenXS) {
+        margin-left: 0;
+        max-width: 370px;
+      }
     }
   }
 
@@ -77,22 +215,56 @@
     position: relative;
     margin: 40px 0;
 
+    @media (max-width: $screenMd) {
+      margin: 0 0 25px;
+    }
+
+    @media (max-width: $screenXS) {
+      display: none;
+    }
+
     &::before {
       @include font24Proxima-B;
       content: "*";
       position: absolute;
       top: 5px;
       left: -40px;
+
+      @media (max-width: $screenMd) {
+        display: flex;
+        top: 0;
+        left: -17px;
+      }
     }
 
-    &--3 {
+    &--beautiful {
+      @media (max-width: $screenMd) {
+        text-align: right;
+
+        &::before {
+          left: auto;
+          right: 65px;
+        }
+      }
+
+      @media (max-width: $screen685) {
+        text-align: left;
+
+        &::before {
+          right: auto;
+          left: -17px;
+        }
+      }
+    }
+
+    &--save-time {
       margin-left: -70px;
     }
   }
 
   &__heading {
     position: relative;
-    @include font36Proxima;
+    @include font36Bebas;
 
     &::after {
       position: absolute;
@@ -101,8 +273,21 @@
       content: url("../images/rectangle.svg");
     }
 
-    &--2 {
+    &--beautiful {
       margin-top: 105px;
+
+      @media (max-width: $screen685) {
+        margin-top: 30px;
+      }
+    }
+
+    @media (max-width: $screen685) {
+      margin-top: 30px;
+    }
+
+    @media (max-width: $screenXS) {
+      margin-top: 105px;
+      margin-bottom: 25px;
     }
   }
 
@@ -111,6 +296,10 @@
     left: -67px;
     color: $colorBlack;
 
+    @media (max-width: $screenMd) {
+      left: -40px;
+    }
+
     &::before {
       position: absolute;
       top: 3px;
@@ -118,7 +307,17 @@
       content: url("../images/rectangle.svg");
     }
 
-    &--2 {
+    &--beautiful {
+      top: -75px;
+      left: 20px;
+
+      @media (max-width: $screen685) {
+        top: 0;
+        left: -40px;
+      }
+    }
+
+    @media (max-width: $screenXS) {
       top: -75px;
       left: 20px;
     }

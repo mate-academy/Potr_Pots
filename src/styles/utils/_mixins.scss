@@ -60,6 +60,17 @@
   line-height: 20vw;
   letter-spacing: 0.15em;
   margin: 0;
+  user-select: none;
+
+  @media (min-width: $screenXL) {
+    font-size: 288px;
+    line-height: 288px;
+  }
+
+  @media (max-width: $screenMd) {
+    font-size: 30vw;
+    line-height: 30vw;
+  }
 }
 
 @mixin font138 {
@@ -68,13 +79,30 @@
   line-height: 138px;
   letter-spacing: 0.12em;
   color: $colorAqua;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $colorAqua;
+
+  @media (max-width: $screenLg) {
+    font-size: 110px;
+    line-height: 110px;
+  }
+
+  @media (max-width: $screenMd) {
+    font-size: 80px;
+    line-height: 80px;
+  }
+
+  @media (max-width: $screenXS) {
+    font-size: 58px;
+    line-height: 58px;
+  }
 }
 
 @mixin font58 {
   font-family: BebasNeue-Bold, sans-serif;
   font-size: 58px;
   line-height: 58px;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: $colorAqua;
 }
@@ -92,9 +120,13 @@
   font-family: ProximaNova-Semibold, sans-serif;
   font-size: 36px;
   line-height: 150%;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
   text-transform: none;
   color: $colorGrayDark;
+
+  @media (max-width: $screenXS) {
+    font-size: 32px;
+  }
 }
 
 @mixin font26 {
@@ -130,6 +162,15 @@
   color: $colorBlack;
 }
 
+@mixin font24Proxima-R {
+  font-family: ProximaNova-Regular, sans-serif;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+  text-transform: none;
+  color: $colorBlack;
+}
+
 @mixin font24Bedas {
   font-family: BebasNeue-Bold, sans-serif;
   font-size: 24px;
@@ -137,12 +178,19 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: $colorGrayDark;
+
+  @media (max-width: $screenSm - 1px) {
+    font-size: 36px;
+    line-height: 150%;
+  }
 }
 
 @mixin font20 {
   font-family: ProximaNova-Bold, sans-serif;
   font-size: 20px;
   line-height: 150%;
+  text-transform: none;
+  letter-spacing: 0;
   color: $colorGray;
 }
 
@@ -169,11 +217,17 @@
 }
 
 @mixin font14 {
-  font-family: ProximaNova-Bold, sans-serif;
-  font-weight: 600;
+  font-family: ProximaNova-Semibold, sans-serif;
   font-size: 14px;
   line-height: 150%;
   color: $colorGray;
+}
+
+@mixin font12 {
+  font-family: ProximaNova-Regular, sans-serif;
+  font-size: 12px;
+  line-height: 150%;
+  color: $colorAqua;
 }
 
 @mixin font11 {

@@ -5,18 +5,18 @@
 .burger-menu__open {
   display: none;
   position: absolute;
-  top: 6px;
+  top: 23px;
   right: $paddingsMob;
   width: 48px;
   height: 48px;
   cursor: pointer;
 
-  &:hover {
-    background-color: crimson;
-  }
-
   @media (max-width: $screenMd) {
     display: block;
+  }
+
+  @media (max-width: $screenXS) {
+    top: 6px;
   }
 }
 
@@ -24,10 +24,11 @@
   position: fixed;
   right: -200vw;
   bottom: $paddingsMob;
-  z-index: 2;
+  z-index: 11;
   display: flex;
   align-items: center;
   padding-top: 40px;
+  font-size: 12px;
   transform: rotate(-90deg);
   transform-origin: top center;
   cursor: pointer;

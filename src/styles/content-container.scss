@@ -1,13 +1,29 @@
 .content-container {
-  width: 1170px;
+  width: $screenXLContent;
+
+  @media (max-width: 1270px) {
+    width: 100%;
+    padding: 0 $paddingsLg;
+  }
 
   @media (max-width: $screenMd) {
     width: 100%;
-    padding: 0 34px;
+    padding: 0 $paddingsMd;
   }
 
-  @media (max-width: $screenLg) {
+  @media (max-width: $screenXS) {
     width: 100%;
-    padding: 0 50px;
+    padding: 0 $paddingsMob;
+  }
+}
+
+.link-container {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  @media (min-width: $screenXL) {
+    width: 1400px;
   }
 }

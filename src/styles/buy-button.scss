@@ -1,21 +1,23 @@
 .buy-button {
+  @include font14;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   width: 238px;
   height: 48px;
-  outline-color: #eb5757;
-  border: 1px solid #03839e;
-  font-family: Proxima Nova, sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 150%;
+  outline-color: $colorRed;
+  border: 1px solid $colorAqua;
   text-transform: uppercase;
   color: #121212;
-  background: #f8f8f8;
+  background: $colorWhiteGray;
   cursor: pointer;
   transition-duration: 0.5s;
+
+  @media (max-width: $screenXS) {
+    background: $colorYellow;
+    border-color: $colorYellow;
+  }
 
   &::after {
     content: "";
@@ -26,11 +28,22 @@
   }
 
   &:hover {
-    background: #03839e;
-    color: #f8f8f8;
+    background: $colorAqua;
+    color: $colorWhiteGray;
 
     &::after {
       background: url("../images/arrow-white.svg");
+    }
+
+    @media (max-width: $screenXS) {
+      background: $colorWhiteGray;
+      border-color: $colorBlack;
+      color: $colorBlack;
+      outline: none;
+
+      &::after {
+        background: url("../images/arrow-black.svg");
+      }
     }
   }
 }

@@ -1,25 +1,31 @@
 .features {
-  position: relative;
   display: flex;
   justify-content: center;
-  padding-top: 30px;
+  padding-top: 50px;
   padding-bottom: 100px;
 
-  &__content-container {
-    @media (min-width: 1450px) {
-      width: 80vw;
-    }
+  @media (max-width: $screenMd) {
+    padding-bottom: 30px;
+  }
+
+  @media (max-width: $screenXS) {
+    padding-top: 25px;
+    padding-bottom: 0;
   }
 
   &__side-link {
     @include sideLink;
-    top: -170px;
+    top: -200px;
     left: 0;
     transform: rotate(-90deg);
 
     &::before {
       top: -28px;
       right: 105px;
+    }
+
+    @media (max-width: $screenMd) {
+      display: none;
     }
   }
 
@@ -28,22 +34,91 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding-top: 80px;
+
+    @media (max-width: $screenMd) {
+      padding-top: 50px;
+    }
+
+    @media (max-width: $screenSm - 1px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__pros {
     width: 25vw;
+    max-width: 370px;
     min-width: 220px;
     text-align: center;
+
+    @media (max-width: $screenMd) {
+      margin-bottom: 70px;
+      text-align: left;
+    }
+
+    @media (max-width: $screenSm - 1px) {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: 290px 1fr;
+      grid-template-areas: "img heading"
+        "img description";
+      grid-column-gap: 70px;
+      align-items: start;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media (max-width: $screen685) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 260px;
+      text-align: center;
+    }
+
+    @media (max-width: $screenXS) {
+      width: 100%;
+      max-width: 370px;
+    }
+
+    &--1 {
+      @media (max-width: $screenMd) {
+        order: 2;
+      }
+
+      @media (max-width: $screenSm - 1px) {
+        order: 0;
+      }
+    }
+
+    &--2 {
+      @media (max-width: $screenMd) {
+        order: 3;
+      }
+
+      @media (max-width: $screenSm - 1px) {
+        order: 0;
+        grid-template-columns: 1fr 290px;
+        grid-template-areas: "heading img "
+          "description img ";
+      }
+    }
   }
 
   &__title {
     @include font58;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $colorAqua;
   }
 
   &__img-box {
+    grid-area: img;
     width: 25vw;
+    max-width: 370px;
     min-width: 220px;
     height: 25vw;
+    max-height: 370px;
+    min-height: 220px;
     overflow: hidden;
     margin-bottom: 33px;
     clip-path: polygon(
@@ -68,6 +143,21 @@
         0% 80%,
         0% 20%);
     }
+
+    @media (max-width: $screenSm - 1px) {
+      width: 290px;
+      height: 290px;
+    }
+
+    @media (max-width: $screen685) {
+      width: 260px;
+      height: 260px;
+    }
+
+    @media (max-width: $screenXS) {
+      width: 81vw;
+      height: 81vw;
+    }
   }
 
   &__img {
@@ -78,5 +168,15 @@
 
   &__heading {
     @include font24Bedas;
+    grid-area: heading;
+    align-self: end;
+
+    @media (max-width: $screen685) {
+      align-self: center;
+    }
+  }
+
+  &__description {
+    grid-area: description;
   }
 }
