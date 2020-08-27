@@ -198,7 +198,7 @@ const startButton = document.querySelector('.startButton');
 startButton.onclick = () => {
   if (document.querySelector('.genomInput')) {
     if (document.querySelector('.genomInput').value) {
-      trees[0].genom = isNaN(document.querySelector('.genomInput').value);
+      trees[0].genom = eval(document.querySelector('.genomInput').value);
     };
     document.querySelector('.genomArea').remove();
   }
