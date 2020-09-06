@@ -2,10 +2,18 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
     <title>Potr Pots</title>
     <link rel="stylesheet" href="./styles/main.scss">
-    <link rel="icon" href="./images/favicon_poter-pots.png">
+    <link
+      rel="stylesheet"
+      media="all"
+      href="./styles/animate.css"
+    >
+    <link rel="icon" href="images/favicon_potr-pots.png">
   </head>
   <body>
     <header id="home" class="header">
@@ -29,7 +37,7 @@
         <nav class="nav">
           <ul class="nav__list">
             <li class="nav__item nav__item--desktop-hidden">
-              <a class="nav__link" href="#">
+              <a class="nav__link basket-mobile" href="#">
                 Basket <span class="nav__basket-count">0</span>
               </a>
             </li>
@@ -56,13 +64,43 @@
     </header>
 
     <main class="main-content">
+      <section class="pop-up">
+        <div class="pop-up__container">
+          <div class="pop-up__bg"></div>
+
+          <div class="pop-up__content">
+            <h3 class="pop-up__title">Unfortunately you cannot buy any pots on this page</h3>
+
+            <p class="pop-up__text">
+              But if you really want to buy them (because the POTR POTS are really great), here is the
+              <a
+                class="pop-up__link"
+                href="https://potrpots.com"
+                target="_blank"
+                rel="noopener"
+              >
+                manufacturer's official website.
+              </a>
+            </p>
+
+            <img
+              class="pop-up__img"
+              src="images/favicon_potr-pots.png"
+              alt="Potr-Pots small icon"
+            >
+          </div>
+
+          <button class="pop-up__close-button" type="button"></button>
+        </div>
+      </section>
+
       <article id="promo" class="promo">
         <div class="promo__bg"></div>
 
         <div class="link-container">
           <div class="content-container promo__content-container">
             <section class="promo__description">
-              <h1 class="promo__title">
+              <h1 class="promo__title animated fadeInLeftBig">
                 <span class="transparent">POTR ~ Eco,</span>
                 <br>
                 <span class="transparent">self</span>-watering,
@@ -83,7 +121,7 @@
 
               <a class="promo__next" href="#forWhom">More about POTR POTS</a>
 
-              <button class="buy-button promo__buy-button">
+              <button type="button" class="buy-button promo__buy-button">
                 Buy now
               </button>
             </section>
@@ -108,7 +146,7 @@
           </h2>
 
           <section class="for-whom__pros for-whom__pros--robust">
-            <div class="for-whom__img-box">
+            <div class="for-whom__img-box wow fadeInUp">
               <img
                 class="for-whom__img for-whom__img--robust"
                 src="images/photos/for-whom/robust.jpg"
@@ -116,7 +154,7 @@
               >
             </div>
 
-            <div class="for-whom__text for-whom__text--robust">
+            <div class="for-whom__text for-whom__text--robust wow fadeInUp">
               <p class="for-whom__note">
                 Robust
               </p>
@@ -132,7 +170,7 @@
           </section>
 
           <section class="for-whom__pros for-whom__pros--beautiful">
-            <div class="for-whom__img-box">
+            <div class="for-whom__img-box wow fadeInUp">
               <img
                 class="for-whom__img for-whom__img--beautiful"
                 src="images/photos/for-whom/beautiful.jpg"
@@ -140,7 +178,7 @@
               >
             </div>
 
-            <div class="for-whom__text for-whom__text--beautiful">
+            <div class="for-whom__text for-whom__text--beautiful wow fadeInUp">
               <p class="for-whom__note for-whom__note--beautiful">
                 Beautiful
               </p>
@@ -156,7 +194,7 @@
           </section>
 
           <section class="for-whom__pros for-whom__pros--save-time">
-            <div class="for-whom__img-box">
+            <div class="for-whom__img-box wow fadeInUp">
               <img
                 class="for-whom__img for-whom__img--save-time"
                 src="images/photos/for-whom/saves-time.jpg"
@@ -164,7 +202,7 @@
               >
             </div>
 
-            <div class="for-whom__text for-whom__text--save-time">
+            <div class="for-whom__text for-whom__text--save-time wow fadeInUp">
               <p class="for-whom__note">
                 Saves time
               </p>
@@ -191,17 +229,28 @@
               Potr pots
             </a>
 
-            <h2 class="features__title">
+            <h2 class="features__title wow fadeInUp">
               POTR Pots <span class="transparent">Features</span>
             </h2>
 
             <div class="features__content">
-              <section class="features__pros features__pros--1">
+              <section class="features__pros features__pros--1 wow zoomIn">
                 <div class="features__img-box">
                   <img class="features__img"
                        src="images/photos/features/flat-packed.gif"
-                       alt="flat packet"
+                       alt="Flat packet postage"
                   >
+
+                  <video
+                    class="features__video"
+                    width="370"
+                    height="370"
+                    controls
+                    autoplay
+                  >
+                    <source src="video/flat-packet.mp4" type="video/mp4">
+                    Sorry, your browser doesn't support embedded videos.
+                  </video>
                 </div>
                 <h3 class="features__heading">
                   Flat pack postage
@@ -211,12 +260,23 @@
                 </p>
               </section>
 
-              <section class="features__pros features__pros--2">
+              <section class="features__pros features__pros--2 wow zoomIn">
                 <div class="features__img-box">
                   <img class="features__img"
                        src="images/photos/features/easy-assembly.gif"
-                       alt="flat packet"
+                       alt="Easy assembly"
                   >
+
+                  <video
+                    class="features__video"
+                    width="370"
+                    height="370"
+                    controls
+                    autoplay
+                  >
+                    <source src="video/easy-assembly.mp4" type="video/mp4">
+                    Sorry, your browser doesn't support embedded videos.
+                  </video>
                 </div>
                 <h3 class="features__heading">
                   Easy assembly
@@ -226,12 +286,23 @@
                 </p>
               </section>
 
-              <section class="features__pros features__pros--3">
+              <section class="features__pros features__pros--3 wow zoomIn">
                 <div class="features__img-box">
                   <img class="features__img"
                        src="images/photos/features/self-watering.gif"
-                       alt="flat packet"
+                       alt="Self-watering"
                   >
+
+                  <video
+                    class="features__video"
+                    width="370"
+                    height="370"
+                    controls
+                    autoplay
+                  >
+                    <source src="video/self-watering.mp4" type="video/mp4">
+                    Sorry, your browser doesn't support embedded videos.
+                  </video>
                 </div>
                 <h3 class="features__heading">
                   Self-watering
@@ -251,19 +322,19 @@
         <div class="potr-team__bg"></div>
 
         <div class="link-container">
-          <div class="transparent potr-team__mate potr-team__mate--andy">
+          <div class="transparent potr-team__mate potr-team__mate--andy wow fadeInRightBig">
             Andy
           </div>
 
           <div class="content-container potr-team__content-container">
-            <div class="transparent potr-team__mate potr-team__mate--martin">
+            <div class="transparent potr-team__mate potr-team__mate--martin wow fadeInLeftBig">
               Martin
             </div>
 
-            <h2 class="potr-team__title">Meet the POTR team!</h2>
+            <h2 class="potr-team__title wow fadeInUp">Meet the POTR team!</h2>
 
             <section class="potr-team__content">
-              <div class="potr-team__description">
+              <div class="potr-team__description wow fadeInUp">
                 <p>
                   Andy and Martin are experienced product designers with a love of plants and the environment. They have over
                   ten years combined industry experience in bringing products to market at some of the worlds largest consumer
@@ -309,7 +380,7 @@
               Features
             </h2>
 
-            <section class="materials__static-content">
+            <section class="materials__static-content wow fadeInUp">
               <h3 class="materials__heading">
                 Environmentally friendly
               </h3>
@@ -332,7 +403,11 @@
               class="materials__slider"
             >
 
-            <button class="materials__button"></button>
+            <button
+              type="button"
+              class="materials__show-hidden-text-button wow zoomIn"
+            >
+            </button>
 
             <p class="materials__hidden-text">
               POTR Pots combines a passion for simple, playful design with a desire to improve our environment through a
@@ -348,7 +423,11 @@
               class="materials__slider"
             >
 
-            <button class="materials__button"></button>
+            <button
+              type="button"
+              class="materials__show-hidden-text-button wow zoomIn"
+            >
+            </button>
 
             <p class="materials__hidden-text">
               We selected recycled PP due to its fantastic mechanical properties. PP is robust meaning it
@@ -365,7 +444,11 @@
               class="materials__slider"
             >
 
-            <button class="materials__button"></button>
+            <button
+              type="button"
+              class="materials__show-hidden-text-button wow zoomIn"
+            >
+            </button>
 
             <p class="materials__hidden-text">
               With a semi transparent finish to the pots, its easy to see when your plants are getting thirsty, making
@@ -381,7 +464,11 @@
               class="materials__slider"
             >
 
-            <button class="materials__button"></button>
+            <button
+              type="button"
+              class="materials__show-hidden-text-button wow zoomIn"
+            >
+            </button>
 
             <p class="materials__hidden-text">
               By using recycled plastic, this also drastically cuts the CO2 impact compared with producing new materials
@@ -397,7 +484,11 @@
               class="materials__slider"
             >
 
-            <button class="materials__button"></button>
+            <button
+              type="button"
+              class="materials__show-hidden-text-button wow zoomIn"
+            >
+            </button>
 
             <p class="materials__hidden-text">
               We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it
@@ -415,7 +506,7 @@
         </div>
       </article>
 
-      <article id="potrSize" class="potr-size">
+      <article id="potrSize" class="potr-size wow fadeInUp">
         <div class="link-container">
           <div class="content-container potr-size__content-container">
             <h2 class="potr-size__title">
@@ -435,7 +526,7 @@
             </div>
 
             <div class="potr-size__description">
-              <div class="potr-size__item potr-size__item--1">
+              <div class="potr-size__item potr-size__item--1 wow fadeInRight">
                 <h3 class="potr-size__heading">
                   Large
                 </h3>
@@ -444,7 +535,7 @@
                 </p>
               </div>
 
-              <div class="potr-size__item potr-size__item--2">
+              <div class="potr-size__item potr-size__item--2 wow fadeInRight">
                 <h3 class="potr-size__heading">
                   Small
                 </h3>
@@ -529,7 +620,7 @@
           </section>
 
           <section class="benefits__content">
-            <div class="benefits__item benefits__item--1">
+            <div class="benefits__item benefits__item--1 wow fadeInRight">
               <h3 class="benefits__heading">
                 Easy assembly
               </h3>
@@ -538,7 +629,7 @@
               </p>
             </div>
 
-            <div class="benefits__item benefits__item--2">
+            <div class="benefits__item benefits__item--2 wow fadeInRight">
               <h3 class="benefits__heading">
                 Flat pack postage
               </h3>
@@ -547,7 +638,7 @@
               </p>
             </div>
 
-            <div class="benefits__item benefits__item--3">
+            <div class="benefits__item benefits__item--3 wow fadeInRight">
               <h3 class="benefits__heading">
                 Self-watering
               </h3>
@@ -556,7 +647,7 @@
               </p>
             </div>
 
-            <button class="buy-button benefits__buy-button">
+            <button type="button" class="buy-button benefits__buy-button">
               Buy now
             </button>
 
@@ -576,18 +667,17 @@
         <div class="contact__bg"></div>
         <div class="content-container contact__content-container">
           <div class="contact__circle"></div>
-          <h2 class="contact__title">
+          <h2 class="contact__title wow fadeInUp">
             Have any questions?
           </h2>
-          <p class="contact__intro">
+          <p class="contact__intro wow fadeInUp">
             Here few ways to get in touch with us:
           </p>
 
           <form
-            class="contact__form"
+            class="contact__form wow fadeInUp"
             name="message"
-            action="#"
-            method="post"
+            method="POST"
           >
             <h3 class="contact__heading">
               Message us
@@ -629,7 +719,7 @@
             </button>
           </form>
 
-          <section class="contact__content">
+          <section class="contact__content wow fadeInUp">
             <p class="contact__type">
               Our phone
             </p>
@@ -667,11 +757,11 @@
       </article>
     </main>
 
-    <footer class="footer">
+    <footer id="footer" class="footer">
       <div class="content-container footer__content-container">
         <section class="footer__item footer__item--small">
           <a href="#messageUs">
-            <h2 class="footer__heading footer__heading--small">
+            <h2 class="footer__heading footer__heading--small footer__heading--small--left">
               Adrress
             </h2>
           </a>
@@ -692,16 +782,28 @@
 
         <section class="footer__item footer__item--middle">
           <div class="footer__networks">
-            <a href="#">
-              <img src="images/twitter.svg" alt="Our twitter here">
+            <a href="#footer">
+              <img
+                class="footer__networks-link"
+                src="images/twitter.svg"
+                alt="Our twitter here"
+              >
             </a>
 
-            <a href="#">
-              <img src="images/instagram.svg" alt="Our instagram here">
+            <a href="#footer">
+              <img
+                class="footer__networks-link"
+                src="images/instagram.svg"
+                alt="Our instagram here"
+              >
             </a>
 
-            <a href="#">
-              <img src="images/fb.svg" alt="Our facebook here">
+            <a href="#footer">
+              <img
+                class="footer__networks-link"
+                src="images/fb.svg"
+                alt="Our facebook here"
+              >
             </a>
           </div>
 
@@ -718,11 +820,11 @@
 
         <section class="footer__item footer__item--small">
           <a href="#potrTeam">
-            <h2 class="footer__heading footer__heading--small">
+            <h2 class="footer__heading footer__heading--small footer__heading--small--right">
               About us
             </h2>
           </a>
-          <p class="footer__text">
+          <p class="footer__text footer__text--black">
             Copyright &copy; 2020
           </p>
         </section>
@@ -730,5 +832,9 @@
     </footer>
 
     <script type="text/javascript" src="scripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
   </body>
 </html>

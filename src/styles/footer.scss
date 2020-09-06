@@ -1,7 +1,7 @@
 .footer {
   display: flex;
   justify-content: center;
-  height: 295px;
+  height: 250px;
   padding-top: 75px;
 
   @media (max-width: $screen720) {
@@ -35,10 +35,23 @@
   &__heading {
     @include font24Bedas;
     color: $colorBlack;
+    transition-duration: 0.5s;
 
     &--small {
       @media (max-width: $screenMd) {
         font-size: 24px;
+      }
+
+      &--left {
+        &:hover {
+          transform: translateY(-5px) rotate(-7deg);
+        }
+      }
+
+      &--right {
+        &:hover {
+          transform: rotate(7deg);
+        }
       }
     }
 
@@ -47,10 +60,18 @@
         font-size: 36px;
         line-height: 36px;
       }
+
+      &:hover {
+        transform: translateY(-10px) scale(1.2);
+      }
     }
   }
 
   &__text {
+    &--black {
+      color: $colorBlack;
+    }
+
     &--mobile-only {
       display: none;
 
@@ -72,7 +93,21 @@
     }
   }
 
+  &__networks-link {
+    transition: transform 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.15);
+    }
+  }
+
   &__link {
-    color: $colorGray;
+    color: $colorBlack;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $colorAqua;
+    }
   }
 }

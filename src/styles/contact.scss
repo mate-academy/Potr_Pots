@@ -46,6 +46,11 @@
       clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
     }
 
+    @media (max-width: $screenSm) {
+      top: 25px;
+      height: 58vw;
+    }
+
     @media (max-width: $screenXS) {
       top: -20px;
       width: 100vw;
@@ -119,12 +124,18 @@
     @include font24Proxima-R;
     font-weight: 400;
     margin-top: 1em;
+    margin-bottom: 15px;
+
+    @media (max-width: $screenSm) {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
   }
 
   &__input {
     @include font16;
-    margin-top: 20px;
-    padding: 10px 15px;
+    margin-top: 10px;
+    padding: 5px;
     outline: none;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
@@ -151,12 +162,16 @@
     align-items: center;
     height: 48px;
     width: 150px;
-    margin-top: 20px;
+    margin-top: 40px;
     outline: none;
     border: none;
     background-color: transparent;
     transition-duration: 0.3s;
     cursor: pointer;
+
+    @media (max-width: $screenSm) {
+      margin-top: 20px;
+    }
 
     @media (max-width: $screen720) {
       width: calc(100vw - 60px);
@@ -166,7 +181,9 @@
 
   &__button-text {
     @include font16-S;
+
     border-bottom: 1px solid $colorGrayDark;
+    transition-duration: 0.3s;
 
     .contact__button:hover &,
     .contact__button:focus & {
@@ -176,11 +193,20 @@
   }
 
   &__content {
+    margin-top: 45px;
     grid-area: contacts;
+
+    @media (max-width: $screenSm) {
+      margin-top: -15px;
+    }
   }
 
   &__type {
     @include font24Proxima;
+
+    @media (max-width: $screenSm) {
+      margin-top: 15px;
+    }
   }
 
   &__description {

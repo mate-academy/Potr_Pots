@@ -26,10 +26,40 @@
     background: linear-gradient(
       180deg, $colorWhiteGray 0%,
       rgba(255, 255, 255, 0) 30.93%),
-      url(../images/photos/material-bg.jpg)
+      url(../images/photos/material/material-bg-xl.jpg)
       center
       no-repeat;
     background-size: contain;
+
+    @media (max-width: $screenMd) {
+      background: linear-gradient(
+        180deg, $colorWhiteGray 0%,
+        rgba(255, 255, 255, 0) 30.93%),
+        url(../images/photos/material/material-bg-md.jpg)
+        center
+        no-repeat;
+      background-size: contain;
+    }
+
+    @media (max-width: $screenSm) {
+      background: linear-gradient(
+        180deg, $colorWhiteGray 0%,
+        rgba(255, 255, 255, 0) 30.93%),
+        url(../images/photos/material/material-bg-sm.jpg)
+        center
+        no-repeat;
+      background-size: contain;
+    }
+
+    @media (max-width: $screenXS) {
+      background: linear-gradient(
+        180deg, $colorWhiteGray 0%,
+        rgba(255, 255, 255, 0) 30.93%),
+        url(../images/photos/material/material-bg-xs.jpg)
+        center
+        no-repeat;
+      background-size: contain;
+    }
   }
 
   &__side-link {
@@ -182,7 +212,7 @@
     }
   }
 
-  &__button {
+  &__show-hidden-text-button {
     position: relative;
     display: flex;
     justify-content: center;
@@ -252,8 +282,8 @@
     }
   }
 
-  &__button:hover + &__hidden-text,
-  &__button:focus + &__hidden-text {
+  &__show-hidden-text-button:hover + &__hidden-text,
+  &__show-hidden-text-button:focus + &__hidden-text {
     height: auto;
     padding: 35px 45px;
     opacity: 1;
