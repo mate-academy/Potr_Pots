@@ -12,7 +12,7 @@
   @media (max-width: $screenXS) {
     padding-top: 150px;
     display: flex;
-    padding-bottom: 230px;
+    padding-bottom: 255px;
   }
 
   &__bg {
@@ -207,9 +207,21 @@
     }
 
     @media (max-width: $screenXS) {
-      top: 70%;
-      left: 50%;
+      display: none;
     }
+  }
+
+  &__hidden-text {
+    height: 1px;
+    width: 300px;
+    padding: 0 45px;
+    opacity: 0;
+    color: $colorWhiteGray;
+    background: rgba(0, 0, 0, 0.41);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+    transition-duration: 1s;
+    overflow: hidden;
   }
 
   &__show-hidden-text-button {
@@ -226,10 +238,6 @@
     opacity: 1;
     transition-duration: 0.5s;
     cursor: pointer;
-
-    @media (max-width: $screenXS) {
-      display: none;
-    }
 
     &::before {
       content: "";
@@ -262,26 +270,6 @@
     }
   }
 
-  &__hidden-text {
-    height: 1px;
-    width: 300px;
-    padding: 0 45px;
-    opacity: 0;
-    color: $colorWhiteGray;
-    background: rgba(0, 0, 0, 0.41);
-    mix-blend-mode: normal;
-    backdrop-filter: blur(34px);
-    transition-duration: 1s;
-    overflow: hidden;
-
-    @media (max-width: $screenXS) {
-      height: 255px;
-      padding: 35px 40px;
-      opacity: 0;
-      z-index: 1;
-    }
-  }
-
   &__show-hidden-text-button:hover + &__hidden-text,
   &__show-hidden-text-button:focus + &__hidden-text {
     height: auto;
@@ -290,52 +278,52 @@
     z-index: 5;
   }
 
-  &__slider {
-    display: none;
-
-    @media (max-width: $screenXS) {
-      &:checked ~ .materials__hidden-text {
-        opacity: 1;
-        transition-duration: 1s;
-      }
-    }
-  }
-
-  &__slider-box {
+  &__sliderBox {
     display: none;
     position: absolute;
-    bottom: -125px;
-    right: calc(50% - 40px);
-    justify-content: space-around;
-    align-items: center;
-    width: 80px;
-    height: 10px;
-    z-index: 5;
+    top: 80%;
+    left: calc(50% - 150px);
 
     @media (max-width: $screenXS) {
-      display: flex;
-    }
-
-    @media (max-width: 490px) {
-      bottom: -150px;
-    }
-
-    @media (max-width: 400px) {
-      bottom: -165px;
+      display: block;
     }
   }
 
-  &__slider-checked {
-    box-sizing: content-box;
-    height: 7px;
-    width: 7px;
-    transform: rotate(-45deg);
-    background: $colorWhiteGray;
-    border: 1px solid rgba(0, 0, 0, 0.41);
+  &__slider {
+    width: 300px;
+    height: 255px;
+    padding: 30px 45px;
+    color: $colorWhiteGray;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
 
-    &:hover {
-      background: rgba(0, 0, 0, 0.3);
-      border-color: $colorWhiteGray;
+    &--dots {
+      display: flex;
+      justify-content: center;
+      margin: 10px;
+
+      & li {
+        box-sizing: content-box;
+        height: 7px;
+        width: 7px;
+        transform: rotate(-45deg);
+        background: $colorWhiteGray;
+        border: 1px solid rgba(0, 0, 0, 0.45);
+        margin: 3px;
+      }
+
+      & li.slick-active {
+        background: rgba(0, 0, 0, 0.3);
+        border-color: $colorWhiteGray;
+      }
+
+      & > li > button {
+        opacity: 0;
+        transform: rotate(45deg) translate(-10px);
+        width: 12px;
+      }
     }
   }
 }
