@@ -1,0 +1,147 @@
+.pop-up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -5;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition-duration: 0.5s;
+
+  &__container {
+    position: relative;
+    width: 650px;
+    padding: 60px 100px 90px;
+    background: $colorWhiteGray;
+    z-index: -1;
+
+    @media (max-width: $screen685) {
+      width: 90vw;
+      padding: 70px 20px 120px 30px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $colorYellowLight;
+    clip-path: polygon(8% 17%, 100% 17%, 100% 90%, 8% 76%);
+
+    @media (max-width: $screen685) {
+      clip-path: polygon(5% 12%, 100% 12%, 100% 90%, 5% 76%);
+    }
+  }
+
+  &__content {
+    z-index: 1;
+  }
+
+  &__title {
+    color: $colorBlack;
+
+    @media (max-width: $screen685) {
+      line-height: 120%;
+    }
+  }
+
+  &__text {
+    margin-top: 40px;
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    transform: rotate(-15deg);
+    transition-duration: 0.5s;
+
+    &:hover {
+      transform: rotate(30deg);
+    }
+
+    @media (max-width: $screen685) {
+      bottom: 20px;
+      left: initial;
+      right: 20px;
+      transform: rotate(28deg);
+
+      &:hover {
+        transform: rotate(-20deg);
+      }
+    }
+  }
+
+  &__link {
+    color: $colorAqua;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $colorRed;
+    }
+  }
+
+  &__close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    background: none;
+
+    @media (max-width: $screen685) {
+      bottom: 20px;
+      right: initial;
+      left: 15px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 0;
+      width: 30px;
+      height: 4px;
+      background: $colorRed;
+      transform: rotate(45deg);
+      transition-duration: 0.3s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 0;
+      width: 30px;
+      height: 4px;
+      background: $colorRed;
+      transform: rotate(-45deg);
+      transition-duration: 0.3s;
+    }
+
+    &:hover {
+      &::before {
+        transform: rotate(130deg);
+        background: #03839e;
+      }
+
+      &::after {
+        transform: rotate(-130deg);
+        background: #03839e;
+      }
+
+    }
+  }
+}

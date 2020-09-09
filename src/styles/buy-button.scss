@@ -1,0 +1,50 @@
+.buy-button {
+  @include font14;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 238px;
+  height: 48px;
+  outline: none;
+  border: 1px solid $colorAqua;
+  text-transform: uppercase;
+  color: #121212;
+  background: $colorWhiteGray;
+  cursor: pointer;
+  transition-duration: 0.5s;
+
+  @media (max-width: $screenXS) {
+    background: $colorYellow;
+    border-color: $colorYellow;
+  }
+
+  &::after {
+    content: "";
+    width: 26px;
+    height: 8px;
+    margin-left: 20px;
+    background: url("../images/arrow-black.svg");
+  }
+
+  &:hover,
+  &:focus {
+    background: $colorAqua;
+    color: $colorWhiteGray;
+
+    &::after {
+      background: url("../images/arrow-white.svg");
+    }
+
+    @media (max-width: $screenXS) {
+      background: $colorWhiteGray;
+      border-color: $colorBlack;
+      color: $colorBlack;
+      outline: none;
+
+      &::after {
+        background: url("../images/arrow-black.svg");
+      }
+    }
+  }
+}

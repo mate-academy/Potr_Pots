@@ -1,0 +1,329 @@
+.materials {
+  display: flex;
+  justify-content: center;
+  padding-top: 150px;
+  padding-bottom: 85px;
+
+  @media (max-width: $screenMd) {
+    padding-top: 250px;
+    padding-bottom: 75px;
+  }
+
+  @media (max-width: $screenXS) {
+    padding-top: 150px;
+    display: flex;
+    padding-bottom: 255px;
+  }
+
+  &__bg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 75vw;
+    max-width: 1440px;
+    max-height: 1083px;
+    background: linear-gradient(
+      180deg, $colorWhiteGray 0%,
+      rgba(255, 255, 255, 0) 30.93%),
+      url(../images/photos/material/material-bg-xl.jpg)
+      center
+      no-repeat;
+    background-size: contain;
+
+    @media (max-width: $screenMd) {
+      background: linear-gradient(
+        180deg, $colorWhiteGray 0%,
+        rgba(255, 255, 255, 0) 30.93%),
+        url(../images/photos/material/material-bg-md.jpg)
+        center
+        no-repeat;
+      background-size: contain;
+    }
+
+    @media (max-width: $screenSm) {
+      background: linear-gradient(
+        180deg, $colorWhiteGray 0%,
+        rgba(255, 255, 255, 0) 30.93%),
+        url(../images/photos/material/material-bg-sm.jpg)
+        center
+        no-repeat;
+      background-size: contain;
+    }
+
+    @media (max-width: $screenXS) {
+      background: linear-gradient(
+        180deg, $colorWhiteGray 0%,
+        rgba(255, 255, 255, 0) 30.93%),
+        url(../images/photos/material/material-bg-xs.jpg)
+        center
+        no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__side-link {
+    @include sideLink;
+    display: none;
+
+    @media (max-width: $screenMd) {
+      display: block;
+    }
+
+    @media (max-width: $screenXS) {
+      display: none;
+    }
+
+    &--left {
+      top: 50px;
+      left: -15px;
+      transform: rotate(90deg);
+      z-index: 10;
+    }
+
+    &--right {
+      top: -200px;
+      right: -15px;
+    }
+
+  }
+
+  &__content-container {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__title {
+    @include font138;
+    position: absolute;
+    top: -150px;
+    left: 0;
+
+    @media (max-width: 1270px) {
+      left: 50px;
+    }
+
+    @media (max-width: $screenLg) {
+      position: absolute;
+      top: -180px;
+    }
+
+    @media (max-width: $screenMd) {
+      top: -200px;
+      left: 37px;
+    }
+
+    @media (max-width: $screenXS) {
+      top: -130px;
+      left: 30px;
+    }
+  }
+
+  &__static-content {
+    width: 32vw;
+    height: 400px;
+    max-width: 370px;
+    padding-top: 30px;
+
+    @media (max-width: $screenLg) {
+      position: absolute;
+      top: -100px;
+      width: 320px;
+    }
+
+    @media (max-width: $screenMd) {
+      top: -150px;
+    }
+
+    @media (max-width: $screen720) {
+      display: none;
+    }
+  }
+
+  &__heading {
+    @include font20;
+  }
+
+  &__hidden-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-50%);
+
+    &--1 {
+      top: 80%;
+      left: 19%;
+      z-index: 1;
+
+      @media (max-width: $screenMd) {
+        top: 70%;
+        left: 22%;
+      }
+    }
+
+    &--2 {
+      top: 58%;
+      left: 39%;
+      z-index: 2;
+
+      @media (max-width: $screenMd) {
+        top: 50%;
+        left: 35%;
+      }
+    }
+
+    &--3 {
+      top: 86%;
+      left: 49%;
+      z-index: 1;
+
+      @media (max-width: $screenMd) {
+        top: 78%;
+      }
+    }
+
+    &--4 {
+      top: 72%;
+      left: 60%;
+      z-index: 2;
+
+      @media (max-width: $screenMd) {
+        top: 60%;
+        left: 65%;
+      }
+    }
+
+    &--5 {
+      top: 61%;
+      left: 80%;
+      z-index: 2;
+
+      @media (max-width: $screenMd) {
+        top: 38%;
+        left: 75%;
+      }
+    }
+
+    @media (max-width: $screenXS) {
+      display: none;
+    }
+  }
+
+  &__hidden-text {
+    height: 1px;
+    width: 300px;
+    padding: 0 45px;
+    opacity: 0;
+    color: $colorWhiteGray;
+    background: rgba(0, 0, 0, 0.41);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+    transition-duration: 1s;
+    overflow: hidden;
+  }
+
+  &__show-hidden-text-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border-radius: 50%;
+    border: 1px solid #eb5757;
+    background: #eb5757;
+    opacity: 1;
+    transition-duration: 0.5s;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: relative;
+      left: 6px;
+      width: 12px;
+      height: 1px;
+      background: $colorGrayLight;
+    }
+
+    &::after {
+      content: "";
+      position: relative;
+      left: -6px;
+      width: 12px;
+      height: 1px;
+      background: $colorGrayLight;
+      transform: rotate(90deg);
+      transition-duration: 1s;
+    }
+
+    &:hover {
+      border-color: rgba(36, 35, 35, 0.75);
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+    }
+
+    &:hover:after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__show-hidden-text-button:hover + &__hidden-text,
+  &__show-hidden-text-button:focus + &__hidden-text {
+    height: auto;
+    padding: 35px 45px;
+    opacity: 1;
+    z-index: 5;
+  }
+
+  &__sliderBox {
+    display: none;
+    position: absolute;
+    top: 80%;
+    left: calc(50% - 150px);
+
+    @media (max-width: $screenXS) {
+      display: block;
+    }
+  }
+
+  &__slider {
+    width: 300px;
+    height: 255px;
+    padding: 30px 45px;
+    color: $colorWhiteGray;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+
+    &--dots {
+      display: flex;
+      justify-content: center;
+      margin: 10px;
+
+      & li {
+        box-sizing: content-box;
+        height: 7px;
+        width: 7px;
+        transform: rotate(-45deg);
+        background: $colorWhiteGray;
+        border: 1px solid rgba(0, 0, 0, 0.45);
+        margin: 3px;
+      }
+
+      & li.slick-active {
+        background: rgba(0, 0, 0, 0.3);
+        border-color: $colorWhiteGray;
+      }
+
+      & > li > button {
+        opacity: 0;
+        transform: rotate(45deg) translate(-10px);
+        width: 12px;
+      }
+    }
+  }
+}

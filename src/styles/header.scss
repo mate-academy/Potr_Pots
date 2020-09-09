@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+
+  @media (max-width: $screenMd) {
+    padding: 30px 0;
+  }
+
+  @media (max-width: $screenXS) {
+    padding: 15px 0;
+    background: $colorWhiteGray;
+  }
+
+  &__content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__heading {
+    line-height: 36px;
+    letter-spacing: 0.06em;
+  }
+
+  &__basket {
+    @include hover(transform, rotate(10deg), 0.3s);
+    position: relative;
+
+    @media (max-width: $screenMd) {
+      display: none;
+    }
+  }
+
+  &__basket-count {
+    @include basketCounter;
+    right: -10px;
+  }
+}

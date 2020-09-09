@@ -1,0 +1,44 @@
+.burger-menu__check {
+  display: none;
+}
+
+.burger-menu__open {
+  display: none;
+  position: absolute;
+  top: 23px;
+  right: $paddingsMob;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+
+  @media (max-width: $screenMd) {
+    display: block;
+  }
+
+  @media (max-width: $screenXS) {
+    top: 6px;
+  }
+}
+
+.burger-menu__close {
+  position: fixed;
+  right: -200vw;
+  bottom: $paddingsMob;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  font-size: 12px;
+  transform: rotate(-90deg);
+  transform-origin: top center;
+  cursor: pointer;
+  transition: right 0.7s, transform 0.5s;
+}
+
+.burger-menu__check:checked ~ .burger-menu__close {
+  right: $paddingsMob;
+
+  &:hover {
+    transform: rotate(-90deg) translateX(5%);
+  }
+}

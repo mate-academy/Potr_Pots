@@ -1,0 +1,230 @@
+.contact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 39px;
+  padding-bottom: 150px;
+
+  @media (max-width: $screenMd) {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  @media (max-width: $screenXS) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  &__content-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 10% auto;
+    grid-template-areas: "title . ."
+      "intro . contacts"
+      "form . contacts";
+
+    @media (max-width: $screen720) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 91vw;
+    height: 45vw;
+    max-height: 600px;
+    background: $colorYellowLight;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+
+    @media (max-width: $screenMd) {
+      width: 97vw;
+      height: 70vw;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+    }
+
+    @media (max-width: $screenSm) {
+      top: 25px;
+      height: 58vw;
+    }
+
+    @media (max-width: $screenXS) {
+      top: -20px;
+      width: 100vw;
+      height: 175vw;
+      max-height: 175vw;
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    top: -140px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    background: url("../images/sign.svg") no-repeat center;
+    background-size: contain;
+    transition-duration: 1s;
+
+    @media (max-width: 1270px) {
+      right: 50px;
+    }
+
+    @media (max-width: $screenMd) {
+      top: -140px;
+      right: -40px;
+    }
+
+    @media (max-width: $screen720) {
+      top: -100px;
+      right: -70px;
+    }
+
+    &:hover {
+      transform: rotate(100deg);
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    color: $colorBlack;
+
+    @media (max-width: $screenXS) {
+      width: 250px;
+    }
+  }
+
+  &__intro {
+    grid-area: intro;
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: $colorBlack;
+  }
+
+  &__form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+
+    @media (max-width: $screenMd) {
+      width: 340px;
+    }
+
+    @media (max-width: $screen720) {
+      width: calc(100vw - 74px);
+    }
+
+    @media (max-width: $screenXS) {
+      width: calc(100vw - 60px);
+    }
+  }
+
+  &__heading {
+    @include font24Proxima-R;
+    font-weight: 400;
+    margin-top: 1em;
+    margin-bottom: 15px;
+
+    @media (max-width: $screenSm) {
+      margin-top: 10px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    @include font16;
+    margin-top: 10px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+
+    @media (max-width: $screen720) {
+      margin-top: 15px;
+      padding: 5px;
+    }
+
+    &--textarea {
+      resize: none;
+    }
+
+    &::placeholder {
+      color: $colorGray;
+    }
+  }
+
+  &__button {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 150px;
+    margin-top: 40px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    transition-duration: 0.3s;
+    cursor: pointer;
+
+    @media (max-width: $screenSm) {
+      margin-top: 20px;
+    }
+
+    @media (max-width: $screen720) {
+      width: calc(100vw - 60px);
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button-text {
+    @include font16-S;
+
+    border-bottom: 1px solid $colorGrayDark;
+    transition-duration: 0.3s;
+
+    .contact__button:hover &,
+    .contact__button:focus & {
+      border-color: $colorRed;
+      color: $colorRed;
+    }
+  }
+
+  &__content {
+    margin-top: 45px;
+    grid-area: contacts;
+
+    @media (max-width: $screenSm) {
+      margin-top: -15px;
+    }
+  }
+
+  &__type {
+    @include font24Proxima;
+
+    @media (max-width: $screenSm) {
+      margin-top: 15px;
+    }
+  }
+
+  &__description {
+    display: block;
+    width: 270px;
+    color: $colorBlack;
+    transition-duration: 0.3s;
+
+    @media (max-width: $screenSm) {
+      width: 205px;
+    }
+
+    &:hover {
+      color: $colorAqua;
+    }
+  }
+}
