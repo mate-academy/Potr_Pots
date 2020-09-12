@@ -1,0 +1,158 @@
+.header {
+  position: fixed; //I will change it with Js
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px $bodySidePadding;
+  transition-duration: $transDuration;
+  &--filled {
+    background-color: $colorGreyLight;
+  }
+  @media (max-width: $screenLarge) {
+    padding: 20px $bodySidePaddingLp;
+  }
+  @media (max-width: $screenMob) {
+    padding: 0 $bodySidePaddingMb;
+    background-color: $colorGreyLight;
+  }
+
+  &__logo {
+    color: $colorDark;
+  }
+
+  &__desktop {
+    @media (max-width: $screenLarge) {
+      display: none;
+    }
+  }
+  &__nav-list {
+    display: flex;
+    align-items: center;
+  }
+  &__link {
+    display: block;
+    color: $colorSemiDark;
+    padding: $headerLinkPaddingVertical $headerLinkPaddingHorizontal;
+    transition-duration: $transDuration;
+    &:hover {
+      transform: rotate(-3deg) scale(1.1);
+    }
+    &--basket {
+      position: relative;
+      height: 37px;
+      width: 37px;
+      padding: 0;
+      margin-left: 15vw;
+      -webkit-text-fill-color: transparent;
+      background: url(../images/header/basket.svg) bottom left no-repeat;
+      cursor: pointer;
+      &::after {
+        content: "0";
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14px;
+        width: 14px;
+
+        font-family: $fontBebas;
+        font-size: 9px;
+        -webkit-text-fill-color: $colorGreyLight;
+        background-color: $colorTurq;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &__mobile-opener {
+    display: none;
+    width: 43px;
+    height: 40px;
+    background: $colorGreyLight url(../images/header/header-opener.svg) center no-repeat;
+    cursor: pointer;
+    @media (max-width: $screenLarge) {
+      display: block;
+    }
+  }
+
+  &__mobile-checkbox {
+    display: none;
+  }
+}
+
+.header-mobile {
+  position: fixed;
+  bottom: 0;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 72vw;
+  padding: 120px $bodySidePaddingMb 40px 0;
+  background-color: $colorTurq;
+  transition-timing-function: ease-in;
+  transition-duration: $transDuration * 1.5;
+  overflow: hidden;
+
+  &__link {
+    display: inline-block;
+    padding: $headerMobileLinkPadding;
+    color: $colorGreyLight;
+    transition-duration: $transDuration;
+    outline: none;
+    &--basket {
+      position: relative;
+      cursor: pointer;
+      &::after {
+        content: "0";
+        position: absolute;
+        top: $headerMobileLinkPadding - 6px;
+        right: -7px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14px;
+        width: 14px;
+
+        font-family: $fontBebas;
+        font-size: 9px;
+        background-color: $colorRed;
+        border-radius: 50%;
+      }
+    }
+    &:hover,
+    &:focus {
+      transform: translateX(5%);
+    }
+  }
+
+  &__closer {
+    position: absolute;
+    bottom: $bodySidePaddingLp;
+    right: $bodySidePaddingLp;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    color: $colorGreyLight;
+    transform-origin: bottom left;
+    transition-duration: $transDuration;
+    transform: rotate(-90deg) translateY(200%);
+    cursor: pointer;
+    &:hover {
+      transform: rotate(-90deg) translateY(200%) translateX(5%);
+    }
+  }
+}
+
+.header__mobile-checkbox:checked ~ .header-mobile {
+  right: 0;
+  padding-left: 80px;
+}

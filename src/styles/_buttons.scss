@@ -1,0 +1,58 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 240px;
+  font-family: $fontProxima;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition-duration: $transDuration;
+  &:hover {
+    transform: scale(1.03);
+  }
+  
+  &--buy {
+    color: $colorDark;
+    background-color: transparent;
+    border: 1px solid $colorTurq;
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 25px;
+      height: 7px;
+      margin-left: 20px;
+      background: url("../images/_buttons/arrow-black.svg") center no-repeat;
+    }
+    &:hover {
+      color: $colorLight;
+      background-color: $colorTurq;
+      &::after {
+        background: url("../images/_buttons/arrow-white.svg") center no-repeat;
+      }
+    }
+    @media (max-width: $screenMob) {
+      background-color: $colorYellow;
+      border-color: $colorYellow;
+      &:hover {
+        color: $colorDark;
+        background-color: transparent;
+        border-color: $colorDark;
+        &::after {
+          background: url("../images/_buttons/arrow-black.svg") center no-repeat;
+        }
+      }
+    }
+  }
+
+  &--check {
+    border: 1px solid $colorGreyLight;
+    &:hover {
+      color: $colorRed;
+      border-color: $colorRed;
+    }
+  }
+}

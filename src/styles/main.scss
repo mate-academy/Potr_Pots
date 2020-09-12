@@ -1,7 +1,56 @@
-@import "utils";
 @import "fonts";
+@import "variables";
+@import "mixins";
 @import "typography";
+@import "buttons";
+@import "inputs";
+
+* {
+  box-sizing: border-box;
+  &::selection {
+    color: $colorGreyLight;
+    background-color: $colorTurq;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  background-color: $colorGreyLight;
+  font-family: sans-serif;
 }
+
+body,
+ul,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@import "header";
+@import "main-container";
+@import "main-screen";
+@import "for-whom";
+@import "features";
+@import "team";
+@import "materials";
+@import "mobile-slider";
+@import "size";
+@import "summary";
+@import "photo-card";
+@import "message-us";
+@import "footer";
+@import "popup";
