@@ -1,38 +1,84 @@
-# POTR POTS landing page
+# POTR POTS
+TAP **[PREVIEW LINK](https://andrii256.github.io/Potr_Pots/)** TO SEE DEMO
 
-Implement landing page according to [Figma design](https://www.figma.com/file/B4inXKHcMH3ChrTnXEJKS1/POTR-POTS-(Copy)?node-id=0%3A1) - Use BEM and SCSS
-- The design 1440px
-- Notebook 1280px
-- Tablet 768px
-- Mobile (> 320px)
+## Technologies
 
-1. Implement the header with `nav`.
-1. Implement `For whom` block.
-1. Implement `Features` block.
-1. Implement `POTR team` block with the card reused 3 times.
-1. Implement `Materials` block with 4 process cards.
-1. Implement `POTR size` block.
-1. Implement `Benefits` block.
-1. Implement `Questions` block
-1. Implement the footer.
+ - JavaScript (native)
+ - HTML5
+ - CSS3
+ - Sass (SCSS)
+ - CSS animations
+ - BEM
+ - Google page speed insights
+ - npm
+ - git
 
-## Instructions
-1. **Fork** the repo.
-2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
-3. Run `npm install` (or just `npm i`)
-4. Run `npm start`.
-5. Open one more terminal window for the next steps
-6. `git checkout -b develop` - to create new branch and switch on it
-7. Write you code in `src` folder
-8. Run `npm run lint` and fix code style errors.
-9. Run `npm run deploy` to deploy your solution to `gh-pages`
-10. `git add . && git commit -m 'solution'` to save your changes
-11. `git push origin develop` - to send you code for PR
-12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
-13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/layout_miami/)
-14. Copy `DEMO LINK` to the PR description
 
-> To update you PR repeat steps 7-11
+## Code Description and Features
+This is one page online shop of special ECO-friendly pots.
+It is not the hardest in the world project, but it is difficult notwithstanding. Here is non-standart logic that musted developer to solve many geometrics tasks.
+So, there are 10 blocks:
 
---> [CHECKLIST](https://github.com/mate-academy/Potr_Pots/blob/master/checklist.md)
+**Header**
+Header looks like usual header, but it is not. There are yellow trapese on background and there are one correlation of header indentation on all the screens.
+*semantic (nav, ul, li) implemented
+*ux logic (scroll and hide & show) implemented
+
+**Main screen**
+There are few blocks and with different rightside indentation and there are 'more about us' button that change its positioning dependence of screen sizes. Also there are big yellow trapese that implemented used `div`s only (without unnecessary graphics).
+*There are in design idea to make text before picture, but it looks like a bug and I decided to make it another.
+
+**For whom**
+This is hardest one block, because there are very unusual logic and it was really hard to set it in using usual instruments.
+But I did it.
+Now it is equal of designer idea (and I like it).
+*There are few animated no-iteractive elements.
+
+**Only features**
+This block was easy to implement, but hard to animate. Designer didnt left me gifs, I musted myself download them from official kickstarter page and then optimize them (gifs on official site are 2mb> each) 
+
+**Team (about us)**
+It is almost easy block, but there are bit names before other elements and it requires absolute positioning, and it requires geometrical thinking when you adapt it for other screens.
+
+**Materials and features**
+This is very interesting block, because there are every dot dependet of its location. Doesnt matter which size of screen it is.
+*Also there are CSS animated popups
+*Also there were not text hint in design, so I went to kickstarter and came up with it by myself.
+
+**Size**
+Really easy block, totally suitable for FlexBox or Grid using.
+
+**Summary**
+Almost easy block, but I wanted to make it "alive" and make different animations. The hardest one was to calculate dependencies of positions of cards.
+(Open DEMO on wide screen and then hover cursor on 'Buy now button')
+
+**Contact us**
+Block with form.
+Form are maded semantically correct.
+
+**Footer**
+Easiest block in this site
+
+**Popup**
+(By default it is hidden, touch any button to open it)
+There were not this block in design, but I love users and I make it for theirs sake.
+(Pots are really good, may be you really want to buy it)
+
+## Links
+
+Figma design: [link](https://www.figma.com/file/1Oq0w1zNCqKAr20kxTgYoP/POTR-POTS?node-id=0%3A1)
+
+Page speed insights: [link](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fandrii256.github.io%2FPotr_Pots%2F&tab=mobile)
+
+Demonstration: [link](https://andrii256.github.io/Potr_Pots/)
+
+## My Contacts
+Andrii Hrushetskyi
+
+Ukraine
+
+Phone: +380 68 4344 676 (telegram and viber available too)
+
+Email: [hrushetskyi.andrii@gmail.com](mailto:hrushetskyi.andrii@gmail.com)
+
+[Skype](https://join.skype.com/invite/g14s4nvGNzCx) | [LinkedIn](https://www.linkedin.com/in/andrii256/) | [GitHub](https://github.com/Andrii256)

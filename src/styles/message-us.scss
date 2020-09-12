@@ -1,0 +1,101 @@
+.message-us {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: $messageUsHeight;
+  padding: 40px $bodySidePadding 160px;
+  @media (max-width: $screenLarge) {
+    align-items: center;
+    padding: 25px $bodySidePaddingLp 140px;
+  }
+  @media (max-width: $screenTablet) {
+    flex-direction: column;
+    align-items: start;
+    height: $messageUsHeightTablet;
+  }
+  @media (max-width: $screenMob) {
+    height: $messageUsHeightMobile;
+    padding: 45px $bodySidePaddingMb;
+  }
+  @media (max-width: $messageUsTitleShrinkBreakpoint) {
+    height: $messageUsHeightExtraMobile;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    margin-right: 15vw;
+    @media (max-width: $screenTablet) {
+      width: 100%;
+    }
+  }
+  &__hint-subtitle {
+    margin-top: 30px;
+    font-weight: 400;
+  }
+
+  &__input {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  &__submit-button {
+    display: block;
+    align-self: center;
+    margin-top: 40px;
+    font-family: $fontProxima;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    color: $colorDark;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dotted $colorDark;
+    transition-duration: $transDuration;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      color: $colorRed;
+      border-color: $colorRed;
+      transform: scale(1.1);
+    }
+    @media (max-width: $screenTablet) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__contact-name {
+    font-weight: normal;
+    opacity: 0.3;
+    margin: 30px 0 5px;
+  }
+  &__contact-content {
+    color: $colorDark;
+  }
+
+  &__trapese {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: $messageUsTrapeseWidth;
+    height: 100%;
+    border-left: $messageUsTrapeseWidth solid $colorYellowLight;
+    border-bottom: (185px) solid transparent;
+    @media (max-width: $screenLarge) {
+      width: $messageUsTrapeseWidthLp;
+      border-bottom-width: 150px;
+      border-left-width: $messageUsTrapeseWidthLp;
+    }
+    @media (max-width: $screenTablet) {
+      height: 500px;
+      width: 100vw;
+      border-bottom-width: 50px;
+      border-left-width: 100vw;
+    }
+    @media (max-width: $messageUsTitleShrinkBreakpoint) {
+      height: 580px;
+    }
+  }
+}

@@ -1,0 +1,196 @@
+.summary {
+  $this: &;
+  position: relative;
+  height: 820px;
+  max-width: 1400px;
+  overflow: hidden;
+  @media (max-width: $screenLarge) {
+    height: auto;
+    padding: 0 $bodySidePaddingLp 95px;
+  }
+  @media (max-width: $screenMob) {
+    padding: 0 $bodySidePaddingMb 100px;
+  }
+
+  &__photo-card {
+    height: $summaryPhotoCardHeight;
+    position: absolute;
+    transition-duration: $transDuration * 2.5;
+    @media (max-width: $screenLarge) {
+      display: none;
+    }
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+    &:hover .photo-card__image {
+      transform: rotateY(370deg);
+    }
+
+    &--a {
+      @include photoCardPlacing(-20px, -20px, -15.1deg);
+      &-linedUp {
+        @include photoCardPlacing(
+          $summaryPhotoCardGap,
+          $summaryPhotoCardGap, 
+          0
+        );
+      }
+    }
+    &--b {
+      @include photoCardPlacing(331px, -124px, 0);
+      &-linedUp {
+        @include photoCardPlacing(
+          $summaryPhotoCardGap,
+          $summaryPhotoCardGap * 2 + $photocardWidth,
+          0
+        );
+      }
+    }
+    &--c {
+      @include photoCardPlacing(580px, 50px, -15.8deg);
+      &-linedUp {
+        @include photoCardPlacing(
+          $summaryPhotoCardGap,
+          $summaryPhotoCardGap * 3 + $photocardWidth * 2,
+          0
+        );
+      }
+    }
+    &--d {
+      @include photoCardPlacing(250px, 130px, -15.2deg);
+      &-linedUp {
+        @include photoCardPlacing(
+          $summaryPhotoCardGap,
+          $summaryPhotoCardGap * 4 + $photocardWidth * 3,
+          0
+        );
+      }
+    }
+    &--e {
+      @include photoCardPlacing(-120px, 280px, -29deg);
+      &-linedUp {
+        @include photoCardPlacing(
+          $summaryPhotoCardHeight + $summaryPhotoCardGap * 2,
+          $summaryPhotoCardGap,
+          0
+        );
+      }
+    }
+    &--f {
+      @include photoCardPlacing(500px, 330px, -30deg);
+      &-linedUp {
+        @include photoCardPlacing(
+          $summaryPhotoCardHeight + $summaryPhotoCardGap * 2,
+          $summaryPhotoCardGap * 2 + $photocardWidth,
+          0
+        );
+      }
+    }
+  }
+
+  &__content-box {
+    display: grid;
+    grid-template-areas: "first-item second-item"
+      "third-item third-item"
+      "button button"
+      "colored colored";
+    align-content: center;
+    height: 100%;
+    margin-left: 635px;
+    padding-right: $bodySidePaddingMb;
+    @media (max-width: 1300px) {
+      grid-template-areas: "first-item"
+        "second-item"
+        "third-item "
+        "button"
+        "colored";
+    }
+    @media (max-width: $screenLarge) {
+      grid-template-areas: "first-item button"
+        "first-item button"
+        "second-item colored"
+        "second-item colored"
+        "third-item colored"
+        "third-item colored";
+      grid-template-columns: 50% 50%;
+      align-content: center;
+      margin-left: 0;
+      padding-right: 0;
+    }
+    @media (max-width: $screenTablet) {
+      grid-template-areas: "first-item"
+        "second-item"
+        "third-item"
+        "button"
+        "colored";
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+    padding-left: 25px;
+    &--first {
+      grid-area: first-item;
+    }
+    &--second {
+      grid-area: second-item;
+    }
+    &--third {
+      grid-area: third-item;
+      margin-bottom: 60px;
+    }
+
+    &-title {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        display: block;
+        height: 7px;
+        width: 7px;
+        background-color: $colorSemiDark;
+      }
+    }
+    &-description {
+      color: $decorGrayColor;
+    }
+  }
+
+  &__buy-button {
+    grid-area: button;
+    @media (max-width: $screenLarge) {
+      align-self: flex-end;
+      margin-left: $bodySidePaddingLp * 1.5;
+    }
+    @media (max-width: $screenTablet) {
+      margin-left: 0;
+    }
+  }
+
+  &__colored-text-box {
+    grid-area: colored;
+    padding-top: 70px;
+    padding-left: 100px;
+    @media (max-width: $screenLarge) {
+      padding-top: 30px;
+      padding-left: $bodySidePaddingLp * 1.5;
+    }
+    @media (max-width: $screenTablet) {
+      padding-left: 0;
+    }
+  }
+
+  &__red-text {
+    color: $colorRed;
+  }
+
+  &__blue-text {
+    margin-top: 10px;
+    color: $colorTurq;
+  }
+}
