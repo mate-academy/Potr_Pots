@@ -15,25 +15,18 @@ TAP **[PREVIEW LINK](https://andrii256.github.io/Potr_Pots/)** TO SEE DEMO
 
 
 ## Code Description and Features
-
 This is alone page online shop of special ECO-friendly pots. It is not the hardest in the world project, but it is difficult notwithstanding. Here is non-standard logic that musted a developer to solve many geometrics tasks. So, there are 10 blocks:
 
 **Header**
-
 The header looks like the usual header, but it is not. There is a yellow trapeze on the background and there is one correlation of header indentation on all the screens.
-
 *semantic (nav, ul, li) implemented
-
 *UX logic (scroll and hide & show) implemented
 
 **Main screen**
-
 There are few blocks and with different right-side indentations and there are 'more about us' button that changes its positioning dependence of screen sizes. Also, there is a big yellow trapeze that implemented used divs only (without unnecessary graphics).
-
 *There is in design idea to make text before picture, but it looks like a bug, and I decided to make it another.
 
 **For whom**
-
 This is the hardest one block because there is very unusual logic and it was really hard to set it in using usual instruments.
 But I did it. Now it is equal to the designer idea (and I like it).
 *There are few animated no-interactive elements.
