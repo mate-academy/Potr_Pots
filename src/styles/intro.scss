@@ -1,0 +1,97 @@
+.intro {
+  padding-top: 70px;
+  padding-bottom: 78px;
+
+  &__content {
+    @include flex(space-between, flex-start);
+  }
+
+  &__title {
+    @extend %h1;
+    margin-left: 100px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    @include strokedText;
+
+    @include for-1024 {
+      margin-left: 0;
+    }
+  }
+
+  &__info {
+    margin-right: 66px;
+
+    @include for-1024 {
+      position: relative;
+      margin-right: -65px;
+    }
+  }
+
+  &__buying {
+    @include flex(space-between)
+  }
+
+  &__buying-right {
+    @include flex($y: flex-end);
+    flex-direction: column;
+  }
+
+  &__link-down {
+    @include flex($y: center);
+    margin-top: 50px;
+    writing-mode: vertical-rl;
+    @include font(12px);
+    font-family: $content-text-reg;
+    color: $main-blue;
+
+    @include for-1024 {
+      margin-top: 20px;
+    }
+  }
+
+  &__down-img {
+    margin-top: 11px;
+    margin-left: 2px;
+  }
+
+  &__price {
+    margin: -7px 62px 49px 0;
+    max-width: 139px;
+
+    @include for-1024 {
+      margin-right: 90px;
+      margin-bottom: 36px;
+    }
+  }
+
+  &__price-text {
+    @include font(14px);
+    font-family: $content-text-semi;
+    color: $text-dark-grey1;
+  }
+
+  &__price-value {
+    display: block;
+    @include font(26px, 32px);
+    font-family: $content-text-bold;
+    color: $text-dark-grey1;
+  }
+
+  &__button {
+    margin-right: 130px;
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    max-width: 500px;
+
+    @include for-1024 {
+      min-width: 300px;
+    }
+  }
+
+  &__img {
+    display: block;
+    @include object-fit(cover);
+  }
+}

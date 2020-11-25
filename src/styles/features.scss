@@ -1,0 +1,33 @@
+.features {
+  padding: 112px 0 50px;
+
+  &__title {
+    margin-bottom: 77px;
+    @extend %h2;
+    @include strokedText;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+  }
+
+  &__img {
+    display: block;
+    margin-bottom: 36px;
+    max-height: 370px;
+    @include object-fit(cover);
+  }
+
+  &__col-title {
+    margin-bottom: 22px;
+    @extend %h4;
+    text-align: center;
+  }
+
+  &__info {
+    @extend .content-text;
+    text-align: center;
+  }
+}

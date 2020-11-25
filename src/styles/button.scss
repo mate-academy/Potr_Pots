@@ -1,0 +1,56 @@
+.button {
+  @include flex( center, center);
+  height: 48px;
+  width: 238px;
+  @include font(14px);
+  font-family: $content-text-semi;
+  text-transform: uppercase;
+  color: #121212;
+  border: 1px solid $main-blue;
+  @include hover(color, #fff);
+  @include hover(background-color, $main-blue);
+
+  &__arrow {
+    margin-left: 20px;
+    width: 26px;
+    height: 8px;
+    background: url("../images/ico-arrow-black.svg") center no-repeat;
+  }
+
+  &:hover {
+
+    .button__arrow {
+      background-image: url("../images/ico-arrow-white.svg");
+    }
+  }
+
+  &--bubbly {
+    position:relative;
+    z-index: 0;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &:after {
+      font-weight: 200;
+      top: -30px;
+      left: -20px;
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      height: 400%;
+      width: 100%;
+      pointer-events: none;
+      opacity: .6;
+      background:
+        radial-gradient(circle at 20% 35%, transparent 0, transparent 3px, $light-grey 4px, $light-grey 5px, transparent 6px),
+        radial-gradient(circle at 75% 44%, transparent 0, transparent 2px, $light-grey 3px, $light-grey 4px, transparent 4px),
+        radial-gradient(circle at 35% 14%, transparent 0, transparent 2px, $light-grey 3px, $light-grey 4px, transparent 4px),
+        radial-gradient(circle at 46% 52%, transparent 0, transparent 4px, $light-grey 5px, $light-grey 6px, transparent 6px);
+      animation: bubbles 5s linear infinite both;
+    }
+  }
+}

@@ -4,3 +4,31 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin font($size: null, $height: null, $letter-spacing: null) {
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin strokedText {
+  color: transparent;
+  text-stroke: 1px $main-blue;
+  -webkit-text-stroke: 1px $main-blue;
+}
+
+@mixin flex($x: null, $y: null) {
+  display: flex;
+  justify-content: $x;
+  align-items: $y;
+}
+
+@mixin object-fit($object-fit: null, $max-width: 100%, $max-height: 100%) {
+  object-fit: $object-fit;
+  max-width: $max-width;
+  max-height: $max-height;
+}
+
+@mixin for-1024 {
+  @media (max-width: 1024px) { @content; }
+}

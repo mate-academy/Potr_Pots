@@ -1,0 +1,58 @@
+.team {
+  position: relative;
+  padding: 75px 0 170px;
+  overflow: hidden;
+
+  &__title {
+    @extend %h2;
+    color: $text-dark-grey1;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    padding-top: 155px;
+  }
+
+  &__large-text {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    display: inline-block;
+    @include font(288px, 120px, $letter-spacing: $title-letter-spacing);
+    @include strokedText;
+    font-family: $title-bold;
+    text-align: right;
+
+    &--top {
+      left: -61px;
+      top: 107px;
+    }
+
+    &--bottom {
+      bottom: -140px;
+      left: calc(50% + 116px);
+    }
+  }
+
+  &__info {
+    margin-right: 57px;
+    padding-top: 140px;
+    max-width: 336px;
+  }
+
+  &__paragraph {
+    margin-bottom: 32px;
+    @extend .content-text;
+  }
+
+  &__pic {
+    max-width: 677px;
+    max-height: 507px;
+  }
+
+  &__img {
+    display: block;
+    @include object-fit;
+  }
+}
