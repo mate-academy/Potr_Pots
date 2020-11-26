@@ -17,6 +17,7 @@
 @import "sizes";
 @import "advantages";
 @import "contacts";
+@import "footer";
 
 @import "animations";
 
@@ -25,23 +26,44 @@
   background-color: $main-yellow;
 }
 
+::-webkit-scrollbar {
+  width: 40px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 5px 5px 5px -5px rgba(60, 60, 60, 0.3) inset;
+  background-color: #f9f9fd;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  background-size: contain;
+  background-image: url("https://bipbap.ru/wp-content/uploads/2019/10/risuem-s-detmi-myshku_29.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #333;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px -5px rgba(60, 60, 60, 0.3);
+}
+
 body {
   font-family: $content-text-reg;
   background-color: $light-grey;
   line-height: 1.5;
 }
 
-.page {
-  height: 10000px;
-}
-
 .main {
   overflow: hidden;
+
+  &__materials {
+    margin: 0 auto;
+  }
 }
 
 .container {
   margin: 0 auto;
   padding: 0 15px;
+  width: 100%;
   max-width: $containerWidth;
 
   box-shadow: 0 0 1px 1px #f44;

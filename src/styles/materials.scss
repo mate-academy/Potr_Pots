@@ -1,11 +1,23 @@
 .materials {
-  padding-top: 50px;
-  min-height: 1300px;
-  background: url("../images/materials-bg.jpg") bottom center no-repeat;
-  background-attachment: scroll;
+  @include flex($x: center);
+  padding-top: 240px;
+
+  &__content-bg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 1440px;
+    height: 77vw;
+    max-height: 1080px;
+    background: url("../images/materials-bg.jpg") bottom center no-repeat;
+    background-size: contain;
+  }
 
   &__title {
-    margin-bottom: 14px;
+    position: absolute;
+    top: calc(-1em - 30px);
+    max-width: 880px;
     @include font(139px, 100%, 0.12em);
     font-family: $title-bold;
     color: $main-blue;
@@ -16,8 +28,6 @@
   }
 
   &__text {
-    position: relative;
-    top: -125px;
     max-width: 470px;
   }
 
@@ -28,5 +38,103 @@
 
   &__paragraph {
     @extend .content-text;
+  }
+
+  &__board {
+    flex-grow: 1;
+  }
+
+  &__label {
+    position: absolute;
+    @include flex($y: center);
+    flex-direction: column;
+    transform: translateX(-50%);
+    $labelWidth: 303px;
+    width: $labelWidth;
+
+    &--1 {
+      left: calc(27% - #{$labelWidth * 0.5});
+      bottom: -7%;
+    }
+
+    &--2 {
+      left: calc(49% - #{$labelWidth * 0.5});
+      bottom: 17%;
+    }
+
+    &--3 {
+      left: calc(60% - #{$labelWidth * 0.5});
+      bottom: -10%;
+    }
+
+    &--4 {
+      left: calc(72% - #{$labelWidth * 0.5});
+      bottom: 8%;
+    }
+
+    &--5 {
+      left: calc(90% - #{$labelWidth * 0.5});
+      bottom: 10%;
+    }
+  }
+
+  &__more {
+    padding: 35px 45px;
+    @extend .content-text;
+    color: $light-grey;
+    background-color: rgba(0, 0, 0, 0.41);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+    transform: scale(0);
+    transform-origin: center -8px;
+    transition: transform 0.5s;
+  }
+
+  &__to-show {
+    position: relative;
+    margin-bottom: 6px;
+    width: 51px;
+    height: 51px;
+    background-color: $red;
+    border-radius: 50%;
+    backdrop-filter: blur(12px);
+    @include hover(background-color, rgba(36, 35, 35, 0.75));
+    @include hover(opacity, 0.65);
+    transition: background-color 0.3s , opacity 0.3s;
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 11px;
+      height: 1px;
+      background-color: #fff;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 11px;
+      background-color: #fff;
+      transition: height 0.5s;
+    }
+
+    &:hover {
+
+      &:after {
+        height: 0;
+      }
+
+      & + .materials__more {
+        transform: scale(1);
+      }
+    }
   }
 }

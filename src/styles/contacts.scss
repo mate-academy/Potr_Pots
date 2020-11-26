@@ -2,6 +2,19 @@
   position: relative;
   padding: 138px 0 162px;
 
+  &__container {
+    position: relative;
+  }
+
+  &__bg-circle {
+    position: absolute;
+    top: -140px;
+    right: -64px;
+    width: 223px;
+    height: 238px;
+    background: url("../images/text-circle.png") center no-repeat;
+  }
+
   &__title {
     @extend %h3;
   }
@@ -13,7 +26,10 @@
   }
 
   &__content {
-    @include flex($x: flex-start);
+    position: relative;
+    @include flex($x: space-between);
+    max-width: 870px;
+    width: 100%;
   }
 
   &__form {
@@ -64,9 +80,30 @@
     @include font(16px, 19px);
     font-family: $content-text-semi;
     color: $text-dark-grey1;
-
     background-color: transparent;
     border: 0;
     border-bottom: 1px dotted $text-dark-grey1;
+  }
+
+  &__data {
+    padding-top: 8px;
+    max-width: 270px;
+  }
+
+  &__data-item {
+    margin-bottom: 18px;
+  }
+
+  &__data-head {
+    display: block;
+    margin-bottom: 4px;
+    @include font(24px);
+    font-family: $content-text-reg;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__data-link {
+    @extend .content-text;
+    color: #000;
   }
 }
