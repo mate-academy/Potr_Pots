@@ -3,7 +3,11 @@
   background-image: url(../images/rectangle.png);
   background-repeat: no-repeat;
   background-size: 1090px;
-  height: 784px;
+
+  &__container {
+    height: 784px;
+    position: relative;
+  }
 
   &__background {
     // background-color: $yellow-light;
@@ -30,13 +34,25 @@
   }
 
   &__main {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 500px;
+    column-gap: 20px;
+    // grid-template-rows: 266px 500px;
     justify-content: space-between;
     padding-top: 63.7px;
   }
 
+  &__image {
+    grid-area: 1 / 1 / 2 / 2;
+    position: absolute;
+    right: 135px;
+  }
+
   &__info {
-    margin-left: 100px;
+    margin-left: 50px;
+    position: absolute;
+    z-index: 1;
+
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -44,7 +60,7 @@
 
   &__title {
     @include titleFont;
-    letter-spacing: 0.15em;
+    // letter-spacing: 0.15em;
     color: $turquoise;
 
     & span {
