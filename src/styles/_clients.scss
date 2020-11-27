@@ -1,0 +1,103 @@
+.clients {
+
+  &__container {
+    position: relative;
+   }
+
+  &__title {
+
+    &::before {
+      @include slash;
+    }
+
+    &::after {
+      @include slash;
+      position: absolute;
+      bottom: 4px;
+      left: 57%;
+    }
+
+    & span {
+      padding-right: 40px;
+    }
+
+    &--robust {
+      max-width: 470px;
+      position: relative;
+
+      &::before{
+        left: -15px;
+        position: absolute;
+      }
+    }
+
+    &--beautiful {
+      position: relative;
+      max-width: 400px;
+
+      &::after {
+        left: 85%;
+      }
+    }
+
+    &--time {
+      max-width: 370px;
+      position: relative;
+
+      &::after {
+        left: 97%;
+      }
+    }
+  }
+
+  &__small-text {
+    @include s3Font;
+    color: #333;
+    margin-bottom: 39px;
+    position: relative;
+
+    &::before {
+      content: "*";
+      @include h3Font;
+      color: #000;
+      position: absolute;
+      left: -30px;
+      top: 22%;
+    }
+
+    &--beautiful {
+      margin-top: 39px;
+    }
+  }
+
+  &__text {
+    @include s3Font;
+    color: #4f4f4f;
+    max-width: 370px;
+    margin-top: 11px;
+  }
+
+  &__block {
+
+    &--robust {
+      margin-top: 35px;
+      display: grid;
+      column-gap: 200px;
+      grid-template-columns: 500px 1fr;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &--beautiful {
+      margin-top: 185px;
+    }
+
+    &__time {
+      position: absolute;
+      left: 58%;
+      bottom: -17%;
+    }
+
+
+  }
+}
