@@ -1,0 +1,139 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+  height: 36px;
+  margin: 15px auto 30px;
+
+  @media screen and (min-width: 766px) {
+    width: 706px;
+  }
+
+  &__list {
+    display: none;
+  }
+
+  @media screen and (min-width: 1278px) {
+    width: 1180px;
+
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item {
+      display: inline-flex;
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        background: url(../images/icon-bag.svg) no-repeat center;
+        margin-left: 198px;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: #4f4f4f;
+      margin-right: 64px;
+    }
+  }
+
+  &__name {
+    font-family: "Bebas Neue", cursive;
+    font-size: 32px;
+    line-height: 36px;
+    color: #333;
+  }
+
+  &__burger {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: block;
+    color: #0f0e08;
+
+    @media screen and (min-width: 1278px) {
+      display: none;
+    }
+
+    .burger-open {
+      z-index: 1;
+      top: -15px;
+      right: -30px;
+      position: absolute;
+      width: 231px;
+      height: 568px;
+      visibility: hidden;
+    }
+  }
+
+  &__burger .burger-menu,
+  &__burger::after,
+  &__burger::before {
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    background: #515758;
+    margin: 0 auto;
+  }
+
+  &__burger .burger-menu {
+    top: 14px;
+  }
+
+  &__burger::after,
+  &__burger::before {
+    transition: 0.3s;
+    content: "";
+  }
+
+  &__burger::after {
+    bottom: 5px;
+  }
+
+  &__burger::before {
+    top: 5px;
+  }
+
+  &__burger:hover {
+    .burger-menu {
+      display: none;
+    }
+
+    .burger-open {
+      visibility: visible;
+      animation: menu-open 1s forwards;
+    }
+
+    &::after,
+    &::before {
+      z-index: 2;
+      width: 40px;
+    }
+
+    &::after {
+      bottom: -5px;
+      transform-origin: left center;
+      transform: rotate(-45deg);
+    }
+
+    &::before {
+      transform-origin: left center;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+@keyframes menu-open {
+  0% {
+    background: #03839e;
+    opacity: 0.5;
+    transform: translate(150px, 0);
+  }
+
+  100% {
+    background: #03839e;
+    transform: translate(0, 0);
+  }
+}

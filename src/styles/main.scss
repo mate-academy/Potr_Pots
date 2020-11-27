@@ -1,7 +1,34 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "navigation";
+@import "primary";
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-  background: $c-gray;
+  background: #f6f6f0;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+body,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.container__back-photo {
+  display: none;
+
+  @media screen and (min-width: 766px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
 }
