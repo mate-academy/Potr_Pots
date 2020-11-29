@@ -1,0 +1,210 @@
+.materials {
+  @include flex($x: center);
+  padding-top: 240px;
+
+  @include for-768 {
+    padding-top: 15px;
+  }
+
+  &__content-bg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 1440px;
+    height: 77vw;
+    max-height: 1080px;
+    background: url("../images/materials-bg.jpg") bottom center no-repeat;
+    background-size: contain;
+
+    @include for-480 {
+      height: 350px;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: calc(-1em - 30px);
+    max-width: 880px;
+    @include font(139px, 100%, 0.12em);
+    font-family: $title-bold;
+    color: $main-blue;
+
+    @include for-1024 {
+      top: calc(-2em - 30px);
+      font-size: 80px;
+    }
+
+    @include for-768 {
+      position: static;
+      text-align: center;
+      font-size: 58px;
+    }
+
+    @include for-480 {
+      text-align: left;
+      font-size: 56px;
+    }
+  }
+
+  &__info {
+    @include flex($x: flex-end);
+  }
+
+  &__text {
+    max-width: 470px;
+
+    @include for-1180 {
+      max-width: 370px;
+    }
+
+    @include for-1024 {
+      max-width: 340px;
+    }
+
+    @include for-768 {
+      max-width: 100%;
+    }
+  }
+
+  &__info-title {
+    @include font(20px);
+    color: $text-dark-grey1;
+  }
+
+  &__content {
+    @include for-1024 {
+      position: relative;
+      top: -84px;
+    }
+
+    @include for-768 {
+      display: none;
+    }
+  }
+
+  &__paragraph {
+    @extend .content-text;
+  }
+
+  &__board {
+    flex-grow: 1;
+  }
+
+  &__label {
+    position: absolute;
+    @include flex($y: center);
+    flex-direction: column;
+    transform: translateX(-50%);
+    $labelWidth: 303px;
+    width: $labelWidth;
+
+    &--1 {
+      left: calc(27% - #{$labelWidth * 0.5});
+      top: 80%;
+
+      @include for-1180 {
+        left: 15vw;
+      }
+    }
+
+    &--2 {
+      left: calc(49% - #{$labelWidth * 0.5});
+      top: 55%;
+
+      @include for-1180 {
+        left: 30vw;
+      }
+    }
+
+    &--3 {
+      left: calc(60% - #{$labelWidth * 0.5});
+      top: 82%;
+
+      @include for-1180 {
+        left: 50vw;
+      }
+    }
+
+    &--4 {
+      left: calc(72% - #{$labelWidth * 0.5});
+      top: 60%;
+
+      @include for-1180 {
+        left: 55vw;
+      }
+    }
+
+    &--5 {
+      left: calc(90% - #{$labelWidth * 0.5});
+      top: 62%;
+
+      @include for-1180 {
+        left: 80vw;
+      }
+    }
+  }
+
+  &__more {
+    padding: 35px 45px;
+    @extend .content-text;
+    color: $light-grey;
+    background-color: rgba(0, 0, 0, 0.41);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.6s, opacity 0.3s;
+  }
+
+  &__to-show {
+    margin-bottom: 6px;
+    width: 51px;
+    height: 51px;
+    background-color: $red;
+    border-radius: 50%;
+    backdrop-filter: blur(12px);
+    transition: opacity 0.3s, background-color 0.3s;
+    // cursor: pointer;
+
+    &:before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 11px;
+      height: 1px;
+      background-color: #fff;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 11px;
+      background-color: #fff;
+      transition: height 0.5s;
+    }
+
+    // &:hover {
+    //   background-color: rgba(36, 35, 35, 0.75);
+    //   opacity: 0.65;
+
+    //   &:after {
+    //     height: 0;
+    //   }
+
+    //   & + .materials__more {
+    //     max-height: 500px;
+    //     opacity: 1;
+    //     transition: max-height 0, opacity 0.3s;
+    //   }
+    // }
+  }
+}

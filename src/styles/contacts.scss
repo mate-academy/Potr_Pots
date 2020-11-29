@@ -1,0 +1,174 @@
+.contacts {
+  position: relative;
+  padding: 138px 0 162px;
+
+  @include for-1024 {
+    padding: 18px 0 100px;
+  }
+
+  @include for-640 {
+    padding: 45px 0 35px;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__bg-circle {
+    position: absolute;
+    top: -140px;
+    right: -64px;
+    width: 223px;
+    height: 238px;
+    background: url("../images/text-circle.png") center no-repeat;
+  }
+
+  &__title {
+    @extend %h3;
+
+    @include for-640 {
+      text-align: center;
+    }
+    
+    @include for-480 {
+      text-align: left;
+    }
+  }
+
+  &__intro {
+    margin-bottom: 27px;
+    @extend .content-text;
+    color: $text-black;
+
+    @include for-1024 {
+      max-width: 300px;
+    }
+
+    @include for-640 {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    @include for-480 {
+      text-align: left;
+    }
+  }
+
+  &__content {
+    position: relative;
+    @include flex($x: space-between);
+    max-width: 870px;
+    width: 100%;
+
+    @include for-640 {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__form {
+    margin-right: 30px;
+    max-width: 370px;
+    width: 100%;
+
+    @include for-640 {
+      margin-right: 0;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__form-title {
+    display: block;
+    margin-bottom: 20px;
+    @include font(24px);
+    font-family: $content-text-reg;
+    font-weight: 400;
+
+    @include for-1024 {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__field {
+    display: block;
+    margin-bottom: 22px;
+    padding: 2px 15px 4px 8px;
+    width: 100%;
+    max-width: 370px;
+    @extend .content-text;
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    outline: none;
+    border-left: 0 solid rgba(0, 0, 0, 0.3);
+    transition: border-width 0.2s;
+
+    @include for-1024 {
+      margin-bottom: 25px;
+    }
+
+    &::placeholder {
+      @extend .content-text;
+      color: $text-dark-grey2;
+    }
+
+    &:focus {
+      border-left-width: 5px;
+    }
+  }
+
+  &__submit {
+    display: block;
+    margin: 59px auto 0;
+    padding: 0;
+    @include font(16px, 19px);
+    font-family: $content-text-semi;
+    color: $text-dark-grey1;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px dotted $text-dark-grey1;
+    @include hover(opacity, 0.6);
+
+    @include for-1024 {
+      margin-top: 35px;
+    }
+  }
+
+  &__data {
+    padding-top: 8px;
+    max-width: 270px;
+
+    @include for-1024 {
+      margin-top: -60px;
+      margin-right: 25px;
+      max-width: 205px;
+    }
+
+    @include for-640 {
+      margin: 0;
+      max-width: 370px;
+    }
+  }
+
+  &__data-item {
+    margin-bottom: 18px;
+  }
+
+  &__data-head {
+    display: block;
+    margin-bottom: 4px;
+    @include font(24px);
+    font-family: $content-text-reg;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__data-link {
+    @extend .content-text;
+    color: $text-black;
+    transition: text-shadow 0.5s;
+
+    &:hover {
+      text-shadow: 0 0 1px #000;
+    }
+  }
+}

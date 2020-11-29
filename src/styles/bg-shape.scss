@@ -1,0 +1,74 @@
+.bg-shape {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  background-color: #ffec7a;
+
+  &--main {
+    top: 0;
+    left: 0;
+    width: calc(50vw + #{$containerWidth * 0.31});
+    height: calc((50vw + #{$containerWidth * 0.31}) * 0.44);
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+
+    @include for-1024 {
+      width: 85vw;
+      height: calc(85vw * 0.5);
+    }
+
+    @include for-480 {
+      display: none;
+    }
+  }
+
+  &--team {
+    left: -667px;
+    top: 255px;
+    width: calc(50vw + #{$containerWidth * 0.33});
+    height: calc((50vw + #{$containerWidth * 0.31}) * 0.44);
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+
+    @include for-1024 {
+      left: -50vw;
+    }
+
+    @include for-768 {
+      top: auto;
+      bottom: -30px;
+    }
+
+    @include for-480 {
+      left: 0;
+      bottom: 40px;
+      width: 200%;
+      height: 30%;
+    }
+  }
+
+  &--contacts {
+    top: 100px;
+    left: 0;
+    height: 567px;
+    width: calc(50vw + #{$containerWidth * 0.5});
+    background-image: none;
+    background-color: #ffec7a;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+
+    @include for-1024 {
+      top: 0;
+      height: 100%;
+      width: calc(100vw - 30px);
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+    
+    @include for-640 {
+      width: 100vw;
+      height: 58%;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    @include for-480 {
+      height: 62%;
+    }
+  }
+}

@@ -1,7 +1,57 @@
-@import "utils";
 @import "fonts";
+@import "utils";
+@import "reset";
 @import "typography";
 
+@import "button";
+@import "bg-shape";
+@import "side-line";
+@import "container";
+
+@import "header";
+@import "nav";
+@import "intro";
+@import "for-whom";
+@import "features";
+@import "team";
+@import "materials";
+@import "sizes";
+@import "advantages";
+@import "contacts";
+@import "footer";
+
+@import "animations";
+
+::selection {
+  color: $main-blue;
+  background-color: $main-yellow;
+}
+
 body {
-  background: $c-gray;
+  font-family: $content-text-reg;
+  background-color: $light-grey;
+  line-height: 1.5;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: 5px 5px 5px -5px rgba(60, 60, 60, 0.3) inset;
+  background-color: $light-grey;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: $text-dark-grey2;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px -5px rgba(60, 60, 60, 0.3);
+}
+
+.main {
+  overflow: hidden;
+
+  &__materials {
+    margin: 0 auto;
+  }
 }

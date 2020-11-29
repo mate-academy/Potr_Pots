@@ -1,4 +1,37 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  @include font(64px, 100%, $title-letter-spacing);
+  font-family: $title-bold;
+  text-transform: uppercase;
+}
+
+%h2 {
+  @include font(58px, 100%, $title-letter-spacing);
+  font-family: $title-bold;
+  text-transform: uppercase;
+}
+
+%h3 {
+  @include font(36px, $letter-spacing: $title-letter-spacing);
+  font-family: $title-bold;
+  text-transform: uppercase;
+}
+
+%h4 {
+  @include font(24px, 100%);
+  font-family: $title-bold;
+  color: $text-dark-grey1;
+  text-transform: uppercase;
+}
+
+%h6 {
+  @include font(18px, 100%, $letter-spacing: $title-letter-spacing);
+  font-family: $title-bold;
+  color: $text-black;
+  text-transform: uppercase;
+}
+
+.content-text {
+  @include font(16px);
+  font-family: $content-text-reg;
+  color: $text-dark-grey2;
 }

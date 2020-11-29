@@ -1,0 +1,85 @@
+.footer {
+  padding: 54px 0 34px;
+
+  &__content {
+    @include flex($x: space-between);
+
+    @include for-640 {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__address {
+    @include for-640 {
+      display: none;
+    }
+  }
+
+  &__address-title {
+    margin-bottom: 11px;
+    @extend %h4;
+    letter-spacing: $title-letter-spacing;
+    color: $text-black;
+  }
+
+  &__address-info {
+    @extend .content-text;
+    color: $text-black;
+  }
+
+  &__public {
+    width: 100%;
+    max-width: 160px;
+    text-align: center;
+
+    @include for-640 {
+      max-width: 200px;
+    }
+  }
+
+  &__public-list {
+    margin-bottom: 14px;
+    @include flex($x: space-between);
+  }
+
+  &__public-link {
+    display: block;
+    @include hover(transform, scale(1.3));
+   
+  }
+
+  &__ico {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__logo {
+    display: inline-block;
+    @extend %h3;
+    color: $text-black;
+    transform-origin: center 80%;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scaleY(0.6) scaleX(1.2);
+    }
+  }
+
+  &__about-title {
+    margin-bottom: 11px;
+    @extend %h4;
+    letter-spacing: $title-letter-spacing;
+    color: $text-black;
+
+    @include for-640 {
+      display: none;
+    }
+  }
+
+  &__copyright {
+    @extend .content-text;
+    color: $text-black;
+  }
+}

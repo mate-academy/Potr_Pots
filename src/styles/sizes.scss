@@ -1,0 +1,132 @@
+.sizes {
+  padding: 120px 0 70px;
+
+  @include for-1024 {
+    padding-top: 110px;
+  }
+  
+  @include for-768 {
+    padding-bottom: 50px;
+  }
+
+  &__title {
+    margin-bottom: 56px;
+    @extend %h3;
+
+    @include for-1024 {
+      margin-bottom: 29px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-areas: "head head head"
+      "note categories scheme"
+      "footnote footnote scheme"
+      "floor floor floor";
+    grid-template-columns: 23% 31.8% 45.1%;
+    align-items: start;
+
+    @include for-1024 {
+      justify-content: space-between;
+      grid-template-columns: 0 40% 60%;
+    }
+    
+    @include for-640 {
+      grid-template-areas: "head head head"
+        "scheme scheme scheme"
+        "categories categories categories"
+        "floor floor floor";
+    }
+  }
+
+  &__note {
+    grid-area: note;
+    padding-top: 30px;
+    padding-right: 17px;
+    @extend .content-text;
+
+    @include for-1024 {
+      grid-area: head;
+      margin-bottom: 18px;
+      padding-top: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__categories {
+    grid-area: categories;
+    margin-top: 30px;
+    padding: 0 30px 15px;
+    max-width: 306px;
+    border-left: 1px solid $decorate-elem-color;
+
+    @include for-1024 {
+      margin-right: 36px;
+      padding: 0 0 15px;
+      max-width: 246px;
+      border-left: 0;
+    }
+
+    @include for-640 {
+      margin-top: 40px;
+      margin-right: 0;
+    }
+  }
+
+  &__category {
+    &:first-of-type {
+      margin-bottom: 69px;
+
+      @include for-1024 {
+        margin-bottom: 37px;
+      }
+    }
+  }
+
+  &__category-title {
+    margin-bottom: 20px;
+    @extend %h6;
+  }
+
+  &__category-text {
+    @extend .content-text;
+  }
+
+  &__footnote {
+    grid-area: footnote;
+    padding: 10px 30px 0 0;
+    max-width: 575px;
+    @extend .content-text;
+
+    @include for-1024 {
+      grid-area: floor;
+      padding-top: 26px;
+      padding-right: 0;
+      max-width: 100%;
+    }
+  }
+
+  &__scheme {
+    grid-area: scheme;
+
+    @include for-480 {
+      margin-left: -30px;
+      margin-right: -30px;
+      max-width: calc(100% + 60px);
+    }
+  }
+
+  &__img {
+    display: block;
+    @include object-fit;
+
+    @include for-1024 {
+      margin-left: auto;
+    }
+
+    @include for-640 {
+      margin-right: auto;
+    }
+  }
+}

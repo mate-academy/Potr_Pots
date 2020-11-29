@@ -1,0 +1,271 @@
+.advantages {
+  position: relative;
+  padding: 182px 0 154px;
+
+  @include for-1024 {
+    padding: 50px 0 54px;
+  }
+
+  &__side-line {
+    top: -95px;
+
+    @include for-480 {
+      display: none;
+    }
+  }
+
+  &__parallax-scene {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include for-1024 {
+      display: none;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    padding: 20px 20px 15px;
+    width: 270px;
+    background-color: #fff;
+    box-shadow: -4px -5px 7px 3px rgba(50, 50, 50, 0.4);
+
+    &--1 {
+      top: -262px;
+      left: 210px;
+      transform: rotate(-28.9deg);
+
+      @include for-1180 {
+        left: 150px;
+      }
+    }
+
+    &--2 {
+      top: -192px;
+      left: -70px;
+      transform: rotate(-15deg);
+
+      @include for-1180 {
+        left: -120px;
+      }
+    }
+
+    &--3 {
+      top: 80px;
+      left: 110px;
+      transform: rotate(-15.2deg);
+
+      @include for-1180 {
+        left: 80px;
+      }
+    }
+
+    &--4 {
+      top: 150px;
+      left: -150px;
+
+      @include for-1180 {
+        left: -180px;
+      }
+    }
+
+    &--5 {
+      top: 400px;
+      left: 20px;
+      transform: rotate(-15.8deg);
+
+      @include for-1180 {
+        left: -30px;
+      }
+    }
+
+    &--6 {
+      top: 340px;
+      left: 280px;
+      transform: rotate(-30.4deg);
+
+      @include for-1180 {
+        top: 360px;
+        left: 220px;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 230px;
+    height: 230px;
+    @include object-fit(cover);
+  }
+
+  &__caption {
+    display: block;
+    margin-top: 10px;
+    min-height: 28px;
+    @include font(11px, 14px);
+    font-family: $content-text-reg;
+    color: $text-light-grey;
+  }
+
+  &__content {
+    position: relative;
+    @include flex($x: flex-end);
+  }
+
+  &__col {
+    width: 100%;
+    max-width: 685px;
+
+    @include for-1180 {
+      width: 55%;
+    }
+
+    @include for-1024 {
+      display: flex;
+      max-width: 100%;
+      width: 100%;
+    }
+    
+    @include for-640 {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    @include for-1180 {
+      flex-direction: column;
+    }
+
+    @include for-1024 {
+      margin-bottom: 0;
+      margin-right: 20px;
+      width: 100%;
+      max-width: 347px;
+    }
+
+    @include for-640 {
+      margin-right: 0;
+    }
+  }
+
+  &__buying {
+    @include for-1024 {
+      padding-top: 82px;
+    }
+    
+    @include for-640 {
+      margin-right: 54px;
+      padding-top: 20px;
+    }
+  }
+
+  &__topic {
+    padding-left: 27px;
+
+    @include for-480 {
+      padding-left: 0;
+    }
+
+    &:nth-of-type(odd) {
+      margin-right: 40px;
+
+      @include for-1024 {
+        margin-right: 0;
+      }
+    }
+
+    &:nth-of-type(2) {
+      @include for-1024 {
+        order: 2;
+      }
+    }
+  }
+
+  &__name {
+    position: relative;
+    display: block;
+    margin-bottom: 3px;
+    @include font(36px);
+    font-family: $content-text-semi;
+    color: $text-dark-grey1;
+
+    @include for-480 {
+      font-size: 32px;
+    }
+
+    &:before {
+      position: absolute;
+      z-index: 1;
+      content: "";
+      top: calc(50% - 5px);
+      left: -25px;
+      width: 7px;
+      height: 7px;
+      transform: rotate(45deg);
+      background-color: $text-dark-grey2;
+
+      @include for-480 {
+        left: -15px;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 40px;
+    @extend .content-text;
+    color: $text-light-grey;
+
+    @include for-1024 {
+      max-width: 212px;
+    }
+  }
+
+  &__button {
+    margin-bottom: 70px;
+
+    @include for-1024 {
+      margin-bottom: 33px;
+    }
+  }
+
+  &__discount {
+    padding-left: 100px;
+
+    @include for-1024 {
+      padding-left: 0;
+    }
+  }
+
+  &__discount-value {
+    display: block;
+    margin-bottom: 5px;
+    @extend %h3;
+    color: $red;
+
+    @include for-1024 {
+      font-size: 24px;
+      line-height: 1;
+    }
+  }
+
+  &__discount-info {
+    @extend %h4;
+    color: $main-blue;
+    letter-spacing: $title-letter-spacing;
+
+    @include for-1024 {
+      max-width: 240px;
+      font-size: 18px;
+    }
+  }
+
+}
