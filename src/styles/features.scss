@@ -6,7 +6,7 @@
   }
 
   @include for-768 {
-    padding-bottom: 45px;
+    padding: 70px 0 45px;
   }
 
   &__title {
@@ -20,6 +20,10 @@
 
     @include for-768 {
       text-align: center;
+    }
+
+    @include for-480 {
+      font-size: 56px;
     }
   }
 
@@ -37,6 +41,10 @@
       justify-content: center;
       grid-gap: 67px;
     }
+
+    @include for-480 {
+      grid-template-columns: repeat(auto-fit, 260px);
+    }
   }
 
   &__img {
@@ -49,6 +57,7 @@
     margin-bottom: 22px;
     @extend %h4;
     text-align: center;
+    letter-spacing: $title-letter-spacing;
 
     @include for-1024 {
       text-align: left;

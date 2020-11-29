@@ -8,6 +8,10 @@
 
   &__side-line {
     top: -95px;
+
+    @include for-480 {
+      display: none;
+    }
   }
 
   &__parallax-scene {
@@ -125,6 +129,11 @@
       max-width: 100%;
       width: 100%;
     }
+    
+    @include for-640 {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__items {
@@ -142,16 +151,29 @@
       width: 100%;
       max-width: 347px;
     }
+
+    @include for-640 {
+      margin-right: 0;
+    }
   }
 
   &__buying {
     @include for-1024 {
       padding-top: 82px;
     }
+    
+    @include for-640 {
+      margin-right: 54px;
+      padding-top: 20px;
+    }
   }
 
   &__topic {
     padding-left: 27px;
+
+    @include for-480 {
+      padding-left: 0;
+    }
 
     &:nth-of-type(odd) {
       margin-right: 40px;
@@ -176,6 +198,10 @@
     font-family: $content-text-semi;
     color: $text-dark-grey1;
 
+    @include for-480 {
+      font-size: 32px;
+    }
+
     &:before {
       position: absolute;
       z-index: 1;
@@ -186,6 +212,10 @@
       height: 7px;
       transform: rotate(45deg);
       background-color: $text-dark-grey2;
+
+      @include for-480 {
+        left: -15px;
+      }
     }
   }
 

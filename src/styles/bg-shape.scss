@@ -15,6 +15,10 @@
       width: 85vw;
       height: calc(85vw * 0.5);
     }
+
+    @include for-480 {
+      display: none;
+    }
   }
 
   &--team {
@@ -31,7 +35,13 @@
     @include for-768 {
       top: auto;
       bottom: -30px;
+    }
 
+    @include for-480 {
+      left: 0;
+      bottom: 40px;
+      width: 200%;
+      height: 30%;
     }
   }
 
@@ -51,7 +61,14 @@
       clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     }
     
-  }
+    @include for-640 {
+      width: 100vw;
+      height: 58%;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
 
-  
+    @include for-480 {
+      height: 62%;
+    }
+  }
 }

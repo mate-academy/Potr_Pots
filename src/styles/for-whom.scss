@@ -15,6 +15,10 @@
     @include for-768 {
       text-align: center;
     }
+
+    @include for-480 {
+      text-align: left;
+    }
   }
 
   &__content {
@@ -25,6 +29,10 @@
   &__pic {
     margin-bottom: 39px;
     max-width: 500px;
+
+    @include for-480 {
+      display: none;
+    }
   }
 
   &__img {
@@ -38,6 +46,10 @@
 
     @include for-768 {
       margin-top: 20px;
+    }
+
+    @include for-480 {
+      margin-top: 0;
     }
   }
 
@@ -67,6 +79,10 @@
     position: relative;
     margin-bottom: 11px;
     @extend %h3;
+
+    @include for-480 {
+      margin-bottom: 27px;
+    }
   }
 
   &__number {
@@ -74,6 +90,13 @@
     content: "";
     left: -68px;
     top: 0;
+
+    @include for-480 {
+      position: static;
+      display: block;
+      margin-bottom: 27px;
+      padding-left: 20px;
+    }
 
     &:before {
       position: absolute;
@@ -84,6 +107,10 @@
       height: 46px;
       transform: rotate(22deg);
       background-color: $text-dark-grey1;
+
+      @include for-480 {
+        left: 10px;
+      }
     }
   }
 
@@ -130,6 +157,10 @@
       margin-bottom: 80px;
       width: 100%;
 
+      @include for-480 {
+        margin-bottom: 70px;
+      }
+
       .for-whom__pic {
         margin-right: 15px;
         margin-bottom: 0;
@@ -158,6 +189,10 @@
         @include for-768 {
           padding-left: 58px;
           max-width: 100%;
+        }
+
+        @include for-480 {
+          padding-left: 0;
         }
       }
 
@@ -197,6 +232,10 @@
         flex-direction: column;
       }
 
+      @include for-480 {
+        margin-bottom: 70px;
+      }
+
       .for-whom__pic {
         @include for-1180 {
           flex-grow: 1;
@@ -233,6 +272,10 @@
           padding-left: 58px;
           max-width: 100%;
         }
+
+        @include for-480 {
+          padding-left: 0;
+        }
       }
 
       .for-whom__feature {
@@ -256,6 +299,11 @@
 
         @include for-768 {
           position: absolute;
+        }
+
+        @include for-480 {
+          position: static;
+          margin-bottom: 27px;
         }
 
         &:before {
@@ -309,6 +357,10 @@
         @include for-768 {
           max-width: 100%;
         }
+
+        @include for-480 {
+          padding-left: 0;
+        }
       }
 
       .for-whom__number {
@@ -321,6 +373,10 @@
 
     &--top {
       top: 0;
+
+      @include for-480 {
+        top: 60%;
+      }
     }
 
     &--bottom {

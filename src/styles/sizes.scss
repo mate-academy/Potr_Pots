@@ -31,6 +31,13 @@
       justify-content: space-between;
       grid-template-columns: 0 40% 60%;
     }
+    
+    @include for-640 {
+      grid-template-areas: "head head head"
+        "scheme scheme scheme"
+        "categories categories categories"
+        "floor floor floor";
+    }
   }
 
   &__note {
@@ -43,6 +50,7 @@
       grid-area: head;
       margin-bottom: 18px;
       padding-top: 0;
+      padding-right: 0;
     }
   }
 
@@ -58,6 +66,11 @@
       padding: 0 0 15px;
       max-width: 246px;
       border-left: 0;
+    }
+
+    @include for-640 {
+      margin-top: 40px;
+      margin-right: 0;
     }
   }
 
@@ -96,6 +109,12 @@
 
   &__scheme {
     grid-area: scheme;
+
+    @include for-480 {
+      margin-left: -30px;
+      margin-right: -30px;
+      max-width: calc(100% + 60px);
+    }
   }
 
   &__img {
@@ -104,6 +123,10 @@
 
     @include for-1024 {
       margin-left: auto;
+    }
+
+    @include for-640 {
+      margin-right: auto;
     }
   }
 }

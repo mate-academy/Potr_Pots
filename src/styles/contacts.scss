@@ -6,6 +6,10 @@
     padding: 18px 0 100px;
   }
 
+  @include for-640 {
+    padding: 45px 0 35px;
+  }
+
   &__container {
     position: relative;
   }
@@ -21,6 +25,14 @@
 
   &__title {
     @extend %h3;
+
+    @include for-640 {
+      text-align: center;
+    }
+    
+    @include for-480 {
+      text-align: left;
+    }
   }
 
   &__intro {
@@ -31,6 +43,15 @@
     @include for-1024 {
       max-width: 300px;
     }
+
+    @include for-640 {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    @include for-480 {
+      text-align: left;
+    }
   }
 
   &__content {
@@ -38,14 +59,21 @@
     @include flex($x: space-between);
     max-width: 870px;
     width: 100%;
+
+    @include for-640 {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__form {
+    margin-right: 30px;
     max-width: 370px;
     width: 100%;
 
-    &:first-of-type {
-      margin-right: 30px;
+    @include for-640 {
+      margin-right: 0;
+      margin-bottom: 60px;
     }
   }
 
@@ -75,6 +103,10 @@
     border-left: 0 solid rgba(0, 0, 0, 0.3);
     transition: border-width 0.2s;
 
+    @include for-1024 {
+      margin-bottom: 25px;
+    }
+
     &::placeholder {
       @extend .content-text;
       color: $text-dark-grey2;
@@ -82,10 +114,6 @@
 
     &:focus {
       border-left-width: 5px;
-    }
-
-    @include for-1024 {
-      margin-bottom: 25px;
     }
   }
 
@@ -114,6 +142,11 @@
       margin-top: -60px;
       margin-right: 25px;
       max-width: 205px;
+    }
+
+    @include for-640 {
+      margin: 0;
+      max-width: 370px;
     }
   }
 

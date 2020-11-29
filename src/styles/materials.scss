@@ -16,6 +16,10 @@
     max-height: 1080px;
     background: url("../images/materials-bg.jpg") bottom center no-repeat;
     background-size: contain;
+
+    @include for-480 {
+      height: 350px;
+    }
   }
 
   &__title {
@@ -35,6 +39,11 @@
       position: static;
       text-align: center;
       font-size: 58px;
+    }
+
+    @include for-480 {
+      text-align: left;
+      font-size: 56px;
     }
   }
 
@@ -158,7 +167,7 @@
     border-radius: 50%;
     backdrop-filter: blur(12px);
     transition: opacity 0.3s, background-color 0.3s;
-    cursor: pointer;
+    // cursor: pointer;
 
     &:before {
       position: absolute;
@@ -183,19 +192,19 @@
       transition: height 0.5s;
     }
 
-    &:hover {
-      background-color: rgba(36, 35, 35, 0.75);
-      opacity: 0.65;
+    // &:hover {
+    //   background-color: rgba(36, 35, 35, 0.75);
+    //   opacity: 0.65;
 
-      &:after {
-        height: 0;
-      }
+    //   &:after {
+    //     height: 0;
+    //   }
 
-      & + .materials__more {
-        max-height: 500px;
-        opacity: 1;
-        transition: max-height 0, opacity 0.3s;
-      }
-    }
+    //   & + .materials__more {
+    //     max-height: 500px;
+    //     opacity: 1;
+    //     transition: max-height 0, opacity 0.3s;
+    //   }
+    // }
   }
 }
