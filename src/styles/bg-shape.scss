@@ -2,10 +2,6 @@
   position: absolute;
   content: "";
   z-index: -1;
-  // width: 1121px;
-  // height: 467px;
-  // background: url("../images/yellow-rect.svg") 0 -1px no-repeat;
-  // background-size: cover;
   background-color: #ffec7a;
 
   &--main {
@@ -14,6 +10,11 @@
     width: calc(50vw + #{$containerWidth * 0.31});
     height: calc((50vw + #{$containerWidth * 0.31}) * 0.44);
     clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+
+    @include for-1024 {
+      width: 85vw;
+      height: calc(85vw * 0.5);
+    }
   }
 
   &--team {
@@ -22,6 +23,16 @@
     width: calc(50vw + #{$containerWidth * 0.33});
     height: calc((50vw + #{$containerWidth * 0.31}) * 0.44);
     clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+
+    @include for-1024 {
+      left: -50vw;
+    }
+
+    @include for-768 {
+      top: auto;
+      bottom: -30px;
+
+    }
   }
 
   &--contacts {
@@ -29,14 +40,18 @@
     left: 0;
     height: 567px;
     width: calc(50vw + #{$containerWidth * 0.5});
-    // height: calc((50vw + #{$containerWidth * 0.5}) * 0.4);
     background-image: none;
     background-color: #ffec7a;
     clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+
+    @include for-1024 {
+      top: 0;
+      height: 100%;
+      width: calc(100vw - 30px);
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+    
   }
 
-  @include for-1024 {
-    width: 85vw;
-    height: calc(85vw * 0.5);
-  }
+  
 }

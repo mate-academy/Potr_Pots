@@ -3,10 +3,18 @@
   padding-top: 70px;
   padding-bottom: 40px;
 
+  @include for-1024 {
+    padding-top: 30px;
+  }
+
   &__title {
     margin-bottom: 34px;
     @extend %h3;
     color: $text-dark-grey1;
+
+    @include for-768 {
+      text-align: center;
+    }
   }
 
   &__content {
@@ -21,10 +29,16 @@
 
   &__img {
     display: block;
+    max-width: 100%;
+    object-fit: cover;
   }
 
   &__info {
     max-width: 470px;
+
+    @include for-768 {
+      margin-top: 20px;
+    }
   }
 
   &__feature {
@@ -34,6 +48,10 @@
     @extend .content-text;
     color: $text-dark-grey1;
 
+    @include for-768 {
+      display: none;
+    }
+
     &:before {
       position: absolute;
       content: "*";
@@ -41,7 +59,7 @@
       top: 5px;
       @include font(24px, 24px);
       font-family: $title-bold;
-      color: #000;
+      color: $text-black;
     }
   }
 
@@ -74,7 +92,11 @@
     display: inline;
     width: 10px;
     height: 10px;
-    background-color: #000;
+    background-color: $text-black;
+
+    @include for-768 {
+      display: none;
+    }
 
     &:after {
       position: absolute;
@@ -91,17 +113,66 @@
   &__paragraph {
     @extend .content-text;
     max-width: 370px;
+
+    @include for-768 {
+      max-width: 100%;
+    }
   }
 
   &__col {
 
+    @include for-768 {
+      flex-direction: column;
+    }
+
     &--robust {
       @include flex(space-between, center);
-      margin-bottom: 41px;
+      margin-bottom: 80px;
       width: 100%;
 
       .for-whom__pic {
         margin-right: 15px;
+        margin-bottom: 0;
+
+        @include for-1024 {
+          max-width: 284px;
+        }
+
+        @include for-768 {
+          margin-right: 0;
+          max-width: 405px;
+        }
+      }
+
+      .for-whom__info {
+        @include for-1180 {
+          padding-left: 95px;
+          max-width: 500px;
+        }
+
+        @include for-1024 {
+          padding-left: 65px;
+          max-width: 405px;
+        }
+
+        @include for-768 {
+          padding-left: 58px;
+          max-width: 100%;
+        }
+      }
+
+      .for-whom__paragraph {
+        @include for-1024 {
+          max-width: 278px;
+        }
+
+        @include for-768 {
+          max-width: 100%;
+        }
+      }
+
+      .for-whom__number {
+        left: -40px;
       }
     }
 
@@ -113,8 +184,68 @@
       max-width: 500px;
       width: 100%;
 
+      @include for-1180 {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 0;
+        margin-bottom: 80px;
+        padding-top: 0;
+        max-width: 100%;
+      }
+
+      @include for-768 {
+        flex-direction: column;
+      }
+
+      .for-whom__pic {
+        @include for-1180 {
+          flex-grow: 1;
+          margin-bottom: 0;
+        }
+      }
+
+      .for-whom__img {
+        @include for-1180 {
+          margin: 0 auto;
+        }
+        
+        @include for-1024 {
+          margin-right: 0;
+        }
+      }
+
       .for-whom__info {
         margin-left: 100px;
+
+        @include for-1180 {
+          order: -1;
+          margin-left: 0;
+          margin-right: 15px;
+        }
+
+        @include for-1024 {
+          max-width: 340px;
+        }
+
+        @include for-768 {
+          order: 1;
+          margin-right: 0;
+          padding-left: 58px;
+          max-width: 100%;
+        }
+      }
+
+      .for-whom__feature {
+        @include for-1180 {
+          text-align: right;
+        }
+      }
+
+      .for-whom__feature:before {
+        @include for-1180 {
+          left: auto;
+          right: 80px;
+        }
       }
 
       .for-whom__number {
@@ -122,6 +253,10 @@
         display: block;
         margin-bottom: 18px;
         padding-left: 20px;
+
+        @include for-768 {
+          position: absolute;
+        }
 
         &:before {
           left: 10px;
@@ -134,12 +269,50 @@
       flex-direction: column;
       max-width: 470px;
 
-      .for-whom__text {
-        padding-left: 95px;
+      @include for-1180 {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      @include for-768 {
+        flex-direction: column;
+      }
+
+      .for-whom__pic {
+        @include for-1180 {
+          margin-bottom: 0;
+          margin-right: 15px;
+        }
+
+        @include for-1024 {
+          max-width: 284px;
+        }
+
+        @include for-768 {
+          max-width: 400px;
+        }
+      }
+
+      .for-whom__info {
+        @include for-1180 {
+          padding-left: 95px;
+          max-width: 500px;
+        }
+
+        @include for-1024 {
+          padding-left: 65px;
+          max-width: 405px;
+        }
+
+        @include for-768 {
+          max-width: 100%;
+        }
       }
 
       .for-whom__number {
-        left: -75px;
+        left: -45px;
       }
     }
   }
@@ -152,6 +325,10 @@
 
     &--bottom {
       bottom: 0;
+
+      @include for-1180 {
+        display: none;
+      }
     }
   }
 }

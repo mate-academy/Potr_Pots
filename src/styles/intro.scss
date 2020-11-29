@@ -1,9 +1,21 @@
 .intro {
-  padding-top: 70px;
-  padding-bottom: 78px;
+  padding: 70px 0 78px;
+
+  @include for-1024 {
+    padding: 30px 0;
+  }
+  
+  @include for-768 {
+    padding-top: 0;
+  }
 
   &__content {
     @include flex(space-between, flex-start);
+
+    @include for-768 {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__title {
@@ -16,6 +28,10 @@
     @include for-1024 {
       margin-left: 0;
     }
+
+    @include for-768 {
+      margin-bottom: 21px;
+    }
   }
 
   &__info {
@@ -24,6 +40,13 @@
     @include for-1024 {
       position: relative;
       margin-right: -65px;
+    }
+    
+    @include for-768 {
+      order: 1;
+      margin-right: 0;
+      width: 100%;
+      max-width: 500px;
     }
   }
 
@@ -34,6 +57,16 @@
   &__buying-right {
     @include flex($y: flex-end);
     flex-direction: column;
+
+    @include for-768 {
+      align-items: flex-start;
+    }
+  }
+
+  &__down-img {
+    margin-top: 11px;
+    margin-left: 2px;
+    animation: arrow-translate 1s ease-out infinite;
   }
 
   &__link-down {
@@ -43,15 +76,15 @@
     @include font(12px);
     font-family: $content-text-reg;
     color: $main-blue;
+    @include hover(opacity, 0.7);
 
     @include for-1024 {
       margin-top: 20px;
     }
-  }
 
-  &__down-img {
-    margin-top: 11px;
-    margin-left: 2px;
+    @include for-768 {
+      order: 1;
+    }
   }
 
   &__price {
@@ -61,6 +94,10 @@
     @include for-1024 {
       margin-right: 90px;
       margin-bottom: 36px;
+    }
+
+    @include for-768 {
+      margin: 0 0 20px;
     }
   }
 
@@ -87,6 +124,10 @@
 
     @include for-1024 {
       min-width: 300px;
+    }
+
+    @include for-768 {
+      margin-bottom: 25px;
     }
   }
 

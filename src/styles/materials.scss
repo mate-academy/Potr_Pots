@@ -2,6 +2,10 @@
   @include flex($x: center);
   padding-top: 240px;
 
+  @include for-768 {
+    padding-top: 15px;
+  }
+
   &__content-bg {
     position: relative;
     display: flex;
@@ -21,6 +25,17 @@
     @include font(139px, 100%, 0.12em);
     font-family: $title-bold;
     color: $main-blue;
+
+    @include for-1024 {
+      top: calc(-2em - 30px);
+      font-size: 80px;
+    }
+
+    @include for-768 {
+      position: static;
+      text-align: center;
+      font-size: 58px;
+    }
   }
 
   &__info {
@@ -29,11 +44,34 @@
 
   &__text {
     max-width: 470px;
+
+    @include for-1180 {
+      max-width: 370px;
+    }
+
+    @include for-1024 {
+      max-width: 340px;
+    }
+
+    @include for-768 {
+      max-width: 100%;
+    }
   }
 
   &__info-title {
     @include font(20px);
     color: $text-dark-grey1;
+  }
+
+  &__content {
+    @include for-1024 {
+      position: relative;
+      top: -84px;
+    }
+
+    @include for-768 {
+      display: none;
+    }
   }
 
   &__paragraph {
@@ -54,27 +92,47 @@
 
     &--1 {
       left: calc(27% - #{$labelWidth * 0.5});
-      bottom: -7%;
+      top: 80%;
+
+      @include for-1180 {
+        left: 15vw;
+      }
     }
 
     &--2 {
       left: calc(49% - #{$labelWidth * 0.5});
-      bottom: 17%;
+      top: 55%;
+
+      @include for-1180 {
+        left: 30vw;
+      }
     }
 
     &--3 {
       left: calc(60% - #{$labelWidth * 0.5});
-      bottom: -10%;
+      top: 82%;
+
+      @include for-1180 {
+        left: 50vw;
+      }
     }
 
     &--4 {
       left: calc(72% - #{$labelWidth * 0.5});
-      bottom: 8%;
+      top: 60%;
+
+      @include for-1180 {
+        left: 55vw;
+      }
     }
 
     &--5 {
       left: calc(90% - #{$labelWidth * 0.5});
-      bottom: 10%;
+      top: 62%;
+
+      @include for-1180 {
+        left: 80vw;
+      }
     }
   }
 
@@ -85,22 +143,21 @@
     background-color: rgba(0, 0, 0, 0.41);
     mix-blend-mode: normal;
     backdrop-filter: blur(34px);
-    transform: scale(0);
-    transform-origin: center -8px;
-    transition: transform 0.5s;
+
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.6s, opacity 0.3s;
   }
 
   &__to-show {
-    position: relative;
     margin-bottom: 6px;
     width: 51px;
     height: 51px;
     background-color: $red;
     border-radius: 50%;
     backdrop-filter: blur(12px);
-    @include hover(background-color, rgba(36, 35, 35, 0.75));
-    @include hover(opacity, 0.65);
-    transition: background-color 0.3s , opacity 0.3s;
+    transition: opacity 0.3s, background-color 0.3s;
     cursor: pointer;
 
     &:before {
@@ -127,13 +184,17 @@
     }
 
     &:hover {
+      background-color: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
 
       &:after {
         height: 0;
       }
 
       & + .materials__more {
-        transform: scale(1);
+        max-height: 500px;
+        opacity: 1;
+        transition: max-height 0, opacity 0.3s;
       }
     }
   }

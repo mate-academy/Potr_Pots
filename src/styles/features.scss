@@ -1,22 +1,47 @@
 .features {
   padding: 112px 0 50px;
 
+  @include for-1024 {
+    padding: 90px 0 75px;
+  }
+
+  @include for-768 {
+    padding-bottom: 45px;
+  }
+
   &__title {
     margin-bottom: 77px;
     @extend %h2;
     @include strokedText;
+
+    @include for-1024 {
+      margin-bottom: 52px;
+    }
+
+    @include for-768 {
+      text-align: center;
+    }
   }
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     grid-gap: 30px;
+
+    @include for-1024 {
+      grid-gap: 20px;
+    }
+
+    @include for-768 {
+      grid-template-columns: repeat(auto-fit, 370px);
+      justify-content: center;
+      grid-gap: 67px;
+    }
   }
 
   &__img {
     display: block;
-    margin-bottom: 36px;
-    max-height: 370px;
+    margin: 0 auto 36px;
     @include object-fit(cover);
   }
 
@@ -24,10 +49,26 @@
     margin-bottom: 22px;
     @extend %h4;
     text-align: center;
+
+    @include for-1024 {
+      text-align: left;
+    }
+
+    @include for-768 {
+      text-align: center;
+    }
   }
 
   &__info {
     @extend .content-text;
     text-align: center;
+
+    @include for-1024 {
+      text-align: left;
+    }
+
+    @include for-768 {
+      text-align: center;
+    }
   }
 }

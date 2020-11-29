@@ -1,5 +1,5 @@
 .footer {
-  padding: 54px 0 64px;
+  padding: 54px 0 34px;
 
   &__content {
     @include flex($x: space-between);
@@ -9,39 +9,58 @@
     margin-bottom: 11px;
     @extend %h4;
     letter-spacing: $title-letter-spacing;
-    color: #000;
+    color: $text-black;
   }
 
   &__address-info {
     @extend .content-text;
-    color: #000;
+    color: $text-black;
   }
 
   &__public {
     width: 100%;
-    max-width: 230px;
+    max-width: 160px;
     text-align: center;
   }
 
   &__public-list {
-    margin-bottom: 84px;
+    margin-bottom: 14px;
     @include flex($x: space-between);
   }
 
+  &__public-link {
+    display: block;
+    @include hover(transform, scale(1.3));
+   
+  }
+
+  &__ico {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
   &__logo {
+    display: inline-block;
     @extend %h3;
-    color: #000;
+    color: $text-black;
+    transform-origin: center 80%;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scaleY(0.6) scaleX(1.2);
+    }
   }
 
   &__about-title {
     margin-bottom: 11px;
     @extend %h4;
     letter-spacing: $title-letter-spacing;
-    color: #000;
+    color: $text-black;
   }
 
   &__copyright {
     @extend .content-text;
-    color: #000;
+    color: $text-black;
   }
 }

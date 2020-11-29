@@ -2,6 +2,10 @@
   position: relative;
   padding: 138px 0 162px;
 
+  @include for-1024 {
+    padding: 18px 0 100px;
+  }
+
   &__container {
     position: relative;
   }
@@ -22,7 +26,11 @@
   &__intro {
     margin-bottom: 27px;
     @extend .content-text;
-    color: #000;
+    color: $text-black;
+
+    @include for-1024 {
+      max-width: 300px;
+    }
   }
 
   &__content {
@@ -47,6 +55,10 @@
     @include font(24px);
     font-family: $content-text-reg;
     font-weight: 400;
+
+    @include for-1024 {
+      margin-bottom: 14px;
+    }
   }
 
   &__field {
@@ -69,7 +81,11 @@
     }
 
     &:focus {
-      border-left-width: 3px;
+      border-left-width: 5px;
+    }
+
+    @include for-1024 {
+      margin-bottom: 25px;
     }
   }
 
@@ -83,11 +99,22 @@
     background-color: transparent;
     border: 0;
     border-bottom: 1px dotted $text-dark-grey1;
+    @include hover(opacity, 0.6);
+
+    @include for-1024 {
+      margin-top: 35px;
+    }
   }
 
   &__data {
     padding-top: 8px;
     max-width: 270px;
+
+    @include for-1024 {
+      margin-top: -60px;
+      margin-right: 25px;
+      max-width: 205px;
+    }
   }
 
   &__data-item {
@@ -104,6 +131,11 @@
 
   &__data-link {
     @extend .content-text;
-    color: #000;
+    color: $text-black;
+    transition: text-shadow 0.5s;
+
+    &:hover {
+      text-shadow: 0 0 1px #000;
+    }
   }
 }

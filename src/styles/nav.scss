@@ -1,8 +1,23 @@
 .nav {
   padding-right: 10px;
 
+  @include for-1024 {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: -101%;
+    padding: 138px 0 30px;
+    height: 100vh;
+    overflow: auto;
+    background-color: $main-blue;
+  }
+
   &__list {
     @include flex(space-between, center);
+
+    @include for-1024 {
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -14,24 +29,84 @@
 
     &--basket {
       margin-left: 262px;
+
+      @include for-1024 {
+        order: -1;
+        margin-left: 0;
+      }
     }
 
     @include for-1024 {
-      margin-left: 35px;
-
-      &--basket {
-        margin-left: 100px;
-      }
+      margin-left: 0;
     }
   }
 
   &__link {
+    position: relative;
     @include flex(center, center);
     height: 36px;
     @extend .content-text;
+
+    @include for-1024 {
+      justify-content: flex-start;
+      padding-left: 80px;
+      width: 230px;
+      color: $light-grey;
+    }
+
+    &-img {
+      @include object-fit(contain, 30px, 30px);
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 2px;
+      background-color: $main-blue;
+      transition: width 0.3s;
+    }
+
+    &:before {
+      left: 0;
+      top: 0;
+    }
+
+    &:after {
+      right: 0;
+      bottom: 0;
+    }
+
+    &:hover:before,
+    &:hover:after {
+      width: 100%;
+    }
+
+    &--basket {
+
+      &:before,
+      &:after {
+        display: none;
+      }
+
+      &:hover {
+        animation: basket-shake 0.8s cubic-bezier(0.35, 0.1, 0.2, 1) both;
+      }
+
+      .nav__link-img {
+        @include for-1024 {
+          display: none;
+        }
+      }
+    }
   }
 
-  &__link-img {
-    @include object-fit(contain, 30px, 30px);
+  &__basket-name {
+    display: none;
+
+    @include for-1024 {
+      display: block;
+    }
   }
 }

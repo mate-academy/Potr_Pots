@@ -1,17 +1,34 @@
 .team {
   position: relative;
   padding: 75px 0 170px;
-  overflow: hidden;
+
+  @include for-1024 {
+    padding: 75px 0 100px;
+  }
+
+  @include for-768 {
+    padding: 45px 0 85px;
+  }
 
   &__title {
     @extend %h2;
     color: $text-dark-grey1;
+
+    @include for-768 {
+      text-align: center;
+    }
   }
 
   &__content {
     position: relative;
     display: flex;
     padding-top: 155px;
+
+    @include for-768 {
+      flex-direction: column;
+      align-items: center;
+      padding-top: 61px;
+    }
   }
 
   &__large-text {
@@ -19,26 +36,67 @@
     z-index: 1;
     content: "";
     display: inline-block;
-    @include font(288px, 120px, $letter-spacing: $title-letter-spacing);
+    @include font(288px, 100%, $letter-spacing: $title-letter-spacing);
     @include strokedText;
     font-family: $title-bold;
-    text-align: right;
+
+    @include for-1024 {
+      font-size: 232px;
+    }
+
+    @include for-768 {
+      display: none;
+    }
 
     &--top {
       left: -61px;
-      top: 107px;
+      top: 30px;
+
+      @include for-1024 {
+        top: 0;
+      }
     }
 
     &--bottom {
-      bottom: -140px;
-      left: calc(50% + 116px);
+      bottom: -220px;
+      right: -170px;
     }
+
+    @include for-1440 {
+      &--top {
+        left: 0;
+      }
+  
+      &--bottom {
+        right: -45px;
+      }
+    }
+
+    @include for-1024 {
+      &--bottom {
+        bottom: -90px;
+      }
+    }
+
   }
 
   &__info {
     margin-right: 57px;
     padding-top: 140px;
     max-width: 336px;
+
+    @include for-1024 {
+      margin-right: 37px;
+      padding-top: 50px;
+    }
+
+    @include for-768 {
+      order: 1;
+      margin-right: 0;
+      margin-top: 35px;
+      padding-top: 0;
+      max-width: 100%;
+    }
   }
 
   &__paragraph {
@@ -49,6 +107,14 @@
   &__pic {
     max-width: 677px;
     max-height: 507px;
+
+    @include for-1024 {
+      max-width: 500px;
+    }
+
+    @include for-768 {
+      max-width: 100%;
+    }
   }
 
   &__img {

@@ -1,6 +1,14 @@
 .header {
   padding: 20px 0 15px;
 
+  @include for-1024 {
+    padding-top: 29px;
+  }
+
+  @include for-768 {
+    padding-top: 16px;
+  }
+
   &__content {
     @include flex(space-between, center);
   }
@@ -9,5 +17,39 @@
     @include font(36px, 36px, 0.06em);
     font-family: $title-bold;
     color: $text-dark-grey1;
+    transform-origin: center 80%;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scaleY(0.6) scaleX(1.2);
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include for-1024 {
+      position: fixed;
+      z-index: 2;
+      right: 34px;
+      top: 32px;
+
+      @include flex($y: center);
+      height: 26px;
+      width: 30px;
+      cursor: pointer;
+      @include hover(opacity, 0.6);
+    }
+
+    @include for-768 {
+      top: 19px;
+    }
+  }
+
+  &__burger-stripe {
+    height: 4px;
+    width: 100%;
+    background-color: $text-dark-grey1;
+    box-shadow: 0 7px 0 0 $text-dark-grey1, 0 -7px 0 0 $text-dark-grey1;
   }
 }

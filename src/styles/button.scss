@@ -7,20 +7,38 @@
   text-transform: uppercase;
   color: #121212;
   border: 1px solid $main-blue;
-  @include hover(color, #fff);
-  @include hover(background-color, $main-blue);
+  transition: color 0.3s, background-color 0.3s;
+
+  @include for-768 {
+    margin-right: 0;
+    background-color: $bright-yellow;
+    border-color: $text-dark-grey1;
+  }
 
   &__arrow {
     margin-left: 20px;
     width: 26px;
     height: 8px;
     background: url("../images/ico-arrow-black.svg") center no-repeat;
+    transition: margin 0.3s, background-image 0.3s;
   }
 
   &:hover {
+    background-color: $main-blue;
+    color: #fff;
+
+    @include for-768 {
+      background-color: #fff;
+      color: #121212;
+    }
 
     .button__arrow {
+      margin-left: 30px;
       background-image: url("../images/ico-arrow-white.svg");
+
+      @include for-768 {
+        background-image: url("../images/ico-arrow-black.svg");
+      }
     }
   }
 
@@ -30,36 +48,40 @@
     border-radius: 4px;
     overflow: hidden;
 
-    &:after {
-      font-weight: 200;
-      top: -30px;
-      left: -20px;
-    }
-
     &:before {
       position: absolute;
       content: "";
       top: 0;
       left: 0;
-      height: 400%;
+      height: 600%;
       width: 100%;
       pointer-events: none;
       opacity: 0.6;
 
       background: radial-gradient(
-        circle at 20% 35%, transparent 0, transparent 3px, 
+        circle at 20% 15%, transparent 0, transparent 3px, 
         $light-grey 4px, $light-grey 5px, transparent 6px),
         radial-gradient(
           circle at 75% 44%, transparent 0, transparent 2px,
           $light-grey 3px, $light-grey 4px, transparent 4px),
         radial-gradient(
-            circle at 35% 14%, transparent 0, transparent 2px,
+            circle at 35% 37%, transparent 0, transparent 2px,
             $light-grey 3px, $light-grey 4px, transparent 4px),
         radial-gradient(
-              circle at 46% 52%, transparent 0, transparent 4px,
-              $light-grey 5px, $light-grey 6px, transparent 6px);
+              circle at 46% 72%, transparent 0, transparent 3px,
+              $light-grey 4px, $light-grey 6px, transparent 6px),
+        radial-gradient(
+                circle at 86% 65%, transparent 0, transparent 4px,
+                $light-grey 5px, $light-grey 6px, transparent 6px),
+        radial-gradient(
+                  circle at 62% 78%, transparent 0, transparent 2px,
+                  $light-grey 3px, $light-grey 4px, transparent 5px);
 
       animation: bubbles 5s linear infinite both;
+
+      @include for-768 {
+        display: none;
+      }
     }
   }
 }
