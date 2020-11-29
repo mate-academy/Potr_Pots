@@ -1,6 +1,7 @@
 .materials {
   width: 260px;
   margin: 0 auto;
+  position: relative;
 
   @media screen and (min-width: 766px) {
     width: 706px;
@@ -12,23 +13,264 @@
 
   &__name {
     width: 268px;
-    height: 199px;
+    margin-bottom: 35px;
 
     font-family: "Bebas Neue Bold", cursive;
+    font-weight: bold;
     font-size: 58px;
     line-height: 58px;
     letter-spacing: 0.15em;
 
     color: #03839e;
 
+    @media screen and (min-width: 766px) {
+      width: 532px;
+      font-size: 80px;
+      line-height: 80px;
+      letter-spacing: 0.12em;
+    }
+
     @media screen and (min-width: 1278px) {
       width: 880px;
-      height: 289px;
-
       font-size: 139px;
       line-height: 139px;
       letter-spacing: 0.12em;
     }
 
   }
+
+  &__photo1 {
+    height: 397px;
+    margin-left: -30px;
+    position: absolute;
+    z-index: -1;
+    top: 110px;
+    background: linear-gradient(180deg, #f8f8f8 0%,rgba(255, 255, 255, 0) 31%);
+
+    @media screen and (min-width: 766px) {
+      display: none;
+    }
+  }
+
+  &__photo2 {
+    display: none;
+
+    @media screen and (min-width: 766px) {
+      position: relative;
+      display: block;
+      z-index: -1;
+      width: 768px;
+      height: 577px;
+      margin-left: -30px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      width: 1440px;
+      height: 1082px;
+      margin-top: -155px;
+      margin-left: -110px;
+    }
+
+  }
+
+  &__ecology {
+    display: none;
+  }
+
+  &__button1,
+  &__button2,
+  &__button3,
+  &__button4,
+  &__button5 {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #eb5757;
+    border-radius: 50%;
+    font-family: "Proxima Nova Regular", cursive;
+    font-size: 20px;
+    color: #e0e0e0;
+  }
+
+  &__button1 {
+    position: relative;
+    top: 40px;
+
+    @media screen and (min-width: 766px) {
+      top: -160px;
+      left: 60px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -200px;
+      left: 230px;
+    }
+  }
+
+  &__button2 {
+    position: relative;
+    top: 65px;
+    left: 220px;
+
+    @media screen and (min-width: 766px) {
+      top: -325px;
+      left: 210px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -525px;
+      left: 510px;
+    }
+  }
+
+  &__button3 {
+    position: relative;
+    top: -5px;
+    left: 120px;
+    transform: rotate(71deg);
+    background: rgba(36, 35, 35, 0.75);
+    opacity: 0.65;
+    backdrop-filter: blur(12px);
+
+    @media screen and (min-width: 766px) {
+      top: -470px;
+      left: 530px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -530px;
+      left: 1060px;
+    }
+  }
+
+  &__button4 {
+    position: absolute;
+
+    @media screen and (min-width: 766px) {
+      top: 570px;
+      left: 430px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: 900px;
+      left: 810px;
+    }
+  }
+
+  &__button5 {
+    position: absolute;
+
+    @media screen and (min-width: 766px) {
+      top: 630px;
+      left: 310px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: 1070px;
+      left: 650px;
+    }
+  }
+
+  &__black-box {
+    margin-left: -21px;
+    margin-bottom: 76px;
+    width: 302px;
+    height: 254px;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+    padding: 28px 44px 58px 45px;
+
+    @media screen and (min-width: 766px) {
+      position: absolute;
+      top: 465px;
+      right: 0;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: 865px;
+    }
+
+  }
+}
+
+@media screen and (min-width: 766px) {
+  .materials__ecology {
+    display: block;
+    position: absolute;
+    top: 80px;
+    right: 0;
+
+    @media screen and (min-width: 1278px) {
+      top: 160px;
+    }
+
+  }
+
+  .materials__ecology-name {
+    width: 340px;
+    height: 30px;
+    font-family: "Proxima Nova Regular", cursive;
+    font-size: 20px;
+    line-height: 150%;
+    color: #4f4f4f;
+
+    @media screen and (min-width: 1278px) {
+      width: 221px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+
+  .material__ecology-text {
+    margin-top: 10px;
+    width: 340px;
+    height: 192px;
+    left: 394px;
+    top: 3736px;
+
+    font-family: "Proxima Nova Regular", cursive;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+
+    @media screen and (min-width: 1278px) {
+      width: 470px;
+      height: 144px;
+    }
+  }
+}
+
+.black-box {
+  &__text {
+    width: 213px;
+    height: 168px;
+    left: 54px;
+    top: 5326px;
+    font-family: "Proxima Nova Regular", cursive;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f8f8f8;
+    margin-bottom: 11px;
+  }
+
+  &__rhomb {
+    display: flex;
+    width: 80px;
+    height: 20px;
+    margin: 0 auto;
+  }
+}
+
+.rhomb {
+  width: 30px;
+  background: url(../images/rhomb.svg) no-repeat center;
+}
+
+.rhomb:first-child {
+  background: url(../images/active-rhomb.svg) no-repeat center;
 }
