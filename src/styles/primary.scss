@@ -15,12 +15,13 @@
     grid-template-columns: 505px 505px;
     gap: 0 70px;
     justify-content: end;
+    margin-bottom: -100px;
   }
 
   &__photo {
 
-    width: 100%;
-    height: 307px;
+    width: 320px;
+    height: 320px;
     margin: 15px 0 25px -30px;
     object-fit: cover;
 
@@ -35,8 +36,9 @@
     @media screen and (min-width: 1278px) {
       justify-self: end;
       object-fit: cover;
-      // width: 500px;
-      // height: 500px;
+      width: 500px;
+      height: 500px;
+      left: 0;
     }
   }
 
@@ -68,13 +70,23 @@
       justify-self: baseline;
       align-self: center;
     }
+
+    @media screen and (min-width: 1278px) {
+      width: 501px;
+      height: 266px;
+      top: -100px;
+    }
   }
 
   &__price {
     position: relative;
     @media screen and (min-width: 766px) {
-      top: -60px;
+      top: -90px;
       left: 30px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -250px;
     }
 
     &-number {
@@ -97,10 +109,13 @@
 
     &-button {
       position: relative;
-      font-family: "Proxima Nova Regular", cursive;
+      font-family: "Proxima Nova Semibold", cursive;
       font-size: 14px;
       text-align: center;
       line-height: 48px;
+      text-transform: uppercase;
+
+      color: #121212;
       margin-top: 20px;
       margin-bottom: 100px;
       background: #ffe339;
@@ -111,15 +126,16 @@
       &::after {
         content: "";
         position: absolute;
-        bottom: 21px;
+        bottom: 18px;
         right: 50px;
-        height: 1px;
-        width: 25px;
-        background-color: black;
+        height: 10px;
+        width: 30px;
+        background: url(../images/arrow-1.svg) no-repeat center;
       }
 
       @media screen and (min-width: 766px) {
-        top: 45px;
+        top: 25px;
+        margin-bottom: 0;
       }
     }
 
