@@ -4,17 +4,17 @@
   width: 260px;
   height: 36px;
   margin: 15px auto 30px;
-
-  @media screen and (min-width: 766px) {
-    width: 706px;
-  }
+  position: relative;
 
   &__list {
     display: none;
   }
 
+  @media screen and (min-width: 766px) {
+    width: 706px;
+  }
+
   @media screen and (min-width: 1278px) {
-    // width: 1180px;
     width: 1218px;
 
     &__list {
@@ -37,6 +37,25 @@
       text-decoration: none;
       color: #4f4f4f;
       margin-right: 64px;
+    }
+  }
+
+  &__back-photo {
+    display: none;
+
+    @media screen and (min-width: 766px) {
+      display: block;
+      position: absolute;
+      left: -31px;
+      top: -15px;
+      z-index: -1;
+
+    }
+
+    @media screen and (min-width: 1278px) {
+      width: 1400px;
+      height: 467px;
+      margin-left: -130px;
     }
   }
 
