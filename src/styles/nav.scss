@@ -10,6 +10,13 @@
     height: 100vh;
     overflow: auto;
     background-color: $main-blue;
+    transition: right 0.3s;
+  }
+
+  &--active {
+    @include for-1024 {
+      right: 0;
+    }
   }
 
   &__list {
@@ -52,6 +59,7 @@
       padding-left: 80px;
       width: 230px;
       color: $light-grey;
+      @include hover(opacity, 0.6);
     }
 
     &-img {
@@ -107,6 +115,42 @@
 
     @include for-1024 {
       display: block;
+    }
+  }
+
+  &__close {
+    display: none;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    writing-mode: vertical-rl;
+    cursor: pointer;
+    @include hover(opacity, 0.6);
+
+    @include for-1024 {
+      @include flex($y: center);
+
+      @include for-h640 {
+        top: 20px;
+      }
+    }
+  }
+
+  &__close-text {
+    @include flex($y: center);
+    @include font(12px);
+    transform: rotate(180deg);
+    text-transform: uppercase;
+    color: $light-grey;
+
+    &:before {
+      content: "";
+      display: block;
+      margin-bottom: 18px;
+      margin-top: 5px;
+      width: 1px;
+      height: 44px;
+      background-color: $light-grey;
     }
   }
 }

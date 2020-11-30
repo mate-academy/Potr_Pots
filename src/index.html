@@ -12,26 +12,26 @@
       <div class="header__content container">
         <a class="header__logo" href="#">Potr Pots</a>
 
-        <nav class="nav">
+        <nav id="navMenu" class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a class="nav__link" href="#">Features</a>
+              <a class="nav__link" href="#features">Features</a>
             </li>
 
             <li class="nav__item">
-              <a class="nav__link" href="#">About us</a>
+              <a class="nav__link" href="#about-us">About us</a>
             </li>
 
             <li class="nav__item">
-              <a class="nav__link" href="#">Materials</a>
+              <a class="nav__link" href="#materials">Materials</a>
             </li>
 
             <li class="nav__item">
-              <a class="nav__link" href="#">Message us</a>
+              <a class="nav__link" href="#contacts">Message us</a>
             </li>
 
             <li class="nav__item nav__item--basket">
-              <a class="nav__link nav__link--basket" href="#">
+              <a class="nav__link nav__link--basket" href="#intro">
                 <span class="nav__basket-name">Basket</span>
                 <img
                   class="nav__link-img"
@@ -41,9 +41,18 @@
               </a>
             </li>
           </ul>
+
+          <div class="nav__close js-nav-hide">
+            <span class="nav__close-text">Close</span>
+            <img
+              class="nav__close-img"
+              src="images/ico-menu-cross.svg"
+              alt="close nav"
+            >
+          </div>
         </nav>
 
-        <div class="header__burger">
+        <div class="header__burger js-nav-show">
           <span class="header__burger-stripe"></span>
         </div>
       </div>
@@ -52,7 +61,7 @@
     <main class="main">
       <div class="bg-shape bg-shape--main"></div>
 
-      <section class="intro">
+      <section id="intro" class="intro">
         <div class="intro__content container">
           <div class="intro__info">
             <h1 class="intro__title">
@@ -185,7 +194,7 @@
         </div>
       </section>
 
-      <section class="features">
+      <section id="features" class="features">
         <div class=" container">
           <h2 class="features__title">
             <strong class="title-important">POTR Pots </strong>
@@ -232,7 +241,7 @@
         </div>
       </section>
 
-      <section class="team">
+      <section id="about-us" class="team">
         <div class="bg-shape bg-shape--team"></div>
 
         <div class="container">
@@ -262,7 +271,7 @@
         </div>
       </section>
 
-      <section class="materials main__materials">
+      <section id="materials" class="materials main__materials">
         <div class="materials__content-bg">
           <div class="container">
             <h2 class="materials__title">Materials and Features</h2>
@@ -491,7 +500,7 @@
         </div>
       </section>
 
-      <section class="contacts">
+      <section id="contacts" class="contacts">
         <div class="bg-shape bg-shape--contacts"></div>
 
         <div class="contacts__container container">
@@ -610,7 +619,7 @@
             </li>
           </ul>
 
-          <a class="footer__logo" href="#">Potrpots</a>
+          <a class="footer__logo" href="#intro">Potrpots</a>
         </div>
 
         <div class="footer__about">
@@ -620,13 +629,8 @@
       </div>
     </footer>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script>
-      if(document.documentElement.clientWidth > 1024) {
-        const scene = document.getElementById("jsParallaxScene");
-        const parallax = new Parallax(scene);
-      }
-    </script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
