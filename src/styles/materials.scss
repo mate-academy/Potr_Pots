@@ -41,6 +41,11 @@
       font-size: 58px;
     }
 
+    @include for-640 {
+      position: absolute;
+      top: 0;
+    }
+
     @include for-480 {
       text-align: left;
       font-size: 56px;
@@ -98,13 +103,29 @@
     transform: translateX(-50%);
     $labelWidth: 303px;
     width: $labelWidth;
+    pointer-events: none;
+
+    @include for-640 {
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      z-index: 4;
+    }
 
     &--1 {
       left: calc(27% - #{$labelWidth * 0.5});
       top: 80%;
 
       @include for-1180 {
-        left: 15vw;
+        left: 20vw;
+      }
+
+      @include for-640 {
+        top: 0;
+        left: 50%;
       }
     }
 
@@ -115,6 +136,11 @@
       @include for-1180 {
         left: 30vw;
       }
+
+      @include for-640 {
+        top: 0;
+        left: 50%;
+      }
     }
 
     &--3 {
@@ -123,6 +149,11 @@
 
       @include for-1180 {
         left: 50vw;
+      }
+
+      @include for-640 {
+        top: 0;
+        left: 50%;
       }
     }
 
@@ -133,6 +164,11 @@
       @include for-1180 {
         left: 55vw;
       }
+
+      @include for-640 {
+        top: 0;
+        left: 50%;
+      }
     }
 
     &--5 {
@@ -142,11 +178,19 @@
       @include for-1180 {
         left: 80vw;
       }
+
+      @include for-640 {
+        top: 0;
+        left: 50%;
+      }
     }
   }
 
   &__more {
-    padding: 35px 45px;
+    position: absolute;
+    transform: translateY(56px);
+
+    padding: 0 45px;
     @extend .content-text;
     color: $light-grey;
     background-color: rgba(0, 0, 0, 0.41);
@@ -156,10 +200,15 @@
     overflow: hidden;
     max-height: 0;
     opacity: 0;
-    transition: max-height 0.6s, opacity 0.3s;
+    transition: padding 0.3s max-height 0.6s, opacity 0.3s;
+
+    @include for-640 {
+      max-width: 300px;
+    }
   }
 
   &__to-show {
+    position: absolute;
     margin-bottom: 6px;
     width: 51px;
     height: 51px;
@@ -167,7 +216,8 @@
     border-radius: 50%;
     backdrop-filter: blur(12px);
     transition: opacity 0.3s, background-color 0.3s;
-    // cursor: pointer;
+    pointer-events: all;
+    cursor: pointer;
 
     &:before {
       position: absolute;
@@ -192,19 +242,61 @@
       transition: height 0.5s;
     }
 
-    // &:hover {
-    //   background-color: rgba(36, 35, 35, 0.75);
-    //   opacity: 0.65;
+    &:hover {
+      background-color: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
 
-    //   &:after {
-    //     height: 0;
-    //   }
+      &:after {
+        height: 0;
+      }
 
-    //   & + .materials__more {
-    //     max-height: 500px;
-    //     opacity: 1;
-    //     transition: max-height 0, opacity 0.3s;
-    //   }
-    // }
+      & + .materials__more {
+        padding: 35px 45px;
+        max-height: 500px;
+        opacity: 1;
+        transition: max-height 0.2s, opacity 0.3s;
+      }
+    }
+  }
+
+  &__label--1 .materials__to-show {
+    @include for-640 {
+      left: 15%;
+      top: auto;
+      bottom: 30vw;
+    }
+  }
+
+  &__label--2 .materials__to-show {
+    @include for-640 {
+      left: 35%;
+      top: auto;
+      bottom: 15vw;
+    }
+  }
+
+  &__label--3 .materials__to-show {
+    @include for-640 {
+      left: 55%;
+      top: auto;
+      bottom: 5vw;
+    }
+  
+  }
+
+  &__label--4 .materials__to-show {
+    @include for-640 {
+      left: 70%;
+      top: auto;
+      bottom: 30vw;
+    }
+  }
+
+  &__label--5 .materials__to-show {
+    @include for-640 {
+      left: 80%;
+      top: auto;
+      bottom: 10vw;
+    }
   }
 }
