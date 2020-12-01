@@ -1,15 +1,15 @@
 .questions {
-  width: 260px;
+  width: $WidthForSmallView;
   margin: 0 auto;
   position: relative;
 
   @media screen and (min-width: 766px) {
-    width: 706px;
+    width: $WidthForMiddleView;
     display: flex;
   }
 
   @media screen and (min-width: 1278px) {
-    width: 1218px;
+    width: $WidthForMaxView;
     margin-top: 310px;
   }
 
@@ -39,7 +39,7 @@
 
     @media screen and (min-width: 1278px) {
       background: url(../images/question4.png) no-repeat center;
-      width: 1218px;
+      width: $WidthForMaxView;
       margin-left: -70px;
     }
   }
@@ -67,14 +67,14 @@
     width: 260px;
     height: 108px;
 
-    font-family: "Bebas Neue Bold", cursive;
+    font-family: $BebasBold;
     font-size: 36px;
     line-height: 150%;
 
     letter-spacing: 0.15em;
     text-transform: uppercase;
 
-    color: #000;
+    color: $GeneralBlack;
 
     @media screen and (min-width: 766px) {
       width: 350px;
@@ -88,10 +88,10 @@
     margin-bottom: 40px;
     width: 260px;
     height: 48px;
-    font-family: "Proxima Nova Regular", cursive;
+    font-family: $ProximaRegular;
     font-size: 16px;
     line-height: 150%;
-    color: #000;
+    color: $GeneralBlack;
 
     @media screen and (min-width: 766px) {
       margin-top: 24px;
@@ -105,11 +105,11 @@
     margin-bottom: 23px;
     width: 126px;
     height: 36px;
-    font-family: "Proxima Nova Regular", cursive;
+    font-family: $ProximaRegular;
     font-size: 24px;
     line-height: 150%;
 
-    color: #000;
+    color: $GeneralBlack;
   }
 
   &__form {
@@ -121,10 +121,10 @@
       height: 24px;
 
       width: 260px;
-      font-family: "Proxima Nova Regular", cursive;
+      font-family: $ProximaRegular;
       font-size: 16px;
       line-height: 150%;
-      color: #4f4f4f;
+      color: $Grey;
       background: none;
       margin-bottom: 20px;
       border: none;
@@ -145,10 +145,11 @@
       margin-bottom: 100px;
       border: none;
       text-decoration: underline;
+      cursor: pointer;
 
       &:hover {
-        color: #eb5757;
-        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+        color: $MainRed;
+        box-shadow: $HoverShadow;
       }
     }
 
@@ -156,7 +157,7 @@
     &-email,
     &-message {
       &:hover {
-        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+        box-shadow: $HoverShadow;
       }
     }
   }
@@ -177,7 +178,7 @@
     height: 29px;
     left: 30px;
 
-    font-family: "Proxima Nova Regular", cursive;
+    font-family: $ProximaRegular;
     font-size: 24px;
     line-height: 150%;
 
@@ -192,18 +193,18 @@
     width: 143px;
     height: 24px;
 
-    font-family: "Proxima Nova Regular", cursive;
+    font-family: $ProximaRegular;
     font-size: 16px;
     line-height: 150%;
 
-    color: #000;
+    color: $GeneralBlack;
 
     text-decoration: none;
 
     transition: box-shadow 0.5s;
 
     &:hover {
-      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: $HoverShadow;
     }
   }
 
@@ -213,10 +214,10 @@
 
     width: 258px;
     height: 48px;
-    font-family: "Proxima Nova Regular", cursive;
+    font-family: $ProximaRegular;
     font-size: 16px;
     line-height: 150%;
 
-    color: #000;
+    color: $GeneralBlack;
   }
 }

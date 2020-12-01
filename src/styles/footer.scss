@@ -1,15 +1,15 @@
 .footer {
-  width: 260px;
+  width: $WidthForSmallView;
   margin: 91px auto 0;
 
   @media screen and (min-width: 766px) {
-    width: 706px;
+    width: $WidthForMiddleView;
     display: flex;
     justify-content: space-between;
   }
 
   @media screen and (min-width: 1278px) {
-    width: 1218px;
+    width: $WidthForMaxView;
     height: 296px;
     align-items: center;
   }
@@ -25,39 +25,46 @@
         width: 88px;
         height: 24px;
 
-        font-family: "Bebas Neue Bold", cursive;
+        font-family: $BebasBold;
         font-size: 24px;
         line-height: 24px;
 
         letter-spacing: 0.15em;
         text-transform: uppercase;
 
-        color: #000;
+        color: $GeneralBlack;
       }
 
       &-adress {
         width: 140px;
         height: 72px;
-        font-family: "Proxima Nova Regular", cursive;
+        font-family: $ProximaRegular;
         font-size: 16px;
         line-height: 150%;
-        color: #000;
+        color: $GeneralBlack;
       }
     }
   }
 
   &__title {
+    display: block;
     width: 260px;
     height: 54px;
 
-    font-family: "Bebas Neue Bold", cursive;
+    font-family: $BebasBold;
     font-size: 36px;
     line-height: 150%;
     text-align: center;
     letter-spacing: 0.15em;
+    text-decoration: none;
     text-transform: uppercase;
 
-    color: #000;
+    color: $GeneralBlack;
+    transition: box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: $HoverShadow;
+    }
   }
 
   &__right {
@@ -69,14 +76,14 @@
         display: block;
         width: 100px;
         height: 24px;
-        font-family: "Bebas Neue Bold", cursive;
+        font-family: $BebasBold;
         font-size: 24px;
         text-align: center;
         line-height: 24px;
         letter-spacing: 0.15em;
         text-transform: uppercase;
 
-        color: #000;
+        color: $GeneralBlack;
       }
     }
   }
@@ -84,12 +91,12 @@
   &__right-copyright {
     width: 260px;
     height: 24px;
-    font-family: "Proxima Nova Regular", cursive;
+    font-family: $ProximaRegular;
     font-size: 16px;
     line-height: 150%;
     text-align: center;
 
-    color: #000;
+    color: $GeneralBlack;
 
     @media screen and (min-width: 766px) {
       width: 124px;
@@ -122,7 +129,7 @@
     transition: box-shadow 0.5s;
 
     &:hover {
-      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: $HoverShadow;
     }
   }
 }

@@ -1,7 +1,7 @@
 .nav {
   display: flex;
   justify-content: space-between;
-  width: 260px;
+  width: $WidthForSmallView;
   height: 36px;
   margin: 15px auto 30px;
   position: relative;
@@ -11,11 +11,11 @@
   }
 
   @media screen and (min-width: 766px) {
-    min-width: 706px;
+    min-width: $WidthForMiddleView;
   }
 
   @media screen and (min-width: 1278px) {
-    width: 1218px;
+    width: $WidthForMaxView;
 
     &__list {
       display: flex;
@@ -49,7 +49,7 @@
     }
 
     &__link:hover {
-      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: $HoverShadow;
     }
   }
 
@@ -74,7 +74,7 @@
 
   &__name {
     display: block;
-    font-family: "Bebas Neue", cursive;
+    font-family: $BebasRegular;
     font-size: 32px;
     line-height: 36px;
     color: #333;
@@ -82,7 +82,7 @@
     transition: box-shadow 0.5s;
 
     &:hover {
-      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: $HoverShadow;
     }
   }
 
@@ -98,13 +98,87 @@
     }
 
     .burger-open {
-      z-index: 1;
+      z-index: 2;
       top: -15px;
       right: -30px;
       position: absolute;
-      width: 231px;
-      height: 568px;
+      padding-top: 140px;
+      width: 85vw;
+      height: 100vh;
       visibility: hidden;
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        width: 85vw;
+        height: 40vh;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      &__item {
+        display: flex;
+      }
+
+      &__link {
+        text-decoration: none;
+        color: $GreyLight;
+        margin-bottom: 20px;
+
+        font-family: $ProximaRegular;
+        font-size: 16px;
+        line-height: 150%;
+        transition: box-shadow 0.5s;
+      }
+
+      &__link:hover {
+        box-shadow: $HoverShadow;
+      }
+
+      &__close {
+        position: absolute;
+        right: 100px;
+
+        &-cross {
+          display: block;
+          position: absolute;
+          width: 37px;
+          height: 18px;
+
+          font-family: $ProximaRegular;
+          font-size: 12px;
+          line-height: 150%;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $GreyLight;
+          transform: rotate(-90deg);
+
+          &::before {
+            display: block;
+            position: relative;
+            content: "";
+            width: 1px;
+            height: 44px;
+            background-color: $GreyLight;
+            transform: rotate(-90deg);
+            top: 30px;
+            right: 30px;
+
+          }
+        }
+
+        &::before {
+          display: block;
+          position: relative;
+          content: "";
+          width: 40px;
+          height: 40px;
+
+          background: url(../images/cross.svg) no-repeat center;
+          top: 110px;
+          right: -40px;
+        }
+      }
     }
   }
 
@@ -137,43 +211,40 @@
   }
 
   &__burger:hover {
-    .burger-menu {
-      display: none;
-    }
 
     .burger-open {
       visibility: visible;
-      animation: menu-open 1s forwards;
-    }
+      animation: menu-open320 1s forwards;
 
-    &::after,
-    &::before {
-      z-index: 2;
-      width: 40px;
-    }
-
-    &::after {
-      bottom: -5px;
-      transform-origin: left center;
-      transform: rotate(-45deg);
-    }
-
-    &::before {
-      transform-origin: left center;
-      transform: rotate(45deg);
+      @media screen and (min-width: 766px) {
+        animation: menu-open768 1s forwards;
+      }
     }
   }
 }
 
-@keyframes menu-open {
+@keyframes menu-open320 {
   0% {
-    background: #03839e;
+    background: $TurquoiseColor;
     opacity: 0.5;
     transform: translate(150px, 0);
   }
 
   100% {
-    background: #03839e;
-    transform: translate(0, 0);
+    background: $TurquoiseColor;
+    transform: translate(40px, 0);
+  }
+}
+
+@keyframes menu-open768 {
+  0% {
+    background: $TurquoiseColor;
+    opacity: 0.5;
+    transform: translate(150px, 0);
+  }
+
+  100% {
+    background: $TurquoiseColor;
+    transform: translate(70px, 0);
   }
 }

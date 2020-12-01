@@ -1,9 +1,9 @@
 .main {
   margin: 25px auto;
-  width: 260px;
+  width: $WidthForSmallView;
 
   @media screen and (min-width: 766px) {
-    width: 706px;
+    width: $WidthForMiddleView;
     display: grid;
     gap: 0 30px;
     grid-template-columns: repeat(2, auto);
@@ -11,7 +11,7 @@
   }
 
   @media screen and (min-width: 1278px) {
-    width: 1218px;
+    width: $WidthForMaxView;
     grid-template-columns: 505px 505px;
     gap: 0 70px;
     justify-content: end;
@@ -19,7 +19,6 @@
   }
 
   &__photo {
-
     width: 320px;
     height: 320px;
     margin: 15px 0 25px -30px;
@@ -42,7 +41,7 @@
   }
 
   &__caption {
-    font-family: "Bebas Neue", cursive;
+    font-family: $BebasRegular;
     width: 260px;
     height: 150px;
     font-size: 36px;
@@ -51,10 +50,10 @@
     text-transform: uppercase;
 
     color: transparent;
-    -webkit-text-stroke: 1px #03839e;
+    -webkit-text-stroke: 1px $TurquoiseColor;
 
     &-full {
-      color: #03839e;
+      color: $TurquoiseColor;
     }
 
     @media screen and (min-width: 766px) {
@@ -92,25 +91,25 @@
     &-number {
       display: block;
       margin-top: 16px;
-      font-family: "Proxima Nova Bold", cursive;
+      font-family: $ProximaBold;
       font-size: 26px;
       line-height: 32px;
-      color: #333;
+      color: $Black;
     }
 
     &-description {
       width: 139px;
       height: 43px;
-      font-family: "Proxima Nova Semibold", cursive;
+      font-family: $ProximaSemibold;
       font-size: 14px;
       line-height: 150%;
-      color: #4f4f4f;
+      color: $Grey;
     }
 
     &-button {
       display: block;
       position: relative;
-      font-family: "Proxima Nova Semibold", cursive;
+      font-family: $ProximaSemibold;
       font-size: 14px;
       text-align: center;
       line-height: 48px;
@@ -120,10 +119,10 @@
       color: #121212;
       margin-top: 20px;
       margin-bottom: 100px;
-      background: #ffe339;
+      background: $Yellow;
       width: 238px;
       height: 48px;
-      border: 1px solid #ffe339;
+      border: 1px solid $Yellow;
 
       transition: background-color 0.5s, border 0.5s, color 0.5s;
 
@@ -148,8 +147,8 @@
       border: 1px solid black;
 
       @media screen and (min-width: 766px) {
-        background-color: #03839e;
-        border: 1px solid #03839e;
+        background-color: $TurquoiseColor;
+        border: 1px solid $TurquoiseColor;
         color: white;
 
         &::after {
@@ -160,13 +159,13 @@
 
     &-more {
       position: absolute;
-      font-family: "Proxima Nova Regular", cursive;
+      font-family: $ProximaRegular;
       font-size: 12px;
       bottom: 80px;
       right: -70px;
       width: 130px;
       height: 18px;
-      color: #03839e;
+      color: $TurquoiseColor;
       transform: rotate(90deg);
     }
 
@@ -191,7 +190,7 @@
       &-button {
         right: 120px;
         background-color: transparent;
-        border: 1px solid #03839e;
+        border: 1px solid $TurquoiseColor;
       }
 
       &-more {
