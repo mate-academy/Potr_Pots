@@ -18,10 +18,6 @@ navHide.addEventListener('click', () => {
   }
 });
 
-document.querySelector('#features').scrollIntoView({
-  behavior: 'smooth',
-});
-
 // smooth scroll
 $(document).ready(function() {
   // Add smooth scrolling to all links
@@ -36,7 +32,7 @@ $(document).ready(function() {
 
       $('html, body').animate({
         scrollTop: $(hash).offset().top,
-      }, 800, function() {
+      }, 500, function() {
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;
       });
