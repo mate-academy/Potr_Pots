@@ -1,0 +1,57 @@
+.burger {
+  // display: none;
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  padding: 120px 20px;
+
+  right: 100vw;
+  height: 100vh;
+  z-index: 2;
+  width: 50%;
+  font-family: "Proxima Nova Regular", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  color: #f8f8f8;
+  background-color: $green-color;
+  opacity: 0.9;
+
+  transition: right 1s;
+
+  @media (max-width: 992px) {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    // display: flex;
+  }
+
+  &__item {
+    text-align: left;
+    padding: 8px 0;
+  }
+
+  &__link {
+    color: #f8f8f8;
+    display: block;
+
+    &--count {
+      display: inline-block;
+      align-items: center;
+      text-align: center;
+
+      width: 13px;
+      height: 13px;
+      background-color: #eb5757;
+      border-radius: 100%;
+      font-size: 9px;
+      line-height: 7px;
+      padding: 4px;
+      margin: 4px;
+      position: relative;
+      top: -6px;
+      font-family: "Bebas Neue Bold", sans-serif;
+      color: #f8f8f8;
+    }
+  }
+}

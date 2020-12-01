@@ -1,0 +1,132 @@
+.questions {
+
+  display: flex;
+  justify-content: center;
+  padding: 80px 0;
+  position: relative;
+
+  &__content-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    position: relative;
+
+    @media (max-width: 480px) {
+      display: block;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 90vw;
+    height: 70vh;
+    background-image: url("../images/promo-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+  }
+
+  &__info {
+
+    @media (max-width: 480px) {
+      margin-top: 90px;
+    }
+  }
+
+  &__sircle {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    right: 0;
+    top: -120px;
+  }
+
+  &__title {
+    font-family: "Bebas Neue Bold", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__form-title {
+    font-size: 24px;
+    line-height: 150%;
+    color: #000;
+    margin-top: 30px;
+    margin-bottom: 25px;
+  }
+
+  &__heading {
+    font-family: "Proxima Nova Regular", sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.39);
+    margin-bottom: 4px;
+  }
+
+  &__text {
+    font-family: "Proxima Nova Regular", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 0;
+  }
+}
+
+.form {
+  font-size: 12px;
+  max-width: 350px;
+
+  &__button {
+    background-color: transparent;
+    cursor: pointer;
+    border-bottom: 1px dashed #333;
+    font-family: "Proxima Nova Semibold", sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333;
+    text-transform: capitalize;
+    margin: 0 auto;
+    display: flex;
+  }
+}
+
+.form__label {
+  display: block;
+}
+
+.form__input {
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  resize: none;
+  transition: border-color 0.6s;
+
+  &:focus {
+    border-color: #b3b3b3;
+  }
+
+  &::placeholder {
+    color: #4f4f4f;
+    font-family: "Proxima Nova Regular", sans-serif;
+    text-transform: capitalize;
+  }
+}
+
+.form__label--hidden {
+  display: none;
+}

@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+
+  &__content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: "Bebas Neue Bold", sans-serif;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.06em;
+    color: #333;
+  }
+
+  &__cart {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  &__label {
+    display: none;
+    z-index: 2;
+    width: 20px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../images/icons/menu.svg");
+
+    @media (max-width: 992px) {
+      & {
+        display: block;
+        height: 20px;
+      }
+    }
+  }
+
+  &__toggler {
+    display: none;
+    z-index: 2;
+
+    &:checked + .header__label {
+      background-image: url("../images/icons/cross.svg");
+      z-index: 3;
+      transform: translateY(550px);
+
+      &::before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 44px;
+        background: #f8f8f8;
+        position: absolute;
+        right: 50%;
+        top: -60px;
+      }
+
+      &::after {
+        content: "Close";
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+
+        top: -80px;
+        left: -2px;
+        transform: rotate(-90deg);
+        text-transform: uppercase;
+        color: #f8f8f8;
+      }
+    }
+
+    &:checked ~ .burger {
+      right: 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 15px 0;
+    background: #f8f8f8;
+  }
+}
+
+// git statuses
+// git remote   show origin
+// git remove remote remove origin
+// add origin
