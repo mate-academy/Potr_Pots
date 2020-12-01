@@ -108,12 +108,14 @@
     }
 
     &-button {
+      display: block;
       position: relative;
       font-family: "Proxima Nova Semibold", cursive;
       font-size: 14px;
       text-align: center;
       line-height: 48px;
       text-transform: uppercase;
+      text-decoration: none;
 
       color: #121212;
       margin-top: 20px;
@@ -122,6 +124,8 @@
       width: 238px;
       height: 48px;
       border: 1px solid #ffe339;
+
+      transition: background-color 0.5s, border 0.5s, color 0.5s;
 
       &::after {
         content: "";
@@ -136,6 +140,21 @@
       @media screen and (min-width: 766px) {
         top: 25px;
         margin-bottom: 0;
+      }
+    }
+
+    &-button:hover {
+      background-color: transparent;
+      border: 1px solid black;
+
+      @media screen and (min-width: 766px) {
+        background-color: #03839e;
+        border: 1px solid #03839e;
+        color: white;
+
+        &::after {
+          background: url(../images/Arrow-white.svg) no-repeat center;
+        }
       }
     }
 
@@ -154,11 +173,12 @@
     &-more::after {
       content: "";
       position: absolute;
-      top: 5px;
+      top: -15px;
       right: -50px;
-      height: 1px;
+      height: 44px;
       width: 44px;
-      background-color: #03839e;
+      transform: rotate(-90deg);
+      background: url(../images/blue-arrow.svg) no-repeat center;
 
     }
 

@@ -1,6 +1,7 @@
 .for-whom {
   margin: 102px auto 0;
   width: 260px;
+  position: relative;
 
   @media screen and (min-width: 766px) {
     width: 706px;
@@ -8,6 +9,45 @@
 
   @media screen and (min-width: 1278px) {
     width: 1180px;
+  }
+
+  &__side-text {
+    position: absolute;
+    width: 69px;
+    height: 14px;
+
+    top: 1000px;
+    left: 275px;
+
+    font-family: "Bebas Neue Regular", cursive;
+    font-size: 12px;
+    line-height: 12px;
+
+    letter-spacing: 0.22em;
+
+    color: #828282;
+    transform: rotate(90deg);
+
+    &::before {
+      position: relative;
+      display: block;
+      content: "";
+      top: 4px;
+      right: 70px;
+      width: 65px;
+      height: 1px;
+      background-color: #828282;
+    }
+
+    @media screen and (min-width: 766px) {
+      top: 0;
+      left: 660px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      left: 1130px;
+    }
+
   }
 
   &__name {
@@ -78,14 +118,15 @@
 }
 
 @media screen and (min-width: 766px) {
-  .facts__photo2 {
-    justify-self: end;
-  }
+  // .facts__photo2 {
+  //   justify-self: end;
+  // }
 }
 
 .fact1,
 .fact2,
 .fact3 {
+  position: relative;
 
   &__number {
     font-family: "Bebas Neue Regular", cursive;
@@ -106,6 +147,36 @@
       background-color: #333;
       transform: rotate(112deg);
     }
+  }
+
+  &__star {
+
+    display: none;
+
+    @media screen and (min-width: 766px) {
+      display: block;
+      position: absolute;
+      font-family: "Proxima Nova Regular", cursive;
+      width: 160px;
+      height: 24px;
+      font-size: 16px;
+      line-height: 150%;
+      color: #333;
+      top: 0;
+
+      &::before {
+        position: relative;
+        display: block;
+        content: "";
+        width: 23px;
+        height: 21px;
+        color: black;
+        background: url(../images/star.svg) no-repeat center;
+        top: 15px;
+        left: -30px;
+      }
+    }
+
   }
 
   &__name {
@@ -141,16 +212,53 @@
 }
 
 .fact3 {
+  @media screen and (min-width: 766px) {
+    &__star {
+      top: 40px;
+    }
+  }
+
   @media screen and (min-width: 1278px) {
     position: relative;
     margin-top: -100px;
     left: 50px;
+
+    &__star {
+      left: -100px;
+    }
   }
 }
 
 .fact2 {
+  @media screen and (min-width: 766px) {
+    &__star {
+      top: -20px;
+      left: 250px;
+    }
+  }
+
   @media screen and (min-width: 1278px) {
     margin-top: -300px;
+    margin-left: 100px;
+
+    &__star {
+      top: -50px;
+      left: 0;
+    }
+  }
+}
+
+.fact1 {
+  @media screen and (min-width: 766px) {
+    &__star {
+      top: 40px;
+    }
+  }
+
+  @media screen and (min-width: 1278px) {
+    &__star {
+      top: 20px;
+    }
   }
 }
 

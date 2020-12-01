@@ -130,13 +130,34 @@
       border: none;
       outline: none;
       border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+      transition: box-shadow 0.5s, color 0.5s;
+
+    }
+
+    &-message {
+      resize: none;
+      overflow: hidden;
     }
 
     &-submit {
       width: 260px;
       margin-bottom: 100px;
       border: none;
-      text-decoration: dotted;
+      text-decoration: underline;
+
+      &:hover {
+        color: #eb5757;
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    &-name,
+    &-email,
+    &-message {
+      &:hover {
+        box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      }
     }
   }
 }
@@ -164,7 +185,30 @@
 
   }
 
+  &__adress-phone,
+  &__adress-mail {
+    margin-bottom: 8px;
+
+    width: 143px;
+    height: 24px;
+
+    font-family: "Proxima Nova Regular", cursive;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #000;
+
+    text-decoration: none;
+
+    transition: box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    }
+  }
+
   &__adress {
+
     margin-bottom: 8px;
 
     width: 258px;
@@ -174,10 +218,5 @@
     line-height: 150%;
 
     color: #000;
-
-    @media screen and (min-width: 766px) {
-      width: 205px;
-      height: 48px;
-    }
   }
 }

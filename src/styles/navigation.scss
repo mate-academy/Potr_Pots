@@ -11,7 +11,7 @@
   }
 
   @media screen and (min-width: 766px) {
-    width: 706px;
+    min-width: 706px;
   }
 
   @media screen and (min-width: 1278px) {
@@ -19,15 +19,17 @@
 
     &__list {
       display: flex;
+      width: 900px;
       align-items: center;
+      justify-content: space-between;
     }
 
     &__item {
       display: inline-flex;
 
       .icon {
-        width: 30px;
-        height: 30px;
+        width: 48px;
+        height: 48px;
         background: url(../images/icon-bag.svg) no-repeat center;
         margin-left: 198px;
       }
@@ -37,6 +39,17 @@
       text-decoration: none;
       color: #4f4f4f;
       margin-right: 64px;
+
+      height: 24px;
+
+      font-family: "Proxima Nova Regular", cursive;
+      font-size: 16px;
+      line-height: 150%;
+      transition: box-shadow 0.5s;
+    }
+
+    &__link:hover {
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
     }
   }
 
@@ -60,10 +73,17 @@
   }
 
   &__name {
+    display: block;
     font-family: "Bebas Neue", cursive;
     font-size: 32px;
     line-height: 36px;
     color: #333;
+    text-decoration: none;
+    transition: box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    }
   }
 
   &__burger {

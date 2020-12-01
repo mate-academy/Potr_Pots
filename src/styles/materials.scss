@@ -11,6 +11,61 @@
     width: 1218px;
   }
 
+  &__side-text1,
+  &__side-text2 {
+    display: none;
+
+    @media screen and (min-width: 766px) {
+      display: block;
+      position: absolute;
+      width: 69px;
+      height: 14px;
+
+      font-family: "Bebas Neue Regular", cursive;
+      font-size: 12px;
+      line-height: 12px;
+
+      letter-spacing: 0.22em;
+
+      color: #828282;
+      transform: rotate(90deg);
+
+      &::before {
+        position: relative;
+        display: block;
+        content: "";
+        top: 4px;
+        right: 70px;
+        width: 65px;
+        height: 1px;
+        background-color: #828282;
+      }
+    }
+  }
+
+  &__side-text1 {
+    @media screen and (min-width: 766px) {
+      top: 30px;
+      left: 670px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      display: none;
+    }
+  }
+
+  &__side-text2 {
+    @media screen and (min-width: 766px) {
+      top: 250px;
+      left: -45px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -1900px;
+      transform: rotate(-90deg);
+    }
+  }
+
   &__name {
     width: 268px;
     margin-bottom: 35px;
@@ -82,6 +137,7 @@
   &__button3,
   &__button4,
   &__button5 {
+    display: block;
     position: relative;
     width: 50px;
     height: 50px;
@@ -92,11 +148,17 @@
     font-family: "Proxima Nova Regular", cursive;
     font-size: 20px;
     color: #e0e0e0;
+    text-decoration: none;
+    transition: transform 0.5s;
   }
 
   &__button1 {
     position: relative;
     top: 40px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     @media screen and (min-width: 766px) {
       top: -160px;
@@ -105,7 +167,7 @@
 
     @media screen and (min-width: 1278px) {
       top: -200px;
-      left: 230px;
+      left: 150px;
     }
   }
 
@@ -114,6 +176,10 @@
     top: 65px;
     left: 220px;
 
+    &:hover {
+      transform: scale(1.2);
+    }
+
     @media screen and (min-width: 766px) {
       top: -325px;
       left: 210px;
@@ -121,7 +187,7 @@
 
     @media screen and (min-width: 1278px) {
       top: -525px;
-      left: 510px;
+      left: 430px;
     }
   }
 
@@ -133,6 +199,10 @@
     background: rgba(36, 35, 35, 0.75);
     opacity: 0.65;
     backdrop-filter: blur(12px);
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     @media screen and (min-width: 766px) {
       top: -470px;
@@ -148,6 +218,10 @@
   &__button4 {
     position: absolute;
 
+    &:hover {
+      transform: scale(1.2);
+    }
+
     @media screen and (min-width: 766px) {
       top: 570px;
       left: 430px;
@@ -161,6 +235,10 @@
 
   &__button5 {
     position: absolute;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     @media screen and (min-width: 766px) {
       top: 630px;
