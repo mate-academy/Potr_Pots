@@ -1,11 +1,10 @@
 .benefits {
-
   display: flex;
   justify-content: center;
   padding: 50px 0;
 
   @media (max-width: 768px) {
-    padding: 50px 0 120px;
+    padding: 50px 0;
   }
 
   &__content-container {
@@ -39,13 +38,11 @@
     @media (max-width: 768px) {
       position: static;
       margin: 0 auto;
-
       flex-direction: row;
       max-width: 100%;
     }
 
     @media (max-width: 480px) {
-
       display: block;
     }
   }
@@ -72,10 +69,9 @@
   }
 
   &__title {
-    font-family: "Proxima Nova Semibold", sans-serif;
-    font-size: 36px;
-    line-height: 36px;
-    color: #333;
+    @include font36;
+
+    font-weight: 600;
     position: relative;
 
     &::before {
@@ -104,10 +100,37 @@
     margin-bottom: 70px;
     align-self: start;
     display: flex;
+    background-color: transparent;
+    border: 1px solid $green-color;
+
+    &:hover {
+      background-color: $green-color;
+      color: $grey-light;
+
+      &::after {
+        background-image: url("../images/icons/arrow-hover.svg");
+      }
+    }
 
     @media (max-width: 768px) {
       align-self: center;
       margin-bottom: 30px;
+    }
+
+    @media (max-width: 576px) {
+      align-self: flex-start;
+      background-color: $yellow-color;
+      border: 1px solid $yellow-color;
+
+      &:hover {
+        border: 1px solid $dark-grey-color;
+        background-color: #fff;
+        color: $dark-grey-color;
+
+        &::after {
+          background-image: url("../images/icons/arrow-right.svg");
+        }
+      }
     }
   }
 
@@ -118,18 +141,20 @@
   }
 
   &__sales-title {
-    font-family: "Bebas Neue Bold", sans-serif;
-    font-size: 36px;
-    line-height: 150%;
+    @include font36;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #eb5757;
   }
 
   &__sales-proposal {
-    font-family: "Bebas Neue Bold", sans-serif;
-    font-size: 24px;
-    line-height: 24px;
+    @include font24;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #03839e;

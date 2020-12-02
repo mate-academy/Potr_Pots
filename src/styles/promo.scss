@@ -27,20 +27,17 @@
     @media (max-width: 992px) {
       width: 100%;
     }
-
-    @media (max-width: 576px) {
-      // display: none;
-    }
   }
 
-  &__side-link {
+  &__link {
+    @include font12;
+
     top: 690px;
     right: 0;
-
     position: absolute;
-    font-family: "Bebas Neue Bold", sans-serif;
-    font-size: 12px;
-    line-height: 12px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: #828282;
@@ -115,15 +112,14 @@
   }
 
   &__price {
-    font-family: "Proxima Nova Bold", sans-serif;
+    font-weight: 700;
     font-size: 26px;
     line-height: 32px;
     text-transform: uppercase;
-    color: #333;
+    color: $dark-grey-color;
   }
 
   &__text {
-    font-family: "Proxima Nova Semibold", sans-serif;
     font-size: 14px;
     line-height: 150%;
     color: #4f4f4f;
@@ -166,6 +162,7 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    box-shadow: 0 0 1px 1px #0000001a;
   }
 
   &__btn {
@@ -177,7 +174,7 @@
 
     &:hover {
       background-color: $green-color;
-      color: #f8f8f8;
+      color: $grey-light;
 
       &::after {
         background-image: url("../images/icons/arrow-hover.svg");
@@ -190,14 +187,13 @@
 
     @media (max-width: 576px) {
       align-self: flex-start;
-      background-color: #ffe339;
-      border: 1px solid #ffe339;
-      // margin: 25px 0 0;
+      background-color: $yellow-color;
+      border: 1px solid $yellow-color;
 
       &:hover {
-        border: 1px solid #333;
+        border: 1px solid $dark-grey-color;
         background-color: #fff;
-        color: #333;
+        color: $dark-grey-color;
 
         &::after {
           background-image: url("../images/icons/arrow-right.svg");
@@ -207,7 +203,6 @@
   }
 
   &__next {
-    font-family: "Proxima Nova Regular", sans-serif;
     font-size: 12px;
     line-height: 150%;
     color: $green-color;
@@ -252,4 +247,18 @@
 .transparent {
   -webkit-text-stroke: 1px $green-color;
   color: transparent;
+}
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+
+  100% {
+    box-shadow: 0 0 0 20px rgba(104, 223, 19, 0);
+  }
 }

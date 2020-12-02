@@ -1,5 +1,4 @@
 .features {
-
   display: flex;
   justify-content: center;
   padding: 80px 0;
@@ -7,6 +6,7 @@
   &__guide {
     display: grid;
     justify-items: center;
+    justify-content: center;
     grid-template-columns: repeat(auto-fill, 370px);
     gap: 30px 30px;
   }
@@ -38,16 +38,13 @@
 
     &:hover {
       border-radius: 50%;
-      -webkit-transform: rotate(360deg);
-      -moz-transform: rotate(360deg);
-      -o-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-      transform: rotate(360deg);
+      animation: pulse-animation 2s infinite;
     }
   }
 
   &__title {
-    font-family: "Bebas Neue Bold", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
     font-size: 58px;
     line-height: 58px;
     display: flex;
@@ -55,18 +52,22 @@
     letter-spacing: 0.15em;
     color: $green-color;
     padding-bottom: 80px;
-    // display: flex;
     flex-wrap: wrap;
   }
 
   &__text {
-    font-family: "Bebas Neue Bold", sans-serif;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
     font-size: 24px;
     line-height: 24px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #333;
+    color: $dark-grey-color;
     padding-top: 30px;
     padding-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 50px 0;
   }
 }

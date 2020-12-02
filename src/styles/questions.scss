@@ -1,5 +1,4 @@
 .questions {
-
   display: flex;
   justify-content: center;
   padding: 80px 0;
@@ -21,8 +20,8 @@
     top: 0;
     left: 0;
     z-index: -2;
-    width: 90vw;
-    height: 70vh;
+    width: 80vw;
+    height: 30vh;
     background-image: url("../images/promo-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,35 +47,35 @@
   }
 
   &__title {
-    font-family: "Bebas Neue Bold", sans-serif;
-    font-size: 36px;
+    @include font36;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 700;
     line-height: 150%;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #000;
+    color: $black-color;
   }
 
   &__form-title {
-    font-size: 24px;
-    line-height: 150%;
-    color: #000;
+    @include font24;
+
+    color: $black-color;
     margin-top: 30px;
     margin-bottom: 25px;
   }
 
   &__heading {
-    font-family: "Proxima Nova Regular", sans-serif;
-    font-size: 24px;
-    line-height: 150%;
+    @include font24;
+
     color: rgba(0, 0, 0, 0.39);
     margin-bottom: 4px;
   }
 
   &__text {
-    font-family: "Proxima Nova Regular", sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    color: #000;
+    @include font16;
+
+    color: $black-color;
     margin-bottom: 20px;
   }
 
@@ -86,17 +85,18 @@
 }
 
 .form {
-  font-size: 12px;
+  @include font12;
+
   max-width: 350px;
 
   &__button {
+    @include font16;
+
     background-color: transparent;
     cursor: pointer;
-    border-bottom: 1px dashed #333;
-    font-family: "Proxima Nova Semibold", sans-serif;
-    font-size: 16px;
-    line-height: 19px;
-    color: #333;
+    border-bottom: 1px dashed $dark-grey-color;
+    font-weight: 600;
+    color: $dark-grey-color;
     text-transform: capitalize;
     margin: 0 auto;
     display: flex;
@@ -122,7 +122,6 @@
 
   &::placeholder {
     color: #4f4f4f;
-    font-family: "Proxima Nova Regular", sans-serif;
     text-transform: capitalize;
   }
 }
