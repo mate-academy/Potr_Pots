@@ -13,6 +13,157 @@
 
   <body>
 
+
+    <div class="shopping-cart shopping-cart--disabled">
+
+      <!-- Title -->
+      <div class="title">
+        Shopping Bag
+      </div>
+
+      <button class="close-btn">
+        <img src="./images/icons/cross.svg" alt="">
+      </button>
+
+      <!-- item #1 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn">
+          </span>
+        </div>
+
+        <div class="image">
+          <img src="./images/photos/features/step-1.jpg" alt="img">
+        </div>
+
+        <div class="description">
+          <span>Common Projects</span>
+          <span>Bball High</span>
+          <span>White</span>
+        </div>
+
+        <div class="quantity">
+          <button
+            class="cart-btn plus-btn"
+            type="button"
+            name="button"
+          >
+            <img src="./images/cart/d.svg" alt="">
+          </button>
+          <input
+            type="text"
+            name="name"
+            value="1"
+          >
+          <button
+            class="cart-btn minus-btn"
+            type="button"
+            name="button"
+          >
+            <img src="./images/cart/substract.svg" alt="">
+          </button>
+        </div>
+
+        <div class="total-price">$549</div>
+      </div>
+
+      <!-- item #2 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn">
+          </span>
+        </div>
+
+        <div class="image">
+          <img
+            src="./images/photos/features/step-1.jpg"
+            alt="img"
+          >
+        </div>
+
+        <div class="description">
+          <span>Common Projects</span>
+          <span>Bball High</span>
+          <span>White</span>
+        </div>
+
+        <div class="quantity">
+          <button
+            class="cart-btn plus-btn"
+            type="button"
+            name="button"
+          >
+            <img src="./images/cart/d.svg" alt="">
+          </button>
+          <input
+            type="text"
+            name="name"
+            value="1"
+          >
+          <button
+            class="cart-btn minus-btn"
+            type="button"
+            name="button"
+          >
+            <img src="./images/cart/substract.svg" alt="">
+          </button>
+        </div>
+
+        <div class="total-price">$549</div>
+      </div>
+
+      <!-- item #3 -->
+      <div class="item">
+        <div class="buttons">
+          <span class="delete-btn"></span>
+          <span class="like-btn">
+          </span>
+        </div>
+
+        <div class="image">
+          <img
+            class=""
+            src="./images/photos/features/step-3.jpg"
+            alt="img"
+          >
+        </div>
+
+        <div class="description">
+          <span>Common Projects</span>
+          <span>Bball High</span>
+          <span>White</span>
+        </div>
+
+        <div class="quantity">
+          <button
+            class="cart-btn plus-btn"
+            type="button"
+            name="button"
+          >
+            <img src="./images/cart/d.svg" alt="">
+          </button>
+          <input
+            type="text"
+            name="name"
+            value="1"
+          >
+          <button
+            class="cart-btn minus-btn"
+            type="button"
+            name="button"
+          >
+            <img src="./images/cart/substract.svg" alt="">
+          </button>
+        </div>
+
+        <div class="total-price">$549</div>
+      </div>
+    </div>
+
+
+
     <header class="header">
       <div class="content-container header__content-container">
         <a class="header__logo" href="#promo">POTR POTS</a>
@@ -93,7 +244,11 @@
 
               <a class="promo__next" href="#forWhom">More about POTR POTS</a>
 
-              <button type="button" class="btn promo__btn">
+              <button
+                type="button"
+                class="btn promo__btn"
+                onclick="location.href='#features'"
+              >
               Buy now
               </button>
             </section>
@@ -358,7 +513,7 @@
             </ul>
 
             <div class="benefits__wrapper">
-              <button class="benefits__btn btn">Buy now</button>
+              <button class="benefits__btn btn" onclick="location.href='#features'">Buy now</button>
 
               <div class="benefits__sales">
                 <h2 class="benefits__sales-title">50% off</h2>
@@ -394,6 +549,7 @@
                 id="name"
                 placeholder="name"
                 autocomplete="off"
+                required
               >
 
               <label class="form__label--hidden" for="email">email:</label>
@@ -403,11 +559,12 @@
                 id="email"
                 placeholder="email"
                 autocomplete="off"
+                required
               >
 
               <label class="form__label--hidden" for="message">message: </label>
               <!-- linthtml-configure attr-new-line="5" -->
-              <textarea class="form__input" id="message" placeholder="message"></textarea>
+              <textarea class="form__input" id="message" placeholder="message" required></textarea>
               <!-- linthtml-configure attr-new-line="2" -->
 
               <input
@@ -452,9 +609,33 @@
 
         <div class="footer__center">
           <ul class="footer__list">
-            <li class="footer__item"><a class="footer__link" href=""><img src="./images/icons/twitter.svg" alt=""></a></li>
-            <li class="footer__item"><a class="footer__link" href=""><img src="./images/icons/instarram.svg" alt=""></a></li>
-            <li class="footer__item"><a class="footer__link" href=""><img src="./images/icons/facebook.svg" alt=""></a></li>
+            <li class="footer__item">
+              <a class="footer__link" href="#home">
+                <img
+                  class="footer__img"
+                  src="./images/icons/twitter.svg"
+                  alt=""
+                >
+              </a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#home">
+                <img
+                  class="footer__img"
+                  src="./images/icons/instarram.svg"
+                  alt=""
+                >
+              </a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#home">
+                <img
+                  class="footer__img"
+                  src="./images/icons/facebook.svg"
+                  alt=""
+                >
+              </a>
+            </li>
           </ul>
 
           <div class="footer__logo"><a href="#promo">potrpots</a></div>
@@ -476,6 +657,7 @@
     >
     &uarr;
     </a>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
