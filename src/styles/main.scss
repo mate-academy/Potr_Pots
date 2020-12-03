@@ -1,7 +1,121 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 body {
-  background: $c-gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+}
+
+table {
+  margin-top: 100px;
+  transform: rotateX(180deg);
+  background: #333;
+}
+
+th {
+  height: 10px;
+  width: 10px;
+}
+
+div {
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  padding: 20px;
+  font-size: 20px;
+}
+
+footer {
+  display: flex;
+  margin: 0 auto 100px;
+  width: 770px;
+  border: 2px solid #333;
+  border-top: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #dbd9a2;
+}
+
+.settingsArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.inputArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+input {
+  margin-top: 10px;
+  padding-left: 10px;
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid #333;
+}
+
+.fromSunArea {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.energyArea {
+  display: flex;
+  width: 100%;
+}
+
+.fromSun__span {
+  width: 100%;
+}
+
+.startSimulationArea {
+  width: 200px;
+  border-left: 2px solid #333;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.genomArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 10px;
+  height: 120px;
+  text-align: center;
+}
+
+button {
+  height: 30px;
+  width: 70px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: #333;
+    color: white;
+  }
 }
