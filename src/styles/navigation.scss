@@ -171,6 +171,17 @@
             top: 30px;
             right: 30px;
 
+            @media screen and (min-width: 766px) {
+              width: 2px;
+              height: 70px;
+              top: 55px;
+              right: 60px;
+            }
+          }
+
+          @media screen and (min-width: 766px) {
+            font-size: 24px;
+            right: 70px;
           }
         }
 
@@ -184,12 +195,19 @@
           background: url(../images/cross.svg) no-repeat center;
           top: 110px;
           right: -40px;
+
+          @media screen and (min-width: 766px) {
+            width: 80px;
+            height: 80px;
+            top: 180px;
+            right: -30px;
+          }
         }
       }
     }
   }
 
-  &__burger .burger-menu,
+  &__burger .burger__menu,
   &__burger::after,
   &__burger::before {
     height: 4px;
@@ -197,9 +215,10 @@
     position: absolute;
     background: #515758;
     margin: 0 auto;
+    border-radius: 3px;
   }
 
-  &__burger .burger-menu {
+  &__burger .burger__menu {
     top: 14px;
   }
 
@@ -216,16 +235,16 @@
   &__burger::before {
     top: 5px;
   }
+}
 
-  &__burger:hover {
+.nav__burger--open .burger-open {
+  visibility: visible;
+  animation: menu-open320 1s forwards;
 
-    .burger-open {
-      visibility: visible;
-      animation: menu-open320 1s forwards;
-
-      @media screen and (min-width: 766px) {
-        animation: menu-open768 1s forwards;
-      }
+  @media screen and (min-width: 766px) {
+    animation: menu-open768 1s forwards;
+    &__link {
+      font-size: 36px;
     }
   }
 }
