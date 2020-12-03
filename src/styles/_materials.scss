@@ -9,6 +9,9 @@
   &__container {
     display: grid;
     row-gap: 150px;
+    @media (max-width: 750px) {
+      display: block;
+    }
   }
 
   &__heading {
@@ -83,7 +86,7 @@
     cursor: pointer;
 
     @media (max-width: 750px) {
-      visibility: hidden;
+      display: none;
     }
 
     &--1 {
@@ -184,8 +187,9 @@
   &__slider {
     display: none;
 
-    @media (max-width: 700px) {
-      display: initial;
+    @media (max-width: 750px) {
+      display: flex;
+      justify-content: center;
     }
   }
 }

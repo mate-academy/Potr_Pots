@@ -5,7 +5,7 @@
     gap: 0 64px;
 
     @media (max-width: 955px) {
-      visibility: hidden;
+      display: block;
       right: 0;
       // transform: translate(50%, 142px);
     }
@@ -23,7 +23,8 @@
     @include s3Font;
     color: #4f4f4f;
 
-    @media (max-width: 995px) {
+    @media (max-width: 955px) {
+      display: none;
       @include s2Font;
       color: #f8f8f8;
       padding: 20px;
@@ -89,19 +90,30 @@
         transform: rotate(90deg);
       }
 
+      & ~ .nav__link {
+        display: block !important;
+        @include s2Font;
+        color: #f8f8f8;
+        padding: 20px;
+      }
+
       & ~ .nav__list {
-        visibility: visible;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
+        padding: 20px 1px;
         background-color: #03839e;
         width: 450px;
         height: 450px;
         position: absolute;
         top: 0;
-        right: -30px;
+        right: 0;
+
+        @media (max-width: 500px) {
+          width: 100vw;
+        }
       }
+
     }
   }
 
@@ -112,7 +124,7 @@
     height: 32px;
     cursor: pointer;
     z-index: 1;
-    right: 0;
+    right: 32px;
     top: 19px;
 
     @media (max-width: 955px) {
