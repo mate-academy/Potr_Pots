@@ -1,6 +1,10 @@
 .features {
   margin-top: 450px;
 
+  @media (max-width: 955px) {
+    margin-top: 130px;
+  }
+
   &__title {
     margin-bottom: 75px;
     @include h1Font;
@@ -16,8 +20,15 @@
   &__cards {
     display: grid;
     justify-content: space-between;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 260px;
+      grid-auto-flow: row;
+      grid-template-rows: repeat(3, 1fr);
+      justify-content: center;
+    }
   }
 
   &__card {
@@ -34,5 +45,16 @@
   &__info {
     @include s3Font;
     color: #4f4f4f;
+  }
+
+  &__image {
+
+    width: 100%;
+    object-fit: cover;
+
+    // @media (max-width: 1170px) {
+    //   width: 220px;
+    // }
+
   }
 }

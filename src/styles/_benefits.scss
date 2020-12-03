@@ -9,10 +9,21 @@
     justify-content: space-between;
     overflow: hidden;
     height: 823px;
+
+    @media (max-width: 940px) {
+      display: initial;
+    }
+  }
+
+  &__pictures {
+    @media (max-width: 940px) {
+      display: none;
+    }
   }
 
   &__img {
     position: absolute;
+
     &:hover {
       animation: pulse;
       animation-duration: 2s;
@@ -38,22 +49,52 @@
     &--4 {
       bottom: 269px;
       left: 132px;
+
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
 
     &--5 {
       bottom: -96px;
+      left: -70px;
+
+      @media (max-width: 1024px) {
+        display: none;
+      }
     }
 
     &--6 {
       bottom: -62px;
-      left: 250px;
+      left: 170px;
+
+      @media (max-width: 1170px) {
+        display: none;
+      }
+    }
+  }
+
+  &__content {
+
+    @media (max-width: 940px) {
+      display: flex;
+    }
+
+    @media (max-width: 750px) {
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 
   &__advantages {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin-top: 180px;
+
+    @media (max-width: 940px) {
+      margin-top: 0;
+      padding-left: 30px;
+    }
   }
 
   &__heading {
@@ -77,6 +118,10 @@
   &__advantage {
     margin-right: 45px;
     margin-bottom: 60px;
+
+    @media (max-width: 940px) {
+      margin-right: 0;
+    }
   }
 
   &__text {
@@ -86,6 +131,12 @@
 
   &__button {
     margin-bottom: 70px;
+    @media (max-width: 940px) {
+      transform: translate(40%, 50%);
+    }
+    @media (max-width: 750px) {
+      transform: translate(30px);
+    }
   }
 
   &__sale {
@@ -94,6 +145,10 @@
     letter-spacing: 0.15em;
     margin-bottom: 15px;
     margin-left: 100px;
+
+    @media (max-width: 750px) {
+      margin-left: 30px;
+    }
   }
 
   &__order {
@@ -101,10 +156,18 @@
     color: $turquoise;
     letter-spacing: 0.15em;
     margin-left: 100px;
+
+    @media (max-width: 750px) {
+      margin-left: 30px;
+    }
   }
 
   &__vertical-link {
     top: 23px;
+
+    @media (max-width: 750px) {
+      right: -15%;
+    }
 
     &::before {
       right: 136px;

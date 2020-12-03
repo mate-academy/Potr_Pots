@@ -1,5 +1,9 @@
 .clients {
 
+  @media (max-width: 700px) {
+    margin-top: 100px;
+  }
+
   &__container {
     position: relative;
   }
@@ -8,6 +12,9 @@
 
     &::before {
       @include slash;
+      top: 2px;
+      position: absolute;
+      left: -12px;
     }
 
     &::after {
@@ -19,6 +26,10 @@
 
     & span {
       padding-right: 40px;
+
+      @media (max-width: 700px) {
+        display: block;
+      }
     }
 
     &--robust {
@@ -36,7 +47,7 @@
       max-width: 400px;
 
       &::after {
-        left: 85%;
+        left: 65%;
       }
     }
 
@@ -56,17 +67,43 @@
     margin-bottom: 39px;
     position: relative;
 
+    @media (max-width: 700px) {
+      visibility: hidden;
+    }
+
     &::before {
       content: "*";
       @include h3Font;
       color: #000;
       position: absolute;
-      left: -30px;
+      left: -20px;
       top: 22%;
     }
 
     &--beautiful {
       margin-top: 39px;
+
+      @media (max-width: 955px) {
+        left: 94%;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__img {
+
+    @media (max-width: 1024px) {
+      width: 284px;
+    }
+
+    @media (max-width: 700px) {
+      display: none;
+    }
+
+    &--time {
+      @media (max-width: 955px) {
+        width: 284px;
+      }
     }
   }
 
@@ -86,16 +123,54 @@
       grid-template-columns: 500px 1fr;
       justify-content: space-between;
       align-items: center;
+
+      @media (max-width: 1070px) {
+        column-gap: 150px;
+      }
+
+      @media (max-width: 955px) {
+        display: flex;
+        column-gap: 40px;
+      }
+
+      @media (max-width: 700px) {
+        justify-content: center;
+        column-gap: 0;
+      }
+
     }
 
     &--beautiful {
       margin-top: 185px;
+
+      @media (max-width: 955px) {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        margin-top: 90px;
+        margin-bottom: 90px;
+      }
+
+      @media (max-width: 700px) {
+        justify-content: center;
+        margin: 30px 0;
+      }
     }
 
     &--time {
       position: absolute;
       left: 58%;
       bottom: -17%;
+
+      @media (max-width: 955px) {
+        display: flex;
+        justify-content: space-between;
+        position: static;
+      }
+
+      @media (max-width: 700px) {
+        justify-content: center;
+      }
     }
   }
 }

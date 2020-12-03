@@ -1,7 +1,7 @@
 .questions {
   background-image: url(../images/questions-bg.png);
   background-repeat: no-repeat;
-  height: 568px;
+  min-height: 568px;
 
   &__container {
     position: relative;
@@ -24,6 +24,13 @@
     margin-top: 27px;
     display: grid;
     grid-auto-flow: column;
+    margin-bottom: 50px;
+
+    @media (max-width: 750px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   }
 
   &__field {
