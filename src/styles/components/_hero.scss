@@ -3,6 +3,8 @@
     display: flex;
     justify-content: space-between;
     padding-top: 64px;
+
+    perspective: 800px;
   }
 
   &__info {
@@ -16,11 +18,12 @@
 
     font-family: "Bebas Neue Bold", sans-serif;
     text-transform: uppercase;
-    color: $c-turquoise;
     -webkit-text-stroke: 1px $c-turquoise;
     font-size: 64px;
     line-height: 1;
     letter-spacing: 0.15em;
+
+    color: $c-turquoise;
 
     &--transparent {
       color: transparent;
@@ -34,14 +37,16 @@
     font-size: 26px;
     line-height: 1.23;
     font-family: "Proxima Nova Bold", sans-serif;
+
     color: #333;
   }
 
   &__promo-text {
     font-size: 14px;
     line-height: 1.5;
-    color: $c-text;
     font-family: "Proxima Nova Semibold", sans-serif;
+
+    color: $c-text;
   }
 
   &__text {
@@ -53,12 +58,12 @@
 
     font-size: 12px;
     line-height: 1.5;
-    color: $c-turquoise;
     font-family: "Proxima Nova Regular", sans-serif;
 
-    transform: rotate(90deg);
+    color: $c-turquoise;
 
     cursor: pointer;
+    transform: rotate(90deg);
 
     &--uppercase {
       text-transform: uppercase;
@@ -83,6 +88,12 @@
         animation: arrows 1s linear;
       }
     }
+
+    @media (max-width: 1024px) {
+      & {
+        bottom: 50px;
+      }
+    }
   }
 
   &__button {
@@ -93,6 +104,16 @@
     width: 500px;
     height: 500px;
     margin-left: -110px;
+
+    box-shadow: -5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+
+    transition: all 0.5s ease;
+
+    &:hover {
+      box-shadow: 15px 15px 5px 0 rgba(0, 0, 0, 0.5);
+
+      transform: rotateY(-10deg) translateX(-10px) scale(1.1);
+    }
 
     @media (min-width: 761px) and (max-width: 1024px) {
       width: 306px;
@@ -128,7 +149,7 @@
       }
 
       &__text {
-        bottom: 60px;
+        bottom: 80px;
       }
 
       &__button {
