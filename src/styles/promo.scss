@@ -3,12 +3,12 @@
   justify-content: center;
   padding: 80px 0;
 
-  @media (max-width: 992px) {
+  @media (max-width: $screenDesktop) {
     padding-top: 25px;
     padding-bottom: 60px;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: $screenMobile) {
     padding-top: 0;
     padding-bottom: 40px;
   }
@@ -24,7 +24,7 @@
     background-repeat: no-repeat;
     background-size: contain;
 
-    @media (max-width: 992px) {
+    @media (max-width: $screenDesktop) {
       width: 100%;
     }
   }
@@ -40,7 +40,7 @@
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #828282;
+    color: $grey-color;
     transform: rotate(90deg);
 
     &::before {
@@ -50,15 +50,15 @@
       right: 105px;
       width: 1px;
       height: 65px;
-      background: #828282;
+      background: $grey-color;
       transform: rotate(90deg);
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: $screenDesktop) {
       right: -15px;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: $screenMobile) {
       top: auto;
       bottom: -950px;
       right: -20px;
@@ -70,11 +70,11 @@
     flex-direction: column;
     align-items: flex-start;
 
-    @media (max-width: 720px) {
+    @media (max-width: $screenTablet) {
       align-self: center;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: $screenMobile) {
       align-self: flex-start;
     }
   }
@@ -83,15 +83,15 @@
     z-index: 2;
     margin-left: 110px;
 
-    @media (max-width: 1440px) {
+    @media (max-width: $screenExstraLarge) {
       margin-left: 90px;
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: $screenLarge) {
       margin-left: 0;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: $screenMobile) {
       align-self: flex-start;
       padding-top: 25px;
     }
@@ -100,11 +100,11 @@
   &__offer {
     align-self: flex-end;
 
-    @media (max-width: 992px) {
+    @media (max-width: $screenDesktop) {
       margin-right: 90px;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: $screenMobile) {
       align-self: flex-start;
       margin-right: 0;
       margin-top: 20px;
@@ -131,7 +131,7 @@
     max-width: 500px;
     max-height: 500px;
 
-    @media (max-width: 992px) {
+    @media (max-width: $screenDesktop) {
       position: absolute;
       right: 34px;
       z-index: 1;
@@ -140,7 +140,7 @@
       max-height: 40vw;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: $screenTablet) {
       position: static;
       align-self: center;
       margin-bottom: 30px;
@@ -149,7 +149,7 @@
       max-height: 300px;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: $screenMobile) {
       margin-bottom: 0;
       width: 100vw;
       height: 100vw;
@@ -175,24 +175,25 @@
     &:hover {
       background-color: $green-color;
       color: $grey-light;
+      transform: scale(1.1);
 
       &::after {
         background-image: url("../images/icons/arrow-hover.svg");
       }
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: $screenDesktop) {
       margin: 25px 90px 0 0;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: $screenMobile) {
       align-self: flex-start;
       background-color: $yellow-color;
       border: 1px solid $yellow-color;
 
       &:hover {
         border: 1px solid $dark-grey-color;
-        background-color: #fff;
+        background-color: $white-color;
         color: $dark-grey-color;
 
         &::after {
@@ -211,7 +212,7 @@
     left: -60px;
     transform: rotate(90deg);
 
-    @media (max-width: 576px) {
+    @media (max-width: $screenMobile) {
       position: absolute;
       top: auto;
       left: auto;
@@ -237,7 +238,7 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    @media (max-width: 720px) {
+    @media (max-width: $screenTablet) {
       flex-direction: column-reverse;
       padding: 0;
     }

@@ -3,9 +3,9 @@
   justify-content: center;
   padding: 50px 0;
 
-  @media (max-width: 768px) {
-    padding: 50px 0;
-  }
+  // @media (max-width: $screenTablet) {
+  //   padding: 50px 0;
+  // }
 
   &__content-container {
     display: flex;
@@ -20,7 +20,7 @@
     left: -400px;
     z-index: -1;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screenTablet) {
       display: none;
     }
   }
@@ -35,14 +35,14 @@
     right: 0;
     top: 20%;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screenTablet) {
       position: static;
       margin: 0 auto;
       flex-direction: row;
       max-width: 100%;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: $screenMobile) {
       display: block;
     }
   }
@@ -50,12 +50,8 @@
   &__items {
     display: flex;
     flex-wrap: wrap;
-    width: 700px;
+    max-width: 700px;
     margin-bottom: 60px;
-
-    @media (max-width: 768px) {
-      display: block;
-    }
   }
 
   &__item {
@@ -63,7 +59,7 @@
     margin-bottom: 40px;
     margin-right: 30px;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screenTablet) {
       margin-bottom: 20px;
     }
   }
@@ -89,9 +85,9 @@
   }
 
   &__text {
-    color: #828282;
+    color: $grey-color;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screenTablet) {
       max-width: 200px;
     }
   }
@@ -106,25 +102,26 @@
     &:hover {
       background-color: $green-color;
       color: $grey-light;
+      transform: scale(1.1);
 
       &::after {
         background-image: url("../images/icons/arrow-hover.svg");
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $screenTablet) {
       align-self: center;
       margin-bottom: 30px;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: $screenMobile) {
       align-self: flex-start;
       background-color: $yellow-color;
       border: 1px solid $yellow-color;
 
       &:hover {
         border: 1px solid $dark-grey-color;
-        background-color: #fff;
+        background-color: $white-color;
         color: $dark-grey-color;
 
         &::after {
@@ -147,7 +144,7 @@
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #eb5757;
+    color: $red-color;
   }
 
   &__sales-proposal {
@@ -157,6 +154,6 @@
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #03839e;
+    color: $green-color;
   }
 }

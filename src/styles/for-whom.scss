@@ -24,7 +24,7 @@
     padding-top: 80px;
     padding-left: 80px;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screenTablet) {
       display: block;
       padding-top: 40px;
       padding-left: 0;
@@ -46,20 +46,16 @@
       align-items: center;
       padding-right: 100px;
 
-      @media (max-width: 1080px) {
+      @media (max-width: 1020px) {
         margin-right: 0;
-      }
-
-      @media (max-width: 480px) {
         padding-right: 0;
       }
-
     }
 
     &--beautiful {
       margin-bottom: 120px;
 
-      @media (max-width: 768px) {
+      @media (max-width: $screenTablet) {
         display: flex;
         flex-direction: row-reverse;
         margin-bottom: 50px;
@@ -67,7 +63,7 @@
     }
 
     &--time {
-      @media (max-width: 768px) {
+      @media (max-width: $screenTablet) {
         display: flex;
       }
     }
@@ -80,16 +76,16 @@
       margin-right: 20px;
       max-width: 50%;
 
-      @media (max-width: 600px) {
+      @media (max-width: $screenMobile) {
         max-width: 100%;
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $screenTablet) {
       max-width: 50%;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: $screenMobile) {
       max-width: 100%;
     }
   }
@@ -101,7 +97,7 @@
       max-width: 500px;
       max-height: 500px;
 
-      @media (max-width: 768px) {
+      @media (max-width: $screenTablet) {
         max-width: 284px;
         max-height: 284px;
       }
@@ -118,7 +114,7 @@
       padding-right: 50px;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: $screenMobile) {
       display: none;
     }
   }
@@ -134,7 +130,7 @@
     padding-bottom: 40px;
     position: relative;
 
-    @media (max-width: 768px) {
+    @media (max-width: $screenTablet) {
       display: none;
     }
 
@@ -150,7 +146,7 @@
       left: -40px;
       bottom: 35px;
 
-      @media (max-width: 768px) {
+      @media (max-width: $screenTablet) {
         display: none;
       }
     }
@@ -159,7 +155,7 @@
       display: flex;
       flex-direction: row-reverse;
 
-      @media (max-width: 768px) {
+      @media (max-width: $screenTablet) {
         display: none;
       }
     }
@@ -196,7 +192,7 @@
     &--time {
       margin-left: -25px;
 
-      @media (max-width: 600px) {
+      @media (max-width: $screenMobile) {
         margin-left: 20px;
         display: block;
       }
@@ -214,6 +210,12 @@
     position: relative;
     padding-top: 10px;
 
+    text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+    background: url(https://htmlcolors.com/palette-image/121/dark-blue-and-red.png) repeat-x;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: aitf 4s linear infinite;
+
     &::after {
       content: "";
       height: 46px;
@@ -225,7 +227,7 @@
       right: 140px;
       bottom: 0;
 
-      @media (max-width: 768px) {
+      @media (max-width: $screenTablet) {
         display: none;
       }
     }
@@ -255,7 +257,7 @@
     line-height: 12px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: #828282;
+    color: $grey-color;
     transform: rotate(90deg);
 
     &::before {
@@ -265,22 +267,30 @@
       right: 105px;
       width: 1px;
       height: 65px;
-      background: #828282;
+      background: $grey-color;
       transform: rotate(90deg);
-    }
-
-    @media (max-width: 576px) {
-      top: auto;
-      bottom: -950px;
-      right: -20px;
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $screenTablet) {
     padding: 50px 0;
   }
 
-  @media (max-width: 480px) {
-    padding: 40px 0;
+  @media (max-width: $screenMobile) {
+    display: none;
+  }
+
+  @-webkit-keyframes aitf {
+    0% {
+      background-position: 10% -10%;
+    }
+
+    50% {
+      background-position: 90% 10%;
+    }
+
+    100% {
+      background-position: 100% 10%;
+    }
   }
 }
