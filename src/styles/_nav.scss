@@ -32,10 +32,6 @@
 
     &--basket {
       display: none;
-
-      @media (max-width: 995px) {
-        display: inherit;
-      }
     }
 
     &:hover {
@@ -90,24 +86,31 @@
         transform: rotate(90deg);
       }
 
-      & ~ .nav__list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 1px;
-        background-color: #03839e;
-        width: 450px;
-        height: 450px;
-        position: absolute;
-        top: 0;
-        right: 0;
+      & ~ .nav {
 
-        & .nav__link {
-          display: block;
-        }
+        &__list {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px 1px;
+          background-color: #03839e;
+          width: 450px;
+          height: 450px;
+          position: absolute;
+          top: 0;
+          right: 0;
 
-        @media (max-width: 500px) {
-          width: 100vw;
+          & .nav__link {
+            display: block;
+
+            &--basket {
+              display: inherit;
+            }
+          }
+
+          @media (max-width: 500px) {
+            width: 100vw;
+          }
         }
       }
     }
