@@ -1,0 +1,230 @@
+.question {
+  &__content {
+    position: relative;
+
+    height: 567px;
+    padding-top: 39px;
+  }
+
+  &__decor-bg {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    z-index: -1;
+
+    width: 100%;
+    height: inherit;
+
+    background-image: url("../images/vectors/decor_bottom.svg");
+    background-repeat: no-repeat;
+  }
+
+  &__decor-text {
+    position: absolute;
+    right: 60px;
+    top: -120px;
+    z-index: -1;
+
+    width: 200px;
+    height: 200px;
+
+    background-image: url("../images/decor_text1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    animation: rotate 60s linear infinite;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: "Bebas Neue Bold", sans-serif;
+
+    color: $c-black;
+  }
+
+  &__info {
+    display: flex;
+    gap: 230px ;
+  }
+
+  &__text {
+    margin-bottom: 27px;
+
+    font-size: 16px;
+    line-height: 150%;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    color: $c-black;
+  }
+
+  &__subtitle {
+    margin-bottom: 23px;
+
+    font-size: 24px;
+    line-height: 150%;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    color: $c-black;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+
+    &-wrap {
+      margin-bottom: 160px;
+    }
+  }
+
+  &__input {
+    padding: 4px 6px;
+    margin-bottom: 15px;
+
+    font-size: 16px;
+    line-height: 150%;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    color: $c-text;
+  }
+
+  &__button {
+    position: relative;
+    margin-top: 59px;
+
+    display: inline-block;
+
+    font-size: 16px;
+    line-height: 19px;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    border: none;
+    background-color: transparent;
+    color: $c-heading;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 50px / 2);
+
+      width: 50px;
+      height: 1px;
+
+      border-bottom: 1px dashed $c-heading;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    margin-top: 68px;
+  }
+
+  &__heading {
+    margin-bottom: 4px;
+
+    font-size: 24px;
+    line-height: 150%;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    color: $c-black;
+  }
+
+  @media (max-width: 1150px) {
+    & {
+      &__decor-bg {
+        left: -20px;
+      }
+
+      &__decor-text {
+        right: 30px;
+      }
+
+      &__form {
+        width: 340px;
+      }
+
+      &__info {
+        gap: 140px;
+      }
+
+      &__contacts {
+        width: 205px;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    & {
+      &__content {
+        margin-bottom: 290px;
+      }
+
+      &__decor-bg {
+        left: 0;
+      }
+
+      &__decor-text {
+        width: 120px;
+        height: 120px;
+        top: -70px;
+        right: 25px;
+      }
+
+      &__title {
+        margin-bottom: 20px;
+      }
+
+      &__info {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 90px;
+      }
+
+      &__form {
+        width: 100%;
+      }
+
+      &__form-wrap {
+        margin-bottom: 0;
+      }
+
+      &__input {
+        width: 100%;
+      }
+
+      &__button {
+        margin-top: 30px;
+      }
+
+      &__contacts {
+        width: 250px;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
