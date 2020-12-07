@@ -1,0 +1,124 @@
+.menu {
+  display: flex;
+  // flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 21px;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    width: 231px;
+    height: 568px;
+    padding: 20px 0;
+    list-style: none;
+    background-color: #03839e;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    transform: translateY(-100);
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__toggler:not(:checked) ~ &__list {
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #f8f8f8;
+    font-family: $proximaR;
+    // color: $middle-gray-color;
+    padding-right: 64px;
+    line-height: 24px;
+    text-decoration: none;
+    transition: transform 0.4s ease-out;
+
+    &::after {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $main-blue-color;
+      content: "";
+      transition: width 0.4s ease-out;
+    }
+
+    &:hover {
+      color: $dark-gray-color;
+      transform: scale(1.1);
+    }
+
+    &:hover:after,
+    &:focus:after {
+      width: 100%;
+    }
+
+    &--is-active {
+      color: $dark-gray-color;
+      font-weight: bold;
+    }
+  }
+}
+
+.burger {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  padding: 120px 20px;
+  right: 100vw;
+  height: 100vh;
+  z-index: 2;
+  width: 30%;
+  font-size: 16px;
+  line-height: 150%;
+  color: $light-gray-color;
+  background-color: $main-blue-color;
+  opacity: 0.9;
+  transition: left 1s;
+
+  @media (max-width: 992px) {
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    text-align: left;
+    padding: 13px 68px;
+  }
+
+  &__link {
+    color: #f8f8f8;
+    display: flex;
+
+    &--count {
+      display: inline-block;
+      align-items: center;
+      text-align: center;
+
+      width: 13px;
+      height: 13px;
+      background-color: #eb5757;
+      border-radius: 100%;
+      font-size: 9px;
+      line-height: 7px;
+      padding: 4px;
+      margin: 4px;
+      position: relative;
+      top: -6px;
+      font-family: $bebasB;
+      font-weight: 700;
+      color: $light-gray-color;
+    }
+  }
+}

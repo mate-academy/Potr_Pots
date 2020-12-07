@@ -1,0 +1,176 @@
+.box {
+  display: grid;
+  background: url(../img/rectangle3.png) no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 74px;
+}
+
+.questions {
+  position: relative;
+  display: flex;
+  justify-self: center;
+  max-width: $content-width;
+  height: 567px;
+
+  @media (max-width: 1270px) {
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
+    padding: 0 30px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: start;
+  }
+
+  &__circle {
+    position: absolute;
+    right: 0;
+    top: -110px;
+    // @media (max-width: 1275px) {
+    //   right: -50px;
+    //   top: -110px;
+    // }
+ 
+  }
+
+  &__title {
+    font-family: $bebasB;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding-top: 39px;
+    @media (max-width: 386px) {
+      margin-left: 25px;
+      font-size: 30px;
+    }
+  }
+
+  &__subtitle {
+    font-family: $proximaR;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 27px;
+    @media (max-width: 386px) {
+      margin-left: 25px;
+    }
+  }
+
+  &__message-us {
+    font-family: $proximaR;
+    font-size: 24px;
+    line-height: 36px;
+    @media (max-width: 386px) {
+      margin-left: 25px;
+    }
+  }
+
+  &__name {
+    display: block;
+    @include form-styles;
+    background-color: $main-yellow;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 370px;
+    padding-top: 25px;
+    @media (max-width: 926px) {
+      width: 340px;
+    }
+    @media (max-width: 386px) {
+      margin-left: 25px;
+    }
+  }
+
+  &__email {
+    display: block;
+    @include form-styles;
+    background-color: $main-yellow;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 370px;
+    padding-top: 25px;
+    @media (max-width: 926px) {
+      width: 340px;
+    }
+    @media (max-width: 386px) {
+      margin-left: 25px;
+    }
+  }
+
+  &__message {
+    display: block;
+    @include form-styles;
+    background: $main-yellow;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 370px;
+    padding-top: 25px;
+    @media (max-width: 926px) {
+      width: 340px;
+    }
+    @media (max-width: 386px) {
+      margin-left: 25px;
+
+    }
+  }
+
+  &__button {
+    display: flex;
+    font-family: $proximaS;
+    font-size: 16px;
+    line-height: 19px;
+    background: $main-yellow;
+    color: #333;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+    padding-top: 64px;
+    margin: auto;
+    cursor: pointer;
+  }
+
+  &__adress {
+    padding: 160px 230px 0;
+
+    @media (max-width: 1270px) {
+      padding: 160px 100px 0;
+    }
+    @media (max-width: 926px) {
+      position: relative;
+      top: -30px;
+      padding: 160px 0 0 88px;
+    }
+    @media (max-width: 926px) {
+      position: static;
+      top: 0;
+    }
+    @media (max-width: 768px) {
+      text-align: start;
+      padding-left: 0;
+    }
+    @media (max-width: 386px) {
+      margin-left: 40px;
+    }
+  }
+
+  &__our {
+    padding-bottom: 21px;
+  }
+
+  &__text {
+    font-family: $proximaR;
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__desc {
+    font-family: $proximaR;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

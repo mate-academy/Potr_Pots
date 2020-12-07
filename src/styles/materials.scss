@@ -1,0 +1,239 @@
+.promo {
+  display: grid;
+  justify-self: center;
+  background: url(../img/yellow-pots.jpg) 0 0 / 100% no-repeat;
+  // max-width: 1532px;
+  max-width: $content-width;
+  position: relative;
+}
+
+.materials {
+  justify-self: center;
+  max-width: $content-width;
+
+  @media (max-width: 1270px) {
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  @media (max-width: 992px) {
+    width: 100%;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 576px) {
+    width: 100%;
+    padding: 0 30px;
+  }
+
+  &__title {
+    display: inline-block;
+    position: relative;
+    font-family: $bebasB;
+    font-size: 139px;
+    line-height: 139px;
+    letter-spacing: 0.12em;
+    color: $main-blue-color;
+    top: -160px;
+    z-index: 3;
+    @media (max-width: 1104px) {
+      font-size: 80px;
+      line-height: 80px;
+      letter-spacing: 0.12em;
+    }
+    @media (max-width: 1024px) {
+      font-size: 80px;
+    }
+
+    @media (max-width: 848px) {
+      font-size: 58px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 56px;
+    }
+    @media (max-width: 386px) {
+      margin-left: 25px;
+      font-size: 33px;
+    }
+
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    // white-space: pre-line;
+  }
+
+  &__inner {
+    position: relative;
+    align-self: flex-end;
+    top: -300px;
+    @media (max-width: 1104px) {
+      top: -100px;
+    }
+    @media (max-width: 933px) {
+      top: -250px;
+    }
+    @media (max-width: 854px) {
+      top: -150px;
+    }
+    @media (max-width: 620px) {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 30px;
+    font-family: $proximaB;
+    color: $middle-gray-color;
+
+    @media (max-width: 590px) {
+      font-size: 58px;
+      line-height: 58px;
+    }
+  }
+
+  &__subdesc {
+    font-size: 16px;
+    line-height: 24px;
+    color: $middle-gray-color;
+    font-family: $proximaR;
+    @media (max-width: 933px) {
+      // font-size: 10px;
+      // line-height: 18px;
+
+    }
+
+  }
+
+  &__subdesc-bold {
+    font-family: $proximaB;
+  }
+
+  &__btn {
+    display: flex;
+  }
+
+  &__toggler {
+    display: none;
+  }
+
+  &__desc {
+    display: block;
+    max-width: 303px;
+    height: 235px;
+    padding: 35px 45px;
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.41);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+    font-family: $proximaR;
+    font-size: 16px;
+    line-height: 24px;
+    color: #f8f8f8;
+    position: relative;
+    z-index: 1;
+    left: -20px;
+    top: 6px;
+    @media (max-width: 500px) {
+      visibility: visible;
+      top: 220px;
+    }
+    @media (max-width: 386px) {
+      margin-left: 70px;
+
+    }
+  }
+
+  &__toggler-label {
+    position: relative;
+    width: 51px;
+    height: 51px;
+    background-color: #eb5757;
+    border-radius: 50%;
+    display: grid;
+    padding: 20px;
+    cursor: pointer;
+    text-align: center;
+    grid-row-end: 3;
+    top: 50px;
+    left: 50px;
+    @media (max-width: 1270px) {
+      top: 0;
+    }
+    @media (max-width: 500px) {
+      display: none;
+    }
+
+    &::before {
+      @include btn-styles;
+    }
+    &::after {
+      content: "";
+      display: grid;
+      position: absolute;
+      justify-self: center;
+      align-self: center;
+      height: 12px;
+      width: 1px;
+      background-color: #e0e0e0;
+    }
+
+    &:hover {
+      background-color: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(12px);
+    }
+
+    &:hover::before {
+      @include btn-styles;
+    }
+
+    &:hover::after {
+      @include btn-styles;
+    }
+  }
+
+  &__toggler-label:hover ~ &__desc {
+    visibility: visible;
+  }
+
+  &__aspidistra {
+    position: relative;
+    @media (max-width: 768px) {
+      // left: 180px;
+      top: -90px;
+    }
+    @media (max-width: 689px) {
+      // left: 180px;
+      top: -180px;
+    }
+  }
+
+  &__ivy {
+    position: relative;
+    // bottom: -300px;
+    // left: -10px;
+    @media (max-width: 933px) {
+      display: none;
+    }
+  }
+
+  &__cactus {
+    position: relative;
+    @media (max-width: 933px) {
+      display: none;
+    }
+  }
+
+  &__pandanus {
+    // position: relative;
+    // bottom: -330px;
+    @media (max-width: 933px) {
+      display: none;
+    }
+  }
+}
