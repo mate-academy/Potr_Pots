@@ -107,8 +107,7 @@
 
     &-text {
       position: absolute;
-      left: calc(-303px / 2 + 51px / 2);
-      top: 57px;
+      z-index: 1;
 
       width: 303px;
       padding: 35px 45px;
@@ -117,15 +116,35 @@
       color: $c-grayLight;
       font-family: "Proxima Nova Regular", sans-serif;
       font-size: 16px;
-      line-height: 1;
+      line-height: 1.5;
 
       opacity: 0;
       background: rgba(0, 0, 0, 0.41);
-      mix-blend-mode: normal;
       backdrop-filter: blur(34px);
 
       transition: all 0.5s ease-in;
       transform: scale(0);
+
+      &--1 {
+        bottom: 95px;
+        left: 311px;
+      }
+      &--2 {
+        bottom: 159px;
+        left: 415px;
+      }
+      &--3 {
+        bottom: 50px;
+        right: 396px;
+      }
+      &--4 {
+        bottom: 30px;
+        right: 430px;
+      }
+      &--5 {
+        bottom: 132px;
+        right: 150px;
+      }
     }
 
     &:hover {
@@ -138,11 +157,10 @@
       transform: rotate(  180deg);
     }
 
-    &:hover &-text {
+    &:hover + &-text {
       opacity: 1;
       transform: scale(1);
       background: rgba(0, 0, 0, 0.41);
-      mix-blend-mode: normal;
       backdrop-filter: blur(34px);
     }
   }
@@ -200,22 +218,18 @@
         &--1 {
           left: 144px;
         }
-
         &--2 {
           bottom: 350px;
           left: 317px;
         }
-
         &--3 {
           bottom: 105px;
           left: 554px;
         }
-
         &--4 {
           bottom: 252px;
           left: 680px;
         }
-
         &--5 {
           bottom: 359px;
           right: 162px;
@@ -223,15 +237,22 @@
 
         &-text {
           &--1 {
-            left: 0;
+            left: 200px;
+          }
+          &--2 {
+            bottom: 190px;
+            left: 372px;
+          }
+          &--3 {
+            right: 288px;
           }
           &--4 {
-            left: auto;
-            right: 0;
+            bottom: 90px;
+            right: 160px;
           }
           &--5 {
-            left: auto;
-            right: 0;
+            bottom: 118px;
+            right: 140px;
           }
         }
       }
@@ -279,48 +300,45 @@
           bottom: 103px;
           left: 83px;
         }
-
         &--2 {
           bottom: 230px;
           left: 231px;
         }
-
         &--3 {
           bottom: 72px;
           left: 338px;
         }
-
         &--4 {
           bottom: 180px;
           left: auto;
           right: 223px;
         }
-
         &--5 {
           bottom: 319px;
           right: 162px;
         }
 
         &-text {
-          left: 0;
-
           &--1 {
-            left: 57px;
+            left: 140px;
+            bottom: 50px;
           }
-
+          &--2 {
+            bottom: 170px;
+            left: 290px;
+          }
           &--3 {
-            top: -190px;
-            left: 0;
+            right: auto;
+            left: 300px;
+            bottom: 130px;
           }
-
           &--4 {
-            left: auto;
-            right: -150px;
+            bottom: 130px;
+            right: auto;
+            left: 185px;
           }
-
           &--5 {
-            left: auto;
-            right: -100px;
+            bottom: 74px;
           }
         }
       }
@@ -346,6 +364,14 @@
         left: calc(50% - 400px / 2);
 
         max-width: 400px;
+      }
+
+      &__pros {
+        &-text {
+          &--3 {
+            left: 100px;
+          }
+        }
       }
 
       &__decor {
@@ -378,50 +404,26 @@
           bottom: 201px;
           left: 30px;
         }
-
         &--2 {
           bottom: 21px;
           left: 53px;
         }
-
         &--3 {
           bottom: 153px;
           left: 135px;
         }
-
         &--4 {
           bottom: 61px;
           right: 56px;
         }
-
         &--5 {
           bottom: 136px;
           right: 17px;
         }
-
         &-text {
-          padding: 28px 44px 58px;
-          top: 57px;
-
-          &--1 {
-            left: -21.5px;
-          }
-
-          &--2 {
-            left: -45px;
-          }
-
-          &--3 {
-            left: -126px;
-          }
-
-          &--4 {
-            right: -47.5px;
-          }
-
-          &--5 {
-            right: -8.5px;
-          }
+          left: 9px;
+          right: auto;
+          bottom: -150px;
         }
       }
     }
