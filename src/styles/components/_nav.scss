@@ -1,0 +1,220 @@
+.nav {
+  &__list {
+    display: flex;
+    justify-content: end;
+
+    font-family: "Proxima Nova Regular", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+
+    list-style: none;
+
+    &--active {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 138px;
+    }
+
+    @media (min-width: 1024px) {
+      & {
+        display: flex;
+        justify-content: end;
+      }
+    }
+  }
+
+  &__item {
+    margin-right: 64px;
+
+    &--hide {
+      display: none;
+    }
+
+    &--purchase {
+      margin-left: 198px;
+      margin-right: 9px;
+
+      &:hover {
+        animation: bounce-purchase linear 1s;
+      }
+
+      @media (max-width: 1170px) {
+        & {
+          margin-left: 98px;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        & {
+          display: none;
+          margin-left: 0;
+        }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      & {
+        margin-right: 0;
+        margin-bottom: 15px;
+
+        &--hide {
+          position: relative;
+
+          display: block;
+
+          &::after {
+            content: "0";
+            position: absolute;
+            right: -20px;
+
+            width: 13px;
+            height: 13px;
+
+            border-radius: 50%;
+            background-color: $c-red;
+            color: $c-white;
+            font-size: 9px;
+            line-height: 13px;
+            text-align: center;
+            font-family: "Bebas Neue Regular", sans-serif;
+          }
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 5px;
+
+    color: $c-text;
+
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+
+    transition: border-color 0.5s linear;
+
+    &:hover {
+      border-color: $c-turquoise;
+    }
+
+    &--purchase {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+
+      background-image: url("../images/vectors/purchase.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      border: none;
+    }
+
+    @media (max-width: 1024px) {
+      & {
+        color: $c-grayLight;
+
+        &:hover {
+          border-color: $c-white;
+        }
+      }
+    }
+  }
+
+  &__x-close {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    & {
+      display: none;
+
+      &__x-close {
+        position: relative;
+        z-index: 1;
+        left: 150px;
+        top: -70px;
+
+        display: inline-block;
+        width: 50%;
+
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 1.5;
+        color: #f8f8f8;
+        font-family: "Proxima Nova Regular", sans-serif;
+        text-transform: uppercase;
+        text-align: right;
+
+        transform: rotate(-90deg);
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 5px;
+
+          width: 12px;
+          height: 12px;
+
+          -webkit-mask: url("../images/vectors/x_close.svg") no-repeat 100% 100%;
+          mask: url("../images/vectors/x_close.svg") no-repeat 100% 100%;
+          -webkit-mask-size: cover;
+          mask-size: cover;
+          background-color: $c-grayLight;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 25px;
+          top: 7px;
+
+          height: 1px;
+          width: 44px;
+
+          background-color: #f8f8f8;
+        }
+      }
+    }
+  }
+
+  &--active {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 568px;
+    width: 231px;
+
+    background-color: $c-turquoise;
+
+    @media (min-width: 1024px) {
+      & {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes bounce-purchase {
+  0% {
+    transform: scale(1,1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1,0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9,1.1) translateY(-10px);
+  }
+  50% {
+    transform: scale(1,1) translateY(0);
+  }
+  100% {
+    transform: scale(1,1) translateY(0);
+  }
+}

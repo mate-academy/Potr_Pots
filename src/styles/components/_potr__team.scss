@@ -1,0 +1,146 @@
+.potr__team {
+  &__content {
+    position: relative;
+
+    margin-bottom: 226px;
+  }
+
+  &__title {
+    padding-bottom: 149px;
+
+    font-size: 58px;
+    line-height: 1;
+    letter-spacing: 0.15em;
+    font-family: "Bebas Neue Bold", sans-serif;
+
+    color: $c-heading;
+  }
+
+  &__background {
+    position: absolute;
+    left: -672px;
+    top: 158px;
+    z-index: -1;
+
+    width: 1121px;
+    height: 467px;
+
+    background-image: url("../images/vectors/rectangle-1.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      z-index: 0;
+
+      width: 672px;
+      height: 500px;
+
+      background-color: $c-grayLight;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+
+    font-size: 288px;
+    line-height: 288px;
+    letter-spacing: 0.15em;
+    font-family: "Bebas Neue Bold", sans-serif;
+
+    color: transparent;
+    -webkit-text-stroke: 1px $c-turquoise;
+
+    &--top {
+      top: 58px;
+      left: 74px;
+    }
+
+    &--bottom {
+      bottom: calc(-50% + 144px);
+      right: 0;
+    }
+
+    &--last {
+      letter-spacing: 0;
+    }
+  }
+
+  @media (max-width: 1140px) {
+    &__title {
+      padding-bottom: 189px;
+    }
+
+    &__decor {
+      font-size: 232px;
+      line-height: 1;
+
+      &--top {
+        top: 74px;
+        left: -44px;
+
+        -webkit-text-stroke: 0.8px $c-turquoise;
+      }
+
+      &--bottom {
+        bottom: calc(-50% + 167px);
+
+        font-size: 220px;
+
+        line-height: 1;
+        -webkit-text-stroke: 0.76px $c-turquoise;
+      }
+    }
+  }
+
+  @media (max-width: 780px) {
+    &__content {
+      margin-bottom: 176px;
+    }
+
+    &__background {
+      left: -869px;
+      top: 167px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    &__background {
+      right: 0;
+      left: auto;
+      top: 610px;
+
+      &::before {
+        width: 400px;
+      }
+    }
+  }
+
+  @media (max-width: 670px) {
+    &__title {
+      padding-bottom: 61px;
+    }
+
+    &__background {
+      top: 485px;
+    }
+
+    &__decor {
+      display: none;
+    }
+  }
+
+  @media (max-width: 610px) {
+    &__background {
+      top: 565px;
+    }
+  }
+
+  @media (max-width: 353px) {
+    &__background {
+      top: 600px;
+    }
+  }
+}
