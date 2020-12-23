@@ -1,0 +1,247 @@
+.eco {
+  display: flex;
+  padding-left: 235px;
+  padding-right: 135px;
+  justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
+  @media (max-width: 498px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__background {
+    background-image: url(../img/rectangle.png);
+    position: absolute;
+    width: 1121px;
+    height: 466px;
+    left: 0;
+    top: -137px;
+
+    @media (max-width: 1024px) {
+      width: 821px;
+      height: 466px;
+    }
+
+    @media (max-width: 983px) {
+      width: 100%;
+    }
+    @media (max-width: 498px) {
+      background-image: none;
+    }
+  }
+
+  &__text {
+    @media (max-width: 500px) {
+      padding-left: 30px;
+    }
+  }
+
+  &__title {
+    white-space: nowrap;
+    position: relative;
+    font-family: $bebasB;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px $main-blue-color;
+    z-index: 2;
+
+    @media screen and (max-width: 1161px) {
+      margin-right: -80px;
+      max-width: 260px;
+    }
+    @media (max-width: 768px) {
+      padding-top: 36px;
+      margin: 0;
+    }
+    @media (max-width: 520px) {
+      font-size: 54px;
+      line-height: 54px;
+      padding-bottom: 21px;
+    }
+    @media (max-width: 468px) {
+      font-size: 44px;
+      line-height: 44px;
+    }
+    @media (max-width: 400px) {
+      font-size: 38px;
+      line-height: 38px;
+    }
+    @media (max-width: 340px) {
+      font-size: 36px;
+      line-height: 36px;
+    }
+  }
+
+  &__color {
+    position: relative;
+    color: $main-blue-color;
+    animation: anime infinite 2s linear;
+  }
+
+  @keyframes anime {
+    0% {
+      color: orange;
+    }
+    33% {
+      color: rgba(235, 70, 70, 0.658);
+    }
+    66% {
+      color: $main-blue-color;
+    }
+    100% {
+      color: rgb(240, 173, 49);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    @media screen and (max-width: 1161px) {
+      padding-left: 85px;
+    }
+    @media screen and (max-width: 520px) {
+      padding: 0;
+    }
+  }
+
+  &__subtext {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 21px;
+    z-index: 2;
+    @media (max-width: 500px) {
+      align-items: flex-start;
+    }
+  }
+
+  &__price {
+    font-size: 26px;
+    line-height: 32px;
+    font-family: $proximaB;
+    color: $dark-gray-color;
+    padding-right: 60px;
+    z-index: 1;
+    @media (max-width: 500px) {
+      font-size: 24px;
+    }
+  }
+
+  &__suggest {
+    font-family: $proximaS;
+    font-size: 14px;
+    line-height: 21px;
+    color: $middle-gray-color;
+    z-index: 1;
+  }
+
+  &__button {
+    padding-top: 48px;
+    padding-left: 132px;
+
+    @media (max-width: 1161px) {
+      padding-left: 52px;
+    }
+    @media screen and (max-width: 520px) {
+      padding-left: 0;
+    }
+  }
+
+  &__btn {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: repeat(2, auto);
+    gap: 18px;
+    width: 238px;
+    height: 48px;
+    border: 1px solid $main-blue-color;
+    font-size: 14px;
+    color: $middle-black-color;
+    font-family: $proximaS;
+    text-transform: uppercase;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    &:hover {
+      background-color: $main-blue-color;
+      border-color: #f8f8f8;
+      color: white;
+    }
+    @media (max-width: 768px) {
+      background: #ffe339;
+      border-color: #ffe339;
+    }
+  }
+
+  &__sideline {
+    display: grid;
+    position: absolute;
+    left: 135px;
+    top: 320px;
+    font-size: 12px;
+    line-height: 18px;
+    font-family: $proximaR;
+    color: $main-blue-color;
+    writing-mode: tb-rl;
+    align-items: center;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    text-transform: uppercase;
+
+    @media (max-width: 1024px) {
+      left: 35px;
+      top: 300px;
+    }
+    @media (max-width: 768px) {
+      top: 750px;
+      left: 700px;
+    }
+    @media (max-width: 745px) {
+      display: none;
+    }
+  }
+
+  &__images {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.22);
+
+    @media (max-width: 868px) {
+      box-shadow: none;
+    }
+  }
+
+  &__img {
+    transition: transform 0.2s linear;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+      0 10px 10px rgba(0, 0, 0, 0.22);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    object-fit: cover;
+    &:hover {
+      transform: translate3d(-10px, -10px, 0);
+      @media (max-width: 500px) {
+        transform: translate3d(0, -10px, 0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      object-fit: cover;
+      // margin-left: 20px;
+    }
+  }
+}

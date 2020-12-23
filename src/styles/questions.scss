@@ -1,0 +1,197 @@
+.questions {
+  display: flex;
+  background: url(../img/rectangle3.png) no-repeat;
+  background-size: 90% 100%;
+  margin-bottom: 74px;
+  position: relative;
+  justify-self: center;
+  height: 567px;
+
+  @media (max-width: 813px){
+    background-size: 98% 100%;
+  }
+  @media (max-width: 750px){
+    background-size: 100% 100%;
+  }
+  @media (max-width: 658px){
+    height: 100%;
+    background-size: 100% 60%;
+  }
+  @media (max-width: 562px){
+    margin-bottom: 54px;
+  }
+  @media (max-width: 451px){
+    background-size: 100% 65%;
+  }
+
+  &__inner {
+    display: flex;
+    padding-left: 135px;
+    padding-right: 135px;
+    @media (max-width: 1024px){
+    padding: 0;
+    padding-left: 35px;
+    // justify-content: space-between;
+    // max-width: 768px;
+    }
+    @media (max-width: 658px) {
+      flex-direction: column;
+    }
+    
+  }
+
+  &__circle {
+    position: absolute;
+    right: 0;
+    top: -110px;
+    animation: spin 5s linear 0s infinite;
+    @media (max-width: 780px){
+      right: 60px;
+      top: -115px;
+    }
+    @media (max-width: 658px) {
+      right: -120px;
+      top: -50px;
+    }
+    @media (max-width: 545px) {
+      right: -220px;
+      top: -90px;
+    }
+    @media (max-width: 438px) {
+      right: -130px;
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__title {
+    font-family: $bebasB;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding-top: 39px;
+    @media (max-width: 480px) {
+     max-width: 250px;
+     padding-bottom: 10px;
+    }
+  }
+
+  &__subtitle {
+    font-family: $proximaR;
+    font-size: 16px;
+    line-height: 24px;
+    padding-bottom: 27px;
+  }
+
+  &__message-us {
+    font-family: $proximaR;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  &__name {
+    display: block;
+    @include form-styles;
+    background-color: $main-yellow;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 370px;
+    padding-top: 25px;
+    @media (max-width: 813px){
+      width: 340px;
+    }
+    @media (max-width: 480px) {
+      width: 260px;
+    }
+  }
+
+  &__email {
+    display: block;
+    @include form-styles;
+    background-color: $main-yellow;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 370px;
+    padding-top: 25px;
+    @media (max-width: 813px){
+      width: 340px;
+    }
+    @media (max-width: 480px) {
+      width: 260px;
+    }
+  }
+
+  &__message {
+    display: block;
+    @include form-styles;
+    background: $main-yellow;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 370px;
+    padding-top: 25px;
+    @media (max-width: 813px){
+      width: 340px;
+    }
+    @media (max-width: 480px) {
+      width: 260px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    font-family: $proximaS;
+    font-size: 16px;
+    line-height: 19px;
+    background: $main-yellow;
+    color: #333;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+    padding-top: 64px;
+    margin: auto;
+    cursor: pointer;
+  }
+
+  &__adress {
+    padding: 160px 230px 0;
+    @media (max-width: 1024px){
+      padding: 100px 35px 0 180px;
+    }
+    @media (max-width: 950px){
+      padding-left: 150px;
+    }
+    @media (max-width: 910px){
+      padding-left: 90px;
+    }
+    @media (max-width: 843px){
+      padding-left: 70px;
+    }
+    @media (max-width: 658px) {
+      padding-left: 165px;
+    }
+    @media (max-width: 545px) {
+      padding-left: 0;
+    }
+  }
+
+  &__our {
+    padding-bottom: 21px;
+  }
+
+  &__text {
+    font-family: $proximaR;
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__desc {
+    font-family: $proximaR;
+    font-size: 16px;
+    line-height: 24px;
+    color: inherit;
+  }
+}
