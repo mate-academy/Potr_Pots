@@ -1,0 +1,208 @@
+.main {
+  margin: 25px auto;
+  width: $WidthForSmallView;
+
+  @media screen and (min-width: 766px) {
+    width: $WidthForMiddleView;
+    display: grid;
+    gap: 0 30px;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  @media screen and (min-width: 1278px) {
+    width: $WidthForMaxView;
+    grid-template-columns: 505px 505px;
+    gap: 0 70px;
+    justify-content: end;
+    margin-bottom: -100px;
+  }
+
+  &__photo {
+    width: 320px;
+    height: 320px;
+    margin: 15px 0 25px -30px;
+    object-fit: cover;
+
+    @media screen and (min-width: 766px) {
+      position: relative;
+      left: -50px;
+      width: 306px;
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    @media screen and (min-width: 1278px) {
+      justify-self: end;
+      object-fit: cover;
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  &__caption {
+    font-family: $BebasRegular;
+    width: 260px;
+    height: 150px;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: transparent;
+    -webkit-text-stroke: 1px $TurquoiseColor;
+
+    &-full {
+      color: $TurquoiseColor;
+    }
+
+    @media screen and (min-width: 766px) {
+      position: relative;
+      z-index: 1;
+      width: 460px;
+      height: 266px;
+      font-size: 64px;
+      line-height: 64px;
+      grid-column: 1/span 2;
+      grid-row: 1;
+      justify-self: baseline;
+      align-self: center;
+    }
+
+    @media screen and (min-width: 1278px) {
+      width: 501px;
+      height: 266px;
+      top: -100px;
+      left: -60px;
+    }
+  }
+
+  &__price {
+    position: relative;
+    @media screen and (min-width: 766px) {
+      top: -90px;
+      left: 30px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -250px;
+    }
+
+    &-number {
+      display: block;
+      margin-top: 16px;
+      font-family: $ProximaBold;
+      font-size: 26px;
+      line-height: 32px;
+      color: $Black;
+    }
+
+    &-description {
+      width: 139px;
+      height: 43px;
+      font-family: $ProximaSemibold;
+      font-size: 14px;
+      line-height: 150%;
+      color: $Grey;
+    }
+
+    &-button {
+      display: block;
+      position: relative;
+      font-family: $ProximaSemibold;
+      font-size: 14px;
+      text-align: center;
+      line-height: 48px;
+      text-transform: uppercase;
+      text-decoration: none;
+
+      color: #121212;
+      margin-top: 20px;
+      margin-bottom: 100px;
+      background: $Yellow;
+      width: 238px;
+      height: 48px;
+      border: 1px solid $Yellow;
+
+      transition: background-color 0.5s, border 0.5s, color 0.5s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 18px;
+        right: 50px;
+        height: 10px;
+        width: 30px;
+        background: url(../images/arrow-1.svg) no-repeat center;
+      }
+
+      @media screen and (min-width: 766px) {
+        top: 25px;
+        margin-bottom: 0;
+      }
+    }
+
+    &-button:hover {
+      background-color: transparent;
+      border: 1px solid black;
+
+      @media screen and (min-width: 766px) {
+        background-color: $TurquoiseColor;
+        border: 1px solid $TurquoiseColor;
+        color: white;
+
+        &::after {
+          background: url(../images/Arrow-white.svg) no-repeat center;
+        }
+      }
+    }
+
+    &-more {
+      position: absolute;
+      font-family: $ProximaRegular;
+      font-size: 12px;
+      bottom: 80px;
+      right: -70px;
+      width: 130px;
+      height: 18px;
+      color: $TurquoiseColor;
+      transform: rotate(90deg);
+    }
+
+    &-more::after {
+      content: "";
+      position: absolute;
+      top: -15px;
+      right: -50px;
+      height: 44px;
+      width: 44px;
+      transform: rotate(-90deg);
+      background: url(../images/blue-arrow.svg) no-repeat center;
+
+    }
+
+    @media screen and (min-width: 766px) {
+      display: flex;
+      flex-direction: column;
+      margin-top: -16px;
+      margin-left: 200px;
+
+      &-button {
+        right: 120px;
+        background-color: transparent;
+        border: 1px solid $TurquoiseColor;
+      }
+
+      &-more {
+        top: 140px;
+        left: -295px;
+      }
+    }
+
+    @media screen and (min-width: 1278px) {
+      &-more {
+        left: -410px;
+      }
+    }
+  }
+}
