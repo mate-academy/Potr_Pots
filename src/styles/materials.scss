@@ -1,3 +1,101 @@
+
+.black-box {
+  display: none;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.45);
+  mix-blend-mode: normal;
+  backdrop-filter: blur(34px);
+  height: 254px;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+  padding: 28px 44px 58px 45px;
+
+  &__text {
+    width: 213px;
+    height: 168px;
+
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+    color: $GreyLight;
+  }
+
+  &__rhomb {
+    display: flex;
+    width: 80px;
+    height: 20px;
+    margin: 0 auto;
+  }
+}
+
+.rhomb {
+  width: 30px;
+  background: url(../images/rhomb.svg) no-repeat center;
+}
+
+.rhomb:first-child {
+  background: url(../images/active-rhomb.svg) no-repeat center;
+}
+
+.button {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+
+  background: $MainRed;
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: transform 0.5s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 1px;
+    background-color: #fff;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 15px;
+    background-color: #fff;
+    transition: height 0.5s;
+  }
+
+  &:hover {
+    background-color: rgba(36, 35, 35, 0.75);
+
+    .black-box {
+      @media screen and (min-width: 766px) {
+        display: block;
+      }
+    }
+
+    &:after {
+      height: 0;
+    }
+  }
+}
+
+.open {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  top: 430px;
+  left: -20px;
+}
+
 .materials {
   width: $WidthForSmallView;
   margin: 0 auto;
@@ -132,33 +230,9 @@
     display: none;
   }
 
-  &__button1,
-  &__button2,
-  &__button3,
-  &__button4,
-  &__button5 {
-    display: block;
-    position: relative;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    background: $MainRed;
-    border-radius: 50%;
-    font-family: $ProximaRegular;
-    font-size: 20px;
-    color: #e0e0e0;
-    text-decoration: none;
-    transition: transform 0.5s;
-  }
-
   &__button1 {
     position: relative;
     top: 40px;
-
-    &:hover {
-      transform: scale(1.2);
-    }
 
     @media screen and (min-width: 766px) {
       top: -160px;
@@ -176,10 +250,6 @@
     top: 65px;
     left: 220px;
 
-    &:hover {
-      transform: scale(1.2);
-    }
-
     @media screen and (min-width: 766px) {
       top: -325px;
       left: 210px;
@@ -195,14 +265,6 @@
     position: relative;
     top: -5px;
     left: 120px;
-    transform: rotate(71deg);
-    background: rgba(36, 35, 35, 0.75);
-    opacity: 0.65;
-    backdrop-filter: blur(12px);
-
-    &:hover {
-      transform: scale(1.2);
-    }
 
     @media screen and (min-width: 766px) {
       top: -470px;
@@ -217,12 +279,10 @@
 
   &__button4 {
     position: absolute;
-
-    &:hover {
-      transform: scale(1.2);
-    }
+    display: none;
 
     @media screen and (min-width: 766px) {
+      display: block;
       top: 570px;
       left: 430px;
     }
@@ -236,10 +296,6 @@
   &__button5 {
     position: absolute;
 
-    &:hover {
-      transform: scale(1.2);
-    }
-
     @media screen and (min-width: 766px) {
       top: 630px;
       left: 310px;
@@ -252,30 +308,19 @@
   }
 
   &__black-box {
-    margin-left: -21px;
-    margin-bottom: 76px;
-    width: 302px;
-    height: 254px;
-    background: rgba(0, 0, 0, 0.45);
-    mix-blend-mode: normal;
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(34px);
-    padding: 28px 44px 58px 45px;
-
     @media screen and (min-width: 766px) {
       position: absolute;
-      top: 465px;
-      right: 0;
+      top: 70px;
+      right: -120px;
     }
-
-    @media screen and (min-width: 1278px) {
-      top: 865px;
-    }
-
   }
 }
 
 @media screen and (min-width: 766px) {
+  .open {
+    display: none;
+  }
+
   .materials__ecology {
     display: block;
     position: absolute;
@@ -321,34 +366,4 @@
       height: 144px;
     }
   }
-}
-
-.black-box {
-  &__text {
-    width: 213px;
-    height: 168px;
-    left: 54px;
-    top: 5326px;
-    font-family: $ProximaRegular;
-    font-size: 16px;
-    line-height: 150%;
-    color: $GreyLight;
-    margin-bottom: 11px;
-  }
-
-  &__rhomb {
-    display: flex;
-    width: 80px;
-    height: 20px;
-    margin: 0 auto;
-  }
-}
-
-.rhomb {
-  width: 30px;
-  background: url(../images/rhomb.svg) no-repeat center;
-}
-
-.rhomb:first-child {
-  background: url(../images/active-rhomb.svg) no-repeat center;
 }
