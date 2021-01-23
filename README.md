@@ -1,38 +1,27 @@
-# POTR POTS landing page
+# POTR POTS landing page [DEMO LINK](https://DarMatt.github.io/Potr_Pots/)
 
-Implement landing page according to [Figma design](https://www.figma.com/file/B4inXKHcMH3ChrTnXEJKS1/POTR-POTS-(Copy)?node-id=0%3A1) - Use BEM and SCSS
-- The design 1440px
-- Notebook 1280px
-- Tablet 768px
-- Mobile (> 320px)
+Design [Figma design](https://www.figma.com/file/B4inXKHcMH3ChrTnXEJKS1/POTR-POTS-(Copy)?node-id=0%3A1)
 
-1. Implement the header with `nav`.
-1. Implement `For whom` block.
-1. Implement `Features` block.
-1. Implement `POTR team` block with the card reused 3 times.
-1. Implement `Materials` block with 4 process cards.
-1. Implement `POTR size` block.
-1. Implement `Benefits` block.
-1. Implement `Questions` block
-1. Implement the footer.
+- Adaptive layout for all custom devices.
 
-## Instructions
-1. **Fork** the repo.
-2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
-3. Run `npm install` (or just `npm i`)
-4. Run `npm start`.
-5. Open one more terminal window for the next steps
-6. `git checkout -b develop` - to create new branch and switch on it
-7. Write you code in `src` folder
-8. Run `npm run lint` and fix code style errors.
-9. Run `npm run deploy` to deploy your solution to `gh-pages`
-10. `git add . && git commit -m 'solution'` to save your changes
-11. `git push origin develop` - to send you code for PR
-12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
-13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<DarMatt>.github.io/Potr_Pots/)
-14. Copy `DEMO LINK` to the PR description
 
-> To update you PR repeat steps 7-11
+**Project structure**
+- header with `nav`.
+- `For whom` block.
+- `Features` block.
+- `POTR team` block with the card reused 3 times.
+- `Materials` block with 4 process cards.
+- `POTR size` block.
+- `Benefits` block.
+- `Questions` block
+- footer.
 
---> [CHECKLIST](https://github.com/mate-academy/Potr_Pots/blob/master/checklist.md)
+**Technologies:**
+- HTML
+- CSS(SASS);
+- CSS animations;
+- Flex + Grid;
+
+**Methodologies:**
+- BEM;
+- Cross-browser semantic and responsive
