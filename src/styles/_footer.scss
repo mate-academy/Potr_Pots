@@ -1,0 +1,64 @@
+.footer {
+  max-height: 298px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 74px;
+
+    @media (max-width: 650px) {
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    @include h3Font;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__link {
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
+
+  &__logo {
+    @include h2Font;
+    letter-spacing: 0.15em;
+    margin-top: 84px;
+
+    @media (max-width: 650px) {
+      margin-top: 40px;
+    }
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  &__text--copyright {
+    visibility: hidden;
+
+    @media (max-width: 650px) {
+      visibility: visible;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__left,
+  &__right {
+    @media (max-width: 650px) {
+      display: none;
+    }
+  }
+}

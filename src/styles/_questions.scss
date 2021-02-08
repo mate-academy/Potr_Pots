@@ -1,0 +1,73 @@
+.questions {
+  background-image: url(../images/questions-bg.png);
+  background-repeat: no-repeat;
+  min-height: 568px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    right: 32%;
+    top: -67px;
+    background: url(../images/circle.png) 1% no-repeat;
+    width: 18%;
+    height: 48%;
+
+    @media (max-width: 1920px) {
+      right: 14%;
+    }
+    @media (max-width: 1440px) {
+      right: -4%;
+    }
+    @media (max-width: 1170px) {
+      right: 0;
+    }
+    @media (max-width: 850px) {
+      width: 13%;
+    }
+    @media (max-width: 500px) {
+      width: 32%;
+      height: 31%;
+    }
+  }
+
+  &__heading {
+    @include h2Font;
+    color: #000;
+    letter-spacing: 0.15em;
+    margin-top: 40px;
+  }
+
+  &__content {
+    margin-top: 27px;
+    display: grid;
+    grid-auto-flow: column;
+    margin-bottom: 50px;
+
+    @media (max-width: 750px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__field {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__contacts {
+
+    @media (max-width: 750px) {
+      margin-left: 20px;
+    }
+    @media (max-width: 490px) {
+      margin-left: 0;
+    }
+  }
+}
