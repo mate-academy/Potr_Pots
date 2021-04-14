@@ -29,6 +29,10 @@
     padding: 0 $sidePaddingMobile;
   }
 
+  &__title-2 {
+    line-height: 36px;
+  }
+
   &__toggler {
     position: relative;
     z-index: 3;
@@ -36,7 +40,7 @@
     padding: 5px;
 
     border: none;
-    background-color: #fff;
+    background-color: $greyLight;
     background-image: url("../images/sign/menu_icon.svg");
     background-position: center;
     background-repeat: no-repeat;
@@ -83,7 +87,7 @@
       padding: 5px;
 
       border: none;
-      background-color: #fff;
+      background-color: $greyLight;
       background-image: url("../images/sign/icon-bag.png");
       background-position: center;
       background-repeat: no-repeat;
@@ -128,7 +132,7 @@
 
 .info-by-pot {
   position: relative;
-  padding-bottom: 1000px;
+  padding-bottom: 100px;
   padding-top: $paddingTextMobile;
   padding-left: $sidePaddingMobile;
 
@@ -140,6 +144,7 @@
     & {
       position: unset;
       width: 440px;
+      padding-bottom: 115px;
     }
 
     &__title-1 {
@@ -154,12 +159,14 @@
       flex-direction: column;
       align-items: flex-end;
       padding-top: 250px;
+      padding-right: 10px;
     }
   }
 
   @media (min-width: $widthNotebook) {
     & {
       padding-top: 75px;
+      padding-bottom: 230px;
     }
   }
 
@@ -187,8 +194,22 @@
 
   &__button:hover {
     @extend %button;
-    background-color: #fff;
+    background-color: $greyLight;
     border-color: #333;
+  }
+
+  @media (min-width: $widthTablet) {
+    &__button {
+      background-color: $greyLight;
+      border: 1px solid $turquoise;
+      transition: 0.3s;
+    }
+
+    &__button:hover {
+      background-color: $turquoise;
+      border-color: $turquoise;
+      color: $greyLight;
+    }
   }
 }
 
@@ -196,6 +217,7 @@
   position: absolute;
   top: 240px;
   right: -65px;
+
   display: flex;
   flex-direction: row;
   height: 20px;
@@ -204,6 +226,7 @@
 
   &__text {
     @include textStyle(12px, 18px, normal, $turquoise);
+    letter-spacing: normal;
   }
 
   &::after {
