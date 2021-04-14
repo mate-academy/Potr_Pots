@@ -1,0 +1,92 @@
+.nav {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 100%;
+  right: 170%;
+  min-height: 650px;
+  height: 100vh;
+  width: 70%;
+  background-color: $turquoise;
+  transition: $timeHidht;
+
+  @media (min-width: $widthNotebook) {
+    & {
+      display: none;
+    }
+  }
+
+  &__list {
+    padding-top: 140px;
+    margin: 0 auto;
+    width: min-content;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    padding-bottom: 5px;
+    @include textStyle(24px, 32px, normal, #fff);
+    text-decoration: none;
+    border-bottom: solid 1px $turquoise;
+    transition: $timeHidht ease-in-out;
+  }
+
+  &__item--buy-counter::after {
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include square(18px);
+
+    content: "0";
+    font-size: 9px;
+    line-height: 18px;
+    
+    color: $greyLight;
+    background-color: $red;
+    border-radius: 50%;
+  }
+
+  &__link:hover {
+    text-shadow: 0 0 1px #fff, 0 0 1em #000;
+    border-color: #fff;
+  }
+
+  &--active {
+    left: 30%;
+    right: 0;
+  }
+}
+
+.nav-desktop {
+  display: none;
+  @media (min-width: $widthNotebook) {
+    & {
+      display: block;
+    }
+    &__list {
+      display: flex;
+      list-style: none;
+    }
+
+    &__link {
+      margin-right: 64px;
+      padding: 10px;
+      @include textStyle(16px, 24px, normal, $colorTextGray);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    &__link:hover {
+      text-shadow: 0 0 1px #fff, 0 0 0.5em #555;
+    }
+  }
+}

@@ -1,4 +1,26 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  @include textStyle(36px, 54px, normal, transparent);
+  -webkit-text-stroke: 1px $turquoise;
+}
+
+%h2 {
+  @include textStyle(36px, 36px, bold, #333333);
+}
+
+%button {
+  height: 48px;
+  width: 238px;
+
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  @include textStyle(14px, 21px, bold, #121212);
+  letter-spacing: 1.2px;
+  text-indent: -40px;
+
+  background-image: url(../images/sign/Arrow2.svg);
+  background-repeat: no-repeat;
+  background-position: 147px 17px;
+  outline: none;
+  transition: 0.3s;
+  cursor: pointer;
 }
