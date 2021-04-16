@@ -1,0 +1,140 @@
+.potr-team {
+  position: relative;
+  overflow: hidden;
+
+  &__background {
+    position: absolute;
+    bottom: -250px;
+    left: 0;
+    right: 0;
+    height: 550px;
+    background-size: cover;
+    background-image: url("../images/sign/Potr-backround.png");
+    background-repeat: no-repeat;
+    background-position: left;
+    z-index: -1;
+  }
+
+  &__title-2 {
+    font-size: 58px;
+    line-height: 58px;
+    padding-left: $sidePaddingMobile;
+    margin-bottom: 33px;
+  }
+
+  &__name {
+    display: none;
+  }
+
+  &__photo {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__text {
+    padding: 0 $sidePaddingMobile 60px;
+    margin-top: 35px;
+  }
+
+  @media (min-width: $widthTablet) {
+    &__name {
+      display: block;
+      position: absolute;
+
+      font-family: Bebas Neue, sans-serif;
+      @include textStyle(232px, 232px, normal, transparent);
+      -webkit-text-stroke: 1px $turquoise;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    &__name--position-1 {
+      transform: translateX(-44px);
+    }
+
+    &__name--position-2 {
+      bottom: 0;
+      right: -35px;
+    }
+
+    &__name-2 {
+      display: block;
+      position: absolute;
+    }
+
+    &__background {
+      bottom: unset;
+      top: 200px;
+      width: 1121px;
+      background-image: url(../images/sign/Potr-background-2.png);
+      transform: translateX(-70%);
+      background-size: cover;
+    }
+
+    &__photo {
+      height: 255px;
+      width: 340px;
+      margin-right: $sidePaddingMobile;
+    }
+
+    &__text {
+      padding-right: 50px;
+      transform: translateY(70px);
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: center;
+      height: 600px;
+    }
+  }
+
+  @media (min-width: 950px) {
+    &__photo {
+      height: 382px;
+      width: 500px;
+    }
+
+    &__info {
+      height: 700px;
+    }
+  }
+
+  @media (min-width: $widthNotebook) {
+    & {
+      padding: 0 $sidePaddingNotebook;
+    }
+    &__photo {
+      height: 500px;
+      width: 670px;
+    }
+
+    &__info {
+      height: 850px;
+    }
+
+    &__name {
+      font-size: 288px;
+      line-height: 288px;
+    }
+
+    &__name--position-1 {
+      transform: translateX(-20px);
+    }
+    
+    &__background {
+      transform: translateX(-50%);
+    }
+
+    &__text {
+      padding: 0;
+      margin-right: 77px;
+    }
+
+    &__title-2 {
+      padding-left: 0;
+    }
+  }
+}

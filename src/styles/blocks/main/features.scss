@@ -1,0 +1,103 @@
+.features {
+  $maxWidthCard: 370px;
+  padding: 0 $sidePaddingMobile;
+  margin-bottom: 95px;
+
+  &__card {
+    margin: 0 auto 70px;
+    max-width: $maxWidthCard;
+  }
+
+  &__title-1 {
+    font-size: 58px;
+    line-height: 58px;
+    margin-bottom: 50px;
+  }
+
+  &__title-1 > span {
+    color: $turquoise;
+  }
+
+  &__photo {
+    margin-bottom: 40px;
+    height: 100%;
+    width: 100%;
+    max-width: $maxWidthCard;
+
+    @include scale(1.2);
+    object-fit: contain;
+  }
+
+  &__title-3 {
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  @media (min-width: $widthTablet) {
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      row-gap: 20px;
+      align-items: flex-start;
+    }
+
+    &__card--area-1 {
+      grid-area: 1/2;
+    }
+
+    &__card--area-2 {
+      grid-area: 1/3;
+    }
+
+    &__card--area-3 {
+      grid-area: 1/1;
+    }
+
+    &__photo,
+    &__card {
+      width: 220px;
+    }
+
+    &__title-3,
+    &__text {
+      text-align: start;
+    }
+  }
+
+  @media (min-width: $widthNotebook) {
+    & {
+      padding: 0 $sidePaddingNotebook;
+    }
+  }
+  @media (min-width: $widthDesktop) {
+    &__container {
+      row-gap: 30px;
+    }
+
+    &__card--area-1 {
+      grid-area: 1/1;
+    }
+
+    &__card--area-2 {
+      grid-area: 1/2;
+    }
+
+    &__card--area-3 {
+      grid-area: 1/3;
+    }
+
+    &__photo,
+    &__card {
+      width: 370px;
+    }
+
+    &__title-3,
+    &__text {
+      text-align: center;
+    }
+  }
+}
