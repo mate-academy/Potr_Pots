@@ -1,0 +1,192 @@
+.shoppingBagModal {
+  display: block;
+  position: absolute;
+  min-width: 830px;
+  top: -500%;
+  left: 50%;
+  max-width: 603px;
+  transform: translateX(-50%);
+  padding: 40px 20px 111px 30px;
+
+  background-color: $c-grey-light;
+  transition: top 0.8s linear;
+  z-index: 999;
+
+  &_active {
+    display: block;
+    top: 200px;
+  }
+
+  &__titleWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__closeBtn {
+    position: relative;
+    bottom: 15px;
+    right: 10px;
+    width: 66px;
+    height: 66px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0;
+    background: center / contain no-repeat url("../images/icons/shoppingBagModalCloseBtn.png");
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__headersList {
+    padding: 0 100px 10px;
+    margin: 0;
+    display: flex;
+    list-style: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  &__headerItem {
+    font-size: 16px;
+    line-height: 150%;
+
+    &_1 {
+      margin-right: 130px;
+    }
+
+    &_2 {
+      margin-right: 140px;
+    }
+
+    &_3 {
+      margin-right: 32px;
+    }
+  }
+
+  &__potItem {
+    padding: 37px 10px 37px 100px;
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 70px;
+      height: 70px;
+    }
+
+    &_s {
+      margin-bottom: 33px;
+      &::before {
+        background: center / contain no-repeat url("../images/photos/smallPotBefore.png");
+      }
+    }
+
+    &_l {
+      &::before {
+        background: center / contain no-repeat url("../images/photos/largePotBefore.png");
+      }
+    }
+  }
+
+  &__potSize {
+    font-family: "Proxima Nova", sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    margin: auto 37px auto 0;
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 152px;
+    margin-right: 93px;
+  }
+
+  &__btn {
+    outline: none;
+    border: none;
+    width: 34px;
+    height: 34px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &_remove {
+      transform: rotate(45deg) translateY(-100%);
+      position: absolute;
+      right: 30px;
+      top: 50%;
+    }
+  }
+
+  &__orderNum {
+    font-size: 11px;
+    line-height: 13px;
+    color: $c-gray;
+    text-transform: uppercase;
+
+    &::after {
+      content: " order";
+    }
+  }
+
+  &__potPrice {
+    font-size: 16px;
+    line-height: 150%;
+    margin-right: 56px;
+    &::before {
+      content: "$ ";
+    }
+  }
+
+  &__totalPotPrice {
+    font-size: 16px;
+    line-height: 150%;
+    margin-right: 80px;
+
+    &::before {
+      content: "$ ";
+    }
+  }
+
+  &__lastRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 135px 0 70px;
+  }
+
+  &__totalWrapper {
+    display: flex;
+    justify-content: space-between;
+    min-width: 155px;
+  }
+
+  &__total {
+    font-size: 20px;
+    line-height: 150%;
+    margin: auto 0;
+  }
+}
