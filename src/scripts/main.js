@@ -1,30 +1,40 @@
-'use strict';
+import {
+  headerToggleBtn,
+  menuCloseBtn,
+  overlay,
+  shoppingBagIcon,
+  buyBtn,
+  shoppingBagCloseBtn,
+  checkoutShowBtn,
+  checkoutCloseBtn,
+  thanksShowBtn,
+  thanksCloseBtn,
+} from './custom/consts';
+import { showMenu, hideMenu } from './custom/burgerMenu';
+import { shoppingBagShow, shoppingBagHide } from './custom/shoppingBag';
+import { checkoutModalShow, checkoutModalHide } from './custom/checkout';
+import { thanksModalShow, thanksModalHide } from './custom/thanks';
 
-const headerToggleBtn = document.querySelector('.header__menuToggler');
-const nav = document.querySelector('.nav');
-const menuCloseBtn = document.querySelector('.nav__closeBtn');
-const overlay = document.querySelector('.overlay');
-const page = document.querySelector('.page');
+headerToggleBtn.addEventListener('click', showMenu);
+overlay.addEventListener('click', hideMenu);
+menuCloseBtn.addEventListener('click', hideMenu);
 
-const shoppingBagModal = document.querySelector('.shoppingBagModal');
-const shoppingBagIcon = document.querySelector('.header__cart');
-const shoppingBagCloseBtn = document
-  .querySelector('.shoppingBagModal__closeBtn');
+shoppingBagIcon.addEventListener('click', shoppingBagShow);
+shoppingBagCloseBtn.addEventListener('click', shoppingBagHide);
+overlay.addEventListener('click', shoppingBagHide);
 
-function navToggle() {
-  nav.classList.toggle('nav_active');
-  overlay.classList.toggle('overlay_active');
-  page.classList.toggle('page_no-scroll');
-}
+buyBtn.forEach(btn => {
+  btn.addEventListener('click', shoppingBagShow);
+});
 
-headerToggleBtn.addEventListener('click', navToggle);
-overlay.addEventListener('click', navToggle);
-menuCloseBtn.addEventListener('click', navToggle);
+checkoutShowBtn.addEventListener('click', checkoutModalShow);
+checkoutCloseBtn.addEventListener('click', checkoutModalHide);
+overlay.addEventListener('click', checkoutModalHide);
 
-function shoppingBagToggler() {
-  shoppingBagModal.classList.toggle('shoppingBagModal_active');
-  overlay.classList.toggle('overlay_active');
-}
+thanksShowBtn.addEventListener('click', e => {
+  e.preventDefault();
+});
 
-shoppingBagIcon.addEventListener('click', shoppingBagToggler);
-shoppingBagCloseBtn.addEventListener('click', shoppingBagToggler);
+thanksShowBtn.addEventListener('click', thanksModalShow);
+thanksCloseBtn.addEventListener('click', thanksModalHide);
+overlay.addEventListener('click', thanksModalHide);

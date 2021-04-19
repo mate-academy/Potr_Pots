@@ -631,8 +631,224 @@
       </div>
     </section>
 
-    <section class="checkoutModal"></section>
-    <section class="thanksModal"></section>
+    <section class="checkoutModal">
+      <div class="checkoutModal__titleWrapper">
+        <h2 class="checkoutModal__title">
+          checkout
+        </h2>
+        <button class="checkoutModal__closeBtn"></button>
+      </div>
+
+      <form action="" class="checkoutModal__form">
+        <div class="checkoutModal__address">
+          <h3 class="checkoutModal__subtitle checkoutModal__subtitle_1">
+            Provide your address
+          </h3>
+
+          <div class="checkoutModal__content">
+            <div class="checkoutModal__inputWrapper">
+              <input
+                required
+                placeholder="First name"
+                type="text"
+                class="input checkoutModal__input"
+                name="firstName"
+              >
+              <input
+                required
+                placeholder="Last name"
+                type="text"
+                class="input checkoutModal__input"
+                name="lastName"
+              >
+            </div>
+
+            <input
+              required
+              placeholder="Email"
+              type="email"
+              class="input checkoutModal__input checkoutModal__input_fullSize"
+              name="email"
+            >
+
+            <div class="checkoutModal__inputWrapper">
+              <input
+                required
+                placeholder="City"
+                type="text"
+                class="input checkoutModal__input checkoutModal__input_city"
+                name="city"
+              >
+              <input
+                required
+                placeholder="Street"
+                type="text"
+                class="input checkoutModal__input"
+                name="street"
+              >
+            </div>
+
+            <div class="checkoutModal__inputWrapper">
+              <input
+                required
+                placeholder="House number"
+                type="text"
+                class="input checkoutModal__input"
+                name="houseNumber"
+              >
+              <input
+                placeholder="Ukraine"
+                class="input checkoutModal__input"
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="checkoutModal__method">
+          <h3 class="checkoutModal__subtitle checkoutModal__subtitle_2">
+            Select a payment method
+          </h3>
+
+          <label for="paymentSyst1" class="checkoutModal__label checkoutModal__label_visa">
+            <input
+              type="radio"
+              class="input checkoutModal__input checkoutModal__input_method checkoutModal__input_visa"
+              required
+              name="paymentSyst"
+              id="paymentSyst1"
+            >
+            MasterCard / Visa
+          </label>
+
+          <label for="paymentSyst2" class="checkoutModal__label checkoutModal__label_paypal">
+            <input
+              type="radio"
+              class="input checkoutModal__input checkoutModal__input_method checkoutModal__input_paypal"
+              required
+              name="paymentSyst"
+              id="paymentSyst2"
+              checked
+            >
+            PayPal
+          </label>
+        </div>
+
+        <div class="checkoutModal__payment">
+          <h3 class="checkoutModal__subtitle checkoutModal__subtitle_3">
+            Your payment
+          </h3>
+
+          <div class="checkoutModal__content">
+            <div class="checkoutModal__lineWrapper">
+              <div for="" class="checkoutModal__inlineLabel">
+                Amount:
+              </div>
+
+              <div class="checkoutModal__inlineContent">
+                USD 7,50
+              </div>
+            </div>
+
+            <div class="checkoutModal__lineWrapper">
+              <label for="cardholderName" class="checkoutModal__inlineLabel">
+                Name on card:
+              </label>
+
+              <div class="checkoutModal__inlineContent">
+                <input
+                  required
+                  placeholder="YOUR NAME"
+                  type="text"
+                  class="input checkoutModal__input checkoutModal__input_fullSize checkoutModal__input_payment"
+                  name="cardholderName"
+                  id="cardholderName"
+                >
+              </div>
+            </div>
+
+            <div class="checkoutModal__lineWrapper">
+              <label for="cardNumber" class="checkoutModal__inlineLabel">
+                Card number:
+              </label>
+
+              <div class="checkoutModal__inlineContent">
+                <input
+                  required
+                  placeholder="**** **** **** ****"
+                  type="text"
+                  class="input checkoutModal__input checkoutModal__input_fullSize checkoutModal__input_payment"
+                  name="cardNumber"
+                  id="cardNumber"
+                >
+              </div>
+            </div>
+
+            <div class="checkoutModal__lineWrapper">
+              <label for="cardMonthExp" class="checkoutModal__inlineLabel">
+                Expiration date:
+              </label>
+
+              <div class="checkoutModal__inlineContent">
+                <input
+                  required
+                  placeholder="08"
+                  type="number"
+                  class="input checkoutModal__input checkoutModal__input_payment"
+                  name="cardMonthExp"
+                  id="cardMonthExp"
+                >
+                <input
+                  required
+                  placeholder="2019"
+                  type="number"
+                  class="input checkoutModal__input checkoutModal__input_payment"
+                  name="cardYearExp"
+                  id="cardYearExp"
+                >
+              </div>
+            </div>
+
+            <div class="checkoutModal__lineWrapper">
+              <label for="cardCvc" class="checkoutModal__inlineLabel">
+                CVC:
+              </label>
+
+              <div class="checkoutModal__inlineContent">
+                <input
+                  required
+                  placeholder="***"
+                  type="text"
+                  maxlength="3"
+                  class="input checkoutModal__input checkoutModal__input_payment"
+                  name="cardCvc"
+                  id="cardCvc"
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="modalBtn checkoutModal__btn">
+          Submit
+        </button>
+      </form>
+    </section>
+
+    <section class="thanksModal">
+      <div class="thanksModal__titleWrapper">
+        <h2 class="logo thanksModal__logo">
+          potrpots
+        </h2>
+        <button class="thanksModal__closeBtn"></button>
+      </div>
+
+      <div class="thanksModal__txt">
+        Thank you, payment was successful!
+      </div>
+      <div class="thanksModal__txt thanksModal__txt_s">
+        Expect a message to ship the item
+      </div>
+    </section>
     <div class="overlay"></div>
 
     <script type="text/javascript" src="scripts/main.js"></script>
