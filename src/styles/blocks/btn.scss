@@ -1,0 +1,54 @@
+.btn {
+  position: relative;
+  cursor: pointer;
+
+  display: block;
+  max-width: 238px;
+  padding: 14px 101px 14px 60px;
+  background-color: transparent;
+  border: 1px solid $c-turquoise;
+
+  color: #121212;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: all 0.3s;
+
+  @media (max-width: 540px) {
+    background-color: $c-yellow;
+    border-color: $c-yellow;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 67px;
+
+    width: 25px;
+    height: 8px;
+    transform: translateY(-50%);
+
+    background: center / contain no-repeat url("../images/icons/btnArrow.png");
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: $c-turquoise;
+
+    @media (max-width: 540px) {
+      color: #121212;
+      background-color: transparent;
+      border-color: $c-gray;
+    }
+
+    &::after {
+      background-image: url("../images/icons/btnArrowWhite.png");
+
+      @media (max-width: 540px) {
+        background: center / contain no-repeat url("../images/icons/btnArrow.png");
+      }
+    }
+  }
+}

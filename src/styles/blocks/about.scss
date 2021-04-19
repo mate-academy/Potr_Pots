@@ -1,0 +1,136 @@
+.about {
+  position: relative;
+  padding: 126px 0 386px;
+  background: -855px 312px / contain no-repeat url("../images/icons/headerYellowRect.svg");
+
+  @media (max-width: 991px) {
+    padding: 148px 0 371px;
+    background: -515px 312px / contain no-repeat url("../images/icons/headerYellowRect.svg");
+  }
+
+  @media (max-width: 767px) {
+    padding: 95px 0 197px;
+    background: 0 700px / contain no-repeat url("../images/icons/headerYellowRect.svg");
+  }
+
+  &::after,
+  &::before {
+    position: absolute;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 288px;
+    line-height: 100%;
+    color: transparent;
+    -webkit-text-stroke: 1px $c-turquoise;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    @media (max-width: 991px) {
+      font-size: 231px;
+    }
+  }
+
+  &::before {
+    content: "Martin";
+    left: -60px;
+    top: 217px;
+
+    @media (max-width: 991px) {
+      left: -45px;
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &::after {
+    content: "Andy";
+    right: 0;
+    bottom: 185px;
+
+    @media (max-width: 991px) {
+      bottom: 225px;
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  &__section-title {
+    margin: 0 0 121px;
+    font-size: 58px;
+    line-height: 100%;
+    letter-spacing: 0.15em;
+    color: $c-gray;
+
+    @media (max-width: 991px) {
+      margin: 0 0 161px;
+    }
+
+    @media (max-width: 767px) {
+      margin: 0 0 61px;
+    }
+  }
+
+  &__content {
+    padding: 28px 100px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 991px) {
+      padding: 28px 0 0;
+    }
+
+    @media (max-width: 767px) {
+      padding: 0;
+      display: block;
+    }
+  }
+
+  &__description {
+    max-width: 36%;
+    padding-right: 57px;
+
+    @media (max-width: 1200px) {
+      max-width: 50%;
+    }
+
+    @media (max-width: 991px) {
+      padding-top: 50px;
+    }
+
+    @media (max-width: 767px) {
+      max-width: 100%;
+      padding-right: 0;
+      padding-top: 0;
+      margin-top: 35px;
+    }
+  }
+
+  &__txt {
+    margin: 0;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray-light;
+    &:first-of-type {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__photo {
+    max-width: 64%;
+    order: 2;
+
+    @media (max-width: 1200px) {
+      max-width: 50%;
+    }
+
+    @media (max-width: 767px) {
+      width: 100vw;
+      max-width: unset;
+      margin-left: -30px;
+    }
+  }
+}
