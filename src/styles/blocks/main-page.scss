@@ -1,14 +1,20 @@
 @import "./header/header.scss";
+@import "footer.scss";
 @import "./header/nav.scss";
 @import "./main/main.scss";
 @import "./main/for-whom.scss";
 @import "./main/features.scss";
 @import "./main/potr-team.scss";
+@import "./main/materials.scss";
+@import "./main/potr-size.scss";
+@import "./main/benefits.scss";
+@import "./main/questions.scss";
 
 .main-home {
   position: relative;
   background-color: $gray;
   z-index: 0;
+  scroll-behavior: smooth;
 }
 
 .page-home {
@@ -32,5 +38,12 @@
   &__background--active {
     opacity: 0.8;
     z-index: 2;
+  }
+
+  @media (min-width: $widthNotebook) {
+    &__background {
+      z-index: 0;
+      opacity: 0;
+    }
   }
 }

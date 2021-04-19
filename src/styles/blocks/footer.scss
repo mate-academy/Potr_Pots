@@ -1,0 +1,71 @@
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 $sidePaddingMobile 50px;
+  z-index: 1;
+
+  &__addres,
+  &__title-3 {
+    display: none;
+  }
+
+  &__addres {
+    width: 140px;
+  }
+
+  &__title-3 {
+    color: #000;
+    margin-bottom: 11px;
+  }
+
+  &__text {
+    color: #000;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__wrapper-logo {
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+    margin-bottom: 41px;
+  }
+
+  &__logo-twitter,
+  &__logo-instagram,
+  &__logo-fasebook {
+    @include scale(1.3);
+  }
+
+  &__title-2 {
+    text-align: center;
+    color: #000;
+  }
+
+  @media (min-width: $widthTablet) {
+    & {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 50px;
+    }
+
+    &__addres,
+    &__title-3 {
+      display: block;
+    }
+  }
+
+  @media (min-width: $widthNotebook) {
+    & {
+      padding: 0 $sidePaddingNotebook 64px;
+      align-items: flex-start;
+    }
+
+    &__wrapper-logo {
+      margin-bottom: 84px;
+    }
+  }
+}

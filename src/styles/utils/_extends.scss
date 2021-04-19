@@ -13,6 +13,10 @@
   text-transform: uppercase;
 }
 
+%h4 {
+  @include textStyle(20px,30px, bold, $colorTextGray2);
+}
+
 %p {
   @include textStyle(16px, 24px, normal, $colorTextGray);
 }
@@ -27,10 +31,23 @@
   letter-spacing: 1.2px;
   text-indent: -40px;
 
-  background-image: url(../images/sign/Arrow2.svg);
-  background-repeat: no-repeat;
-  background-position: 147px 17px;
   outline: none;
   transition: 0.3s;
   cursor: pointer;
+}
+
+%inputStyle {
+  display: block;
+  margin-bottom: 16px;
+  height: 32px;
+  width: 100%;
+
+  font-family: Roboto, sans-serif;
+  @include textStyle(16px, 24px, normal, #000);
+  text-indent: 5px;
+
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }

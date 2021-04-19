@@ -1,7 +1,6 @@
 .features {
   $maxWidthCard: 370px;
   padding: 0 $sidePaddingMobile;
-  margin-bottom: 95px;
 
   &__card {
     margin: 0 auto 70px;
@@ -9,9 +8,10 @@
   }
 
   &__title-1 {
-    font-size: 58px;
-    line-height: 58px;
+    font-size: 56px;
+    line-height: 56px;
     margin-bottom: 50px;
+    text-align: center;
   }
 
   &__title-1 > span {
@@ -74,6 +74,10 @@
     }
   }
   @media (min-width: $widthDesktop) {
+    &__photo {
+      @include scale(1.03);
+    }
+
     &__container {
       row-gap: 30px;
     }
@@ -98,6 +102,10 @@
     &__title-3,
     &__text {
       text-align: center;
+    }
+
+    &__title-1 {
+      text-align: start;
     }
   }
 }

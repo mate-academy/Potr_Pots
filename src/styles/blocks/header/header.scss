@@ -113,7 +113,7 @@
       @include square(310px);
       margin-top: 55px;
       margin-right: $sidePaddingMobile;
-      @include scale(1.2);
+      @include scale(1.1);
     }
   }
 
@@ -186,10 +186,22 @@
   }
 
   &__button {
+    position: relative;
     @extend %button;
     background-color: $yellow;
     border: 1px solid $yellow;
     transition: 0.3s;
+  }
+
+  &__button::after {
+    position: absolute;
+    left: 147px;
+    top: 18px;
+    width: 25px;
+    height: 10px;
+    content: "";
+    background-image: url(../images/sign/Arrow2.svg);
+    background-repeat: no-repeat;
   }
 
   &__button:hover {
@@ -209,6 +221,10 @@
       background-color: $turquoise;
       border-color: $turquoise;
       color: $greyLight;
+    }
+
+    &__button:hover::after {
+      background-image: url(../images/sign/ArrowWhite.svg);
     }
   }
 }
