@@ -1,0 +1,253 @@
+.benefits {
+  position: relative;
+  overflow: hidden;
+  padding: 0 $sidePaddingMobile 100px;
+
+  &__title-3 {
+    position: relative;
+    @include textStyle(32px, 48px, 550, $colorTextGray2);
+    margin-bottom: 3px;
+  }
+
+  &__title-3::before {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20px;
+    content: "";
+    display: block;
+    @include square(10px);
+    background-image: url("../images/sign/li.benefits.svg");
+    background-repeat: no-repeat;
+
+  }
+
+  &__text {
+    color: #828282;
+    padding-bottom: 40px;
+  }
+
+  &__button {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    @extend %button;
+    background: $yellow;
+    border: 1px solid $yellow;
+  }
+
+  &__button::after {
+    position: absolute;
+    left: 147px;
+    top: 18px;
+    width: 25px;
+    height: 10px;
+    content: "";
+    background-image: url(../images/sign/Arrow2.svg);
+    background-repeat: no-repeat;
+  }
+
+  &__button:hover {
+    background-color: $greyLight;
+    border: 1px solid #333;
+  }
+
+  &__sale {
+    margin-bottom: 13px;
+    font-weight: normal;
+    color: #eb5757;
+  }
+
+  &__sale-text {
+    color: $turquoise;
+  }
+
+  @media (min-width: $widthTablet) {
+    & {
+      padding: 20px 54px 100px;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__points {
+      margin-right: 10%;
+    }
+
+    &__text {
+      padding-bottom: 20px;
+      max-width: 220px;
+    }
+
+    &__title-3 {
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    &__promotion {
+      align-self: center;
+    }
+
+    &__button {
+      background-color: $greyLight;
+      border: 1px solid $turquoise;
+      transition: 0.3s;
+    }
+
+    &__button:hover {
+      background-color: $turquoise;
+      border-color: $turquoise;
+      color: $greyLight;
+    }
+
+    &__button:hover::after {
+      background-image: url(../images/sign/ArrowWhite.svg);
+    }
+  }
+
+  @media (min-width: $widthNotebook) {
+    & {
+      padding-top: 170px;
+      padding-bottom: 200px;
+      padding-right: 0;
+    }
+
+    &__container {
+      flex-direction: column;
+      width: 60%;
+      margin-left: 43%;
+      margin-right: 0;
+    }
+
+    &__points {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: 0;
+    }
+
+    &__text {
+      max-width: unset;
+      padding-bottom: 40px;
+    }
+
+    &__point {
+      margin-right: 45px;
+    }
+
+    &__promotion {
+      align-self: unset;
+    }
+
+    &__sale,
+    &__sale-text {
+      padding-left: 100px;
+    }
+  }
+
+  &__card-1 {
+    position: absolute;
+    top: -28px;
+    left: -18px;
+    transform: rotate(-15.03deg);
+  }
+
+  &__card-2 {
+    position: absolute;
+    top: -117px;
+    left: 281px;
+    transform: rotate(-28.9deg);
+  }
+
+  &__card-3 {
+    position: absolute;
+    top: 320px;
+    left: -145px;
+    z-index: 2;
+  }
+
+  &__card-4 {
+    position: absolute;
+    top: 240px;
+    left: 121px;
+    transform: rotate(-15.03deg);
+    z-index: 3;
+  }
+
+  &__card-5 {
+    position: absolute;
+    top: 566px;
+    left: 53px;
+    transform: rotate(-15.8deg);
+    z-index: 1;
+  }
+
+  &__card-6 {
+    position: absolute;
+    bottom: 27px;
+    left: 336px;
+    transform: rotate(-30.43deg);
+  }
+}
+
+.card {
+  display: none;
+  height: 300px;
+  width: 270px;
+  padding: 0 20px;
+
+  background-color: #fff;
+
+  &__text {
+    position: absolute;
+    bottom: 20px;
+    @include textStyle(11px, 15px, normal, #828282);
+  }
+
+  &__image-1 {
+    position: absolute;
+    transform: rotate(15.03deg);
+  }
+
+  &__image-2 {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 310px;
+    transform: rotate(28.9deg);
+  }
+
+  &__image-3 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &__image-4 {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    transform: rotate(15.03deg);
+  }
+
+  &__image-5 {
+    position: absolute;
+    top: -5px;
+    left: -7px;
+    transform: rotate(15.8deg);
+  }
+
+  &__image-6 {
+    position: absolute;
+    top: -20px;
+    left: -22px;
+    transform: rotate(30.43deg);
+  }
+
+  @media (min-width: $widthNotebook) {
+    & {
+      display: block;
+    }
+  }
+}

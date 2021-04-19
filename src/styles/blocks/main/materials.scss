@@ -1,0 +1,179 @@
+.materials {
+  $fontSizeh2mobile: 58px;
+  $fontSizeh2tablet: 80px;
+  $fontSizeh2notebook: 139px;
+  position: relative;
+  margin-top: 67px;
+
+  &__background {
+    width: 100%;
+  }
+
+  &__title-2 {
+    @include textStyle(
+      $fontSizeh2mobile, $fontSizeh2mobile, normal, $turquoise
+    );
+    letter-spacing: 0.12em;
+    padding-left: $sidePaddingMobile;
+  }
+
+  &__title-2--margin {
+    margin-bottom: $fontSizeh2mobile / 3;
+  }
+
+  &__title-2--position {
+    position: absolute;
+    transform: translateY(-30%);
+  }
+
+  &__info-about-useful,
+  &__toggler-info {
+    display: none;
+  }
+
+  &__info-container-1 {
+    position: absolute;
+    margin: 0 10%;
+    transform: translateY(-30%);
+    z-index: 1;
+  }
+
+  &__background-text {
+    background: rgba(36, 35, 35, 0.75);
+    opacity: 0.65;
+  }
+
+  &__info-text {
+    padding: 28px 45px 0;
+    color: #f8f8f8;
+  }
+
+  @media (min-width: $widthTablet) {
+
+    &__info-text {
+      padding-bottom: 35px;
+    }
+
+    &__title-2 {
+      font-size: $fontSizeh2tablet;
+      line-height: $fontSizeh2tablet;
+    }
+
+    &__info-about-useful {
+      position: absolute;
+      right: $sidePaddingMobile;
+      top: $fontSizeh2tablet;
+      width: 44%;
+      display: block;
+    }
+
+    &__info-container-1 {
+      right: $sidePaddingMobile;
+      bottom: 72px;
+      margin: 0;
+      width: 300px;
+      transform: none;
+    }
+
+    &__toggler-info {
+      position: absolute;
+      display: block;
+      @include square(51px);
+
+      background-image: url("../images/sign/cross1.svg"),
+        url("../images/sign/cross2.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50%;
+      background-color: #eb5757;
+
+      border: none;
+      outline: none;
+
+      cursor: pointer;
+    }
+
+    &__toggler-info--position-1 {
+      left: 50%;
+      transform: translate(-50%, -120%);
+    }
+
+    &__toggler-info--checked {
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      background-image: url("../images/sign/cross1.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &__info-container-2 {
+      position: absolute;
+      left: 14%;
+      bottom: 20%;
+    }
+
+    &__info-container-3 {
+      position: absolute;
+      left: 35%;
+      bottom: 40%;
+    }
+
+    &__info-container-4 {
+      position: absolute;
+      left: 48%;
+      bottom: 15%;
+    }
+
+    &__info-container-5 {
+      position: absolute;
+      left: 60%;
+      bottom: 35%;
+    }
+  }
+
+  @media (min-width: $widthNotebook) {
+    & {
+      margin-top: 0;
+    }
+
+    &__info-about-useful {
+      width: 470px;
+      right: $sidePaddingNotebook;
+      top: $fontSizeh2notebook;
+    }
+
+    &__info-container-1 {
+      right: $sidePaddingNotebook;
+      bottom: 140px;
+    }
+
+    &__title-2 {
+      font-size: $fontSizeh2notebook;
+      line-height: $fontSizeh2notebook;
+    }
+  }
+}
+
+.flip {
+  padding: 11px 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  &__icon {
+    @include square(10px);
+    background: cover;
+    background-image: url("../images/sign/Rectangle.svg");
+    background-repeat: no-repeat;
+
+    &--choise {
+      background-image: url("../images/sign/RectangleActive.svg");
+      @include square(12px);
+    }
+  }
+
+  @media (min-width: $widthTablet) {
+    display: none;
+  }
+}
