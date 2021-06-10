@@ -16,25 +16,22 @@
 
     row-gap: 100px;
 
-      grid-template-areas:
-      "f f f f f f f f f f"
+    grid-template-areas: "f f f f f f f f f f"
       "s s s s s s s s s s"
       "t t t t t t t t t t";
 
-      @media (min-width: 1250px) {
-        grid-template-areas:
-        "f f f f f f f f f f"
+    @media (min-width: 1250px) {
+      grid-template-areas: "f f f f f f f f f f"
         "s s s s s t t t t t"
         "s s s s s t t t t t";
-      }
+    }
   }
 
   &__article-1 {
     grid-area: f;
 
     @media (min-width: 768px) {
-      grid-template-areas:
-        "i i i i . f f f f f"
+      grid-template-areas: "i i i i . f f f f f"
         "i i i i . f f f f f"
         "i i i i . f f f f f"
         "i i i i . f f f f f"
@@ -47,8 +44,7 @@
     }
 
     @media (min-width: 1024px) {
-      grid-template-areas:
-        ". i i i i . f f f f f ."
+      grid-template-areas: ". i i i i . f f f f f ."
         ". i i i i . f f f f f ."
         ". i i i i . f f f f f ."
         ". i i i i . f f f f f ."
@@ -61,8 +57,7 @@
     }
 
     @media (min-width: 1250px) {
-      grid-template-areas:
-        "i i i i i . . . . ."
+      grid-template-areas: "i i i i i . . . . ."
         "i i i i i . . . . ."
         "i i i i i . f f f f"
         "i i i i i . f f f f"
@@ -78,14 +73,13 @@
   &__article-2 {
     grid-area: s;
 
-      .article__photo {
-        justify-self: end;
+    .article__photo {
+      justify-self: end;
     }
 
     @media (min-width: 768px) {
 
-      grid-template-areas:
-        ". . . . . i i i i i"
+      grid-template-areas: ". . . . . i i i i i"
         "f f f f f i i i i i"
         "f f f f f i i i i i"
         "f f f f f i i i i i"
@@ -101,8 +95,7 @@
 
     @media (min-width: 1024px) {
 
-      grid-template-areas:
-        ". . . . . . i i i i i ."
+      grid-template-areas: ". . . . . . i i i i i ."
         ". f f f f f i i i i i ."
         ". f f f f f i i i i i ."
         ". f f f f f i i i i i ."
@@ -116,8 +109,7 @@
 
     @media (min-width: 1250px) {
 
-      grid-template-areas:
-        ". . . . . . . . . ."
+      grid-template-areas: ". . . . . . . . . ."
         ". i i i i i i . . ."
         ". i i i i i i . . ."
         ". i i i i i i . . ."
@@ -131,8 +123,7 @@
 
     @media (min-width: 1440px) {
 
-      grid-template-areas:
-        ". . . . . . . . . ."
+      grid-template-areas: ". . . . . . . . . ."
         ". i i i i i i . . ."
         ". i i i i i i . . ."
         ". i i i i i i . . ."
@@ -149,8 +140,7 @@
     grid-area: t;
 
     @media (min-width: 768px) {
-      grid-template-areas:
-        "i i i i . f f f f f"
+      grid-template-areas: "i i i i . f f f f f"
         "i i i i . f f f f f"
         "i i i i . f f f f f"
         "i i i i . f f f f f"
@@ -163,8 +153,7 @@
     }
 
     @media (min-width: 1024px) {
-      grid-template-areas:
-        ". i i i i . f f f f f ."
+      grid-template-areas: ". i i i i . f f f f f ."
         ". i i i i . f f f f f ."
         ". i i i i . f f f f f ."
         ". i i i i . f f f f f ."
@@ -178,8 +167,7 @@
 
     @media (min-width: 1250px) {
 
-      grid-template-areas:
-        "i i i i i i i i i ."
+      grid-template-areas: "i i i i i i i i i ."
         "i i i i i i i i i ."
         "i i i i i i i i i ."
         "i i i i i i i i i ."
@@ -190,13 +178,12 @@
         ". . f f f f f f f ."
         ". . f f f f f f f .";
 
-        row-gap: 100px;
+      row-gap: 100px;
     }
 
     @media (min-width: 1440px) {
 
-      grid-template-areas:
-        ". . i i i i i i i ."
+      grid-template-areas: ". . i i i i i i i ."
         ". . i i i i i i i ."
         ". . i i i i i i i ."
         ". . i i i i i i i ."
@@ -224,21 +211,7 @@
   max-height: min-content;
   display: grid;
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, auto);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: 1fr repeat(10, 1fr) 1fr;
-  }
-
-  @media (min-width: 1250px) {
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-  }
-
-  &__photo {
+  .article__photo {
     display: none;
     grid-column: 1 / -1;
     grid-area: i;
@@ -349,5 +322,19 @@
         left: -50px;
       }
     }
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, auto);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr repeat(10, 1fr) 1fr;
+  }
+
+  @media (min-width: 1250px) {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
   }
 }
