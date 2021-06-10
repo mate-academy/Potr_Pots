@@ -3,6 +3,8 @@
   font-size: 16px;
   line-height: 1.5;
   color: $text-color;
+
+  scroll-behavior: smooth;
 }
 
 .page__body {
@@ -22,5 +24,43 @@
 
   @media (min-width: 1200px) {
     @include grid-column-size($column-135, 10, 100px);
+  }
+}
+
+.up-anchor {
+  width: 150px;
+  height: 12px;
+  position: absolute;
+
+  font-family: "Bebas Neue", cursive;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+
+  color: #828282;
+
+  transform: rotate(90deg);
+  transition: color 0,2s linear;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    top: 4px;
+    left: -50px;
+    background-color: #828282;
+
+    transition: background-color 0,2s linear;
+  }
+
+  &:hover,
+  &:active {
+    color: $turquoise;
+
+    &::before {
+      background-color: $turquoise;
+    }
   }
 }
