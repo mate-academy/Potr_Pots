@@ -9,8 +9,18 @@
   background-color: $grey-light;
 }
 
-.content {
+.grid {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.grid__item {
   display: grid;
 
   @include grid-column-size($column-30, 2, 130px);
+
+  @media (min-width: 1200px) {
+    @include grid-column-size($column-135, 10, 100px);
+  }
 }

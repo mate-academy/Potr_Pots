@@ -1,70 +1,95 @@
 .header {
-  grid-column: 2 / -2;
-
   position: relative;
-  padding: 15px 0;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  &__bg {
+    position: absolute;
+    top: -1px;
+    right: 12%;
+    z-index: -100;
 
-  @media (min-width: 1024px) {
+    width: 100%;
+    max-height: 468px;
+
+    @media (max-width: 666px) {
+      display: none;
+    }
+  }
+
+  &__inner {
+    grid-column: 2 / -2;
+    position: inherit;
+    // overflow: hidden;
+
+    padding: 15px 0;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (min-width: 768px) {
+      margin-bottom: 35px;
+    }
+
+    @media (min-width: 1024px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
-}
 
-.header__logo {
-  width: 131px;
-  height: 27px;
-}
+  &__logo {
+    width: 131px;
+    height: 27px;
+  }
 
-.header__menu-btn {
-  padding-left: 5px;
-  border: 0;
-  background-color: transparent;
+  &__menu-btn {
+    padding-left: 5px;
+    border: 0;
+    background-color: transparent;
 
-  @media (min-width: 1024px) {
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: -$column-30;
+    z-index: 100;
+
+    @media (min-width: 1024px) {
+      position: static;
+    }
+  }
+
+  &__basket-btn {
+    border: none;
+    background-color: transparent;
     display: none;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }
   }
 }
 
-.header__nav {
-  position: absolute;
-  top: 0;
-  right: -$column-30;
-
-  @media (min-width: 1024px) {
-    position: static;
-  }
-}
-
-.header__basket-btn {
-  border: none;
-  background-color: transparent;
-  display: none;
-
-  @media (min-width: 1024px) {
-    display: block;
-  }
-}
-
-
-
-// GRID
-
+// NAV
 
 .nav {
   width: 230px;
   height: 100vh;
 
   display: grid;
-  visibility: hidden;
   grid-template-columns: 30px 1fr 30px;
   grid-template-rows: 5vh 25vh 40vh 25vh 5vh;
 
-  background-color: $turquiose;
+  background-color: $turquoise;
+
+  transform: translateY(-100vh);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
   @media (min-width: 1024px) {
     width: auto;
@@ -72,122 +97,124 @@
     visibility: visible;
     display: block;
     background-color: transparent;
+    transform: none;
   }
-}
 
-.nav__list {
-  grid-column: 2 / 3;
-  grid-row: 3 / 4;
-  justify-self: center;
+  &__list {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    justify-self: center;
 
-  @media (min-width: 1024px) {
-    display: flex;
-    column-gap: 60px;
+    @media (min-width: 1024px) {
+      display: flex;
+      column-gap: 60px;
+    }
   }
-}
 
-.nav__item {
-  margin-bottom: 12px;
+  &__item {
+    padding: 8px;
+    margin-bottom: 5px;
 
-  &:first-child {
+    &:first-child {
+      @media (min-width: 1024px) {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-family: "Proxima Nova", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+
+    color: $grey-light;
+
+    text-decoration: none;
+
+    @media (min-width: 1024px) {
+      color: $text-color;
+    }
+  }
+
+  &__basket-count {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: -20px;
+
+    font-family: "Bebas Neue", cursive;
+    font-size: 9px;
+    line-height: 13px;
+    text-align: center;
+
+    color: $grey-light;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: $red;
+  }
+
+  &__close-btn {
+    position: relative;
+    left: 50px;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+
+    height: min-content;
+
+    justify-self: end;
+    align-self: center;
+
+    padding: 5px 10px 5px 70px;
+
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $grey-light;
+    text-transform: uppercase;
+
+    border: none;
+    background-color: transparent;
+    transform: rotate(-90deg);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      width: 44px;
+      height: 1px;
+      background-color: $grey-light;
+    }
+
     @media (min-width: 1024px) {
       display: none;
     }
   }
 
-  @media (min-width: 1024px) {
-    margin-bottom: 0;
-  }
-}
-
-.nav__link {
-  position: relative;
-  font-family: "Proxima Nova", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-
-  color: $grey-light;
-
-  text-decoration: none;
-
-  @media (min-width: 1024px) {
-    color: $text-color;
-  }
-}
-
-.nav__basket-count {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  right: -20px;
-
-  font-family: "Bebas Neue", cursive;
-  font-size: 9px;
-  line-height: 13px;
-  text-align: center;
-
-  color: $grey-light;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background-color: $red;
-}
-
-.nav__close-btn {
-  position: relative;
-  left: 50px;
-  grid-column: 2 / 3;
-  grid-row: 4 / 5;
-
-  height: min-content;
-
-  justify-self: end;
-  align-self: center;
-
-  padding: 5px 10px 5px 70px;
-
-  font-family: "Proxima Nova", sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
-  color: $grey-light;
-  text-transform: uppercase;
-
-  border: none;
-  background-color: transparent;
-  transform: rotate(-90deg);
-
-  &::before {
-    content: '';
+  &__close-icon {
     position: absolute;
-    top: 50%;
-    left: 20px;
-    width: 44px;
-    height: 1px;
+    display: inline-block;
     background-color: $grey-light;
-  }
+    width: 16px;
+    height: 1px;
 
-  @media (min-width: 1024px) {
-    display: none;
-  }
-}
+    top: 50%;
+    left: 0;
 
-.nav__close-icon {
-  position: absolute;
-  display: inline-block;
-  background-color: $grey-light;
-  width: 16px;
-  height: 1px;
+    transform: rotate(45deg);
 
-  top: 50%;
-  left: 0;
-
-  transform: rotate(45deg);
-
-  &:nth-child(2n) {
-    transform: rotate(-45deg);
+    &:nth-child(2n) {
+      transform: rotate(-45deg);
+    }
   }
 }
 
 .nav--active {
-  visibility: visible;
+  transform: translateY(0);
 }

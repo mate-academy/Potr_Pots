@@ -1,0 +1,153 @@
+.first-view {
+  position: relative;
+
+  &__img {
+    grid-column: 1 / -1;
+    justify-self: center;
+
+    position: relative;
+    z-index: -10;
+
+    margin-bottom: 25px;
+
+    @media (min-width: 666px) {
+      grid-column: 3 / -2;
+      grid-row: 1 / 2;
+      justify-self: end;
+    }
+  }
+
+  &__content {
+    grid-column: 2 / -2;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    @media (min-width: 667px) {
+      grid-row: 1 / 2;
+      grid-column: 2 / 4;
+    }
+
+    @media (min-width: 1200px) {
+      grid-column: 2 / 7;
+    }
+
+    @media (min-width: 1440px) {
+      grid-column: 3 / 6;
+    }
+  }
+
+  &__title {
+    color: $turquoise;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+
+    @media (min-width: 768px) {
+      margin-left: 30%;
+    }
+
+    @media (min-width: 1200px) {
+      align-self: center;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__tag {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  &__buy-btn {
+    @media (min-width: 768px) {
+      margin-left: 15%;
+    }
+  }
+
+  &__anchor {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    align-self: end;
+    justify-self: center;
+
+    width: 200px;
+    height: 12px;
+    height: min-content;
+    position: relative;
+    padding-right: 60px;
+
+    font-size: 12px;
+    line-height: 1;
+    text-decoration: none;
+
+    color: $turquoise;
+    transform: rotate(90deg);
+
+    @media (min-width: 768px) {
+      grid-column: 1 / 2;
+      justify-self: center;
+      left: 20px;
+    }
+
+    @media (min-width: 1200px) {
+      grid-column: 1/2;
+      justify-self: start;
+      left: 40px;
+    }
+
+    &-decor {
+      transform: rotate(-90deg);
+      position: absolute;
+      top: -20px;
+      right: 20px;
+    }
+  }
+}
+
+.buy-btn {
+  width: 240px;
+  height: 48px;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  background-color: $yellow;
+
+  border: 1px solid $yellow;
+
+  text-transform: uppercase;
+
+  color: #121212;
+
+  transition: border-color 0.2s linear,
+  background-color 0.2s linear,
+  color 0.2s linear;
+
+  &:hover,
+  &:active {
+    border-color: #333333;
+    background-color: transparent;
+
+    @media (min-width: 768px) {
+      border-color: $turquoise;
+      background-color: $turquoise;
+      color: #fff;
+    }
+  }
+
+  @media (min-width: 768px) {
+    background-color: transparent;
+    border-color: $turquoise;
+  }
+
+    &:hover .buy-btn__decor {
+      @media (min-width: 768px) {
+        stroke: #fff;
+      }
+    }
+
+    &__decor {
+      margin-left: 10px;
+    }
+}
