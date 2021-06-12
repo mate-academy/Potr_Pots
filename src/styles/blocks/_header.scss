@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+  //overflow: hidden;
   padding: 15px 38px 16px 30px;
 
   @media (min-width: $smallScreen) {
@@ -23,6 +25,25 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+  }
+
+  &__rectangle {
+    display: none;
+
+    @media(min-width: $smallScreen) {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 150px;
+      z-index: -1;
+      //overflow: hidden;
+      width: 100%;
+    }
+
+    @media(min-width: $largeScreen) {
+      top: 0;
+      right: 350px;
     }
   }
 }
