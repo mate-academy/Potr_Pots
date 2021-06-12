@@ -1,0 +1,64 @@
+.burger__check {
+  display: none;
+}
+
+.burger__open {
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: 36px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+
+  @media (min-width: $mediumScreen) {
+    display: none;
+  }
+
+  @media (min-width: $smallScreen) {
+    top: 29px;
+    right: 42px;
+  }
+}
+
+.burger__close {
+  position: fixed;
+  top: 0;
+  right: -200vw;
+}
+
+.burger__check:checked ~ .nav {
+  right: 0;
+}
+
+.burger__check:checked ~ .burger__close {
+  transition: right 0.7s;
+  right: 30px;
+  top: 450px;
+  width: 16px;
+  height: 16px;
+  z-index: 11;
+
+  &::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 1px;
+    height: 44px;
+    background-color: #f8f8f8;
+    bottom: 27px;
+    right: 7px;
+    @media (min-width: $lessSmallScreen) {
+      right: 10px;
+    }
+  }
+
+  @media (min-width: $lessSmallScreen) {
+    width: 22px;
+    right: 25px;
+  }
+}
+
+.burger__close-image {
+  filter: invert(96%) sepia(25%) saturate(7275%) hue-rotate(287deg) brightness(153%) contrast(95%);
+}

@@ -1,0 +1,128 @@
+.nav {
+  position: fixed;
+  top: 0;
+  right: -200vw;
+  z-index: 10;
+  width: 72%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $bck-colorNav;
+  transition: right 0.7s;
+  @extend %flex;
+
+  @media (min-width: $mediumScreen) {
+    & {
+      flex-grow: 1;
+      position: static;
+      padding: 0;
+      background-color: unset;
+
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 15px;
+    @media (min-width: $lessSmallScreen) {
+      row-gap: 24px;
+    }
+
+    @media (min-width: $mediumScreen) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+      line-height: 150%;
+      column-gap: 45px;
+    }
+    @media (min-width: $largeScreen) {
+      column-gap: 64px;
+    }
+  }
+  &__item {
+
+    &_hidden {
+      display: block;
+
+      position: relative;
+
+      @media (min-width: $mediumScreen) {
+        display: none;
+        margin: 0;
+      }
+    }
+
+  }
+
+  &__basket-count {
+    position: absolute;
+    top: -2px;
+    right: -23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    font-family: Bebas Neue, sans-serif;
+    @include font (9px, 13px);
+    letter-spacing: 0.15em;
+    color: $colorlinkWhite;
+    background: #eb5757;
+  }
+
+  &__link {
+    position: relative;
+    color: $colorlinkWhite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 2px;
+      background-color: #6df752;
+      transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    &:hover::before {
+      left: 0;
+      right: auto;
+      width: 100%;
+    }
+
+    @media (min-width: $lessSmallScreen) {
+      font-size: 1.5rem;
+    }
+
+    @media (min-width: $mediumScreen) {
+      color: #4f4f4f;
+      font-size: 16px;
+    }
+  }
+
+  &__text {
+    position: absolute;
+
+    top: 360px;
+    right: 18px;
+    transform: rotate(-90deg);
+    font-size: 12px;
+    line-height: 150%;
+    color: $colorlinkWhite;
+    text-transform: uppercase;
+
+    @media (min-width: $lessSmallScreen) {
+      font-size: 1rem;
+      top: 350px;
+      right: 13px;
+    }
+  }
+}
