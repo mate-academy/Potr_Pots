@@ -6,6 +6,7 @@
 @import "./blocks/nav.scss";
 @import "./blocks/burger.scss";
 @import "./blocks/potr-info.scss";
+@import "./blocks/for-whom.scss";
 
 @font-face {
   font-family: "BebasNeue-Bold";
@@ -80,4 +81,28 @@ a {
   max-width: 1440px;
   //max-width: 1100px;
   margin: 0 auto;
+}
+
+.main {
+  padding: 0 30px;
+  @media(min-width: $smallScreen) {
+    padding: 0 34px;
+  }
+
+  @media(min-width: $largeScreen) {
+    padding: 0 134px 0 235px;
+  }
+}
+
+.main__top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @media(min-width: $smallScreen) {
+    flex-direction: row-reverse;
+  }
+
 }
