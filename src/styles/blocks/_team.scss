@@ -1,0 +1,102 @@
+.team {
+  position: relative;
+  //overflow: hidden;
+
+  &__content {
+
+  }
+
+  &__name {
+    display: none;
+  }
+
+  &__title {
+    font-family: "BebasNeue-Bold", sans-serif;
+    font-size: 58px;
+    line-height: 58px;
+
+    margin: 70px 0 60px;
+    letter-spacing: 0.15em;
+    color: #333;
+  }
+
+  &__back-image {
+    position: absolute;
+    bottom: -300px;
+    left: 0;
+    right: 0;
+    height: 550px;
+    background-size: cover;
+    background-image: url("../images/rectangle-small.png");
+    background-repeat: no-repeat;
+    background-position: 80% 20%;
+    z-index: -1;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+  &__text {
+    //font-family: Proxima Nova;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+    margin-top: 35px;
+
+    & > span {
+      display: block;
+      margin-top: 30px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__content {
+      display: flex;
+      flex-direction: row-reverse;
+      column-gap: 40px;
+    }
+    &__title {
+      margin-bottom: 200px;
+    }
+
+    &__image {
+      height: 255px;
+      width: 340px;
+
+    }
+    &__back-image {
+      bottom: unset;
+      top: 200px;
+      //width: 1121px;
+      height: 250px;
+      //background-image: url(../images/rectangle-big.png);
+      transform: translateX(-70%);
+      background-size: cover;
+    }
+
+    &__name {
+      display: block;
+      position: absolute;
+
+      font-family: "BebasNeue-Bold", sans-serif;
+      font-size: 231.88px;
+      line-height: 232px;
+      color: transparent;
+      -webkit-text-stroke: 1px #03839e;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+
+      &--martin {
+        top: 90px;
+        left: -80px;
+      }
+
+      &--andry {
+        bottom: -130px;
+        right: -70px;
+      }
+    }
+
+  }
+}
