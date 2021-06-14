@@ -11,3 +11,5 @@ menuBtn.onclick = function(event) {
 menuCloseBtn.onclick = function(event) {
   headerClose.classList.remove('nav--active');
 };
+
+const formBtn = document.querySelector('.contacnt-form__btn');
