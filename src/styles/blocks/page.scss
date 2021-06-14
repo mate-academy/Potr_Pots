@@ -5,24 +5,24 @@
   color: $text-color;
 
   scroll-behavior: smooth;
-}
 
-.page__body {
-  background-color: $grey-light;
+  &__body {
+    background-color: $grey-light;
+  }
 }
 
 .grid {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-}
 
-.grid__item {
-  display: grid;
-  @include grid-column-size($column-30, 2, 130px);
+  &__item {
+    display: grid;
+    @include grid-column-size($column-30, 2, 130px);
 
-  @media (min-width: 1200px) {
-    @include grid-column-size($column-135, 10, 100px);
+    @media (min-width: 1200px) {
+      @include grid-column-size($column-135, 10, 100px);
+    }
   }
 }
 

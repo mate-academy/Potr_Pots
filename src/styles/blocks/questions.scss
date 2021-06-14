@@ -1,6 +1,6 @@
 .questions {
   position: relative;
-  padding: 150px 0;
+  padding: 150px 0 100px;
   overflow: hidden;
 
   &__bg {
@@ -58,7 +58,7 @@
 
       @media (min-width: 1200px) {
         top: -150px;
-        right: 0;
+        right: -150px;
       }
     }
   }
@@ -81,6 +81,7 @@
 
     @media (min-width: 1200px) {
       max-width: 40%;
+      gap: 40px;
     }
   }
 
@@ -112,7 +113,6 @@
     color: #000;
   }
 }
-
 
 .contacnt-form {
   display: flex;
@@ -185,5 +185,11 @@
     background-color: transparent;
     border: none;
     border-bottom: 1px dotted #333;
+
+    transition: color 0.2s linear;
+
+    &:hover {
+      color: $turquoise;
+    }
   }
 }
