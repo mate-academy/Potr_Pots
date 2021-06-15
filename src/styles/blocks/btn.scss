@@ -1,0 +1,51 @@
+.buy-btn {
+  display: inline-block;
+  width: 240px;
+  height: 48px;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 48px;
+  text-align: center;
+
+  background-color: $color-yellow;
+
+  border: 1px solid $color-yellow;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+
+  color: #121212;
+
+  transition: border-color $transition-duration linear,
+    background-color $transition-duration linear,
+    color $transition-duration linear;
+
+  &__decor {
+    margin-left: 10px;
+  }
+
+  &:hover,
+  &:active {
+    border-color: $color-black-3;
+    background-color: transparent;
+
+    @media (min-width: 768px) {
+      border-color: $color-turquoise;
+      background-color: $color-turquoise;
+      color: #fff;
+    }
+  }
+
+  @media (min-width: 768px) {
+    background-color: transparent;
+    border-color: $color-turquoise;
+  }
+
+  &:hover .buy-btn__decor {
+    @media (min-width: 768px) {
+      stroke: #fff;
+    }
+  }
+}
