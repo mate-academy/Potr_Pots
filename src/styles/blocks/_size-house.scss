@@ -1,0 +1,140 @@
+.size-house {
+  &__image {
+    width: 100%;
+    //padding-bottom: 40px;
+  }
+  &__title {
+    font-family: "BebasNeue-Bold", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: #000;
+  }
+  &__text {
+    margin: 30px 0;
+  }
+
+  &__container {
+
+  }
+
+  &__title-about {
+    margin: 40px 0 20px;
+    font-family: "BebasNeue-Bold", sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+
+    letter-spacing: 0.15em;
+
+    color: #000;
+  }
+
+  &__text-about {
+
+  }
+  &__final-text {
+    margin: 40px 0;
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 24px;
+      left: -9px;
+      color: #4f4f4f;
+      content: "*";
+    }
+  }
+  @media (min-width: 768px) {
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 3fr 4fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    &__text {
+      grid-area: 1 / 1 / auto / span 2;
+    }
+
+    &__image {
+      grid-area: 2 / 2;
+      //padding-right: $sidePaddingMobile;
+      padding-bottom: 0;
+    }
+
+    &__container {
+      grid-area: 2 / 1;
+    }
+    &__text-about {
+      max-width: 246px;
+    }
+    &__final-text {
+      padding-top: 25px;
+      grid-area: 3 / 1 / auto / span 2;
+    }
+  }
+
+  @media (min-width: 992px) {
+    &__image {
+      width: 528px;
+      height: 427px;
+    }
+  }
+
+  @media (min-width: 1300px) {
+    // & {
+    //   padding: 120px $sidePaddingNotebook 126px;
+    // }
+    &__wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-rows: auto auto;
+    }
+    &__title {
+      margin-bottom: 40px;
+    }
+
+    &__text {
+      padding: 25px 50px 0 0;
+      grid-area: 1 / 1;
+    }
+
+    &__image {
+      grid-area: 1 / 3 / span 2 / auto;
+      padding: 0 0 0 48px;
+      // width: 528px;
+      // height: 427px;
+    }
+
+    &__container {
+      position: relative;
+      padding: 25px 48px 0 0;
+      grid-area: 1 / 2;
+    }
+
+    &__text-about::before {
+      position: absolute;
+      left: -25px;
+      top: 20px;
+      content: "";
+      display: block;
+      height: 257px;
+      width: 1px;
+      background-color: #d8d8d8;
+    }
+
+    &__final-text {
+      padding: 0 25px 0 0;
+      grid-area: 2 / 1 / auto / span 2;
+    }
+
+    &__text-about-size {
+      padding-bottom: 70px;
+    }
+
+    // &__title-2 {
+    //   padding: 0 0 56px;
+    // }
+  }
+}
