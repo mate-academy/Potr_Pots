@@ -17,12 +17,9 @@
 
   &__item {
     font-family: "BebasNeue-Bold", sans-serif;
-    font-size: 24px;
-    line-height: 24px;
+    @include textStyle(24px, 24px, bold, $colorBlack);
 
     letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #000;
     margin-bottom: 11px;
   }
   &__text {
@@ -46,16 +43,14 @@
 
   &__title {
     text-align: center;
-    color: #000;
     font-family: "BebasNeue-Bold", sans-serif;
-    font-size: 36px;
-    line-height: 150%;
 
+    @include textStyle(36px, 150%, bold, $colorBlack);
     letter-spacing: 0.15em;
     text-transform: uppercase;
 
   }
-  @media (min-width: 768px) {
+  @media (min-width: $smallScreen) {
     & {
       display: flex;
       flex-direction: row;
@@ -68,7 +63,7 @@
       display: block;
     }
   }
-  @media (min-width: 1300px) {
+  @media (min-width: $notebookScreen) {
     & {
       align-items: flex-start;
     }

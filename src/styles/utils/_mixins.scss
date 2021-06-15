@@ -3,16 +3,16 @@
   line-height: $height;
 }
 
-@mixin textStyle($_fontSize, $_lineHeight, $_fontWeight, $_color) {
-  font-size: $_fontSize;
-  line-height: $_lineHeight;
-  font-weight: $_fontWeight;
-  color: $_color;
+@mixin textStyle($fontSize, $lineHeight, $fontWeight, $color) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+  color: $color;
 }
 
 @mixin up {
   position: absolute;
-  font-family: BebasNeue-Bold, sans-serif;
+  font-family: "BebasNeue-Bold", sans-serif;
   font-size: 12px;
   line-height: 12px;
   letter-spacing: 0.22em;
@@ -32,15 +32,15 @@
   }
 }
 
-@mixin square($_widht) {
-  height: $_widht;
-  width: $_widht;
+@mixin square($dimensions) {
+  height: $dimensions;
+  width: $dimensions;
 }
 
-@mixin scale($_value) {
+@mixin scale($value) {
   transition: 0.6s;
   &:hover {
-    transform: scale(#{$_value});
+    transform: scale(#{$value});
     border-radius: 3%;
     cursor: pointer;
   }

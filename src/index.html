@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
+      <header class="header" id="home">
         <div class="header__container container">
           <a href="">
             <h2 class="container__logo">
@@ -39,16 +39,16 @@
                 </a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="">Features</a>
+                <a class="nav__link" href="#features">Features</a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="">About us</a>
+                <a class="nav__link" href="#about-us">About us</a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="">Materials</a>
+                <a class="nav__link" href="#materials">Materials</a>
               </li>
               <li class="nav__item">
-                <a class="nav__link" href="">Message us</a>
+                <a class="nav__link" href="#message-us">Message us</a>
               </li>
             </ul>
             <div class="nav__text">close</div>
@@ -85,15 +85,15 @@
             <button class="potr-info__btn" type="button">
               Buy now
             </button>
-            <a href="" class="potr-info__down">
+            <a href="#more" class="potr-info__down">
               More about POTR POTS
             </a>
-            <a href="" class="potr-info__up">
+            <a href="#home" class="potr-info__up">
               potr pots
             </a>
           </div>
         </section>
-        <section class="main__whom for-whom">
+        <section class="main__whom for-whom" id="more">
           <div class="for-whom__container">
             <h2 class="for-whom__title">
               For whom?
@@ -186,7 +186,7 @@
             </div>
           </div>
         </section>
-        <section class="main__features features">
+        <section class="main__features features" id="features">
           <h2 class="features__title">
             <span>POTR Pots</span> Features
           </h2>
@@ -232,7 +232,7 @@
             </div>
           </div>
         </section>
-        <section class="main__team team">
+        <section class="main__team team" id="about-us">
           <h2 class="team__title">
             Meet the POTR team!
           </h2>
@@ -257,7 +257,7 @@
             </div>
           </div>
         </section>
-        <section class="main__materials materials">
+        <section class="main__materials materials" id="materials">
           <h2 class="materials__title">
             Materials and <br>Features
           </h2>
@@ -435,7 +435,7 @@
             </div>
           </div>
         </section>
-        <section class="main__contacts contacts">
+        <section class="main__contacts contacts" id="message-us">
           <h2 class="contacts__title">
             have any questions?
           </h2>
@@ -444,7 +444,7 @@
               <div class="feedback__form-title">
                 Here few ways to get in touch with us:
               </div>
-              <form action="#" method="POST">
+              <form action="#" method="POST" class="feedback__form">
                 <p class="feedback__title">
                   Message us
                 </p>
@@ -452,18 +452,23 @@
                   type="text"
                   class="feedback__input"
                   placeholder="Name"
+                  name="name"
+                  required
                 >
                 <input
                   type="email"
                   class="feedback__input"
-                  placeholder="Enail"
+                  placeholder="Email"
+                  name="email"
+                  required
                 >
                 <textarea
                   name="feedback" id=""
                   class="feedback__input feedback__input--textarea"
                   placeholder="Massage"
-                >
-                </textarea>
+                  rows="1"
+                  name="user-massage"
+                ></textarea>
                 <button type="submit" class="feedback__button">
                   Submit
                 </button>
@@ -550,7 +555,7 @@
               >
             </a>
           </div>
-          <a href="">
+          <a href="#home">
             <h2 class="footer__title">
               potrpots
             </h2>

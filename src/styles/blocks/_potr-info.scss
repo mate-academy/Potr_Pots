@@ -59,13 +59,10 @@
   &__title {
     margin-top: 25px;
     font-family: "BebasNeue-Bold", sans-serif;
-    font-weight: 700px;
-    font-size: 36px;
-    line-height: 36px;
+    @include textStyle(36px, 36px, bold, $bck-colorNav);
 
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #03839e;
 
     & span {
 
@@ -182,7 +179,7 @@
       right: -35px;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: $smallScreen) {
       top: auto;
       left: -60px;
 
@@ -190,7 +187,7 @@
       right: auto;
 
     }
-    @media (min-width: 992px) {
+    @media (min-width: $mediumScreen) {
       top: auto;
 
       left: -10px;
@@ -198,7 +195,7 @@
       right: auto;
 
     }
-    @media (min-width: 1100px) {
+    @media (min-width: $moreAverageScreen) {
       top: auto;
 
       left: 30px;
@@ -206,7 +203,7 @@
       right: auto;
 
     }
-    @media (min-width: 1440px) {
+    @media (min-width: $largeScreen) {
       top: auto;
 
       left: 75px;
@@ -219,12 +216,12 @@
     display: none;
     @include up;
 
-    @media (min-width: 768px) {
+    @media (min-width: $smallScreen) {
       display: block;
       right: -30px;
       bottom: -70px;
     }
-    @media (min-width: 992px) {
+    @media (min-width: $mediumScreen) {
       display: block;
       right: 1px;
       bottom: -150px;

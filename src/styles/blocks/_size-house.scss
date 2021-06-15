@@ -5,13 +5,11 @@
   }
   &__title {
     font-family: "BebasNeue-Bold", sans-serif;
-    font-size: 36px;
-    line-height: 150%;
+    @include textStyle(36px, 150%, bold, $colorBlack);
 
     letter-spacing: 0.15em;
     text-transform: uppercase;
 
-    color: #000;
   }
   &__text {
     margin: 30px 0;
@@ -20,12 +18,9 @@
   &__title-about {
     margin: 40px 0 20px;
     font-family: "BebasNeue-Bold", sans-serif;
-    font-size: 18px;
-    line-height: 18px;
+    @include textStyle(18px, 18px, bold, $colorBlack);
 
     letter-spacing: 0.15em;
-
-    color: #000;
   }
 
   &__final-text {
@@ -39,7 +34,7 @@
       content: "*";
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: $smallScreen) {
     &__wrapper {
       display: grid;
       grid-template-columns: 3fr 4fr;
@@ -68,14 +63,14 @@
     }
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: $mediumScreen) {
     &__image {
       width: 528px;
       height: 427px;
     }
   }
 
-  @media (min-width: 1300px) {
+  @media (min-width: $notebookScreen) {
 
     &__wrapper {
       display: grid;

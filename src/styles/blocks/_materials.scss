@@ -6,11 +6,9 @@
   }
   &__title {
     font-family: "BebasNeue-Bold", sans-serif;
-    font-size: 58px;
-    line-height: 58px;
-    letter-spacing: 0.15em;
+    @include textStyle(58px, 58px, bold, $bck-colorNav);
 
-    color: #03839e;
+    letter-spacing: 0.15em;
   }
 
   &__info {
@@ -35,7 +33,7 @@
     display: none;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: $smallScreen) {
     &__info {
       display: block;
       position: absolute;
@@ -114,7 +112,7 @@
     }
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: $mediumScreen) {
     &__info {
       padding-right: 50px;
     }
@@ -122,7 +120,7 @@
       padding-left: 50px;
     }
   }
-  @media (min-width: 1440px) {
+  @media (min-width: $largeScreen) {
     &__title {
       padding-left: 135px;
     }
@@ -152,7 +150,7 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: $smallScreen) {
     display: none;
   }
 }

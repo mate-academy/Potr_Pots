@@ -7,12 +7,10 @@
 
   &__title {
     font-family: "BebasNeue-Bold", sans-serif;
-    font-size: 58px;
-    line-height: 58px;
+    @include textStyle(58px, 58px, bold, $colorGray-2);
 
     margin: 70px 0 60px;
     letter-spacing: 0.15em;
-    color: #333;
   }
 
   &__back-image {
@@ -75,9 +73,8 @@
       position: absolute;
 
       font-family: "BebasNeue-Bold", sans-serif;
-      font-size: 231.88px;
-      line-height: 232px;
-      color: transparent;
+      @include textStyle(231.88px, 232px, bold, $transparent);
+  
       -webkit-text-stroke: 1px #03839e;
       text-transform: uppercase;
       letter-spacing: 0.15em;
@@ -95,7 +92,7 @@
 
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: $mediumScreen) {
 
     &__image {
       height: 382px;
@@ -111,7 +108,7 @@
     }
 
   }
-  @media (min-width: 1300px) {
+  @media (min-width: $notebookScreen) {
 
     &__image {
       height: 500px;
