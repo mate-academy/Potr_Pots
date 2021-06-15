@@ -12,4 +12,14 @@ menuCloseBtn.onclick = function(event) {
   headerClose.classList.remove('nav--active');
 };
 
-const formBtn = document.querySelector('.contacnt-form__btn');
+const form = document.querySelector('.contacnt-form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const inputs = document.querySelectorAll('.form-input');
+
+  for (const input of inputs) {
+    input.value = '';
+  }
+});
