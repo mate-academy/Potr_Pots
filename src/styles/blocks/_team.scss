@@ -1,10 +1,10 @@
 .team {
   position: relative;
-  //overflow: hidden;
+  // overflow: hidden;
 
-  &__content {
+  // &__content {
 
-  }
+  // }
 
   &__name {
     display: none;
@@ -54,6 +54,7 @@
     &__content {
       display: flex;
       flex-direction: row-reverse;
+      justify-content: space-between;
       column-gap: 40px;
     }
     &__title {
@@ -72,7 +73,9 @@
       height: 250px;
       //background-image: url(../images/rectangle-big.png);
       transform: translateX(-70%);
+      background-position: 50% 30%;
       background-size: cover;
+
     }
 
     &__name {
@@ -94,9 +97,45 @@
 
       &--andry {
         bottom: -130px;
-        right: -70px;
+        right: -60px;
       }
     }
 
+  }
+
+  @media (min-width: 992px) {
+
+    &__image {
+      height: 382px;
+      width: 500px;
+    }
+    &__name--andry {
+      bottom: -160px;
+      right: -20px;
+    }
+    &__text {
+      //padding-right: 50px;
+      transform: translateY(70px);
+      max-width: 340px;
+      //align-self: flex-start;
+      //text-align: start;
+    }
+    // &__info {
+    //   height: 700px;
+    // }
+  }
+  @media (min-width: 1300px) {
+
+    &__image {
+      height: 500px;
+      width: 670px;
+    }
+    &__name--martin {
+      top: 90px;
+      left: 40px;
+    }
+    // &__info {
+    //   height: 700px;
+    // }
   }
 }
