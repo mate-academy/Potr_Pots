@@ -1,0 +1,208 @@
+.materials {
+  position: relative;
+
+  &__title {
+    grid-column: 2 / -2;
+
+    margin-top: 150px;
+
+    color: $color-turquoise;
+    max-width: 530px;
+    position: relative;
+
+    @media(min-width: 768px) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__inner {
+    grid-column: 1 / -1;
+    position: relative;
+
+    @media(min-width: 1200px) {
+      grid-column: 1 / -2;
+    }
+  }
+
+  &__image-block {
+    position: relative;
+  }
+
+  &__picture {
+    margin-top: -40px;
+    position: relative;
+    z-index: -1;
+    max-width: 100vw;
+  }
+
+  &__info {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: -25%;
+    max-width: 340px;
+
+    @media(min-width: 768px) {
+      display: inline-block;
+    }
+
+    @media(min-width: 1024px) {
+      right: 10%;
+      top: -20%;
+    }
+
+    @media(min-width: 1220px) {
+      right: 20%;
+      top: -15%;
+      max-width: 30%;
+    }
+  }
+
+  &__info-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  // Tooltips =======================
+
+  &__tooltip-list {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @media (max-width: 812px) {
+      max-width: 80vw;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 567px) {
+      display: none;
+    }
+  }
+
+  &__tooltip-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    &:first-child {
+      top: 50%;
+      height: 50%;
+    }
+
+    &:nth-child(2) {
+      top: 30%;
+      height: 70%;
+    }
+
+    &:nth-child(3) {
+      top: 20%;
+      height: 80%;
+    }
+
+    &:nth-child(4) {
+      top: 60%;
+      height: 40%;
+    }
+
+    &:nth-child(5) {
+      top: 35%;
+      height: 65%;
+    }
+  }
+
+  &__tooltip-checkbox {
+    display: none;
+
+    &:checked + .materials__tooltip-label {
+      background: rgba(0, 0, 0, 0.41);
+      mix-blend-mode: normal;
+      backdrop-filter: blur(34px);
+      z-index: 1;
+
+      &::before {
+        content: "-";
+      }
+    }
+
+    &:checked ~ .materials__tooltip-label::after {
+      display: block;
+    }
+  }
+
+  &__tooltip-label {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin-bottom: 20px;
+    height: 51px;
+    width: 51px;
+    background-color: $color-red;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+
+    &::before {
+      content: "+";
+      color: $color-grey-light;
+      font-size: 20px;
+      line-height: 51px;
+    }
+
+    &::after {
+      content: "We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.";
+      display: none;
+      margin-top: 10px;
+      width: 320px;
+      max-width: 320px;
+      padding: 35px 45px;
+      color: $color-grey-light;
+      transform: translateX(-40%);
+      text-align: left;
+
+      background: rgba(0, 0, 0, 0.51);
+      mix-blend-mode: normal;
+      backdrop-filter: blur(34px);
+
+      @media (max-width: 812px) {
+        max-width: 250px;
+        padding: 10px 15px;
+      }
+    }
+  }
+
+  // Slider =====================
+
+  &__slider {
+    width: 96%;
+    margin: 0 auto;
+    display: flex;
+    column-gap: 10px;
+    overflow-x: scroll;
+    margin-top: -50px;
+
+    @media (min-width: 566px) {
+      display: none;
+    }
+  }
+
+  &__slider-text {
+    display: block;
+    position: relative;
+    width: 96vw;
+    max-width: 320px;
+
+    padding: 35px 45px;
+    color: $color-grey-light;
+
+    background: rgba(0, 0, 0, 0.41);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+  }
+}
