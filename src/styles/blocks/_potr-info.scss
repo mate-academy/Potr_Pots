@@ -1,4 +1,22 @@
 .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @media(min-width: $smallScreen) {
+    flex-direction: row-reverse;
+    padding: 0 64px;
+  }
+
+  @media(min-width: $moreAverageScreen) {
+    flex-direction: row-reverse;
+    padding: 0 120px;
+  }
+  @media(min-width: $largeScreen) {
+    padding: 0 134px 0 234px;
+  }
 
   &__image-container {
     position: relative;
@@ -47,9 +65,6 @@
     flex-direction: column;
     flex-grow: 1;
   }
-  // @media(min-width: $largeScreen) {
-  //   //margin-top: -70px;
-  // }
 
   &__title {
     margin-top: 25px;

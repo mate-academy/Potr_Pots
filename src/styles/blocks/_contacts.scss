@@ -1,17 +1,17 @@
 .contacts {
-  position: relative;
+  margin: 0;
+  padding: 50px 30px;
 
-  &__background {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background-size: cover;
-    background-image: url("../images/rectangle-back.png");
-    background-repeat: no-repeat;
-    background-position: left;
-    height: 70%;
-    width: 100%;
-    z-index: -1;
+  @media(min-width: $smallScreen) {
+    padding: 50px 34px;
+  }
+
+  @media (min-width: $mediumScreen) {
+    padding: 50px;
+  }
+
+  @media (min-width: $largeScreen) {
+    padding: 60px 135px;
   }
 
   &__title {
@@ -20,17 +20,6 @@
     @include textStyle(36px, 150%, bold, $colorBlack);
     text-transform: uppercase;
 
-  }
-  &__logo {
-    position: absolute;
-    right: 0;
-    top: -70px;
-    height: 238px;
-    width: 150px;
-    background-image: url("../images/potr.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: left;
   }
 
   &__item {
@@ -59,17 +48,6 @@
       width: 340px;
       margin-right: 140px;
     }
-    &__background {
-      height: 100%;
-      width: 98%;
-    }
-    &__logo {
-      position: absolute;
-      right: -16px;
-      top: -115px;
-      height: 238px;
-      width: 195px;
-    }
     &__info {
       width: 210px;
     }
@@ -82,16 +60,6 @@
 
     &__info {
       width: 230px;
-    }
-
-    &__background {
-      height: 100%;
-      width: 90%;
-    }
-
-    &__logo {
-      right: -40px;
-      width: 215px;
     }
   }
 }
@@ -146,4 +114,58 @@
     }
   }
 
+}
+
+.wrapper-contacts {
+  &__background {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    background-size: cover;
+    background-image: url("../images/rectangle-back.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    height: 130%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__logo {
+    position: absolute;
+    right: 0;
+    top: -70px;
+    height: 238px;
+    width: 170px;
+    background-image: url("../images/potr.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+  }
+
+  @media (min-width: $smallScreen) {
+    &__background {
+      height: 110%;
+      width: 90%;
+    }
+    &__logo {
+      position: absolute;
+      right: -16px;
+      top: -115px;
+      height: 238px;
+      width: 195px;
+      background-position: center;
+    }
+
+  }
+  @media (min-width: $notebookScreen) {
+    &__background {
+      height: 100%;
+      width: 90%;
+    }
+
+    &__logo {
+      right: -40px;
+      width: 215px;
+    }
+  }
 }
