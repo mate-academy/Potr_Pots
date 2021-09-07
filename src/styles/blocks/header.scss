@@ -1,0 +1,84 @@
+.header {
+  &::before {
+    @include bp(tablet) {
+      content: "";
+      position: absolute;
+      top: -1px;
+      bottom: 0;
+      left: 0;
+      right: 154px;
+      display: block;
+      height: 466px;
+      max-width: 1105px;
+      background-image: url("../images/hero-bg-image.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+  @include bp(tablet) {
+    margin-bottom: 56px;
+  }
+
+  &__container {
+    height: 67px;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include bp(tablet) {
+      height: 96px;
+    }
+  }
+
+  &__logo {
+    min-width: fit-content;
+
+    @extend %h2;
+    color: $color-logo-header;
+
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+
+    width: 72vw;
+    height: 100vh;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+
+    @include bp(notebook) {
+      position: static;
+
+      display: flex;
+      width: calc(66.67%);
+      height: auto;
+
+      background-color: red;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    @include bp(notebook) {
+      display: none;
+    }
+  }
+
+  &--open &__nav {
+    right: 0;
+
+    visibility: visible;
+    opacity: 1;
+  }
+}

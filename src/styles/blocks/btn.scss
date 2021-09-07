@@ -1,0 +1,32 @@
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 238px;
+  padding: 14px 0;
+
+  @extend %s4;
+  color: #121212;
+  font-weight: 600;
+  
+  background-color: $color-yellow;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    width: 25px;
+    height: 8px;
+    margin-left: 19px;
+
+    background-image: url("../images/btn-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @include bp(tablet) {
+    background-color: transparent;
+    border: 1px solid $color-turquoise;
+  }
+}
