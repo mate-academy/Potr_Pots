@@ -10,11 +10,10 @@
     margin: 0 auto;
 
     @include bp(tablet) {
-      padding: 0 34px;
-      // overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      padding: 0 34px;
     }
 
     @include bp(desktop) {
@@ -25,12 +24,12 @@
   &__container {
     @include bp(tablet) {
       position: relative;
+
       display: flex;
       flex-direction: row-reverse;
       justify-content: flex-end;
-      gap: 47px;
-      // justify-content: space-between;
       align-items: center;
+      gap: 47px;
       width: 100%;
     }
 
@@ -47,7 +46,6 @@
 
     @include bp(tablet) {
       margin-bottom: 29px;
-      // margin-bottom: 190px;
     }
   }
 
@@ -55,9 +53,9 @@
     margin: 0 0 35px;
 
     @include bp(tablet) {
+      flex: 1 0 48.6%;
       max-width: 667px;
       margin: 0;
-      flex: 1 0 48.6%;
     }
   }
 
@@ -85,48 +83,48 @@
     &--martin {
       position: relative;
       z-index: 10;
-      transform: translate(-77px, 45px);
+
       margin-top: -45px;
+      transform: translate(-77px, 45px);
 
       @include bp(desktop) {
-        transform: translate(-55px, 137px);
         margin-top: -137px;
+        transform: translate(-55px, 137px);
       }
 
       &::before {
         content: "";
         position: absolute;
-        // bottom: -60px;
-        // left: 0;
         top: 47%;
         left: -60%;
+        z-index: -100;
+
         display: block;
         width: 100%;
         height: 370px;
+
         background-image: url("../images/hero-bg-image.svg");
-        // background-position: top right;
         background-size: cover;
         background-repeat: no-repeat;
-        z-index: -100;
       }
     }
 
     &--andy {
-      transform: translate(65px, -72px);
-      margin-bottom: -72px;
       margin-left: auto;
+      margin-bottom: -72px;
+      transform: translate(65px, -72px);
 
       @include bp(desktop) {
-        transform: translate(155px, -90px);
         margin-bottom: -90px;
+        transform: translate(155px, -90px);
       }
     }
   }
 
   &__description {
     position: relative;
-    padding: 0 30px;
     z-index: 10;
+    padding: 0 30px;
 
     @extend %s3;
 
@@ -146,9 +144,11 @@
       position: absolute;
       bottom: -60px;
       left: 0;
+
       display: block;
       width: 100%;
       height: 300px;
+
       background-image: url("../images/hero-bg-image.svg");
       background-size: cover;
       background-repeat: no-repeat;
