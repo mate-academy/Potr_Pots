@@ -1,8 +1,34 @@
 .materials {
   &__container {
     position: relative;
+    height: 100%;
+  }
+
+  &__text-box {
+    display: none;
+
+    @include bp(tablet) {
+      position: absolute;
+      display: block;
+      width: 340px;
+      transform: translate(109%, -30%);
+    }
+
+    @include bp(desktop) {
+      width: 470px;
+      transform: translate(150%, -50%);
+    }
+  }
+
+  &__title-box {
+    position: relative;
     z-index: 10;
     margin-bottom: -55px;
+    display: block;
+
+    @include bp(tablet) {
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
@@ -16,6 +42,25 @@
     @include bp(desktop) {
       font-size: 138px;
     }
+
+    &--break {
+      @include bp(tablet) {
+        display: block;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    color: $color-logo-header-light;
+    @extend %s;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__description {
+    color: $color-logo-header-light;
+    @extend %s3;
   }
 
   &__image-box {
@@ -46,6 +91,50 @@
 
     @include bp(tablet) {
       display: none;
+    }
+  }
+
+  &__collapse-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__collapse {
+    display: none;
+
+    @include bp(tablet) {
+      display: inline-block;
+    }
+
+    position: absolute;
+    z-index: 9;
+
+    &:nth-child(1) {
+      bottom: 10%;
+      left: 0;
+    }
+
+    &:nth-child(2) {
+      bottom: 50%;
+      left: 20%;
+    }
+
+    &:nth-child(3) {
+      bottom: 0;
+      left: 40%;
+    }
+
+    &:nth-child(4) {
+      bottom: 30%;
+      left: 60%;
+    }
+
+    &:nth-child(5) {
+      bottom: 10%;
+      left: 80%;
     }
   }
 }

@@ -20,7 +20,7 @@ const headerFunc = () => {
   });
 };
 
-const slider = () => {
+const sliderFunc = () => {
   const slides = document.querySelectorAll('.slider__slide');
   const btnLeft = document.querySelector('.slider__btn--left');
   const btnRight = document.querySelector('.slider__btn--right');
@@ -96,5 +96,25 @@ const slider = () => {
   });
 };
 
+const collapseFunc = () => {
+  const collapse = document.querySelectorAll('.collapse');
+  const collapseButton = document.querySelectorAll('.collapse__button');
+
+  collapseButton.forEach(btn => {
+    btn.addEventListener('click', e => {
+      const closestCollapse = e.target.closest('.collapse');
+
+      collapse.forEach(col => {
+        if (col !== closestCollapse) {
+          col.classList.remove('collapse--active');
+        }
+      });
+
+      e.target.closest('.collapse').classList.toggle('collapse--active');
+    });
+  });
+};
+
 headerFunc();
-slider();
+sliderFunc();
+collapseFunc();

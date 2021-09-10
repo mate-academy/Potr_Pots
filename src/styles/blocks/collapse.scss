@@ -1,0 +1,41 @@
+.collapse {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  
+  &__button {
+    display: block;
+    width: 51px;
+    height: 51px;
+    margin: 0 auto;
+    margin-bottom: 9px;
+
+    border-radius: 50%;
+    border: none;
+    color: #e0e0e0;
+    font-size: 25px;
+    background-color: $color-red;
+    cursor: pointer;
+
+    &::after {
+      content: "+";
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    visibility: hidden;
+  }
+
+  &--active &__button {
+    background-color: rgba(36, 35, 35, 0.75);
+
+    &::after {
+      content: "-";
+    }
+  }
+
+  &--active &__content {
+    visibility: visible;
+  }
+}
