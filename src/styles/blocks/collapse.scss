@@ -1,13 +1,11 @@
 .collapse {
   display: inline-block;
   position: relative;
-  z-index: 1;
   
   &__button {
     display: block;
     width: 51px;
     height: 51px;
-    margin: 0 auto;
     margin-bottom: 9px;
 
     border-radius: 50%;
@@ -16,6 +14,7 @@
     font-size: 25px;
     background-color: $color-red;
     cursor: pointer;
+    transition: all 0.3s;
 
     &::after {
       content: "+";
@@ -24,7 +23,14 @@
   }
 
   &__content {
+    position: absolute;
+    left: 50%;
+    width: max-content;
+    opacity: 0;
+
     visibility: hidden;
+    transform: translateX(-50%);
+    transition: all 0.3s;
   }
 
   &--active &__button {
@@ -36,6 +42,7 @@
   }
 
   &--active &__content {
+    opacity: 1;
     visibility: visible;
   }
 }
