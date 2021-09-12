@@ -27,7 +27,7 @@
 
   &__card {
     position: absolute;
-    transition: all 0.3s;
+    transition: all $animations-speed;
 
     &:hover {
       transform: rotate(0);
@@ -158,6 +158,10 @@
       left: -10px;
       background-color: $color-logo-header-light;
       transform: rotate(-45deg) translateY(-50%);
+
+      @include bp(desktop) {
+        left: -15px;
+      }
     }
   }
 
@@ -175,6 +179,10 @@
 
     @include bp(tablet) {
       margin-bottom: 33px;
+    }
+
+    @include bp(desktop) {
+      margin-bottom: 70px;
     }
   }
 
