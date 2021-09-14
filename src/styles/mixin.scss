@@ -1,0 +1,122 @@
+@mixin title-styles {
+  font-family: $bebasB;
+  font-size: 36px;
+  line-height: 54px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 11px;
+}
+
+@mixin note-styles {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+  font-family: $proximaR;
+  padding-bottom: 39px;
+  position: relative;
+}
+
+@mixin subtitle-styles {
+  font-size: 16px;
+  line-height: 24px;
+  color: #4f4f4f;
+  font-family: $proximaR;
+}
+
+@mixin slash-styles {
+  display: block;
+  width: 1px;
+  height: 46px;
+  background: #333;
+  transform: rotate(22deg);
+  position: absolute;
+}
+
+@mixin star {
+  &::before {
+    content: "*";
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    font-family: $bebasB;
+    height: 24px;
+    position: absolute;
+    top: 6px;
+    left: -40px;
+  }
+}
+
+@mixin pp-text {
+  position: absolute;
+  font-size: 12px;
+  line-height: 12px;
+  font-family: $bebasB;
+  letter-spacing: 0.22em;
+  color: $light-gray-color;
+
+  &::before {
+    position: relative;
+    left: -80px;
+    bottom: -4px;
+    display: block;
+    content: "";
+    width: 65px;
+    height: 1px;
+    background: $light-gray-color;
+  }
+}
+
+@mixin btn-styles {
+  content: "";
+  display: grid;
+  justify-self: center;
+  align-self: center;
+  height: 12px;
+  width: 1px;
+  background-color: #e0e0e0;
+  transform: rotate(-90deg);
+}
+
+@mixin picture-size {
+  height: 230px;
+  width: 230px;
+}
+
+@mixin frame {
+  height: 302px;
+  max-width: 270px;
+  background: #fff;
+}
+
+@mixin button {
+  position: relative;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  grid-template-columns: repeat(2, auto);
+  gap: 18px;
+  max-width: 238px;
+  height: 48px;
+  left: 245px;
+  bottom: 15px;
+  border: 1px solid $main-blue-color;
+  font-size: 14px;
+  color: $middle-black-color;
+  font-family: $proximaS;
+  text-transform: uppercase;
+}
+
+@mixin just-align-self-center {
+  justify-self: center;
+  align-self: center;
+}
+
+@mixin form-styles {
+  font-family: $proximaR;
+  font-size: 16px;
+  line-height: 24px;
+  color: #4f4f4f;
+}
