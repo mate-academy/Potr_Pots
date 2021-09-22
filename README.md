@@ -17,18 +17,19 @@ Implement landing page according to [Figma design](https://www.figma.com/file/B4
 1. Implement the footer.
 
 ## HR important moments
-- Скорость анимаций на всем лендинге одинаковая (например увеличение при наведении или выезд блоков при скроле)
-- Placeholder в формах подсказывают что именно ввести, а если стоит валидация формы, то понятно в каком формате вводить номер телефона
-- Убедитесь, что с мобильных выглядит все аккуратно и без горизонтальной прокрутки
-- Добавьте favicon
-- Добавьте мягкий скролл при клике на меню до соответствующих блоков страницы
-- Кнопки в футер меню также должны быть кликабельны и вести на блоки в лендинге.
-- После нажатия кнопок меню лендинг скролит именно на начало нужного блока (именно, туда, где начинается его секция)
-- Важно, чтобы у пользователя была возможность удобно написать текст в 2-3 строки в поле message
-- При попытке отправить форму нет 405 ошибки, нужно чтобы данные вносились, форма очищалась, а после отправки перекидывало на верх страницы или происходила перезагрузка страницы
-- Иконки соцсетей в лендинге при нажатии пусть ведут на реальные соц.сети
-- Кнопка корзины кликабельна и ведет на форму обратной связи
-- Для пользователя удобно, когда при клике на Address, он открывался в новой вкладке в гугл-картах. 
+- The speed of animations is the same throughout the landing page (for example, increasing when hovering or moving blocks when scrolling)
+- Placeholders in the forms suggest what to enter, and if there is a validation of the form, then it is clear in what format to enter the phone number
+- Make sure everything looks neat on mobile and without horizontal scrolling
+- Add favicon
+- Add a smooth scroll for the whole page
+- When you try to send the form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
+- After clicking the menu buttons, the landing page will scroll exactly to the beginning of the desired block (exactly where its section begins)
+- The user must have the opportunity to write 2-3 lines of text in the message field
+- When you try to send the form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
+- All the social icons in the footer should be clickable and open the real social networks of the brand in a new tab
+- The shopping cart button is clickable and leads to the feedback form
+- It is convenient for the user when clicking on Address, it opens in a new tab in Google Maps
+
 
 ## Github flow
 1. **Fork** the repo.
