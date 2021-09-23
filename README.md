@@ -18,18 +18,20 @@ Implement landing page according to [Figma design](https://www.figma.com/file/B4
 
 ## Checklist for preparing a portfolio project for HR review
 
-- The speed of animations is the same throughout the landing page (for example, increasing when hovering or moving blocks when scrolling)
-- Placeholders in the forms suggest what to enter, and if there is a validation of the form, then it is clear in what format to enter the phone number
-- Make sure everything looks neat on mobile and without horizontal scrolling
-- Add favicon
-- Add a smooth scroll for the whole page
-- When you try to send the form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
-- After clicking the menu buttons, the landing page will scroll exactly to the beginning of the desired block (exactly where its section begins)
-- The user must have the opportunity to write 2-3 lines of text in the message field
-- When you try to send the form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
-- All the social icons in the footer should be clickable and open the real social networks of the brand in a new tab
-- The shopping cart button is clickable and leads to the feedback form
-- It is convenient for the user when clicking on Address, it opens in a new tab in Google Maps
+1. Don’t forget to add a title for the whole web page (it could be the name of your landing)
+2. A landing page is implemented strictly according to the design in Figma
+4. Links in the header and footer menus should lead to the corresponding blocks of the landing page
+5. The speed of animations is the same throughout the landing page (for example, increasing when hovering or moving blocks when scrolling)
+6. Placeholders in the forms suggest what to enter, and if there is a validation of the form, then it is clear in what format to enter the phone number
+7. Make sure everything looks neat on mobile and without horizontal scrolling
+8. Add favicon
+9. Add a smooth scroll for the whole page
+10. After clicking the menu buttons, the landing page will scroll exactly to the beginning of the desired block (exactly where its section begins)
+11. The user must have the opportunity to write 2-3 lines of text in the message field
+12. All the social icons in the footer should be clickable and open the real social networks of the brand in a new tab
+13. The shopping cart button is clickable and leads to the feedback form
+14. When you try to send the form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
+15. The form shouldn’t submit empty
 
 
 ## Github flow
