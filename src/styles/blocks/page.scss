@@ -1,0 +1,84 @@
+.page {
+  font-family: "Proxima Nova", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $text-color;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $color-grey-light;
+  }
+}
+
+.grid {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  &__item {
+    display: grid;
+    @include grid-column-size($column-30, 2, 130px);
+
+    @media (min-width: 1200px) {
+      @include grid-column-size($column-135, 10, 100px);
+    }
+  }
+}
+
+.up-anchor {
+  width: 150px;
+  height: 12px;
+  position: absolute;
+
+  font-family: "Bebas Neue", cursive;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  text-decoration: none;
+
+  color: #828282;
+
+  transform: rotate(90deg);
+  transition: color $transition-duration linear;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    top: 4px;
+    left: -50px;
+    background-color: #828282;
+
+    transition: background-color $transition-duration linear;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-turquoise;
+
+    &::before {
+      background-color: $color-turquoise;
+    }
+  }
+}
+
+.strong-text {
+  font-weight: 700;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-text-fill-color: #000;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

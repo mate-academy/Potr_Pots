@@ -1,0 +1,126 @@
+.potr-team {
+  position: relative;
+
+  &__grid-item {
+    display: grid;
+    @include grid-column-size($column-30, 2, 130px);
+
+    @media (min-width: 1200px) {
+      @include grid-column-size($column-135, 10, 100px);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: -15vh;
+    left: 0;
+    height: 45vh;
+    width: 100%;
+    background-image: url(../images/fv-bg-yellow.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-width: 768px) {
+      top: 45%;
+      left: 0;
+      height: 33vh;
+      width: 30%;
+    }
+
+    @media (min-width: 1200px) {
+      top: 35%;
+      width: 33%;
+      height: 40vh;
+    }
+  }
+
+  &__title {
+    grid-column: 2 / -2;
+
+    margin: 100px 0 50px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 200px;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-bottom: 36px;
+    position: relative;
+
+    @media (min-width: 768px) {
+      grid-column: 3 / -2;
+      grid-row: 2 / -1;
+
+      &::before {
+        content: "martin";
+        position: absolute;
+        right: 10%;
+        top: -50%;
+        z-index: 1;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 232px;
+        line-height: 232px;
+        color: transparent;
+
+        letter-spacing: 0.15em;
+
+        -webkit-text-stroke: 0.8px $color-turquoise;
+
+        @media (min-width: 1200px) {
+          right: 45%;
+          top: -20%;
+        }
+      }
+
+      &::after {
+        content: "andy";
+        position: absolute;
+        right: -8%;
+        top: 70%;
+        z-index: 1;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 232px;
+        line-height: 232px;
+        color: transparent;
+
+        letter-spacing: 0.15em;
+
+        -webkit-text-stroke: 0.8px $color-turquoise;
+
+        @media (min-width: 1200px) {
+          right: -8px;
+          top: 90%;
+        }
+      }
+    }
+
+    @media (min-width: 1200px) {
+      grid-column: -2 / -9;
+      justify-self: end;
+    }
+  }
+
+  &__inner {
+    grid-column: 2 / -2;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    @media (min-width: 768px) {
+      grid-column: 2 / 3;
+      grid-row: 2 / -1;
+      margin-right: 50px;
+    }
+
+    @media (min-width: 1200px) {
+      grid-column: 2 / 5;
+      margin: 75px 50px 0 0;
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.header {
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    top: -1px;
+    right: 12%;
+    z-index: -1;
+
+    width: 100%;
+    max-height: 468px;
+
+    @media (max-width: 666px) {
+      display: none;
+    }
+  }
+
+  &__inner {
+    grid-column: 2 / -2;
+    position: inherit;
+
+    padding: 15px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      margin-bottom: 35px;
+    }
+
+    @media (min-width: 1024px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    width: 131px;
+    height: 27px;
+  }
+
+  &__menu-btn {
+    padding-left: 5px;
+    border: 0;
+    background-color: transparent;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: -$column-30;
+    z-index: 1;
+
+    @media (min-width: 1024px) {
+      position: static;
+    }
+  }
+
+  &__basket-btn {
+    border: none;
+    background-color: transparent;
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  }
+}

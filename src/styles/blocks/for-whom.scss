@@ -1,0 +1,207 @@
+.for-whom {
+  position: relative;
+
+  &__title {
+    margin: 100px 0;
+    grid-column: 2 / -2;
+  }
+
+  &__inner {
+    grid-column: 2 / -2;
+
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, auto);
+
+    row-gap: 100px;
+
+    grid-template-areas: "f f f f f f f f f f"
+      "s s s s s s s s s s"
+      "t t t t t t t t t t";
+
+    @media (min-width: 1250px) {
+      grid-template-areas: "f f f f f f f f f f"
+        "s s s s s t t t t t"
+        "s s s s s t t t t t";
+    }
+  }
+
+  &__article-1 {
+    grid-area: f;
+
+    @media (min-width: 768px) {
+      grid-template-areas: "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f";
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-areas: ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f .";
+    }
+
+    @media (min-width: 1250px) {
+      grid-template-areas: "i i i i i . . . . ."
+        "i i i i i . . . . ."
+        "i i i i i . f f f f"
+        "i i i i i . f f f f"
+        "i i i i i . f f f f"
+        "i i i i i . f f f f"
+        "i i i i i . f f f f"
+        "i i i i i . f f f f"
+        "i i i i i . f f f f"
+        "i i i i i . . . . .";
+    }
+  }
+
+  &__article-2 {
+    grid-area: s;
+
+    .article__photo {
+      justify-self: end;
+    }
+
+    @media (min-width: 768px) {
+
+      grid-template-areas: ". . . . . i i i i i"
+        "f f f f f i i i i i"
+        "f f f f f i i i i i"
+        "f f f f f i i i i i"
+        "f f f f f i i i i i"
+        "f f f f f i i i i i"
+        "f f f f f i i i i i"
+        "f f f f f i i i i i"
+        "f f f f f i i i i i"
+        ". . . . . i i i i i";
+
+      align-content: center;
+    }
+
+    @media (min-width: 1024px) {
+
+      grid-template-areas: ". . . . . . i i i i i ."
+        ". f f f f f i i i i i ."
+        ". f f f f f i i i i i ."
+        ". f f f f f i i i i i ."
+        ". f f f f f i i i i i ."
+        ". f f f f f i i i i i ."
+        ". f f f f f i i i i i ."
+        ". f f f f f i i i i i ."
+        ". f f f f f i i i i i ."
+        ". . . . . . i i i i i .";
+    }
+
+    @media (min-width: 1250px) {
+
+      grid-template-areas: ". . . . . . . . . ."
+        ". i i i i i i . . ."
+        ". i i i i i i . . ."
+        ". i i i i i i . . ."
+        ". i i i i i i . . ."
+        ". . . . . . . . . ."
+        ". f f f f f f f . ."
+        ". f f f f f f f . ."
+        ". f f f f f f f . ."
+        ". . . . . . . . . .";
+    }
+
+    @media (min-width: 1440px) {
+
+      grid-template-areas: ". . . . . . . . . ."
+        ". i i i i i i . . ."
+        ". i i i i i i . . ."
+        ". i i i i i i . . ."
+        ". i i i i i i . . ."
+        ". . . . . . . . . ."
+        ". . f f f f f f . ."
+        ". . f f f f f f . ."
+        ". . f f f f f f . ."
+        ". . . . . . . . . .";
+    }
+  }
+
+  &__article-3 {
+    grid-area: t;
+
+    @media (min-width: 768px) {
+      grid-template-areas: "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f"
+        "i i i i . f f f f f";
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-areas: ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f ."
+        ". i i i i . f f f f f .";
+    }
+
+    @media (min-width: 1250px) {
+
+      grid-template-areas: "i i i i i i i i i ."
+        "i i i i i i i i i ."
+        "i i i i i i i i i ."
+        "i i i i i i i i i ."
+        "i i i i i i i i i ."
+        "i i i i i i i i i ."
+        ". . f f f f f f f ."
+        ". . f f f f f f f ."
+        ". . f f f f f f f ."
+        ". . f f f f f f f .";
+
+      row-gap: 100px;
+    }
+
+    @media (min-width: 1440px) {
+
+      grid-template-areas: ". . i i i i i i i ."
+        ". . i i i i i i i ."
+        ". . i i i i i i i ."
+        ". . i i i i i i i ."
+        ". . i i i i i i i ."
+        ". . i i i i i i i ."
+        ". . . f f f f f f f"
+        ". . . f f f f f f f"
+        ". . . f f f f f f f"
+        ". . . f f f f f f f";
+    }
+  }
+
+  &__up-anchor {
+    bottom: 400px;
+    right: -60px;
+
+    @media (min-width: 1024px) {
+      bottom: 400px;
+      right: 0;
+    }
+  }
+}
