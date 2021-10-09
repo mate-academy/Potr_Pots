@@ -1,0 +1,55 @@
+.btn {
+  transition: all $animations-speed;
+
+  &__buy {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 238px;
+    padding: 14px 0;
+    
+    border: 1px solid transparent;
+    @extend %s4;
+    color: #121212;
+    font-weight: 600;
+    
+    background-color: $color-yellow;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include bp(tablet) {
+      background-color: transparent;
+      border-color: $color-turquoise;
+    }
+
+    &:hover,
+    &:active {
+      background-color: transparent;
+      border-color: $color-logo-header;
+
+      @include bp(tablet) {
+        background-color: $color-turquoise;
+        border-color: $color-turquoise;
+        color: #fff;
+
+        &::after {
+          background-image: url("../images/btn-arrow-white.svg");
+        }
+      }
+    }
+  
+    &::after {
+      content: "";
+      width: 25px;
+      height: 8px;
+      margin-left: 19px;
+  
+      background-image: url("../images/btn-arrow-black.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      transition: all $animations-speed;
+    }
+  }
+}

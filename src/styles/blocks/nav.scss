@@ -1,0 +1,138 @@
+.nav {
+  z-index: 10000;
+
+  background-color: $color-turquoise;
+
+  @include bp(notebook) {
+    background-color: initial;
+  }
+
+  &__list {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transform: translate(-50%, -50%);
+
+    list-style: none;
+
+    @include bp(notebook) {
+      position: static;
+
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+
+      transform: initial;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    @include bp(notebook) {
+      margin-bottom: 0;
+      margin-right: 64px;
+    }
+
+    &--basket {
+      @include bp(notebook) {
+        order: 1;
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    @extend %s3;
+    color: $color-grey-light;
+    text-decoration: none;
+
+    @include bp(notebook) {
+      color: #4f4f4f;
+    }
+
+    &--basket {
+      position: relative;
+
+      &::after {
+        content: "0";
+        position: absolute;
+        top: -50%;
+        right: -23px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 13px;
+        height: 13px;
+
+        font-size: 9px;
+        background-color: $color-red;
+        border-radius: 50%;
+
+        @include bp(notebook) {
+          display: none;
+        }
+      }
+
+      @include bp(notebook) {
+        display: block;
+        width: 30px;
+        height: 30px;
+        font-size: 0;
+        background-image: url("../images/shopping-bag.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 122px;
+    right: 0;
+    display: flex;
+    align-items: center;
+
+    color: $color-grey-light;
+
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+    cursor: pointer;
+
+    @include bp(notebook) {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 1px;
+      width: 44px;
+      margin-right: 5px;
+      background-color: $color-grey-light;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      order: -1;
+      margin-right: 18px;
+      background-image: url("../images/cancel.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}

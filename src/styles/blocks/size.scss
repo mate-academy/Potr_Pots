@@ -1,0 +1,111 @@
+.size {
+  overflow: hidden;
+
+  @include bp(desktop) {
+    margin-bottom: 100px;
+  }
+
+  &__content-box {
+    @include bp(tablet) {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    @include bp(desktop) {
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
+  &__image-box {
+    @include full-width();
+    margin-bottom: 40px;
+
+    @include bp(tablet) {
+      order: 1;
+      flex: 0 1 50%;
+    }
+
+    @include bp(desktop) {
+      flex: 0 0 45%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__text-group {
+    @include bp(tablet) {
+      flex: 0 1 40%;
+      margin-right: 36px;
+    }
+
+    @include bp(desktop) {
+      position: relative;
+      // flex: 0 0 250px;
+      flex: 0 0 21%;
+      margin-right: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 1px;
+        height: 90%;
+        left: -30px;
+        background-color: #d8d8d8;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @extend %h2;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    @extend %h4;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @extend %s3;
+    color: $color-logo-header-light;
+
+    @include bp(desktop) {
+      // flex: 0 0 250px;
+      flex: 0 0 21%;
+      margin-bottom: 69px;
+    }
+
+    &--annotation {
+      @include bp(tablet) {
+        order: 2;
+        max-width: 100%;
+      }
+
+      @include bp(desktop) {
+        position: absolute;
+        bottom: 26px;
+        left: 0;
+        width: 48%;
+        margin-bottom: 0;
+
+        &::before {
+          content: "*";
+          position: absolute;
+          left: -7px;
+        }
+      }
+    }
+  }
+}

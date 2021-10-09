@@ -1,0 +1,154 @@
+.materials {
+  margin-bottom: 76px;
+
+  @include bp(tablet) {
+    margin-bottom: 110px;
+  }
+
+  @include bp(desktop) {
+    margin-bottom: 114px;
+  }
+
+  &__container {
+    position: relative;
+    height: 100%;
+  }
+
+  &__text-box {
+    display: none;
+
+    @include bp(tablet) {
+      position: absolute;
+      display: block;
+      width: 340px;
+      transform: translate(109%, -30%);
+    }
+
+    @include bp(desktop) {
+      width: 470px;
+      transform: translate(150%, -50%);
+    }
+  }
+
+  &__title-box {
+    position: relative;
+    z-index: 10;
+    margin-bottom: -55px;
+    display: block;
+
+    @include bp(tablet) {
+      margin-bottom: 40px;
+    }
+
+    @include bp(desktop) {
+      margin-bottom: -200px;
+    }
+  }
+
+  &__title {
+    color: $color-turquoise;
+    @extend %h1;
+
+    @include bp(tablet) {
+      font-size: 80px;
+    }
+
+    @include bp(desktop) {
+      font-size: 138px;
+    }
+
+    &--break {
+      @include bp(tablet) {
+        display: block;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    color: $color-logo-header-light;
+    @extend %s;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__description {
+    color: $color-logo-header-light;
+    @extend %s3;
+  }
+
+  &__image-box {
+    position: relative;
+    width: 100%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      display: block;
+      background-image: linear-gradient(180deg, $color-grey-light 0%,
+      rgba(255, 255, 255, 0) 30.93%);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__slider {
+    margin-top: -50px;
+
+    @include bp(tablet) {
+      display: none;
+    }
+  }
+
+  &__collapse-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__collapse {
+    display: none;
+
+    @include bp(tablet) {
+      display: inline-block;
+    }
+
+    position: absolute;
+    z-index: 9;
+
+    &:nth-child(1) {
+      bottom: 17%;
+      left: 16%;
+    }
+
+    &:nth-child(2) {
+      bottom: 65%;
+      left: 31%;
+    }
+
+    &:nth-child(3) {
+      bottom: 15%;
+      left: 43%;
+    }
+
+    &:nth-child(4) {
+      bottom: 27%;
+      left: 63%;
+    }
+
+    &:nth-child(5) {
+      bottom: 55%;
+      left: 70%;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.collapse {
+  display: inline-block;
+  position: relative;
+  
+  &__button {
+    display: block;
+    width: 51px;
+    height: 51px;
+    margin-bottom: 9px;
+
+    border-radius: 50%;
+    border: none;
+    color: #e0e0e0;
+    font-size: 25px;
+    background-color: $color-red;
+    cursor: pointer;
+    transition: all $animations-speed;
+
+    &::after {
+      content: "+";
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    left: 50%;
+    width: max-content;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%);
+    transition: all $animations-speed;
+  }
+
+  &--active &__button {
+    background-color: rgba(36, 35, 35, 0.75);
+
+    &::after {
+      content: "-";
+    }
+  }
+
+  &--active &__content {
+    opacity: 1;
+    visibility: visible;
+  }
+}

@@ -1,0 +1,88 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 0 auto;
+  position: relative;
+  max-width: 303px;
+  overflow: hidden;
+
+  &__tooltip {
+    padding-bottom: 60px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__control-box {
+    // height: 100px;
+    // transform: translateY(-120%);
+  }
+
+  &__slide {
+    flex: 1 0 100%;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    transition: transform 1s;
+  }
+
+  &__btn {
+    position: absolute;
+    top: 81%;
+    z-index: 10;
+  
+    border: none;
+    background: rgba(0, 0, 0, 0.4);
+    font-family: inherit;
+    color: $color-grey-light;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    font-size: 23px;
+    cursor: pointer;
+    
+
+    &--left {
+      left: 10%;
+      transform: translate(-50%, -50%);
+    }
+
+    &--right {
+      right: 10%;
+      transform: translate(50%, -50%);
+    }
+  }
+}
+
+.dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+
+  &__dot {
+    cursor: pointer;
+    transition: all 0.5s;
+    background-color: $color-grey-light;
+    border: 1px solid $color-grey-light;
+    height: 15px;
+    text-align: center;
+    transform: rotate(45deg);
+    width: 15px;
+    margin-right: 15px;
+
+    &--active {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

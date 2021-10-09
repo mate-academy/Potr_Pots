@@ -1,0 +1,64 @@
+.footer {
+  padding-bottom: 50px;
+
+  @include bp(tablet) {
+    padding-bottom: 63px;
+  }
+
+  &__content-box {
+    @include bp(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 230px;
+    margin: 0 auto;
+  }
+
+  &__col {
+    display: none;
+    font-style: normal;
+    max-width: 170px;
+
+    @include bp(tablet) {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-bottom: 41px;
+
+    @include bp(tablet) {
+      margin-bottom: 28px;
+    }
+
+    @include bp(desktop) {
+      margin-bottom: 84px;
+    }
+  }
+
+  &__logo {
+    @extend %h2;
+    color: #000;
+    text-decoration: none;
+  }
+
+  &__heading {
+    @extend %h3;
+    margin-bottom: 11px;
+  }
+
+  &__copy {
+    @include bp(tablet) {
+      display: none;
+    }
+  }
+}

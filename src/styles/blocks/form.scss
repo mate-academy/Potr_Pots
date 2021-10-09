@@ -1,0 +1,58 @@
+.form {
+  &__fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__title {
+    margin-bottom: 23px;
+    @extend %s2;
+    font-weight: bold;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    padding-left: 6px;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
+
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    background-color: transparent;
+
+    &::placeholder {
+      @extend %s3;
+      color: $color-logo-header-light;
+    }
+
+    &:focus {
+      border-color: $color-turquoise;
+    }
+
+    &:last-child {
+      margin-bottom: 31px;
+    }
+  }
+
+  &__submit-btn {
+    display: block;
+    padding: 0;
+    border: none;
+    border-bottom: 1px dashed $color-logo-header;
+    @extend %s3;
+    font-weight: bold;
+    color: $color-logo-header;
+    margin: 0 auto;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+
+    &:focus {
+      border-color: $color-turquoise;
+    }
+  }
+}
+//:valid и :invalid

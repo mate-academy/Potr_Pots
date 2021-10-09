@@ -1,0 +1,164 @@
+.whom {
+  counter-reset: num;
+  margin-bottom: 112px;
+
+  @include bp(tablet) {
+    margin-bottom: 130px;
+  }
+
+  @include bp(notebook) {
+    margin-bottom: 150px;
+  }
+
+  &__content {
+    @include bp(desktop) {
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+
+  &__image-box {
+    display: none;
+
+    @include bp(tablet) {
+      display: block;
+      flex: 1 0 284px;
+      align-self: stretch;
+
+      &--2 {
+        order: 1;
+        height: 417px;
+        max-width: 300px;
+      }
+
+      &--3 {
+        max-width: 470px;
+      }
+    }
+  }
+
+  &__image {
+    @include bp(tablet) {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__presentation {
+    &:not(:last-child) {
+      margin-bottom: 143px;
+    }
+
+    @include bp(tablet) {
+      display: flex;
+      // justify-content: space-between;
+      align-items: center;
+      gap: 76px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 100px;
+    @extend %h2;
+    color: $color-logo-header;
+  }
+
+  &__text-box {
+    @include bp(tablet) {
+      flex: 0 0 49%;
+
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__advantages {
+    display: none;
+
+    @extend %s3;
+    color: $color-logo-header;
+    
+    @include bp(tablet) {
+      position: relative;
+      display: block;
+      margin-bottom: 25px;
+    }
+
+    &::before {
+      content: "*";
+      position: absolute;
+      transform: translate(-23px, -5px);
+      @extend %h3;
+      color: #000;
+    }
+
+    &--2 {
+      align-self: flex-end;
+      margin-bottom: 96px;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    margin-bottom: 28px;
+
+    @extend %h2;
+    color: #000;
+
+    @include bp(desktop) {
+      letter-spacing: 0.15em;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 46px;
+      background-image: url("../images/whom-subtitle-bg-img.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      vertical-align: middle;
+    }
+
+    &::before {
+      counter-increment: num;
+      content: counter(num);
+      position: absolute;
+      width: 40px;
+      text-align: right;
+      top: -76px;
+
+      @include bp(tablet) {
+        top: 0;
+        left: -60px;
+      }
+    }
+
+    &::after {
+      display: none;
+
+      @include bp(tablet) {
+        display: inline-block;
+        width: 19px;
+      }
+    }
+
+    &--2 {
+      &::before {
+        @include bp(tablet) {
+          left: 0;
+          top: -68px;
+        }
+      }
+    }
+  }
+
+  &__text {
+    @extend %s3;
+    color: #4f4f4f;
+  }
+}
