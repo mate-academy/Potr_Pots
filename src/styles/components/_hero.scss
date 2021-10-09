@@ -1,0 +1,229 @@
+.hero {
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+
+    perspective: 800px;
+  }
+
+  &__info {
+    position: relative;
+
+    width: 100%;
+  }
+
+  &__title {
+    padding-left: 94px;
+  }
+
+  &__promo-price {
+    padding-left: 396px;
+    padding-bottom: 49px;
+
+    font-size: 26px;
+    line-height: 1.23;
+    font-family: "Proxima Nova Bold", sans-serif;
+
+    color: #333;
+  }
+
+  &__promo-text {
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Proxima Nova Semibold", sans-serif;
+
+    color: $c-text;
+  }
+
+  &__text {
+    position: absolute;
+    left: -59px;
+    bottom: 110px;
+
+    width: 130px;
+
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    color: $c-turquoise;
+
+    cursor: pointer;
+    transform: rotate(90deg);
+
+    &--uppercase {
+      text-transform: uppercase;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 4px;
+      right: -50px;
+
+      width: 44px;
+      height: 8px;
+
+      background-image: url("../images/vectors/arrow-long.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &:hover {
+      &::after {
+        animation: arrows 1s linear;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      & {
+        bottom: 50px;
+      }
+    }
+  }
+
+  &__button {
+    margin-left: 226px;
+  }
+
+  &__image {
+    width: 500px;
+    height: 500px;
+    margin-left: -110px;
+
+    box-shadow: -5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+
+    transition: all 0.5s ease;
+
+    &:hover {
+      box-shadow: 15px 15px 5px 0 rgba(0, 0, 0, 0.5);
+
+      transform: rotateY(-10deg) translateX(-10px) scale(1.1);
+    }
+
+    @media (min-width: 761px) and (max-width: 1024px) {
+      width: 306px;
+      height: 306px;
+    }
+  }
+
+  @media (max-width: 1120px) {
+    & {
+      &__title {
+        padding-left: 0;
+      }
+
+      &__promo-price {
+        padding-left: 300px;
+      }
+
+      &__button {
+        margin-left: 132px;
+      }
+    }
+  }
+
+  @media (max-width: 830px) {
+    & {
+      &__content {
+        padding-top: 40px;
+      }
+
+      &__promo-price {
+        padding-left: 240px;
+        padding-bottom: 44px;
+      }
+
+      &__text {
+        bottom: 80px;
+      }
+
+      &__button {
+        margin-left: 122px;
+      }
+    }
+  }
+
+  @media (max-width: 760px) {
+    & {
+      &__content {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 16px;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        order: 2;
+        max-width: 500px;
+      }
+
+      &__title {
+        margin-bottom: 30px;
+
+        white-space: nowrap;
+      }
+
+      &__image {
+        order: 1;
+        margin-left: 0;
+        margin-bottom: 25px;
+      }
+
+      &__promo-price {
+        padding-left: 0;
+        padding-bottom: 0;
+        margin-bottom: 20px;
+      }
+
+      &__button {
+        margin-left: 0;
+      }
+
+      &__text {
+        left: 90%;
+      }
+    }
+  }
+
+  @media (max-width: 590px) {
+    & {
+      &__text {
+        left: 80%;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__content {
+      padding-top: 0;
+      margin-top: 86px;
+    }
+
+    &__image {
+      width: 320px;
+      height: 320px;
+    }
+
+    &__title {
+      font-size: 36px;
+
+    }
+
+    &__text {
+      bottom: 70px;
+    }
+  }
+}
+
+@keyframes arrows {
+  from {
+    transform: rotateX(0deg) translateX(0);
+  }
+  to {
+    transform: rotateX(360deg) translateX(10px);
+  }
+}
