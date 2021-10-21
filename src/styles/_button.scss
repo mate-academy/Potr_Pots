@@ -1,0 +1,27 @@
+.button {
+  @include buttonFont;
+  padding: 14px 62px;
+  border: 1px solid $turquoise;
+  transition: 0.25s;
+
+  @media (max-width: 550px) {
+    // width: 100%;
+    background-color: $yellow;
+    border-color: $yellow;
+  }
+
+  &::after {
+    content: url(../images/arrow.svg);
+    padding-left: 20px;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 17.5em 0 0 0 $turquoise;
+    color: #fff;
+
+    &::after {
+      content: url(../images/arrow-white.svg);
+    }
+  }
+}
