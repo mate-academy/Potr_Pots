@@ -1,0 +1,61 @@
+.team {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  &__text {
+    width: 336px;
+    margin-right: 57px;
+
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    color: $c-text;
+
+    &--gap {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__image {
+    width: 677px;
+    height: 508px;
+  }
+
+  @media (max-width: 1140px) {
+    & {
+      align-items: start;
+      justify-content: center;
+    }
+
+    &__text {
+      width: 313px;
+      margin-right: 40px;
+
+      &--gap {
+        margin-top: 53px;
+      }
+    }
+
+    &__image {
+      width: 340px;
+      height: 255px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    flex-direction: column-reverse;
+    align-items: center;
+
+    &__text {
+      margin-right: 0;
+      padding: 0 30px;
+    }
+
+    &__image {
+      width: 320px;
+      height: 240px;
+    }
+  }
+}
