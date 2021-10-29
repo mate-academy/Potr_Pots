@@ -1,0 +1,97 @@
+.questions {
+  background-image: url("../images/form/Rectangle.png");
+  background-size: cover;
+  background-size: 1390px 568px;
+  background-repeat: no-repeat;
+  padding: 40px 0 126px;
+  @include onMobile {
+    padding: 40px 0;
+    margin-bottom: 90px;
+    background-size: 100% 528px;
+  }
+
+  &__title {
+    margin-bottom: 23px;
+  }
+
+  &__subtitle {
+    line-height: $lh-basic;
+    margin-bottom: 27px;
+  }
+
+  &__message-us {
+    @include text($e);
+    margin-bottom: 23px;
+  }
+
+  &__feedback-content {
+    display: flex;
+    gap: 20px;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+
+    @include onMobile {
+      flex-direction: column;
+      gap: 90px;
+    }
+  }
+
+  &__form-outer {
+    flex-basis: 50%;
+  }
+}
+
+.form-questions {
+  max-width: 370px;
+  text-align: center;
+
+  &__input {
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: $lh-basic;
+    color: $dark-gray;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #0000004D;
+    padding: 20px 0 4px 4px;
+    // transition: box-shadow $hover-dur;
+    }
+    
+  &__submit {
+    margin-top: 60px;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dashed $dark;
+    line-height: 19px;
+    color: $dark;
+    cursor: pointer;
+    transition: color $hover-dur, border-color $red;
+    &:hover {
+      color: $red;
+      border-color: $red;
+    }
+  }
+}
+
+.contacts {
+  &__option-name {
+    color: #00000063;
+   @include text($e);
+    margin-bottom: 4px;
+  }
+
+  &__option-info {
+    display: inline-block;
+    line-height: $lh-basic;
+    margin-bottom: 21px;
+    transition: color $hover-dur;
+    &:hover {
+      color: $grey;
+    }
+  }
+}

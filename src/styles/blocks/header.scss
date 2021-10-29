@@ -1,0 +1,217 @@
+.header {
+  padding-top: 20px;
+  background: url("../images/Rectangle.png") no-repeat;
+  @include onMobile {
+    background:none;
+  }
+
+  &__logo {
+    transition: color $hover-dur;
+    &:hover {
+      color: $turquoise;
+    } 
+  }
+
+  &__nav {
+    min-width: 50%;
+    @include onTablet {
+      display: none;
+    }
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__bag{
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 85px;
+  }
+
+  &__menu-burger {
+    background: url("../images/icons/menu_icon.png") center no-repeat;
+    width: 32px;
+    height: 32px;
+
+    @include onDesktop {
+      display: none;
+    }
+    @include onLaptop{
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav-link {
+    color: $dark-gray;
+    transition: color $hover-dur;
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(6,minmax(50px,100px));
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 25px;
+      position: relative;
+      margin-bottom: 150px;
+    }
+  }
+
+  &__big-title {
+    @include onMobile {
+      max-width: 260px;
+    }
+  }
+
+  &__title-img {
+    max-width: 100%;
+  }
+
+  &__content-right {
+    @include onMobile {
+      width: 100vw;
+    }
+  }
+
+  &__content-img{
+    max-width: 100%;
+    margin: 0 auto;
+    display: inherit;
+  }
+  
+  &__content-left {
+    @include onDesktop {
+      grid-row:4/7;
+      height: fit-content;
+    }
+
+    @include onTablet {
+      grid-area:4/1/7/1;
+    }
+
+    @include onMobile {
+      position: absolute;
+      right: -4%;
+      top: 76%;
+    }
+  }
+
+  &__content-middle {
+    grid-area: 1/2/4/4;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-area: 1/1/4/5;
+    }
+    @include onMobile {
+      gap: 20px;
+    }
+  }
+
+  &__text-block {
+    align-self: end;
+
+    @include onTablet {
+      align-self: center;
+    }
+    @include onMobile {
+      align-self: start;
+    }
+  }
+
+  &__scroll-text{
+    writing-mode: vertical-rl;
+    font-size: 12px;
+    color:$turquoise;
+    cursor: pointer;
+    &::after {
+      content:"";
+      background-image: url("../images/icons/Arrow.svg");
+      width: 8px;
+      height: 44px;
+      display: inline-block;
+      margin-top: 11px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__price {
+    font-weight: 500;
+    color: $dark;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  &__text{
+    color: $dark-gray;
+    font-size: $c;
+    line-height: 150%;
+    margin-bottom: 49px;
+
+    @include onMobile {
+      margin-bottom: 0;
+    }
+  }
+  &__btn{
+    align-self: center;
+    @include button-main;
+    transition: background-color $hover-dur, color $hover-dur;
+    @include onMobile {
+      @include button-mobile;
+    }
+
+    &:after {
+      @include btn-arrow;
+      transition: background-image $hover-dur;
+    }
+
+    // @include onMobile {
+    //   &:hover {
+    //     background-color: #fff;
+    //     border: 1px solid $grey;
+    //   }
+    // }
+
+    &:hover {
+      background-color: $turquoise;
+      color: $white;
+      &::after {
+        background-image: url(../images/buttonElements/Arrow-white.svg);
+      }
+    }
+  }
+
+  &__content-right {
+    justify-self: end;
+    grid-area: 1/4/5/7;
+  }
+}

@@ -1,0 +1,56 @@
+.mobile-menu {
+  transform: translateX(100%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: $turquoise;
+  width: 70%;
+  height: 100vh;
+  padding-top: 138px;
+  z-index: 3;
+  transition: transform 0.3s;
+  &:target {
+    transform: translateX(0%);
+  }
+
+  &__nav {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  &__nav-list {
+    font-family: $font-main;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__nav-link {
+  color: $grey-light;
+  line-height: 150%;
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 70px;
+    right: 23px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 12px;
+    line-height: 150%;
+    color: $grey-light;
+    &::before {
+      content:"";
+      height: 44px;
+      width: 1px;
+      background-color: $grey-light;
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+  }
+  &__close-cross {
+    position: absolute;
+    right: 0; 
+    bottom: 20px;
+  }
+}

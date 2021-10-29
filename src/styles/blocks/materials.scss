@@ -1,0 +1,116 @@
+.materials{
+  background-image: url(../images/materials/materials-bg.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 130px;
+  margin-bottom: 120px;
+  // padding-bottom: 1440px;
+  @include onTablet {
+    // padding-bottom: 768px;
+  }
+
+  @include onMobile {
+    background-size: contain;
+    margin-bottom: 76px;
+  }
+  &__content{
+    position: relative;
+  }
+  &__title {
+    font-family: $font-secondary;
+    font-size: 138.805px;
+    line-height: 139px;
+    letter-spacing: 0.12em;
+    color: $turquoise;
+
+    margin-bottom: 500px;
+
+
+    @include onTablet {
+      margin-bottom: 284px;
+      font-size: 80px;
+      line-height: 80px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onMobile {
+      font-size: 58px;
+      line-height: 58px;
+      letter-spacing: 0.155em;
+    }
+  }
+
+  &__text{
+    position: absolute;
+    max-width: 470px;
+    top: 140px;
+    right: 0;
+
+    @include onTablet {
+      top: 80px;
+      max-width: 340px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    line-height: 150%;
+    color: $dark-gray;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    line-height: 150%;
+    color: $dark-gray;
+  }
+
+  &__paragraph>span {
+    font-weight: 700;
+  }
+
+  &__accordion {
+    display: flex;
+  }
+
+  &__accordion-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $red;
+    color: $white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 50%;
+
+    &--opened{
+      background-color: #242323BF;
+    }
+  }
+
+  &__accordion-text{
+    background-color:#00000069;
+    max-width: 304px;
+    color: $grey-light;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 35px 45px;
+  }
+  &__accordion-dots{
+    display: none;
+    @include onMobile{
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+    }
+   
+
+  }
+}

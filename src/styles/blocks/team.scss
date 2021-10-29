@@ -1,0 +1,81 @@
+.team {
+  margin-bottom: 226px;
+
+  @include onMobile {
+    margin-bottom: 67px;
+  }
+  &__title {
+    margin-bottom: 150px;
+
+    @include onMobile {
+      font-size: $a;
+      line-height: 58px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 56px;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+
+    @include onMobile {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__yellow-bg {
+    z-index: -1;
+    position: absolute;
+    left: -17%;
+    max-width: 100%;
+
+    @include onMobile {
+      bottom: -32%;
+    }
+  }
+
+  &__info {
+    max-width: 336px;
+    line-height: 150%;
+    color: $dark-gray;
+  }
+
+  &__photo {
+    @include onMobile {
+      width: 100vh;
+    }
+  }
+  &__martin {
+    position: absolute;
+    top: -20%;
+    left: -5%;
+    
+    @include onTablet {
+      max-width: 719px;
+    }
+    @include onMobile{
+      display: none;
+    }
+  }
+
+  &__andy {
+    position: absolute;
+    bottom: -26%;
+    right: 0;
+    @include onTablet {
+      max-width: 459px;
+    }
+    @include onMobile{
+      display: none;
+    }
+  }
+
+  &__photo-img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
