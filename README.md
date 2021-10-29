@@ -48,7 +48,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/B4
 11. `git push origin develop` - to send you code for PR
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://Val-splace.github.io/Potr_Pots/)
+  [DEMO LINK](https://Val-space.github.io/Potr_Pots/)
 14. Copy `DEMO LINK` to the PR description
 
 > To update you PR repeat steps 7-11
