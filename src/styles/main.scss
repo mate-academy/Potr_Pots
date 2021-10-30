@@ -12,13 +12,20 @@
 .page {
   font-family: Bebas Neue;
   color: $color-text-black;
+  
 
   &__container {
     margin: 0 auto;
     background-color: $color-main-gray;
     max-width: 1200px;
 
-    @include onTablet {}
+    @include onTablet {
+      padding: 0 34px;
+    }
+
+    @include onMobile {
+      padding: 0 30px;
+    }
   }
 }
 
@@ -88,8 +95,8 @@
   width: max-content;
   padding: 14px 64px;
 
-  background: #FFE339;
-  border: 1px solid #FFE339;
+  background-color: transparent;
+  border: 1px solid #03839E;
   font-family: Montserrat;
   font-size: 14px;
   line-height: 150%;
@@ -103,7 +110,6 @@
 }
 
 .preview {
-
   @include onDesctop {
     margin-top: 90px;
     margin-bottom: 150px;
@@ -112,21 +118,34 @@
 
   @include onTablet {
     margin-top: 56px;
+    position: relative;
   }
 
   &__img {
     display: block;
-    height: 500px;
     width: 100%;
+    position: relative;
+     
+    &:after {
+      content: "";
+      padding-top: 100%;
+      display: block;
+    }
+    
     background-image: url(../images/SMall_pot.png);
     background-repeat: no-repeat;
     background-size: cover;
+  
+    @include onTablet {
+      justify-self: end;
+      width: 90%;
+    }
   }
 
-
   &__title {
-    font-size: 36px;
-    line-height: 36px;
+    font-size: 64px;
+    line-height: 64px;
+    width: max-content;
     letter-spacing: 0.155em;
     text-transform: uppercase;
     color: $color-main-blue;
@@ -134,6 +153,13 @@
 
     &--transparent {
       color: transparent;
+    }
+
+    @include onMobile {
+      font-size: 36px;
+      line-height: 36px;
+      margin-top: 25px;
+      margin-bottom: 21px;
     }
   }
 
@@ -147,17 +173,31 @@
   }
 
   &__text {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     font-family: Montserrat;
     font-weight: normal;
     font-size: 14px;
     line-height: 21px;
+
+    @include onDesctop{
+      margin-bottom: 50px;
+    }
+
+    @include onTablet{
+      margin-bottom: 44px;
+    }
+
   }
 
   &__button {
     @include onDesctop {
-      background-color: transparent;
-      border: 1px solid #03839E;
+      justify-self: end;
     }
+    @include onMobile {
+      background: #FFE339;
+      border: 1px solid #FFE339;
+      margin: 0 auto;
+    }
+    
   }
 }

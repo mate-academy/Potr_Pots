@@ -3,50 +3,61 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     column-gap: 20px;
+
+    @for $start from 1 through 6 {
+      @for $end from $start through 6 {
+        &__item--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
   }
 
   @include onDesctop {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
-  }
 
-  @for $start from 1 through 12 {
-    @for $end from $start through 12 {
-      &__item--desctop-#{$start}-#{$end} {
-        @include onDesctop {
-          grid-column: #{$start} / #{$end + 1};
-        }
-      }
-    }
-  }
-
-  @for $start from 1 through 6 {
-    @for $end from $start through 6 {
-      &__item--tablet-#{$start}-#{$end} {
-        @include onTablet {
-          grid-column: #{$start} / #{$end + 1};
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &__item--desctop-#{$start}-#{$end} {
+          @include onDesctop {
+            grid-column: #{$start} / #{$end + 1};
+          }
         }
       }
     }
   }
 }
 
-.grid--5 {
-  
+.grid-wrap {
+  @include onTablet {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(100px, 170px));
+    column-gap: 20px;
+
+    @for $start from 1 through 4 {
+      @for $end from $start through 4 {
+        &__item--tablet-#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+
   @include onDesctop {
     position: absolute;
-    left: 100px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: 30px;
-  
+
     @for $start from 1 through 5 {
       @for $end from $start through 5 {
         &__item--desctop-#{$start}-#{$end} {
-          @include onDesctop {
-            grid-column: #{$start} / #{$end + 1};
-          }
+          grid-column: #{$start} / #{$end + 1};
         }
       }
     }
