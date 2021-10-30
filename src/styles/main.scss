@@ -1,10 +1,163 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils/vars";
+@import "./utils/mixins";
+@import "./reset.scss";
 
-@import url(./blocks/grid.scss);
+@import "./utils/_mixins.scss";
+@import "./blocks/grid.scss";
 
 * {
   box-sizing: border-box;
 }
 
+.page {
+  font-family: Bebas Neue;
+  color: $color-text-black;
+
+  &__container {
+    margin: 0 auto;
+    background-color: $color-main-gray;
+    max-width: 1200px;
+
+    @include onTablet {}
+  }
+}
+
+.header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.06em;
+    color: inherit;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+    }
+  }
+
+  &__nav-items:not(:last-child) {
+    margin-right: 64px;
+  }
+
+  &__nav-link {
+    font-family: Montserrat;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-text-gray;
+
+  }
+
+  &__basket {
+    display: none;
+    width: 32px;
+    height: 32px;
+
+    @include onDesctop {
+      display: block;
+    }
+
+  }
+
+  &__burger {
+    display: block;
+    width: 32px;
+    height: 32px;
+
+    @include onDesctop {
+      display: none;
+    }
+  }
+
+}
+
+.button {
+  height: 48px;
+  width: max-content;
+  padding: 14px 64px;
+
+  background: #FFE339;
+  border: 1px solid #FFE339;
+  font-family: Montserrat;
+  font-size: 14px;
+  line-height: 150%;
+  color: #121212;
+  text-transform: uppercase;
+
+  &__arrow {
+    display: inline;
+    margin-left: 12px;
+  }
+}
+
+.preview {
+
+  @include onDesctop {
+    margin-top: 90px;
+    margin-bottom: 150px;
+    position: relative;
+  }
+
+  @include onTablet {
+    margin-top: 56px;
+  }
+
+  &__img {
+    display: block;
+    height: 500px;
+    width: 100%;
+    background-image: url(../images/SMall_pot.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  &__title {
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    color: $color-main-blue;
+    -webkit-text-stroke: 1px $color-main-blue;
+
+    &--transparent {
+      color: transparent;
+    }
+  }
+
+  &__prise {
+    margin-bottom: 2px;
+    position: relative;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  &__text {
+    margin-bottom: 50px;
+    font-family: Montserrat;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  &__button {
+    @include onDesctop {
+      background-color: transparent;
+      border: 1px solid #03839E;
+    }
+  }
+}
