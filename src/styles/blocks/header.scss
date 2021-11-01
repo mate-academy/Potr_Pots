@@ -23,13 +23,22 @@
   }
 
   &__bag{
-    display: block;
+    display: none;
 
-    @include onTablet {
-      display: none;
+    @include onDesktop {
+      display: block;
     }
-    @include onMobile {
-      display: none;
+  }
+
+  &__bag-icon {
+    &:hover > .header__bag-image{
+      animation: shake linear 1s alternate;
+    }
+    @keyframes shake {
+      0% { transform: rotate(-20deg); }
+      40% {transform: rotate(20deg);}
+      75% {transform: rotate(-10deg);}
+      100% { transform: rotate(0deg);}
     }
   }
 
@@ -97,7 +106,7 @@
     }
   }
 
-  &__content-img{
+  &__content-img {
     max-width: 100%;
     margin: 0 auto;
     display: inherit;
@@ -145,7 +154,7 @@
     }
   }
 
-  &__scroll-text{
+  &__scroll-text {
     writing-mode: vertical-rl;
     font-size: 12px;
     color:$turquoise;
@@ -171,7 +180,7 @@
     line-height: 32px;
   }
 
-  &__text{
+  &__text {
     color: $dark-gray;
     font-size: $c;
     line-height: 150%;
@@ -181,33 +190,38 @@
       margin-bottom: 0;
     }
   }
-  &__btn{
+  &__btn {
     align-self: center;
-    @include button-main;
-    transition: background-color $hover-dur, color $hover-dur;
+
+    @include onDesktop {
+      @include button-main;
+
+      &:hover {
+        @include btn-hover;
+      }
+    }
+
+    @include onTablet {
+      @include button-main;
+
+      &:hover {
+        @include btn-hover;
+      }
+    }
+
     @include onMobile {
+      align-self: start;
       @include button-mobile;
+
+      &:hover {
+        @include btn-hover-mobile;
+      }
     }
 
     &:after {
       @include btn-arrow;
-      transition: background-image $hover-dur;
     }
 
-    // @include onMobile {
-    //   &:hover {
-    //     background-color: #fff;
-    //     border: 1px solid $grey;
-    //   }
-    // }
-
-    &:hover {
-      background-color: $turquoise;
-      color: $white;
-      &::after {
-        background-image: url(../images/buttonElements/Arrow-white.svg);
-      }
-    }
   }
 
   &__content-right {

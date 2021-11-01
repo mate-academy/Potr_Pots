@@ -45,6 +45,8 @@
   text-transform: uppercase;
   border: 1px solid $turquoise;
   padding: 14px 68px 14px 62px;
+  transition: background-color $hover-dur, color $hover-dur;
+
 }
 
 @mixin title($font-size,$line-height) {
@@ -65,4 +67,18 @@
     height: 8px;
     display: inline-block;
     margin-left: 9px;
+    transition: background-image $hover-dur;
+}
+
+@mixin btn-hover {
+  background-color: $turquoise;
+  color: $white;
+  &::after {
+    background-image: url(../images/buttonElements/Arrow-white.svg);
+  }
+}
+
+@mixin btn-hover-mobile {
+  background-color: transparent;
+  border: 1px solid $dark;
 }
