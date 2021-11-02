@@ -1,16 +1,31 @@
 .materials {
   position: relative;
 
+  &__sideline {
+    display: none;
+    @extend %sideline-basic;
+      
+    @include onTablet {
+      display: block;
+    }
+
+    &--right {
+      top: 0;
+      right: 3%;
+    }
+
+    &--left {
+      top: 20%;
+      left: 3%;
+    }
+  }
+
   &__bg {
     background-image: url(../images/materials/materials-bg.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     margin-bottom: 120px;
     padding-bottom: 78%;
-
-    @include onTablet {
-      padding-bottom: 70%;
-    }
 
     @include onMobile {
       padding-bottom: 0;

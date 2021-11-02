@@ -1,8 +1,28 @@
 .header {
+  position: relative;
   padding-top: 20px;
   background: url("../images/Rectangle.png") no-repeat;
   @include onMobile {
     background:none;
+  }
+
+  &__sideline {
+    @extend %sideline-basic;
+    bottom: -6%;
+    right: 2%;
+
+    // &::before {
+    //   display: inline-block;
+    //   content: '';
+    //   width: 1px;
+    //   height: 65px;
+    //   margin-bottom: 10px;
+    //   background-color: $side-line;
+    // }
+
+    @include onMobile {
+      display: none;
+    }
   }
 
   &__logo {
@@ -118,12 +138,12 @@
   
   &__content-left {
     @include onDesktop {
-      grid-row:4/7;
+      grid-area:4/1/6/1;
       height: fit-content;
     }
 
     @include onTablet {
-      grid-area:4/1/7/1;
+      grid-area:4/1/6/1;
     }
 
     @include onMobile {
@@ -172,9 +192,9 @@
       margin-top: 11px;
     }
 
-    @include onDesktop {
-      margin-bottom: 66px;
-    }
+    // @include onDesktop {
+    //   margin-bottom: 66px;
+    // }
   }
 
   &__price {
