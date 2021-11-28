@@ -4,3 +4,92 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onDesktop {
+  @media(min-width: 1280px){
+    @content;
+  }
+}
+
+@mixin onLaptop {
+  @media(min-width: 1280px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media(min-width: 768px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media(max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin button-mobile {
+  display: inline-block;
+  background-color: $yellow;
+  border:none;
+  padding: 14px 68px 14px 62px;
+  color:$button-dark;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+@mixin button-main {
+  color:$button-dark;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid $turquoise;
+  padding: 14px 68px 14px 62px;
+  transition: background-color $hover-dur, color $hover-dur;
+
+}
+
+@mixin title($font-size,$line-height) {
+  font-family: $font-secondary;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin text($font-size) {
+  font-size: $font-size;
+  line-height: $lh-basic;
+}
+
+@mixin btn-arrow {
+    content: "";
+    background-image: url(../images/buttonElements/ArrowButton.svg);
+    width: 26px;
+    height: 8px;
+    display: inline-block;
+    margin-left: 9px;
+    transition: background-image $hover-dur;
+}
+
+@mixin btn-hover {
+  background-color: $turquoise;
+  color: $white;
+  &::after {
+    background-image: url(../images/buttonElements/Arrow-white.svg);
+  }
+}
+
+@mixin btn-hover-mobile {
+  background-color: transparent;
+  border: 1px solid $dark;
+}
+
+@mixin slash {
+  content: "";
+  background-image: url("../images/forWhom/slash.svg");
+  width: 19px;
+  height: 44px;
+  display: inline-block;
+  position: relative;
+  left: 8px;
+  top: 10px;
+}

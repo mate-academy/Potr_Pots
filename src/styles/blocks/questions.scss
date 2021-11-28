@@ -1,0 +1,44 @@
+.questions {
+  background-image: url("../images/form/Rectangle.png");
+  background-size: cover;
+  background-size: 1390px 568px;
+  background-repeat: no-repeat;
+  padding: 40px 0 126px;
+  @include onMobile {
+    padding: 40px 0;
+    margin-bottom: 90px;
+    background-size: 100% 528px;
+  }
+
+  &__title {
+    margin-bottom: 23px;
+  }
+
+  &__subtitle {
+    line-height: $lh-basic;
+    margin-bottom: 27px;
+  }
+
+  &__message-us {
+    @include text($e);
+    margin-bottom: 23px;
+  }
+
+  &__feedback-content {
+    display: flex;
+    gap: 20px;
+
+    @include onTablet {
+      justify-content: space-between;
+    }
+
+    @include onMobile {
+      flex-direction: column;
+      gap: 90px;
+    }
+  }
+
+  &__form-outer {
+    flex-basis: 50%;
+  }
+}

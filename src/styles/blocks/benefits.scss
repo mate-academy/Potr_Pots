@@ -1,0 +1,200 @@
+.benefits {
+  position: relative;
+
+  @include onDesktop {
+    height: 822px;
+    padding-top: 180px;
+    overflow: hidden;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 0 0 100px 16px;
+    }
+
+    @include onTablet {
+      margin-bottom: 94px;
+      margin-left: 20px;
+    }
+  }
+
+  &__benefit {
+    
+    &--1{
+      @include onDesktop {
+        grid-area: 1/3/2/5;
+        margin-bottom: 40px;
+      }
+      @include onTablet {
+        grid-area: 1/1/3/4;
+      }
+    }
+
+    &--2{
+      @include onDesktop {
+        grid-area: 2/3/3/5;
+        margin-bottom: 60px;
+      }
+      @include onTablet {
+        grid-area: 3/1/5/4;
+      }
+    }
+
+    &--3{
+      @include onDesktop {
+        grid-area: 1/5/2/7;
+      }
+      @include onTablet {
+        grid-area: 5/1/7/4;
+      }
+    }
+  }
+
+  &__buy{
+
+    @include onDesktop {
+      grid-area: 3/3/3/5;
+      margin-bottom: 70px;
+    }
+
+    @include onTablet {
+      grid-area: 2/4/3/7;
+    }
+  }
+
+  &__name {
+    position: relative;
+    font-size: $f;
+    line-height: $lh-basic;
+    color: $dark;
+
+    &::before {
+      content:'';
+      position: absolute;
+      left: -16px;
+      top: 36%;
+      background-color: $dark-gray;
+      width: 7px;
+      height: 7px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__manual {
+    color: #828282;
+    line-height: $lh-basic;
+  }
+
+  &__buy-btn {
+
+    @include onDesktop {
+      @include button-main;
+
+      &:hover {
+        @include btn-hover;
+      }
+    }
+
+    @include onTablet {
+      @include button-main;
+
+      &:hover {
+        @include btn-hover;
+      }
+    }
+    
+    @include onMobile {
+      @include button-mobile;
+      margin-bottom: 40px;
+
+      &:hover {
+        @include btn-hover-mobile;
+      }
+    }
+
+    &:after {
+      @include btn-arrow;
+    }
+  }
+
+  &__discount {
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.155em;
+
+    @include onDesktop {
+      grid-area: 4/4/6/6;
+    }
+  
+    @include onTablet {
+      grid-area: 4/4/4/7;
+
+    }
+  }
+
+  &__discount-sum {
+    color: $red;
+    font-size: $g;
+    line-height: 150%;
+    margin-bottom: 5px;
+
+    @include onTablet {
+      font-size: $e;
+      line-height: $e;
+      margin-bottom: 3px;
+    }
+  }
+
+  &__discount-promo {
+    font-size: $e;
+    line-height: $e;
+    color: $turquoise;
+
+    @include onTablet {
+      font-size: $d;
+      line-height: $d;
+    }
+  }
+
+  &__photocard {
+    display: none;
+    width: 300px;
+    position: absolute;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--1 {
+      top: 0;
+      left: 0;
+    }
+    &--2 {
+      top: -128px;
+      left: 214px;
+    }
+    &--3 {
+    width: 130px;
+    top: 360px;
+    }
+    &--4 {
+      top:260px;
+      left: 100px;
+    }
+    &--5 {
+      bottom: -50px;
+      z-index: -2;
+    }
+    &--6 {
+      bottom: -20px;
+      left: 220px;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.features {
+  margin-bottom: 150px;
+
+  @include onMobile {
+    margin-bottom: 95px;
+  }
+  
+  &__big-title {
+    margin-bottom: 77px;
+    @include title($a, 58px);
+    letter-spacing: 0.155em;
+    color: $turquoise;
+
+    @include onMobile {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 10px;
+
+    @include onTablet {
+      gap: 5px;
+    }
+    
+    @include onMobile{
+      flex-direction: column;
+      align-items: center;
+      gap: 68px;
+    }
+  }
+
+  &__column {
+    flex-basis: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+
+    @include onTablet {
+      align-items: start;
+    }
+
+    @include onMobile {
+      flex-basis: 100%;
+    }
+  }
+
+  &__image-wrap {
+    margin-bottom: 36px;
+  }
+
+  &__img{
+    max-width: 100%;
+  }
+
+  &__column-title {
+    margin-bottom: 22px;
+    @include title($e, 24px);
+    text-align: center;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    color: $dark;
+  }
+
+  &__column-text {
+    line-height: 150%;
+    color: $dark-gray;
+
+    @include onMobile {
+      text-align: center;
+    }
+  }
+ }
+ 
+ .big-title {
+  &__transparent {
+    color: $white;
+    text-shadow: -1px 0 $turquoise, 0 1px $turquoise, 1px 0 $turquoise, 0 -1px $turquoise;
+  }
+}

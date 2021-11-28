@@ -1,0 +1,183 @@
+.materials {
+  position: relative;
+
+  &__sideline {
+    display: none;
+    @extend %sideline-basic;
+      
+    @include onTablet {
+      display: block;
+    }
+
+    &--right {
+      top: 0;
+      right: 3%;
+    }
+
+    &--left {
+      top: 20%;
+      left: 3%;
+    }
+  }
+
+  &__bg {
+    background-image: url(../images/materials/materials-bg.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 120px;
+    padding-bottom: 78%;
+
+    @include onMobile {
+      padding-bottom: 0;
+      margin-bottom: 76px;
+      background: none;
+    }
+  }
+
+  &__content{
+    position: relative;
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-size: 138.805px;
+    line-height: 139px;
+    letter-spacing: 0.12em;
+    color: $turquoise;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 80px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onMobile {
+      font-size: 58px;
+      line-height: 58px;
+      letter-spacing: 0.155em;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    max-width: 470px;
+    top: 140px;
+    right: 0;
+    z-index: 3;
+
+    @include onTablet {
+      top: 80px;
+      max-width: 340px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    line-height: 150%;
+    color: $dark-gray;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    line-height: 150%;
+    color: $dark-gray;
+  }
+
+  &__paragraph > span {
+    font-weight: 700;
+  }
+
+  &__accordion {
+    display: flex;
+  }
+
+  &__accordion-switch {
+    cursor: pointer;
+    @include onMobile {
+      display: none;
+    }
+
+    &--1 {
+      position: absolute;
+      left: 20%;
+      bottom: 15%;
+    }
+
+    &--2 {
+      position: absolute;
+      left: 39%;
+      bottom: 30%;
+    }
+
+    &--3 {
+      position: absolute;
+      left: 46%;
+      bottom: 10%;
+    }
+
+    &--4 {
+      position: absolute;
+      left: 58%;
+      bottom: 25%;
+    }
+  }
+
+  &__img {
+    display: none;
+    max-width: 100%;
+
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__switch-wrapper {
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    right: 10%;
+    bottom: 8%;
+
+    @include onMobile {
+      margin: 0 auto;
+      display: block;
+      max-width: 90%;
+      position: relative;
+      top: -60px;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &__accordion-text{
+    background-color:#00000069;
+    max-width: 304px;
+    margin: auto;
+    color: $grey-light;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 35px 45px;
+    margin-top: 6px;
+
+    @include onMobile {
+      max-width: 500px;
+      background: #00000073;
+      box-shadow: 0px 3px 2px 0px #00000026;
+    }
+  }
+
+  &__accordion-dots{
+    display: none;
+    @include onMobile{
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+    }
+  }
+}
