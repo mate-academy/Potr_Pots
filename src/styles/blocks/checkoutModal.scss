@@ -1,0 +1,203 @@
+.checkoutModal {
+  display: block;
+  position: absolute;
+  min-width: 830px;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  padding: 53px 130px 95px;
+
+  background-color: $c-grey-light;
+  transition: transform 0.6s;
+  z-index: 999;
+
+  &_active {
+    transform: translate(-50%, 0);
+  }
+
+  &__titleWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 51px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__closeBtn {
+    position: relative;
+    bottom: 35px;
+    right: -100px;
+    width: 66px;
+    height: 66px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0;
+    background: center / contain no-repeat url("../images/icons/shoppingBagModalCloseBtn.png");
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0 0 52px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      left: -54px;
+      display: block;
+      width: 24px;
+      line-height: 24px;
+      background-color: $c-gray;
+      color: #f2f2f2;
+      text-align: center;
+      font-family: "Bebas neue", sans-serif;
+      font-size: 12px;
+      border-radius: 50%;
+    }
+
+    @for $i from 1 through 3 {
+      &_#{$i}::before {
+        content: "#{$i}";
+      }
+    }
+  }
+
+  &__inputWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__input {
+    padding: 0 17px 11px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #bdbdbd;
+    flex-basis: 48%;
+    min-width: unset;
+
+    &_fullSize {
+      min-width: 100%;
+    }
+
+    &_method {
+      margin-bottom: 0;
+      padding: 0;
+      display: inline-block;
+    }
+
+    &_visa {
+      margin-right: 110px;
+    }
+
+    &_paypal {
+      margin-right: 59px;
+    }
+
+    &_city {
+      order: 2;
+    }
+
+    &_payment {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    border-bottom: 1px solid #bdbdbd;
+    cursor: pointer;
+    display: block;
+    min-width: 100%;
+    padding: 1px 17px 11px;
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #828282;
+    position: relative;
+
+    &:not(:last-of-type) {
+      margin-bottom: 35px;
+    }
+
+    &_visa {
+      &::before {
+        content: "";
+        width: 34px;
+        height: 34px;
+        position: absolute;
+        top: -5px;
+        left: 47px;
+        background: center / contain no-repeat url("../images/icons/checkoutModalMastercardIcon.png");
+      }
+
+      &::after {
+        content: "";
+        width: 37px;
+        height: 23px;
+        position: absolute;
+        top: 0;
+        left: 90px;
+        background: center / contain no-repeat url("../images/icons/checkoutModalVisaIcon.png");
+      }
+    }
+
+    &_paypal {
+      &::before {
+        content: "";
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        top: 2px;
+        left: 56px;
+        background: center / contain no-repeat url("../images/icons/checkoutModalPaypalIcon.png");
+      }
+    }
+  }
+
+  &__lineWrapper {
+    display: flex;
+    align-items: center;
+
+    &:not(:last-of-type) {
+      padding: 15px 0;
+    }
+
+    &:last-of-type {
+      padding-top: 15px;
+    }
+  }
+
+  &__inlineContent {
+    flex-basis: 75%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__inlineLabel {
+    flex-basis: 25%;
+  }
+
+  &__address {
+    padding-bottom: 65px;
+  }
+
+  &__method {
+    padding-bottom: 109px;
+  }
+
+  &__payment {
+    padding-bottom: 56px;
+  }
+}
