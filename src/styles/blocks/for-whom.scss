@@ -1,0 +1,71 @@
+.for-whom {
+  padding: 0 30px;
+
+  &__image {
+    display: none;
+    height: 100%;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  .one {
+    display: flex;
+    align-items: center;
+  }
+
+  .two {
+    margin: 0 30px;
+  }
+
+  &__number {
+    margin-bottom: 28px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: 25px;
+      background-color: #333;
+      height: 46px;
+      width: 1px;
+      transform: rotate(22deg);
+    }
+  }
+
+  &__title {
+    margin-top: 102px;
+    margin-bottom: 28px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+
+    @include onTablet {
+      margin-top: 115px;
+    }
+
+    @include onDesktop {
+      margin-top: 158px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 70px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+
+    &:last-child {
+      margin-bottom: 112px;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.materials {
+  background-image: linear-gradient(180deg,
+  #f8f8f8 0%,
+  rgba(255, 255, 255, 0) 30.93%),
+    url(../images/materials.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    margin: 0 34px;
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 80px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 139px;
+      line-height: 139px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    @include onDesktop {
+      margin-top: -100px;
+      padding-bottom: 200px;
+    }
+  }
+
+  &__text {
+    color: $c-gray-light;
+    max-width: 470px;
+    margin: 50px 25px;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+
+    @include onDesktop {
+      // margin-top: 200px;
+      transform: translateY(75%);
+      font-size: 115%;
+    }
+  }
+
+  &__text-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  &__text-paragraph {
+    span {
+      font-weight: bold;
+    }
+  }
+}

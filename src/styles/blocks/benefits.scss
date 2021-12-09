@@ -1,0 +1,117 @@
+.benefits {
+  &__content {
+    margin: 0 34px;
+
+    @include onDesktop {
+      margin: 0;
+      display: flex;
+    }
+  }
+
+  &__container-photo {
+    max-width: 700px;
+    // height: 900px;
+    flex-wrap: wrap;
+    // position: relative;
+    overflow: hidden;
+
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__photo-card {
+    // position: absolute;
+    width: 270px;
+    height: 300px;
+    background-color: #fff;
+    z-index: -1;
+
+    &:nth-child(1) {
+      transform: translate(-10%, -10%) rotate(-15deg);
+    }
+
+    &:nth-child(2) {
+      transform: translate(1%, -40%) rotate(-29deg);
+    }
+
+    &:nth-child(3) {
+      transform: translate(-50%, 1%) rotate(1deg);
+    }
+
+    &:nth-child(4) {
+      transform: translate(-45%, -20%) rotate(-15deg);
+    }
+
+    &:nth-child(5) {
+      transform: translate(0%, -10%) rotate(-16deg);
+      z-index: -2;
+    }
+
+    &:nth-child(6) {
+      transform: translate(10%, -35%) rotate(-30deg);
+    }
+  }
+
+  &__photo {
+    margin: 20px 20px 0;
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+  }
+
+  &__photo-text {
+    display: block;
+    margin: 0 20px;
+    font-size: 11px;
+    line-height: 131.5%;
+    color: #828282;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 32px;
+    line-height: 150%;
+    color: #333;
+
+    &::before {
+      content: "";
+      background-image: url(../images/benefits-rectangle.svg);
+      margin-right: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 11px;
+      height: 22px;
+    }
+  }
+
+  // &__container-text {
+  // }
+
+  &__text {
+    margin-left: 21px;
+    margin-bottom: 40px;
+  }
+
+  &__promo-sale {
+    display: block;
+    margin: 40px 0 15px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    color: $c-red;
+  }
+
+  &__promo-text {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+  }
+}
