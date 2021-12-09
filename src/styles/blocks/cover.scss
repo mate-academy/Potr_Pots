@@ -1,0 +1,128 @@
+.cover {
+  &__image {
+    width: 100vw;
+    margin: 0 -30px 26px;
+    z-index: -1;
+
+    @include onTab {
+      max-width: 320px;
+      margin: 0;
+
+      position: absolute;
+      right: 34px;
+    }
+
+    @include onDesktop {
+      right: 134px;
+      max-width: 500px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 102px;
+
+    @include onDesktop {
+      margin-left: 100px;
+    }
+  }
+
+  &__title {
+    @extend %subtitle;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    color: transparent;
+    margin-bottom: 20px;
+    -webkit-text-stroke: 1px $colorBlue;
+
+    &--text--solid {
+      text-shadow: none;
+      color: $colorBlue;
+    }
+
+    @include onTab {
+      font-size: 64px;
+      line-height: 64px;
+      max-width: 500px;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__price {
+    display: block;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $colorGray;
+    margin-bottom: 4px;
+
+    @include onTab {
+      margin-left: 240px;
+    }
+  }
+
+  &__price-text {
+    display: block;
+    color: #4f4f4f;
+    font-size: 14px;
+    margin-bottom: 20px;
+
+    @include onTab {
+      margin: 0 0 44px 240px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include onTab {
+      margin-left: 122px;
+    }
+  }
+
+  &__side-link {
+    font-size: 12px;
+    line-height: 18px;
+    color: $colorBlue;
+    text-decoration: none;
+
+    position: absolute;
+    top: 500px;
+    right: 6px;
+
+    transform: rotate(90deg);
+    transform-origin: top right;
+
+    &::after {
+      content: "";
+      background-image: url(../images/arrow.svg);
+      background-repeat: no-repeat;
+      height: 44px;
+      width: 12px;
+      display: block;
+
+      position: absolute;
+      top: -15px;
+      left: 160px;
+
+      transform: rotate(-90deg);
+    }
+
+    @include onTab {
+      transform-origin: bottom left;
+      top: 330px;
+      left: 34px;
+      right: auto;
+    }
+
+    @include onDesktop {
+      top: 449px;
+      left: 134px;
+
+    }
+  }
+}

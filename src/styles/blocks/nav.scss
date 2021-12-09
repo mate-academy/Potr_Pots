@@ -1,0 +1,157 @@
+.nav {
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: 230px;
+    height: 100vh;
+    background-color: $colorBlue;
+    padding-top: 138px;
+
+    overflow-y: auto;
+
+    @include onDesktop {
+      position: static;
+      width: auto;
+      height: auto;
+
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+
+  &__list {
+    & :first-of-type ::after {
+      content: "0";
+      display: flex;
+
+      position: absolute;
+      top: -50%;
+      left: 110%;
+
+      height: 13px;
+      width: 13px;
+      background: #eb5757;
+      border-radius: 50%;
+
+      font-family: Bebas Neue, sans-serif;
+      font-size: 9px;
+      line-height: 9px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin: 0 64px 0 0;
+
+      &--onDesktop--none {
+        display: none;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding-bottom: 4px;
+
+    font-size: 16px;
+    color: $colorWhite;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color $transitionDuration;
+
+    &:hover {
+      border-color: $colorWhite;
+    }
+
+    @include onDesktop {
+      color: #4f4f4f;
+      transition: color $transitionDuration;
+
+      &:hover {
+        color: $colorBlue;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 410px;
+    right: 30px;
+
+    font-size: 12px;
+    line-height: 18px;
+    color: $colorWhite;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: rotate(-90deg);
+
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 44px;
+      background-color: $colorWhite;
+
+      position: relative;
+      top: 9px;
+      right: 50px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__close-icon {
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 16px;
+      background-color: $colorWhite;
+
+      position: relative;
+      bottom: 10px;
+      right: 75px;
+
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 16px;
+      background-color: $colorWhite;
+
+      position: relative;
+      bottom: 11px;
+      right: 75px;
+
+      transform: rotate(-45deg);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

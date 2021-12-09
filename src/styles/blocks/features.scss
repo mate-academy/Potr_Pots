@@ -1,0 +1,74 @@
+.features {
+  &__title {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: transparent;
+    margin-bottom: 53px;
+    -webkit-text-stroke: 1px $colorBlue;
+
+    &--text--solid {
+      text-shadow: none;
+      color: $colorBlue;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include onTab {
+      flex-direction: row;
+    }
+  }
+
+  &__part {
+    margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 95px;
+    }
+
+    @include onTab {
+      max-width: calc((100% - 40px) / 3);
+      margin: 0 20px 148px 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    @include onDesktop {
+      max-width: calc((100% - 60px) / 3);
+      margin: 0 30px 126px 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 35px;
+
+    @include onTab {
+      width: none;
+    }
+  }
+
+  &__subtitle {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    line-height: 24px;
+    margin-bottom: 22px;
+
+    color: $colorGray;
+  }
+
+  &__text {
+    line-height: 24px;
+    text-align: center;
+    color: #4f4f4f;
+  }
+}

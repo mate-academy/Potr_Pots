@@ -1,0 +1,154 @@
+.size {
+  &__sizes {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(100% - 428px);
+    margin: 20px 12px 0 0;
+
+    position: relative;
+
+    @include onDesktop {
+      &::before {
+        content: "";
+        height: 257px;
+        width: 1px;
+        display: block;
+        background-color: #d8d8d8;
+
+        position: absolute;
+        left: -30px;
+      }
+
+      flex-basis: auto;
+      margin-top: 30px;
+    }
+  }
+
+  &__content {
+    @include onTab {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row-reverse;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+    }
+  }
+
+  &__wrapper {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      margin-right: 600px;
+    }
+  }
+
+  &__title {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 85px;
+    }
+  }
+
+  &__description {
+    line-height: 24px;
+    color: #4f4f4f;
+
+    margin-bottom: 32px;
+
+    @include onTab {
+      flex-basis: 100%;
+      margin-bottom: 18px;
+    }
+
+    @include onDesktop {
+      margin: 30px 47px 0 0;
+    }
+  }
+
+  &__image {
+    width: 100vw;
+    margin: 0 -30px 40px;
+
+    @include onTab {
+      width: unset;
+      max-width: 416px;
+      margin: 0 0 26px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      right: 134px;
+
+      max-width: 530px;
+      margin: 0 0 100px;
+      order: 1;
+    }
+  }
+
+  &__subtitle {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    line-height: 24px;
+    color: #4f4f4f;
+
+    margin-bottom: 40px;
+
+    @include onTab {
+      margin-bottom: 37px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+
+      &:last-child {
+        margin-bottom: 80px;
+      }
+    }
+  }
+
+  &__comment {
+    line-height: 24px;
+    color: #4f4f4f;
+
+    position: relative;
+
+    margin-bottom: 98px;
+
+    &::before {
+      content: "*";
+      color: #4f4f4f;
+      display: block;
+
+      position: absolute;
+      top: 0;
+      left: -10px;
+    }
+
+    @include onTab {
+      margin-bottom: 120px;
+    }
+
+    @include onDesktop {
+      margin-right: 40px;
+    }
+  }
+
+}

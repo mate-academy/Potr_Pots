@@ -1,0 +1,113 @@
+.team {
+  &__title {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: $colorGray;
+
+    margin-bottom: 60px;
+
+    @include onTab {
+      margin-bottom: 190px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    @include onTab {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__image {
+    margin: 0 -30px 35px;
+
+    @include onTab {
+      max-width: 340px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      max-width: 678px;
+      margin: 0 100px 0 0;
+    }
+  }
+
+  &__text {
+    line-height: 24px;
+    color: #4f4f4f;
+    margin-bottom: 95px;
+
+    &::after {
+      content: "";
+      background-image: url(../images/Rectangle.svg);
+      background-repeat: no-repeat;
+      background-position: left -200px;
+      height: 400px;
+      width: 100vw;
+      z-index: -1;
+
+      position: absolute;
+      top: 600px;
+      left: 0;
+
+      @include onTab {
+        width: 50vw;
+        background-position: right 25%;
+        top: 150px;
+      }
+    }
+
+    @include onTab {
+      margin: 50px 48px 172px 0;
+    }
+
+    @include onDesktop {
+      margin: 140px 57px 330px 0;
+    }
+  }
+
+  &__names {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 232px;
+    line-height: 232px;
+    letter-spacing: 0.15em;
+    color: transparent;
+    -webkit-text-stroke: 1px $colorBlue;
+    display: none;
+
+    @include onTab {
+      display: inline-block;
+      position: absolute;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 288px;
+    }
+
+    &--marty {
+      @include onTab {
+        top: 60px;
+        left: -44px;
+      }
+
+      @include onDesktop {
+        left: 74px;
+      }
+    }
+
+    &--andy {
+      @include onTab {
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}

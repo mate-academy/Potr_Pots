@@ -1,0 +1,171 @@
+.contacts {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 145px;
+    overflow: hidden;
+
+    position: relative;
+
+    @include onTab {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 110px;
+    }
+
+    @include onDesktop {
+      padding-top: 94px;
+      overflow: unset;
+    }
+
+    &::after {
+      content: "";
+      background-image: url(../images/Rectangle2.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+      height: 600px;
+
+      z-index: -1;
+
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+
+      @include onTab {
+        background-position: right;
+        top: 0;
+        right: 20px;
+      }
+
+      @include onDesktop {
+        right: 136px;
+      }
+    }
+  }
+
+  &__info {
+    flex-basis: 30%;
+  }
+
+  &__image {
+    max-width: 223px;
+
+    position: absolute;
+    top: 40px;
+    right: -70px;
+
+    @include onTab {
+      top: -20px;
+      right: -30px;
+    }
+
+    @include onDesktop {
+      top: -100px;
+      right: 82px;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    margin-bottom: 14px;
+
+    @include onTab {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    line-height: 24px;
+
+    margin-bottom: 40px;
+
+    @include onTab {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 36px;
+
+    margin-bottom: 23px;
+
+    @include onTab {
+      margin-bottom: 14px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 23px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+
+    @include onTab {
+      width: 340px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__field {
+    display: inline-block;
+    padding-bottom: 4px;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    margin-bottom: 25px;
+
+    &::placeholder {
+      line-height: 24px;
+      color: #4f4f4f;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    border: none;
+    border-bottom: 1px dashed $colorGray;
+    background-color: transparent;
+    margin: 0 auto 75px;
+
+    // margin-bottom: 75px;
+
+    @include onTab {
+      margin-bottom: 165px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 145px;
+    }
+  }
+
+  &__type {
+    font-family: Proxima Nova, sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.39);
+
+    margin-bottom: 4px;
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 38px;
+
+    &:last-child {
+      margin-bottom: 91px;
+    }
+  }
+}

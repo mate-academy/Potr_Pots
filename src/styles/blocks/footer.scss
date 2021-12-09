@@ -1,0 +1,86 @@
+.footer {
+  &__content {
+    @include onTab {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__address {
+    display: none;
+
+    @include onTab {
+      display: block;
+    }
+  }
+
+  &__title {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    margin-bottom: 11px;
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+
+  &__content-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__networks {
+    margin: 0 auto 40px;
+
+    @include onDesktop {
+      margin-bottom: 28px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 84px;
+    }
+  }
+
+  &__icon {
+    height: 20px;
+    width: 20px;
+
+    margin-right: 85px;
+    text-decoration: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__name {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+
+  &__copyright {
+    font-size: 16px;
+
+    @include onTab {
+      display: none;
+    }
+  }
+
+  &__about-us {
+    display: none;
+
+    @include onTab {
+      display: block;
+    }
+  }
+}
