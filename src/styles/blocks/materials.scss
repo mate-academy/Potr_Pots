@@ -29,11 +29,11 @@
     z-index: -1;
 
     @include onTab {
-      margin: 0 -34px;
+      margin: 0 -34px 110px;
     }
 
     @include onDesktop {
-      margin: 0 -134px;
+      margin: 0 -134px 120px;
     }
   }
 
@@ -81,9 +81,7 @@
     border-radius: 50%;
     background-color: #eb5757;
 
-    position: absolute;
-
-    transition-duration: 0.3s;
+    transition: background-color $transitionDuration, opacity $transitionDuration, backdrop-filter $transitionDuration;
 
     &::before {
       content: "";
@@ -95,10 +93,6 @@
       position: absolute;
       top: 20px;
       left: 25px;
-    }
-
-    &:hover::before {
-      display: none;
     }
 
     &::after {
@@ -113,12 +107,6 @@
       top: 20px;
       left: 25px;
     }
-
-    &:hover {
-      background-color: rgba(36, 35, 35, 0.75);
-      opacity: 0.65;
-      backdrop-filter: blur(12px);
-    }
   }
 
   &__details {
@@ -128,7 +116,7 @@
     line-height: 24px;
     color: $colorWhite;
 
-    background: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.45);
     mix-blend-mode: normal;
     backdrop-filter: blur(34px);
 
@@ -136,19 +124,75 @@
 
     &--1 {
       display: block;
-      margin: 0 auto 36px;
+    }
+
+    @include onTab {
+      display: block;
+      transform: scale(0);
+      transform-origin: top;
+      transition: transform $transitionDuration linear;
 
       position: relative;
-      top: -40px;
+      top: 9px;
+      right: 125px;
+
+      z-index: 2;
     }
   }
 
-  &__point--1 {
-    display: none;
+  &__info {
+    position: absolute;
+
+    @include onTab {
+      right: 0;
+      bottom: 0;
+    }
+
+    &:hover {
+      & :first-child {
+        background-color: rgba(36, 35, 35, 0.75);
+        opacity: 0.65;
+        backdrop-filter: blur(12px);
+
+        &::before {
+          display: none;
+        }
+      }
+
+      & :nth-child(2) {
+        display: block;
+
+        transform: scale(1);
+      }
+    }
+  }
+
+  &__info--1 {
+    display: inline-block;
+    margin-bottom: 36px;
+
+    position: relative;
+    top: -40px;
+    left: calc((100vw - 303px) / 2 - 30px);
+    right: calc((100vw - 303px) / 2 - 30px);
+
+    & :first-child {
+      display: none;
+    }
+
     @include onTab {
       display: block;
+
+      margin-bottom: 0;
+
+      position: absolute;
       top: 650px;
       left: 83px;
+      right: auto;
+
+      & :first-child {
+        display: block;
+      }
     }
 
     @include onDesktop {
@@ -157,7 +201,7 @@
     }
   }
 
-  &__point--2 {
+  &__info--2 {
     display: none;
     @include onTab {
       display: block;
@@ -171,7 +215,7 @@
     }
   }
 
-  &__point--3 {
+  &__info--3 {
     display: none;
     @include onTab {
       display: block;
@@ -185,7 +229,7 @@
     }
   }
 
-  &__point--4 {
+  &__info--4 {
     display: none;
     @include onTab {
       display: block;
@@ -199,7 +243,7 @@
     }
   }
 
-  &__point--5 {
+  &__info--5 {
     display: none;
     @include onTab {
       display: block;
@@ -210,6 +254,98 @@
     @include onDesktop {
       top: 900px;
       left: 1100px;
+    }
+  }
+
+  &__side-link-right {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.22em;
+    color: #828282;
+    text-decoration: none;
+    z-index: 2;
+
+    position: absolute;
+    display: none;
+
+    transform: rotate(90deg);
+    transform-origin: top right;
+    transition: color $transitionDuration, background-color $transitionDuration;
+
+    &:hover {
+      color: $colorBlue;
+
+      &::before {
+        background-color: $colorBlue;
+      }
+    }
+
+    &::before {
+      content: "";
+      background-color: #828282;
+      height: 1px;
+      width: 65px;
+      display: block;
+
+      position: absolute;
+      top: 7px;
+      left: -79px;
+    }
+
+    @include onTab {
+      display: block;
+      top: 80px;
+      right: 10px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__side-link-left {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.22em;
+    color: #828282;
+    text-decoration: none;
+    z-index: 2;
+
+    position: absolute;
+    display: none;
+
+    transform: rotate(90deg);
+    transform-origin: bottom left;
+    transition: color $transitionDuration, background-color $transitionDuration;
+
+    &:hover {
+      color: $colorBlue;
+
+      &::before {
+        background-color: $colorBlue;
+      }
+    }
+
+    &::before {
+      content: "";
+      background-color: #828282;
+      height: 1px;
+      width: 65px;
+      display: block;
+
+      position: absolute;
+      top: 7px;
+      left: -79px;
+    }
+
+    @include onTab {
+      display: block;
+      top: 220px;
+      left: 10px;
+    }
+
+    @include onDesktop {
+      display: none;
     }
   }
 }

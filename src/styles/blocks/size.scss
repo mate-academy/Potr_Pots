@@ -1,4 +1,11 @@
 .size {
+  &__cover {
+    display: flex;
+    flex-direction: row-reverse;
+
+    position: relative;
+  }
+
   &__sizes {
     display: flex;
     flex-direction: column;
@@ -29,7 +36,7 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: row-reverse;
-    }
+  }
 
     @include onDesktop {
       display: flex;
@@ -42,7 +49,6 @@
     @include onDesktop {
       display: flex;
       flex-direction: column;
-      margin-right: 600px;
     }
   }
 
@@ -87,12 +93,17 @@
     }
 
     @include onDesktop {
-      position: absolute;
-      right: 134px;
+      display: none;
 
       max-width: 530px;
-      margin: 0 0 100px;
-      order: 1;
+      height: 430px;
+    }
+
+    &--desktop {
+      display: none;
+      @include onDesktop {
+        display: block;
+      }
     }
   }
 
@@ -148,6 +159,54 @@
 
     @include onDesktop {
       margin-right: 40px;
+    }
+  }
+
+  &__side-link {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.22em;
+    color: #828282;
+    text-decoration: none;
+    z-index: 2;
+
+    position: absolute;
+    display: none;
+
+    transform: rotate(90deg);
+    transform-origin: top right;
+    transition: color $transitionDuration, background-color $transitionDuration;
+
+
+    &:hover {
+      color: $colorBlue;
+
+      &::before {
+        background-color: $colorBlue;
+      }
+    }
+
+    &::before {
+      content: "";
+      background-color: #828282;
+      height: 1px;
+      width: 65px;
+      display: block;
+
+      position: absolute;
+      top: 7px;
+      left: -79px;
+    }
+
+    @include onTab {
+      display: block;
+      bottom: -110px;
+      right: -24px;
+    }
+
+    @include onDesktop {
+      bottom: -60px;
+      right: -110px;
     }
   }
 

@@ -27,8 +27,23 @@
     background-repeat: no-repeat;
   }
 
+  &:hover {
+    background-color: $colorWhite;
+    border: 1px solid #000;
+  }
+
   @include onTab {
     background-color: $colorWhite;
     border: 1px solid #03839e;
+
+    &:hover {
+      background-color: $colorBlue;
+      color: $colorWhite;
+      border-color: transparent;
+
+      &::after {
+        background-image: url(../images/white-arrow.svg);
+      }
+    }
   }
 }

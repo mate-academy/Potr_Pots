@@ -50,6 +50,10 @@
         margin-right: 160px;
       }
     }
+
+    &--1 {
+      position: relative;
+    }
   }
 
   &__content {
@@ -78,20 +82,32 @@
   }
 
   &__image1 {
+    box-shadow: -10px 5px 5px #6d757a;
+
     @include onDesktop {
       margin: 0 100px 0 0;
     }
   }
 
   &__image2 {
+    @include onTab {
+      box-shadow: 10px 5px 5px #6d757a;
+    }
+
     @include onDesktop {
       margin-top: 105px;
+      box-shadow: -10px 5px 5px #6d757a;
     }
   }
 
   &__image3 {
+    @include onTab {
+      box-shadow: -10px 5px 5px #6d757a;
+    }
+
     @include onDesktop {
       align-self: flex-end;
+      box-shadow: 10px 5px 5px #6d757a;
     }
   }
 
@@ -193,13 +209,23 @@
     letter-spacing: 0.22em;
     color: #828282;
     text-decoration: none;
+    z-index: 2;
 
     position: absolute;
-    top: 820px;
-    right: 6px;
+    top: 880px;
+    right: -22px;
 
     transform: rotate(90deg);
     transform-origin: top right;
+    transition: color $transitionDuration, background-color $transitionDuration;
+
+    &:hover {
+      color: $colorBlue;
+
+      &::before {
+        background-color: $colorBlue;
+      }
+    }
 
     &::before {
       content: "";
@@ -209,21 +235,18 @@
       display: block;
 
       position: absolute;
-      top: 6px;
-      right: 79px;
+      top: 7px;
+      left: -79px;
     }
 
     @include onTab {
-      transform-origin: bottom left;
-      top: 330px;
-      left: 34px;
-      right: auto;
+      top: -100px;
+      right: -24px;
     }
 
     @include onDesktop {
-      top: 390px;
-      left: 134px;
-
+      top: 70px;
+      right: -100px;
     }
   }
 }
