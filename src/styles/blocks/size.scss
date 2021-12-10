@@ -36,7 +36,7 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: row-reverse;
-  }
+    }
 
     @include onDesktop {
       display: flex;
@@ -67,7 +67,6 @@
   }
 
   &__description {
-    line-height: 24px;
     color: #4f4f4f;
 
     margin-bottom: 32px;
@@ -117,7 +116,6 @@
   }
 
   &__text {
-    line-height: 24px;
     color: #4f4f4f;
 
     margin-bottom: 40px;
@@ -136,7 +134,6 @@
   }
 
   &__comment {
-    line-height: 24px;
     color: #4f4f4f;
 
     position: relative;
@@ -177,15 +174,6 @@
     transform-origin: top right;
     transition: color $transitionDuration, background-color $transitionDuration;
 
-
-    &:hover {
-      color: $colorBlue;
-
-      &::before {
-        background-color: $colorBlue;
-      }
-    }
-
     &::before {
       content: "";
       background-color: #828282;
@@ -196,6 +184,14 @@
       position: absolute;
       top: 7px;
       left: -79px;
+    }
+
+    &:hover {
+      color: $colorBlue;
+
+      &::before {
+        background-color: $colorBlue;
+      }
     }
 
     @include onTab {

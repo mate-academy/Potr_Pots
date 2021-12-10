@@ -127,7 +127,6 @@
 
   &__advantage {
     display: none;
-    line-height: 24px;
     color: $colorGray;
 
     margin-bottom: 25px;
@@ -136,7 +135,6 @@
       content: "*";
       font-family: Bebas Neue, sans-serif;
       font-size: 24px;
-      line-height: 24px;
       letter-spacing: 0.15em;
       margin-right: 10px;
 
@@ -200,7 +198,6 @@
 
   &__text {
     color: #4f4f4f;
-    line-height: 24px;
   }
 
   &__side-link {
@@ -219,14 +216,6 @@
     transform-origin: top right;
     transition: color $transitionDuration, background-color $transitionDuration;
 
-    &:hover {
-      color: $colorBlue;
-
-      &::before {
-        background-color: $colorBlue;
-      }
-    }
-
     &::before {
       content: "";
       background-color: #828282;
@@ -237,6 +226,14 @@
       position: absolute;
       top: 7px;
       left: -79px;
+    }
+
+    &:hover {
+      color: $colorBlue;
+
+      &::before {
+        background-color: $colorBlue;
+      }
     }
 
     @include onTab {
