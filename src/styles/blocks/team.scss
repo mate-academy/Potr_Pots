@@ -1,0 +1,148 @@
+.team {
+  justify-content: center;
+  margin-bottom: 200px;
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: $c-grey-1;
+
+    margin-bottom: 61px;
+
+    @include onTablet {
+      margin-bottom: 190px;
+    }
+
+    z-index: 1;
+
+    grid-column: 1 / -1;
+  }
+
+  &__name {
+    display: none;
+
+    z-index: 1;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+
+      font-family: "Bebas Neue", sans-serif;
+
+      color: $c-background;
+      opacity: 0.25;
+      text-shadow: -2px 0 $c-turquoise,
+        0 2px $c-turquoise,
+        2px 0 $c-turquoise,
+        0 -2px $c-turquoise;
+
+      letter-spacing: 0.15em;
+    }
+
+    &-martin {
+      font-size: 232px;
+      line-height: 232px;
+      transform: translate(-75px, -228px);
+
+      @include onDesktop {
+        font-size: 288px;
+        line-height: 288px;
+        transform: translate(-58px, -260px);
+      }
+    }
+
+    &-andy {
+      font-size: 220px;
+      line-height: 220px;
+      transform: translate(280px, 150px);
+
+      @include onDesktop {
+        font-size: 288px;
+        line-height: 288px;
+        transform: translate(705px, 300px);
+      }
+    }
+  }
+
+  &__image {
+    position: relative;
+    transform: translateX(-30px);
+    width: 320px;
+
+    @include onTablet {
+      width: 100%;
+      transform: translateX(0);
+    }
+
+    margin-bottom: 35px;
+
+    @include grid(1, -2, 4, 6, 5, 11);
+  }
+
+  &__article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey-2;
+
+    @include grid(1, -2, 1, 3, 1, 4);
+
+    @include onTablet {
+      grid-row: 2;
+      transform: translateY(20%);
+    }
+
+    @include onDesktop {
+      width: 316px;
+      transform: translateY(25%);
+    }
+  }
+
+  &__rectangle {
+    position: absolute;
+    transform: translate(-25%, 95px);
+
+    @include onTablet {
+      height: 365px;
+      transform: translate(-56%, -140px);
+    }
+
+    @include onDesktop {
+      transform: translate(-36%, -180px);
+    }
+
+    width: 500px;
+    height: 400px;
+
+    z-index: -1;
+    overflow: hidden;
+
+    &-yellow {
+      background-color: $c-yellow-light;
+      width: 100%;
+      height: 100%;
+
+      transform: translate(0, -34%) skew(0, -15deg);
+    }
+  }
+
+  &__potr-pots {
+    visibility: hidden;
+
+    @include onTablet {
+      visibility: visible;
+
+      transform: rotate(90deg) translate(210px, -650px);
+    }
+
+    @include onDesktop {
+      transform: rotate(-90deg) translate(1500px, -1250px);
+    }
+  }
+}
