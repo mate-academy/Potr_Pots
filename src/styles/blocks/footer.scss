@@ -3,6 +3,7 @@
   justify-content: center;
 
   &__wrapper {
+    position: relative;
     @include grid(1, -2, 3, 4, 6, 8);
   }
 
@@ -95,4 +96,23 @@
 
     width: 170px;
   }
+}
+
+.stamp {
+  position: absolute;
+  top: 0;
+  transform: translate(133px, -1105px);
+
+  @include onTablet {
+    transform: translate(324px, -754px);
+  }
+
+  @include onDesktop {
+    transform: translate(575px, -752px);
+  }
+
+  background-image: url(../images/stamp.png);
+
+  width: 230px;
+  height: 230px;
 }

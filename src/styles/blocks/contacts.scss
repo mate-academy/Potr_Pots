@@ -9,6 +9,10 @@
   padding-top: 45px;
   margin-top: 100px;
 
+  @include onDesktop {
+    margin-top: 0;
+  }
+
   &__title {
     font-family: "Bebas Neue", sans-serif;
     font-size: 33px;
@@ -95,6 +99,7 @@
 
   &__info {
     @include grid(1, -2, 5, 6, 7, 9);
+    z-index: 1;
 
     @include onTablet {
       transform: translateY(-10%);
