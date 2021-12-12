@@ -158,10 +158,13 @@
     overflow: hidden;
 
     @include onDesktop {
-      display: block;
+      display: flex;
+      flex-wrap: wrap;
       grid-column: 1 / 3;
       width: 650px;
       height: 900px;
+
+      transform: translateY(-30px);
     }
 
     &-block {
@@ -175,30 +178,34 @@
       background-color: #fff;
 
       &-1 {
-        transform: translate(270px, -130px) rotate(-29deg);
+        order: 2;
+        transform: translate(0, -90px) rotate(-29deg);
       }
 
       &-2 {
-        transform: translate(-10px, -330px) rotate(-15deg);
+        order: 1;
+        transform: rotate(-15deg);
       }
 
       &-3 {
-        transform: translate(120px, -370px) rotate(-15deg);
+        order: 4;
+        transform: translate(-150px, -25px) rotate(-15deg);
       }
 
       &-4 {
-        transform: translate(-150px, -570px);
-        z-index: 2;
+        order: 3;
+        transform: translate(-150px, 50px);
       }
 
       &-5 {
-        transform: translate(310px, -720px) rotate(-30deg);
+        order: 6;
+        transform: translate(20px, -60px) rotate(-30deg);
       }
 
       &-6 {
-        height: 290px;
-        transform: translate(30px, -940px) rotate(-16deg);
-        z-index: -4;
+        order: 5;
+        z-index: -1;
+        transform: rotate(-16deg);
       }
     }
 
@@ -253,7 +260,7 @@
       }
 
       &-5 {
-        transform: translate(-59px, -30px);
+        transform: translate(-59px, -35px);
       }
 
       &-6 {
