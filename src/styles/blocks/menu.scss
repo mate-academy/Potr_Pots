@@ -3,6 +3,10 @@
   width: 70%;
   height: 100vh;
 
+  @include onTablet {
+    width: 40%;
+  }
+
   &__container {
     height: 100%;
     display: flex;
@@ -20,6 +24,22 @@
 
     &:last-child {
       margin-bottom: 0;
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      display: inline-block;
+      width: 12px;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        width: 1px;
+        height: 44px;
+        background-color: #fff;
+      }
     }
   }
 

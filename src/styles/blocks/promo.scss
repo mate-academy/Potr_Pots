@@ -76,10 +76,25 @@
     text-transform: uppercase;
     text-decoration: none;
     color: inherit;
+    border: 1px solid transparent;
+    transition: color 0.3s, background-color 0.3s, border 0.3s;
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $c-gray;
+    }
 
     @include onTablet {
       border: 1px solid $c-turquoise;
       background-color: transparent;
+
+      &:hover {
+        background-color: $c-turquoise;
+        color: #fff;
+        &::after {
+          filter: invert(100%);
+        }
+      }
     }
 
     &::after {
@@ -91,6 +106,7 @@
       height: 10px;
       background-position: center;
       background-repeat: no-repeat;
+      transition: filter 0.3s;
     }
   }
 
