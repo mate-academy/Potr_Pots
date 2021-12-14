@@ -1,0 +1,94 @@
+.navigation {
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    text-decoration: none;
+    display: inline-block;
+    @include font-title(36, 100%);
+    letter-spacing: 0.06em;
+    color: $color-grey-primary;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    &-item {
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 1%;
+        height: 1px;
+        opacity: 0;
+        border-radius: 2px;
+        background-color: $color-turquoise;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: all 0.5s;
+      }
+
+      &:not(:last-child) {
+        margin: 0 64px 0 0;
+      }
+
+      &:hover::after {
+        opacity: 1;
+        width: 100%;
+      }
+    }
+
+    @include on-tablet-large() {
+      display: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 16px;
+    color: inherit;
+
+    @include hover(color, $color-turquoise);
+  }
+
+  &__basket {
+    text-decoration: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/nav/basket-icon.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+    perspective: 100px;
+
+    &:hover {
+      transform: scale(1.1) rotateY(180deg);
+    }
+
+    @include on-tablet-large() {
+      display: none;
+    }
+  }
+
+  &__btn {
+    display: none;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/header/menu_icon.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include on-tablet-large() {
+      display: block;
+    }
+  }
+}

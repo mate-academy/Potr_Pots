@@ -1,0 +1,256 @@
+.from-whom {
+  padding: 20px 0 0;
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    @include font-title(36, 150%);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $color-grey-primary;
+    margin: 0 0 35px;
+
+    @include on-tablet() {
+      margin: 0 0 80px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include on-tablet-large() {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__bloc {
+    display: flex;
+    flex-direction: column;
+
+    &--size_big {
+      grid-column: 1/-1;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0 0 80px;
+
+      @include on-tablet-large() {
+        margin: 0 0 60px;
+      }
+    }
+
+    &--size_little {
+      @include on-tablet-large() {
+        flex-direction: row-reverse;
+        align-items: center;
+        margin: 0 0 60px;
+      }
+    }
+
+    &--size_middle {
+      padding: 0 0 0 100px;
+
+      @include on-tablet-large() {
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &-wrapper {
+      &--size_big {
+        padding: 0 0 0 100px;
+      }
+
+      @include on-laptop() {
+        padding: 0 0 0 45px;
+      }
+
+      @include on-tablet() {
+        padding: 0;
+      }
+    }
+
+    @include on-tablet() {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:not(:last-child) {
+      @include on-tablet() {
+        margin: 0 0 130px;
+      }
+    }
+  }
+
+  &__image {
+    &--size_big {
+      width: 500px;
+      height: 500px;
+      margin: 0 100px 0 0;
+
+      @include on-laptop() {
+        margin: 0 60px 0 0;
+      }
+
+      @include on-tablet-large() {
+        width: 285px;
+        height: 285px;
+      }
+    }
+
+    &--size_little {
+      width: 300px;
+      height: 417px;
+      margin: 105px 100px 40px;
+
+      @include on-tablet-large() {
+        width: 300px;
+        height: 415px;
+        margin: 0;
+      }
+    }
+
+    &--size_hight {
+      width: 470px;
+      height: 670px;
+      margin: 0 0 40px;
+
+      @include on-tablet-large() {
+        width: 285px;
+        height: 405px;
+      }
+    }
+
+    @include on-tablet-large() {
+      pointer-events: none;
+    }
+
+    @include on-tablet() {
+      display: none;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__description {
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    color: $color-grey-primary;
+    margin: 0 0 40px;
+
+    &--mar_big {
+      margin: 0 0 91px;
+
+      @include on-tablet-large() {
+        margin: 0 0 40px;
+      }
+    }
+
+    &--pos_left {
+      left: -100px;
+
+      @include on-tablet-large() {
+        left: 0;
+      }
+    }
+
+    &::before {
+      width: 11px;
+      height: 11px;
+      display: inline-block;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+      background-image: url(../images/from-whom/desc-symbol.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    @include on-tablet() {
+      display: none;
+    }
+  }
+
+  &__bloc-title {
+    max-width: 400px;
+    @include font-title(36, 150%);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000;
+    position: relative;
+    margin: 0 0 11px;
+
+    &::after {
+      position: relative;
+      right: 20px;
+      bottom: 10px;
+      content: "";
+      display: inline-block;
+      width: 46px;
+      height: 1px;
+      background-color: $color-grey-primary;
+      transform: rotate(-65deg);
+
+      @include on-tablet() {
+        display: none;
+      }
+    }
+
+    &-number {
+      position: absolute;
+      left: -78px;
+
+      &--pos_top {
+        left: 20px;
+        top: -57px;
+
+        @include on-tablet-large() {
+          top: 0;
+        }
+      }
+
+      @include on-tablet-large() {
+        left: -40px;
+      }
+
+      @include on-tablet() {
+        top: -62px;
+        left: 20px;
+      }
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: -35px;
+        content: "";
+        display: inline-block;
+        width: 46px;
+        height: 1px;
+        background-color: $color-grey-primary;
+        transform: rotate(-65deg) translate(7px);
+      }
+    }
+  }
+
+  &__text {
+    max-width: 370px;
+  }
+
+  @include on-tablet() {
+    padding: 10px 0 0;
+  }
+}

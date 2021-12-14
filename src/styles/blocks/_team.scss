@@ -1,0 +1,114 @@
+.team {
+  padding: 20px 0 0;
+
+  &__container {
+    position: relative;
+    height: 100%;
+  }
+
+  &__title {
+    @include font-title(58, 100%);
+    letter-spacing: 0.15em;
+    color: $color-grey-primary;
+    margin: 0 0 150px;
+
+    @include on-tablet-large() {
+      margin: 0 0 180px;
+    }
+
+    @include on-tablet() {
+      margin: 0 0 60px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include on-tablet() {
+      width: 100%;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin: 0 0 20px;
+    }
+
+    &-bloc {
+      max-width: 335px;
+
+      @include on-tablet-large() {
+        margin-top: 55px;
+      }
+
+      @include on-tablet() {
+        max-width: none;
+        margin: 0;
+      }
+    }
+  }
+
+  &__image {
+    width: 677px;
+    height: 507px;
+    margin: 0 100px 0 0;
+
+    @include on-tablet-large() {
+      margin: 0;
+    }
+
+    @include on-tablet-large() {
+      width: 340px;
+      height: 255px;
+    }
+
+    @include on-tablet() {
+      width: 100vw;
+      height: auto;
+      margin: 0 0 35px;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__decoration {
+    @include font-title(288, 100%);
+    letter-spacing: 0.16em;
+    position: absolute;
+
+    &--top {
+      top: 65px;
+      left: 25px;
+
+      @include on-tablet-large() {
+        top: 65px;
+        left: -45px;
+      }
+    }
+
+    &--bottom {
+      bottom: -220px;
+      right: -80px;
+
+      @include on-tablet-large() {
+        right: -40px;
+      }
+    }
+
+    @include on-tablet-large() {
+      font-size: 233px;
+    }
+
+    @include on-tablet() {
+      display: none;
+    }
+  }
+}

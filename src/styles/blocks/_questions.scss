@@ -1,0 +1,98 @@
+.questions {
+  width: 100%;
+  height: auto;
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    @include font-title(36, 150%);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000;
+    padding: 38px 0 0;
+  }
+
+  &__text {
+    color: #000;
+    margin: 0 0 27px;
+  }
+
+  &__content {
+    display: flex;
+
+    @include on-tablet-large() {
+      justify-content: space-between;
+    }
+
+    @include on-tablet() {
+      flex-direction: column;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    margin-right: 230px;
+
+    @include on-tablet-large() {
+      margin: 0;
+    }
+
+    @include on-tablet() {
+      margin: 0 0 90px;
+    }
+
+    @include on-phone() {
+      width: 100%;
+    }
+
+    &-title {
+      font-size: 24px;
+      color: #000;
+      margin: 0 0 23px;
+    }
+  }
+
+  &__input {
+    @include font(16, 400);
+    line-height: 150%;
+    padding: 0 5px 4px;
+    margin: 0 0 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #0000004d;
+    resize: none;
+
+    &--text {
+      max-height: 30px;
+      margin: 0 0 60px;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      line-height: inherit;
+      color: $main-color;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    align-self: center;
+    @include font(16, 500);
+    line-height: 120%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dashed #333;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $color-red;
+      border-color: $color-red;
+    }
+  }
+}

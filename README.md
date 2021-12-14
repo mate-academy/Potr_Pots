@@ -13,7 +13,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/B4
 1. Implement `Materials` block with 4 process cards.
 1. Implement `POTR size` block.
 1. Implement `Benefits` block.
-1. Implement `Questions` block
+1. Implement `questions` block
 1. Implement the footer.
 
 ## Checklist for preparing a portfolio project for HR review

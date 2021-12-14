@@ -1,0 +1,105 @@
+.container {
+  max-width: 1365px;
+  width: 100%;
+  padding: 0 95px;
+  margin: 0 auto;
+  position: relative;
+
+  &__bg {
+    width: 100%;
+    height: 467px;
+    background-image: url(../images/container/container-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: absolute;
+    top: -25px;
+    left: -50px;
+    z-index: -1;
+
+    &--small {
+      background-image: url(../images/team/container-bg.png);
+      top: 160px;
+
+      @include on-tablet() {
+        background-image: url(../images/container/container-bg.png);
+        width: 1120px;
+        height: 466px;
+        top: auto;
+        left: auto;
+        bottom: -30%;
+        right: -150px;
+      }
+    }
+
+    &--large {
+      max-width: 1390px;
+      height: 600px;
+      background-image: url(../images/questions/questions-bg.png);
+      background-size: contain;
+      top: 0;
+      right: 20px;
+
+      @include on-laptop() {
+        left: auto;
+        height: 565px;
+        background-size: cover;
+      }
+
+      @include on-phone() {
+        right: 0;
+      }
+    }
+
+    &--header {
+      @include on-tablet() {
+        display: none;
+      }
+    }
+  }
+
+  @include on-laptop() {
+    padding: 0 50px;
+  }
+
+  @include on-tablet-large() {
+    padding: 0 30px;
+  }
+}
+
+.circle-dec {
+  position: absolute;
+  top: -90px;
+  right: 10px;
+  width: 160px;
+  height: 160px;
+  background-image: url(../images/questions/circle.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: rotate 60s infinite linear;
+
+  // @include on-tablet-large() {
+  //   right: -10px;
+  // }
+
+  @include on-tablet() {
+    right: -20px;
+  }
+
+  @include on-phone() {
+    right: -50px;
+  }
+
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+    transform-origin: center;
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
