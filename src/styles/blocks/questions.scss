@@ -2,7 +2,15 @@
   background-image: url(../images/rectangle.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: -100px;
+
+  @include onTablet {
+    background-size: 130%;
+  }
+
+  @include onDesktop {
+    background-size: cover;
+    background-position-x: -100px;
+  }
 
   &__container {
     margin: 0 34px;
@@ -25,7 +33,7 @@
   &__content {
     @include onTablet {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-start;
     }
   }
 
@@ -42,10 +50,9 @@
   }
 
   &__input {
-    display: block;
+    display: inline-block;
     background-color: transparent;
     width: 100%;
-    min-width: 370px;
     margin-bottom: 20px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
@@ -57,26 +64,16 @@
     }
   }
 
-  // &__info {
-  // }
-
-  &__phone {
-    font-size: 24px;
-    line-height: 150%;
-    color: rgba(0, 0, 0, 0.39);
+  &__info {
+    @include onTablet {
+      margin-left: 100px;
+    }
   }
 
-  &__email {
+  &__contact {
     font-size: 24px;
     line-height: 150%;
     color: rgba(0, 0, 0, 0.39);
-  }
-
-  &__office {
-    font-size: 24px;
-    line-height: 150%;
-    color: rgba(0, 0, 0, 0.39);
-
   }
 
   &__link {
@@ -96,10 +93,22 @@
   }
 
   &__submit {
-    display: inline-block;
+    display: block;
+    width: 80px;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
     color: #333;
+    border: none;
     border-bottom: 1px dashed #333;
     text-decoration: none;
+    margin: 0 auto;
     margin-bottom: 90px;
+    background-color: transparent;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-turquoise;
+    }
   }
 }

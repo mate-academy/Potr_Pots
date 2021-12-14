@@ -36,12 +36,13 @@
     }
   }
 
-  &__title {
+  &__title-link {
     margin: 0;
     font-size: 36px;
     line-height: 36px;
     letter-spacing: 0.06em;
     color: #333;
+    text-decoration: none;
   }
 
   &__button {
@@ -55,6 +56,12 @@
 
     @include onDesktop {
       background-image: url(../images/cart.svg);
+      transition: transform 0.3s, filter 0.3s;
+
+      &:hover {
+        filter: drop-shadow(5px 5px 5px black);
+        transform: scale(1.5);
+      }
     }
   }
 }
