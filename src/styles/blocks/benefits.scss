@@ -1,0 +1,278 @@
+.benefits {
+  &__content {
+    position: relative;
+    height: 823px;
+
+    padding-top: 181px;
+    padding-bottom: 155px;
+
+    overflow: hidden;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1 ;
+
+    width: 270px;
+    height: 290px;
+    padding-top: 20px;
+    padding-left: 20px;
+
+    background-color: $c-white;
+
+    &--1 {
+      top: -27px;
+      left: -17px;
+
+      transform: rotate(-15deg);
+    }
+
+    &--2 {
+      top: -117px;
+      left: 274px;
+
+      transform: rotate(-29deg);
+    }
+
+    &--3 {
+      top: 332px;
+      left: -146px;
+      z-index: 1;
+    }
+
+    &--4 {
+      top: 242px;
+      left: 135px;
+      z-index: 1;
+
+      transform: rotate(-15deg);
+    }
+
+    &--5 {
+      bottom: -47px;
+      left: 50px;
+
+      transform: rotate(-15deg);
+    }
+
+    &--6 {
+      bottom: 33px;
+      left: 332px;
+      z-index: -1;
+
+      transform: rotate(-30deg);
+    }
+  }
+
+  &__picture {
+    width: 230px;
+    height: 230px;
+
+    object-fit: cover;
+  }
+
+  &__capture {
+    max-width: 230px;
+
+    font-size: 11px;
+    line-height: 131.5%;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    color: $c-decor;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__list {
+    width: 51%;
+    margin-bottom: 61px;
+  }
+
+  &__item {
+    display: inline-block;
+
+    &--move {
+      padding-left: 40px;
+      margin: 40px 0;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+
+    font-size: 36px;
+    line-height: 150%;
+    color: $c-heading;
+    font-family: "Proxima Nova Semibold", sans-serif;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: calc(50% - 7px / 2);
+
+      width: 7px;
+      height: 7px;
+
+      background: $c-text;
+
+      animation: rotate 3s linear infinite;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    font-family: "Proxima Nova Regular", sans-serif;
+
+    color: $c-decor;
+  }
+
+  &__button {
+    margin-bottom: 70px;
+    margin-left: -105px;
+  }
+
+  &__promotion {
+    margin-right: 100px;
+  }
+
+  &__discount {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: "Bebas Neue Bold", sans-serif;
+
+    color: $c-red;
+  }
+
+  &__promo {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-family: "Bebas Neue Bold", sans-serif;
+
+    color: $c-turquoise;
+  }
+
+  @media (max-width: 1150px) {
+    & {
+      &__content {
+        padding-top: 20px;
+        padding-bottom: 94px;
+        height: auto;
+      }
+
+      &__gallery {
+        display: none;
+      }
+
+      &__info {
+        flex-direction: row;
+        align-items: center;
+        margin-left: 21px;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+      }
+
+      &__item {
+        margin-bottom: 21px;
+
+        &--move {
+          order: 1;
+          padding-left: 0;
+          margin: 0;
+        }
+      }
+
+      &__subtitle {
+        margin-bottom: 3px;
+      }
+
+      &__text {
+        width: 211px;
+      }
+
+      &__button {
+        margin-left: 0;
+        margin-bottom: 33px;
+
+        font-size: 14px;
+        line-height: 150%;
+
+        color: $c-button-text;
+      }
+
+      &__discount {
+        margin-bottom: 3px;
+
+        font-size: 24px;
+        line-height: 24px;
+      }
+
+      &__promo {
+        max-width: 240px;
+
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    & {
+      &__info {
+        flex-direction: column;
+        margin-left: 0;
+      }
+
+      &__list {
+        width: 100%;
+      }
+
+      &__item {
+        &--move {
+          order: 0;
+          align-self: flex-end;
+        }
+      }
+
+      &__subtitle {
+        font-size: 32px;
+        line-height: 1.5;
+      }
+
+      &__text {
+        width: 100%;
+      }
+
+      &__button {
+        margin-bottom: 40px;
+      }
+
+      &__discount {
+        margin-bottom: 13px;
+      }
+
+      &__promotion {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
