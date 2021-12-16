@@ -1,0 +1,225 @@
+.questions {
+  width: $WidthForSmallView;
+  margin: 0 auto;
+  position: relative;
+
+  @media screen and (min-width: 766px) {
+    width: $WidthForMiddleView;
+    display: flex;
+  }
+
+  @media screen and (min-width: 1278px) {
+    width: $WidthForMaxView;
+    margin-top: 310px;
+  }
+
+  &__your {
+    overflow: hidden;
+
+    @media screen and (min-width: 766px) {
+      width: 486px;
+    }
+
+    @media screen and (min-width: 1278px) {
+
+      margin-right: 100px;
+    }
+  }
+
+  &__block {
+    position: absolute;
+    background: url(../images/questions-1.png) no-repeat center;
+    width: 320px;
+    height: 560px;
+    margin-left: -30px;
+    z-index: -1;
+
+    @media screen and (min-width: 766px) {
+      background: url(../images/questions-2.png) no-repeat center;
+      width: 748px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      background: url(../images/question4.png) no-repeat center;
+      width: $WidthForMaxView;
+      margin-left: -70px;
+    }
+  }
+
+  &__mark {
+    position: absolute;
+    top: -70px;
+    left: 135px;
+    width: 223px;
+    height: 239px;
+
+    @media screen and (min-width: 766px) {
+      left: 565px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -100px;
+      left: 1000px;
+    }
+  }
+
+  &__ask {
+    padding: 40px 0;
+
+    width: 260px;
+    height: 108px;
+
+    font-family: $BebasBold;
+    font-size: 36px;
+    line-height: 150%;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: $GeneralBlack;
+
+    @media screen and (min-width: 766px) {
+      width: 350px;
+      height: 54px;
+      padding: 20px 0;
+    }
+  }
+
+  &__way {
+    margin-top: 54px;
+    margin-bottom: 40px;
+    width: 260px;
+    height: 48px;
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+    color: $GeneralBlack;
+
+    @media screen and (min-width: 766px) {
+      margin-top: 24px;
+      width: 266px;
+      height: 24px;
+    }
+  }
+
+  &__message-us {
+
+    margin-bottom: 23px;
+    width: 126px;
+    height: 36px;
+    font-family: $ProximaRegular;
+    font-size: 24px;
+    line-height: 150%;
+
+    color: $GeneralBlack;
+  }
+
+  &__form {
+
+    &-name,
+    &-email,
+    &-submit,
+    &-message {
+      height: 24px;
+
+      width: 260px;
+      font-family: $ProximaRegular;
+      font-size: 16px;
+      line-height: 150%;
+      color: $Grey;
+      background: none;
+      margin-bottom: 20px;
+      border: none;
+      outline: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+      transition: box-shadow 0.5s, color 0.5s;
+
+    }
+
+    &-message {
+      resize: none;
+      overflow: hidden;
+    }
+
+    &-submit {
+      width: 260px;
+      margin-bottom: 100px;
+      border: none;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        color: $MainRed;
+        box-shadow: $HoverShadow;
+      }
+    }
+
+    &-name,
+    &-email,
+    &-message {
+      &:hover {
+        box-shadow: $HoverShadow;
+      }
+    }
+  }
+}
+
+.our {
+  @media screen and (min-width: 766px) {
+    margin-top: 77px;
+  }
+
+  @media screen and (min-width: 1278px) {
+    margin-top: 140px;
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    width: 114px;
+    height: 29px;
+    left: 30px;
+
+    font-family: $ProximaRegular;
+    font-size: 24px;
+    line-height: 150%;
+
+    color: rgba(0, 0, 0, 0.39);
+
+  }
+
+  &__adress-phone,
+  &__adress-mail {
+    margin-bottom: 8px;
+
+    width: 143px;
+    height: 24px;
+
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $GeneralBlack;
+
+    text-decoration: none;
+
+    transition: box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: $HoverShadow;
+    }
+  }
+
+  &__adress {
+
+    margin-bottom: 8px;
+
+    width: 258px;
+    height: 48px;
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $GeneralBlack;
+  }
+}

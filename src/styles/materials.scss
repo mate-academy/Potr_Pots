@@ -1,0 +1,369 @@
+
+.black-box {
+  display: none;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.45);
+  mix-blend-mode: normal;
+  backdrop-filter: blur(34px);
+  height: 254px;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+  padding: 28px 44px 58px 45px;
+
+  &__text {
+    width: 213px;
+    height: 168px;
+
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+    color: $GreyLight;
+  }
+
+  &__rhomb {
+    display: flex;
+    width: 80px;
+    height: 20px;
+    margin: 0 auto;
+  }
+}
+
+.rhomb {
+  width: 30px;
+  background: url(../images/rhomb.svg) no-repeat center;
+}
+
+.rhomb:first-child {
+  background: url(../images/active-rhomb.svg) no-repeat center;
+}
+
+.button {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+
+  background: $MainRed;
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: transform 0.5s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 1px;
+    background-color: #fff;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 15px;
+    background-color: #fff;
+    transition: height 0.5s;
+  }
+
+  &:hover {
+    background-color: rgba(36, 35, 35, 0.75);
+
+    .black-box {
+      @media screen and (min-width: 766px) {
+        display: block;
+      }
+    }
+
+    &:after {
+      height: 0;
+    }
+  }
+}
+
+.open {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  top: 430px;
+  left: -20px;
+}
+
+.materials {
+  width: $WidthForSmallView;
+  margin: 0 auto;
+  position: relative;
+
+  @media screen and (min-width: 766px) {
+    width: $WidthForMiddleView;
+  }
+
+  @media screen and (min-width: 1278px) {
+    width: $WidthForMaxView;
+  }
+
+  &__side-text1,
+  &__side-text2 {
+    display: none;
+
+    @media screen and (min-width: 766px) {
+      display: block;
+      position: absolute;
+      width: 69px;
+      height: 14px;
+
+      font-family: $BebasRegular;
+      font-size: 12px;
+      line-height: 12px;
+
+      letter-spacing: 0.22em;
+
+      color: $MiddleGrey;
+      transform: rotate(90deg);
+
+      &::before {
+        position: relative;
+        display: block;
+        content: "";
+        top: 4px;
+        right: 70px;
+        width: 65px;
+        height: 1px;
+        background-color: $MiddleGrey;
+      }
+    }
+  }
+
+  &__side-text1 {
+    @media screen and (min-width: 766px) {
+      top: 30px;
+      left: 670px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      display: none;
+    }
+  }
+
+  &__side-text2 {
+    @media screen and (min-width: 766px) {
+      top: 250px;
+      left: -45px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -1900px;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__name {
+    width: 268px;
+    margin-bottom: 35px;
+
+    font-family: $BebasBold;
+    font-weight: bold;
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+
+    color: $TurquoiseColor;
+
+    @media screen and (min-width: 766px) {
+      width: 532px;
+      font-size: 80px;
+      line-height: 80px;
+      letter-spacing: 0.12em;
+    }
+
+    @media screen and (min-width: 1278px) {
+      width: 880px;
+      font-size: 139px;
+      line-height: 139px;
+      letter-spacing: 0.12em;
+    }
+
+  }
+
+  &__photo1 {
+    height: 397px;
+    margin-left: -30px;
+    position: absolute;
+    z-index: -1;
+    top: 110px;
+    background: linear-gradient(180deg, #f8f8f8 0%,rgba(255, 255, 255, 0) 31%);
+
+    @media screen and (min-width: 766px) {
+      display: none;
+    }
+  }
+
+  &__photo2 {
+    display: none;
+
+    @media screen and (min-width: 766px) {
+      position: relative;
+      display: block;
+      z-index: -1;
+      width: 768px;
+      height: 577px;
+      margin-left: -30px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      width: 1440px;
+      height: 1081px;
+      margin-top: -155px;
+      margin-left: -110px;
+    }
+
+  }
+
+  &__ecology {
+    display: none;
+  }
+
+  &__button1 {
+    position: relative;
+    top: 40px;
+
+    @media screen and (min-width: 766px) {
+      top: -160px;
+      left: 60px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -200px;
+      left: 150px;
+    }
+  }
+
+  &__button2 {
+    position: relative;
+    top: 65px;
+    left: 220px;
+
+    @media screen and (min-width: 766px) {
+      top: -325px;
+      left: 210px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -525px;
+      left: 430px;
+    }
+  }
+
+  &__button3 {
+    position: relative;
+    top: -5px;
+    left: 120px;
+
+    @media screen and (min-width: 766px) {
+      top: -470px;
+      left: 530px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -530px;
+      left: 1060px;
+    }
+  }
+
+  &__button4 {
+    position: absolute;
+    display: none;
+
+    @media screen and (min-width: 766px) {
+      display: block;
+      top: 570px;
+      left: 430px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: 900px;
+      left: 810px;
+    }
+  }
+
+  &__button5 {
+    position: absolute;
+
+    @media screen and (min-width: 766px) {
+      top: 630px;
+      left: 310px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: 1070px;
+      left: 650px;
+    }
+  }
+
+  &__black-box {
+    @media screen and (min-width: 766px) {
+      position: absolute;
+      top: 70px;
+      right: -120px;
+    }
+  }
+}
+
+@media screen and (min-width: 766px) {
+  .open {
+    display: none;
+  }
+
+  .materials__ecology {
+    display: block;
+    position: absolute;
+    top: 80px;
+    right: 0;
+
+    @media screen and (min-width: 1278px) {
+      top: 160px;
+    }
+
+  }
+
+  .materials__ecology-name {
+    width: 340px;
+    height: 30px;
+    font-family: $ProximaRegular;
+    font-size: 20px;
+    line-height: 150%;
+    color: $Grey;
+
+    @media screen and (min-width: 1278px) {
+      width: 221px;
+      height: 30px;
+      font-size: 20px;
+      line-height: 150%;
+    }
+  }
+
+  .material__ecology-text {
+    margin-top: 10px;
+    width: 340px;
+    height: 192px;
+    left: 394px;
+    top: 3736px;
+
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+    color: $Grey;
+
+    @media screen and (min-width: 1278px) {
+      width: 470px;
+      height: 144px;
+    }
+  }
+}

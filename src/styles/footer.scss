@@ -1,0 +1,135 @@
+.footer {
+  width: $WidthForSmallView;
+  margin: 91px auto 0;
+
+  @media screen and (min-width: 766px) {
+    width: $WidthForMiddleView;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media screen and (min-width: 1278px) {
+    width: $WidthForMaxView;
+    height: 296px;
+    align-items: center;
+  }
+
+  &__left {
+    display: none;
+
+    @media screen and (min-width: 766px) {
+      display: block;
+
+      &-name {
+        margin-bottom: 11px;
+        width: 88px;
+        height: 24px;
+
+        font-family: $BebasBold;
+        font-size: 24px;
+        line-height: 24px;
+
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+
+        color: $GeneralBlack;
+      }
+
+      &-adress {
+        width: 140px;
+        height: 72px;
+        font-family: $ProximaRegular;
+        font-size: 16px;
+        line-height: 150%;
+        color: $GeneralBlack;
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    width: 260px;
+    height: 54px;
+
+    font-family: $BebasBold;
+    font-size: 36px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: $GeneralBlack;
+    transition: box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: $HoverShadow;
+    }
+  }
+
+  &__right {
+    text-align: center;
+    &-about {
+      display: none;
+
+      @media screen and (min-width: 766px) {
+        display: block;
+        width: 100px;
+        height: 24px;
+        font-family: $BebasBold;
+        font-size: 24px;
+        text-align: center;
+        line-height: 24px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+
+        color: $GeneralBlack;
+      }
+    }
+  }
+
+  &__right-copyright {
+    width: 260px;
+    height: 24px;
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    color: $GeneralBlack;
+
+    @media screen and (min-width: 766px) {
+      width: 124px;
+      height: 24px;
+    }
+
+  }
+}
+
+.icons {
+  display: flex;
+  margin-bottom: 41px;
+
+  &__twitter,
+  &__instagram {
+    margin-right: 65px;
+  }
+
+  &__twitter,
+  &__instagram,
+  &__facebook {
+    display: block;
+    text-align: center;
+    padding-top: 7px;
+    text-decoration: none;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+
+    transition: box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: $HoverShadow;
+    }
+  }
+}

@@ -1,0 +1,246 @@
+.size {
+  width: 260px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  background: $GreyLight;
+
+  @media screen and (min-width: 766px) {
+    width: 706px;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1278px) {
+    width: 1218px;
+    height: 650px;
+  }
+
+  &__grid {
+
+    @media screen and (min-width: 766px) {
+      display: grid;
+      grid-template-columns: 246px 500px;
+      gap: 0 36px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      grid-template-columns: 253px 250px 530px;
+      gap: 0 47px;
+    }
+  }
+
+  &__name {
+    width: 260px;
+    height: 162px;
+    margin-top: 340px;
+    margin-bottom: 30px;
+
+    font-family: $BebasBold;
+    font-size: 36px;
+    line-height: 150%;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: $GeneralBlack;
+
+    @media screen and (min-width: 766px) {
+      margin-top: 0;
+      width: 698px;
+      height: 54px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      width: 642px;
+      height: 54px;
+      margin-bottom: 56px;
+    }
+  }
+
+  &__pretext {
+    margin-bottom: 32px;
+    width: 260px;
+    height: 72px;
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+    color: $Grey;
+
+    @media screen and (min-width: 766px) {
+      width: 579px;
+      height: 48px;
+      margin-bottom: 18px;
+
+      grid-row: 1/span 2;
+    }
+
+    @media screen and (min-width: 1278px) {
+      width: 250px;
+      height: 96px;
+
+      position: absolute;
+      top: 130px;
+
+      &::after {
+        display: block;
+        position: relative;
+        z-index: 1;
+        content: "";
+
+        top: 10px;
+        left: 160px;
+        width: 220px;
+        height: 1px;
+        background-color: #d8d8d8;
+        transform: rotate(90deg);
+      }
+
+    }
+  }
+
+  &__photo {
+    width: 320px;
+    height: 260px;
+    margin-left: -30px;
+    margin-bottom: 40px;
+
+    @media screen and (min-width: 766px) {
+      width: 416px;
+      height: 338px;
+      margin-left: 0;
+
+      grid-column: 2;
+    }
+
+    @media screen and (min-width: 1278px) {
+      width: 528px;
+      height: 428px;
+
+      grid-column: 3;
+      margin-left: 49px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__large {
+
+    &-argum {
+      margin-bottom: 40px;
+
+      @media screen and (min-width: 766px) {
+        margin-top: 21px;
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      @media screen and (min-width: 1278px) {
+        grid-column: 2;
+        margin-bottom: 0;
+      }
+    }
+
+    &-name {
+      width: 260px;
+      height: 18px;
+      margin-bottom: 20px;
+
+      font-family: $BebasBold;
+      font-size: 18px;
+      line-height: 18px;
+
+      letter-spacing: 0.15em;
+
+      color: $GeneralBlack;
+    }
+
+    &-text {
+      width: 246px;
+      height: 48px;
+      left: 30px;
+
+      font-family: $ProximaRegular;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: $Grey;
+    }
+  }
+
+  &__small {
+
+    &-argum {
+      margin-bottom: 40px;
+
+      @media screen and (min-width: 766px) {
+        margin-top: 144px;
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      @media screen and (min-width: 1278px) {
+        grid-column: 2;
+        margin-bottom: 0;
+      }
+    }
+
+    &-name {
+      width: 260px;
+      height: 18px;
+      margin-bottom: 20px;
+
+      font-family: $BebasBold;
+      font-size: 18px;
+      line-height: 18px;
+
+      letter-spacing: 0.15em;
+
+      color: $GeneralBlack;
+    }
+
+    &-text {
+      width: 246px;
+      height: 48px;
+      left: 30px;
+
+      font-family: $ProximaRegular;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: $Grey;
+    }
+  }
+
+  &__last-text {
+    position: relative;
+    margin-bottom: 98px;
+    width: 260px;
+    height: 96px;
+
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $Grey;
+
+    &::before {
+      position: absolute;
+      content: "*";
+      left: -8px;
+      width: 7px;
+      height: 20px;
+    }
+
+    @media screen and (min-width: 766px) {
+      width: 700px;
+      height: 48px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      width: 546px;
+      height: 48px;
+
+      top: -85px;
+      margin-bottom: 0;
+    }
+  }
+}

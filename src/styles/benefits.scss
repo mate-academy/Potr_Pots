@@ -1,0 +1,265 @@
+.benefits {
+  width: $WidthForSmallView;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  position: relative;
+
+  @media screen and (min-width: 766px) {
+    width: $WidthForMiddleView;
+    display: grid;
+    grid-template-columns: 350px 350px;
+    grid-template-rows: 105px 105px 105px;
+    grid-auto-flow: column;
+  }
+
+  @media screen and (min-width: 1278px) {
+    width: $WidthForMaxView;
+    grid-auto-flow: row;
+    justify-items: end;
+    justify-content: end;
+
+    margin-top: 180px;
+  }
+
+  &__side-text {
+    display: none;
+
+    @media screen and (min-width: 766px) {
+      display: block;
+      position: absolute;
+      width: 136px;
+      height: 14px;
+      z-index: 1;
+
+      left: 635px;
+
+      font-family: $BebasRegular;
+      font-size: 12px;
+      line-height: 12px;
+
+      letter-spacing: 0.22em;
+
+      color: $MiddleGrey;
+      transform: rotate(90deg);
+
+      &::before {
+        position: relative;
+        display: block;
+        content: "";
+        top: 4px;
+        right: 70px;
+        width: 65px;
+        height: 1px;
+        background-color: $MiddleGrey;
+      }
+    }
+
+    @media screen and (min-width: 1278px) {
+      top: -160px;
+      left: 1140px;
+    }
+  }
+
+  &__1,
+  &__2,
+  &__3 {
+    position: relative;
+  }
+
+  &__1-name,
+  &__2-name,
+  &__3-name {
+    width: 260px;
+    height: 48px;
+    font-family: $ProximaSemibold;
+    font-size: 32px;
+    line-height: 150%;
+    color: $Black;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background: url(../images/black-rhomb.svg) no-repeat center;
+      top: 15px;
+      left: -20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__1-text,
+  &__2-text,
+  &__3-text {
+
+    margin-bottom: 40px;
+    width: 256px;
+    height: 24px;
+
+    font-family: $ProximaRegular;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: $MiddleGrey;
+  }
+
+  &__button {
+    display: block;
+    position: relative;
+    font-family: $ProximaSemibold;
+    font-size: 14px;
+    text-align: center;
+    line-height: 48px;
+    text-transform: uppercase;
+
+    color: #121212;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    background: $Yellow;
+    width: 238px;
+    height: 48px;
+    border: 1px solid $Yellow;
+
+    cursor: pointer;
+    transition: background-color 0.5s, border 0.5s, color 0.5s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 18px;
+      right: 50px;
+      height: 10px;
+      width: 30px;
+      background: url(../images/arrow-1.svg) no-repeat center;
+    }
+
+    @media screen and (min-width: 766px) {
+      margin-top: 40px;
+      border: 1px solid #0386a0;
+      box-sizing: border-box;
+      background-color: transparent;
+    }
+
+    @media screen and (min-width: 1278px) {
+      grid-row: 3;
+      margin-bottom: 330px;
+    }
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid black;
+
+      @media screen and (min-width: 766px) {
+        background-color: $TurquoiseColor;
+        border: 1px solid $TurquoiseColor;
+        color: white;
+
+        &::after {
+          background: url(../images/Arrow-white.svg) no-repeat center;
+        }
+      }
+    }
+  }
+
+  &__discount {
+
+    @media screen and (min-width: 766px) {
+      margin-top: 40px;
+    }
+
+    @media screen and (min-width: 1278px) {
+      position: absolute;
+      top: 343px;
+      right: 230px;
+    }
+
+    &-percent {
+      margin-bottom: 13px;
+      width: 172px;
+      height: 51px;
+      font-family: $BebasBold;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      color: $MainRed;
+
+      @media screen and (min-width: 766px) {
+        width: 157px;
+        height: 27px;
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+
+    &-text {
+      width: 260px;
+      height: 50px;
+
+      font-family: $BebasBold;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $TurquoiseColor;
+
+      @media screen and (min-width: 766px) {
+        width: 240px;
+        height: 47px;
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  &__card1,
+  &__card2,
+  &__card3,
+  &__card4,
+  &__card5,
+  &__card6 {
+    display: none;
+
+    @media screen and (min-width: 1278px) {
+      display: block;
+      position: absolute;
+    }
+  }
+}
+
+@media screen and (min-width: 1278px) {
+  .benefits {
+    &__card1 {
+      top: -350px;
+      left: 190px;
+    }
+
+    &__card2 {
+      top: -220px;
+      left: -30px;
+    }
+
+    &__card3 {
+      top: 40px;
+      left: 60px;
+    }
+
+    &__card4 {
+      top: 160px;
+      left: -30px;
+      z-index: 1;
+    }
+
+    &__card5 {
+      top: 370px;
+      left: 0;
+      z-index: -2;
+    }
+
+    &__card6 {
+      top: 260px;
+      left: 260px;
+      z-index: -1;
+    }
+  }
+}
