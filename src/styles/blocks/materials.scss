@@ -1,0 +1,335 @@
+.materials {
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 110px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 120px;
+  }
+
+  &__top-title{
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: $colorTurquoise;
+    font-weight: bold;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 80px;
+      letter-spacing: 0.12em;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      white-space: nowrap;
+      font-size: 138px;
+      line-height: 138px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    z-index: -1;
+    top: -70px;
+    height: 396px;
+
+    @include onTablet {
+      top: initial;
+      height: 576px;
+    }
+
+    @include onDesktop {
+      top: -120px;
+      height: 1080px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  }
+
+  &-img {
+    height: 100%;
+    object-position: left;
+  }
+
+  &__container {
+    overflow: initial;
+    top: -466px;
+
+    @include onTablet {
+      top: -576px;
+    }
+
+    @include onDesktop {
+      top: -1200px;
+    }
+  }
+
+  &__eco-description {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 340px;
+      position: absolute;
+      z-index: 25;
+      right: 30px;
+      top: -120px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      right: 135px;
+      top: 0;
+    }
+
+    &-title {
+      @include onTablet {
+        font-size: 20px;
+        line-height: 30px;
+        color: $colorTextGrey4F;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 16px;
+      }
+    }
+
+    &-text--bold {
+      @include onTablet {
+        font-weight: 600;
+      }
+      
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    height: 396px;
+    margin-bottom: 90px;
+    z-index: 10;
+
+    @include onTablet {
+      height: 576px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      height: 1080px;
+    }
+  }
+
+  &__description {
+    &-btn {
+      display: block;
+      width: 51px;
+      height: 51px;
+      outline: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      background-color: #EB5757;
+      border-radius: 50%;
+      position: relative;
+      transition: all 0.3s;
+  
+      &::after {
+        content: "";
+        display: block;
+        height: 11px;
+        width: 1px;
+        background-color: #E0E0E0;
+        margin: 0 auto;
+        transition: all 0.3s;
+      }
+  
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 1px;
+        width: 11px;
+        background-color: #E0E0E0;
+        margin: 0 auto;
+      }
+
+      &:hover {
+        background-color: rgba(36, 35, 35, 0.75);
+        opacity: 0.65;
+        backdrop-filter: blur(12px);
+      }
+
+    }
+
+    &-1 {
+      position: absolute;
+      top: 35%;
+      left: 2%;
+
+      @include onTablet {
+        top: 72%;
+        left: 8%;
+      }
+
+      @include onDesktop {
+        top: 80%;
+        left: 10%;
+      }
+    }
+
+    &-2 {
+      position: absolute;
+      top: 80%;
+      left: 12%;
+
+      @include onTablet {
+        top: 50%;
+        left: 28%;
+      }
+
+      @include onDesktop {
+        top: 58%;
+        left: 35%;
+      }
+    }
+
+    &-3 {
+      position: absolute;
+      top: 50%;
+      left: 40%;
+
+      @include onTablet {
+        top: 78%;
+        left: 43%;
+      }
+
+      @include onDesktop {
+        top: 85%;
+        left: 47%;
+      }
+    }
+
+    &-4 {
+      position: absolute;
+      top: 75%;
+      left: 70%;
+
+      @include onTablet {
+        top: 57%;
+        left: 65%;
+      }
+
+      @include onDesktop {
+        top: 70%;
+        left: 60%;
+      }
+    }
+
+    &-5 {
+      position: absolute;
+      top: 52%;
+      left: 85%;
+
+      @include onTablet {
+        top: 32%;
+        left: 75%;
+      }
+
+      @include onDesktop {
+        top: 60%;
+        left: 82%;
+      }
+    }
+    
+  }
+
+  &__description-btn:hover::after {
+    transform: rotateZ(90deg);
+  }
+
+  &__description-text {
+    display: none;
+    width: 300px;
+    height: 237px;
+    padding: 35px 45px;
+    color: $colorTextGreyF8;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(34px);
+    position: relative;
+    z-index: 10;
+    transition: all 3s;
+  }
+
+  &__description-btn-1:hover + &__description-text-1 {
+    display: block;
+    left: -24px;
+    
+    @include onTablet {
+      top: -288px;
+    }
+
+    @include onDesktop {
+      left: -120px;
+    }
+  }
+
+  &__description-btn-2:hover + &__description-text-2 {
+    display: block;
+    top: -288px;
+    left: -50px;
+
+    @include onTablet {
+      top: -288px;
+      left: -120px;
+    }
+
+    @include onDesktop {
+      top: 0;
+      left: -120px;
+    }
+  }
+
+  &__description-btn-3:hover + &__description-text-3 {
+    display: block;
+    left: -123px;
+
+    @include onTablet {
+      top: -288px;
+      left: -120px;
+    }
+  }
+
+  &__description-btn-4:hover + &__description-text-4 {
+    display: block;
+    top: -288px;
+    left: -200px;
+
+    @include onTablet {
+      top: -122px;
+      left: -300px;
+    }
+
+    @include onDesktop {
+      top: -288px;
+      left: -120px;
+    }
+  }
+
+  &__description-btn-5:hover + &__description-text-5 {
+    display: block;
+    left: -240px;
+
+    @include onTablet {
+
+      left: -130px;
+    }
+  }
+}

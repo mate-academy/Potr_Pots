@@ -1,0 +1,172 @@
+.header {
+  padding: 16px 0 0;
+  max-width: 1440px;
+  position: relative;
+
+  &-bg {
+    @include onTablet {
+      position: absolute;
+      width: 80%;
+      height: 350px;
+      top: 0;
+      left: 0;
+      background: linear-gradient(165deg, $colorYellowLight 60%, #fff 60%) ;
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      height: 460px;
+    }
+  }
+
+  @include onDesktop {
+    padding: 20px 0 0;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    @include onTablet {
+      margin-bottom: 56px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 85px;
+    }
+
+    &-title {
+      line-height: 36px;
+      font-weight: normal;
+      letter-spacing: 0.06em;
+      color: $colorTextGrey33;
+    }
+  }
+
+  &__menu {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 90px;
+    right: 0;
+    height: 100vh;
+    background-color: $colorTurquoise;
+    z-index: 10;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      position: static;
+      background-color: initial;
+      transform: translateX(0);
+      height: initial;
+    }
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+
+    &-main {
+      width: 60%;
+
+      &-center {
+        width: max-content;
+        margin: 0 auto;
+      }
+
+      &-bottom {
+        display: flex;
+
+        &-inner {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+
+    &-img-container {
+      margin: 0 auto 24px;
+
+      @include onTablet {
+        margin: 0;
+      }
+
+      &--mobile {
+        @include onTablet {
+          display: none;
+        }
+      }
+
+      &--tablet-desktop {
+        display: none;
+
+        @include onTablet {
+          display: block;
+          min-width: 320px;
+          position: absolute;
+          z-index: -1;
+          right: 0;
+        }
+
+        @include onDesktop {
+          position: static;
+          max-width: 500px;
+        }
+      }
+    }
+
+    &-description {
+      font-family: $textStyleBebas;
+      font-size: 36px;
+      line-height: 36px;
+      letter-spacing: 0.15em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      color: $colorTurquoise;
+      font-weight: bold;
+      margin: 0 0 20px;
+
+      @include onTablet {
+        margin: 0;
+        
+        font-size: 64px;
+        line-height: 64px;
+      }
+    }
+
+    &-price {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        align-self: flex-end;
+        margin-top: -16px;
+        margin-bottom: 45px;
+        padding-right: 130px;
+      }
+
+      &-number {
+        font-size: 26px;
+        line-height: 32px;
+        font-weight: 600;
+        color: $colorTextGrey33;
+        margin: 0;
+        letter-spacing: -0.5px;
+      }
+      
+      &-description {
+        width: 140px;
+        font-size: 14px;
+        line-height: 21px;
+        margin: 0;
+      }
+    }
+  }
+}

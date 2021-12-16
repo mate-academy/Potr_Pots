@@ -1,0 +1,43 @@
+.arrow-more {
+  display: block;
+  text-decoration: none;
+  width: 18px;
+  text-align: center;
+
+  &__description {
+    display: block;
+    writing-mode: vertical-rl;
+    font-family: $textStyleOutfit;
+    font-size: 12px;
+    line-height: 18px;
+    color: $colorTurquoise;
+    margin-bottom: 11px;
+  }
+
+  &__img {
+    height: 44px;
+    width: 8px;
+  }
+
+  &--mobile {
+    position: absolute;
+    top: 567px;
+    right: 15px;
+    padding: 3px;
+    transform: translateX(50%);
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--tablet-desktop {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      align-self: flex-end;
+      padding-top: 24px;
+    }
+  }
+}

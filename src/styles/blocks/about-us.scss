@@ -1,0 +1,153 @@
+.about-us {
+  margin-bottom: 67px;
+  
+  @include onTablet {
+    margin-bottom: 172px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 226px;
+  }
+
+  &__top-title {
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: $colorTextGrey33;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 190px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__container {
+    @include onTablet {
+      position: relative;
+      overflow: visible;
+    }
+  }
+
+  &__name {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      font-family: Bebas Neue;
+      font-size: 230px;
+      line-height: 230px;
+      letter-spacing: 0.15em;
+      -webkit-text-stroke: 0.8px $colorTurquoise;
+      position: absolute;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 288px;
+      -webkit-text-stroke: 1px $colorTurquoise;
+    }
+
+    &-1 {
+      @include onTablet {
+        top: -150px;
+        left: -45px;
+      }
+
+      @include onDesktop {
+        top: -135px;
+        left: 70px;
+      }
+
+    }
+
+    &-2 {
+      @include onTablet {
+        right: -30px;
+        top: 200px;
+      }
+
+      @include onDesktop {
+        right: -40px;
+        top: initial;
+        bottom: -200px;
+      }
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__img {
+
+    &--mobile {
+      margin: 0 auto 36px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        max-width: 340px;
+      }
+
+      @include onDesktop {
+        max-width: 677px;
+      }
+    }
+
+  }
+
+  &__description {
+    max-width: 400px;
+    margin: 0 auto 70px;
+    
+
+    &-bg {
+      position: absolute;
+      height: 350px;
+      top: 96px;
+      left: -30px;
+      right: -30px;
+      background: linear-gradient(165deg, $colorYellowLight 60%, #fff 60%) ;
+      z-index: -1;
+
+      @include onTablet {
+        width: 35%;
+        height: 300px;
+        top: -50px;
+      }
+
+      @include onDesktop {
+        width: 30%;
+        height: 380px;
+        left: 0%;
+      }
+    }
+
+    @include onTablet {
+      max-width: 312px;
+      margin-bottom: 0;
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      max-width: 336px;
+      margin: 0 60px 0 0;
+      padding: 0;
+      align-self: center;
+    }
+
+  }
+}

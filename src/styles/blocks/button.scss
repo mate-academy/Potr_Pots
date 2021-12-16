@@ -1,0 +1,53 @@
+.button {
+  font-family: $textStyleOutfit;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #121212;
+  background: $colorYellow;
+  border: 1px solid $colorYellow;
+  padding: 14px 62px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  width: max-content;
+
+  &__arrow {
+    display: block;
+    background-image: url(../images/arrow-btn.svg);
+    width: 25px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-left: 16px;
+  }
+
+  & > img {
+    margin-left: 16px;
+  }
+
+  &:hover {
+    background: transparent;
+    border: 1px solid $colorTextGrey33;
+  }
+
+  @include onTablet {
+    align-self: center;
+    border: 1px solid $colorTurquoise;
+    background-color: transparent;
+    width: max-content;
+    margin: 0 auto;
+
+    &:hover {
+      background: $colorTurquoise;
+      border: 1px solid $colorTurquoise;
+      color: #fff;
+    }
+
+    &:hover &__arrow {
+      background-image: url(../images/arrow-btn-white.svg);
+    }
+  }
+}
