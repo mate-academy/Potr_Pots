@@ -1,0 +1,163 @@
+.potr-pots {
+  padding: 70px 0 0;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    @include on-tablet() {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 0 0 103px;
+    position: relative;
+
+    @include on-laptop() {
+      padding: 0 0 0 50px;
+    }
+
+    @include on-tablet-large() {
+      padding: 0;
+    }
+
+    @include on-tablet() {
+      position: static;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    width: 500px;
+    @include font-title(64, 100%);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $color-turquoise;
+
+    @include on-laptop() {
+      position: relative;
+      z-index: 5;
+    }
+
+    @include on-phone() {
+      width: auto;
+      font-size: 36px;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__info {
+    max-width: 155px;
+    display: flex;
+    flex-direction: column;
+    color: $color-grey-primary;
+    font-weight: 500;
+    margin: 0 0 50px;
+
+    @include on-laptop() {
+      margin-right: 110px;
+    }
+  }
+
+  &__prise {
+    font-size: 26px;
+    line-height: 130%;
+  }
+
+  &__button {
+    margin: 0 65px 0 0;
+  }
+
+  &__image {
+    width: 500px;
+    height: 500px;
+    perspective: 100px;
+    transition: all 0.5s;
+
+    &:hover {
+      box-shadow: $box-shadow-right;
+      transform: rotate(-1deg) translateY(-10px);
+    }
+
+    @include on-laptop() {
+      width: 400px;
+      height: 400px;
+    }
+
+    @include on-tablet-large() {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      pointer-events: none;
+    }
+
+    @include on-tablet() {
+      position: relative;
+      width: 100vw;
+      height: auto;
+      margin: 0 0 25px;
+      transform: translateX(-30px);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__arrow {
+    position: absolute;
+    left: -80px;
+    bottom: 85px;
+    text-decoration: none;
+    font-size: 12px;
+    color: $color-turquoise;
+    transform: rotate(90deg);
+
+    &::after {
+      content: "";
+      display: inline-block;
+      position: relative;
+      left: 10px;
+      width: 44px;
+      height: 10px;
+      background-image: url(../images/potr-pots/arrow-green.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    &:hover::after {
+      animation: pos-left infinite 0.5s alternate linear;
+    }
+
+    @keyframes pos-left {
+      0% {
+        left: 10px;
+      }
+
+      100% {
+        left: 15px;
+      }
+    }
+
+    @include on-tablet() {
+      left: auto;
+      right: 0;
+      bottom: -30px;
+      transform-origin: right;
+    }
+  }
+
+  @include on-tablet() {
+    padding: 5px 0 0;
+  }
+}

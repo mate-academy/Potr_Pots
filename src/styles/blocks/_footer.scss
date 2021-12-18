@@ -1,0 +1,98 @@
+.footer {
+  padding: 20px 0 65px;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include on-tablet() {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    &-title {
+      @include font-title(24, 100%);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #000;
+      margin: 0 0 11px;
+
+      @include on-tablet() {
+        display: none;
+      }
+    }
+
+    &--flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include on-tablet() {
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+
+  &__adress {
+    text-decoration: none;
+    display: inline-block;
+    max-width: 170px;
+    color: inherit;
+
+    @include hover(color, $color-red);
+  }
+
+  &__soc {
+    list-style: none;
+    width: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-link {
+      width: 21px;
+      height: 21px;
+      display: inline-block;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transition: transform 0.5s;
+      margin: 0 0 80px;
+
+      &--twitter {
+        background-image: url(../images/footer/twitter.svg);
+      }
+
+      &--instagram {
+        background-image: url(../images/footer/instagram.svg);
+      }
+
+      &--facebook {
+        background-image: url(../images/footer/facebook.svg);
+      }
+
+      @include on-tablet-large() {
+        margin: 0 0 30px;
+      }
+
+      &:hover {
+        transform: scale(1.5) translateY(-5px);
+      }
+    }
+  }
+
+  &__logo {
+    @include font-title(36, 150%);
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000;
+
+    @include hover(color, $color-red);
+  }
+}

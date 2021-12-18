@@ -1,6 +1,43 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.5s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin font($size, $weight) {
+  font-family: "Proxima", sans-serif;
+  font-size: #{$size}px;
+  font-weight: $weight;
+  line-height: 150%;
+}
+
+@mixin font-title($size, $height) {
+  font-family: "Bebas", sans-serif;
+  font-size: #{$size}px;
+  line-height: $height;
+}
+
+@mixin on-laptop() {
+  @media(max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin on-tablet-large() {
+  @media(max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin on-tablet() {
+  @media(max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin on-phone() {
+  @media(max-width: 550px) {
+    @content;
   }
 }
