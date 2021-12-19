@@ -1,0 +1,111 @@
+.sizes {
+  justify-content: center;
+
+  margin-top: 76px;
+
+  @include onTablet {
+    margin-top: 0;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-black;
+
+    margin-bottom: 30px;
+
+    @include grid(1, -2, 1, -2, 1, 8);
+  }
+
+  &__text {
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey-2;
+
+    margin-bottom: 32px;
+
+    @include onDesktop {
+      width: 253px;
+    }
+
+    @include grid(1, -2, 1, 5, 1, 3);
+  }
+
+  &__picture {
+    transform: translate(-30px);
+
+    @include onTablet {
+      transform: translate(30px);
+    }
+
+    @include onDesktop {
+      transform: translate(-55px);
+    }
+
+    margin-bottom: 41px;
+
+    @include grid(1, -2, 3, 6, 8, 12);
+  }
+
+  &__block {
+    width: 246px;
+
+    @include grid(1, -2, 1, 2, 4, 7);
+
+    @include onTablet {
+      grid-row: 3;
+    }
+
+    @include onDesktop {
+      box-sizing: content-box;
+      padding-left: 30px;
+      grid-row: 2;
+      height: 257px;
+      border: 1px solid;
+      border-color: transparent transparent transparent #d8d8d8;
+    }
+  }
+
+  &__name {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+    color: $c-black;
+
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey-2;
+
+    margin-bottom: 40px;
+  }
+
+  &__notes {
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey-2;
+
+    @include grid(1, -2, 1, -2, 1, 6);
+
+    @include onDesktop {
+      transform: translateY(-120px);
+      width: 546px;
+    }
+
+    &::before {
+      content: "*";
+      position: absolute;
+      transform: translateX(-6px);
+    }
+  }
+}

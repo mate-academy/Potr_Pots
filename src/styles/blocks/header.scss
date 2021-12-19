@@ -1,0 +1,309 @@
+.header {
+  justify-content: center;
+  margin-bottom: 102px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__menu-opener {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.06em;
+    color: $c-grey-1;
+  }
+
+  &__image {
+    background-image: url(../images/cactus_pot.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 320px;
+    width: 320px;
+
+    position: relative;
+    left: -30px;
+
+    @include onTablet {
+      position: static;
+      margin-left: 35px;
+      width: calc(100% - 35px);
+      height: 306px;
+      grid-row: 2;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+
+    @include grid(1, -2, 4, 6, 8, 12);
+  }
+
+  &__subtitle {
+    margin-top: 25px;
+
+    @include onTablet {
+      font-size: 62px;
+      line-height: 64px;
+      grid-row: 2;
+    }
+
+    @include grid(1, -2, 1, 4, 2, 6);
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 35px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-turquoise;
+
+    &-styles {
+      color: $c-background;
+      opacity: 0.5;
+      text-shadow: -1px 0 $c-turquoise,
+        0 1px $c-turquoise,
+        1px 0 $c-turquoise,
+        0 -1px $c-turquoise;
+
+      @include onTablet {
+        color: $c-yellow-light;
+      }
+
+      &:last-child {
+        color: $c-background;
+      }
+    }
+  }
+
+  &__price {
+    margin-top: 21px;
+
+    @include grid(1, -2, 3, 4, 5, 6);
+
+    @include onTablet {
+      transform: translateY(-120%);
+    }
+
+    @include onDesktop {
+      transform: translateY(-350%);
+    }
+
+    &-tag {
+      font-family: "Proxima Nova", sans-serif;
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: bold;
+      color: $c-black;
+    }
+
+    &-message {
+      font-family: "Proxima Nova", sans-serif;
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+
+  &__buy-button {
+    margin-top: 20px;
+
+    @include grid(1, -2, 2, 4, 3, 6);
+
+    @include onTablet {
+      transform: translateY(-120%);
+    }
+
+    @include onDesktop {
+      transform: translate(30px, -450%);
+    }
+  }
+
+  &__more {
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+    text-decoration: none;
+    width: max-content;
+
+    color: $c-turquoise;
+
+    position: absolute;
+    margin-left: 190px;
+    margin-top: 60px;
+
+    transform: rotate(90deg);
+
+    @include onTablet {
+      margin-left: -320px;
+      margin-top: 130px;
+    }
+
+    @include onDesktop {
+      margin-left: -480px;
+      margin-top: 150px;
+    }
+
+    &-arrow {
+      margin-left: 10px;
+      height: 10px;
+      filter: invert(36%)
+        sepia(56%)
+        saturate(1699%)
+        hue-rotate(159deg)
+        brightness(89%)
+        contrast(98%);
+    }
+  }
+
+  &__rectangle {
+    position: absolute;
+    display: none;
+    height: 600px;
+    width: 1121px;
+
+    background-color: $c-yellow-light;
+    z-index: -1;
+
+    @include onTablet {
+      display: block;
+      transform: translate(-48%, -67%) skew(0, -15deg);
+    }
+
+    @include onDesktop {
+      transform: translate(-22%, -71%) skew(0, -15deg);
+    }
+  }
+}
+
+.nav {
+  background-color: $c-turquoise;
+  width: 231px;
+  height: 750px;
+  z-index: 1;
+
+  position: fixed;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+
+  transition: transform 1.5s ease-out;
+  transform: translateX(100%);
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include onDesktop {
+    transition: none;
+    position: relative;
+    left: 300px;
+    top: -100px;
+    align-items: center;
+    transform: translateX(0);
+    margin-left: 100px;
+
+    height: 50px;
+    width: max-content;
+
+    background-color: transparent;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+    gap: 15px;
+    margin-top: 138px;
+
+    @include onDesktop {
+      flex-direction: row;
+      margin-top: 0;
+      width: 100%;
+      gap: 64px;
+      //margin-left: 27px;
+
+      & > .nav__item:first-child {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-background;
+
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    &:hover {
+      color: $c-yellow-light;
+    }
+
+    @include onDesktop {
+      color: $c-grey-2;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__closer {
+    position: absolute;
+    width: max-content;
+    bottom: 150px;
+    right: -20px;
+
+    &-link {
+      font-family: "Proxima Nova", sans-serif;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $c-background;
+
+      display: flex;
+      align-items: center;
+
+      transform: rotate(-90deg);
+    }
+
+    &-stick {
+      height: 1px;
+      width: 44px;
+      margin-right: 10px;
+      padding-left: 20px;
+
+      background-color: $c-background;
+    }
+
+    &-rectangle {
+      height: 1px;
+      width: 20px;
+
+      background-color: $c-background;
+
+      &--1 {
+        transform: rotate(45deg);
+      }
+
+      &--2 {
+        transform: translateX(-100%) rotate(-45deg);
+      }
+    }
+  }
+}

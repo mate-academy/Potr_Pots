@@ -1,0 +1,85 @@
+.materials {
+  justify-content: center;
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+
+    @include onDesktop {
+      font-size: 139px;
+      line-height: 139px;
+      letter-spacing: 0.1em;
+    }
+
+    @include grid(1, -2, 1, 5, 1, 10);
+  }
+
+  &__article {
+    @include grid(1, -2, 4, 6, 8, 12);
+
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      transform: translateY(-55%);
+    }
+  }
+
+  &__subtitle {
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 20px;
+    line-height: 150%;
+    color: $c-grey-2;
+  }
+
+  &__text {
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__picture {
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    grid-column: 1 / -1;
+
+    position: relative;
+    width: 320px;
+    height: 240px;
+    transform: translate(-30px);
+
+    @include onTablet {
+      width: 100%;
+      height: 577px;
+      background-size: cover;
+      transform: translate(-30px, -20%);
+    }
+
+    @include onDesktop {
+      height: 1081px;
+      transform: translate(-155px, -20%);
+    }
+  }
+
+  &__potr-pots {
+    visibility: hidden;
+
+    @include onTablet {
+      visibility: visible;
+
+      transform: rotate(90deg) translate(-700px, 80px);
+    }
+
+    @include onDesktop {
+      visibility: hidden;
+    }
+  }
+}
