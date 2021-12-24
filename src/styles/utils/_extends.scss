@@ -1,4 +1,53 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  @include textStyle(36px, 54px, normal, transparent);
+  -webkit-text-stroke: 1px $turquoise;
+}
+
+%h2 {
+  @include textStyle(36px, 54px, bold, $colorTextGray2);
+}
+
+%h3 {
+  @include textStyle(24px,24px, normal, $colorTextGray2);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+%h4 {
+  @include textStyle(20px,30px, bold, $colorTextGray2);
+}
+
+%p {
+  @include textStyle(16px, 24px, normal, $colorTextGray);
+}
+
+%button {
+  height: 48px;
+  width: 238px;
+
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  @include textStyle(14px, 21px, bold, #121212);
+  letter-spacing: 1.2px;
+  text-indent: -40px;
+
+  outline: none;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+%inputStyle {
+  display: block;
+  margin-bottom: 16px;
+  height: 32px;
+  width: 100%;
+
+  font-family: Roboto, sans-serif;
+  @include textStyle(16px, 24px, normal, #000);
+  text-indent: 5px;
+
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }

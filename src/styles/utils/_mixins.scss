@@ -1,6 +1,20 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin scale($_value) {
+  transition: 0.6s;
   &:hover {
-    #{$_property}: $_toValue;
+    transform: scale(#{$_value});
+    border-radius: 3%;
+    cursor: pointer;
   }
+}
+
+@mixin textStyle($_fontSize, $_lineHeight, $_fontWeight, $_color) {
+  font-size: $_fontSize;
+  line-height: $_lineHeight;
+  font-weight: $_fontWeight;
+  color: $_color;
+}
+
+@mixin square($_widht) {
+  height: $_widht;
+  width: $_widht;
 }
