@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 57px;
+  padding: 0 30px;
+
+  @include tablet {
+    padding: 0 42px;
+
+    &::before {
+      content: "";
+      background: url(../images/Rectangle.png) no-repeat left top;
+      grid-area: 1 / 1 / 1 / 4;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 466px;
+      width: 80%;
+      z-index: -1;
+    }
+  }
+
+  @include desktop {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    grid-template-areas: "logo nav basket";
+    padding: 0 144px;
+  }
+
+  &__logo {
+    grid-area: logo;
+
+    line-height: 36px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    white-space: nowrap;
+  }
+
+  &__basket {
+    display: none;
+
+    @include desktop {
+      display: block;
+      background: url(../images/bag.png) no-repeat right center;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
