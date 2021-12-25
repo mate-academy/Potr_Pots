@@ -1,0 +1,49 @@
+.button {
+  display: inline-block;
+  max-width: 238px;
+  padding: 13px 100px 13px 62px;
+  background-color: #ffe339;
+  border: 1px solid #ffe339;
+  box-sizing: border-box;
+  position: relative;
+
+  color: #121212;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 21px;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 10px;
+
+    position: absolute;
+    left: 146px;
+    top: 20px;
+
+    background-image: url(../images/button-arrow.svg);
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    background-color: $colorWhite;
+    border: 1px solid #000;
+  }
+
+  @include onTab {
+    background-color: $colorWhite;
+    border: 1px solid #03839e;
+
+    &:hover {
+      background-color: $colorBlue;
+      color: $colorWhite;
+      border-color: transparent;
+
+      &::after {
+        background-image: url(../images/white-arrow.svg);
+      }
+    }
+  }
+}

@@ -1,0 +1,254 @@
+.for-whom {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row-container {
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__part {
+    margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 112px;
+    }
+
+    @include onTab {
+      display: flex;
+      align-items: center;
+      margin-bottom: 100px;
+
+      &:last-child {
+        margin-bottom: 135px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+
+      &:last-child {
+        margin-bottom: 150px;
+      }
+    }
+
+    &--reverse--on-tab {
+      flex-direction: row-reverse;
+    }
+
+    &--direction--on-Desktop {
+      @include onDesktop {
+        flex-direction: column;
+      }
+    }
+
+    &--margin--onDesktop {
+      @include onDesktop {
+        margin-right: 160px;
+      }
+    }
+
+    &--1 {
+      position: relative;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    &--margin--on-tab {
+      @include onTab {
+        margin-right: 57px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTab {
+      display: block;
+      margin-right: 15px;
+      min-width: 284px;
+      transition: transform $transitionDuration linear;
+
+      &:hover {
+        transform: scale(120%);
+      }
+    }
+
+    @include onDesktop {
+      margin: 0 40px;
+    }
+  }
+
+  &__image1 {
+    box-shadow: -10px 5px 5px #6d757a;
+
+    @include onDesktop {
+      margin: 0 100px 0 0;
+    }
+  }
+
+  &__image2 {
+    @include onTab {
+      box-shadow: 10px 5px 5px #6d757a;
+    }
+
+    @include onDesktop {
+      margin-top: 105px;
+      box-shadow: -10px 5px 5px #6d757a;
+    }
+  }
+
+  &__image3 {
+    @include onTab {
+      box-shadow: -10px 5px 5px #6d757a;
+    }
+
+    @include onDesktop {
+      align-self: flex-end;
+      box-shadow: 10px 5px 5px #6d757a;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    color: $colorGray;
+    margin-bottom: 26px;
+
+    @include onTab {
+      margin-bottom: 42px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__advantage {
+    display: none;
+    color: $colorGray;
+
+    margin-bottom: 25px;
+
+    &::before {
+      content: "*";
+      font-family: Bebas Neue, sans-serif;
+      font-size: 24px;
+      letter-spacing: 0.15em;
+      margin-right: 10px;
+
+      @include onDesktop {
+        margin-right: 30px;
+      }
+    }
+
+    @include onTab {
+      display: block;
+    }
+
+    &--align--end {
+      align-self: flex-end;
+
+      @include onDesktop {
+        align-self: flex-start;
+      }
+    }
+  }
+
+  &__number {
+    @extend %h2;
+    display: block;
+    margin-bottom: 28px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 46px;
+      margin-right: 15px;
+      background-color: $colorGray;
+
+      transform: rotate(22deg);
+      transform-origin: bottom;
+    }
+
+    @include onTab {
+      margin: 0 20px 0 0;
+      display: inline;
+    }
+  }
+
+  &__subtitle {
+    @extend %h2;
+    margin-bottom: 28px;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 46px;
+      margin-right: 15px;
+      background-color: $colorGray;
+
+      transform: rotate(22deg);
+      transform-origin: bottom;
+    }
+  }
+
+  &__text {
+    color: #4f4f4f;
+  }
+
+  &__side-link {
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.22em;
+    color: #828282;
+    text-decoration: none;
+    z-index: 2;
+
+    position: absolute;
+    top: 880px;
+    right: -22px;
+
+    transform: rotate(90deg);
+    transform-origin: top right;
+    transition: color $transitionDuration, background-color $transitionDuration;
+
+    &::before {
+      content: "";
+      background-color: #828282;
+      height: 1px;
+      width: 65px;
+      display: block;
+
+      position: absolute;
+      top: 7px;
+      left: -79px;
+    }
+
+    &:hover {
+      color: $colorBlue;
+
+      &::before {
+        background-color: $colorBlue;
+      }
+    }
+
+    @include onTab {
+      top: -100px;
+      right: -24px;
+    }
+
+    @include onDesktop {
+      top: 70px;
+      right: -100px;
+    }
+  }
+}

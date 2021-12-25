@@ -1,0 +1,66 @@
+.header {
+  @include onTab {
+    &::before {
+      content: "";
+      display: block;
+      height: 500px;
+      width: 1120px;
+
+      position: absolute;
+      top: -30px;
+      left: -510px;
+
+      background-image: url(../images/Rectangle.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: cover;
+
+      z-index: -1;
+
+      @include onDesktop {
+        left: 0;
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    margin-bottom: 16px;
+
+    @include onTab {
+      padding-top: 30px;
+      margin-bottom: 56px;
+    }
+
+    @include onDesktop {
+      padding-top: 20px;
+      margin-bottom: 90px;
+    }
+  }
+
+  &__name {
+    @extend %subtitle;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: $colorGray;
+    margin: 0;
+  }
+
+  &__icon-menu {
+    background-image: url(../images/menu.png);
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__icon-basket {
+    display: none;
+    @include onDesktop {
+      display: inline-block;
+      background-image: url(../images/bag.png);
+    }
+  }
+}
