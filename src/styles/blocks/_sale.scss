@@ -1,0 +1,266 @@
+.sale {
+  margin-top: 90px;
+  @media (min-width: $mediumScreen) {
+    padding: 0 50px;
+  }
+
+  @media (min-width: $largeScreen) {
+    padding: 0 135px;
+  }
+
+  position: relative;
+
+  &__title {
+    position: relative;
+    font-size: 32px;
+    line-height: 150%;
+    font-weight: bold;
+
+    color: #333;
+
+    margin-bottom: 3px;
+    &::before {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -20px;
+      content: "";
+      display: block;
+      @include square(10px);
+      background-image: url("../images/brill.svg");
+      background-repeat: no-repeat;
+
+    }
+  }
+
+  &__text {
+    color: #828282;
+  }
+
+  &__card--1 {
+    position: absolute;
+    top: -28px;
+    left: -18px;
+    transform: rotate(-15.03deg);
+  }
+
+  &__card--2 {
+    position: absolute;
+    top: -117px;
+    left: 281px;
+    transform: rotate(-28.9deg);
+  }
+
+  &__card--3 {
+    position: absolute;
+    top: 320px;
+    left: -145px;
+    z-index: 2;
+  }
+
+  &__card--4 {
+    position: absolute;
+    top: 240px;
+    left: 121px;
+    transform: rotate(-15.03deg);
+    z-index: 3;
+  }
+
+  &__card--5 {
+    position: absolute;
+    top: 566px;
+    left: 53px;
+    transform: rotate(-15.8deg);
+    z-index: 1;
+  }
+
+  &__card--6 {
+    position: absolute;
+    bottom: 110px;
+    left: 336px;
+    transform: rotate(-30.43deg);
+  }
+
+  &__button {
+    position: relative;
+    text-indent: -40px;
+    margin: 60px 0 40px;
+    @extend %button;
+    background-color: $yellow;
+    border: 1px solid $yellow;
+    transition: 0.7s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 150px;
+      top: 19px;
+      width: 25px;
+      height: 10px;
+      background-image: url(../images/arrow.svg);
+      background-repeat: no-repeat;
+
+    }
+
+    &:hover {
+      background-color: unset;
+      border-color: #333;
+    }
+
+    @media(min-width: $smallScreen) {
+      align-self: flex-end;
+      margin-top: 44px;
+      margin-right: 35px;
+      border: 1px solid #03839e;
+      background-color: unset;
+
+      &:hover {
+        background-color: #03839e;
+
+        color: white;
+      }
+
+      &:hover:after {
+        background-image: url(../images/arrow-white.svg);
+        background-repeat: no-repeat;
+      }
+    }
+    @media(min-width: $largeScreen) {
+      margin-top: 49px;
+      align-self: center;
+      margin-right: 140px;
+    }
+  }
+
+  &__percent {
+    font-family: "BebasNeue-Bold", sans-serif;
+    @include textStyle(36px, 150%, bold, $percent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+
+  }
+
+  &__additional-text {
+    font-family: "BebasNeue-Bold", sans-serif;
+    @include textStyle(24px, 24px, bold, $bck-colorNav);
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+  }
+
+  @media (min-width: $smallScreen) {
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    &__content {
+      margin-right: 10%;
+    }
+
+    &__title {
+      margin-top: 21px;
+      font-size: 36px;
+      line-height: 150%;
+    }
+    &__container {
+      margin-top: 30px;
+    }
+  }
+
+  @media (min-width: $notebookScreen) {
+    & {
+      padding-right: 0;
+      overflow: hidden;
+    }
+
+    &__wrapper {
+      flex-direction: column;
+      width: 60%;
+      margin-left: 43%;
+      margin-right: 0;
+    }
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: 0;
+      margin-top: 150px;
+    }
+    &__title {
+      margin-right: 45px;
+    }
+    &__additional-text {
+      margin-bottom: 200px;
+      margin-left: 15%;
+    }
+
+    &__button {
+      margin: 70px 0;
+    }
+    &__percent {
+      margin-left: 15%;
+    }
+  }
+}
+
+.card {
+  display: none;
+  height: 300px;
+  width: 270px;
+
+  background-color: #fff;
+
+  &__text {
+    position: absolute;
+    bottom: 20px;
+    padding-left: 20px;
+    @include textStyle(11px, 15px, normal, #828282);
+  }
+
+  &__image-1 {
+    position: absolute;
+    transform: rotate(15.03deg);
+  }
+
+  &__image-2 {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: 310px;
+    transform: rotate(28.9deg);
+  }
+
+  &__image-3 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  &__image-4 {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    transform: rotate(15.03deg);
+  }
+
+  &__image-5 {
+    position: absolute;
+    top: -5px;
+    left: -7px;
+    transform: rotate(15.8deg);
+  }
+
+  &__image-6 {
+    position: absolute;
+    top: -20px;
+    left: -22px;
+    transform: rotate(30.43deg);
+  }
+
+  @media (min-width: $notebookScreen) {
+    & {
+      display: block;
+    }
+  }
+}

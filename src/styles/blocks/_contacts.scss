@@ -1,0 +1,171 @@
+.contacts {
+  margin: 0;
+  padding: 50px 30px;
+
+  @media(min-width: $smallScreen) {
+    padding: 50px 34px;
+  }
+
+  @media (min-width: $mediumScreen) {
+    padding: 50px;
+  }
+
+  @media (min-width: $largeScreen) {
+    padding: 60px 135px;
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    font-family: "BebasNeue-Bold", sans-serif;
+    @include textStyle(36px, 150%, bold, $colorBlack);
+    text-transform: uppercase;
+
+  }
+
+  &__item {
+    @include textStyle(24px, 36px, normal, rgba(0, 0, 0, 0.39));
+    margin-bottom: 4px;
+    margin-top: 30px;
+  }
+
+  &__element {
+    margin-bottom: 38px;
+    line-height: 24px;
+    color: #000;
+    text-decoration: none;
+    &:hover {
+      color: #447c39;
+      box-shadow: 10px 5px 5px #447c39;
+    }
+  }
+
+  @media (min-width: $smallScreen) {
+    &__wrapper {
+      display: flex;
+      justify-content: start;
+    }
+    &__wrapper--feedback {
+      width: 340px;
+      margin-right: 140px;
+    }
+    &__info {
+      width: 210px;
+    }
+  }
+  @media (min-width: $notebookScreen) {
+    &__wrapper--feedback {
+      width: 370px;
+      margin-right: 280px;
+    }
+
+    &__info {
+      width: 230px;
+    }
+  }
+}
+
+.feedback {
+  padding-bottom: 59px;
+
+  &__form-title {
+    margin-bottom: 40px;
+    color: #000;
+  }
+
+  &__title {
+    @include textStyle(24px, 36px, 500, #000);
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    @extend %inputStyle;
+    margin-bottom: 16px;
+    transition: 0.3s;
+
+    &--textarea {
+      resize: none;
+      margin-bottom: 31px;
+    }
+    &:hover {
+      border-color: $colorGray;
+
+    }
+    &:focus {
+      border-color: $colorGray;
+      box-shadow: 0 5px 4px -5px #333;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    height: 24px;
+
+    @include textStyle(16px, 24px, bold, $colorGray-2);
+    text-decoration: underline dotted 0.5px;
+    text-underline-offset: 5px;
+
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      color: #eb5757;
+    }
+  }
+
+}
+
+.wrapper-contacts {
+  &__background {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    background-size: cover;
+    background-image: url("../images/rectangle-back.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    height: 130%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__logo {
+    position: absolute;
+    right: 0;
+    top: -70px;
+    height: 238px;
+    width: 170px;
+    background-image: url("../images/potr.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+  }
+
+  @media (min-width: $smallScreen) {
+    &__background {
+      height: 110%;
+      width: 90%;
+    }
+    &__logo {
+      position: absolute;
+      right: -16px;
+      top: -115px;
+      height: 238px;
+      width: 195px;
+      background-position: center;
+    }
+
+  }
+  @media (min-width: $notebookScreen) {
+    &__background {
+      height: 100%;
+      width: 90%;
+    }
+
+    &__logo {
+      right: -40px;
+      width: 215px;
+    }
+  }
+}

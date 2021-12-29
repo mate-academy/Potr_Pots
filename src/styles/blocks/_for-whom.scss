@@ -1,0 +1,304 @@
+.for-whom {
+  display: flex;
+  margin-top: 102px;
+  @media (min-width: $smallScreen) {
+    justify-content: start;
+    align-items: stretch;
+  }
+
+  @media (min-width: $mediumScreen) {
+    padding: 0 50px;
+  }
+
+  @media (min-width: $moreAverageScreen) {
+    padding: 90px 90px 0;
+  }
+
+  @media (min-width: $largeScreen) {
+    padding: 0 135px;
+  }
+  &__value {
+    flex-grow: 1;
+
+    @media (min-width: $smallScreen) {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 76px;
+
+      margin-bottom: 100px;
+
+      &:nth-child(3) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &--first {
+      @media (min-width: $notebookScreen) {
+
+        column-gap: 150px;
+      }
+      @media (min-width: $largeScreen) {
+
+        column-gap: 200px;
+      }
+    }
+    @media (min-width: $smallScreen) {
+      &--block-2 {
+        flex-direction: row-reverse;
+      }
+    }
+    @media (min-width: $moreAverageScreen) {
+      &--block-2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        column-gap: 0;
+      }
+
+      &--block-3 {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+      }
+    }
+
+  }
+
+  &__text {
+
+    margin-top: -35px;
+
+    @media (min-width: $smallScreen) {
+      position: relative;
+      max-width: 340px;
+      min-width: 278px;
+    }
+
+    @media (min-width: $mediumScreen) {
+
+      max-width: 470px;
+
+    }
+
+    &--block-2 {
+      @media (min-width: $smallScreen) {
+        margin-top: 20px;
+
+      }
+    }
+
+  }
+
+  &__wrapper {
+    @media (min-width: $moreAverageScreen) {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 120px;
+    }
+    @media (min-width: $notebookScreen) {
+
+      column-gap: 190px;
+    }
+    @media (min-width: $largeScreen) {
+
+      column-gap: 240px;
+    }
+  }
+
+  &__title {
+    font-family: "BebasNeue-Bold", sans-serif;
+    @include textStyle(36px, 150%, bold, $colorGray-2);
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+  }
+
+  &__image-container {
+    display: none;
+
+    &--image-1 {
+      @media (min-width: $smallScreen) {
+        display: block;
+        width: 284px;
+        height: 284px;
+      }
+
+      @media (min-width: $mediumScreen) {
+
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    &--image-2 {
+      @media (min-width: $smallScreen) {
+        display: block;
+        width: 300px;
+        height: 417px;
+      }
+      @media (min-width: $mediumScreen) {
+
+        width: 300px;
+        height: 417px;
+      }
+
+      @media (min-width: $moreAverageScreen) {
+
+        margin-top: 100px;
+        width: 300px;
+        height: 417px;
+      }
+    }
+
+    &--image-3 {
+      @media (min-width: $smallScreen) {
+        display: block;
+        width: 284px;
+        height: 404px;
+      }
+
+      @media (min-width: $mediumScreen) {
+
+        width: 460px;
+        height: 670px;
+      }
+    }
+
+    @media (min-width: $smallScreen) {
+      display: block;
+
+    }
+  }
+
+  &__img {
+
+    @media (min-width: $smallScreen) {
+
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+
+    }
+  }
+
+  &__note {
+    display: none;
+
+    @media (min-width: $smallScreen) {
+      display: block;
+      margin-bottom: 26px;
+
+      &:before {
+        position: absolute;
+        top: 9px;
+        left: -15px;
+        content: url("../images/star.svg");
+      }
+
+      &--beauty {
+        text-align: end;
+        &::before {
+          left: auto;
+          right: 65px;
+        }
+        @media (min-width: $moreAverageScreen) {
+          text-align: start;
+          &::before {
+            left: -15px;
+            top: 9px;
+          }
+        }
+      }
+    }
+  }
+  &__text-title {
+    font-family: "BebasNeue-Bold", sans-serif;
+    @include textStyle(36px, 150%, bold, $colorBlack);
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+
+    &--block-3 {
+      @media (min-width: $moreAverageScreen) {
+        margin-left: 70px;
+      }
+    }
+
+    @media (min-width: $smallScreen) {
+      margin-bottom: 11px;
+      position: relative;
+
+    }
+
+    @media (min-width: $smallScreen) {
+      &--block-title {
+        margin-top: 100px;
+      }
+    }
+  }
+
+  &__oblic {
+    display: none;
+    @media (min-width: $smallScreen) {
+      display: inline-block;
+      position: relative;
+      top: 11px;
+      right: 1px;
+    }
+  }
+
+  &__number {
+    margin-top: 100px;
+    margin-bottom: 28px;
+    display: block;
+    position: relative;
+    font-family: "BebasNeue-Bold", sans-serif;
+    @include textStyle(36px, 150%, bold, $colorBlack);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-indent: 20px;
+    &--block-1 {
+      margin-top: 0;
+    }
+    &:before {
+      position: absolute;
+      top: 3px;
+      left: -18px;
+      content: url("../images/oblique.svg");
+    }
+    @media (min-width: $smallScreen) {
+
+      position: absolute;
+      left: -60px;
+      top: 0;
+      margin-top: 0;
+    }
+
+    &--block-2 {
+      @media (min-width: $smallScreen) {
+        left: -1vw;
+        top: -70px;
+      }
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+
+    &--text-3 {
+      @media (min-width: $moreAverageScreen) {
+        margin-left: 70px;
+      }
+    }
+  }
+}
+
+.for-whom__text-3 {
+  @media (min-width: $moreAverageScreen) {
+    max-width: 460px;
+  }
+}

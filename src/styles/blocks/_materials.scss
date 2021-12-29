@@ -1,0 +1,164 @@
+.materials {
+  position: relative;
+
+  &__image {
+    width: 100%;
+  }
+  &__title {
+    font-family: "BebasNeue-Bold", sans-serif;
+    @include textStyle(58px, 58px, bold, $bck-colorNav);
+
+    letter-spacing: 0.15em;
+
+    padding-left: 20px;
+  }
+
+  &__info {
+    display: none;
+  }
+
+  &__content--1 {
+    position: absolute;
+
+    transform: translateY(-30%);
+    z-index: 1;
+  }
+  &__back {
+    background: rgba(36, 35, 35, 0.75);
+    opacity: 0.9;
+  }
+  &__text-button {
+    padding: 28px 20px 0;
+    color: #f8f8f8;
+  }
+  &__button {
+    display: none;
+  }
+  @media (min-width: 400px) {
+    &__title {
+      padding-left: 50px;
+    }
+  }
+
+  @media (min-width: $smallScreen) {
+    &__info {
+      display: block;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      width: 44%;
+    }
+
+    &__content--1 {
+
+      transform: none;
+      right: 30px;
+      bottom: 22px;
+      margin: 0;
+      width: 300px;
+
+    }
+
+    &__text-button {
+      padding: 35px 45px;
+    }
+
+    &__button {
+      position: absolute;
+      display: block;
+      @include square(51px);
+
+      background-image: url("../images/circle-red.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 50%;
+      background-color: #eb5757;
+
+      border: none;
+      outline: none;
+
+      cursor: pointer;
+      &::before {
+        content: "+";
+        color: #e0e0e0;
+        font-size: 20px;
+        line-height: 51px;
+      }
+
+      &--active {
+        top: -30%;
+        right: 120px;
+        background: rgba(36, 35, 35, 0.75);
+        &::before {
+          content: "-";
+          color: #e0e0e0;
+          font-size: 20px;
+          line-height: 51px;
+        }
+      }
+    }
+    &__content--2 {
+      position: absolute;
+      right: 35%;
+      bottom: 35%;
+    }
+    &__content--3 {
+      position: absolute;
+      left: 35%;
+      bottom: 40%;
+    }
+    &__content--4 {
+      position: absolute;
+      left: 48%;
+      bottom: 15%;
+    }
+    &__content--5 {
+      position: absolute;
+      left: 14%;
+      bottom: 20%;
+    }
+  }
+
+  @media (min-width: $mediumScreen) {
+
+    &__info {
+      padding-right: 50px;
+    }
+    &__title {
+      padding-left: 50px;
+    }
+  }
+  @media (min-width: $largeScreen) {
+    &__title {
+      padding-left: 135px;
+    }
+    &__info {
+      padding-right: 135px;
+    }
+  }
+}
+
+.rhombus {
+  padding: 11px 0 40px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  &__img {
+    @include square(10px);
+    background: cover;
+    background-image: url("../images/rhombus.svg");
+    background-repeat: no-repeat;
+
+    &--gray {
+      background-image: url("../images/rhombus-active.svg");
+      @include square(12px);
+    }
+  }
+
+  @media (min-width: $smallScreen) {
+    display: none;
+  }
+}

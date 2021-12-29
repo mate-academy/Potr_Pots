@@ -1,0 +1,111 @@
+.features {
+  padding-top: 70px;
+  @media (min-width: $mediumScreen) {
+    padding: 0 50px;
+    padding-top: 0;
+  }
+
+  @media (min-width: $moreAverageScreen) {
+    padding: 0 90px;
+  }
+
+  @media (min-width: $largeScreen) {
+    padding: 0 135px;
+  }
+
+  &__title {
+    margin: 5px 0 50px;
+    text-transform: uppercase;
+    font-family: "BebasNeue-Bold", sans-serif;
+    letter-spacing: 0.15em;
+
+    @include textStyle(58px, 58px, bold, $transparent);
+    -webkit-text-stroke: 1px #03839e;
+    & > span {
+      color: $bck-colorNav;
+      white-space: nowrap;
+    }
+  }
+
+  &__container {
+    text-align: center;
+  }
+
+  &__item {
+    margin-bottom: 60px;
+  }
+
+  &__image {
+
+    max-width: 260px;
+
+    width: 100%;
+    object-fit: cover;
+    &:hover {
+      animation: sway 1s linear 1;
+    }
+  }
+
+  &__title-text {
+    margin: 36px 0 22px;
+    text-align: center;
+    font-family: "BebasNeue-Bold", sans-serif;
+
+    letter-spacing: 0.15em;
+    @include textStyle(24px, 24px, bold, $colorGray-2);
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: 16px;
+    display: inline-block;
+    text-align: center;
+    color: #4f4f4f;
+    margin: 0;
+    max-width: 270px;
+  }
+
+  @media (min-width: $smallScreen) {
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      row-gap: 20px;
+      justify-content: space-between;
+      align-items: flex-start;
+      column-gap: 23px;
+    }
+    &__item {
+      text-align: center;
+
+    }
+
+    &__item:nth-child(1) {
+      grid-area: 1/2;
+    }
+
+    &__item:nth-child(2) {
+      grid-area: 1/3;
+    }
+
+    &__item:nth-child(3) {
+      grid-area: 1/1;
+    }
+
+    &__title-text,
+    &__text {
+      text-align: start;
+    }
+  }
+  @media (min-width: $largeScreen) {
+    &__text,
+    &__image {
+      max-width: 370px;
+    }
+  }
+  @media (min-width: 900px) {
+    &__title-text,
+    &__text {
+      text-align: center;
+    }
+  }
+}

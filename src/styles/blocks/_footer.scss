@@ -1,0 +1,75 @@
+.footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 30px 50px;
+  z-index: 1;
+
+  &__address,
+  &__item {
+    display: none;
+  }
+
+  &__address {
+    width: 140px;
+  }
+
+  &__item {
+    font-family: "BebasNeue-Bold", sans-serif;
+    @include textStyle(24px, 24px, bold, $colorBlack);
+
+    letter-spacing: 0.15em;
+    margin-bottom: 11px;
+  }
+  &__text {
+    color: #000;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+    margin-bottom: 41px;
+  }
+
+  &__logo--twitter,
+  &__logo--instagram,
+  &__logo--fasebook {
+    @include scale(1.3);
+  }
+
+  &__title {
+    text-align: center;
+    font-family: "BebasNeue-Bold", sans-serif;
+
+    @include textStyle(36px, 150%, bold, $colorBlack);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+  }
+  @media (min-width: $smallScreen) {
+    & {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 50px;
+    }
+
+    &__address,
+    &__item {
+      display: block;
+    }
+  }
+  @media (min-width: $notebookScreen) {
+    & {
+      align-items: flex-start;
+    }
+
+    &__wrapper {
+      margin-bottom: 84px;
+    }
+  }
+}

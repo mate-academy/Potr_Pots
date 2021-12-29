@@ -1,0 +1,134 @@
+.team {
+  @media (min-width: $mediumScreen) {
+    padding: 0 50px;
+  }
+
+  @media (min-width: $largeScreen) {
+    padding: 0 135px;
+  }
+
+  &__team {
+    margin-bottom: 100px;
+  }
+
+  position: relative;
+
+  &__name {
+    display: none;
+  }
+
+  &__title {
+    font-family: "BebasNeue-Bold", sans-serif;
+    @include textStyle(58px, 58px, bold, $colorGray-2);
+
+    margin: 70px 0 60px;
+    letter-spacing: 0.15em;
+  }
+
+  &__back-image {
+    position: absolute;
+    bottom: -300px;
+    left: 0;
+    right: 0;
+    height: 550px;
+    background-size: cover;
+    background-image: url("../images/rectangle-small.png");
+    background-repeat: no-repeat;
+    background-position: 80% 20%;
+    z-index: -1;
+  }
+
+  &__image {
+    height: 100%;
+    width: 100%;
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+    margin-top: 35px;
+
+    & > span {
+      display: block;
+      margin-top: 30px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__content {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      column-gap: 40px;
+    }
+    &__title {
+      margin-bottom: 200px;
+    }
+
+    &__image {
+      height: 255px;
+      width: 340px;
+
+    }
+    &__back-image {
+      bottom: unset;
+      top: 200px;
+      height: 250px;
+      transform: translateX(-70%);
+      background-position: 50% 30%;
+      background-size: cover;
+
+    }
+
+    &__name {
+      display: block;
+      position: absolute;
+
+      font-family: "BebasNeue-Bold", sans-serif;
+      @include textStyle(231.88px, 232px, bold, $transparent);
+
+      -webkit-text-stroke: 1px #03839e;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+
+      &--martin {
+        top: 90px;
+        left: -80px;
+      }
+
+      &--andry {
+        bottom: -130px;
+        right: -60px;
+      }
+    }
+
+  }
+
+  @media (min-width: $mediumScreen) {
+
+    &__image {
+      height: 382px;
+      width: 500px;
+    }
+    &__name--andry {
+      bottom: -160px;
+      right: -20px;
+    }
+    &__text {
+      transform: translateY(70px);
+      max-width: 340px;
+    }
+
+  }
+  @media (min-width: $notebookScreen) {
+
+    &__image {
+      height: 500px;
+      width: 670px;
+    }
+    &__name--martin {
+      top: 90px;
+      left: 40px;
+    }
+  }
+}
