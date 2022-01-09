@@ -1,0 +1,126 @@
+.sizes {
+  @include onTablet {
+    margin-bottom: 120px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 100px;
+  }
+
+  &__top-title {
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: #000;
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__wrapper {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__top-content {
+    max-width: 500px;
+    margin-bottom: 32px;
+
+    @include onTablet {
+      max-width: 580px;
+      margin-bottom: 18px;
+    }
+
+    @include onDesktop {
+      margin: 0 16px 0 0;
+      max-width: 253px;
+      padding-top: 28px;
+    }
+  }
+
+  &__inner {
+
+    @include onTablet {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      margin-bottom: 24px;
+    }
+
+    &-description {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        max-width: 246px;
+        margin-bottom: 0;
+        padding-top: 20px;
+      }
+
+      @include onDesktop {
+        box-sizing: content-box;
+        padding: 32px 0 20px 30px;
+        border-left: 1px solid #d8d8d8;
+        height: min-content;
+      }
+
+      &-title {
+        font-family: $textStyleBebas;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 0.15em;
+        color: #000;
+        margin-bottom: 20px;
+      }
+  
+      &-content:not(:last-child) {
+        margin-bottom: 40px;
+      }
+  
+      &-content--bold {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__inner-img {
+    margin: 0 -30px 40px;
+    max-width: 416px;
+
+    @media (min-width: 400px) {
+      margin: 0 auto 40px;
+    }
+
+    @include onTablet {
+      max-width: 528px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      margin-left: 60px;
+    }
+  }
+
+  &__bottom-content {
+    position: relative;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -10px;
+    }
+
+    @include onTablet {
+      max-width: 700px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      bottom: 70px;
+      width: 546px;
+    }
+  }
+}

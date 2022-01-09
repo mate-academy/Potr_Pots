@@ -1,0 +1,244 @@
+.benefit {
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-right: 15px;
+      max-width: 284px;
+    }
+
+    &-el-1 {
+      @include onTablet {
+        display: block;
+        max-width: 284px;
+      }
+
+      @include onDesktop {
+        min-width: 284px;
+        max-width: 500px;
+        margin-right: 100px;
+      }
+    }
+
+    &-el-2 {
+      @include onTablet {
+        margin-right: 0;
+        margin-left: 57px;
+      }
+
+      @include onDesktop {
+        max-width: 300px;
+        margin: 0 auto 80px;
+      }
+    }
+
+    &-el-3 {
+      @include onDesktop {
+        min-width: 284px;
+        max-width: 470px;
+        margin: 0 0 80px;
+      }
+    }
+  }
+
+  &-inner {
+    max-width: 340px;
+    position: relative;
+    margin: 0 auto;
+
+    @include onTablet {
+      max-width: initial;
+      display: flex;
+      align-self: flex-end;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin-left: auto;
+    }
+
+    &-1 {
+      @include onTablet {
+        flex-direction: row;
+      }
+
+      &-2 {
+        @include onTablet {
+          max-width: 340px;
+        }
+
+        @include onDesktop {
+          max-width: 370px;
+        }
+      }
+
+      @include onDesktop {
+        display: flex;
+        align-self: center;
+        margin: 0;
+      }
+    }
+
+    &-2 {
+
+      @include onTablet {
+        flex-direction: column;
+        align-self: center;
+      }
+
+      &-2 {
+        @include onTablet {
+          max-width: 340px;
+        }
+
+        @include onDesktop {
+          max-width: 370px;
+          margin-left: auto;
+        }
+      }
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+
+    &-3 {
+      @include onTablet {
+        flex-direction: row;
+      }
+
+      @include onDesktop {
+        display: flex;
+      }
+
+      &-2 {
+        @include onTablet {
+          flex-direction: row;
+          max-width: 340px;
+        }
+
+        @include onDesktop {
+          max-width: 370px;
+        }
+      }
+    }
+  }
+
+  &__title {
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    font-weight: normal;
+    color: #000;
+    margin-bottom: 28px;
+
+    @include onTablet {
+      margin-bottom: 11px;
+    }
+
+    &-mark {
+      display: none;
+
+      @include onTablet {
+        display: inline-block;
+        position: absolute;
+        top: -55px;
+        left: 36px;
+        color: $colorTextGrey33;
+
+        &::before {
+          content: "*";
+          font-size: 24px;
+          line-height: 24px;
+          color: #000;
+          margin-right: 10px;
+        }
+      }
+
+      @include onDesktop {
+        left: -45px;
+
+        &::before {
+          content: "*";
+          font-size: 24px;
+          line-height: 24px;
+          color: #000;
+          margin-right: 30px;
+        }
+      }
+
+      &-1 {
+        @include onDesktop {
+          left: 60px;
+        }
+      }
+
+      &-2 {
+        @include onTablet {
+          left: initial;
+          right: 0;
+        }
+
+        @include onDesktop {
+          left: 60px;
+        }
+      }
+    }
+
+    &-number {
+      padding-left: 18px;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 46px;
+        background-color: $colorTextGrey33;
+        position: absolute;
+        left: 10px;
+        transform: rotate(22deg);
+      }
+
+      @include onTablet {
+        margin-right: 20px;
+      }
+
+      @include onDesktop {
+        margin-right: 70px;
+      }
+
+      &-2 {
+        @include onDesktop {
+          align-self: flex-end;
+          margin-right: 330px;
+        }
+      }
+    }
+
+    &-text {
+      & > span {
+        position: relative;
+
+        @include onTablet {
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 46px;
+            background-color: $colorTextGrey33;
+            position: absolute;
+            left: 10px;
+            transform: rotate(22deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__description {
+    margin: 0;
+  }
+}
