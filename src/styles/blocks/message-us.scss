@@ -1,0 +1,232 @@
+.message-us {
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 160px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 216px;
+  }
+
+  &__container {
+    overflow: visible;
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 580px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(175deg, $colorYellowLight 90%,
+    $colorTextGreyF8 90%);
+    z-index: -1;
+
+    @include onTablet {
+      width: initial;
+      right: 20px;
+      height: 480px;
+      background: linear-gradient(175deg, $colorYellowLight 80%,
+      $colorTextGreyF8 80%);
+    }
+
+    @include onDesktop {
+      right: 135px;
+      height: 550px;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 156px;
+      height: 238px;
+      background-image: url(../images/advantage-circle.png);
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -70px;
+      right: 0;
+
+      @include onTablet {
+        width: 200px;
+        top: -110px;
+        right: -20px;
+      }
+
+      @include onDesktop {
+        width: 223px;
+        top: -110px;
+        right: -62px;
+      }
+    }
+  }
+
+  &__wrapper {
+    padding-top: 45px;
+
+    @include onTablet {
+      display: flex;
+      padding-top: 0;
+    }
+  }
+
+  &__top {
+    &-title {
+      line-height: 54px;
+      letter-spacing: 0.15em;
+      color: #000;
+      margin-bottom: 14px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &-hint {
+      color: #000;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+  &__form {
+    margin-bottom: 90px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &-wrapper {
+
+      @include onTablet {
+        max-width: 350px;
+        margin-right: 136px;
+        padding: 24px 0 0 4px;
+      }
+
+      @include onDesktop {
+        margin-right: 265px;
+        padding: 38px 0 0 ;
+      }
+    }
+
+    &-title {
+      font-size: 24px;
+      line-height: 36px;
+      color: #000;
+      margin-bottom: 24px;
+
+      @include onTablet {
+        margin-bottom: 14px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 24px;
+      }
+    }
+
+    &-item {
+      display: block;
+      width: 100%;
+      font-family: $textStyleOutfit;
+      color: $colorTextGrey4F;
+      font-size: 16px;
+      line-height: 24px;
+      background-color: $colorYellowLight;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      padding: 0 0 4px 6px;
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 25px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 20px;
+      }
+
+      &::placeholder {
+        font-family: $textStyleOutfit;
+        font-size: 16px;
+        line-height: 24px;
+        color: $colorTextGrey4F;
+      }
+    }
+
+    &-message {
+      margin-bottom: 30px;
+
+      resize: none;
+      overflow: auto;
+
+      @include onTablet {
+        margin-bottom: 35px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    &-btn {
+      display: block;
+      margin: 0 auto;
+      font-family: $textStyleOutfit;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: bold;
+      color: $colorTextGrey33;
+      background-color: transparent;
+      padding: 0;
+      outline: none;
+      border: none;
+      border-bottom: 1px dashed $colorTextGrey33;
+      cursor: pointer;
+
+      &:hover {
+        color: $colorRed;
+        border-bottom: 1px dashed $colorRed;
+      }
+    }
+  }
+
+  &__contact {
+    @include onTablet {
+      max-width: 200px;
+      padding-top: 70px;
+    }
+
+    @include onDesktop {
+      max-width: 270px;
+      padding-top: 140px;
+    }
+
+    &-item {
+      margin-bottom: 38px;
+
+      @include onTablet {
+        margin-bottom: 22px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &-title {
+        font-size: 24px;
+        line-height: 36px;
+        color: rgba(0, 0, 0, 0.39);
+        margin-bottom: 4px;
+      }
+
+      &-content {
+        color: #000;
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+.congratulation {
+  &__modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: none;
+
+    &-open {
+      display: block;
+    }
+
+    &-body {
+      min-height: 100%;
+      padding: 100px 12px;
+
+      @include onTablet {
+        padding: 200px 21px 100px;
+      }
+    }
+
+    &-content {
+      background-color: $colorTextGreyF8;
+      color: #000;
+      width: 296px;
+      margin: 0 auto;
+      padding: 18px 18px 136px;
+
+      @include onTablet {
+        width: 700px;
+        padding: 12px 12px 136px 120px;
+      }
+
+      @include onDesktop {
+        width: 830px;
+        padding: 24px 24px 192px 130px;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    margin-bottom: 28px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+
+    &-close {
+      width: 46px;
+      height: 46px;
+      background-color: $colorTextGrey33;
+      border-radius: 50%;
+      margin: 0 0 24px auto;
+      cursor: pointer;
+      position: relative;
+      transform: rotate(45deg);
+
+      &::after {
+        content: "";
+        display: block;
+        height: 15px;
+        width: 3px;
+        background-color: $colorTextGreyF8;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 15px;
+        background-color: $colorTextGreyF8;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &-title {
+      position: relative;
+      width: 80px;
+
+      @include onTablet {
+        padding-top: 32px;
+      }
+
+      &-circle {
+        width: 80px;
+        height: 80px;
+        background-color: $colorYellow;
+        border-radius: 50%;
+      }
+
+      &-text {
+        font-size: 17px;
+        line-height: 17px;
+        letter-spacing: 0.15em;
+        position: absolute;
+        bottom: 50%;
+        left: 48px;
+        transform: translateY(50%);
+
+        @include onTablet {
+          padding-top: 32px;
+        }
+      }
+    }
+  }
+
+  &__message {
+    &-successful {
+      font-size: 24px;
+      line-height: 36px;
+      margin-bottom: 12px;
+
+      @include onTablet {
+        font-size: 32px;
+        line-height: 48px;
+        margin-bottom: 19px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

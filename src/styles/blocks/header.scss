@@ -10,7 +10,8 @@
       height: 350px;
       top: 0;
       left: 0;
-      background: linear-gradient(165deg, $colorYellowLight 60%, #fff 60%) ;
+      background: linear-gradient(165deg, $colorYellowLight 60%,
+      $colorTextGreyF8 60%);
       z-index: -1;
     }
 
@@ -34,13 +35,6 @@
 
     @include onDesktop {
       margin-bottom: 85px;
-    }
-
-    &-title {
-      line-height: 36px;
-      font-weight: normal;
-      letter-spacing: 0.06em;
-      color: $colorTextGrey33;
     }
   }
 
@@ -66,6 +60,7 @@
       background-color: initial;
       transform: translateX(0);
       height: initial;
+      z-index: initial;
     }
   }
 
@@ -133,12 +128,16 @@
       color: $colorTurquoise;
       font-weight: bold;
       margin: 0 0 20px;
+      -webkit-text-stroke: 0.7px $colorTurquoise;
 
       @include onTablet {
         margin: 0;
-        
         font-size: 64px;
         line-height: 64px;
+      }
+
+      @include onDesktop {
+        -webkit-text-stroke: 1px $colorTurquoise;
       }
     }
 

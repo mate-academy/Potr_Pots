@@ -8,10 +8,10 @@
   }
 
   &__top-title {
-  line-height: 54px;
-  letter-spacing: 0.15em;
-  color: #000000;
-  margin-bottom: 30px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: #000;
+    margin-bottom: 30px;
 
     @include onDesktop {
       margin-bottom: 56px;
@@ -23,7 +23,6 @@
       display: flex;
       justify-content: space-between;
     }
-    
   }
 
   &__top-content {
@@ -53,24 +52,6 @@
     }
 
     &-description {
-      
-      &-title {
-        font-family: $textStyleBebas;
-        font-size: 18px;
-        line-height: 18px;
-        letter-spacing: 0.15em;
-        color: #000000;
-        margin-bottom: 20px;
-      }
-  
-      &-content:not(:last-child) {
-        margin-bottom: 40px;
-      }
-  
-      &-content--bold {
-        font-weight: bold;
-      }
-  
       margin-bottom: 40px;
 
       @include onTablet {
@@ -82,18 +63,35 @@
       @include onDesktop {
         box-sizing: content-box;
         padding: 32px 0 20px 30px;
-        border-left: 1px solid #D8D8D8;
+        border-left: 1px solid #d8d8d8;
         height: min-content;
+      }
+
+      &-title {
+        font-family: $textStyleBebas;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 0.15em;
+        color: #000;
+        margin-bottom: 20px;
+      }
+  
+      &-content:not(:last-child) {
+        margin-bottom: 40px;
+      }
+  
+      &-content--bold {
+        font-weight: bold;
       }
     }
   }
 
   &__inner-img {
-    margin: 0 -30px 40px -30px;
+    margin: 0 -30px 40px;
     max-width: 416px;
 
     @media (min-width: 400px) {
-      margin: 0 auto 40px auto;
+      margin: 0 auto 40px;
     }
 
     @include onTablet {
@@ -106,10 +104,9 @@
     }
   }
 
-  
-
   &__bottom-content {
     position: relative;
+
     &::before {
       content: "*";
       position: absolute;

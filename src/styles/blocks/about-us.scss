@@ -2,11 +2,12 @@
   margin-bottom: 67px;
   
   @include onTablet {
-    margin-bottom: 172px;
+    margin-bottom: 100px;
+    overflow: hidden;
   }
 
   @include onDesktop {
-    margin-bottom: 226px;
+    margin-bottom: 70px;
   }
 
   &__top-title {
@@ -37,7 +38,7 @@
 
     @include onTablet {
       display: block;
-      font-family: Bebas Neue;
+      font-family: $textStyleBebas;
       font-size: 230px;
       line-height: 230px;
       letter-spacing: 0.15em;
@@ -61,7 +62,6 @@
         top: -135px;
         left: 70px;
       }
-
     }
 
     &-2 {
@@ -81,6 +81,11 @@
   &__wrapper {
     @include onTablet {
       display: flex;
+      margin-bottom: 72px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
     }
   }
 
@@ -106,13 +111,11 @@
         max-width: 677px;
       }
     }
-
   }
 
   &__description {
     max-width: 400px;
     margin: 0 auto 70px;
-    
 
     &-bg {
       position: absolute;
@@ -120,7 +123,8 @@
       top: 96px;
       left: -30px;
       right: -30px;
-      background: linear-gradient(165deg, $colorYellowLight 60%, #fff 60%) ;
+      background: linear-gradient(165deg, $colorYellowLight 60%,
+      $colorTextGreyF8 60%);
       z-index: -1;
 
       @include onTablet {
@@ -148,6 +152,5 @@
       padding: 0;
       align-self: center;
     }
-
   }
 }

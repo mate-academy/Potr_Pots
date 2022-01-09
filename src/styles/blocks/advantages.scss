@@ -1,0 +1,266 @@
+.advantages {
+  @include onDesktop {
+    margin-bottom: -100px;
+  }
+
+  &__wrapper {
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__photos {
+    @include onDesktop {
+      margin-left: -135px;
+      margin-right: 370px;
+    }
+
+    &-item {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        width: 270px;
+        height: 302px;
+      }
+    }
+
+    &-block-1 {
+      @include onDesktop {
+        display: flex;
+        position: relative;
+        top: -50px;
+        margin-bottom: 22px;
+      }
+
+      &-item-2 {
+        @include onDesktop {
+          position: absolute;
+          left: 230px;
+          top: -110px;
+        }
+      }
+    }
+
+    &-block-2 {
+      @include onDesktop {
+        display: flex;
+        position: relative;
+      }
+
+      &-item-2 {
+        @include onDesktop {
+          position: absolute;
+          left: 100px;
+          top: -105px;
+        }
+      }
+    }
+
+    &-block-3 {
+      @include onDesktop {
+        display: flex;
+        position: relative;
+        top: -82px;
+        z-index: -1;
+      }
+
+      &-item-2 {
+        @include onDesktop {
+          position: absolute;
+          left: 260px;
+          top: -90px;
+        }
+      }
+    }
+  }
+
+  &__inner {
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: block;
+      padding-top: 180px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 60px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      margin: 0 20px 0 54px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 60px;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+
+      @include onTablet {
+        width: 320px;
+      }
+
+      @include onDesktop {
+        width: max-content;
+        margin-right: 45px;
+      }
+
+      &-1 {
+        margin-bottom: 32px;
+
+        @include onTablet {
+          margin-bottom: 21px;
+          order: 0;
+        }
+
+        @include onDesktop {
+          margin-bottom: 40px;
+        }
+
+      }
+
+      &-2 {
+        margin-bottom: 32px;
+        @include onTablet {
+          margin-bottom: 0;
+          order: 2;
+        }
+
+        @include onDesktop {
+          order: 1;
+          margin-bottom: 40px;
+        }
+      }
+
+      &-3 {
+        @include onTablet {
+          margin-bottom: 21px;
+          order: 1;
+        }
+
+        @include onDesktop {
+          order: 2;
+          margin-bottom: 0;
+        }
+      }
+
+      &-title {
+        position: relative;
+
+        font-size: 32px;
+        line-height: 48px;
+        color: $colorTextGrey33;
+        margin-bottom: 4px;
+
+        &::before {
+          content: "";
+          display: block;
+          background-image: url(../images/rhombus-img.svg);
+          width: 11px;
+          height: 11px;
+          position: absolute;
+          left: -15px;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        @include onTablet {
+          font-size: 36px;
+          line-height: 54px;
+        }
+      }
+
+      &-description {
+        color: #828282;
+
+        @include onTablet {
+          max-width: 220px;
+        }
+
+        @include onDesktop {
+          max-width: max-content;
+        }
+      }
+    }
+  }
+
+  &__spesial-price {
+    @include onTablet {
+      max-width: 240px;
+      padding-top: 80px;
+    }
+
+    @include onDesktop {
+      max-width: 100%;
+      padding-top: 0;
+    }
+  }
+
+  &__button {
+    margin: 0 0 40px;
+
+    @include onTablet {
+      margin: 0 0 32px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 70px;
+    }
+  }
+
+  &__price-description {
+    @include onDesktop {
+      padding-left: 100px;
+    }
+
+    &-sale {
+      font-family: $textStyleBebas;
+      font-size: 36px;
+      line-height: 54px;
+      font-weight: normal;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $colorRed;
+      margin: 0 0 12px;
+
+      @include onTablet {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 4px;
+      }
+
+      @include onDesktop {
+        font-size: 36px;
+        line-height: 54px;
+        margin-bottom: 6px;
+      }
+    }
+
+    &-text {
+      font-family: $textStyleBebas;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $colorTurquoise;
+      margin: 0;
+
+      @include onTablet {
+        font-size: 18px;
+        line-height: 18px;
+      }
+
+      @include onDesktop {
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+}

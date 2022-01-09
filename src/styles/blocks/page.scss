@@ -14,9 +14,33 @@
   &__body {
     margin: 0;
     padding: 0;
+    background-color: $colorTextGreyF8;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+
+    &--with-modal {
+      overflow: hidden;
+    }
   }
 
   &__section {
     margin: 0 auto 100px;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    -webkit-text-fill-color: $colorTextGrey4F;
+    box-shadow: $colorYellow;
+    transition: background-color 5000s ease-in-out 0s;
   }
 }
