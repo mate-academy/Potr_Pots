@@ -5,9 +5,8 @@
   }
 
   &__title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-left: 30px;
+    margin-bottom: 21px;
   }
 
   &__title-text {
@@ -17,5 +16,96 @@
 
     -webkit-text-stroke: 0.65px $turquoiseColor;
     color: $turquoiseColor;
+  }
+
+  &__order {
+    padding-left: 30px;
+  }
+
+  &__cost {
+    margin-bottom: 1px;
+
+    font-family: "Proxima Nova Bold", sans-serif;
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  &__offer {
+    margin-bottom: 20px;
+
+    font-family: "Proxima Nova Semibold", sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  &__buy-button {
+    font-family: "Proxima Nova Semibold", sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+    margin-bottom: 100px;
+
+    box-sizing: border-box;
+    width: 240px;
+    height: 50px;
+
+    border: 1px solid transparent;
+
+    background-color: $yellowColor;
+
+    &:hover {
+      background-color: transparent;
+      border-color: #333;
+    }
+  }
+
+  &__buy-button-text {
+    width: 75px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #121212;
+  }
+
+  &__buy-button-arrow {
+    display: inline-block;
+    position: relative;
+
+    margin-left: 9px;
+
+    width: 25px;
+    height: 1.5px;
+    background-color: #000;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 6px;
+      height: 1px;
+      background-color: #000;
+      transform: rotate(-45deg);
+      right: -1px;
+      bottom: -2px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 6px;
+      height: 1px;
+      background-color: #000;
+      transform: rotate(45deg);
+      right: -1px;
+      bottom: 2px;
+    }
   }
 }
