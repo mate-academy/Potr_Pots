@@ -1,0 +1,101 @@
+.menu {
+  position: fixed;
+  top: 0;
+  font-family: "Proxima Nova Light", sans-serif;
+
+  height: 100vh;
+  width: 72%;
+
+  background-color: $turquoiseColor;
+
+  transform: translateX(145%);
+
+  &:target {
+    transform: translateX(39%);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 138px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    text-align: center;
+    line-height: 150%;
+    color: $greyLightColor;
+    text-decoration: none;
+  }
+
+  &__basket-button {
+    height: 100%;
+
+    padding: 0;
+
+    line-height: 150%;
+    color: $greyLightColor;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: start;
+    background-color: $turquoiseColor;
+    border: none;
+  }
+
+  &__basket-button-number {
+    font-family: "Bebas Neue", cursive;
+    position: absolute;
+    left: 65%;
+    width: 13px;
+    height: 13px;
+
+    color: $greyLightColor;
+    font-size: 9px;
+    line-height: 13px;
+    text-align: center;
+    background-color: $redColor;
+    border-radius: 50%;
+  }
+
+  &__close {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(-90deg);
+  }
+
+  &__close-link {
+    margin-right: 18px;
+
+    font-size: 12px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $greyLightColor;
+  }
+
+  &__close-line {
+    display: inline-block;
+    margin-right: 9px;
+    width: 44px;
+    height: 1px;
+    border: none;
+    background-color: $greyLightColor;
+  }
+}
