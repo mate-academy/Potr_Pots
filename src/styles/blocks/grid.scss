@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  margin: 0 auto;
+  padding: 0 30px;
+  width: 100vw;
+  height: 100px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @for $start from 1 to 3 {
+    @for $end from $start to 3 {
+      &__mob--#{$start}-#{$end} {
+        grid-column: $start / #{$end + 1};
+      }
+    }
+  }
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+
+    padding: 0 35px;
+
+    @for $start from 1 to 7 {
+      @for $end from $start to 7 {
+        &__tab--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+
+    padding: 0 40px;
+
+    @for $start from 1 to 13 {
+      @for $end from $start to 13 {
+        &__desk--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+}
