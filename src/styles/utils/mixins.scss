@@ -1,0 +1,31 @@
+@mixin arrow($length, $height ,$color) {
+  display: inline-block;
+
+  width: $length;
+  height: $height;
+  background-color: $color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 6px;
+    height: 1px;
+    background-color: $color;
+    transform: rotate(-45deg);
+    right: -1px;
+    bottom: -2px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 6px;
+    height: 1px;
+    background-color: $color;
+    transform: rotate(45deg);
+    right: -1px;
+    bottom: 2px;
+  }
+}

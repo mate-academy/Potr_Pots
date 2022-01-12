@@ -1,11 +1,12 @@
 .preview {
+  position: relative;
+
   &__image {
     width: 100%;
     margin-bottom: 24px;
   }
 
   &__title {
-    padding-left: 30px;
     margin-bottom: 21px;
   }
 
@@ -16,10 +17,6 @@
 
     -webkit-text-stroke: 0.65px $turquoiseColor;
     color: $turquoiseColor;
-  }
-
-  &__order {
-    padding-left: 30px;
   }
 
   &__cost {
@@ -75,37 +72,33 @@
   }
 
   &__buy-button-arrow {
-    display: inline-block;
     position: relative;
-
+    @include arrow(25px, 1.5px, #000);
     margin-left: 9px;
+  }
 
-    width: 25px;
-    height: 1.5px;
-    background-color: #000;
+  &__more-about {
+    position: absolute;
+    top: 90%;
+    right: -24%;
+    display: flex;
+    align-items: center;
+    gap: 11px;
 
-    &::before {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      width: 6px;
-      height: 1px;
-      background-color: #000;
-      transform: rotate(-45deg);
-      right: -1px;
-      bottom: -2px;
-    }
+    text-decoration: none;
 
-    &::after {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      width: 6px;
-      height: 1px;
-      background-color: #000;
-      transform: rotate(45deg);
-      right: -1px;
-      bottom: 2px;
-    }
+    transform: rotate(90deg);
+  }
+
+  &__more-about-text {
+    font-family: "Proxima Nova Light", sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: $turquoiseColor;
+  }
+
+  &__more-about-arrow {
+    position: relative;
+    @include arrow(44px, 1px, $turquoiseColor);
   }
 }
