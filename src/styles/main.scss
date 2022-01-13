@@ -5,91 +5,10 @@
 @import "normalize.scss";
 
 @import "blocks/grid.scss";
+@import "blocks/menu.scss";
+@import "blocks/header.scss";
 
-.header {
-  &__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__logo {
-    @extend %fons--36-b;
-    color: #333;
-  }
-
-  &__list {
-    display: none;
-
-    @include onDesktop {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-  &__item {
-    margin-right: 64px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
-  &__link {
-    @extend %fons--16-p;
-    color: #4f4f4f;
-    padding: 20px 0;
-  }
-
-  &__shopping-bag {
-    display: none;
-    @include onDesktop {
-      display: block;
-      @include addImg (30);
-      background-image: url(../images/icons__svg/bag.svg);
-    }
-  }
-
-  &__burger {
-    @include onDesktop {
-      display: none;
-    }
-    @include addImg (30);
-    background-image: url(../images/icons__svg/burger.svg);
-  }
-
-  &__title {
-    @extend %fons--64-b;
-  }
-}
-
-.menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 100vh;
-
-  background-color: $col-turquoise;
-  &__list {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-  }
-
-  &__item {
-    margin-bottom: 15px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
-  &__link {
-    @extend %fons--16-p;
-    color: $col-grey-light;
-    padding: 20px 0;
-  }
+.transparent-text {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px $col-turquoise;
 }
