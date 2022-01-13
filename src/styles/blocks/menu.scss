@@ -12,8 +12,19 @@
 
   z-index: 1;
 
+  @include onTablet {
+    width: 50%;
+    transform: translateX(200%);
+
+    font-size: 24px;
+  }
+
   &:target {
     transform: translateX(39%);
+
+    @include onTablet {
+      transform: translateX(100%);
+    }
   }
 
   &__content {
@@ -26,10 +37,14 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include onTablet {
+      gap: 32px;
+    }
   }
 
   &__item {
@@ -60,6 +75,10 @@
   &__basket-button-number {
     font-family: "Bebas Neue", cursive;
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
     left: 65%;
     width: 13px;
     height: 13px;
@@ -67,15 +86,20 @@
     color: $greyLightColor;
     font-size: 9px;
     line-height: 13px;
-    text-align: center;
     background-color: $redColor;
     border-radius: 50%;
+
+    @include onTablet {
+      width: 18px;
+      height: 18px;
+      font-size: 14px;
+    }
   }
 
   &__close {
     position: absolute;
     top: 80%;
-    left: 50%;
+    left: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -90,6 +114,10 @@
     line-height: 150%;
     text-decoration: none;
     color: $greyLightColor;
+
+    @include onTablet {
+      font-size: 18px;
+    }
   }
 
   &__close-line {
