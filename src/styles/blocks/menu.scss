@@ -1,0 +1,103 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100vh;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  display: flex;
+  align-items: flex-end;
+
+  color: #fff;
+
+  &--active {
+    transform: translateX(0);
+  }
+
+  &__list {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-bottom: 250px;
+  }
+
+  &__link {
+    @extend %fons--16-p;
+    display: block;
+    color: $col-grey-light;
+    padding: 7px 0;
+    margin-bottom: 1px;
+
+    &--basket {
+      position: relative;
+      &::after {
+        content: "1";
+
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 9px;
+        line-height: 13px;
+        letter-spacing: 0.16em;
+        text-align: center;
+
+        position: absolute;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: $col-red-light;
+        margin-left: 10px;
+      }
+
+      @include onTablet {
+        font: 1.5em;
+      }
+    }
+  }
+
+  &__background {
+    position: absolute;
+    right: 0;
+    width: clamp(230px, calc(14.38rem + (1vw - 3.2px) * 37.95), 400px);
+    height: 100vh;
+
+    background-color: $col-turquoise;
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__close {
+    @extend %fons--12-p;
+    text-transform: uppercase;
+    display: block;
+    position: absolute;
+    cursor: pointer;
+
+    z-index: 4;
+
+    transform: rotate(-90deg);
+    right: 0;
+    bottom: 132px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: #fff;
+      right: 130%;
+      top: 40%;
+    }
+
+    &::before {
+      content: "✕";
+      position: absolute;
+      font-size: 20px;
+      top: -2px;
+      right: 270%;
+    }
+  }
+}

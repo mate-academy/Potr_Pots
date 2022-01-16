@@ -1,0 +1,186 @@
+.header {
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+
+  &__logo {
+    @extend %fons--36-b;
+    color: #333;
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    margin-right: 64px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    @extend %fons--16-p;
+    color: #4f4f4f;
+    padding: 20px 0;
+  }
+
+  &__shopping-bag {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      @include addImg (30);
+      background-image: url(../images/icons__svg/bag.svg);
+    }
+  }
+
+  &__burger {
+    @include onDesktop {
+      display: none;
+    }
+
+    @include addImg (45);
+    background-image: url(../images/icons__svg/burger.svg);
+  }
+
+  &__title {
+    margin-top: 20px;
+    @extend %fons--36-b;
+    letter-spacing: 0.17em;
+    color: $col-turquoise;
+    line-height: 100%;
+
+    @include onTablet {
+      margin-top: 10px;
+      font-size: 64px;
+      line-height: 105%;
+    }
+  }
+
+  &__main-img {
+    position: relative;
+  }
+
+  &__mobile-arrow {
+    position: absolute;
+    bottom: -360px;
+    right: 5px;
+    z-index: 1;
+    color: $col-turquoise;
+    writing-mode: vertical-rl;
+    width: 1rem;
+    @extend %fons--12-p;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: -55px;
+      right: 1px;
+      width: 1rem;
+      height: 45px;
+      background-image: url(../images/icons__svg/big-arrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    z-index: -1;
+
+    @include onTablet {
+      position: absolute;
+      top: 120px;
+      right: 30px;
+      width: 306px;
+    }
+
+    @include onDesktop {
+      width: 500px;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    z-index: -2;
+    right: 320px;
+
+    @include onTablet {
+      right: clamp(150px, calc(9.38rem + (1vw - 7.68px) * 78.13), 350px);
+    }
+
+    @media (min-width: 1440px) {
+      left: 0;
+    }
+  }
+
+  &__price {
+    margin-top: 20px;
+    position: relative;
+
+    @include onTablet {
+      top: -20px;
+    }
+  }
+
+  &__price-value {
+    @extend %fons--26-p;
+    color: #333;
+  }
+
+  &__price-sentence {
+    @extend %fons--14-p;
+    color: #4f4f4f;
+  }
+
+  &__button {
+    margin-top: 20px;
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__arrow-scroll {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @extend %fons--12-p;
+    margin-top: 20px;
+  }
+}
+
+.arrow-scroll {
+  color: $col-turquoise;
+  writing-mode: vertical-rl;
+  width: 1rem;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: -55px;
+    width: 1rem;
+    height: 45px;
+    background-image: url(../images/icons__svg/big-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+  }
+}

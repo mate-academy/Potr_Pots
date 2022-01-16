@@ -3,7 +3,7 @@
   width: 100%;
 
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 0 20px;
 
   @for $start from 1 to 3 {
     @for $end from $start to 3 {
@@ -15,9 +15,6 @@
 
   @include onTablet {
     grid-template-columns: repeat(6, 1fr);
-    gap: 0 30px;
-
-    padding: 0 35px;
 
     @for $start from 1 to 7 {
       @for $end from $start to 7 {
@@ -30,9 +27,6 @@
 
   @include onDesktop {
     grid-template-columns: repeat(12, 1fr);
-    gap: 0 30px;
-
-    padding: 0 40px;
 
     @for $start from 1 to 13 {
       @for $end from $start to 13 {
@@ -41,19 +35,5 @@
         }
       }
     }
-  }
-}
-
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 30px;
-
-  @include onTablet {
-    padding: 0 35px;
-  }
-
-  @include onDesktop {
-    padding: 0 40px;
   }
 }
