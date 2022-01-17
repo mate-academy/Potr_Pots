@@ -171,6 +171,7 @@
 
   color: #121212;
   margin: 0 auto;
+  transition: all 0.5s ease-in-out;
   &::after {
     background-image: url(/images/header/button__arrow.svg);
     content: "";
@@ -179,6 +180,23 @@
     background-repeat: no-repeat;
     align-items: center;
     margin-left: 13px;
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover {
+    color: red;
+    transform: translate(20px);
+    transition: all 0.5s ease-in-out;
+    filter: drop-shadow(0 0 3px rgba(100,0,0,0.5));
+    &::after {
+      background-image: url(/images/header/button__arrow.svg);
+      content: "";
+      width: 26px;
+      height: 20%;
+      background-repeat: no-repeat;
+      align-items: center;
+      margin-left: 13px;
+      transform: rotate(360deg);
+    }
   }
   @media (min-width: 320px) and (max-width: 767px) {
     background: #ffe339;
@@ -191,18 +209,14 @@
   font-family: Proxima Nova, sans-serif;
   font-size: 12px;
   line-height: 150%;
-
-  /* identical to box height, or 18px */
   display: flex;
   align-items: center;
-
-  /* Turquoise */
   color: #03839e;
-
   transform: rotate(90deg);
   position: absolute;
   flex-direction: row;
   height: 18px;
+  transition: all 0.5s ease-in-out;
   @media (min-width: 320px) and (max-width: 767px) {
     width: 200px;
     right: -70px;
@@ -217,8 +231,10 @@
     height: 45px;
     background-repeat: no-repeat;
     transform: rotate(-90deg);
-    margin-left: 25px;
-    align-items: center;
+    margin-left: 35px;
+  }
+  &:hover {
+    transform: translatey(35px) rotate(90deg);
   }
 }
 

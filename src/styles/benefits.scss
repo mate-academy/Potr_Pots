@@ -9,8 +9,8 @@
   grid-template-columns: 50% 25% 25%;
   grid-template-rows: 25% 10% 10% 5% 10% 10%;
   height: 830px;
-  overflow: hidden;
   position: relative;
+  overflow-y: visible;
   @media (min-width: 320px) and (max-width: 767px) {
     grid-template-columns: 100%;
     padding: 0 30px 100px;
@@ -200,8 +200,6 @@
 .benefits__button_text {
   width: 238px;
   height: 48px;
-
-  /* Turquoise */
   border: 1px solid #03839e;
   box-sizing: border-box;
   display: flex;
@@ -228,6 +226,24 @@
     background-repeat: no-repeat;
     align-items: center;
     margin-left: 13px;
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover {
+    color: red;
+    margin-left: 50px;
+    transform: translate(20px);
+    transition: all 0.5s ease-in-out;
+    filter: drop-shadow(0 0 3px rgba(100,0,0,0.5));
+    &::after {
+      background-image: url(/images/header/button__arrow.svg);
+      content: "";
+      width: 26px;
+      height: 20%;
+      background-repeat: no-repeat;
+      align-items: center;
+      margin-left: 13px;
+      transform: rotate(360deg);
+    }
   }
   @media (min-width: 320px) and (max-width: 767px) {
     grid-column: 1 / 2;
