@@ -19,3 +19,17 @@ for (const item of menuItems) {
     menu.classList.toggle('menu--active');
   });
 }
+
+const btns = document.querySelectorAll('.materials__btn');
+
+for (let i = 0; i < btns.length; i++) {
+  btns[i].addEventListener('click', () => {
+    for (const allBtn of btns) {
+      if (allBtn !== btns[i]) {
+        allBtn.classList.remove('materials__btn--active');
+      }
+    }
+
+    btns[i].classList.toggle('materials__btn--active');
+  });
+}
