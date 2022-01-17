@@ -1,8 +1,142 @@
 .port-size {
+  margin-bottom: 98px;
 
   &__title {
+    margin-bottom: 30px;
+
     font-size: 36px;
     line-height: 150%;
+    letter-spacing: 0.15em;
+  }
+
+  &__content {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+    }
+  }
+
+  &__info {
+
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  &__text {
+    position: relative;
+    font-family: Proxima Nova Regular, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    &:first-child {
+      @include onTablet {
+        width: 580px;
+        margin-bottom: 18px;
+      }
+
+      &::after {
+        @include onDesktop {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: -20px;
+          width: 1px;
+          height: 100%;
+          background-color: #d8d8d8;
+        }
+      }
+    }
+
+    &--star::before {
+      content: "*";
+      position: absolute;
+      left: -8px;
+    }
+  }
+
+  &__tablet-wrapper {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 26px;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__desktop-wrapper {
+
+    @include onDesktop {
+      display: flex;
+      gap: 47px;
+    }
+  }
+
+  &__image-wrapper {
+    margin: 30px -30px 40px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--tablet-only {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        margin: 0;
+        width: 416px;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--desktop-only {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        margin: 0;
+        width: 528px;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__articles {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      min-width: 246px;
+    }
+
+    @include onDesktop {
+      min-width: 170px;
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  &__article-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 18px;
     letter-spacing: 0.15em;
   }
 }
