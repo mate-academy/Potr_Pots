@@ -1,0 +1,58 @@
+.buy-button {
+  font-family: "Proxima Nova Semibold", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+  width: 240px;
+  height: 50px;
+
+  border: 1px solid transparent;
+
+  color: #121212;
+  background-color: $yellowColor;
+
+  @include onTablet {
+    background-color: transparent;
+    border: 1px solid $turquoiseColor;
+    color: #121212;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border-color: #333;
+
+    @include onTablet {
+      background-color: $turquoiseColor;
+      border-color: $turquoiseColor;
+      color: #fff;
+    }
+  }
+
+  &-arrow {
+    position: relative;
+    @include arrow(25px, 1.5px, #121212);
+    margin-left: 9px;
+  }
+
+  &:hover &-arrow {
+    @include onTablet {
+      @include arrow(25px, 1.5px, #fff);
+    }
+  }
+
+  &__text {
+    width: 75px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: inherit;
+  }
+}
