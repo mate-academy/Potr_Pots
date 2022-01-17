@@ -4,17 +4,104 @@
   color: #333;
   margin-bottom: 112px;
 
+  @include onTablet {
+    margin-bottom: 135px;
+  }
+
+  &__article {
+
+    @include onTablet {
+      display: flex;
+      gap: 76px;
+
+      margin-bottom: 72px;
+    }
+
+    &--tablet-reverse {
+      @include onTablet {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      width: 300px;
+    }
+  }
+
+  &__text {
+    margin-top: -32px;
+  }
+
+  &__micro-title {
+    display: none;
+    position: relative;
+
+    &--right {
+      text-align: right;
+    }
+
+    @include onTablet {
+      display: block;
+
+      margin-bottom: 25px;
+
+      font-family: Proxima Nova Regular, sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    &::before {
+      content: "*";
+      position: absolute;
+      font-family: Bebas Neue, cursive;
+      font-size: 24px;
+      line-height: 24px;
+      left: -16px;
+    }
+
+    &--right::before {
+      text-align: right;
+      right: 68px;
+    }
+  }
+
   &__title {
+    position: relative;
     letter-spacing: 0.15em;
     font-size: inherit;
     margin-bottom: 28px;
+
+    @include onTablet {
+      margin-bottom: 11px;
+    }
+
+    &--dash::after {
+      @include onTablet {
+        content: "";
+        position: absolute;
+        top: 110%;
+        margin-left: -25px;
+        width: 46px;
+        height: 1px;
+        background-color: #333;
+        transform: rotate(-70deg) translate(100%, 0);
+      }
+    }
+
+    &--dash-3::after {
+      @include onTablet {
+        top: 105%;
+      }
+    }
   }
 
   &__line-number {
     margin-bottom: 28px;
   }
 
-  &__acticle-number {
+  &__article-number {
     position: relative;
     display: inline-block;
     font-size: inherit;
