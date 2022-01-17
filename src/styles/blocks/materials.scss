@@ -2,14 +2,153 @@
   position: relative;
   display: flex;
 
-  margin-bottom: 76px;
+  margin-bottom: 260px;
+
+  &__title {
+    position: relative;
+    margin-bottom: -40px;
+
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.12em;
+
+    color: $turquoiseColor;
+    -webkit-text-stroke: 1.5px $turquoiseColor;
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      font-size: 80px;
+      line-height: 80px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onTablet {
+      position: relative;
+      display: block;
+      width: 340px;
+      margin-left: 50%;
+      margin-top: -70px;
+      margin-bottom: -150px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+
+    font-family: Proxima Nova Regular, sans-serif;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: #4f4f4f;
+  }
+
+  &__info-text {
+    font-family: Proxima Nova Regular, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #4f4f4f;
+  }
 
   &__image-wrapper {
     margin: 0 -30px;
+    z-index: -1;
+
+    @include onTablet {
+      margin: 30px -34px 0;
+    }
   }
 
   &__image {
     width: 100%;
-    z-index: -1;
+  }
+
+  &__button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: $redColor;
+    border-radius: 50%;
+    border: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 5.5px);
+      width: 1px;
+      height: 11px;
+
+      background-color: #e0e0e0;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+
+    &--1 {
+      top: 80%;
+      left: 10%;
+    }
+
+    &--2 {
+      top: 63%;
+      left: 30%;
+    }
+
+    &--3 {
+      top: 83%;
+      left: 44%;
+    }
+
+    &--4 {
+      top: 70%;
+      left: 65%;
+    }
+
+    &--5 {
+      top: 53%;
+      left: 72%;
+    }
+
+    &--active {
+      background-color: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(12px);
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__info {
+    position: absolute;
+    top: calc(50% + 34px);
+    transform: translateX(calc(-50% + 25px));
+    overflow: hidden;
+    transition: max-height 0.3s;
+    transition-timing-function: ease-in;
+    width: 300px;
+
+    background-color: rgba(0, 0, 0, 0.75);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+  }
+
+  &__info-content {
+    padding: 35px 45px;
+
+    color: #f8f8f8;
+  }
+
+  &__info--hidden {
+    max-height: 0;
+    transition-timing-function: ease-out;
   }
 }
