@@ -22,16 +22,58 @@
         flex-direction: row-reverse;
       }
     }
+
+    &--1 {
+      @include onDesktop {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        margin-left: 100px;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+    }
   }
 
   &__image {
+    display: none;
+
     @include onTablet {
+      display: block;
+      min-width: 284px;
+      width: 100%;
+    }
+
+    &--2 {
       width: 300px;
+    }
+
+    &--3 {
+      width: 470px;
     }
   }
 
   &__text {
     margin-top: -32px;
+
+    &--3 {
+      margin-left: 80px;
+    }
   }
 
   &__micro-title {
@@ -40,6 +82,10 @@
 
     &--right {
       text-align: right;
+
+      @include onDesktop {
+        text-align: left;
+      }
     }
 
     @include onTablet {
@@ -64,6 +110,10 @@
     &--right::before {
       text-align: right;
       right: 68px;
+
+      @include onDesktop {
+        text-align: left;
+      }
     }
   }
 
@@ -124,5 +174,14 @@
     font-size: 16px;
     line-height: 150%;
     margin-bottom: 70px;
+  }
+}
+
+.desktop-container {
+  @include onDesktop {
+    display: flex;
+    gap: 150px;
+    align-items: center;
+    justify-content: center;
   }
 }

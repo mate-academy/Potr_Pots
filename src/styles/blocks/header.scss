@@ -18,6 +18,51 @@
     letter-spacing: 0.06em;
   }
 
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 50%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  // &__item {
+
+  // }
+
+  &__link {
+    font-family: Proxima Nova Regular, sans-serif;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 20px 10px;
+    color: #4f4f4f;
+  }
+
+  &__basket-button {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      margin-right: 104px;
+
+      width: 30px;
+      height: 30px;
+
+      border: none;
+      background-color: transparent;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/basket.png);
+    }
+  }
+
   &__menu-opener {
     box-sizing: border-box;
     margin-right: 8px;
@@ -32,6 +77,10 @@
 
     &:hover {
       cursor: pointer;
+    }
+
+    @include onDesktop {
+      display: none;
     }
   }
 }

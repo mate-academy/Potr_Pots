@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POTR POTS</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body>
@@ -16,6 +17,31 @@
                 POTR POTS
               </h2>
             </a>
+            <div class="header__menu">
+              <div class="header__list">
+                <div class="header__item">
+                  <a href="#features" class="header__link">
+                    Features
+                  </a>
+                </div>
+                <div class="header__item">
+                  <a href="#about-us" class="header__link">
+                    About us
+                  </a>
+                </div>
+                <div class="header__item">
+                  <a href="#materials" class="header__link">
+                    Materials
+                  </a>
+                </div>
+                <div class="header__item">
+                  <a href="#message-us" class="header__link">
+                    Message us
+                  </a>
+                </div>
+              </div>
+            </div>
+            <button class="header__basket-button"></button>
             <a href="#menu" class="header__menu-opener"></a>
           </div>
         </div>
@@ -112,9 +138,9 @@
             <h2 class="for-whom__title">
               For whom?
             </h2>
-            <article class="for-whom__article">
+            <article class="for-whom__article for-whom__article--1">
               <div class="for-whom__image-wrapper">
-                <img class="for-whom__image" src="./images/for-whom-1.png" alt="Flower in a pot">
+                <img class="for-whom__image for-whom__image--1" src="./images/for-whom-1.png" alt="Flower in a pot">
               </div>
               <div class="for-whom__text">
                 <p class="for-whom__micro-title">
@@ -133,49 +159,51 @@
                 </p>
               </div>
             </article>
-            <article class="for-whom__article for-whom__article--tablet-reverse">
-              <div class="for-whom__image-wrapper">
-                <img class="for-whom__image" src="./images/for-whom-2.png" alt="Cactus in a pot">
-              </div>
-              <div class="for-whom__text">
-                <p class="for-whom__micro-title for-whom__micro-title--right">
-                  Beautiful
-                </p>
-                <h2 class="for-whom__article-number">
-                  2
-                </h2>
-                <h2 class="for-whom__title for-whom__title--dash">
-                  For those who love modern design
-                </h2>
-                <p class="for-whom__article-text">
-                  We strived to achieve something that would
-                  look beautiful in your home while being incredibly
-                  functional and intuitive to use.
-                </p>
-              </div>
-            </article>
-            <article class="for-whom__article">
-              <div class="for-whom__image-wrapper">
-                <img class="for-whom__image" src="./images/for-whom-3.png" alt="Booba pot">
-              </div>
-              <div class="for-whom__text">
-                <p class="for-whom__micro-title">
-                  Saves time
-                </p>
-                <h2 class="for-whom__article-number">
-                  3
-                </h2>
-                <h2 class="for-whom__title for-whom__title--dash for-whom__title--dash-3">
-                  For those who don't have enough time to regular water indoor plants
-                </h2>
-                <p class="for-whom__article-text">
-                  Water is drawn up through the cotton
-                  by the plant using tried and tested wicking
-                  technology.  It's particularly useful if you
-                  aren’t able to water them yourself on a regular basis!
-                </p>
-              </div>
-            </article>
+            <div class="desktop-container">
+              <article class="for-whom__article for-whom__article--2 for-whom__article--tablet-reverse">
+                <div class="for-whom__image-wrapper">
+                  <img class="for-whom__image for-whom__image--2" src="./images/for-whom-2.png" alt="Cactus in a pot">
+                </div>
+                <div class="for-whom__text">
+                  <p class="for-whom__micro-title for-whom__micro-title--right">
+                    Beautiful
+                  </p>
+                  <h2 class="for-whom__article-number">
+                    2
+                  </h2>
+                  <h2 class="for-whom__title for-whom__title--dash">
+                    For those who love modern design
+                  </h2>
+                  <p class="for-whom__article-text">
+                    We strived to achieve something that would
+                    look beautiful in your home while being incredibly
+                    functional and intuitive to use.
+                  </p>
+                </div>
+              </article>
+              <article class="for-whom__article for-whom__article--3">
+                <div class="for-whom__image-wrapper">
+                  <img class="for-whom__image for-whom__image--3" src="./images/for-whom-3.png" alt="Booba pot">
+                </div>
+                <div class="for-whom__text for-whom__text--3">
+                  <p class="for-whom__micro-title">
+                    Saves time
+                  </p>
+                  <h2 class="for-whom__article-number">
+                    3
+                  </h2>
+                  <h2 class="for-whom__title for-whom__title--dash for-whom__title--dash-3">
+                    For those who don't have enough time to regular water indoor plants
+                  </h2>
+                  <p class="for-whom__article-text">
+                    Water is drawn up through the cotton
+                    by the plant using tried and tested wicking
+                    technology.  It's particularly useful if you
+                    aren’t able to water them yourself on a regular basis!
+                  </p>
+                </div>
+              </article>
+            </div>
           </div>
         </section>
         <section class="features" id="features">
@@ -224,30 +252,83 @@
               Meet the POTR team!
             </h1>
           </div>
-          <img class="team__image" src="./images/team.png" alt="Potr Team">
           <div class="container">
-            <p class="team__text">
-              Andy and Martin are experienced product designers
-              with a love of plants and the environment.
-              They have over ten years combined industry experience
-              in bringing products to market at some of the
-              worlds largest consumer product companies.
-              <br>
-              <br>
-              Having studied Product Design Engineering
-              together at the Glasgow School of Art, they
-              have a long history of working as a team
-              on a variety of design projects.
-            </p>
+            <h1 class="team__large-name team__large-name--martin transparent-text">
+              Martin
+            </h1>
+            <div class="team__container">
+              <div class="team__image-container">
+                <img class="team__image" src="./images/team.png" alt="Potr Team">
+              </div>
+              <p class="team__text">
+                Andy and Martin are experienced product designers
+                with a love of plants and the environment.
+                They have over ten years combined industry experience
+                in bringing products to market at some of the
+                worlds largest consumer product companies.
+                <br>
+                <br>
+                Having studied Product Design Engineering
+                together at the Glasgow School of Art, they
+                have a long history of working as a team
+                on a variety of design projects.
+              </p>
+            </div>
           </div>
+          <h1 class="team__large-name team__large-name--andy transparent-text">
+            Andy
+          </h1>
           <div class="team__polygon"></div>
         </section>
         <section class="materials">
+          <div class="container">
+            <h1 class="materials__title">
+              Materials and Features
+            </h1>
+            <div class="materials__interactive-container">
+              <div class="materials__image-wrapper">
+                <img class="materials__image" src="./images/materials.png" alt="Materials">
+              </div>
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide mySwiper__slide">
+                    <div class="mySwiper__text">
+                      We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.
+                    </div>
+                  </div>
+                  <div class="swiper-slide mySwiper__slide">
+                    <div class="mySwiper__text">
+                      2We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.
+                    </div>
+                  </div>
+                  <div class="swiper-slide mySwiper__slide">
+                    <div class="mySwiper__text">
+                      3We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.
+                    </div>
+                  </div>
+                  <div class="swiper-slide mySwiper__slide">
+                    <div class="mySwiper__text">
+                      4We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.
+                    </div>
+                  </div>
+                  <div class="swiper-slide mySwiper__slide">
+                    <div class="mySwiper__text">
+                      5We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="potr-size">
 
         </section>
       </main>
 
     </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
