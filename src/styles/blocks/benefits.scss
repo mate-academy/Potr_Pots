@@ -1,13 +1,170 @@
 .benefits {
 
+  @include onDesktop {
+    padding-top: 100px;
+  }
+
+  &__content {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      height: 100vh;
+    }
+  }
+
+  &__photocard-area {
+    display: none;
+
+    @include onDesktop {
+      position: relative;
+      display: block;
+      margin-left: -135px;
+
+      min-width: 60%;
+
+      z-index: -1;
+    }
+  }
+
+  &__photocard {
+    box-sizing: border-box;
+    position: absolute;
+    width: 270px;
+    height: 300px;
+    padding: 20px;
+
+    background-color: #fff;
+
+    &--1 {
+      top: -50px;
+      left: -145px;
+    }
+
+    &--2 {
+      top: -400px;
+      left: -27px;
+
+      transform: rotate(-15deg);
+    }
+
+    &--3 {
+      top: 170px;
+      left: 60px;
+
+      transform: rotate(-16deg);
+
+      z-index: -1;
+    }
+
+    &--4 {
+      top: -150px;
+      left: 140px;
+
+      transform: rotate(-15deg);
+    }
+
+    &--5 {
+      top: -490px;
+      left: 270px;
+
+      transform: rotate(-29deg);
+    }
+
+    &--6 {
+      top: 100px;
+      left: 350px;
+
+      transform: rotate(-30deg);
+    }
+  }
+
+  &__photocard-container {
+    margin-bottom: 8px;
+
+    width: 230px;
+    height: 230px;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    &--1 {
+      background-position: right;
+      background-image: url(../images/photocard1.png);
+    }
+
+    &--2 {
+      transform: rotate(15deg);
+
+      background-image: url(../images/photocard2.png);
+    }
+
+    &--3 {
+      transform: rotate(16deg);
+
+      background-image: url(../images/photocard3.png);
+    }
+
+    &--4 {
+      transform: rotate(15deg);
+
+      background-image: url(../images/photocard4.png);
+    }
+
+    &--5 {
+      transform: rotate(29deg);
+
+      background-image: url(../images/photocard5.png);
+    }
+
+    &--6 {
+      transform: rotate(30deg);
+
+      background-image: url(../images/photocard6.png);
+    }
+  }
+
+  &__photocard-info {
+    font-family: Proxima Nova Regular, sans-serif;
+    font-size: 11px;
+    line-height: 131.5%;
+
+    color: #828282;
+  }
+
+  &__info {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
   &__list {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @include onDesktop {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
   }
 
   &__item {
     margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
 
     &:last-child {
       margin-bottom: 60px;
@@ -46,6 +203,12 @@
 
   &__buy-button {
     margin-bottom: 40px;
+  }
+
+  &__sale {
+    @include onDesktop {
+      margin-left: 100px;
+    }
   }
 
   &__sale-title {
