@@ -77,6 +77,18 @@
       margin-bottom: 30px;
     }
 
+    &:focus {
+      outline: none;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      background-color: transparent !important;
+    }
+
     &::placeholder {
       font-family: Proxima Nova Ligth, sans-serif;
       font-size: 16px;
@@ -95,6 +107,13 @@
 
     border: none;
     background-color: transparent;
+
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__form-button-text {
@@ -139,5 +158,11 @@
 
     text-decoration: none;
     color: #000;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $turquoiseColor;
+    }
   }
 }

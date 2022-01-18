@@ -14,6 +14,15 @@ for (let i = 0; i < materialsButtons.length; i++) {
   });
 }
 
+document.getElementById('questionsForm')
+  .addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+  });
+
 const swiper = new Swiper('.mySwiper', {
   pagination: {
     el: '.swiper-pagination',

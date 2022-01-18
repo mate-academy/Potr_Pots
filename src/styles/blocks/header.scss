@@ -32,9 +32,14 @@
     justify-content: space-around;
   }
 
-  // &__item {
+  &__item {
 
-  // }
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 
   &__link {
     font-family: Proxima Nova Regular, sans-serif;
@@ -42,6 +47,11 @@
     font-size: 16px;
     padding: 20px 10px;
     color: #4f4f4f;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #000;
+    }
   }
 
   &__basket-button {
@@ -55,11 +65,19 @@
       width: 30px;
       height: 30px;
 
+      cursor: pointer;
+
       border: none;
       background-color: transparent;
       background-position: center;
       background-size: cover;
       background-image: url(../images/basket.png);
+
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 
