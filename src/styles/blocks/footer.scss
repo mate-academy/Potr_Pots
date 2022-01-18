@@ -1,0 +1,98 @@
+.footer {
+
+  &__content {
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 64px;
+    }
+  }
+
+  &__content-left {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__content-right {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-bottom: 12px;
+
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+  }
+
+  &__text {
+    font-family: Proxima Nova Regular, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__media-list {
+    display: flex;
+    justify-content: center;
+    gap: 85px;
+
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    padding-top: 90px;
+
+    list-style: none;
+  }
+
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    background-position: center;
+    background-size: cover;
+
+    &--1 {
+      background-image: url(../images/twitter.png);
+    }
+
+    &--2 {
+      background-image: url(../images/instagram.png);
+    }
+
+    &--3 {
+      background-image: url(../images/facebook.png);
+    }
+  }
+
+  &__logo {
+    font-size: 36px;
+    line-height: 150%;
+
+    text-align: center;
+    letter-spacing: 0.15em;
+  }
+
+  &__copyright {
+    margin-bottom: 50px;
+
+    font-family: Proxima Nova Regular, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

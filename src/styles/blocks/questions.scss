@@ -1,0 +1,143 @@
+.questions {
+  position: relative;
+
+  &__polygon {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $yellowLightColor;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 58%, 0% 65%);
+    z-index: -1;
+
+    @include onTablet {
+      clip-path: polygon(0% 0%, 97% 0%, 97% 80%, 0% 97%);
+    }
+  }
+
+  &__content {
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      gap: 140px;
+    }
+  }
+
+  &__title {
+    display: flex;
+
+    padding-top: 45px;
+    margin-bottom: 14px;
+
+    font-size: 36px;
+    line-height: 150%;
+
+    letter-spacing: 0.15em;
+  }
+
+  &__subtitle {
+    display: flex;
+
+    margin-bottom: 40px;
+
+    font-family: Proxima Nova Regular, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__form-title {
+    font-family: Proxima Nova Light, sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+
+    margin-bottom: 18px;
+  }
+
+  &__form-input {
+    box-sizing: border-box;
+    border: none;
+    display: block;
+
+    padding: 5px;
+
+    width: 100%;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    background-color: transparent;
+
+    &--last {
+      margin-bottom: 30px;
+    }
+
+    &::placeholder {
+      font-family: Proxima Nova Ligth, sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: #4f4f4f;
+    }
+  }
+
+  &__form-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 90px;
+
+    border: none;
+    background-color: transparent;
+  }
+
+  &__form-button-text {
+    font-family: Proxima Nova Regular, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    width: min-content;
+
+    border-bottom: 1px dashed #333;
+    color: #333;
+  }
+
+  &__contacts {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 38px;
+  }
+
+  &__contact-title {
+    margin-bottom: 4px;
+
+    font-family: Proxima Nova Light, sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__contact-text {
+    font-family: Proxima Nova Regular, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    display: flex;
+    align-items: flex-end;
+
+    text-decoration: none;
+    color: #000;
+  }
+}
