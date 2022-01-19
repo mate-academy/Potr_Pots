@@ -28,7 +28,6 @@
   display: flex;
   flex-direction: column;
   width: 55vw;
-  flex-wrap: wrap;
   position: absolute;
   overflow: hidden;
   @media (min-width: 320px) and (max-width: 1279px) {
@@ -99,20 +98,21 @@
   top: -150px;
   left: -130px;
   transition: all 0.5s ease-in-out;
+  z-index: 2;
   &:hover {
-    transform: rotate(30deg) scale(1.3) translate(50px, -150px);
-    z-index: 1;
+    transform: rotate(30deg) scale(1.3) translate(-120px, -150px);
   }
 }
 
 .benefits__images_row2 {
   margin-top: -140px;
-  width: 50%;
+  width: 80%;
 }
 
 .benefits__images_row3 {
   margin-top: -10px;
   height: 200px;
+  width: 60vw;
 }
 
 .benefits__card {
@@ -125,11 +125,8 @@
   font-size: 36px;
   line-height: 150%;
   font-weight: bold;
-
-  /* identical to box height, or 54px */
   display: flex;
   align-items: center;
-  /* Gray 1 */
   color: #333;
   &::before {
     position: relative;
@@ -146,12 +143,8 @@
   font-family: Proxima Nova, sans-serif;
   font-size: 16px;
   line-height: 150%;
-
-  /* identical to box height, or 24px */
   display: flex;
   align-items: flex-end;
-
-  /* Gray 3 */
   color: #828282;
   margin-left: 18px;
 }
@@ -270,12 +263,8 @@
   font-size: 36px;
   line-height: 150%;
   font-weight: bold;
-
-  /* or 54px */
   letter-spacing: 0.15em;
   text-transform: uppercase;
-
-  /* Red */
   color: #eb5757;
   @media (min-width: 320px) and (max-width: 767px) {
     grid-column: 1 / 2;
@@ -307,14 +296,10 @@
   font-size: 24px;
   line-height: 24px;
   font-weight: bold;
-
-  /* or 100% */
   display: flex;
   align-items: center;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-
-  /* Turquoise */
   color: #03839e;
   @media (min-width: 320px) and (max-width: 767px) {
     grid-column: 1 / 2;
