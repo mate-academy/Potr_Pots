@@ -1,7 +1,109 @@
-
 .page {
+  &__header {
+    margin-bottom: 100px;
 
-  &__card {
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+
+    &-price-block {
+      margin-bottom: 20px;
+    }
+  }
+
+  &-neader__nav {
+    @include onTablet {
+      margin-bottom: 27px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__link-about {
+    position: absolute;
+    bottom: 0;
+    right: -20%;
+
+    @include onTablet {
+      bottom: -10%;
+      left: -45px;
+      left: -7%;
+    }
+    @include onDesktop {
+      bottom: 12%;
+      left: 7%;
+    }
+  }
+
+  &__for-whom-cards {
+    margin-bottom: 112px;
+  }
+
+  &__for-whom-card {
     margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  // optimized picture
+  &__photo-container {
+    position: relative;
+    width: 100%;
+    max-height: 500px;
+    display: none;
+    // height: 284px;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      padding-bottom: 0;
+      width: 284px;
+      display: block;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      height: 500px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__photo {
+    @include onTablet {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  //
+  &__features-cards {
+    margin-bottom: 95px;
+  }
+
+  &__features-card {
+    margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 60px;
+    }
   }
 }
