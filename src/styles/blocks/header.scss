@@ -73,8 +73,14 @@
     flex-direction: column;
 
     &-left {
+      display: flex;
+      flex-direction: column;
+      order: 2;
       width: 100%;
+
       @include onDesktop {
+        display: flex;
+        order: 1;
         padding: 0 70px;
       }
     }
@@ -91,7 +97,6 @@
   }
 
   &__title {
-    order: 2;
     font-family: Bebas Neue, cursive;
     font-size: 2.25rem;
     line-height: 2.25rem;
@@ -99,29 +104,35 @@
     text-transform: uppercase;
     color: $c-blue-accent;
 
+    margin-bottom: 20px;
+
+
     @include onTablet {
-      order: 1;
+      align-self: center;
       font-size: 4rem;
       line-height: 4rem;
       position: relative;
       margin-right: -70px;
+      margin-bottom: 0;
     }
 
     @include onDesktop {
-      // width: 500px;
       position: static;
     }
   }
 
   &__cactus-photo {
     display: block;
-    order: 1;
     min-height: 320px;
     object-fit: cover;
     background-position: center;
+    order: 1;
+    margin-bottom: 25px;
 
     @include onTablet {
+      order: 2;
       height: 284px;
+      margin-bottom: 0;
     }
 
     @include onDesktop {
@@ -129,14 +140,29 @@
     }
   }
 
+  &__price-block {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      align-self: end;
+      padding-right: 10px;
+      margin-bottom: 45px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
   &__price {
-    font-family: "Quicksand", sans-serif;
-    font-size: 1.5rem;
+    font-family: $ff-common;
+    font-size: 1.7rem;
+    font-weight: bold;
     color: $c-gray-title;
   }
 
   &__text {
-    font-family: "Quicksand", sans-serif;
+    font-family: $ff-common;
     font-size: 0.8rem;
     line-height: 1.3rem;
     font-weight: 700;
@@ -144,18 +170,14 @@
   }
 
   &__button-buy {
-    font-family: "Quicksand", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 0;
-    font-size: 14px;
-    line-height: 150%;
-    text-transform: uppercase;
-    color: #121212;
-    background-color: #ffe339;
-    border: 1px solid $c-blue-accent;
+    background-color: $c-yellow;
+    border: none;
+    align-self: center;
+
+    @include onTablet {
+      border: 1px solid $c-blue-accent;
+      background:transparent;
+    }
   }
 
   &__wrapper-link-about {
@@ -170,9 +192,5 @@
     font-family: $ff-common;
     font-size: 12px;
     margin-right: 11px;
-  }
-
-  &__link-arrow {
-    // transform: rotate(-90deg);
   }
 }
