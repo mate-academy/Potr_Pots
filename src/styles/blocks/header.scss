@@ -1,24 +1,49 @@
 .header {
-  height: max-content;
+
+  @include onTablet {
+    background-image: url(../images/tabl.png);
+    background-repeat: no-repeat;
+  }
+  @include onDesktop {
+    background-image: url(../images/rect-background.png);
+  }
 
   &__nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 0;
   }
 
   &__logo {
-    font-family: Bebas Neue;
+    font-family: Bebas Neue, cursive;
     font-size: 2.25rem;
     line-height: 2.25rem;
     letter-spacing: 0.12rem;
     color: $c-gray-title;
+    padding: 15px 0;
+
+    @include onTablet {
+      padding: 29px 0;
+    }
+  }
+
+  &__menu-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__list {
-    display: flex;
-    align-items: center;
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__item {
@@ -26,37 +51,96 @@
   }
 
   &__link {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Quicksand", sans-serif;
     color: $c-gray-text;
     padding: 27px 20px;
   }
 
+  &__basket-icon {
+    display: none;
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__basket-img {
+    display: block;
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 0;
+    }
+  }
+
+  &__wrapper-link-about {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    transform: rotate(90deg);
+  }
+
+  &__link-about {
+    display: inline-block;
+    word-break: normal;
+    color: $c-blue-accent;
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+
+    margin-right: 30px;
+  }
+
+  &__link-arrow {
+    transform: rotate(-90deg);
+  }
+
   &__title {
-    font-family: Bebas Neue;
+    order: 2;
+    font-family: Bebas Neue, cursive;
     font-size: 2.25rem;
     line-height: 2.25rem;
-    letter-spacing: 0.155em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: $c-blue-accent;
 
     @include onTablet {
+      order: 1;
       font-size: 4rem;
       line-height: 4rem;
+      position: relative;
+      margin-right: -70px;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      margin-right: 70px;
+      position: static;
     }
   }
 
   &__cactus-photo {
     display: block;
-    width: 100%;
+    order: 1;
     min-height: 320px;
     object-fit: cover;
     background-position: center;
-  }
 
-  &__price-block {
+    @include onTablet {
+      height: 284px;
+    }
+
+    @include onDesktop {
+      min-height: 500px;
+    }
   }
 
   &__price {
+    font-family: "Quicksand", sans-serif;
     font-size: 1.5rem;
     color: $c-gray-title;
   }
@@ -70,6 +154,7 @@
   }
 
   &__button-buy {
+    font-family: "Quicksand", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
