@@ -1,0 +1,84 @@
+.footer {
+  &__content {
+    padding: 0 10px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: red;
+
+    @include onTablet {
+      flex-direction: row;
+      padding: 74px 10px 64px;
+    }
+  }
+
+  &__title {
+    display: none;
+    font-family: Bebas Neue;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 11px;
+    text-transform: uppercase;
+    color: #000;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__info {
+    line-height: 150%;
+    color: #000;
+
+    &--address {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &--copyright {
+      text-align: center;
+
+      @include onTablet {
+        text-align-last: left;
+      }
+    }
+  }
+
+  &__center-title {
+    font-family: Bebas Neue;
+    font-size: 36px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__icons {
+    margin-bottom: 41px;
+
+    @include onTablet {
+      margin-bottom: 84px;
+    }
+  }
+
+  &__link-icon {
+    display: inline-block;
+    margin-right: 85px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include onTablet {
+      margin-right: 80px;
+    }
+
+    @include onDesktop{
+      margin-right: 85px;
+    }
+  }
+}
