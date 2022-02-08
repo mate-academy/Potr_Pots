@@ -1,0 +1,95 @@
+.potr-size {
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      gap: 36px;
+    }
+
+    @include onDesktop {
+      gap: 96px;
+    }
+  }
+
+  &__title {
+    font-family: $ff-main;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 85px;
+  }
+
+  &__subtitle {
+    font-family: $ff-common;
+    line-height: 150%;
+    color: $c-gray-text;
+    margin-bottom: 20px;
+  }
+
+  &__left {
+    @include onDesktop {
+      display: flex;
+    }
+
+    &-wrapper {
+      border-left: 1px solid #d8d8d8;
+      height: max-content;
+    }
+
+    &-sizes {
+      padding-left: 30px;
+
+      @include onTablet {
+        order: 1;
+      }
+
+      @include onDesktop {
+        order: 2;
+      }
+    }
+
+    &-title {
+      font-family: $ff-main;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0.15em;
+      color: #000;
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      font-family: $ff-common;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-gray-text;
+      margin-bottom: 69px;
+
+      &--bottom {
+        @include onDesktop {
+          width: 50%;
+          margin-top: -50px;
+        }
+      }
+    }
+  }
+
+  &__schema {
+    height: 320px;
+
+    @include onTablet {
+      height: 337px;
+      order: 2;
+    }
+
+    @include onDesktop {
+      height: 427px;
+      order: 1;
+    }
+  }
+}

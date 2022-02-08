@@ -1,7 +1,7 @@
 .team {
-  background-image: url(../images/team/team-background.png);
-  background-repeat: no-repeat;
-  background-position: center left;
+
+
+
 
   &__title {
     font-family: $ff-main;
@@ -17,9 +17,10 @@
   }
 
   &__content {
+    // background-color: blueviolet;
     display: flex;
     flex-direction: column;
-    // gap: 35px;
+    // background-color: red;
 
     @include onTablet {
       flex-direction: row;
@@ -28,19 +29,38 @@
   }
 
   &__left {
+    background-image: url(../images/team/team-background.png);
+    background-repeat: no-repeat;
+    background-position: top left;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    // align-self: flex-end;
+
+    order: 1;
+
+    @include onTablet {
+      order: 0;
+    }
+
+    // background-image: url(../images/team/team-background.png);
+    // background-repeat: no-repeat;
+    // background-position: center left;
+
   }
 
   &__text {
+
     font-family: $ff-common;
     font-size: 16px;
     line-height: 150%;
     color: $c-gray-text;
-    text-align: justify;
+    // text-align: justify;
 
-    flex-basis: 264px;
+    // flex-basis: 264px;
 
     &--first {
       margin-bottom: 20px;
@@ -48,10 +68,19 @@
   }
 
   &__photo {
+    order: 0;
     height: 240px;
+    width: 100%;
+    object-fit: cover;
+
+    align-self: center;
+
+    margin-bottom: 35px;
 
     @include onTablet {
       height: 255px;
+      width: max-content;
+      order: 1;
     }
 
     @include onDesktop {

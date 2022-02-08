@@ -1,0 +1,90 @@
+.buy {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__photos {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__photo-container {
+    display: flex;
+  }
+
+  &__photo {
+    display: block;
+  }
+
+  &__right {
+    align-self: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-image: url(../images/rhomb.png);
+  }
+
+  &__item {
+    padding-right: 30px;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__right {
+
+
+  }
+
+  &__title {
+    font-family: $ff-common;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 150%;
+    color: #333;
+  }
+
+  &__text {
+    font-family: $ff-common;
+    line-height: 150%;
+    font-weight: normal;
+    color: #828282;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: 1px solid $c-blue-accent;
+    align-self: start;
+    margin-bottom: 83px;
+  }
+
+  &__sale {
+    &-off {
+      font-family: $ff-main;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #eb5757;
+    }
+
+    &-order {
+      font-family: $ff-main;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #03839e;
+    }
+  }
+}
