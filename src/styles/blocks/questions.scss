@@ -2,18 +2,15 @@
   position: relative;
   background-image: url(../images/form-background.png);
   background-repeat: no-repeat;
-  background-position: left top;
-
-  @include onTablet {
-    background-image: url(../images/form-background.png);
-  }
-
+  
   &__stamp-img {
     position: absolute;
     top: -($stamp-width / 2) + 50px;
     right: -($stamp-height / 2) + 50px;
 
-    @include largeDesktop{
+    z-index: 1;
+
+    @include largeDesktop {
       top: -($stamp-width / 2);
       right: $stamp-height / 2;
     }
