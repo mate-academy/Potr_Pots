@@ -1,6 +1,4 @@
 .header {
-  position: relative;
-
   @include onTablet {
     background-image: url(../images/header/header-background-tablet.png);
     background-repeat: no-repeat;
@@ -16,22 +14,39 @@
   }
 
   &__logo {
-    font-family: Bebas Neue, cursive;
-    font-size: 2.25rem;
-    line-height: 2.25rem;
+    padding: 10px 0;
+    font-family: $ff-main;
+    font-size: 36px;
+    line-height: 36px;
     letter-spacing: 0.12rem;
-    color: $c-gray-title;
-    padding: 15px 0;
+    color: $c-grey-title;
+    outline: none;
+    border-bottom: 2px solid transparent;
+    @include hover(color, $c-blue-accent);
 
-    @include onTablet {
-      padding: 29px 0;
+    &:focus {
+      outline: none;
+      color: $c-blue-accent;
+      border-bottom: 2px solid $c-blue-accent;
     }
   }
 
   &__menu-icon {
-    display: block;
     width: 32px;
     height: 32px;
+
+    background-image: url(../images/icons/menu_icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    border: 2px solid transparent;
+    @include hover(border-bottom, 2px solid $c-blue-accent);
+    @include hover(border-left,2px solid $c-blue-accent);
+
+    &:focus {
+      border: 2px solid $c-blue-accent;
+    }
 
     @include onDesktop {
       display: none;
@@ -47,18 +62,29 @@
     }
   }
 
-  &__item {
-    margin: 0 12px;
-  }
-
   &__link {
-    font-family: "Quicksand", sans-serif;
-    color: $c-gray-text;
-    padding: 27px 20px;
+    padding: 27px 0;
+    font-family: $ff-common;
+    color: $c-grey-text;
+    border-bottom: 1px solid transparent;
+    @include hover(color, $c-blue-accent);
+
+    &:focus {
+      outline: none;
+      color: $c-blue-accent;
+      border-bottom: 1px solid $c-blue-accent;
+    }
   }
 
   &__basket-icon {
     display: none;
+    border: 2px solid transparent;
+    @include hover(border,2px solid $c-blue-accent);
+
+    &:focus {
+      outline: 2px solid $c-blue-accent;
+    }
+
     @include onDesktop {
       display: block;
     }
@@ -89,33 +115,20 @@
       flex-direction: row;
       justify-content: flex-end;
     }
-
-    @include onTablet {
-      flex-direction: row;
-      justify-content: flex-end;
-    }
   }
 
   &__title {
-    font-family: Bebas Neue, cursive;
-    font-size: 2.25rem;
-    line-height: 2.25rem;
+    font-family: $ff-main;
+    font-size: 36px;
+    line-height: 36px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: $c-blue-accent;
-    margin-bottom: 20px;
 
     @include onTablet {
       align-self: center;
-      font-size: 4rem;
-      line-height: 4rem;
-      position: relative;
-      margin-right: -70px;
-      margin-bottom: 0;
-    }
-
-    @include onDesktop {
-      position: static;
+      font-size: 64px;
+      line-height: 64px;
     }
   }
 
@@ -125,12 +138,10 @@
     object-fit: cover;
     background-position: center;
     order: 1;
-    margin-bottom: 25px;
 
     @include onTablet {
       order: 2;
       height: 284px;
-      margin-bottom: 0;
     }
 
     @include onDesktop {
@@ -139,43 +150,28 @@
   }
 
   &__price-block {
-    margin-bottom: 20px;
-
     @include onTablet {
       align-self: end;
       padding-right: 10px;
-      margin-bottom: 45px;
-    }
-
-    @include onDesktop {
-      margin-bottom: 50px;
     }
   }
 
   &__price {
     font-family: $ff-common;
-    font-size: 1.7rem;
+    font-size: 26px;
     font-weight: bold;
-    color: $c-gray-title;
+    color: $c-grey-title;
   }
 
   &__text {
     font-family: $ff-common;
-    font-size: 0.8rem;
-    line-height: 1.3rem;
+    font-size: 14px;
     font-weight: 700;
-    color: $c-gray-text;
+    color: $c-grey-text;
   }
 
   &__button-buy {
-    background-color: $c-yellow;
-    border: none;
     align-self: center;
-
-    @include onTablet {
-      border: 1px solid $c-blue-accent;
-      background: transparent;
-    }
   }
 
   &__wrapper-link-about {
@@ -186,9 +182,20 @@
   }
 
   &__link-about {
+    display: none;
+    padding: 2px;
     color: $c-blue-accent;
     font-family: $ff-common;
     font-size: 12px;
     margin-right: 11px;
+
+    &:focus,
+    &:hover {
+      outline: 1px solid $c-blue-accent;
+    }
+
+    @include onTablet {
+      display: block;
+    }
   }
 }
