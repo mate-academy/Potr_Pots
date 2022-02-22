@@ -1,8 +1,69 @@
 .page {
-  background: #f8f8f8;
-  overflow-x: hidden;
+  position: relative;
+  background: $c-grey-light;
+
+  &__side-links {
+    position: absolute;
+    display: none;
+    align-items: center;
+    gap: 10px;
+    transform: rotate(90deg);
+
+    @include onDesktop {
+      display: flex;
+    }
+
+    &--1 {
+      top: 820px;
+      right: 0;
+      z-index: 2;
+    }
+
+    &--2 {
+      bottom: 1900px;
+      right: 0;
+      z-index: 2;
+    }
+  }
+
+  &__side-link {
+    display: block;
+    font-family: $ff-main;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.22em;
+    color: #828282;
+  }
+
+  &__side-dash {
+    width: 75px;
+    height: 1px;
+    background: #828282;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    transform: translateX(100%);
+    transition: transform 500ms;
+    z-index: 100;
+
+    &:target {
+      transform: translateY(0);
+    }
+
+    &-close {
+      position: absolute;
+      bottom: 100px;
+      right: 0;
+      transform: rotate(-90deg);
+    }
+  }
 
   &__header {
+    position: relative;
     margin-bottom: 100px;
 
     @include onTablet {
@@ -12,15 +73,43 @@
     @include onDesktop {
       margin-bottom: 150px;
     }
-  }
 
-  &-neader__nav {
-    @include onTablet {
-      margin-bottom: 27px;
+    &-title {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        position: relative;
+        margin-right: -70px;
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        position: static;
+      }
     }
 
-    @include onDesktop {
-      margin-bottom: 55px;
+    &-item {
+      margin: 0 32px;
+    }
+
+    &-photo {
+      margin-bottom: 25px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &-price {
+      margin-bottom: 20px;
+
+      @include onTablet {
+        margin-bottom: 45px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 50px;
+      }
     }
   }
 
@@ -30,7 +119,7 @@
     right: -20%;
 
     @include onTablet {
-      bottom: -10%;
+      bottom: -5%;
       left: -7%;
     }
     @include onDesktop {
@@ -39,23 +128,37 @@
     }
   }
 
-  &__for-whom-cards {
-    margin-bottom: 112px;
+  &__for-whom {
+    &-card2 {
+      margin-bottom: 70px;
 
-    @include onTablet {
-      margin-bottom: 135px;
+      @include onTablet {
+        margin-bottom: 0;
+      }
     }
 
-    @include onDesktop {
-      margin-bottom: 150px;
+    &-question {
+      margin-bottom: 26px;
     }
-  }
 
-  &__for-whom-card {
-    margin-bottom: 70px;
+    &-span {
+      margin-bottom: 40px;
+    }
 
-    &:last-child {
-      margin-bottom: 0;
+    &-title {
+      margin-bottom: 28px;
+    }
+
+    &-cards {
+      margin-bottom: 112px;
+
+      @include onTablet {
+        margin-bottom: 135px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 150px;
+      }
     }
   }
 
@@ -77,35 +180,203 @@
     @include onTablet {
       margin-bottom: 150px;
     }
+
+    &-title {
+      margin-bottom: 50px;
+
+      @include onDesktop {
+        margin-bottom: 77px;
+      }
+    }
+
+    &-photo {
+      margin: 0 5px 40px;
+    }
+
+    &-subtitle {
+      margin-bottom: 22px;
+    }
   }
 
   &__team {
-    margin-bottom: 67px;
+    margin-bottom: 135px;
 
     @include onTablet {
-      margin-bottom: 245px;
+      margin-bottom: 200px;
     }
 
     @include onDesktop {
       margin-bottom: 226px;
     }
+
+    &-yellow-background {
+      position: absolute;
+      bottom: -35%;
+      left: 0;
+      z-index: -1;
+
+      @include onTablet {
+        bottom: 0;
+      }
+    }
   }
 
-  &__potr-size {
+  &__pots-size {
+    margin-bottom: 98px;
+
     @include onTablet {
-      margin: 114px 0 100px;
+      margin-bottom: 120px;
     }
 
     @include onDesktop {
-      margin: 110px 0 120px;
+      margin-bottom: 0;
+    }
+
+    &-title {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 56px;
+      }
+    }
+
+    &-subtitle {
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: -50px;
+      }
+    }
+
+    &-left-wrapper {
+      margin-bottom: 40px;
+    }
+
+    &-left-title {
+      margin-bottom: 20px;
+    }
+
+    &-text--bottom {
+      @include onDesktop {
+        margin-top: -50px;
+      }
+    }
+
+    &-schema-mobile {
+      margin: 30px 0;
+    }
+  }
+
+  &__materials {
+    position: relative;
+    margin-bottom: 280px;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      @include title-position($materials-title-height-mobile, 30px);
+
+      @include onTablet {
+        @include title-position($materials-title-height-tablet, 34px);
+      }
+
+      @include onDesktop {
+        @include title-position($materials-title-height-desktop, 75px);
+      }
+    }
+
+    &-content {
+      position: absolute;
+      bottom: -130%;
+      left: 50%;
+
+      @include onTablet {
+        position: static;
+      }
+    }
+  }
+
+  &__buy {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 94px;
+    }
+
+    @include onDesktop {
+      margin-top: -50px;
+      z-index: -1;
+    }
+
+    &-list {
+      margin-bottom: 75px;
     }
   }
 
   &__input {
     margin-bottom: 20px;
 
-    &:last-of-type {
+    &--textarea {
       margin-bottom: 60px;
+    }
+  }
+
+  &__message {
+    &-info {
+      margin-bottom: 21px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-stamp {
+      position: absolute;
+      top: -($stamp-width / 2) + 50px;
+      right: -($stamp-height / 2) + 50px;
+
+      @include largeDesktop {
+        top: -($stamp-width / 2);
+        right: $stamp-height / 2;
+      }
+    }
+  }
+
+  &__footer {
+    &-title {
+      margin-bottom: 10px;
+    }
+
+    &-icons {
+      margin-bottom: 41px;
+
+      @include onTablet {
+        margin-bottom: 84px;
+      }
+    }
+
+    &-link {
+      margin-right: 85px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include onTablet {
+        margin-right: 80px;
+      }
+
+      @include onDesktop {
+        margin-right: 85px;
+      }
     }
   }
 }
