@@ -1,17 +1,13 @@
 .features {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   &__cards {
     display: flex;
     flex-direction: column;
-
+    
     @include onTablet {
       flex-direction: row;
     }
   }
-
+  
   &__card {
     display: flex;
     flex-direction: column;
@@ -24,12 +20,6 @@
     line-height: 56px;
     letter-spacing: 0.15em;
     color: $c-blue-accent;
-
-    margin-bottom: 50px;
-
-    @include onDesktop {
-      margin-bottom: 77px;
-    }
   }
 
   &__outline-letters {
@@ -42,15 +32,14 @@
     align-items: center;
     display: block;
     height: 218px;
-    margin-bottom: 37px;
-    object-fit: contain;
+    object-fit: cover;
 
     @include onTablet {
-      height: 260px;
+      height: 250px;
     }
 
     @include onDesktop {
-      height: 370px;
+      height: 300px;
     }
   }
 
@@ -61,15 +50,12 @@
     text-align: center;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: $c-gray-title;
-
-    margin-bottom: 22px;
+    color: $c-grey-title;
   }
 
   &__description {
     font-family: $ff-common;
-    line-height: 150%;
     text-align: center;
-    color: $c-gray-text;
+    color: $c-grey-text;
   }
 }
