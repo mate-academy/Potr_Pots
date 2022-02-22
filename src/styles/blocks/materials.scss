@@ -1,82 +1,86 @@
 .materials {
-  position: relative;
-
   &__container {
-    height: 100vh;
-    background: linear-gradient(
-        180deg,
-        #f8f8f8 0%,
-        rgba(255, 255, 255, 0) 30.93%
-      ),
-      url(../images/materials/materials1.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    min-height: 250px;
+    @include background('../images/materials/materials-mobile.png')
+
+    @include onTablet {
+      @include background('../images/materials/materials-tablet.png')
+      height: 577px;
+    }
+
+    @include onDesktop {
+      height: 1080px;
+      @include background('../images/materials/materials-desktop.png')
+    }
   }
 
   &__title {
     font-family: $ff-main;
     color: $c-blue-accent;
-    font-size: 58px;
-    line-height: 58px;
     letter-spacing: 0.15em;
 
     @include onTablet {
-      font-size: 80px;
-      line-height: 80px;
       letter-spacing: 0.12em;
-    }
-
-    @include onDesktop {
-      position: absolute;
-      top: -139px;
-      font-size: 139px;
-      line-height: 139px;
     }
   }
 
   &__content {
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 165px;
+    width: 100%;
+    transform: translate(-50%, -50%);
 
-    &-top {
+    @include onTablet {
+      width: 50%;
+      padding-bottom: 72px;
+      transform: translate(0, 0);
     }
 
+    @include onDesktop{
+      padding-bottom: 165px;
+    }
+
+    &-top,
     &-bottom {
+      background-color: transparent;
     }
 
     &-title {
+      display: none;
       font-family: $ff-common;
       font-size: 20px;
       line-height: 150%;
-      color: $c-gray-title;
+      color: $c-grey-title;
+
+      @include onTablet {
+        display: block;
+      }
     }
 
     &-text {
+      display: none;
       font-family: $ff-common;
       line-height: 150%;
-      color: $c-gray-text;
+      color: $c-grey-text;
+
+      @include onTablet {
+        display: block;
+      }
     }
 
     &-info {
+      min-height: 237px;
+      width: 303px;
       font-family: $ff-common;
       line-height: 150%;
-      color: #f8f8f8;
+      color: $c-grey-light;
       padding: 35px 45px;
-      height: 254px;
-      width: 303px;
       background: rgba(0, 0, 0, 0.45);
       mix-blend-mode: normal;
       box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
       backdrop-filter: blur(34px);
-
-      @include onTablet {
-        height: 237px;
-      }
     }
   }
 }
