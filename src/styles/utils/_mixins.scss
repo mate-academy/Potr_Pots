@@ -5,6 +5,26 @@
   }
 }
 
+@mixin background($url) {
+  background: linear-gradient(
+    180deg,
+    #f8f8f8 0%,
+    rgba(255, 255, 255, 0) 30.93%
+  ),
+    url($url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin title-position ($size, $left) {
+  position: absolute;
+  left: $left;
+  top: -$size;
+  font-size: $size;
+  line-height: $size;
+}
+
 @mixin screen-498 {
   @media (min-width: 498px) {
     @content;
