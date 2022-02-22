@@ -1,10 +1,12 @@
 .footer {
+  background: $c-grey-light;
+
   &__content {
-    padding: 0 10px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    padding: 0 10px 50px;
 
     @include onTablet {
       align-items: stretch;
@@ -15,24 +17,38 @@
 
   &__title {
     display: none;
-    font-family: Bebas Neue, cursive;
+    font-family: $ff-main;
     font-size: 24px;
     line-height: 24px;
-    margin-bottom: 11px;
     text-transform: uppercase;
-    color: #000;
+    color: $c-black;
 
     @include onTablet {
       display: block;
     }
+
+    &--about {
+      color: $c-black;
+      outline: none;
+      @include hover(color, $c-blue-accent);
+
+      &:focus {
+        color: $c-blue-accent;
+      }
+    }
   }
 
   &__info {
-    line-height: 150%;
-    color: #000;
+    color: $c-black;
 
     &--address {
       display: none;
+      outline: none;
+      @include hover(color, $c-blue-accent);
+
+      &:focus {
+        color: $c-blue-accent;
+      }
 
       @include onTablet {
         display: block;
@@ -49,37 +65,29 @@
   }
 
   &__center-title {
-    font-family: Bebas Neue, cursive;
+    font-family: $ff-main;
     font-size: 36px;
-    line-height: 150%;
-    text-align: center;
     letter-spacing: 0.15em;
+    text-align: center;
     text-transform: uppercase;
-    color: #000;
-  }
+    color: $c-black;
+    transition: transform 500ms;
+    @include hover(color, $c-blue-accent);
 
-  &__icons {
-    margin-bottom: 41px;
-
-    @include onTablet {
-      margin-bottom: 84px;
+    &:focus {
+      outline: none;
+      color: $c-blue-accent;
+      transform: $link-scale;
     }
   }
 
   &__link-icon {
     display: inline-block;
-    margin-right: 85px;
+    @include hover(color, $c-blue-accent);
 
-    &:last-child {
-      margin-right: 0;
-    }
-
-    @include onTablet {
-      margin-right: 80px;
-    }
-
-    @include onDesktop {
-      margin-right: 85px;
+    &:focus {
+      outline: 2px solid $c-blue-accent;
+      border-radius: 5px;
     }
   }
 }
