@@ -3,10 +3,35 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-family: $ff-common;
   padding: 12px 67px 12px 62px;
+
+  font-family: $ff-common;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-  color: #121212;
+
+  outline: none;
+  border: 1px solid transparent;
+  color: $c-dark-grey;
+  background-color: $c-yellow;
+
+  transition: border 500ms, background-color 500ms;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $c-blue-accent;
+    background-color: transparent;
+  }
+
+  @include onTablet {
+    border: 1px solid $c-blue-accent;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      background-color: $c-yellow;
+      border: 1px solid transparent;
+    }
+  }
 }
