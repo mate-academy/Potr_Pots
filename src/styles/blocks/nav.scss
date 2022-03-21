@@ -1,0 +1,43 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 44px;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  &__link {
+    @extend %s3;
+    color: $gray2;
+    padding: 10px;
+
+    @include tablet {
+      color: $gray-light;
+      padding: 7px 0;
+    }
+
+    &--basket {
+      position: relative;
+
+      &::after {
+        content: "0";
+        position: absolute;
+        top: 5px;
+        right: -20px;
+
+        display: grid;
+        place-content: center;
+        @extend %counter;
+
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: $red;
+      }
+    }
+  }
+}

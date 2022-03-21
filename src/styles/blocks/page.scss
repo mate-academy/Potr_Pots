@@ -1,3 +1,27 @@
 .page {
-  color: #000;
+  overflow-x: hidden;
+
+  &__body {
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  &__header {
+    margin-bottom: 150px;
+  }
+
+  &__burger-menu {
+    position: absolute;
+    top: -100vh;
+    right: 0;
+    z-index: 5;
+    opacity: 0;
+
+    transition: $transition-main;
+
+    &:target {
+      top: 0;
+      opacity: 1;
+    }
+  }
 }

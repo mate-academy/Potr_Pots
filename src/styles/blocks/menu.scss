@@ -1,0 +1,44 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 78px;
+  @include mobile {
+    height: 68px;
+  }
+
+  &__logo {
+    @extend %h2;
+    letter-spacing: 0.06em;
+    color: $gray1;
+  }
+
+  &__nav {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__shopping {
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__burger-icon {
+    display: none;
+
+    padding: 9px;
+    height: 50px;
+    width: 50px;
+
+    @include tablet {
+      display: block;
+    }
+  }
+}
