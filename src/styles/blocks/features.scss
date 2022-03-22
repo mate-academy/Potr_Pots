@@ -1,0 +1,63 @@
+.features {
+
+  &__title {
+    margin-bottom: 76px;
+    @extend %h1;
+    color: $blue;
+    margin-right: -0.15em;
+
+    @include tablet {
+      margin-bottom: 52px;
+    }
+    @include mobile {
+      margin-bottom: 50px;
+    }
+  }
+  &__line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 70px;
+    }
+  }
+  &__card {
+    width: 40%;
+    max-width: 370px;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &__img-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 36px;
+  }
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    // height: auto;
+    // aspect-ratio: 1 / 1;
+    // object-fit: cover;
+  }
+  &__card-title {
+    margin-bottom: 22px;
+    @extend %h3;
+    color: $gray1;
+    text-align: center;
+  }
+  &__about {
+    @extend %s3;
+    color: $gray2;
+    text-align: center;
+  }
+}
