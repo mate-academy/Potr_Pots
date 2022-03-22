@@ -1,3 +1,22 @@
 .for-whom {
-  color: #fff;
+  &__title {
+    @extend %h2;
+    color: $gray1;
+    margin-bottom: 34px;
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+  &__card-line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+
+    @include tablet {
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0;
+    }
+  }
 }

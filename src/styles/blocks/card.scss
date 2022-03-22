@@ -1,0 +1,248 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+
+  &--square {
+    flex-direction: row;
+    justify-content: start;
+    gap: 200px;
+    margin-bottom: 80px;
+
+    @include tablet {
+      margin-bottom: 100px;
+    }
+    @include mobile {
+      margin-bottom: 70px;
+    }
+  }
+
+  &--small {
+    padding: 105px 0 0 100px;
+    margin-bottom: 80px;
+
+    @include tablet {
+      margin-bottom: 100px;
+      padding: 0;
+    }
+    @include mobile {
+      margin-bottom: 70px;
+    }
+  }
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 76px;
+  }
+
+  &__img {
+    object-fit: cover;
+    @include mobile {
+      display: none;
+    }
+  }
+  &--square &__img {
+    width: 45%;
+    max-width: 500px;
+    height: 500px;
+    @include tablet {
+      max-width: 284px;
+      height: 284px;
+    }
+  }
+  &--small &__img {
+    width: 83%;
+    max-width: 300px;
+    height: 417px;
+    @include tablet {
+      width: 45%;
+      order: 2;
+    }
+  }
+  &--big &__img {
+    width: 100%;
+    max-width: 470px;
+    height: 670px;
+
+    @include tablet {
+      width: 45%;
+      max-width: 284px;
+      height: 404px;
+    }
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+  }
+  &--big &__text-block {
+    max-width: 470px;
+    @include tablet {
+      max-width: 340px;
+      justify-content: center;
+    }
+  }
+
+  &__benefit {
+    position: relative;
+    width: fit-content;
+    @extend %s3;
+    color: $gray1;
+    &::before {
+      content: "*";
+      position: absolute;
+      @extend %h3;
+      color: $black;
+      left: -43px;
+      top: 4px;
+      @include tablet {
+        left: -23px;
+      }
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+  &--small &__benefit {
+    @include tablet {
+      align-self: end;
+    }
+  }
+
+  $mob-num-left: 19px;
+  $mob-num-top: -76px;
+
+  &__number {
+    position: absolute;
+    width: 15px;
+
+    @extend %h2;
+    letter-spacing: normal;
+    color: $gray1;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -19px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      display: inline-block;
+      width: 19px;
+      height: 44px;
+      background-image: url(../images/whom/slash.svg);
+    }
+  }
+  &--square &__number {
+    top: 0;
+    left: -83px;
+    @include tablet {
+      left: -35px;
+    }
+    @include mobile {
+      left: $mob-num-left;
+      top: $mob-num-top;
+    }
+  }
+  &--small &__number {
+    left: 19px;
+    top: -76px;
+    @include mobile {
+      left: $mob-num-left;
+      top: $mob-num-top;
+    }
+  }
+  &--big &__number {
+    top: 0;
+    left: -76px;
+    @include tablet {
+      left: -35px;
+    }
+    @include mobile {
+      left: $mob-num-left;
+      top: $mob-num-top;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    color: $gray1;
+    position: relative;
+    margin-bottom: 11px;
+    max-width: 370px;
+    @include tablet {
+      max-width: 340px;
+    }
+
+    &::after {
+      content: "";
+      position: relative;
+      left: -10px;
+      top: 10px;
+
+      display: inline-block;
+      width: 19px;
+      height: 44px;
+      background-image: url(../images/whom/slash.svg);
+
+      @include mobile {
+        display: none;
+      }
+    }
+    @include mobile {
+      margin-bottom: 28px;
+    }
+  }
+  &--square &__title {
+    margin-top: 39px;
+    @include tablet {
+      margin-top: 25px;
+    }
+    @include mobile {
+      margin-top: 76px;
+    }
+  }
+  &--small &__title {
+    margin-top: 112px;
+    @include tablet {
+      margin-top: 96px;
+    }
+    @include mobile {
+      margin-top: 70px;
+    }
+  }
+  &--big &__title {
+    margin-left: 95px;
+    margin-top: 39px;
+    @include tablet {
+      margin-left: 0;
+      margin-top: 17px;
+    }
+    @include mobile {
+      margin-top: 82px;
+    }
+  }
+
+  &__about {
+    @extend %s3;
+    color: $gray2;
+    max-width: 370px;
+    @include tablet {
+      max-width: 340px;
+    }
+  }
+  &--square &__about {
+    @include tablet {
+      max-width: 280px;
+    }
+  }
+  &--big &__about {
+    margin-left: 95px;
+    @include tablet {
+      margin-left: 0;
+    }
+  }
+}
