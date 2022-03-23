@@ -1,3 +1,103 @@
+$margin-img: calc(100vw * 0.75);
+
 .team {
-  color: #fff;
+
+  &__title {
+    @extend %h1;
+    color: $gray1;
+    margin-bottom: 150px;
+    @include tablet {
+      margin-bottom: 189px;
+    }
+    @include mobile {
+      margin-bottom: calc(#{$margin-img} + 95px);
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 60px;
+    position: relative;
+
+    @include tablet {
+      align-items: flex-start;
+      gap: 48px;
+    }
+  }
+  &__about {
+    @extend %s3;
+    color: $gray2;
+    max-width: 310px;
+
+    @include tablet {
+      margin-top: 50px;
+    }
+    @include mobile {
+      margin-top: 0;
+    }
+  }
+  &__img {
+    width: 60%;
+    max-width: 677px;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height); /* stylelint-disable-line */
+
+    @include tablet {
+      width: 50%;
+      max-width: 340px;
+    }
+    @include mobile {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+
+      top: calc((#{$margin-img} + 35px) * -1);
+      width: 100vw;
+      max-width: none;
+    }
+  }
+  &__bg-rectangle {
+    width: 1120px;
+    height: 420px;
+
+    z-index: -1;
+    position: absolute;
+    left: -730px;
+    top: -30px;
+    @include tablet {
+      left: -830px;
+      top: -70px;
+    }
+    @include mobile {
+      left: -500px;
+      top: 96px;
+    }
+  }
+  &__bg-text {
+    @extend %bg-text;
+    position: absolute;
+    &--first {
+      top: -124px;
+      left: -61px;
+
+      @include tablet {
+        top: -160px;
+        left: -78px;
+      }
+    }
+    &--second {
+      right: -130px;
+      bottom: -210px;
+      @include tablet {
+        font-size: 219px;
+        right: -70px;
+        bottom: -110px;
+      }
+    }
+    @include mobile {
+      display: none;
+    }
+
+  }
 }
