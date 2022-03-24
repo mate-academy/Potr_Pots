@@ -1,103 +1,116 @@
-$margin-img: calc(100vw * 0.75);
-
 .team {
-
+  position: relative;
+  background-image: url(../images/header/Rectangle.svg);
+  background-repeat: no-repeat;
+  background-position: -670px 170px;
+  background-size: 1120px;
+  @include tablet {
+    background-position: -900px 170px;
+  }
+  @include mobile {
+    background-position: left -620px bottom -170px;
+  }
   &__title {
     @extend %h1;
     color: $gray1;
     margin-bottom: 150px;
+    word-wrap: break-word;
     @include tablet {
-      margin-bottom: 189px;
+      margin-bottom: 190px;
     }
     @include mobile {
-      margin-bottom: calc(#{$margin-img} + 95px);
+      margin-bottom: 60px;
     }
   }
-  &__content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 60px;
+  &__container {
     position: relative;
-
+    display: grid;
+    grid-template-columns: 316px auto;
+    place-content: start start;
+    gap: 76px;
     @include tablet {
-      align-items: flex-start;
-      gap: 48px;
+      grid-template-columns: minmax(1%, 310px) auto;
+      gap: 46px;
+    }
+    @include s-tablet {
+      gap: 30px;
+    }
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+      gap: 35px;
     }
   }
   &__about {
     @extend %s3;
     color: $gray2;
-    max-width: 310px;
+    margin-top: 130px;
 
     @include tablet {
       margin-top: 50px;
     }
-    @include mobile {
+    @include s-tablet {
       margin-top: 0;
+    }
+    @include mobile {
+      margin-bottom: 70px;
+    }
+  }
+  &__img-container {
+    width: 100%;
+    position: relative;
+    @include mobile {
+      height: calc(100vw * 0.75);
+      order: -1;
     }
   }
   &__img {
-    width: 60%;
-    max-width: 677px;
+    width: 100%;
+    max-width: 676px;
     height: auto;
     aspect-ratio: attr(width) / attr(height); /* stylelint-disable-line */
 
     @include tablet {
-      width: 50%;
       max-width: 340px;
     }
     @include mobile {
       position: absolute;
+      top: 0;
       left: 50%;
       transform: translateX(-50%);
-
-      top: calc((#{$margin-img} + 35px) * -1);
       width: 100vw;
       max-width: none;
-    }
-  }
-  &__bg-rectangle {
-    width: 1120px;
-    height: 420px;
-
-    z-index: -1;
-    position: absolute;
-    left: -730px;
-    top: -30px;
-    @include tablet {
-      left: -830px;
-      top: -70px;
-    }
-    @include mobile {
-      left: -500px;
-      top: 96px;
     }
   }
   &__bg-text {
     @extend %bg-text;
     position: absolute;
+    @include mobile {
+      display: none;
+    }
     &--first {
       top: -124px;
       left: -61px;
-
       @include tablet {
         top: -160px;
         left: -78px;
       }
-    }
-    &--second {
-      right: -130px;
-      bottom: -210px;
-      @include tablet {
-        font-size: 219px;
-        right: -70px;
-        bottom: -110px;
+      @include s-tablet {
+        left: auto;
+        right: 0;
       }
     }
-    @include mobile {
-      display: none;
+    &--second {
+      right: 0;
+      bottom: -210px;
+      @include tablet {
+        right: -30px;
+        bottom: -110px;
+      }
+      @include s-tablet {
+        right: 0;
+        bottom: -90px;
+      }
     }
-
   }
 }

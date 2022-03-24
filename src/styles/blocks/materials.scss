@@ -1,3 +1,58 @@
 .materials {
-  color: #fff;
+  background: url(../images/materials/materials3.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain;
+  height: 1160px;
+  @include tablet {
+    height: 775px;
+  }
+  @include mobile {
+    height: 370px;
+  }
+
+  &__flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @extend %bg-title;
+    color: $blue;
+    word-wrap: break-word;
+  }
+
+  &__text-container {
+    align-self: flex-end;
+    margin-top: -100px;
+    max-width: 470px;
+
+    @include s-desktop {
+      margin-top: 0;
+    }
+    @include tablet {
+      margin-top: -80px;
+      max-width: 340px;
+    }
+    @include s-tablet {
+      margin-top: 0;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__text-title {
+    margin-bottom: 12px;
+    @extend %s3-title;
+    color: $gray2;
+  }
+  &__about {
+    @extend %s3;
+    color: $gray2;
+
+    &--bold {
+      font-family: "Proxima Nova Bold", sans-serif;
+    }
+  }
 }

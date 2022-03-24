@@ -1,3 +1,176 @@
 .benefits {
-  color: #fff;
+  position: relative;
+  display: grid;
+  align-content: center;
+  height: 100vh;
+  @include tablet {
+    height: fit-content;
+  }
+  // Bg cards
+  &__card-container {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__card {
+    position: absolute;
+    transform-origin: top left;
+    width: 270px;
+    height: 300px;
+    padding: 20px;
+    background-color: $white;
+    &--position-1 {
+      z-index: 1;
+      top: 332px;
+      left: -146px;
+    }
+    &--position-2 {
+      transform: rotate(-15.03deg);
+      top: 20px;
+      left: -50px;
+    }
+    &--position-3 {
+      transform: rotate(-15.2deg);
+      top: 292px;
+      left: 94px;
+    }
+    &--position-4 {
+      transform: rotate(-28.9deg);
+      top: -32px;
+      left: 224px;
+    }
+    &--position-5 {
+      transform: rotate(-15.8deg);
+      top: 624px;
+      left: 16px;
+    }
+    &--position-6 {
+      transform: rotate(-30.43deg);
+      top: 588px;
+      left: 278px;
+    }
+  }
+  &__card-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1; /* stylelint-disable-line */
+    object-fit: cover;
+    margin-bottom: 8px;
+  }
+  &__card-sign {
+    @extend %card-sign;
+    color: $gray4;
+  }
+  // Section grid
+  &__grid {
+    display: grid;
+    grid-template-columns: 520px auto;
+    grid-template-rows: repeat(3, auto);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      align-items: center;
+      gap: 30px 20px;
+    }
+    @include mobile {
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(2, auto);
+      gap: 60px;
+    }
+  }
+  // Benefits
+  &__benefit-container {
+    margin-bottom: 60px;
+    grid-area: 1 / 2 / 2 / 3;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 45px;
+
+    @include tablet {
+      margin-bottom: 0;
+      grid-area: 1 / 1 / 2 / 2;
+      gap: 20px;
+    }
+    @include mobile {
+      grid-area: 1 / 1 / 2 / 2;
+      gap: 30px;
+    }
+  }
+  &__benefit {
+    width: fit-content;
+  }
+  &__benefit-title {
+    position: relative;
+    margin-bottom: 4px;
+    @extend %s1;
+    color: $gray1;
+    @include mobile {
+      font-size: 32px;
+    }
+    &::before {
+      position: absolute;
+      left: -18px;
+      top: 18px;
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-image: url(../images/benefits/Romb.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  &__benefit-text {
+    @extend %s3;
+    color: $gray4;
+  }
+  &__button {
+    margin-bottom: 70px;
+    @include tablet {
+      margin-bottom: 32px;
+    }
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+  // Discount
+  &__discount-container {
+    grid-area: 3 / 2 / 4 / 3;
+    @include tablet {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    @include mobile {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+  }
+  &__discount-value {
+    margin-bottom: 5px;
+    margin-left: 100px;
+    @extend %h2;
+    color: $red;
+    @include tablet {
+      margin-left: 0;
+    }
+    @include mobile {
+      margin-bottom: 12px;
+    }
+  }
+  &__discount-about {
+    margin-left: 100px;
+    @extend %h3;
+    color: $blue;
+    @include tablet {
+      margin-left: 0;
+    }
+  }
 }
