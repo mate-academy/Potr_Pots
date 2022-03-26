@@ -1,5 +1,15 @@
 .features {
-
+  position: relative;
+  // Side text
+  &__side-text {
+    top: -250px;
+    transform: rotate(180deg);
+    left: $side-text-offset-desktop;
+    @include tablet {
+      display: none;
+    }
+  }
+  // Content
   &__title {
     margin-bottom: 76px;
     @extend %h1;
@@ -19,6 +29,12 @@
     @include mobile {
       grid-template-columns: repeat(1, 1fr);
       gap: 70px;
+    }
+  }
+  &__card {
+    transition: $transition-main;
+    &:hover {
+      transform: translateY(-20px);
     }
   }
   &__img {

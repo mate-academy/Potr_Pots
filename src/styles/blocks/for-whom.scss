@@ -1,22 +1,43 @@
 .for-whom {
+  position: relative;
+  // Side text
+  &__side-text {
+    top: -65px;
+    right: $side-text-offset-desktop;
+
+    @include tablet {
+      top: -115px;
+      right: $side-text-offset-tablet;
+    }
+    @include mobile {
+      top: 880px;
+      right: $side-text-offset-mobile;
+    }
+  }
+  // Content
   &__title {
     @extend %h2;
     color: $gray1;
     margin-bottom: 34px;
     @include mobile {
-      margin-bottom: 20px;
+      margin-bottom: 100px;
     }
   }
-  &__card-line {
-    display: flex;
-    flex-direction: row;
+  &__card-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(10%, 470px));
+    grid-template-rows: repeat(2, auto);
     justify-content: space-between;
-    gap: 60px;
+    gap: 80px 55px;
 
     @include tablet {
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 0;
+      grid-template-columns: auto;
+      grid-template-rows: repeat(3, auto);
+      align-content: start;
+      row-gap: 100px;
+    }
+    @include mobile {
+      row-gap: 140px;
     }
   }
 }

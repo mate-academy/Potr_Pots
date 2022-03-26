@@ -1,32 +1,39 @@
+$mob-num-left: 19px;
+$mob-num-top: -76px;
+$num-left-offset-desktop: -84px;
+$num-left-offset-tablet: -34px;
+$num-left-slash-offset: 17px;
+$num-top-offset-mobile: -74px;
+
 .card {
   display: flex;
   flex-direction: column;
-  gap: 39px;
+  gap: 38px;
 
   &--square {
+    grid-area: 1 / 1 / 2 / 3;
     flex-direction: row;
     justify-content: start;
     gap: 200px;
-    margin-bottom: 80px;
 
     @include tablet {
-      margin-bottom: 100px;
-    }
-    @include mobile {
-      margin-bottom: 70px;
+      grid-area: 1 / 1 / 2 / 2;
     }
   }
-
   &--small {
-    padding: 105px 0 0 100px;
-    margin-bottom: 80px;
+    grid-area: 2 / 1 / 3 / 2;
+    margin: 100px 0 0 100px;
 
     @include tablet {
-      margin-bottom: 100px;
-      padding: 0;
+      grid-area: 2 / 1 / 3 / 2;
+      margin: 0;
     }
-    @include mobile {
-      margin-bottom: 70px;
+  }
+  &--big {
+    grid-area: 2 / 2 / 3 / 3;
+    place-self: end;
+    @include tablet {
+      grid-area: 3 / 1 / 4 / 2;
     }
   }
 
@@ -39,144 +46,135 @@
 
   &__img {
     object-fit: cover;
+    transition: $transition-main;
+
+    &--square {
+      width: 45%;
+      max-width: 500px;
+      height: 500px;
+      @include tablet {
+        max-width: 284px;
+        height: 284px;
+      }
+    }
+    &--small {
+      width: 83%;
+      max-width: 300px;
+      height: 417px;
+      @include tablet {
+        width: 45%;
+        order: 2;
+      }
+    }
+    &--big {
+      width: 100%;
+      max-width: 470px;
+      height: 670px;
+      @include tablet {
+        width: 45%;
+        max-width: 284px;
+        height: 404px;
+      }
+    }
     @include mobile {
       display: none;
     }
-  }
-  &--square &__img {
-    width: 45%;
-    max-width: 500px;
-    height: 500px;
-    @include tablet {
-      max-width: 284px;
-      height: 284px;
+    &:hover {
+      transform: scale(0.98);
+      box-shadow: 0 0 15px 10px $gray5;
     }
   }
-  &--small &__img {
-    width: 83%;
-    max-width: 300px;
-    height: 417px;
-    @include tablet {
-      width: 45%;
-      order: 2;
-    }
-  }
-  &--big &__img {
-    width: 100%;
-    max-width: 470px;
-    height: 670px;
-
-    @include tablet {
-      width: 45%;
-      max-width: 284px;
-      height: 404px;
-    }
-  }
-
   &__text-block {
     display: flex;
     flex-direction: column;
     position: relative;
     justify-content: center;
   }
-  &--big &__text-block {
-    max-width: 470px;
-    @include tablet {
-      max-width: 340px;
-      justify-content: center;
-    }
-  }
-
   &__benefit {
     position: relative;
     width: fit-content;
     @extend %s3;
     color: $gray1;
+
     &::before {
       content: "*";
       position: absolute;
       @extend %h3;
       color: $black;
-      left: -43px;
+      left: -40px;
       top: 4px;
       @include tablet {
-        left: -23px;
+        left: -20px;
       }
     }
     @include mobile {
       display: none;
     }
-  }
-  &--small &__benefit {
-    @include tablet {
-      align-self: end;
+    &--square {
+      margin-bottom: 38px;
+      @include tablet {
+        margin-bottom: 24px;
+      }
+    }
+    &--small {
+      margin-bottom: 112px;
+      @include tablet {
+        margin-bottom: 96px;
+        align-self: end;
+      }
+    }
+    &--big {
+      margin-bottom: 38px;
+      @include tablet {
+        margin-bottom: 18px;
+      }
     }
   }
-
-  $mob-num-left: 19px;
-  $mob-num-top: -76px;
-
   &__number {
     position: absolute;
-    width: 15px;
+    display: inline-block;
 
     @extend %h2;
     letter-spacing: normal;
     color: $gray1;
+
     &::before {
       content: "";
       position: absolute;
-      left: -19px;
-      top: 50%;
-      transform: translateY(-50%);
+      left: $num-left-slash-offset * -1;
 
-      display: inline-block;
       width: 19px;
       height: 44px;
       background-image: url(../images/whom/slash.svg);
     }
-  }
-  &--square &__number {
-    top: 0;
-    left: -83px;
-    @include tablet {
-      left: -35px;
-    }
-    @include mobile {
-      left: $mob-num-left;
-      top: $mob-num-top;
-    }
-  }
-  &--small &__number {
-    left: 19px;
-    top: -76px;
-    @include mobile {
-      left: $mob-num-left;
-      top: $mob-num-top;
-    }
-  }
-  &--big &__number {
-    top: 0;
-    left: -76px;
-    @include tablet {
-      left: -35px;
-    }
-    @include mobile {
-      left: $mob-num-left;
-      top: $mob-num-top;
-    }
-  }
 
+    &--square {
+      left: $num-left-offset-desktop;
+      @include tablet {
+        left: $num-left-offset-tablet;
+      }
+    }
+    &--small {
+      left: $num-left-slash-offset;
+      top: $num-top-offset-mobile;
+    }
+    &--big {
+      left: $num-left-offset-desktop;
+      @include tablet {
+        left: $num-left-offset-tablet;
+      }
+    }
+    @include mobile {
+      left: $num-left-slash-offset;
+      top: $num-top-offset-mobile;
+    }
+  }
   &__title {
     @extend %h2;
     color: $gray1;
     position: relative;
     margin-bottom: 11px;
     max-width: 370px;
-    @include tablet {
-      max-width: 340px;
-    }
-
     &::after {
       content: "";
       position: relative;
@@ -192,40 +190,19 @@
         display: none;
       }
     }
+    @include tablet {
+      max-width: 340px;
+    }
     @include mobile {
       margin-bottom: 28px;
     }
-  }
-  &--square &__title {
-    margin-top: 39px;
-    @include tablet {
-      margin-top: 25px;
-    }
-    @include mobile {
-      margin-top: 76px;
+    &--big {
+      margin-left: 100px;
+      @include tablet {
+        margin-left: 0;
+      }
     }
   }
-  &--small &__title {
-    margin-top: 112px;
-    @include tablet {
-      margin-top: 96px;
-    }
-    @include mobile {
-      margin-top: 70px;
-    }
-  }
-  &--big &__title {
-    margin-left: 95px;
-    margin-top: 39px;
-    @include tablet {
-      margin-left: 0;
-      margin-top: 17px;
-    }
-    @include mobile {
-      margin-top: 82px;
-    }
-  }
-
   &__about {
     @extend %s3;
     color: $gray2;
@@ -233,16 +210,17 @@
     @include tablet {
       max-width: 340px;
     }
-  }
-  &--square &__about {
-    @include tablet {
-      max-width: 280px;
+
+    &--square {
+      @include tablet {
+        max-width: 280px;
+      }
     }
-  }
-  &--big &__about {
-    margin-left: 95px;
-    @include tablet {
-      margin-left: 0;
+    &--big {
+      margin-left: 95px;
+      @include tablet {
+        margin-left: 0;
+      }
     }
   }
 }

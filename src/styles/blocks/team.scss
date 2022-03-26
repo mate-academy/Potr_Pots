@@ -10,6 +10,19 @@
   @include mobile {
     background-position: left -620px bottom -170px;
   }
+  // Side text
+  &__side-text {
+    visibility: hidden;
+    bottom: -300px;
+    @include tablet {
+      visibility: visible;
+      right: $side-text-offset-tablet;
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+  // Content
   &__title {
     @extend %h1;
     color: $gray1;
@@ -85,6 +98,8 @@
   &__bg-text {
     @extend %bg-text;
     position: absolute;
+    transition: $transition-main;
+
     @include mobile {
       display: none;
     }
@@ -99,6 +114,9 @@
         left: auto;
         right: 0;
       }
+      &:hover {
+        transform: translateX(2%);
+      }
     }
     &--second {
       right: 0;
@@ -110,6 +128,9 @@
       @include s-tablet {
         right: 0;
         bottom: -90px;
+      }
+      &:hover {
+        transform: translateX(-2%);
       }
     }
   }

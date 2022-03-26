@@ -1,8 +1,10 @@
 .page {
-  overflow-x: hidden;
-
   &__body {
+    overflow-x: hidden;
     background-color: $gray-light;
+    &--scroll-off {
+      overflow: hidden;
+    }
   }
   &__header {
     margin-bottom: 150px;
@@ -15,15 +17,17 @@
   }
   &__burger-menu {
     position: absolute;
-    top: -100vh;
+    top: 0;
     right: 0;
     z-index: 5;
     opacity: 0;
 
+    transform: scaleX(0);
+    transform-origin: center right;
     transition: $transition-main;
 
     &:target {
-      top: 0;
+      transform: scaleX(1);
       opacity: 1;
     }
   }
@@ -61,7 +65,7 @@
       margin-bottom: 110px;
     }
     @include mobile {
-      margin-bottom: 76px;
+      margin-bottom: 278px; //76
     }
   }
   &__size {

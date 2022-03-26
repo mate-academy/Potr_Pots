@@ -1,7 +1,9 @@
+$button-width: 238px;
+
 .button {
   height: 48px;
   width: 100%;
-  max-width: 238px;
+  max-width: $button-width;
   border: 1px solid $blue;
   display: flex;
   justify-content: center;
@@ -9,23 +11,31 @@
   gap: 16px;
   @extend %button;
   color: $gray3;
+
   transition: $transition-main;
+  box-shadow: inset 0 0 0 0 $blue;
+
   @include mobile {
-    border-color: $yellow;
+    box-shadow: none;
     background-color: $yellow;
+    border-color: $yellow;
   }
   &:hover {
     background-color: $blue;
     color: $white;
+    box-shadow: inset $button-width 0 0 0 $blue;
+
     @include mobile {
+      box-shadow: none;
       color: $gray3;
-      background-color: $white;
       border-color: $gray1;
+      background-color: $white;
     }
   }
   &--secondary {
     border-color: $gray5;
     background-color: $white;
+
     &:hover {
       color: $red;
       border-color: $red;
