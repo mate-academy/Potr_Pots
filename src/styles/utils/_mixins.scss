@@ -3,6 +3,17 @@
   line-height: $lineHeight;
 }
 
+@mixin mediaMaxSize($screenSize: $tabletSize) {
+  @media (max-width: $screenSize) {
+    @content;
+  }
+}
+
+@mixin iconSize($height, $width) {
+  height: $height;
+  width: $width;
+}
+
 /* that may be useful */
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;

@@ -1,10 +1,10 @@
-.nav {
-  display: flex;
+.menu {
+  display: none;
   justify-content: space-between;
   align-items: center;
 
   @include mediaMaxSize {
-    display: none;
+    display: flex;
   }
 
   @extend %paddingScreenSize;
@@ -16,19 +16,10 @@
     color: $c-darkGray1;
   }
 
-  &__list {
-    display: flex;
-    column-gap: 64px;
-  }
+  &__hamburger {
+    @include iconSize(32px, 32px);
 
-  &__link {
-    color: $c-darkGray2;
-  }
-
-  &__shop-icon {
-    @include iconSize (24px, 24px);
-
-    background-image: url("../images/shop-icon.svg");
+    background-image: url("../images/menu_icon.svg");
     background-size: contain;
     background-position: center;
   }

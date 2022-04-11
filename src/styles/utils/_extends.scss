@@ -1,4 +1,11 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+%paddingScreenSize {
+  padding: 24px $paddingDeskNote;
+
+  @include mediaMaxSize {
+    padding: 30px $paddingTablet;
+  }
+
+  @include mediaMaxSize($mobileSize) {
+    padding: 16px $paddingMobile;
+  }
 }
