@@ -1,8 +1,18 @@
 .header {
+  position: relative;
+
   max-width: $maxWidth;
   min-width: $minWidth;
+  // since the pic gets smaller height must be fixed
+  // for the verticle p
+  height: 640px;
+
+  @include mediaMaxSize($mobileSize) {
+    height: unset;
+  }
 
   &__main-wrapper {
+    position: relative;
     display: flex;
     justify-content: end;
 
@@ -19,7 +29,16 @@
   }
 
   &__main {
+    position: relative;
     width: 50%;
+
+    @include mediaMaxSize($mobileSize) {
+      display: flex;
+      flex-direction: column;
+
+      width: unset;
+      row-gap: 20px;
+    }
   }
 
   &__image {
@@ -56,11 +75,76 @@
   }
 
   &__text-wrapper {
-    padding-right: 64px;
+    position: absolute;
+    top: 244px;
+    left: 300px;
+
+    @include mediaMaxSize($notebookSize) {
+      left: 200px;
+    }
+
+    @include mediaMaxSize($tabletBreakpoint) {
+      left: 160px
+    }
+
+    @include mediaMaxSize($mobileBreakpoint) {
+      left:104px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      position: unset;
+    }
   }
 
   &__price {
     @include fontParams(26px, 32px);
     color: $c-darkGray;
+  }
+
+  &__text {
+    @include fontParams(14px);
+    color: $c-darkGrayLight;
+  }
+
+  &__button {
+    position: absolute;
+    top: 360px;
+    left: 25%;
+
+    @include mediaMaxSize($mobileBreakpoint) {
+      left: 0;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      position: unset;
+    }
+  }
+
+  &__verticle {
+    &-text {
+      position: absolute;
+      bottom: 0;
+      left: $paddingDeskNote;
+
+      max-height: max-content;
+      height: 100%;
+
+      writing-mode: vertical-lr;
+      @include fontParams(12px);
+      color: $c-turquoise;
+
+      @include mediaMaxSize {
+        left: $paddingTablet;
+      }
+
+      @include mediaMaxSize($mobileBreakpoint) {
+        left: unset;
+        right: $paddingMobile;
+      }
+    }
+
+    &-arrow {
+      padding-top: 8px;
+    }
   }
 }
