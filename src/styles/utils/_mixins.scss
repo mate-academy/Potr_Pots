@@ -4,3 +4,20 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin fontParam($fontSize, $fontWeight) {
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+
+@mixin forDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin forTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

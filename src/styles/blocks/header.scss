@@ -1,0 +1,68 @@
+.header {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+  &__menu {
+    display: none;
+
+    @include forDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 30px;
+  }
+
+  &__title-link {
+    text-decoration: none;
+    color: $c-grey1;
+    @include fontParam(36px, $bold);
+    line-height: 36px;
+    padding: 16px 30px;
+    font-family: "Bebas Neue", cursive;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $c-grey2;
+    @include fontParam(16px, $regular);
+    line-height: 24px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $c-turquoise;
+    }
+  }
+
+  &__button {
+    display: block;
+    height: 32px;
+    width: 32px;
+    background-image: url(/images/menu_icon.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include forDesktop {
+      background-image: url(/images/cart.png);
+      transition: transform 0.3s, filter 0.3s;
+
+      &:hover {
+        filter: drop-shadow(5px 5px 5px black);
+        transform: scale(1.5);
+      }
+    }
+  }
+}
