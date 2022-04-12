@@ -1,0 +1,51 @@
+.button-buy {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  padding: 14px 64px;
+
+  @include fontParams(14px, 150%);
+  color: $c-blackish;
+  text-transform: uppercase;
+
+  border: 1px solid $c-turquoise;
+  background-color: #fff;
+
+  transition: color $transitionDuration,
+    background-color $transitionDuration,
+    border-color $transitionDuration;
+
+  &__arrow {
+    padding: 5px 15px;
+
+    background-image: url("../images/Arrow_black.svg");
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: $c-turquoise;
+  }
+
+  &:hover &__arrow {
+    background-image: url("../images/Arrow_white.svg");
+  }
+
+  &--mobile {
+    background-color: $c-yellow;
+    border-color: $c-yellow;
+
+    &:hover {
+      color: $c-blackish;
+      background-color: #fff;
+      border-color: $c-blackish;
+    }
+
+    //i am not sure about this
+    //i couldn't find how to write with &
+    &:hover .button-buy__arrow {
+      background-image: url("../images/Arrow_black.svg");
+    }
+  }
+}
