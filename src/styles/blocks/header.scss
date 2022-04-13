@@ -3,12 +3,25 @@
 
   max-width: $maxWidth;
   min-width: $minWidth;
+  overflow: hidden;
+  
   // since the pic gets smaller height must be fixed
   // for the verticle p
   height: 640px;
 
   @include mediaMaxSize($mobileSize) {
     height: unset;
+  }
+
+  &__yellow-bg {
+    position: absolute;
+    top: 0;
+    right: 25%;
+    z-index: -99;
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
   }
 
   &__main-wrapper {
