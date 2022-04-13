@@ -1,10 +1,5 @@
 .page {
   background-color: $c-gray-light;
-  padding: 16px 32px 48px;
-
-  @include forDesktop {
-    padding: 24px 120px 64px;
-  }
 
   &__container {
     max-width: 1200px;
@@ -22,5 +17,14 @@
     &:target {
       transform: translateX(0);
     }
+  }
+}
+
+.page__rectangle {
+  @include forTablet {
+    // padding: 16px 32px 48px;
+    background-image: url(/images/rectangle.png);
+    background-repeat: no-repeat;
+   
   }
 }

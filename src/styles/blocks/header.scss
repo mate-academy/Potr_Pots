@@ -3,7 +3,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 30px 48px;
 
+    @include forTablet {
+      padding: 24px 42px 64px;
+    }
+
+    @include forDesktop {
+      padding: 24px 120px 64px;
+    }
   }
 
   &__menu {
@@ -22,16 +30,17 @@
   }
 
   &__item {
-    margin-right: 30px;
+    margin-right: 56px;
   }
 
   &__title-link {
     text-decoration: none;
     color: $c-grey1;
-    @include fontParam(36px, $bold);
+    font-size: 36px;
     line-height: 36px;
-    padding: 16px 30px;
+    // padding: 16px 30px;
     font-family: "Bebas Neue", cursive;
+    letter-spacing: 1px;
   }
 
   &__link {
