@@ -14,3 +14,27 @@
   max-width: $maxWidth;
   min-width: $minWidth;
 }
+
+%singleLinesOnTitles {
+  position: absolute;
+  top: -64px;
+
+  @include mediaMaxSize {
+    top: -48px;
+  }
+
+  @include mediaMaxSize($mobileBreakpoint) {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+
+    @include iconSize(11px, 11px);
+    background-image: url("../images/asterisk.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

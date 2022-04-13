@@ -1,4 +1,5 @@
 .for-whom {
+  position: relative;
   padding: 152px $paddingDeskNote 0;
 
   @include mediaMaxSize {
@@ -7,6 +8,39 @@
 
   @include mediaMaxSize($mobileSize) {
     padding: 104px $paddingMobile 0;
+  }
+
+/* #sectionStart durable */
+  &__verticle-text {
+    position: absolute;
+    top: 128px;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    max-width: max-content;
+
+    @include fontParams(12px, 12px);
+    color: $c-lightGray;
+
+    transform: rotate(90deg);
+
+    @include mediaMaxSize {
+      top: 0;
+      right: -32px;
+    }
+
+    @include mediaMaxSize($mobileBreakpoint) {
+      display: none;
+    }
+  }
+
+  &__verticle-line {
+    width: 64px;
+    height: 1px;
+    background-color: $c-lightGray;
   }
 
   &__durable {
@@ -26,72 +60,8 @@
     width: 100%;
     object-fit: contain;
   }
+/* #sectionEnd durable */
 
-  &__text-wrapper {
-    display: flex;
-    justify-content: space-between;
-    column-gap: 20px;
-  }
+  
 
-  &__number {
-    position: relative;
-    padding: 0 16px;
-    @include fontParams(36px);
-
-    &-slash {
-      position: absolute;
-      left: 0;
-    }
-  }
-
-  &__content-wrapper {
-    position: relative;
-    align-self: center;
-  }
-
-  &__text-single {
-    position: absolute;
-    top: -64px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: -40px;
-
-      @include iconSize(11px, 11px);
-      background-image: url("../images/asterisk.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
-
-    }
-  }
-
-  &__text-title {
-    position: relative;
-    display: inline-block;
-    max-width: 464px;
-
-    @include fontParams(36px);
-    letter-spacing: 0.15em;
-
-    &-slash {
-      position: relative;
-      top: 16px;
-    }
-  }
-
-  &__text {
-    max-width: 370px;
-    margin-top: 8px;
-
-    @include fontParams(16px);
-    color: $c-darkGrayLight;
-
-    @include  mediaMaxSize {
-      max-width: 340px;
-    }
-    @include mediaMaxSize($mobileSize) {
-      max-width: unset;
-    }
-  }
 }

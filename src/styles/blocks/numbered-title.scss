@@ -1,0 +1,59 @@
+.numbered-title {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 16px;
+
+  @include mediaMaxSize {
+    column-gap: 8px;
+  }
+
+  &__title {
+    position: relative;
+    display: inline-block;
+    max-width: 464px;
+
+    @include fontParams(36px);
+    letter-spacing: 0.15em;
+
+    &-slash {
+      position: relative;
+      top: 8px;
+    }
+  }
+
+  &__number {
+    position: relative;
+    padding: 0 16px;
+    @include fontParams(36px);
+
+    &-slash {
+      position: relative;
+      left: -8px;
+      top: 8px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    align-self: center;
+  }
+
+  &__text-single {
+    @extend %singleLinesOnTitles;
+  }
+
+  &__text {
+    max-width: 370px;
+    margin-top: 8px;
+
+    @include fontParams(16px);
+    color: $c-darkGrayLight;
+
+    @include  mediaMaxSize {
+      max-width: 340px;
+    }
+    @include mediaMaxSize($mobileSize) {
+      max-width: unset;
+    }
+  }
+}
