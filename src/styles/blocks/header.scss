@@ -14,6 +14,14 @@
     padding: 6px 30px 16px;
   }
 
+ &__nav {
+   display: none;
+
+   @include forDesktop {
+    display: block;
+   }
+ }
+
   &__logo {
     @include fontParams(36px, 100%, 400, 0.06em);
     color: $greyFont;
@@ -24,6 +32,10 @@
     display: inline-block;
     height: 48px;
     width: 48px;
+
+    @include forDesktop{
+      display:none;
+    }
   }
 
   &__burger-button {
@@ -39,31 +51,56 @@
     cursor: pointer;
   }
 
+  &__top {
+    justify-content: space-between;
+    margin: 0;
+    @include forDesktop {
+      display: flex;
+      margin: 21px 135px 85px 166px;
+    }
+  }
   &__photo {
     width: 100%;
     height: 100%;
+
+    @include forDesktop{
+      height: 500px;
+      width: 500px;
+    }
   }
 
   &__image {
     display: block;
     width: 100%;
+
+    @include forDesktop {
+    }
   }
 
   &__buy {
+    display: flex;
     position: relative;
-    margin: 25px auto;
+    margin: 0 auto;
+    justify-content: center;
+
+    @include forDesktop {
+      margin: 0;
+    }
   }
 
   &__buy-wrapper {
     margin: 25px 30px 102px;
   }
 
-
   &__title {
     margin-bottom: 21px;
-    @include fontParams(36px, 36px, 400, 0.155em);
+    @include fontParams(36px, 36px, 400, 0.15em);
     color: $turquiseFont;
     text-transform: uppercase;
+
+    @include forDesktop {
+      @include fontParams(48px, 48px, 400, 0.15em);
+    }
   }
 
   &__empty {
@@ -75,6 +112,10 @@
     margin-bottom: 1px;
     font-family: "Proxima Nova", sans-serif;
     @include fontParams (26px, 32px, 700, normal);
+
+    @include forDesktop {
+      text-align: right;
+    }
 
   }
 
@@ -91,6 +132,17 @@
       color: $turquiseFont;
       @include fontParams(12px, 150%, 400, normal);
       transform: rotate(90deg);
+
+      @include forDesktop{
+        top: 200px;
+        right: 500px;
+        width: max-content;
+      }
+    }
+
+    @include forDesktop {
+      text-align: right;
+      margin-bottom: 50px;
     }
   }
 
@@ -98,17 +150,53 @@
     //display: flex;
     padding: 15px 101px 13px 62px;
     width: 238px;
-    background-color: #FFE339;
+    background-color: #ffe339;
     color: #121212;
     font-family: "Proxima Nova", sans-serif;
     @include fontParams(14px, 20px, 700, normal);
     text-transform: uppercase;
 
-    &::after{
+    &::after {
       position: absolute;
       content: url("/images/header/arrow.svg");
       transform: translateX(100%);
     }
+
+    @include forDesktop {
+      margin: 49px 0 0 100px;
+    }
+  }
+  &__basket {
+    display: none;
+    height: 48px;
+    width: 48px;
+
+    @include forDesktop{
+      display: inline-block;
+    }
   }
 
+  &__basket-button {
+    margin: 8px 10px 9px;
+    height: 30px;
+    width: 30px;
+
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-image: url("/images/header/basket.svg");
+    cursor: pointer;
+  }
+
+  &__down {
+    display: flex;
+    max-width: 1400px;
+    @include forDesktop{
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin: 0 135px 150px 266px;
+    }
+  }
 }
