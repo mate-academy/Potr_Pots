@@ -1,23 +1,21 @@
 .header {
   width: 100%;
-  background-color: #f8f8f8;
-
   &__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
+
   }
 
   &__menu {
     display: flex;
     justify-content: space-between;
-    margin: 6px 30px 16px;
+    padding: 6px 30px 16px;
   }
 
   &__logo {
-    @include fontParams(36px, 100%, 400);
-    letter-spacing: 0.06em;
+    @include fontParams(36px, 100%, 400, 0.06em);
     color: $greyFont;
     margin-top: 9px;
   }
@@ -43,9 +41,74 @@
 
   &__photo {
     width: 100%;
+    height: 100%;
   }
 
   &__image {
+    display: block;
     width: 100%;
   }
+
+  &__buy {
+    position: relative;
+    margin: 25px auto;
+  }
+
+  &__buy-wrapper {
+    margin: 25px 30px 102px;
+  }
+
+
+  &__title {
+    margin-bottom: 21px;
+    @include fontParams(36px, 36px, 400, 0.155em);
+    color: $turquiseFont;
+    text-transform: uppercase;
+  }
+
+  &__empty {
+    color: transparent;
+    -webkit-text-stroke: 0.68px $turquiseFont;
+  }
+
+  &__price {
+    margin-bottom: 1px;
+    font-family: "Proxima Nova", sans-serif;
+    @include fontParams (26px, 32px, 700, normal);
+
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    font-family: "Proxima Nova", sans-serif;
+    @include fontParams (14px, 150%, 700, normal);
+
+    &::after {
+      position: absolute;
+      bottom: 50px;
+      right: -100px;
+      content: "More about  POTR POTS" url("/images/header/arrow_2.svg");
+      color: $turquiseFont;
+      @include fontParams(12px, 150%, 400, normal);
+      transform: rotate(90deg);
+    }
+  }
+
+  &__button {
+    //display: flex;
+    padding: 15px 101px 13px 62px;
+    width: 238px;
+    background-color: #FFE339;
+    color: #121212;
+    font-family: "Proxima Nova", sans-serif;
+    @include fontParams(14px, 20px, 700, normal);
+    text-transform: uppercase;
+
+    &::after{
+      position: absolute;
+      content: url("/images/header/arrow.svg");
+      transform: translateX(100%);
+    }
+  }
+
 }
