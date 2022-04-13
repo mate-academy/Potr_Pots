@@ -1,0 +1,97 @@
+.for-whom {
+  padding: 152px $paddingDeskNote 0;
+
+  @include mediaMaxSize {
+    padding: 64px $paddingTablet 0;
+  }
+
+  @include mediaMaxSize($mobileSize) {
+    padding: 104px $paddingMobile 0;
+  }
+
+  &__durable {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 32px;
+
+    margin-top: 32px;
+    @include mediaMaxSize {
+      margin-top: 24px;
+    }
+  }
+
+  &__durable-img {
+    max-width: 500px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+  }
+
+  &__number {
+    position: relative;
+    padding: 0 16px;
+    @include fontParams(36px);
+
+    &-slash {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  &__content-wrapper {
+    position: relative;
+    align-self: center;
+  }
+
+  &__text-single {
+    position: absolute;
+    top: -64px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -40px;
+
+      @include iconSize(11px, 11px);
+      background-image: url("../images/asterisk.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+
+    }
+  }
+
+  &__text-title {
+    position: relative;
+    display: inline-block;
+    max-width: 464px;
+
+    @include fontParams(36px);
+    letter-spacing: 0.15em;
+
+    &-slash {
+      position: relative;
+      top: 16px;
+    }
+  }
+
+  &__text {
+    max-width: 370px;
+    margin-top: 8px;
+
+    @include fontParams(16px);
+    color: $c-darkGrayLight;
+
+    @include  mediaMaxSize {
+      max-width: 340px;
+    }
+    @include mediaMaxSize($mobileSize) {
+      max-width: unset;
+    }
+  }
+}
