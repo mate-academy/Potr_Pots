@@ -1,46 +1,30 @@
 .for-whom {
   position: relative;
-  padding: 152px $paddingDeskNote 0;
+  padding: 0 $paddingDeskNote;
 
   @include mediaMaxSize {
-    padding: 64px $paddingTablet 0;
+    padding: 0 $paddingTablet;
   }
 
   @include mediaMaxSize($mobileSize) {
-    padding: 104px $paddingMobile 0;
+    padding: 0 $paddingMobile;
   }
 
-/* #sectionStart durable */
+  /* #sectionStart durable */
   &__verticle-text {
     position: absolute;
-    top: 128px;
+    top: -48px;
     right: 0;
-
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
-
-    max-width: max-content;
-
-    @include fontParams(12px, 12px);
-    color: $c-lightGray;
 
     transform: rotate(90deg);
 
     @include mediaMaxSize {
-      top: 0;
       right: -32px;
     }
 
     @include mediaMaxSize($mobileBreakpoint) {
       display: none;
     }
-  }
-
-  &__verticle-line {
-    width: 64px;
-    height: 1px;
-    background-color: $c-lightGray;
   }
 
   &__durable {
@@ -60,8 +44,91 @@
     width: 100%;
     object-fit: contain;
   }
-/* #sectionEnd durable */
 
-  
+  &__durable-numbered-title {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 16px;
 
+    @include mediaMaxSize {
+      column-gap: 8px;
+    }
+  }
+  /* #sectionEnd durable */
+
+  &__pots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    align-items: center;
+
+    &--second {
+      justify-self: end;
+    }
+
+    @include mediaMaxSize {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+
+      &--second {
+        justify-self: center;
+      }
+    }
+  }
+
+  &__pots-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    &--second {
+      max-width: 470px;;
+    }
+
+    @include mediaMaxSize {
+      flex-direction: row-reverse;
+
+      &--second {
+        flex-direction: row;
+        column-gap: 24px;
+        max-width: unset;
+      }
+    }
+  }
+
+  &__pots-first-img {
+    align-self: center;
+    max-width: 300px;
+    width: 100%;
+  }
+
+  &__pots-first-numbered-title {
+    position: relative;
+    margin: 104px auto 0;
+  }
+
+  &__pots-category {
+    @extend %singleLinesOnTitles;
+  }
+
+  &__pots-second-img {
+    align-self: flex-end;
+    max-width: 470px;
+    width: 100%;
+  }
+
+  &__pots-second-numbered-title {
+    margin: 104px auto 0;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 16px;
+
+    @include mediaMaxSize {
+      column-gap: 8px;
+    }
+  }
+
+  &__category-wrapper {
+    position: relative;
+  }
 }
