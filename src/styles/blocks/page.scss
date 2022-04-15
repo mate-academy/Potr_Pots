@@ -11,13 +11,22 @@
 
   &__article {
     margin-top: 152px;
+    padding: 0 $paddingDeskNote;
 
     @include mediaMaxSize {
-      margin-top: 64px;
+      margin-top: 104px;
+      padding: 0 $paddingTablet;
     }
 
     @include mediaMaxSize($mobileSize) {
       margin-top: 104px;
+      padding: 0 $paddingMobile;
+    }
+
+    &--first {
+      @include mediaMaxSize {
+        margin-top: 64px;
+      }
     }
   }
 
