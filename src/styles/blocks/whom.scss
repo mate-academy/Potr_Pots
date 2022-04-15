@@ -1,17 +1,66 @@
-.whom{
+.whom {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
 
-  &__image-1,
-  &__image-2,
-  &__image-3
-  {
+  &__wrapper {
+    margin: 0 30px;
+  }
+
+  @include forDesktop {
+    margin: 0 135px 150px;
+  }
+
+  &__title {
+    @include fontParams(36px, 150%, 400, 0.15em);
+    margin-bottom: 26px;
+    }
+
+  &__number-title {
+    @include fontParams(36px, 54px, 400, 0.15em);
+    margin-bottom: 28px;
+  }
+
+  &__text {
+    display: none;
+  }
+
+  &__block-1 {
+  display: inline;
+  @include forDesktop{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__block-2 {
+  }
+
+  &__block-3 {
+  }
+
+  }
+
+  &__p-text {
+    @include fontParams(16px, 150%, 300, normal);
+    font-family: "Proxima Nova", sans-serif;
+  }
+  &__bot {
+  display: block;
+  @include forDesktop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  }
+  &__img-1,
+  &__img-2,
+  &__img-3 {
     display: none;
 
     @include forDesktop {
       display: block  ;
     }
   }
-
-
 
 }
