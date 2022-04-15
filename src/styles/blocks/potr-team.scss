@@ -1,15 +1,37 @@
 .potr-team {
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
+
+  padding-bottom: $padMargSectionSeperationDesktop;
+
+  @include mediaMaxSize($mobileSize) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   &__title {
     @include fontParams(58px, 58px);
+
+    @include mediaMaxSize($mobileSize) {
+      padding-left: $paddingMobile;
+      padding-right: $paddingMobile;
+    }
   }
 
   &__yellow-bg {
     position: absolute;
     top: 176px;
     right: 70%;
+
+    //to prevent the extension in size after some point
+    @include mediaMaxContentWidth {
+      right: unset;
+      left: -60%;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
   }
 
   &__martin,
@@ -20,27 +42,69 @@
     font-size: 20vw;
     letter-spacing: $letterSpacingTitle;
     @extend %turqoiseBorderWhiteText;
+
+    @include mediaMaxContentWidth {
+      font-size: 288px;
+    }
+
+    @include mediaMaxSize {
+      font-size: 25vw;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
   }
 
   &__martin {
     top: 36px;
-    left: 60px;
+    right: 30vw;
+
+    @include mediaMaxContentWidth {
+      right: 464px;
+    }
+
+    @include mediaMaxSize {
+      right: 25vw;
+    }
   }
 
   &__andy {
-    top: 500px;
-    right: 0;
+    top: 42vw;
+    right: -1vw;
+
+    @include mediaMaxContentWidth {
+      top: 664px;
+    }
+
+    @include mediaMaxSize {
+      right: -4vw;
+    }
+
+    @include mediaMaxSize($tabletBreakpoint) {
+      top: 55vw;
+    }
   }
 
   &__content {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    column-gap: 48px;
+    grid-template-columns: 336px 1fr;
+    column-gap: 64px;
 
-    padding-top: 136px;
+    padding-top: 10vw;
 
-    @include mediaMaxSize {
-      column-gap: 48px;
+    @include mediaMaxContentWidth {
+      padding-top: 136px;
+    }
+
+    @include mediaMaxSize($tabletBreakpoint) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      grid-template-columns: unset;
+      grid-template-rows: 2;
+      padding-top: 64px;
     }
   }
 
@@ -49,17 +113,27 @@
 
     @include fontParams(16px);
     color: $c-darkGrayLight;
+
+    @include mediaMaxContentWidth {
+      padding-top: 136px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      grid-row: 2;
+      padding-right: $paddingMobile;
+      padding-left: $paddingMobile;
+    }
   }
 
   &__image {
     position: relative;
     z-index: -2;
+    align-self: center;
 
-
-
-    object-fit: contain;
-    object-position: top;
     width: 100%;
-    // height: auto;
+
+    @include mediaMaxSize($mobileSize) {
+      grid-row: 1;
+    }
   }
 }
