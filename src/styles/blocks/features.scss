@@ -1,12 +1,27 @@
 .features {
   position: relative;
 
+  &__verticle-text {
+    position: absolute;
+    top: -188px;
+    left: 0;
+
+    transform: rotate(-90deg);
+
+    @include mediaMaxSize {
+      right: -32px;
+    }
+
+    @include mediaMaxSize($mobileBreakpoint) {
+      display: none;
+    }
+  }
+
   &__title {
     @include fontParams(58px, 58px);
-    letter-spacing: 0.15em;
+    letter-spacing: $letterSpacingTitle;
     white-space: nowrap;
-    -webkit-text-stroke: 1px $c-turquoise;
-    color: #fff;
+    @extend %turqoiseBorderWhiteText;
 
     &--blue {
       color: $c-turquoise;
@@ -41,7 +56,7 @@
 
     @include fontParams(24px, 24px);
     text-align: center;
-    letter-spacing: 0.15em;
+    letter-spacing: $letterSpacingTitle;
     text-transform: uppercase;
     color: $c-darkGray;
   }

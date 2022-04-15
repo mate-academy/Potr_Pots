@@ -1,0 +1,65 @@
+.potr-team {
+  position: relative;
+  // overflow: hidden;
+
+  &__title {
+    @include fontParams(58px, 58px);
+  }
+
+  &__yellow-bg {
+    position: absolute;
+    top: 176px;
+    right: 70%;
+  }
+
+  &__martin,
+  &__andy {
+    position: absolute;
+    z-index: -1;
+
+    font-size: 20vw;
+    letter-spacing: $letterSpacingTitle;
+    @extend %turqoiseBorderWhiteText;
+  }
+
+  &__martin {
+    top: 36px;
+    left: 60px;
+  }
+
+  &__andy {
+    top: 500px;
+    right: 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 48px;
+
+    padding-top: 136px;
+
+    @include mediaMaxSize {
+      column-gap: 48px;
+    }
+  }
+
+  &__text {
+    padding-top: 12vw;
+
+    @include fontParams(16px);
+    color: $c-darkGrayLight;
+  }
+
+  &__image {
+    position: relative;
+    z-index: -2;
+
+
+
+    object-fit: contain;
+    object-position: top;
+    width: 100%;
+    // height: auto;
+  }
+}

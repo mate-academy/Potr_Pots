@@ -14,7 +14,10 @@
     position: absolute;
     top: 0;
     right: 25%;
-    z-index: -99;
+
+    @include mediaMaxSize($notebookSize) {
+      right: 20%;
+    }
 
     @include mediaMaxSize($mobileSize) {
       display: none;
@@ -73,10 +76,9 @@
     z-index: 1;
 
     @include fontParams(64px, 64px);
-    letter-spacing: 0.15em;
+    letter-spacing: $letterSpacingTitle;
     white-space: nowrap;
-    -webkit-text-stroke: 1px $c-turquoise;
-    color: #fff;
+    @extend %turqoiseBorderWhiteText;
 
     @include mediaMaxSize($mobileSize) {
       @include fontParams(36px,36px);
