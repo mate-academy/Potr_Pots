@@ -1,0 +1,192 @@
+.benefits {
+
+  @include forTablet {
+    margin-top: 120px;
+  }
+
+  @include forDesktop {
+    margin-top: -50px;
+  }
+  &__content {
+    margin: 0 30px;
+
+    @include forDesktop {
+      margin: 0;
+      display: flex;
+      justify-content: initial;
+    }
+  }
+
+  &__container-photo {
+    max-width: 700px;
+    // height: 900px;
+    flex-wrap: wrap;
+    // position: relative;
+    overflow: hidden;
+
+    display: none;
+
+    @include forDesktop {
+      display: flex;
+    }
+  }
+
+  &__photo-card {
+    // position: absolute;
+    width: 270px;
+    height: 300px;
+    background-color: #fff;
+    z-index: -1;
+
+    &:nth-child(1) {
+      transform: translate(-10%, -10%) rotate(-15deg);
+    }
+
+    &:nth-child(2) {
+      transform: translate(1%, -40%) rotate(-29deg);
+    }
+
+    &:nth-child(3) {
+      transform: translate(-50%, 1%) rotate(1deg);
+    }
+
+    &:nth-child(4) {
+      transform: translate(-45%, -20%) rotate(-15deg);
+    }
+
+    &:nth-child(5) {
+      transform: translate(0%, -10%) rotate(-16deg);
+      z-index: -2;
+    }
+
+    &:nth-child(6) {
+      transform: translate(10%, -35%) rotate(-30deg);
+    }
+  }
+
+  &__photo {
+    margin: 20px 20px 0;
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+  }
+
+  &__photo-text {
+    display: block;
+    margin: 0 20px;
+    font-size: 11px;
+    line-height: 131.5%;
+    color: #828282;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 32px;
+    line-height: 150%;
+    color: $c-grey1;
+    font-family: "Proxima Nova", Arial, sans-serif;
+
+    @include forTablet {
+      font-size: 36px;
+    }
+
+    &::before {
+      content: "";
+      background-image: url(/images/benefits_square.png);
+      margin-right: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: inline-block;
+      width: 11px;
+      height: 22px;
+    }
+  }
+
+  &__column-right {
+    margin-bottom: 100px;
+    @include forTablet {
+      display: flex;
+      column-gap: 50px;
+      align-items: center;
+    }
+    @include forDesktop {
+      display: flex;
+      flex-direction: column;
+      margin-left: -100px;
+      margin-top: 150px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__container-text {
+    margin-bottom: 60px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-family: "Proxima Nova", Arial, sans-serif;
+    color: #828282;
+  }
+
+  &__promo-sale {
+    display: block;
+    margin: 40px 0 15px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    color: $c-red;
+  }
+
+  &__promo-text {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+  }
+}
+
+.benefits__text-last {
+  margin-bottom: 0;
+}
+
+.benefits__button {
+  transform: translateX(0);
+}
+
+@include forDesktop {
+  .benefit {
+    display: flex;
+  }
+  .benefit-2 {
+    margin-left: 32px;
+  }
+
+  .benefits__button {
+    margin-left: -80px;
+  }
+}
+
+.benefits__photo-1 {
+  transform: rotate(8deg);
+}
+
+.benefits__photo-2 {
+  transform: translate(-10%, 10%) rotate(28deg);
+}
+
+.benefits__photo-4 {
+  transform: rotate(15deg);
+}
+
+.benefits__photo-5 {
+  transform: translate(0%, -5%) rotate(15deg);
+  z-index: -2;
+}
+
+.benefits__photo-6 {
+  transform: translate(-10%, 10%) rotate(30deg);
+}
