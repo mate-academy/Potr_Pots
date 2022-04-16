@@ -1,3 +1,92 @@
 .materials {
-  // don't accept without a code
+  position: relative;
+  padding-top: 40px;
+
+  &__verticle-text {
+    display: none;
+
+    @include mediaMaxSize {
+      display: flex;
+      position: absolute;
+      top: 80px;
+      right: -40px;
+      transform: rotate(90deg);
+
+      &--second {
+        right: unset;
+        top: 280px;
+        left: -40px;
+      }
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+  }
+
+  &__title {
+    padding: 0 $paddingDeskNote;
+    margin-bottom: -100px;
+
+    font-size: 10vw;
+    line-height: 100%;
+    letter-spacing: 0.12em;
+    color: $c-turquoise;
+
+    @include mediaMaxContentWidth {
+      font-size: 140px;
+    }
+
+    @include mediaMaxSize {
+      margin-bottom: -140px;
+
+      @include fontParams(80px, 80px);
+      padding: 40px $paddingTablet;
+    }
+  }
+
+  &__text-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 200px;
+
+    padding: 0 $paddingDeskNote;
+    margin-bottom: -12%;
+
+    @include mediaMaxSize {
+      grid-template-columns: 1fr 2fr;
+      padding: 40px $paddingTablet;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include fontParams(16px, 24px);
+    color: $c-darkGrayLight;
+    max-width: 440px;
+
+    @include mediaMaxSize {
+      max-width: 360px;
+    }
+
+    &-title {
+      @include fontParams(20px);
+    }
+
+    &-bold {
+      @include fontParams(18px, 24px);
+      color: #000;
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: -1;
+
+    width: 100%;
+    object-fit: contain;
+  }
 }

@@ -20,8 +20,8 @@
 
   &__yellow-bg {
     position: absolute;
-    top: 176px;
-    right: 70%;
+    top: 20%;
+    right: 69%;
 
     //to prevent the extension in size after some point
     @include mediaMaxContentWidth {
@@ -29,8 +29,13 @@
       left: -60%;
     }
 
+    @include mediaMaxSize {
+      right: 74%;
+    }
+
     @include mediaMaxSize($mobileSize) {
-      display: none;
+      top: 65%;
+      right: 0;
     }
   }
 
@@ -70,19 +75,20 @@
   }
 
   &__andy {
-    top: 42vw;
-    right: -1vw;
+    top: 70%;
+    right: -2%;
 
     @include mediaMaxContentWidth {
-      top: 664px;
+      top: 576px;
     }
 
     @include mediaMaxSize {
-      right: -4vw;
+      top: 65%;
+      right: -4%;
     }
 
     @include mediaMaxSize($tabletBreakpoint) {
-      top: 55vw;
+      top: 55%;
     }
   }
 
@@ -131,6 +137,7 @@
     align-self: center;
 
     width: 100%;
+    max-width: 672px;
 
     @include mediaMaxSize($mobileSize) {
       grid-row: 1;
