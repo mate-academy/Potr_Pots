@@ -1,0 +1,78 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 36px;
+
+  &__actions {
+    padding: 0 30px;
+    margin-bottom: 16px;
+
+    @include onTablet {
+      padding: 0;
+      margin-bottom: 56px;
+    }
+
+    @include onDesctop {
+      margin-bottom: 85px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    letter-spacing: 0.06em;
+    color: #333;
+    text-decoration: none;
+  }
+
+  &__nav-list {
+    display: none;
+
+    @include onDesctop {
+      display: flex;
+      padding: 0;
+    }
+  }
+
+  &__nav-item {
+    list-style: none;
+    margin-right: 64px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    font-family: "Urbanist";
+    color: #4f4f4f;
+  }
+
+  &__icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__icon-shop {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(../images/icons/bagforsale.svg);
+    }
+  }
+
+  &__icon--menu {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../images/icons/menu_icon.svg);
+
+    @include onDesctop {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,309 @@
+.shopping-bag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-family: "Urbanist";
+  padding: 200px 12px 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: translateX(-100%);
+
+  @include onTablet {
+    position: fixed;
+    height: 100vh;
+  }
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__container {
+    max-width: 450px;
+    background-color: white;
+    margin: auto;
+    padding: 0 18px 40px;
+
+   @include onTablet {
+      max-width: unset;
+      width: 725px;
+      height: 535px;
+      padding: 20px 30px 120px;
+   }
+
+   @include onDesctop {
+      width: 830px;
+      height: 600px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Urbanist";
+    line-height: 150%;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      justify-content: unset;
+    }
+  }
+
+  &__title-item {
+    @include onTablet {
+      padding-left: 100px;
+    }
+  }
+
+  &__title-quantity {
+    @include onTablet {
+      padding-left: 160px;
+    }
+
+  }
+
+  &__title-unit-price {
+    display: none;
+
+    @include onTablet {
+      display: inline;
+      padding-left: 130px;
+    }
+
+    @include onDesctop {
+      padding-left: 140px;
+    }
+  }
+
+  &__title-total-price {
+    display: none;
+
+    @include onTablet {
+      display: inline;
+      padding-left: 32px;
+    }
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: center;
+      padding: 25px 0;
+    }
+  }
+
+  &__flower-image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__product-count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 35px;
+
+    @include onTablet {
+      justify-content: unset;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__product-count-box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__count-minus {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #b3b3b3;
+    line-height: 44px;
+    margin-left: 20px;
+
+    @include onTablet {
+      margin-left: 43px;
+    }
+  }
+
+  &__count-plus {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: $gray;
+    text-align: center;
+    line-height: 44px;
+  }
+
+  &__product-count-title {
+    @include onTablet {
+      padding-left: 30px;
+    }
+  }
+
+  &__order-count {
+    &::before {
+      content: "1";
+    }
+    font-size: 11px;
+    width: 30px;
+    text-align: center;
+
+    @include onTablet {
+      width: 70px;
+      &::before {
+        content: "1 ORDER";
+      }
+    }
+  }
+
+  &__order-count-2 {
+    &::before {
+      content: "0";
+    }
+    font-size: 11px;
+    width: 30px;
+    text-align: center;
+
+    @include onTablet {
+      width: 70px;
+      &::before {
+        content: "0 ORDER";
+      }
+    }
+  }
+
+  &__product-price {
+    margin-bottom: 30px;
+    & > span {
+      margin-right: 100px;
+    }
+    @include onTablet {
+      margin-bottom: 0;
+      padding-left: 100px;
+
+      & > span {
+        display: none;
+      }
+    }
+  }
+
+  &__product-price-2 {
+    margin-bottom: 40px;
+    & > span {
+      margin-right: 92px;
+    }
+    @include onTablet {
+      padding-left: 56px;
+      margin-bottom: 0;
+
+      & > span {
+        display: none;
+      }
+    }
+  }
+
+  &__close {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: $gray;
+      text-align: center;
+      line-height: 31px;
+      margin-left: 93px;
+    }
+  }
+
+  &__close-last {
+    margin-left: 115px;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 35px;
+    }
+  }
+
+  &__total-price {
+    display: flex;
+    margin-top: 15px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__button-box {
+    text-align: -webkit-center;
+
+    @include onTablet {
+      text-align: unset;
+    }
+  }
+
+  &__button {
+    width: 240px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    display: block;
+    text-align: center;
+    line-height: 48px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #121212;
+    font-weight: bold;
+    margin-top: 70px;
+
+    @include onTablet {
+      margin-top: 0;
+      margin-left: 70px;
+    }
+
+    &:hover {
+      border-color: $red;
+      color: $red;
+    }
+  }
+
+  &__total-text {
+    font-size: 20px;
+
+    @include onTablet {
+      margin-left: 180px;
+    }
+  }
+
+  &__total {
+    font-size: 20px;
+    margin-left: 120px;
+
+    @include onTablet {
+      margin-left: 50px;
+    }
+  }
+}
+
+.price-margin {
+  @include onTablet {
+    margin-left: 20px;
+  }
+}

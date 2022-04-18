@@ -1,0 +1,100 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 66.66%;
+  transform: translateX(100%);
+  transition: 0.3s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__nav {
+    height: 100vh;
+    padding: 138px 0 0 80px;
+
+    background-color: $turquoise;
+  }
+
+  &__item {
+    list-style: none;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+    &:hover .menu__link-hover-arrow {
+      display: inline-block;
+    }
+
+    &:hover .menu__link {
+      font-weight: bold;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-family: "Urbanist";
+    font-size: 16px;
+    line-height: 150%;
+    color: #f8f8f8;
+
+    text-decoration: none;
+
+    @include onTablet {
+      font-size: 20px;
+    }
+  }
+
+  &__basket-count {
+    width: 13px;
+    height: 13px;
+
+    color: #fff;
+    background-color: $red;
+
+    border-radius: 50%;
+    font-size: 9px;
+    text-align: center;
+    line-height: 14px;
+    margin-left: 9px;
+  }
+
+  &__item-first-element {
+    display: flex;
+  }
+
+  &__close-box {
+    position: absolute;
+    top: 410px;
+    right: 30px;
+
+    font-family: "Urbanist";
+    font-size: 12px;
+    color: white;
+
+    writing-mode: vertical-rl;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover :first-child {
+      font-weight: bold;
+    }
+  }
+
+  &__close-box > span {
+    direction: ltr;
+  }
+
+  &__arrow {
+    margin-top: 5px;
+    margin-bottom: 18px;
+  }
+
+  &__link-hover-arrow {
+    display: none;
+    margin-left: 10px;
+  }
+}

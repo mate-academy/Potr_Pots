@@ -1,0 +1,185 @@
+.checkout {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 200px 12px 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Urbanist";
+  transform: translateY(-100%);
+
+  &:target {
+    transform: translateY(0);
+  }
+
+  &__section {
+    margin-bottom: 90px;
+  }
+
+  &__container {
+    max-width: 450px;
+    height: 100%;
+    background-color: white;
+    padding: 0 18px 100px;
+    margin: auto;
+
+    @include onTablet {
+      max-width: 725px;
+    }
+
+    @include onDesctop {
+      max-width: 830px;
+    }
+  }
+
+  &__address-box {
+    @include onTablet {
+      padding: 0 90px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__payment-method {
+    @include onTablet {
+      padding: 0 90px;
+    }
+  }
+
+  &__payment {
+    @include onTablet {
+      padding: 0 90px;
+    }
+  }
+
+  &__title-box {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  &__title-number {
+    width: 25px;
+    height: 25px;
+    color: white;
+    background-color: #333;
+    font-size: 12px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    margin-right: 20px;
+  }
+
+  &__title {
+    line-height: 150%;
+  }
+
+  &__input {
+    width: 100%;
+    height: 45px;
+    border: 0;
+    border-bottom: 1px solid #bdbdbd;
+    outline: 0;
+    margin-bottom: 20px;
+
+    &--width-40 {
+      width: 49%;
+
+      @include onTablet {
+        width: 38%;
+      }
+    }
+
+    @include onTablet {
+      height: 20px;
+      margin-bottom: 33px;
+      &--tablet {
+        width: 48%;
+      }
+
+      &--width-79 {
+        width: 79%;
+      }
+
+      &--width-80 {
+        width: 80%;
+      }
+    }
+  }
+
+  &__data-box {
+    @include onTablet {
+      display: inline;
+    }
+  }
+
+  &__visa-master {
+    display: flex;
+    color: #bdbdbd;
+  }
+
+  &__paypal {
+    display: flex;
+    color: #bdbdbd;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+  }
+
+  &__radiobtn {
+    margin-right: 15px;
+    accent-color: #333;
+  }
+
+  &__master-card {
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  &__visa-card {
+    margin-right: 15px;
+  }
+
+  &__paypal-img {
+    margin-right: 15px;
+  }
+
+  &__total-price {
+    display: flex;
+    margin-bottom: 40px;
+
+    & > p:first-child {
+      margin-right: 80px;
+    }
+  }
+
+  &__input-cvv {
+    width: 30%;
+    height: unset;
+  }
+
+  &__submit-btn {
+    width: 240px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    display: block;
+    text-align: center;
+    line-height: 48px;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #121212;
+    font-weight: bold;
+    margin-top: -40px;
+
+    @include onTablet {
+      margin-left: 70px;
+    }
+
+    &:hover {
+      border-color: $red;
+      color: $red;
+    }
+  }
+}
