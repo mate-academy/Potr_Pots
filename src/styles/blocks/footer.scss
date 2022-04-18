@@ -1,0 +1,121 @@
+.footer {
+  padding: 0 30px 64px;
+
+  &__address {
+    display: none;
+
+    @include forTablet {
+      display: block;
+    }
+  }
+
+  &__icon-container {
+    margin: 90px 45px 41px;
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+
+    @include forTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+
+    &--twitter {
+      background-image: url(/images/twitter-icon.svg);
+      border-radius: 50%;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: $c-yellow;
+        transform: scale(1.2);
+      }
+    }
+
+    &--instagram {
+      background-image: url(/images/insta-icon.svg);
+      border-radius: 30%;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: $c-yellow;
+        transform: scale(1.2);
+      }
+    }
+
+    &--facebook {
+      background-image: url(../images/facebook-icon.svg);
+      border-radius: 50%;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: $c-yellow;
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.footer__aboutus {
+  display: none;
+
+  @include forTablet {
+    display: block;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    padding-bottom: 12px;
+    letter-spacing: 2px;
+    margin-top: -18px;
+
+  }
+}
+
+.footer__right {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.footer__copyright {
+  font-family: "Proxima Nova", Arial, sans-serif;
+}
+
+@include forTablet {
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer__right {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer__address-title {
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    padding-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+}
