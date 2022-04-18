@@ -1,5 +1,6 @@
 .which-size {
-  padding: 120px 0 98px;
+  position: relative;
+  padding: 120px 30px 98px;
 
   @include forTablet {
     padding: 0;
@@ -150,5 +151,43 @@
 
   .which-size__text-margin {
     margin-top: 20px;
+  }
+}
+
+.which-size__arrow {
+  display: none;
+  @include forTablet {
+    text-transform: uppercase;
+    position: absolute;
+    display: inline-block;
+    font-family: "Bebas Neue", sans-serif;
+    right: -50px;
+    bottom: -100px;
+    transform: rotate(90deg) translateY(0%) translateX(0%);
+    text-decoration: none;
+    color: #828282;
+    font-size: 14px;
+    line-height: 12px;
+    height: 18px;
+    letter-spacing: 2px;
+
+    @include forDesktop {
+      right: -40px;
+      bottom: 10px;
+    }
+
+    &::before {
+      position: absolute;
+      left: -75px;
+      bottom: 10px;
+      content: "";
+      display: inline-block;
+      background-color: #828282;
+      transform: translateY(0%) translateX(0%);
+      width: 65px;
+      height: 1px;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 }
