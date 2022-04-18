@@ -1,4 +1,5 @@
 .for-whom {
+  position: relative;
   padding: 102px 30px 112px;
 
   @include forTablet {
@@ -198,4 +199,33 @@
     display: block;
   }
 
+}
+
+.for-whom-sideArrow {
+  position: absolute;
+  display: inline-block;
+  font-family: "Bebas Neue", sans-serif;
+  right: 50px;
+  bottom: 550px;
+  transform: rotate(90deg) translateY(-330%) translateX(-100%);
+  text-decoration: none;
+  color: #828282;
+  font-size: 10px;
+  line-height: 12px;
+  height: 18px;
+  letter-spacing: 2px;
+
+  &::before {
+    position: absolute;
+    right: -10px;
+    bottom: 15px;
+    content: "";
+    display: inline-block;
+    background-color: #828282;
+    transform: translateY(300%) translateX(-110%);
+    width: 65px;
+    height: 1px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
