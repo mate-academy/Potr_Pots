@@ -1,0 +1,89 @@
+.payment-successful {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 200px 12px 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transform: translateY(-100%);
+
+  &:target {
+    transform: translateY(0);
+  }
+
+  @include onTablet {
+    padding: 200px 34px 0;
+  }
+
+  &__container {
+    position: relative;
+    max-width: 450px;
+    background-color: white;
+    padding: 18px 18px 130px;
+    margin: auto;
+
+    @include onTablet {
+      max-width: 700px;
+      padding: 44px 18px 130px 120px;
+    }
+
+    @include onDesctop {
+      max-width: 830px;
+      padding: 47px 18px 190px 130px;
+    }
+  }
+
+  &__yello-box {
+    position: relative;
+    margin-bottom: 36px;
+  }
+
+  &__yello-circle {
+    width: 80px;
+    height: 80px;
+    background-color: $yello;
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-weight: 100;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 26px;
+    left: 45px;
+  }
+
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include onTablet {
+      top: 12px;
+      right: 12px;
+    }
+
+    @include onDesctop {
+      top: 23px;
+      right: 23px;
+    }
+  }
+
+  &__main-title {
+    font-size: 24px;
+    line-height: 150%;
+    font-family: "Urbanist" , sans-serif;
+    margin-bottom: 13px;
+
+    @include onTablet {
+      font-size: 32px;
+      font-weight: bold;
+    }
+  }
+
+  &__main-text {
+    font-family: "Urbanist" , sans-serif;
+    line-height: 150%;
+  }
+}
