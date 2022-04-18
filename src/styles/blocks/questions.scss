@@ -1,0 +1,116 @@
+.questions {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 560px;
+
+  &__yellow-bg {
+    position: absolute;
+    top: -$marginTopML;
+    right: 9vw;
+    // left: 0;
+
+    @include mediaMaxSize($tabletSize) {
+      right: 20px;
+    }
+  }
+
+  &__stamp {
+    position: absolute;
+    top: -146px;
+    right: 5%;
+
+    overflow-y: visible;
+    @include iconSize(224px, 224px);
+
+    background-image: url("../images/questions-stamp.svg");
+
+    @include mediaMaxContentWidth {
+      right: 72px;
+    }
+
+    @include mediaMaxSize {
+      right: -40px;
+    }
+  }
+
+  &__title {
+    margin-top: $marginTopML;
+  }
+
+  &__contact {
+    display: flex;
+    column-gap: 20%;
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    min-width: 370px;
+    width: 35%;
+
+    @include mediaMaxSize {
+      min-width: 340px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      min-width: unset;
+    }
+  }
+
+  &__subtitle {
+    @include fontParams(16px);
+  }
+
+  &__message-title {
+    margin-top: 24px;
+    @include fontParams(24px);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__form-item {
+    margin-top: 20px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    @include fontParams(16px);
+    color: $c-lightGray;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $c-darkGrayLight;
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    justify-self: center;
+    align-self: center;
+  }
+
+  &__contact-info {
+    align-self: flex-end;
+    max-width: 270px;
+  }
+
+  &__contact-title {
+    margin-top: 24px;
+    @include fontParams(24px);
+    opacity: 0.4;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__contact-link {
+    margin-top: 4px;
+    @include fontParams(16px);
+    color: #000;
+    cursor: pointer;
+  }
+}

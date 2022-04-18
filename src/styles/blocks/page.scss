@@ -11,7 +11,8 @@
 
   &__article,
   &__potr-size,
-  &__benefits {
+  &__benefits,
+  &__questions {
     padding: 0 $paddingDeskNote;
 
     @include mediaMaxSize {
@@ -58,6 +59,8 @@
   }
 
   &__benefits {
+    @extend %minMaxWidth;
+
     padding-left: 0;
     margin-top: 96px;
 
@@ -69,6 +72,16 @@
     @include mediaMaxSize($mobileSize) {
       margin-top: 96px;
       padding: 0 $paddingMobile;
+    }
+  }
+
+  &__questions {
+    @include mediaMaxSize {
+      margin-top: 160px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 184px;
     }
   }
 
