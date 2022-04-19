@@ -1,11 +1,76 @@
 .team {
+  position: relative;
   &__title {
     @include fontParams(58px, 58px, 400, normal);
     color: $greyFont;
     margin: 0 30px 60px;
+    @include forTablet {
+      display: none;
+    }
   }
 
+  &__title-2 {
+    @include fontParams(58px, 58px, 400, 0.15em);
+    color: $greyFont;
+    margin: 0 30px 60px;
+    display: none;
+    @include forTablet {
+      display: inline;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 189px 34px 0 34px;
+  }
   &__image {
     width: 100%;
+  }
+
+  &__text {
+    margin: 35px 30px 67px;
+    @include fontParams(16px, 150%, 400, normal);
+    font-family: "Proxima Nova", sans-serif;
+    color: $gray2Font;
+    order: -1;
+  }
+
+  &__martin,
+  &__andy {
+    display: none;
+    position: absolute;
+    @include fontParams(30vw, 30vw, normal, 0.15em);
+    color: transparent;
+    -webkit-text-stroke: 0.80px $turquiseFont;
+  }
+
+  &__martin {
+    top:-40%;
+    left: -2%;
+    @include forTablet{
+      display: inline;
+    }
+    @include forDesktop {
+      top: -50%;
+      @include fontParams(20vw, 20vw, normal, 0.15em);
+    }
+  }
+
+  &__andy {
+    top: 35%;
+    left: 40%;
+    @include forTablet{
+      display: inline;
+    }
+    @include forDesktop {
+      @include fontParams(20vw, 20vw, normal, 0.15em);
+    }
+  }
+
+  &__text {
+    max-width: 300px;
+    margin-top: 30%;
+    margin-left: 20%;
   }
 }
