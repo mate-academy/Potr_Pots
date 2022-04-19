@@ -1,3 +1,95 @@
 .footer {
-  height: 500px;
+  display: flex;
+  justify-content: space-between;
+
+  @include mediaMaxSize($mobileSize) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__adress-title,
+  &__about-us-text {
+    @include fontParams(24px, 24px);
+    letter-spacing: $letterSpacingTitle;
+  }
+
+  &__adress-wrapper {
+    width: 176px;
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+  }
+
+  &__adress {
+    display: block;
+    margin-top: 8px;
+    padding: 8px 0;
+    color: #000;
+    @include hoverState(color, $c-turquoise);
+  }
+
+  &__about-us-text {
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+  }
+
+  &__copyright {
+    margin-top: 16px;
+    @include fontParams(16px, 16px);
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 0;
+    }
+  }
+
+  &__icons-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+  }
+
+  &__logo {
+    display: block;
+    width: max-content;
+    margin-top: 80px;
+
+    text-align: center;
+    @include fontParams(36px);
+    letter-spacing: $letterSpacingTitle;
+    color: #000;
+
+    @include mediaMaxSize {
+      margin-top: 32px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 40px;
+    }
+  }
+
+  &__tweeter {
+    @include iconSize(20px, 20px);
+    border-radius: 50%;
+    @include hoverState(background-color, #1d9bf0);
+  }
+
+  &__instagram {
+    @include iconSize(20px, 20px);
+    border-radius: 25%;
+    @include hoverState(background-color, $c-discountColor);
+  }
+
+  &__facebook {
+    @include iconSize(20px, 20px);
+    border-radius: 50%;
+    @include hoverState(background-color, #1877f2);
+  }
 }

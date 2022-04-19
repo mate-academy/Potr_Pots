@@ -93,5 +93,15 @@
   &__footer {
     margin: 0 auto;
     @extend %minMaxWidth;
+
+    padding: 72px $paddingDeskNote 64px;
+
+    @include mediaMaxSize {
+      padding: 24px $paddingTablet 64px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      padding: 88px $paddingMobile 48px;
+    }
   }
 }
