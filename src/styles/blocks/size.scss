@@ -26,6 +26,7 @@
 
     @include forDesktop {
       grid-column: 2/5;
+      margin-bottom: -50px;
     }
   }
 
@@ -53,8 +54,10 @@
     @include forDesktop {
       grid-column: 1;
       margin-right: 47px;
+      margin-bottom: -50px;
     }
   }
+
   &__pot-size {
     margin-bottom: 69px;
   }
@@ -73,6 +76,10 @@
     @include fontParams(16px, 150%, 400, normal);
     font-family: "Proxima Nova", sans-serif;
     color: $gray2Font;
+    &::before {
+      content: "*";
+      margin-right: 3px;
+    }
     @include forDesktop {
       grid-column: 1 / 3;
     }

@@ -1,0 +1,81 @@
+.benefits {
+  display: grid;
+  font-family: "Proxima Nova", sans-serif;
+  margin: 0 $mobileMargin;
+
+  @include forTablet {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 56px;
+    gap: 20px;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    @include fontParams(32px, 150%, bold, normal);
+    color: $gray2Font;
+    position: relative;
+    margin-bottom: 40px;
+    &:after {
+      content:"";
+      height: 5px;
+      width: 5px;
+      background: $gray2Font;
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      left: -12px;
+      top: 20px;
+    }
+  }
+
+  &__text {
+    @include fontParams(16px, 150%, 400, normal);
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 15px 101px 13px 62px;
+    background-color: #ffe339;
+    color: #121212;
+    font-family: "Proxima Nova", sans-serif;
+    @include fontParams(14px, 20px, 700, normal);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    &::after {
+      position: absolute;
+      content: url("/images/header/arrow.svg");
+      transform: translateX(100%);
+    }
+
+    @include forTablet {
+      margin: 80px 30px 33px 0;
+    }
+  }
+
+  &__discount {
+    display: block;
+    @include fontParams(36px, 150%, 400, 0.15em);
+    font-family: "Bebas Neue", cursive;
+    color: #eb5757;
+    margin-bottom: 13px;
+
+    @include forTablet {
+      @include fontParams(24px, 24px, 400, 0.15em);
+    }
+  }
+
+  &__half {
+    display: block;
+    @include fontParams(24px, 24px, 400, 0.15em);
+    font-family: "Bebas Neue", cursive;
+    color: $turquiseFont;
+    text-transform: uppercase;
+
+    @include forTablet {
+      @include fontParams(18px, 18px, 400, 0.15em);
+    }
+  }
+}
