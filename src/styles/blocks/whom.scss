@@ -5,7 +5,12 @@
   max-width: 500px;
   margin: 0 auto;
 
+  @include forTablet {
+    max-width: 1800px;
+  }
+
   @include forDesktop {
+    display: flex;
     max-width: 1800px;
     margin: 0 135px 150px;
   }
@@ -57,6 +62,14 @@
 
   &__block-1 {
     display: inline;
+
+    @include forTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 80px;
+      gap: 100px;
+    }
+
     @include forDesktop {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -85,6 +98,9 @@
   &__img-3 {
     display: none;
 
+    @include forTablet {
+      display: block;
+    }
     @include forDesktop {
       display: block;
     }
@@ -94,6 +110,10 @@
     display: flex;
     justify-content: center;
     margin-bottom: 102px;
+
+    @include forTablet {
+      order: 1;
+    }
   }
 
   &__photo-3 {
@@ -103,8 +123,28 @@
   }
 
   &__block-3 {
+    @include forTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 80px;
+      gap: 100px;
+    }
     @include forDesktop {
+      display: block;
       margin-left: 200px;
+    }
+  }
+
+  &__block-2 {
+    @include forTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 80px;
+      gap: 100px;
+    }
+    
+    @include forDesktop {
+      display: block;
     }
   }
 }

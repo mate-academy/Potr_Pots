@@ -29,7 +29,7 @@
       margin: 189px 34px 0;
     }
 
-    @include forTablet{
+    @include forTablet {
       grid-template-columns: repeat(2, 1fr);
       margin: 189px 34px 0;
     }
@@ -72,15 +72,16 @@
   }
 
   &__martin {
-    top: -40%;
-    left: -2%;
+
 
     @include forTablet {
       display: inline;
-      top: -23vw;
+      @include fontParams(20vw, 20vw, normal, 0.15em);
+      top: 5%;
+      left: -5%;
     }
     @include forDesktop {
-      top: -18vw;
+      top: 5%;
       @include fontParams(20vw, 20vw, normal, 0.15em);
     }
   }
@@ -88,10 +89,13 @@
   &__andy {
     right: 0;
     @include forTablet {
-      display: inline;
+      @include fontParams(20vw, 20vw, normal, 0.15em);
+      display: block;
+      bottom: 5%;
     }
     @include forDesktop {
       @include fontParams(20vw, 20vw, normal, 0.15em);
+      bottom: -10%;
     }
   }
 }
