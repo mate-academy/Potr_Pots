@@ -1,0 +1,42 @@
+.features {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 0 30px 95px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    @include forTablet {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @include fontParams(58px, 58px, 400, normal);
+    color: $turquiseFont;
+    margin-bottom: 50px;
+  }
+
+  &__image {
+    margin-bottom: 37px;
+  }
+
+  &__block-title {
+    @include fontParams(24px, 24px, 400, 0.15em);
+    color: $greyFont;
+    text-align: center;
+  }
+
+  &__text {
+    @include fontParams(16px, 150%, 200, normal);
+    font-family: "Proxima Nova";
+    color: $gray2Font;
+    text-align: center;
+  }
+}
