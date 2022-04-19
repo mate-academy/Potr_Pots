@@ -24,6 +24,20 @@
     }
   }
 
+  &__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+
+    transform: translateY(-100vh);
+    transition: transform $transitionDuration;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
   &__main-wrapper {
     position: relative;
     display: flex;
