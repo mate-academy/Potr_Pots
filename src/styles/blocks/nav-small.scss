@@ -1,0 +1,26 @@
+.nav-small {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mediaMaxSize {
+    display: flex;
+  }
+
+  @extend %paddingNavMenu;
+
+  &__logo {
+    @include fontParams(36px, 36px);
+    white-space: nowrap;
+    font-family: "Bebas Neue", cursive;
+    color: $c-darkGray;
+  }
+
+  &__hamburger {
+    @include iconSize(32px, 32px);
+
+    background-image: url("../images/menu_icon.svg");
+    background-size: contain;
+    background-position: center;
+  }
+}
