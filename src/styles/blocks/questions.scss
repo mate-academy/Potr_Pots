@@ -1,16 +1,24 @@
 .questions {
   position: relative;
-  overflow-x: hidden;
   min-height: 560px;
 
   &__yellow-bg {
+    @extend %minMaxWidth;
     position: absolute;
     top: -$marginTopML;
     right: 9vw;
-    // left: 0;
+    overflow: hidden;
 
-    @include mediaMaxSize($tabletSize) {
+    @include mediaMaxContentWidth {
+      right: 135px;
+    }
+
+    @include mediaMaxSize {
       right: 20px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      right: -50%;
     }
   }
 
@@ -29,17 +37,29 @@
     }
 
     @include mediaMaxSize {
-      right: -40px;
+      right: 0;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      top: -176px;
     }
   }
 
   &__title {
     margin-top: $marginTopML;
+
+    @include mediaMaxSize($mobileSize) {
+      max-width: 300px;
+    }
   }
 
   &__contact {
     display: flex;
     column-gap: 20%;
+
+    @include mediaMaxSize($mobileSize) {
+      flex-direction: column;
+    }
   }
 
   &__message {
@@ -54,6 +74,8 @@
 
     @include mediaMaxSize($mobileSize) {
       min-width: unset;
+      width: 100%;
+      align-self: center;
     }
   }
 
@@ -79,10 +101,15 @@
 
     @include fontParams(16px);
     color: $c-lightGray;
-    background-color: transparent;
+    background-color: $c-lightYellow;
 
     &::placeholder {
       color: $c-darkGrayLight;
+    }
+
+    &:active,
+    &:focus {
+      background-color: $c-lightYellow;
     }
   }
 
@@ -90,11 +117,20 @@
     margin-top: 20px;
     justify-self: center;
     align-self: center;
+
+    cursor: pointer;
+    @include hoverState(color, $c-turquoise);
   }
 
   &__contact-info {
     align-self: flex-end;
     max-width: 270px;
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 90px;
+      align-self: center;
+      max-width: 320px;
+    }
   }
 
   &__contact-title {
@@ -111,6 +147,7 @@
     margin-top: 4px;
     @include fontParams(16px);
     color: #000;
-    cursor: pointer;
+
+    @include hoverState(color, $c-turquoise);
   }
 }

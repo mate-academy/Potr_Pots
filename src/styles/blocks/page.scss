@@ -1,12 +1,15 @@
 .page {
   &__header {
     margin: 0 auto;
-    @extend %minMaxWidth;
+    max-width: $maxWidth;
+    // width: 300px;
+    overflow: hidden;
   }
 
   &__main {
     margin: 0 auto;
-    @extend %minMaxWidth;
+    max-width: $maxWidth;
+    overflow: hidden;
   }
 
   &__article,
@@ -76,6 +79,8 @@
   }
 
   &__questions {
+    @extend %minMaxWidth;
+
     @include mediaMaxSize {
       margin-top: 160px;
     }
