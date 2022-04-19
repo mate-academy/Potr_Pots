@@ -21,11 +21,20 @@
 
   &__content {
     display: grid;
+    grid-template-columns: 1fr;
+
+    @include forDesktop{
     grid-template-columns: repeat(2, 1fr);
-    margin: 189px 34px 0 34px;
+    margin: 189px 34px 0;
+    }
   }
+
   &__image {
     width: 100%;
+    max-width: 700px;
+    @include forDesktop {
+      margin-right: 100px;
+    }
   }
 
   &__text {
@@ -33,7 +42,12 @@
     @include fontParams(16px, 150%, 400, normal);
     font-family: "Proxima Nova", sans-serif;
     color: $gray2Font;
-    order: -1;
+    @include forDesktop {
+      max-width: 300px;
+      margin-top: 30%;
+      margin-left: 20%;
+      order: -1;
+    }
   }
 
   &__martin,
@@ -42,35 +56,28 @@
     position: absolute;
     @include fontParams(30vw, 30vw, normal, 0.15em);
     color: transparent;
-    -webkit-text-stroke: 0.80px $turquiseFont;
+    -webkit-text-stroke: 0.8px $turquiseFont;
   }
 
   &__martin {
-    top:-40%;
+    top: -40%;
     left: -2%;
-    @include forTablet{
+    @include forTablet {
       display: inline;
     }
     @include forDesktop {
-      top: -50%;
+      top: -18vw;
       @include fontParams(20vw, 20vw, normal, 0.15em);
     }
   }
 
   &__andy {
-    top: 35%;
-    left: 40%;
-    @include forTablet{
+    right: 0;
+    @include forTablet {
       display: inline;
     }
     @include forDesktop {
       @include fontParams(20vw, 20vw, normal, 0.15em);
     }
-  }
-
-  &__text {
-    max-width: 300px;
-    margin-top: 30%;
-    margin-left: 20%;
   }
 }
