@@ -1,0 +1,160 @@
+.team {
+  &__container {
+    position: relative;
+    max-width: 500px;
+    padding: 0 30px;
+    margin: auto;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      max-width: 900px;
+      padding: 0 35px;
+      margin-bottom: 170px;
+    }
+
+    @include onDesctop {
+      max-width: 1440px;
+      padding: 0 135px;
+    }
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: #333;
+    margin-bottom: 60px;
+  }
+
+  &__box {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__image-box {
+    width: 100%;
+    margin-left: -30px;
+    margin-bottom: 35px;
+
+    @include onTablet {
+      width: 340px;
+      height: 255px;
+      margin-top: 120px;
+    }
+
+    @include onDesctop {
+      width: 677px;
+      height: 507px;
+      margin-right: 100px;
+    }
+  }
+
+  &__image {
+    width: calc(100% + 60px);
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+
+  &__description {
+    position: relative;
+
+    @include onTablet {
+      top: 180px;
+      width: 300px;
+    }
+
+    @include onDesctop {
+      top: 220px;
+    }
+  }
+
+  &__image-rectangle-box {
+    width: 100%;
+    margin-left: -30px;
+
+    @include onTablet {
+      margin-left: -35px;
+    }
+
+    @include onDesctop {
+      margin-left: -135px;
+    }
+  }
+
+  &__image-rectangle {
+    width: calc(100% + 60px);
+    position: absolute;
+    top: 97px;
+    height: 336px;
+
+    @include onTablet {
+      width: 255px;
+      position: relative;
+      top: -118px;
+      height: 276px;
+    }
+
+    @include onDesctop {
+      width: 450px;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    display: block;
+    font-family: "Urbanist", sans-serif;
+    line-height: 150%;
+    z-index: 2;
+    color: #4f4f4f;
+
+    @include onDesctop {
+      margin-top: 40px;
+    }
+  }
+
+  &__name {
+    display: none;
+    font-size: 232px;
+    line-height: 232px;
+    letter-spacing: 0.15em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px;
+    font-weight: normal;
+    color: $turquoise;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesctop {
+      font-size: 288px;
+    }
+  }
+
+  &__martin {
+    position: absolute;
+    top: 69px;
+    left: -42px;
+
+    @include onDesctop {
+      top: 140px;
+      left: 78px;
+    }
+  }
+
+  &__andy {
+    position: absolute;
+    top: 450px;
+    right: -35px;
+
+    @include onDesctop {
+      top: 705px;
+      right: 10px;
+    }
+  }
+}

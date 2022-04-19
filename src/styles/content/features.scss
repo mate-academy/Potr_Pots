@@ -2,8 +2,8 @@
   &__container {
     max-width: 500px;
     padding: 0 30px;
-    margin-bottom: 95px;
     margin: auto;
+    margin-bottom: 95px;
 
     @include onTablet {
       max-width: 900px;
@@ -69,11 +69,21 @@
     text-align: center;
     color: #4f4f4f;
     margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
   }
 
   &__image {
     height: 260px;
     margin-bottom: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 1px 1px 20px;
+    }
 
     @include onTablet {
       height: 220px;
