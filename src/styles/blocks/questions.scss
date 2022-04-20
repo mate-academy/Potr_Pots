@@ -1,0 +1,105 @@
+.questions {
+  margin: 0 $mobileMargin 0;
+
+  @include forTablet {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__title {
+    @include fontParams(36px, 150%, 400, 0.15em);
+    color: $blackFont;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+
+    @include forTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__intro {
+    @include fontParams(16px, 150%, 400, normal);
+    color: $blackFont;
+    font-family: "Proxima Nova", sans-serif;
+    margin-bottom: 40px;
+
+  }
+
+  &__message-title {
+    @include fontParams(24px, 150%, 400, normal);
+    color: $blackFont;
+    font-family: "Proxima Nova", sans-serif;
+    margin-bottom: 23px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__form-input {
+    margin-bottom: 20px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    @include fontParams(16px, 150%, 400, normal);
+    color: $greyFont;
+
+    &::placeholder {
+      color: $greyFont;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .submit {
+    @include fontParams(16px, 150%, 400, normal);
+    color: $gray2Font;
+
+    border: none;
+    border-bottom: 1px dashed $gray2Font;
+
+    background-color: transparent;
+
+    transition: color 0.5s,
+      border-color 0.5s;
+
+    &:hover {
+      color: $orangeFont;
+      border-color: $orangeFont;
+    }
+  }
+
+  &__form-wrapper {
+    margin-bottom: 90px;
+
+    @include forTablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__information {
+    @include forTablet {
+      grid-column: 4/5;
+    }
+  }
+
+  &__info-title {
+    @include fontParams(24px, 150%, 400, normal);
+    font-family: "Proxima Nova", sans-serif;
+    color: rgba(0, 0, 0, 0.39);
+
+    margin-bottom: 4px;
+  }
+
+  &__info-link {
+    display: block;
+    @include fontParams(16px, 150%, 400, normal);
+    color: $blackFont;
+    margin-bottom: 38px;
+  }
+}
