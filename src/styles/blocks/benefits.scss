@@ -59,16 +59,32 @@
   &__button {
     display: inline-block;
     padding: 15px 101px 13px 62px;
-    background-color: #ffe339;
-    color: #121212;
+    margin-bottom: 40px;
+
+    background-color: $yellowButton;
+    color: $darkGrayFont;
+    border: 1px solid transparent;
+
     font-family: "Proxima Nova", sans-serif;
     @include fontParams(14px, 20px, 700, normal);
     text-transform: uppercase;
-    margin-bottom: 40px;
+
+    transition: border-color $transitionTime,
+      background-color $transitionTime;
+
     &::after {
       position: absolute;
       content: url("/images/header/arrow.svg");
       transform: translateX(100%);
+    }
+
+    &:hover {
+      background-color: transparent;
+      border-color: $greyFont;
+    }
+
+    &:hover::after {
+      transform: translateX(40px);
     }
 
     @include forTablet {
@@ -77,6 +93,18 @@
 
     @include forDesktop {
       margin: 0 0 70px;
+      background-color: transparent;
+      border-color: $turquiseFont;
+      color: $darkGrayFont;
+
+      &:hover {
+        background-color: $turquiseFont;
+        color: $whiteFont;
+      }
+
+      &:hover::after {
+        content: url("/images/header/arrow_3.svg");
+      }
     }
   }
 
