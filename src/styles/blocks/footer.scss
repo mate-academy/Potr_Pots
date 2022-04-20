@@ -1,9 +1,29 @@
 .footer {
 
+  @include forTablet {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 35px;
+  }
+
+  @include forDesktop {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 135px;
+  }
+
   &__icon-container {
     display: flex;
     justify-content: space-between;
     margin: 0 45px 41px;
+
+    @include forTablet {
+      margin:0 0 41px;
+    }
+
+    @include forDesktop {
+      margin:0 0 41px;
+    }
   }
 
   &__icon {
@@ -23,8 +43,24 @@
     text-align: center;
     margin-bottom: 50px;
   }
+
+  &__copyright {
+
+    @include forTablet{
+      display: none;
+    }
+
+    @include forDesktop {
+      display: none;
+    }
+  }
+
   &__logo {
     @include fontParams(36px, 100%, 400, 0.06em);
     color: $greyFont;
+  }
+
+  &__small-title {
+    @include fontParams(24px, 24px, 400, 0.15em);
   }
 }
