@@ -1,0 +1,110 @@
+.house {
+  &__container {
+    max-width: 500px;
+    padding: 0 30px;
+    margin: auto;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      max-width: 900px;
+      padding: 0 35px;
+      margin-bottom: 120px;
+    }
+
+    @include onDesctop {
+      max-width: 1440px;
+      padding: 0 135px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @include onDesctop {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__box {
+    position: relative;
+  }
+
+  &__little-box {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__text-box {
+    @include onTablet {
+      padding-top: 20px;
+      padding-right: 36px;
+    }
+  }
+
+  &__title-text {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-family: "Urbanist", sans-serif;
+    line-height: 150%;
+    color: #4f4f4f;
+    margin-bottom: 35px;
+
+    @include onDesctop {
+      width: 250px;
+      &:first-child {
+        display: none;
+      }
+
+      &--last {
+        position: absolute;
+        bottom: 20px;
+        width: 546px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__text-desctop {
+    display: none;
+    @include onDesctop {
+      display: block;
+      margin-top: 20px;
+      border-right: 2px solid #b5b2b2;
+      height: 257px;
+    }
+  }
+
+  &__image-box {
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    margin-bottom: 35px;
+
+    @include onTablet {
+      width: 416px;
+      margin-left: 0;
+      margin-bottom: 25px;
+    }
+
+    @include onDesctop {
+      width: 530px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
