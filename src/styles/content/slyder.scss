@@ -1,0 +1,53 @@
+.slider {
+  position: relative;
+  top: -60px;
+  margin: 0 9px;
+  padding: 28px 45px;
+  background: rgba(0, 0, 0, 0.4);
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dots {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dot {
+  display: block;
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  transform: rotateZ(45deg);
+}
+
+.dot--active {
+  background-color: black;
+}
+
+.list {
+  display: flex;
+  transition: transform 0.3s;
+}
+
+.item {
+  font-family: "Urbanist", sans-serif;
+  line-height: 150%;
+  color: #f8f8f8;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 100%;
+}
