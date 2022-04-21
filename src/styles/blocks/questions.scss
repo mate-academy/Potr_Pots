@@ -67,12 +67,16 @@
     margin-bottom: 20px;
     background-color: transparent;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-
+    font-family: "Proxima Nova", sans-serif;
     @include fontParams(16px, 150%, 400, normal);
     color: $greyFont;
 
     &::placeholder {
       color: $greyFont;
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 
@@ -138,5 +142,15 @@
     @include fontParams(16px, 150%, 400, normal);
     color: $blackFont;
     margin-bottom: 38px;
+  }
+
+  &__textarea {
+    border: none;
+    outline: none;
+    color: $gray2Font;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    @include fontParams(16px, 150%, 400, normal);
+    font-family: "Proxima Nova", sans-serif;
   }
 }
