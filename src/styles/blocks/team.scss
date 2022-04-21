@@ -1,6 +1,21 @@
 .team {
   position: relative;
   margin-bottom: 62px;
+
+  @include forTablet {
+    background-image: url("/images/team/background.png");
+    background-repeat: no-repeat;
+    background-size: 25% 60%;
+    background-position: 0 100px;
+  }
+
+  @include forDesktop {
+    background-image: url("/images/team/background.png");
+    background-repeat: no-repeat;
+    background-size: 25% 90%;
+    background-position: 0 200px;
+  }
+
   &__title {
     @include fontParams(58px, 58px, 400, normal);
     color: $greyFont;
