@@ -5,9 +5,9 @@ const menu = document.querySelector('.header__burger-menu');
 const closeB = document.querySelector('.burger-nav__close');
 
 button.addEventListener('click', function() {
-  menu.style.display = 'block';
+  menu.style.transform = 'translateX(0)';
 });
 
 closeB.addEventListener('click', function() {
-  menu.style.display = 'none';
+  menu.style.transform = 'translateX(75vw)';
 });
