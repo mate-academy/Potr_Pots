@@ -18,11 +18,36 @@
     background-color $transitionDuration,
     border-color $transitionDuration;
 
-  &__arrow {
-    padding: 5px 15px;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 
-    background-image: url("../images/Arrow_black.svg");
-    background-repeat: no-repeat;
+  &__tip-up,
+  &__tip-down {
+    width: 5px;
+    height: 1px;
+    background-color: $c-blackish;
+    transform-origin: 70%;
+    transition: background-color $transitionDuration;
+  }
+
+  &__tip-up {
+    transform: rotate(45deg);
+  }
+
+  &__tip-down {
+    transform: rotate(-45deg);
+  }
+
+  &__arrow {
+    position: relative;
+    width: 30px;
+    height: 1px;
+
+    background-color: $c-blackish;
+    transition: background-color $transitionDuration;
   }
 
   &:hover {
@@ -30,8 +55,10 @@
     background-color: $c-turquoise;
   }
 
-  &:hover &__arrow {
-    background-image: url("../images/Arrow_white.svg");
+  &:hover &__arrow,
+  &:hover &__tip-up,
+  &:hover &__tip-down {
+    background-color: #fff;
   }
 
   @include mediaMaxSize($mobileSize) {
@@ -44,10 +71,10 @@
       border-color: $c-blackish;
     }
 
-    //i am not sure about this
-    //i couldn't find how to write with &
-    &:hover .button-buy__arrow {
-      background-image: url("../images/Arrow_black.svg");
+    &:hover .button-buy__arrow,
+    &:hover .button-buy__tip-up,
+    &:hover .button-buy__tip-down {
+      background-color: $c-blackish;
     }
   }
 }
