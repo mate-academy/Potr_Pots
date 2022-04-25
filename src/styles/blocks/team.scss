@@ -1,0 +1,99 @@
+.team {
+  position: relative;
+  padding-top: 30px;
+
+  &__title-name {
+    display: none;
+    font-family: $ff-main;
+    letter-spacing: 0.15em;
+
+    @include onTablet {
+      display: block;
+      font-size: 231px;
+      line-height: 231px;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 288px;
+    }
+
+    &--martin {
+      position: absolute;
+      top: 30px;
+      left: 0;
+
+      @include onDesktop {
+        left: 75px;
+      }
+    }
+
+    &--andy {
+      position: absolute;
+      bottom: -100px;
+      right: 0;
+    }
+  }
+
+  &__title {
+    margin: -60px 0 60px;
+    font-family: $ff-main;
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: $c-grey-title;
+  }
+
+  &__yellow-background {
+    height: 500px;
+    width: 100%;
+    background-image: url(../images/team/team-background.png);
+    background-repeat: no-repeat;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    order: 1;
+    text-align: justify;
+
+    @include onTablet {
+      order: 0;
+    }
+  }
+
+  &__text-wrapper {
+    width: 265px;
+  }
+
+  &__text {
+    font-family: $ff-common;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey-text;
+
+    &--first {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__photo {
+    order: 0;
+    height: 240px;
+    width: 100%;
+    object-fit: cover;
+    align-self: center;
+
+    @include onTablet {
+      height: 255px;
+      width: max-content;
+      order: 1;
+    }
+
+    @include onDesktop {
+      height: 507px;
+    }
+  }
+}

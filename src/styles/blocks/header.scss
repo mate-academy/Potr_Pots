@@ -1,0 +1,208 @@
+.header {
+  @include onTablet {
+    background-image: url(../images/header/header-background-tablet.png);
+    background-repeat: no-repeat;
+  }
+  @include onDesktop {
+    background-image: url(../images/header/header-background.png);
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    padding: 10px 0;
+    font-family: $ff-main;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.12rem;
+    color: $c-grey-title;
+    outline: none;
+    border-bottom: 2px solid transparent;
+    @include hover(color, $c-blue-accent);
+
+    &:focus {
+      outline: none;
+      color: $c-blue-accent;
+      border-bottom: 2px solid $c-blue-accent;
+    }
+  }
+
+  &__menu-icon {
+    width: 32px;
+    height: 32px;
+
+    background-image: url(../images/icons/menu_icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    border: 2px solid transparent;
+    @include hover(border-bottom, 2px solid $c-blue-accent);
+    @include hover(border-left,2px solid $c-blue-accent);
+
+    &:focus {
+      border: 2px solid $c-blue-accent;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__link {
+    padding: 27px 0;
+    font-family: $ff-common;
+    color: $c-grey-text;
+    border-bottom: 1px solid transparent;
+    @include hover(color, $c-blue-accent);
+
+    &:focus {
+      outline: none;
+      color: $c-blue-accent;
+      border-bottom: 1px solid $c-blue-accent;
+    }
+  }
+
+  &__basket-icon {
+    display: none;
+    outline: none;
+    border: 2px solid transparent;
+    @include hover(border-bottom, 2px solid $c-blue-accent);
+    @include hover(border-right, 2px solid $c-blue-accent);
+
+    &:focus {
+      border-bottom: 2px solid $c-blue-accent;
+      border-right: 2px solid $c-blue-accent;
+    }
+
+    &:active {
+      transform: scale(1.05);
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__basket-img {
+    display: block;
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+
+    &-left {
+      display: flex;
+      flex-direction: column;
+      order: 2;
+      width: 100%;
+
+      @include onDesktop {
+        display: flex;
+        order: 1;
+        padding: 0 70px;
+      }
+    }
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
+  &__title {
+    font-family: $ff-main;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-blue-accent;
+
+    @include onTablet {
+      align-self: center;
+      font-size: 64px;
+      line-height: 64px;
+    }
+  }
+
+  &__cactus-photo {
+    display: block;
+    min-height: 320px;
+    object-fit: cover;
+    background-position: center;
+    order: 1;
+
+    @include onTablet {
+      order: 2;
+      height: 284px;
+    }
+
+    @include onDesktop {
+      min-height: 500px;
+    }
+  }
+
+  &__price-block {
+    @include onTablet {
+      align-self: flex-end;
+      padding-right: 10px;
+    }
+  }
+
+  &__price {
+    font-family: $ff-common;
+    font-size: 26px;
+    font-weight: bold;
+    color: $c-grey-title;
+  }
+
+  &__text {
+    font-family: $ff-common;
+    font-size: 14px;
+    font-weight: 700;
+    color: $c-grey-text;
+  }
+
+  &__button-buy {
+    align-self: center;
+  }
+
+  &__wrapper-link-about {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    transform: rotate(90deg);
+  }
+
+  &__link-about {
+    display: none;
+    padding: 2px;
+    color: $c-blue-accent;
+    font-family: $ff-common;
+    font-size: 12px;
+    margin-right: 11px;
+
+    &:focus,
+    &:hover {
+      outline: 1px solid $c-blue-accent;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

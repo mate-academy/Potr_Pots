@@ -1,0 +1,115 @@
+.pots-size {
+  background: $c-grey-light;
+  position: relative;
+  z-index: 1;
+
+  @include onDesktop {
+    padding: 126px 0;
+  }
+
+  &__title {
+    font-family: $ff-main;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-black;
+  }
+
+  &__subtitle {
+    font-family: $ff-common;
+    line-height: 150%;
+    color: $c-grey-text;
+
+    @include onDesktop {
+      width: 50%;
+    }
+  }
+
+  &__tablet-container {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
+    }
+
+    @include onDesktop {
+      gap: 100px;
+    }
+  }
+
+  &__left {
+    @include onDesktop {
+      display: flex;
+    }
+
+    &-wrapper {
+      @include onDesktop {
+        border-left: 1px solid $c-grey-light;
+      }
+    }
+
+    &-sizes {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      @include onTablet {
+        padding-left: 30px;
+      }
+    }
+
+    &-title {
+      font-family: $ff-main;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0.15em;
+      color: $c-black;
+    }
+
+    &-text {
+      font-family: $ff-common;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-grey-text;
+
+      &--bottom {
+        @include onDesktop {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &__schema-mobile {
+    height: 320px;
+    background-image: url(../images/pots-size/pots-sizes-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @include onTablet {
+      display: none;
+
+    }
+  }
+
+  &__schema {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      height: 337px;
+      width: 100%;
+      background-image: url(../images/pots-size/pots-sizes-tablet.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center right;
+    }
+
+    @include onDesktop {
+      height: 427px;
+    }
+  }
+}

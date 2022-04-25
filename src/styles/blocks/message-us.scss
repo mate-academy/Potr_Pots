@@ -1,0 +1,97 @@
+.message-us {
+  position: relative;
+  background-image: url(../images/form-background.png);
+  background-repeat: no-repeat;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    padding: 45px 0 91px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 230px;
+      padding: 38px 0 143px;
+    }
+  }
+
+  &__left {
+    &-title {
+      font-family: $ff-main;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $c-black;
+    }
+
+    &-subtitle {
+      margin-bottom: 27px;
+      font-family: $ff-common;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-black;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-title {
+      margin-bottom: 23px;
+      font-family: $ff-common;
+      font-size: 24px;
+      line-height: 150%;
+      color: $c-black;
+    }
+
+    &-button {
+      border: 0;
+      outline: 0;
+      padding: 10px;
+      background-color: transparent;
+      border-bottom: 1px dashed $c-grey-title;
+      font-family: $ff-common;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      color: $c-grey-title;
+      cursor: pointer;
+      @include hover(color, $c-blue-accent);
+      @include hover(border-bottom, 1px dashed $c-blue-accent);
+      transition: transform 500ms;
+
+      &:focus {
+        color: $c-blue-accent;
+        border-bottom: 1px dashed $c-blue-accent;
+        transform: scale(1.08);
+      }
+    }
+  }
+
+  &__right {
+    align-self: flex-end;
+
+    &-title {
+      font-family: $ff-common;
+      font-size: 24px;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-link {
+      display: block;
+      font-family: $ff-common;
+      color: $c-black;
+      @include hover(color, $c-blue-accent);
+
+      &:focus {
+        outline: none;
+        color: $c-blue-accent;
+      }
+    }
+  }
+}

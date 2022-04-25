@@ -1,0 +1,30 @@
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+
+  &--team {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    
+    @include onTablet {
+      flex-direction: row;
+      gap: 57px;
+    }
+  }
+
+  &--materials {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+  }
+
+  &--port-size {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

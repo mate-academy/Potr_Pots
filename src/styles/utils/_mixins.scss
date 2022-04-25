@@ -4,3 +4,52 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin background($url) {
+  background: linear-gradient(
+    180deg,
+    #f8f8f8 0%,
+    rgba(255, 255, 255, 0) 30.93%
+  ),
+    url($url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@mixin title-position ($size, $left) {
+  position: absolute;
+  left: $left;
+  top: -$size;
+  font-size: $size;
+  line-height: $size;
+}
+
+@mixin screen-498 {
+  @media (min-width: 498px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 744px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin largeDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin icon-size($size) {
+  width: $size;
+  height: $size;
+}

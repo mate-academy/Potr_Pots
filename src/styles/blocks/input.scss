@@ -1,0 +1,29 @@
+.input {
+  width: 100%;
+  padding: 8px;
+  font-family: $ff-common;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  outline: none;
+  line-height: 150%;
+  color: $c-grey-text;
+
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  &--textarea {
+    resize: none;
+    overflow-y: hidden;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-text-fill-color: $c-grey-text;
+    -webkit-box-shadow: 0 0 0 1000px $c-light-yellow inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}

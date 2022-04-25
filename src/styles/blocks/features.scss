@@ -1,0 +1,61 @@
+.features {
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+  
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: $ff-main;
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: 0.15em;
+    color: $c-blue-accent;
+  }
+
+  &__outline-letters {
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $c-blue-accent;
+    color: transparent;
+  }
+
+  &__photo {
+    align-items: center;
+    display: block;
+    height: 218px;
+    object-fit: cover;
+
+    @include onTablet {
+      height: 250px;
+    }
+
+    @include onDesktop {
+      height: 300px;
+    }
+  }
+
+  &__subtitle {
+    font-family: $ff-main;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-grey-title;
+  }
+
+  &__description {
+    font-family: $ff-common;
+    text-align: center;
+    color: $c-grey-text;
+  }
+}
