@@ -1,6 +1,6 @@
 'use strict';
 
-const form = document.querySelector('.questions__form');
+const form = document.querySelector('.message-us__form');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();

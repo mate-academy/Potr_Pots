@@ -78,11 +78,18 @@
 
   &__basket-icon {
     display: none;
+    outline: none;
     border: 2px solid transparent;
-    @include hover(border,2px solid $c-blue-accent);
+    @include hover(border-bottom, 2px solid $c-blue-accent);
+    @include hover(border-right, 2px solid $c-blue-accent);
 
     &:focus {
-      outline: 2px solid $c-blue-accent;
+      border-bottom: 2px solid $c-blue-accent;
+      border-right: 2px solid $c-blue-accent;
+    }
+
+    &:active {
+      transform: scale(1.05);
     }
 
     @include onDesktop {
