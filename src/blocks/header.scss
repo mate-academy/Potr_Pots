@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  height: 80px;
+  width: 100%;
+  margin: 0;
+
+  &__menu {
+    display: none;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: block;
+    }
+  }
+
+  &__nav {
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &__basket {
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/basket.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+}

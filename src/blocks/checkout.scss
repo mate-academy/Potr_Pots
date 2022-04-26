@@ -1,0 +1,374 @@
+.checkout {
+  padding: 50px 130px 95px;
+
+  @include iPad {
+    padding: 80px 110px;
+  }
+
+  @include mobile {
+    padding: 80px 20px 100px;
+  }
+
+  &__content {
+    @include flex-column;
+    position: relative;
+  }
+
+  &__block-title {
+    @include s3;
+    padding-top: 50px;
+    position: relative;
+
+    &::before {
+      content: attr(data-phase);
+      display: flex;
+      position: absolute;
+      left: -30px;
+      height: 24px;
+      width: 24px;
+      background-color: $gray;
+      color: #fff;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transform: translateX(-100%);
+    }
+
+    @include mobile {
+      padding-left: 42px;
+
+      &::before {
+        left: 20px;
+      }
+    }
+
+  }
+
+  // address //
+  &__address-form {
+    display: grid;
+    grid-template-columns: 270px 30px 270px;
+    grid-template-rows: repeat(4, 70px);
+    align-items: flex-end;
+    padding: 15px 0 50px;
+    position: relative;
+
+    @include iPad {
+      grid-template-columns: 240px 20px 240px;
+    }
+
+    @include mobile {
+      @include flex-column;
+      width: 100%;
+      align-items: flex-start;
+      gap: 35px;
+      padding-top: 50px;
+    }
+  }
+
+  &__input-form {
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    outline: none;
+    padding-bottom: 11px;
+    @include s3;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &::placeholder {
+      @include s3;
+      color: #828282;
+    }
+
+    &--invalid,
+    &:invalid {
+      color: red;
+      border-color: red;
+    }
+
+    &--firstName {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    &--lastName {
+      grid-column: 3/4;
+      grid-row: 1/2;
+    }
+
+    &--email {
+      grid-column: 1/4;
+      grid-row: 2/3;
+    }
+
+    &--street {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+
+    &--city {
+      grid-column: 3/4;
+      grid-row: 3/4;
+    }
+
+    &--house {
+      grid-column: 1/2;
+      grid-row: 4/5;
+    }
+
+    &--country {
+      grid-column: 3/4;
+      grid-row: 4/5;
+      color: #828282;
+      appearance: none;
+      background: url(../images/select-arrow.png) no-repeat;
+      background-position: 95% 50%;
+      width: 100%;
+    }
+  }
+
+  // payment //
+  &__payment {
+    @include flex-column;
+    padding-bottom: 50px;
+  }
+
+  &__payment-method {
+    display: flex;
+    height: 24px;
+    width: 100%;
+    border-bottom: 1px solid #bdbdbd;
+    padding: 35px 0 11px;
+    align-items: center;
+    gap: 14px;
+
+    &:first-child {
+      margin-top: 15px;
+    }
+
+    @include mobile {
+      gap: 12px;
+    }
+  }
+
+  &__payment-info {
+    @include s3;
+    color: #828282;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  // client data //
+  &__clientPaymentData {
+    display: grid;
+    grid-template-columns: 126px 44px 200px 30px 170px;
+    grid-template-rows: repeat(5, 52px);
+
+    @include iPad {
+      grid-template-columns: 130px 12px 163px 27px 170px;
+    }
+
+    @include mobile {
+      @include flex-column;
+      position: relative;
+      padding-top: 35px;
+      box-sizing: border-box;
+    }
+  }
+
+  &__info-name {
+    @include s3;
+    color: #000;
+    grid-column: 1/2;
+    align-self: flex-end;
+
+    &:invalid {
+      color: red;
+      border-color: red;
+    }
+
+    @include mobile {
+      align-self: flex-start;
+    }
+
+    &--amount {
+      grid-row: 1/2;
+    }
+
+    &--name {
+      grid-row: 2/3;
+
+      @include mobile {
+        padding-top: 30px;
+      }
+    }
+
+    &--card {
+      grid-row: 3/4;
+
+      @include mobile {
+        padding-top: 30px;
+      }
+    }
+
+    &--date {
+      grid-row: 4/5;
+
+      @include mobile {
+        padding-top: 40px;
+      }
+    }
+
+    &--cvc {
+      grid-row: 5/6;
+
+      @include mobile {
+        padding-top: 40px;
+      }
+    }
+  }
+
+  &__amount {
+    @include s3;
+    color: #000;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    align-self: flex-end;
+
+    @include mobile {
+      position: absolute;
+      top: 35px;
+      right: 45px;
+    }
+  }
+
+  &__cardInfo {
+    @include s3;
+    font-weight: normal;
+    color: #828282;
+    padding-left: 20px;
+    border: none;
+    border-bottom: 1px solid #828282;
+    align-self: flex-end;
+
+    @include mobile {
+      align-self: flex-start;
+      width: 100%;
+      padding-left: 0;
+    }
+
+    &::placeholder {
+      text-transform: uppercase;
+    }
+
+    &--name {
+      grid-column: 3/6;
+      grid-row: 2/3;
+
+      @include mobile {
+        padding-top: 15px;
+      }
+
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+
+    &--number {
+      grid-column: 3/6;
+      grid-row: 3/4;
+
+      @include mobile {
+        padding-top: 15px;
+      }
+    }
+
+    &--cvc {
+      @include s3;
+      grid-row: 5/6;
+      grid-column: 3/4;
+
+      @include mobile {
+        width: 76px;
+        position: absolute;
+        left: 62px;
+        bottom: 0;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+      bottom: none;
+    }
+  }
+
+  &__date {
+    @include s3;
+    border: none;
+    border-bottom: 1px solid #828282;
+    grid-row: 4/5;
+    align-self: flex-end;
+    padding-left: 20px;
+
+    @include mobile {
+      padding-top: 15px;
+    }
+
+    &--month {
+      grid-column: 3/4;
+      appearance: none;
+      background: url(../images/select-arrow.png) no-repeat;
+      background-position: 95% 50%;
+
+      @include mobile {
+        width: 120px;
+      }
+    }
+
+    &--year {
+      grid-column: 5/6;
+      appearance: none;
+      background: url(../images/select-arrow.png) no-repeat;
+      background-position: 95% 50%;
+
+      @include mobile {
+        position: absolute;
+        right: 0;
+        bottom: 65px;
+        width: 120px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+      bottom: none;
+    }
+
+    @include mobile {
+      align-self: flex-start;
+    }
+  }
+
+  &__submit {
+    margin-top: 56px;
+    width: 230px;
+
+    @include mobile {
+      margin: 56px auto 0;
+    }
+  }
+}
+
+.checkout__input-form--country > option,
+.checkout__date--month > option,
+.checkout__date--year > option {
+  font-size: 16px;
+  color: #828282;
+}

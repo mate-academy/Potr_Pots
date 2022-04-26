@@ -1,0 +1,315 @@
+.materials {
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  background-image: url(../images/FINAL.png);
+  background-position: center;
+  background-size: cover;
+  margin-top: 386px;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, #f8f8f8 0%,
+    rgba(255, 255, 255, 0) 30.93%);
+  }
+
+  @include iPad {
+    height: 760px;
+  }
+
+  @include mobile {
+    margin-top: 0;
+    height: 400px;
+    background-size: cover;
+  }
+
+  &__title {
+    position: absolute;
+    top: -167px;
+    left: $padding;
+    max-width: 870px;
+    @include title;
+    font-size: 138px;
+    color: $turquoise;
+    letter-spacing: 16px;
+    z-index: 10;
+
+    @include tablet {
+      font-size: 100px;
+      letter-spacing: 12px;
+    }
+
+    @include iPad {
+      left: $padding-iPad;
+      font-size: 80px;
+      max-width: 532px;
+      letter-spacing: 10px;
+    }
+
+    @include mobile {
+      max-width: 88%;
+      @include h1;
+      line-height: 100%;
+      letter-spacing: 9px;
+      top: 0;
+      transform: translateY(-80%);
+      z-index: 10;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    @include flex-column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__benefits {
+    @include flex-column;
+    gap: 14px;
+    width: 470px;
+
+    @include tablet {
+      width: 420px;
+    }
+
+    @include iPad {
+      position: absolute;
+      top: -80px;
+      width: 340px;
+    }
+  }
+
+  &__subtitle {
+    @include s3;
+    color: $gray2;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 10;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include s3;
+    color: $gray2;
+    z-index: 10;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__about-bobbiny {
+    display: none;
+
+    &--active {
+      display: block;
+      position: absolute;
+      @include s3;
+      color: $grey-light;
+      @include flex-center;
+      width: 303px;
+      height: 237px;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 35px 45px;
+      box-sizing: border-box;
+    }
+
+    &--1 {
+      bottom: 234px;
+      left: 10%;
+
+      @include tablet {
+        left: 7%;
+      }
+
+      @include iPad {
+        bottom: 180px;
+        left: 0;
+      }
+    }
+
+    &--2 {
+      bottom: 120px;
+      left: 31%;
+
+      @include tablet {
+        left: 28%;
+      }
+
+      @include iPad {
+        bottom: 304px;
+        left: 20%;
+      }
+    }
+
+    &--3 {
+      bottom: 176px;
+      left: 41%;
+
+      @include tablet {
+        left: 38%;
+      }
+
+      @include iPad {
+        bottom: 146px;
+        left: 36%;
+      }
+    }
+
+    &--4 {
+      bottom: 22px;
+      left: 53%;
+
+      @include tablet {
+        left: 50%;
+      }
+
+      @include iPad {
+        bottom: 250px;
+        left: 51%;
+      }
+    }
+
+    &--5 {
+      bottom: 102px;
+      left: 72%;
+
+      @include tablet {
+        left: 69%;
+      }
+
+      @include iPad {
+        bottom: 58px;
+        left: unset;
+        right: 0;
+      }
+    }
+
+    &--slide {
+      display: none;
+
+      @include mobile {
+        display: block;
+        position: absolute;
+        @include s3;
+        color: $grey-light;
+        @include flex-center;
+        width: 302px;
+        height: 237px;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 35px 45px;
+        box-sizing: border-box;
+        bottom: -45%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__labels {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      position: absolute;
+      bottom: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 20px;
+    }
+  }
+
+  &__label {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(248, 248, 248, 1);
+    border: 1px solid rgba(248, 248, 248, 1);
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 20;
+
+    &--active {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(248, 248, 248, 1);
+    }
+  }
+
+  &__open {
+    position: absolute;
+    height: 51px;
+    width: 51px;
+    @include link;
+    border-radius: 50%;
+    background: url(../images/plus.png) no-repeat;
+
+    &--active {
+      background: url(../images/minus.png) no-repeat;
+    }
+
+    &--1 {
+      bottom: 163px;
+      left: 17vw;
+
+      @include iPad {
+        bottom: 114px;
+        left: 12vw;
+      }
+    }
+
+    &--2 {
+      bottom: 400px;
+      left: 38vw;
+
+      @include iPad {
+        bottom: 236px;
+        left: 31vw;
+      }
+    }
+
+    &--3 {
+      bottom: 105px;
+      left: 48vw;
+
+      @include iPad {
+        bottom: 76px;
+      }
+    }
+
+    &--4 {
+      bottom: 272px;
+      right: 38vw;
+
+      @include iPad {
+        bottom: 182px;
+        right: 30vw;
+      }
+    }
+
+    &--5 {
+      bottom: 374px;
+      right: 19vw;
+
+      @include iPad {
+        right: 20vw;
+        bottom: 320px;
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

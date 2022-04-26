@@ -1,0 +1,74 @@
+.dropdownPage {
+  display: none;
+
+  &--active {
+    @include flex-column;
+    box-sizing: border-box;
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 830px;
+    height: max-content;
+    padding: 30px 40px 110px;
+    z-index: 20;
+    background-color: #fff;
+
+    @include iPad {
+      width: 725px;
+      padding: 50px 38px 60px;
+    }
+  
+    @include mobile {
+      width: 296px;
+      padding: 80px 18px 92px;
+    }
+  }
+
+  &__title {
+    @include h2;
+    letter-spacing: 0.15em;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    height: 47px;
+    width: 47px;
+    background: url(../images/bag-close.svg) no-repeat;
+    background-size: contain;
+    cursor: pointer;
+
+    @include iPad {
+      top: 12px;
+      right: 12px;
+    }
+
+    @include mobile {
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__button {
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    text-align: center;
+    height: 48px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e0e0e0;
+      border: 1px solid $gray2;
+    }
+
+    &:disabled {
+      border: 1px solid #eb5757;
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+}
