@@ -1,7 +1,6 @@
 .footer {
   position: relative;
-  display: flex;
-  justify-content: space-between;
+  @include flex-column;
   height: 296px;
   width: 100%;
   padding-top: 74px;
@@ -15,7 +14,12 @@
   @include mobile {
     height: 280px;
     padding-top: 90px;
-    
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
     @include mobile {
       justify-content: center;
     }
@@ -43,6 +47,7 @@
 
       &:hover {
         transform: scale(1,1.2);
+        transition-duration: 0.3s;
       }
     }
 
@@ -63,6 +68,7 @@
     &--address {
       &:hover {
         border-bottom: 1px solid #000;
+        transition-duration: 0.3s;
       }
     }
 
@@ -80,10 +86,13 @@
   }
 
   &__logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    align-self: center;
     bottom: 64px;
+
+    &:hover {
+      transform: scale(0.9);
+      transition-duration: 0.3s;
+    }
   }
 
   &__networks {
@@ -92,6 +101,10 @@
 
     @include iPad {
       gap: 80px;
+    }
+
+    @include mobile {
+      padding-bottom: 40px;
     }
   }
 
@@ -102,6 +115,7 @@
 
     &:hover {
       transform: scale(1.2);
+      transition-duration: 0.3s;
     }
   }
 }

@@ -74,6 +74,14 @@
     @include s3;
     color: $gray2;
 
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      -webkit-text-fill-color: $gray2;
+      -webkit-background-: 0 0 0 1000px #000 inset;
+    }
+
     &::placeholder {
       position: absolute;
       @include s3;
@@ -137,6 +145,7 @@
     color: #000;
     &:hover {
       border-bottom: 1px solid #000;
+      transition-duration: 0.3s;
     }
   }
 

@@ -18,7 +18,7 @@
   <body class="page__body">
     <div class="page__wrapper">
       <header class="page__section header" id="header">
-        <h2 class="header__logo logo">POTR POTS</h2>
+        <a class="header__logo logo" href="#home-page">POTR POTS</a>
         <a class="header__menu" href="#menu">
           <img src="images/menu_icon.png" alt="menu_icon">
         </a>
@@ -139,7 +139,9 @@
                 data-input="lastName"
               >
               <input
+                autocomplete="email"
                 type="email"
+                name="email"
                 class="checkout__input-form checkout__input-form--email formInput"
                 placeholder="Email"
                 pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
@@ -277,7 +279,7 @@
           <span class="succesfullPayment__message">Expect a message to ship the item</span>
         </div>
 
-        <div class="page__section home-page">
+        <div class="page__section home-page" id="home-page">
           <div class="home-page__blocks">
             <div class="home-page__main-block">
               <h1 class="home-page__title">
@@ -545,7 +547,7 @@
           <h2 class="message-us__title">have any questions?</h2>
           <p class="message-us__ways">Here few ways to get in touch with us:</p>
           <div class="message-us__block">
-            <form class="message-us__form">
+            <form class="message-us__form" autocomplete="on">
               <p class="message-us__form-title">Message us</p>
               <input
                 class="message-us__field"
@@ -563,6 +565,7 @@
                 required
               >
               <input
+                autocomplete="email"
                 class="message-us__field"
                 type="text"
                 name="text"
@@ -606,48 +609,50 @@
       </main>
 
       <footer class="page__section footer">
-        <div class="footer__block footer__block--address">
-          <h3 class="footer__title">Adrress</h3>
-          <span class="footer__block-map">
+        <div class="footer__content">
+          <div class="footer__block footer__block--address">
+            <h3 class="footer__title">Adrress</h3>
+            <span class="footer__block-map">
+              <a
+                class="footer__block-info footer__block-info--address"
+                href="https://goo.gl/maps/5JLC8KVGhMPstw8b9"
+                target="blank"
+              >
+                United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD
+              </a>
+            </span>
+          </div>
+          <div class="footer__networks">
             <a
-              class="footer__block-info footer__block-info--address"
-              href="https://goo.gl/maps/5JLC8KVGhMPstw8b9"
+              class="footer__network-link"
+              href="https://ru.linkedin.com/"
               target="blank"
             >
-              United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD
+              <img src="images/link.png" alt="linkendin">
             </a>
-          </span>
+            <a
+              class="footer__network-link"
+              href="https://instagram.com"
+              target="blank"
+            >
+              <img src="images/icons8-instagram-50.png" alt="instagram">
+            </a>
+            <a
+              class="footer__network-link"
+              href="https://www.facebook.com/"
+              target="blank"
+            >
+              <img src="images/facebook.png" alt="facebook">
+            </a>
+          </div>
+          <div class="footer__block">
+            <a class="footer__title--link" href="#about-us">
+              <h3 class="footer__title">aBOUT uS</h3>
+            </a>
+            <p class="footer__block-info footer__block-info--copyright">Copyright © 2019</p>
+          </div>
         </div>
-        <h2 class="footer__logo logo">POTR POTS</h2>
-        <div class="footer__networks">
-          <a
-            class="footer__network-link"
-            href="https://ru.linkedin.com/"
-            target="blank"
-          >
-            <img src="images/link.png" alt="linkendin">
-          </a>
-          <a
-            class="footer__network-link"
-            href="https://instagram.com"
-            target="blank"
-          >
-            <img src="images/icons8-instagram-50.png" alt="instagram">
-          </a>
-          <a
-            class="footer__network-link"
-            href="https://www.facebook.com/"
-            target="blank"
-          >
-            <img src="images/facebook.png" alt="facebook">
-          </a>
-        </div>
-        <div class="footer__block">
-          <a class="footer__title--link" href="#about-us">
-            <h3 class="footer__title">aBOUT uS</h3>
-          </a>
-          <p class="footer__block-info footer__block-info--copyright">Copyright © 2019</p>
-        </div>
+        <a class="footer__logo logo" href="#home-page">POTR POTS</a>
       </footer>
     </div>
     <script type="text/javascript" src="scripts/main.js"></script>

@@ -16,6 +16,9 @@
     margin: 0;
   }
 
+  scroll-behavior: smooth;
+  transition-duration: 0.3s;
+
   &__body {
     width: 100%;
     font-family: "Proxima Nova", "Montserrat", sans-serif;
@@ -30,8 +33,6 @@
     min-height: 100%;
     max-height: max-content;
     overflow: hidden;
-    transition-duration: 0.3s;
-    scroll-behavior: smooth;
 
     &--background {
       &::before {
@@ -74,6 +75,7 @@
 
     &:target {
       transform: translateX(0);
+      transition-duration: 0.3s;
     }
   }
 }
