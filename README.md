@@ -2,7 +2,7 @@
 
 **⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).** 
 
-Implement landing page according to [Figma design](https://www.figma.com/file/B4inXKHcMH3ChrTnXEJKS1/POTR-POTS-(Copy)?node-id=0%3A1) - Use BEM and SCSS
+Implement landing page according to [Figma design](https://www.figma.com/file/50zgLU65Mcd3MisFHMfLfx/POTR-POTS?node-id=0%3A1) - Use BEM and SCSS
 - The design 1440px
 - Notebook 1280px
 - Tablet 768px
