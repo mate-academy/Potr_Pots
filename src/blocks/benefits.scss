@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   padding-right: $padding;
+  box-sizing: border-box;
 
   @include iPad {
     padding-right: $padding-iPad;
@@ -87,6 +88,7 @@
     }
 
     @include mobile {
+      box-sizing: border-box;
       width: 100%;
       padding-left: $padding;
     }
@@ -128,6 +130,11 @@
     &--self {
       width: 270px;
       padding-right: 45px;
+
+      @include mobile {
+        width: max-content;
+        padding-right: 0;
+      }
     }
 
     &--pack {
@@ -139,6 +146,8 @@
     }
 
     @include mobile {
+      width: 100%;
+
       &--self {
         order: 3;
       }
