@@ -1,0 +1,576 @@
+.materials {
+  position: relative;
+  height: max-content;
+  z-index: 4;
+
+  &__back {
+    position: absolute;
+    top: 390px;
+    width: 100%;
+    z-index: 0;
+    max-width: 1440px;
+    left: calc((100% - 1440px) / 2);
+
+    @include iPad {
+      top: 450px;
+      left: 0;
+    }
+
+    @include iPhone {
+      top: 200px;
+      left: 0;
+    }
+
+    &--img {
+      width: 100%;
+    }
+  }
+
+  &__right {
+    position: absolute;
+    top: 80px;
+    color: #828282;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.22em;
+    writing-mode: vertical-lr;
+    text-transform: uppercase;
+    display: none;
+
+    @include iPad {
+      display: block;
+      right: 10px;
+    }
+
+    @include iPhone {
+      display: none;
+      right: 6px;
+      top: 750px;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 65px;
+      background-color: #828282;
+      margin-bottom: 10px;
+    }
+
+    &--2 {
+      position: absolute;
+      top: 100px;
+      color: #828282;
+      font-size: 12px;
+      line-height: 12px;
+      letter-spacing: 0.22em;
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+      display: none;
+      height: 170px;
+  
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 65px;
+        background-color: #828282;
+        margin-bottom: 10px;
+      }
+
+      @include iPad {
+        display: block;
+        left: 10px;
+        top: 370px;
+      }
+
+      @include iPhone {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "bebas", sans-serif;
+    font-size: 139px;
+    line-height: 139px;
+    letter-spacing: 0.12em;
+    color: #03839e;
+    grid-column: 1 / 13;
+    z-index: 2;
+    margin-top: 230px;
+    height: min-content;
+
+    @include iPad {
+      grid-column: 1 / 7;
+      font-size: 80px;
+      line-height: 80px;
+      width: 540px;
+    }
+
+    @include iPhone {
+      grid-column: 1 / 3;
+      font-size: 58px;
+      line-height: 58px;
+      margin-top: 70px;
+    }
+  }
+
+  &__content {
+    grid-column: 8 / 13;
+    margin-top: -120px;
+    z-index: 2;
+
+    @include iPad {
+      grid-column: 4 / 7;
+      margin-top: -70px;
+    }
+
+    @include iPhone {
+      display: none;
+    }
+  }
+
+  &__name {
+    font-family: "proxima", sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    color: #4f4f4f;
+    font-weight: 1000;
+  }
+
+  &__text {
+    font-family: "proxima", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4f4f4f;
+    margin-top: 14px;
+
+    &--bold {
+      font-weight: 1000;
+    }
+  }
+
+  &__plus {
+    position: absolute;
+
+    @include iPad {
+      grid-column: 1 / 7;
+      
+
+    }
+
+    &--item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+
+      &-1 {
+        top: -190px;
+        left: 250px;
+        cursor: pointer;
+        background-color: #eb5757;
+
+        &::before {
+          content: "";
+          position: relative;
+          top: 12px;
+          left: 20px;
+          width: 11px;
+          height: 1px;
+          background-color: #e0e0e0;
+          display: inline-block;
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: relative;
+          top: 17px;
+          left: 14px;
+          width: 1px;
+          height: 11px;
+          background-color: #e0e0e0;
+        }
+
+        @include iPad {
+          top: calc(-150px - ((190 - 150) * (100vw - 768px) / (1440 - 768)));
+          left: calc(90px + ((250 - 90) * (100vw - 768px) / (1440 - 768)));
+        }
+
+        @include iPhone {
+          top: calc(-180px + ((180 - 150) * (100vw - 320px) / (768 - 320)));
+          left: calc(20px + ((90 - 20) * (100vw - 320px) / (768 - 320)));
+        }
+      }
+
+      &-2 {
+        top: -460px;
+        left: 550px;
+        background-color: #eb5757;
+        cursor: pointer;
+        
+        &::before {
+          content: "";
+          position: relative;
+          top: 12px;
+          left: 20px;
+          width: 11px;
+          height: 1px;
+          background-color: #e0e0e0;
+          display: inline-block;
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: relative;
+          top: 17px;
+          left: 14px;
+          width: 1px;
+          height: 11px;
+          background-color: #e0e0e0;
+        }
+
+        @include iPad {
+          top: calc(-270px - ((460 - 270) * (100vw - 768px) / (1440 - 768)));
+          left: calc(240px + ((550 - 240) * (100vw - 768px) / (1440 - 768)));
+        }
+
+        @include iPhone {
+          top: calc(-80px - ((270 - 80) * (100vw - 320px) / (768 - 320)));
+          left: calc(70px + ((240 - 70) * (100vw - 320px) / (768 - 320)));
+        }
+      }
+
+      &-3 {
+        top: -170px;
+        left: 680px;
+        background-color: #eb5757;
+        cursor: pointer;
+        
+        &::before {
+          content: "";
+          position: relative;
+          top: 12px;
+          left: 20px;
+          width: 11px;
+          height: 1px;
+          background-color: #e0e0e0;
+          display: inline-block;
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: relative;
+          top: 17px;
+          left: 14px;
+          width: 1px;
+          height: 11px;
+          background-color: #e0e0e0;
+        }
+
+        @include iPad {
+          top: calc(-100px - ((170 - 100) * (100vw - 768px) / (1440 - 768)));
+          left: calc(340px + ((680 - 340) * (100vw - 768px) / (1440 - 768)));
+        }
+
+        @include iPhone {
+          top: calc(-150px + ((150 - 100) * (100vw - 320px) / (768 - 320)));
+          left: calc(130px + ((340 - 130) * (100vw - 320px) / (768 - 320)));
+        }
+      }
+
+      &-4 {
+        top: -350px;
+        left: 830px;
+        background-color: #eb5757;
+        cursor: pointer;
+        
+        &::before {
+          content: "";
+          position: relative;
+          top: 12px;
+          left: 20px;
+          width: 11px;
+          height: 1px;
+          background-color: #e0e0e0;
+          display: inline-block;
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: relative;
+          top: 17px;
+          left: 14px;
+          width: 1px;
+          height: 11px;
+          background-color: #e0e0e0;
+        }
+
+        @include iPad {
+          top: calc(-190px - ((350 - 190) * (100vw - 768px) / (1440 - 768)));
+          left: calc(440px + ((830 - 440) * (100vw - 768px) / (1440 - 768)));
+        }
+
+        @include iPhone {
+          top: calc(-80px - ((190 - 80) * (100vw - 320px) / (768 - 320)));
+          left: calc(190px + ((440 - 190) * (100vw - 320px) / (768 - 320)));
+        }
+      }
+
+      &-5 {
+        top: -420px;
+        left: 1110px;
+        background-color: #eb5757;
+        cursor: pointer;
+        
+        &::before {
+          content: "";
+          position: relative;
+          top: 12px;
+          left: 20px;
+          width: 11px;
+          height: 1px;
+          background-color: #e0e0e0;
+          display: inline-block;
+        }
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: relative;
+          top: 17px;
+          left: 14px;
+          width: 1px;
+          height: 11px;
+          background-color: #e0e0e0;
+        }
+
+        @include iPad {
+          top: calc(-230px - ((420 - 230) * (100vw - 768px) / (1440 - 768)));
+          left: calc(590px + ((1110 - 590) * (100vw - 768px) / (1440 - 768)));
+        }
+
+        @include iPhone {
+          top: calc(-150px - ((230 - 150) * (100vw - 320px) / (768 - 320)));
+          left: calc(250px + ((590 - 250) * (100vw - 320px) / (768 - 320)));
+        }
+      }
+    }
+  }
+}
+
+.materials__input1 {
+  position: absolute;
+  opacity: 0;
+}
+
+.materials__input2 {
+  position: absolute;
+  opacity: 0;
+}
+
+.materials__input3 {
+  position: absolute;
+  opacity: 0;
+}
+
+.materials__input4 {
+  position: absolute;
+  opacity: 0;
+}
+
+.materials__input5 {
+  position: absolute;
+  opacity: 0;
+}
+
+.materials__nav--text {
+  width: 215px;
+  height: 170px;
+  background: rgba(0, 0, 0, 0.41);
+  mix-blend-mode: normal;
+  padding: 35px 45px;
+  position: absolute;
+  display: none;
+  color: #f8f8f8;
+  font-family: "proxima", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+
+  &-1 {
+    top: -130px;
+    left: 120px;
+    display: none;
+
+    @include iPad {
+      top: calc(-95px - ((130 - 95) * (100vw - 768px) / (1440 - 768)));
+      left: calc(35px + ((120 - 35) * (100vw - 768px) / (1440 - 768)));
+    }
+
+    @include iPhone {
+      top: -50px;
+      left: calc((100vw - 305px) / 2);
+    }
+  }
+
+  &-2 {
+    top: -400px;
+    left: 420px;
+    display: none;
+
+    @include iPad {
+      top: calc(-215px - ((400 - 215) * (100vw - 768px) / (1440 - 768)));
+      left: calc(130px + ((420 - 130) * (100vw - 768px) / (1440 - 768)));
+    }
+
+    @include iPhone {
+      top: -50px;
+      left: calc((100vw - 305px) / 2);
+    }
+  }
+
+  &-3 {
+    top: -110px;
+    left: 560px;
+    display: none;
+
+    @include iPad {
+      top: calc(-45px - ((110 - 45) * (100vw - 768px) / (1440 - 768)));
+      left: calc(220px + ((560 - 220) * (100vw - 768px) / (1440 - 768)));
+    }
+
+    @include iPhone {
+      top: -50px;
+      left: calc((100vw - 305px) / 2);
+    }
+  }
+
+  &-4 {
+    top: -290px;
+    left: 700px;
+    display: none;
+
+    @include iPad {
+      top: calc(-135px - ((290 - 135) * (100vw - 768px) / (1440 - 768)));
+      left: calc(320px + ((700 - 320) * (100vw - 768px) / (1440 - 768)));
+    }
+
+    @include iPhone {
+      top: -50px;
+      left: calc((100vw - 305px) / 2);
+    }
+  }
+
+  &-5 {
+    top: -360px;
+    left: 990px;
+    display: none;
+
+    @include iPad {
+      top: calc(-175px - ((360 - 175) * (100vw - 768px) / (1440 - 768)));
+      left: calc(450px + ((990 - 450) * (100vw - 768px) / (1440 - 768)));
+    }
+
+    @include iPhone {
+      top: -50px;
+      left: calc((100vw - 305px) / 2);
+    }
+  }
+}
+
+// .materials__nav--text-1 {
+//   display: none;
+// }
+
+// .materials__nav--text-2 {
+//   display: none;
+// }
+
+// .materials__nav--text-3 {
+//   display: none;
+// }
+
+// .materials__nav--text-4 {
+//   display: none;
+// }
+
+// .materials__nav--text-5 {
+//   display: none;
+// }
+
+.materials__input1:checked ~ .materials__nav--text-1 {
+  display: block;
+}
+
+.materials__input2:checked ~ .materials__nav--text-2 {
+  display: block;
+}
+
+.materials__input3:checked ~ .materials__nav--text-3 {
+  display: block;
+}
+
+.materials__input4:checked ~ .materials__nav--text-4 {
+  display: block;
+}
+
+.materials__input5:checked ~ .materials__nav--text-5 {
+  display: block;
+}
+
+.materials__input1:checked ~ .materials__plus--item-1 {
+  background: rgba(36, 35, 35, 0.75);
+  opacity: 0.65;
+  backdrop-filter: blur(12px);
+
+  &::after {
+    display: none;
+  }
+}
+
+.materials__input2:checked ~ .materials__plus--item-2 {
+  background: rgba(36, 35, 35, 0.75);
+  opacity: 0.65;
+  backdrop-filter: blur(12px);
+  
+  &::after {
+    display: none;
+  }
+}
+
+.materials__input3:checked ~ .materials__plus--item-3 {
+  background: rgba(36, 35, 35, 0.75);
+  opacity: 0.65;
+  backdrop-filter: blur(12px);
+
+  &::after {
+    display: none;
+  }
+}
+
+.materials__input4:checked ~ .materials__plus--item-4 {
+  background: rgba(36, 35, 35, 0.75);
+  opacity: 0.65;
+  backdrop-filter: blur(12px);
+
+  &::after {
+    display: none;
+  }
+}
+
+.materials__input5:checked ~ .materials__plus--item-5 {
+  background: rgba(36, 35, 35, 0.75);
+  opacity: 0.65;
+  backdrop-filter: blur(12px);
+
+  &::after {
+    display: none;
+  }
+}
