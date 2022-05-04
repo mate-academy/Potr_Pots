@@ -1,37 +1,25 @@
 'use strict';
 
 const icon = document.getElementById('header-burger');
-const item1 = document.getElementById('item1');
-const item2 = document.getElementById('item2');
-const item3 = document.getElementById('item3');
-const item4 = document.getElementById('item4');
-const item5 = document.getElementById('item5');
-const item6 = document.getElementById('item6');
+
+for (let i = 1; i <= 6; i++) {
+  const item = document.getElementById(`item${i}`);
+
+  item.addEventListener('click', () => {
+    document.getElementById('menu-container').classList.toggle('menu-opened');
+  });
+}
 
 icon.addEventListener('click', () => {
   document.getElementById('menu-container').classList.toggle('menu-opened');
 });
 
-item1.addEventListener('click', () => {
-  document.getElementById('menu-container').classList.toggle('menu-opened');
-});
+for (let i = 1; i <= 5; i++) {
+  document.getElementById(`plus${i}`).addEventListener('click', () => {
+    const popup = document.getElementById(`popup${i}`);
+    const plus = document.getElementById(`plus${i}`);
 
-item2.addEventListener('click', () => {
-  document.getElementById('menu-container').classList.toggle('menu-opened');
-});
-
-item3.addEventListener('click', () => {
-  document.getElementById('menu-container').classList.toggle('menu-opened');
-});
-
-item4.addEventListener('click', () => {
-  document.getElementById('menu-container').classList.toggle('menu-opened');
-});
-
-item5.addEventListener('click', () => {
-  document.getElementById('menu-container').classList.toggle('menu-opened');
-});
-
-item6.addEventListener('click', () => {
-  document.getElementById('menu-container').classList.toggle('menu-opened');
-});
+    popup.classList.toggle('materials__popup--active');
+    plus.classList.toggle('materials__plus--active');
+  });
+}
