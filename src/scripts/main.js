@@ -15,9 +15,10 @@ icon.addEventListener('click', () => {
 });
 
 for (let i = 1; i <= 5; i++) {
-  document.getElementById(`plus${i}`).addEventListener('click', () => {
-    const popup = document.getElementById(`popup${i}`);
-    const plus = document.getElementById(`plus${i}`);
+  const plus = document.querySelector(`.materials__plus--${i}`);
+
+  plus.addEventListener('click', () => {
+    const popup = document.querySelector(`.materials__popup--${i}`);
 
     popup.classList.toggle('materials__popup--active');
     plus.classList.toggle('materials__plus--active');
