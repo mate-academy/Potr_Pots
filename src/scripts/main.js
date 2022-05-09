@@ -46,8 +46,8 @@ for (let i = 1; i <= 5; i++) {
 }
 
 for (let i = 1; i <= 2; i++) {
-  const minus = document.getElementById(`minus${i}`);
-  const plus = document.getElementById(`mobilePlus${i}`);
+  const minus = document.querySelector(`.minus${i}`);
+  const plus = document.querySelector(`.mobilePlus${i}`);
   const text = document.querySelector(`.basket__change${i}`);
   let counter = text.textContent;
   const unit = document.querySelector(`.basket__unit-price${i}`).textContent;
