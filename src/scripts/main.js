@@ -49,7 +49,7 @@ for (let i = 1; i <= 2; i++) {
   const minus = document.querySelector(`.minus${i}`);
   const plus = document.querySelector(`.mobilePlus${i}`);
   const text = document.querySelector(`.basket__change${i}`);
-  let counter = text.textContent;
+  let counter = 0;
   const unit = document.querySelector(`.basket__unit-price${i}`).textContent;
   const total = document.querySelector(`.basket__total-price${i}`);
 
@@ -57,7 +57,7 @@ for (let i = 1; i <= 2; i++) {
   const price = price1.replace(',', '.');
 
   minus.addEventListener('click', () => {
-    if (counter !== 0) {
+    if (counter > 0) {
       counter--;
 
       text.textContent = counter;
@@ -74,17 +74,19 @@ for (let i = 1; i <= 2; i++) {
   });
 
   plus.addEventListener('click', () => {
-    counter++;
+    if (counter >= 0) {
+      counter++;
 
-    text.textContent = counter;
-    total.textContent = `$ ${counter * parseFloat(price)}`;
+      text.textContent = counter;
+      total.textContent = `$ ${counter * parseFloat(price)}`;
 
-    const final = document.querySelector(`.basket__finish-price`).textContent;
-    const finalText = document.querySelector(`.basket__finish-price`);
-    const final1 = final.replace('$ ', '');
-    let final2 = parseFloat(final1.replace(',', '.'));
+      const final = document.querySelector(`.basket__finish-price`).textContent;
+      const finalText = document.querySelector(`.basket__finish-price`);
+      const final1 = final.replace('$ ', '');
+      let final2 = parseFloat(final1.replace(',', '.'));
 
-    final2 += parseFloat(price);
-    finalText.textContent = `$ ${final2}`;
+      final2 += parseFloat(price);
+      finalText.textContent = `$ ${final2}`;
+    }
   });
 }

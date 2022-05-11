@@ -19,6 +19,12 @@ button.addEventListener('click', () => {
   document.querySelector('.checkout').classList.add('checkout--active');
   document.querySelector('.basket').classList.remove('basket--active');
   document.querySelector('.page').classList.remove('page--blured');
+
+  const finish = document.querySelector('.basket__finish-price').textContent;
+
+  const newFinish = finish.replace('$ ', '');
+
+  document.querySelector('.checkout__change').textContent = `USD ${newFinish}`;
 });
 
 const coCross = document.querySelector('.checkout__cross');
