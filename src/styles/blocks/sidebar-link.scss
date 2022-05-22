@@ -1,0 +1,30 @@
+.sidebar-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 18px;
+  position: absolute;
+  right: 0;
+  transform: rotate(90deg) translate(-58px, 8px);
+  transform-origin: right;
+  @include Manrope(400,12px);
+  color: $accent-text;
+  fill: $accent-text;
+  @include hover(opacity, 0.7);
+
+  @include onTablet {
+    right: auto;
+    bottom: 0;
+    transform-origin: left;
+    transform: rotate(90deg) translate(-100%, 0);
+  }
+
+  &__icon {
+    display: inline-block;
+    height: 45px;
+    width: 8px;
+    fill: inherit;
+    transform: rotate(-90deg) translate(-23px, 8px);
+    transform-origin: top;
+  }
+}

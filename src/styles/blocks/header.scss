@@ -1,0 +1,112 @@
+.header {
+  @include onLaptop {
+    background-image: url("../images/photos/header_bg.svg");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: top left;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    min-height: 68px;
+
+    @include onTablet {
+      min-height: 120px;
+    }
+
+    @include onLaptop {
+      min-height: 140px;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+  }
+
+  &__img {
+    max-width: 100vw;
+    width: 100vw;
+    margin: 0 0 25px -30px;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      width: 100%;
+      margin: 0;
+      padding-left: 34px;
+    }
+
+    @include onLaptop {
+      padding-left: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    @include Bebas(36px);
+    line-height: 1;
+    color: $accent-text;
+    letter-spacing: 0.12em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $accent-text;
+
+    @include onTablet {
+      position: absolute;
+      margin-bottom: 0;
+      font-size: 64px;
+    }
+
+    @include onLaptop {
+      position: static;
+      grid-row: 1 / 2;
+      letter-spacing: 0.07em;
+    }
+
+    @include onDesktop {
+      letter-spacing: 0.12em;
+    }
+
+    &--accent {
+      -webkit-text-fill-color: $accent-text;
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    @include Manrope(700, 26px);
+    color: $main-title;
+
+    @include onTablet {
+      position: relative;
+      top: -66px;
+      margin-bottom: 0;
+    }
+
+    @include onLaptop {
+      position: static;
+      grid-row: 1 / 2;
+      align-self: end;
+      margin-bottom: 83%;
+    }
+  }
+
+  &__text {
+    display: block;
+    max-width: 138px;
+    font-size: 14px;
+    color: $main-text;
+    font-weight: 400;
+  }
+
+  &__btn {
+    @include onLaptop {
+      grid-row: 1 / 2;
+      align-self: end;
+      margin-bottom: 40px;
+    }
+  }
+}
