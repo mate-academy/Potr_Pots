@@ -13,6 +13,10 @@
     align-items: center;
   }
 
+  @include onDesktop {
+    padding: 74px 136px 64px;
+  }
+
   &__address {
     display: none;
     flex-direction: column;
@@ -43,6 +47,14 @@
   &__social-networks {
     display: flex;
     justify-content: space-around;
+
+    @include onTablet {
+      margin-bottom: 28px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 84px;
+    }
   }
 
   &__social-network {
@@ -64,6 +76,7 @@
 
     @include onTablet {
       width: 170px;
+      align-items: flex-start;
     }
   }
 

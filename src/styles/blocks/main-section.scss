@@ -21,4 +21,85 @@
       width: 75vw;
     }
   }
+
+  &__photo {
+    width: 100vw;
+    padding-bottom: 25px;
+
+    @include onTablet {
+      position: absolute;
+      right: 0;
+      padding-bottom: 0;
+
+      width: 306px;
+      height: 306px;
+      z-index: -1;
+
+      transform: translate(-5vw);
+    }
+
+    @include onDesktop {
+      transform: translate(-18vw);
+    }
+  }
+
+  &__title {
+    padding-bottom: 30px;
+
+    color: $turquoise;
+    width: max-content;
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__price {
+    width: max-content;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 44px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__price-value {
+    @extend %section-2Text;
+    font-weight: 700;
+  }
+
+  &__price-description {
+    @extend %section-4Text;
+  }
+
+  &__more {
+    @extend %section-5Text;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    width: max-content;
+
+    color: $turquoise;
+    fill: $turquoise;
+
+    transform: translate(68vw, -12.3vh) rotate(90deg);
+
+    @include onTablet {
+      transform: translate(-9.7vw, -7vh) rotate(90deg);
+    }
+
+    @include onDesktop {
+      transform: translate(-4.5vw, -7vh) rotate(90deg);
+    }
+  }
 }
