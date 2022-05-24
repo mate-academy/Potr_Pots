@@ -33,9 +33,10 @@
   }
 
   &__photo-container {
-    margin-bottom: 35px;
+    margin: 0 auto 35px;
     position: relative;
     width: 100%;
+    max-width: 350px;
     max-height: 260px;
 
     &::after {
@@ -46,7 +47,9 @@
 
     @include onTablet {
       max-height: 220px;
+      width: 100%;
     }
+
     @include onLaptop {
       max-height: 370px;
     }
@@ -54,6 +57,7 @@
 
   &__img {
     position: absolute;
+    margin: 0 auto;
     height: 100%;
     object-fit: cover;
     object-position: center bottom;
