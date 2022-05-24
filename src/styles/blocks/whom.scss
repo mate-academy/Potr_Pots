@@ -1,0 +1,178 @@
+.whom {
+
+  &__title {
+    font-size: 36px;
+    color: $main-title;
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+    @include onLaptop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 76px;
+
+    &:not(:last-child) {
+      margin-bottom: 70px;
+
+      @include onLaptop {
+        margin-bottom: 80px;
+      }
+    }
+
+    &--reverse-row {
+      @include onTablet {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &--column {
+      @include onLaptop {
+        flex-direction: column;
+        gap: 45px;
+      }
+    }
+
+    &--row {
+      @include onLaptop {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 30px;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      max-width: 40%;
+      width: 100%;
+    }
+
+    @include onLaptop {
+      max-width: 100%;
+    }
+
+    &--first {
+      @include onTablet {
+        margin-top: 26px;
+      }
+
+      @include onLaptop {
+        margin-top: 0;
+        max-width: 500px;
+      }
+    }
+  }
+
+  &__feature {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-bottom: 25px;
+      position: relative;
+      @include Manrope(400, 16px);
+
+      &::before {
+        content: "*";
+        position: absolute;
+        left: -12px;
+        font-size: 24px;
+        line-height: 1;
+        color: #000;
+
+        @include onLaptop {
+          left: -32px;
+        }
+      }
+
+      &--reverse-row {
+        margin-left: auto;
+        margin-top: 30px;
+        max-width: max-content;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 36px;
+    color: #000;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    position: relative;
+
+    @include onTablet {
+      &::after {
+        content: "";
+        position: relative;
+        right: 10px;
+        bottom: -8px;
+        display: inline-block;
+        width: 1px;
+        height: 46px;
+        background-color: $main-title;
+        transform: rotate(22deg);
+        transform-origin: bottom;
+      }
+    }
+
+    @include onLaptop {
+      &--margin {
+        margin-left: 22%;
+      }
+    }
+  }
+
+  &__num {
+    display: block;
+    padding-left: 18px;
+
+    &::before {
+      content: "";
+      position: relative;
+      right: 16px;
+      bottom: -1px;
+      display: inline-block;
+      width: 1px;
+      height: 46px;
+      background-color: $main-title;
+      transform: rotate(22deg);
+      transform-origin: bottom;
+    }
+
+    @include onTablet {
+      position: absolute;
+      left: -32px;
+      transform: translate(-50%, -4px);
+
+      &--reverse-row {
+        position: static;
+        left: auto;
+        transform: translate(0, 0);
+      }
+    }
+
+    @include onLaptop {
+      left: -83px;
+    }
+  }
+
+  &__descr {
+    @include Manrope(400, 16px);
+
+    @include onLaptop {
+      &--margin {
+        margin-left: 22%;
+      }
+    }
+  }
+}
