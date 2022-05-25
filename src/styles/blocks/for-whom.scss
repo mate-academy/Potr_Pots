@@ -1,0 +1,213 @@
+.for-whom {
+  &__title {
+    width: max-content;
+
+    color: $grey-dark;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__side-decor {
+    @extend %section-5Text;
+    display: none;
+    color: #828282;
+
+    @include onTablet {
+      position: absolute;
+      right: 0;
+      display: inline-block;
+    }
+
+    &:before {
+      position: absolute;
+      bottom: 8px;
+      left: -80px;
+      content: "";
+      height: 1px;
+      width: 65px;
+      background: #828282;
+    }
+
+    &--top {
+      @include onTablet {
+        transform: translate(-2vw, 15vh) rotate(90deg);
+      }
+
+      @include onDesktop {
+        transform: translate(-7vw, 15vh) rotate(90deg);
+      }
+    }
+  }
+
+  &__first-pot {
+    display: none;
+
+    @include onTablet {
+      display: inline-block;
+      width: 260px;
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__reason-first {
+    @include onTablet {
+      transform: translateY(-35px);
+    }
+
+    @include onDesktop {
+      transform: translateY(125px);
+    }
+  }
+
+  &__reason-number {
+    @extend %section-BigText;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 22px;
+      transform: translate(60px, 25px);
+    }
+
+    @include onDesktop {
+      margin-bottom: 27px;
+      transform: translate(0, 200px);
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      height: 46px;
+      width: 46px;
+      background-image: url("../images/icons/14.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transform: translate(-30px, -6px);
+    }
+
+    &--not-translated {
+      transform: translate(0, 0);
+    }
+  }
+
+  &__reason-short {
+    @extend %section-3Text;
+    display: none;
+    color: $grey-dark;
+
+    &--second {
+      transform: translateX(260px);
+    }
+
+    &::before {
+      display: block;
+      content: "";
+      width: 11px;
+      height: 11px;
+      background-image: url("../images/icons/12.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      transform: translate(-25px, 16px);
+    }
+
+    @include onTablet {
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__reason-title {
+    position: relative;
+    margin-bottom: 20px;
+    height: min-content;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    &::after {
+      position: absolute;
+      display: none;
+      content: "";
+      height: 46px;
+      width: 46px;
+      background-image: url("../images/icons/14.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      @include onTablet {
+        display: block;
+        transform: translate(110px, -55px);
+      }
+    }
+  }
+
+  &__reason-description {
+    @extend %section-3Text;
+    margin-bottom: 70px;
+    color: #4f4f4f;
+  }
+
+  &__second-pot {
+    display: none;
+
+    @include onTablet {
+      display: inline-block;
+      width: 300px;
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      width: 400px;
+      margin-bottom: 45px;
+    }
+  }
+
+  &__reason-second {
+    transform: translateY(40px);
+  }
+
+  &__third-pot {
+    display: none;
+
+    @include onTablet {
+      display: inline-block;
+      width: 250px;
+      margin-bottom: 136px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      margin-bottom: 150px;
+    }
+  }
+
+  &__reason-third {
+    @include onDesktop {
+      transform: translateY(120px);
+    }
+  }
+}
