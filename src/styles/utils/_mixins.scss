@@ -9,3 +9,23 @@
     @content;
   }
 }
+
+@mixin columnsTemplate($colums, $gap) {
+  grid-template-columns: repeat($colums, 1fr);
+  column-gap: $gap;
+}
+
+@mixin columnsRulesMod($start, $end) {
+  @for $i from $start through $end {
+    @for $k from $start through $end {
+      &-#{$i}-#{$k} {
+        grid-column: #{$i} / #{$k + 1};
+      }
+    }
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}

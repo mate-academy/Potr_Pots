@@ -1,16 +1,13 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 20px;
+  @include columnsTemplate(2, 20px);
 
   @include onTablet {
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 24px;
+    @include columnsTemplate(6, 24px);
   }
 
   @include onDesktop {
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: 30px;
+    @include columnsTemplate(12, 30px);
   }
 
   &--phone-none {
@@ -23,36 +20,18 @@
 
   &__item {
     &--phone {
-      @for $start from 1 through 2 {
-        @for $end from 1 through 2 {
-          &-#{$start}-#{$end} {
-            grid-column: #{$start} / #{$end + 1};
-          }
-        }
-      }
+      @include columnsRulesMod (1, 2);
     }
 
     @include onTablet {
       &--tablet {
-        @for $start from 1 through 6 {
-          @for $end from 1 through 6 {
-            &-#{$start}-#{$end} {
-              grid-column: #{$start} / #{$end + 1};
-            }
-          }
-        }
+        @include columnsRulesMod (1, 6);
       }
     }
 
     @include onDesktop {
       &--desktop {
-        @for $start from 1 through 12 {
-          @for $end from 1 through 12 {
-            &-#{$start}-#{$end} {
-              grid-column: #{$start} / #{$end + 1};
-            }
-          }
-        }
+        @include columnsRulesMod (1, 12);
       }
     }
   }

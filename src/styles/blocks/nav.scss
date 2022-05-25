@@ -6,13 +6,9 @@
   &__logo-link {
     display: block;
     width: max-content;
-
-    text-decoration: none;
   }
 
   &__logo {
-    margin: 0;
-
     @extend %title;
     color: $color-grey-1;
     font-size: 36px;
@@ -25,8 +21,6 @@
     z-index: 2;
     top: 0;
     right: 0;
-
-    margin: 0;
 
     transform: translateX(100%);
 
@@ -43,13 +37,12 @@
   &__menu-btn {
     display: block;
 
-    width: 48px;
-    height: 48px;
+    @include square(48px);
 
+    background-image: url(../images/menu_btn.png);
     background-size: 32px 32px;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(../images/menu_btn.png);
 
     @include onDesktop {
       display: none;
@@ -59,12 +52,11 @@
   &__basket {
     display: none;
 
-    width: 48px;
-    height: 48px;
+    @include square(48px);
 
     background-image: url(../images/bag.png);
-    background-repeat: no-repeat;
     background-size: 30px 30px;
+    background-repeat: no-repeat;
     background-position: center;
 
     @include onDesktop {
