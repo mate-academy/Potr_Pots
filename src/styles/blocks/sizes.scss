@@ -1,0 +1,80 @@
+.sizes {
+  padding: 100px 0;
+
+  &__title {
+    font-size: 36px;
+    color: #000;
+    letter-spacing: 0.12em;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__text {
+    @include Manrope(400, 16px);
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 38px;
+    }
+  }
+
+  &__img {
+    max-width: 100vw;
+    margin: 0 0 30px -30px;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      max-width: 100%;
+      margin: 0 0 30px;
+    }
+
+    @include onLaptop {
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__list {
+    grid-row: 2 / 3;
+    margin-bottom: 15px;
+
+    @include onLaptop {
+      grid-row: 1 / 2;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1;
+    color: #000;
+    letter-spacing: 0.12em;
+  }
+
+  &__descr {
+    @include Manrope(400, 16px);
+  }
+
+  &__disclaimer {
+    position: relative;
+    @include Manrope(400, 16px);
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -10px;
+    }
+  }
+}
