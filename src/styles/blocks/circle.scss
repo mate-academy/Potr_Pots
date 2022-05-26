@@ -1,0 +1,59 @@
+.circle {
+  position: relative;
+  height: 51px;
+  width: 51px;
+  background-color: $red;
+  border-radius: 50%;
+
+  &__line-vertical {
+    position: absolute;
+    top: calc(50% - 11px);
+    left: calc(50% - 1px);
+    width: 2px;
+    height: 22px;
+    background-color: #e0e0e0;
+  }
+
+  &__line-horizontal {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: calc(50% - 11px);
+    width: 22px;
+    height: 2px;
+    background-color: #e0e0e0;
+  }
+
+  &::after {
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: calc(50% + (-303px / 2));
+    padding: 35px 45px 34px;
+    /* stylelint-disable-next-line */
+    content: "We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.";
+    display: inline-block;
+    height: 237px;
+    width: 303px;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f8f8f8;
+    background: rgba(0, 0, 0, 0.41);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.41);
+  }
+
+  &:hover &__line-vertical {
+    transform: rotate(90deg);
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
