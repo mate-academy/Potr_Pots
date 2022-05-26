@@ -1,0 +1,33 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include onTablet {
+    gap: 25px;
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    padding: 0 0 4px 6px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+
+    &::placeholder {
+      @include Manrope(400, 16px);
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin-top: 10px;
+    padding: 4px 0;
+    @include hover(color, $main-text);
+
+    @include onLaptop {
+      margin-top: 30px;
+    }
+  }
+}

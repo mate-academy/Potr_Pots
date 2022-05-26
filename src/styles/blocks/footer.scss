@@ -1,0 +1,154 @@
+.footer {
+  position: relative;
+  padding: 45px 0 30px;
+  color: #000;
+  background-image: url("../images/photos/footer-bg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include onTablet {
+    background-image: url("../images/photos/footer-bg-laptop.svg");
+    background-position: top;
+    padding-bottom: 64px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 230px;
+    height: 230px;
+    opacity: 20%;
+    transform: translate(50%, -50%);
+
+    background-image: url("../images/photos/stamp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__top {
+    margin-bottom: 100px;
+
+    @include onTablet {
+      display: flex;
+      gap: 140px;
+      margin-bottom: 160px;
+    }
+
+    @include onLaptop {
+      gap: 230px;
+      margin-bottom: 212px;
+    }
+  }
+
+  &__top-left {
+    margin-bottom: 80px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    letter-spacing: 0.12em;
+  }
+
+  &__text {
+    display: block;
+    @include Manrope(400, 16px);
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    @include Manrope(400, 24px);
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    @include onTablet {
+      max-width: 205px;
+      align-self: center;
+    }
+
+    @include onLaptop {
+      max-width: 270px;
+    }
+  }
+
+  &__item {
+    @include Manrope(400, 24px);
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__link {
+    display: block;
+    margin-top: 5px;
+    color: #000;
+    font-size: 16px;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__address {
+    display: none;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.12em;
+
+    @include onTablet {
+      display: block;
+      max-width: 170px;
+      font-size: 24px;
+    }
+  }
+
+  &__address-content {
+    display: block;
+    line-height: 1.5;
+    margin-top: 10px;
+    letter-spacing: normal;
+    @include Manrope(400, 16px);
+  }
+
+  &__middle {
+    width: 230px;
+    text-align: center;
+  }
+
+  &__about {
+    text-align: center;
+    font-size: 0;
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 10px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__copyright {
+    @include Manrope(400, 16px);
+    @include onTablet {
+      display: block;
+    }
+  }
+}

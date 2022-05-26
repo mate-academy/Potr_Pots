@@ -1,4 +1,5 @@
-'use strict';
+
+import Splide from '../scripts/lib/splide.min.js';
 
 const nav = document.querySelector('.nav');
 const headerBtn = document.querySelector('.burger-btn');
@@ -14,3 +15,18 @@ togglers.forEach(toogler => {
     headerBtnLine.classList.toggle('burger-btn__line--active');
   });
 });
+
+new Splide('.splide', {
+  arrows: false,
+  breakpoints: {
+    2000: {
+      width: '40vw',
+    },
+    1100: {
+      width: '60vw  ',
+    },
+    640: {
+      width: '80vw',
+    },
+  },
+}).mount();
