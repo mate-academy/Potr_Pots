@@ -1,0 +1,45 @@
+.close-button {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  &__icon {
+    width: 46px;
+    height: 46px;
+
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-image: url(/images/icons/cross.svg);
+    background-size: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:hover {
+      border-color: $gray-light;
+    }
+
+    &:focus {
+      background-color: $dark-gray;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 12px;
+    color: $gray-light;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 44px;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: $gray-light;
+    }
+
+  }
+}

@@ -1,0 +1,74 @@
+.header {
+  box-sizing: border-box;
+  height: 100vh;
+  align-content: center;
+  padding-top: 15px;
+
+  @include tablet {
+    background-image: url(/images/bg_Rectangle.svg);
+    background-position: top left;
+    background-size: 75%;
+    background-repeat: no-repeat;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    padding: 0 30px;
+  }
+
+  &__actions {
+    grid-column: 1 / 4;
+    margin-bottom: 10px;
+  }
+
+  &__img-container {
+    position: relative;
+    box-sizing: border-box;
+    max-height: 100vw;
+    margin-bottom: 25px;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: right;
+  }
+
+  &__title {
+    grid-column: 1 / 4;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    color: $turquoise;
+    margin-bottom: 30px;
+
+    &-item--border {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px $turquoise;
+    }
+  }
+
+  &__fast-buy {
+    &-price {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 36px;
+    }
+
+    &-description {
+      font-weight: 400;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+  }
+}
