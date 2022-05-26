@@ -4,6 +4,16 @@
   grid-template-rows: 1;
   column-gap: 20px;
 
+  position: relative;
+
+  &--tablet {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
   @include onTablet {
     grid-template-columns: repeat(6, 100px);
     column-gap: 20px;
@@ -13,14 +23,6 @@
     grid-template-columns: repeat(12, 70px);
     column-gap: 30px;
   }
-
-  // &--tabelt {
-  //   display: block;
-
-  //   @include onTablet {
-  //     display: grid;
-  //   }
-  // }
 
   &__item {
     @for $start from 1 through 2 {
