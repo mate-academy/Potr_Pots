@@ -1,0 +1,132 @@
+.advantages {
+
+  &__title {
+    margin-bottom: 26px;
+
+    @include title-m;
+
+    @include onTablet {
+      margin-bottom: 19px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__robust {
+    position: relative;
+    margin-bottom: 110px;
+  }
+
+  &__beautiful {
+    position: relative;
+    margin-bottom: 110px;
+  }
+
+  &__saves-time {
+    position: relative;
+  }
+
+  &__anotation {
+    position: relative;
+    display: none;
+
+    color: $color-grey-1;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &::before {
+      content: "*";
+      position: absolute;
+      transform: translateX(-$colums-gap-t) translateY(-20%);
+
+      font-size: 24px;
+
+      @include onDesktop {
+        transform: translateX(-$colums-gap-d) translateY(-10%);
+      }
+    }
+  }
+
+  &__number {
+    width: max-content;
+    margin-bottom: 30px;
+
+    color: $color-black;
+    @include title-m;
+
+    @include onTablet {
+      position: absolute;
+      transform: translateX(-100%) translateY(32px);
+    }
+
+    @include onDesktop {
+      margin-bottom: 27px;
+    }
+
+    &::before {
+      content: "";
+      @include slashDecor;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    color: $color-black;
+    @include title-m;
+
+    @include onTablet {
+      margin-bottom: 10px;
+
+      &::after {
+        content: "";
+        @include slashDecor;
+        margin-bottom: -10px;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 70px;
+
+    color: $color-grey-2;
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img-container {
+    display: none;
+
+    @include onTablet {
+      max-width: 500px;
+
+      &--1 {
+        @include imageSizer(129%, 1);
+        margin-top: 30px;
+      }
+      &--2 {
+        @include imageSizer(100%, 1.4);
+      }
+      &--3 {
+        @include imageSizer(100%, 1.4);
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    @include square(100%);
+
+    object-fit: cover;
+    object-position: center;
+  }
+}

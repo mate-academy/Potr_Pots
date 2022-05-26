@@ -27,16 +27,27 @@
     }
   }
 
-  &__image-container {
+  &__content {
     position: relative;
+  }
 
-    width: 100%;
+  &__parallel-container {
+    @include onTablet {
+      @include parallelContainer;
+    }
+  }
+
+  &__image-container {
+    @include imageSizer(100vw, 1);
+
+    margin-left: -$side-pading-m;
     margin-bottom: 25px;
 
-    &::after {
-      content: "";
-      display: block;
-      padding-bottom: 100%;
+    @include onTablet {
+      @include imageSizer(92%, 1);
+      max-width: 500px;
+      margin-left: 0;
+      margin-bottom: 0;
     }
   }
 
@@ -44,25 +55,54 @@
     position: absolute;
     display: block;
 
-    width: 100%;
-    height: 100%;
+    @include square (100%);
 
     object-fit: cover;
     object-position: -90px;
   }
 
+  &__buttom-content {
+    position: relative;
+    z-index: 1;
+  }
+
   &__title {
     margin-bottom: 30px;
 
-    @extend %title-m;
+    @include title-m;
     color: $color-turquoise;
     line-height: 1.2;
-    letter-spacing: 0.14em;
     -webkit-text-stroke: 0.7px $color-turquoise;
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      @include title-xl;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
   }
 
   &__title-transparent {
     color: transparent;
+  }
+
+  &__sale {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    color: $color-grey-2;
+
+    @include onTablet {
+      margin-top: -25px;
+      margin-bottom: 44px;
+    }
+    @include onDesktop {
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
   }
 
   &__price {
@@ -74,12 +114,6 @@
     color: $color-grey-1;
   }
 
-  &__sale {
-    margin-bottom: 20px;
-
-    color: $color-grey-2;
-  }
-
   &__buy {
     width: 238px;
   }
@@ -88,13 +122,14 @@
     position: absolute;
     display: flex;
     right: 5px;
+    z-index: 2;
 
     font-size: 12px;
     color: $color-turquoise;
 
     transform: rotate(90deg);
     transform-origin: 100% 0;
-    
+
     &::after {
       content: "";
       width: 45px;
@@ -104,6 +139,13 @@
       background-position: right;
       background-size: contain;
       background-repeat: no-repeat;
+    }
+
+    @include onTablet {
+      right: auto;
+      left: auto;
+      bottom: -70px;
+      transform: translateX(-100%) rotate(90deg) translateY(-100%);
     }
   }
 }

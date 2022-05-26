@@ -1,13 +1,13 @@
 .grid {
   display: grid;
-  @include columnsTemplate(2, 20px);
+  @include columnsTemplate($colums-count-m, $colums-gap-m, 1fr);
 
   @include onTablet {
-    @include columnsTemplate(6, 24px);
+    @include columnsTemplate($colums-count-t, $colums-gap-t, 1fr);
   }
 
   @include onDesktop {
-    @include columnsTemplate(12, 30px);
+    @include columnsTemplate($colums-count-d, $colums-gap-d, 1fr);
   }
 
   &--phone-none {
@@ -19,19 +19,28 @@
   }
 
   &__item {
+    @each $position in (start, end, center, stretch) {
+      &--align-#{$position} {
+        align-self: $position;
+      }
+      &--justify-#{$position} {
+        justify-self: $position;
+      }
+    }
+
     &--phone {
-      @include columnsRulesMod (1, 2);
+      @include columnsRulesMod (1, $colums-count-m);
     }
 
     @include onTablet {
       &--tablet {
-        @include columnsRulesMod (1, 6);
+        @include columnsRulesMod (1, $colums-count-t);
       }
     }
 
     @include onDesktop {
       &--desktop {
-        @include columnsRulesMod (1, 12);
+        @include columnsRulesMod (1, $colums-count-d);
       }
     }
   }

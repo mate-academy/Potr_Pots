@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
 
-  padding: 14px;
-
+  padding: 13px;
+  border: 1px solid $color-yellow;
   font-size: 14px;
   color: $color-semi-black;
   font-weight: 600;
@@ -15,9 +15,29 @@
     content: "";
     width: 25px;
     margin-left: 5px;
-    
-    background-image: url(../images/btn_arrow.svg);
-    background-repeat: no-repeat;
-    background-position: center;
+
+    background-color: $color-semi-black;
+    -webkit-mask: url(../images/btn_arrow.svg) center no-repeat;
+    mask: url(../images/btn_arrow.svg) center no-repeat;
+  }
+
+  &:hover {
+    border-color: $color-grey-1;
+    background-color: transparent;
+  }
+
+  @include onTablet {
+    border-color: $color-turquoise;
+    background-color: transparent;
+
+    &:hover {
+      color: $color-grey-light;
+      background-color: $color-turquoise;
+      border-color: $color-turquoise;
+
+      &::after {
+        background-color: $color-grey-light;
+      }
+    }
   }
 }

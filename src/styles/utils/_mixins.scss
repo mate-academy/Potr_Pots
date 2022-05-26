@@ -10,8 +10,8 @@
   }
 }
 
-@mixin columnsTemplate($colums, $gap) {
-  grid-template-columns: repeat($colums, 1fr);
+@mixin columnsTemplate($colums, $gap, $width) {
+  grid-template-columns: repeat($colums, $width);
   column-gap: $gap;
 }
 
@@ -28,4 +28,68 @@
 @mixin square($size) {
   width: $size;
   height: $size;
+}
+
+@mixin title {
+  font-family: "Bebas Neue", cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+@mixin title-xl {
+  @include title;
+  font-size: 64px;
+  line-height: 100%;
+}
+
+@mixin title-l {
+  @include title;
+  font-size: 58px;
+  line-height: 100%;
+}
+
+@mixin title-m {
+  @include title;
+  font-size: 36px;
+}
+
+@mixin title-s {
+  @include title;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+@mixin title-xs {
+  @include title;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+@mixin slashDecor {
+  display: inline-block;
+  width: 1px;
+  height: 45px;
+  margin: 0 8px;
+  background-color: $color-grey-1;
+  transform: rotate(22deg);
+}
+
+@mixin imageSizer ($width, $height-mod) {
+  position: relative;
+  display: block;
+  width: $width;
+  height: min-content;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100% * $height-mod;
+  }
+}
+
+@mixin parallelContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 }
