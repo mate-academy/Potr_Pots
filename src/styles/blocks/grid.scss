@@ -1,0 +1,22 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  gap: 20px;
+  max-width: 260px;
+  padding: 0 30px;
+  margin: 0 auto;
+
+  @include tablet {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 700px;
+    padding: 0 34px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    max-width: 1170px;
+    padding: 0 135px;
+  }
+}
