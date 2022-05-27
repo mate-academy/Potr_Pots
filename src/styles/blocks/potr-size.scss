@@ -1,0 +1,85 @@
+.potr-size {
+  &__main-title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__img {
+    width: 100vw;
+    margin: 0 0 30px -30px;
+
+    @include onTablet {
+      position: absolute;
+      right: 0;
+      margin-right: 30px;
+      width: 416px;
+      height: 337px;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+      width: 528px;
+      height: 427px;
+    }
+  }
+
+  &__info {
+    @extend %section-3Text;
+    margin-bottom: 30px;
+    color: #4f4f4f;
+
+    @include  onTablet {
+      margin-bottom: 38px;
+      max-width: 270px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      height: 257px;
+      border-right: 1px solid #d8d8d8;
+    }
+  }
+
+  &__size {
+    margin-bottom: 40px;
+  }
+
+  &__size-title {
+    margin-bottom: 10px;
+  }
+
+  &__size-description {
+    @extend %section-3Text;
+    color: #4f4f4f;
+  }
+
+  &__adidional {
+    @extend %section-3Text;
+    position: relative;
+    margin-bottom: 110px;
+    color: #4f4f4f;
+
+    @include onTablet {
+      margin-bottom: 105px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 152px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: -15px;
+      display: block;
+      content: "*";
+    }
+  }
+}
