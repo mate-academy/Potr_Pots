@@ -1,0 +1,158 @@
+.benefits {
+  position: relative;
+  z-index: -10;
+  @include onDesktop {
+    padding-top: 186px;
+  }
+
+  &__benefit {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    &:last-child {
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 94px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    @extend %section-1Text;
+    color: $grey-dark;
+
+    @include onTablet {
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 45%;
+      left: -14px;
+      display: block;
+      content: "";
+      height: 8px;
+      width: 8px;
+      background-image: url("../images/icons/8.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__description {
+    @extend %section-3Text;
+    color: #828282;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      transform: translateY(-200px);
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      transform: translateY(0);
+    }
+  }
+
+  &__discount-title {
+    color: $red;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      font-size: 24px;
+      margin-bottom: 0;
+      transform: translateY(-320px);
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      transform: translateY(0);
+    }
+  }
+
+  &__discount-description {
+    color: $turquoise;
+    margin-bottom: 110px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      font-size: 18px;
+      transform: translateY(-320px);
+    }
+
+    @include onDesktop {
+      margin-bottom: 152px;
+      font-size: 24px;
+      transform: translateY(0);
+    }
+  }
+
+  &__card {
+    position: absolute;
+    display: none;
+
+    @include onDesktop {
+      display: inline-block;
+    }
+
+    &--first {
+      top: -120px;
+      left: 300px;
+      z-index: -1;
+      transform: rotate(-28.9deg);
+    }
+
+    &--second {
+      top: -25px;
+      left: -20px;
+      z-index: -1;
+      transform: rotate(-15.03deg);
+    }
+
+    &--third {
+      top: 260px;
+      left: 130px;
+      z-index: -1;
+      transform: rotate(-15.2deg);
+    }
+
+    &--fourth {
+      top: 320px;
+      left: -150px;
+      z-index: -1;
+      transform: rotate(0.05deg);
+    }
+
+    &--fifth {
+      top: 610px;
+      left: 70px;
+      z-index: -1;
+      transform: rotate(-15.8deg);
+    }
+
+    &--sixth {
+      top: 510px;
+      left: 370px;
+      z-index: -1;
+      transform: rotate(-30.43deg);
+    }
+  }
+}
