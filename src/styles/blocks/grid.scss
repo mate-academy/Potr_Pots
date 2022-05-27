@@ -18,16 +18,21 @@
     }
   }
 
-  &__item {
-    @each $position in (start, end, center, stretch) {
-      &--align-#{$position} {
-        align-self: $position;
-      }
-      &--justify-#{$position} {
-        justify-self: $position;
-      }
-    }
+  &--tablet-none {
+    display: block;
 
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &--desktop-none {
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__item {
     &--phone {
       @include columnsRulesMod (1, $colums-count-m);
     }
@@ -35,12 +40,16 @@
     @include onTablet {
       &--tablet {
         @include columnsRulesMod (1, $colums-count-t);
+
+        @include itemPositioning;
       }
     }
 
     @include onDesktop {
       &--desktop {
         @include columnsRulesMod (1, $colums-count-d);
+
+        @include itemPositioning;
       }
     }
   }

@@ -22,6 +22,11 @@
   &__beautiful {
     position: relative;
     margin-bottom: 110px;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 
   &__saves-time {
@@ -36,19 +41,37 @@
 
     @include onTablet {
       display: block;
+      margin-bottom: 24px;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin-bottom: 40px;
     }
 
     &::before {
       content: "*";
       position: absolute;
-      transform: translateX(-$colums-gap-t) translateY(-20%);
+
+      transform: translateX(-(11px + $colums-gap-t)) translateY(-20%);
 
       font-size: 24px;
 
       @include onDesktop {
-        transform: translateX(-$colums-gap-d) translateY(-10%);
+        transform: translateX(-(11px + $colums-gap-d)) translateY(-5%);
       }
     }
+
+    &--tablet-right {
+      text-align: right;
+      margin-top: 30px;
+
+      @include onDesktop {
+        text-align: left;
+        margin-top: 0;
+      }
+    }
+
   }
 
   &__number {
@@ -59,8 +82,7 @@
     @include title-m;
 
     @include onTablet {
-      position: absolute;
-      transform: translateX(-100%) translateY(32px);
+      margin-bottom: 22px;
     }
 
     @include onDesktop {
@@ -70,6 +92,17 @@
     &::before {
       content: "";
       @include slashDecor;
+    }
+
+    &--left {
+      @include onTablet {
+        position: absolute;
+        transform: translateX(-(37 + $colums-gap-t));
+      }
+
+      @include onDesktop {
+        transform: translateX(-(37 + $colums-gap-d));
+      }
     }
   }
 
@@ -94,6 +127,7 @@
     margin-bottom: 70px;
 
     color: $color-grey-2;
+
     @include onTablet {
       margin-bottom: 0;
     }
@@ -106,18 +140,32 @@
   &__img-container {
     display: none;
 
-    @include onTablet {
-      max-width: 500px;
-
-      &--1 {
+    &--1 {
+      @include onTablet {
         @include imageSizer(129%, 1);
-        margin-top: 30px;
+        max-width: 500px;
+        margin-top: 24px;
       }
-      &--2 {
-        @include imageSizer(100%, 1.4);
+      @include onDesktop {
+        margin-top: 0;
       }
-      &--3 {
-        @include imageSizer(100%, 1.4);
+    }
+    &--2 {
+      @include onTablet {
+        @include imageSizer(89%, 1.4);
+      }
+      @include onDesktop {
+        margin-bottom: 45px;
+      }
+    }
+    &--3 {
+      @include onTablet {
+        @include imageSizer(129%, 1.4);
+        max-width: 470px;
+      }
+      @include onDesktop {
+        margin-bottom: 45px;
+        margin-left: -($colums-gap-d+$colums-width-d);
       }
     }
   }
