@@ -1,0 +1,64 @@
+.polaroid {
+  display: none;
+  @include onLaptop {
+    display: block;
+    position: absolute;
+    top: 0;
+    max-width: 50%;
+    z-index: -1;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    width: 270px;
+    height: 290px;
+    background-color: #fff;
+    background-image: url("../images/polaroid/1.jpg");
+    background-repeat: no-repeat;
+    background-position: center 28px;
+
+    &--1 {
+      transform: rotate(-15deg);
+    }
+
+    &--2 {
+      background-image: url("../images/polaroid/2.jpg");
+      transform: rotate(-29deg) translate(55px, -85px);
+    }
+
+    &--3 {
+      background-image: url("../images/polaroid/3.jpg");
+      transform: translateX(-145px);
+      z-index: 1;
+    }
+
+    &--4 {
+      background-position: center 18px;
+      background-image: url("../images/polaroid/4.jpg");
+      transform: rotate(-15deg) translate(-40%, -85px);
+    }
+
+    &--5 {
+      background-image: url("../images/polaroid/5.jpg");
+      transform: rotate(-15deg) translate(34%, -12%);
+    }
+
+    &--6 {
+      background-image: url("../images/polaroid/6.jpg");
+      transform: rotate(-30deg) translate(56%, -32%);
+    }
+  }
+
+  &__text {
+    padding: 10px 28px;
+    @include Manrope(400, 11px);
+    color: #828282;
+  }
+}
