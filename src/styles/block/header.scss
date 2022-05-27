@@ -1,0 +1,163 @@
+.header {
+  padding: 15px 0 110px;
+
+  &__logo {
+    width: 134px;
+    height: 34px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../images/Logo.svg);
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__menu {
+    margin-right: 8px;
+
+    width: 32px;
+    height: 32px;
+
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__shop-icon {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      margin-right: 8px;
+
+      width: 30px;
+      height: 30px;
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url(../images/shop.svg);
+    }
+  }
+
+  &__img {
+
+    &--phone {
+      width: 100vw;
+      height: 320px;
+      margin-bottom: 25px;
+
+      background-position: left;
+      background-size: cover;
+      background-image: url(../images/backImage.png);
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    color: transparent;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.15em;
+    -webkit-text-stroke: 1px $sea-color;
+
+    &--color {
+      color: $sea-color;
+    }
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__face {
+    position: relative;
+
+    @include onTablet {
+
+      background-size: 320px;
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-image: url(../images/backImage.png);
+    }
+
+    @include onDesktop {
+      background-size: contain;
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 26px;
+    color: $dark-color;
+    line-height: 35px;
+  }
+
+  &__top {
+    margin-bottom: 20px ;
+
+    font-size: 14px;
+    line-height: 21px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__buy {
+    padding-left: 65px;
+
+    width: 240px;
+    height: 50px;
+
+    font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
+
+    background-repeat: no-repeat;
+    background-position: top 50% right 65px;
+    background-image: url(../images/wayRight.svg);
+    background-color: $yellow-color;
+    border: none;
+    cursor: pointer;
+
+    @include onTablet {
+      font-weight: 700;
+      background-color: transparent;
+      border: 1px solid $sea-color;
+    }
+  }
+
+  @include onTablet {
+    padding-bottom: 115px;
+
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-size: 80%;//83%;
+    background-image: url(../images/YellowBack.svg);
+  }
+
+  @include onDesktop {
+    padding-bottom: 150px;
+  }
+}
