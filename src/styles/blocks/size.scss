@@ -1,0 +1,131 @@
+.size {
+  margin-bottom: 110px;
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: #000;
+  }
+
+  &__topic {
+    margin-bottom: 30px;
+
+    line-height: 24px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include onDesktop {
+        max-width: 250px;
+        display: block;
+
+        position: relative;
+
+        &::after {
+          content: "";
+
+          position: absolute;
+          top: 0;
+          right: -20px;
+
+          width: 1px;
+          height: 50%;
+
+          border-left: 1px solid #d8d8d8;
+        }
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/size__img.png);
+
+    &--mobile {
+      display: block;
+      margin-bottom: 30px;
+
+      width: 100%;
+      min-height: 260px;
+
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url(../images/size__img.png);
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    @include onTablet {
+      display: block;
+
+      min-width: 416px;
+      min-height: 338px;
+    }
+
+    @include onDesktop {
+      width: 528px;
+      height: 428px;
+    }
+  }
+
+  &__details {
+    max-width: 246px;
+
+    &--title {
+      margin-bottom: 10px;
+
+      font-size: 18px;
+      letter-spacing: 0.15em;
+      color: #000;
+    }
+
+    &--topic {
+      margin-bottom: 40px;
+
+      line-height: 24px;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      max-width: 100%;
+    }
+  }
+
+  &__block {
+    max-width: 250px;
+  }
+
+  &__additional {
+    position: relative;
+
+    line-height: 24px;
+
+    &::before {
+      content: "*";
+
+      position: absolute;
+      left: -10px;
+    }
+
+    @include onDesktop {
+      margin-top: -100px;
+
+      max-width: 550px;
+    }
+  }
+}

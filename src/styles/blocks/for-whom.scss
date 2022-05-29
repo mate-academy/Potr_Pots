@@ -1,0 +1,204 @@
+.for-whom {
+  margin-bottom: 110px;
+
+  &__img {
+    display: none;
+
+    margin-bottom: 110px;
+
+    &--plant {
+      width: 284px;
+      height: 284px;
+
+      background-size: cover;
+      background-image: url(../images/for-whom--plant.png);
+
+      @include onDesktop {
+        width: 500px;
+        height: 500px;
+        background-size: contain;
+      }
+    }
+
+    &--cactus {
+      width: 300px;
+      height: 417px;
+
+      background-image: url(../images/for-whom--cactus.png);
+
+      @include onDesktop {
+        width: 330px;
+        height: 480px;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &--art {
+      width: 290px;
+      height: 450px;
+
+      background-size: cover;
+      background-image: url(../images/for-whom--art.png);
+
+      @include onDesktop {
+        width: 430px;
+        height: 600px;
+      }
+    }
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 54px;
+    color: $c-dark-title;
+    letter-spacing: 0.15em;
+  }
+
+  &__slash {
+    display: inline-block;
+    width: 20px;
+    height: 45px;
+
+    background-size: cover;
+    background-image: url(../images/for-whom__slash.svg);
+  }
+
+  &--num {
+    margin-bottom: 30px;
+
+    font-size: 36px;
+    line-height: 64px;
+    letter-spacing: 0.15em;
+    color: #000;
+
+    @include onTablet {
+      position: absolute;
+
+      &--first {
+        top: 20px;
+        left: 300px;
+
+        @include onDesktop {
+          left: 600px;
+          top: 200px;
+        }
+      }
+
+      &--second {
+        top: 60px;
+
+        @include onDesktop {
+          top: 210px;
+        }
+      }
+
+      &--third {
+        left: 300px;
+        top: 20px;
+
+        @include onDesktop {
+          top: 100px;
+          left: 500px;
+        }
+      }
+    }
+  }
+
+  &__secondary {
+    &--title {
+      margin-bottom: 20px;
+
+      font-size: 36px;
+      line-height: 54px;
+      letter-spacing: 0.15em;
+      color: #000;
+
+      @include onTablet {
+        &--first::after {
+          content: "* Robust";
+
+          position: absolute;
+
+          width: max-content;
+
+          left: 350px;
+          top: -35px;
+
+          font-family: "Manrope", sans-serif;
+          font-size: 16px;
+          letter-spacing: normal;
+
+          @include onDesktop {
+            left: 640px;
+            top: 100px;
+          }
+        }
+
+        &--second {
+          &::after {
+            content: "* Beautiful";
+
+            position: absolute;
+
+            width: max-content;
+
+            top: -18px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 16px;
+            letter-spacing: normal;
+
+            @include onDesktop {
+              left: 480px;
+              top: 0;
+            }
+          }
+        }
+
+        &--third::after {
+          content: "* Saves time";
+
+          position: absolute;
+
+          width: max-content;
+
+          left: 350px;
+          top: -50px;
+
+          font-family: "Manrope", sans-serif;
+          font-size: 16px;
+          letter-spacing: normal;
+
+          @include onDesktop {
+            top: 0;
+            left: 640px;
+          }
+        }
+      }
+
+      @include onTablet {
+        margin-top: 30px;
+      }
+    }
+
+    &--topic {
+      line-height: 24px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__section {
+    @include onTablet {
+      margin: auto 0;
+    }
+  }
+}

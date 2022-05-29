@@ -1,0 +1,112 @@
+.features {
+  margin-bottom: 110px;
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-weight: 400;
+    color: $c-turquoise;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px $c-turquoise;
+
+    &--bordered {
+      color: transparent;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &__box {
+      @include onTablet {
+        width: 220px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+      }
+    }
+
+    &__img {
+      margin-bottom: 35px;
+
+      width: 260px;
+      height: 260px;
+
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      &--first {
+        background-image: url(../images/features-1.png);
+      }
+
+      &--second {
+        background-image: url(../images/features-2.png);
+      }
+
+      &--third {
+        background-image: url(../images/features-3.png);
+      }
+
+      @include onTablet {
+        width: 220px;
+        height: 220px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+        height: 370px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 20px;
+
+      font-size: 24px;
+      line-height: 24px;
+      color: $c-dark-title;
+      letter-spacing: 0.15em;
+    }
+
+    &__topic {
+      line-height: 24px;
+      margin-bottom: 70px;
+      
+      &--last {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+  @include onTablet {
+    margin-bottom: 132px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 174px;
+  }
+}
