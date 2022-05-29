@@ -1,0 +1,38 @@
+.dropdown {
+
+  &__toggler {
+    box-sizing: border-box;
+    height: 51px;
+    width: 51px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-image: url(/images/icons/add.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--open {
+      border: no;
+      background-image: url(/images/icons/close.svg);
+    }
+  }
+
+  &__droptext {
+    position: absolute;
+    box-sizing: border-box;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 304px;
+    color: $light-gray;
+    background-color: rgba($color: #000, $alpha: 0.45);
+    padding: 35px 45px;
+    opacity: 0;
+    transition: opacity 300ms;
+  }
+
+  &__droptext--hidden {
+    opacity: 1;
+    z-index: 0;
+  }
+}

@@ -1,0 +1,113 @@
+.materials {
+  position: relative;
+  &__image {
+    position: relative;
+    z-index: -1;
+    margin-top: -50%;
+    height: 100%;
+    width: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(#fff 0%, rgba(255, 255, 255, 0) 36%);
+    }
+
+    @include tablet {
+      margin-top: -10%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  @include tablet {
+    background-size: cover;
+    background-position: bottom;
+  }
+
+  &__title {
+    color: $turquoise;
+    margin-bottom: 120px;
+
+    @include tablet {
+      display: inline;
+      font-size: 80px;
+      line-height: 96px;
+    }
+
+    @include desktop {
+      font-size: 140px;
+      line-height: 167px;
+    }
+  }
+
+  &__eco {
+    display: none;
+
+    @include tablet {
+      display: block;
+      margin-top: -5%;
+    }
+
+    @include desktop {
+      display: block;
+      margin-top: -11%;
+    }
+  }
+
+  &__eco-title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  &__eco-discription {
+    @extend %s3;
+  }
+
+  &__slider {
+    margin: -120px auto 0;
+    @include tablet {
+      display: none;
+    }
+
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+
+    @include tablet {
+      display: block;
+    }
+
+    &--1 {
+      left: 12%;
+      bottom: 10%;
+    }
+
+    &--2 {
+      left: 32%;
+      bottom: 30%;
+    }
+
+    &--3 {
+      left: 52%;
+      bottom: 5%;
+    }
+
+    &--4 {
+      left: 62%;
+      bottom: 20%;
+    }
+    &--5 {
+      right: 12%;
+      bottom: 45%;
+    }
+  }
+}
