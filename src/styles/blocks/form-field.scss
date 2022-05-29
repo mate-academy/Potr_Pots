@@ -1,0 +1,36 @@
+.form-field {
+  width: 100%;
+  height: 32px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 4px;
+
+  &--last {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 35px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  &--textarea {
+    font-family: inherit;
+    height: 34px;
+    resize: none;
+  }
+}
