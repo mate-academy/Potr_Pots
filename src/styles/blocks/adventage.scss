@@ -1,0 +1,116 @@
+.adventage {
+  &__img {
+    @include onDesktop {
+      background-repeat: no-repeat;
+      background-size: 540px;
+      background-position: left -10px top -50px;
+      background-image: url(../images/adventage.png);
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 5px;
+
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: $c-dark-title;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 20px;
+      left: -20px;
+
+      width: 7px;
+      height: 7px;
+
+      transform: rotate(45deg);
+
+      background-color: #4f4f4f;
+    }
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+
+  &__topic {
+    margin-bottom: 40px;
+
+    line-height: 24px;
+    color: #828282;
+
+    &:last-of-type {
+      margin-bottom: 60px;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__buy {
+    margin-bottom: 40px;
+
+    padding-left: 65px;
+
+    width: 240px;
+    height: 50px;
+
+    font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
+
+    background-repeat: no-repeat;
+    background-position: top 50% right 65px;
+    background-image: url(../images/button-arrow.svg);
+    background-color: $c-yellow;
+    border: none;
+    cursor: pointer;
+
+    @include onTablet {
+      margin-top: -90%;
+
+      font-weight: 700;
+
+      background-color: transparent;
+      border: 1px solid $c-turquoise;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
+  &__offer {
+    margin-bottom: 110px;
+
+    &--title {
+      margin-bottom: 10px;
+
+      font-size: 36px;
+      line-height: 54px;
+      letter-spacing: 0.15em;
+      color: #eb5757;
+    }
+
+    &--topic {
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      color: $c-turquoise;
+    }
+
+    @include onTablet {
+      margin-top: -80%;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+}
