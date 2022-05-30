@@ -1,11 +1,18 @@
 .polaroid {
   display: none;
+
   @include onLaptop {
     display: block;
+    max-width: 720px;
+    width: 100%;
     position: absolute;
     top: 0;
-    max-width: 50%;
+    left: 0;
     z-index: -1;
+  }
+
+  @include onDesktop {
+    left: -35px;
   }
 
   &__list {
