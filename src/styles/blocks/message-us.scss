@@ -1,6 +1,7 @@
 .message-us {
   position: relative;
   padding-top: 38px;
+
   background-color: $grey-light;
 
   &__rectangle {
@@ -8,7 +9,9 @@
     top: 0;
     left: 0;
     right: 0;
+
     height: 900px;
+
     background-image: url("../images/blocks/3.png");
     background-size: cover;
     background-position: top left;
@@ -20,8 +23,8 @@
     }
 
     @include onDesktop {
-      height: 650px;
-      width: 90vw;
+      height: 600px;
+      width: 83vw;
     }
   }
 
@@ -30,8 +33,10 @@
     right: 0;
     top: -75px;
     z-index: 1;
+
     width: 200px;
     height: 200px;
+
     background-image: url("../images/icons/2.png");
     background-size: contain;
     background-repeat: no-repeat;
@@ -58,14 +63,23 @@
 
   &__button {
     margin-bottom: 80px;
+
     height: 48px;
     width: 100%;
+
     background-color: transparent;
     border: none;
     cursor: pointer;
+
     font-weight: 700;
     font-size: 16px;
     line-height: 22px;
+    
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgb(231, 207, 69);
+    }
   }
 
   &__info {
@@ -100,5 +114,11 @@
 
   &__info-link {
     @extend %section-3Text;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $grey;
+    }
   }
 }

@@ -1,15 +1,23 @@
 .page {
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
   &__menu {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: 10;
+
     transform: translateX(-100%);
-    z-index: 0;
+
+    transition: transform 0.4s cubic-bezier(0.36, 1.09, 0.72, 0.25);
 
     &:target {
       transform: translateX(0%);
-      z-index: 1;
     }
   }
 }

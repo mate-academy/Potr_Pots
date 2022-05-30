@@ -1,11 +1,22 @@
 .potr-team {
+  position: relative;
+  z-index: 1;
+
+  background-color: $grey-light;
+
+  @include onDesktop {
+    padding-top: 150px;
+  }
+
   &__rectangle {
     position: absolute;
     left: 0;
     right: 0;
     z-index: -1;
+
     height: 500px;
     width: 100%;
+
     background-image: url("../images/blocks/2.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,6 +27,7 @@
     @include onTablet {
       height: 466px;
       width: 33vw;
+
       transform: translateY(150px);
     }
 
@@ -25,8 +37,8 @@
   }
 
   &__title {
-    color: $grey-dark;
     margin-bottom: 25px;
+    color: $grey-dark;
 
     @include onTablet {
       margin-bottom: 178px;
@@ -38,14 +50,15 @@
   }
 
   &__img {
-    width: 100vw;
-    margin-left: -30px;
     z-index: -1;
+    margin-left: -30px;
+    width: 100vw;
 
     @include onTablet {
       position: absolute;
       right: 0;
       margin-right: 30px;
+
       width: 340px;
     }
 
@@ -77,10 +90,11 @@
 
   &__big-text {
     position: absolute;
+    z-index: 1;
     display: none;
+
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.16em;
-    z-index: 1;
 
     &--martin {
       transform: translate(-6vw, -23vh);
@@ -100,6 +114,7 @@
 
     @include onTablet {
       display: inline-block;
+
       font-size: 232px;
       line-height: 278px;
     }

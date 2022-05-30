@@ -1,4 +1,8 @@
 .features {
+  position: relative;
+  background-color: $grey-light;
+  z-index: 1;
+
   &__title {
     color: $turquoise;
     margin: 0 auto 24px;
@@ -20,12 +24,13 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
+
       width: 100%;
       margin-bottom: 132px;
     }
 
     @include onDesktop {
-      margin-bottom: 150px;
+      margin-bottom: 0;
     }
   }
 
@@ -36,6 +41,12 @@
     width: min-content;
 
     margin: 0 auto;
+
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.15);
+    }
 
     &--order {
       order: 0;
@@ -78,8 +89,9 @@
   &__card-description {
     @extend %section-3Text;
     margin-bottom: 70px;
-    color: #4f4f4f;
+
     text-align: center;
+    color: #4f4f4f;
 
     @include onTablet {
       text-align: left;

@@ -5,14 +5,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     height: 100vh;
+
     overflow-y: auto;
   }
 
   &__button {
     align-self: flex-start;
     transform: translate(-23vw, 3vh);
-    color: $grey-light;
   }
 
   &__list {
@@ -24,10 +25,14 @@
   &__link {
     @extend %section-3Text;
     padding-bottom: 5px;
+    
     color: $grey-light;
+    border-bottom: 1px solid transparent;
+
+    transition: border-color 0.3s;
 
     &:hover {
-      border-bottom: 1px solid $grey-light;
+      border-color: $grey-light;
     }
   }
 }

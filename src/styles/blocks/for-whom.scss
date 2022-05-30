@@ -1,4 +1,10 @@
 .for-whom {
+  position: relative;
+  z-index: 1;
+  padding-top: 150px;
+
+  background-color: $grey-light;
+
   &__title {
     width: max-content;
 
@@ -21,8 +27,8 @@
 
     @include onTablet {
       position: absolute;
-      right: 0;
       display: inline-block;
+      right: 0;
     }
 
     &:before {
@@ -30,8 +36,10 @@
       bottom: 8px;
       left: -80px;
       content: "";
+
       height: 1px;
       width: 65px;
+
       background: #828282;
     }
 
@@ -48,6 +56,13 @@
 
   &__first-pot {
     display: none;
+
+    transition: transform 0.5s, box-shadow 0.5s ease;
+
+    &:hover {
+      transform: scale(1.15);
+      box-shadow: 15px 15px 15px rgba(110, 110, 110, 0.65);
+    }
 
     @include onTablet {
       display: inline-block;
@@ -77,9 +92,10 @@
 
   &__reason-number {
     @extend %section-BigText;
+    margin-bottom: 30px;
+
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
-    margin-bottom: 30px;
 
     @include onTablet {
       margin-bottom: 22px;
@@ -93,10 +109,12 @@
 
     &::before {
       position: absolute;
-      content: "";
       display: block;
+      content: "";
+
       height: 46px;
       width: 46px;
+
       background-image: url("../images/icons/14.svg");
       background-size: contain;
       background-position: center;
@@ -122,8 +140,10 @@
     &::before {
       display: block;
       content: "";
+
       width: 11px;
       height: 11px;
+
       background-image: url("../images/icons/12.svg");
       background-repeat: no-repeat;
       background-size: contain;
@@ -145,6 +165,7 @@
   &__reason-title {
     position: relative;
     margin-bottom: 20px;
+
     height: min-content;
     width: 340px;
 
@@ -156,8 +177,10 @@
       position: absolute;
       display: none;
       content: "";
+
       height: 46px;
       width: 46px;
+
       background-image: url("../images/icons/14.svg");
       background-repeat: no-repeat;
       background-size: contain;
@@ -191,6 +214,13 @@
   &__second-pot {
     display: none;
 
+    transition: transform 0.5s, box-shadow 0.5s ease;
+
+    &:hover {
+      transform: scale(1.15);
+      box-shadow: -15px 15px 15px rgba(110, 110, 110, 0.65);
+    }
+
     @include onTablet {
       display: inline-block;
       width: 300px;
@@ -214,10 +244,17 @@
   &__third-pot {
     display: none;
 
+    transition: transform 0.5s, box-shadow 0.5s ease;
+
+    &:hover {
+      transform: scale(1.15);
+      box-shadow: 15px 15px 15px rgba(110, 110, 110, 0.65);
+    }
+
     @include onTablet {
       display: inline-block;
-      width: 250px;
       margin-bottom: 136px;
+      width: 250px;
     }
 
     @include onLaptop {
@@ -225,8 +262,8 @@
     }
 
     @include onDesktop {
-      width: 470px;
       margin-bottom: 150px;
+      width: 470px;
     }
   }
 

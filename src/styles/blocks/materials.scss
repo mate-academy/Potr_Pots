@@ -1,4 +1,10 @@
 .materials {
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+
+  background-color: $grey-light;
+
   &__section-title {
     color: $turquoise;
 
@@ -51,9 +57,11 @@
 
   &__img {
     position: relative;
-    width: 100%;
-    margin-bottom: 70px;
     z-index: -1;
+    margin-bottom: 70px;
+
+    width: 100%;
+
     transform: translateY(-250px);
 
     @include onTablet {
@@ -69,10 +77,12 @@
 
   &__information {
     @extend %section-3Text;
+    display: flex;
     padding: 28px 44px 58px 45px;
-    margin: 0 auto;
+
     width: 100%;
     height: min-content;
+    
     color: #f8f8f8;
     background: rgba(0, 0, 0, 0.45);
     mix-blend-mode: normal;
