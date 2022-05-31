@@ -47,10 +47,7 @@
   &__social-networks {
     display: flex;
     justify-content: space-around;
-
-    @include onTablet {
-      margin-bottom: 28px;
-    }
+    margin-bottom: 32px;
 
     @include onDesktop {
       margin-bottom: 84px;
@@ -60,6 +57,18 @@
   &__social-network {
     height: 20px;
     width: 20px;
+  }
+
+  &__twitter,
+  &__instagram,
+  &__facebook {
+    fill: #000;
+
+    transition: fill 0.25s;
+
+    &:hover {
+      fill: rgb(95, 95, 95);
+    }
   }
 
   &__logo {
