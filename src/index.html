@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Potr Pots</title>
+    <title>POTR POTS</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="images/fav.png"
+    >
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;700&family=Poppins&display=swap" rel="stylesheet">
   </head>
   <body>
+    <script type="text/javascript" src="scripts/main.js"></script>
     <header class="header">
       <div class="container">
         <div class="top-action">
@@ -23,19 +29,19 @@
           <nav class="header__nav">
             <ul class="nav__list">
               <li class="nav__list__item">
-                <a href="#">Features</a>
+                <a href="#features">Features</a>
               </li>
 
               <li class="nav__list__item">
-                <a href="#">About us</a>
+                <a href="#aboutUs">About us</a>
               </li>
 
               <li class="nav__list__item">
-                <a href="#">Materials</a>
+                <a href="#materials">Materials</a>
               </li>
 
               <li class="nav__list__item">
-                <a href="#">Message us</a>
+                <a href="#messageUs">Message us</a>
               </li>
             </ul>
           </nav>
@@ -137,10 +143,10 @@
             </button>
 
             <div class="sidebar--link">
-              <a href="#" class="sidebar--link__text" >
+              <a  href="#forWhom" class="sidebar--link__text" >
                 More about POTR POTS
               </a>
-              <div class="sidebar--link__arrow"></div>
+              <a href="#forWhom" class="sidebar--link__arrow"></a>
             </div>
 
             <div class="sidebar--decor">
@@ -154,7 +160,7 @@
 
     <main>
       <div class="container">
-        <section class="for-whom title">
+        <section class="for-whom title" id="forWhom">
           <h2 class="for-whom__title">For whom?</h2>
 
           <div class="grid grid--tablet">
@@ -284,7 +290,7 @@
           </div>
         </section>
 
-        <section class="features">
+        <section class="features" id="features">
           <h2 class="features__title title">
             POTR Pots <span class="features__title--bordered"> Features</span>
           </h2>
@@ -360,7 +366,7 @@
         </section>
       </div>
 
-      <section class="potr-team">
+      <section class="potr-team" id="aboutUs">
         <div class="container">
           <div class="potr-team__title title">Meet the POTR team! </div>
         </div>
@@ -380,7 +386,7 @@
         </div>
       </section>
 
-      <section class="about">
+      <section class="about" id="materials">
         <div class="container">
           <div class="about__title title">
             Materials and
@@ -584,7 +590,7 @@
         </div>
       </section>
 
-      <section class="contact">
+      <section class="contact" id="messageUs">
         <div class="container">
           <div class="grid grid--tablet">
             <div
@@ -606,27 +612,30 @@
                 Message us
               </div>
 
-              <input
+              <form action="form" name="contact-form">
+                <input
                 type="text"
                 placeholder="Name"
                 class="contact__input"
-              >
+                >
 
-              <input
-                type="email"
-                placeholder="Email"
-                class="contact__input"
-              >
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="contact__input"
+                >
 
-              <input
-                type="text"
-                placeholder="Message"
-                class="contact__input"
-              >
+                <textarea
+                  type="text"
+                  placeholder="Message"
+                  class="contact__input contact__input--area"
+                  maxlength="90"
+                ></textarea>
 
-              <button class="contact__button common-text">
-                Submit
-              </button>
+                <button class="contact__button common-text">
+                  Submit
+                </button>
+              </form>
             </div>
 
             <div
@@ -640,9 +649,9 @@
                 Our phone
               </div>
 
-              <div class="contact__info--topic common-text">
+              <a href="tel: +7 098 454 56 34" class="contact__info--topic common-text">
                 +7 098 454 56 34
-              </div>
+              </a>
 
               <div class="contact__info--title common-text">
                 Our email
@@ -681,14 +690,26 @@
 
         <div class="footer__content footer__connect">
           <div class="footer__social">
-            <div class="footer__social--twitter"></div>
+            <a
+              href="https://twitter.com/?lang=uk"
+              target="_blank"
+              class="footer__social--twitter"
+            ></a>
 
-            <div class="footer__social--instagram"></div>
+            <a
+            href="https://www.instagram.com/potrpots/"
+              target="_blank"
+              class="footer__social--instagram"
+            ></a>
 
-            <div class="footer__social--facebook"></div>
+            <a
+            href="https://www.facebook.com/potrpots"
+              target="_blank"
+              class="footer__social--facebook"
+            ></a>
           </div>
 
-          <div class="footer__logo"></div>
+          <a href="#" class="footer__logo"></a>
 
           <div class="footer__copyright--mobile common-text">
             Copyright © 2022
@@ -706,6 +727,5 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
