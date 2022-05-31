@@ -1,0 +1,111 @@
+.team {
+  position: relative;
+  padding-bottom: 58px;
+
+  overflow: hidden;
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 90vw;
+
+    background-image: url(../images/rectangle_yellow.svg);
+    background-size: 400%;
+    background-position: top right;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      top: 170px;
+      right: 68vw;
+
+      background-size: 140%;
+    }
+
+    @include onDesktop {
+      top: 130px;
+      background-size: 75%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    @include title-l;
+    color: $color-grey-1;
+  }
+
+  &__member {
+    display: none;
+
+    @include onTablet {
+      position: relative;
+      display: block;
+
+      @include title;
+      font-size: 232px;
+      letter-spacing: 0.15em;
+      line-height: 100%;
+      color: transparent;
+      -webkit-text-stroke: 0.7px $color-turquoise;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+    }
+
+    &--left {
+      @include onTablet {
+        margin-left: -80px;
+      }
+
+      @include onDesktop {
+        margin-left: -60px;
+      }
+    }
+
+    &--right {
+      @include onTablet {
+        text-align: end;
+        margin-top: -70px;
+        margin-right: -68px;
+      }
+
+      @include onDesktop {
+        margin-top: -22px;
+        margin-right: -160px;
+      }
+    }
+  }
+
+  &__image {
+    max-width: 100vw;
+    margin-left: -$side-pading-m;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      order: 1;
+      max-width: 100%;
+      margin: -70px 0 0;
+    }
+
+    @include onDesktop {
+      margin-top: -210px;
+    }
+  }
+
+  &__text {
+    color: $color-grey-2;
+    @include onTablet {
+      margin-top: -20px;
+      margin-right: 18px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
+}

@@ -4,11 +4,6 @@
 
   @include onTablet {
     padding-top: 23px;
-
-    background-image: url(../images/rectangle_yellow.svg);
-    background-position: top left;
-    background-size: 78%;
-    background-repeat: no-repeat;
   }
 
   @include onDesktop {
@@ -24,6 +19,34 @@
 
     @include onDesktop {
       margin-bottom: 50px;
+    }
+  }
+
+  &__background {
+    display: none;
+    position: absolute;
+    z-index: -1;
+
+    width: 100vw;
+    height: 90vw;
+
+    background-image: url(../images/rectangle_yellow.svg);
+    background-size: 400%;
+    background-position: top right;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      display: block;
+      top: 0;
+      right: 17vw;
+
+      background-size: 140%;
+    }
+
+    @include onDesktop {
+      right: 22vw;
+      top: -104px;
+      background-size: 100%;
     }
   }
 
