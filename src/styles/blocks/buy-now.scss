@@ -1,4 +1,16 @@
 .buy-now {
+  @include desktop {
+    padding-top: 186px;
+    padding-bottom: 152px;
+  }
+  &__features {
+    display: block;
+
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 
   &__feature {
     margin-bottom: 40px;
@@ -14,6 +26,7 @@
   }
 
   &__buy-link {
+
     margin-bottom: 50px;
   }
 
@@ -25,4 +38,15 @@
     color: $turquoise;
   }
 
+  &__polaroid {
+    z-index: -1;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: -130px;
+
+    @include desktop {
+      visibility: visible;
+    }
+  }
 }
