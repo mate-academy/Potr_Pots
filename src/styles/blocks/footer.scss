@@ -20,11 +20,10 @@
     content: "";
     display: block;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -100px;
+    right: 40px;
     width: 164px;
     height: 164px;
-    transform: translateY(-50%);
 
     background-image: url("../images/photos/stamp.png");
     background-size: contain;
@@ -97,10 +96,7 @@
     margin-top: 5px;
     color: #000;
     font-size: 16px;
-
-    @include onLaptop {
-      @include hover(color, $accent-text);
-    }
+    @include hover(color, $accent-text);
   }
 
   &__bottom {
@@ -135,6 +131,7 @@
     margin-top: 10px;
     letter-spacing: normal;
     @include Manrope(400, 16px);
+    @include hover(color, $accent-text);
   }
 
   &__middle {
@@ -145,16 +142,13 @@
   &__about {
     text-align: center;
     font-size: 0;
+    @include hover(color, $accent-text);
 
     @include onTablet {
       font-size: 24px;
       line-height: 1;
       margin-bottom: 10px;
       letter-spacing: 0.12em;
-    }
-
-    @include onLaptop {
-      @include hover(color, $accent-text);
     }
   }
 

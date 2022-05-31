@@ -1,9 +1,13 @@
 .header {
-  @include onLaptop {
+  @include onTablet {
     background-image: url("../images/photos/header_bg.svg");
     background-repeat: no-repeat;
-    background-size: 75%;
+    background-size: 85%;
     background-position: top left;
+  }
+
+  @include onLaptop {
+    background-size: 75%;
   }
 
   &__top {
@@ -37,6 +41,12 @@
       width: 100%;
       margin: 0;
       padding-left: 34px;
+      transition: transform 0.3s, filter 0.3s;
+
+      &:hover {
+        transform: scale(0.9);
+        filter: drop-shadow(2px 3px 6px $main-text);
+      }
     }
 
     @include onLaptop {
