@@ -4,7 +4,7 @@
 1. Add favicon, [example](http://joxi.ru/brRoByXuBJjwkm)
 2. Add a smooth scroll for the whole page (`scroll-behavior: smooth;`)
 3. Logo in the header and footer leads to the home section
-4. [Arrow "more about POTR POTS"](http://joxi.ru/DmBjw5otqwR4dm) should move down on hover and lead to `For whom` section
+4. The arrow "more about POTR POTS" should move down on hover and lead to `For whom` section
 5. All interactive elements(**links, buttons, pictures, icons**) ***should have a hover effect and cursor pointer***. User must intuitively understand that he can interact with them
 6. Make sure when you click on logo there is no 404 error (Use `href="#"` in `anchor tag`)
 7. When you try to send the form there is no 405 error and the form is automatically cleared after submit and is scrolled to the top of the page or the page is reloaded
