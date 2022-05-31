@@ -1,0 +1,72 @@
+.footer {
+  position: relative;
+  padding-top: 45px;
+
+  background-image: url(../images/footer_bg.svg);
+  background-size: auto 1030px;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    background-size: auto 520px;
+  }
+
+  @include onDesktop {
+    background-size: auto 568px;
+  }
+
+  &__desktop-wrapper {
+    @include onDesktop {
+      position: relative;
+    }
+  }
+
+  &__stamp-wrapper {
+    position: absolute;
+    top: 0;
+    right: -30px;
+
+    width: (0.7 * $stamp-size);
+    height: $stamp-size;
+
+    transform: translateY(-50%);
+    overflow: hidden;
+
+    @include onTablet {
+      width: (0.9 * $stamp-size);
+    }
+
+    @include onDesktop {
+      width: $stamp-size;
+      transform: translateY(-100%);
+    }
+  }
+
+  &__stamp {
+    @include square($stamp-size);
+    object-fit: cover;
+    object-position: left;
+
+    opacity: 0.2;
+  }
+
+  &__contact {
+    margin-bottom: 102px;
+
+    @include onTablet {
+      margin-bottom: 156px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 210px;
+    }
+  }
+
+  &__aditional-info {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+  }
+
+}

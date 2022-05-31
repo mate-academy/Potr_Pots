@@ -1,0 +1,56 @@
+.features {
+
+  &__title {
+    margin-bottom: 25px;
+
+    @include title-l;
+    color: $color-turquoise;
+    -webkit-text-stroke: 0.7px $color-turquoise;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+    @include onDesktop {
+      margin-bottom: 74px;
+    }
+  }
+
+  &__text-transparent {
+    color: transparent;
+  }
+
+  &__feature {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-wrapper {
+    margin-bottom: 37px;
+
+    @include imageSizer(100%, 1);
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    @include square(100%);
+    object-fit: cover;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    @include title-s;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: center;
+  }
+}
