@@ -29,6 +29,8 @@
     background-image: url("../images/photos/stamp.png");
     background-size: contain;
     background-repeat: no-repeat;
+
+    animation: rotate 60s infinite;
   }
 
   &__top {
@@ -95,6 +97,10 @@
     margin-top: 5px;
     color: #000;
     font-size: 16px;
+
+    @include onLaptop {
+      @include hover(color, $accent-text);
+    }
   }
 
   &__bottom {
@@ -146,6 +152,10 @@
       margin-bottom: 10px;
       letter-spacing: 0.12em;
     }
+
+    @include onLaptop {
+      @include hover(color, $accent-text);
+    }
   }
 
   &__copyright {
@@ -153,5 +163,15 @@
     @include onTablet {
       display: block;
     }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
