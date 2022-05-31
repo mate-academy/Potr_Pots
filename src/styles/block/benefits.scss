@@ -1,0 +1,93 @@
+.benefits {
+  // display: block;
+  // position: relative;
+  display: grid;
+  // &__list{
+  // }
+
+  &__item {
+    &::before {
+      content: "";
+      position: relative;
+      left: -15px;
+      top: 38px;
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: #333;
+      margin-right: 10px;
+      transform: translate(0, -50%) scaleY(1.5) rotate(45deg);
+    }
+
+  }
+
+  &__subtitle {
+    font-family: Manrope, sans-serif;
+    font-style: bold;
+    font-size: 30px;
+    line-height: 54px;
+    color: #333;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+  }
+
+  &__description {
+    // margin-bottom: 40px;
+
+    font-family: Manrope, sans-serif;
+    font-style: regular;
+    font-size: 16px;
+    line-height: 24px;
+
+    &--last {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__post {
+    font-family: Bebas Neue, sans-serif;
+    font-style: regular;
+    font-size: 36px;
+    line-height: 54px;
+
+    color: #eb5757;
+
+    @include onTablet {
+      position: relative;
+      top: -180px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: 60px;
+    }
+
+    &-description {
+      font-size: 24px;
+      line-height: 24px;
+
+      color: #03839e;
+    }
+  }
+
+  &__botton {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      position: relative;
+      top: 110px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: 220px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    top: -350px;
+  }
+}

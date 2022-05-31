@@ -6,7 +6,7 @@
     max-height: 8px;
 
     position: absolute;
-    right: -90px;
+    right: -75px;
     bottom: 95px;
 
     transform: rotate(90deg);
@@ -43,22 +43,26 @@
 
   &__decor {
     display: none;
+    // transform: rotate(90deg);
 
     @include onTablet {
       display: flex;
       align-items: center;
 
-      position: absolute;
-
+      // position: absolute;
+      position: fixed;
+      // margin-right: 240px;
       top: 500px;
-      right: -80px;
+      right: -40px;
 
       transform: rotate(90deg);
 
       &_bar {
         width: 65px;
         height: 1px;
-        background-image: url(../images/strip.svg);
+        text-align: center;
+        transform: rotate(90deg);
+        color: #828282;
       }
 
       &_text {
@@ -69,11 +73,25 @@
         font-size: 12px;
         letter-spacing: 0.22em;
         text-transform: uppercase;
+
       }
 
+      // @include onTablet {}
+
       @include onDesktop {
-        top: 720px;
-        right: -60px;
+
+        display: flex;
+        align-items: center;
+        top: 650px;
+        right: 40px;
+
+      }
+
+      @media (min-width: 1700px) {
+        display: flex;
+        align-items: center;
+        top: 650px;
+        right: 180px;
       }
     }
   }
