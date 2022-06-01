@@ -39,3 +39,32 @@ toggler5.addEventListener('click', () => {
   droptext5.classList.toggle('dropdown__droptext--hidden');
   toggler5.classList.toggle('dropdown__toggler--open');
 });
+
+const menuOpener = document.querySelector('#menu-opener');
+const menuCloser = document.querySelector('#menu-closer');
+const menu = document.querySelector('#menu');
+
+menuOpener.addEventListener('click', () => {
+  menuOpener.classList.toggle('icon--menu-none');
+  menu.classList.toggle('menu--active');
+});
+
+menuCloser.addEventListener('click', () => {
+  menuOpener.classList.toggle('icon--menu-none');
+  menu.classList.toggle('menu--active');
+});
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#menu') {
+    document.body.classList.add('header--with-menu');
+  } else {
+    document.body.classList.remove('header--with-menu');
+  }
+});
+
+const form = document.getElementById('form');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  form.reset();
+});

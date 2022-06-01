@@ -1,13 +1,15 @@
 .buy-now {
+  position: relative;
   @include desktop {
     padding-top: 186px;
-    padding-bottom: 152px;
+    padding-bottom: 42px;
   }
   &__features {
     display: block;
 
     @include desktop {
       display: flex;
+      justify-content: space-between;
       flex-wrap: wrap;
     }
   }
@@ -25,9 +27,22 @@
     @extend %s3;
   }
 
-  &__buy-link {
+  &__offer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+  }
+
+  &__buy-link {
     margin-bottom: 50px;
+  }
+
+  &__discount {
+
+    @include desktop {
+      padding-left: 100px;
+    }
   }
 
   &__discount-title {
@@ -39,14 +54,14 @@
   }
 
   &__polaroid {
-    z-index: -1;
-    visibility: hidden;
     position: absolute;
     top: 0;
+    z-index: -1;
+    display: none;
     left: -130px;
 
     @include desktop {
-      visibility: visible;
+      display: block;
     }
   }
 }

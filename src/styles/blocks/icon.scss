@@ -7,10 +7,41 @@
   background-repeat: no-repeat;
 
   &--menu {
+
+    @include desktop {
+      display: none;
+    }
     background-image: url(/images/icons/menu.svg);
 
     &:hover {
       background-image: url(/images/icons/menu_hover.svg);
+    }
+
+    &-none {
+      display: none;
+    }
+  }
+
+  &--basket {
+    position: relative;
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+    background-image: url(/images/icons/shopbag.svg);
+
+    &:hover::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      border-radius: 1px;
+      background-color: $dark-gray;
     }
   }
 }

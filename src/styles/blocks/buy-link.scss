@@ -11,12 +11,30 @@
   color: $dark-gray;
   text-transform: uppercase;
   background-color: $yellow;
-  border-color: $yellow;
+  border: 1px solid $yellow;
+
+  @include tablet {
+    background-color: $light-gray;
+    border: 1px solid $turquoise;
+  }
 
   &::after {
     content: url(/images/icons/Arrow2.svg);
+    fill: rebeccapurple;
     height: 8px;
     width: 26px;
     padding-left: 10px;
   }
+
+  &:hover {
+    background-color: $light-gray;
+    border: 1px solid $dark-gray;
+
+    @include tablet {
+      color: $light-gray;
+      background-color: $turquoise;
+      border: 1px solid $turquoise;
+    }
+  }
+
 }

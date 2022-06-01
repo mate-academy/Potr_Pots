@@ -1,46 +1,86 @@
 .menu {
-  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  padding-top: 15%;
+  height: 100vh;
+  width: 200px;
+  background-color: $turquoise;
 
-  &__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
-    padding: 0 30px;
+  @include desktop {
+    position: static;
+    height: auto;
+    transform: translate(0);
+    background-color: transparent;
+    padding: 0;
+    width: auto;
   }
 
-  &__actions {
-    grid-column: 2 / 3;
+  &--active {
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    padding-top: 15%;
+    height: 100vh;
+    width: 200px;
+    background-color: $turquoise;
+    transform: translateX(0%);
   }
 
   &__close {
-    grid-column: 2 / 3;
+    z-index: 1;
+    position: absolute;
+    bottom: 150px;
+    right: 30px;
     transform-origin: right;
     transform: rotate(-90deg);
-  }
-
-  &__background {
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 1px solid black;
-    height: 100vh;
-    width: 75%;
-    background-color: $turquoise;
+    @include desktop {
+      display: none;
+    }
   }
 
   &__list {
-
-    padding: 0;
     list-style: none;
+
+    @include desktop {
+      display: flex;
+      gap: 60px;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__item {
-    margin-bottom: 16px;
 
+    margin-bottom: 30px;
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+
+    &--phone {
+      @include desktop {
+        display: none;
+      }
+    }
   }
 
   &__link {
     color: $light-gray;
+    @include desktop {
+      color: $dark-gray;
+    }
+
+    &:hover {
+      color: $yellow;
+      @include desktop {
+        color: $red;
+      }
+    }
   }
 }

@@ -1,4 +1,6 @@
 .about-us {
+  position: relative;
+  overflow: hidden;
   background-image: url(/images/bg_Rectangle.svg);
   background-size: 75%;
   background-repeat: no-repeat;
@@ -12,10 +14,14 @@
     }
   }
 
-  &__names {
+  &__content {
+    position: relative;
+  }
+
+  &__name {
+    position: absolute;
     display: none;
     z-index: 2;
-    position: absolute;
     font-size: 232px;
 
     @include tablet {
@@ -23,14 +29,18 @@
     }
   }
 
-  &__names--martin {
-    top: 200px;
-    left: -40px;
+  &__name--martin {
+    top: 130px;
+    left: 0;
   }
 
-  &__names--andy {
-    right: -30px;
-    bottom: -70px;
+  &__name--andy {
+    right: 0;
+    bottom: 40px;
+
+    @include desktop {
+      bottom: 100px;
+    }
   }
 
   &__photo {
@@ -50,8 +60,7 @@
   }
 
   &__phone-photo {
-    width: 320px;
-    margin-left: -30px;
+    width: 100%;
     margin-bottom: 30px;
     @include tablet {
       display: none;
@@ -73,5 +82,18 @@
 
   &__paragraph {
     @extend %s3;
+
+    @include tablet {
+
+      &:last-child {
+        margin-bottom: 110px;
+      }
+    }
+
+    @include desktop {
+      &:last-child {
+        margin-bottom: 240px;
+      }
+    }
   }
 }

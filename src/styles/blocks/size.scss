@@ -14,19 +14,27 @@
       margin-left: auto;
       margin-bottom: auto;
     }
+
+    @include desktop {
+      grid-row: 1 / 3;
+    }
   }
 
   &__paragraph {
-    margin-bottom: 15px;
-  }
-
-  &__paragraph-text {
     margin-bottom: 30px;
   }
 
   &__types {
-    grid-row: 3;
     margin-bottom: 15px;
+
+    @include tablet {
+      grid-row: 2;
+    }
+
+    @include desktop {
+      grid-row: 1;
+      margin-bottom: 100px;
+    }
   }
 
   &__type {
