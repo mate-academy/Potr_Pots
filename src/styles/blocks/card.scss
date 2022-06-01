@@ -1,0 +1,36 @@
+.card {
+  position: relative;
+
+  &__toggle {
+    display: block;
+    @include square(51px);
+    margin: 9px auto;
+
+    border-radius: 50%;
+    background-color: $color-red;
+  }
+
+  &__content {
+    position: relative;
+    padding: 35px 45px;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+
+    color: $color-grey-light;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include square(100%);
+
+    background: rgba(0, 0, 0, 0.55);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+  }
+}
