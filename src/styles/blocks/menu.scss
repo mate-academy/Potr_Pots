@@ -4,19 +4,21 @@
   z-index: 1;
   top: 0;
   right: 0;
-  transform: translateX(100%);
   padding-top: 15%;
   height: 100vh;
   width: 200px;
   background-color: $turquoise;
+  transform: translateX(100%);
+  transition-duration: $transition-time;
 
   @include desktop {
     position: static;
     height: auto;
-    transform: translate(0);
     background-color: transparent;
     padding: 0;
     width: auto;
+    transition-duration: 0s;
+    transform: translate(0);
   }
 
   &--active {
@@ -29,7 +31,18 @@
     height: 100vh;
     width: 200px;
     background-color: $turquoise;
+    transition-duration: $transition-time;
     transform: translateX(0%);
+
+    @include desktop {
+      position: static;
+      height: auto;
+      background-color: transparent;
+      padding: 0;
+      width: auto;
+      transition-duration: 0s;
+      transform: translate(0);
+    }
   }
 
   &__close {
@@ -71,6 +84,7 @@
   }
 
   &__link {
+    transition-duration: $transition-time;
     color: $light-gray;
     @include desktop {
       color: $dark-gray;

@@ -1,6 +1,7 @@
 .buy-link {
+  padding-right: 30px;
+  position: relative;
   display: block;
-  box-sizing: border-box;
   height: 48px;
   width: 238px;
   text-align: center;
@@ -12,6 +13,7 @@
   text-transform: uppercase;
   background-color: $yellow;
   border: 1px solid $yellow;
+  transition-duration: $transition-time;
 
   @include tablet {
     background-color: $light-gray;
@@ -19,11 +21,19 @@
   }
 
   &::after {
-    content: url(/images/icons/Arrow2.svg);
-    fill: rebeccapurple;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: "";
+    display: block;
     height: 8px;
     width: 26px;
+    background-image: url(/images/icons/1arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
     padding-left: 10px;
+    transform: translate(100%, -30%);
+
   }
 
   &:hover {
@@ -31,10 +41,12 @@
     border: 1px solid $dark-gray;
 
     @include tablet {
+      &::after {
+        background-image: url(/images/icons/2arrow.svg);
+      }
       color: $light-gray;
       background-color: $turquoise;
       border: 1px solid $turquoise;
     }
   }
-
 }

@@ -5,6 +5,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  transition-duration: $transition-time;
 
   &--menu {
 
@@ -31,17 +32,24 @@
     }
     background-image: url(/images/icons/shopbag.svg);
 
-    &:hover::after {
+    &::after {
       content: "";
       position: absolute;
       display: block;
       bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 50px;
+      width: 0;
       height: 2px;
       border-radius: 1px;
+      background-color: transparent;
+      transition-duration: $transition-time;
+    }
+
+    &:hover::after {
+      width: 50px;
       background-color: $dark-gray;
+      transition-duration: $transition-time;
     }
   }
 }

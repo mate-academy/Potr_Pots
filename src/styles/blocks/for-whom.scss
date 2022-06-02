@@ -39,10 +39,15 @@
   }
 
   &__item-image {
+    transition-duration: $transition-time;
+    
+    &:hover {
+      transform: scale(1.2);
+    }
     &--first {
       display: none;
       object-fit: cover;
-      
+
       @include tablet {
         display: block;
         height: 284px;

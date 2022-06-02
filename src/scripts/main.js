@@ -68,3 +68,50 @@ form.addEventListener('submit', function(event) {
   event.preventDefault();
   form.reset();
 });
+
+const slider = initSlider(document.querySelector('#slider'));
+
+function initSlider(sliderElement) {
+  const dots = sliderElement.querySelectorAll('.slider__button');
+  const list = sliderElement.querySelector('.slider__list');
+  const maxShift = list.children.length - 1;
+
+  let currentIndex = 1;
+
+  move(currentIndex);
+
+  function move(newIndex) {
+    dots[currentIndex].classList.remove('slider__button--active');
+
+    if (newIndex < 0) {
+      currentIndex = maxShift;
+    } else if (newIndex > maxShift) {
+      currentIndex = 0;
+    } else {
+      currentIndex = newIndex;
+    }
+
+    dots[currentIndex].classList.add('slider__button--active');
+    list.style.transform = `translateX(${currentIndex * (-100)}%)`;
+  }
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener('click', () => {
+      move(i);
+    });
+  }
+
+  return {
+    move: move,
+    prev() {
+      move(currentIndex - 1);
+    },
+    next() {
+      move(currentIndex + 1);
+    },
+  };
+}
+
+setInterval(() => {
+  slider.next();
+}, 4000);

@@ -7,13 +7,47 @@
     border: none;
     outline: none;
     border-radius: 50%;
-    background-image: url(/images/icons/add.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: $red;
+
+    &:hover {
+      border: 2px solid $yellow;
+    }
+
+    &::before {
+
+      position: absolute;
+      content: "";
+      background-image: url(/images/icons/plus.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      width: 15px;
+      height: 15px;
+      top: 50%;
+      left: 50%;
+      transform-origin: 0 0;
+      transform: rotate(45deg) translate(-50%, -50%);
+      transition-duration: $transition-time;
+    }
+
+    &__icon {
+      display: block;
+      box-sizing: border-box;
+      width: 7px;
+      height: 7px;
+      background-image: url(/images/icons/plus.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
 
     &--open {
-      border: no;
-      background-image: url(/images/icons/close.svg);
+      &::before {
+        transform: rotate(0) translate(-50%, -50%);
+        transition-duration: $transition-time;
+      }
+      border: none;
+      background-color: rgba($color: #000, $alpha: 0.5);
     }
   }
 
