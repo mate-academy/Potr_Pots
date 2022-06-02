@@ -11,9 +11,18 @@
   text-transform: uppercase;
   cursor: pointer;
 
+  transition: color $transition-time,
+    border-color $transition-time,
+    background-color $transition-time,
+    transform $transition-time/2;
+
   &:hover {
     border-color: $color-red;
     color: $color-red;
+  }
+
+  &:active {
+    transform: scale(0.9);
   }
 
   &--accent {
@@ -25,6 +34,8 @@
       content: "";
       width: 25px;
       margin-left: 5px;
+
+      transition: background-color $transition-time;
 
       background-color: $color-semi-black;
       -webkit-mask: url(../images/btn_arrow.svg) center no-repeat;

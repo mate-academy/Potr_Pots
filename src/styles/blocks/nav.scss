@@ -23,6 +23,8 @@
     right: 0;
     bottom: 0;
 
+    transition: transform ease-in-out $transition-time;
+
     transform: translateX(100%);
 
     &:target {
@@ -59,6 +61,16 @@
     background-size: 30px 30px;
     background-repeat: no-repeat;
     background-position: center;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
 
     @include onDesktop {
       display: block;

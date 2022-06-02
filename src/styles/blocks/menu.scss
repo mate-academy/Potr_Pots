@@ -1,7 +1,7 @@
 .menu {
   display: flex;
   flex-direction: column;
-  
+
   padding: 130px $side-pading-m 42px 80px;
 
   color: $color-grey-light;
@@ -22,9 +22,23 @@
     width: 120px;
     margin-bottom: 15px;
 
+    transition: color $transition-time, transform $transition-time;
+
+    &:hover {
+      color: $color-yellow-light;
+    }
+
     @include onDesktop {
       width: auto;
       margin-bottom: 0;
+
+      &:hover {
+        color: $color-red;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
     }
 
     &--basket {
@@ -62,7 +76,7 @@
   &__close {
     transform: translateX(100%) rotate(-90deg);
     transform-origin: 0 100%;
-
+    
     @include onDesktop {
       display: none;
     }
