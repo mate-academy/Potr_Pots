@@ -16,6 +16,16 @@
       top: 1030px;
       right: 0;
       bottom: 0;
+
+      animation-name: move;
+      animation-duration: 2.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+
+      &:hover {
+        animation-play-state: paused;
+      }
     }
 
     @include onDesktop {
@@ -23,6 +33,16 @@
       top: 1500px;
       right: 0;
       bottom: 0;
+    }
+  }
+
+  @keyframes move {
+    from {
+      top: 1450px;
+    }
+
+    to {
+      bottom: 1480px;
     }
   }
 
@@ -41,14 +61,42 @@
     background-image: url(../images/wayDown.svg);
   }
 
+  @keyframes rotate {
+    from {
+      transform: rotate(90deg);
+    }
+
+    to {
+      transform: rotate(92deg);
+    }
+
+    from {
+      transform: rotate(92deg);
+    }
+
+    to {
+      transform: rotate(88deg);
+    }
+  }
+
   &__decor {
     display: none;
+
+    &:hover {
+      animation-name: rotate;
+      animation-duration: 1.01s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    z-index: 1;
     // transform: rotate(90deg);
 
     @include onTablet {
       display: flex;
       align-items: center;
-
+      margin-right: auto;
       // position: absolute;
       position: fixed;
       // margin-right: 240px;
@@ -73,7 +121,6 @@
         font-size: 12px;
         letter-spacing: 0.22em;
         text-transform: uppercase;
-
       }
 
       // @include onTablet {}

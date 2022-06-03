@@ -17,9 +17,27 @@
 
   font-family: "Manrope", sans-serif;
 
+  transition: background-color, box-shadow 0.5s;
+
   @include onTablet {
     font-weight: 700;
     background-color: transparent;
+    border: 1px solid $sea-color;
+
+    &:hover {
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  @include onDesktop {
+    &:hover {
+      background-color: $sea-color;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  &:active {
+    box-shadow: none;
     border: 1px solid $sea-color;
   }
 }

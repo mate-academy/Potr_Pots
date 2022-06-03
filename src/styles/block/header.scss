@@ -1,5 +1,7 @@
 .header {
   padding: 15px 0 110px;
+  background-color: #f8f8f8;
+  height: 100vh;
 
   &__logo {
     width: 134px;
@@ -9,6 +11,12 @@
     background-size: contain;
     background-position: center;
     background-image: url(../images/Logo.svg);
+
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 
   &__nav {
@@ -35,6 +43,8 @@
   &__shop-icon {
     display: none;
 
+    transition: all 0.2s;
+
     @include onDesktop {
       display: block;
 
@@ -46,6 +56,10 @@
       background-position: center;
       background-repeat: no-repeat;
       background-image: url(../images/shop.svg);
+    }
+
+    &:hover {
+      transform: scale(1.05);
     }
   }
 
@@ -74,6 +88,8 @@
     line-height: 42px;
     letter-spacing: 0.15em;
     -webkit-text-stroke: 1px $sea-color;
+
+    cursor: default;
 
     &--color {
       color: $sea-color;
@@ -110,6 +126,8 @@
     font-size: 26px;
     color: $dark-color;
     line-height: 35px;
+
+    cursor: default;
   }
 
   &__top {
@@ -118,34 +136,12 @@
     font-size: 14px;
     line-height: 21px;
 
+    cursor: default;
+
     @include onDesktop {
       margin-bottom: 50px;
     }
   }
-
-  // &__buy {
-  //   padding-left: 65px;
-
-  //   width: 240px;
-  //   height: 50px;
-
-  //   font-size: 14px;
-  //   text-align: left;
-  //   text-transform: uppercase;
-
-  //   background-repeat: no-repeat;
-  //   background-position: top 50% right 65px;
-  //   background-image: url(../images/wayRight.svg);
-  //   background-color: $yellow-color;
-  //   border: none;
-  //   cursor: pointer;
-
-  //   @include onTablet {
-  //     font-weight: 700;
-  //     background-color: transparent;
-  //     border: 1px solid $sea-color;
-  //   }
-  // }
 
   @include onTablet {
     padding-bottom: 115px;

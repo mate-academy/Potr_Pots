@@ -1,11 +1,19 @@
 .benefits {
-  // display: block;
-  // position: relative;
-  display: grid;
-  // &__list{
-  // }
+  // display: grid;
+  max-width: 1440px;
+
+  @include onDesktop {
+    margin-bottom: -450px;
+  }
+
+  &__gallery {
+    display: flex;
+    max-width: max-content;
+    margin: 0 auto;
+  }
 
   &__item {
+    cursor: default;
     &::before {
       content: "";
       position: relative;
@@ -86,8 +94,10 @@
     }
   }
 
-  &__container {
-    position: relative;
-    top: -350px;
+  @include onDesktop {
+    &__container {
+      position: relative;
+      top: -350px;
+    }
   }
 }
