@@ -18,7 +18,7 @@
       bottom: 0;
 
       animation-name: move;
-      animation-duration: 2.5s;
+      animation-duration: 1.01s;
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       animation-direction: alternate;
@@ -36,13 +36,27 @@
     }
   }
 
-  @keyframes move {
-    from {
-      top: 1450px;
-    }
+  @include onTablet {
+    @keyframes move {
+      from {
+        top: 940px;
+      }
 
-    to {
-      bottom: 1480px;
+      to {
+        top: 950px;
+      }
+    }
+  }
+
+  @include onDesktop {
+    @keyframes move {
+      from {
+        top: 1450px;
+      }
+
+      to {
+        bottom: 1480px;
+      }
     }
   }
 
@@ -90,7 +104,7 @@
       animation-direction: alternate;
     }
 
-    z-index: 1;
+    z-index: 2;
     // transform: rotate(90deg);
 
     @include onTablet {

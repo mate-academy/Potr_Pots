@@ -1,5 +1,6 @@
 .menu {
   background-color: #03839e;
+  z-index: 5;
 
   &__content {
     display: flex;
@@ -36,6 +37,11 @@
       background-color: #f8f8f8;
     }
 
+    @include onTablet {
+      top: 210px;
+      left: 140px;
+    }
+
   }
 
   &__list {
@@ -56,6 +62,9 @@
 
     transition: border-color 0.5s;
 
+    @include onTablet {
+      font-size: 40px;
+    }
     &:hover {
       border-color: #f8f8f8;
     }

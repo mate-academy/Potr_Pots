@@ -33,7 +33,9 @@ Implement landing page according to [Figma design](https://www.figma.com/file/50
 11. `git push origin develop` - to send you code for PR
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://DmitriiPirohov.github.io/Potr_Pots/) 
+  [DEMO LINK](https://DmitriiPirohov.github.io/Potr_Pots/)
+
+  [Figma:] https://www.figma.com/file/50zgLU65Mcd3MisFHMfLfx/POTR-POTS?node-id=2%3A445
 14. Copy `DEMO LINK` to the PR description
 
 > To update you PR repeat steps 7-11

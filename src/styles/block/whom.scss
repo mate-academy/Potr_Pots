@@ -3,7 +3,7 @@
   box-sizing: border-box;
   // margin-bottom: 110px;
   max-height: max-content;
-  padding-top: 5px;
+  // padding-top: 5px;
 
   cursor: default;
 
@@ -12,17 +12,19 @@
   }
 
   @include onDesktop {
-    margin-bottom: 110px;
+    margin-bottom: 150px;
   }
 
   &__title {
     font-size: 34px;
     color: #333;
     margin-bottom: 25px;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
 
     @include onTablet {
       margin-bottom: 34px;
+      padding-top: 20px;
     }
 
     @include onDesktop {
@@ -191,6 +193,7 @@
   }
 
   &__first-picture {
+    display: none;
     transition: all 0.5s;
 
     &:hover {
@@ -200,6 +203,7 @@
     @include pictureSquere(0);
 
     @include onTablet {
+      display: block;
       @include pictureSquere (284px);
     }
 
@@ -211,6 +215,7 @@
 
   &__second-picture {
     transition: all 0.5s;
+    display: none;
 
     &:hover {
       box-shadow: 0 30px 50px rgba(0, 0 , 0, 0.8);
@@ -219,6 +224,7 @@
     @include pictureSquere(0);
 
     @include onTablet {
+      display: block;
       @include pictureSize(417px, 300px);
       margin-bottom: 111px;
     }
@@ -230,6 +236,7 @@
 
   &__third-picture {
     transition: all 0.5s;
+    display: none;
 
     &:hover {
       box-shadow: 0 30px 50px rgba(0, 0 , 0, 0.8);
@@ -239,6 +246,7 @@
     @include pictureSquere(0);
 
     @include onTablet {
+      display: block;
       @include pictureSize(404px, 284px);
       position: relative;
       top: 1px;
