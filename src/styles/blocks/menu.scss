@@ -1,0 +1,37 @@
+.menu {
+  position: fixed;
+  justify-content: center;
+  overflow: scroll;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(-1000vh);
+  background-color: #053a47b8;
+  // height: 100vh;
+  padding-top: 50px;
+
+  &:target {
+    transform: translate(0);
+  }
+
+  &__content {
+    padding: 50px 30px 30px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $turquoise;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+
+    @include On768 {
+      max-width: 600px;
+    }
+    @include On1440 {
+      max-width: 900px;
+    }
+  }
+}

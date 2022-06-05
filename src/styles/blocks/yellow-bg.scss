@@ -1,0 +1,48 @@
+.yellow-bg {
+  display: none;
+  position: absolute;
+  z-index: -1;
+  width: 80%;
+  height: 100%;
+  background-image: url(../images/Rectangle.png);
+  @extend .bg-img;
+  left: 0;
+  top: 0;
+
+  &--header {
+
+    @include On768 {
+      display: block;
+    }
+  }
+
+  &--about-us {
+    display: block;
+    width: 100%;
+    height: 50%;
+    top: 75%;
+
+    @include On768 {
+      top: 20%;
+      width: 40%;
+    }
+    @include On1440 {
+      width: 30%;
+    }
+  }
+
+  &--questions {
+    display: block;
+    margin-top: 80px;
+    width: 100%;
+    height: 150%;
+
+    @include On768 {
+      width: 98%;
+    }
+    @include On1280 {
+      margin-top: 0;
+      width: 105%;
+    }
+  }
+}

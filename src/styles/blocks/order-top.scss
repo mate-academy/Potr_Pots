@@ -1,0 +1,48 @@
+.order-top {
+  width: 100%;
+  height: max-content;
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    color: #000;
+
+    @media (min-width: 350px) {
+      font-size: 32px;
+    }
+    @include On768 {
+      font-size: 38px;
+    }
+  }
+
+  &__close {
+    display: block;
+    width: 36px;
+    height: 36px;
+    transition: 0.2s transform linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @media (min-width: 350px) {
+      width: 46px;
+      height: 46px;
+    }
+    @include On768 {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

@@ -1,0 +1,117 @@
+.header {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+
+  @include On1440 {
+    margin: 0 auto;
+  }
+
+  &__content {
+    padding-top: 20px;
+    position: relative;
+    margin-bottom: 100px;
+
+    @include On1440 {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__top-nav {
+    margin-bottom: 10px;
+
+    @include On768 {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__pict {
+    height: 320px;
+    margin: 0 -30px 25px;
+
+    @media (min-width: 500px) {
+      max-width: 400px;
+      margin: 0 auto 25px;
+    }
+
+    @include On768 {
+      height: 320px;
+      max-width: 320px;
+      margin-right: 0;
+      margin-left: auto;
+    }
+
+    @include On1024 {
+      max-width: 400px;
+      height: 400px;
+      margin-left: auto;
+      margin-right: 0;
+    }
+    @include On1440 {
+      max-width: 500px;
+      height: 500px;
+      margin-left: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s transform linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__title {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &-container {
+      width: 100%;
+      max-width: 400px;
+      height: 172px;
+      margin: 0 auto 30px;
+
+      @include On768 {
+        max-width: 70%;
+        height: 266px;
+        position: absolute;
+        top: 120px;
+        z-index: 1;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__price {
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 20px;
+
+    @include On768() {
+      margin-top: -100px;
+    }
+    @include On1440() {
+      margin-top: -250px;
+    }
+
+    &-amount {
+
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 36px;
+      color: $black-col;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $main-color;
+    }
+  }
+}
