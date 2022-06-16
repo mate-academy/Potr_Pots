@@ -1,11 +1,48 @@
 .header {
-  height: 68px;
+  position: relative;
+  margin: 0 30px;
+  @include tablet {
+    height: 100vh;
+    margin: 0;
+    padding: 0 42px;
+  }
+
+  @include desktop {
+    padding: 0 130px;
+  }
+
+  &__bg {
+    @include tablet {
+      position: absolute;
+      left: 0;
+      width: 80%;
+      height: 55%;
+      background: url("../images/header-bg.png") no-repeat left;
+      background-size: cover;
+      z-index: 0;
+    }
+
+    @include desktop {
+      width: 80%;
+      height: 70%;
+    }
+   }
 
   &__top-items {
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 30px;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+    color: $c-gray1;
+    z-index: 1;
   }
 
   &__menu-icon {
@@ -13,11 +50,127 @@
     width: 32px;
     height: 32px;
     background: url("../images/icons/menu_icon.png") no-repeat center;
+    z-index: 1;
+    @include desktop {
+      display: none;
+    }
   }
 
+  &__bottom-items{
+    position: relative;
+    height: 100%;
+  }
   &__image {
     display: block;
     width: 320px;
-    margin: 0 auto;
+    margin: 0 -30px 25px;
+
+    @media (min-width: 325px) {
+      margin: 0 auto 25px;
+      width: 100%;
+    }
+    @include tablet {
+      position: absolute;
+      width: 45%;
+      right: -15px;
+      animation: headerSlideRight;
+      animation-duration: $animationHeaderTime;
+
+    }
+
+    @include desktop {
+      width: 500px;
+      top: 70px;
+    }
   }
+
+  &__text {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 0.68px $c-blue;
+
+    margin-bottom: 30px;
+
+    @include tablet {
+      position: absolute;
+      left: 0;
+      width: 460px;
+      font-size: 64px;
+      line-height: 64px;
+
+      animation: headerSlideLeft-t;
+      animation-duration: $animationHeaderTime;
+    }
+
+    @include desktop {
+      left: 10%;
+      top: 10%;
+      animation: headerSlideLeft-d;
+      animation-duration: $animationHeaderTime;
+    }
+
+    & span{
+      color: $c-blue;
+    }
+  }
+
+  &__buy-block {
+    font-family: "Manrope", sans-serif;
+    @include tablet {
+      position: absolute;
+      bottom: 30%;
+      right: 45%;
+      width: 240px;
+      animation: headerSlideBottom-t;
+      animation-duration: $animationHeaderTime;
+    }
+
+    @include desktop {
+      bottom: 39%;
+      right: 53%;
+      animation: headerSlideBottom-d;
+      animation-duration: $animationHeaderTime;
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: $c-gray1;
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      padding-left: 40px;
+    }
+  }
+
+  &__half-price {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-gray2;
+    margin-bottom: 20px;
+
+    @include tablet {
+      display: flex;
+      justify-content: end;
+      margin-bottom: 44px;
+    }
+  }
+  &__basket-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url("../images/icons/basket.png") no-repeat center;
+  }
+
 }

@@ -1,0 +1,47 @@
+.primary-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  height: 48px;
+  max-width: 270px;
+
+  box-sizing: border-box;
+  border: $c-yellow 1px solid;
+  background-color: $c-yellow;
+
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: #121212;
+  transition:
+  opacity $delay,
+  box-shadow $delay,
+  transform $delay;
+
+  @include tablet {
+    background-color: transparent;
+    border-color: $c-blue;
+    max-width: 238px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 0 6px 12px rgb(3, 131, 158);
+
+    @include tablet {
+      background-color: $c-blue;
+      color: $c-white;
+    }
+  }
+
+  &:active {
+    box-shadow: 0 3px 6px rgb(3, 131, 158);
+    transform: translateY(2px);
+  }
+}
