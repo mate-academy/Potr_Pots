@@ -1,0 +1,78 @@
+.contact {
+  color: $color-black;
+
+  &__title {
+    @include title-m;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 68px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+
+    &--last {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info-group {
+    margin-bottom: 34px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 5px;
+
+    color: $color-grey-3;
+    font-size: 24px;
+  }
+
+  &__button {
+    width: 130px;
+    margin: 0 auto;
+  }
+
+  &__link {
+    display: block;
+    width: fit-content;
+    transition: color ease $transition-time, transform $transition-time;
+
+    &:hover {
+      color: $color-red;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}

@@ -1,6 +1,110 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin columnsTemplate($colums, $gap, $width) {
+  grid-template-columns: repeat($colums, $width);
+  column-gap: $gap;
+}
+
+@mixin columnsRulesMod($start, $end) {
+  @for $i from $start through $end {
+    &-order-#{i} {
+      order: $i;
+    }
+
+    @for $k from $start through $end {
+      &-#{$i}-#{$k} {
+        grid-column: #{$i} / #{$k + 1};
+      }
+    }
+  }
+}
+
+@mixin itemPositioning {
+  @each $position in (start, end, center, stretch) {
+    &-align-#{$position} {
+      align-self: $position;
+    }
+    &-justify-#{$position} {
+      justify-self: $position;
+    }
+  }
+}
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin title {
+  font-family: "Bebas Neue", cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+}
+
+@mixin title-xl {
+  @include title;
+  font-size: 64px;
+  line-height: 100%;
+}
+
+@mixin title-l {
+  @include title;
+  font-size: 58px;
+  line-height: 100%;
+}
+
+@mixin title-m {
+  @include title;
+  font-size: 36px;
+}
+
+@mixin title-s {
+  @include title;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+@mixin title-xs {
+  @include title;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+@mixin slashDecor {
+  display: inline-block;
+  width: 1px;
+  height: 45px;
+  margin: 0 8px;
+  background-color: $color-grey-1;
+  transform: rotate(22deg);
+}
+
+@mixin imageSizer ($width, $height-mod) {
+  position: relative;
+  display: block;
+  width: $width;
+  height: min-content;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100% * $height-mod;
+  }
+}
+
+@mixin parallelContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 }

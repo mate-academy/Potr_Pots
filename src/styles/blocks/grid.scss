@@ -1,0 +1,56 @@
+.grid {
+  display: grid;
+  @include columnsTemplate($colums-count-m, $colums-gap-m, 1fr);
+
+  @include onTablet {
+    @include columnsTemplate($colums-count-t, $colums-gap-t, 1fr);
+  }
+
+  @include onDesktop {
+    @include columnsTemplate($colums-count-d, $colums-gap-d, 1fr);
+  }
+
+  &--phone-none {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &--tablet-none {
+    display: block;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &--desktop-none {
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__item {
+    &--phone {
+      @include columnsRulesMod (1, $colums-count-m);
+    }
+
+    @include onTablet {
+      &--tablet {
+        @include columnsRulesMod (1, $colums-count-t);
+
+        @include itemPositioning;
+      }
+    }
+
+    @include onDesktop {
+      &--desktop {
+        @include columnsRulesMod (1, $colums-count-d);
+
+        @include itemPositioning;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  padding: 130px $side-pading-m 42px 80px;
+
+  color: $color-grey-light;
+  background-color: $color-turquoise;
+
+  @include onDesktop {
+    flex-direction: row;
+    gap: 60px;
+
+    height: auto;
+    padding: 0;
+
+    color: $color-grey-2;
+    background-color: transparent;
+  }
+
+  &__item {
+    width: 120px;
+    margin-bottom: 15px;
+
+    transition: color $transition-time, transform $transition-time;
+
+    &:hover {
+      color: $color-yellow-light;
+    }
+
+    @include onDesktop {
+      width: auto;
+      margin-bottom: 0;
+
+      &:hover {
+        color: $color-red;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+
+    &--basket {
+      display: flex;
+
+      &::after {
+        content: "0";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include square(14px);
+        margin-left: 6px;
+
+        font-size: 8px;
+        line-height: 100%;
+        border-radius: 50%;
+        background-color: $color-red;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--last {
+      margin-bottom: auto;
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__close {
+    transform: translateX(100%) rotate(-90deg);
+    transform-origin: 0 100%;
+    
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__close-link {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+  }
+
+  &__cross {
+    @include square(12px);
+    margin-right: 18px;
+
+    background-image: url(../images/menu_cross.svg);
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__dash {
+    width: 44px;
+    height: 1px;
+    transform: translateY(-50%);
+    margin-right: 5px;
+
+    background-color: $color-grey-light;
+  }
+}

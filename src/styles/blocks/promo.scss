@@ -1,0 +1,220 @@
+.promo {
+  &__wrapper {
+    position: relative;
+  }
+
+  &__photos {
+    position: absolute;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  &__photo {
+    display: none;
+    padding: 20px;
+    background: #fff;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: min-content;
+    }
+
+    &::before {
+      content: "";
+
+      display: block;
+      @include square(230px);
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    &::after {
+      display: block;
+      color: $color-grey-3;
+      font-size: 11px;
+    }
+
+    &--1 {
+      transform: translate(-15px, -30px) rotate(-15deg);
+      &::before {
+        background-image: url(../images/promo_1.png);
+      }
+
+      &::after {
+        content: "Origami experiments";
+      }
+    }
+
+    &--2 {
+      transform: translate(30px, -120px) rotate(-29deg);
+      &::before {
+        background-image: url(../images/promo_2.png);
+      }
+
+      &::after {
+        content: "A plant pot for the 21st century.";
+      }
+    }
+
+    &--3 {
+      transform: translate(-150px, 24px);
+
+      &::before {
+        background-image: url(../images/promo_3.png);
+      }
+
+      &::after {
+        content: "Bobbiny cotton cord colour options";
+      }
+    }
+    &--4 {
+      transform: translate(-148px, -70px) rotate(-15deg);
+      &::before {
+        background-image: url(../images/promo_4.png);
+      }
+
+      &::after {
+        content: "POTR Pots compliment other house hold objects.";
+      }
+    }
+
+    &--5 {
+      transform: translate(43px, -27px) rotate(-16deg);
+
+      &::before {
+        background-image: url(../images/promo_5.png);
+      }
+
+      &::after {
+        content: "";
+      }
+    }
+
+    &--6 {
+      transform: translate(51px, -129px) rotate(-30deg);
+
+      &::before {
+        background-image: url(../images/promo_6.png);
+      }
+
+      &::after {
+        content: "POTR pots ready to go!";
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-top: 186px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__feature {
+    position: relative;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      margin-left: 22px;
+    }
+
+    @include onDesktop {
+      display: inline-block;
+      margin-right: 18px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -18px;
+
+      @include square(7px);
+
+      background-color: $color-grey-2;
+
+      transform: rotate(45deg);
+    }
+
+    &--last {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+
+    color: $color-grey-1;
+    font-size: 32px;
+    font-weight: 700;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+  }
+
+  &__text {
+    color: $color-grey-3;
+  }
+
+  &__buy-btn {
+    margin-bottom: 40px;
+    max-width: 238px;
+
+    @include onTablet {
+      margin-bottom: 35px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__deal {
+    @include onTablet {
+      max-width: 80%;
+    }
+
+    @include onDesktop {
+      max-width: 100%;
+    }
+  }
+
+  &__deal-title {
+    margin-bottom: 10px;
+
+    @include title-m;
+    color: $color-red;
+
+    @include onTablet {
+      margin-bottom: 5px;
+    }
+
+    @include onDesktop {
+      margin-left: $colums-width-d + $colums-gap-d;
+    }
+  }
+
+  &__deal-text {
+    @include title-s;
+    color: $color-turquoise;
+
+    @include onDesktop {
+      margin-left: $colums-width-d + $colums-gap-d;
+    }
+  }
+
+}

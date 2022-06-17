@@ -1,0 +1,120 @@
+.materials {
+  position: relative;
+
+  &__wrapper {
+    min-height: 75vw;
+
+    background-image: linear-gradient(180deg,
+    $color-grey-light 0%,
+    rgba(255, 255, 255, 0) 30.93%),
+      url(../images/hero_shot.png);
+
+    background-size: contain, 100%;
+    background-repeat: no-repeat;
+    background-position: top, 0 1px;
+  }
+
+  &__title {
+    position: relative;
+    top: -130px;
+
+    color: $color-turquoise;
+    @include title-l;
+
+    @include onTablet {
+      top: -290px;
+      font-size: 80px;
+      line-height: 100%;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      top: -120px;
+      font-size: 139px;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    color: $color-grey-2;
+
+    @include onTablet {
+      display: block;
+      margin-top: -340px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    @include onDesktop {
+      margin-top: -270px;
+    }
+  }
+
+  &__text {
+    display: none;
+    color: $color-grey-2;
+
+    @include onTablet {
+      display: block;
+      margin-top: -300px;
+    }
+
+    @include onDesktop {
+      margin-top: -230px;
+    }
+  }
+
+  &__text-bold {
+    font-weight: 700;
+  }
+
+  &__card {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: block;
+      width: 303px;
+
+      transform: translateX(-50%);
+    }
+
+    &--is-active {
+      z-index: 1;
+    }
+
+    &--1 {
+      bottom: 20%;
+      left: 14%;
+    }
+
+    &--2 {
+      top: 49%;
+      left: 35%;
+    }
+
+    &--3 {
+      bottom: 11%;
+      left: 49%;
+    }
+
+    &--4 {
+      bottom: 29%;
+      left: 71%;
+    }
+
+    &--5 {
+      top: 32%;
+      left: 76%;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    margin: -51px 9px 0;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

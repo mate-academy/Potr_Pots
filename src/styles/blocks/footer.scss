@@ -1,0 +1,77 @@
+.footer {
+  position: relative;
+  padding-top: 45px;
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+
+    width: 100vw;
+    height: 92%;
+
+    background-image: url(../images/rectangle_yellow_2.svg);
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      right: 2vw;
+      height: 75%;
+      background-position: bottom;
+    }
+
+    @include onDesktop {
+      right: 10vw;
+    }
+  }
+
+  &__desktop-wrapper {
+    @include onDesktop {
+      position: relative;
+    }
+  }
+
+  &__stamp-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: (0.7 * $stamp-size);
+    height: $stamp-size;
+
+    transform: translateY(-50%);
+    overflow: hidden;
+
+    @include onTablet {
+      width: (0.9 * $stamp-size);
+    }
+
+    @include onDesktop {
+      width: $stamp-size;
+      transform: translateY(-100%);
+      right: -30px;
+    }
+  }
+
+  &__stamp {
+    @include square($stamp-size);
+    object-fit: cover;
+    object-position: left;
+
+    opacity: 0.2;
+  }
+
+  &__contact {
+    margin-bottom: 102px;
+
+    @include onTablet {
+      margin-bottom: 156px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 210px;
+    }
+  }
+}

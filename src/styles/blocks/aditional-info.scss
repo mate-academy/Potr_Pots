@@ -1,0 +1,134 @@
+.aditional-info {
+  display: flex;
+  justify-content: center;
+
+  color: $color-black;
+
+  @include onTablet {
+    justify-content: space-between;
+  }
+
+  &__ardess {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: fit-content;
+
+    transition: color ease $transition-time, transform $transition-time;
+
+    &:hover {
+      color: $color-red;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    @include title-s;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__social {
+    display: flex;
+    gap: 85px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 28px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 84px;
+    }
+  }
+
+  &__twitter {
+    @include square(20px);
+
+    background-image: url(../images/icons8-twitter-circled.svg);
+    background-size: contain;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__instagram {
+    @include square(20px);
+
+    background-image: url(../images/icons8-instagram.svg);
+    background-size: contain;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__facebook {
+    @include square(20px);
+
+    background-image: url(../images/icons8-facebook.svg);
+    background-size: contain;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__logo {
+    @include title-m;
+
+    transition: transform $transition-time;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__copyright {
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__about {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

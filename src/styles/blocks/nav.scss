@@ -1,0 +1,79 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo-link {
+    display: block;
+    width: max-content;
+  }
+
+  &__logo {
+    @include title;
+    color: $color-grey-1;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 6%;
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    transition: transform ease-in-out $transition-time;
+
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      position: static;
+      transform: translateX(0);
+    }
+  }
+
+  &__menu-btn {
+    display: block;
+
+    @include square(48px);
+
+    background-image: url(../images/menu_btn.png);
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__basket {
+    display: none;
+
+    @include square(48px);
+
+    background-image: url(../images/bag.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: transform $transition-time;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,174 @@
+.header {
+  position: relative;
+  padding-top: 6px;
+
+  @include onTablet {
+    padding-top: 23px;
+  }
+
+  @include onDesktop {
+    padding-top: 14px;
+  }
+
+  &__nav {
+    margin-bottom: 14px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__background {
+    display: none;
+    position: absolute;
+    z-index: -1;
+
+    width: 100vw;
+    height: 90vw;
+
+    background-image: url(../images/rectangle_yellow.svg);
+    background-size: 400%;
+    background-position: top right;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      display: block;
+      top: 0;
+      right: 17vw;
+
+      background-size: 140%;
+    }
+
+    @include onDesktop {
+      right: 22vw;
+      top: -104px;
+      background-size: 100%;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__parallel-container {
+    @include onTablet {
+      @include parallelContainer;
+    }
+  }
+
+  &__image-container {
+    @include imageSizer(100vw, 1);
+
+    margin-left: -$side-pading-m;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      @include imageSizer(92%, 1);
+      max-width: 500px;
+      margin-left: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    display: block;
+
+    @include square (100%);
+
+    object-fit: cover;
+    object-position: -90px;
+  }
+
+  &__buttom-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include title-m;
+    color: $color-turquoise;
+    line-height: 1.2;
+    -webkit-text-stroke: 0.7px $color-turquoise;
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      @include title-xl;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title-transparent {
+    color: transparent;
+  }
+
+  &__sale {
+    margin-bottom: 20px;
+
+    font-size: 14px;
+    color: $color-grey-2;
+
+    @include onTablet {
+      margin-top: -25px;
+      margin-bottom: 44px;
+    }
+    @include onDesktop {
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 1px;
+
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 700;
+    color: $color-grey-1;
+  }
+
+  &__buy {
+    width: 238px;
+  }
+
+  &__about {
+    position: absolute;
+    display: flex;
+    right: 5px;
+    z-index: 2;
+
+    font-size: 12px;
+    color: $color-turquoise;
+
+    transform: rotate(90deg);
+    transform-origin: 100% 0;
+
+    &::after {
+      content: "";
+      width: 45px;
+      margin-left: 9px;
+
+      background-image: url(../images/about_arrow.svg);
+      background-position: right;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    @include onTablet {
+      right: auto;
+      left: auto;
+      bottom: -70px;
+      transform: translateX(-100%) rotate(90deg) translateY(-100%);
+    }
+  }
+}

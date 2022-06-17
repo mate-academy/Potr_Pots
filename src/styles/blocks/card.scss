@@ -1,0 +1,119 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &--toggle-bottom {
+    flex-direction: column-reverse;
+  }
+
+  &__toggle {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include square(51px);
+    margin: 9px auto;
+
+    border-radius: 50%;
+    background-color: $color-red;
+    backdrop-filter: blur(12px);
+
+    transition: background-color $transition-time, transform $transition-time;
+
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      height: 1px;
+      width: 11px;
+      background-color: $color-grey-5;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+
+      height: 1px;
+      width: 11px;
+      background-color: $color-grey-5;
+
+      transition: transform $transition-time;
+      transform: rotate(-90deg);
+    }
+
+    &:checked {
+      background-color: rgba(36, 35, 35, 0.55);
+    }
+
+    &:checked::after {
+      transform: rotate(0);
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    max-height: 0;
+    padding: 35px 45px;
+
+    transform: scale(0);
+    margin: -9px 0;
+
+    transition: transform ease $transition-time,
+      margin $transition-time,
+      max-height $transition-time 0s;
+
+    transform-origin: 50% 0;
+
+    overflow: hidden;
+
+    &--toggle-bottom {
+      transform-origin: 50% 100%;
+    }
+
+    &--slide {
+      display: block;
+      max-height: max-content;
+      transform: scale(1);
+      margin: 0;
+    }
+  }
+
+  &__toggle:checked ~ &__content {
+    max-height: 500px;
+    margin: 0;
+    transform: scale(1);
+  }
+
+  &__text {
+    position: relative;
+    z-index: 1;
+
+    color: $color-grey-light;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include square(100%);
+
+    background: rgba(0, 0, 0, 0.55);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+  }
+}

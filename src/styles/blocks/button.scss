@@ -1,0 +1,79 @@
+.button {
+  display: flex;
+  justify-content: center;
+
+  padding: 13px;
+  border: 1px solid $color-grey-5;
+
+  color: $color-semi-black;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  transition: color $transition-time,
+    border-color $transition-time,
+    background-color $transition-time,
+    transform $transition-time/2;
+
+  &:hover {
+    border-color: $color-red;
+    color: $color-red;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &--accent {
+    border: 1px solid $color-yellow;
+    background-color: $color-yellow;
+    color: $color-semi-black;
+
+    &::after {
+      content: "";
+      width: 25px;
+      margin-left: 5px;
+
+      transition: background-color $transition-time;
+
+      background-color: $color-semi-black;
+      -webkit-mask: url(../images/btn_arrow.svg) center no-repeat;
+      mask: url(../images/btn_arrow.svg) center no-repeat;
+    }
+
+    &:hover {
+      color: $color-semi-black;
+      border-color: $color-grey-1;
+      background-color: transparent;
+    }
+
+    @include onTablet {
+      border-color: $color-turquoise;
+      background-color: transparent;
+
+      &:hover {
+        color: $color-grey-light;
+        background-color: $color-turquoise;
+        border-color: $color-turquoise;
+
+        &::after {
+          background-color: $color-grey-light;
+        }
+      }
+    }
+  }
+
+  &--secondary {
+    padding: 11px;
+    font-size: 16px;
+    color: $color-grey-1;
+    border-color: transparent;
+    text-decoration: underline dotted;
+    text-transform: capitalize;
+
+    &:hover {
+      border-color: transparent;
+    }
+  }
+}
