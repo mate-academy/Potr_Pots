@@ -1,11 +1,7 @@
 .header {
   position: relative;
 
-  &__container {
-    padding: 0 30px;
-  }
-
-  &__poster {
+  &__poster-mobile {
     display: block;
     margin: 0 auto 25px;
     width: 320px;
@@ -13,11 +9,15 @@
 
   }
 
+  &__poster {
+    display: none;
+  }
+
   &__title {
     display: block;
     margin: 0 auto 30px;
     width: 260px;
-    height: auto;
+    height: 172px;
 
   }
 
@@ -58,7 +58,7 @@
     padding-right: 53px ;
     position: absolute;
     bottom: 84px;
-    right: -60px;
+    right: -80px;
 
     transform: rotate(90deg);
     white-space: nowrap;
@@ -84,16 +84,12 @@
 
   @media (min-width: 768px) {
     background-image: url("../images/header/Rectangle.png");
-    background-size: contain;
+
     background-repeat: no-repeat;
     padding-bottom: 44px;
     &__content {
       display: flex;
-      justify-content: center;
-    }
-
-    &__container {
-      padding: 0 34px;
+      justify-content: flex-end;
     }
 
     &__about {
@@ -101,12 +97,16 @@
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
+      margin-right: 15px;
+    }
+
+    &__poster-mobile {
+      display: none;
     }
 
     &__poster {
       display: block;
       @include square (306px);
-      order: 1;
       margin: 0;
     }
 
@@ -160,17 +160,11 @@
 
   @media (min-width: 1440px) {
     background-image: url("../images/header/RectangleBig.png");
-    background-position: -220px -80px;
 
     &__content {
       position: relative;
       display: flex;
       justify-content: flex-end;
-      margin-right: 135px;
-    }
-
-    &__container {
-      padding: 0 135px;
     }
 
     &__about {
@@ -178,12 +172,12 @@
       flex-direction: column;
       justify-content: flex-end;
       align-items: flex-end;
+      margin-right: 132px;
     }
 
     &__poster {
       display: block;
       @include square (500px);
-      order: 1;
       margin: 0;
     }
 
@@ -196,7 +190,6 @@
       width: 470px;
       height: 256px;
       z-index: 1;
-      margin-bottom: 0;
     }
 
     &__price-wraper {
@@ -220,7 +213,7 @@
       padding-right: 53px ;
       position: absolute;
       bottom: 84px;
-      right: 1240px;
+      right: 1070px;
 
       transform: rotate(90deg);
       white-space: nowrap;
