@@ -26,29 +26,24 @@
   }
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
     &__box {
-      @include onTablet {
-        width: 220px;
-      }
+      place-items: center;
 
-      @include onDesktop {
-        width: 370px;
+      @include onTablet {
+        place-items: start;
       }
     }
 
     &__img {
-      margin-bottom: 35px;
+      margin: 0 auto 35px;
 
-      width: 260px;
-      height: 260px;
+      width: 50%;
+      min-width: 280px;
+      height: 300px;
 
       background-repeat: no-repeat;
-      background-size: contain;
-
+      background-size: cover;
+      background-position: right;
       transition: all 0.2s;
 
       &--first {
@@ -68,8 +63,8 @@
       }
 
       @include onTablet {
-        width: 220px;
-        height: 220px;
+        min-width: 100%;
+        max-width: 400px;
       }
 
       @include onDesktop {

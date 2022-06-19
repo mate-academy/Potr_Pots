@@ -4,52 +4,73 @@
   &__img {
     display: none;
 
-    margin-bottom: 110px;
+    margin-bottom: 100px;
+
+    max-width: 500px;
+    height: 380px;
+
+    background-size: cover;
+    background-position: center bottom;
+
+    transform-origin: left top;
+    transition: all 0.3s;
 
     &--plant {
-      width: 284px;
-      height: 284px;
-
-      background-size: cover;
       background-image: url(../images/for-whom--plant.png);
 
-      @include onDesktop {
-        width: 500px;
-        height: 500px;
-        background-size: contain;
+      @include onTablet {
+        &:hover {
+          transform: scale(1.08);
+        }
       }
     }
 
     &--cactus {
-      width: 300px;
-      height: 417px;
+      margin-left: -25%;
+      height: 500px;
 
+      background-position: center;
       background-image: url(../images/for-whom--cactus.png);
 
-      @include onDesktop {
-        width: 330px;
-        height: 480px;
+      transform-origin: right;
 
-        background-repeat: no-repeat;
-        background-size: cover;
+      @include onTablet {
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      @include onDesktop {
+        margin: 0;
+        width: 100%;
       }
     }
 
     &--art {
-      width: 290px;
-      height: 450px;
+      min-height: 500px;
 
-      background-size: cover;
       background-image: url(../images/for-whom--art.png);
 
+      transform-origin: left bottom;
+
+      @include onTablet {
+        &:hover {
+          transform: scale(1.08);
+        }
+      }
+
       @include onDesktop {
-        width: 430px;
-        height: 600px;
+        margin-top: 150px;
+        height: 670px;
       }
     }
 
     @include onTablet {
       display: block;
+    }
+
+    @include onDesktop {
+      max-width: 500px;
     }
   }
 
@@ -63,7 +84,7 @@
     letter-spacing: 0.15em;
   }
 
-  &__slash {
+  &--slash {
     display: inline-block;
     width: 20px;
     height: 45px;
@@ -73,42 +94,23 @@
   }
 
   &--num {
+    display: block;
+    position: relative;
     margin-bottom: 30px;
 
     font-size: 36px;
-    line-height: 64px;
-    letter-spacing: 0.15em;
     color: #000;
 
-    @include onTablet {
-      position: absolute;
-
-      &--first {
-        top: 20px;
-        left: 300px;
-
-        @include onDesktop {
-          left: 600px;
-          top: 200px;
-        }
+    &--first,
+    &--third {
+      @include onTablet {
+        justify-self: right;
       }
+    }
 
-      &--second {
-        top: 60px;
-
-        @include onDesktop {
-          top: 210px;
-        }
-      }
-
-      &--third {
-        left: 300px;
-        top: 20px;
-
-        @include onDesktop {
-          top: 100px;
-          left: 500px;
-        }
+    &--third {
+      @include onDesktop {
+        place-self: center;
       }
     }
   }
@@ -124,63 +126,33 @@
 
       @include onTablet {
         &--first::after {
-          content: "* Robust";
+          content: "*Robust";
 
-          position: absolute;
+          position: relative;
+
+          left: -20%;
+          top: -200px;
 
           width: max-content;
-
-          left: 350px;
-          top: -35px;
 
           font-family: "Manrope", sans-serif;
           font-size: 16px;
           letter-spacing: normal;
-
-          @include onDesktop {
-            left: 640px;
-            top: 100px;
-          }
         }
 
         &--second {
           &::after {
-            content: "* Beautiful";
+            content: "*Beautiful";
 
-            position: absolute;
+            position: relative;
 
             width: max-content;
 
-            top: -18px;
+            top: -200px;
 
             font-family: "Manrope", sans-serif;
             font-size: 16px;
             letter-spacing: normal;
-
-            @include onDesktop {
-              left: 480px;
-              top: 0;
-            }
-          }
-        }
-
-        &--third::after {
-          content: "* Saves time";
-
-          position: absolute;
-
-          width: max-content;
-
-          left: 350px;
-          top: -50px;
-
-          font-family: "Manrope", sans-serif;
-          font-size: 16px;
-          letter-spacing: normal;
-
-          @include onDesktop {
-            top: 0;
-            left: 640px;
           }
         }
       }
@@ -197,8 +169,6 @@
   }
 
   &__section {
-    @include onTablet {
-      margin: auto 0;
-    }
+    margin: auto 0;
   }
 }

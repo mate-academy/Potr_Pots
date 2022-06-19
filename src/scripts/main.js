@@ -1,12 +1,8 @@
 'use strict';
 
-function submitForm() {
-  const frm = document.getElementsByName('contact-form')[0];
+const form = document.querySelector('.contact-form');
 
-  frm.submit();
-  frm.reset();
-}
-
-const btn = document.getElementsByClassName('contact__button');
-
-btn.addEventListener('click', submitForm());
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  form.reset();
+});

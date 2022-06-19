@@ -1,9 +1,16 @@
 .grid {
-  grid-template-columns: repeat(2, 120px);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1;
   column-gap: 20px;
 
-  position: relative;
+  &--mob {
+    display: grid;
+
+    @include onTablet {
+      display: block;
+    }
+  }
 
   &--tablet {
     display: block;
@@ -14,12 +21,12 @@
   }
 
   @include onTablet {
-    grid-template-columns: repeat(6, 100px);
+    grid-template-columns: repeat(6, 1fr);
     column-gap: 20px;
   }
 
   @include onDesktop {
-    grid-template-columns: repeat(12, 70px);
+    grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
   }
 
