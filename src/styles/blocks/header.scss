@@ -1,0 +1,132 @@
+.header {
+  height: 100vh;
+  position: relative;
+  // width: 100%;
+
+  @include onTablet {
+    height: 100vh;
+    max-height: 600px;
+    margin: 0;
+
+
+  }
+
+  &__bg {
+
+    @include onTablet {
+      position: fixed;
+      left: 0;
+      width: 80%;
+      height: 75%;
+      background: url(../images/png/bg-big.png);
+      background-size: cover;
+      z-index: 0;
+    }
+
+  }
+
+  &__top-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  &__title {
+    margin: 0;
+
+    @include f-bebas-400;
+    font-size: 36px;
+    letter-spacing: 0.06em;
+  }
+
+  &__bottom-content {
+    padding: 0 30px;
+  }
+
+  &__image {
+    width: 100%;
+    padding: 0 -30px;
+
+    @include onTablet {
+      position: absolute;
+      top: 120px;
+      right: 30px;
+
+      width: 300px;
+    }
+  }
+
+  &__subtitle {
+    margin: 25px 0;
+
+    @include f-bebas-400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 0.68px $c-Turquoise;
+
+    & span {
+      color: $c-Turquoise;
+    }
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      left: 34px;
+      top: 120px;
+      width: 470px;
+      font-size: 64px;
+      line-height: 64px
+    }
+
+  }
+
+  &__prise {
+    @include f-manrope-700;
+    font-size: 26px;
+    color: #333333;
+    margin-bottom: 1px;
+
+  }
+
+  &__prise-1 {
+    @include onTablet {
+      position: fixed;
+      top: 360px;
+      left: 275px;
+    }
+  }
+
+  &__paragraph {
+    @include f-manrope-400;
+    font-size: 14px;
+    color: #4f4f4f;
+    margin: 0 0 20px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 48px;
+    background-color: $c-yellow;
+    border: 1px solid #FFE339;
+    width: 100%;
+    @include f-manrope-400;
+    text-transform: uppercase;
+    font-size: 14px;
+
+    @include onTablet {
+      width: 240px;
+      position: fixed;
+      left: 150px;
+      top: 487px;
+    }
+  }
+}
+
