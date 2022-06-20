@@ -1,5 +1,15 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 body,
@@ -18,7 +28,7 @@ ul {
 }
 
 .container {
-  background-color: #fff;
+  background-color: $c-white;
 
   &__description-pos {
     margin: 100px 0;
@@ -35,5 +45,11 @@ ul {
   }
   &__team-pos {
     margin-bottom: 168px;
+    @include tablet {
+      margin-bottom: 100px;
+    }
+    @include desktop {
+      margin-bottom: 150px;
+    }
   }
 }
