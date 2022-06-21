@@ -1,5 +1,4 @@
 .for-who {
-  // width: 100%;
   display: block;
   &__title,
   &__subtitle {
@@ -11,11 +10,16 @@
 
   &__title {
     margin-bottom: 25px;
+    color: #333333;
   }
 
   &__image {
     display: none;
-    width: 320px
+    width: 320px;
+
+    @include onTablet {
+      display: block;
+    }
   }
 
   &__number {
@@ -29,11 +33,13 @@
 
   &__subtitle {
     margin-bottom: 20px;
+    color: #000000
   }
 
   &__description {
     @include f-manrope-400;
     font-size: 16px;
     margin-bottom: 70px;
+    color: $c-gray-dark;
   }
 }
