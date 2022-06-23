@@ -34,12 +34,28 @@
     padding: 0 $paddingDesktop;
     grid-template-columns: repeat(12, minmax(70px, 1fr));
     column-gap: 30px;
+    grid-template-rows: 50px;
+    grid-template-areas: "image image image image image . . . . . . ."
+      "image image image image image . . . . . . ."
+      "image image image image image tt1 tt1 tt1 tt2 tt2 tt2 tt2"
+      "image image image image image tx1 tx1 tx1 tx2 tx2 tx2 tx2"
+      "image image image image image tt3 tt3 tt3 . . . ."
+      "image image image image image tx3 tx3 tx3 tx3 . . ."
+      "image image image image image btn btn btn . . . ."
+      "image image image image image . per per . . . ."
+      "image image image image image . bl bl bl bl bl ."
+      "image image image image image . . . . . . ."
+  ;
 
   }
 
   &__image {
     grid-area: image;
     display: none;
+    @include desktop {
+      display: block;
+      margin-left: -135px;
+    }
   }
 
   &__title {
@@ -97,6 +113,9 @@
     grid-area: btn;
     display: flex;
     width: 238px;
+    @include desktop {
+      margin: 60px 0 70px;
+    }
   }
 
   &__tt1 {
