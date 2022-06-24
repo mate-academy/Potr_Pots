@@ -10,7 +10,8 @@
   }
 
   @include onDeskTop {
-    min-height: 800px
+    min-height: 800px;
+    background-position: 0 200px;
   }
 
   &__title {
@@ -46,10 +47,18 @@
     }
 
     @include onDeskTop {
-      width: 677px;
-      height: 507px;
-      right: 250px;
-      top: 200px
+      width: 670px;
+      height: 500px;
+      right: 130px;
+      top: 300px;
+    }
+    @include onBigDesk {
+      @include onDeskTop {
+        width: 677px;
+        height: 507px;
+        right: 250px;
+        top: 200px
+      }
     }
   }
 
@@ -101,7 +110,6 @@
         width: 600px;
       }
     }
-    
     @include onTablet {
       display: block;
       position: absolute;

@@ -1,8 +1,9 @@
 .page {
   background-color: $c-gray-light;
   position: relative;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
+  scroll-behavior: smooth;
 
 
   &__menu {
@@ -15,6 +16,12 @@
     &:target {
       transform: translateX(0);
       transition: transform 0.5s;
+
+      @include onDeskTop {
+        &:target {
+          transform: 0;
+        }
+      }
     }
   }
 
