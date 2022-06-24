@@ -1,13 +1,29 @@
 .materials {
-  min-height: 400px;
+  min-height: 450px;
   position: relative;
   background-image: url(../images/lpg/bg-down.jpg);
   background-repeat: no-repeat;
-  background-size: auto;
-  background-position: center 40px;
+  background-size: contain;
+  background-position: center 150px;
+
+  @media (min-width: 330px) {
+    background-size: cover;
+    background-position: center;
+  }
+
+  @include onTablet {
+    min-height: 800px;
+    background-size: contain;
+    background-position: center 150px;
+  }
+
+  @include onDeskTop {
+    min-height: 1080px;
+    background-size: cover;
+    // background-position: center 100px;
+  }
 
 
-  width: 100%;
   &__title {
     @include f-bebas-400;
     font-size: 58px;
@@ -15,16 +31,31 @@
     letter-spacing: 0.155em;
     color: $c-Turquoise;
 
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDeskTop {
+      font-size: 138.805px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+      min-height: 900px;
+    }
+
   }
 
   &__description {
-    display: block;
+    display: flex;
     background: rgba(0, 0, 0, 0.45);
-    height: 300px;
+    height: 250px;
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
+    align-items: center;
+    justify-content: center;
 
     position: absolute;
-    bottom: 0;
+    bottom: -100px;
     left: 9px;
     right: 9px;
     @include f-manrope-400;
@@ -33,5 +64,10 @@
     padding: 28px 45px 58px;
     line-height: 150%;
     color: #f8f8f8;
+
+    @media (min-width: 340px) {
+      width: 302px;
+      opacity: 0;
+    }
   }
 }
