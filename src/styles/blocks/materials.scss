@@ -1,3 +1,256 @@
 .materials {
   padding: 0;
+  background-image: url("../images/material/material-backgraund.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  &__container {
+    padding: 0;
+  }
+
+  &__second-linc {
+    display: none;
+  }
+
+  &__second-linc-duble {
+    display: none;
+  }
+
+  &__title {
+    margin-bottom: 120px;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+  }
+
+  &__description {
+    display: none;
+  }
+
+  &__slider {
+    padding: 28px 40px 47px;
+    overflow: hidden;
+    width: 254px;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+  }
+
+  &__list {
+    display: flex;
+    width: 1510px;
+    margin-bottom: 11px;
+  }
+
+  &__item {
+
+    width: 201px;
+    margin-right: 20px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    transition: transform 3s linear;
+    color: $c-gray-light;
+  }
+
+  &__control {
+    display: flex;
+    justify-content: center;
+    &:active {
+      transform: translateX(302px);
+    }
+  }
+
+  &__control-btn {
+    margin-right: 14px;
+    @include square (7px);
+    border: 1px solid $c-gray-light;
+    transform: rotate(-45deg);
+    background: $c-gray-light;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__cards {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    background-image: url("../images/material/background-tablet.png");
+    background-size: contain;
+    background-position: bottom;
+
+    margin: 0;
+    padding-bottom: 687px;
+    &__container {
+      position: relative;
+
+    }
+
+    &__title {
+      margin-bottom: 0;
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    &__description {
+      position: absolute;
+      right: 34px;
+      top: 141px;
+      display: block;
+      width: 340px;
+    }
+
+    &__title-description {
+      margin-bottom: 10px;
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: $c-gray-2;
+    }
+
+    &__content-description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $c-gray-2;
+    }
+
+    &__slider {
+      display: none;
+    }
+
+    &__cards {
+      display: block;
+      position: relative;
+      width: 100%;
+      padding: 0;
+      background: transparent;
+
+    }
+
+    &__card {
+      position: absolute;
+      padding: 0;
+      width: 303px;
+
+      &--1 {
+        bottom: -600px;
+        left: -11%;
+      }
+
+      &--2 {
+        bottom: -684px;
+        right: 40%;
+      }
+
+      &--3 {
+        bottom: -660px;
+        right: 20%;
+      }
+
+      &--4 {
+        bottom: -660px;
+        right: 9%;
+      }
+
+      &--5 {
+        bottom: -580px;
+        right: -2%;
+      }
+    }
+
+    &__card-btn {
+      display: block;
+      margin: 0 auto;
+      width: 51px;
+      height: 51px;
+      background-image: url("../images/material/plus.png");
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.3s;
+
+      &:hover {
+        background-image: url("../images/material/minus.png");
+
+        .materials__card-description-1 {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__card-description {
+      width: 303px;
+      height: 237px;
+      padding: 35px 45px;
+      background: rgba(0, 0, 0, 0.45);
+      mix-blend-mode: normal;
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(34px);
+
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $c-gray-light;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &__second-linc {
+      position: absolute;
+      display: block;
+      right: -5%;
+      top: 8%;
+      transform: rotate(90deg);
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.22em;
+      color: $c-gray-4;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: 75px;
+        display: block;
+        width: 65px;
+        height: 1px;
+        background: $c-gray-4;
+      }
+    }
+    &__second-linc-duble {
+      display: block;
+      position: absolute;
+      left: -6%;
+      top: 17%;
+      transform: rotate(270deg);
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.22em;
+      color: $c-gray-4;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: 75px;
+        display: block;
+        width: 65px;
+        height: 1px;
+        background: $c-gray-4;
+      }
+    }
+  }
 }
