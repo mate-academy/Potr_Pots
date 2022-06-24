@@ -1,3 +1,41 @@
-.main {
-  padding: 0;
+.swiper {
+  width: 100%;
+  height: 300px;
+
+  bottom: -155px;
+  @media (min-width: 405px) {
+    bottom: -230px;
+  }
+  @media (min-width: 680px) {
+    bottom: -300px;
+  }
+  @include tablet {
+    display: none;
+  }
+}
+
+.slider {
+
+  &__item {
+    width: 250px;
+    height: 250px;
+    padding: 35px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-white;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+  }
+  &__bullets .swiper-pagination-bullet {
+    height: 7px;
+    width: 7px;
+    background-color: $c-white;
+    border: $c-white 1px solid;
+    opacity: 1;
+  }
+  &__bullets .swiper-pagination-bullet-active {
+    background-color: $c-gray1;
+  }
 }

@@ -67,11 +67,20 @@
 
   &__address-container {
     width: 200px;
+
+    @media (min-width: 400px) {
+      margin: 0 auto;
+    }
+
+    @include tablet {
+      margin: 0;
+    }
   }
 
   &__social-icons-pos {
     margin-top: 100px;
-
+    display: flex;
+    justify-content: space-around;
     @include tablet {
       display: none;
     }
