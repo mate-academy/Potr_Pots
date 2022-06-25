@@ -21,3 +21,22 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-pagination',
   },
 });
+
+function onEntry(entry) {
+  entry.forEach(change => {
+    if (change.isIntersecting) {
+      change.target.classList.add('--active');
+    } else {
+      change.target.classList.remove('--active');
+    }
+  });
+}
+
+const options = { threshold: [0.01] };
+// eslint-disable-next-line no-undef
+const observer = new IntersectionObserver(onEntry, options);
+const elements = document.querySelectorAll('.animation-item');
+
+for (const elm of elements) {
+  observer.observe(elm);
+}

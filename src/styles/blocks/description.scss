@@ -1,11 +1,11 @@
 .description {
-  padding: 0 30px;
+  padding: 0 $paddingMobile;
 
   @include tablet {
-    padding: 0 35px;
+    padding: 0 $paddingTablet;
   }
   @include desktop {
-    padding: 0 135px;
+    padding: 0 $paddingDesktop;
   }
 
   &__bottom {
@@ -51,6 +51,11 @@
       display: flex;
       gap: 76px;
     }
+    @include toAnimate {
+      opacity: 0;
+      transform: scale(0.25);
+      transition: all 2s;
+    }
 
     @include desktop {
       gap: 200px;
@@ -94,6 +99,12 @@
       align-items: center;
     }
 
+    @include toAnimate {
+      opacity: 0;
+      transform: scale(0.25);
+      transition: all 2s;
+    }
+
     @include desktop {
       flex-direction: column;
       gap: 182px;
@@ -126,6 +137,12 @@
     @include tablet {
       display: flex;
       gap: 76px;
+    }
+
+    @include toAnimate {
+      opacity: 0;
+      transform: scale(0.25);
+      transition: all 2s;
     }
 
     @include desktop {
@@ -173,6 +190,12 @@
     text-transform: uppercase;
     color: $c-gray1;
     margin-bottom: 100px;
+
+    @include toAnimate {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+
   }
 
   &__block-title {

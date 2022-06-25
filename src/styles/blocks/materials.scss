@@ -40,6 +40,13 @@
       padding: 0 $paddingTablet;
       width: 600px;
     }
+
+    @include toAnimate {
+      transform: translateX(150px);
+      opacity: 0;
+      transition: transform 2s, opacity 2s;
+    }
+
     @include desktop {
       padding: 0 $paddingDesktop;
       width: 1300px;
@@ -54,6 +61,7 @@
     line-height: 150%;
     color: $c-gray2;
     display: none;
+
     @include tablet {
       position: absolute;
       display: block;
@@ -62,6 +70,13 @@
       top: 85px;
       padding-right: $paddingTablet;
     }
+
+    @include toAnimate {
+      transform: translateY(150px);
+      opacity: 0;
+      transition: transform 2s, opacity 2s;
+    }
+
     @include desktop {
       padding-right: $paddingDesktop;
       width: 600px;

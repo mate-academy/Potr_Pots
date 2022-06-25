@@ -16,17 +16,31 @@
 
   &__address {
     display: none;
+
     @include tablet {
       display: block;
       width: 170px;
+    }
+
+    @include toAnimate {
+      transform: translateX(50px);
+      opacity: 0;
+      transition: transform 2s, opacity 2s;
     }
   }
 
   &__about {
     display: none;
+
     @include tablet {
       display: block;
       width: 170px;
+    }
+
+    @include toAnimate {
+      transform: translateX(-50px);
+      opacity: 0;
+      transition: transform 2s, opacity 2s;
     }
   }
 
@@ -77,7 +91,13 @@
     text-decoration: none;
 
     color: $c-black;
+
+    @include toAnimate {
+      opacity: 0;
+      transition: opacity 2s;
+    }
   }
+
   &__copyright {
     display: block;
     text-align: center;

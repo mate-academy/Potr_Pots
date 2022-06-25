@@ -20,6 +20,13 @@
       background: url("../images/roumd1-txt.png") center no-repeat;
       width: 200px;
     }
+
+    @include toAnimate {
+      transform: rotate(180deg);
+      opacity: 0;
+      transition: transform 2s, opacity 2s;
+    }
+
     height: 200px;
     width: 100px;
     top: -90px;
@@ -62,6 +69,12 @@
       display: flex;
       gap: 100px;
       justify-content: space-around;
+    }
+
+    @include toAnimate {
+      transform: scale(0.1);
+      opacity: 0;
+      transition: transform 2s, opacity 2s;
     }
   }
 

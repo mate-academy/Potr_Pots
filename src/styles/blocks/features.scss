@@ -1,11 +1,11 @@
 .features {
-  padding: 0 30px;
+  padding: 0 $paddingMobile;
 
   @include tablet {
-    padding: 0 35px;
+    padding: 0 $paddingTablet;
   }
   @include desktop {
-    padding: 0 135px;
+    padding: 0 $paddingDesktop;
   }
 
   &__header {
@@ -13,6 +13,13 @@
     line-height: 70px;
     -webkit-text-stroke: 1px $c-blue;
     margin-bottom: 22px;
+
+    @include toAnimate {
+      opacity: 0;
+      transform: translateX(30%);
+      transition: transform 2s;
+      width: max-content;
+    }
   }
 
   &__container {
@@ -61,6 +68,11 @@
     @include tablet {
       text-align: left;
     }
+
+    @include toAnimate {
+      opacity: 0;
+    }
+
     @include desktop {
       text-align: center;
     }
@@ -84,6 +96,12 @@
     @include tablet {
       text-align: left;
     }
+
+    @include toAnimate {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
     @include desktop {
       text-align: center;
     }
@@ -97,6 +115,10 @@
 
     @include tablet {
       height: 218px;
+    }
+    @include toAnimate {
+      opacity: 0;
+      transform: rotateX(120deg);
     }
 
     @include desktop {
