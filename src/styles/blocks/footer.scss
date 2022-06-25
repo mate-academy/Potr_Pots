@@ -1,0 +1,77 @@
+.footer {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+
+  &__adress {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      text-align: center
+    }
+  }
+
+  &__title {
+    margin: 0 0 10px;
+
+    @include f-bebas-400;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+
+  }
+
+  &__link {
+    @include f-manrope-400;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  &__social {
+    display: flex;
+    gap: 85px;
+  }
+
+  &__about-us {
+    margin: 0 0 10px;
+    display: none;
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+
+  &__copy {
+    @include f-manrope-400;
+    font-size: 16px;
+    line-height: 24px;
+
+    &--disabled {
+      margin-top: 0;
+      @include onTablet {
+        display: none
+      }
+    }
+  }
+
+  &__name {
+    @include f-bebas-400;
+    font-size: 36px;
+    line-height: 54px;
+    text-transform: uppercase;
+    letter-spacing: 0.155em;
+    margin-bottom: 0;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+  }
+}

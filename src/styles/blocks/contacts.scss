@@ -1,10 +1,25 @@
 .contacts {
   background-image: url(../images/png/form-bg.png);
   background-repeat: no-repeat;
-  background-position: top -100px;
-  background-size: cover;
-  // max-height: 1000px;
-  // background-size: 100%;
+  background-size: 768px 1003px;
+
+  @include onTablet {
+    background-size: cover;
+    background-image: url(../images/svg/bg.svg);
+    background-position: center;
+  }
+
+  @include onDeskTop {
+    background-image: url(../images/svg/bg-big.svg);
+    background-position: -200px 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 600px;
+  }
+
+  @include onBigDesk {
+    background-position: -130px 30px;
+  }
   &__title {
     padding-top: 40px;
     @include f-bebas-400;
@@ -25,10 +40,32 @@
     @include f-manrope-400;
     font-size: 24px;
     line-height: 36px;
+    display: block;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
   }
 
   &__form {
 
+  }
+
+  &__info {
+    &-title {
+      @include f-manrope-400;
+      line-height: 36px;
+      font-size: 24px;
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-link {
+      @include f-manrope-400;
+      font-size: 16px;
+      line-height: 24px;
+      text-decoration: none;
+      color: #000000;
+    }
   }
 }
 
