@@ -11,7 +11,11 @@
   background-image: url("../images/header/Arrow-2.png");
   background-repeat: no-repeat;
   background-position: 75%, 50%;
-  @include hover (background-color, $c-yellow-light);
+  transition: background-color 0.3s, border-color 0.3s;
+  &:hover {
+    background-color: transparent;
+    border-color: #333;
+  }
 
   @media (min-width: 768px) {
     border: 1px solid $c-turquoise;
@@ -20,7 +24,10 @@
     background-repeat: no-repeat;
     background-position: 75% 50%;
 
-    @include hover (background-color, $c-yellow-light);
+    &:hover {
+      background-color: $c-turquoise;
+      border-color: $c-turquoise;
+    }
   }
 
   @media (min-width: 1440px) {
@@ -30,6 +37,9 @@
     background-repeat: no-repeat;
     background-position: 75% 50%;
 
-    @include hover (background-color, $c-yellow-light);
+    &:hover {
+      background-color: $c-turquoise;
+      border-color: $c-turquoise;
+    }
   }
 }
