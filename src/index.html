@@ -37,7 +37,7 @@
             <ul class="nav__list">
 
               <li class="nav__item">
-                <a href="#basket" class="nav__link nav__link--no-active">Basket<span class="nav__basket">1</span></a>
+                <a href="#popup-bag" class="nav__link nav__link--no-active popup-link">Basket<span class="nav__basket">3</span></a>
               </li>
 
               <li class="nav__item">
@@ -66,7 +66,7 @@
             </ul>
 
           </nav>
-          <a href="#" class="header__basket-icon"></a>
+          <a href="#popup-bag" class="header__basket-icon popup-link"></a>
         </div>
         <div class="header__bottom-items">
           <img
@@ -80,7 +80,7 @@
           <div class="header__buy-block">
             <p class="header__price">$ 7,50</p>
             <p class="header__half-price">Get the second order <br> in half price</p>
-            <a class="primary-btn" href="#">Buy now <span class="btn-arrow"></span></a>
+            <a class="primary-btn popup-link" href="#popup-bag">Buy now </a>
           </div>
         </div>
       </header>
@@ -173,7 +173,7 @@
           </div>
         </article>
 
-        <article class="team container__team-pos">
+        <article class="team container__team-pos" id="about">
           <div class="team__martin outline-text animation-item">Martin</div>
           <div class="team__andy outline-text animation-item">Andy</div>
           <h2 class="team__title animation-item">Meet the POTR team! </h2>
@@ -198,7 +198,7 @@
           </div>
         </article>
 
-        <article class="materials container__materials-pos">
+        <article class="materials container__materials-pos" id="materials">
           <div class="materials__bg"></div>
           <h2 class="materials__header outline-text animation-item"><span>Materials and Features</span></h2>
           <div class="materials__txt-container animation-item">
@@ -284,12 +284,12 @@
           <p class="second-order__text second-order__tx2 animation-item">POTR pots arrive flat packed in an envelope!</p>
           <h2 class="second-order__title second-order__tt3 animation-item">Self-watering</h2>
           <p class="second-order__text second-order__tx3 animation-item">Add water to POTR and watch your plant drink!</p>
-          <a href="#" class="second-order__by-btn primary-btn animation-item">Buy now</a>
+          <a href="#popup-bag" class="second-order__by-btn primary-btn animation-item popup-link">Buy now</a>
           <p class="second-order__50percent animation-item">50% off</p>
           <p class="second-order__blue-txt animation-item">Get the second order in half price</p>
         </article>
 
-        <article class="contacts container__contacts-order-pos">
+        <article class="contacts container__contacts-order-pos" id="message-us">
           <div class="contacts__round-text animation-item"></div>
           <h2 class="contacts__header">have any questions?</h2>
           <div class="contacts__container animation-item">
@@ -362,16 +362,68 @@
             <a href="#" class="social-icons__icon"><img src="./images/icons/instagram.svg" alt="instagram icon"></a>
             <a href="#" class="social-icons__icon"><img src="./images/icons/fb-meta.svg" alt="fb-meta icon"></a>
           </div>
-          <a href="#" class="footer__logo animation-item">potrpots</a>
+          <a href="#" class="footer__logo ">potrpots</a>
           <p class="footer__copyright">Copyright © 2022</p>
         </div>
         <div class="footer__about animation-item">
-          <h2 class="footer__title">ABOUT US</h2>
+          <a href="#about" class="footer__title">ABOUT US</a>
           <p class="footer__text">Copyright © 2022</p>
         </div>
       </footer>
+      <div class="popup-wrapper">
+        <div class="popup popup-bag" id="popup-bag">
+          <div class="popup-bag__body">
+            <div class="popup__content popup-bag__content">
+              <button class="popup-bag__close close-popup">X</button>
+              <div class="popup-bag__title">Shopping bag</div>
+              <div class="popup-bag__line popup-bag__l1"></div>
+              <p class="popup-bag__text popup-bag__item">Item</p>
+              <p class="popup-bag__text popup-bag__qty-text">Quantity</p>
+
+              <img
+                src="./images/photos/basket-1.png"
+                alt="Large POTR Pot photo"
+                class="popup-bag__img popup-bag__img1"
+              >
+              <p class="popup-bag__text popup-bag__n1">Large POTR Pot</p>
+              <div class="popup-bag__qty-block popup-bag__q1">
+                <button class="popup-bag__btn">+</button>
+                <p class="popup-bag__qty">1</p>
+                <button class="popup-bag__btn">-</button>
+              </div>
+              <p class="popup-bag__text popup-bag__pt1">Unit price</p>
+              <p class="popup-bag__text popup-bag__p1">$ 7,50</p>
+              <p class="popup-bag__text popup-bag__tpt1">Total price</p>
+              <p class="popup-bag__text popup-bag__tp1">$ 7,50</p>
+
+              <div class="popup-bag__line popup-bag__l2"></div>
+              <img
+                src="./images/photos/basket-2.png"
+                alt="Small POTR Pot photo"
+                class="popup-bag__img popup-bag__img2"
+              >
+              <p class="popup-bag__text popup-bag__n2">Small POTR Pot</p>
+              <div class="popup-bag__qty-block popup-bag__q2">
+                <button class="popup-bag__btn">+</button>
+                <p class="popup-bag__qty">2</p>
+                <button class="popup-bag__btn">-</button>
+              </div>
+              <p class="popup-bag__text popup-bag__pt2">Unit price</p>
+              <p class="popup-bag__text popup-bag__p2">$ 5.00</p>
+              <p class="popup-bag__text popup-bag__tpt2">Total price</p>
+              <p class="popup-bag__text popup-bag__tp2">$ 10.00</p>
+              <div class="popup-bag__line popup-bag__l3"></div>
+
+              <p class="popup-bag__text popup-bag__total">Total:</p>
+              <p class="popup-bag__text popup-bag__amount">$ 17,50</p>
+              <button class="popup-bag__checkout-btn">Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="scripts/popups.js"></script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
