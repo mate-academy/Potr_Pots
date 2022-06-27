@@ -20,7 +20,6 @@
   @include onDeskTop {
     min-height: 1080px;
     background-size: cover;
-    // background-position: center 100px;
   }
 
 
@@ -53,11 +52,11 @@
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
     align-items: center;
     justify-content: center;
+    width: 300px;
 
     position: absolute;
     bottom: -100px;
-    left: 9px;
-    right: 9px;
+    right: 10px;
     @include f-manrope-400;
     font-size: 16px;
     text-align: center;
@@ -66,8 +65,95 @@
     color: #f8f8f8;
 
     @media (min-width: 340px) {
-      width: 302px;
-      opacity: 0;
+      width: 300px;
+      opacity: 1;
+    }
+
+    @include onTablet {
+      right: 50px;
+      bottom: 15%;
+      z-index: 1;
+    }
+
+    @include onDeskTop {
+      bottom: 25%;
+    }
+  }
+
+  &__btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #e0e0e0;
+    font-size: 18px;
+    background-color: $c-red;
+    height: 51px;
+    width: 51px;
+    border-radius: 50%;
+    text-decoration: none;
+    position: absolute;
+    transition: 0.5s;
+
+    &:hover {
+      @include hover-scale;
+    }
+
+    @include onTablet {
+      display: flex
+    }
+
+    &--1 {
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(12px);
+
+      top: 45%;
+      right: 20%;
+
+      @include onDeskTop {
+        top: 45%;
+        right: 162px;
+      }
+    }
+
+    &--2 {
+      bottom: 35%;
+      right: 35%;
+
+      @include onDeskTop {
+        bottom: 25%;
+        right: 35%;
+      }
+    }
+
+    &--3 {
+      bottom: 20%;
+      left: 45%;
+
+      @include onDeskTop {
+        bottom: 15%;
+        left: 48%;
+      }
+    }
+
+    &--4 {
+      bottom: 35%;
+      left: 30%;
+
+      @include onDeskTop {
+        bottom: 25%;
+        left: 30%;
+      }
+    }
+
+    &--5 {
+      bottom: 25%;
+      left:10%;
+
+      @include onDeskTop {
+        bottom: 10%;
+        right: 30px;
+      }
     }
   }
 }

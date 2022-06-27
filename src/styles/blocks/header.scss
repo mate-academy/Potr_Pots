@@ -17,6 +17,10 @@
     height: 70vh;
   }
 
+ @media (min-height: 1800px) {
+  height: 800px;
+ }
+
   &__menu {
     display: none;
     list-style: none;
@@ -129,6 +133,7 @@
 
       animation-name: sliderLeft;
       animation-duration: 4s;
+      animation-timing-function: linear;
     }
 
   }
@@ -176,6 +181,14 @@
     text-transform: uppercase;
     font-size: 14px;
     gap: 20px;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: $c-yellow-light;
+      border: 1px #FFE339;
+      @include hover-scale;
+
+    }
 
     @include onTablet {
       width: 240px;
@@ -186,9 +199,7 @@
 
     @include onDeskTop {
       left: 430px;
-      // animation-name: apperiance;
-      animation-name: scale;
-      animation-duration: 4s;
+      animation: apperiance 5s linear;
     }
 
   }
@@ -204,10 +215,6 @@
     font-size: 14px;
     transition: 0.3s;
 
-    &:hover {
-      background: #FFE339;
-      border: 1px #FFE339;
-    }
   }
 }
 

@@ -11,12 +11,21 @@
     padding: 0;
     list-style: none;
     position: fixed;
-    top: 18%;
-    left: 25%;
+    top: 25%;
+    left: 30%;
+
+    @include onTablet {
+      top: 20%;
+      left: 40%;
+    }
   }
 
   &__item {
     margin-bottom: 15px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
   }
 
   &__link {
@@ -24,11 +33,33 @@
     font-size: 16px;
     text-decoration: none;
     color: $c-gray-light;
+
+    @include onTablet {
+      font-size: 22px;
+    }
   }
 
   &__cross {
     position: absolute;
     bottom: 30px;
     right: 40px;
+  }
+
+  &__close {
+    margin: 0;
+    @include f-manrope-400;
+    color: #fff;
+    font-size: 18px;
+    text-transform: uppercase;
+    position: absolute;
+    right: 21px;
+    bottom: 100px;
+    transform: rotate(270deg);
+
+    @include onTablet {
+      font-size: 24px;
+      right: 17px;
+    }
+
   }
 }
