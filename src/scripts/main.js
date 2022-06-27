@@ -3,9 +3,12 @@
 const form = document.querySelector('.form');
 const pageElement = document.querySelector('.page');
 const menuMobOpenBtn = document.querySelector('.nav__menu-opened');
-const menuMob = document.querySelector('.nav-mob');
+const menuMob = document.querySelector('.header__wrapper-nav-mob');
 const menuMobCloceBtn = document.querySelector('.nav-mob__btn-close');
 const navList = document.querySelector('.nav-mob__list');
+const backCloseElement = document.querySelector('.header__background-nav-mob');
+// const headerElement = document.querySelector('.header');
+// const mainElement = document.querySelector('.main');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -34,3 +37,4 @@ function handlerNavList(event) {
 menuMobOpenBtn.addEventListener('click', handlerOpenMenu);
 menuMobCloceBtn.addEventListener('click', handlerCloceMenu);
 navList.addEventListener('click', handlerNavList);
+backCloseElement.addEventListener('click', handlerCloceMenu);
