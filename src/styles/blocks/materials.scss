@@ -62,9 +62,9 @@
   &__control {
     display: flex;
     justify-content: center;
-    &:active {
-      transform: translateX(302px);
-    }
+    // &:active {
+    //   transform: translateX(302px);
+    // }
   }
 
   &__control-btn {
@@ -137,37 +137,35 @@
       width: 100%;
       padding: 0;
       background: transparent;
-
     }
 
     &__card {
       position: absolute;
       padding: 0;
-      width: 303px;
 
       &--1 {
         bottom: -600px;
-        left: -10%;
+        left: 12%;
       }
 
       &--2 {
-        bottom: -684px;
-        right: 40%;
+        bottom: -454px;
+        right: 63%;
       }
 
       &--3 {
-        bottom: -660px;
-        right: 20%;
+        bottom: -621px;
+        right: 48%;
       }
 
       &--4 {
-        bottom: -660px;
-        right: 9%;
+        bottom: -506px;
+        right: 27%;
       }
 
       &--5 {
-        bottom: -580px;
-        right: -2%;
+        bottom: -368px;
+        right: 17%;
       }
     }
 
@@ -180,13 +178,15 @@
       background-size: cover;
       background-position: center;
       transition: background-image 0.3s;
-
-      &:hover {
-        background-image: url("../images/material/minus.png");
-      }
+      cursor: pointer;
     }
 
     &__card-description {
+      position: absolute;
+      visibility: hidden;
+      top: 60px;
+      left: -50%;
+      transform: translateX(-35%);
       width: 303px;
       height: 237px;
       padding: 35px 45px;
@@ -194,13 +194,13 @@
       mix-blend-mode: normal;
       box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
       backdrop-filter: blur(34px);
-
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
       color: $c-gray-light;
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 1s;
+      z-index: 2;
     }
 
     &__second-linc {
@@ -261,5 +261,13 @@
     &__second-linc-duble {
       display: none;
     }
+  }
+
+  &__open-card-descriptional {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__btn-minus {
+    background-image: url("../images/material/minus.png");
   }
 }

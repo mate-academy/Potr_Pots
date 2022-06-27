@@ -7,8 +7,7 @@ const menuMob = document.querySelector('.header__wrapper-nav-mob');
 const menuMobCloceBtn = document.querySelector('.nav-mob__btn-close');
 const navList = document.querySelector('.nav-mob__list');
 const backCloseElement = document.querySelector('.header__background-nav-mob');
-// const headerElement = document.querySelector('.header');
-// const mainElement = document.querySelector('.main');
+const materialsBtnArr = document.querySelectorAll('.materials__card-btn');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -34,7 +33,20 @@ function handlerNavList(event) {
     pageElement.classList.remove('page--scroll-none');
   }
 }
+
+function handlerOpenDescriptMaterials(event) {
+  const tooltip = event.currentTarget
+    .parentNode.querySelector('.materials__card-description');
+
+  tooltip.classList.toggle('materials__open-card-descriptional');
+  event.currentTarget.classList.toggle('materials__btn-minus');
+}
+
 menuMobOpenBtn.addEventListener('click', handlerOpenMenu);
 menuMobCloceBtn.addEventListener('click', handlerCloceMenu);
 navList.addEventListener('click', handlerNavList);
 backCloseElement.addEventListener('click', handlerCloceMenu);
+
+materialsBtnArr.forEach((el) => {
+  el.addEventListener('click', handlerOpenDescriptMaterials);
+});
