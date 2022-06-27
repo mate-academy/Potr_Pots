@@ -1,5 +1,7 @@
 .header {
-  position: relative;
+  &__container {
+    position: relative;
+  }
 
   &__poster-mobile {
     display: block;
@@ -44,8 +46,8 @@
     display: block;
     padding-right: 53px ;
     position: absolute;
-    bottom: 84px;
-    right: -60px;
+    bottom: 24%;
+    right: -35%;
 
     transform: rotate(90deg);
     white-space: nowrap;
@@ -107,8 +109,8 @@
 
     &__title {
       position: absolute;
-      top: 101px;
-      left: 34px;
+      top: 0;
+      left: 0;
       display: block;
       margin: 0 0 30px;
       width: 460px;
@@ -130,8 +132,8 @@
       display: block;
       padding-right: 53px ;
       position: absolute;
-      bottom: 84px;
-      right: 660px;
+      bottom: 0;
+      right: 90%;
 
       transform: rotate(90deg);
       white-space: nowrap;
@@ -139,6 +141,7 @@
       font-size: 12px;
       line-height: 1.5;
       color: $c-turquoise;
+      @include hover(text-shadow,  4px 5px 3px  $c-yellow);
     }
   }
 
@@ -146,7 +149,6 @@
     background-image: url("../images/header/RectangleBig.png");
 
     &__content {
-      position: relative;
       display: flex;
       justify-content: flex-end;
     }
