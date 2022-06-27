@@ -10,6 +10,7 @@
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     column-gap: 20px;
     &__item {
 
@@ -17,6 +18,14 @@
         @for $end from 1 through 6 {
           &--#{$start}-#{$end}-t {
             grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+
+      @for $start from 1 through 2 {
+        @for $end from 1 through 2 {
+          &--#{$start}-#{$end}-row-t {
+            grid-row: #{$start} / #{$end + 1};
           }
         }
       }
@@ -32,6 +41,14 @@
         @for $end from 1 through 12 {
           &--#{$start}-#{$end}-d {
             grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+
+      @for $start from 1 through 2 {
+        @for $end from 1 through 2 {
+          &--#{$start}-#{$end}-row-d {
+            grid-row: #{$start} / #{$end + 1};
           }
         }
       }

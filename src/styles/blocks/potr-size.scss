@@ -21,6 +21,10 @@
 
   }
 
+  &__description-desktop {
+    display: none;
+  }
+
   &__picture-mobile {
     width: 100%;
     height: auto;
@@ -113,11 +117,20 @@
     }
 
     &__picture {
-      margin-bottom: 20px;
+      margin-bottom: 0;
+      margin-left: 90px;
       width: 528px;
       height: 427px;
       order: 2;
       grid-column: span 6;
+    }
+
+    &__description {
+      display: none;
+    }
+
+    &__description-desktop {
+      display: block;
     }
 
     &__about-size {
@@ -132,6 +145,21 @@
 
     &__corect {
       order: 2;
+    }
+
+    &__content {
+      padding-left: 30px;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 257px;
+        background-color: #d8d8d8;
+      }
     }
   }
 
