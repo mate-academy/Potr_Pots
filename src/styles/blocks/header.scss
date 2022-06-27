@@ -1,0 +1,77 @@
+.header {
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    position: sticky;
+    top: 0;
+
+    padding-top: 15px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @extend %h2;
+  }
+
+  &__photo {
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    display: inline-block;
+    margin: 0 0 30px;
+
+    color: $c-turquoise;
+    @extend %h2;
+    line-height: 43px;
+
+    &--white {
+      color: transparent;
+      -webkit-text-stroke: 0.68px $c-turquoise;
+    }
+  }
+
+  &__price {
+    margin: 0;
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: #333;
+  }
+
+  &__price-subtitle {
+    margin: 0;
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  &__more {
+    color: $c-turquoise;
+    text-decoration: none;
+    @extend %s5;
+
+    &::after {
+      content: "------>";
+      color: $c-turquoise;
+    }
+  }
+}
