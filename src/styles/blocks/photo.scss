@@ -1,30 +1,29 @@
 .photo {
   &__image {
-    position: absolute;
     width: 100%;
     height: 100%;
 
     object-fit: cover;
     object-position: center;
-    @include interactZoom(0.5s, 125%);
+    @include interactZoom(0.5s, 135%);
   }
 
   &__container {
-    position: relative;
-
-    box-sizing: border-box;
     width: 100%;
     height: 320px;
     overflow: hidden;
     cursor: zoom-in;
 
-    @include interactZoom(0.5s, 105%);
+    @include interactZoom(0.5s, 115%);
 
-    &--wide {
-      @include onMobile {
-        right: 0;
-        left: 0;
-      }
+    @include onTablet {
+      width: 306px;
+      height: 306px;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      height: 500px;
     }
   }
 }

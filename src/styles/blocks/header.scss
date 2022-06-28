@@ -1,8 +1,10 @@
 .header {
+  position: relative;
+
   &__menu {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
 
     position: sticky;
     top: 0;
@@ -13,6 +15,28 @@
     @include onTablet {
       margin-bottom: 50px;
     }
+
+    @include onDesktop {
+      margin-bottom: 75px;
+    }
+  }
+
+  &__menu-list {
+    display: none;
+    flex-direction: row;
+    gap: 60px;
+
+    list-style: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__menu-list-item {
+
+    color: #4f4f4f;
+    @extend %s3;
   }
 
   &__logo {
@@ -25,7 +49,35 @@
   }
 
   &__photo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      margin-right: 34px;
+      top: 0;
+      right: 0;
+    }
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      margin-right: 34px;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__mobile-photo {
     margin-bottom: 25px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
   }
 
   &__title {
@@ -35,43 +87,129 @@
     color: $c-turquoise;
     @extend %h2;
     line-height: 43px;
+    letter-spacing: 0.16em;
 
     &--white {
       color: transparent;
       -webkit-text-stroke: 0.68px $c-turquoise;
     }
+
+    @include onDesktop {
+      position: relative;
+      margin-bottom: 20px;
+      left: 100px;
+
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 0.16em;
+    }
+
+    @include onTablet {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 0.16em;
+    }
   }
 
   &__price {
-    margin: 0;
-
+    text-align: start;
     font-family: "Manrope", serif;
     font-style: normal;
     font-weight: 700;
     font-size: 26px;
     line-height: 36px;
     color: #333;
+
+    @include onDesktop {
+      position: relative;
+      left: 400px;
+      margin-bottom: 5px;
+    }
+
+    @include onTablet {
+      position: relative;
+      left: 240px;
+      bottom: 20px;
+    }
+
+    &--subtitle {
+      margin-bottom: 20px;
+
+      text-align: start;
+      font-family: "Manrope", serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: #4f4f4f;
+
+      @include onDesktop {
+        position: relative;
+        left: 400px;
+        margin-bottom: 50px;
+      }
+
+      @include onTablet {
+        position: relative;
+        left: 240px;
+        bottom: 20px;
+        margin-bottom: 50px;
+      }
+    }
   }
 
-  &__price-subtitle {
-    margin: 0;
+  &__button {
+    @include onDesktop {
+      position: relative;
+      left: 300px;
 
-    font-family: "Manrope", serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 150%;
-    color: #4f4f4f;
+      max-width: 270px;
+    }
+
+    @include onTablet {
+      position: relative;
+      left: 120px;
+      bottom: 20px;
+
+      max-width: 240px;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+
+    transform: rotate(90deg);
+    transform-origin: center;
+
+    @include onDesktop {
+      left: -3%;
+    }
+
+    @include onTablet {
+      left: -6%;
+      bottom: 12%;
+    }
+
+    @include onMobile {
+      top: 70%;
+      right: -25%;
+    }
   }
 
   &__more {
+    display: flex;
+    gap: 9px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__more-text {
     color: $c-turquoise;
     text-decoration: none;
     @extend %s5;
-
-    &::after {
-      content: "------>";
-      color: $c-turquoise;
-    }
   }
 }

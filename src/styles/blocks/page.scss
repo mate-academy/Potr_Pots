@@ -8,4 +8,27 @@
   &__body {
     background-color: $c-background;
   }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    @include onDesktop {
+      margin-bottom: 192px;
+    }
+
+    @include onTablet {
+      margin-bottom: 80px;
+    }
+  }
 }
