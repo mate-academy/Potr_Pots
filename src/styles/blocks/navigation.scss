@@ -2,7 +2,7 @@
 
   position: absolute;
   background-color: transparent;
-  height: 100vh;
+  height: 50vh;
   width: 80%;
   right: 0;
   top: -150%;
@@ -21,6 +21,7 @@
     display: block;
     top: 0;
     z-index: 1;
+    height: 100vh;
     background-color: $c-blue;
   }
 
@@ -63,18 +64,16 @@
 
     text-decoration: none;
     color: $c-white;
+    transition: color 0.3s;
 
-    &--no-active {
-      @include desktop {
-        display: none;
-      }
-    }
+    position: relative;
+
     @media (min-height: 600px) {
-      font-size: 20px;
+      font-size: 4vh;
     }
 
     @include tablet {
-      font-size: 25px;
+      font-size: 3vh;
     }
 
     @include desktop {
@@ -82,7 +81,33 @@
       font-size: 16px;
 
     }
+
+    &--no-active {
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $c-blue;
+      content: "";
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover {
+      color: $c-red;
+      transform: scale(1.2);
+    }
+    &:hover:after {
+      width: 100%;
+    }
   }
+
   &__close {
     @include desktop {
       display: none;
@@ -97,9 +122,10 @@
 
     text-transform: uppercase;
     text-decoration: none;
-    color: #f8f8f8;
+    color: $c-white;
 
     transform: rotate(-90deg);
+
     @media (max-height: 415px) {
       bottom: -30px;
     }
@@ -125,8 +151,8 @@
     right: -8px;
     height: 16px;
     width: 16px;
-    background-color: #eb5757;
-    color: #f8f8f8;
+    background-color: $c-red;
+    color: $c-white;
     border-radius: 50%;
     font-size: 11px;
 

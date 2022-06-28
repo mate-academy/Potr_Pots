@@ -13,9 +13,9 @@ if (popupLinks.length > 0) {
 
     popupLink.addEventListener('click', function(e) {
       const popupName = popupLink.getAttribute('href').replace('#', '');
-      const curentPopup = document.getElementById(popupName);
+      const currentPopup = document.getElementById(popupName);
 
-      popupOpen(curentPopup);
+      popupOpen(currentPopup);
       e.preventDefault();
     });
   }
@@ -65,7 +65,7 @@ function popupClose(popupActive, doUnlock = true) {
 
 function bodyLock() {
   const lockPaddingValue = window.innerWidth
-    - document.querySelector('.popup-wrapper').offsetWidth + 'px';
+    - document.querySelector('.body').offsetWidth + 'px';
 
   if (lockPadding.length > 0) {
     for (let index = 0; index < lockPadding.length; index++) {

@@ -4,13 +4,27 @@
 const nav = document.getElementById('nav');
 const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('closeBtn');
+const body = document.querySelector('body');
+const closeMenu = document.querySelectorAll('.menu-close');
+
+if (closeMenu.length > 0) {
+  for (let index = 0; index < closeMenu.length; index++) {
+    const closeMenuButton = closeMenu[index];
+
+    closeMenuButton.addEventListener('click', function(e) {
+      body.classList.remove('lock');
+      nav.classList.remove('nav--active');
+    });
+  }
+}
 
 menuBtn.addEventListener('click', () => {
   nav.classList.toggle('nav--active');
+  body.classList.add('lock');
 });
 
 closeBtn.addEventListener('click', () => {
-  nav.classList.toggle('nav--active');
+  nav.classList.remove('nav--active');
 });
 
 // eslint-disable-next-line no-undef

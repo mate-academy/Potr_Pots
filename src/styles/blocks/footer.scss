@@ -25,7 +25,6 @@
     @include toAnimate {
       transform: translateX(50px);
       opacity: 0;
-      transition: transform 2s, opacity 2s;
     }
   }
 
@@ -40,7 +39,6 @@
     @include toAnimate {
       transform: translateX(-50px);
       opacity: 0;
-      transition: transform 2s, opacity 2s;
     }
   }
 
@@ -78,6 +76,10 @@
     line-height: 150%;
     color: $c-black;
     text-decoration: none;
+    transition: color 0.5s;
+    &:hover {
+      color: $c-blue;
+    }
   }
 
   &__logo {
@@ -93,6 +95,7 @@
 
     color: $c-black;
     transition: transform 0.5s;
+
     &:hover {
       transform: scale(1.2) ;
     }
