@@ -1,4 +1,5 @@
 .description {
+  position: relative;
   padding: 0 $paddingMobile;
 
   @include tablet {
@@ -30,7 +31,7 @@
     }
   }
   &__image--big {
-    height: 300px;
+    height: 417px;
     @include desktop {
       height: 417px;
     }
@@ -51,6 +52,7 @@
     @include tablet {
       display: flex;
       gap: 76px;
+      align-items: center;
     }
     @include toAnimate {
       opacity: 0;
@@ -71,7 +73,7 @@
       left: 20px;
 
       @include tablet {
-        top: 6px;
+        top: 24px;
         left: 320px;
       }
 
@@ -117,7 +119,7 @@
       left: 20px;
 
       @include tablet {
-        top: -10px;
+        top: 50px;
       }
       @include desktop {
         top: 535px;
@@ -136,6 +138,7 @@
     @include tablet {
       display: flex;
       gap: 76px;
+      align-items: center;
     }
 
     @include toAnimate {
@@ -157,7 +160,7 @@
       left: 20px;
 
       @include tablet {
-        top: 6px;
+        top: 30px;
         left: 320px;
       }
 
@@ -224,7 +227,7 @@
     left: 13px;
 
     @include tablet {
-      top: 0;
+      top: 20px;
       left: 315px;
     }
 
@@ -247,7 +250,7 @@
     left: 13px;
 
     @include tablet {
-      top: -17px;
+      top: 45px;
     }
 
     @include desktop {
@@ -268,7 +271,7 @@
     left: 13px;
 
     @include tablet {
-      top: 0;
+      top: 25px;
       left: 315px;
     }
 
@@ -277,12 +280,116 @@
       left: 23px;
 
     }
-
     background: #000;
     height: 46px;
     width: 1px;
     box-sizing: border-box;
     transform: rotateZ(20deg);
+  }
 
+  &__robust {
+    display: none;
+
+    @include toAnimate {
+      opacity: 0;
+      transform: scale(0.25);
+    }
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: 128px;
+      left: 380px;
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-gray1;
+    }
+    @include desktop {
+      top: 240px;
+      left: 66%;
+      @media (min-width:1350px) {
+        left: 62%;
+      }
+    }
+
+    &:before {
+      content: "*";
+      position: absolute;
+      font-size: 24px;
+      bottom: -2px;
+      left: -16px;
+    }
+
+  }
+
+  &__beautiful {
+    display: none;
+
+    @include toAnimate {
+      opacity: 0;
+      transform: scale(0.25);
+    }
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: 575px;
+      left: 295px;
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-gray1;
+    }
+    @include desktop {
+      top: 1320px;
+      left: 8%;
+      @media (min-width:1350px ) {
+        left: 12%;
+      }
+    }
+
+    &:before {
+      content: "*";
+      position: absolute;
+      font-size: 24px;
+      bottom: -2px;
+      left: -16px;
+    }
+  }
+
+  &__saves-time {
+    display: none;
+
+    @include toAnimate {
+      opacity: 0;
+      transform: scale(0.25);
+    }
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      bottom: 390px;
+      left: 390px;
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-gray1;
+    }
+    @include desktop {
+      bottom: 355px;
+      left: 58%;
+    }
+
+    &:before {
+      content: "*";
+      position: absolute;
+      font-size: 24px;
+      bottom: -2px;
+      left: -26px;
+    }
   }
 }

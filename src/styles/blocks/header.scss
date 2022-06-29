@@ -9,7 +9,7 @@
   }
 
   @include desktop {
-    padding: 0 130px;
+    padding: 0 $paddingDesktop;
   }
 
   &__bg {
@@ -25,7 +25,7 @@
 
     @include desktop {
       width: 80%;
-      height: 38vw;
+      height: 90%;
     }
   }
 
@@ -68,17 +68,13 @@
   }
   &__image {
     display: block;
-    width: 320px;
+    width: 100vw;
     margin: 0 -30px 25px;
 
-    @media (min-width: 325px) {
-      margin: 0 auto 25px;
-      width: 100%;
-    }
     @include tablet {
       position: absolute;
       width: 45%;
-      right: -15px;
+      right: $paddingTablet;
       animation: headerSlideRight;
       animation-duration: $animationHeaderTime;
 
@@ -119,10 +115,13 @@
 
   &__buy-block {
     font-family: "Manrope", sans-serif;
+    @media (min-width: 400px) {
+      margin-left: calc(12% * 1.5);
+    }
     @include tablet {
       position: absolute;
       top: 39%;
-      right: 45%;
+      right: 48%;
       width: 240px;
       animation: headerSlideBottom-t;
       animation-duration: $animationHeaderTime;
@@ -170,6 +169,64 @@
 
     @include desktop {
       display: block;
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+
+    }
+  }
+
+  &__left-text {
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      bottom: 64px;
+      display: block;
+      writing-mode: vertical-rl;
+      height: 185px;
+
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 150%;
+      color: $c-blue;
+      background: url("../images/icons/arrow-blue.svg") no-repeat bottom;
+
+      text-decoration: none;
+      @include desktop {
+        bottom: -20px;
+      }
+    }
+  }
+
+  &__right-text {
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      bottom: -85px;
+      right: 8px;
+      display: block;
+      writing-mode: vertical-rl;
+      height: 140px;
+
+      font-family: "Bebas Neue", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: end;
+
+      letter-spacing: 0.22em;
+      color: $c-gray3;
+      background: url("../images/icons/vertical-line.svg") no-repeat top 0 left 8px;
+
+      @include desktop {
+        right: $paddingDesktop;
+        bottom: -365px;
+      }
 
     }
   }

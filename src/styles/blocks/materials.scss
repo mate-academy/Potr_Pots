@@ -1,6 +1,7 @@
 .materials {
   position: relative;
   height: 580px;
+  overflow-x: hidden;
 
   @include tablet {
     height: 815px;
@@ -154,7 +155,7 @@
 
     position: absolute;
     bottom: 20%;
-    left: 60%;
+    left: 59%;
 
     @include desktop {
       bottom: 35%;
@@ -168,13 +169,15 @@
     }
 
     position: absolute;
-    bottom: 30%;
+    bottom: 31%;
     left: 81%;
   }
 
   &__dropdown {
     display: none;
     visibility: hidden;
+    width: 240px;
+    height: 250px;
 
     @include tablet {
       display: block;
@@ -204,8 +207,8 @@
 
   &__dropdown-1 {
     position: absolute;
-    left: 3%;
-    bottom: 20%;
+    left: 2%;
+    bottom: 22%;
     width: 250px;
     height: 250px;
   }
@@ -213,32 +216,44 @@
   &__dropdown-2 {
     position: absolute;
     left: 16%;
-    bottom: 24%;
-    width: 250px;
-    height: 250px;
+    @include tablet {
+      bottom: 25%;
+    }
+    @include desktop {
+      bottom: 1%;
+    }
   }
 
   &__dropdown-3 {
     position: absolute;
     left: 33%;
     bottom: 28%;
-    width: 250px;
-
+    @include desktop {
+      bottom: 22%;
+      left: 38%;
+    }
   }
 
   &__dropdown-4 {
     position: absolute;
-    left: 48%;
-    bottom: 39%;
-    width: 250px;
-    height: 250px;
+    @include tablet {
+      left: 48%;
+      bottom: 28%;
+    }
+    @include desktop {
+      bottom: 10%;
+      left: 54%;
+    }
   }
 
   &__dropdown-5 {
     position: absolute;
-    right: 2%;
     bottom: 0;
-    width: 250px;
-    height: 250px;
+    @include tablet {
+      right: 2%;
+    }
+    @include desktop {
+      right: 5%;
+    }
   }
 }

@@ -41,7 +41,7 @@ function onEntry(entry) {
     if (change.isIntersecting) {
       change.target.classList.add('--active');
     } else {
-      change.target.classList.remove('--active');
+    // change.target.classList.remove('--active');
     }
   });
 }
@@ -54,3 +54,11 @@ const elements = document.querySelectorAll('.animation-item');
 for (const elm of elements) {
   observer.observe(elm);
 }
+
+const formSubmit = document.getElementById('form');
+
+formSubmit.addEventListener('submit', (e) => {
+  document.getElementById('form').reset();
+  document.getElementById('form-submit').innerHTML = 'Sended!';
+  e.preventDefault();
+});
