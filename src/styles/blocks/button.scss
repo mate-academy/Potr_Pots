@@ -1,0 +1,34 @@
+.button {
+  @include onTablet {
+    grid-column: 2 / 4;
+  }
+
+  @include onDesktop {
+    grid-column: 4 / 7;
+  }
+  
+  &__content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    background-color: $c-yellow;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #121212;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+
+    & img {
+      margin-left: 24px;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.menu {
+  width: 72%;
+  height: 100vh;
+  padding: 138px 0 0 81px;
+
+  background-color: $c-turquoise;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    max-width: max-content;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    &--first {
+      position: relative;
+    }
+  }
+
+  &__link {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $c-gray-light;
+  }
+
+  &__item-badge {
+    position: absolute;
+    top: -0.2rem;
+    left: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $c-red;
+    width: 14px;
+    height: 14px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: $c-gray-light;
+
+    border-radius: 50%;
+  }
+}
