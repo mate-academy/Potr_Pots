@@ -1,4 +1,5 @@
 .second-order {
+  position: relative;
   padding: 0 $paddingMobile;
   display: grid;
   grid-template-columns: repeat(2, minmax(120px, 1fr));
@@ -171,5 +172,17 @@
 
   &__tx3 {
     grid-area: tx3;
+  }
+
+  &__border-text-pos {
+    @include tablet {
+      position: absolute;
+      top: 90px;
+      right: 8px;
+    }
+
+    @include desktop {
+      display: none;
+    }
   }
 }
