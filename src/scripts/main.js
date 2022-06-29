@@ -18,8 +18,8 @@ const modalBack = document.querySelector('.page__modal');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
-
   form.reset();
+  pageElement.scrollIntoView();
 });
 
 function handlerOpenMenu() {
