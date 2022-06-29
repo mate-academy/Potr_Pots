@@ -14,6 +14,7 @@ const btnOpenModalHead = document.querySelector('.header__btn-buy');
 const btnOpenModBenef = document.querySelector('.benefits__btn-buy');
 const btnOpenBascetMob = document.querySelector('.nav-mob__btn-bascet');
 const btnOpenBascetDesc = document.querySelector('.nav__bascet');
+const modalBack = document.querySelector('.page__modal');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -24,11 +25,13 @@ form.addEventListener('submit', function(event) {
 function handlerOpenMenu() {
   menuMob.classList.add('nav-mob__open');
   pageElement.classList.add('page--scroll-none');
+  document.body.classList.add('page--fix-paddng');
 }
 
 function handlerCloceMenu() {
-  menuMob.classList.remove('nav-mob__open');
   pageElement.classList.remove('page--scroll-none');
+  document.body.classList.remove('page--fix-paddng');
+  menuMob.classList.remove('nav-mob__open');
 }
 
 function handlerNavList(event) {
@@ -48,9 +51,16 @@ function handlerOpenDescriptMaterials(event) {
   event.currentTarget.classList.toggle('materials__btn-minus');
 }
 
-function handlerCloseModal() {
+function handlerButtonCloseModal() {
   modal.classList.remove('modal__open');
   pageElement.classList.remove('page--scroll-none');
+}
+
+function handlerCloseModal(event) {
+  if (event.target.dataset.type === 'modal-wrapper') {
+    modal.classList.remove('modal__open');
+    pageElement.classList.remove('page--scroll-none');
+  }
 }
 
 function handlerOpenModalBascet() {
@@ -67,8 +77,9 @@ materialsBtnArr.forEach((el) => {
   el.addEventListener('click', handlerOpenDescriptMaterials);
 });
 
-btnCloseModal.addEventListener('click', handlerCloseModal);
+btnCloseModal.addEventListener('click', handlerButtonCloseModal);
 btnOpenModBenef.addEventListener('click', handlerOpenModalBascet);
 btnOpenModalHead.addEventListener('click', handlerOpenModalBascet);
 btnOpenBascetMob.addEventListener('click', handlerOpenModalBascet);
 btnOpenBascetDesc.addEventListener('click', handlerOpenModalBascet);
+modalBack.addEventListener('click', handlerCloseModal);
