@@ -2,6 +2,51 @@
   background-color: $c-gray-light;
   scroll-behavior: smooth;
 
+  &__body {
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+
+    @include onTablet {
+      max-width: 768px;
+    }
+
+    @include onDesktop {
+      max-width: 1440px;
+    }
+  }
+
+  &__section {
+    margin: 0;
+  }
+
+  &__image-header {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 466px;
+      width: 507px;
+      background-image: url(../images/svg/rectangle-tablet.svg);
+    }
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 1035px;
+      height: 466px;
+
+      background-image: url(../images/svg/rectangle-desktop.svg);
+    }
+  }
+
   &__image-shopify {
     width: 320px;
     height: 319px;
@@ -12,9 +57,5 @@
     @include onTablet {
       display: none;
     }
-  }
-
-  &__section {
-    margin: 0;
   }
 }
