@@ -1,24 +1,62 @@
 .for-whom {
+  position: relative;
+
   &__title {
     margin-bottom: 25px;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-size: 36px;
     line-height: 150%;
-    /* identical to box height, or 54px */
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: $c-gray-dark;
+  }
 
+  &__wrapper-section-2-3 {
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 300px;
+    }
   }
 
   &__section-wraper {
+    // position: relative;
+
     margin-bottom: 70px;
 
     @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(6, 100px);
-      gap: 20px;
+      position: relative;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 76px;
+    }
+
+    &--desktop-robust {
+      @include onDesktop {
+        display: flex;
+        justify-content: space-between;
+        gap: 201px;
+      }
+    }
+
+    &--desktop-beautiful {
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        margin-left: 100px;
+        gap: 110px;
+      }
+    }
+
+    &--desktop-saves-time {
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 
@@ -27,60 +65,69 @@
 
     @include onTablet {
       display: block;
-      &--right {
-        columns: 4 / -1;
-      }
+    }
 
-      &--left {
-        columns: 1 / 4;
+    &--desktop-beautiful {
+      @include onDesktop {
+        order: -1;
+        margin-top: 105px;
       }
     }
   }
 
   &__section-image {
     width: 284px;
-  }
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
 
-  &__section-note {
-    display: none;
-
-    @include onTablet {
-      display: block;
-      &--right {
-        columns: 4;
+    &--desktop-robust {
+      @include onDesktop {
+        width: 500px;
+        height: 500px;
       }
+    }
 
-      &--left {
-        columns: 3;
+    &--desktop-beautiful {
+      @include onDesktop {
+        width: 300px;
+        height: 417px;
+      }
+    }
+
+    &--desktop-saves-time {
+      @include onDesktop {
+        width: 470px;
+        height: 670px;
       }
     }
   }
 
   &__section {
+    display: flex;
+    flex-direction: column;
 
     &:last-child {
       margin-bottom: 0;
     }
+
+    &--desktop-robust {
+      @include onDesktop {
+        margin-top: 180px;
+      }
+    }
+
+    &--desktop-saves-time {
+      @include onDesktop {
+        margin-left: 100px;
+      }
+    }
   }
 
-  &__section-number-wrapper {
+  &__section-title-wrapper {
     display: flex;
-    margin-bottom: 30px;
-  }
+    flex-direction: row;
 
-  &__section-icon {
-    height: 46px;
-    margin-right: 1px;
-  }
-
-  &__section-number {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 65px;
-    letter-spacing: 0.15em;
-
-    color: #000;
   }
 
   &__section-title {
@@ -89,10 +136,22 @@
     font-weight: 400;
     font-size: 36px;
     line-height: 150%;
-    /* or 54px */
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #000;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__section-title-icon {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      align-self: flex-start;
+    }
   }
 
   &__section-info {
@@ -100,7 +159,50 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    /* or 24px */
     color: $c-gray-mid;
+  }
+
+  &__number-wrapper {
+    display: flex;
+    margin-bottom: 30px;
+
+    &--left {
+      @include onTablet {
+        position: absolute;
+        top: 0;
+        left: 300px;
+      }
+    }
+
+    &--desktop-1 {
+      @include onDesktop {
+        position: absolute;
+        top: 170px;
+        left: 580px;
+      }
+    }
+
+    &--desktop-3 {
+      @include onDesktop {
+        position: absolute;
+        top: 760px;
+        left: 0;
+      }
+    }
+  }
+
+  &__number-icon {
+    height: 46px;
+    margin-right: 1px;
+  }
+
+  &__number-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 65px;
+    letter-spacing: 0.15em;
+
+    color: #000;
   }
 }
