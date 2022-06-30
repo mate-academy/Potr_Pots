@@ -4,7 +4,7 @@
 
   @include onTablet {
     margin-bottom: 0;
-    min-height: 500px;
+    height: 100vh;
     background: url(../images/png/bg-big.png);
     background-repeat: no-repeat;
   }
@@ -14,7 +14,7 @@
     background-repeat: no-repeat;
     background-size: 1121px 470px;
     background-position: -100px 0;
-    height: 70vh;
+    height: 80vh;
   }
 
  @media (min-height: 1800px) {
@@ -33,6 +33,12 @@
 
     &-item {
       padding: 30px;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.3s;
+      }
     }
 
     &-link {
@@ -41,6 +47,9 @@
       color: $c-gray-dark;
       line-height: 24px;
       font-size: 16px;
+      transition: 0.3s;
+
+
     }
   }
 
@@ -91,7 +100,7 @@
       width: 450px;
       right: 135px;
       animation-name: Appearance-radius;
-      animation-duration: 4s;
+      animation-duration: 3s;
       animation-timing-function: ease-in-out;
 
     }
@@ -132,7 +141,7 @@
       left: 240px;
 
       animation-name: sliderLeft;
-      animation-duration: 4s;
+      animation-duration: 3s;
       animation-timing-function: linear;
     }
 
@@ -214,7 +223,63 @@
     text-decoration: none;
     font-size: 14px;
     transition: 0.3s;
+  }
 
+  &__left-link {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      bottom: 50px;
+      left: 30px;
+      display: block;
+      writing-mode: vertical-rl;
+      height: 185px;
+
+      @include f-manrope-400;
+      color: $c-Turquoise;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 150%;
+
+      background-image: url(../images/svg/Arrow-blu.svg);
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
+
+    @include onDeskTop {
+      left: 130px;
+      bottom: -50px;
+    }
+  }
+
+  &__bottom-text {
+    display: none;
+    height: 140px;
+    @include f-bebas-400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-align: end;
+    color: #828282;
+    writing-mode: vertical-rl;
+    background-image: url(../images/svg/potr-line.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      bottom: -100px;
+      right: 30px;
+    }
+
+    @include onDeskTop {
+      right: 135px;
+      bottom: -230px;
+    }
   }
 }
 
