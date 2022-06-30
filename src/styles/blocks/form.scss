@@ -1,5 +1,6 @@
 .form {
   &__input {
+    width: 100%;
     padding: 4px 6px;
     outline: none;
     border-top: none;
@@ -8,6 +9,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: transparent;
     font-weight: 700;
+    transition: color 0.3s, border-bottom 0.3s;
 
     &:not(:last-child) {
       margin-bottom: 25px;
@@ -22,6 +24,17 @@
     &:-webkit-autofill,
     &:-webkit-autofill:focus {
       transition: background-color 600000s 0s, color 600000s 0s;
+    }
+    &:required:focus {
+      border-bottom: 1px solid $c-turquoise;
+    }
+    &:required:focus:valid:not(:placeholder-shown) {
+      border-bottom: 1px solid $c-turquoise;
+      color: $c-turquoise;
+    }
+    &:required:focus:invalid:not(:placeholder-shown) {
+      border-bottom: 1px solid #eb5757;
+      color: #eb5757;
     }
   }
   &__btn {
@@ -38,10 +51,11 @@
     line-height: 24px;
     color: $c-gray-1;
     cursor: pointer;
-    transition: color 0.3s;
+    transition: color 0.3s border-bottom 0.3s;
 
     &:hover {
       color: #eb5757;
+      border-bottom: 1px solid #eb5757;
     }
   }
 }
