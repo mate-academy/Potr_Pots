@@ -74,11 +74,16 @@
   }
 
   &__martin {
-
+    transition: 1s;
     display: none;
 
     &-photo {
       width: 700px;
+      &:hover {
+        transform: translateX(100px);
+        transition: 1s;
+        cursor: pointer;
+      }
 
       @include onDeskTop {
         width: 900px;
@@ -97,7 +102,14 @@
     @include onDeskTop {
       left: 80px;
       top: 100px;
+      &:hover {
+        transform: translateX(100px);
+        transition: transform 1s;
+        cursor: pointer;
+      }
     }
+
+
   }
 
   &__andy {

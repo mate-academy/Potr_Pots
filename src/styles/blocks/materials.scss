@@ -45,6 +45,41 @@
 
   }
 
+  &__text {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: block;
+      top: 100px;
+      right: 35px;
+    }
+
+    @include onDeskTop {
+      top: 150px;
+      right: 100px;
+    }
+
+    &-title {
+      @include f-manrope-400;
+      font-size: 20px;
+      line-height: 150%;
+      color: #4f4f4f;
+    }
+
+    &-paaragraph {
+      width: 340px;
+      font-size: 16px;
+      line-height: 150%;
+      color: #4f4f4f;
+
+      @include onDeskTop {
+        width: 470px;
+      }
+    }
+  }
+
+
   &__description {
     display: flex;
     background: rgba(0, 0, 0, 0.45);
@@ -72,7 +107,7 @@
     @include onTablet {
       right: 50px;
       bottom: 15%;
-      z-index: 1;
+
     }
 
     @include onDeskTop {
@@ -113,6 +148,7 @@
       @include onDeskTop {
         top: 45%;
         right: 162px;
+        bottom: 100px;
       }
     }
 
