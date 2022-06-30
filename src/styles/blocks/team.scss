@@ -1,17 +1,16 @@
 .team {
-  &__grid {
-    @include onDesktop {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      column-gap: 30px;
+  overflow: hidden;
+
+  &__height {
+    @include onTablet {
+      height: 700px;
     }
 
-    @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      column-gap: 20px;
+    @include onDesktop {
+      height: 1000px;
     }
   }
+
 
   &__title {
     margin-bottom: 25px;
@@ -25,12 +24,10 @@
     color: #333;
 
     @include onDesktop {
-      grid-column: 1 / 7;
-      margin-bottom: 143px;
+      margin-bottom: 27px;
     }
 
     @include onTablet {
-      grid-column: 1 / 6;
       margin-bottom: 17px;
     }
 
@@ -40,7 +37,7 @@
   }
 
   &__names {
-    display: inline-block;
+    display:inline-block;
 
     color: transparent;
     -webkit-text-stroke: 1px $c-turquoise;
@@ -48,8 +45,6 @@
     font-family: "Bebas Neue", serif;
     font-style: normal;
     font-weight: 400;
-    letter-spacing: 0.16em;
-    line-height: 264px;
 
     @include onMobile {
       display: none;
@@ -57,75 +52,64 @@
   }
 
   &__martin {
-    position: absolute;
-    top: 16%;
-    left: -6%;
+    position: relative;
+    left: -11%;
     z-index: 1;
 
     font-size: 231px;
     line-height: 278px;
+    letter-spacing: 0.15em;
 
     @include onDesktop {
-      top: 12%;
-      left: -2%;
+      top: 0;
+      left: -5%;
       font-size: 288px;
       line-height: 346px;
     }
   }
 
   &__andy {
-    position: absolute;
-    top: 82%;
-    right: -4%;
+    position: relative;
+    left: 40%;
+    bottom: -14%;
     z-index: 1;
 
     font-size: 220px;
+    line-height: 264px;
+    letter-spacing: 0.15em;
 
     @include onDesktop {
       font-size: 288px;
       line-height: 346px;
 
-      top: 84%;
-      right: -12%;
+      top: 21%;
+      left: 60%;
     }
   }
-  &__image {
-    position: absolute;
 
-    width: 100%;
-    height: 100%;
+  &__image {
 
     object-position: center;
     object-fit: cover;
 
-  }
-
-  &__image-container {
-    position: relative;
-    height: 240px;
-    overflow: hidden;
+    cursor: zoom-in;
+    @include interactZoom(0.5s, 115%);
 
     @include onDesktop {
-      grid-column: 5 / 12;
-
       width: 677px;
       height: 508px;
-      margin-bottom: 76px;
     }
 
     @include onTablet {
-      position: absolute;
-      top: 253px;
-      right: 0;
-
-      margin-right: 34px;
-
       width: 340px;
       height: 255px;
+      margin-bottom: 24px;
     }
 
     @include onMobile {
       margin-bottom: 30px;
+      min-height: 240px;
+      width: 100%;
     }
   }
 
@@ -140,32 +124,51 @@
     @include onDesktop {
       display: flex;
       flex-direction: column;
+      align-self: flex-end;
 
       width: 336px;
       height: 264px;
-
-      position: absolute;
-      top: 55%;
-
     }
     @include onTablet {
-      grid-column: 1 / 4;
-
       display: flex;
       flex-direction: column;
+      align-self: flex-end;
 
       width: 313px;
-      height: 275px;
-      margin-top: 213px;
+      height: 231px;
     }
     @include onMobile {
       padding: 0 30px 58px;
     }
   }
 
+  &__flex {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: 57px;
+
+      position: absolute;
+      top: 20%;
+
+      margin-right: 100px;
+    }
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: 47px;
+
+      position: absolute;
+
+      top: 35%;
+    }
+  }
+
   &__block-mobile {
-    width: 320px;
-    height: 325px;
+    width: 100%;
+    min-height: 325px;
 
     display: none;
 
@@ -180,7 +183,7 @@
       height: 365px;
 
       position: absolute;
-      top: 18%;
+      top: 15%;
       left: -13%;
 
       clip-path: polygon(0% 10%,100% 10%,100% 55%,0% 100%);
