@@ -1,0 +1,106 @@
+.for-whom {
+  &__title {
+    margin-bottom: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    /* identical to box height, or 54px */
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-gray-dark;
+
+  }
+
+  &__section-wraper {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 100px);
+      gap: 20px;
+    }
+  }
+
+  &__section-image-wraper {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      &--right {
+        columns: 4 / -1;
+      }
+
+      &--left {
+        columns: 1 / 4;
+      }
+    }
+  }
+
+  &__section-image {
+    width: 284px;
+  }
+
+  &__section-note {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      &--right {
+        columns: 4;
+      }
+
+      &--left {
+        columns: 3;
+      }
+    }
+  }
+
+  &__section {
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-number-wrapper {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  &__section-icon {
+    height: 46px;
+    margin-right: 1px;
+  }
+
+  &__section-number {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 65px;
+    letter-spacing: 0.15em;
+
+    color: #000;
+  }
+
+  &__section-title {
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    /* or 54px */
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__section-info {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    /* or 24px */
+    color: $c-gray-mid;
+  }
+}
