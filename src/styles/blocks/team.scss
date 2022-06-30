@@ -1,0 +1,210 @@
+.team {
+  &__grid {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.16em;
+    color: #333;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin-bottom: 143px;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 6;
+      margin-bottom: 17px;
+    }
+
+    @include onMobile {
+      padding: 0 30px;
+    }
+  }
+
+  &__names {
+    display: inline-block;
+
+    color: transparent;
+    -webkit-text-stroke: 1px $c-turquoise;
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    line-height: 264px;
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__martin {
+    position: absolute;
+    top: 16%;
+    left: -6%;
+    z-index: 1;
+
+    font-size: 231px;
+    line-height: 278px;
+
+    @include onDesktop {
+      top: 12%;
+      left: -2%;
+      font-size: 288px;
+      line-height: 346px;
+    }
+  }
+
+  &__andy {
+    position: absolute;
+    top: 82%;
+    right: -4%;
+    z-index: 1;
+
+    font-size: 220px;
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+
+      top: 84%;
+      right: -12%;
+    }
+  }
+  &__image {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    object-position: center;
+    object-fit: cover;
+
+  }
+
+  &__image-container {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+
+    @include onDesktop {
+      grid-column: 5 / 12;
+
+      width: 677px;
+      height: 508px;
+      margin-bottom: 76px;
+    }
+
+    @include onTablet {
+      position: absolute;
+      top: 253px;
+      right: 0;
+
+      margin-right: 34px;
+
+      width: 340px;
+      height: 255px;
+    }
+
+    @include onMobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__about {
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4f4f4f;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+
+      width: 336px;
+      height: 264px;
+
+      position: absolute;
+      top: 55%;
+
+    }
+    @include onTablet {
+      grid-column: 1 / 4;
+
+      display: flex;
+      flex-direction: column;
+
+      width: 313px;
+      height: 275px;
+      margin-top: 213px;
+    }
+    @include onMobile {
+      padding: 0 30px 58px;
+    }
+  }
+
+  &__block-mobile {
+    width: 320px;
+    height: 325px;
+
+    display: none;
+
+    background-color: $c-yellow-light;
+    clip-path: polygon(0% 10%,100% 10%,100% 71%,0% 100%);
+    z-index: -1;
+
+    @include onDesktop {
+      display: block;
+
+      width: 500px;
+      height: 365px;
+
+      position: absolute;
+      top: 18%;
+      left: -13%;
+
+      clip-path: polygon(0% 10%,100% 10%,100% 55%,0% 100%);
+    }
+
+    @include onTablet {
+      display: block;
+
+      width: 1120px;
+      height: 466px;
+
+      position: absolute;
+      top: 28%;
+      right: 67%;
+
+      clip-path: polygon(0% 0%,100% 0%,100% 39%,0% 93%);
+
+    }
+
+    @include onMobile {
+      display: block;
+
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
