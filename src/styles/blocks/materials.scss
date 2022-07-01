@@ -1,21 +1,21 @@
 .materials {
 
   &__title {
+    overflow-x: hidden;
     position: relative;
 
     display: inline-block;
     margin-bottom: 120px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 0 30px;
 
     z-index: 1;
 
     font-family: "Bebas Neue", serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 58px;
+    font-size: 53px;
     line-height: 70px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.13em;
     color: $c-turquoise;
 
     @include onDesktop {
@@ -126,7 +126,6 @@
   /* list */
   &__list {
     display: none;
-    z-index: 1;
 
     list-style: none;
 
@@ -156,6 +155,29 @@
       background: rgba(36, 35, 35, 0.75);
       opacity: 0.65;
       backdrop-filter: blur(12px);
+    }
+
+    &::after {
+      content: "";
+      width: 11px;
+      height: 1px;
+      background-color: #e0e0e0;
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      width: 11px;
+      height: 1px;
+      background-color: #e0e0e0;
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+
+    &:hover::before {
+      opacity: 0;
     }
   }
 
@@ -214,5 +236,85 @@
         left: 77%;
       }
     }
+  }
+
+  &__list-content {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 250px;
+    min-height: 166px;
+    padding: 35px;
+
+    z-index: 9000;
+
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(40px);
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #f8f8f8;
+
+
+    transition: all 0.5s ease-in-out 0.1s;
+
+    &--1 {
+      transform: translateY(0) translateX(0) scale(0);
+    }
+
+    &--2 {
+      transform: translateY(0) translateX(0) scale(0);
+    }
+
+    &--3 {
+      transform: translateY(0) translateX(0) scale(0);
+    }
+
+    &--4 {
+      transform: translateY(0) translateX(0) scale(0);
+    }
+
+    &--5 {
+      transform: translateY(0) scale(0);
+    }
+  }
+
+  &__list-link:hover &__list-content--1 {
+    transform: translateY(-70%) translateX(0) scale(100%);
+
+    @include onTablet {
+      transform: translateY(-70%) translateX(30%) scale(100%);
+    }
+  }
+
+  &__list-link:hover &__list-content--2 {
+    transform: translateY(-70%) translateX(-50%) scale(100%);
+
+    @include onTablet {
+      transform: translateY(-70%) translateX(0) scale(100%);
+    }
+  }
+
+  &__list-link:hover &__list-content--3 {
+    transform: translateY(-10%) translateX(-60%) scale(100%);
+
+    @include onTablet {
+      transform: translateY(-70%) translateX(0) scale(100%);
+    }
+  }
+
+  &__list-link:hover &__list-content--4 {
+    transform: translateY(-80%) translateX(10%) scale(100%);
+  }
+
+  &__list-link:hover &__list-content--5 {
+    transform: translateY(65%) scale(100%);
   }
 }
