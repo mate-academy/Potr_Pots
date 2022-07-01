@@ -5,6 +5,7 @@
   height: 100vh;
   width: 70%;
   position: relative;
+  z-index: 1;
 
 
   &__list {
@@ -42,7 +43,7 @@
   &__cross {
     position: absolute;
     bottom: 30px;
-    right: 40px;
+    right: 25px;
 
     @include onTablet {
       right: 38px;
@@ -54,16 +55,35 @@
     @include f-manrope-400;
     color: #fff;
     font-size: 18px;
+    text-decoration: none;
     text-transform: uppercase;
     position: absolute;
     right: 21px;
-    bottom: 100px;
-    transform: rotate(270deg);
+    bottom: 60px;
+    height: 110px;
+    text-align: end;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    background-image: url(../images/svg/menu-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 49% 0;
+    background-size: 1px 60px;
 
     @include onTablet {
+      height: 120px;
       font-size: 20px;
-      right: 17px;
+      right: 34px;
     }
+  }
 
+  &__basket {
+    position: absolute;
+    right: 39%;
+    top: 27%;
+
+    @include onTablet {
+      right: 43%;
+      top: 21%;
+    }
   }
 }
