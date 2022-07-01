@@ -294,8 +294,6 @@
               </div>
             </div>
             <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
           </div>
 
         </div>
@@ -744,12 +742,15 @@
     <script type="module">
       import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js'
       var swiper = new Swiper('.swiper', {
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
         pagination: {
           el: '.swiper-pagination',
+        },
+        autoplay: {
+          delay: 5000,
+        },
+        freeMode: {
+          enabled: true,
+          sticky: true,
         },
       });
     </script>
