@@ -45,7 +45,9 @@ function handlerNavList(event) {
 }
 
 function handlerOpenDescriptMaterials(event) {
-  resetMaterials();
+  const cardId = event.currentTarget.parentNode.dataset.card;
+
+  resetMaterials(cardId);
 
   const tooltip = event.currentTarget
     .parentNode.querySelector('.materials__card-description');
@@ -54,13 +56,15 @@ function handlerOpenDescriptMaterials(event) {
   event.currentTarget.classList.toggle('materials__btn-minus');
 }
 
-function resetMaterials() {
+function resetMaterials(id) {
   cardMaterialBlocks && cardMaterialBlocks.forEach((block) => {
-    block.querySelector('.materials__card-description')
-      .classList.remove('materials__open-card-descriptional');
+    if (block.dataset.card !== id) {
+      block.querySelector('.materials__card-description')
+        .classList.remove('materials__open-card-descriptional');
 
-    block.querySelector('.materials__card-btn')
-      .classList.remove('materials__btn-minus');
+      block.querySelector('.materials__card-btn')
+        .classList.remove('materials__btn-minus');
+    }
   });
 }
 
