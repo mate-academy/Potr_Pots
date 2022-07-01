@@ -81,37 +81,107 @@
 
   &__description {
     display: flex;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.65);
     height: 250px;
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
     align-items: center;
     justify-content: center;
     width: 300px;
-
-    position: absolute;
-    bottom: -100px;
-    right: 10px;
     @include f-manrope-400;
     font-size: 16px;
     text-align: center;
+    color: #f8f8f8;
     padding: 28px 45px 58px;
     line-height: 150%;
-    color: #f8f8f8;
 
-    @media (min-width: 340px) {
-      width: 300px;
-      opacity: 1;
+    &--1 {
+      position: absolute;
+      bottom: -100px;
+      right: 10px;
+
+      @include onTablet {
+        right: 0;
+        bottom: 15%;
+        opacity: 0;
+        z-index: 1;
+      }
+
+      @include onDeskTop {
+        right: 30px;
+        bottom: 25%;
+      }
     }
 
-    @include onTablet {
-      right: 50px;
-      bottom: 15%;
+    &--2 {
+      display: none;
+      @include onTablet {
+        display: block;
+        position: absolute;
+        right: 220px;
+        top: 200px;
+        opacity: 0;
+      }
 
+      @include onDeskTop {
+        top: 460px;
+        right: 330px;
+        opacity: 0;
+      }
     }
 
-    @include onDeskTop {
-      bottom: 25%;
+    &--3 {
+      display: none;
+      @include onTablet {
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 530px;
+        opacity: 0;
+      }
+
+      @include onDeskTop {
+        top: 820px;
+        right: 290px;
+        opacity: 0;
+      }
     }
+
+    &--4 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 200px;
+        opacity: 0;
+      }
+
+      @include onDeskTop {
+        left: 250px;
+        top: 500px;
+        opacity: 0;
+      }
+    }
+    &--5 {
+      display: none;
+      height: 200px;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+        left: 20px;
+        bottom: -5px;
+        opacity: 0;
+      }
+
+      @include onDeskTop {
+        left: 240px;
+        bottom: 30px;
+        opacity: 0;
+      }
+    }
+
   }
 
   &__btn {
@@ -128,33 +198,62 @@
     position: absolute;
     transition: 0.5s;
 
+    &::before {
+      content: "+";
+      color: #fff;
+    }
+
     &:hover {
+      transition: 0.3s;
+      opacity: 1;
       @include hover-scale;
       cursor: pointer;
+      background: rgba(36, 35, 35, 0.75);
+      &::before {
+        content: "-";
+      }
     }
+
 
     @include onTablet {
       display: flex
     }
 
     &--1 {
-      background: rgba(36, 35, 35, 0.75);
+      background: $c-red;
       opacity: 0.65;
       backdrop-filter: blur(12px);
-
       top: 45%;
       right: 20%;
+
+      @include onTablet {
+        &:hover {
+          & + .materials__description--1 {
+            opacity: 1;
+          }
+        }
+      }
 
       @include onDeskTop {
         top: 45%;
         right: 162px;
         bottom: 100px;
       }
+
     }
 
     &--2 {
       bottom: 35%;
       right: 35%;
+
+      @include onTablet {
+        right: 40%;
+        &:hover {
+          & + .materials__description--2 {
+            opacity: 1;
+          }
+        }
+      }
 
       @include onDeskTop {
         bottom: 25%;
@@ -166,6 +265,15 @@
       bottom: 20%;
       left: 45%;
 
+      @include onTablet {
+        // right: 40%;
+        &:hover {
+          & + .materials__description--3 {
+            opacity: 1;
+          }
+        }
+      }
+
       @include onDeskTop {
         bottom: 15%;
         left: 48%;
@@ -175,6 +283,15 @@
     &--4 {
       bottom: 35%;
       left: 30%;
+
+      @include onTablet {
+        // right: 40%;
+        &:hover {
+          & + .materials__description--4 {
+            opacity: 1;
+          }
+        }
+      }
 
       @include onDeskTop {
         bottom: 25%;
@@ -186,10 +303,25 @@
       bottom: 25%;
       left:10%;
 
+      @include onTablet {
+        // right: 40%;
+        &:hover {
+          & + .materials__description--5 {
+            opacity: 1;
+          }
+        }
+      }
+
       @include onDeskTop {
         bottom: 10%;
         right: 30px;
       }
     }
   }
+
+  &__block {
+    display: flex;
+  }
 }
+
+
