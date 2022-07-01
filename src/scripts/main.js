@@ -15,6 +15,7 @@ const btnOpenModBenef = document.querySelector('.benefits__btn-buy');
 const btnOpenBascetMob = document.querySelector('.nav-mob__btn-bascet');
 const btnOpenBascetDesc = document.querySelector('.nav__bascet');
 const modalBack = document.querySelector('.page__modal');
+const cardMaterialBlocks = document.querySelectorAll('.materials__card');
 
 form.addEventListener('submit', function(event) {
   event.preventDefault();
@@ -44,11 +45,23 @@ function handlerNavList(event) {
 }
 
 function handlerOpenDescriptMaterials(event) {
+  resetMaterials();
+
   const tooltip = event.currentTarget
     .parentNode.querySelector('.materials__card-description');
 
   tooltip.classList.toggle('materials__open-card-descriptional');
   event.currentTarget.classList.toggle('materials__btn-minus');
+}
+
+function resetMaterials() {
+  cardMaterialBlocks && cardMaterialBlocks.forEach((block) => {
+    block.querySelector('.materials__card-description')
+      .classList.remove('materials__open-card-descriptional');
+
+    block.querySelector('.materials__card-btn')
+      .classList.remove('materials__btn-minus');
+  });
 }
 
 function handlerButtonCloseModal() {
