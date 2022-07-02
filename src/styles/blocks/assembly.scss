@@ -1,0 +1,358 @@
+.assembly {
+  &__title {
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+    position: relative;
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 150%;
+
+    color: #333;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+
+    &::before {
+      content: "";
+
+      display: block;
+
+      width: 7px;
+      height: 7px;
+      margin-right: 10px;
+
+      position: absolute;
+      top: 20px;
+      left: -15px;
+
+      background: #4f4f4f;
+      transform: rotate(-45deg);
+
+      @include onTablet {
+        top: 25px;
+        left: -20px;
+      }
+
+      @include onDesktop {
+        top: 20px;
+        left: -20px;
+      }
+    }
+  }
+
+  &__info {
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #828282;
+  }
+
+  &__button {
+    max-width: 238px;
+    height: 48px;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      align-self: flex-start;
+
+      margin-bottom: 70px;
+
+      background-color: transparent;
+      border: 1px solid #03839e;
+
+      &:hover {
+        color: #e5e5e5;
+        background-color: #03839e;
+      }
+
+      &:hover .arrow__body {
+        --arrow-color: #e5e5e5;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 35px;
+
+      background-color: transparent;
+      border: 1px solid #03839e;
+
+      &:hover {
+        color: #e5e5e5;
+        background-color: #03839e;
+      }
+
+      &:hover .arrow__body {
+        --arrow-color: #e5e5e5;
+      }
+    }
+  }
+
+  &__off {
+    margin-bottom: 10px;
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #eb5757;
+
+    @include onDesktop {
+      margin-bottom: 5px;
+      padding-left: 100px;
+    }
+
+    @include onTablet {
+      margin-bottom: 5px;
+
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__get {
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #03839e;
+
+    @include onDesktop {
+      padding-left: 100px;
+    }
+
+    @include onTablet {
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__gallery {
+    display: none;
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: 215px 215px;
+
+      position: relative;
+    }
+  }
+
+  &__image {
+    width: 182px;
+    height: 182px;
+    margin-bottom: 6px;
+
+    object-fit: cover;
+    object-position: center;
+
+    overflow: hidden;
+  }
+
+  &__image-card {
+
+    box-sizing: border-box;
+
+    width: 214px;
+    height: 240px;
+
+    position: absolute;
+
+    padding: 16px;
+    background-color: #fff;
+
+    z-index: 5;
+
+    cursor: pointer;
+
+    &:first-child {
+      top: 15%;
+      left: -9%;
+
+      transform: matrix(0.97, -0.26, 0.26, 0.97, 0, 0);
+      @include interactZoom(0.5s, 200%);
+    }
+
+    &:first-child .assembly__image {
+      transform: rotate(15deg) scale(125%) translateY(1%) translateX(0);
+    }
+
+    &:nth-child(2) {
+      top: 8%;
+      right: 13%;
+
+      width: 189px;
+      height: 212px;
+
+      transform: matrix(0.88, -0.48, 0.48, 0.88, 0, 0);
+      @include interactZoom(0.5s, 200%);
+    }
+
+    &:nth-child(2) .assembly__image {
+      width: 161px;
+      height: 161px;
+
+      transform: matrix(-0.88, 0.48, 0.48, 0.88, 0, 0)
+        scale(140%) translateY(0) translateX(1%);
+    }
+
+    &:nth-child(3) {
+      left: -18%;
+      top: 54%;
+
+      z-index: 6;
+      @include interactZoom(0.5s, 200%);
+    }
+
+    &:nth-child(4) {
+      right: 17%;
+      top: 40%;
+
+      transform: matrix(0.97, -0.26, 0.26, 0.97, 0, 0);
+      @include interactZoom(0.5s, 200%);
+    }
+
+    &:nth-child(4) .assembly__image {
+      transform: matrix(-0.97, 0.26, 0.26, 0.97, 0, 0)
+        scale(123%) translateY(1%) translateX(1%);
+    }
+
+    &:nth-child(5) {
+      left: 5%;
+      bottom: -16%;
+
+      transform: matrix(0.96, -0.27, 0.27, 0.96, 0, 0);
+      @include interactZoom(0.5s, 200%);
+    }
+
+    &:nth-child(5) .assembly__image {
+      transform: matrix(-0.96, 0.27, 0.27, 0.96, 0, 0)
+        scale(123%) translateY(2%) translateX(0);
+    }
+
+    &:last-child {
+      right: -9%;
+      bottom: -8%;
+
+      transform: matrix(0.86, -0.51, 0.51, 0.86, 0, 0);
+      @include interactZoom(0.5s, 200%);
+    }
+
+    &:last-child .assembly__image {
+      transform: matrix(-0.86, 0.51, 0.51, 0.86, 0, 0)
+        scale(140%) translateY(2%) translateX(1%);
+    }
+  }
+
+  &__image-memo {
+    padding-top: 2px;
+    padding-left: 3px;
+    font-family: "Monrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 11px;
+    color: #828282;
+  }
+
+  &__block-1 {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+
+      width: 670px;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: start;
+      gap: 20px;
+    }
+  }
+
+  &__block-2 {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 60px;
+      padding-top: 186px;
+
+      &:first-child,
+      &:last-child {
+        padding-left: 20px;
+      }
+    }
+
+    &-1 {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:first-child {
+      @include onTablet {
+        order: 1;
+      }
+    }
+
+    &:nth-child(2) {
+      @include onTablet {
+        order: 3;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+
+      @include onTablet {
+        order: 2;
+      }
+    }
+  }
+
+  &__block-3 {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      max-width: 238px;
+    }
+  }
+}
