@@ -1,4 +1,5 @@
 .button {
+
   @include onTablet {
     grid-column: 2 / 4;
   }
@@ -6,7 +7,7 @@
   @include onDesktop {
     grid-column: 4 / 7;
   }
-  
+
   &__content-wrapper {
     display: flex;
     justify-content: center;
@@ -21,6 +22,13 @@
     line-height: 21px;
     text-transform: uppercase;
     color: #121212;
+
+    &--offer {
+      @include onTablet {
+        background-color: transparent;
+        border: 1px solid $c-turquoise;
+      }
+    }
   }
 
   &__content {
@@ -29,6 +37,18 @@
 
     & img {
       margin-left: 24px;
+    }
+  }
+
+  &--offer {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 35px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
     }
   }
 }
