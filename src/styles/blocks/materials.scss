@@ -318,4 +318,65 @@
   &__list-link:hover &__list-content--5 {
     transform: translateY(65%) scale(100%);
   }
+
+  &__side-link-content {
+    display: inline-block;
+
+    box-sizing: border-box;
+    height: 120px;
+
+    background-image: url(/images/svg3.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+
+    text-decoration: none;
+    writing-mode: vertical-lr;
+
+    text-align: end;
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    color: #828282;
+  }
+
+  &__side-link {
+    position: absolute;
+    overflow: hidden;
+
+    @include interactZoom(0.3s, 110%);
+
+    &--1 {
+      @include onDesktop {
+        display: none;
+      }
+
+      @include onTablet {
+        top: 3%;
+        right: 1%;
+
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        display: none;
+      }
+
+      @include onTablet {
+        top: 23%;
+        left: 1%;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
 }
