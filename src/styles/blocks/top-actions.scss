@@ -1,0 +1,60 @@
+.top-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+
+  @include onTablet {
+    margin-bottom: 50px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 75px;
+  }
+
+  &__logo {
+    display: block;
+    width: 134px;
+    height: 43px;
+    content: "";
+    background-image: url(../images/icon/potrpots.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+  }
+
+  &__cart {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      content: "";
+      width: 30px;
+      height: 30px;
+      background-image: url(../images/icon/bag.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+  }
+
+  &__menu {
+    display: block;
+    width: 32px;
+    height: 32px;
+    content: "";
+    background-image: url(../images/icon/menu_icon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
