@@ -23,10 +23,34 @@
     text-transform: uppercase;
     color: #121212;
 
+    &--shopify {
+      @include onTablet {
+        width: 240px;
+      }
+
+      @include onDesktop {
+        width: 270px;
+      }
+    }
+
     &--offer {
       @include onTablet {
         background-color: transparent;
         border: 1px solid $c-turquoise;
+        width: 238px;
+      }
+    }
+
+    &--connect {
+      color: #fff;
+      background-color: $c-turquoise;
+
+      @include onTablet {
+        width: 219px;
+      }
+
+      @include onDesktop {
+        width: 238px;
       }
     }
   }
@@ -34,10 +58,7 @@
   &__content {
     display: flex;
     justify-content: center;
-
-    & img {
-      margin-left: 24px;
-    }
+    align-items: center;
   }
 
   &--offer {
@@ -49,6 +70,25 @@
 
     @include onDesktop {
       margin-bottom: 70px;
+    }
+  }
+
+  &__arrow-wrapper {
+    display: grid;
+    place-items: center;
+  }
+
+  &__arrow {
+    width: 30px;
+    height: 10px;
+    margin-left: 24px;
+
+    background-image: url(../images/svg/arrow-button-black.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--connect {
+      background-image: url(../images/svg/arrow-button-white.svg);
     }
   }
 }
