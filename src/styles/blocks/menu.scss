@@ -26,6 +26,13 @@
     display: flex;
     align-items: flex-end;
     color: #F8F8F8;
+    width: fit-content;
+    transition: all 0.3s;
+
+    &:hover {
+      text-decoration-line: underline;
+      transition: all 0.3s;
+    }
   }
 
   &__decorative {
@@ -37,6 +44,11 @@
     gap: 18px;
     transform: rotate(180deg);
 
+    &:hover > &-cross {
+      transform: rotate(90deg);
+      transition: transform 0.3s;
+    }
+
       &-cross {
         display: block;
         content: "";
@@ -46,6 +58,9 @@
         background-size: contain;
         background-position: center;
         background-image: url(../images/icon/cross.svg);
+        transition: transform 0.3s;
+
+
       }
 
       &-text {
