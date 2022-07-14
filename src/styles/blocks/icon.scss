@@ -11,8 +11,7 @@
   background-image: url(../images/svg/menu-icon.svg);
 
   @include onDesktop {
-    --icon-width: 30px;
-    background-image: url(../images/svg/cart-icon.svg);
+    display: none;
   }
 
   &--cross {
@@ -22,5 +21,16 @@
     left: 80%;
 
     background-image: url(../images/svg/cross.svg);
+  }
+
+  &--cart {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      --icon-width: 30px;
+      background-image: url(../images/svg/cart-icon.svg);
+    }
   }
 }
