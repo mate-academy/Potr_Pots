@@ -1,6 +1,76 @@
 .for-whom {
   position: relative;
 
+  &__section-title-wrap {
+    position: relative;
+  }
+
+  &__item {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-gray-dark;
+    }
+
+    &:before {
+      content: "*";
+      position: absolute;
+      bottom: -5px;
+      left: -20px;
+
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 29px;
+      letter-spacing: 0.15em;
+
+      color: #000;
+    }
+
+    &--robust {
+      @include onTablet {
+        top: -20%;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: -50%;
+        left: 0;
+      }
+    }
+
+    &--beautiful {
+      @include onTablet {
+        top: -70%;
+        left: 75%;
+      }
+
+      @include onDesktop {
+        top: -90%;
+        left: 0;
+      }
+    }
+
+    &--saves-time {
+      @include onTablet {
+        top: -15%;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: -20%;
+        left: -27%;
+      }
+    }
+  }
+
   &__title {
     margin-bottom: 25px;
     font-family: "Bebas Neue", sans-serif;
@@ -131,7 +201,6 @@
   &__section-title-wrapper {
     display: flex;
     flex-direction: row;
-
   }
 
   &__section-title {
@@ -201,6 +270,7 @@
   }
 
   &__number-title {
+    position: absolute;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-size: 36px;
@@ -208,5 +278,40 @@
     letter-spacing: 0.15em;
 
     color: #000;
+
+    &--one {
+      @include onTablet {
+        top: -5%;
+        left: -10%;
+      }
+
+      @include onDesktop {
+        top: -10%;
+        left: -20%;
+      }
+    }
+
+    &--two {
+      @include onTablet {
+        top: -70%;
+        left: 10%;
+      }
+
+      @include onDesktop {
+        top: -50%;
+      }
+    }
+
+    &--three {
+      @include onTablet {
+        top: -5%;
+        left: -10%;
+      }
+
+      @include onDesktop {
+        top: 0;
+        left: -20%;
+      }
+    }
   }
 }
