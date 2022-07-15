@@ -4,8 +4,8 @@
 
 Implement landing page according to [Figma design](https://www.figma.com/file/50zgLU65Mcd3MisFHMfLfx/POTR-POTS_FE-students?node-id=1760%3A281) - Use BEM and SCSS
 - The design 1440px
-- Notebook 1280px
-- Tablet 768px
+- Desktop 1280px
+- Tablet 640px
 - Mobile (> 320px)
 
 1. Implement the header with `nav`.
