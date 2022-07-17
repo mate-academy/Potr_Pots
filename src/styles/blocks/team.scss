@@ -28,13 +28,15 @@
       position: relative;
       flex-direction: row;
       justify-content: space-between;
-      margin-bottom: -30px;
+      gap: 47px;
+      margin-bottom: 180px;
     }
 
     @include onDesktop {
       align-items: end;
+      gap: 57px;
       margin-right: 100px;
-      margin-bottom: -50px;
+      margin-bottom: 250px;
     }
   }
 
@@ -58,7 +60,7 @@
 
     @include onTablet {
       width: 340px;
-      height: 250px;
+      height: 255px;
     }
 
     @include onDesktop {
@@ -72,6 +74,8 @@
 
     @include onTablet {
       margin-bottom: 0;
+
+      min-width: 313px;
     }
 
     @include onDesktop {
@@ -87,7 +91,8 @@
     color: $c-gray-mid;
 
     @include onTablet {
-      width: 313px;
+      width: 100%;
+
       margin-top: 60px;
       margin-bottom: -90%;
     }
@@ -127,14 +132,10 @@
   &__image-team-rectangle {
     min-width: 320px;
     width: 100vw;
-    // max-height: 293px;
     height: 293px;
 
     background-image: url(../images/svg/rectangle-team-mobile.svg);
     background-repeat: no-repeat;
-
-    // display: block;
-    // overflow: hidden;
 
     @include onTablet {
       height: 466px;
@@ -181,9 +182,10 @@
     display: none;
 
     @include onTablet {
+      position: absolute;
       display: block;
-      margin-left: 290px;
-      margin-bottom: -150px;
+      top: 93%;
+      right: 0;
 
       font-family: "Bebas Neue", sans-serif;
       font-weight: 400;
@@ -197,9 +199,6 @@
     }
 
     @include onDesktop {
-      margin-left: 700px;
-      margin-bottom: -150px;
-
       font-size: 288px;
       line-height: 346px;
       -webkit-text-stroke: 1px $c-turquoise;

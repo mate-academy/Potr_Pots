@@ -11,9 +11,24 @@ window.addEventListener('hashchange', () => {
 
 // Page shouldn't be reloaded on form submit
 const form = document.querySelector('form');
+const submitbutton = document.querySelector('#submit-button');
 
-form.addEventListener('submit', function(event) {
+submitbutton.addEventListener('click', function(event) {
   event.preventDefault();
 
   form.reset();
 });
+
+// smootscroll
+
+// you need to add to your config file
+
+// {
+//   "parserOptions": {
+//       "sourceType": "module",
+//   }
+// }
+// import smoothscroll from 'smoothscroll-polyfill';
+
+// kick off the polyfill!
+// smoothscroll.polyfill();

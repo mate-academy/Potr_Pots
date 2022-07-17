@@ -29,6 +29,20 @@
     @include onTablet {
       display: flex;
       justify-content: space-between;
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      min-width: 220px;
+      max-width: 376px;
+    }
+
+    @include onDesktop {
+      width: 370px;
     }
   }
 
@@ -44,24 +58,13 @@
 
     @include onTablet {
       min-width: 220px;
-      height: 220px;
+      width: 100%;
+      min-height: 220px;
     }
 
     @include onDesktop {
       min-width: 370px;
       height: 370px;
-    }
-  }
-
-  &__item {
-    @include onTablet {
-      display: flex;
-      flex-direction: column;
-      width: 220px;
-    }
-
-    @include onDesktop {
-      width: 370px;
     }
   }
 

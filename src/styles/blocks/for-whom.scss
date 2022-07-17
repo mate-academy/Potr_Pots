@@ -1,78 +1,9 @@
 .for-whom {
   position: relative;
 
-  &__section-title-wrap {
-    position: relative;
-  }
-
-  &__item {
-    display: none;
-
-    @include onTablet {
-      position: absolute;
-      display: block;
-
-      font-family: "Manrope", sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 150%;
-      color: $c-gray-dark;
-    }
-
-    &:before {
-      content: "*";
-      position: absolute;
-      bottom: -5px;
-      left: -20px;
-
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 29px;
-      letter-spacing: 0.15em;
-
-      color: #000;
-    }
-
-    &--robust {
-      @include onTablet {
-        top: -20%;
-        left: 0;
-      }
-
-      @include onDesktop {
-        top: -50%;
-        left: 0;
-      }
-    }
-
-    &--beautiful {
-      @include onTablet {
-        top: -70%;
-        left: 75%;
-      }
-
-      @include onDesktop {
-        top: -90%;
-        left: 0;
-      }
-    }
-
-    &--saves-time {
-      @include onTablet {
-        top: -15%;
-        left: 0;
-      }
-
-      @include onDesktop {
-        top: -20%;
-        left: -27%;
-      }
-    }
-  }
-
   &__title {
-    margin-bottom: 25px;
+    margin-bottom: 100px;
+
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-size: 36px;
@@ -80,19 +11,18 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: $c-gray-dark;
-  }
 
-  &__wrapper-section-2-3 {
+    @include onTablet {
+      margin-bottom: 42px;
+    }
 
     @include onDesktop {
-      display: flex;
-      justify-content: space-between;
-      gap: 300px;
+      margin-bottom: 34px;
     }
   }
 
-  &__section-wraper {
-    margin-bottom: 70px;
+  &__section-wrapper {
+    margin-bottom: 110px;
 
     @include onTablet {
       position: relative;
@@ -128,7 +58,16 @@
     }
   }
 
-  &__section-image-wraper {
+  &__wrapper-section-2-3 {
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 300px;
+    }
+  }
+
+  &__section-image-wrapper {
     display: none;
 
     @include onTablet {
@@ -145,7 +84,7 @@
 
   &__section-image {
     width: 284px;
-    height: 100%;
+    height: 284px;
     object-position: center;
     object-fit: cover;
 
@@ -162,6 +101,13 @@
       }
     }
 
+    &--tablet-beautiful {
+      @include onTablet{
+        width: 300px;
+        height: 417px;
+      }
+    }
+
     &--desktop-beautiful {
       @include onDesktop {
         width: 300px;
@@ -170,6 +116,11 @@
     }
 
     &--desktop-saves-time {
+      @include onTablet{
+        width: 284px;
+        height: 405px;
+      }
+
       @include onDesktop {
         width: 470px;
         height: 670px;
@@ -191,6 +142,13 @@
       }
     }
 
+    &--tablet-beautiful {
+      @include onTablet {
+        margin-top: 100px;
+      }
+
+    }
+
     &--desktop-saves-time {
       @include onDesktop {
         margin-left: 100px;
@@ -201,6 +159,150 @@
   &__section-title-wrapper {
     display: flex;
     flex-direction: row;
+  }
+
+  &__section-title-wrap {
+    position: relative;
+  }
+
+  &__item {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-gray-dark;
+    }
+
+    &:before {
+      content: "*";
+      position: absolute;
+      bottom: -5px;
+      left: -20px;
+
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 29px;
+      letter-spacing: 0.15em;
+
+      color: #000;
+    }
+
+    &--robust {
+      @include onTablet {
+        top: -30px;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: -60px;
+        left: 0;
+      }
+    }
+
+    &--beautiful {
+      @include onTablet {
+        top: -70px;
+        right: 0;
+      }
+
+      @include onDesktop {
+        top: -150px;
+        left: 0;
+      }
+    }
+
+    &--saves-time {
+      @include onTablet {
+        top: -30px;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: -50px;
+        left: -100px;
+      }
+    }
+  }
+
+  &__slash {
+    position: absolute;
+    top: -70px;
+    left: 0;
+
+    @include onTablet {
+      display: block;
+      top: 0;
+      left: -55px;
+    }
+
+    @include onDesktop {
+      left: -115px;
+    }
+
+    &--two {
+      @include onTablet {
+        top: -65px;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: -80px;
+      }
+    }
+  }
+
+  &__number-title {
+    position: absolute;
+    top: -70px;
+    left: 15px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 65px;
+    letter-spacing: 0.15em;
+
+    color: #000;
+
+    &--one {
+      @include onTablet {
+        top: 0;
+        left: -40px;
+      }
+
+      @include onDesktop {
+        left: -95px;
+      }
+    }
+
+    &--two {
+      @include onTablet {
+        top: -65px;
+        left: 20px;
+      }
+
+      @include onDesktop {
+        top: -80px;
+      }
+    }
+
+    &--three {
+      @include onTablet {
+        top: 0;
+        left: -40px;
+      }
+
+      @include onDesktop {
+        left: -95px;
+      }
+    }
   }
 
   &__section-title {
@@ -218,100 +320,11 @@
     }
   }
 
-  &__section-title-icon {
-    display: none;
-
-    @include onTablet {
-      display: block;
-      align-self: flex-start;
-    }
-  }
-
   &__section-info {
     font-family: "Manrope", sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     color: $c-gray-mid;
-  }
-
-  &__number-wrapper {
-    display: flex;
-    margin-bottom: 30px;
-
-    &--left {
-      @include onTablet {
-        position: absolute;
-        top: 0;
-        left: 300px;
-      }
-    }
-
-    &--desktop-1 {
-      @include onDesktop {
-        position: absolute;
-        top: 170px;
-        left: 580px;
-      }
-    }
-
-    &--desktop-3 {
-      @include onDesktop {
-        position: absolute;
-        top: 760px;
-        left: 0;
-      }
-    }
-  }
-
-  &__number-icon {
-    height: 46px;
-    margin-right: 1px;
-  }
-
-  &__number-title {
-    position: absolute;
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 65px;
-    letter-spacing: 0.15em;
-
-    color: #000;
-
-    &--one {
-      @include onTablet {
-        top: -5%;
-        left: -10%;
-      }
-
-      @include onDesktop {
-        top: -10%;
-        left: -20%;
-      }
-    }
-
-    &--two {
-      @include onTablet {
-        top: -70%;
-        left: 10%;
-      }
-
-      @include onDesktop {
-        top: -50%;
-      }
-    }
-
-    &--three {
-      @include onTablet {
-        top: -5%;
-        left: -10%;
-      }
-
-      @include onDesktop {
-        top: 0;
-        left: -20%;
-      }
-    }
   }
 }
