@@ -204,4 +204,42 @@
       -webkit-text-stroke: 1px $c-turquoise;
     }
   }
+  &__arrow {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      bottom: -65%;
+      right: 1%;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__arrow-word {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #828282;
+    letter-spacing: 0.22em;
+    writing-mode: vertical-lr;
+  }
+
+  &__arrow-line {
+    display: block;
+    height: 65px;
+    width: 10px;
+    background-image: url(../images/svg/arrow-line.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }

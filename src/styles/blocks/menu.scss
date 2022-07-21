@@ -1,4 +1,5 @@
 .menu {
+  // position: relative;
   width: 72%;
   height: 100vh;
   padding: 20% 0 0 20%;
@@ -65,5 +66,39 @@
     color: $c-gray-light;
 
     border-radius: 50%;
+  }
+
+  &__arrow {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    bottom: 30%;
+    right: 10%;
+  }
+
+  &__arrow-word {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: $c-gray-light;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+  }
+
+  &__arrow-line {
+    height: 44px;
+    width: 1px;
+    background-image: url(../images/svg/menu-arrow-line.svg);
+  }
+
+  &__arrow-cross {
+    height: 12px;
+    width: 12px;
+    background-image: url(../images/svg/cross.svg);
   }
 }
