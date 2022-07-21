@@ -21,6 +21,16 @@
     }
   }
 
+  @-webkit-keyframes translating {
+    from {
+      transform: translate(-100%);
+    }
+
+    to {
+      transform: translate(0);
+    }
+  }
+
   &__title {
     margin-bottom: 30px;
     font-family: "Bebas Neue", sans-serif;
@@ -31,6 +41,8 @@
     text-transform: uppercase;
     color: transparent;
     -webkit-text-stroke: 0.68px $c-turquoise;
+
+    -webkit-animation: translating 0.7s ease-out 0.5s 1 alternate;
 
     & span {
       color: $c-turquoise;

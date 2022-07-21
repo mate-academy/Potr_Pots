@@ -1,6 +1,26 @@
 .team {
   position: relative;
 
+  @-webkit-keyframes translateleft {
+    from {
+      transform: translate(0);
+    }
+
+    to {
+      transform: translate(30%);
+    }
+  }
+
+  @-webkit-keyframes translateright {
+    from {
+      transform: translate(70%);
+    }
+
+    to {
+      transform: translate(0);
+    }
+  }
+
   &__title {
     margin-bottom: 25px;
 
@@ -162,6 +182,8 @@
     color: transparent;
     -webkit-text-stroke: 0.8px $c-turquoise;
 
+    -webkit-animation: translateleft 5s ease 0.5s infinite alternate;
+
     @include onTablet {
       display: block;
       margin-left: -74px;
@@ -196,6 +218,8 @@
       color: transparent;
 
       -webkit-text-stroke: 0.8px $c-turquoise;
+
+      -webkit-animation: translateright 5s ease 0.5s infinite alternate;
     }
 
     @include onDesktop {
