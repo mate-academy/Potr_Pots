@@ -1,0 +1,67 @@
+.buy-now {
+  position: relative;
+  @include desktop {
+    padding-top: 186px;
+    padding-bottom: 42px;
+  }
+  &__features {
+    display: block;
+
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__feature {
+    margin-bottom: 40px;
+  }
+
+  &__feature-title {
+    @extend %s1;
+    margin-bottom: 5px;
+  }
+
+  &__feature-discription {
+    @extend %s3;
+  }
+
+  &__offer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+  }
+
+  &__buy-link {
+    margin-bottom: 50px;
+  }
+
+  &__discount {
+
+    @include desktop {
+      padding-left: 100px;
+    }
+  }
+
+  &__discount-title {
+    color: $red;
+    margin-bottom: 10px;
+  }
+  &__discount-discription {
+    color: $turquoise;
+  }
+
+  &__polaroid {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    display: none;
+    left: -130px;
+
+    @include desktop {
+      display: block;
+    }
+  }
+}

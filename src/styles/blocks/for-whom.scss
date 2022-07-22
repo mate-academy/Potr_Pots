@@ -1,0 +1,121 @@
+.for-whom {
+  &__item {
+    position: relative;
+    display: block;
+    margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      display: flex;
+      gap: 20px;
+    }
+
+    @include desktop {
+      display: block;
+    }
+
+    &--full {
+      @include tablet {
+        display: flex;
+      }
+    }
+
+  }
+
+  &__container {
+    @include desktop {
+      display: flex;
+      gap: 20px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 3;
+    color: $dark-gray;
+    margin-bottom: 26px;
+  }
+
+  &__item-image {
+    transition-duration: $transition-time;
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+    &--first {
+      display: none;
+      object-fit: cover;
+
+      @include tablet {
+        display: block;
+        height: 284px;
+        width: 284px;
+      }
+
+      @include desktop {
+        height: 500px;
+        width: 500px;
+      }
+    }
+
+    &--second {
+      display: none;
+      object-fit: cover;
+
+      @include tablet {
+        display: block;
+        height: 417px;
+        width: 300px;
+        order: 1;
+
+      }
+
+      @include desktop {
+        padding-top: 185px;
+        margin-bottom: 185px;
+      }
+    }
+
+    &--third {
+      display: none;
+      object-fit: cover;
+      @include tablet {
+        display: block;
+        height: 404px;
+        width: 284px;
+      }
+
+      @include desktop {
+        height: 670px;
+        width: 100%;
+
+      }
+
+      @include desktop {
+        padding-top: 80px;
+        margin-bottom: 110px;
+      }
+    }
+  }
+
+  &__item-number {
+    display: flex;
+    line-height: 65px;
+    color: $dark-gray;
+
+    &::before {
+      content: url(/images/icons/Rectangle.svg);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    @extend %s3;
+    color: $dark-gray;
+  }
+}

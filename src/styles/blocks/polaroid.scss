@@ -1,0 +1,52 @@
+.polaroid {
+  overflow: hidden;
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    gap: 20px;
+  }
+
+  &__item {
+    display: inline-block;
+    background-color: #fff;
+    padding: 20px 20px 30px;
+
+    &--1 {
+      transform: rotate(-15deg) translateY(-70px);
+    }
+
+    &--2 {
+      transform: rotate(-30deg) translate(20%, -130px);
+    }
+
+    &--3 {
+      transform: rotate(0) translate(0);
+    }
+
+    &--4 {
+      transform: rotate(-15deg) translateY(-70px);
+    }
+
+    &--5 {
+      z-index: -1;
+      transform: rotate(-15deg) translate(70%, -40px);
+    }
+
+    &--6 {
+      transform: rotate(-30deg) translate(80%, -30px);
+    }
+  }
+
+  &__photo {
+    height: 230px;
+    width: 230px;
+    object-fit: cover;
+  }
+
+  &__photo-discription {
+    @extend %s5;
+    color: $gray;
+  }
+}

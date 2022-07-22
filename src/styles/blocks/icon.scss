@@ -1,0 +1,51 @@
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition-duration: $transition-time;
+
+  &--menu {
+
+    @include desktop {
+      display: none;
+    }
+    background-image: url(/images/icons/menu.svg);
+
+    &:hover {
+      background-image: url(/images/icons/menu_hover.svg);
+    }
+  }
+
+  &--basket {
+    position: relative;
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+    background-image: url(/images/icons/shopbag.svg);
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      border-radius: 1px;
+      background-color: transparent;
+      transition-duration: $transition-time;
+    }
+
+    &:hover::after {
+      width: 50px;
+      background-color: $dark-gray;
+      transition-duration: $transition-time;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+.header {
+  position: relative;
+  box-sizing: border-box;
+  align-content: center;
+  padding-top: 15px;
+
+  @include tablet {
+    background-image: url(/images/bg_Rectangle.svg);
+    background-position: top left;
+    background-size: 75%;
+    background-repeat: no-repeat;
+  }
+
+  &__actions {
+    margin-bottom: 10px;
+
+    @include tablet {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    &-item {
+      position: absolute;
+      grid-row: 1;
+    }
+  }
+
+  &__title {
+    position: relative;
+    white-space: nowrap;
+    z-index: 1;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    margin-bottom: 30px;
+
+    @include tablet {
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 0.15em;
+      margin-bottom: 0;
+    }
+  }
+
+  &__fast-buy {
+    padding-top: 50%;
+
+    height: max-content;
+    grid-row: 1;
+
+    @include tablet {
+      padding-top: 100%;
+    }
+
+    &-price {
+      @extend %s1;
+    }
+
+    &-description {
+      @extend %s4;
+      font-weight: 400;
+      margin-bottom: 20px;
+
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__buy-link {
+    margin-top: 40px;
+
+    @include desktop {
+      grid-row: 1;
+      align-self: end;
+      margin-bottom: 10%;
+
+    }
+  }
+
+  &__img-container {
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+    grid-row: 1;
+    justify-self: end;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &--phone {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      width: 90%;
+      display: none;
+      @include tablet {
+        display: block;
+      }
+
+      @include desktop {
+        width: 100%;
+      }
+
+    }
+  }
+
+  &__img {
+
+    &--phone {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+}
