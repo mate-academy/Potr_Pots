@@ -1,6 +1,11 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+/*
+  Adding transition properties and duration
+  depending on user preferred settings
+*/
+
+@mixin transition($properties...) {
+  @media (prefers-reduced-motion: no-preference) {
+    transition-duration: $transition-duration;
+    transition-property: $properties;
   }
 }
