@@ -25,36 +25,48 @@ GRID
 
   Modifiers:
 
-  .grid__cols--{SIZE}-col-{START}-span-{COUNT}
+  1) col start only:
 
-    where
-    {SIZE}  - one of [s, m, l];
-    {START} - column start index [1 ... total of media columns];
-    {COUNT} - columns span count [1 ... (total of media columns - {START})];
+    .grid__cols--{SIZE}-col-{START}
+
+  2) col start with colspan:
+
+    .grid__cols--{SIZE}-col-{START}-span-{COUNT}
+
+  3) col start with col end (inclusive):
+
+    .grid__cols--{SIZE}-col-{START}-to-{END}
+
+      where
+      {SIZE}  - one of [s, m, l];
+      {START} - column start index [1 ... total of media columns];
+      {COUNT} - columns span count [1 ... (total of media columns - {START})];
+      {END}   - column end index [{START} ... total of media columns];
 
   Example:
 
-  .grid__cols
-  .grid__cols--m-col-2-span-4
+    .grid__cols
+    .grid__cols--s-col-2-to-2
+    .grid__cols--m-col-2-span-3
 
-  - Mobile version:
+    - Mobile version:
 
-    |                             |                             |
-    |<-                        content                        ->|
+      |                             |                             |
+      |<-          empty          ->|<-         content         ->|
 
-  - Pad version:
+    - Pad version:
 
-    |         |         |         |         |         |         |
-    |  empty  |<-              content              ->|  empty  |
+      |         |         |         |         |         |         |
+      |<-empty->|<-         content         ->|<-     empty     ->|
 
-  - Desktop version:
+    - Desktop version:
 
-    |    |    |    |    |    |    |    |    |    |    |    |    |
-    |  empty  |<-              content              ->|  empty  |
+      |    |    |    |    |    |    |    |    |    |    |    |    |
+      |<-empty->|<-         content         ->|<-     empty     ->|
 
-    *  here {START} and {COUNT} are recalculated automatically for
-       larger media, so you don't need to define it if it occupies
-       same area. It works for all modifiers: s --> m --> l
+      *  here {START} and {COUNT} are recalculated automatically for
+        larger media, so you don't need to define it if it occupies
+        same area. It works for all modifiers: s --> m --> l
 
 */
 

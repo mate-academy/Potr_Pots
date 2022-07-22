@@ -30,14 +30,6 @@
       );
     }
 
-    // Fill to last
-    #{$root}__cols--#{$name}-col-#{$colStart}-fill {
-      @include gridColumnSpan(
-        if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
-        $maxSpan * $colSize
-      );
-    }
-
     // Any available column spans
     @for $colSpan from 1 through $maxSpan {
       #{$root}__cols--#{$name}-col-#{$colStart}-span-#{$colSpan} {
@@ -45,6 +37,16 @@
           if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
           $colSpan * $colSize
         );
+      }
+
+      // Fill to last
+      @if $colSpan == $maxSpan {
+        #{$root}__cols--#{$name}-col-#{$colStart}-fill {
+          @include gridColumnSpan(
+            if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
+            $maxSpan * $colSize
+          );
+        }
       }
     }
 
