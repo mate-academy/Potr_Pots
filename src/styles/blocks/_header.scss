@@ -1,0 +1,53 @@
+.header {
+  &__content {
+    padding-top: 16px;
+
+    @include mediaPad {
+      padding-top: 30px;
+    }
+  }
+
+  &__line {
+    display: grid;
+    grid-template-columns: auto 1fr 32px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    &-list {
+      display: none;
+
+      @include mediaDesktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+      }
+    }
+
+    &-toggler-icon {
+      @extend %icon;
+      background-image: url("/images/icons/menu.svg");
+
+      cursor: pointer;
+
+      @include mediaDesktop {
+        display: none;
+      }
+    }
+
+    &-cart-icon {
+      display: none;
+
+      @extend %icon;
+      background-image: url("/images/icons/cart.svg");
+
+      cursor: pointer;
+
+      @include mediaDesktop {
+        display: block;
+      }
+    }
+  }
+}

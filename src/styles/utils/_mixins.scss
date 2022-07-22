@@ -61,3 +61,21 @@
     }
   }
 }
+
+@mixin flexColsGenerator($root, $name, $colsCount, $colGap, $colSize: 1) {
+  $totalGapsWidth: $colGap * (($colsCount * $colSize) - 1);
+
+  @for $cols from 1 through $colsCount {
+    $gapWidth: (($cols * $colSize) - 1) * $colGap;
+
+    #{$root}__cols--#{$name}-#{$cols} {
+      flex-basis: #{
+        "calc((100% - " +
+        $totalGapsWidth +
+        ") * " +
+        ($cols / $colsCount) +
+        " + " +
+        $gapWidth + ")"};
+    }
+  }
+}

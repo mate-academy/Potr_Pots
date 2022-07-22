@@ -1,0 +1,74 @@
+/*
+FLEX
+--------------------------------------------- */
+
+$flexClass: ".flex";
+
+#{$flexClass} {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: $mobile-grid-gap;
+
+  @include mediaPad {
+    column-gap: $pad-grid-gap;
+  }
+
+  @include mediaDesktop {
+    column-gap: $desktop-grid-gap;
+  }
+
+  &__cols {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+  }
+}
+
+@include flexColsGenerator(
+  $flexClass,
+  "s",
+  $mobile-grid-columns,
+  $mobile-grid-gap
+);
+
+@include mediaPad {
+  @include flexColsGenerator(
+    $flexClass,
+    "s",
+    $mobile-grid-columns,
+    $pad-grid-gap,
+    $pad-grid-columns / $mobile-grid-columns,
+  );
+
+  @include flexColsGenerator(
+    $flexClass,
+    "m",
+    $pad-grid-columns,
+    $pad-grid-gap
+  );
+}
+
+@include mediaDesktop {
+  @include flexColsGenerator(
+    $flexClass,
+    "s",
+    $mobile-grid-columns,
+    $desktop-grid-gap,
+    $desktop-grid-columns / $mobile-grid-columns,
+  );
+
+  @include flexColsGenerator(
+    $flexClass,
+    "m",
+    $pad-grid-columns,
+    $desktop-grid-gap,
+    $desktop-grid-columns / $pad-grid-columns,
+  );
+
+  @include flexColsGenerator(
+    $flexClass,
+    "l",
+    $desktop-grid-columns,
+    $desktop-grid-gap
+  );
+}

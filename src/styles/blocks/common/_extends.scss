@@ -7,11 +7,31 @@ COMMON STYLES
   font-weight: $fw-regular;
   line-height: 1.5;
   text-transform: uppercase;
-  letter-spacing: 15.5%;
+  letter-spacing: 0.16em;
 }
 
 %paragraph {
   font-family: $ff-primary;
   font-weight: $fw-regular;
   line-height: 1.5;
+}
+
+%icon {
+  width: 100%;
+  padding-bottom: 100%;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+%link {
+  cursor: pointer;
+
+  @include transition(color);
+
+  &:hover {
+    text-decoration: underline 1px wavy var(--color-hover, $color-primary1-500);
+    color: var(--color-hover, $color-primary1-500);
+  }
 }

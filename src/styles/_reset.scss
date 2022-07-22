@@ -13,23 +13,16 @@ RESET
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-/*
-    Remove all the styles of the "User-Agent-Stylesheet",
-    except for the "display" property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
- */
-*:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *) {
-  all: unset;
-  box-sizing: inherit;
-  display: revert;
+  margin: 0;
+  padding: 0;
 }
 
 /* Reapply the pointer cursor for anchor tags */
 a,
 button {
-  cursor: revert;
+  color: unset;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Remove list styles (bullets/numbers) */
