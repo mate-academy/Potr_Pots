@@ -1,11 +1,61 @@
-/*
-  Adding transition properties and duration
-  depending on user preferred settings
-*/
+// Adding transition properties and duration
+// depending on user preferred settings
 
 @mixin transition($properties...) {
   @media (prefers-reduced-motion: no-preference) {
     transition-duration: $transition-duration;
     transition-property: $properties;
+  }
+}
+
+// Utilities for generating grid system
+
+@mixin gridColumnSpan($colStart, $colSpan) {
+  grid-column: #{$colStart} / span #{$colSpan};
+}
+
+@mixin gridColumnTo($colStart, $colEnd) {
+  grid-column: #{$colStart} / #{$colEnd + 1};
+}
+
+@mixin gridColsGenerator($root, $name, $colsCount, $colSize: 1) {
+  @for $colStart from 1 through $colsCount {
+    $maxSpan: $colsCount + 1 - $colStart;
+
+    // 1 column only
+    #{$root}__cols--#{$name}-col-#{$colStart} {
+      @include gridColumnSpan(
+        if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
+        $colSize
+      );
+    }
+
+    // Fill to last
+    #{$root}__cols--#{$name}-col-#{$colStart}-fill {
+      @include gridColumnSpan(
+        if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
+        $maxSpan * $colSize
+      );
+    }
+
+    // Any available column spans
+    @for $colSpan from 1 through $maxSpan {
+      #{$root}__cols--#{$name}-col-#{$colStart}-span-#{$colSpan} {
+        @include gridColumnSpan(
+          if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
+          $colSpan * $colSize
+        );
+      }
+    }
+
+    // Any available column end (inclusive)
+    @for $colEnd from $colStart through $colsCount {
+      #{$root}__cols--#{$name}-col-#{$colStart}-to-#{$colEnd} {
+        @include gridColumnTo(
+          if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
+          $colEnd * $colSize
+        );
+      }
+    }
   }
 }
