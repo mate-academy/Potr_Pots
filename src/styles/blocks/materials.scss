@@ -1,0 +1,191 @@
+.materials {
+  position: relative;
+  z-index: 1;
+
+  background-color: $grey-light;
+
+  &__section-title {
+    color: $turquoise;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      line-height: 168px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__title {
+    @extend %section-1Text;
+    display: none;
+    font-size: 20px;
+    color: #4f4f4f;
+
+    @include onTablet {
+      display: inline-block;
+      margin-bottom: 10px;
+
+      transform: translateY(-80px);
+    }
+
+    @include onDesktop {
+      margin-bottom: 15px;
+      transform: translateY(-150px);
+    }
+  }
+
+  &__description {
+    @extend %section-3Text;
+    display: none;
+    color: #4f4f4f;
+
+    @include onTablet {
+      display: inline-block;
+      transform: translateY(-80px);
+    }
+
+    @include onDesktop {
+      transform: translateY(-150px);
+    }
+  }
+
+  &__img {
+    position: relative;
+    z-index: -1;
+    margin-bottom: 70px;
+
+    width: 100%;
+
+    transform: translateY(-250px);
+
+    @include onTablet {
+      margin-bottom: -40px;
+      transform: translateY(-150px);
+    }
+
+    @include onDesktop {
+      transform: translateY(-350px);
+      margin-bottom: -250px;
+    }
+  }
+
+  &__information {
+    @extend %section-3Text;
+    display: flex;
+    padding: 28px 44px 58px 45px;
+
+    width: 100%;
+    height: min-content;
+
+    color: #f8f8f8;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+
+    transform: translateY(200px);
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__info-circle {
+    display: none;
+
+    @include onTablet {
+      display: inline-block;
+      position: absolute;
+    }
+
+    &--first {
+      @include onTablet {
+        top: 12vh;
+        left: 20vw;
+      }
+
+      @include onLaptop {
+        top: 30vh;
+        left: 25vw;
+      }
+
+      @include onDesktop {
+        top: 54vh;
+        left: 26vw;
+      }
+    }
+
+    &--second {
+      @include onTablet {
+        top: 26vh;
+        left: 5vw;
+      }
+
+      @include onLaptop {
+        top: 45vh;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: 61vh;
+        left: 3vw;
+      }
+    }
+
+    &--third {
+      @include onTablet {
+        top: 39vh;
+        left: -21vw;
+      }
+
+      @include onLaptop {
+        top: 55vh;
+        left: -24vw;
+      }
+
+      @include onDesktop {
+        top: 80vh;
+        left: -12vw;
+      }
+    }
+
+    &--fourth {
+      @include onTablet {
+        top: 22vh;
+        left: -42vw;
+      }
+
+      @include onLaptop {
+        top: 35vh;
+        left: -40vw;
+      }
+
+      @include onDesktop {
+        top: 50vh;
+        left: -26vw;
+      }
+    }
+
+    &--fifth {
+      @include onTablet {
+        top: 35vh;
+        left: -67vw;
+      }
+
+      @include onLaptop {
+        top: 70vh;
+        left: -60vw;
+      }
+
+      @include onDesktop {
+        top: 70vh;
+        left: -50vw;
+      }
+    }
+  }
+}

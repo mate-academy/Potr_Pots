@@ -1,0 +1,127 @@
+.main {
+  position: relative;
+  z-index: 1;
+  background-color: $grey-light;
+
+  &__color-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background-image: url("../images/blocks/1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+
+    @include onTablet {
+      height: 48vh;
+      width: 75vw;
+    }
+
+    @include onLaptop {
+      height: 50vh;
+    }
+
+    @include onDesktop {
+      height: 50vh;
+      width: 64vw;
+    }
+  }
+
+  &__photo {
+    width: 100vw;
+    margin: 0 -30px 25px;
+
+    @include onTablet {
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      margin: 0;
+
+      width: 306px;
+      height: 306px;
+    }
+
+    @include onLaptop {
+      width: 400px;
+      height: 400px;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  &__title {
+    margin: 0 auto 30px;
+    color: $turquoise;
+    width: max-content;
+
+    @include onTablet {
+      margin: 0;
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__price {
+    width: max-content;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 44px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__price-value {
+    @extend %section-2Text;
+    font-weight: 700;
+  }
+
+  &__price-description {
+    @extend %section-4Text;
+  }
+
+  &__more {
+    @extend %section-5Text;
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+    width: max-content;
+
+    color: $turquoise;
+    fill: $turquoise;
+
+    transform: translate(60vw, -12.3vh) rotate(90deg);
+    transition: color 0.3s, text-shadow 0.3s;
+
+    @include onTablet {
+      transform: translate(-9.7vw, -9vh) rotate(90deg);
+    }
+
+    @include onLaptop {
+      transform: translate(-9.7vw, -9vh) rotate(90deg);
+    }
+
+    @include onDesktop {
+      transform: translate(-4.5vw, -9vh) rotate(90deg);
+    }
+
+    &:hover {
+      color: rgb(3, 131, 158);
+      text-shadow: 0 0 15 rgba(32, 206, 250, 0.5),
+        0 0 10 rgba(32, 206, 250, 0.5);
+    }
+  }
+}

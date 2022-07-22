@@ -1,0 +1,36 @@
+.button {
+  @extend %section-4Text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+  width: 238px;
+  height: 48px;
+
+  color: #121212;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  background-color: $yellow;
+  border: 1px solid $yellow;
+  transition: color 0.3s, background-color 0.3s, fill 0.3s, border-color 0.3s;
+
+  &:hover {
+    color: #121212;
+    background-color: #fff;
+    border-color: #121212;
+  }
+
+  @include onTablet {
+    background-color: #fff;
+    border: 1px solid $turquoise;
+
+    &:hover {
+      border-color: $turquoise;
+      background-color: $turquoise;
+      color: #fff;
+      fill: #fff;
+    }
+  }
+}

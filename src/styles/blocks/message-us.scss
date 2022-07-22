@@ -1,0 +1,133 @@
+.message-us {
+  position: relative;
+  padding-top: 38px;
+
+  background-color: $grey-light;
+
+  &__rectangle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 900px;
+
+    background-image: url("../images/blocks/3.png");
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      height: 600px;
+      width: 95vw;
+    }
+
+    @include onDesktop {
+      height: 600px;
+      width: 83vw;
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    right: 0;
+    top: -75px;
+    z-index: 1;
+
+    width: 200px;
+    height: 200px;
+
+    background-image: url("../images/icons/2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include onLaptop {
+      top: -8vh;
+    }
+
+    @include onDesktop {
+      top: -8vh;
+      right: 11vw;
+    }
+  }
+
+  &__main-description {
+    @extend %section-3Text;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__field-title {
+    @extend %section-2Text;
+    margin-bottom: 25px;
+  }
+
+  &__field {
+    margin: 0 0 16px;
+  }
+
+  &__button {
+    margin-bottom: 80px;
+
+    height: 48px;
+    width: 100%;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgb(231, 207, 69);
+    }
+  }
+
+  &__info {
+    margin-bottom: 34px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25px;
+    }
+
+    &:last-child {
+      margin-bottom: 110px;
+
+      @include onTablet {
+        margin-bottom: 198px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 128px;
+      }
+    }
+  }
+
+  &__info-title {
+    @extend %section-2Text;
+    margin-bottom: 5px;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__info-link {
+    @extend %section-3Text;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: $grey;
+    }
+  }
+}

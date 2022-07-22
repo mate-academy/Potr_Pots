@@ -1,0 +1,127 @@
+.potr-team {
+  position: relative;
+  z-index: 1;
+
+  background-color: $grey-light;
+
+  @include onDesktop {
+    padding-top: 150px;
+  }
+
+  &__rectangle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    height: 500px;
+    width: 100%;
+
+    background-image: url("../images/blocks/2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+
+    transform: translateY(560px);
+
+    @include onTablet {
+      height: 466px;
+      width: 33vw;
+
+      transform: translateY(150px);
+    }
+
+    @include onDesktop {
+      transform: translateY(200px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    color: $grey-dark;
+
+    @include onTablet {
+      margin-bottom: 178px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__img {
+    z-index: -1;
+    margin-left: -30px;
+    width: 100vw;
+
+    @include onTablet {
+      position: absolute;
+      right: 0;
+      margin-right: 30px;
+
+      width: 340px;
+    }
+
+    @include onLaptop {
+      width: 490px;
+    }
+
+    @include onDesktop {
+      margin-right: 0;
+      width: 678px;
+    }
+  }
+
+  &__description {
+    @extend %section-3Text;
+    color: #4f4f4f;
+    margin: 30px 0 168px;
+
+    @include onTablet {
+      margin: 50px 0 114px;
+      max-width: 312px;
+    }
+
+    @include onDesktop {
+      margin: 250px 0 240px;
+      max-width: 336px;
+    }
+  }
+
+  &__big-text {
+    position: absolute;
+    z-index: 1;
+    display: none;
+
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.16em;
+
+    &--martin {
+      transform: translate(-6vw, -23vh);
+
+      @include onDesktop {
+        transform: translate(1vw, -15vh);
+      }
+    }
+
+    &--andy {
+      transform: translate(27vw, 26vh);
+
+      @include onDesktop {
+        transform: translate(34vw, 50vh);
+      }
+    }
+
+    @include onTablet {
+      display: inline-block;
+
+      font-size: 232px;
+      line-height: 278px;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+    }
+  }
+}

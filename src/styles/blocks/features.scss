@@ -1,0 +1,104 @@
+.features {
+  position: relative;
+  background-color: $grey-light;
+  z-index: 1;
+
+  &__title {
+    color: $turquoise;
+    margin: 0 auto 24px;
+
+    @include onTablet {
+      margin: 0 auto 52px;
+    }
+
+    @include onDesktop {
+      margin: 0 auto 70px;
+    }
+  }
+
+  &__container {
+    display: block;
+    margin-bottom: 110px;
+
+    @include onTablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      width: 100%;
+      margin-bottom: 132px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min-content;
+
+    margin: 0 auto;
+
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+    &--order {
+      order: 0;
+
+      @include onTablet {
+        order: -1;
+      }
+
+      @include onDesktop {
+        order: 0;
+      }
+    }
+  }
+
+  &__card-img {
+    margin-bottom: 36px;
+  }
+
+  &__img {
+    width: 260px;
+
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include onLaptop {
+      width: 295px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__card-title {
+    color: $grey-dark;
+    margin-bottom: 20px;
+  }
+
+  &__card-description {
+    @extend %section-3Text;
+    margin-bottom: 70px;
+
+    text-align: center;
+    color: #4f4f4f;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+}

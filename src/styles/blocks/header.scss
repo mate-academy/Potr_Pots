@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 0 10px;
+
+  @include onTablet {
+    margin-bottom: 53px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 72px;
+  }
+
+  &__color-block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background-image: url("../images/blocks/1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top left;
+
+    @include onTablet {
+      height: 60vh;
+      width: 80vw;
+      left: -50px;
+    }
+
+    @include onLaptop {
+      left: 0;
+    }
+
+    @include onDesktop {
+      height: 60vh;
+      width: 100vw;
+      left: -55vw;
+    }
+  }
+
+  &__logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+
+    color: $grey-dark;
+
+    transition: text-shadow 0.3s, color 0.3s;
+
+    &:hover {
+      color: rgb(3, 131, 158);
+      text-shadow: 0 0 15px rgba(32, 206, 250, 0.5),
+        0 0 10px rgba(32, 206, 250, 0.5);
+    }
+  }
+
+  &__button {
+    height: 32px;
+    width: 32px;
+
+    background-image: url("../images/icons/6.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include onLaptop {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onLaptop {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__link {
+    @extend %section-3Text;
+    color: #4f4f4f;
+
+    transition: text-shadow 0.3s, color 0.3s;
+
+    &:hover {
+      color: rgb(3, 131, 158);
+      text-shadow: 0 0 15px rgba(32, 206, 250, 0.5),
+        0 0 10px rgba(32, 206, 250, 0.5);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.menu {
+  background-color: $turquoise;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    overflow-y: auto;
+  }
+
+  &__button {
+    align-self: flex-start;
+    transform: translate(-23vw, 3vh);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__link {
+    @extend %section-3Text;
+    padding-bottom: 5px;
+
+    color: $grey-light;
+    border-bottom: 1px solid transparent;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $grey-light;
+    }
+  }
+}
