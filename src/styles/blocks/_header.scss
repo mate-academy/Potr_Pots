@@ -45,9 +45,115 @@
 
       cursor: pointer;
 
+      &:hover {
+        background-image: url("/images/icons/cart-hover.svg");
+      }
+
       @include mediaDesktop {
         display: block;
       }
+    }
+  }
+
+  &__intro {
+    padding-top: 10px;
+
+    @include mediaPad {
+      padding-top: 50px;
+    }
+
+    @include mediaDesktop {
+      padding-top: 90px;
+    }
+
+    &-img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      &-wrapper {
+        grid-row: 1 / span 2;
+        height: 320px;
+        margin-inline: -$mobile-grid-padding-inline;
+
+        @include mediaPad {
+          height: 100%;
+          margin-inline: auto 0;
+        }
+      }
+    }
+
+    &-title {
+      font-size: $fs-800;
+
+      &-wrapper {
+        display: none;
+
+        @include mediaPad {
+          z-index: 1;
+
+          display: block;
+          grid-row: 1 / span 1;
+        }
+      }
+    }
+
+    &-price {
+      display: none;
+
+      @include mediaPad {
+        z-index: 1;
+
+        display: flex;
+        grid-row: 2 / span 1;
+        padding-top: 10px;
+      }
+
+      @include mediaDesktop {
+        padding-top: 20px;
+      }
+
+      &-value {
+        color: $color-secondary-600;
+      }
+
+      &-text {
+        color: $color-secondary-500;
+      }
+    }
+
+    &-buy {
+      display: none;
+
+      @include mediaPad {
+        display: block;
+        padding-top: 50px;
+      }
+    }
+  }
+
+  &::before {
+    @include mediaPad {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+
+      display: block;
+      width: calc(100% - 150px);
+      height: 100%;
+
+      background: url("/images/bg-rectangle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    @include mediaDesktop {
+      width: calc(100% - 405px);
     }
   }
 }

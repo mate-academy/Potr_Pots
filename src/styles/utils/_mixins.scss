@@ -75,7 +75,19 @@
         ") * " +
         ($cols / $colsCount) +
         " + " +
-        $gapWidth + ")"};
+        $gapWidth +
+        ")"};
+    }
+
+    #{$root}__cols--#{$name}-offset-#{$cols} {
+      margin-left: #{
+        "calc((100% - " +
+        $totalGapsWidth +
+        ") * " +
+        ($cols / $colsCount) +
+        " + " +
+        ($gapWidth + $colGap) +
+        ")"};
     }
   }
 }
