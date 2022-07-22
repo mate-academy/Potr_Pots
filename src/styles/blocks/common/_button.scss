@@ -1,0 +1,80 @@
+.button {
+  @extend .s4;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: max-content;
+  padding: 1em 4.5em;
+
+  text-transform: uppercase;
+  color: var(--color, inherit);
+  background-color: var(--color-bg, inherit);
+  border: 1px solid var(--color-border, inherit);
+
+  @include transition(color, background-color, border);
+
+  &__text::after {
+    content: "";
+
+    display: inline-block;
+    width: 25px;
+    height: 8px;
+    margin-left: 15px;
+
+    background-image: #{"var(--arrow)"};
+  }
+
+  &:hover {
+    color: var(--color-hover, inherit);
+    background-color: var(--color-bg-hover, inherit);
+    border: 1px solid var(--color-border-hover, inherit);
+
+    &:after {
+      background-image: #{"var(--arrow-hover)"};
+    }
+  }
+
+  &--primary1 {
+    --color: #{$color-neutral-100};
+    --color-hover: #{$color-neutral-100};
+    --color-bg: #{$color-primary1-500};
+    --color-bg-hover: #{$color-primary1-400};
+    --color-border: transparent;
+    --color-border-hover: transparent;
+    --arrow: url("/images/icons/arrow-light.svg");
+    --arrow-hover: url("/images/icons/arrow-light.svg");
+  }
+
+  &--primary2 {
+    --color: #{$color-secondary-700};
+    --color-hover: #{$color-secondary-500};
+    --color-bg: #{$color-primary2-500};
+    --color-bg-hover: #{$color-primary2-400};
+    --color-border: transparent;
+    --color-border-hover: transparent;
+    --arrow: url("/images/icons/arrow-dark.svg");
+    --arrow-hover: url("/images/icons/arrow-dark.svg");
+  }
+
+  &--secondary1 {
+    --color: #{$color-secondary-700};
+    --color-hover: #{$color-neutral-100};
+    --color-bg: transparent;
+    --color-bg-hover: #{$color-primary1-500};
+    --color-border: #{$color-primary1-500};
+    --color-border-hover: transparent;
+    --arrow: url("/images/icons/arrow-dark.svg");
+    --arrow-hover: url("/images/icons/arrow-light.svg");
+  }
+
+  &--secondary2 {
+    --color: #{$color-secondary-700};
+    --color-hover: #{$color-secondary-700};
+    --color-bg: transparent;
+    --color-bg-hover: #{$color-neutral-100};
+    --color-border: #{$color-secondary-700};
+    --color-border-hover: transparent;
+    --arrow: url("/images/icons/arrow-dark.svg");
+    --arrow-hover: url("/images/icons/arrow-dark.svg");
+  }
+}
