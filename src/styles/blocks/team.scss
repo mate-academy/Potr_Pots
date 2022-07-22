@@ -1,0 +1,212 @@
+.team {
+  overflow: hidden;
+
+  &__height {
+    @include onTablet {
+      height: 700px;
+    }
+
+    @include onDesktop {
+      height: 1000px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.16em;
+    color: #333;
+
+    @include onDesktop {
+      margin-bottom: 27px;
+    }
+
+    @include onTablet {
+      margin-bottom: 17px;
+    }
+
+    @include onMobile {
+      padding: 0 30px;
+    }
+  }
+
+  &__names {
+    display: inline-block;
+
+    color: transparent;
+    -webkit-text-stroke: 1px $c-turquoise;
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__martin {
+    position: relative;
+    left: -11%;
+    z-index: 1;
+
+    font-size: 231px;
+    line-height: 278px;
+    letter-spacing: 0.15em;
+
+    @include onDesktop {
+      top: 0;
+      left: -5%;
+      font-size: 288px;
+      line-height: 346px;
+    }
+  }
+
+  &__andy {
+    position: relative;
+    left: 40%;
+    bottom: -14%;
+    z-index: 1;
+
+    font-size: 220px;
+    line-height: 264px;
+    letter-spacing: 0.15em;
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+
+      top: 21%;
+      left: 60%;
+    }
+  }
+
+  &__image {
+
+    object-position: center;
+    object-fit: cover;
+
+    cursor: zoom-in;
+    @include interactZoom(0.5s, 115%);
+
+    @include onDesktop {
+      width: 677px;
+      height: 508px;
+    }
+
+    @include onTablet {
+      width: 340px;
+      height: 255px;
+      margin-bottom: 24px;
+    }
+
+    @include onMobile {
+      margin-bottom: 30px;
+      min-height: 240px;
+      width: 100%;
+    }
+  }
+
+  &__about {
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4f4f4f;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+
+      width: 336px;
+      height: 264px;
+    }
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+
+      width: 313px;
+      height: 231px;
+    }
+    @include onMobile {
+      padding: 0 30px 58px;
+    }
+  }
+
+  &__flex {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: 57px;
+
+      position: absolute;
+      top: 20%;
+
+      margin-right: 100px;
+    }
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: 47px;
+
+      position: absolute;
+
+      top: 35%;
+    }
+  }
+
+  &__block-mobile {
+    width: 100%;
+    min-height: 325px;
+
+    display: none;
+
+    background-color: $c-yellow-light;
+    clip-path: polygon(0% 10%,100% 10%,100% 71%,0% 100%);
+    z-index: -1;
+
+    @include onDesktop {
+      display: block;
+
+      width: 500px;
+      height: 365px;
+
+      position: absolute;
+      top: 15%;
+      left: -13%;
+
+      clip-path: polygon(0% 10%,100% 10%,100% 55%,0% 100%);
+    }
+
+    @include onTablet {
+      display: block;
+
+      width: 1120px;
+      height: 466px;
+
+      position: absolute;
+      top: 28%;
+      right: 67%;
+
+      clip-path: polygon(0% 0%,100% 0%,100% 39%,0% 93%);
+
+    }
+
+    @include onMobile {
+      display: block;
+
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}

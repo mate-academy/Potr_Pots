@@ -1,0 +1,39 @@
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include onDesktop {
+    width: 30px;
+  }
+
+  &--menu {
+    background-image: url(/images/menu_icon.svg);
+
+    @include interactZoom(0.5s, 110%);
+
+    @include onTablet {
+      margin-right: 8px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--cart {
+    background-image: url(/images/shopping_cart.svg);
+
+    @include interactZoom(1s, 130%);
+
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

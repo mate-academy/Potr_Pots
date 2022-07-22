@@ -1,0 +1,289 @@
+.header {
+  position: relative;
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    padding-top: 15px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 75px;
+    }
+  }
+
+  &__menu-list {
+    display: none;
+    flex-direction: row;
+    gap: 60px;
+
+    list-style: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__menu-list-item {
+    display: inline-block;
+
+    text-decoration: none;
+    color: #4f4f4f;
+    @extend %s3;
+
+    @include interactZoom(0.5s, 120%);
+  }
+
+  &__logo {
+    display: inline-block;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @extend %h2;
+
+    @include interactZoom(0.5s, 120%);
+  }
+
+  &__photo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      margin-right: 34px;
+      top: 0;
+      right: 0;
+    }
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      margin-right: 34px;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__mobile-photo {
+    margin-bottom: 25px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    margin: 0 0 30px;
+
+    color: $c-turquoise;
+    @extend %h2;
+    line-height: 43px;
+    letter-spacing: 0.16em;
+
+    &--white {
+      color: transparent;
+      -webkit-text-stroke: 0.68px $c-turquoise;
+    }
+
+    @include onDesktop {
+      position: relative;
+      margin-bottom: 20px;
+      left: 100px;
+
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 0.16em;
+    }
+
+    @include onTablet {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 0.16em;
+    }
+  }
+
+  &__buy-block {
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+
+      padding-left: 300px;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+
+      padding-left: 120px;
+    }
+
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__price {
+    display: inline-block;
+    text-align: start;
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: #333;
+
+    @include onDesktop {
+      padding-left: 100px;
+    }
+
+    @include onTablet {
+      padding-left: 120px;
+    }
+  }
+
+  &__sub-price {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    text-align: start;
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #4f4f4f;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      padding-left: 100px;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+      padding-left: 120px;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      max-width: 270px;
+    }
+
+    @include onTablet {
+      max-width: 240px;
+    }
+
+    @include onMobile {
+      max-width: 260px;
+    }
+  }
+
+  &__arrow-text {
+    display: inline-block;
+
+    box-sizing: border-box;
+    height: 185px;
+
+    color: $c-turquoise;
+    text-decoration: none;
+    writing-mode: vertical-lr;
+
+    background-image: url(/images/svg2.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    @extend %s5;
+  }
+
+  &__arrow {
+    position: absolute;
+    overflow: hidden;
+
+    @include interactZoom(0.3s, 110%);
+
+    @include onDesktop {
+      left: -3%;
+      bottom: -8%;
+    }
+
+    @include onTablet {
+      left: 0;
+      bottom: -15%;
+    }
+
+    @include onMobile {
+      right: 1%;
+      bottom: 0;
+    }
+  }
+
+  &__side-link-content {
+    display: inline-block;
+
+    box-sizing: border-box;
+    height: 120px;
+
+    background-image: url(/images/svg3.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+
+    text-decoration: none;
+    writing-mode: vertical-lr;
+
+    text-align: end;
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    color: #828282;
+  }
+
+  &__side-link {
+    position: absolute;
+    overflow: hidden;
+
+    @include interactZoom(0.3s, 110%);
+
+    @include onDesktop {
+      right: 1%;
+      bottom: -70%;
+
+      z-index: 10;
+    }
+
+    @include onTablet {
+      right: 1%;
+      bottom: -25%;
+    }
+
+    @include onMobile {
+      right: 2%;
+      bottom: -430%;
+
+      z-index: 10;
+    }
+  }
+}

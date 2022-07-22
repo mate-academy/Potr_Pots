@@ -1,0 +1,23 @@
+.block {
+  &__header {
+    position: absolute;
+    right: 20%;
+    width: 100%;
+    height: 466px;
+
+    clip-path: polygon(0% 0%,100% 0%,100% 33%,0% 76%);
+    display: none;
+
+    background-color: $c-yellow-light;
+
+    @include onDesktop {
+      display: block;
+      right: 27%;
+      clip-path: polygon(0% 0%,100% 0%,100% 42%,12% 100%);
+    }
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

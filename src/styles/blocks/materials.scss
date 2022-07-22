@@ -1,0 +1,384 @@
+.materials {
+
+  &__title {
+    overflow-x: hidden;
+    position: relative;
+
+    display: inline-block;
+    margin-bottom: 120px;
+    padding: 0 30px;
+
+    z-index: 1;
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 53px;
+    line-height: 70px;
+    letter-spacing: 0.13em;
+    color: $c-turquoise;
+
+    @include onDesktop {
+      position: absolute;
+      top: -15%;
+
+      padding-left: 135px;
+
+      font-size: 136px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onTablet {
+      position: relative;
+
+      margin-bottom: 27px;
+      padding-left: 34px;
+
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__background {
+    min-height: 240px;
+
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+
+    background-image: url(/images/materials.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include onDesktop {
+      position: static;
+
+      min-height: 1020px;
+    }
+
+    @include onTablet {
+      position: static;
+
+      min-height: 576px;
+    }
+  }
+
+  /* feature */
+  &__feature {
+    display: block;
+
+    max-width: 340px;
+    padding-right: 34px;
+
+    @include onDesktop {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      max-width: 470px;
+      padding-right: 135px;
+
+    }
+    @include onTablet {
+      position: absolute;
+      top: 18%;
+      right: 0;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__feature-title {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  &__feature-info {
+    display: inline-block;
+
+    height: 144px;
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  /* list */
+  &__list {
+    display: none;
+
+    list-style: none;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__list-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    height: 51px;
+    width: 51px;
+    border-radius: 50%;
+
+    background-color: #eb5757;
+    color: #e0e0e0;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(12px);
+    }
+
+    &::after {
+      content: "";
+      width: 11px;
+      height: 1px;
+      background-color: #e0e0e0;
+    }
+
+    &::before {
+      content: "";
+
+      position: absolute;
+
+      width: 11px;
+      height: 1px;
+      background-color: #e0e0e0;
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+
+    &:hover::before {
+      opacity: 0;
+    }
+  }
+
+  &__list-item {
+    position: absolute;
+
+    &:first-child {
+      bottom: 13%;
+      left: 11%;
+    }
+
+    &:nth-child(2) {
+      bottom: 28%;
+      left: 30%;
+    }
+
+    &:nth-child(3) {
+      bottom: 9%;
+      left: 45%;
+    }
+
+    &:nth-child(4) {
+      bottom: 17%;
+      left: 54%;
+    }
+
+    &:last-child {
+      bottom: 39%;
+      left: 72%;
+    }
+
+    @include onDesktop {
+
+      &:first-child {
+        bottom: 13%;
+        left: 18%;
+      }
+
+      &:nth-child(2) {
+        bottom: 35%;
+        left: 38%;
+      }
+
+      &:nth-child(3) {
+        bottom: 9%;
+        left: 47%;
+      }
+
+      &:nth-child(4) {
+        bottom: 25%;
+        left: 58%;
+      }
+
+      &:last-child {
+        bottom: 34%;
+        left: 77%;
+      }
+    }
+  }
+
+  &__list-content {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 250px;
+    min-height: 166px;
+    padding: 35px;
+
+    z-index: 999;
+
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(40px);
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #f8f8f8;
+
+    transition: all 0.5s ease-in-out 0.1s;
+
+    &--1 {
+      transform: translateY(0) translateX(0) scale(0);
+    }
+
+    &--2 {
+      transform: translateY(0) translateX(0) scale(0);
+    }
+
+    &--3 {
+      transform: translateY(0) translateX(0) scale(0);
+    }
+
+    &--4 {
+      transform: translateY(0) translateX(0) scale(0);
+    }
+
+    &--5 {
+      transform: translateY(0) scale(0);
+    }
+  }
+
+  &__list-link:hover &__list-content--1 {
+    transform: translateY(-70%) translateX(0) scale(100%);
+
+    @include onTablet {
+      transform: translateY(-70%) translateX(30%) scale(100%);
+    }
+  }
+
+  &__list-link:hover &__list-content--2 {
+    transform: translateY(-70%) translateX(-50%) scale(100%);
+
+    @include onTablet {
+      transform: translateY(-70%) translateX(0) scale(100%);
+    }
+  }
+
+  &__list-link:hover &__list-content--3 {
+    transform: translateY(-10%) translateX(-60%) scale(100%);
+
+    @include onTablet {
+      transform: translateY(-70%) translateX(0) scale(100%);
+    }
+  }
+
+  &__list-link:hover &__list-content--4 {
+    transform: translateY(-80%) translateX(10%) scale(100%);
+  }
+
+  &__list-link:hover &__list-content--5 {
+    transform: translateY(65%) scale(100%);
+  }
+
+  &__side-link-content {
+    display: inline-block;
+
+    box-sizing: border-box;
+    height: 120px;
+
+    background-image: url(/images/svg3.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+
+    text-decoration: none;
+    writing-mode: vertical-lr;
+
+    text-align: end;
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    color: #828282;
+  }
+
+  &__side-link {
+    position: absolute;
+    overflow: hidden;
+
+    @include interactZoom(0.3s, 110%);
+
+    &--1 {
+      @include onDesktop {
+        display: none;
+      }
+
+      @include onTablet {
+        top: 3%;
+        right: 1%;
+
+        z-index: 10;
+
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        display: none;
+      }
+
+      @include onTablet {
+        top: 23%;
+        left: 1%;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,258 @@
+.size {
+  &__grid {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__title {
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__info {
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onTablet {
+      margin-bottom: 38px;
+    }
+
+    @include onMobile {
+      margin-bottom: 30px;
+    }
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  &__info-desktop {
+    display: none;
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+      display: block;
+      box-sizing: border-box;
+
+      width: 300px;
+      height: 257px;
+      padding-right: 38px;
+
+      border-right: 3px solid #d8d8d8;
+
+      font-family: "Manrope", serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #4f4f4f;
+    }
+  }
+
+  &__image-m {
+    display: none;
+
+    @include onMobile {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      display: block;
+
+      width: 100%;
+      height: 100%;
+      margin-top: 30px;
+
+      object-fit: fill;
+    }
+  }
+
+  &__image {
+    display: none;
+    @include onDesktop {
+      display: block;
+
+      width: 528px;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    @include onTablet {
+      display: block;
+
+      width: 416px;
+      height: 100%;
+      object-fit: fill;
+    }
+  }
+
+  &__title-large {
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    @include onMobile {
+      margin-bottom: 10px;
+    }
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.16em;
+    color: #000;
+  }
+
+  &__info-large {
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    @include onMobile {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  &__title-small {
+    @include onDesktop {
+      margin-bottom: 10px;
+    }
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    @include onMobile {
+      margin-bottom: 10px;
+    }
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.16em;
+    color: #000;
+  }
+
+  &__info-small {
+    @include onMobile {
+      margin-bottom: 15px;
+    }
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  &__block-1 {
+    @include onDesktop {
+      grid-column: 4 / 13;
+      display: flex;
+      justify-content: space-between;
+      gap: 96px;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      gap: 36px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__block-2 {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+
+      min-width: 240px;
+    }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+
+      min-width: 240px;
+    }
+  }
+
+  &__info-extra {
+    position: relative;
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      position: absolute;
+      left: 0;
+      bottom: 10%;
+      margin-bottom: 15px;
+    }
+
+    @include onMobile {
+      margin-bottom: 15px;
+    }
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+
+    &::before {
+      content: "*";
+
+      position: absolute;
+      left: -2%;
+
+      width: 7px;
+      height: 20px;
+    }
+  }
+}

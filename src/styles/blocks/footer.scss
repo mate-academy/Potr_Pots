@@ -1,0 +1,184 @@
+.footer {
+  &__logo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo-social {
+    display: flex;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+
+    @include onDesktop {
+      width: 230px;
+      margin-bottom: 74px;
+    }
+
+    @include onTablet {
+      width: 220px;
+      margin-bottom: 32px;
+    }
+
+    @include onMobile {
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+  }
+
+  &__logo-twitter {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(/images/twitter.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include interactZoom(0.5s, 150%);
+  }
+
+  &__logo-insta {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(/images/instagram.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include interactZoom(0.5s, 150%);
+  }
+
+  &__logo-facebook {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(/images/facebook.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include interactZoom(0.5s, 150%);
+  }
+
+  &__logo-title {
+    align-self: center;
+    width: 170px;
+    height: 54px;
+
+    background-image: url(/images/logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include interactZoom(0.5s, 130%);
+  }
+
+  &__adress {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__adress-title {
+    margin-bottom: 10px;
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__adress-map {
+    text-decoration: none;
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__about-us {
+    margin-bottom: 10px;
+
+    text-decoration: none;
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #000;
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+
+    @include onMobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__container {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 64px;
+      padding-top: 74px;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 110px;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+
+.page {
+  font-family: "Manrope", "Bebas", serif;
+  font-size: 16px;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $c-background;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 110px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+
+    &--header {
+      margin-bottom: 110px;
+
+      @include onDesktop {
+        margin-bottom: 192px;
+      }
+    }
+
+    &--team {
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+  }
+}

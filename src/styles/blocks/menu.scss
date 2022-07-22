@@ -1,0 +1,123 @@
+.menu {
+  background-color: $c-turquoise;
+  z-index: 3;
+
+  &__content {
+    position: relative;
+    bottom: 0;
+    height: 100vh;
+    width: 231px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-top: 150px;
+    padding-left: 80px;
+
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__basket {
+    position: relative;
+    &::after {
+      position: absolute;
+
+      content: "0";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 14px;
+      width: 14px;
+      background-color: $c-red;
+      border-radius: 50%;
+
+      font-family: "Bebas Neue", serif;
+      font-weight: 400;
+      font-size: 9px;
+      line-height: 11px;
+      letter-spacing: 0.15em;
+
+      transform: translateX(400%) translateY(-190%);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    color: $c-grey-light;
+    text-decoration: none;
+    @extend %s3;
+
+    @include interactZoom(0.5s, 120%);
+  }
+
+  &__exit {
+    position: relative;
+    left: 80px;
+    top: 80px;
+
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    transform: rotate(-90deg);
+  }
+
+  &__close {
+    color: $c-grey-light;
+    @extend %s5;
+    text-transform: uppercase;
+
+    &::after {
+      position: absolute;
+
+      content: "";
+      display: block;
+      width: 36px;
+      height: 1px;
+
+      background-color: $c-grey-light;
+      border-radius: 5px;
+
+      transform: translateX(-40px) translateY(-10px);
+      transform-origin: center;
+    }
+  }
+
+  &__cross {
+    display: block;
+    width: 16px;
+    height: 1px;
+
+    background-color: $c-grey-light;
+    border-radius: 5px;
+
+    transform: rotate(45deg);
+
+    &::after {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 1px;
+
+      background-color: $c-grey-light;
+      border-radius: 5px;
+
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+    @include interactZoom(1s, 130%);
+  }
+}

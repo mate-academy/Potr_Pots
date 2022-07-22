@@ -1,0 +1,90 @@
+.features {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 22px;
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.13em;
+    color: $c-turquoise;
+
+    overflow: hidden;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+
+    &--white {
+      color: transparent;
+      -webkit-text-stroke: 0.68px $c-turquoise;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    margin-bottom: 37px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 20px;
+
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+
+    text-align: center;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: #333;
+  }
+
+  &__card-info {
+    display: inline-block;
+
+    font-family: "Manrope", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    color: #4f4f4f;
+  }
+}

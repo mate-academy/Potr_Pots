@@ -1,0 +1,48 @@
+.photo {
+  &__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+    @include interactZoom(0.5s, 110%);
+  }
+
+  &__container {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+    cursor: zoom-in;
+
+    @include interactZoom(0.5s, 115%);
+
+    @include onTablet {
+      width: 306px;
+      height: 306px;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  &__container-features {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    cursor: zoom-in;
+
+    @include interactZoom(0.5s, 110%);
+
+    @include onTablet {
+      width: 220px;
+      height: 220px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+      height: 370px;
+    }
+  }
+}
