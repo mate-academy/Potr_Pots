@@ -1,0 +1,153 @@
+/*
+FOR WHOM
+--------------------------------------------- */
+
+.for-whom {
+  @extend %section;
+
+  &__title {
+    color: $color-secondary-600;
+  }
+
+  &__articles {
+    row-gap: 70px;
+    padding-top: 24px;
+
+    @include mediaPad {
+      padding-top: 40px;
+    }
+  }
+
+  &__article {
+
+    &--2,
+    &--3 {
+      @include mediaDesktop {
+        row-gap: 45px;
+      }
+    }
+
+    &-content {
+      &--1 {
+        @include mediaDesktop {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+
+      &--2 {
+        display: flex;
+        flex-direction: column;
+        order: 0;
+        @include mediaPad {
+          order: -1;
+          align-items: flex-end;
+        }
+        @include mediaDesktop {
+          order: 0;
+          align-items: flex-start;
+        }
+      }
+    }
+
+    &-img {
+      max-width: 80%;
+
+      display: none;
+
+      @include mediaPad {
+        display: flex;
+      }
+
+      @include mediaDesktop {
+        max-width: 100%;
+      }
+    }
+
+    &-tag {
+      position: relative;
+
+      display: none;
+      padding-bottom: 25px;
+
+      color: $color-secondary-600;
+
+      @include mediaPad {
+        display: block;
+      }
+
+      &::before {
+        content: "*";
+
+        position: absolute;
+        top: 5px;
+        left: -24px;
+
+        @extend .h3;
+        color: $color-secondary-900;
+
+        @include mediaDesktop {
+          left: -34px;
+        }
+      }
+    }
+
+    &-title {
+      position: relative;
+
+      padding-top: 76px;
+
+      @include mediaDesktop {
+        padding-top: 0;
+      }
+
+      @extend .h2;
+
+      &::before,
+      &::after {
+        position: absolute;
+
+        height: 46px;
+
+        background: url("/images/icons/slash.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &::before {
+        top: 0;
+
+        display: block;
+        padding-left: 17px;
+        padding-top: 6px;
+
+        @include mediaDesktop {
+          left: -21%;
+        }
+      }
+
+      @include mediaPad {
+        &::after {
+          content: "";
+
+          display: inline;
+          width: 19px;
+        }
+      }
+
+      @for $i from 1 to 10 {
+        &--#{$i}::before {
+          content: "#{$i}";
+        }
+      }
+    }
+
+    &-text {
+      padding-top: 20px;
+
+      color: $color-secondary-500;
+    }
+  }
+
+}
