@@ -7,4 +7,4 @@
   - [Demo](https://grodh06.github.io/Potr_Pots/)
 * Technology stack
 * JS
-* HTML5, CSS3, Sass (SCSS), BEM, Flexbox
+* HTML5, CSS3, Sass (SCSS), BEM, Flexbox, Grid
