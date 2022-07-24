@@ -91,3 +91,23 @@
     }
   }
 }
+
+@mixin sizeToMedia($size) {
+  @if $size == "s" {
+    @include mediaMobile {
+      @content;
+    }
+  }
+
+  @if $size == "m" {
+    @include mediaPad {
+      @content;
+    }
+  }
+
+  @if $size == "l" {
+    @include mediaDesktop {
+      @content;
+    }
+  }
+}

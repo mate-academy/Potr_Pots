@@ -22,6 +22,42 @@ $flexClass: ".flex";
     flex-shrink: 0;
     flex-basis: 100%;
   }
+
+  @each $size in "s", "m", "l" {
+    @include sizeToMedia($size) {
+      &--#{$size}-justify-start {
+        justify-content: flex-start;
+      }
+
+      &--#{$size}-justify-center {
+        justify-content: center;
+      }
+
+      &--#{$size}-justify-end {
+        justify-content: flex-end;
+      }
+
+      &--#{$size}-align-start {
+        align-items: flex-start;
+      }
+
+      &--#{$size}-align-center {
+        align-items: center;
+      }
+
+      &--#{$size}-align-end {
+        align-items: flex-end;
+      }
+
+      &--#{$size}-direction-row {
+        flex-direction: row;
+      }
+
+      &--#{$size}-direction-column {
+        flex-direction: column;
+      }
+    }
+  }
 }
 
 @include flexColsGenerator(
