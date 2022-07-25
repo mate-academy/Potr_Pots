@@ -10,12 +10,17 @@
 
   &__description {
     z-index: 1;
-    grid-row: 3 / 5;
+    grid-row: 1 / 5;
+    display: none;
 
     color: $color-secondary-500;
+
+    @include mediaPad {
+      display: block;
+    }
   }
 
-  &__sliders {
+  &__showcase {
     position: absolute;
     bottom: 0;
 
@@ -24,13 +29,120 @@
 
     &-wrapper {
       position: relative;
-      top: -150px;
+      top: -75px;
       left: 0;
       right: 0;
+
+      @include mediaPad {
+        top: -150px;
+      }
+    }
+  }
+
+  &__triggers {
+    display: none;
+
+    @include mediaPad {
+      display: block;
+    }
+  }
+
+  &__sliders {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 80%;
+    z-index: 1;
+
+    display: block;
+    min-height: 254px;
+
+    @include mediaPad {
+      top: 35%;
     }
   }
 
   &__slider {
+    $root: &;
+
+    position: absolute;
+
+    min-width: 100%;
+    min-height: 100%;
+    padding: 28px 44px 58px;
+
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    backdrop-filter: blur(40px);
+
+    pointer-events: none;
+
+    @include transition(margin, left, width, opacity);
+
+    @include mediaPad {
+      width: 35%;
+      min-width: auto;
+      min-height: auto;
+      height: max-content;
+      padding: 35px;
+
+      &--1 {
+        left: 1%;
+        margin-top: 19%;
+      }
+
+      &--2 {
+        left: 20%;
+        margin-top: 7%;
+      }
+
+      &--3 {
+        left: 32%;
+        margin-top: 14%;
+      }
+
+      &--4 {
+        width: 40%;
+        left: 40%;
+        margin-top: 11%;
+      }
+
+      &--5 {
+        width: 40%;
+        left: 60%;
+        margin-top: 6%;
+      }
+
+      @include mediaDesktop {
+        width: 20%;
+
+        &--1 {
+          left: 8%;
+          margin-top: 32%;
+        }
+
+        &--2 {
+          left: 26%;
+          margin-top: 19%;
+        }
+
+        &--3 {
+          left: 38%;
+          margin-top: 30%;
+        }
+
+        &--4 {
+          left: 49%;
+          margin-top: 21%;
+        }
+
+        &--5 {
+          left: 69%;
+          margin-top: 20%;
+        }
+      }
+    }
+
     &-control {
       display: none;
     }
@@ -46,14 +158,35 @@
       color: $color-neutral-500;
       background-color: $color-accent-500;
       border-radius: 50%;
+      opacity: 1;
 
       cursor: pointer;
 
-      @include transition(box-shadow, color);
+      @include transition(box-shadow, color, transform, opacity);
 
       &--1 {
         left: 17%;
         bottom: 15%;
+      }
+
+      &--2 {
+        left: 35%;
+        bottom: 30%;
+      }
+
+      &--3 {
+        left: 47%;
+        bottom: 11%;
+      }
+
+      &--4 {
+        left: 58%;
+        bottom: 25%;
+      }
+
+      &--5 {
+        left: 77%;
+        bottom: 23%;
       }
 
       &::after {
@@ -69,22 +202,76 @@
       &:hover {
         box-shadow: 3px 5px 15px $color-accent-900;
         color: $color-neutral-100;
+
+        transform: scale(1.15);
+      }
+    }
+
+    &-pins {
+      position: absolute;
+      bottom: 36px;
+
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      width: 100%;
+
+      @include mediaPad {
+        display: none;
+      }
+    }
+
+    &-pin {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+
+      background-color: $color-neutral-200;
+      border: 1px solid $color-neutral-200;
+      transform: rotate(45deg);
+
+      cursor: pointer;
+
+      @include transition(background-color, border-color);
+
+      &:hover {
+        background-color: $color-neutral-500;
+      }
+    }
+
+    &-text {
+      color: $color-neutral-200;
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  #slide-#{$i}:checked {
+    & ~ .materials__showcase-wrapper .materials__slider-trigger--#{$i} {
+      background-color: $color-secondary-900;
+      opacity: 0.4;
+
+      cursor: auto;
+
+      &::after {
+        content: "-";
       }
 
-      @for $i from 1 through 5 {
-        #slide-#{$i}:checked ~ .materials__slider &--#{$i} {
-          background-color: $color-secondary-700;
-          opacity: 0.75;
+      &:hover {
+        box-shadow: none;
+        color: $color-neutral-500;
 
-          &::after {
-            content: "-";
-          }
-
-          &:hover {
-            box-shadow: 3px 5px 15px $color-secondary-600;
-          }
-        }
+        transform: scale(1);
       }
+    }
+
+    & ~ .materials__sliders .materials__slider-pin--#{$i} {
+      background-color: $color-accent-500;
+    }
+
+    & ~ .materials__sliders .materials__slider--#{$i} {
+      pointer-events: all;
+      opacity: 1;
     }
   }
 }
