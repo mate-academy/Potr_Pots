@@ -82,10 +82,6 @@ $gridClass: ".grid";
   );
   column-gap: $mobile-grid-gap;
 
-  &__cols {
-    grid-column: 1 / -1;
-  }
-
   @include mediaPad {
     --columns-count: #{$pad-grid-columns};
 
@@ -140,4 +136,16 @@ $gridClass: ".grid";
     "l",
     $desktop-grid-columns
   );
+}
+
+#{$gridClass}__cols {
+  grid-column: 1 / -1;
+
+  @each $size in "s", "m", "l" {
+    @include sizeToMedia($size) {
+      &--#{$size}-no-gap {
+        column-gap: 0;
+      }
+    }
+  }
 }
