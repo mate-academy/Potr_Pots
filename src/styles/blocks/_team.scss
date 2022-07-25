@@ -1,4 +1,32 @@
 .team {
+  &__rectangle {
+    position: relative;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      z-index: -1;
+      left: 0;
+
+      display: block;
+
+      @include mediaPad {
+        top: 180px;
+
+        width: 300px;
+        height: 311px;
+
+        background: url("/images/team-rectangle.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      @include mediaDesktop {
+        width: 435px;
+      }
+    }
+  }
   &__title {
     color: $color-secondary-600;
   }
@@ -7,8 +35,6 @@
     padding-top: 25px;
 
     &-content {
-      position: relative;
-
       padding-top: 30px;
 
       @include mediaPad {
