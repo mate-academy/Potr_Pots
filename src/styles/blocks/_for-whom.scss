@@ -3,8 +3,6 @@ FOR WHOM
 --------------------------------------------- */
 
 .for-whom {
-  @extend %section;
-
   &__title {
     color: $color-secondary-600;
   }
@@ -52,16 +50,14 @@ FOR WHOM
     }
 
     &-img {
-      max-width: 80%;
-
-      display: none;
-
-      @include mediaPad {
-        display: flex;
+      @include mediaMobile {
+        display: none;
       }
 
-      @include mediaDesktop {
-        max-width: 100%;
+      @include mediaPad {
+        display: inherit;
+        width: 80%;
+        height: auto;
       }
     }
 
