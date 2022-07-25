@@ -73,10 +73,12 @@ GRID
 $gridClass: ".grid";
 
 #{$gridClass} {
+  --columns-count: #{$mobile-grid-columns};
+
   display: grid;
   grid-template-columns: repeat(
-    $mobile-grid-columns,
-    minmax($mobile-grid-column-width, 1fr)
+    var(--columns-count),
+    1fr
   );
   column-gap: $mobile-grid-gap;
 
@@ -85,18 +87,14 @@ $gridClass: ".grid";
   }
 
   @include mediaPad {
-    grid-template-columns: repeat(
-      $pad-grid-columns,
-      minmax($pad-grid-column-width, 1fr)
-    );
+    --columns-count: #{$pad-grid-columns};
+
     column-gap: $pad-grid-gap;
   }
 
   @include mediaDesktop {
-    grid-template-columns: repeat(
-      $desktop-grid-columns,
-      minmax($desktop-grid-column-width, 1fr)
-    );
+    --columns-count: #{$desktop-grid-columns};
+
     column-gap: $desktop-grid-gap;
   }
 }
