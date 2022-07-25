@@ -1,0 +1,57 @@
+.page {
+  font-family: "Bebas Neue" , sans-serif;
+  scroll-behavior: smooth;
+
+  &__arrow {
+    position: absolute;
+    top: 567px;
+    right: 6px;
+    height: 193px;
+
+    font-size: 12px;
+    font-family: "Urbanist" , sans-serif;
+    font-weight: bold;
+    color: $turquoise;
+
+    writing-mode: vertical-rl;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+      font-weight: bold;
+    }
+
+    @include onTablet {
+      top: 397px;
+      left: 34px;
+      right: unset;
+    }
+
+    @include onDesctop {
+      top: 450px;
+      left: 166px;
+    }
+  }
+
+  &__section-first-element {
+    padding: 15px 0 76px;
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include onTablet {
+      height: 100vh;
+      background: url(../images/header/Rectangle_header.png);
+      background-repeat: no-repeat;
+      background-size: 614px 380px;
+      padding: 30px 34px 60px;
+      max-width: 1024px;
+    }
+
+    @include onDesctop {
+      background-size: 1090px;
+      padding: 24px 135px 150px;
+      max-width: 1440px;
+    }
+  }
+}

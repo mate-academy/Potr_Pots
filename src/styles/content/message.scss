@@ -1,0 +1,142 @@
+.message {
+  position: relative;
+
+  @include onTablet {
+    padding-right: 35px;
+  }
+
+  @include onDesctop {
+    padding-right: 135px;
+  }
+
+  &__container {
+    max-width: 500px;
+    padding: 45px 30px 0;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    background: url(../images/message/message.png);
+    background-size: 1440px;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      max-width: 900px;
+      padding: 26px 35px 0;
+      background-size: cover;
+    }
+
+    @include onDesctop {
+      max-width: 1440px;
+      padding: 38px 135px 0;
+    }
+  }
+
+  &__box {
+    display: block;
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__form {
+    margin-right: 0;
+    @include onTablet {
+      margin-right: 135px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  &__description {
+    font-family: "Urbanist", sans-serif;
+    line-height: 150%;
+    margin-bottom: 40px;
+  }
+
+  &__form-title {
+    font-family: "Urbanist", sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 45px;
+    border: 0;
+    border-bottom: 1px solid #bdbdbd;
+    outline: 0;
+    background-color: transparent;
+    margin-bottom: 20px;
+  }
+
+  &__button-box {
+    width: 100%;
+    text-align: center;
+  }
+
+  &__button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    border-bottom: 2px solid #a7a4a4;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 90px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onDesctop {
+      margin-bottom: 140px;
+    }
+  }
+
+  &__contact-title {
+    font-family: "Urbanist", sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__contact-link {
+    display: block;
+    font-family: "Urbanist", sans-serif;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 35px;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+      color: $turquoise;
+    }
+  }
+
+  &__image-box {
+    position: absolute;
+    top: -100px;
+    left: 55%;
+    width: 230px;
+    height: 230px;
+
+    @include onTablet {
+      left: 75%;
+    }
+
+    @include onDesctop {
+      left: 81%;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

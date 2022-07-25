@@ -1,0 +1,152 @@
+.header {
+  &__main {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      position: relative;
+    }
+  }
+
+  &__image {
+    max-width: 450px;
+    height: 320px;
+    margin: 0 auto 25px;
+
+    @include onTablet {
+      margin: 0;
+      height: 305px;
+    }
+
+    @include onDesctop {
+      max-width: 500px;
+      height: 500px;
+    }
+  }
+
+  &__image-cactus {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      @include onTablet {
+        box-shadow: 1px 1px 13px 1px black;
+      }
+    }
+  }
+
+  &__main-content {
+    padding: 0 30px;
+
+    @include onTablet {
+      position: absolute;
+      left: 0;
+      padding: 0;
+    }
+
+    @include onDesctop {
+      left: 100px;
+    }
+  }
+
+  &__logo {
+    color: $turquoise;
+    font-size: 36px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 21px;
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 0.16em;
+      font-weight: bold;
+    }
+
+    & > span {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px;
+      font-weight: normal;
+    }
+  }
+
+  &__price-container {
+    @include onTablet {
+      margin-top: -40px;
+      padding-left: 240px;
+    }
+  }
+  &__price {
+    font-family: system-ui;
+    font-size: 26px;
+    color: #333;
+    font-weight: 700;
+  }
+
+  &__price-description {
+    font-family: "Urbanist" , sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 90%;
+    height: 48px;
+
+    font-size: 14px;
+    font-family: "Urbanist" , sans-serif;
+
+    color: #131313;
+    background: $yello;
+    border: 1px solid $yello;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 48px;
+
+    @include onTablet {
+      width: 238px;
+      background-color: white;
+      border-color: $turquoise;
+      font-weight: bold;
+      margin-left: 120px;
+    }
+
+    &:hover {
+      background-color: white;
+      border-color: #333;
+
+      @include onTablet {
+        background-color: $turquoise;
+        color: white;
+        border-color: $turquoise;
+      }
+    }
+  }
+
+  &__button-arrow-white {
+    display: none;
+  }
+
+  &__button:hover .header__button-arrow-white {
+    @include onTablet {
+      display: inline-block;
+    }
+  }
+
+  &__button:hover .arrow-black {
+    @include onTablet {
+      display: none;
+    }
+  }
+}

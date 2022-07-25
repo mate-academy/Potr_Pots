@@ -1,0 +1,270 @@
+.about {
+  &__container {
+    max-width: 500px;
+    padding: 0 30px;
+    margin: auto;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      max-width: 900px;
+      padding: 0 135px 0 35px;
+    }
+
+    @include onDesctop {
+      display: flex;
+      max-width: 1440px;
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+
+  &__box {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include onDesctop {
+      display: block;
+      width: 600px;
+      margin-left: -20px;
+      padding-top: 140px;
+    }
+  }
+
+  &__square-display {
+    display: flex;
+    align-items: center;
+    margin-left: -15px;
+
+    @include onTablet {
+      margin-left: 0;
+    }
+  }
+
+  &__square {
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    transform: rotateZ(45deg);
+    margin-right: 8px;
+
+    @include onTablet {
+      margin-right: 10px;
+    }
+  }
+
+  &__title {
+    font-family: "Urbanist", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 150%;
+    color: #333;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+  }
+
+  &__text-padding {
+    @include onDesctop {
+      padding-left: 20px;
+    }
+  }
+
+  &__text-box {
+    @include onDesctop {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__text {
+    font-family: "Urbanist", sans-serif;
+    line-height: 150%;
+    color: #828282;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      padding-left: 15px;
+    }
+
+    @include onDesctop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__sale {
+    font-size: 36px;
+    color: $red;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+
+    @include onTablet {
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+
+    @include onDesctop {
+      font-size: 36px;
+      padding-left: 100px;
+    }
+  }
+
+  &__sale-text {
+    font-size: 24px;
+    color: $turquoise;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 18px;
+      width: 240px;
+    }
+
+    @include onDesctop {
+      font-size: 24px;
+      width: unset;
+      padding-left: 100px;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 90%;
+    height: 48px;
+
+    font-size: 14px;
+    font-family: "Urbanist" , sans-serif;
+    font-weight: bold;
+
+    color: #131313;
+    background: $yello;
+    border: 1px solid $yello;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 48px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      width: 238px;
+      background-color: white;
+      border-color: $turquoise;
+      font-weight: bold;
+      margin-top: 60px;
+    }
+
+    @include onDesctop {
+      margin-bottom: 70px;
+    }
+
+    &:hover {
+      background-color: white;
+      border-color: #333;
+
+      @include onTablet {
+        background-color: $turquoise;
+        color: white;
+        border-color: $turquoise;
+      }
+    }
+  }
+
+  &__button-arrow-white {
+    display: none;
+  }
+
+  &__button:hover .about__button-arrow-white {
+    @include onTablet {
+      display: inline-block;
+    }
+  }
+
+  &__button:hover .arrow-black {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__foto-box {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+      position: relative;
+      width: 760px;
+      height: 840px;
+      overflow: hidden;
+    }
+  }
+
+  &__image-box {
+    width: 270px;
+    height: 300px;
+    padding: 20px 20px 0;
+    background-color: white;
+    box-shadow: 1px 1px 15px -5px;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__image {
+    width: 230px;
+    height: 230px;
+  }
+
+  &__image-text {
+    font-family: "Urbanist", sans-serif;
+    font-size: 11px;
+    line-height: 131.5%;
+    color: #8b8b8b;
+  }
+
+  &__image-position-1 {
+    transform: rotate(-28deg);
+    position: absolute;
+    left: 340px;
+    top: -110px;
+  }
+
+  &__image-position-2 {
+    transform: rotate(-15deg);
+    position: absolute;
+    left: -15px;
+    top: -23px;
+  }
+
+  &__image-position-3 {
+    transform: rotate(-15deg);
+    position: absolute;
+    top: 240px;
+    left: 170px;
+  }
+
+  &__image-position-4 {
+    position: absolute;
+    top: 345px;
+    left: -110px;
+  }
+  &__image-position-5 {
+    position: absolute;
+    top: 460px;
+    left: 425px;
+    transform: rotate(-30deg);
+  }
+  &__image-position-6 {
+    position: absolute;
+    transform: rotate(-15deg);
+    top: 590px;
+    left: 118px;
+  }
+}

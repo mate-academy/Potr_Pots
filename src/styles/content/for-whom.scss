@@ -1,0 +1,258 @@
+.for-whom {
+  &__container {
+    max-width: 500px;
+    margin: auto;
+    padding: 0 30px;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      padding: 0 35px;
+      max-width: 900px;
+      margin-bottom: 130px;
+    }
+
+    @include onDesctop {
+      max-width: 1440px;
+      padding: 0 135px;
+      margin-bottom: 300px;
+    }
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 26px;
+  }
+
+  &__first {
+    @include onTablet {
+      display: flex;
+      margin-bottom: 100px;
+      padding-right: 66px;
+    }
+  }
+
+  &__second {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      margin-bottom: 120px;
+    }
+
+    @include onDesctop {
+      flex-direction: column;
+      margin: 100px 230px 0 100px;
+    }
+  }
+
+  &__third {
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesctop {
+      flex-direction: column;
+    }
+  }
+
+  &__first-image-box {
+    height: 284px;
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-right: 15px;
+    }
+
+    @include onDesctop {
+      height: 500px;
+      margin-right: 100px;
+    }
+  }
+
+  &__first-image {
+    height: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 1px 1px 20px 3px black;
+    }
+  }
+
+  &__second-image-box {
+    height: 417px;
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__second-image {
+    height: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 1px 1px 20px 3px black;
+    }
+  }
+
+  &__third-image {
+    height: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 1px 1px 20px 3px black;
+    }
+  }
+
+  &__third-image-box {
+    height: 400px;
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-right: 15px;
+    }
+
+    @include onDesctop {
+      height: 670px;
+    }
+  }
+
+  &__first-text-box {
+    margin-bottom: 70px;
+
+    &--robust {
+      @include onTablet {
+        padding-top: 25px;
+
+        &::before {
+          content: "* Robust";
+          position: absolute;
+          top: -25px;
+          left: 50px;
+          font-family: "Urbanist", sans-serif;
+          color: #333;
+
+          @include onDesctop {
+            top: 120px;
+          }
+        }
+      }
+
+      @include onDesctop {
+        padding-top: 180px;
+      }
+    }
+
+    &--savestime {
+      @include onTablet {
+        padding-top: 25px;
+
+        &::before {
+          content: "* Saves time";
+          position: absolute;
+          top: -20px;
+          left: 50px;
+          font-family: "Urbanist", sans-serif;
+          color: #333;
+
+          @include onDesctop {
+            left: 0;
+            top: -70px;
+          }
+        }
+      }
+      @include onDesctop {
+        top: 110px;
+      }
+    }
+
+    @include onTablet {
+      display: flex;
+      position: relative;
+      margin-bottom: 0;
+    }
+
+    &--beautiful {
+      @include onTablet {
+        display: block;
+        padding-top: 90px;
+        padding-right: 57px;
+
+        &::before {
+          content: "* Beautiful";
+          position: absolute;
+          top: 25px;
+          right: 57px;
+          font-family: "Urbanist", sans-serif;
+          color: #333;
+
+          @include onDesctop {
+            right: unset;
+          }
+        }
+      }
+
+      @include onDesctop {
+        padding-top: 100px;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__style-text {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    position: relative;
+
+    &--after::after {
+      @include onTablet {
+        content: "/";
+        color: #4f4f4f;
+        font-size: 66px;
+        font-family: emoji, sans-serif;
+        position: absolute;
+      }
+    }
+
+  }
+
+  &__style-description {
+    font-family: "Urbanist", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  &__style-text--margin20 {
+    margin-left: 20px;
+    &::before {
+      content: "/";
+      color: #4f4f4f;
+      font-size: 66px;
+      font-family: emoji , sans-serif;
+      position: absolute;
+      left: -20px;
+    }
+    @include onTablet {
+      margin: 0 20px;
+    }
+  }
+
+  &__2-3-section {
+    @include onDesctop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

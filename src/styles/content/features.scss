@@ -1,0 +1,96 @@
+.features {
+  &__container {
+    max-width: 500px;
+    padding: 0 30px;
+    margin: auto;
+    margin-bottom: 95px;
+
+    @include onTablet {
+      max-width: 900px;
+      padding: 0 35px;
+      margin-bottom: 150px;
+    }
+
+    @include onDesctop {
+      max-width: 1440px;
+      padding: 0 135px;
+    }
+  }
+
+  &__title {
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: #03839e;
+    margin-bottom: 50px;
+
+    & > p > span {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px;
+      font-weight: normal;
+    }
+
+    @include onDesctop {
+      margin-bottom: 77px;
+    }
+  }
+
+  &__box {
+    text-align: center;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__card {
+    @include onTablet {
+      width: 220px;
+    }
+    @include onDesctop {
+      width: 370px;
+    }
+  }
+
+  &__title-text {
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 22px;
+  }
+
+  &__text {
+    font-family: "Urbanist", sans-serif;
+    line-height: 150%;
+    text-align: center;
+    color: #4f4f4f;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    height: 260px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 1px 1px 20px;
+    }
+
+    @include onTablet {
+      height: 220px;
+    }
+
+    @include onDesctop {
+      height: 370px;
+    }
+  }
+}
