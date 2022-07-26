@@ -1,10 +1,12 @@
 .button {
+  $root: &;
+
   @extend .s4;
   display: inline-flex;
   justify-content: center;
   align-items: center;
   min-width: max-content;
-  width: 100%;
+  width: auto;
   padding: 1em 4.5em;
 
   text-transform: uppercase;
@@ -13,6 +15,10 @@
   border: 1px solid var(--color-border, inherit);
 
   @include transition(color, background-color, border);
+
+  &--fullwidth {
+    width: 100%;
+  }
 
   &__text::after {
     content: "";
@@ -30,16 +36,16 @@
     background-color: var(--color-bg-hover, inherit);
     border: 1px solid var(--color-border-hover, inherit);
 
-    &:after {
+    #{$root}__text::after {
       background-image: #{"var(--arrow-hover)"};
     }
   }
 
   &--primary1 {
-    --color: #{$color-neutral-100};
-    --color-hover: #{$color-neutral-100};
-    --color-bg: #{$color-primary1-500};
-    --color-bg-hover: #{$color-primary1-400};
+    --color: #{var(--color-neutral-100)};
+    --color-hover: #{var(--color-neutral-100)};
+    --color-bg: #{var(--color-primary1-500)};
+    --color-bg-hover: #{var(--color-primary1-400)};
     --color-border: transparent;
     --color-border-hover: transparent;
     --arrow: url("/images/icons/arrow-light.svg");
@@ -47,10 +53,10 @@
   }
 
   &--primary2 {
-    --color: #{$color-secondary-700};
-    --color-hover: #{$color-secondary-500};
-    --color-bg: #{$color-primary2-500};
-    --color-bg-hover: #{$color-primary2-400};
+    --color: #{var(--color-secondary-700)};
+    --color-hover: #{var(--color-secondary-500)};
+    --color-bg: #{var(--color-primary2-500)};
+    --color-bg-hover: #{var(--color-primary2-400)};
     --color-border: transparent;
     --color-border-hover: transparent;
     --arrow: url("/images/icons/arrow-dark.svg");
@@ -58,22 +64,22 @@
   }
 
   &--secondary1 {
-    --color: #{$color-secondary-700};
-    --color-hover: #{$color-neutral-100};
+    --color: #{var(--color-secondary-700)};
+    --color-hover: #{var(--color-neutral-100)};
     --color-bg: transparent;
-    --color-bg-hover: #{$color-primary1-500};
-    --color-border: #{$color-primary1-500};
+    --color-bg-hover: #{var(--color-primary1-500)};
+    --color-border: #{var(--color-primary1-500)};
     --color-border-hover: transparent;
     --arrow: url("/images/icons/arrow-dark.svg");
     --arrow-hover: url("/images/icons/arrow-light.svg");
   }
 
   &--secondary2 {
-    --color: #{$color-secondary-700};
-    --color-hover: #{$color-secondary-700};
+    --color: #{var(--color-secondary-700)};
+    --color-hover: #{var(--color-secondary-700)};
     --color-bg: transparent;
-    --color-bg-hover: #{$color-neutral-100};
-    --color-border: #{$color-secondary-700};
+    --color-bg-hover: #{var(--color-neutral-100)};
+    --color-border: #{var(--color-secondary-700)};
     --color-border-hover: transparent;
     --arrow: url("/images/icons/arrow-dark.svg");
     --arrow-hover: url("/images/icons/arrow-dark.svg");
