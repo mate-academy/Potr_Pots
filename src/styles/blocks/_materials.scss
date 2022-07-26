@@ -37,12 +37,18 @@
       left: 0;
       right: 0;
 
+      margin-bottom: calc(254px - 9%);
+
       @include mediaPad {
         top: -150px;
+
+        margin-bottom: -150px;
       }
 
       @include mediaDesktop {
         top: -250px;
+
+        margin-bottom: -250px;
       }
     }
   }
@@ -81,7 +87,9 @@
 
     background: rgba(0, 0, 0, 0.4);
     opacity: 0;
-    backdrop-filter: blur(40px);
+
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
 
     pointer-events: none;
 
@@ -93,6 +101,9 @@
       min-height: auto;
       height: max-content;
       padding: 35px;
+
+      box-shadow: none;
+      backdrop-filter: blur(40px);
 
       &--1 {
         left: 1%;
