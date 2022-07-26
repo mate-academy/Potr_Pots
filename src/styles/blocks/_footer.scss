@@ -35,6 +35,8 @@
 
       @extend %icon;
 
+      @include transition(filter);
+
       &--twitter {
         background-image: url("/images/icons/twitter.svg");
       }
@@ -45,6 +47,17 @@
 
       &--facebook {
         background-image: url("/images/icons/facebook.svg");
+      }
+
+      &:hover {
+        // Filter values calculated using this great tool:
+        // https://codepen.io/sosuke/pen/Pjoqqp
+        filter: invert(32%)
+          sepia(40%)
+          saturate(2518%)
+          hue-rotate(161deg)
+          brightness(99%)
+          contrast(98%);
       }
 
       &-wrapper {
