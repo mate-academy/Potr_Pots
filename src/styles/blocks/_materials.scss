@@ -13,7 +13,7 @@
     grid-row: 1 / 5;
     display: none;
 
-    color: $color-secondary-500;
+    color: var(--color-secondary-500);
 
     @include mediaPad {
       display: block;
@@ -174,8 +174,8 @@
       width: 50px;
       height: 50px;
 
-      color: $color-neutral-500;
-      background-color: $color-accent-500;
+      color: var(--color-neutral-500);
+      background-color: var(--color-accent-500);
       border-radius: 50%;
       opacity: 1;
 
@@ -219,8 +219,8 @@
       }
 
       &:hover {
-        box-shadow: 3px 5px 15px $color-accent-900;
-        color: $color-neutral-100;
+        box-shadow: 3px 5px 15px var(--color-accent-900);
+        color: var(--color-neutral-100);
 
         transform: scale(1.15);
       }
@@ -245,8 +245,8 @@
       width: 15px;
       height: 15px;
 
-      background-color: $color-neutral-200;
-      border: 1px solid $color-neutral-200;
+      background-color: var(--color-neutral-200);
+      border: 1px solid var(--color-neutral-200);
       transform: rotate(45deg);
 
       cursor: pointer;
@@ -254,12 +254,12 @@
       @include transition(background-color, border-color);
 
       &:hover {
-        background-color: $color-neutral-500;
+        background-color: var(--color-neutral-500);
       }
     }
 
     &-text {
-      color: $color-neutral-200;
+      color: var(--color-neutral-200);
     }
   }
 }
@@ -267,7 +267,7 @@
 @for $i from 1 through 5 {
   #slide-#{$i}:checked {
     & ~ .materials__showcase-wrapper .materials__slider-trigger--#{$i} {
-      background-color: $color-secondary-900;
+      background-color: var(--color-secondary-900);
       opacity: 0.4;
 
       cursor: auto;
@@ -278,14 +278,14 @@
 
       &:hover {
         box-shadow: none;
-        color: $color-neutral-500;
+        color: var(--color-neutral-500);
 
         transform: scale(1);
       }
     }
 
     & ~ .materials__sliders .materials__slider-pin--#{$i} {
-      background-color: $color-accent-500;
+      background-color: var(--color-accent-500);
     }
 
     & ~ .materials__sliders .materials__slider--#{$i} {
