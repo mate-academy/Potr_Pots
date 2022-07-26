@@ -1,0 +1,43 @@
+.form {
+  &__textarea,
+  &__input {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+    max-height: 200px;
+    padding: 4px;
+    outline: none;
+
+    border: 1px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+
+    @extend .s3;
+
+    @include transition(color, border-color);
+
+    &::placeholder {
+      color: var(--color-secondary-500);
+    }
+
+    &:hover {
+      border-bottom-color: rgba(0, 0, 0, 0.6);
+    }
+
+    &:active,
+    &:focus-visible {
+      border-bottom-color: var(--color-primary1-500);
+    }
+
+    &:not(:placeholder-shown):valid {
+      color: var(--color-primary1-500);
+      border-bottom-color: var(--color-primary1-500);
+    }
+
+    &:not(:placeholder-shown):invalid {
+      color: var(--color-accent-500);
+      border-bottom-color: var(--color-accent-500);
+    }
+  }
+}
