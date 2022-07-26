@@ -15,7 +15,7 @@ COMMON STYLES
   line-height: 1;
   color: transparent;
   -webkit-text-stroke-width: 0.68px;
-  -webkit-text-stroke-color: $color-primary1-500;
+  -webkit-text-stroke-color: var(--color-primary1-500);
 }
 
 %paragraph {
@@ -39,8 +39,9 @@ COMMON STYLES
   @include transition(color);
 
   &:hover {
-    text-decoration: underline 1px wavy var(--color-hover, $color-primary1-500);
-    color: var(--color-hover, $color-primary1-500);
+    text-decoration: underline 1px wavy 
+      var(--color-hover, var(--color-primary1-500));
+    color: var(--color-hover, var(--color-primary1-500));
   }
 }
 
@@ -62,4 +63,9 @@ COMMON STYLES
   &:hover {
     transform: scale(1.05) translateY(-1%);
   }
+}
+
+%img-wrapper {
+  overflow: hidden;
+  display: flex;
 }
