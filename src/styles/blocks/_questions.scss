@@ -1,0 +1,101 @@
+.questions {
+  position: relative;
+
+  @include mediaDesktop {
+    padding-top: 10px;
+    padding-bottom: 130px;
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    top: 110px;
+    left: 0;
+
+    display: block;
+    width: 2578px;
+    height: 1003px;
+
+    background: url("/images/questions-rectangle.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include mediaPad {
+      right: 0;
+      top: 150px;
+
+      width: 1419px;
+      height: 552px;
+
+      background-size: 100% 100%;
+    }
+
+    @include mediaDesktop {
+      top: 0;
+      right: 10%;
+      left: 0;
+      bottom: 0;
+
+      width: 90%;
+      height: 100%;
+    }
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    top: 26px;
+    right: -40px;
+
+    display: block;
+    width: 164px;
+    height: 164px;
+
+    background: url("/images/questions-stamp.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include mediaPad {
+      top: 72px;
+    }
+
+    @include mediaDesktop {
+      top: -82px;
+      right: calc(10% - 82px);
+    }
+  }
+
+  &__content {
+    padding-top: 40px;
+  }
+
+  &__form {
+    padding-top: 30px;
+
+    &-group {
+      gap: 10px;
+      padding-block: 40px;
+    }
+  }
+
+  &__contacts {
+    gap: 20px;
+
+    padding-top: 56px;
+
+    @include mediaPad {
+      padding-top: 0;
+    }
+  }
+
+  &__contact {
+    &-title {
+      color: rgba(0, 0, 0, 0.39);
+    }
+  }
+
+}
