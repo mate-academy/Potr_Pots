@@ -1,13 +1,26 @@
 // Media breakpoints
 
 @mixin mediaMobile {
-  @media all and (min-width: $mobile-media-width) {
+  @media all {
+    @content;
+  }
+}
+
+@mixin mediaMobile-only {
+  @media all and (max-width: #{$pad-media-width - 1}) {
     @content;
   }
 }
 
 @mixin mediaPad {
   @media all and (min-width: $pad-media-width) {
+    @content;
+  }
+}
+
+@mixin mediaPad-only {
+  @media all and (min-width: $pad-media-width) and
+    (max-width: #{$desktop-media-width - 1}) {
     @content;
   }
 }
