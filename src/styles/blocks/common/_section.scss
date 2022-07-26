@@ -1,3 +1,62 @@
 .section {
   @extend %section;
+
+  &__side-title {
+    position: absolute;
+
+    display: block;
+    width: max-content;
+    padding-top: 0;
+
+    @include transition(transform);
+
+    &::before {
+      content: "";
+
+      display: inline-block;
+      width: 65px;
+      height: 10px;
+      margin-right: 10px;
+
+      background-image: url("/images/icons/line.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &--right {
+      right: 0;
+      top: 0;
+
+      transform-origin: right top;
+      transform: rotate(90deg) translateY(5px) translateX(200%);
+
+      @include mediaPad {
+        transform: rotate(90deg) translateY(10px) translateX(200%);
+      }
+
+      @include mediaDesktop {
+        transform: rotate(90deg)
+          translateY(calc(var(--padding-inline) - 25px))
+          translateX(200%);
+      }
+    }
+
+    &--left {
+      top: 0;
+      bottom: 0;
+
+      transform-origin: left top;
+      transform: rotate(-90deg) translateY(-25px) translateX(-200%);
+    }
+
+    &-text {
+      font-family: $ff-heading;
+      font-weight: $fw-regular;
+      font-size: $fs-150;
+      line-height: 1;
+      letter-spacing: 0.22em;
+      color: var(--color-secondary-400);
+    }
+  }
 }
