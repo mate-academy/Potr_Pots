@@ -1,0 +1,176 @@
+.potr-size {
+  margin-bottom: 110px;
+
+  @include onTablet {
+    margin-bottom: 0;
+  }
+
+  @include onDesktop {
+    height: 540px;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    @extend %second-font;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-desktop {
+      display: none;
+      margin-bottom: 60px;
+      @extend %second-font;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      @include onTablet {
+        margin-bottom: 30px;
+        display: grid;
+      }
+
+      @include onDesktop {
+        display: grid;
+      }
+    }
+
+    &-description {
+      margin-bottom: 30px;
+      line-height: 150%;
+      color: $greyDark-color;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+
+      &::after {
+        @include onDesktop {
+          content: "";
+          display: block;
+          width: 1px;
+          height: 257px;
+          transform: translate(270px, -95px);
+          background-color: #d8d8d8;
+        }
+      }
+    }
+  }
+
+  &__image {
+    margin: 0 0 30px;
+    width: 100%;
+    transition: transform 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      position: absolute;
+      right: 40px;
+      margin: 0;
+      width: 414px;
+      height: 336px;
+    }
+
+    @include onDesktop {
+      max-width: 528px;
+      max-height: 427px;
+      transform: translateX(-30px);
+
+    }
+
+    @include onDesign {
+      width: 528px;
+      position: absolute;
+      right: 70px;
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      transform: translate(50px, -168%);
+    }
+
+    @include onDesign {
+      transform: translateY(-198%);
+    }
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    @extend %second-font;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+    color: $black-color;
+
+    &-description {
+      margin-bottom: 40px;
+      line-height: 150%;
+      color: $greyDark-color;
+    
+      @include onTablet {
+        margin-bottom: 50px;
+        width: 246px;
+      }
+
+      &--addition {
+        display: none;
+
+        @include onTablet {
+          display: inline;
+        }
+      }
+
+      &--move {
+        @include onTablet {
+          width: fit-content;
+        }
+
+        @include onDesktop {
+          transform: translate(15px, -250px);
+        }
+      }
+    }
+
+    &-description:last-child {
+      margin-bottom: 15px;
+
+      @include onTablet {
+        margin-bottom: 130px;
+      }
+
+      @include onDesktop {
+        margin: 0;
+      }
+    }
+
+  }
+
+  &__star {
+    position: absolute;
+    left: 20px;
+    line-height: 150%;
+    color: $greyDark-color;
+
+    @include onDesktop {
+      transform: translate(20px, -340px);
+    }
+
+    @include onDesign {
+      transform: translate(65px, -250px);
+    }
+  }
+}
