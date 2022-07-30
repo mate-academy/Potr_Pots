@@ -1,0 +1,229 @@
+.materials {
+  padding: 0;
+  background-image: url("../images/material/material-backgraund.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+
+  &__container {
+    padding: 0;
+  }
+
+  &__second-linc {
+    display: none;
+  }
+
+  &__second-linc-duble {
+    display: none;
+  }
+
+  &__title {
+    margin-bottom: 120px;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+  }
+
+  &__description {
+    display: none;
+  }
+
+  &__slider {
+    margin: 0 auto;
+  }
+
+  &__cards {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    background-image: url("../images/material/background-tablet.png");
+    background-size: contain;
+    background-position: bottom;
+
+    margin: 0;
+    padding-bottom: 687px;
+    &__container {
+      position: relative;
+
+    }
+
+    &__title {
+      margin-bottom: 0;
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    &__description {
+      position: absolute;
+      right: 34px;
+      top: 141px;
+      display: block;
+      width: 340px;
+    }
+
+    &__title-description {
+      margin-bottom: 10px;
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: $c-gray-2;
+    }
+
+    &__content-description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $c-gray-2;
+    }
+
+    &__slider {
+      display: none;
+    }
+
+    &__cards {
+      display: block;
+      position: relative;
+      width: 100%;
+      padding: 0;
+      background: transparent;
+    }
+
+    &__card {
+      position: absolute;
+      padding: 0;
+
+      &--1 {
+        bottom: -600px;
+        left: 15%;
+      }
+
+      &--2 {
+        bottom: -454px;
+        right: 63%;
+      }
+
+      &--3 {
+        bottom: -621px;
+        right: 48%;
+      }
+
+      &--4 {
+        bottom: -506px;
+        right: 27%;
+      }
+
+      &--5 {
+        bottom: -368px;
+        right: 17%;
+      }
+    }
+
+    &__card-btn {
+      display: block;
+      margin: 0 auto;
+      width: 51px;
+      height: 51px;
+      background-image: url("../images/material/plus.png");
+      background-size: cover;
+      background-position: center;
+      transition: background-image 0.3s;
+      cursor: pointer;
+    }
+
+    &__card-description {
+      position: absolute;
+      visibility: hidden;
+      top: 60px;
+      left: -50%;
+      transform: translateX(-35%);
+      width: 303px;
+      height: 237px;
+      padding: 35px 45px;
+      background: rgba(0, 0, 0, 0.45);
+      mix-blend-mode: normal;
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(34px);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $c-gray-light;
+      opacity: 0;
+      transition: opacity 1s;
+      z-index: 2;
+    }
+
+    &__second-linc {
+      position: absolute;
+      display: block;
+      top: 90px;
+      left: -1%;
+      transform: rotate(90deg);
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.22em;
+      color: $c-gray-4;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: 75px;
+        display: block;
+        width: 65px;
+        height: 1px;
+        background: $c-gray-4;
+      }
+      @include hover(text-shadow,  4px 5px 3px  rgba(3, 131, 158, 0.5));
+    }
+    &__second-linc-duble {
+      display: block;
+      position: absolute;
+      right: 0%;
+      bottom: 132px;
+      transform: rotate(270deg);
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.22em;
+      color: $c-gray-4;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: 75px;
+        display: block;
+        width: 65px;
+        height: 1px;
+        background: $c-gray-4;
+      }
+      @include hover(text-shadow,  4px 5px 3px  rgba(3, 131, 158, 0.5));
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &__second-linc {
+      display: none;
+    }
+
+    &__second-linc-duble {
+      display: none;
+    }
+  }
+
+  &__open-card-descriptional {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__btn-minus {
+    background-image: url("../images/material/minus.png");
+  }
+}

@@ -1,0 +1,141 @@
+.footer {
+  position: relative;
+  padding: 0 0 30px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__address {
+    display: none;
+  }
+
+  &__about-us-linc {
+    display: none;
+  }
+
+  &__list-sotial {
+    position: absolute;
+    top: -62%;
+    transform: translateX(-25%);
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+    padding-bottom: 40px;
+  }
+
+  &__sotial-linc {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+
+    &--twiter {
+      background-image: url("../images/footer/icon-twiter.png");
+    }
+
+    &--instagram {
+      background-image: url("../images/footer/icon-instagram.png");
+    }
+
+    &--facebook {
+      background-image: url("../images/footer/icon-facebook.png");
+    }
+  }
+
+  &__copiright {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000;
+  }
+
+  @media (min-width: 768px) {
+    background-color: $c-gray-light;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &__address {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__address-linc {
+      margin-bottom: 10px;
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #000;
+      @include hover(text-shadow,  4px 5px 3px  rgba(3, 131, 158, 0.5));
+    }
+
+    &__address-linc-double {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000;
+      @include hover(text-shadow,  4px 5px 3px  rgba(3, 131, 158, 0.5));
+    }
+
+    &__list-sotial {
+      position: relative;
+      top: 0;
+      transform: translateX(0);
+      padding-bottom: 28px;
+    }
+
+    &__logo {
+      display: block;
+      text-align: center;
+    }
+
+    &__about-us-linc {
+      display: block;
+      margin-bottom: 11px;
+
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #000;
+      @include hover(text-shadow,  4px 5px 3px  rgba(3, 131, 158, 0.5));
+    }
+  }
+  @media (min-width: 1440px) {
+    padding: 74px 0 64px;
+
+    &__list-sotial {
+      position: relative;
+      top: 0;
+      transform: translateX(0);
+      padding-bottom: 84px;
+    }
+
+    &__logo {
+      display: block;
+      text-align: center;
+    }
+
+    &__about-us-linc {
+      margin-bottom: 10px;
+    }
+  }
+}

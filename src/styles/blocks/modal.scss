@@ -1,0 +1,54 @@
+.modal {
+  display: none;
+
+  &__wrapper {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-height: 100vh;
+    background: #f8f8f8;
+    overflow-x: hidden;
+
+    @media (min-width: 768px) {
+      width: 92%;
+    }
+
+    @media (min-width: 1440px) {
+      width: 58%;
+    }
+  }
+
+  &__btn-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 6px;
+    top: 6px;
+    width: 47px;
+    height: 47px;
+    font-size: 34px;
+    font-weight: 700;
+    background-color: #333;
+    border-radius: 50%;
+    transform: matrix(0.71, -0.71, 0.7, 0.71, 0, 0);
+    color: #f2f2f2;
+    @include hover(background-color, rgb(104, 98, 98) );
+
+    @media (min-width: 768px) {
+      right: 12px;
+      top: 12px;
+    }
+
+    @media (min-width: 1440px) {
+      right: 21px;
+      top: 30px;
+    }
+  }
+
+  &__open {
+    display: block;
+  }
+}

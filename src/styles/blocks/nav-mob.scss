@@ -1,0 +1,147 @@
+.nav-mob {
+  display: flex;
+  justify-content: center;
+  padding-top: 138px;
+  height: 100vh;
+  width: 72%;
+  background-color: $c-turquoise;
+
+  &__item {
+    margin-bottom: 15px;
+  }
+
+  &__btn-bascet {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-gray-light;
+    transition: text-shadow 0.3s;
+    &::after {
+      content: "0";
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      top: -10px;
+      right: -20px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #eb5757;
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      font-size: 9px;
+      line-height: 11px;
+      letter-spacing: 0.15em;
+      color: $c-gray-light;
+    }
+    &:hover {
+      text-shadow: 2px 2px 2px $c-yellow-light;
+    }
+  }
+
+  &__linc {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-gray-light;
+    transition: text-shadow 0.3s;
+
+    &:hover {
+      text-shadow: 2px 2px 2px $c-yellow-light;
+    }
+  }
+
+  &__btn-close {
+    display: block;
+    position: absolute;
+    bottom: 40%;
+    right: 10%;
+    transform: rotate(270deg);
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: $c-gray-light;
+    cursor: pointer;
+
+    &::before {
+      content: "\00d7";
+      display: block;
+      position: absolute;
+      transform: rotate(270deg);
+      bottom: -25%;
+      left: -130%;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      height: 44px;
+      width: 2px;
+      background-color: $c-gray-light;
+      position: absolute;
+      transform: rotate(270deg);
+      bottom: -58%;
+      left: -42%;
+    }
+  }
+
+  &__open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  @media (min-width: 768px) {
+    &__btn-bascet {
+      font-size: 32px;
+      line-height: 46px;
+      &::after {
+        top: -10px;
+        right: -43px;
+        width: 34px;
+        height: 34px;
+
+        font-size: 18px;
+        line-height: 19px;
+        letter-spacing: 0.15em;
+      }
+    }
+
+    &__linc {
+      font-size: 32px;
+      line-height: 46px;
+    }
+
+    &__btn-close {
+      bottom: 40%;
+      right: 10%;
+      font-size: 32px;
+      line-height: 46px;
+
+      &::before {
+        bottom: -13%;
+        left: -107%;
+        font-size: 46px;
+        line-height: 1.2;
+      }
+
+      &::after {
+        bottom: -2%;
+        left: -37%;
+      }
+    }
+
+  }
+}

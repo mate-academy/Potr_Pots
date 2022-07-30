@@ -1,0 +1,166 @@
+.potr-size {
+  padding: 110px 0;
+
+  &__title {
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-gray-2;
+
+  }
+
+  &__description-desktop {
+    display: none;
+  }
+
+  &__picture-mobile {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+
+  }
+
+  &__picture {
+    display: none;
+  }
+
+  &__sub-title {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+    color: #000;
+  }
+
+  &__about-size {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-gray-2;
+
+    &:last-child {
+      margin-bottom: 15px;
+    }
+  }
+  &__larg {
+    margin-bottom: 40px;
+  }
+
+  &__small {
+    margin-bottom: 15px;
+  }
+
+  &__corect {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-gray-2;
+
+    &::before {
+      content: "*";
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    &__picture-mobile {
+      display: none;
+    }
+
+    &__picture {
+      display: block;
+      margin-bottom: 20px;
+      width: 416px;
+      height: 337px;
+      order: 2;
+      grid-column: span 2;
+    }
+
+    &__content {
+      order: 1;
+    }
+
+    &__about-size {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__larg {
+      margin-bottom: 50px;
+    }
+
+    &__corect {
+      order: 3;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    &__title {
+      margin-bottom: 66px;
+    }
+
+    &__picture {
+      margin-bottom: 0;
+      margin-left: 90px;
+      width: 528px;
+      height: 427px;
+      order: 2;
+      grid-column: span 6;
+    }
+
+    &__description {
+      display: none;
+    }
+
+    &__description-desktop {
+      display: block;
+    }
+
+    &__about-size {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__larg {
+      margin-bottom: 50px;
+    }
+
+    &__corect {
+      order: 2;
+    }
+
+    &__content {
+      padding-left: 30px;
+      position: relative;
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 257px;
+        background-color: #d8d8d8;
+      }
+    }
+  }
+
+}
