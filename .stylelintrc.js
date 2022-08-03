@@ -6,5 +6,9 @@ module.exports = {
   plugins: [
     "stylelint-scss"
   ],
-  rules: {}
+  rules: {
+    "selector-pseudo-class-no-unknown": [ true, {
+      ignorePseudoClasses: ["where"],
+    } ]
+  }
 };
