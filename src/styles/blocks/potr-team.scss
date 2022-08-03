@@ -1,0 +1,130 @@
+.potr-team {
+  padding-bottom: 170px;
+
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-image: url(../images/potr-team.svg);
+
+  &__title {
+    margin-bottom: 25px;
+
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $c-dark-title;
+
+    @include onTablet {
+      margin-bottom: 180px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    @include onTablet {
+      &::before {
+        position: absolute;
+        left: -70px;
+        top: -145px;
+
+        content: "MARTIN";
+
+        font-family: "Bebas Neue", cursive;
+        font-size: 200px;
+        color: transparent;
+        -webkit-text-stroke: 1px $c-turquoise;
+        letter-spacing: 0.25em;
+
+        @include onDesktop {
+          top: -160px;
+
+          font-size: 310px;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        right: -20px;
+        bottom: -130px;
+
+        content: "ANDY";
+
+        font-family: "Bebas Neue", cursive;
+        font-size: 200px;
+        color: transparent;
+        -webkit-text-stroke: 1px $c-turquoise;
+        letter-spacing: 0.2em;
+
+        @include onDesktop {
+          font-size: 310px;
+
+          bottom: -330px;
+        }
+      }
+    }
+  }
+
+  &__topic {
+    line-height: 24px;
+
+    @include onTablet {
+      margin-top: 50px;
+      max-width: 313px;
+    }
+
+    @include onDesktop {
+      margin-top: 200px;
+      max-width: 360px;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    width: 340px;
+    height: 255px;
+
+    background-size: cover;
+    background-image: url(../images/potr-team__img.png);
+
+    transform-origin: right top;
+    transition: all 0.3s;
+
+    @include onTablet {
+      display: block;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    @include onDesktop {
+      width: 677px;
+      height: 507px;
+    }
+
+    &--mobile {
+      margin: 0 auto 30px;
+
+      width: 320px;
+      height: 240px;
+
+      background-size: cover;
+      background-image: url(../images/potr-team__img.png);
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  @include onTablet {
+    background-position: 0 40%;
+  }
+
+  @include onDesktop {
+    margin-bottom: 200px;
+  }
+}

@@ -1,0 +1,96 @@
+.about {
+  &__materials {
+    position: relative;
+    padding-top: 180px;
+    margin-bottom: 110px;
+
+    width: 100%;
+    min-height: 240px;
+
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(../images/about__materials.png);
+
+    @include onTablet {
+      min-height: 576px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      min-height: 1080px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 140px;
+      line-height: 166px;
+    }
+  }
+
+  &__secondary {
+    display: none;
+    margin-right: 30px;
+
+    max-width: 340px;
+
+    font-family: "Manrope", sans-serif;
+    color: #4f4f4f;
+    text-align: right;
+
+    &--title {
+      margin-bottom: 10px;
+
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &--topic {
+      line-height: 24px;
+    }
+
+    @include onTablet {
+      display: block;
+
+      position: absolute;
+      right: 0;
+      bottom: 30px;
+    }
+  }
+
+  &__description {
+    margin: 9px auto;
+    padding: 30px 45px 35px;
+
+    box-sizing: border-box;
+    width: 300px;
+
+    font-weight: 300;
+    line-height: 24px;
+    color: #f8f8f8;
+
+    background-color: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+
+    @include onTablet {
+      position: absolute;
+      right: 10%;
+      bottom: 30%;
+    }
+  }
+}

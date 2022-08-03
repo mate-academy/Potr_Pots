@@ -1,0 +1,177 @@
+.header {
+  padding: 15px 0 110px;
+
+  &__logo {
+    width: 134px;
+    height: 34px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../images/header__logo.svg);
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__menu {
+    margin-right: 8px;
+
+    width: 32px;
+    height: 32px;
+
+    background-image: url(../images/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__shopping-bag {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      margin-right: 8px;
+
+      width: 40px;
+      height: 40px;
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url(../images/shopping-bag.svg);
+
+      transition: all 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__img {
+
+    &--phone {
+      width: 100%;
+      height: 320px;
+      margin-bottom: 25px;
+
+      background-position: center;
+      background-size: cover;
+      background-image: url(../images/header__img.png);
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    color: transparent;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.15em;
+    -webkit-text-stroke: 1px $c-turquoise;
+
+    &--colored {
+      color: $c-turquoise;
+    }
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__order {
+    position: relative;
+
+    @include onTablet {
+
+      background-size: 320px;
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-image: url(../images/header__img.png);
+    }
+
+    @include onDesktop {
+      background-size: contain;
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 26px;
+    color: $c-dark-title;
+    line-height: 35px;
+  }
+
+  &__topic {
+    margin-bottom: 20px ;
+
+    font-size: 14px;
+    line-height: 21px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__buy {
+    padding-left: 65px;
+
+    max-width: 350px;
+
+    height: 50px;
+
+    font-size: 14px;
+    text-align: left;
+    text-transform: uppercase;
+
+    background-repeat: no-repeat;
+    background-position: top 50% right 65px;
+    background-image: url(../images/button-arrow.svg);
+    background-color: $c-yellow;
+    border: none;
+    cursor: pointer;
+
+    @include onTablet {
+      font-weight: 700;
+      background-color: transparent;
+      border: 1px solid $c-turquoise;
+
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: $c-yellow;
+        border-color: $c-yellow;
+      }
+    }
+  }
+
+  @include onTablet {
+    padding-bottom: 115px;
+
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: 83%;
+    background-image: url(../images/header-rectangle.svg);
+  }
+
+  @include onDesktop {
+    padding-bottom: 150px;
+  }
+}

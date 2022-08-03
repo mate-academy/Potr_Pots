@@ -1,0 +1,174 @@
+.for-whom {
+  margin-bottom: 110px;
+
+  &__img {
+    display: none;
+
+    margin-bottom: 100px;
+
+    max-width: 500px;
+    height: 380px;
+
+    background-size: cover;
+    background-position: center bottom;
+
+    transform-origin: left top;
+    transition: all 0.3s;
+
+    &--plant {
+      background-image: url(../images/for-whom--plant.png);
+
+      @include onTablet {
+        &:hover {
+          transform: scale(1.08);
+        }
+      }
+    }
+
+    &--cactus {
+      margin-left: -25%;
+      height: 500px;
+
+      background-position: center;
+      background-image: url(../images/for-whom--cactus.png);
+
+      transform-origin: right;
+
+      @include onTablet {
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      @include onDesktop {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    &--art {
+      min-height: 500px;
+
+      background-image: url(../images/for-whom--art.png);
+
+      transform-origin: left bottom;
+
+      @include onTablet {
+        &:hover {
+          transform: scale(1.08);
+        }
+      }
+
+      @include onDesktop {
+        margin-top: 150px;
+        height: 670px;
+      }
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      max-width: 500px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 54px;
+    color: $c-dark-title;
+    letter-spacing: 0.15em;
+  }
+
+  &--slash {
+    display: inline-block;
+    width: 20px;
+    height: 45px;
+
+    background-size: cover;
+    background-image: url(../images/for-whom__slash.svg);
+  }
+
+  &--num {
+    display: block;
+    position: relative;
+    margin-bottom: 30px;
+
+    font-size: 36px;
+    color: #000;
+
+    &--first,
+    &--third {
+      @include onTablet {
+        justify-self: right;
+      }
+    }
+
+    &--third {
+      @include onDesktop {
+        place-self: center;
+      }
+    }
+  }
+
+  &__secondary {
+    &--title {
+      margin-bottom: 20px;
+
+      font-size: 36px;
+      line-height: 54px;
+      letter-spacing: 0.15em;
+      color: #000;
+
+      @include onTablet {
+        &--first::after {
+          content: "*Robust";
+
+          position: relative;
+
+          left: -20%;
+          top: -200px;
+
+          width: max-content;
+
+          font-family: "Manrope", sans-serif;
+          font-size: 16px;
+          letter-spacing: normal;
+        }
+
+        &--second {
+          &::after {
+            content: "*Beautiful";
+
+            position: relative;
+
+            width: max-content;
+
+            top: -200px;
+
+            font-family: "Manrope", sans-serif;
+            font-size: 16px;
+            letter-spacing: normal;
+          }
+        }
+      }
+
+      @include onTablet {
+        margin-top: 30px;
+      }
+    }
+
+    &--topic {
+      line-height: 24px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__section {
+    margin: auto 0;
+  }
+}

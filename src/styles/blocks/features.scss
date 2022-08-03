@@ -1,0 +1,113 @@
+.features {
+  margin-bottom: 110px;
+
+  &__title {
+    margin-bottom: 20px;
+
+    font-weight: 400;
+    color: $c-turquoise;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px $c-turquoise;
+
+    &--bordered {
+      color: transparent;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__content {
+    &__box {
+      place-items: center;
+
+      @include onTablet {
+        place-items: start;
+      }
+    }
+
+    &__img {
+      margin: 0 auto 35px;
+
+      width: 50%;
+      min-width: 280px;
+      height: 300px;
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: right;
+      transition: all 0.2s;
+
+      &--first {
+        background-image: url(../images/features-1.png);
+      }
+
+      &--second {
+        background-image: url(../images/features-2.png);
+      }
+
+      &--third {
+        background-image: url(../images/features-3.png);
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      @include onTablet {
+        min-width: 100%;
+        max-width: 400px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+        height: 370px;
+      }
+    }
+
+    &__title {
+      margin-bottom: 20px;
+
+      font-size: 24px;
+      line-height: 24px;
+      color: $c-dark-title;
+      letter-spacing: 0.15em;
+    }
+
+    &__topic {
+      line-height: 24px;
+      margin-bottom: 70px;
+
+      &--last {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+  @include onTablet {
+    margin-bottom: 132px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 174px;
+  }
+}
