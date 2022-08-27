@@ -1,0 +1,209 @@
+.unit {
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+
+  }
+
+  @for $index from 1 through 3 {
+    &--#{$index} &__title::before {
+      content: "#{$index}";
+      display: block;
+      margin-bottom: 30px;
+      padding: 20px 25px 0;
+      line-height: 30px;
+
+      @include image (more-about_before, contain, icon, 0);
+
+      @include onTablet {
+        position: absolute;
+        margin-bottom: 0;
+        transform: translateX(-85%);
+      }
+
+      @include onDesktop {
+        transform: translateX(-135%);
+      }
+    }
+  }
+
+  &__photo-container {
+    display: none;
+
+    @include onTablet {
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+
+      width: 85%;
+      max-height: 500px;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      width: 88%;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    @include shape (100%);
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__content {
+    @include onDesktop {
+      grid-column: 8 / -2;
+      align-self: center;
+    }
+  }
+
+  &__keyword {
+    display: none;
+
+    @include onTablet {
+      position: relative;
+      display: block;
+      transform: translateY(-100%);
+
+      &::before {
+        content: "*";
+        position: absolute;
+        font-size: 27px;
+        color: black;
+        transform: translateX(-20px);
+      }
+    }
+
+    @include onDesktop {
+      transform: translateY(0);
+      margin-bottom: 40px;
+
+      &::before {
+        transform: translateX(-40px);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @include h2 ($font-secondary);
+    color: black;
+
+    @include onTablet {
+      position: relative;
+      margin-bottom: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: 23px;
+        padding-bottom: 50px;
+
+        @include image (more-about_after, contain, icon, 0);
+      }
+    }
+  }
+
+  &--2,
+  &--3 {
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &--2 &__photo-container {
+    @include onTablet {
+      grid-column: -1 / -2;
+      justify-self: end;
+
+      @include shape (90%, 420px);
+      margin-bottom: 45px;
+    }
+
+    @include onDesktop {
+      width: 82%;
+    }
+  }
+
+  &--2 &__img {
+    object-position: left;
+    }
+
+  &--2 &__content {
+    @include onTablet {
+      grid-row: 1 / 2;
+    }
+  }
+
+  &--2 &__title::before {
+    @include onTablet {
+      position: initial;
+
+      transform: translateX(0);
+      margin-bottom: 20px;
+    }
+  }
+
+  &--2 &__keyword {
+    @include onTablet {
+      margin-bottom: 30px;
+      text-align: right;
+      transform: translateY(0);
+    }
+
+    @include onDesktop {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+  }
+
+  &--3 &__photo-container {
+    @include onTablet {
+      max-height: 670px;
+    }
+
+    @include onDesktop {
+      @include shape (100%, 670px);
+      margin-bottom: 45px;
+    }
+  }
+
+  &--3 &__content {
+    @include onDesktop {
+      align-self: flex-end;
+      width: 80%;
+    }
+  }
+
+  &--3 &__keyword {
+    @include onTablet {
+      margin-bottom: 15px;
+      transform: translateY(-50%);
+    }
+    
+    @include onDesktop {
+      transform: translateY(0);
+      transform: translatex(-25%);
+      margin-bottom: 40px;
+    }
+  }
+}

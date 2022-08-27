@@ -54,7 +54,18 @@
   }
 
   &--side-page {
+    @include shape(fit-content);
+    padding: 5px;
+    
+    @include text ($font-secondary,12px, 14px);
+    letter-spacing: 0.22em;
+    color: #828282;
 
+    &::after {
+      @include shape (65px, 0.1px);
+      border: 1px solid #828282;
+      order: -1;
+    }
   }
 
   &__upper-el {
