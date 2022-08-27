@@ -1,6 +1,85 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onLagreScreen {
+  @media (min-width: 1796px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin text (
+  $font,
+  $size,
+  $line: $size,
+  $weight: false
+) {
+    
+    font-size: $size;
+    line-height: $line;
+
+    @if $font == $font-secondary {
+      font-family: $font;
+      letter-spacing: 0.12em;
+    }
+
+    @if $weight {
+      font-weight: $weight;
+    }
+}
+
+@mixin h2 ($font: $font-secondary) {
+  @include text($font, 36px, 54px);
+
+  @if $font ==$font-main {
+    font-weight: 700;
+  }
+}
+
+@mixin h3 ($font){
+  @if $font == $font-main {
+    @include text($font, 24px, 36px);
+  } @else {
+    @include text($font, 24px);
+  }
+}
+
+
+@mixin image ($name, $size, $type) {
+  @if $type == "icon" {
+    background-image: url(../images/icons/#{$name}.svg);
+  } @else {
+    background-image: url(../images/photos/#{$name}.png);
+  }
+  
+  background-size: $size;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin shape (
+  $width, 
+  $height: $width, 
+  $radius: false
+) {
+  width: $width;
+  height: $height;
+
+  @if $radius {
+    border-radius: $radius;
   }
 }

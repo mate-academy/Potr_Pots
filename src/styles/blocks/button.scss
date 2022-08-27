@@ -1,0 +1,63 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  @include shape (100%, 48px);
+
+  @include text ($font-main, 14px, 21px);
+  color: black;
+  text-transform: uppercase;
+
+  transition: all $duration;
+
+  &::after {
+    content: "";
+    @include shape (25px, 8px);
+  }
+  
+  
+  &--primary {
+    
+  }
+  
+  &--primary-2 {
+    background-color: $yellow;
+
+    &::after {
+      @include image (Arrow_black, contain, icon);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &--secondary {
+
+  }
+
+  &--secondary-2 {
+
+  }
+
+  &--side-header {
+    @include shape (max-content, min-content);
+    text-transform: none;
+    @include text ($font-main, 12px, 18px);
+    color: $blue;
+    
+    &::after {
+      @include image(Arrow_blue, cover, icon);
+    }
+  }
+
+  &--side-page {
+
+  }
+
+  &__upper-el {
+    text-transform: uppercase;
+  }
+}
