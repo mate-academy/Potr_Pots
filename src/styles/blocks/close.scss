@@ -1,0 +1,29 @@
+.close {
+  &__box {
+    position: relative;
+    transform-origin: 65% 0;
+    transform: rotate(-90deg);
+  }
+
+  &__link {
+    display: inline-block;
+    background-image: url(../images/menu-close.svg);
+    @include square(12px);
+  }
+
+  &__text {
+    color: $white-color;
+    padding-left: 66px;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 44px;
+      border-bottom: 1px solid $white-color;
+      left: 30px;
+      top: 50%;
+    }
+  }
+}
