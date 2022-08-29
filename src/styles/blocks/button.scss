@@ -1,0 +1,54 @@
+.button {
+  display: block;
+  padding: 14px 14px 14px 68px;
+  width: 238px;
+  position: relative;
+  @include Manrope(600, 14px);
+  text-transform: uppercase;
+  text-align: left;
+  background-color: $accent-button;
+  border: 1px solid transparent;
+  transition: background-color 0.3s, border 0.3s;
+
+  &__icon {
+    margin-left: 16px;
+    fill: inherit;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $main-title;
+  }
+
+  @include onTablet {
+    overflow: hidden;
+    background-color: transparent;
+    border: 1px solid $accent-text;
+    transition: color 0.3s, fill 0.3s;
+
+    &::before {
+      content: " ";
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      display: block;
+      width: 0;
+      height: 100%;
+      background-color: $accent-text;
+      transition: width 0.3s;
+    }
+
+    &:hover {
+      color: #fff;
+      fill: #fff;
+      border-color: $accent-text;
+
+      &::before {
+        right: auto;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}

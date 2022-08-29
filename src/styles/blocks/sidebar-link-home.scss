@@ -1,0 +1,49 @@
+.sidebar-link-home {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  transform: rotate(90deg) translateY(10px);
+  transform-origin: right;
+  font-size: 12px;
+  line-height: 14px;
+  color: #828282;
+  letter-spacing: 0.22em;
+  @include hover(opacity, 0.7);
+
+  @include onTablet {
+    top: 0;
+    bottom: auto;
+
+    &--benefits {
+      transform: rotate(90deg) translateX(100%);
+    }
+  }
+
+  @include onLaptop {
+    transform: rotate(90deg) translate(100%, 10px);
+  }
+
+  &--left {
+    display: none;
+
+    @include onLaptop {
+      display: flex;
+      right: auto;
+      left: 0;
+      bottom: 0;
+      top: auto;
+      transform: rotate(90deg) translate(0, 100px);
+    }
+  }
+
+  &__line {
+    display: block;
+    width: 65px;
+    height: 1px;
+    background-color: #828282;
+  }
+
+}

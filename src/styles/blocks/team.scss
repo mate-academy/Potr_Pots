@@ -1,0 +1,96 @@
+.team {
+  margin-bottom: 110px;
+  padding-bottom: 58px;
+  background-image: url("../images/photos/team-bg.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+
+  @include onTablet {
+    background-position: left 40%;
+    background-size: 34% 100%;
+    margin-bottom: 180px;
+    padding-bottom: 0;
+  }
+
+  @include onLaptop {
+    background-size: 24% 82%;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-size: 58px;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    color: $main-title;
+
+    @include onTablet {
+      margin-bottom: 178px;
+    }
+  }
+
+  &__img {
+    max-width: 100vw;
+    margin: 0 0 30px -30px;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      margin-top: 55px;
+      grid-row: 1 / 2;
+    }
+
+    @include onLaptop {
+      margin-top: 0;
+      padding-top: 230px;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__text {
+    @include Manrope(400, 16px);
+
+    &:first-of-type {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__martin,
+  &__andy {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: 21%;
+      left: -3%;
+      font-size: 232px;
+      line-height: 1;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-color: $accent-text;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__andy {
+    @include onTablet {
+      top: auto;
+      left: auto;
+      right: 0;
+      bottom: 0;
+      transform: translateY(63%);
+    }
+
+    @include onLaptop {
+      transform: translateY(92%);
+    }
+  }
+}

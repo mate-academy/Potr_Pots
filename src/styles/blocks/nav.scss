@@ -1,0 +1,117 @@
+.nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 0;
+  height: 100vh;
+  background-color: $accent-text;
+  transition: transform 0.5s, max-width 0.5s, padding 0.3s;
+  transform: translateX(150%);
+  z-index: 1;
+  overflow: hidden;
+
+  @include onLaptop {
+    position: static;
+    padding: 0;
+    max-width: 100%;
+    overflow: visible;
+    background-color: transparent;
+    transform: translateX(0);
+    margin-right: 296px;
+    height: auto;
+  }
+
+  &--active {
+    transform: translateX(0);
+    max-width: 100vw;
+    padding: 138px 30px 42px 82px;
+
+    @include onLaptop {
+      padding: 0;
+    }
+  }
+
+  &__list {
+    @include onLaptop {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+      @include onLaptop {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding: 5px 0;
+    @include Manrope(400, 16px);
+    color: $grey-lite;
+
+    &::after {
+      content: "";
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-radius: 1px;
+      background-color: $grey-lite;
+      transition: transform 0.3s;
+      transform: scale(0);
+
+      @include onLaptop {
+        background-color: $main-text;
+      }
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include onLaptop {
+      color: $main-text;
+    }
+
+    &--basket {
+      @include onLaptop {
+        padding: 8px;
+        position: absolute;
+        right: -296px;
+        transform: translateY(-50%);
+        font-size: 0;
+      }
+    }
+  }
+
+  &__icon {
+    display: none;
+
+    @include onLaptop {
+      display: block;
+      width: 30px;
+      height: 30px;
+      fill: $main-title;
+    }
+  }
+
+  &__count {
+    position: absolute;
+    top: 0;
+    right: -21px;
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $accent-red;
+    font-size: 9px;
+    line-height: 14px;
+    text-align: center;
+  }
+}

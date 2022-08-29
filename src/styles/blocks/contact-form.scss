@@ -1,0 +1,40 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include onTablet {
+    gap: 25px;
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    padding: 0 0 4px 6px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    @include Manrope(400, 16px);
+    /* stylelint-disable */
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 1000px $accent-decor inset;
+    }
+    /* stylelint-enable */
+    &::placeholder {
+      font: inherit;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin-top: 10px;
+    padding: 4px 0;
+    @include hover(color, $accent-text);
+
+    @include onLaptop {
+      margin-top: 30px;
+    }
+  }
+}
