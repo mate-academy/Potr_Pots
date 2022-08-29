@@ -1,0 +1,152 @@
+.team {
+  position: relative;
+
+  &__background-container {
+    position: absolute;
+    top: 67%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: conic-gradient(from 73deg at 0% 100%, $gray-light 0%, $yellow-light 100%);
+    z-index: -1;
+
+    @include onTablet {
+      top: 38%;
+      bottom: 25%;
+      width: 224px;
+    }
+
+    @include onDesktop {
+      top: 30%;
+      width: 385px;
+    }
+  }
+
+  &__name {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      @include text ($font-secondary, 232px);
+      transform: translate(-50px, 90px);
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      transform: translate(50px, 50%);
+    }
+
+    &:last-child {
+      @include onTablet {
+        position: absolute;
+        bottom: -25%;
+        right: 0;
+
+        transform: translate(0);
+      }
+
+      @include onDesktop {
+        bottom: -29%;
+      }
+    }
+
+    &--stroke {
+      color: transparent;
+      -webkit-text-stroke: 0.6px $blue;
+    }
+  }
+
+  &__title {
+    @extend %container;
+    margin-bottom: 25px;
+    @include text ($font-secondary, 58px, 70px);
+    color: $gray-dark;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__container {
+    @extend %container-tablet;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__photo-container {
+    position: relative;
+    box-sizing: border-box;
+
+    aspect-ratio: 4 / 3;
+    max-height: 255px;
+    margin: 0 auto 30px;
+
+    overflow: hidden;
+
+    &::after {
+      display: block;
+      content: "";
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      grid-column: 2;
+      max-height: 500px;
+      margin: 0;
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -2;
+    }
+  }
+
+  &__img {
+    position: absolute;
+
+    @include shape (100%);
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__content {
+    @extend %container;
+
+    @include onTablet {
+      grid-row: 1;
+      max-width: none;
+      margin: 50px 0 0;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      align-self: end;
+      margin: 0;
+    }
+  }
+
+  &__about {
+    &:first-child {
+      margin-bottom: 24px;
+    }
+
+    &:nth-child(2) {
+      padding-bottom: 60px;
+
+      @include onTablet {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
