@@ -1,29 +1,29 @@
 .close {
-  &__box {
-    position: relative;
-    transform-origin: 65% 0;
-    transform: rotate(-90deg);
-  }
+  position: absolute;
+  bottom: 42px;
+  right: 32px;
 
   &__link {
-    display: inline-block;
-    background-image: url(../images/menu-close.svg);
-    @include square(12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__text {
+    writing-mode: tb-rl;
+    transform: rotate(180deg);
     color: $white-color;
-    padding-left: 66px;
     text-transform: uppercase;
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
-      display: inline-block;
-      width: 44px;
-      border-bottom: 1px solid $white-color;
-      left: 30px;
-      top: 50%;
-    }
+  &__line {
+    height: 44px;
+    width: 1px;
+    margin: 5px 0 18px;
+    border-left: 1px solid $white-color;
+  }
+
+  &__img {
+    @include square(12px);
   }
 }

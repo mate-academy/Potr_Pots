@@ -1,0 +1,154 @@
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include onTablet {
+      min-width: 700px;
+      margin: 0 auto;
+      padding: 0 34px;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(100px,1fr));
+      grid-template-rows: auto;
+      grid-template-areas: "text text text text img img"
+      ". . price price img img"
+      ". butt butt butt . .";
+      column-gap: 20px;
+    }
+
+    @include onDesktop {
+      min-width: 1170px;
+      grid-template-columns: repeat(12, minmax(70px, 1fr));
+      column-gap: 30px;
+      padding: 0 135px;
+      grid-template-areas: ". text text text text text . img img img img img"
+      ". . . . price price . img img img img img"
+      ". . . butt butt butt . img img img img img";
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    max-width: 320px;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      max-width: 306px;
+      grid-area: img;
+      justify-self: end;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      max-width: 500px;
+      height: auto;
+    }
+  }
+
+  &__title {
+    @extend %bebas;
+    padding: 0 30px;
+    font-size: 36px;
+    line-height: 43px;
+    @extend %title-upper;
+    color: transparent;
+    -webkit-text-stroke: 1px $page-main-color;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-area: text;
+      font-size: 64px;
+      line-height: 64px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__text-filled {
+    color: $page-main-color;
+    -webkit-text-stroke: none;
+  }
+
+  &__price-info {
+    padding: 0 30px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-area: price;
+      margin-bottom: 50px;
+      padding: 0;
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: $black-333;
+  }
+
+  &__order-info {
+    @extend %font-size-14;
+    color: $gray-4f;
+  }
+
+  &__more-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+    color: $page-main-color;
+    font-size: 12px;
+    line-height: 18px;
+    gap: 9px;
+
+    @include onTablet {
+      left: 34px;
+    }
+  }
+
+  &__more-about {
+    writing-mode: tb-rl;
+  }
+
+
+  &__buy-now {
+    display: flex;
+    font-size: 14px;
+    line-height: 48px;
+    max-height: 48px;
+    width: 100%;
+    max-width: 260px;
+    text-transform: uppercase;
+    color: #121212;
+    font-weight: 600;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: yellow;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: auto;
+      background-image: url(../images/Arrow2.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      margin-left: 24px;
+    }
+
+    @include onTablet {
+      grid-area: butt;
+    }
+  }
+}

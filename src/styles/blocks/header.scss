@@ -4,6 +4,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
+
+    @include onTablet {
+      padding: 26px 34px 0;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding: 20px 134px 0;
+    }
   }
 
   &__logo {
@@ -11,7 +20,7 @@
     font-size: 36px;
     line-height: 43px;
     letter-spacing: 0.06em;
-    color: #333;
+    color: $black-333;
   }
 
   &__menu-opener {
@@ -21,5 +30,22 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 32px 32px;
+    justify-self: end;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-basket {
+    display: none;
+    @include onDesktop {
+      display: block;
+      background-image: url(../images/basket.png);
+      @include square(48px);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30px 30px;
+    }
   }
 }
