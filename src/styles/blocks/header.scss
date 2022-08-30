@@ -1,5 +1,33 @@
 .header {
+  position: relative;
 
+  &__right-text {
+    position: absolute;
+    left: 72%;
+    bottom: 12%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #03839e;
+
+    transform: rotate(90deg) translateY(-150%);
+
+    &:after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 44px;
+      left: 130%;
+      bottom: -10px;
+      color: #03839e;
+      background-image: url("../images/side_arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      transform: rotate(-90deg);
+    }
+  }
 
   &__navigation {
     margin-bottom: 10px;
@@ -11,15 +39,15 @@
 
   &__title {
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.676417px #03839E;
+    -webkit-text-stroke: 0.68px #03839e;
     line-height: 43px;
-    letter-spacing: 0.155em;
+    letter-spacing: 0.15em;
 
     margin-bottom: 30px;
   }
 
   &__price {
-    font-family: 'Manrope', sans-serif;
+    font-family: "Manrope", sans-serif;
     font-weight: 700;
     font-size: 26px;
     line-height: 36px;
@@ -28,13 +56,12 @@
   }
 
   &__text {
-    font-family: 'Manrope', sans-serif;
+    font-family: "Manrope", sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
 
     margin-bottom: 20px;
   }
-
 
 }
