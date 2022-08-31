@@ -16,7 +16,7 @@
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-auto-rows: minmax(min-content, max-content);
-    grid-template-areas: ". im im im . ."
+    grid-template-areas: ". im im im im ."
     "txt txt txt txt txt txt";
     column-gap: 30px;
   }
@@ -27,19 +27,20 @@
     @include onTablet {
       width: 50%;
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
     }
 
     @include onDesktop {
       width: 100%;
       grid-area: im;
-      display: block;
       margin-bottom: 44px;
     }
   }
 
   &__img {
-    max-width: 300px;
+      width: 80%;
+      object-fit: contain;
+      object-position: center;
   }
 
   &__grid {
@@ -50,9 +51,9 @@
       grid-template-columns: repeat(3, 1fr);
       grid-auto-rows: minmax(min-content, max-content);
       column-gap: 20px;
-      grid-template-areas: ". . all"
-      "pos . ."
-      "descr descr descr";
+      grid-template-areas: ". . star type"
+      "pos . . ."
+      "descr descr descr descr";
     }
 
     @include onDesktop {
@@ -65,29 +66,6 @@
     }
   }
 
-  &__type-on-tablet {
-    display: none;
-
-    @include onTablet {
-      display: flex;
-      grid-area: all;
-      align-items: baseline;
-      justify-self: end;
-      margin-bottom: 28px;
-    }
-
-    @include onDesktop {
-      display: none;
-    }
-  }
-
-  &__tablet-star {
-    font-size: 24px;
-    line-height: 29px;
-    @extend %title-upper;
-    color: black;
-  }
-
   &__star {
     display: none;
     font-size: 24px;
@@ -95,16 +73,10 @@
     @extend %title-upper;
     color: black;
 
-    @include onDesktop {
+    @include onTablet {
       grid-area: star;
       display: block;
       justify-self: end;
-    }
-
-    &--tablet--off {
-      @include onDesktop {
-        display: block;
-      }
     }
   }
 
@@ -112,18 +84,10 @@
     display: none;
     color: $black-333;
 
-    @include onDesktop {
+    @include onTablet {
       margin-bottom: 34px;
       display: block;
       grid-area: type;
-      padding-left: 0;
-      justify-self: start;
-    }
-
-    &--tablet--off {
-      @include onDesktop {
-        display: block;
-      }
     }
   }
 

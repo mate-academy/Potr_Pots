@@ -1,8 +1,7 @@
 .for-whom {
   &__container {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
     padding: 0 30px;
 
     @include onTablet {
@@ -23,22 +22,13 @@
     color: $black-333;
   }
 
-  &__block-a {
-    position: relative;
-  }
-
-  &__block-c {
-    position: relative;
-  }
-
   &__a-b-box {
-
     @include onTablet {
       display: flex;
       flex-direction: column;
       gap: 122px;
     }
-    
+
     @include onDesktop {
       flex-direction: row;
       gap: 30px;

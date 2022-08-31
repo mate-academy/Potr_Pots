@@ -18,21 +18,7 @@
     align-items: center;
   }
 
-  &__type-on-tablet {
-    display: none;
 
-    @include onTablet {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateY(-100%);
-      display: block;
-    }
-
-    @include onDesktop {
-      display: none;
-    }
-  }
 
   &__img-box {
     display: none;
@@ -41,16 +27,19 @@
       grid-area: im;
       display: block;
     }
+    @include onDesktop {
+      width: 50%;
+    }
 
   }
 
   &__img {
-    @include onTablet {
-      max-width: 284px;
-    }
+    width: 130%;
+    object-fit: contain;
+    object-position: center;
 
     @include onDesktop {
-      max-width: 500px;
+      width: 100%;
     }
   }
 
@@ -62,15 +51,41 @@
       grid-template-columns: repeat(4, 1fr);
       grid-auto-rows: minmax(min-content, max-content);
       column-gap: 20px;
-      grid-template-areas: "pos descr descr descr";
+      grid-template-areas: ". all . ."
+      "pos descr descr descr";
     }
 
     @include onDesktop {
+      width: 50%;
       grid-template-columns: repeat(6, 1fr);
       column-gap: 30px;
       grid-template-areas: "star type . . . ."
       "pos descr descr descr descr .";
     }
+  }
+
+  &__type-on-tablet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      grid-area: all;
+      align-items: baseline;
+      margin-bottom: 28px;
+      margin-left: -20px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__tablet-star {
+    font-size: 24px;
+    line-height: 29px;
+    @extend %title-upper;
+    color: black;
+    margin-right: 10px;
   }
 
   &__star {
@@ -80,23 +95,10 @@
     @extend %title-upper;
     color: black;
 
-    @include onTablet {
-      display: inline-block;
-    }
-
     @include onDesktop {
       display: block;
       grid-area: star;
       justify-self: end;
-    }
-
-    &--tablet--off {
-      @include onTablet {
-        display: none;
-      }
-      @include onDesktop {
-        display: block;
-      }
     }
   }
 
@@ -104,23 +106,10 @@
     display: none;
     color: $black-333;
 
-    @include onTablet {
-      display: inline-block;
-    }
-
     @include onDesktop {
       display: block;
       grid-area: type;
       margin-bottom: 30px;
-    }
-
-    &--tablet--off {
-      @include onTablet {
-        display: none;
-      }
-      @include onDesktop {
-        display: block;
-      }
     }
   }
 
