@@ -1,13 +1,55 @@
 .potr-team {
+  position: relative;
+
+  &__big-title {
+    display: none;
+    @include onTablet {
+      display: block;
+      position: absolute;
+      font-weight: 400;
+      font-size: 220px;
+      line-height: 264px;
+      letter-spacing: 0.15em;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0.68px #03839e;
+
+      &--martin {
+        top: 12%;
+        left: -6%;
+        z-index: 2;
+      }
+
+      &--andy {
+        bottom: -10%;
+        right: -6%;
+      }
+    }
+  }
 
   &__content {
-    position: relative;
+    @include onTablet {
+      padding: 30px;
+    }
+  }
+
+  &__container {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+    }
   }
 
   &__bg {
     clip-path: polygon(0 0, 100% 0, 100% 73%, 0% 100%);
     top: 70%;
     height: 293px;
+    width: 100%;
+
+    @include onTablet {
+      width: 300px;
+      top: 30%;
+    }
   }
 
   &__title {
@@ -15,10 +57,15 @@
     line-height: 70px;
     letter-spacing: 0.15em;
     margin: 0 30px 25px;
+
+    @include onTablet {
+      margin-bottom: 160px;
+    }
   }
 
   &__logo {
     display: block;
+    height: 100%;
     margin: 0 auto;
     margin-bottom: 30px;
   }
@@ -28,5 +75,12 @@
     font-size: 16px;
     line-height: 150%;
     color: #4f4f4f;
+
+    @include onTablet {
+      margin-right: 40px;
+      &:first-child {
+        margin-top: 100px;
+      }
+    }
   }
 }
