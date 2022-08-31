@@ -6,9 +6,30 @@
     margin-bottom: 26px;
   }
 
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
   &__article {
     position: relative;
     margin-bottom: 70px;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &-text {
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0 40px;
+      }
+    }
   }
 
   &__side-text {
