@@ -1,18 +1,27 @@
 .questions {
-  position: relative;
+
+  &__container {
+    position: relative;
+  }
+
+  &__content {
+    position: relative;
+  }
 
   &__side-logo {
     position: absolute;
+    right: 0;
+    top: -70px;
     height: 100%;
     width: 149px;
     background-repeat: no-repeat;
     background-image: url("../images/side_logo.png");
-    transform: translateX(114%) translateY(-8%);
   }
 
   &__bg {
     position: absolute;
-    background-image: url("../images/question_bg.svg");
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+    height: 165%;
   }
 
   &__title {
