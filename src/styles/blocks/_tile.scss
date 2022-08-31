@@ -1,0 +1,22 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 4;
+  flex-basis: 33%;
+  @media (max-width: 480px) {
+    max-width: 450px;
+  }
+  &__img {
+    width: 100%;
+  }
+  &__title {
+    @include h3-text;
+  }
+  &__info {
+    @include s3-text;
+    color: $paragraph-grey;
+  }
+}

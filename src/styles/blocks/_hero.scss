@@ -1,0 +1,135 @@
+.hero {
+  display: grid;
+  height: 88vh;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 20px;
+  max-width: 1024px;
+  overflow: hidden;
+  margin: 0 auto 50px;
+  @media (max-width: 475px) {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(120px, 1fr));
+    width: 100%;
+    gap: 20;
+    overflow-x: hidden;
+    margin-top: 30px;
+    padding-left: auto;
+    padding-right: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  &__title {
+    @include title-text;
+    z-index: 1;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    grid-column-start: 1;
+    grid-column-end: span 5;
+    grid-row-start: 2;
+    &-part-1 {
+      -webkit-text-stroke: 1px $turqoise;
+      color: transparent;
+    }
+    &-part-2 {
+      color: $turqoise;
+    }
+    @media (max-width: 475px) {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      grid-row-start: 3;
+      grid-row-end: span 7;
+      transform: scale(70%);
+      overflow: hidden;
+      width: 90vw;
+    }
+  }
+
+  &__img {
+    z-index: 1;
+    grid-row-start: 2;
+    grid-column-start: 6;
+    @media (max-width: 475px) {
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      grid-row-start: 1;
+      grid-row-end: span 3;
+      width: 100%;
+    }
+  }
+  &__price {
+    @include s2-text;
+    position: relative;
+    grid-row-start: 6;
+    grid-column-start: 4;
+    @media (max-width: 475px) {
+      grid-column-start: 1;
+      grid-row-start: 9;
+      align-self: center;
+      justify-self: center;
+      margin-top: 35px;
+    }
+    &:after {
+      content: "Get the second order in half price";
+      position: absolute;
+      width: 140px;
+      bottom: -30px;
+      left: 0;
+      @include s4-text;
+      font-weight: 400;
+      color: $grey;
+      @media (max-width: 475px) {
+        bottom: -40px;
+      }
+    }
+  }
+
+  &__button {
+    @include primary-button-2;
+    grid-row-start: 8;
+    grid-column-start: 3;
+    @media (max-width: 475px) {
+      grid-column-start: 1;
+      grid-row-start: 10;
+      margin-left: 45px;
+      margin-top: 20px;
+    }
+  }
+  &__link {
+    @include s5-text;
+    text-decoration: none;
+    color: $turqoise;
+    transform: rotate(90deg);
+    width: 250px;
+    height: 30px;
+    margin-top: 80px;
+    grid-row-start: 7;
+    grid-column-start: 1;
+    justify-self: center;
+    align-self: center;
+    @media (max-width: 475px) {
+      grid-column-start: 2;
+      grid-row-start: 9;
+      justify-self: start;
+      align-self: start;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      right: 65px;
+      width: 50px;
+      height: 20px;
+
+      background-color: $turqoise;
+      -webkit-mask-image: url("../images/Arrow.svg");
+      mask-image: url("../images/Arrow.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      -webkit-mask-position: center;
+      mask-position: center;
+    }
+  }
+}

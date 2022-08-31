@@ -1,0 +1,115 @@
+.for-whom {
+  display: flex;
+  max-width: 1171px;
+  margin: 0 auto 150px;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &__title {
+    @include h2-text;
+    color: $title-grey;
+    margin: 0 auto 16px;
+    flex: 0 1 100%;
+  }
+}
+
+.card {
+  display: flex;
+  max-width: 1024px;
+  margin: 0 auto 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  @media (min-width: 1024px) {
+    &:first-of-type {
+      flex: 0 1 100%;
+    }
+    &:not(:first-of-type) {
+      flex: 1 0 50%;
+    }
+  }
+
+
+
+  &__img {
+    margin-bottom: 25px;
+    max-width: 500px;
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 450px;
+    align-self: center;
+    margin-left: 50px;
+    height: 300px;
+  }
+  &__body {
+    display: flex;
+    gap:6px;
+    flex-wrap: wrap;
+
+  }
+  &__explainer {
+    @include s3-text;
+
+    margin-bottom: 40px;
+    @media (max-width: 480px) {
+      display: none;
+    }
+    &::before {
+      content: "*";
+      margin-right:40px;
+      @include s2-text;
+    }
+
+  }
+
+  &__paragraph {
+    display: flex;
+    flex-wrap: wrap
+  }
+
+  &__title {
+    @include h2-text;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    &:after {
+      content: "";
+
+      background-image: url("../images/line.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 25px;
+      height: 50px;
+      position: absolute;
+    }
+  }
+  &__number {
+    @include h2-text;
+    line-height: 64px;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      background-image: url("../images/line.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 25px;
+      height: 45px;
+      top: 0;
+      left: -20px;
+    }
+  }
+
+  &__info {
+    @include s3-text;
+    color: $paragraph-grey;
+  }
+
+}

@@ -1,0 +1,99 @@
+.team {
+  overflow-x: hidden;
+  margin-bottom: 27px;
+  &__title {
+    @include h1-text;
+    margin-left: 9vw;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
+
+    @media (max-width: 485px) {
+      grid-template-columns: minmax(120px, 1fr);
+      grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
+    }
+  }
+  &__img {
+    grid-column-start: 9;
+    grid-column-end: 18;
+    grid-row-start: 4;
+    grid-row-end: span 11;
+    @media (max-width: 485px) {
+      max-width: 100%;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: span 7;
+    }
+  }
+  &__paragraph {
+    @include s3-text;
+    width: 310px;
+    grid-row-start: 7;
+    grid-row-end: span 12;
+    grid-column-start: 3;
+    grid-column-end:  7;
+    @media (max-width: 485px) {
+      grid-column-start: 1;
+      grid-row-start: 10;
+      grid-row-end: 18;
+      z-index: 1;
+      width: 260px;
+      margin: 30px auto 0;
+    }
+  }
+  &__martin {
+    @include h1-text;
+    font-size: 288px;
+    line-height: 346px;
+    -webkit-text-stroke: 1px $turqoise;
+    color: transparent;
+    grid-row-start: 2;
+    grid-row-end: span 5;
+    grid-column-start: 2;
+    grid-column-end: span 13;
+    z-index: 1;
+    @media (max-width: 485px) {
+      display:none;
+    }
+  }
+  &__andy {
+    @include h1-text;
+    font-size: 288px;
+    line-height: 346px;
+    -webkit-text-stroke: 1px $turqoise;
+    color: transparent;
+    grid-row-start: 14;
+    grid-row-end: span 12;
+    grid-column-start: 12;
+    @media (max-width: 485px) {
+      display:none;
+    }
+
+  }
+  &__box {
+    background-color: $yellow-light;
+    transform-origin: bottom left;
+    transform: rotate(-17deg);
+    width: 535px;
+    height: 310px;
+    &-container {
+      height: 310px;
+      width: 435px;
+      overflow: hidden;
+      grid-column-start: 1;
+      grid-column-end: span 5;
+      grid-row-start: 3;
+      grid-row-end: span 5;
+      @media (max-width: 485px) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 15;
+        grid-row-end: span 18;
+
+      }
+    }
+  }
+}
