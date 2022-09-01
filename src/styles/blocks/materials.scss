@@ -1,4 +1,6 @@
 .materials {
+  position: relative;
+
   &__grid {
     @include onTablet {
       display: grid;
@@ -73,12 +75,15 @@
 
   &__bckgrnd {
     width: 100%;
+    min-height: 240px;
     position: relative;
     object-fit: cover;
-    bottom: 80px;
+    bottom: 70px;
+    z-index: -1;
 
     @include onTablet {
-      bottom: 120px;
+      z-index: 1;
+      bottom: 96px;
     }
 
     @include onDesktop {
@@ -88,6 +93,68 @@
 
   &__img {
     width: 100%;
+  }
+
+  &__about-mobile {
+    width: calc(100vw - 60px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 240px;
+    padding-bottom: 34px;
+    position: relative;
+    background-color: $bgrnd-radio;
+    backdrop-filter: blur(40px);
+    border-radius: 5px;
+    bottom: 120px;
+  }
+
+  &__label-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__radio-label {
+    display: block;
+    @include square(10px);
+    background-color: $white-color;
+    border: 1px solid black;
+    transform: rotate(45deg);
+  }
+
+  &__cards {
+    padding: 24px 24px 0;
+    color: $white-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__text {
+
+    @for $ind from 1 through 5 {
+      &--num--#{$ind} {
+      display: none;
+      }
+    }
+  }
+
+
+
+  &__btn {
+    @for $ind from 1 through 5 {
+      &--num--#{$ind}:checked ~ .materials__cards > .materials__text--num--#{$ind} {
+        display: block;
+      }
+    }
+
+    @for $ind from 1 through 5 {
+      &--num--#{$ind}:checked ~ .materials__label-box > .materials__radio-label--num--#{$ind} {
+        background-color: $gray-4f;
+      }
+    }
   }
 
   &__about {
