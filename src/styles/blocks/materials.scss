@@ -1,8 +1,4 @@
 .materials {
-  @include onDesktop {
-
-  }
-
   &__grid {
     @include onTablet {
       display: grid;
@@ -27,20 +23,27 @@
   }
 
   &__title {
+    position: relative;
+    z-index: 2;
     @extend %bebas;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.155em;
     color: $page-main-color;
     grid-area: title;
+    padding: 0 30px;
 
     @include onTablet {
       font-size: 80px;
       line-height: 96px;
+      letter-spacing: 0.12em;
+      padding: 0;
     }
 
     @include onDesktop {
-    font-size: 138px;
-    line-height: 166px;
+      font-size: 138px;
+      line-height: 166px;
     }
 
     &--grid--title2 {
@@ -49,6 +52,7 @@
   }
 
   &__description {
+    z-index: 2;
     display: none;
     color: $gray-4f;
 
@@ -70,8 +74,8 @@
   &__bckgrnd {
     width: 100%;
     position: relative;
-    z-index: -1;
     object-fit: cover;
+    bottom: 80px;
 
     @include onTablet {
       bottom: 120px;
@@ -84,5 +88,125 @@
 
   &__img {
     width: 100%;
+  }
+
+  &__about {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+    }
+
+    &--first {
+      left: calc(50% - 40px);
+      @include onTablet {
+        left: 11%;
+        bottom: 17.8%;
+      }
+    }
+
+    &--second {
+      left: calc(50% - 20px);
+      @include onTablet {
+        left: 33%;
+        bottom: 24%;
+      }
+    }
+
+    &--third {
+      left: 50%;
+      @include onTablet {
+        left: 55%;
+        bottom: 18.2%;
+      }
+    }
+
+    &--four {
+      left: calc(50% + 20px);
+      @include onTablet {
+        left: 72%;
+        bottom: 23%;
+      }
+    }
+
+    &--last {
+      left: calc(50% + 40px);
+      @include onTablet {
+        left: 85%;
+        bottom: 30%;
+      }
+    }
+  }
+
+  &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include square(10px);
+    background-color: $red-57;
+
+    @include onTablet {
+      border-radius: 50%;
+      @include square(50px);
+      background-color: $red-57;
+      color: #fff;
+      font-size: 24px;
+      transition: background-color $transition-duration, transform $transition-duration;
+
+      &::after {
+        content: "\21e8";
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: $page-main-color;
+      }
+    }
+  }
+
+  &__radio {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      &--up--150 {
+        transform: translate(-25%, -150%);
+      }
+      &--up--140 {
+        transform: translate(-25%, -140%);
+      }
+      &--up--130 {
+        transform: translate(-25%, -130%);
+      }
+      &--left-up--50-135 {
+        transform: translate(-50%, -135%);
+      }
+      &--left-up--75-135 {
+        transform: translate(-75%, -135%);
+      }
+    }
+  }
+
+  &__radio-btn {
+    &:checked ~ .radio {
+      display: block;
+    }
+
+    &:checked ~ .materials__label {
+      background-color: $bgrnd-radio;
+      opacity: 0.65;
+    }
+
+    @include onTablet {
+      &:checked ~ .materials__label {
+        box-shadow: none;
+        transform: none;
+
+        &::after {
+          content: '\21e7';
+        }
+      }
+    }
   }
 }
