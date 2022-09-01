@@ -79,10 +79,8 @@
     position: relative;
     object-fit: cover;
     bottom: 70px;
-    z-index: -1;
 
     @include onTablet {
-      z-index: 1;
       bottom: 96px;
     }
 
@@ -105,103 +103,66 @@
     padding-bottom: 34px;
     position: relative;
     background-color: $bgrnd-radio;
-    backdrop-filter: blur(40px);
     border-radius: 5px;
     bottom: 120px;
+
+    @include onTablet {
+      position: absolute;
+      background-color: unset;
+      backdrop-filter: unset;
+      padding: 0;
+      top: 0;
+      left: 34px;
+    }
   }
 
   &__label-box {
     display: flex;
     justify-content: center;
     gap: 10px;
+
+    @include onTablet {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__radio-label {
     display: block;
     @include square(10px);
     background-color: $white-color;
-    border: 1px solid black;
     transform: rotate(45deg);
-  }
-
-  &__cards {
-    padding: 24px 24px 0;
-    color: $white-color;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  &__text {
-
-    @for $ind from 1 through 5 {
-      &--num--#{$ind} {
-      display: none;
-      }
-    }
-  }
-
-
-
-  &__btn {
-    @for $ind from 1 through 5 {
-      &--num--#{$ind}:checked ~ .materials__cards > .materials__text--num--#{$ind} {
-        display: block;
-      }
-    }
-
-    @for $ind from 1 through 5 {
-      &--num--#{$ind}:checked ~ .materials__label-box > .materials__radio-label--num--#{$ind} {
-        background-color: $gray-4f;
-      }
-    }
-  }
-
-  &__about {
-    display: none;
 
     @include onTablet {
-      display: block;
-      position: absolute;
-    }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include square(50px);
+      background-color: $red-57;
+      border-radius: 50%;
+      transform: none;
+      color: #fff;
+      font-size: 24px;
+      transition: background-color $transition-duration, transform $transition-duration;
 
-    &--first {
-      left: calc(50% - 40px);
-      @include onTablet {
-        left: 11%;
-        bottom: 17.8%;
+      &::after {
+        content: "\21e8";
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: $page-main-color;
       }
     }
 
-    &--second {
-      left: calc(50% - 20px);
-      @include onTablet {
-        left: 33%;
-        bottom: 24%;
-      }
-    }
-
-    &--third {
-      left: 50%;
-      @include onTablet {
-        left: 55%;
-        bottom: 18.2%;
-      }
-    }
-
-    &--four {
-      left: calc(50% + 20px);
-      @include onTablet {
-        left: 72%;
-        bottom: 23%;
-      }
-    }
-
-    &--last {
-      left: calc(50% + 40px);
-      @include onTablet {
-        left: 85%;
-        bottom: 30%;
+    @each $ind, $left, $bottom in $button-pos {
+      &--num--#{$ind} {
+        @include onTablet {
+          position: absolute;
+          left: $left;
+          bottom: $bottom;
+        }
       }
     }
   }
@@ -231,6 +192,83 @@
       }
     }
   }
+
+  &__cards {
+    padding: 24px 24px 0;
+    color: $white-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include onTablet {
+      display: flex;
+      width: 100%;
+      // max-width: 1440px;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    @for $ind from 1 through 5 {
+      &--num--#{$ind} {
+      display: none;
+      }
+    }
+
+    @include onTablet {
+      z-index: 2;
+      position: absolute;
+      max-width: 284px;
+      padding: 24px;
+      background-color: $bgrnd-radio;
+      color: $white-color;
+      border-radius: 5px;
+    }
+
+    @include onDesktop {
+      // font-size: 20px;
+    }
+
+    @each $ind, $left, $bottom, $transf in $card-pos {
+      &--num--#{$ind} {
+        @include onTablet {
+          left: $left;
+          bottom: $bottom;
+          transform: translateX($transf);
+        }
+      }
+    }
+  }
+
+
+  &__btn {
+    @for $ind from 1 through 5 {
+      &--num--#{$ind}:checked ~ .materials__cards > .materials__text--num--#{$ind} {
+        display: block;
+      }
+    }
+
+    @for $ind from 1 through 5 {
+      &--num--#{$ind}:checked ~ .materials__label-box > .materials__radio-label--num--#{$ind} {
+        background-color: $gray-4f;
+        border: 1px solid $white-color;
+
+      @include onTablet {
+        border: none;
+        box-shadow: none;
+        transform: none;
+
+          &::after {
+            content: '\21e7';
+          }
+        }
+      }
+    }
+  }
+
+
+
+
 
   &__radio {
     display: none;
