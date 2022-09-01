@@ -1,0 +1,128 @@
+.special-offer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__img {
+    max-width: 634px;
+    max-height: 838px;
+    width: 100%;
+    height: auto;
+    flex: 0 0 50%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    @media (max-width: 768px) {
+      display: none;
+    }
+    &-1 {
+      grid-column-start: 2;
+      grid-column-end: span 3;
+      grid-row-start: 2;
+      grid-row-end: span 3;
+      transform: rotate(-30deg);
+    }
+    &-2 {
+      grid-column-start: 6;
+      grid-column-end: span 7;
+      grid-row-start: 1;
+      grid-row-end: span 3;
+      transform: rotate(25deg);
+    }
+    &-3 {
+      grid-column-start: 4;
+      grid-column-end: span 5;
+      grid-row-start: 5;
+      grid-row-end: span 7;
+      transform: rotate(20deg);
+    }
+    &-4 {
+      grid-column-start: 8;
+      grid-column-end: span 9;
+      grid-row-start: 4;
+      grid-row-end: span 5;
+      transform: rotate(-30deg);
+    }
+    &-5 {
+      grid-column-start: 2;
+      grid-column-end: span 3;
+      grid-row-start: 8;
+      grid-row-end: span 9;
+      transform: rotate(-20deg);
+    }
+    &-6 {
+      grid-column-start: 7;
+      grid-column-end: span 8;
+      grid-row-start: 8;
+      grid-row-end: span 9;
+      transform: rotate(10deg);
+    }
+    &-par {
+      @include s5-text;
+      font-size: 9px;
+      color: $paragraph-grey;
+      align-self: flex-start;
+      margin: 0 5px 0;
+    }
+  }
+  &__card {
+    width: 190px;
+    height: 214px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    margin: 0 60px 0;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  &__term {
+    @include s1-text;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      background-color: #000;
+      transform: rotate(45deg);
+    }
+  }
+  &__explainer {
+    @include s3-text;
+    color: $grey;
+  }
+  &__button {
+    @include secondary-button;
+    margin-bottom: 60px;
+  }
+  &__title {
+    @include h2-text;
+    color: $red;
+    letter-spacing: 0.155em;
+  }
+  &__paragraph {
+    @include h3-text;
+    color: $turqoise;
+    letter-spacing: 0.155em;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+
+}
+
