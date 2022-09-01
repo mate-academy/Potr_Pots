@@ -6,6 +6,7 @@
   }
 
   &__content {
+    position: relative;
     margin-top: 25px;
     padding: 0 30px;
   }
@@ -13,7 +14,7 @@
   &__title {
     margin-bottom: 30px;
 
-    font-family: 'Bebas Neue';
+    font-family: "Bebas Neue", sans-serif;
     font-size: 36px;
     line-height: 43px;
     letter-spacing: 5px;
@@ -34,5 +35,34 @@
 
     font-size: 14px;
     line-height: 21px;
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  &__comment {
+    position: absolute;
+    bottom: -12px;
+    right: 14px;
+    font-size: 12px;
+    line-height: 18px;
+    color: $turquoise;
+
+    transform: rotate(90deg);
+    transform-origin: right;
+
+    &::after {
+      display: inline-block;
+      content: "";
+      width: 44px;
+      height: 8px;
+      padding-left: 8px;
+
+      background-image: url(../images/right_turquoise_arrow.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
   }
 }
