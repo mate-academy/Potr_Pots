@@ -1,18 +1,35 @@
 .benefits {
 
   &__container {
-    padding: 0 30px 0 10px;
+    @include onTablet {
+      display: flex;
+      align-items: center;
+    }
+  }
 
+  &__btn-text-container {
+    @include onTablet {
+      padding-left: 20px;
+    }
   }
 
   &__title {
+    position: relative;
     font-family: "Manrope", sans-serif;
     font-weight: 700;
     font-size: 32px;
     text-align: baseline;
     line-height: 150%;
     color: #333;
+    padding-left: 30px;
 
+    &::before {
+      content: "*";
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 6px;
+    }
   }
 
   &__text {
@@ -20,7 +37,7 @@
     font-size: 16px;
     line-height: 150%;
 
-    margin: 0 0 40px;
+    margin: 0 0 40px 30px;
 
     color: #828282;
   }
@@ -28,6 +45,15 @@
   &__button {
     max-width: 240px;
     margin-bottom: 40px;
+
+    @include onTablet {
+      background-color: transparent;
+      border: 1px solid #03839e;
+
+      &:hover {
+        background: #03839e;
+      }
+    }
   }
 
   &__discount {
