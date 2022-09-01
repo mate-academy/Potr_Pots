@@ -93,7 +93,7 @@
     width: 100%;
   }
 
-  &__about-mobile {
+  &__about {
     width: calc(100vw - 60px);
     margin: 0 auto;
     display: flex;
@@ -225,10 +225,6 @@
       border-radius: 5px;
     }
 
-    @include onDesktop {
-      // font-size: 20px;
-    }
-
     @each $ind, $left, $bottom, $transf in $card-pos {
       &--num--#{$ind} {
         @include onTablet {
@@ -239,7 +235,6 @@
       }
     }
   }
-
 
   &__btn {
     @for $ind from 1 through 5 {
@@ -257,59 +252,11 @@
         border: none;
         box-shadow: none;
         transform: none;
+        opacity: 0.65;
 
           &::after {
             content: '\21e7';
           }
-        }
-      }
-    }
-  }
-
-
-
-
-
-  &__radio {
-    display: none;
-
-    @include onTablet {
-      position: absolute;
-      &--up--150 {
-        transform: translate(-25%, -150%);
-      }
-      &--up--140 {
-        transform: translate(-25%, -140%);
-      }
-      &--up--130 {
-        transform: translate(-25%, -130%);
-      }
-      &--left-up--50-135 {
-        transform: translate(-50%, -135%);
-      }
-      &--left-up--75-135 {
-        transform: translate(-75%, -135%);
-      }
-    }
-  }
-
-  &__radio-btn {
-    &:checked ~ .radio {
-      display: block;
-    }
-
-    &:checked ~ .materials__label {
-      background-color: $bgrnd-radio;
-      opacity: 0.65;
-    }
-
-    @include onTablet {
-      &:checked ~ .materials__label {
-        box-shadow: none;
-        transform: none;
-
-        &::after {
-          content: '\21e7';
         }
       }
     }
