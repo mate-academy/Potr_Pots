@@ -1,4 +1,37 @@
 .footer {
+  padding-bottom: 50px;
+
+  &__container {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-name {
+      @include onTablet {
+        flex-grow: 2;
+      }
+    }
+
+    &-address {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        flex-basis: 200px;
+
+      }
+    }
+
+    &-about-us {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+  }
 
   &__icons {
     display: flex;
@@ -14,6 +47,14 @@
     text-transform: uppercase;
 
     color: #000;
+
+    @include onTablet {
+      text-align: start;
+
+      &:nth-child(2) {
+        text-align: center;
+      }
+    }
   }
 
   &__copyright {
@@ -25,6 +66,16 @@
     text-align: center;
     color: #000;
     margin-bottom: 30px;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    &-name {
+      @include onTablet {
+        display: none;
+      }
+    }
   }
 
 }
