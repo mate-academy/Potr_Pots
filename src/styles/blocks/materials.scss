@@ -1,28 +1,126 @@
 .materials {
 
+  &__text {
+    position: relative;
+
+    &-container {
+      display: none;
+      right: 10%;
+      top: 72%;
+      width: 340px;
+      position: absolute;
+
+      @include onTablet {
+        display: block;
+        z-index: -2;
+      }
+    }
+
+    &-title {
+      font-family: "Manrope";
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+
+      color: #4F4F4F;
+
+    }
+
+    &-text {
+      font-family: 'Manrope';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: #4F4F4F;
+    }
+  }
+
   &__title {
     margin: 0 30px;
     font-size: 58px;
     line-height: 70px;
     letter-spacing: 0.15em;
     color: #03839e;
+
+    @include onTablet {
+      max-width: 600px;
+      margin-bottom: 140px;
+    }
   }
 
   &__logo {
-    position: relative;
-    height: 240px;
+    height: 70vw;
     background: linear-gradient(180deg, #fff 0%,
     rgba(255, 255, 255, 0) 40.93%),
-      url(../images/materials_logo.png);
+      url(../images/materials_logo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     transform: translateY(-82px);
     z-index: -1;
+
+    &-content {
+      position: relative;
+    }
   }
 
   &__slider {
-    margin: 0 9px;
+    margin: 0 auto;
     padding: 30px 45px;
     transform: translateY(-130px);
+
+    @include onTablet {
+      position: absolute;
+      bottom: 15%;
+      left: 5%
+    }
+  }
+
+  &__tablet-button {
+    display: none;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    background-color: #eb5757;
+
+    &--active {
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(12px);
+    }
+
+    @include onTablet {
+      display: block;
+
+    }
+
+    &-1 {
+      bottom: 10%;
+      left:10%;
+    }
+
+    &-2 {
+      bottom: 35%;
+      left:30%;
+    }
+
+    &-3 {
+      bottom: 8%;
+      left:44%;
+    }
+
+    &-4 {
+      bottom: 18%;
+      left:58%;
+    }
+
+    &-5 {
+      bottom: 50%;
+      left:70%;
+    }
   }
 }
