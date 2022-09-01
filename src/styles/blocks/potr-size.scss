@@ -1,5 +1,14 @@
 .potr-size {
 
+  &__tablet-container {
+    padding: 0;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
   &__title {
     font-size: 36px;
     line-height: 150%;
@@ -8,6 +17,7 @@
 
     margin: 0 30px 20px;
     color: #000;
+
   }
 
   &__text {
@@ -19,12 +29,13 @@
 
     color: #4f4f4f;
 
+    @include onTablet {
+      width: 579px;
+    }
+
     &--small {
       margin: 0 0 40px;
-
-      &:last-child {
-        margin: 0;
-      }
+      width: 100%;
     }
   }
 
