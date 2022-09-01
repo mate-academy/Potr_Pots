@@ -1,13 +1,12 @@
 .intro {
-  position: relative;
   @extend %flex-column;
 
   &__box {
     @extend %flex-column;
+    position: relative;
     justify-content: center;
 
     @include onTablet {
-      min-width: 700px;
       margin: 0 auto;
       padding: 0 34px;
       display: grid;
@@ -20,7 +19,7 @@
     }
 
     @include onDesktop {
-      min-width: 1170px;
+      max-width: 1440px;
       grid-template-columns: repeat(12, minmax(70px, 1fr));
       column-gap: 30px;
       padding: 0 135px;
