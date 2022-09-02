@@ -99,7 +99,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    min-height: 240px;
+    min-height: 254px;
     padding-bottom: 34px;
     position: relative;
     background-color: $bgrnd-radio;
@@ -144,19 +144,28 @@
       transform: none;
       color: #fff;
       font-size: 24px;
-      transition: background-color $transition-duration, transform $transition-duration;
+      will-change: contents;
+      transition: background-color $transition-duration;
 
       &::after {
-        content: "\21e8";
+        content: "";
+        display: block;
+        @include square(16px);
+        background-color: $white-color;
+        border-radius: 50%;
+        transition: transform $transition-duration;
       }
 
       &:hover {
-        transform: scale(1.1);
         background-color: $page-main-color;
+      }
+
+      &:hover::after{
+        transform: scale(1.4);
       }
     }
 
-    @each $ind, $left, $bottom in $button-pos {
+    @each $ind, $left, $bottom in $button-pos-tablet {
       &--num--#{$ind} {
         @include onTablet {
           position: absolute;
@@ -165,30 +174,13 @@
         }
       }
     }
-  }
 
-  &__label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @include square(10px);
-    background-color: $red-57;
-
-    @include onTablet {
-      border-radius: 50%;
-      @include square(50px);
-      background-color: $red-57;
-      color: #fff;
-      font-size: 24px;
-      transition: background-color $transition-duration, transform $transition-duration;
-
-      &::after {
-        content: "\21e8";
-      }
-
-      &:hover {
-        transform: scale(1.1);
-        background-color: $page-main-color;
+    @each $ind, $left, $bottom in $button-pos-desktop {
+      &--num--#{$ind} {
+        @include onDesktop {
+          left: $left;
+          bottom: $bottom;
+        }
       }
     }
   }
@@ -203,7 +195,6 @@
     @include onTablet {
       display: flex;
       width: 100%;
-      // max-width: 1440px;
       height: 100%;
     }
   }
@@ -214,23 +205,32 @@
       display: none;
       }
     }
-
     @include onTablet {
       z-index: 2;
       position: absolute;
-      max-width: 284px;
+      width: 284px;
       padding: 24px;
       background-color: $bgrnd-radio;
       color: $white-color;
       border-radius: 5px;
+      transform-origin: 50% 50%;
     }
 
-    @each $ind, $left, $bottom, $transf in $card-pos {
+    @each $ind, $left, $bottom, $transX, $transY in $card-pos-tablet {
       &--num--#{$ind} {
         @include onTablet {
           left: $left;
           bottom: $bottom;
-          transform: translateX($transf);
+          transform: translate($transX, $transY);
+        }
+      }
+    }
+
+    @each $ind, $left, $bottom, $transX, $transY in $card-pos-desktop {
+      &--num--#{$ind} {
+        @include onDesktop {
+          left: $left;
+          bottom: $bottom;
         }
       }
     }
@@ -256,6 +256,13 @@
 
           &::after {
             content: '\21e7';
+            line-height: 51px;
+            text-align: center;
+            @include square(100%);
+            background-color: transparent;
+          }
+          &:hover::after {
+            transform: none;
           }
         }
       }

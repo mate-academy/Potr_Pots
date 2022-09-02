@@ -1,0 +1,152 @@
+.potr-size {
+  @include onDesktop {
+    max-width: 1440px;
+  }
+
+  &__title {
+    @extend %bebas;
+    @extend %title-upper;
+    padding: 0 30px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    line-height: 54px;
+    color: #000;
+
+    @include onTablet {
+      padding: 0 34px;
+    }
+
+    @include onDesktop {
+      padding: 0 134px;
+    }
+  }
+
+  &__about {
+    @include onTablet {
+      padding: 0 34px;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+      grid-auto-rows: auto;
+      grid-template-areas: "answ answ answ answ answ ."
+      "pots pots im im im im"
+      "star star star star star star";
+    }
+
+    @include onDesktop {
+      padding: 0 134px;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      grid-template-areas: "answ answ answ pots pots pots im im im im im im"
+      "star star star star star star im im im im im im";
+    }
+  }
+
+  &__answer {
+    color: $gray-4f;
+    padding: 0 30px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      padding: 0;
+      margin-bottom: 38px;
+      grid-area: answ;
+    }
+    @include onDesktop {
+      max-width: 250px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-box {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+      grid-area: im;
+    }
+
+    @include onDesktop {
+      align-self: end;
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__dimensions {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 16px;
+
+    @include onTablet {
+      gap: 26px;
+      padding: 0;
+      grid-area: pots;
+    }
+    @include onDesktop {
+      margin-bottom: 0;
+      gap: 40px;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 258px;
+        border-bottom: 1px solid $gray-d8;
+        transform-origin: 0 0;
+        transform: rotate(-90deg);
+        left: -30px;
+        top: 258px;
+      }
+    }
+  }
+
+  &__card {
+    &-title {
+      @extend %bebas;
+      @extend %title-upper;
+      font-size: 18px;
+      line-height: 18px;
+      color: #000;
+
+      margin-bottom: 10px;
+    }
+
+    &-about {
+      color: $gray-4f;
+    }
+  }
+
+  &__with-star {
+    position: relative;
+    color: $gray-4f;
+    padding: 0 30px;
+
+    @include onTablet {
+      padding: 0;
+      grid-area: star;
+    }
+
+    @include onDesktop {
+      align-self: end;
+    }
+  }
+
+  &__star {
+    position: absolute;
+    top: 0;
+    left: 16px;
+
+    @include onTablet {
+      left: -16px;
+    }
+  }
+}
