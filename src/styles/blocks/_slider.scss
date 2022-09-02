@@ -48,7 +48,7 @@
         content: "+";
         position: absolute;
         @include s2-text;
-        color: #f7f7f7;
+        color: $white;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -108,13 +108,13 @@
       height: 8px;
       width: 8px;
       transform: rotate(45deg);
-      background-color: black;
+      background-color: $black;
       margin: 0 10px 0 10px;
       background: 1px solid transparent;
     }
     &__active {
-      background-color: #fff;
-      background: 1px solid black;
+      background-color: $white;
+      background: 1px solid $black;
     }
     &__button {
       display: none;
@@ -124,57 +124,30 @@
 
 .slide {
   &--1 {
-    grid-column-start: 12;
-    grid-column-end: span 16;
-    grid-row-start: 15;
-    grid-row-end: span 17;
+    @include gridpos(15, span 17, 12, span 16);
     @media (max-width: 768px) {
-      grid-column-start: 11;
-      grid-column-end: span 13;
-      grid-row-start: 13;
-      grid-row-end: span 15;
+      @include gridpos(13, span 15, 11, span 13);
     }
   }
   &--2 {
-    grid-column-start: 9;
-    grid-column-end: span 13;
-    grid-row-start: 10;
-    grid-row-end: span 13;
+    @include gridpos(10, span 13, 9, span 13)
   }
   &--3 {
-    grid-column-start: 6;
-    grid-column-end: span 8;
-    grid-row-start: 15;
-    grid-row-end: span 19;
+    @include gridpos(15, span 19, 6, span 8);
     @media (max-width: 768px) {
-      grid-column-start: 5;
-      grid-column-end: span 6;
-      grid-row-start: 11;
-      grid-row-end: span 13;
+      @include gridpos(11, span 13, 5, span 6);
     }
   }
   &--4 {
-    grid-column-start: 4;
-    grid-column-end: span 7;
-    grid-row-start: 10;
-    grid-row-end: span 12;
+    @include gridpos(10, span 12, 4, span 7);
     @media (max-width: 768px) {
-      grid-column-start: 4;
-      grid-column-end: span 7;
-      grid-row-start: 6;
-      grid-row-end: span 10;
+      @include gridpos(6, span 10, 4, span 7);
     }
   }
   &--5 {
-    grid-column-start: 2;
-    grid-column-end: span 3;
-    grid-row-start: 16;
-    grid-row-end: span 18;
+    @include gridpos(16, span 18, 2, span 3);
     @media (max-width: 768px) {
-      grid-column-start: 2;
-      grid-column-end: span 6;
-      grid-row-start: 10;
-      grid-row-end: span 13;
+      @include gridpos(10, span 13, 2, span 6);
     }
   }
 }
