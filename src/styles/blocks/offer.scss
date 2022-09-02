@@ -1,6 +1,9 @@
 .offer {
   position: relative;
-  padding-top: 115px;
+
+  @include onDesktop {
+    padding-top: 115px;
+  }
 
   &__container {
     @extend %container;
@@ -137,7 +140,11 @@
     position: relative;
     margin-bottom: 5px;
 
-    @include h2 ($font-main);
+    @include text ($font-main, 32px, 48px);
+
+    @include onTablet {
+      @include h2 ($font-main);
+    }
 
     &::before {
       content: "";

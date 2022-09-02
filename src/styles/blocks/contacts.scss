@@ -1,0 +1,147 @@
+.contacts {
+  position: relative;
+  padding-top: 40px;
+
+  @include onTablet {
+    padding-top: 20px;
+  }
+
+  @include onDesktop {
+    padding: 0;
+  }
+
+  &__background-container {
+    position: absolute;
+    top: 0;
+    bottom: -140px;
+    right: 0;
+    left: 0;
+    background: conic-gradient(from 75deg at 0% 100%, $gray-light 0%, $yellow-light 100%);
+    z-index: -1;
+
+    @include onTablet {
+      background: conic-gradient(from 83deg at 0% 100%, $gray-light 0%, $yellow-light 100%);
+      bottom: -90px;
+    }
+
+    @include onDesktop {
+      left: -100%;
+      bottom: -60%;
+
+      background: conic-gradient(from 83deg at 0% 100%, $gray-light 0%, $yellow-light 100%);
+    }
+  }
+
+  &__photo-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include shape (149px);
+    @include image (circle, contain, image, 40px 0);
+
+    transform: translateY(-50%);
+
+    @include onDesktop {
+      @include shape (160px);
+      @include image (circle, contain, image);
+
+      transform: translate(50%, -60%);
+    }
+  }
+
+  &__container {
+    @extend %container;
+
+    @include onTablet {
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0 20px;
+
+      @include onDesktop {
+        position: relative;
+        padding-top: 40px;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0 30px;
+      }
+    }
+  }
+
+  &__title {
+    @include h2 ($font-secondary);
+    color: black;
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+    color: black;
+
+    @include onTablet {
+      grid-row: 2;
+      grid-column: 1 / -1;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 50px;
+    
+    @include onTablet {
+      grid-row: 3;
+      grid-column: 1 / 4;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+
+    & :last-child {
+      @include onTablet {
+        width: 65%;
+      }
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      grid-row: 2 / -1;
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__info-item {
+    &:not(:last-child) {
+      margin-bottom: 35px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__info-title {
+    margin-bottom: 5px;
+
+    @include h3 ($font-main);
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__info-link {
+    color: black;
+  }
+}
