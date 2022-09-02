@@ -12,9 +12,34 @@
     @include onTablet {
       display: block;
     }
+
+    @include onDesktop {
+      &-1 {
+        width: 500px;
+      }
+
+      &-2 {
+        width: 300px;
+      }
+
+      &-3 {
+        width: 470px;
+      }
+    }
+  }
+
+  &__desk {
+
+    @include onDesktop {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__article {
+
     position: relative;
     margin-bottom: 70px;
 
@@ -22,12 +47,39 @@
       display: flex;
     }
 
+    &-desk {
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-3 {
+
+        @include  onDesktop {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+      }
+    }
+
     &-text {
+
       @include onTablet {
         display: flex;
         flex-direction: column;
 
         padding: 0 40px;
+      }
+
+      @include onDesktop {
+        padding: 0;
+        margin-left: 100px;
+        margin-top: 100px;
+        width: 370px;
       }
     }
   }
@@ -38,6 +90,15 @@
     top: -60px;
     @include onTablet {
       display: none;
+    }
+
+    &-desk {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        bottom: 100px;
+      }
     }
   }
 }
