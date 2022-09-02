@@ -1,9 +1,8 @@
 .header {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  display: flex;
   height: 80px;
+  justify-content: space-evenly;
   align-items: center;
-  overflow: hidden;
 
   &__rectangle {
     @media (max-width: 1023) {
@@ -40,9 +39,8 @@
   }
   &__nav {
     z-index: 5;
-    grid-column-start: 7;
-    grid-column-end: span 14;
     transition: right 0.5s;
+    width: 910px;
     @media (max-width: 850px) {
       border: 1px solid $yellow;
       padding-top: 100px;
@@ -57,14 +55,8 @@
   &__logo {
     @include h2-text;
     text-transform: uppercase;
-    grid-column-start: 1;
-    grid-column-end: 4;
     padding: 17px;
     z-index: 1;
-    @media (min-width: 1023px) {
-      grid-column-start: 3;
-      grid-column-end: span 3;
-    }
   }
   &__ul {
     display: flex;

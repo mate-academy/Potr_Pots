@@ -4,7 +4,7 @@
     content: "";
     display: block;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     overflow: visible;
     top: 5px;
     right: -25px;
@@ -18,9 +18,9 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     position: relative;
     overflow: hidden;
-    flex-wrap: wrap;
     max-width: 1300px;
     padding-bottom: 130px;
 
@@ -30,34 +30,39 @@
   }
   &__box {
     position: absolute;
-    width: 200%;
-    height: 100%;
-    z-index: 0;
     bottom: 0;
     left: 0;
+    z-index: 0;
+
+    width: 200%;
+    height: 100%;
+
     background-color: $yellow-light;
+
     transform-origin: bottom left;
-    transform: rotate(-8deg)
+    transform: rotate(-8deg);
   }
   &__section {
+    margin: 0 auto 0;
+    padding: 38px 0 0;
+
     flex: 0 0 30%;
     display: flex;
     flex-direction: column;
-    margin: 0 auto 0;
-    padding: 38px 0 0;
+
     z-index: 1;
-
-
   }
   &__title {
     @include h2-text;
   }
   &__info {
     @include s3-text;
+
     margin-bottom: 30px;
   }
   &__call {
     @include s2-text;
+
     margin-bottom: 40px;
   }
   &__form {
@@ -66,9 +71,10 @@
   }
   &__input {
     @include input;
-    margin-bottom: 20px;
+
     max-width: 400px;
-    &:nth-child(n+3) {
+    margin-bottom: 20px;
+    &:nth-child(n + 3) {
       margin-bottom: 40px;
     }
   }
@@ -85,13 +91,12 @@
   }
   &__name {
     @include s2-text;
-    color: $paragraph_grey
-
+    color: $paragraph_grey;
   }
   &__link {
     @include s3-text;
+    @include link_hover($red);
     text-decoration: none;
     color: #000;
-    @include link_hover($red);
   }
 }
