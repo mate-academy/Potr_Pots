@@ -4,6 +4,22 @@
     @include onTablet {
       padding: 0;
     }
+
+    @include onDesktop {
+      position: relative;
+      width: 240px;
+      margin-right: 80px ;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 250px;
+        background-color: #d8d8d8;
+        left: -28px;
+        top: 0;
+      }
+    }
   }
 
   &__tablet-container {
@@ -14,6 +30,11 @@
       display: flex;
       flex-direction: row-reverse;
     }
+
+    @include onDesktop {
+      margin: 0;
+    }
+
   }
 
   &__title {
@@ -25,6 +46,10 @@
     margin: 0 30px 20px;
     color: #000;
 
+    @include onDesktop {
+      margin-bottom: 66px;
+      padding: 0 135px;
+    }
   }
 
   &__text {
@@ -40,9 +65,21 @@
       width: 579px;
     }
 
+    @include onDesktop {
+      width: 40%;
+    }
+
     &--small {
       margin: 0 0 40px;
       width: 100%;
+    }
+
+    &-container {
+
+      @include onDesktop {
+        display: flex;
+        padding: 0 135px;
+      }
     }
   }
 
@@ -50,6 +87,10 @@
     display: block;
     margin: 0 auto;
     margin-bottom: 30px;
+
+    @include onDesktop {
+      width: 528px;
+    }
   }
 
   &__size-title {
@@ -59,5 +100,14 @@
     margin-bottom: 10px;
 
     color: #000;
+  }
+
+  &__bottom-text {
+    @include onDesktop {
+      padding: 0 135px;
+      text-align: center;
+      width: 36%;
+      transform: translateY(-250%);
+    }
   }
 }
