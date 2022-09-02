@@ -14,11 +14,11 @@
     grid-template-columns: repeat(2, minmax(120px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(120px, 1fr));
     width: 100%;
-    gap: 20;
+    gap: 0;
+    padding: 0;
     overflow-x: hidden;
     margin-top: 30px;
-    padding-left: auto;
-    padding-right: auto;
+    justify-content: center;
     height: auto;
     overflow: visible;
   }
@@ -28,10 +28,7 @@
     z-index: 1;
     letter-spacing: 0.155em;
     text-transform: uppercase;
-    grid-column-start: 1;
-    grid-column-end: span 5;
-    grid-row-start: 2;
-    grid-row-end: span 6;
+    @include gridpos(2, span 6, 1, span 5);
     &-part-1 {
       -webkit-text-stroke: 1px $turqoise;
       color: transparent;
@@ -40,16 +37,10 @@
       color: $turqoise;
     }
     @media (max-width: 768px) {
-      grid-column-start: 2;
-      grid-column-end: span 5;
-      grid-row-start: 2;
-      grid-row-end: span 6;
+      @include gridpos(2, span 6, 2, span 5);
     }
     @media (max-width: 475px) {
-      grid-column-start: 1;
-      grid-column-end: span 2;
-      grid-row-start: 3;
-      grid-row-end: span 7;
+      @include gridpos(4, span 7, 1, span 2);
       transform: scale(70%);
       width: 90vw;
     }
@@ -57,42 +48,26 @@
 
   &__img {
     z-index: 1;
-    grid-row-start: 2;
-    grid-row-end: span 8;
-    grid-column-start: 6;
-    grid-column-end: span 8;
+    @include gridpos(2, span 8, 6, span 8);
     width: 100%;
     height: auto;
     @media (max-width: 768px) {
-      grid-row-start: 2;
-      grid-row-end: 7;
-      grid-column-start: 5;
-      grid-column-end: 9;
+      @include gridpos(2, 7, 5, 9);
     }
     @media (max-width: 475px) {
-      grid-column-start: 1;
-      grid-column-end: span 2;
-      grid-row-start: 1;
-      grid-row-end: span 3;
+      @include gridpos(1, span 3, 1, span 2);
       width: 100%;
     }
   }
   &__price {
     @include s2-text;
     position: relative;
-    grid-row-start: 6;
-    grid-row-end: 7;
-    grid-column-start: 4;
-    grid-column-end: 5;
+    @include gridpos(6, 7, 4, 5);
     @media (max-width: 768px) {
-      grid-row-start: 6;
-      grid-row-end: 7;
-      grid-column-start: 3;
-      grid-column-end: 4;
+      @include gridpos(6, 7, 3, 4);
     }
     @media (max-width: 475px) {
-      grid-column-start: 1;
-      grid-row-start: 9;
+      @include gridpos(8, span 11, 1, span 2);
       align-self: center;
       justify-self: center;
       margin-top: 35px;
@@ -100,9 +75,9 @@
     &:after {
       content: "Get the second order in half price";
       position: absolute;
+      left: 0;
       width: 140px;
       bottom: -30px;
-      left: 0;
       @include s4-text;
       font-weight: 400;
       color: $grey;
@@ -114,19 +89,12 @@
 
   &__button {
     @include primary-button-2;
-    grid-row-start: 8;
-    grid-row-end: 9;
-    grid-column-start: 3;
-    grid-column-end: span 6;
+    @include gridpos(8, 9, 3, span 6);
     @media (max-width: 768px) {
-      grid-row-start: 8;
-      grid-row-end: 9;
-      grid-column-start: 3;
-      grid-column-end: span 6;
+      @include gridpos(8, 9, 3, span 6);
     }
     @media (max-width: 475px) {
-      grid-column-start: 1;
-      grid-row-start: 10;
+      @include gridpos(13, span 14, 1, span 2);
       margin-left: 45px;
       margin-top: 20px;
     }
@@ -139,20 +107,14 @@
     width: 250px;
     height: 30px;
     margin-top: 80px;
-    grid-row-start: 5;
-    grid-row-end: span 8;
-    grid-column-start: 1;
+    @include gridpos(5, span 8, 1, span 2);
     justify-self: end;
     align-self: center;
     @media (max-width: 768px) {
-      grid-row-start: 5;
-      grid-row-end: span 8;
-      grid-column-start: 1;
-      grid-column-end: span 2;
+      @include gridpos(5, span 8, 1, span 2);
     }
     @media (max-width: 475px) {
-      grid-column-start: 2;
-      grid-row-start: 9;
+      @include gridpos(9, span 10, 2, span 3);
       justify-self: start;
       align-self: start;
     }

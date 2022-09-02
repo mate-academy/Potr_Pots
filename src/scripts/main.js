@@ -56,7 +56,7 @@ sliderButton.forEach((a, i) => {
     sliderButton.forEach((e, index) =>
       i === index
         ? e.classList.toggle('button--active')
-        : e.classList.toggle('button--invis')
+        : e
     );
     sliderSlide[i].classList.toggle('slider__active');
   });

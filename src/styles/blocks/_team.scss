@@ -18,45 +18,28 @@
     max-width: 766px;
     width: 100%;
     height: auto;
-    grid-column-start: 9;
-    grid-column-end: 18;
-    grid-row-start: 4;
-    grid-row-end: span 11;
+    @include gridpos(4, span 11, 9, 18);
     z-index: 1;
     @media (max-width: 768px) {
-      grid-column-start: 5;
-      grid-column-end: 10;
-      grid-row-start: 5;
-      grid-row-end: span 9;
+      @include gridpos(5, span 9, 5, 10);
     }
     @media (max-width: 485px) {
-      grid-column-start: 1;
-      grid-column-end: span 4;
-      grid-row-start: 1;
-      grid-row-end: span 7;
+      @include gridpos(1, span 7, 1, span 4);
       margin-left: 0;
     }
   }
   &__paragraph {
     @include s3-text;
     width: 310px;
-    grid-row-start: 7;
-    grid-row-end: span 12;
-    grid-column-start: 3;
-    grid-column-end: 7;
+    @include gridpos(7, span 12, 3, 7);
     z-index: 1;
 
     @media (max-width: 768px) {
-      grid-column-start: 1;
-      grid-column-end: 4;
-      grid-row-start: 5;
-      grid-row-end: span 9;
+      @include gridpos(5, span 9, 1, 4);
       padding: 15px;
     }
     @media (max-width: 485px) {
-      grid-column-start: 1;
-      grid-row-start: 10;
-      grid-row-end: 18;
+      @include gridpos(10, 18, 1, 2);
       z-index: 1;
       width: 260px;
       margin: 30px auto 0;
@@ -68,10 +51,7 @@
     line-height: 23vw;
     -webkit-text-stroke: 1px $turqoise;
     color: transparent;
-    grid-row-start: 2;
-    grid-row-end: span 5;
-    grid-column-start: 2;
-    grid-column-end: span 13;
+    @include gridpos(2, span 5, 2, span 13);
     z-index: 2;
     @media (max-width: 485px) {
       display: none;
@@ -83,18 +63,13 @@
     line-height: 22vw;
     -webkit-text-stroke: 1px $turqoise;
     color: transparent;
-    grid-row-start: 14;
-    grid-row-end: span 12;
-    grid-column-start: 12;
+    @include gridpos(14, span 16, 12, span 14);
     z-index: 2;
     @media (max-width: 485px) {
       display: none;
     }
     @media (max-width: 768px) {
-      grid-column-start: 6;
-      grid-column-end: span 12;
-      grid-row-start: 11;
-      grid-row-end: span 13;
+      @include gridpos(11, span 13, 6, span 12);
     }
   }
   &__box {
@@ -107,15 +82,9 @@
       height: 310px;
       width: 435px;
       overflow: hidden;
-      grid-column-start: 1;
-      grid-column-end: span 5;
-      grid-row-start: 3;
-      grid-row-end: span 5;
+      @include gridpos(3, span 5, 1, span 5);
       @media (max-width: 485px) {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 14;
-        grid-row-end: span 18;
+        @include gridpos(14, span 18, 1, 2);
       }
     }
   }
