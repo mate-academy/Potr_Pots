@@ -1,6 +1,33 @@
 .benefits {
   position: relative;
 
+  &__content {
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+
+  }
+
+  &__images {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+    }
+  }
+
+  &__logo {
+
+    &-2 {
+      position: absolute;
+      left: 14%;
+      top: 30%;
+    }
+  }
+
   &__side-text {
     display: none;
     @include onTablet {
@@ -8,12 +35,21 @@
       right: 0;
       top: 20%;
     }
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__container {
     @include onTablet {
       display: flex;
       align-items: center;
+      justify-content: space-around;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
     }
   }
 
@@ -28,17 +64,22 @@
     font-family: "Manrope", sans-serif;
     font-weight: 700;
     font-size: 32px;
-    text-align: baseline;
     line-height: 150%;
     color: #333;
     padding-left: 30px;
 
+
     &::before {
-      content: "*";
+      content: "";
       position: absolute;
-      top: 4px;
-      left: 0;
-      width: 6px;
+      top: 20px;
+      left: 10px;
+      transform: rotate(45deg);
+
+      width: 7px;
+      height: 7px;
+
+      background-color: #4f4f4f;
     }
   }
 
@@ -50,6 +91,15 @@
     margin: 0 0 40px 30px;
 
     color: #828282;
+
+    &-container {
+      @include onDesktop {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-between;
+        margin-bottom: 60px;
+      }
+    }
   }
 
   &__button {
@@ -63,6 +113,11 @@
       &:hover {
         background: #03839e;
       }
+    }
+
+    @include onDesktop {
+      margin: 0 0 84px;
+      transform: translateX(-90%);
     }
   }
 
@@ -84,6 +139,13 @@
       text-transform: uppercase;
 
       color: #03839e;
+      @include onDesktop {
+        transform: translateX(-30%);
+      }
+    }
+
+    @include onDesktop {
+      transform: translateX(-30%);
     }
   }
 }

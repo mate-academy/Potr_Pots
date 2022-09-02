@@ -1,9 +1,63 @@
 .for-whom {
 
+  position: relative;
+
+  &__tablet-text {
+    display: none;
+    @include onTablet {
+      display: inline;
+      position: absolute;
+      font-family: "Manrope";
+      font-size: 16px;
+      line-height: 150%;
+
+      color: #333333;
+
+      &::before {
+        content: "*";
+        font-size: 22px;
+      }
+
+      &-1 {
+        left: 50%;
+        top: 3%;
+
+        @include onDesktop {
+          top: 12%;
+
+        }
+      }
+
+      &-2 {
+        left: 40%;
+        top: 35%;
+
+        @include onDesktop {
+          top: 68%;
+          left: 15%;
+        }
+      }
+
+      &-3 {
+        left: 50%;
+        bottom: 32%;
+
+        @include onDesktop {
+          left: 58%;
+          bottom: 28%;
+        }
+      }
+    }
+  }
+
   &__title {
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-bottom: 26px;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
   }
 
   &__photo {
@@ -11,6 +65,11 @@
 
     @include onTablet {
       display: block;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(115%);
+      }
     }
 
     @include onDesktop {
@@ -71,7 +130,7 @@
       @include onTablet {
         display: flex;
         flex-direction: column;
-
+        justify-content: flex-end;
         padding: 0 40px;
       }
 
@@ -85,9 +144,10 @@
   }
 
   &__side-text {
-    display: inline-block;
-    left: 92%;
-    top: -60px;
+    display: block;
+    right: -6%;
+    bottom: 0;
+
     @include onTablet {
       display: none;
     }

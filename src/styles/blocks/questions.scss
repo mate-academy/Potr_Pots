@@ -15,12 +15,22 @@
 
   &__side-logo {
     position: absolute;
-    right: 0;
-    top: -70px;
+    right: -15%;
+    top: -80px;
     height: 100%;
     width: 149px;
     background-repeat: no-repeat;
     background-image: url("../images/side_logo.png");
+
+    @include onTablet {
+      right: -3%;
+      top: -110px;
+    }
+
+    @include onDesktop {
+      right: 8%;
+      top: -110px;
+    }
   }
 
   &__bg {
@@ -32,6 +42,12 @@
     @include onTablet {
       clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
       height: 100%;
+    }
+
+    @include onDesktop {
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+      width: 1290px;
+      height: 120%;
     }
   }
 
@@ -97,6 +113,15 @@
       outline: none;
     }
 
+    &:valid {
+      color: #03839e;
+      border-color: #03839e;
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
   }
 
   &__button {
@@ -131,6 +156,12 @@
     color: #000;
 
     margin-bottom: 34px;
+
+    transition: color 0.3s;
+
+    &:hover {
+      color: #03839e;
+    }
 
     &:last-child {
       margin-bottom: 115px;

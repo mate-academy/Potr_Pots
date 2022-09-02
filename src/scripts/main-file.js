@@ -56,3 +56,14 @@ tabletButtons.forEach(function(btn, index) {
     btn.classList.add('materials__tablet-button--active');
   });
 });
+
+const form = document.querySelector('.questions__form');
+const inputs = document.querySelectorAll('.questions__form-input');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  inputs.forEach(input => {
+    input.value = '';
+  });
+});

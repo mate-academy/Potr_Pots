@@ -61,6 +61,7 @@
 
     color: #4f4f4f;
 
+
     @include onTablet {
       width: 579px;
     }
@@ -88,6 +89,12 @@
     margin: 0 auto;
     margin-bottom: 30px;
 
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(110%);
+    }
+
     @include onDesktop {
       width: 528px;
     }
@@ -103,6 +110,13 @@
   }
 
   &__bottom-text {
+    position: relative;
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -12px;
+    }
+
     @include onDesktop {
       padding: 0 135px;
       text-align: center;

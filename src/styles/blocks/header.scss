@@ -29,24 +29,37 @@
 
   &__right-text {
     position: absolute;
-    left: 72%;
-    bottom: 12%;
+    right: -20px;
+    bottom: 15%;
+    width: max-content;
+
+    font-family: 'Manrope', sans-serif;
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
+    text-decoration: none;
+
     color: #03839e;
 
     transform: rotate(90deg) translateY(-150%);
+    transition: border-color 0.4s;
 
-    &:after {
+    border-bottom: 1px solid transparent;
+
+
+    &:hover {
+      border-color: #03839e;
+    }
+
+    &::after {
       position: absolute;
       content: "";
-      display: inline-block;
       width: 10px;
       height: 44px;
-      left: 130%;
+      left: 122%;
       bottom: -10px;
       color: #03839e;
+
       background-image: url("../images/side_arrow.svg");
       background-repeat: no-repeat;
       background-size: contain;
@@ -63,6 +76,7 @@
       left: 105px;
       bottom: 70px;
     }
+
   }
 
   &__navigation {
@@ -85,6 +99,11 @@
     @include onTablet {
       margin: 0;
       float: right;
+
+      transition: transform 0.5s;
+      &:hover {
+        transform: scale(110%);
+      }
     }
 
     @include onDesktop {
@@ -102,8 +121,11 @@
 
     @include onTablet {
       font-weight: 400;
-      font-size: 54px;
+      min-width: 490px;
+      font-size: 66px;
       line-height: 64px;
+
+      margin: 0;
     }
 
     @include onDesktop {
@@ -129,7 +151,7 @@
     &-text {
       @include onTablet {
         align-self: flex-end;
-        margin-right: 10px;
+        margin-right: 20px;
       }
       @include onDesktop {
         margin-right: 200px;
