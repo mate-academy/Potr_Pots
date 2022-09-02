@@ -42,6 +42,7 @@
       border: 1px solid transparent;
       background-color: $red;
       z-index: 0;
+      cursor: pointer;
 
       &::after {
         z-index: 0;
@@ -56,6 +57,9 @@
     }
     &__active {
       visibility: visible;
+      @media (min-width: 768px) {
+        z-index: 999;
+      }
     }
   }
   @media (max-width: 480px) {
@@ -92,7 +96,7 @@
       transform-origin: center center;
       transform: scale(1);
       scroll-snap-align: center;
-      z-index: 5
+      z-index: 5;
     }
 
     &__nav {
@@ -102,6 +106,7 @@
       width: 200px;
       margin-left: -100px;
       text-align: center;
+      z-index: 5;
     }
     &__navlink {
       display: inline-block;
@@ -113,8 +118,8 @@
       background: 1px solid transparent;
     }
     &__active {
-      background-color: $white;
-      background: 1px solid $black;
+      background-color: white;
+      background: 1px solid black;
     }
     &__button {
       display: none;
@@ -130,7 +135,7 @@
     }
   }
   &--2 {
-    @include gridpos(10, span 13, 9, span 13)
+    @include gridpos(10, span 13, 9, span 13);
   }
   &--3 {
     @include gridpos(15, span 19, 6, span 8);
