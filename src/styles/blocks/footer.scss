@@ -1,0 +1,74 @@
+.footer {
+  padding-bottom: 30px;
+
+  @include onTablet {
+    padding-bottom: 110px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 60px;
+  }
+
+  color: black;
+
+  &__container {
+    @extend %container;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__adrress-info {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__adrress-title {
+    @include onTablet {
+      margin-bottom: 10px;
+      @include h3 ($font-secondary);
+    }
+  }
+
+  &__sosial {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 0 10px;
+
+    @include onTablet {
+      gap: 80px;
+      margin-bottom: 30px;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      gap: 70px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    text-align: center;
+  }
+
+  &__about-link {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      @include h3 ($font-secondary);
+      margin-bottom: 10px;
+    }
+  }
+
+  &__copyright-info {
+    text-align: center;
+  }
+}
