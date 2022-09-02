@@ -9,6 +9,10 @@
       top: 35%;
       z-index: 3;
     }
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__text {
@@ -24,6 +28,12 @@
       @include onTablet {
         display: block;
         z-index: -2;
+      }
+
+      @include onDesktop {
+        transform: translateX(-20%) translateY(-30%);
+        z-index: 1;
+        width: 400px;
       }
     }
 
@@ -59,10 +69,23 @@
       max-width: 600px;
       margin-bottom: 140px;
     }
+
+    @include onDesktop {
+      position: relative;
+      font-size: 138px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+      max-width: max-content;
+      padding: 30px 0 0 135px;
+      margin: 0;
+      z-index: 5;
+
+    }
   }
 
   &__logo {
     height: 70vw;
+    max-height: 1080px;
     background: linear-gradient(180deg, #fff 0%,
     rgba(255, 255, 255, 0) 40.93%),
       url(../images/materials_logo.jpg);

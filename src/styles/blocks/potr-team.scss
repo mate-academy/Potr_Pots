@@ -8,6 +8,10 @@
       right: -2%;
       bottom: -30%;
     }
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__big-title {
@@ -26,11 +30,23 @@
         top: 12%;
         left: -6%;
         z-index: 2;
+
+        @include onDesktop {
+          top: 18%;
+          left: 100px;
+          font-size: 288px;
+        }
       }
 
       &--andy {
         bottom: -10%;
         right: -6%;
+
+        @include onDesktop {
+          bottom: -30%;
+          right: 0;
+          font-size: 288px;
+        }
       }
     }
   }
@@ -39,6 +55,10 @@
     @include onTablet {
       padding: 30px;
     }
+
+    @include onDesktop {
+      padding: 0 135px;
+    }
   }
 
   &__container {
@@ -46,6 +66,17 @@
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-around;
+    }
+
+    @include onDesktop {
+      align-items: flex-end;
+    }
+
+    &-text {
+      @include onTablet {
+        width: 400px;
+      }
+
     }
   }
 
@@ -58,6 +89,10 @@
     @include onTablet {
       width: 300px;
       top: 30%;
+    }
+
+    @include onDesktop {
+      width: 435px;
     }
   }
 
@@ -77,6 +112,14 @@
     height: 100%;
     margin: 0 auto;
     margin-bottom: 30px;
+
+    @include onTablet {
+      min-width: 340px;
+      width: 40%;
+    }
+    @include onDesktop {
+      width: 670px;
+    }
   }
 
   &__text {
@@ -88,7 +131,7 @@
     @include onTablet {
       margin-right: 40px;
       &:first-child {
-        margin-top: 100px;
+        margin-top: 50px;
       }
     }
   }
