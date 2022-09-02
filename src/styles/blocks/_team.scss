@@ -1,5 +1,5 @@
 .team {
-  overflow-x: hidden;
+  overflow: hidden;
   margin-bottom: 27px;
   &__title {
     @include h1-text;
@@ -9,23 +9,33 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
-
     @media (max-width: 485px) {
       grid-template-columns: minmax(120px, 1fr);
       grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
     }
   }
   &__img {
+    max-width: 766px;
+    width: 100%;
+    height: auto;
     grid-column-start: 9;
     grid-column-end: 18;
     grid-row-start: 4;
     grid-row-end: span 11;
+    z-index: 1;
+    @media (max-width: 768px) {
+      grid-column-start: 6;
+      grid-column-end: 12;
+      grid-row-start: 5;
+      grid-row-end: span 9;
+      margin-left: 15px;
+    }
     @media (max-width: 485px) {
-      max-width: 100%;
       grid-column-start: 1;
-      grid-column-end: 2;
+      grid-column-end: span 4;
       grid-row-start: 1;
       grid-row-end: span 7;
+      margin-left: 0;
     }
   }
   &__paragraph {
@@ -35,6 +45,15 @@
     grid-row-end: span 12;
     grid-column-start: 3;
     grid-column-end:  7;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      grid-column-start: 2;
+      grid-column-end: 5;
+      grid-row-start: 5;
+      grid-row-end: span 9;
+      padding: 15px;
+    }
     @media (max-width: 485px) {
       grid-column-start: 1;
       grid-row-start: 10;
@@ -46,30 +65,38 @@
   }
   &__martin {
     @include h1-text;
-    font-size: 288px;
-    line-height: 346px;
+    font-size: 20vw;
+    line-height: 23vw;
     -webkit-text-stroke: 1px $turqoise;
     color: transparent;
     grid-row-start: 2;
     grid-row-end: span 5;
     grid-column-start: 2;
     grid-column-end: span 13;
-    z-index: 1;
+    z-index: 2;
     @media (max-width: 485px) {
       display:none;
     }
   }
   &__andy {
     @include h1-text;
-    font-size: 288px;
-    line-height: 346px;
+    font-size: 20vw;
+    line-height: 22vw;
     -webkit-text-stroke: 1px $turqoise;
     color: transparent;
     grid-row-start: 14;
     grid-row-end: span 12;
     grid-column-start: 12;
+    z-index: 2;
     @media (max-width: 485px) {
       display:none;
+    }
+    @media (max-width: 768px) {
+      grid-column-start: 7;
+      grid-column-end: span 12;
+      grid-row-start: 11;
+      grid-row-end: span 13;
+
     }
 
   }
@@ -90,7 +117,7 @@
       @media (max-width: 485px) {
         grid-column-start: 1;
         grid-column-end: 2;
-        grid-row-start: 15;
+        grid-row-start: 14;
         grid-row-end: span 18;
 
       }
