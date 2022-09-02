@@ -6,16 +6,32 @@
     &:last-child {
       margin: 0;
     }
+
     width: 260px;
+
     @include onTablet {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      width: 100%;
+
       &:first-child {
         order: 0;
       }
       &:last-child {
         order: -1;
+      }
+    }
+
+    @include onDesktop {
+
+      align-items: center;
+
+      &:first-child {
+        order: -1;
+      }
+      &:last-child {
+        order: 2;
       }
     }
   }
@@ -41,6 +57,10 @@
     -webkit-text-stroke: 0.68px #03839e;
 
     margin-bottom: 22px;
+
+    @include onDesktop {
+      margin-bottom: 71px;
+    }
   }
 
   &__image {
@@ -69,6 +89,10 @@
 
     @include onTablet {
       text-align: start;
+    }
+
+    @include onDesktop {
+      text-align: center;
     }
   }
 }
