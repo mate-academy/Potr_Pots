@@ -1,0 +1,84 @@
+.header {
+  display: block;
+  padding-top: 15px;
+  padding-inline: 30px;
+
+  @include onTablet {
+    padding-top: 30px;
+    padding-inline: 34px;
+  }
+
+  @include onDesktop {
+    padding-top: 20px;
+    padding-inline: 134px;
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: auto 1fr 32px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+
+    color: $c-title;
+  }
+
+  &__nav-list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+
+      list-style: none;
+    }
+
+    &__link {
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-list;
+    }
+  }
+
+  &__cart-icon {
+    display: none;
+
+    &:hover {
+      background-image: url(/images/icons/cart-hover.svg);
+    }
+
+    @include onDesktop {
+      display: block;
+      width: 32px;
+      height: 32px;
+
+      background-image: url(/images/icons/cart-icon.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__menu-toggler {
+    display: block;
+    width: 32px;
+    height: 32px;
+
+    grid-column: 3 / 4;
+
+    background-image: url(/images/icons/menu_icon.svg);
+    cursor: pointer;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
