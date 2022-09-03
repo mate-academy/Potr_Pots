@@ -17,9 +17,18 @@
       display: none;
 
       @include onTablet {
-        display: block;
+        display: flex;
+        flex-direction: column;
         flex-basis: 200px;
+        align-items: flex-start;
 
+        border-bottom: 1px solid transparent;
+        transition: border-color $transition;
+
+        &:hover {
+          cursor: pointer;
+          border-color: $c-black;
+        }
       }
     }
 
@@ -62,26 +71,36 @@
     }
 
     margin-right: 70px;
-    transition: transform 0.5s;
+    transition: transform $transition;
 
     &:last-child {
       margin: 0;
     }
 
-    &:hover{
+    &:hover {
       transform: scale(150%);
     }
-
   }
 
   &__title {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
     font-size: 36px;
-    line-height: 150%;
+    line-height: $transition;
     text-align: center;
     letter-spacing: 0.15em;
     text-transform: uppercase;
 
-    color: #000;
+    transition: color $transition;
+
+    &:hover {
+      cursor: pointer;
+      color: $c-lightGray;
+    }
+
+    color: $c-black;
 
     @include onTablet {
       text-align: start;
@@ -93,13 +112,13 @@
   }
 
   &__copyright {
-    font-family: "Manrope", sans-serif;
-    font-weight: 400;
+    font-family: $fontFamilyMonrope;
     font-size: 16px;
-    line-height: 150%;
+    line-height: $lineHeight-150;
 
+    text-decoration: none;
     text-align: center;
-    color: #000;
+    color: $c-black;
     margin-bottom: 30px;
 
     @include onTablet {

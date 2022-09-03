@@ -4,14 +4,16 @@
 
   &__tablet-text {
     display: none;
+
     @include onTablet {
       display: inline;
       position: absolute;
-      font-family: "Manrope";
-      font-size: 16px;
-      line-height: 150%;
 
-      color: #333333;
+      font-family: $fontFamilyMonrope;
+      font-size: 16px;
+      line-height: $lineHeight-150;
+
+      color: $c-gray;
 
       &::before {
         content: "*";
@@ -24,7 +26,6 @@
 
         @include onDesktop {
           top: 12%;
-
         }
       }
 
@@ -51,6 +52,7 @@
   }
 
   &__title {
+
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-bottom: 26px;
@@ -65,14 +67,16 @@
 
     @include onTablet {
       display: block;
-      transition: transform 0.5s;
+      transition: transform $transition;
 
       &:hover {
-        transform: scale(115%);
+        cursor: pointer;
+        transform: scale($scaleSize);
       }
     }
 
     @include onDesktop {
+
       &-1 {
         width: 500px;
       }

@@ -8,13 +8,27 @@
     height: 32px;
     width: 32px;
     background-image: url("../images/menu_icon.svg");
+    transition: transform $transition;
+
+    &:hover {
+      transform: scale($scaleSize);
+    }
 
     @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+    @include onDesktop {
+      height: 32px;
+      width: 32px;
       background-image: url("../images/nav_icon.png");
-      transition: transform 0.3s;
+      transition: transform $transition;
 
       &:hover {
-        transform: scale(120%);
+        transform: scale($scaleSize);
       }
     }
   }

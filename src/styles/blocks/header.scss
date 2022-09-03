@@ -12,17 +12,21 @@
   &__container {
     display: flex;
     flex-direction: column;
+
     z-index: 2;
   }
 
   .header__bg {
+
     @include onTablet {
       width: 600px;
       height: 465px;
+
       clip-path: polygon(0 0, 100% 0, 100% 38%, 0 90%);
     }
 
     @include onDesktop {
+
       width: 65%;
     }
   }
@@ -31,34 +35,35 @@
     position: absolute;
     right: -20px;
     bottom: 15%;
+
     width: max-content;
 
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
+    font-family: $fontFamilyMonrope;
     font-size: 12px;
     line-height: 150%;
     text-decoration: none;
 
-    color: #03839e;
+    color: $c-blue;
 
     transform: rotate(90deg) translateY(-150%);
-    transition: border-color 0.4s;
+    transition: border-color $transition;
 
     border-bottom: 1px solid transparent;
 
-
     &:hover {
-      border-color: #03839e;
+      border-color: $c-blue;
     }
 
     &::after {
       position: absolute;
       content: "";
       width: 10px;
+
       height: 44px;
       left: 122%;
+
       bottom: -10px;
-      color: #03839e;
+      color: $c-blue;
 
       background-image: url("../images/side_arrow.svg");
       background-repeat: no-repeat;
@@ -76,7 +81,6 @@
       left: 105px;
       bottom: 70px;
     }
-
   }
 
   &__navigation {
@@ -94,15 +98,19 @@
   &__logo {
 
     display: block;
-    margin: 0 auto;
-    margin-bottom: 25px;
+
+    margin: 0 auto 25px;
+
     @include onTablet {
       margin: 0;
       float: right;
 
-      transition: transform 0.5s;
+      transition: transform $transition;
+
       &:hover {
-        transform: scale(110%);
+
+        cursor: pointer;
+        transform: scale($scaleSize);
       }
     }
 
@@ -113,15 +121,15 @@
 
   &__title {
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.68px #03839e;
+    -webkit-text-stroke: 0.68px $c-blue;
     line-height: 43px;
     letter-spacing: 0.15em;
 
     margin-bottom: 30px;
 
     @include onTablet {
-      font-weight: 400;
       min-width: 490px;
+
       font-size: 66px;
       line-height: 64px;
 
@@ -129,19 +137,22 @@
     }
 
     @include onDesktop {
+
       width: 400px;
     }
-
   }
 
   &__main-section {
+
     @include onTablet {
+
       padding: 0 30px;
     }
   }
 
   &__price {
-    font-family: "Manrope", sans-serif;
+
+    font-family: $fontFamilyMonrope;
     font-weight: 700;
     font-size: 26px;
     line-height: 36px;
@@ -149,29 +160,35 @@
     margin-bottom: 1px;
 
     &-text {
+
       @include onTablet {
+
         align-self: flex-end;
         margin-right: 20px;
       }
+
       @include onDesktop {
+
         margin-right: 200px;
       }
     }
   }
 
   &__side-text {
+
     display: none;
 
     @include onTablet {
       display: inline-block;
+
       left: 90%;
       bottom: -180px;
     }
   }
 
   &__text {
-    font-family: "Manrope", sans-serif;
-    font-weight: 400;
+
+    font-family: $fontFamilyMonrope;
     font-size: 14px;
     line-height: 150%;
 
@@ -183,9 +200,10 @@
   }
 
   &__button {
+
     display: block;
+
     max-width: 260px;
     margin: 0 auto;
   }
-
 }

@@ -1,5 +1,5 @@
 .menu {
-  background-color: #03839e;
+  background-color: $c-blue;
   height: 100vh;
   z-index: 10;
 
@@ -20,7 +20,9 @@
       position: relative;
       display: inline-block;
       background-image: url("../images/menu_close_zero.svg");
+
       bottom: 5px;
+
       width: 14px;
       height: 14px;
     }
@@ -29,16 +31,18 @@
   &__link {
     border-bottom: 1px solid transparent;
     text-decoration: none;
-    font-family: "Manrope", sans-serif;
+
+    font-family: $fontFamilyMonrope;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 1px;
-    color: #f8f8f8;
-    transition: border-color 0.3s;
+    color: $c-lightWhite;
+
+    transition: border-color $transition;
 
     &:hover {
-      border-color: white ;
+      border-color: $c-white;
     }
   }
 
@@ -53,6 +57,11 @@
       width: 12px;
       height: 12px;
       background-image: url("../images/close_menu_icon.svg");
+      transition: transform $transition;
+
+      &:hover {
+        transform: scale($scaleSize);
+      }
     }
 
     &-line {
@@ -64,12 +73,12 @@
     }
 
     &-text {
-      font-family: "Manrope", sans-serif;
-      font-weight: 400;
+      font-family: $fontFamilyMonrope;
       font-size: 12px;
-      line-height: 150%;
+      line-height: $lineHeight-150;
+
       text-transform: uppercase;
-      color: #f8f8f8;
+      color: $c-lightWhite;
 
       transform: rotate(-90deg) translateX(15px);
     }

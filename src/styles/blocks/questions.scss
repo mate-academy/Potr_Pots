@@ -17,8 +17,10 @@
     position: absolute;
     right: -15%;
     top: -80px;
+
     height: 100%;
     width: 149px;
+
     background-repeat: no-repeat;
     background-image: url("../images/side_logo.png");
 
@@ -36,6 +38,7 @@
   &__bg {
     position: absolute;
     clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+
     height: 120%;
     width: 100%;
 
@@ -54,22 +57,22 @@
   &__title {
     padding-top: 45px;
     font-size: 36px;
-    line-height: 150%;
+    line-height: $lineHeight-150;
 
     letter-spacing: 0.15em;
     text-transform: uppercase;
 
-    color: #000;
+    color: $c-black;
 
   }
 
   &__text {
-    font-family: "Manrope", sans-serif;
+    font-family: $fontFamilyMonrope;
 
     font-size: 16px;
-    line-height: 150%;
+    line-height: $lineHeight-150;
 
-    color: #000;
+    color: $c-black;
 
     margin-bottom: 40px;
   }
@@ -82,45 +85,46 @@
   }
 
   &__form-text {
-    font-family: "Manrope", sans-serif;
+    font-family: $fontFamilyMonrope;
 
     font-size: 24px;
-    line-height: 150%;
+    line-height: $lineHeight-150;
 
-    color: #000;
+    color: $c-black;
   }
 
   &__form-input {
 
     width: 100%;
     background-color: transparent;
+
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     margin-bottom: 25px;
-    transition: border-color 0.3s;
+
+    transition: border-color$transition;
 
     &::placeholder {
-      font-family: "Manrope", sans-serif;
-      font-weight: 400;
+      font-family: $fontFamilyMonrope;
       font-size: 16px;
-      line-height: 150%;
-      color: #4f4f4f;
+      line-height: $lineHeight-150;
+      color: $c-lightGray;
 
     }
 
     &:focus {
-      border-color: #03839e;
+      border-color: $c-blue;
       outline: none;
     }
 
     &:valid {
-      color: #03839e;
-      border-color: #03839e;
+      color: $c-blue;
+      border-color: $c-blue;
     }
 
     &:invalid:not(:focus):not(:placeholder-shown) {
-      color: #eb5757;
-      border-color: #eb5757;
+      color: $c-red;
+      border-color: $c-red;
     }
   }
 
@@ -133,9 +137,9 @@
   }
 
   &__feedback-title {
-    font-family: "Manrope", sans-serif;
+    font-family: $fontFamilyMonrope;
     font-size: 24px;
-    line-height: 150%;
+    line-height: $lineHeight-150;
 
     color: rgba(0, 0, 0, 0.39);
 
@@ -148,24 +152,23 @@
 
   &__feedback-text {
     display: block;
-    font-family: "Manrope", sans-serif;
+    font-family: $fontFamilyMonrope;
     font-size: 16px;
-    line-height: 150%;
+    line-height: $lineHeight-150;
 
     text-decoration: none;
-    color: #000;
+    color: $c-black;
 
     margin-bottom: 34px;
 
-    transition: color 0.3s;
+    transition: color $transition;
 
     &:hover {
-      color: #03839e;
+      color: $c-blue;
     }
 
     &:last-child {
       margin-bottom: 115px;
     }
   }
-
 }

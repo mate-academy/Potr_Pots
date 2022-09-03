@@ -3,6 +3,7 @@
 
   &__side-text {
     display: none;
+
     @include onTablet {
       display: block;
       right: -2%;
@@ -16,13 +17,16 @@
 
   &__big-title {
     display: none;
+
     @include onTablet {
       display: inline-block;
       position: absolute;
+
       font-weight: 400;
       font-size: 220px;
       line-height: 264px;
       letter-spacing: 0.15em;
+
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke: 0.68px #03839e;
 
@@ -76,7 +80,6 @@
       @include onTablet {
         width: 400px;
       }
-
     }
   }
 
@@ -110,6 +113,7 @@
   &__logo {
     display: block;
     height: 100%;
+
     margin: 0 auto;
     margin-bottom: 30px;
 
@@ -117,25 +121,28 @@
       min-width: 340px;
       width: 40%;
 
-      transition: transform 0.5s;
+      transition: transform $transition;
 
       &:hover {
-        transform: scale(110%);
+        cursor: pointer;
+        transform: scale($scaleSize);
+      }
     }
-    }
+
     @include onDesktop {
       width: 670px;
     }
   }
 
   &__text {
-    font-family: "Manrope", sans-serif;
+    font-family: $fontFamilyMonrope;
     font-size: 16px;
-    line-height: 150%;
-    color: #4f4f4f;
+    line-height: $lineHeight-150;
+    color: $c-lightGray;
 
     @include onTablet {
       margin-right: 40px;
+
       &:first-child {
         margin-top: 50px;
       }
