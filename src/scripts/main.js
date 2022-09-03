@@ -1,7 +1,7 @@
 'use strict';
 
 const button = document.querySelector('.burger-button');
-
+const form = document.querySelector('.contacts__form');
 const menu = document.querySelector('.header__nav');
 const menuClasses = menu.classList;
 
@@ -55,4 +55,10 @@ sliderButton.forEach((a, i) => {
     );
     sliderSlide[i].classList.toggle('slider__active');
   });
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.reset();
+  alert('You are beautiful');
 });
