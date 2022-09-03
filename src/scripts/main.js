@@ -40,12 +40,6 @@ window.addEventListener('hashchange', () => {
       sliderNav[4].classList.add('slider__active');
       break;
   }
-
-  if (window.location.hash === '#menu') {
-    document.body.classList.add('page__body--with-menu');
-  } else {
-    document.body.classList.remove('page__body--with-menu');
-  }
 });
 
 const sliderButton = document.querySelectorAll('.slider__button');
