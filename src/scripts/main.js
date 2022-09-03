@@ -39,6 +39,7 @@ window.addEventListener('hashchange', () => {
       sliderNav.forEach((e) => e.classList.remove('slider__active'));
       sliderNav[4].classList.add('slider__active');
       break;
+    default: break;
   }
 });
 
