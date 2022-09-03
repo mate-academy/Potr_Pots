@@ -1,39 +1,9 @@
 .header {
-  position: relative;
-
-  &__background-container {
-    @include onTablet {
-      position: absolute;
-      top: 0;
-      bottom: 40%;
-      right: 30%;
-      left: 0;
-      background: conic-gradient(from 77deg at 0% 100%, $gray-light 0%, $yellow-light 100%);
-      z-index: -1;
-    }
-
-    @include onDesktop {
-      bottom: 23%;
-      right: 23%;
-    }
-
-    @include onLagreScreen {
-      right: 30%;
-    }
-  }
-
-  &__container {
-    @extend %container;
-
-    @include onTablet {
-      position: relative;
-    }
-  }
 
   &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex ($content: space-between, $items: center);
+    @extend %container;
+
     margin-bottom: 10px;
     padding-top: 15px;
 
@@ -48,16 +18,64 @@
     }
   }
 
-  &__content {
-    @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 0 20px;
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    transform: translateX(100vw);
+
+    transition: transform $duration;
+
+    &:target {
+      transform: translateX(30vw);
+
+      @include onTablet {
+        transform: translateX(40vw);
+      }
     }
 
     @include onDesktop {
-      grid-template-columns: repeat(12, 1fr);
-      gap: 0 30px;
+      position: initial;
+      transform: translateX(0);
+    }
+  }
+
+  &__container {
+    @extend %container-tablet;
+    @include grid ($tab-rows: (3, auto));
+
+    @include onTablet {
+      position: relative;
+    }
+  }
+
+  &__background-container {
+    @include onTablet {
+      position: absolute;
+      top: -100%;
+      right: 20.5%;
+      bottom: 20%;
+      left: -50%;
+      z-index: -1;
+
+      @include page-bg (77deg);
+    }
+
+    @include onDesktop {
+      right: 25.2%;
+      bottom: 10%;
+      @include page-bg (75deg);
+    }
+  }
+
+  &__content {
+    @extend %container-mobile;
+
+    @include onTablet {
+      display: contents;
     }
   }
 
@@ -67,82 +85,49 @@
     }
   }
 
-  &__menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: translateX(100vw);
-    z-index: 1;
-    
-    transition: transform $duration;
-
-    &:target {
-      transform: translateX(30vw);
-
-      @include onTablet {
-        // transform: translateX(40vw);
-        transform: translateX(40.1vw);
-      }
-    }
-    @include onDesktop {
-      position: initial;
-      transform: translateX(0);
-    }
-  }
-
   &__photo-container {
-    height: 320px;
+    z-index: -1;
+    
+    @include photo-container (400px);
+
     margin-bottom: 25px;
 
     @include onTablet {
-      position: absolute;
-      right: 40px;
-      height: 300px;
+      grid-row: 1 / -1;
+      grid-column: 4 / -1;
+      justify-self: end;
+
+      @include photo-container (306px, 90%);
+      aspect-ratio: 1 / 1;
       margin-bottom: 0;
     }
 
     @include onDesktop {
-      right: 50px;
-      height: 500px;
+      grid-column: 7 / -1;
+      @include photo-container (500px, 88%);
+
     }
   }
 
   &__img {
-    position: absolute;
-    right: 0;
-    left: 0;
-    width: 100%;
-    max-height: 320px;
-    object-fit: contain;
-    z-index: -1;
-
-
-    @include onTablet {
-      position: relative;
-      height: 100%;
-      // opacity: 0.8;
-    }
-
-    @include onDesktop {
-      max-height: none;
-      // opacity: 1;
-    }
+    @include photo (contain);
   }
 
   &__title {
     margin-bottom: 30px;
+
     @include text ($font-secondary, 36px, 43px);
     color: $blue;
 
     &--stroke {
-      color: transparent;
-      -webkit-text-stroke: 0.6px $blue;
+      @extend %stroke;
     }
 
     @include onTablet {
-      grid-column: 1 / 6;
+      grid-row: 1;
+      grid-column: 1 / 5;
       margin-bottom: 0;
+
       @include text ($font-secondary, 64px);
     }
 
@@ -156,9 +141,9 @@
     margin-bottom: 20px;
 
     @include onTablet {
+      grid-row: 2;
       grid-column: 3 / 5;
-      margin-bottom: 50px;
-      transform: translate(-40%, -40%);
+      transform: translateY(-40%);
     }
 
     @include onDesktop {
@@ -169,6 +154,7 @@
 
   &__proposal-price {
     @include h3 ($font-main);
+    color: $gray-dark;
 
     @include onDesktop {
       margin-bottom: 5px;
@@ -182,8 +168,9 @@
   &__button {
 
     @include onTablet {
-      width: 240px;
+      grid-row: 3;
       grid-column: 2 / 5;
+      width: 240px;
     }
 
     @include onDesktop {
@@ -199,9 +186,14 @@
     transform-origin: 100% 0%;
 
     @include onTablet {
-      left: 49px;
+      left: 40px;
+      bottom: 0;
       transform: rotate(90deg) translateX(-85%);
       transform-origin: 0% 100%;
+    }
+
+    @include onDesktop {
+      left: 50px;
     }
   }
 }
