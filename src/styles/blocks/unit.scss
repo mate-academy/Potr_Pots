@@ -1,15 +1,5 @@
 .unit {
-  @include onTablet {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  @include onDesktop {
-    grid-template-columns: repeat(12, 1fr);
-    gap: 30px;
-
-  }
+  @include grid ($tab-cols: (2, 1fr));
 
   @for $index from 1 through 3 {
     &--#{$index} &__title::before {
@@ -17,6 +7,7 @@
       display: block;
       margin-bottom: 30px;
       padding: 20px 25px 0;
+
       line-height: 30px;
 
       @include image (more-about_before, contain, icon, 0);
@@ -37,20 +28,11 @@
     display: none;
 
     @include onTablet {
-      position: relative;
       display: block;
-      box-sizing: border-box;
 
-      width: 85%;
-      max-height: 500px;
-      overflow: hidden;
-
-      &::after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
-      }
+      @include photo-container (500px, 85%);
     }
+
 
     @include onDesktop {
       grid-column: 1 / 7;
@@ -59,11 +41,7 @@
   }
 
   &__img {
-    position: absolute;
-    @include shape (100%);
-
-    object-fit: cover;
-    object-position: center;
+    @include photo (cover);
   }
 
   &__content {
@@ -127,9 +105,7 @@
   &--2,
   &--3 {
     @include onDesktop {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+      @include flex (column);
     }
   }
 
@@ -149,11 +125,11 @@
 
   &--2 &__img {
     object-position: left;
-    }
+  }
 
   &--2 &__content {
     @include onTablet {
-      grid-row: 1 / 2;
+      grid-row: 1;
     }
   }
 
@@ -202,10 +178,9 @@
       margin-bottom: 15px;
       transform: translateY(-50%);
     }
-    
+
     @include onDesktop {
-      transform: translateY(0);
-      transform: translatex(-25%);
+      transform: translate(-25%, 0);
       margin-bottom: 40px;
     }
   }

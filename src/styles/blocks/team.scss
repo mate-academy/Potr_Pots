@@ -7,7 +7,8 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: conic-gradient(from 73deg at 0% 100%, $gray-light 0%, $yellow-light 100%);
+
+    @include page-bg (73deg);
     z-index: -1;
 
     @include onTablet {
@@ -29,12 +30,13 @@
       display: block;
 
       @include text ($font-secondary, 232px);
-      transform: translate(-50px, 90px);
+      transform: translate(-50px, 100px);
     }
 
     @include onDesktop {
-      font-size: 288px;
-      transform: translate(50px, 50%);
+      @include text ($font-secondary, 288px);
+
+      transform: translate(50px, 60%);
       width: fit-content;
     }
 
@@ -44,17 +46,16 @@
         bottom: -25%;
         right: 0;
 
-        transform: translate(0);
+        transform: translate(0, 5px);
       }
 
       @include onDesktop {
-        bottom: -29%;
+        bottom: -33%;
       }
     }
 
     &--stroke {
-      color: transparent;
-      -webkit-text-stroke: 0.6px $blue;
+      @extend %stroke;
     }
   }
 
@@ -65,46 +66,27 @@
     color: $gray-dark;
 
     @include onTablet {
-      margin-bottom: 0;
+      margin-bottom: -70px;
     }
   }
 
   &__container {
     @extend %container-tablet;
 
-    @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    @include onDesktop {
-      grid-template-columns: repeat(12, 1fr);
-      gap: 30px;
-    }
+    @include grid ($tab-cols: (2, 1fr))
   }
 
   &__photo-container {
-    position: relative;
-    box-sizing: border-box;
-
+    @include photo-container (255px, none);
     aspect-ratio: 4 / 3;
-    max-height: 255px;
+
     margin: 0 auto 30px;
 
-    overflow: hidden;
-
-    &::after {
-      display: block;
-      content: "";
-      padding-bottom: 100%;
-    }
-
     @include onTablet {
+      z-index: -1;
       grid-column: 2;
       max-height: 500px;
       margin: 0;
-      z-index: -1;
     }
 
     @include onDesktop {
@@ -113,21 +95,17 @@
   }
 
   &__img {
-    position: absolute;
-
-    @include shape (100%);
-    object-fit: cover;
-    object-position: center;
+    @include photo (cover);
   }
 
   &__content {
-    @extend %container;
+    @extend %container-mobile;
+    padding-bottom: 60px;
 
     @include onTablet {
       grid-row: 1;
-      max-width: none;
-      margin: 50px 0 0;
-      padding: 0;
+      margin-top: 60px;
+      padding-bottom: 0;
     }
 
     @include onDesktop {
@@ -140,14 +118,6 @@
   &__about {
     &:first-child {
       margin-bottom: 24px;
-    }
-
-    &:nth-child(2) {
-      padding-bottom: 60px;
-
-      @include onTablet {
-        padding-bottom: 0;
-      }
     }
   }
 }

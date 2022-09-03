@@ -2,6 +2,8 @@
   position: relative;
   padding-top: 40px;
 
+  color: black;
+
   @include onTablet {
     padding-top: 20px;
   }
@@ -12,23 +14,22 @@
 
   &__background-container {
     position: absolute;
+    z-index: -1;
     top: 0;
     bottom: -160px;
     right: 0;
     left: 0;
-    background: conic-gradient(from 77deg at 0% 100%, $gray-light 0%, $yellow-light 100%);
-    z-index: -1;
+
+    @include page-bg (77deg);
 
     @include onTablet {
-      background: conic-gradient(from 83deg at 0% 100%, $gray-light 0%, $yellow-light 100%);
       bottom: -90px;
+      @include page-bg (83deg);
     }
 
     @include onDesktop {
       left: -100%;
       bottom: -50%;
-
-      background: conic-gradient(from 83deg at 0% 100%, $gray-light 0%, $yellow-light 100%);
     }
   }
 
@@ -52,20 +53,12 @@
 
   &__container {
     @extend %container;
-
-    @include onTablet {
-      display: grid;
-      grid-template-rows: repeat(3, auto);
-      grid-template-columns: repeat(6, 1fr);
-      gap: 0 20px;
+    @include grid ($tab-rows: (3, auto));
 
       @include onDesktop {
         position: relative;
         padding-top: 40px;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 0 30px;
       }
-    }
   }
 
   &__title {
@@ -138,10 +131,6 @@
     margin-bottom: 5px;
 
     @include h3 ($font-main);
-    color: rgba(0, 0, 0, 0.39);
-  }
-
-  &__info-link {
-    color: black;
+    color: scaleColor(61%);
   }
 }

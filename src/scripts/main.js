@@ -7,3 +7,9 @@ window.addEventListener('hashchange', () => {
     document.body.classList.remove('page__body--with-menu');
   }
 });
+
+// function showPopUp() {
+//   const popUpText = document.getElementById('advantage-1');
+
+//   popUpText.classList.toggle('show');
+// }

@@ -1,17 +1,12 @@
 .button {
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  @include flex ($content: center, $items: center, $gap: 10px);
 
   @include shape (100%, 48px);
 
   @include text ($font-main, 14px, 21px);
   color: black;
   text-transform: uppercase;
-
-  // transition: all $duration;
 
   &::after {
     content: "";
@@ -28,8 +23,7 @@
     }
 
     &:hover {
-      // opacity: 0.8;
-      background-color: rgba(3, 128, 158, 0.8);
+      background-color: scaleColor(20%, $blue);
     }
   }
   
@@ -41,7 +35,7 @@
     }
 
     &:hover {
-      opacity: 0.8;
+      background-color: scaleColor(20%, $yellow);
     }
   }
 
@@ -62,10 +56,6 @@
     }
   }
 
-  &--secondary-2 {
-
-  }
-
   &--side-header {
     @include shape (max-content, min-content);
     text-transform: none;
@@ -83,11 +73,11 @@
     
     @include text ($font-secondary, 12px);
     letter-spacing: 0.22em;
-    color: #828282;
+    color: $gray-secondary;
 
     &::after {
       @include shape (65px, 0.1px);
-      border-bottom: 1px solid #828282;
+      border-bottom: 1px solid $gray-secondary;
       order: -1;
     }
   }

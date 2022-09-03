@@ -2,14 +2,11 @@
   position: relative;
 
   &__container {
+    @include grid ($desk-rows: (3, auto), $tab: false);
     @extend %container;
 
     @include onDesktop {
       position: relative;
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: auto auto auto;
-      gap: 0 30px;
     }
   }
 

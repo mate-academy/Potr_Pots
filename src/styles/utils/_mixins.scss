@@ -89,7 +89,7 @@
   $wrap: false) {
   display: flex;
 
-  @if $direction  !=row {
+  @if $direction !=row {
     flex-direction: $direction;
   }
 
@@ -111,36 +111,48 @@
 }
 
 
-@mixin grid ($tab-rows: false,
-  $desk-rows: false) {
+@mixin grid (
+  $tab-rows: false,
+  $desk-rows: false, 
+  $tab: true, 
+  $tab-cols: (6, 1fr),
+  $desk: true,
+  $desk-cols:(12, 1fr)
+) {
+
   display: block;
 
-  @include onTablet {
-    display: grid;
-
-    @if $tab-rows {
-      grid-template-rows: repeat($tab-rows);
+  @if $tab {
+    @include onTablet {
+      display: grid;
+  
+      @if $tab-rows {
+        grid-template-rows: repeat($tab-rows);
+      }
+  
+      grid-template-columns: repeat($tab-cols);
+      gap: 0 20px;
     }
-
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0 20px;
   }
 
-  @include onDesktop {
-
-    @if $desk-rows {
-      grid-template-rows: repeat($desk-rows);
+  @if $desk {
+    @include onDesktop {
+      display: grid;
+  
+      @if $desk-rows {
+        grid-template-rows: repeat($desk-rows);
+      }
+  
+      grid-template-columns: repeat($desk-cols);
+      gap: 0 30px;
     }
-
-    grid-template-columns: repeat(12, 1fr);
-    gap: 0 30px;
   }
 }
 
 @mixin photo-container ($max-height, $width: 100%) {
   position: relative;
   box-sizing: border-box;
-  width: 100%;
+  width: $width;
   max-height: $max-height;
 
   overflow: hidden;
@@ -152,8 +164,9 @@
   }
 }
 
-@mixin photo ($fit) {
+@mixin photo ($fit, $pos: center) {
   position: absolute;
   @include shape (100%);
   object-fit: $fit;
+  object-position: $pos;
 }
