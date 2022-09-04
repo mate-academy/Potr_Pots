@@ -6,7 +6,7 @@
   align-items: stretch;
   color: $paragraph-grey;
   margin-bottom: 60px;
-  @media (max-width: 480px) {
+  @include forMobile {
     flex-direction: column;
     margin: 0 30px 0;
   }
@@ -18,9 +18,10 @@
     margin: 0 0 66px 30px;
     color: $black;
 
-    @media (max-width: 480px) {
+    @include forMobile {
       order: 1;
       margin: 0 20px 66px ;
+      font-size: 35px;
     }
   }
   &__section {
@@ -46,7 +47,7 @@
     justify-content: flex-end;
     align-items: center;
     @include s3-text;
-    @media (max-width: 480px) {
+    @include forMobile {
       flex-direction: column;
       margin: 0 20px 30px;
     }
@@ -63,7 +64,7 @@
       opacity: 0.2;
       right: -10px;
       top: 20px;
-      @media (max-width: 480px) {
+      @include forMobile {
         display: none;
       }
     }
@@ -81,7 +82,7 @@
   }
   &__explainer {
     @include s3-text;
-    @media (max-width: 480px) {
+    @include forMobile {
       margin: 0 20px 0;
     }
   }
@@ -90,7 +91,7 @@
     max-height: 427px;
     width: 100%;
     height: auto;
-    @media (max-width: 480px) {
+    @include forMobile {
       order: 1;
       margin-bottom: 30px;
     }

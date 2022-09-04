@@ -11,10 +11,10 @@
   }
   &__card {
     margin: 0 auto 100px;
-    @media (max-width: 1023px) {
+    @include forTablet {
       margin: 0 60px 100px;
     }
-    @media (max-width: 480px) {
+    @include forMobile {
       margin: 0 auto 70px;
     }
   }
@@ -40,7 +40,7 @@
     margin-bottom: 25px;
     max-width: 525px;
 
-    @media (max-width: 480px) {
+    @include forMobile {
       display: none;
     }
   }
@@ -50,8 +50,8 @@
     max-width: 450px;
     margin-left: 50px;
     height: 300px;
-    @media (max-width: 480px) {
-      margin: 50px;
+    @include forMobile {
+      margin: 35px;
     }
   }
   &__body {
@@ -63,7 +63,7 @@
     @include s3-text;
 
     margin-bottom: 40px;
-    @media (max-width: 480px) {
+    @include forMobile {
       display: none;
     }
     &::before {

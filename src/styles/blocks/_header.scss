@@ -5,28 +5,28 @@
   align-items: center;
 
   &__rectangle {
-    @media (max-width: 1023) {
+    @media (max-width: 1023px) {
       display: none;
     }
     position: absolute;
     z-index: 0;
     background-color: $yellow-light;
     width: 1236px;
-    height: 550px;
+    height: 500px;
     bottom: 10px;
     left: 0;
-    transform: rotate(-20deg);
+    transform: rotate(-15deg);
     transform-origin: bottom left;
     &-container {
-      @media (max-width: 400px) {
-        display: none;
-      }
       position: absolute;
       overflow: hidden;
       width: 70vw;
-      height: 500px;
+      height: 450px;
       top: 0;
       left: 0;
+      @media (max-width: 480px) {
+        display: none;
+      }
     }
   }
 
@@ -41,7 +41,7 @@
     z-index: 5;
     transition: right 0.5s;
     width: 910px;
-    @media (max-width: 850px) {
+    @media (max-width: 768px) {
       border: 1px solid $yellow;
       padding-top: 100px;
       position: fixed;
@@ -64,7 +64,7 @@
     gap: 45px;
     padding-right: 100%;
     padding: 27px 0;
-    @media (max-width: 1023px) {
+    @include forTablet {
       flex-direction: column;
       align-items: flex-start;
       margin-left: 100px;
@@ -73,7 +73,7 @@
   }
   &__li {
     @include s3-text;
-    @media (max-width: 1023px) {
+    @include forTablet {
       color: $grey-light;
     }
     &:last-child {
@@ -143,6 +143,7 @@
   padding: 10px;
   width: 60px;
   height: 60px;
+  margin: 20px 20px 20px auto;
   border: transparent;
   background-image: url(../images/menu_icon.svg);
   background-repeat: no-repeat;
@@ -152,14 +153,14 @@
   border-radius: 50%;
   grid-column-start: 9;
   grid-row-start: 1;
-  @media (max-width: 475px) {
+  @media (max-width: 480px) {
     grid-column-start: 5;
   }
-  margin: 20px 20px 20px auto;
   @media (min-width: 850px) {
     display: none;
   }
 }
+
 .active {
   top: 0px;
   right: 0px;

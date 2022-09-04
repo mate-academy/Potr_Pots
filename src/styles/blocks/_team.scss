@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
-    @media (max-width: 485px) {
+    @include forMobile {
       grid-template-columns: minmax(120px, 1fr);
       grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
     }
@@ -20,10 +20,10 @@
     height: auto;
     @include gridpos(4, span 11, 9, 18);
     z-index: 1;
-    @media (max-width: 768px) {
+    @include forTablet {
       @include gridpos(5, span 9, 5, 10);
     }
-    @media (max-width: 485px) {
+    @include forMobile {
       @include gridpos(1, span 7, 1, span 4);
       margin-left: 0;
     }
@@ -34,14 +34,14 @@
     @include gridpos(7, span 12, 3, 7);
     z-index: 1;
 
-    @media (max-width: 768px) {
+    @include forTablet {
       @include gridpos(5, span 9, 1, 4);
       padding: 15px;
     }
-    @media (max-width: 485px) {
-      @include gridpos(10, 18, 1, 2);
+    @include forMobile {
+      @include gridpos(10, 18, 1, span 2);
       z-index: 1;
-      width: 260px;
+      width: 300px;
       margin: 30px auto 0;
     }
   }
@@ -53,7 +53,7 @@
     color: transparent;
     @include gridpos(2, span 5, 2, span 13);
     z-index: 2;
-    @media (max-width: 485px) {
+    @include forMobile {
       display: none;
     }
   }
@@ -63,13 +63,13 @@
     line-height: 22vw;
     -webkit-text-stroke: 1px $turqoise;
     color: transparent;
-    @include gridpos(14, span 16, 10, 13);
+    @include gridpos(14, span 16, 11, 14);
     z-index: 2;
-    @media (max-width: 485px) {
-      display: none;
-    }
-    @media (max-width: 768px) {
+    @include forTablet {
       @include gridpos(11, span 13, 6, span 12);
+    }
+    @include forMobile {
+      display: none;
     }
   }
   &__box {
@@ -83,7 +83,7 @@
       width: 435px;
       overflow: hidden;
       @include gridpos(3, span 5, 1, span 5);
-      @media (max-width: 485px) {
+      @include forMobile {
         @include gridpos(14, span 18, 1, 2);
       }
     }

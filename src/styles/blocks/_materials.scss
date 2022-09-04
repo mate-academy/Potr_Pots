@@ -17,7 +17,7 @@
     grid-column-start: 2;
     grid-column-end: span 11;
     grid-row-start: 1;
-    grid-row-end: span 5;
+    grid-row-end: span 4;
     z-index: 1;
     @media (max-width: 480px) {
       font-size: 58px;
@@ -63,12 +63,13 @@
     grid-row-end: span 14;
     grid-column-start: 1;
     grid-column-end: span 16;
-    @media (max-width: 480px) {
+
+    @include forTablet {
+      height: 60vh;
+    }
+    @include forMobile {
       grid-row-end: 11;
       height: auto;
-    }
-    @media (max-width: 768px) {
-      height: 60vh;
     }
   }
 }

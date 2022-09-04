@@ -5,11 +5,11 @@
   grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
   gap: 20px;
   max-width: 1024px;
-  @media (max-width: 768px) {
+  @include forTablet {
     grid-template-columns: repeat(10, minmax(70px, 1fr));
-    grid-template-rows: repeat(10, minmax(40px, 1fr));
+    grid-template-rows: repeat(6, minmax(40px, 1fr));
   }
-  @media (max-width: 475px) {
+  @include forMobile {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
     grid-template-rows: repeat(auto-fill, minmax(120px, 1fr));
     width: 100%;
@@ -27,7 +27,7 @@
     z-index: 1;
     letter-spacing: 0.155em;
     text-transform: uppercase;
-    @include gridpos(2, span 6, 1, span 5);
+    @include gridpos(2, span 6, 1, span 6);
     &-part-1 {
       -webkit-text-stroke: 1px $turqoise;
       color: transparent;
@@ -35,10 +35,10 @@
     &-part-2 {
       color: $turqoise;
     }
-    @media (max-width: 768px) {
-      @include gridpos(2, span 6, 2, span 5);
+    @include forTablet {
+      @include gridpos(2, span 3, 2, span 5);
     }
-    @media (max-width: 475px) {
+    @include forMobile {
       @include gridpos(4, span 7, 1, span 2);
       transform: scale(70%);
       width: 90vw;
@@ -47,25 +47,24 @@
 
   &__img {
     z-index: 1;
-    @include gridpos(2, span 8, 6, span 8);
+    @include gridpos(2, span 8, 7, span 8);
     width: 100%;
     height: auto;
-    @media (max-width: 768px) {
+    @include forTablet {
       @include gridpos(2, 7, 5, 9);
     }
-    @media (max-width: 475px) {
+    @include forMobile {
       @include gridpos(1, span 3, 1, span 2);
-      width: 100%;
     }
   }
   &__price {
     @include s2-text;
     position: relative;
     @include gridpos(6, 7, 4, 5);
-    @media (max-width: 768px) {
-      @include gridpos(6, 7, 3, 4);
+    @include forTablet {
+      @include gridpos(5, 5, 3, 4);
     }
-    @media (max-width: 475px) {
+    @include forMobile {
       @include gridpos(8, span 11, 1, span 2);
       align-self: center;
       justify-self: center;
@@ -80,8 +79,11 @@
       @include s4-text;
       font-weight: 400;
       color: $grey;
-      @media (max-width: 475px) {
-        bottom: -40px;
+      @include forTablet {
+        bottom: -10px;
+      }
+      @include forMobile {
+        bottom: -40px
       }
     }
   }
@@ -89,10 +91,10 @@
   &__button {
     @include primary-button-2;
     @include gridpos(8, 9, 3, span 6);
-    @media (max-width: 768px) {
-      @include gridpos(8, 9, 3, span 6);
+    @include forTablet {
+      @include gridpos(6, 6, 3, span 6);
     }
-    @media (max-width: 475px) {
+    @include forMobile {
       @include gridpos(13, span 14, 1, span 2);
       margin-left: 45px;
       margin-top: 20px;
@@ -110,10 +112,10 @@
     justify-self: end;
     align-self: center;
     z-index: 1;
-    @media (max-width: 768px) {
+    @include forTablet {
       @include gridpos(5, span 8, 1, span 2);
     }
-    @media (max-width: 475px) {
+    @include forMobile {
       @include gridpos(9, span 10, 2, span 3);
       justify-self: start;
       align-self: start;
