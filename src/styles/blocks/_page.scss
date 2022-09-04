@@ -7,5 +7,18 @@
   &__body {
     margin: 0;
     min-width: 320px;
+
+    &__menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      transform: translateX(100%);
+      transition: transform $anim-duration;
+
+      &:target {
+        transform: translateX(0);
+      }
+    }
   }
 }
