@@ -1,46 +1,43 @@
 .header {
+  overflow-x: hidden;
+  position: relative;
   height: 100vh;
+
+  &__content {
+    position: relative;
+  }
 
   &__nav {
     margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      padding: 0 100px;
+    }
   }
 
   &__main {
     position: relative;
   }
 
-  &__title {
-    font-family: "Bebas Neue", cursive;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.68px #03839e;
-    line-height: 43px;
-    letter-spacing: 0.15em;
-
-    margin-bottom: 30px;
-
-    &--full {
-      -webkit-text-fill-color: #03839e;
-      -webkit-text-stroke: 1px #03839e;
-    }
-  }
-
-  &__image {
-    width: 100%;
-    margin-bottom: 25px;
-  }
-
-  &__price {
-    font-family: "Manrope", sans-serif;
-    font-weight: bold;
-    font-size: 26px;
-    line-height: 36px;
-    display: inline-block;
-  }
-
   &__side-text {
     position: absolute;
-    right: -20px;
-    transform: rotate(90deg) translate(-95%, -150%);
+    bottom: 106px;
+    right: -50px;
+    transform: rotate(90deg);
 
     font-family: "Manrope", sans-serif;
     font-size: 12px;
@@ -62,16 +59,81 @@
     }
   }
 
+  &__title {
+    font-family: "Bebas Neue", cursive;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.68px #03839e;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      position: relative;
+      min-width: 490px;
+      font-size: 64px;
+      line-height: 64px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &--full {
+      -webkit-text-fill-color: #03839e;
+      -webkit-text-stroke: 1px #03839e;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100vw;
+    left: -30px;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      position: relative;
+      left: 0;
+      float: right;
+      width: 306px;
+    }
+
+    @include onDesktop {
+      width: 500px;
+    }
+  }
+
+  &__lable {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      // transform: translateY(-33%);
+      align-self: flex-end;
+      margin-right: 15px;
+    }
+  }
+
+  &__price {
+    font-family: "Manrope", sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 36px;
+    display: inline-block;
+  }
+
   &__text {
     font-family: "Manrope", sans-serif;
     font-size: 14px;
     line-height: 150%;
     color: $c-gray;
-
-    margin-bottom: 20px;
   }
 
   &__icon--arrow {
     margin-left: 24px;
+  }
+
+  &__button {
+    align-self: flex-end;
   }
 }
