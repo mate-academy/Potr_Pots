@@ -1,7 +1,6 @@
 .header {
   display: block;
   padding-top: 15px;
-  padding-inline: 30px;
 
   @include onTablet {
     padding-top: 30px;
@@ -18,6 +17,9 @@
     grid-template-columns: auto 1fr 32px;
     justify-content: space-between;
     align-items: center;
+
+    padding-bottom: 10px;
+    padding-inline: 30px;
 
     &-logo {
       font-family: "Bebas Neue", sans-serif;
@@ -83,6 +85,136 @@
 
       @include onDesktop {
         display: none;
+      }
+    }
+  }
+
+  &__section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    &-image {
+      min-width: 320px;
+      min-height: 320px;
+
+      margin: 0 auto;
+      padding-bottom: 25px;
+    }
+
+    &-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 43px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      padding-inline: 30px;
+      padding-bottom: 30px;
+
+      color: transparent;
+      -webkit-text-stroke: 0.68px $c-turquoise;
+
+      &--span {
+        color: $c-turquoise;
+      }
+    }
+
+    &-price {
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 36px;
+      color: $c-title;
+
+      padding-inline: 30px;
+    }
+
+    &-info {
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $c-list;
+
+      padding-inline: 30px;
+      padding-bottom: 20px;
+    }
+
+    &-link {
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+
+      display: block;
+      width: max-content;
+
+      font-family: "Manrope", sans-serif;
+      font-size: 12px;
+      line-height: 150%;
+      color: $c-turquoise;
+
+      transform-origin: right bottom;
+      transform: rotate(90deg) translateX(-40%) translateY(110%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 44px;
+        bottom: -11px;
+        left: 124%;
+        background-image: url(/images/icons/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(-90deg);
+      }
+    }
+
+    &-button {
+      display: block;
+      line-height: 48px;
+      width: 260px;
+      margin: 0 auto;
+
+      text-align: center;
+      text-transform: uppercase;
+
+      background-color: $c-yellow;
+
+      &:hover {
+        background-color: $c-yellowlight;
+      }
+
+      &-text {
+        font-family: "Manrope", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 150%;
+        color: $c-button;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 28px;
+          height: 8px;
+
+          margin-left: 24px;
+
+          background-image: url(/images/icons/arrow-button.svg);
+        }
       }
     }
   }
