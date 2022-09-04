@@ -19,10 +19,18 @@
     top: 0;
     z-index: -10;
     background-image: url(/images/icons/bg-rectangle.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 
     @include onTablet {
       width: 600px;
       height: 465px;
+    }
+
+    @include onDesktop {
+      background-image: url(/images/icons/bg-rectangle-desk.svg);
+      width: 1030px;
+      height: 466px;
     }
   }
 
@@ -45,6 +53,12 @@
       letter-spacing: 0.06em;
 
       color: $c-title;
+      border-top: 2px solid transparent;
+      transition: border-color 0.5s;
+
+      &:hover {
+        border-color: inherit;
+      }
     }
 
     &-list {
@@ -65,9 +79,12 @@
         line-height: 150%;
         color: $c-list;
 
+        border-top: 1px solid transparent;
+        transition: border-color 0.5s, color 0.5s;
+
         &:hover {
           color: $c-turquoise;
-          text-decoration: overline $c-turquoise;
+          border-color: $c-turquoise;
         }
       }
     }
@@ -116,22 +133,40 @@
     }
 
     @include onDesktop {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
+      display: block;
     }
 
     &-image {
+      align-self: center;
       position: relative;
       left: -30px;
-      min-width: 320px;
-      min-height: 320px;
+      width: 320px;
+      height: 320px;
 
       margin: 0 auto;
       padding-bottom: 25px;
 
+      transition: all 0.5s;
+
       @include onTablet {
         position: static;
         float: right;
+
+        width: 306px;
+        height: 306px;
+      }
+
+      @include onDesktop {
+        position: static;
+        float: right;
+
+        min-width: 500px;
+        min-height: 500px;
+
+        &:hover {
+          transform: scale(105%);
+          border-radius: 20%;
+        }
       }
     }
 
@@ -161,7 +196,20 @@
         font-size: 64px;
         line-height: 64px;
 
-        min-width: 490px;
+        padding-bottom: 0;
+
+        width: 490px;
+      }
+
+      @include onDesktop {
+        font-size: 64px;
+        line-height: 64px;
+
+        padding-left: 100px;
+        padding-bottom: 0;
+
+        width: 600px;
+        height: 256px;
       }
     }
 
@@ -175,6 +223,11 @@
       @include onTablet {
         align-self: flex-end;
         margin-right: 76px;
+      }
+
+      @include onDesktop {
+        align-self: flex-end;
+        margin-right: 195px;
       }
     }
 
@@ -193,40 +246,12 @@
 
         padding-bottom: 50px;
       }
-    }
 
-    &-link {
-      position: absolute;
-      right: -25px;
-      bottom: 5px;
+      @include onDesktop {
+        align-self: flex-end;
+        margin-right: 132px;
 
-      display: block;
-      width: max-content;
-
-      font-family: "Manrope", sans-serif;
-      font-size: 12px;
-      line-height: 150%;
-      color: $c-turquoise;
-
-      transform-origin: right bottom;
-      transform: rotate(90deg) translateX(-40%) translateY(110%);
-
-      @include onTablet {
-        left: -110px;
-        bottom: -40px;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 44px;
-        bottom: -11px;
-        left: 124%;
-        background-image: url(/images/icons/arrow.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        transform: rotate(-90deg);
+        padding-bottom: 50px;
       }
     }
 
@@ -240,6 +265,12 @@
       text-transform: uppercase;
 
       background-color: $c-yellow;
+
+      transition: background-color 0.5s;
+
+      @include onDesktop {
+        margin-right: 100px;
+      }
 
       &:hover {
         background-color: $c-yellowlight;
@@ -265,6 +296,51 @@
         }
       }
     }
+
+    &-link {
+      position: absolute;
+      right: -25px;
+      bottom: 5px;
+
+      display: block;
+      width: max-content;
+
+      font-family: "Manrope", sans-serif;
+      font-size: 12px;
+      line-height: 150%;
+      color: $c-turquoise;
+
+      transform-origin: right bottom;
+      transition: transform 0.5s;
+      transform: rotate(90deg) translateX(-40%) translateY(110%);
+
+      @include onTablet {
+        left: -110px;
+        bottom: -40px;
+      }
+
+      @include onDesktop {
+        left: -110px;
+        bottom: -60px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 44px;
+        bottom: -11px;
+        left: 124%;
+        background-image: url(/images/icons/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(-90deg);
+      }
+
+      &:hover {
+        transform: rotate(90deg) translateX(-10%) translateY(110%);
+      }
+    }
   }
 
   &__side-text {
@@ -284,6 +360,12 @@
       display: inline-block;
       right: -45px;
       bottom: -100px;
+    }
+
+    @include onDesktop {
+      display: inline-block;
+      right: -30px;
+      bottom: -250px;
     }
 
     &::before {
