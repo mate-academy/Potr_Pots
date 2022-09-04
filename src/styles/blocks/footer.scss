@@ -1,0 +1,97 @@
+.footer {
+  @include flex-col;
+  @include padding-mobile;
+
+  @include onTablet {
+    flex-direction: row;
+    justify-content: space-between;
+    @include padding-tablet;
+  }
+
+  @include onDesktop {
+    @include padding-desktop;
+    @include width-1440;
+  }
+
+  &__adrress {
+    display: none;
+
+    @include onTablet {
+      @include flex-col;
+      gap: 10px;
+    }
+
+    &-title {
+      @extend %bebas;
+      @include fs-24;
+      @extend %title-upper;
+    }
+
+    &-link {
+      color: $black-100;
+    }
+  }
+
+  &__middle-box {
+    @include flex-col;
+    justify-content: center;
+  }
+
+  &__socials {
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 85px;
+
+    @include onTablet {
+      margin-bottom: 74px
+    }
+  }
+
+  &__item {
+    @include square(20px);
+
+    &--twitter {
+      background-image: url(../images/twitter.svg);
+    }
+
+    &--insta {
+      background-image: url(../images/instagram.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/facebook.svg);
+    }
+  }
+
+  &__logo {
+    @extend %bebas;
+    @include fs-36;
+    @extend %title-upper;
+    color: $black-100;
+    text-align: center;
+  }
+
+  &__copyright {
+    @include flex-col;
+    gap: 10px;
+
+    &-title {
+      @extend %bebas;
+      @include fs-24;
+      @extend %title-upper;
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+
+    &-text {
+      text-align: center;
+
+      @include onTablet {
+        text-align: left;
+      }
+    }
+  }
+}

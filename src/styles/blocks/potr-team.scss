@@ -6,22 +6,21 @@
 
   @include onTablet {
     background-position: -190px 174px;
-    padding: 0 34px;
+    @include padding-tablet;
   }
 
   @include onDesktop {
-    max-width: 1440px;
+    @include width-1440;
     background-position: left 184px;
-    padding: 0 134px;
+    @include padding-desktop;
   }
 
   &__title {
     color: $black-333;
     @extend %bebas;
-    font-size: 58px;
-    line-height: 70px;
+    @include fs-58;
     @extend %title-upper;
-    padding: 0 30px;
+    @include padding-mobile;
 
     @include onTablet{
       padding: 0;
@@ -42,13 +41,11 @@
 
     @include onTablet {
       display: block;
-      font-size: 232px;
-      line-height: 278px;
+      @include fs-232;
     }
 
     @include onDesktop {
-      font-size: 288px;
-      line-height: 346px;
+      @include fs-288;
     }
 
     &--top {
@@ -83,14 +80,12 @@
 
     @include onTablet {
       width: 100%;
-      grid-template-columns: repeat(6, 1fr);
-      column-gap: 20px;
+      @include grid-6;
       grid-template-areas: none;
     }
 
     @include onDesktop{
-      grid-template-columns: repeat(12, 1fr);
-      column-gap: 30px;
+      @include grid-12;
     }
   }
 

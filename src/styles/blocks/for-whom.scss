@@ -1,33 +1,31 @@
 .for-whom {
   &__container {
     width: 100%;
-    @extend %flex-column;
-    padding: 0 30px;
+    @include flex-col;
+    @include padding-mobile;
 
     @include onTablet {
-      padding: 0 34px;
+      @include padding-tablet;
     }
 
     @include onDesktop {
       margin: 0 auto;
-      max-width: 1440px;
-      padding: 0 134px;
+      @include width-1440;
+      @include padding-desktop;
     }
   }
 
   &__title {
     @extend %bebas;
-    margin-bottom: 34px;
-    font-size: 36px;
-    line-height: 54px;
+    @include fs-36;
     @extend %title-upper;
     color: $black-333;
+    margin-bottom: 34px;
   }
 
   &__a-b-box {
     @include onTablet {
-      display: flex;
-      flex-direction: column;
+      @include flex-col;
       gap: 122px;
     }
 

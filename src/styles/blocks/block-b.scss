@@ -3,8 +3,7 @@
 
   @include onTablet {
     width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
+    @include flex-row-reverse;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
@@ -13,12 +12,10 @@
 
   @include onDesktop {
     width: 50%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    @include grid-6-desktop;
     grid-auto-rows: minmax(min-content, max-content);
     grid-template-areas: ". im im im im ."
     "txt txt txt txt txt txt";
-    column-gap: 30px;
   }
 
   &__img-box {
@@ -47,10 +44,8 @@
     @include onTablet {
       width: 50%;
       grid-area: txt;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      @include grid-3;
       grid-auto-rows: minmax(min-content, max-content);
-      column-gap: 20px;
       grid-template-areas: ". . star type"
       "pos . . ."
       "descr descr descr descr";
@@ -58,8 +53,7 @@
 
     @include onDesktop {
       width: 100%;
-      grid-template-columns: repeat(6, 1fr);
-      column-gap: 30px;
+      @include grid-6-desktop;
       grid-template-areas: "star type . . . ."
       ". pos . . . ."
       ". descr descr descr descr .";
@@ -68,8 +62,7 @@
 
   &__star {
     display: none;
-    font-size: 24px;
-    line-height: 33px;
+    @include fs-24-lh-32;
     @extend %title-upper;
     color: black;
 
@@ -92,7 +85,9 @@
   }
 
   &__position {
-    @extend %for-whom-title;
+    @extend %bebas;
+    @include fs-36;
+    color: $black-100;
     margin-bottom: 8px;
 
     @include onTablet {
@@ -118,10 +113,10 @@
   }
 
   &__title {
-    @extend %for-whom-title;
-    line-height: 54px;
-    letter-spacing: 0.155em;
-    text-transform: uppercase;
+    @extend %bebas;
+    @include fs-36;
+    color: $black-100;
+    @extend %title-upper;
     margin-bottom: 10px;
 
     @include onTablet {

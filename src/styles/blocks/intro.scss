@@ -1,28 +1,25 @@
 .intro {
-  @extend %flex-column;
+  @include flex-col;
 
   &__box {
-    @extend %flex-column;
+    @include flex-col;
     position: relative;
     justify-content: center;
 
     @include onTablet {
       margin: 0 auto;
-      padding: 0 34px;
-      display: grid;
-      grid-template-columns: repeat(6, minmax(100px,1fr));
-      grid-template-rows: auto;
+      @include padding-tablet;
+      @include grid-6;
       grid-template-areas: "text text text text img img"
       ". . price price img img"
       ". butt butt butt . .";
-      column-gap: 20px;
     }
 
     @include onDesktop {
-      max-width: 1440px;
+      @include width-1440;
       grid-template-columns: repeat(12, minmax(70px, 1fr));
       column-gap: 30px;
-      padding: 0 135px;
+      @include padding-desktop;
       grid-template-areas: ". text text text text text . img img img img img"
       ". . . . price price . img img img img img"
       ". . . butt butt butt . img img img img img";
@@ -50,9 +47,8 @@
 
   &__title {
     @extend %bebas;
-    padding: 0 30px;
-    font-size: 36px;
-    line-height: 43px;
+    @include padding-mobile;
+    @include fs-36-lh-44;
     @extend %title-upper;
     color: transparent;
     -webkit-text-stroke: 0.5px $page-main-color;
@@ -60,8 +56,7 @@
 
     @include onTablet {
       grid-area: text;
-      font-size: 64px;
-      line-height: 64px;
+      @include fs-64;
       padding: 0;
       margin: 0;
     }
@@ -73,7 +68,7 @@
   }
 
   &__price-info {
-    padding: 0 30px;
+    @include padding-mobile;
     margin-bottom: 20px;
 
     @include onTablet {
@@ -85,13 +80,12 @@
 
   &__price {
     font-weight: 700;
-    font-size: 26px;
-    line-height: 36px;
+    @include fs-26;
     color: $black-333;
   }
 
   &__order-info {
-    @extend %font-size-14;
+    @include fs-14;
     color: $gray-4f;
   }
 
@@ -99,13 +93,11 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     width: fit-content;
     align-items: center;
     color: $page-main-color;
-    font-size: 12px;
-    line-height: 18px;
+    @include fs-12;
     gap: 9px;
 
     @include onTablet {
@@ -119,18 +111,7 @@
 
 
   &__buy-now {
-    display: flex;
-    font-size: 14px;
-    line-height: 48px;
-    max-height: 48px;
-    width: 100%;
-    max-width: 260px;
-    text-transform: uppercase;
-    color: #121212;
-    font-weight: 600;
-    justify-content: center;
     margin: 0 auto;
-    background-color: yellow;
 
     &::after {
       content: "";
@@ -138,9 +119,7 @@
       width: 28px;
       height: auto;
       background-image: url(../images/Arrow2.png);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
+      @include img-contain;
       margin-left: 24px;
     }
 

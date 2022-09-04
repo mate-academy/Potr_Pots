@@ -3,11 +3,8 @@
 
   &__grid {
     @include onTablet {
-      display: grid;
-      padding: 0 34px;
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: auto;
-      column-gap: 20px;
+      @include grid-6;
+      @include padding-tablet;
       grid-template-areas:
       "title title title title title ."
       "title2 title2 title2 txt txt txt";
@@ -15,9 +12,8 @@
     @include onDesktop {
       margin: 0 auto;
       max-width: 1440px;
-      padding: 0 134px;
-      grid-template-columns: repeat(12, 1fr);
-      column-gap: 30px;
+      @include padding-desktop;
+      @include grid-12;
       grid-template-areas:
       "title title title title title title title title title . . ."
       "title2 title2 title2 title2 title2 title2 . txt txt txt txt txt";
@@ -34,18 +30,16 @@
     letter-spacing: 0.155em;
     color: $page-main-color;
     grid-area: title;
-    padding: 0 30px;
+    @include padding-mobile;
 
     @include onTablet {
-      font-size: 80px;
-      line-height: 96px;
+      @include fs-80;
       letter-spacing: 0.12em;
       padding: 0;
     }
 
     @include onDesktop {
-      font-size: 138px;
-      line-height: 166px;
+      @include fs-138;
     }
 
     &--grid--title2 {
@@ -66,8 +60,7 @@
 
   &__desr-title {
     margin-bottom: 10px;
-    font-size: 20px;
-    line-height: 30px;
+    @include fs-20;
     @include onDesktop {
       margin-bottom: 26px;
     }
@@ -123,8 +116,7 @@
 
     @include onTablet {
       position: absolute;
-      width: 100%;
-      height: 100%;
+      @include square(100%);
     }
   }
 
@@ -133,6 +125,7 @@
     @include square(10px);
     background-color: $white-color;
     transform: rotate(45deg);
+    cursor: pointer;
 
     @include onTablet {
       display: flex;
@@ -194,8 +187,7 @@
 
     @include onTablet {
       display: flex;
-      width: 100%;
-      height: 100%;
+      @include square(100%);
     }
   }
 

@@ -1,15 +1,15 @@
 .features {
   width: 100%;
-  @extend %flex-column;
-  padding: 0 30px;
+  @include flex-col;
+  @include padding-mobile;
 
   @include onTablet {
-    padding: 0 34px;
+    @include padding-tablet;
   }
 
   @include onDesktop {
-    max-width: 1440px;
-    padding: 0 134px;
+    @include width-1440;
+    @include padding-desktop;
   }
 
   &__title {
@@ -18,8 +18,7 @@
     letter-spacing: 0.135em;
     color: transparent;
     -webkit-text-stroke: 0.5px $page-main-color;
-    font-size: 58px;
-    line-height: 70px;
+    @include fs-58;
     margin-bottom: 25px;
 
     @include onTablet {
@@ -38,8 +37,7 @@
   }
 
   &__cards {
-    display: flex;
-    flex-direction: column;
+    @include flex-col;
     gap: 70px;
 
     @include onTablet {

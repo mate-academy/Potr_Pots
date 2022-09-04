@@ -1,42 +1,37 @@
 .potr-size {
   @include onDesktop {
-    max-width: 1440px;
+    @include width-1440;
   }
 
   &__title {
     @extend %bebas;
     @extend %title-upper;
-    padding: 0 30px;
+    @include padding-mobile;
     margin-bottom: 20px;
-    font-size: 36px;
-    line-height: 54px;
+    @include fs-36;
     color: #000;
 
     @include onTablet {
-      padding: 0 34px;
+      @include padding-tablet;
     }
 
     @include onDesktop {
-      padding: 0 134px;
+      @include padding-desktop;
     }
   }
 
   &__about {
     @include onTablet {
-      padding: 0 34px;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      column-gap: 20px;
-      grid-auto-rows: auto;
+      @include padding-tablet;
+      @include grid-6;
       grid-template-areas: "answ answ answ answ answ ."
       "pots pots im im im im"
       "star star star star star star";
     }
 
     @include onDesktop {
-      padding: 0 134px;
-      grid-template-columns: repeat(12, 1fr);
-      column-gap: 30px;
+      @include padding-desktop;
+      @include grid-12;
       grid-template-areas: "answ answ answ pots pots pots im im im im im im"
       "star star star star star star im im im im im im";
     }
@@ -44,7 +39,7 @@
 
   &__answer {
     color: $gray-4f;
-    padding: 0 30px;
+    @include padding-mobile;
     margin-bottom: 30px;
 
     @include onTablet {
@@ -79,9 +74,8 @@
   }
 
   &__dimensions {
-    padding: 0 30px;
-    display: flex;
-    flex-direction: column;
+    @include padding-mobile;
+    @include flex-col;
     gap: 40px;
     margin-bottom: 16px;
 
@@ -89,9 +83,10 @@
       gap: 26px;
       padding: 0;
       grid-area: pots;
-    }
-    @include onDesktop {
       margin-bottom: 0;
+    }
+
+    @include onDesktop {
       gap: 40px;
       position: relative;
 
@@ -113,8 +108,7 @@
     &-title {
       @extend %bebas;
       @extend %title-upper;
-      font-size: 18px;
-      line-height: 18px;
+      @include fs-18;
       color: #000;
 
       margin-bottom: 10px;
@@ -128,25 +122,26 @@
   &__with-star {
     position: relative;
     color: $gray-4f;
-    padding: 0 30px;
+    @include padding-mobile;
+
+    &::before {
+      content: '*';
+      position: absolute;
+      top: 0;
+      left: 16px;
+    }
 
     @include onTablet {
       padding: 0;
       grid-area: star;
+
+      &::before {
+        left: -16px;
+      }
     }
 
     @include onDesktop {
       align-self: end;
-    }
-  }
-
-  &__star {
-    position: absolute;
-    top: 0;
-    left: 16px;
-
-    @include onTablet {
-      left: -16px;
     }
   }
 }
