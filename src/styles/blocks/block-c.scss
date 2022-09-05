@@ -81,10 +81,13 @@
   }
 
   &__position {
+    display: inline-block;
+    position: relative;
     @extend %bebas;
     @include fs-36;
     color: $black-100;
     margin-bottom: 5px;
+    padding-left: 18px;
 
     @include onTablet {
       grid-area: pos;
@@ -100,12 +103,14 @@
 
     &::before {
       content: "";
-      display: inline-block;
+      display: block;
+      position: absolute;
+      background-image: url(../images/slash.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 19px;
       height: 46px;
-      background-color: $black-333;
-      border: 1px solid $black-333;
-      transform: rotate(22deg);
-      margin: 0 8px;
+      right: 18px;
     }
   }
 
@@ -118,6 +123,7 @@
   }
 
   &__title {
+    position: relative;
     @extend %bebas;
     color: $black-100;
     @include fs-36;
@@ -127,14 +133,13 @@
     @include onTablet {
       &::after {
         content: "";
-        display: inline-block;
-        position: relative;
-        top: 10px;
+        display: inline;
+        position: absolute;
+        background-image: url(../images/slash.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 19px;
         height: 46px;
-        background-color: $black-333;
-        border: 1px solid $black-333;
-        transform: rotate(22deg);
-        margin-left: 4px;
       }
     }
   }
