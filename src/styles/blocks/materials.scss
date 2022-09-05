@@ -114,7 +114,7 @@
     @include onTablet {
       position: absolute;
 
-      & :first-child {
+      & :first-child, :nth-child(2) {
         order: 1;
       }
     }
@@ -124,13 +124,12 @@
         top: 50%;
         right: 5%;
 
-        & :first-child {
+        & :first-child, :nth-child(2) {
           order: 0;
         }
 
-        & :nth-child(2) {
+        & :nth-child(3) {
           z-index: 1;
-          visibility: hidden;
         }
       }
 
@@ -143,11 +142,7 @@
     &--2 {
       @include onTablet {
         top: 44%;
-        right: 25%;
-
-        & :nth-child(2) {
-          visibility: hidden;
-        }
+        right: 20%;
       }
 
       @include onDesktop {
@@ -161,8 +156,7 @@
         top: 53%;
         right: 35%;
 
-        & :nth-child(2) {
-          visibility: hidden;
+        & :nth-child(3) {
           z-index: 1;
         }
       }
@@ -178,17 +172,13 @@
       @include onTablet {
         top: 39%;
         right: 48%;
-
-        & :nth-child(2) {
-          visibility: hidden;
-        }
       }
 
       @include onDesktop {
         top: 55%;
         right: 49%;
 
-        & :nth-child(2) {
+        & :nth-child(3) {
           transform: translateX(-50%);
         }
       }
@@ -199,9 +189,8 @@
         top: 55%;
         right: 67%;
 
-        & :nth-child(2) {
+        & :nth-child(3) {
           transform: translateX(30%);
-          visibility: hidden;
         }
       }
 
@@ -209,7 +198,7 @@
         top: 73%;
         right: 70%;
 
-        & :nth-child(2) {
+        & :nth-child(3) {
           transform: translateX(0);
         }
       }

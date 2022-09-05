@@ -19,6 +19,22 @@
     box-shadow: none;
   }
 
+  &:target &__description {
+    @include onTablet {
+      visibility: visible;
+    }
+  }
+
+  &:target &__link {
+    @include onTablet {
+      display: none;
+    }
+
+    &--close {
+      display: block;
+    }
+  }
+
   &__link {
     display: none;
 
@@ -45,6 +61,17 @@
       &::after {
         transform: translate(-50%, -50%) rotate(90deg);
       }
+
+      &--close {
+        display: none;
+        background-color: scaleColor(25%);
+        backdrop-filter: blur(12px);
+        opacity: 0.65;
+
+        &::after {
+          visibility: hidden;
+        }
+      }
     }
   }
 
@@ -58,18 +85,14 @@
 
       background-color: scaleColor(55%);
       backdrop-filter: blur(40px);
+
+      visibility: hidden;
     }
 
     @include onDesktop {
       width: 300px;
       backdrop-filter: blur(35px);
     }
-
-    // visibility: hidden;
-
-    // &:target {
-    //   visibility: visible;
-    // }
   }
 
   &__links-list {

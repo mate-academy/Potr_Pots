@@ -8,8 +8,10 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-// function showPopUp() {
-//   const popUpText = document.getElementById('advantage-1');
+const form = document.querySelector('.form');
 
-//   popUpText.classList.toggle('show');
-// }
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  form.reset();
+});

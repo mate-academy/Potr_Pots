@@ -28,11 +28,18 @@
         transform: $matrix;
       }
 
-      @if $order == "5" {
+      @if $order == "3" {
         &--#{$order} {
-          z-index: -1;
+          z-index: 1;
         }
       }
+    }
+
+    transition: all $duration;
+
+    &:hover {
+      transform: scale(1.5);
+      z-index: 2;
     }
   }
 
