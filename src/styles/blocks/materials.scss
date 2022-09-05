@@ -10,7 +10,7 @@
     }
     @include onDesktop {
       margin: 0 auto;
-      max-width: 1440px;
+      @include width-1440;
       @include padding-desktop;
       @include grid-12;
       grid-template-areas: "titl titl titl titl titl titl titl titl titl . . ."
@@ -116,6 +116,10 @@
       position: absolute;
       @include square(100%);
     }
+
+    @include onDesktop {
+      @include width-1440;
+    }
   }
 
   &__radio-label {
@@ -186,6 +190,12 @@
     @include onTablet {
       display: flex;
       @include square(100%);
+    }
+
+    @include onDesktop {
+      @include width-1440;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 
