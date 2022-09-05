@@ -21,35 +21,108 @@
 
   &__menu-button {
     @include square(32px);
+    background-image: url("./../images/icon_menu.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
     background-color: transparent;
-    background-image: url("./../images/menu_icon.svg");
-    outline: none;
     border: none;
+
+    @include onDesktop {
+      display: none;
+    }
   }
 
   &__menu {
-    position: absolute;
-    right: 0;
+    @include onPhoneAndTablet {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &__basket {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      @include square(32px);
+
+      background-image: url("./../images/icon_basket.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  &__background {
+    @include onTabletAndDesktop {
+      position: absolute;
+      width: 100%;
+      height: 465px;
+
+      clip-path: polygon(0 0, 72% 0, 72% 36%, 0 86%);
+      background-color: $c-yellow-light;
+      z-index: -1;
+    }
+  }
+
+  &__promo {
+    position: relative;
+    padding: 0 $padding-s;
+
+    @include onTablet {
+      top: 22px;
+      padding: 0 $padding-m;
+    }
+
+    @include onDesktop {
+      top: 64px;
+      padding: 0 $padding-l;
+    }
+  }
+
+  &__photo-container {
+    display: block;
+
+    @include onTabletAndDesktop {
+      position: absolute;
+      top: 0;
+      right: $padding-m;
+    }
+
+    @include onDesktop {
+      right: $padding-l;
+    }
   }
 
   &__photo {
-    width: 100%;
-    margin-bottom: 25px;
+    @include onPhone {
+      width: calc(100% + #{$padding-s * 2});
+      margin-left: -#{$padding-s};
+      margin-bottom: 25px;
+    }
+
+    @include onTablet {
+      width: 306px;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      @include hover(transform, scale(1.03));
+    }
   }
 
   &__title {
-    margin: 0 30px 30px;
+    margin-bottom: 30px;
     color: $c-turquoise;
+    z-index: 1;
 
     &--transparent {
       font-weight: normal;
       -webkit-text-stroke: 1px $c-turquoise;
       color: transparent;
     }
-  }
-
-  &__offer {
-    margin: 0 30px;
   }
 
   &__offer-price {
@@ -66,10 +139,6 @@
     @include onTabletAndDesktop {
       margin-bottom: 50px;
     }
-  }
-
-  &__button {
-    margin: 0 auto;
   }
 
   &__more {
@@ -89,6 +158,13 @@
     line-height: 150%;
     color: $c-turquoise;
     text-decoration: none;
+
+    @include onTabletAndDesktop {
+      left: 0;
+      right: auto;
+    }
+
+    @include hover(opacity, 0.7);
 
     &::after {
       content: "";
