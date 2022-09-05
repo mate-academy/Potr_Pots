@@ -1,5 +1,6 @@
 .nav {
   height: 100vh;
+  width: 72%;
 
   padding-top: 138px;
   padding-left: 80px;
@@ -8,6 +9,10 @@
 
   &__item {
     padding-bottom: 16px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 
   &__link {
@@ -15,13 +20,17 @@
   }
 
   &__close {
-    position: absolute;
-    bottom: 100px;
-    left: 120px;
+    position: relative;
+    top: 90px;
+    left: 0;
+
+    width: max-content;
+
     display: flex;
     align-items: center;
 
     transform: rotate(-90deg);
+    transform-origin: right;
   }
 
   &__close-cross {

@@ -5,7 +5,6 @@
   }
 
   &__content {
-    position: relative;
     padding: 0 30px;
   }
 
@@ -40,9 +39,13 @@
   }
 
   &__comment {
-    position: absolute;
-    bottom: -12px;
-    right: 14px;
+    position: relative;
+    top: -10px;
+    left: 15px;
+
+    display: flex;
+    justify-content: flex-end;
+
     font-size: 12px;
     line-height: 18px;
     color: $turquoise;
@@ -55,12 +58,14 @@
       content: "";
       width: 44px;
       height: 8px;
-      padding-left: 8px;
+      margin-left: 8px;
 
       background-image: url(../images/right_turquoise_arrow.png);
       background-size: contain;
       background-position: center;
       background-repeat: no-repeat;
+
+      transform: translateY(50%);
     }
   }
 }
