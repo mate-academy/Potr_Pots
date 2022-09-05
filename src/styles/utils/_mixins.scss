@@ -170,3 +170,13 @@
   object-fit: $fit;
   object-position: $pos;
 }
+
+@mixin hover {
+  @include onDesktop {
+    transition: all $duration;
+
+    &:hover {
+      @content;
+    }
+  }
+}

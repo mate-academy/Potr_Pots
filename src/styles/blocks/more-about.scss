@@ -70,18 +70,6 @@
     transform: rotate(90deg);
     transform-origin: 100% 0%;
 
-    &:last-child {
-      display: none;
-
-      @include onDesktop {
-        display: flex;
-        top: 100%;
-        left: 50px;
-        transform: rotate(-90deg) translateY(0);
-        transform-origin: 0% 0%;
-      }
-    }
-
     @include onTablet {
       top: 0;
       right: 5px;
@@ -91,6 +79,26 @@
     @include onDesktop {
       right: 50px;
       transform: rotate(90deg) translateX(40%);
+    }
+
+    @include hover {
+      transform: rotate(90deg) translateX(40%) scale(1.2);
+    }
+
+    &:last-child {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        top: 100%;
+        left: 50px;
+        transform: rotate(-90deg) translateY(0);
+        transform-origin: 0% 0%;
+
+        @include hover {
+          transform: scale(1.2) rotate(-90deg) translateY(0);
+        }
+      }
     }
   }
 }

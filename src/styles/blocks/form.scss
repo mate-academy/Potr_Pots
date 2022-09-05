@@ -21,7 +21,7 @@
 
     &:nth-last-child(2) {
       margin-bottom: 30px;
-      
+
       @include onTablet {
         margin-bottom: 40px;
       }
@@ -35,15 +35,22 @@
       color: $blue;
       border-bottom-color: $blue;
     }
-    
-    &:invalid {
-      color: $red;
-      border-bottom-color: $red;
-    }
-    
-    &:focus {
-      color: $page-main-color;
-      border-bottom-color: $blue;
-    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+    font-family: inherit;
+    -webkit-text-fill-color: $blue;
   }
+
+  &:invalid {
+    color: $red;
+    border-bottom-color: $red;
+  }
+
+  &:focus {
+    color: $page-main-color;
+    border-bottom-color: $blue;
+  }
+}
 }
