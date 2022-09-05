@@ -17,8 +17,23 @@
     }
   }
 
+  &__container {
+    &--tablet {
+      @include onTablet {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
   &__header {
     margin-bottom: 110px;
+    padding: 0 30px;
+
+    @include onTablet {
+      margin-bottom: 220px;
+      padding: 0 34px;
+    }
   }
 
   &__section {
@@ -27,6 +42,10 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include onTablet {
+      padding: 0 34px;
     }
   }
 

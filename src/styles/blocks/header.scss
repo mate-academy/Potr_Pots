@@ -1,11 +1,25 @@
 .header {
+  @include onTablet {
+    background-image: url(../images/tablet/header_background.svg);
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
+  }
+
   &__image {
     margin-bottom: 25px;
     width: 100%;
+
+    @include onTablet {
+      width: 306px;
+      margin-bottom: 0;
+    }
   }
 
   &__content {
-    padding: 0 30px;
+    @include onTablet {
+      position: absolute;
+    }
   }
 
   &__title {
@@ -16,6 +30,14 @@
     line-height: 43px;
     letter-spacing: 5px;
     color: $turquoise;
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9px;
+    }
   }
 
   &__price {
@@ -25,6 +47,13 @@
     font-size: 26px;
     line-height: 36px;
     color: $grey1;
+
+    @include onTablet {
+      position: relative;
+      top: -20px;
+      left: 240px;
+      margin-bottom: 6px;
+    }
   }
 
   &__text {
@@ -32,6 +61,13 @@
 
     font-size: 14px;
     line-height: 21px;
+
+    @include onTablet {
+      position: relative;
+      top: -20px;
+      left: 240px;
+      margin-bottom: 30px;
+    }
   }
 
   &__button {
@@ -52,6 +88,13 @@
 
     transform: rotate(90deg);
     transform-origin: right;
+
+    @include onTablet {
+      top: -150px;
+      left: 0;
+      justify-content: flex-start;
+      transform-origin: bottom left;
+    }
 
     &::after {
       display: inline-block;

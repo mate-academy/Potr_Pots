@@ -1,0 +1,24 @@
+.flex {
+  display: block;
+  width: 100%;
+  
+  @include onTablet {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    &--order-1 {
+      @include onTablet {
+        order: 1;
+      }
+    }
+
+    &--order-2 {
+      @include onTablet {
+        order: 2;
+      }
+    }
+  }
+}
