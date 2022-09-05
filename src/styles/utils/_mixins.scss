@@ -4,3 +4,37 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  @include square($size);
+  border-radius: 50%;
+}
+
+@mixin onPhone {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onTabletAndDesktop {
+  @media (min-width: 640px) {
+    @content;
+  }
+}

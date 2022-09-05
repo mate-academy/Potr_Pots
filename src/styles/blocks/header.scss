@@ -1,0 +1,105 @@
+.header {
+  position: relative;
+
+  &__top {
+    margin: 0 auto;
+  }
+
+  &__title-navigation {
+    text-decoration: none;
+  }
+
+  &__title-text {
+    font-family: Bebas, sans-serif;
+    font-size: 34px;
+    line-height: 42px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+
+    color: $c-grey-dark;
+  }
+
+  &__menu-button {
+    @include square(32px);
+    background-color: transparent;
+    background-image: url("./../images/menu_icon.svg");
+    outline: none;
+    border: none;
+  }
+
+  &__menu {
+    position: absolute;
+    right: 0;
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    margin: 0 30px 30px;
+    color: $c-turquoise;
+
+    &--transparent {
+      font-weight: normal;
+      -webkit-text-stroke: 1px $c-turquoise;
+      color: transparent;
+    }
+  }
+
+  &__offer {
+    margin: 0 30px;
+  }
+
+  &__offer-price {
+    margin-bottom: 1px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: $c-grey-dark;
+  }
+
+  &__offer-description {
+    margin-bottom: 20px;
+
+    @include onTabletAndDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  &__more {
+    writing-mode: vertical-lr;
+
+    position: absolute;
+    bottom: 0;
+    right: 6px;
+    height: max-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 12px;
+    line-height: 150%;
+    color: $c-turquoise;
+    text-decoration: none;
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 44px;
+
+      background-image: url("./../images/arrow_down_blue.svg");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: $c-turquoise;
+    }
+  }
+}
