@@ -1,12 +1,15 @@
 .for-whom {
   padding-inline: 30px;
+  padding-bottom: 110px;
 
   @include onTablet {
     padding-inline: 34px;
+    padding-bottom: 130px;
   }
 
   @include onDesktop {
     padding-inline: 135px;
+    padding-bottom: 150px;
   }
 
   &__title {
@@ -22,6 +25,7 @@
   }
 
   &__article {
+    position: relative;
     display: flex;
     flex-direction: column;
 
@@ -31,10 +35,63 @@
 
     &-img {
       display: none;
+      margin-right: 76px;
+
+      @include onTablet {
+        display: block;
+      }
+
+      &--1 {
+        float: left;
+        width: 284px;
+        height: 284px;
+
+        margin: 20px 76px 110px 0;
+      }
+
+      &--2 {
+        float: right;
+        width: 300px;
+        height: 417px;
+
+        margin: 0 0 122px 57px;
+      }
+
+      &--3 {
+        float: left;
+        width: 284px;
+        height: 405px;
+      }
     }
 
     &-description {
       display: none;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-title;
+
+      padding-bottom: 20px;
+
+      &--2 {
+        align-self: flex-end;
+      }
+
+      @include onTablet {
+        display: inline-block;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          position: relative;
+          bottom: -25px;
+          left: -20px;
+          width: 11px;
+          height: 21px;
+          background-image: url(/images/icons/article-star.svg);
+          background-repeat: no-repeat;
+        }
+      }
     }
 
     &-number {
@@ -42,8 +99,23 @@
       font-weight: 400;
       font-size: 36px;
       line-height: 65px;
-      letter-spacing: 0.15em;
       color: $c-article;
+
+      &--1 {
+        @include onTablet {
+          position: absolute;
+          top: 45px;
+          left: -60px;
+        }
+      }
+
+      &--3 {
+        @include onTablet {
+          position: absolute;
+          top: 45px;
+          left: -60px;
+        }
+      }
 
       &:before {
         content: "";
@@ -55,6 +127,8 @@
     }
 
     &-title {
+      position: relative;
+
       font-family: "Bebas Neue", sans-serif;
       font-weight: 400;
       font-size: 36px;
@@ -64,6 +138,20 @@
       color: $c-article;
 
       padding-bottom: 20px;
+
+      @include onTablet {
+        &::after {
+          content: "";
+          position: relative;
+          left: -10px;
+          top: 10px;
+
+          display: inline-block;
+          width: 15px;
+          height: 46px;
+          background-image: url(/images/icons/article-slash.svg);
+        }
+      }
     }
 
     &-info {
@@ -84,6 +172,10 @@
     &:before {
       top: 5px;
       right: 75px;
+    }
+
+    @include onTablet {
+      display: none;
     }
   }
 }
