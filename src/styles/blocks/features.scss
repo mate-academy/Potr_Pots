@@ -1,4 +1,5 @@
 .features {
+  position: relative;
   width: 100%;
   @include flex-col;
   @include padding-mobile;
@@ -12,17 +13,31 @@
     @include padding-desktop;
   }
 
+  &__side-box {
+    position: absolute;
+
+    &--open {
+      top: 0;
+      right: 4px;
+    }
+
+    &--close {
+      bottom: 0;
+      left: 4px;
+    }
+  }
+
   &__title {
     @extend %bebas;
     text-transform: uppercase;
-    letter-spacing: 0.135em;
+    letter-spacing: 0.14em;
     color: transparent;
     -webkit-text-stroke: 0.5px $page-main-color;
     @include fs-58;
     margin-bottom: 25px;
 
     @include onTablet {
-      letter-spacing: 0.155em;
+      letter-spacing: 0.15em;
       margin-bottom: 52px;
     }
 

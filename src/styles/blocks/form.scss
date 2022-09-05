@@ -22,7 +22,6 @@
     margin-bottom: 25px;
   }
 
-
   &__input {
     @extend %form-font;
     display: block;
@@ -41,6 +40,12 @@
       -webkit-text-fill-color: $gray-4f;
     }
 
+    &:active,
+    &:focus-visible {
+      -webkit-text-fill-color: $gray-4f;
+      border-bottom-color: $page-main-color;
+    }
+
     &:where(:not(:placeholder-shown):valid) {
       border-bottom-color: $page-main-color;
       -webkit-text-fill-color: $page-main-color;
@@ -50,13 +55,6 @@
       border-bottom-color: $red-57;
       -webkit-text-fill-color: $red-57;
     }
-
-    &:active,
-    &:focus-visible {
-      -webkit-text-fill-color: $gray-4f;
-      border-bottom-color: $page-main-color;
-    }
-
 
     &--textarea {
       margin-bottom: 30px;

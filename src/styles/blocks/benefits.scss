@@ -1,13 +1,14 @@
 .benefits {
+  position: relative;
   @include padding-mobile;
 
   @include onTablet {
     @include padding-tablet;
     @include grid-2;
     grid-template-areas: "list ."
-    "list btn"
-    "list dsc"
-    "list .";
+      "list btn"
+      "list dsc"
+      "list .";
   }
 
   @include onDesktop {
@@ -15,14 +16,34 @@
     @include padding-desktop;
     @include grid-12;
     grid-template-areas: "im im im im im . . . . . . ."
-    "im im im im im list list list list list list list"
-    "im im im im im btn btn btn . . . ."
-    "im im im im im . dsc dsc dsc dsc dsc  ."
-    "im im im im im . . . . . . .";
+      "im im im im im list list list list list list list"
+      "im im im im im btn btn btn . . . ."
+      "im im im im im . dsc dsc dsc dsc dsc  ."
+      "im im im im im . . . . . . .";
+  }
+
+  &__side-box {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--open {
+      top: 0;
+      right: 4px;
+    }
+
+    &--close {
+      bottom: 0;
+      left: 4px;
+    }
   }
 
   &__img-box {
     display: none;
+    transition: transform $transition-duration ease-in-out;
 
     @include onDesktop {
       width: 100%;
@@ -30,6 +51,10 @@
       display: block;
       grid-area: im;
       margin-left: -134px;
+    }
+
+    &:hover {
+      transform: skew(10deg, -10deg);
     }
   }
 
@@ -69,8 +94,8 @@
     margin-bottom: 5px;
     position: relative;
 
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       display: inline-block;
       @include square(8px);
       transform: rotate(45deg);
@@ -111,7 +136,6 @@
     @extend %bebas;
     @extend %title-upper;
     @include fs-24;
-
 
     @include onTablet {
       @include fs-18;

@@ -15,11 +15,12 @@
     @include grid-6-desktop;
     grid-auto-rows: minmax(min-content, max-content);
     grid-template-areas: ". im im im im ."
-    "txt txt txt txt txt txt";
+      "txt txt txt txt txt txt";
   }
 
   &__img-box {
     display: none;
+    overflow: hidden;
 
     @include onTablet {
       width: 50%;
@@ -35,9 +36,10 @@
   }
 
   &__img {
-      width: 80%;
-      object-fit: contain;
-      object-position: center;
+    width: 80%;
+    object-fit: contain;
+    object-position: center;
+    @extend %img-hover;
   }
 
   &__grid {
@@ -47,16 +49,16 @@
       @include grid-3;
       grid-auto-rows: minmax(min-content, max-content);
       grid-template-areas: ". . star type"
-      "pos . . ."
-      "descr descr descr descr";
+        "pos . . ."
+        "descr descr descr descr";
     }
 
     @include onDesktop {
       width: 100%;
       @include grid-6-desktop;
       grid-template-areas: "star type . . . ."
-      ". pos . . . ."
-      ". descr descr descr descr .";
+        ". pos . . . ."
+        ". descr descr descr descr .";
     }
   }
 

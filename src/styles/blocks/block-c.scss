@@ -12,11 +12,12 @@
     width: 50%;
     @include grid-6-desktop;
     grid-template-areas: ". im im im im im"
-    "txt txt txt txt txt txt";
+      "txt txt txt txt txt txt";
   }
 
   &__img-box {
     display: none;
+    overflow: hidden;
 
     @include onTablet {
       grid-area: im;
@@ -32,6 +33,7 @@
     width: 130%;
     object-fit: contain;
     object-position: center;
+    @extend %img-hover;
 
     @include onDesktop {
       width: 100%;
@@ -43,15 +45,14 @@
       grid-area: txt;
       @include grid-4;
       grid-auto-rows: minmax(min-content, max-content);
-      grid-template-areas:
-      "star type . ."
-      "pos descr descr descr";
+      grid-template-areas: "star type . ."
+        "pos descr descr descr";
     }
 
     @include onDesktop {
       @include grid-12;
       grid-template-areas: "star type type . . ."
-      ". pos descr descr descr descr";
+        ". pos descr descr descr descr";
     }
   }
 
@@ -121,9 +122,6 @@
     @include fs-36;
     @extend %title-upper;
     margin-bottom: 10px;
-
-    @include onTablet {
-    }
 
     @include onTablet {
       &::after {

@@ -17,7 +17,7 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto 14px;
-    @include onTablet{
+    @include onTablet {
       margin: 0 auto 50px;
     }
   }
@@ -48,10 +48,17 @@
     @include onDesktop {
       display: block;
       background-image: url(../images/basket.png);
-      @include square(48px);
+      @include square(34px);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 30px 30px;
+
+      transition: transform $transition-duration ease-in-out;
+    }
+
+    &:hover {
+      transform: skew(-15deg, 10deg);
+      background-size: 34px 34px;
     }
   }
 }

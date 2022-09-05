@@ -11,8 +11,8 @@
       @include padding-tablet;
       @include grid-6;
       grid-template-areas: "text text text text img img"
-      ". . price price img img"
-      ". butt butt butt . .";
+        ". . price price img img"
+        ". butt butt butt . .";
     }
 
     @include onDesktop {
@@ -21,8 +21,8 @@
       column-gap: 30px;
       @include padding-desktop;
       grid-template-areas: ". text text text text text . img img img img img"
-      ". . . . price price . img img img img img"
-      ". . . butt butt butt . img img img img img";
+        ". . . . price price . img img img img img"
+        ". . . butt butt butt . img img img img img";
     }
   }
 
@@ -98,17 +98,24 @@
     align-items: center;
     color: $page-main-color;
     @include fs-12;
-    gap: 9px;
+    gap: 8px;
+
+    transition: gap $transition-duration ease-in-out,
+      bottom $transition-duration ease-in-out;
 
     @include onTablet {
       left: 34px;
+    }
+
+    &:hover {
+      gap: 18px;
+      bottom: -10px;
     }
   }
 
   &__more-about {
     writing-mode: tb-rl;
   }
-
 
   &__buy-now {
     margin: 0 auto;

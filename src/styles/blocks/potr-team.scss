@@ -3,6 +3,7 @@
   background-image: url(../images/Rectangle__about.png);
   background-repeat: no-repeat;
   background-position: -110px 582px;
+  overflow-x: clip;
 
   @include onTablet {
     background-position: -190px 174px;
@@ -15,6 +16,25 @@
     @include padding-desktop;
   }
 
+  &__side-box {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--open {
+      top: 0;
+      right: 4px;
+    }
+
+    &--close {
+      bottom: -154px;
+      left: 4px;
+    }
+  }
+
   &__title {
     color: $black-333;
     @extend %bebas;
@@ -22,7 +42,7 @@
     @extend %title-upper;
     @include padding-mobile;
 
-    @include onTablet{
+    @include onTablet {
       padding: 0;
       margin-bottom: 176px;
     }
@@ -63,10 +83,12 @@
       text-align: right;
       @include onTablet {
         bottom: 0;
-        right: 0;
+        right: -34px;
         transform: translateY(83.2%);
       }
+
       @include onDesktop {
+        right: -40px;
       }
     }
   }
@@ -76,7 +98,7 @@
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     grid-template-areas: "photo"
-    "about";
+      "about";
 
     @include onTablet {
       width: 100%;
@@ -84,7 +106,7 @@
       grid-template-areas: none;
     }
 
-    @include onDesktop{
+    @include onDesktop {
       @include grid-12;
     }
   }

@@ -1,4 +1,20 @@
 .for-whom {
+  position: relative;
+
+  &__side-box {
+    position: absolute;
+
+    &--open {
+      top: 0;
+      right: 4px;
+    }
+
+    &--close {
+      bottom: 0;
+      left: 4px;
+    }
+  }
+
   &__container {
     width: 100%;
     @include flex-col;
@@ -9,6 +25,7 @@
     }
 
     @include onDesktop {
+      position: relative;
       margin: 0 auto;
       @include width-1440;
       @include padding-desktop;

@@ -1,15 +1,15 @@
 .footer {
   @include flex-col;
-  @include padding-mobile;
+  padding: 110px 30px;
 
   @include onTablet {
     flex-direction: row;
     justify-content: space-between;
-    @include padding-tablet;
+    padding: 110px 34px;
   }
 
   @include onDesktop {
-    @include padding-desktop;
+    padding: 110px 134px;
     @include width-1440;
   }
 
@@ -43,12 +43,14 @@
     gap: 85px;
 
     @include onTablet {
-      margin-bottom: 74px
+      margin-bottom: 30px;
     }
   }
 
-  &__item {
+  &__icon {
+    display: inline-block;
     @include square(20px);
+    transition: transform $transition-duration ease-in-out;
 
     &--twitter {
       background-image: url(../images/twitter.svg);
@@ -60,6 +62,10 @@
 
     &--facebook {
       background-image: url(../images/facebook.svg);
+    }
+
+    &:hover {
+      transform: scale(1.25);
     }
   }
 

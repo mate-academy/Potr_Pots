@@ -1,10 +1,9 @@
 .nav {
   @include flex-col;
   width: 230px;
-  height: 568px;
+  height: 100vh;
   background-color: $page-main-color;
-  padding: 138px 0 0 82px;
-  overflow: auto;
+  padding: 20vh 0 0 82px;
   z-index: 2;
 
   &__list {
@@ -17,7 +16,27 @@
   }
 
   &__link {
+    display: inline-block;
     color: $white-color;
+    position: relative;
+
+    &:not(.basket)::after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      right: 0;
+      position: absolute;
+      background-color: $white-color;
+      transition: width 1s ease 0s, right 0.5s ease 0s;
+      width: 0;
+    }
+
+    &:hover:not(.basket)::after {
+      width: 100%;
+      right: 0;
+    }
   }
 
   @include onDesktop {

@@ -13,7 +13,27 @@
   }
 
   &__way {
+    display: inline-block;
+    position: relative;
     color: $black-100;
     white-space: nowrap;
+
+    &::after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      right: 0;
+      position: absolute;
+      background-color: $page-main-color;
+      transition: width 1s ease 0s, right 0.5s ease 0s;
+      width: 0;
+    }
+
+    &:hover:after {
+      width: 100%;
+      right: 0;
+    }
   }
 }
