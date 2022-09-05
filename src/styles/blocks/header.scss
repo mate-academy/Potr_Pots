@@ -1,7 +1,9 @@
 .header {
   overflow-x: hidden;
-  position: relative;
-  height: 100vh;
+
+  @include onTablet {
+    overflow-x: visible;
+  }
 
   &__content {
     position: relative;
@@ -35,15 +37,24 @@
 
   &__side-text {
     position: absolute;
-    bottom: 106px;
-    right: -50px;
+    width: max-content;
+    bottom: 30px;
+    right: -24px;
     transform: rotate(90deg);
+    transform-origin: right top;
 
     font-family: "Manrope", sans-serif;
     font-size: 12px;
     line-height: 150%;
     color: $c-turquoise;
     text-decoration: none;
+
+    @include onTablet {
+      transform-origin: left bottom;
+      transform: rotate(90deg) translateX(-100%);
+      left: 0;
+      bottom: 0;
+    }
 
     &::after {
       content: "";
@@ -61,11 +72,10 @@
 
   &__title {
     font-family: "Bebas Neue", cursive;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.68px #03839e;
     line-height: 43px;
     letter-spacing: 0.15em;
-
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.68px #03839e;
     margin-bottom: 30px;
 
     @include onTablet {
@@ -93,7 +103,6 @@
     margin-bottom: 25px;
 
     @include onTablet {
-      position: relative;
       left: 0;
       float: right;
       width: 306px;
