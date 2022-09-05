@@ -22,9 +22,15 @@ icon.addEventListener('click', () => {
 });
 
 const bag = document.querySelector('.header__link--bag');
+const shopButton = document.querySelector('.header__button');
 const basketCross = document.querySelector('.basket__cross');
 
 bag.addEventListener('click', () => {
+  document.querySelector('.basket').classList.add('basket--active');
+  document.querySelector('.page').classList.add('page--blured');
+});
+
+shopButton.addEventListener('click', () => {
   document.querySelector('.basket').classList.add('basket--active');
   document.querySelector('.page').classList.add('page--blured');
 });
