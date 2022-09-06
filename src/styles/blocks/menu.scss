@@ -1,4 +1,6 @@
 .menu {
+  transform: translateX(0);
+
   @include onPhoneAndTablet {
     position: fixed;
     top: 0;
@@ -15,15 +17,9 @@
     transition: transform $animation-time;
   }
 
-  &--open {
-    transform: translateX(0);
-  }
-
   &--close {
-    transform: translateX(100%);
-
-    @include onDesktop {
-      transform: translateX(0);
+    @include onPhoneAndTablet {
+      transform: translateX(100%);
     }
   }
 
@@ -46,48 +42,23 @@
   }
 
   &__link {
-    height: 100%;
     padding: 8px 0;
-
-    font-size: 16px;
-    line-height: 150%;
     color: $c-grey-light;
     text-decoration: none;
 
     @include onDesktop {
+      display: block;
       padding: 0 30px;
       color: inherit;
     }
 
-    @include hover(opacity, 0.7);
+    @include hover(transform, scale(1.25));
 
     &--basket {
-      position: relative;
-
       @include onDesktop {
         display: none;
       }
-
-      &::after {
-        content: "0";
-
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(12px, 4px);
-        @include circle(14px);
-
-        font-family: Bebas, sans-serif;
-        font-size: 8px;
-        line-height: 100%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: $c-red;
-      }
     }
-
   }
 
   &__close {

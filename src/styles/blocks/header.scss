@@ -1,6 +1,4 @@
 .header {
-  position: relative;
-
   &__top {
     margin: 0 auto;
   }
@@ -10,13 +8,8 @@
   }
 
   &__title-text {
-    font-family: Bebas, sans-serif;
-    font-size: 34px;
     line-height: 42px;
-    font-weight: 400;
     letter-spacing: 0.06em;
-
-    color: $c-grey-dark;
   }
 
   &__menu-button {
@@ -34,7 +27,7 @@
 
   &__menu {
     @include onPhoneAndTablet {
-      position: absolute;
+      position: fixed;
       right: 0;
     }
   }
@@ -52,6 +45,8 @@
       background-position: center;
       background-color: transparent;
       border: none;
+
+      @include hover(opacity, 0.7);
     }
   }
 
@@ -135,6 +130,8 @@
 
   &__offer-description {
     margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 150%;
 
     @include onTabletAndDesktop {
       margin-bottom: 50px;
@@ -165,6 +162,7 @@
     }
 
     @include hover(opacity, 0.7);
+    @include hover(transform, translateY(10%));
 
     &::after {
       content: "";

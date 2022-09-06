@@ -14,11 +14,37 @@
     column-gap: 30px;
   }
 
+  &--tablet {
+    @include onDesktop {
+      display: initial;
+    }
+  }
+
+  &--desktop {
+    @include onTablet {
+      display: initial;
+    }
+  }
+
   &--all {
     @include onPhone {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 20px;
+    }
+  }
+
+  &--tablet-align-end {
+    @include onTablet {
+      justify-self: end;
+    }
+  }
+
+  &--tablet-row {
+    @include onTablet {
+      & > * {
+        grid-row: 1 / 1;
+      }
     }
   }
 
