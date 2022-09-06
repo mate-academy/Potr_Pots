@@ -45,9 +45,16 @@
   &__link {
     margin: 20px;
     text-decoration: none;
+    transition: $trans;
+    &:hover {
+      transform: scale(110%);
+    }
   }
   &__logo {
     @include h2-text;
+    text-decoration: none;
+    color: inherit;
+    @include link_hover($red);
   }
   &__copy {
     @include s3-text;

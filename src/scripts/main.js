@@ -39,7 +39,9 @@ window.addEventListener('hashchange', () => {
       sliderNav.forEach((e) => e.classList.remove('slider__active'));
       sliderNav[4].classList.add('slider__active');
       break;
-    default: break;
+    default:
+      menuClasses.toggle('active');
+      break;
   }
 });
 
@@ -49,9 +51,7 @@ const sliderSlide = document.querySelectorAll('.slider__slide');
 sliderButton.forEach((a, i) => {
   a.addEventListener('click', () => {
     sliderButton.forEach((e, index) =>
-      i === index
-        ? e.classList.toggle('button--active')
-        : e
+      i === index ? e.classList.toggle('button--active') : e
     );
     sliderSlide[i].classList.toggle('slider__active');
   });
