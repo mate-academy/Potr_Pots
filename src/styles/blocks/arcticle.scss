@@ -1,43 +1,14 @@
 .article {
-  $root: &;
-
   display: flex;
-  align-items: center;
+
+  @include onTablet {
+    align-items: center;
+  }
 
   @include onDesktop {
-    align-items: flex-start;
-  }
-
-  &--1 {
-    @include onDesktop {
-      margin-bottom: 80px;
-    }
-  }
-
-  &--2 {
-    @include onTablet {
-      flex-direction: row-reverse;
-    }
-
-    @include onDesktop {
-      max-width: 370px;
-      flex-direction: column;
-      margin-left: 100px;
-    }
-  }
-
-  &--3 {
-    @include onDesktop {
-      width: min-content;
-      flex-direction: column;
+    &:last-child {
       align-items: flex-end;
-      flex-grow: 1;
-
-      #{$root}__container {
-        max-width: 370px;
-      }
     }
-
   }
 
   &__container {
@@ -74,6 +45,7 @@
     color: $c-black;
     display: inline-block;
     position: relative;
+
     @include onTablet {
       &::after {
         content: "";
