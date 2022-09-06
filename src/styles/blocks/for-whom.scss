@@ -1,9 +1,31 @@
 .for-whom {
+  &__articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
   &__title {
     margin-bottom: 101px;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
   }
 
   &__article {
     margin-bottom: 146px;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
   }
 }

@@ -14,23 +14,19 @@ window.addEventListener('hashchange', () => {
   const menuBox = document.getElementById('menu');
 
   if (window.location.hash === '#menu') {
+    document.body.classList.add('page__body--with-menu');
     menuBox.classList.add('page__menu--open');
-    menuBox.classList.remove('page__menu--close');
   } else {
-    menuBox.classList.add('page__menu--close');
     menuBox.classList.remove('page__menu--open');
   }
 });
 
-window.addEventListener('mouseup', (event) => {
+window.addEventListener('click', (event) => {
   const menuBox = document.getElementById('menu');
 
-  if (event.target === menuBox) {
-    menuBox.classList.add('page__menu--open');
-    menuBox.classList.remove('page__menu--close');
-  } else {
+  if (event.target !== menuBox) {
     clearHash();
-    menuBox.classList.add('page__menu--close');
+    document.body.classList.remove('page__body--with-menu');
     menuBox.classList.remove('page__menu--open');
   }
 });

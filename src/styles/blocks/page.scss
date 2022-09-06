@@ -7,23 +7,24 @@
   font-size: 36px;
   line-height: 150%;
   color: $c-grey-dark;
+  scroll-behavior: smooth;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
 
   &__menu {
-    overflow: hidden;
     position: fixed;
     left: 50%;
     right: 0;
     top: 0;
 
-    transition: all $anim-time $cubic-bezier;
-
-    &--close {
-      opacity: 0.7;
-      transform: translateX(100%);
-    }
+    transition: transform $anim-time $cubic-bezier;
+    transform: translateX(100%);
 
     &--open {
-      opacity: 1;
       transform: translateX(0);
     }
 
