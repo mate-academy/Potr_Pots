@@ -19,20 +19,24 @@
     top: -80px;
 
     height: 100%;
-    width: 149px;
+    width: 170px;
 
     background-repeat: no-repeat;
     background-image: url("../images/side_logo.png");
 
     @include onTablet {
-      right: -3%;
+      right: -8%;
       top: -110px;
     }
 
     @include onDesktop {
-      right: 8%;
+      right: 5%;
       top: -110px;
     }
+  }
+
+  &__contact-container {
+    width: 270px;
   }
 
   &__bg {
@@ -94,13 +98,19 @@
   }
 
   &__form-input {
-
+    font-family: $fontFamilyMonrope;
+    font-size: 16px;
+    line-height: 24px;
     width: 100%;
     background-color: transparent;
 
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     margin-bottom: 25px;
+
+    &--textarea {
+      resize: none;
+    }
 
     transition: border-color$transition;
 
@@ -109,7 +119,6 @@
       font-size: 16px;
       line-height: $lineHeight-150;
       color: $c-lightGray;
-
     }
 
     &:focus {

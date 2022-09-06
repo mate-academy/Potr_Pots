@@ -32,16 +32,16 @@ tabletButtons.forEach(function(btn, index) {
     const slidersText = document.querySelector('.materials__slider');
 
     if (index === 4) {
-      slidersText.style.bottom = '-2%';
-      slidersText.style.left = '54%';
+      slidersText.style.bottom = '18%';
+      slidersText.style.left = '63%';
     } else if (index === 3) {
-      slidersText.style.bottom = '24%';
-      slidersText.style.left = '40%';
+      slidersText.style.bottom = '20%';
+      slidersText.style.left = '50%';
     } else if (index === 2) {
-      slidersText.style.bottom = '12%';
-      slidersText.style.left = '26%';
+      slidersText.style.bottom = '10%';
+      slidersText.style.left = '36%';
     } else if (index === 1) {
-      slidersText.style.bottom = '40%';
+      slidersText.style.bottom = '36%';
       slidersText.style.left = '14%';
     } else if (index === 0) {
       slidersText.style.bottom = '15%';
