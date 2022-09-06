@@ -7,6 +7,10 @@
 
     width: 100%;
     height: auto;
+
+    @include onTablet {
+      padding-top: 0;
+    }
   }
 
   &__title {
@@ -19,6 +23,36 @@
     line-height: 70px;
     letter-spacing: 8px;
     color: $turquoise;
+
+    @include onTablet {
+      padding: 0 34px;
+
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 9px;
+    }
+  }
+
+  &__text-container {
+    display: none;
+
+    position: relative;
+    top: 140px;
+
+    margin-right: 34px;
+    width: 340px;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
   }
 
   &__slider {
@@ -31,6 +65,10 @@
 
     display: flex;
     justify-content: center;
+
+    @include onTablet {
+      display: none;
+    }
   }
 
   &__description {
