@@ -8,6 +8,7 @@
   @include forTablet {
     grid-template-columns: repeat(10, minmax(70px, 1fr));
     grid-template-rows: repeat(6, minmax(40px, 1fr));
+    height: 60vh;
   }
   @include forMobile {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
@@ -104,28 +105,29 @@
     @include s5-text;
     text-decoration: none;
     color: $turqoise;
-    transform: rotate(90deg);
-    width: 250px;
-    height: 30px;
-    margin-top: 80px;
-    @include gridpos(5, span 8, 1, span 2);
+    writing-mode: vertical-rl;
+    width: 20px;
+    height: 250px;
     justify-self: end;
     align-self: center;
     z-index: 1;
+    position: absolute;
+    left: -150px;
+    bottom: -10px;
     @include forTablet {
-      @include gridpos(5, span 8, 1, span 2);
+      left: 10px;
     }
     @include forMobile {
-      @include gridpos(9, span 10, 2, span 3);
-      justify-self: start;
-      align-self: start;
+      left: 90%;
     }
     &::after {
       content: "";
       position: absolute;
-      right: 65px;
-      width: 50px;
-      height: 20px;
+      bottom: 80px;
+      left: -10px;
+      width: 40px;
+      height: 10px;
+      transform: rotate(90deg);
 
       background-color: $turqoise;
       -webkit-mask-image: url("../images/Arrow.svg");

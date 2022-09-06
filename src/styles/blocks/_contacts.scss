@@ -7,10 +7,13 @@
     transform: translate(-50%, -50%);
     overflow: visible;
     top: 5px;
-    right: -75px;
+    right: -25px;
     width: 161px;
     height: 161px;
     background-image: url("../images/contacts.svg");
+    @include forTablet {
+      right: -155px;
+    }
     @include forMobile {
       display: none;
     }
@@ -52,6 +55,9 @@
     flex-direction: column;
 
     z-index: 1;
+    @include forTablet {
+      flex: 0 0 40%
+    }
   }
   &__title {
     @include h2-text;

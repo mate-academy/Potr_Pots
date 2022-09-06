@@ -18,6 +18,51 @@
       margin: 0 auto 70px;
     }
   }
+  &__potr {
+    position: absolute;
+
+    writing-mode: vertical-rl;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $paragraph-grey;
+    &::before {
+      content: "";
+      -webkit-mask-image: url("../images/potr.svg");
+      mask-image: url("../images/potr.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      -webkit-mask-position: center;
+      mask-position: center;
+      position: absolute;
+      width: 2px;
+      height: 70px;
+      bottom: -80px;
+      left: 50%;
+      background-color: $paragraph-grey;
+    }
+    &--1 {
+      bottom: 0;
+      left: 20px;
+      @include forMobile {
+        display: none;
+      }
+    }
+    &--2 {
+      top: 0;
+      right: 20px;
+      @include forMobile {
+        top: 90%;
+
+      }
+    }
+  }
 }
 
 .card {
@@ -119,3 +164,4 @@
     color: $paragraph-grey;
   }
 }
+
