@@ -37,7 +37,7 @@
 
     @include onDesktop {
       display: block;
-      @include square(32px);
+      @include square(42px);
 
       background-image: url("./../images/icon_basket.png");
       background-size: contain;
@@ -114,9 +114,7 @@
     z-index: 1;
 
     &--transparent {
-      font-weight: normal;
-      -webkit-text-stroke: 1px $c-turquoise;
-      color: transparent;
+      @include transparent-title($c-turquoise);
     }
   }
 
