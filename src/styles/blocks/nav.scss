@@ -1,11 +1,16 @@
 .nav {
   height: 100vh;
-  width: 72%;
+  width: 230px;
 
   padding-top: 138px;
   padding-left: 80px;
 
   background-color: $turquoise;
+
+  @include onTablet {
+    width: 320px;
+    padding-top: 120px;
+  }
 
   &__item {
     padding-bottom: 16px;
@@ -31,6 +36,11 @@
 
     transform: rotate(-90deg);
     transform-origin: right;
+
+    @include onTablet {
+      top: 0;
+      left: 30px;
+    }
   }
 
   &__close-cross {

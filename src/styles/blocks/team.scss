@@ -1,6 +1,11 @@
 .team {
   padding: 0;
 
+  @include onTablet {
+    padding: 0 34px;
+    margin-bottom: 220px;
+  }
+
   &__title {
     margin-bottom: 24px;
     padding: 0 30px;
@@ -10,15 +15,60 @@
     line-height: 70px;
     letter-spacing: 8px;
     color: $grey1;
+
+    @include onTablet {
+      margin-bottom: 16px;
+      padding: 0;
+    }
+  }
+
+  &__member {
+    display: none;
+    position: absolute;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 232px;
+    line-height: 278px;
+    letter-spacing: 36px;
+    color: $turquoise;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-color: $turquoise;
+    -webkit-text-stroke-width: 0.81px;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--1 {
+      top: 0;
+      left: -80px;
+    }
+
+    &--2 {
+      bottom: -232px;
+      left: -80px;
+    }
   }
 
   &__image {
     width: 100%;
+
+    @include onTablet {
+      width: 340px;
+      height: 255px;
+
+      margin-top: 160px;
+    }
   }
 
   &__container {
     position: relative;
     padding-top: 130px;
+    width: 100%;
+
+    @include onTablet {
+      width: 292px;
+    }
   }
 
   &__background {
@@ -29,11 +79,21 @@
     background-size: cover;
     background-position: bottom;
     background-repeat: no-repeat;
+
+    @include onTablet {
+      position: relative;
+      z-index: -1;
+      right: 90px;
+    }
   }
 
   &__description {
     position: absolute;
     top: 0;
     padding: 30px 30px 58px;
+
+    @include onTablet {
+      padding: 230px 0 0;
+    }
   }
 }
