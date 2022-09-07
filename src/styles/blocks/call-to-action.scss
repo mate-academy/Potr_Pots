@@ -4,6 +4,10 @@
 
     &:last-child {
       margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -35,8 +39,18 @@
     }
   }
 
+  // &__container {
+  //   @include onTablet {
+  //     width: 320px;
+  //   }
+  // }
+
   &__button {
     margin: 0 auto 40px;
+
+    @include onTablet {
+      margin: 0 0 35px;
+    }
   }
 
   &__proposition-1 {
@@ -48,6 +62,15 @@
     letter-spacing: 5px;
     text-transform: uppercase;
     color: $red;
+
+    @include onTablet {
+      margin-bottom: 5px;
+      width: 320px;
+
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 4px;
+    }
   }
 
   &__proposition-2 {
@@ -57,5 +80,13 @@
     letter-spacing: 4px;
     text-transform: uppercase;
     color: $turquoise;
+
+    @include onTablet {
+      width: 240px;
+
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 3px;
+    }
   }
 }

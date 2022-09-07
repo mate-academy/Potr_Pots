@@ -57,4 +57,37 @@
       border-color: $yellowHowered;
     }
   }
+
+  &--secondary {
+    background-color: transparent;
+    border-color: $turquoise;
+    color: $black;
+
+    &::after {
+      background-image: url(../images/right_black_arrow.svg);
+    }
+
+    &:hover {
+      background-color: $turquoise;
+      color: $white;
+
+      &::after {
+        background-image: url(../images/right_white_arrow.svg);
+      }
+    }
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--mobile {
+    @include onTablet {
+      display: none;
+    }
+  }
 }

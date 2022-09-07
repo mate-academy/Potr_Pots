@@ -1,8 +1,16 @@
 .pot-size {
   padding: 0;
 
+  @include onTablet {
+    padding: 0 34px;
+  }
+
   &__container {
     padding: 0 30px;
+
+    @include onTablet {
+      padding: 0;
+    }
   }
 
   &__title {
@@ -14,15 +22,28 @@
     letter-spacing: 6px;
     text-transform: uppercase;
     color: $black;
+
+    @include onTablet {
+      max-width: $tablet-max-width;
+    }
   }
 
   &__text {
     margin-bottom: 30px;
+
+    @include onTablet {
+      width: 100%;
+    }
   }
 
   &__image {
     margin-bottom: 30px;
     width: 100%;
+
+    @include onTablet {
+      width: 416px;
+      height: 336px;
+    }
   }
 
   &__sizes {
@@ -30,6 +51,11 @@
 
     &:last-child {
       margin-bottom: 15px;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+      width: 246px;
     }
   }
 

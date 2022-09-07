@@ -2,14 +2,9 @@
   position: relative;
   padding: 0;
 
-  &__background {
-    padding-top: 130px;
-
-    width: 100%;
-    height: auto;
-
+  &__container {
     @include onTablet {
-      padding-top: 0;
+      padding: 0 34px;
     }
   }
 
@@ -25,11 +20,22 @@
     color: $turquoise;
 
     @include onTablet {
-      padding: 0 34px;
+      padding: 0;
 
       font-size: 80px;
       line-height: 96px;
       letter-spacing: 9px;
+    }
+  }
+
+  &__background {
+    padding-top: 130px;
+
+    width: 100%;
+    height: auto;
+
+    @include onTablet {
+      padding-top: 0;
     }
   }
 
@@ -39,7 +45,6 @@
     position: relative;
     top: 140px;
 
-    margin-right: 34px;
     width: 340px;
 
     @include onTablet {

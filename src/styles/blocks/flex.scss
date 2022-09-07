@@ -3,7 +3,7 @@
   width: 100%;
 
   @include onTablet {
-    width: 828px;
+    width: $tablet-max-width;
     display: flex;
     justify-content: space-between;
   }
@@ -20,6 +20,14 @@
     &--order-2 {
       @include onTablet {
         order: 2;
+      }
+    }
+
+    &--justify-center {
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
     }
   }
