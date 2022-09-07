@@ -1,6 +1,8 @@
 .team {
   overflow: hidden;
   margin-bottom: 27px;
+  width: 95vw;
+  height: auto;
   &__title {
     @include h1-text;
     margin-left: 9vw;
@@ -15,10 +17,9 @@
     }
   }
   &__img {
-    max-width: 766px;
     width: 100%;
     height: auto;
-    @include gridpos(4, span 11, 9, 18);
+    @include gridpos(4, span 11, 8, span 10);
     z-index: 1;
     @include forTablet {
       @include gridpos(5, span 9, 5, 10);
@@ -30,7 +31,8 @@
   }
   &__paragraph {
     @include s3-text;
-    @include gridpos(7, span 12, 3, 7);
+    @include gridpos(7, span 12, 1, span 6);
+    margin: 0 10px;
     z-index: 1;
 
     @include forTablet {
@@ -70,7 +72,7 @@
     @include forTablet {
       @include gridpos(11, span 13, 6, span 12);
     }
-    @media (max-width: 810px) {
+    @include forMobile {
       display: none;
     }
   }

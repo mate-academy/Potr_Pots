@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 120px;
+  gap: 60px;
   &__imgs {
     width: 184px;
     height: 184px;
@@ -72,7 +73,12 @@
     display: flex;
     flex-direction: column;
     max-width: 700px;
-    margin: 0 60px 0;
+    @include forTablet {
+      margin: 0 50px 0;
+    }
+    @include forMobile {
+      margin: 0 20px 0;
+    }
   }
   &__list {
     display: flex;

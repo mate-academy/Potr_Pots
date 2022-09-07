@@ -5,12 +5,11 @@
   grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
   gap: 20px;
   max-width: 1024px;
-  overflow: hidden;
   @include forTablet {
     grid-template-columns: repeat(10, minmax(70px, 1fr));
     grid-template-rows: repeat(6, minmax(40px, 1fr));
   }
-  @include forMobile {
+  @media (max-width: 700px) {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -68,8 +67,8 @@
       @include forTablet {
         bottom: -10px;
       }
-      @include forMobile {
-        bottom: -40px
+      @media (max-width: 700px) {
+        bottom: -40px;
       }
     }
   }
@@ -80,8 +79,7 @@
     @include forTablet {
       @include gridpos(6, 6, 3, span 6);
     }
-    @include forMobile {
-      @include gridpos(13, span 14, 1, span 2);
+    @media (max-width: 700px) {
       margin-left: 45px;
       margin-top: 20px;
     }
@@ -102,7 +100,7 @@
     @include forTablet {
       left: 10px;
     }
-    @include forMobile {
+    @media (max-width: 700px) {
       left: 90%;
     }
     &::after {
