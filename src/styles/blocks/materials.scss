@@ -1,0 +1,183 @@
+.materials {
+  @include onPhone {
+    padding: 0;
+  }
+
+  &--bold-on-tablet {
+    @include onTablet {
+      font-weight: 700;
+    }
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+    color: $c-turquoise;
+    -webkit-text-stroke: $c-turquoise 1px;
+
+    margin-bottom: -32%;
+
+    @include onPhone {
+      margin-left: $padding-s;
+    }
+
+    @include onTablet {
+      margin-bottom: -0.6em;
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      margin-bottom: -1em;
+      font-size: 138px;
+      line-height: 166px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__subtext {
+    @include onTablet {
+      margin-bottom: -18%;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+
+    font-family: Manrope, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: initial;
+    color: $c-grey-text;
+
+    @include onDesktop {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+    z-index: -1;
+
+    @include onPhone {
+      display: block;
+      margin-bottom: -50px;
+    }
+  }
+
+  &__image {
+    height: auto;
+
+    @include onPhone {
+      width: 100%;
+    }
+
+    @include onTablet {
+      width: calc(100% + #{$padding-m * 2});
+      margin-left: -#{$padding-m};
+    }
+
+    @include onDesktop {
+      width: calc(100% + #{$padding-l * 2});
+      margin-left: -#{$padding-l};
+    }
+  }
+
+  &__button {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include circle(52px);
+
+    font-size: 24px;
+    color: #e0e0e0;
+    background-color: $c-red;
+    border: none;
+
+    transition-property: background-color, opacity, backdrop-filter;
+    transition-duration: $animation-time;
+
+    &:hover {
+      background-color: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(12px);
+    }
+
+    @include onPhone {
+      display: none;
+    }
+
+    &--1 {
+      @include onTablet {
+        top: 36%;
+        right: 18%;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        bottom: 24%;
+        right: 38%;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        bottom: 13%;
+        left: 43%;
+      }
+    }
+
+    &--4 {
+      @include onTablet {
+        bottom: 40%;
+        left: 28%;
+      }
+    }
+
+    &--5 {
+      @include onTablet {
+        bottom: 18%;
+        left: 8%;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    width: 302px;
+    height: 256px;
+
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+
+    color: $c-grey-light;
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    padding: 28px 44px 10px;
+  }
+
+  &__bullet {
+    @include square(8px);
+    margin: 0 8px 16px;
+    display: inline-block;
+    background-color: $c-grey-light;
+    border: 1px solid $c-grey-light;
+    opacity: 1;
+    transform: rotate(45deg);
+
+    &--active {
+      background-color: $c-grey-dark;
+    }
+  }
+}

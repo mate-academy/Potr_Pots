@@ -22,3 +22,24 @@ if (!isMenuOpen) {
     isMenuOpen = false;
   });
 }
+
+const onTabletAndDesktop = window.matchMedia('(min-width: 640px)');
+const materialsContainer = document.querySelector('.materials__container');
+
+if (onTabletAndDesktop.matches) {
+  materialsContainer.classList.remove('swiper');
+}
+
+/* Swiper */
+
+// eslint-disable-next-line no-undef, no-unused-vars
+const swiper = new Swiper('.swiper', {
+  spaceBetween: 100,
+
+  pagination: {
+    el: '.swiper-pagination',
+    bulletClass: 'materials__bullet',
+    bulletActiveClass: 'materials__bullet--active',
+    clickable: true,
+  },
+});
