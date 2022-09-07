@@ -1,6 +1,7 @@
 .header {
   display: flex;
   height: 80px;
+  width: 98vw;
   justify-content: space-evenly;
   align-items: center;
   overflow: hidden;
@@ -32,10 +33,19 @@
   }
 
   &__link {
+    display: block;
     z-index: 5;
     text-decoration: none;
     color: inherit;
-    padding: 0 10px 15px 0;
+    padding: 0;
+    @include link_hover($red);
+  }
+  &__link-logo {
+    display: block;
+    width: 200px;
+    z-index: 5;
+    text-decoration: none;
+    color: inherit;
     @include link_hover($red);
   }
   &__nav {
@@ -94,6 +104,9 @@
         transform: rotate(-90deg);
         top: -120px;
         left: -90px;
+        @media (min-width: 769px) {
+          display: none;
+        }
       }
     }
   }
@@ -107,6 +120,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 90%;
+    @media (min-width: 769px) {
+      display: none;
+    }
   }
 }
 
@@ -125,6 +141,7 @@
     order: 2;
     margin-left: auto;
     height: 35px;
+    padding: 0 5px;
   }
   &:after {
     content: "0";

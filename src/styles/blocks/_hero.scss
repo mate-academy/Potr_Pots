@@ -11,16 +11,13 @@
     grid-template-rows: repeat(6, minmax(40px, 1fr));
   }
   @include forMobile {
-    grid-template-columns: repeat(2, minmax(120px, 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(120px, 1fr));
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    gap: 0;
+    gap: 35px;
     padding: 0;
-    overflow-x: hidden;
-    margin-top: 30px;
     justify-content: center;
     height: auto;
-    overflow: visible;
   }
 
   &__title {
@@ -28,6 +25,7 @@
     z-index: 1;
     letter-spacing: 0.155em;
     text-transform: uppercase;
+    margin: 0 10px;
     @include gridpos(2, span 6, 1, span 6);
     &-part-1 {
       -webkit-text-stroke: 1px $turqoise;
@@ -39,11 +37,6 @@
     @include forTablet {
       @include gridpos(2, span 3, 2, span 5);
     }
-    @include forMobile {
-      @include gridpos(4, span 7, 1, span 2);
-      transform: scale(70%);
-      width: 90%;
-    }
   }
 
   &__img {
@@ -54,22 +47,14 @@
     @include forTablet {
       @include gridpos(2, 7, 5, 9);
     }
-    @include forMobile {
-      @include gridpos(1, span 3, 1, span 2);
-    }
   }
   &__price {
     @include s2-text;
     position: relative;
-    @include gridpos(7, 8, 4, 5);
+    margin: 0 10px;
+    @include gridpos(7, 8, 4, 6);
     @include forTablet {
-      @include gridpos(5, 5, 3, 4);
-    }
-    @include forMobile {
-      @include gridpos(8, span 11, 1, span 2);
-      align-self: center;
-      justify-self: center;
-      margin-top: 35px;
+      @include gridpos(5, 5, 3, 5);
     }
     &:after {
       content: "Get the second order in half price";

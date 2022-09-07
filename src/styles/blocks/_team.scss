@@ -30,7 +30,6 @@
   }
   &__paragraph {
     @include s3-text;
-    width: 320px;
     @include gridpos(7, span 12, 3, 7);
     z-index: 1;
 
@@ -63,12 +62,15 @@
     line-height: 22vw;
     -webkit-text-stroke: 1px $turqoise;
     color: transparent;
-    @include gridpos(14, span 16, 11, 14);
+    @include gridpos(14, span 16, 9, 12);
     z-index: 2;
+    @media (max-width: 900px) {
+      @include gridpos( 10, span 13, 7, span 12)
+    }
     @include forTablet {
       @include gridpos(11, span 13, 6, span 12);
     }
-    @include forMobile {
+    @media (max-width: 810px) {
       display: none;
     }
   }
