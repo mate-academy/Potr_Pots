@@ -1,6 +1,6 @@
 .hero {
   display: grid;
-  height: 88vh;
+  height: 100%;
   grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
   gap: 20px;
@@ -9,7 +9,6 @@
   @include forTablet {
     grid-template-columns: repeat(10, minmax(70px, 1fr));
     grid-template-rows: repeat(6, minmax(40px, 1fr));
-    height: 60vh;
   }
   @include forMobile {
     grid-template-columns: repeat(2, minmax(120px, 1fr));
@@ -43,7 +42,7 @@
     @include forMobile {
       @include gridpos(4, span 7, 1, span 2);
       transform: scale(70%);
-      width: 90vw;
+      width: 90%;
     }
   }
 
@@ -62,7 +61,7 @@
   &__price {
     @include s2-text;
     position: relative;
-    @include gridpos(6, 7, 4, 5);
+    @include gridpos(7, 8, 4, 5);
     @include forTablet {
       @include gridpos(5, 5, 3, 4);
     }
@@ -77,7 +76,7 @@
       position: absolute;
       left: 0;
       width: 140px;
-      bottom: -30px;
+      bottom: -40px;
       @include s4-text;
       font-weight: 400;
       color: $grey;
@@ -92,7 +91,7 @@
 
   &__button {
     @include primary-button-2;
-    @include gridpos(8, 9, 3, span 6);
+    @include gridpos(9, 9, 3, span 6);
     @include forTablet {
       @include gridpos(6, 6, 3, span 6);
     }

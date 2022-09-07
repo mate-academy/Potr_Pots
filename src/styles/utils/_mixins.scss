@@ -280,6 +280,15 @@
   }
 }
 
+@mixin card_hover($deg) {
+  -webkit-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  &:hover {
+    transform: rotate($deg)
+  }
+}
+
 @mixin gridpos($rowstart, $rowend, $colstart, $colend) {
   grid-row-start: $rowstart;
   grid-row-end: $rowend;
