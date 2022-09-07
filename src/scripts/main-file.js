@@ -66,4 +66,6 @@ form.addEventListener('submit', (event) => {
   inputs.forEach(input => {
     input.value = '';
   });
+
+  document.documentElement.scrollTop = 0;
 });
