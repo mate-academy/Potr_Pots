@@ -49,8 +49,8 @@ tabletButtons.forEach(function(btn, index) {
   });
 });
 
-const form = document.querySelector('.questions__form');
-const inputs = document.querySelectorAll('.questions__form-input');
+const form = document.querySelector('.message-us__form');
+const inputs = document.querySelectorAll('.message-us__form-input');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
