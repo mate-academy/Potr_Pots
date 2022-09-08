@@ -6,6 +6,21 @@
     background-repeat: no-repeat;
   }
 
+  &__container {
+    &--width {
+      @media (min-width: $desktop-max-width) {
+        width: $desktop-max-width;
+      }
+    }
+
+    &--center {
+      @media (min-width: $desktop-max-width) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
   &__image {
     margin-bottom: 25px;
     width: 100%;
@@ -13,6 +28,10 @@
     @include onTablet {
       width: 306px;
       margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 496px;
     }
   }
 
@@ -38,6 +57,10 @@
       line-height: 64px;
       letter-spacing: 9px;
     }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
   }
 
   &__price {
@@ -55,6 +78,10 @@
       left: 240px;
       margin-bottom: 6px;
     }
+
+    @include onDesktop {
+      top: 0;
+    }
   }
 
   &__text {
@@ -70,10 +97,19 @@
       left: 240px;
       margin-bottom: 30px;
     }
+
+    @include onDesktop {
+      top: 0;
+      margin-bottom: 50px;
+    }
   }
 
   &__button {
     margin: 0 auto;
+
+    @include onDesktop {
+      margin-right: 0;
+    }
   }
 
   &__comment {

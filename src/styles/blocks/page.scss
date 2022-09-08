@@ -27,6 +27,12 @@
         justify-content: center;
       }
     }
+
+    &--header {
+      @include onDesktop {
+        justify-content: right;
+      }
+    }
   }
 
   &__header {
@@ -36,6 +42,10 @@
     @include onTablet {
       margin-bottom: 220px;
       padding: 0 34px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
     }
   }
 
@@ -50,6 +60,10 @@
     @include onTablet {
       padding: 0 34px;
     }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
   }
 
   &__footer {
@@ -59,7 +73,12 @@
 
     @include onTablet {
       padding: 0 34px;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      top: 0;
+      margin-bottom: 64px;
     }
   }
 }
