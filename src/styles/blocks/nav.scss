@@ -18,6 +18,35 @@
     font-size: 36px;
     line-height: 43px;
     letter-spacing: 0.06em;
+
+    &::after,
+    &::before {
+      content: "";
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      bottom: 0;
+      width: 0;
+
+      backface-visibility: hidden;
+      border: 1px solid rgba($c-turquoise, 0);
+      transition: all $anim-time ease-in-out;
+    }
+
+    &:hover::after,
+    &:hover::before {
+      width: 100%;
+
+      backface-visibility: hidden;
+      border-color: $c-turquoise;
+      transition: width $anim-time ease-in-out;
+    }
+
+    &:hover::before {
+      bottom: auto;
+      top: 0;
+      width: 100%;
+    }
   }
 
   &__list {
@@ -35,5 +64,39 @@
     font-size: 16px;
     color: $c-gray;
     text-decoration: none;
+
+    background-image: linear-gradient(
+      to right,
+      $c-turquoise,
+      $c-turquoise 50%,
+      $c-black 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      background: #54b3d6;
+      display: block;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background-position: 0;
+    }
+
+    &:hover::before {
+      width: 100%;
+    }
   }
 }

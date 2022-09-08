@@ -10,12 +10,26 @@
 
     @include onDesktop {
       background-image: url(../images/icons/bag.png);
-    }
-  }
 
-  &--arrow {
-    width: 28px;
-    display: inline-block;
+      &:hover {
+        animation: wiggle 0.3s linear alternate;
+      }
+
+      @keyframes wiggle {
+        from {
+          transform: rotate(0);
+        }
+        25% {
+          transform: rotate(8deg);
+        }
+        75% {
+          transform: rotate(-8deg);
+        }
+        to {
+          transform: rotate(0);
+        }
+      }
+    }
   }
 
   &--cross {
