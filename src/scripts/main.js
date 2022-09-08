@@ -8,6 +8,8 @@ document.querySelector('.form').addEventListener('submit', (event) => {
   for (const input of formInputs) {
     input.value = '';
   }
+
+  window.scrollBy(-10000, -10000);
 }, false);
 
 window.addEventListener('hashchange', () => {
