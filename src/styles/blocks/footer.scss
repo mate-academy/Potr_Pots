@@ -86,9 +86,30 @@
       @include fs-24;
       @extend %title-upper;
       display: none;
+      color: $black-100;
+      position: relative;
 
       @include onTablet {
+        display: inline-block;
+        width: fit-content;
+      }
+
+      &::after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
         display: block;
+        height: 2px;
+        right: 0;
+        position: absolute;
+        background-color: $black-100;
+        transition: width 1s ease 0s, right 0.5s ease 0s;
+        width: 0;
+      }
+
+      &:hover:after {
+        width: 100%;
+        right: 0;
       }
     }
 
