@@ -51,3 +51,18 @@ const swiper = new Swiper('.swiper', {
     clickable: true,
   },
 });
+
+/* Media queries */
+
+const discountBtn = document.querySelector('.discount__button');
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    discountBtn.classList.remove('button--primary-yellow');
+    discountBtn.classList.add('button--secondary-blue');
+  }
+}
+
+const onTablet = window.matchMedia('(min-width: 640px)');
+
+myFunction(onTablet);

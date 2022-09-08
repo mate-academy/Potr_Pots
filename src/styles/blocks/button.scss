@@ -33,6 +33,33 @@
     color: $c-black;
     background-color: $c-yellow;
 
-    @include hover(opacity, 0.7);
+    transition-property: opacity, transform;
+    transition-duration: $animation-time;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &--secondary-blue {
+    color: $c-black;
+    background-color: transparent;
+    border-color: $c-turquoise;
+
+    transition-property: color, background-color, transform;
+    transition-duration: $animation-time;
+
+    &::after {
+      transition: background-image $animation-time;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $c-turquoise;
+
+      &::after {
+        background-image: url("./../images/arrow_right_white.svg");
+      }
+    }
   }
 }
