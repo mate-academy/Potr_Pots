@@ -23,11 +23,26 @@ if (!isMenuOpen) {
   });
 }
 
+/* Materials buttons */
+
+const materialsBtn1 = document.querySelector('.materials__button--1');
+
+materialsBtn1.addEventListener('click', () => {
+  if (materialsBtn1.innerHTML === '-') {
+    materialsBtn1.innerHTML = '+';
+  } else {
+    materialsBtn1.innerHTML = '-';
+  }
+
+  materialsBtn1.classList.toggle('materials__button--active');
+});
+
 /* Swiper */
 
 // eslint-disable-next-line no-undef, no-unused-vars
 const swiper = new Swiper('.swiper', {
   spaceBetween: 100,
+  loop: true,
 
   pagination: {
     el: '.swiper-pagination',
