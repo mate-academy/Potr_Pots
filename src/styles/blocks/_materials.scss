@@ -129,12 +129,20 @@
     padding: 30px 45px;
 
     transform: translateY(-130px);
+    transition: transform $anim-duration, border-radius $anim-duration;
 
     @include onTablet {
       position: absolute;
 
       bottom: 15%;
       left: 5%;
+    }
+
+    @include onDesktop {
+      &:hover {
+        transform: scale(105%);
+        border-radius: 20%;
+      }
     }
   }
 
