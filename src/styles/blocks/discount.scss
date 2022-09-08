@@ -4,7 +4,7 @@
   }
 
   @include onDesktop {
-    grid-template-rows: 256px;
+    margin-bottom: 220px;
     align-items: start;
   }
 
@@ -32,6 +32,15 @@
     padding: 16px 16px 24px;
 
     background: #fff;
+
+    transition-property: box-shadow, transform;
+    transition-duration: $animation-time;
+
+    &:hover {
+      z-index: 1;
+      box-shadow: 0 0 10px #aaa6;
+      transform: scale(1.2);
+    }
 
     &--1 {
       top: -64px;
@@ -75,6 +84,7 @@
 
   &__picture-text {
     font-size: 10px;
+    line-height: 130%;
     color: $c-grey-light-text;
   }
 

@@ -56,8 +56,8 @@ const swiper = new Swiper('.swiper', {
 
 const discountBtn = document.querySelector('.discount__button');
 
-function myFunction(x) {
-  if (x.matches) { // If media query matches
+function myFunction(media) {
+  if (media.matches) {
     discountBtn.classList.remove('button--primary-yellow');
     discountBtn.classList.add('button--secondary-blue');
   }
@@ -66,3 +66,16 @@ function myFunction(x) {
 const onTablet = window.matchMedia('(min-width: 640px)');
 
 myFunction(onTablet);
+
+/* Form settings */
+
+const form = document.querySelector('.message-us__form');
+const inputs = document.querySelectorAll('.message-us__input');
+
+form.addEventListener('submit', event => {
+  event.preventDefault();
+
+  inputs.forEach(input => {
+    input.value = '';
+  });
+});
