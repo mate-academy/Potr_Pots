@@ -23,13 +23,6 @@ if (!isMenuOpen) {
   });
 }
 
-const onTabletAndDesktop = window.matchMedia('(min-width: 640px)');
-const materialsContainer = document.querySelector('.materials__container');
-
-if (onTabletAndDesktop.matches) {
-  materialsContainer.classList.remove('swiper');
-}
-
 /* Swiper */
 
 // eslint-disable-next-line no-undef, no-unused-vars
