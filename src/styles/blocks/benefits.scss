@@ -64,18 +64,16 @@
       content: "";
       display: block;
       position: absolute;
+      @include square(7px);
       top: 50%;
       left: -10px;
-      width: 7px;
-      height: 7px;
       transform: translate(-100%, -50%) rotate(45deg);
       background-color: $c-gray;
     }
   }
 
   &__paragraph {
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
+    @extend %manrope-16;
     line-height: 150%;
 
     color: $c-gray;
@@ -86,17 +84,17 @@
   }
 
   &__lable {
+    @include flex-colum;
     position: relative;
-    display: flex;
-    flex-direction: column;
     letter-spacing: 0.15em;
 
     &-price {
       color: $c-red;
       margin-bottom: 10px;
 
-      position: relative;
-      transform: translateX(25%);
+      @include onDesktop {
+        transform: translateX(25%);
+      }
     }
 
     &-text {
@@ -104,8 +102,9 @@
       line-height: 24px;
       color: $c-turquoise;
 
-      position: relative;
-      transform: translateX(25%);
+      @include onDesktop {
+        transform: translateX(25%);
+      }
     }
 
     @include onTablet {

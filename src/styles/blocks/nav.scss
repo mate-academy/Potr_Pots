@@ -59,44 +59,10 @@
   }
 
   &__link {
-    font-family: "Manrope", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
+    @extend %manrope-16;
     color: $c-gray;
     text-decoration: none;
 
-    background-image: linear-gradient(
-      to right,
-      $c-turquoise,
-      $c-turquoise 50%,
-      $c-black 50%
-    );
-    background-size: 200% 100%;
-    background-position: -100%;
-    padding: 5px 0;
-    position: relative;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
-
-    &::before {
-      content: "";
-      background: #54b3d6;
-      display: block;
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      transition: all 0.3s ease-in-out;
-    }
-
-    &:hover {
-      background-position: 0;
-    }
-
-    &:hover::before {
-      width: 100%;
-    }
+    @include link-animation;
   }
 }
