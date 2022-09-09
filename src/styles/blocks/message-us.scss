@@ -135,6 +135,24 @@
       color: $c-red;
       border-color: $c-red;
     }
+
+    &::placeholder {
+      color: $c-grey-text;
+    }
+
+    &--message {
+      margin-top: -16px;
+      overflow: hidden;
+      resize: none;
+      height: 32px;
+
+      transition: height $animation-time;
+
+      &:focus {
+        border-color: $c-turquoise;
+        height: 96px;
+      }
+    }
   }
 
   &__button {
