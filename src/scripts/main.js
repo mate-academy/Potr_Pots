@@ -1,5 +1,6 @@
 'use strict';
 
+const onTabletAndDesktop = window.matchMedia('(min-width: 640px)');
 const menuOpenButton = document.querySelector('.header__menu-button');
 const menuCloseButton = document.querySelector('.menu__close');
 const menu = document.querySelector('.menu');
@@ -23,49 +24,66 @@ if (!isMenuOpen) {
   });
 }
 
-/* Materials buttons */
+/* Materials buttons behaviour */
+const materialsButtons = document.querySelectorAll('.materials__button');
+const materialsSlides = document.querySelectorAll('.materials__slide');
 
-const materialsBtn1 = document.querySelector('.materials__button--1');
+let tempI = 0;
 
-materialsBtn1.addEventListener('click', () => {
-  if (materialsBtn1.innerHTML === '-') {
-    materialsBtn1.innerHTML = '+';
-  } else {
-    materialsBtn1.innerHTML = '-';
-  }
+materialsButtons.forEach((btn, i) => {
+  btn.addEventListener('click', () => {
+    if (btn.innerHTML === '-') {
+      btn.innerHTML = '+';
+      materialsSlides[i].style.opacity = '0';
+      materialsSlides[i].style.pointerEvents = 'none';
+    } else {
+      btn.innerHTML = '-';
+      materialsSlides[i].style.opacity = '1';
+      materialsSlides[i].style.pointerEvents = 'all';
+    }
 
-  materialsBtn1.classList.toggle('materials__button--active');
+    // Remove selection on previous slides
+    if (i !== tempI) {
+      materialsButtons[tempI].innerHTML = '+';
+      materialsButtons[tempI].classList.remove('materials__button--active');
+      materialsSlides[tempI].style.opacity = '0';
+      materialsSlides[tempI].style.pointerEvents = 'none';
+      tempI = i;
+    }
+
+    btn.classList.toggle('materials__button--active');
+  });
 });
 
 /* Swiper */
 
-// eslint-disable-next-line no-undef, no-unused-vars
-const swiper = new Swiper('.swiper', {
-  spaceBetween: 100,
-  loop: true,
+if (!onTabletAndDesktop.matches) {
+  // eslint-disable-next-line no-undef, no-unused-vars
+  const swiper = new Swiper('.swiper', {
+    spaceBetween: 100,
+    loop: true,
 
-  pagination: {
-    el: '.swiper-pagination',
-    bulletClass: 'materials__bullet',
-    bulletActiveClass: 'materials__bullet--active',
-    clickable: true,
-  },
-});
+    pagination: {
+      el: '.swiper-pagination',
+      bulletClass: 'materials__bullet',
+      bulletActiveClass: 'materials__bullet--active',
+      clickable: true,
+    },
+  });
+}
 
-/* Media queries */
+/* Discount button styles */
 
 const discountBtn = document.querySelector('.discount__button');
 
-function myFunction(media) {
+function switchButtonStyle(media) {
   if (media.matches) {
     discountBtn.classList.remove('button--primary-yellow');
     discountBtn.classList.add('button--secondary-blue');
   }
 }
 
-const onTablet = window.matchMedia('(min-width: 640px)');
-
-myFunction(onTablet);
+switchButtonStyle(onTabletAndDesktop);
 
 /* Form settings */
 

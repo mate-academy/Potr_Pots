@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+
   &__top {
     margin: 0 auto;
   }
@@ -172,6 +174,17 @@
       background-position: center;
       background-repeat: no-repeat;
       color: $c-turquoise;
+    }
+  }
+
+  &__side-text {
+    bottom: 0;
+    right: 10px;
+    transform: translateY(120%);
+
+    @include onDesktop {
+      right: $padding-l;
+      transform: translateY(480%);
     }
   }
 }

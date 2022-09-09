@@ -1,4 +1,6 @@
 .materials {
+  position: relative;
+
   @include onPhone {
     padding: 0;
   }
@@ -9,13 +11,21 @@
     }
   }
 
+  &--hidden-on-tablet {
+    @include onTablet {
+      visibility: hidden;
+    }
+  }
+
   &__title {
+    position: relative;
     font-size: 58px;
     line-height: 70px;
     color: $c-turquoise;
     -webkit-text-stroke: $c-turquoise 1px;
 
-    margin-bottom: -32%;
+    margin-bottom: -1.4em;
+    z-index: 1;
 
     @include onPhone {
       margin-left: $padding-s;
@@ -37,6 +47,9 @@
   }
 
   &__subtext {
+    position: relative;
+    z-index: 1;
+
     @include onTablet {
       margin-bottom: -18%;
     }
@@ -60,9 +73,12 @@
     }
   }
 
+  &__canvas {
+    position: relative;
+  }
+
   &__image-container {
     display: block;
-    position: relative;
     z-index: -1;
 
     @include onPhone {
@@ -72,6 +88,7 @@
 
   &__image {
     height: auto;
+    pointer-events: none;
 
     @include onPhone {
       width: 100%;
@@ -115,42 +132,18 @@
       display: none;
     }
 
-    &::after {
-      display: none;
-      z-index: 1;
-      pointer-events: none;
-    }
-
     &--active {
       background-color: rgba(36, 35, 35, 0.75);
-      backdrop-filter: blur(12px);
+      // backdrop-filter: blur(12px);
 
       &:hover {
         opacity: 1;
       }
-
-      &::after {
-        box-sizing: border-box;
-        position: absolute;
-        display: block;
-        width: 280px;
-        padding: 35px;
-
-        font-size: 16px;
-        line-height: 150%;
-        background-color: rgba(0, 0, 0, 0.45);
-        mix-blend-mode: normal;
-        backdrop-filter: blur(34px);
-
-        z-index: 1;
-      }
     }
 
     &--1 {
-      @include onTablet {
-        top: 36%;
-        right: 18%;
-      }
+      top: 36%;
+      right: 18%;
 
       @include onDesktop {
         bottom: 35%;
@@ -159,10 +152,8 @@
     }
 
     &--2 {
-      @include onTablet {
-        bottom: 24%;
-        right: 38%;
-      }
+      bottom: 24%;
+      right: 38%;
 
       @include onDesktop {
         bottom: 26%;
@@ -171,10 +162,8 @@
     }
 
     &--3 {
-      @include onTablet {
-        bottom: 13%;
-        left: 43%;
-      }
+      bottom: 13%;
+      left: 43%;
 
       @include onDesktop {
         bottom: 10%;
@@ -183,10 +172,8 @@
     }
 
     &--4 {
-      @include onTablet {
-        bottom: 40%;
-        left: 28%;
-      }
+      bottom: 40%;
+      left: 28%;
 
       @include onDesktop {
         bottom: 38%;
@@ -195,10 +182,8 @@
     }
 
     &--5 {
-      @include onTablet {
-        bottom: 18%;
-        left: 8%;
-      }
+      bottom: 18%;
+      left: 8%;
 
       @include onDesktop {
         bottom: 14%;
@@ -212,20 +197,138 @@
     width: 302px;
     height: 256px;
 
-    background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(34px);
-
     color: $c-grey-light;
 
+    @include onPhone {
+      background: rgba(0, 0, 0, 0.45);
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(34px);
+    }
+
     @include onTabletAndDesktop {
-      display: none;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+    }
+
+    @include onTablet {
+      margin-left: -#{$padding-m};
+      width: calc(100% + #{$padding-m * 2});
+    }
+
+    @include onDesktop {
+      margin-left: -#{$padding-l};
+      width: calc(100% + #{$padding-l * 2});
+    }
+  }
+
+  &__wrapper {
+    @include onTabletAndDesktop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
     }
   }
 
   &__slide {
     box-sizing: border-box;
     padding: 28px 44px 10px;
+
+    @include onTabletAndDesktop {
+      position: absolute;
+      box-sizing: content-box;
+      width: 220px;
+      padding: 35px;
+      background: rgba(0, 0, 0, 0.45);
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(34px);
+
+      opacity: 0;
+
+      transition-property: opacity, box-shadow;
+      transition-duration: $animation-time;
+      z-index: 1;
+
+      &:hover {
+        box-shadow: 0 0 30px #2205;
+      }
+
+      &::selection {
+        background-color: #aaa8;
+        color: $c-grey-dark;
+      }
+    }
+
+    &--1 {
+      @include onTablet {
+        top: 46%;
+        right: 3%;
+      }
+
+      @include onDesktop {
+        bottom: 36%;
+        right: 12%;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        bottom: 36%;
+        right: 24%;
+      }
+
+      @include onDesktop {
+        bottom: 32%;
+        right: 30%;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        bottom: 28%;
+        left: 36%;
+      }
+
+      @include onDesktop {
+        bottom: 3%;
+        left: 25%;
+      }
+    }
+
+    &--4 {
+      @include onTablet {
+        bottom: 52%;
+        left: 16%;
+      }
+
+      @include onDesktop {
+        bottom: 45%;
+        left: 20%;
+      }
+    }
+
+    &--5 {
+      @include onTablet {
+        bottom: 28%;
+        left: 3%;
+      }
+
+      @include onDesktop {
+        bottom: 20%;
+        left: 10%;
+      }
+    }
+  }
+
+  &__pagination {
+    @include onTabletAndDesktop {
+      display: none;
+    }
   }
 
   &__bullet {
@@ -239,6 +342,16 @@
 
     &--active {
       background-color: $c-grey-dark;
+    }
+  }
+
+  &__side-text {
+    top: 0;
+    left: 8px;
+    transform: translateY(450%);
+
+    @include onDesktop {
+      display: none;
     }
   }
 }

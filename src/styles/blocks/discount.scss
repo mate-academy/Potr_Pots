@@ -1,4 +1,6 @@
 .discount {
+  position: relative;
+
   @include onTablet {
     align-items: center;
   }
@@ -86,6 +88,13 @@
     font-size: 10px;
     line-height: 130%;
     color: $c-grey-light-text;
+  }
+
+  &__promo {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__features {
@@ -208,6 +217,19 @@
 
     @include onDesktop {
       transform: translateX(100px);
+    }
+  }
+
+  &__side-text {
+    bottom: 50%;
+    right: 10px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &::before {
+      top: -50%;
     }
   }
 }

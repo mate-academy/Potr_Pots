@@ -1,4 +1,5 @@
 .about-us {
+  position: relative;
 
   &__title {
     margin-bottom: 24px;
@@ -72,7 +73,7 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        transform: translate(0, 50%);
+        transform: translate(6%, 50%);
         pointer-events: none;
 
         @include onDesktop {
@@ -89,7 +90,6 @@
     @include onPhone {
       width: calc(100% + #{$padding-s * 2});
       margin-left: -#{$padding-s};
-      margin-bottom: 25px;
     }
 
     @include onTabletAndDesktop {
@@ -146,6 +146,16 @@
         display: block;
         width: 70%;
       }
+    }
+  }
+
+  &__side-text {
+    bottom: 0;
+    right: 10px;
+    transform: translateY(380%);
+
+    @include onDesktop {
+      display: none;
     }
   }
 }
