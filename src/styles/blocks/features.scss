@@ -3,7 +3,7 @@
     margin-bottom: 24px;
     width: 100%;
 
-    font-family: "Bebas Neue", sans-serif;
+    @include fontBebas;
     font-size: 58px;
     line-height: 70px;
     letter-spacing: 8px;
@@ -43,13 +43,21 @@
   &__subtitle {
     margin-bottom: 20px;
 
-    font-family: "Bebas Neue", sans-serif;
+    @include fontBebas;
     font-size: 24px;
     line-height: 24px;
     text-align: center;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: $grey1;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
   }
 
   &__description {

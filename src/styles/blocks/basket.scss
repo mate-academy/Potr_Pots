@@ -1,11 +1,19 @@
 .basket {
   &__image {
     display: none;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 
   &__name-link {
     display: block;
     padding-bottom: 16px;
     color: $greyLight;
+
+    @include onDesktop {
+      display: none;
+    }
   }
 }

@@ -1,8 +1,20 @@
 .for-whom {
+  &__flex-container {
+    display: block;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: $desktop-max-width;
+    }
+  }
+
   &__title {
     margin: 0 0 24px;
 
-    font-family: "Bebas Neue", sans-serif;
+    @include fontBebas;
     font-size: 36px;
     line-height: 54px;
     letter-spacing: 5px;
@@ -25,6 +37,13 @@
       height: 284px;
 
       margin: 24px 0 110px;
+
+      @include onDesktop {
+        width: 500px;
+        height: 500px;
+
+        margin: 0 0 80px;
+      }
     }
 
     &--2 {
@@ -32,6 +51,12 @@
       height: 416px;
 
       margin: 0 0 110px;
+
+      @include onDesktop {
+        order: -1;
+
+        margin: 0;
+      }
     }
 
     &--3 {
@@ -39,6 +64,11 @@
       height: 404px;
 
       margin: 12px 0 0;
+
+      @include onDesktop {
+        width: 460px;
+        height: 670px;
+      }
     }
   }
 
@@ -52,8 +82,35 @@
       margin: 50px 0 22px;
     }
 
+    &--1 {
+      display: block;
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin: 0;
+        padding-bottom: 170px;
+        height: 100%;
+      }
+    }
+
     &--2 {
       margin: 28px 0 0;
+
+      @include onDesktop {
+        margin: 40px 0 28px;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        margin: 0;
+        position: relative;
+        top: 10%;
+        right: 430px;
+      }
     }
   }
 
@@ -63,6 +120,24 @@
     @include onTablet {
       width: 340px;
       margin: 0;
+    }
+
+    @include onDesktop {
+      width: 380px;
+    }
+
+    &--1 {
+      display: block;
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        padding-bottom: 80px;
+
+        height: 100%;
+      }
     }
   }
 
@@ -88,17 +163,26 @@
     &--2 {
       margin: 30px 0 0;
       text-align: right;
+
+      @include onDesktop {
+        margin: 45px 0 0;
+        text-align: left;
+      }
     }
 
     &--3 {
       margin: 0 0 16px;
+
+      @include onDesktop {
+        margin: 0 0 40px;
+      }
     }
   }
 
   &__subtitle {
     margin: 0 0 20px;
 
-    font-family: "Bebas Neue", sans-serif;
+    @include fontBebas;
     font-size: 36px;
     line-height: 54px;
     letter-spacing: 6px;

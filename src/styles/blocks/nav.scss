@@ -2,8 +2,7 @@
   height: 100vh;
   width: 230px;
 
-  padding-top: 138px;
-  padding-left: 80px;
+  padding: 138px 0 0 80px;
 
   background-color: $turquoise;
 
@@ -12,21 +11,51 @@
     padding-top: 120px;
   }
 
+  @include onDesktop {
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    width: 475px;
+
+    padding: 0;
+
+    background-color: transparent;
+  }
+
+  &__list {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 475px;
+    }
+  }
+
   &__item {
     padding-bottom: 16px;
 
     &:last-child {
       padding-bottom: 0;
     }
+
+    @include onDesktop {
+      padding-bottom: 0;
+    }
   }
 
   &__link {
     color: $greyLight;
+
+    @include onDesktop {
+      color: $grey2;
+    }
   }
 
   &__close {
     position: relative;
-    top: 90px;
+    top: 60px;
     left: 0;
 
     width: max-content;
@@ -40,6 +69,10 @@
     @include onTablet {
       top: 0;
       left: 30px;
+    }
+
+    @include onDesktop {
+      display: none;
     }
   }
 
