@@ -18,8 +18,7 @@
   }
 
   &__description {
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
+    @extend %manrope-16;
     line-height: 150%;
     color: $c-gray;
 
@@ -60,7 +59,6 @@
       width: 416px;
       height: 337px;
       margin-bottom: 0;
-
     }
 
     @include onDesktop {
@@ -73,8 +71,8 @@
     margin-bottom: 15px;
 
     @include onTablet {
-      display: flex;
-      flex-direction: column;
+      @include flex-colum;
+
       margin-bottom: 0;
     }
   }
@@ -88,8 +86,7 @@
   }
 
   &__paragraph {
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
+    @extend %manrope-16;
     line-height: 150%;
 
     &:not(:last-child) {
@@ -104,8 +101,7 @@
   }
 
   &__post-script {
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
+    @extend %manrope-16;
     line-height: 150%;
 
     &::before {

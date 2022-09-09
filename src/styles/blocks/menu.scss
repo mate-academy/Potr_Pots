@@ -9,8 +9,8 @@
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
+    @include flex-colum;
+
   }
 
   &__item {
@@ -21,12 +21,11 @@
       content: "0";
       position: relative;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center;
+      @include square(14px);
+
       left: 8px;
 
-      width: 14px;
-      height: 14px;
       background-color: #eb5757;
       border-radius: 50%;
 
@@ -37,8 +36,7 @@
 
   &__link {
     display: flex;
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
+    @extend %manrope-16;
     line-height: 150%;
     text-decoration: none;
     color: $c-white;

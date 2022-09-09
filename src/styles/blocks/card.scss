@@ -1,7 +1,6 @@
 .card {
   &__image {
-    width: 100%;
-    height: 100%;
+    @include square(100%);
 
     object-fit: cover;
     object-position: center;
@@ -20,8 +19,7 @@
   &__text {
     text-align: center;
 
-    font-family: "Manrope", sans-serif;
-    font-size: 16px;
+    @extend %manrope-16;
     line-height: 150%;
     color: $c-gray;
   }
