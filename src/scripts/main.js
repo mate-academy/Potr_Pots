@@ -32,19 +32,16 @@ let tempI = 0;
 
 materialsButtons.forEach((btn, i) => {
   btn.addEventListener('click', () => {
-    if (btn.innerHTML === '-') {
-      btn.innerHTML = '+';
+    if (btn.classList.contains('materials__button--active')) {
       materialsSlides[i].style.opacity = '0';
       materialsSlides[i].style.pointerEvents = 'none';
     } else {
-      btn.innerHTML = '-';
       materialsSlides[i].style.opacity = '1';
       materialsSlides[i].style.pointerEvents = 'all';
     }
 
     // Remove selection on previous slides
     if (i !== tempI) {
-      materialsButtons[tempI].innerHTML = '+';
       materialsButtons[tempI].classList.remove('materials__button--active');
       materialsSlides[tempI].style.opacity = '0';
       materialsSlides[tempI].style.pointerEvents = 'none';
