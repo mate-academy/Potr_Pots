@@ -48,8 +48,18 @@
   &__link {
     color: $greyLight;
 
+    transition: color $smooth-transition;
+
+    &:hover {
+      color: $yellow;
+    }
+
     @include onDesktop {
       color: $grey2;
+
+      &:hover {
+        color: $turquoise;
+      }
     }
   }
 
@@ -78,6 +88,10 @@
 
   &__close-cross {
     transform: rotate(-90deg);
+
+    &:hover {
+      transform: rotate(-70deg);
+    }
   }
 
   &__close-word {
@@ -86,6 +100,8 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $greyLight;
+
+    transition: color $smooth-transition;
 
     &::before {
       content: "";
@@ -98,6 +114,16 @@
       background-color: $greyLight;
 
       transform: translateY(-400%);
+
+      transition: background-color $smooth-transition;
+    }
+
+    &:hover {
+      color: $yellow;
+
+      &::before {
+        background-color: $yellow;
+      }
     }
   }
 }

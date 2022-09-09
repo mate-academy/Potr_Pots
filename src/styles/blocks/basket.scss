@@ -4,6 +4,20 @@
 
     @include onDesktop {
       display: block;
+
+      height: 30px;
+      width: 30px;
+
+      opacity: 0.8;
+
+      object-fit: contain;
+      object-position: center;
+
+      transition: transform $smooth-transition;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 
@@ -12,8 +26,14 @@
     padding-bottom: 16px;
     color: $greyLight;
 
+    transition: color $smooth-transition;
+
     @include onDesktop {
       display: none;
+    }
+
+    &:hover {
+      color: $yellow;
     }
   }
 }

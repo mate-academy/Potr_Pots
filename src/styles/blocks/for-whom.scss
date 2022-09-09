@@ -28,8 +28,14 @@
     object-fit: cover;
     object-position: center;
 
+    transition: transform $smooth-transition;
+
     @include onTablet {
       display: block;
+    }
+
+    &:hover {
+      transform: scale(1.05);
     }
 
     &--1 {
@@ -66,7 +72,7 @@
       margin: 12px 0 0;
 
       @include onDesktop {
-        width: 460px;
+        width: 456px;
         height: 670px;
       }
     }

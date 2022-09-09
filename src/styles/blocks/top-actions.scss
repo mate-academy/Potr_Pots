@@ -23,6 +23,12 @@
     line-height: 43px;
     letter-spacing: 2px;
     color: $grey1;
+
+    transition: transform $smooth-transition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__nav {
@@ -53,8 +59,14 @@
     width: 32px;
     height: 32px;
 
+    transition: transform $smooth-transition;
+
     @include onDesktop {
       display: none;
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 }
