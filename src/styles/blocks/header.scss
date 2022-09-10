@@ -25,6 +25,8 @@
     margin-bottom: 25px;
     width: 100%;
 
+    transition: transform $smooth-transition;
+
     @include onTablet {
       width: 306px;
       margin-bottom: 0;
@@ -32,6 +34,12 @@
 
     @include onDesktop {
       width: 496px;
+    }
+
+    &:hover {
+      @include onTablet {
+        transform: scale(1.05);
+      }
     }
   }
 
@@ -112,44 +120,6 @@
 
     @include onDesktop {
       margin-right: 0;
-    }
-  }
-
-  &__comment {
-    position: relative;
-    top: -10px;
-    left: 15px;
-
-    display: flex;
-    justify-content: flex-end;
-
-    font-size: 12px;
-    line-height: 18px;
-    color: $turquoise;
-
-    transform: rotate(90deg);
-    transform-origin: right;
-
-    @include onTablet {
-      top: -150px;
-      left: 0;
-      justify-content: flex-start;
-      transform-origin: bottom left;
-    }
-
-    &::after {
-      display: inline-block;
-      content: "";
-      width: 44px;
-      height: 8px;
-      margin-left: 8px;
-
-      background-image: url(../images/right_turquoise_arrow.png);
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      transform: translateY(50%);
     }
   }
 }

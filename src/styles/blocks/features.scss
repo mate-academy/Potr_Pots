@@ -1,4 +1,8 @@
 .features {
+  @include onDesktop {
+    position: relative;
+  }
+
   &__title {
     margin-bottom: 24px;
     width: 100%;
@@ -18,6 +22,18 @@
     }
   }
 
+  &__aside-comment {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      transform-origin: left;
+
+      top: -250px;
+      left: 10px;
+    }
+  }
+
   &__article {
     margin-bottom: 70px;
 
@@ -27,6 +43,7 @@
     }
 
     @include onDesktop {
+      position: relative;
       width: 305px;
     }
   }
