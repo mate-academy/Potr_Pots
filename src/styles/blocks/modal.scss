@@ -5,59 +5,95 @@
   right: 0;
   bottom: 0;
 
-  &__block {
-
-  }
-
   &__card {
     display: none;
 
     position: absolute;
-    width: 286px;
+    width: 256px;
     height: max-content;
-    padding: 35px 35px;
+    padding: 25px;
 
     background-color: rgba(0, 0, 0, 0.45);
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(34px);
+
+    @include onDesktop {
+      width: 286px;
+      padding: 35px;
+    }
 
     &--visible {
       display: block;
     }
 
     &--1 {
-      top: 81%;
-      left: 17%;
+      top: 79%;
+      left: 16%;
       transform: translate(-45%, -110%);
+
+      @include onDesktop {
+        top: 81%;
+        left: 17%;
+        transform: translate(-45%, -110%);
+      }
     }
 
     &--2 {
-      top: 63%;
-      left: 37%;
+      top: 62%;
+      left: 43%;
       transform: translate(-90%, -110%);
+
+      @include onDesktop {
+        top: 63%;
+        left: 37%;
+        transform: translate(-90%, -110%);
+      }
     }
 
     &--3 {
-      top: 87%;
-      left: 49%;
+      top: 86%;
+      left: 53%;
       transform: translate(-102%, -50%);
+
+      @include onDesktop {
+        top: 87%;
+        left: 49%;
+        transform: translate(-102%, -50%);
+      }
     }
 
     &--4 {
-      top: 75%;
-      left: 57%;
+      top: 74%;
+      left: 60%;
       transform: translate(-50%, -110%);
+
+      @include onDesktop {
+        top: 75%;
+        left: 57%;
+        transform: translate(-50%, -110%);
+      }
     }
 
     &--5 {
-      top: 68%;
-      left: 78%;
+      top: 70%;
+      left: 76%;
       transform: translate(-32%, 25%);
+
+      @include onDesktop {
+        top: 68%;
+        left: 78%;
+        transform: translate(-32%, 25%);
+      }
     }
   }
 
   &__card-text {
     color: $greyLight;
+    font-size: 13px;
+
+    @include onDesktop {
+      font-size: 16px;
+    }
   }
 
   &__button {
@@ -103,28 +139,53 @@
     }
 
     &--1 {
-      top: 81%;
-      left: 17%;
+      top: 79%;
+      left: 11%;
+
+      @include onDesktop {
+        top: 81%;
+        left: 17%;
+      }
     }
 
     &--2 {
       top: 63%;
       left: 37%;
+
+      @include onDesktop {
+        top: 63%;
+        left: 37%;
+      }
     }
 
     &--3 {
       top: 87%;
-      left: 50%;
+      left: 53%;
+
+      @include onDesktop {
+        top: 87%;
+        left: 50%;
+      }
     }
 
     &--4 {
-      top: 75%;
+      top: 73%;
       left: 57%;
+
+      @include onDesktop {
+        top: 75%;
+        left: 57%;
+      }
     }
 
     &--5 {
       top: 68%;
       left: 78%;
+
+      @include onDesktop {
+        top: 68%;
+        left: 78%;
+      }
     }
   }
 }
