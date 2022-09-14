@@ -1,0 +1,32 @@
+.feature {
+  text-align: center;
+
+  @include onTablet {
+    text-align: left;
+  }
+
+  @include onDesktop {
+    text-align: center;
+  }
+  
+  &__photo-container {
+    @include photo-container (386px);
+
+    margin-bottom: 30px;
+
+    @include hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__img {
+    @include photo (cover);
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include text ($font-secondary, 24px);
+    color: $gray-dark;
+  }
+}

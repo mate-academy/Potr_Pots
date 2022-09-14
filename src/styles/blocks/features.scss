@@ -1,0 +1,70 @@
+.features {
+
+  &__container {
+    @extend %container;
+  }
+
+  &__content {
+    @include grid ($tab-cols: (3, 1fr), $desk-cols: (3, 1fr));
+  }
+
+  &__title {
+    @include text ($font-secondary, 56px, 70px);
+    color: $blue;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+
+    &--stroke {
+      @extend %stroke;
+    }
+  }
+
+  &__feature {
+    &:not(:last-child) {
+      margin-bottom: 70px;
+
+      @include onTablet {
+        grid-row: 1;
+        margin-bottom: 0;
+      }
+    }
+
+    &:first-child {
+      @include onTablet {
+        grid-column: 2;
+      }
+
+      @include onDesktop {
+        grid-column: 1;
+      }
+    }
+
+    &:nth-child(2) {
+      @include onTablet {
+        grid-column: 3;
+      }
+
+      @include onDesktop {
+        grid-column: 2;
+      }
+    }
+
+    &:nth-child(3) {
+      @include onTablet {
+        grid-column: 1;
+      }
+
+      @include onDesktop {
+        grid-column: 3;
+      }
+    }
+  }
+}
