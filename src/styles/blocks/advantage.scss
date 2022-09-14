@@ -1,5 +1,7 @@
 .advantage {
+  position: relative;
   box-sizing: border-box;
+
   @include flex (column, space-between, center);
 
   @include shape (100%, 260px);
@@ -21,6 +23,7 @@
 
   &:target &__description {
     @include onTablet {
+      z-index: 2;
       visibility: visible;
     }
   }
@@ -92,6 +95,22 @@
     @include onDesktop {
       width: 300px;
       backdrop-filter: blur(35px);
+    }
+  }
+
+  &__description-link {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include shape (33%, 100%);
+
+    &--back {
+      left: 0;
+    }
+
+    @include onTablet {
+      display: none;
     }
   }
 

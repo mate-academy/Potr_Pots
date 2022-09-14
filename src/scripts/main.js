@@ -8,14 +8,6 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-// const form = document.querySelector('.form');
-
-// form.addEventListener('submit', function(event) {
-//   event.preventDefault();
-
-//   form.reset();
-// });
-
 const form = document.querySelector('.form');
 
 form.onsubmit = function() {
@@ -23,3 +15,17 @@ form.onsubmit = function() {
 
   return false;
 };
+
+const advantage1 = document.querySelector('.materials__advantage--1');
+
+const showMore = document.getElementById('show-more');
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#show') {
+    advantage1.classList.add('materials__advantage--hidden');
+    showMore.classList.add('materials__highlight-more--hide');
+  } else {
+    advantage1.classList.remove('materials__advantage--hidden');
+    showMore.classList.remove('materials__highlight-more--hide');
+  }
+});
