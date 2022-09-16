@@ -1,0 +1,142 @@
+.contacts {
+  position: relative;
+  padding-top: 40px;
+
+  color: black;
+
+  @include onTablet {
+    padding-top: 20px;
+  }
+
+  @include onDesktop {
+    padding: 0;
+  }
+
+  &__background-container {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: -160px;
+    right: 0;
+    left: 0;
+
+    @include page-bg (77deg);
+
+    @include onTablet {
+      bottom: -90px;
+      @include page-bg (83deg);
+    }
+
+    @include onDesktop {
+      left: -100%;
+      bottom: -50%;
+    }
+  }
+
+  &__photo-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include shape (149px);
+    @include image (circle, contain, image, 40px 0);
+
+    transform: translateY(-50%);
+
+    @include onDesktop {
+      @include shape (160px);
+      @include image (circle, contain, image);
+
+      transform: translate(50%, -60%);
+    }
+  }
+
+  &__container {
+    @extend %container;
+    @include grid ($tab-rows: (3, auto));
+
+      @include onDesktop {
+        position: relative;
+        padding-top: 40px;
+      }
+  }
+
+  &__title {
+    @include h2 ($font-secondary);
+    color: black;
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+    color: black;
+
+    @include onTablet {
+      grid-row: 2;
+      grid-column: 1 / -1;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 50px;
+    
+    @include onTablet {
+      grid-row: 3;
+      grid-column: 1 / 4;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+
+    & :last-child {
+      @include onTablet {
+        width: 65%;
+      }
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      grid-row: 2 / -1;
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__info-item {
+    &:not(:last-child) {
+      margin-bottom: 35px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__info-title {
+    margin-bottom: 5px;
+
+    @include h3 ($font-main);
+    color: scaleColor(61%);
+  }
+
+  &__info-link {
+    @include hover {
+      color: $blue;
+    }
+  }
+}

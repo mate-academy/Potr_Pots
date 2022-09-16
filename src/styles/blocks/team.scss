@@ -1,0 +1,136 @@
+.team {
+  position: relative;
+
+  &__background-container {
+    position: absolute;
+    top: 67%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    @include page-bg (73deg);
+    z-index: -1;
+
+    @include onTablet {
+      top: 38%;
+      bottom: 25%;
+      width: 224px;
+    }
+
+    @include onDesktop {
+      top: 30%;
+      width: 385px;
+    }
+  }
+
+  &__name {
+    display: none;
+
+    @include onTablet {
+      z-index: 1;
+      display: block;
+
+      @include text ($font-secondary, 232px);
+      transform: translate(-50px, 100px);
+    }
+
+    @include onDesktop {
+      @include text ($font-secondary, 288px);
+
+      transform: translate(50px, 60%);
+      width: fit-content;
+    }
+
+    @include hover {
+      transform: translate(50px, 60%) scale(1.1);
+    }
+
+    &:last-child {
+      @include onTablet {
+        position: absolute;
+        bottom: -25%;
+        right: 0;
+
+        transform: translate(0, 5px);
+      }
+
+      @include onDesktop {
+        bottom: -33%;
+      }
+
+      @include hover {
+        transform: translate(0, 5px) scale(1.1);
+      }
+    }
+
+    &--stroke {
+      @include stroke;
+
+      @include hover {
+        @include stroke (1px);
+      }
+    }
+  }
+
+  &__title {
+    @extend %container;
+    margin-bottom: 25px;
+    @include text ($font-secondary, 58px, 70px);
+    color: $gray-dark;
+
+    @include onTablet {
+      margin-bottom: -70px;
+    }
+  }
+
+  &__container {
+    @extend %container-tablet;
+
+    @include grid ($tab-cols: (2, 1fr))
+  }
+
+  &__photo-container {
+    @include photo-container (255px, none);
+    aspect-ratio: 4 / 3;
+
+    margin: 0 auto 30px;
+
+    @include onTablet {
+      z-index: -1;
+      grid-column: 2;
+      max-height: 500px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -2;
+    }
+  }
+
+  &__img {
+    @include photo (cover);
+  }
+
+  &__content {
+    @extend %container-mobile;
+    padding-bottom: 60px;
+
+    @include onTablet {
+      grid-row: 1;
+      margin-top: 60px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      align-self: end;
+      margin: 0;
+    }
+  }
+
+  &__about {
+    &:first-child {
+      margin-bottom: 24px;
+    }
+  }
+}
