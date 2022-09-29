@@ -76,3 +76,17 @@ btn5.addEventListener('click', () => {
   card5.classList.toggle('modal__card--visible');
   btn5.classList.toggle('modal__button--pressed');
 });
+
+// mobile slider in materials section -->
+
+// eslint-disable-next-line no-unused-vars, no-undef
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  loop: true,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
