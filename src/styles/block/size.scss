@@ -1,0 +1,171 @@
+.size {
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 00.15em;
+    text-transform: uppercase;
+    color: #000;
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+
+    &--text {
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      display: flex;
+      align-items: flex-end;
+      color: #4f4f4f;
+      margin: 0;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        width: 580px;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__about {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 36px;
+    }
+
+    @include onDesktop {
+      gap: 96px;
+      margin-bottom: 110px;
+    }
+
+    &--img {
+      width: 100vw;
+      margin: 0 0 30px -30px;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(0.9);
+        filter: drop-shadow(3px 3px 12px #000);
+      }
+
+      @include onTablet {
+        width: 416px;
+        height: 337px;
+        margin: 0;
+      }
+
+      @include onDesktop {
+        min-width: 528px;
+        height: 427px;
+      }
+    }
+
+    &--block {
+      width: 100%;
+
+      @include onDesktop {
+        margin-bottom: 110px;
+      }
+    }
+
+    &--size {
+      @include onDesktop {
+        display: flex;
+        flex-direction: row;
+        gap: 27px;
+        margin-bottom: 70px;
+      }
+
+      &-text {
+        display: none;
+
+        @include onDesktop {
+          font-size: 16px;
+          line-height: 150%;
+          color: #4f4f4f;
+          display: block;
+          max-width: 253px;
+          margin: 0;
+        }
+      }
+
+      &-content {
+        @include onDesktop {
+          border-left: 1px solid #d8d8d8;
+          padding-left: 30px;
+        }
+
+        &-large {
+          &-subtitle {
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 18px;
+            display: flex;
+            align-items: flex-end;
+            letter-spacing: 00.15em;
+            color: #000;
+            margin: 0;
+            margin-bottom: 10px;
+          }
+
+          &-text {
+            font-family: "Manrope", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            display: flex;
+            align-items: flex-end;
+            color: #4f4f4f;
+            margin: 0;
+            margin-bottom: 40px;
+          }
+        }
+      }
+
+      &-star {
+        display: none;
+        position: relative;
+
+        @include onDesktop {
+          line-height: 150%;
+          color: #4f4f4f;
+          display: block;
+
+          &::before {
+            content: "*";
+            position: absolute;
+            left: -10px;
+          }
+        }
+      }
+    }
+  }
+
+  &__star {
+    position: relative;
+    line-height: 150%;
+    display: flex;
+    color: #4f4f4f;
+    margin-bottom: 110px;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -10px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

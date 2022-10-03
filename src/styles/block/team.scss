@@ -1,0 +1,146 @@
+.team {
+  background-image: url(../images/team-bgr.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  padding-bottom: 58px;
+  margin-bottom: 110px;
+  position: relative;
+
+  @include onTablet {
+    background-position: left 44%;
+    background-size: 34% 45%;
+    margin-bottom: 180px;
+    padding-bottom: 0;
+  }
+
+  @include onDesktop {
+    background-position: left 40%;
+    background-size: 32% 39%;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 00.15em;
+    color: #333;
+    margin: 0 30px;
+
+    @include onTablet {
+      margin-bottom: 137px;
+    }
+
+    @include onDesktop {
+      padding-left: 135px;
+    }
+  }
+
+  &__martin {
+    display: none;
+
+    @include onTablet {
+      font-family: "Bebas Neue", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 238px;
+      line-height: 1;
+
+      display: block;
+      position: absolute;
+      top: 13%;
+      left: -7%;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-color: #03839e;
+      letter-spacing: 0.18em;
+    }
+
+    @include onDesktop {
+      left: 7%;
+      font-size: 288px;
+      line-height: 346px;
+      letter-spacing: 00.15em;
+    }
+  }
+
+  &__andy {
+    display: none;
+
+    @include onTablet {
+      font-family: "Bebas Neue", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 230px;
+      line-height: 1;
+
+      display: block;
+      position: absolute;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-color: #03839e;
+      letter-spacing: 0.06em;
+      right: 0;
+      bottom: 0;
+      transform: translateY(67%);
+      overflow: hidden;
+    }
+
+    @include onDesktop {
+      bottom: -4%;
+      letter-spacing: 0.15em;
+      width: 580px;
+      font-size: 288px;
+      line-height: 346px;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    @include onDesktop {
+      padding: 0 235px 0 135px;
+      gap: 30px;
+    }
+
+    &--img {
+      max-width: 100%;
+      margin-bottom: 30px;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(0.9);
+        filter: drop-shadow(3px 3px 12px #000);
+      }
+
+      @include onTablet {
+        width: 340px;
+        height: 255px;
+      }
+
+      @include onDesktop {
+        width: 677px;
+        height: 505px;
+      }
+    }
+    &--about {
+      &-text {
+        font-family: "Manrope", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #4f4f4f;
+        margin: 0 30px;
+        padding-top: 50px;
+
+        @include onDesktop {
+          padding-top: 230px;
+        }
+      }
+    }
+  }
+}
