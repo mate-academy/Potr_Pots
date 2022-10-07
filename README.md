@@ -1,5 +1,5 @@
 # POTR POTS landing page
-Landing page according to [Figma design](https://www.figma.com/file/50zgLU65Mcd3MisFHMfLfx/POTR-POTS_FE-students?node-id=1760%3A281) - Used BEM and SCSS
+Landing page according to [Figma design](https://www.figma.com/file/50zgLU65Mcd3MisFHMfLfx/POTR-POTS_FE-students?node-id=1760%3A281)
 - The design 1440px
 - Desktop 1280px
 - Tablet 640px
