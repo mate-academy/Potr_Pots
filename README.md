@@ -1,4 +1,8 @@
 # POTR POTS landing page
+[DEMO](https://thevovchik.github.io/Potr_Pots/)
+
+Technologies - HTML, CSS, Sass(SCSS), JS, BEM
+
 Landing page according to [Figma design](https://www.figma.com/file/50zgLU65Mcd3MisFHMfLfx/POTR-POTS_FE-students?node-id=1760%3A281)
 - The design 1440px
 - Desktop 1280px
