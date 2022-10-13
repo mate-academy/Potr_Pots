@@ -26,25 +26,14 @@ if (!isMenuOpen) {
 
 /* Materials buttons behaviour */
 const materialsButtons = document.querySelectorAll('.materials__button');
-const materialsSlides = document.querySelectorAll('.materials__slide');
 
 let tempI = 0;
 
 materialsButtons.forEach((btn, i) => {
   btn.addEventListener('click', () => {
-    if (btn.classList.contains('materials__button--active')) {
-      materialsSlides[i].style.opacity = '0';
-      materialsSlides[i].style.pointerEvents = 'none';
-    } else {
-      materialsSlides[i].style.opacity = '1';
-      materialsSlides[i].style.pointerEvents = 'all';
-    }
-
     // Remove selection on previous slides
     if (i !== tempI) {
       materialsButtons[tempI].classList.remove('materials__button--active');
-      materialsSlides[tempI].style.opacity = '0';
-      materialsSlides[tempI].style.pointerEvents = 'none';
       tempI = i;
     }
 
@@ -54,20 +43,18 @@ materialsButtons.forEach((btn, i) => {
 
 /* Swiper */
 
-if (!onTabletAndDesktop.matches) {
-  // eslint-disable-next-line no-undef, no-unused-vars
-  const swiper = new Swiper('.swiper', {
-    spaceBetween: 100,
-    loop: true,
+// eslint-disable-next-line no-undef, no-unused-vars
+const swiper = new Swiper('.swiper', {
+  spaceBetween: 100,
+  loop: true,
 
-    pagination: {
-      el: '.swiper-pagination',
-      bulletClass: 'materials__bullet',
-      bulletActiveClass: 'materials__bullet--active',
-      clickable: true,
-    },
-  });
-}
+  pagination: {
+    el: '.swiper-pagination',
+    bulletClass: 'materials__bullet',
+    bulletActiveClass: 'materials__bullet--active',
+    clickable: true,
+  },
+});
 
 /* Discount button styles */
 
