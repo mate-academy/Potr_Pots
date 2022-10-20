@@ -1,0 +1,48 @@
+.name-image {
+  position: absolute;
+  margin: 0;
+
+  &--martin {
+    width: 70%;
+    top: 32px;
+    left: 0;
+    z-index: 1;
+
+    @include onTablet {
+      width: 93%;
+      left: -6%;
+      top: 56px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &--andy {
+    width: 46%;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    transform: translateY(80%);
+
+    @include onTablet {
+      width: 60%;
+      transform: translateY(57%);
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &--content {
+    font-family: "Bebas Neue", cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 288px;
+    line-height: 346px;
+    letter-spacing: 0.15em;
+    color: $turquoiseMain;
+  }
+}

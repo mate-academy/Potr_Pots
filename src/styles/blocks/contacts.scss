@@ -1,0 +1,55 @@
+.contacts {
+  &-form {
+    grid-column: 1 / span 4;
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $textBlack;
+    margin: 0;
+
+    grid-column: 1 / -1;
+  }
+
+  &__description {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $textBlack;
+    margin: 0 0 30px;
+
+    @include onMobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__info {
+    grid-column: 7 / span 3;
+
+    @include onTablet {
+      grid-column: 5 / span 2;
+    }
+  }
+
+  &__mark-image {
+    position: absolute;
+    top: -8em;
+    right: 0;
+
+    @include onMobile {
+      top: -7em;
+    }
+  }
+}

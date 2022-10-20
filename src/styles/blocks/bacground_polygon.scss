@@ -1,0 +1,59 @@
+.bckgr-polygon {
+  height: 466px;
+  background-color: $yellowLigth;
+  clip-path: polygon(0 0, 80% 0, 80% 30%, 0% 100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
+  transform: translate(-20%, -20%);
+  transition: 1s ease-in-out;
+
+  &--header {
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &--team-section {
+    height: 310px;
+    top: 20%;
+    left: -25%;
+    right: 55%;
+
+    @include onMobile {
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+      height: 293px;
+      top: unset;
+      left: 0;
+      right: 0;
+      bottom: -58px;
+    }
+  }
+
+  &--contacts {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+    height: 567px;
+    top: -38px;
+    right: 5em;
+
+    @include onTablet {
+      right: 0;
+      top: -17px;
+    }
+
+    @include onMobile {
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+      height: 1003px;
+      right: 0;
+    }
+  }
+}
+
+.animation {
+  transform: translate(0, 0);
+  opacity: 1;
+}

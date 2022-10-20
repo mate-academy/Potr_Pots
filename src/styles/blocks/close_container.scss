@@ -1,0 +1,36 @@
+.close-button {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  vertical-align: bottom;
+
+  &::before {
+    content: "";
+    border: 1px solid $greyLigth;
+    background-color: $greyLigth;
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    width: 100%;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    content: "";
+    border: 1px solid $greyLigth;
+    background-color: $greyLigth;
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    width: 100%;
+    transform: rotate(-45deg);
+  }
+}
+
+.close-link {
+  display: inline-block;
+  align-self: end;
+
+  transform: translate(100%, 78px);
+}
