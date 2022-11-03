@@ -1,0 +1,72 @@
+@import "../utils";
+
+
+.Navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 31px 135px 0 135px;
+    column-gap: 5%;
+  
+    @media (max-width:996px) {
+      margin: 29px 34px 0 34px;
+    }
+
+    @include Tabscreen{
+      margin: 29px 34px 0 34px;
+    }
+
+    @include Mobscreen{
+      margin: 15px 30px 0 30px;
+    }
+  
+    &__title {
+      font-family: $bebas-family;
+      color: $primary-color;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      font-size: 36px;
+    }
+  
+    &__Link-con {
+      display: flex;
+      column-gap: 60px;
+  
+      @include Tabscreen{
+        display: none;
+      }
+
+      @include Mobscreen{
+        display: none;
+      }
+    }
+  
+    &__Link{
+      color: $secondary-color;
+      font-family: $manrope-family;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  
+    &__bar{
+      display: none;
+  
+      @include Tabscreen{
+        display: flex;
+      }
+  
+      @include Mobscreen{
+        display: flex;
+      }
+    }
+  
+    &__bag{
+      @include Tabscreen{
+        display: none;
+      }
+
+      @include Mobscreen{
+        display: none;
+      }
+    }
+  }
