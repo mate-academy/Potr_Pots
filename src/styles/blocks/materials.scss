@@ -1,0 +1,201 @@
+.materials {
+  margin-bottom: 110px;
+  background-image: url(../images/photos/materials.jpg);
+  background-repeat: no-repeat;
+  background-position: center 120px;
+  background-size: contain;
+
+  @include onTablet {
+    background-position: center 230px;
+    height: 900px;
+  }
+
+  @include onDesktop {
+    background-position: center 80px;
+    height: 1200px;
+  }
+
+  &__title {
+    margin: 0 0 120px;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $turquoise;
+
+    @include onTablet {
+      width: 550px;
+      font-size: 82px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__slider {
+    height: 250px;
+  }
+
+  &__slide {
+    height: 250px;
+    width: 100%;
+    padding: 28px 45px 0;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey-light;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    @include onTablet {
+      width: 300px;
+      position: absolute;
+      display: none;
+      transition: disoplay 0.3s;
+
+      &--1 {
+        top: 145%;
+        left: 0;
+
+        @include onDesktop {
+          top: 240%;
+          left: -5%;
+        }
+      }
+
+      &--2 {
+        top: 110%;
+        left: 15%;
+
+        @include onDesktop {
+          top: 190%;
+        }
+      }
+
+      &--3 {
+        top: 150%;
+        left: 35%;
+
+        @include onDesktop {
+          top: 250%;
+        }
+      }
+
+      &--4 {
+        top: 135%;
+        left: 45%;
+
+        @include onDesktop {
+          top: 195%;
+          left: 50%;
+        }
+      }
+
+      &--5 {
+        top: 180%;
+        left: 65%;
+
+        @include onDesktop {
+          top: 230%;
+          left: 80%;
+        }
+      }
+    }
+
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__text-container {
+    width: 350px;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 130px;
+    font-family: "Manrope", Helvetica, sans-serif;
+    color: $grey-dark-2;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: $grey-light;
+    background-color: $red;
+
+    &--1 {
+      left: 10%;
+      top: 230%;
+
+      @include onDesktop {
+        left: 5%;
+        top: 330%;
+      }
+    }
+
+    &--2 {
+      left: 30%;
+      top: 200%;
+
+      @include onDesktop {
+        left: 25%;
+        top: 280%;
+      }
+    }
+
+    &--3 {
+      left: 50%;
+      top: 240%;
+
+      @include onDesktop {
+        left: 45%;
+        top: 330%;
+      }
+    }
+
+    &--4 {
+      left: 60%;
+      top: 220%;
+
+      @include onDesktop {
+        left: 60%;
+        top: 280%;
+      }
+    }
+
+    &--5 {
+      left: 80%;
+      top: 160%;
+
+      @include onDesktop {
+        left: 90%;
+        top: 200%;
+      }
+    }
+
+    &--open {
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(6px);
+    }
+  }
+}

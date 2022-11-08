@@ -1,0 +1,94 @@
+.menu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  transform: translateX(110%);
+  transition: transform 0.3s;
+  overflow: auto;
+
+  background-color: $turquoise;
+  padding: 138px 32px 42px;
+  height: 100vh;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+  }
+
+  &__link--basket {
+    &::after {
+      content: "0";
+      position: absolute;
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      font-family: "Bebas Neue", cursive;
+      font-size: 9px;
+      line-height: 14px;
+      text-align: center;
+      background-color: $red;
+      color: $grey-light;
+      transform: translateX(50%);
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    position: relative;
+    font-family: "Manrope", Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey-light;
+  }
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+    align-self: flex-end;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 45px;
+      top: -18px;
+      left: 6px;
+      transform: translate(-50%, -100%);
+      background-color: $grey-light;
+    }
+
+    &::before {
+      content: "close";
+      position: absolute;
+      transform: rotate(-90deg) translate( 50%, -100%);
+      top: -79px;
+      left: 5px;
+
+      font-family: "Manrope", Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 150%;
+      text-transform: uppercase;
+      color: $grey-light;
+    }
+  }
+
+  &:target {
+    transform: translateX(0);
+  }
+}

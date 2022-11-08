@@ -1,0 +1,122 @@
+.about {
+  position: relative;
+  margin-bottom: 168px;
+
+  @include onTablet {
+    margin-bottom: 113px;
+  }
+  @include onDesktop {
+    margin-bottom: 225px;
+  }
+
+  &__background-img {
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    right: 0;
+    bottom: -15%;
+    width: 100%;
+    padding-bottom: 100%;
+
+    background-image: url(../images/icons/team-background.svg);
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      width: 30%;
+      top: 30%;
+    }
+    @include onDesktop {
+      top: 20%;
+    }
+  }
+
+  &__background-text {
+    -webkit-text-stroke: 0.67px $turquoise;
+    position: absolute;
+    z-index: -1;
+    font-weight: 400;
+    font-size: 232px;
+    line-height: 278px;
+    letter-spacing: 0.15em;
+
+    &--1 {
+      left: -5%;
+      top: 10%;
+    }
+
+    &--2 {
+      bottom: -35%;
+      right: 0;
+
+      @include onDesktop {
+        bottom: -25%;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 25px;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $grey-dark;
+
+    @include onTablet {
+      margin-bottom: 175px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 143px;
+    }
+  }
+  
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 47px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 57px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      order: 1;
+      padding-right: 34px;
+    }
+
+    @include onDesktop {
+      padding-right: 100px;
+      grid-column: 2/-1;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      padding-top: 45px;
+      margin: 0 0 0 34px;
+    }
+
+    @include onDesktop {
+      padding-top: 230px;
+      margin: 0 0 0 134px;
+    }
+  }
+
+  &__description {
+    margin: 0 0 24px;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey-dark-2;
+  }
+}

@@ -1,0 +1,117 @@
+.footer {
+  margin-bottom: 30px;
+
+  @include onTablet {
+    margin-bottom: 115px;
+  }
+
+  &__links {
+    margin: 0 15px 40px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 75px;
+    }
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  &__title {
+    display: block;
+    margin: 0;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+
+    &:hover {
+      transform: translateY(-10%);
+      color: $turquoise;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+  }
+
+  &__container {
+    @include onTablet {
+      @include grid;
+    }
+  }
+
+  &__address-container {
+    @include onTablet {
+      grid-column: 1/3;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onDesktop {
+      grid-column: 1/3;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 10px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+
+  }
+
+  &__address {
+    text-decoration: none;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+    transition: 0.3s;
+
+    &:hover {
+      color: $turquoise;
+      transform: translateY(-10%);
+    }
+  }
+
+  &__social-media {
+    grid-column: 3/5;
+
+    @include onDesktop {
+      grid-column: 5/9;
+    }
+  }
+
+  &__copy {
+    grid-column: 5/-1;
+    justify-self: flex-end;
+
+    @include onDesktop {
+      grid-column: -3/-1;
+    }
+  }
+}
