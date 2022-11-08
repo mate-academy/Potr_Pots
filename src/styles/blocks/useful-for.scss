@@ -4,7 +4,7 @@
   &__title {
     @extend %title-smaller;
     @extend %title-main;
-    color: #333333;
+    color: $grey;
     margin-bottom: 26px;
   }
 
@@ -18,15 +18,14 @@
 
     @include onDesktop {
       @include useGrid(12, 30px);
-      grid-template-areas:
-      "first first first first first first first first first first first first"
-      ". second second second second . . third third third third third"
-      ". . . . . . . third third third third third";
+      grid-template-areas: "a a a a a a a a a a a a"
+        ". b b b b . . c c c c c"
+        ". . . . . . . c c c c c";
       margin-bottom: 150px;
     }
   }
 
-  &__image{
+  &__image {
     display: none;
     width: 84%;
     max-width: max-content;
@@ -79,7 +78,7 @@
 
     &::before {
       @extend %slash;
-      background-color: #333;
+      background-color: $grey;
     }
 
     @include onTablet {
@@ -92,8 +91,6 @@
     }
   }
 
-
-
   &__description {
     font-size: 16px;
     @include onTablet {
@@ -105,12 +102,12 @@
     }
   }
 
-  &__item{
+  &__item {
     &-title {
       margin-bottom: 20px;
       @extend %title-main;
       @extend %title-smaller;
-      color: #000000;
+      color: #000;
 
       &::after {
         @extend %slash;
@@ -118,7 +115,7 @@
 
       @include onTabletAndOnDesktop {
         &::after {
-          background-color: #333;
+          background-color: $grey;
         }
       }
 
@@ -133,19 +130,18 @@
     }
     @include onDesktop {
       &:first-child {
-        grid-area: first;
+        grid-area: a;
       }
 
       &:nth-child(2) {
-        grid-area: second;
+        grid-area: b;
         @include useGrid (4, 30px);
-        grid-template-areas:
-        "image image image image "
-        "hint hint hint hint "
-        "number number number number"
-        "title title title title"
-        "desc desc desc desc"
-        ". . . .";
+        grid-template-areas: "image image image image "
+          "hint hint hint hint "
+          "number number number number"
+          "title title title title"
+          "desc desc desc desc"
+          ". . . .";
 
         .useful-for__image {
           height: 417px;
@@ -170,12 +166,12 @@
         }
       }
       &:last-child {
-        grid-area: third;
+        grid-area: c;
         @include useGrid (5, 30px);
         grid-template-areas: "image image image image image"
-        "hint hint hint hint  hint "
-        "number title title title title"
-        ". desc desc desc desc";
+          "hint hint hint hint  hint "
+          "number title title title title"
+          ". desc desc desc desc";
 
         .useful-for__image {
           height: 670px;
@@ -199,7 +195,7 @@
           grid-area: desc;
         }
       }
-  }
+    }
 
     &:nth-child(2) {
       @include onTablet {
@@ -238,7 +234,7 @@
       }
     }
 
-    &--bottom{
+    &--bottom {
       display: block;
       bottom: 0;
       right: 5px;
