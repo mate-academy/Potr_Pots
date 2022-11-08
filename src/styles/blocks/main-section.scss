@@ -5,6 +5,10 @@
     padding-bottom: 158px;
   }
 
+  &__container {
+    position: relative;
+  }
+
   &__image {
     grid-row: 1/5;
     width: 100vw;
@@ -35,8 +39,6 @@
 
     font-size: 36px;
     line-height: 43px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
     color: $turquoise;
 
     @include onTabletAndOnDesktop {
@@ -49,9 +51,7 @@
     }
 
     &--transparent {
-      color: transparent;
-      -webkit-text-stroke: 1px;
-      -webkit-text-stroke-color: $turquoise;
+      @extend %transparent;
     }
   }
 
@@ -85,6 +85,7 @@
     text-decoration: none;
 
     &-content {
+      position: absolute;
       display: flex;
       justify-content: end;
       width: 100%;
@@ -93,7 +94,7 @@
       @include onTabletAndOnDesktop {
         display: block;
         transform: translate(0, 0);
-    
+
         grid-row: 2/5;
         justify-self: start;
         align-self: end;
