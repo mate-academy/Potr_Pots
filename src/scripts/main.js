@@ -57,10 +57,15 @@ document
   .querySelector('.contacts__button')
   .addEventListener('click', function(e) {
     const inputs = Array.from(document.querySelectorAll('.contacts__input'));
+    let isValid;
 
     inputs.forEach(input => {
-      input.reportValidity();
+      isValid = input.reportValidity();
     });
+
+    if (!isValid) {
+      return;
+    }
     e.preventDefault();
 
     inputs.forEach(input => {
