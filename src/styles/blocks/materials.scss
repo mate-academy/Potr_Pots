@@ -1,0 +1,64 @@
+.materials {
+  position: relative;
+  background: url("../images/materials.jpg") center 200px /contain no-repeat;
+  height: 100vh;
+
+  &__title {
+    @extend %title-main;
+    @extend %title-bigger;
+    color: $turquoise;
+    margin-bottom: 120px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      font-size: 80px;
+      line-height: 96px;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      line-height: 167px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    display: none;
+    width: 50%;
+    margin-left: 50%;
+    margin-top: -96px;
+
+    @include onTabletAndOnDesktop {
+      display: block;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+
+    &--bold {
+      font-weight: 700;
+    }
+    &-title {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__potrpots {
+    position: absolute;
+    display: none;
+    @include onTablet {
+      display: block;
+    }
+
+    &--top {
+      right: 0;
+    }
+    &--bottom {
+      top: 200px;
+      left: 0;
+    }
+  }
+}
