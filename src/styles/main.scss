@@ -4,11 +4,21 @@
 @import "./content/navbar";
 @import "./content/menu";
 @import "./content/Porteco";
+@import "./content/forwhom-sec-1";
+@import "./content/forwhom-sec-2";
+@import "./content/features";
+@import "./content/team";
+@import "./content/materials";
+@import "./content/PlanHouse.scss";
+@import "./content/flat";
+@import "./content/contact-us";
+@import "./content/footer";
 
 *{
   padding: 0;
   margin: 0;
   transition: ease-in-out 0.3s;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,8 +29,34 @@ a{
   text-decoration: none;
 }
 
-.bg-yellow{
+section{
+  margin-top: 150px;
+
+  @include Tabscreen{
+    margin-top: 135px;
+  }
+  @include Mobscreen{
+    margin-top: 110px;
+  }
+}
+
+// .bg-yellow{
+//   display: flex;
+
+//   @include Mobscreen{
+//     display: none;
+//   }
+// }
+
+.bg-img{
   display: flex;
-  background: url(../images/bg-yellow.png) no-repeat;
+  top: 0;
+  position: absolute;
+  width: 70%;
+  z-index: -1;
+
+  @include Mobscreen{
+    display: none;
+  }
 }
 

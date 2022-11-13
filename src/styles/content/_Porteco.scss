@@ -1,28 +1,187 @@
 @import "../utils";
 
 .Porteco{
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(12, 70px);
-    column-gap:30px;
-    margin: 77px 135px 0 135px;
-    background-color: blue;
+    grid-template-columns: repeat(2, auto);
+    margin: 77px auto;
     height: 500px;
+    column-gap: 30px;
 
-    &__more {
+    @media (max-width:996px) {
+        margin: 49px auto;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    @include Tabscreen {
+        margin: 49px auto;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        // grid-template-columns: repeat(6, 100px);
+        column-gap:0;
+    }
+
+    @include Mobscreen{
+        height: auto;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100vw;
         display: flex;
-        grid-column: 1;
+        flex-direction: column-reverse;
+        align-items: center;
     }
 
     &__con {
         display: flex;
-        background: red;
-        grid-column: 2/7;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+
+     
+        @include Tabscreen {
+            grid-column: 1/2;
+            width: 40vw;
+        }
+
+
+        @include Mobscreen{
+            width: 80vw;
+            margin: auto;
+            margin-top: 25px;
+
+        }
+
     }
     
+
+    &__more {
+        display: flex;
+        grid-column: 1/7;
+        justify-content: space-between;
+        margin-top: 20px;
+        @include Tabscreen {
+            grid-column: 1/5;
+            column-gap: 5%;
+            width: 50vw;
+        }
+
+        @include Mobscreen {
+            flex-direction: row-reverse;
+            width: 89vw;
+        }
+    }
+
+    &__upsidedown{
+        writing-mode: vertical-lr;
+        font-size: 12px;
+        margin-top: 30px;
+    }
+
+    &__price-con{
+        display: flex;
+        width: 270px;
+        flex-direction: column;
+
+        @include Mobscreen{
+            margin-top: 30px;
+        }
+    }
+    &__number{
+        display: flex;
+        font-size: 26px;
+        font-weight: 700;
+        font-family: $manrope-family;
+        margin-left: 100px;
+        color: $primary-color;
+
+        @include Mobscreen{
+            margin-left: 0;
+        }
+    }
+    &__get{
+        display: flex;
+        margin-top: 5px;
+        font-size: 14px;
+        margin-left: 100px;
+        font-family: $manrope-family;
+        color: $secondary-color;
+        line-height: 150%;
+        font-weight: 400;
+
+        @include Mobscreen{
+            margin-left: 0;
+        }
+    }
+
+    &__buy{
+        display: flex;
+        width: 100%;
+        column-gap: 10px;
+        justify-content: center;
+        margin-top: 50px;
+        background-color: #FFE339;
+        height: 48px;
+        align-items: center;
+        border: none;
+    }
+
+    &__arrow{
+        display: flex;
+   }
+
+       &__info{
+        display: flex;
+        height: 256px;
+        align-self: flex-end;
+        @include Tabscreen {
+            margin-left: 0px;
+            align-self: flex-start;
+        }
+
+        @include Mobscreen{
+            height: auto;
+        }
+    }
+    &__info-img1{
+        width: 100%;
+        height: 100%;
+
+
+        @include Tabscreen{
+            width: 50vw;
+        }
+
+   
+    }
+
+ 
     &__img {
         display: flex;
-        background: blueviolet;
-        grid-column: 7/13;
-        margin-left: 70px;
+        height: 500px;
+        margin-left: auto;
+        width: 100%;
+        @media (max-width:996px) {
+            margin-left: 0;
+        }
+
+
+        @include Tabscreen {
+            display: flex;
+            margin-left: 0;
+            height: 306px;
+            position: relative;
+            z-index: -1;
+        }
+
+        @include Mobscreen{
+            height: auto;
+            width: 100vw;
+        }
     }
+
+
+
 }

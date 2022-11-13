@@ -1,0 +1,153 @@
+@import "../utils";
+
+.Flatpack{
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(2 , auto);
+    column-gap: 5%;
+    margin: 96px auto;
+
+    @include Mobscreen{
+        display: flex;
+        margin-top: 110px;
+        flex-direction: column;
+    }
+
+    &__img{
+        width: 100%;
+
+        @media (max-width:996px) {
+            display: none;
+        }
+    }
+
+    &__container{
+        display: flex;
+        margin-top: 196px;
+        flex-direction: column;
+
+        @media (max-width:996px) {
+            margin-top: 0;
+        }
+    }
+
+    &__test{
+        display: flex;
+    }
+    &__test-2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__test-3{
+        @media (max-width:996px) {
+            display: none;
+        }
+    }
+
+    &__test-tablet{
+        display: none;
+        @media (max-width:996px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__FirstBlock{
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width:996px) {
+            flex-direction: column;
+            row-gap: 30px;
+        }
+    }
+
+    &__SecondBlock{
+        display: flex;
+        margin-top: 40px;
+    }
+
+    &__ThirdBlock{
+        display: flex;
+        flex-direction: column;
+        margin-left: 100px;
+        margin-top: 70px;
+        margin-bottom: 5px;
+
+        @media (max-width:996px) {
+            margin-left: 0;
+        }
+    }
+
+    &__dots{
+        display: block;
+        width: 7px;
+        height: 7px;
+        margin-top: 20px;
+
+        @include Mobscreen{
+            margin-top: 15px;
+        }
+    }
+
+    &__txt{
+       
+        height: fit-content;
+    }
+
+    &__h1{
+        font-weight: 700;
+        font-size: 30px;
+        margin-left: 5px;
+        color: $primary-color;
+        font-family: $manrope-family;
+
+        @include Mobscreen{
+            font-size: x-large;
+        }
+    }
+
+    &__benift{
+        font-weight: 400;
+        font-size: 16px;
+        color:  #828282;
+        @include Mobscreen{
+            margin-top: 5px;
+        }
+    }
+
+    &__buy{
+        display: flex;
+        width: 238px;
+        column-gap: 10px;
+        justify-content: center;
+        margin-top: 50px;
+        background:none;
+        border: 1px solid $menu-bg;
+        height: 48px;
+        align-items: center;
+
+        @include Mobscreen{
+            background: #ffe339;
+        }
+    }
+
+  
+
+    &__percent{
+        font-weight: 400;
+        font-size: 36px;
+        color: #EB5757;
+        font-family: $bebas-family;
+    }
+
+    &__get{
+        font-weight: 400;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #03839e;
+        margin-top: 5px;
+        font-family: $bebas-family;
+    }
+}

@@ -1,0 +1,99 @@
+@import "../utils";
+
+
+.Features {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 150px auto;
+    margin-bottom: 0;
+
+    @include Bigscreen{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    @media (max-width:996px) {
+        margin: 135px auto;
+    }
+
+    @include Tabscreen {
+        margin: 135px auto;
+    }
+
+    @include Mobscreen {
+        margin: 110px auto;
+    }
+
+    &__head{
+        display: block;
+        width: 40%;
+        @include Mobscreen{
+            display: none;
+        }
+    }
+
+    &__head-mobile{
+        display: none;
+        @include Mobscreen{
+            display: block;
+            width: 90%;
+        }
+    }
+
+    &__all-con{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 2%;
+
+        @include Tabscreen{
+            column-gap: 5%;
+        }
+
+        @include Mobscreen{
+            grid-template-columns: auto;
+        }
+    }
+
+    &__img{
+        width: 100%;
+        height: 386px;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.1);
+        }
+
+        @include Tabscreen{
+            height: 223px;
+        }
+
+        @include Mobscreen{
+            height: 260px;
+        }
+    }
+
+    &__card{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        row-gap: 21px;
+        margin-top: 71px;
+    }
+
+    &__title{
+        font-weight: 400;
+        font-size: 24px;
+        color: $primary-color;
+        font-family: $bebas-family;
+    }
+
+    &__description{
+        font-weight: 400;
+        font-size: 16px;
+        color: $secondary-color;
+        font-family: $manrope-family;
+    }
+
+
+}

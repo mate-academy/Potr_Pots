@@ -1,0 +1,201 @@
+@import "../utils";
+
+
+.ForWhom {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 150px auto;
+
+    @include Bigscreen{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+  
+
+    @media (max-width:996px) {
+        margin: 135px auto;
+    }
+
+    @include Tabscreen {
+        margin: 135px auto;
+    }
+
+    @include Mobscreen {
+        margin: 110px auto;
+    }
+
+    &__second-section {
+        display: flex;
+       
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+       
+        @include Tabscreen{
+            flex-direction: column;
+        }
+
+        @include Mobscreen{
+            flex-direction: column;
+        }
+    }
+
+    &__rotate-2 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-weight: 400;
+        font-size: 12px;
+        color: $rotated;
+        transform: rotate(180deg);
+        writing-mode: vertical-lr;
+
+        &::before {
+            content: "";
+            position: relative;
+            display: inline-block;
+            align-items: center;
+            width: 1px;
+            height: 65px;
+            background: $rotated;
+            margin-bottom: 10px;
+        }
+
+        @include Tabscreen {
+            display: none;
+        }
+
+        @include Mobscreen {
+            display: none;
+        }
+    }
+
+    &__second-con {
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+
+        @include Tabscreen {
+            margin-top: 0;
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__pic2 {
+        display: block;
+        width: 300px;
+        height: 417px;
+        margin-left: 100px;
+        margin-bottom: 45px;
+
+        @include Tabscreen {
+            margin-left: 0;
+        }
+
+        @media (max-width:602px) {
+            width: 50%;
+        }
+
+        @include Mobscreen{
+            display: none;
+        }
+    }
+
+    &__info-con-2 {
+        @include Tabscreen {
+            display: flex;
+            flex-direction: column;
+        }
+        
+    }
+
+    &__benifits-2 {
+        @extend .ForWhom__benifits;
+        @include Tabscreen{
+            margin-right: 57px;
+            justify-content: flex-end;
+        }
+    }
+
+    &__box-2 {
+        margin-left: 100px;
+        @include Tabscreen{
+            margin-left: 0;
+        }
+
+        @include Mobscreen{
+            margin-left: 0;
+        }
+    }
+
+    &__third-con {
+        display: flex;
+        flex-direction: column;
+
+        @include Tabscreen{
+            flex-direction: row;
+        }
+
+        @include Mobscreen{
+            margin-top: 70px;
+        }
+    }
+
+    &__pic3 {
+        display: flex;
+        align-self: flex-end;
+        margin-bottom: 45px;
+        width: 80%;
+        height: 670px;
+
+        @media (max-width:602px) {
+            width: 50%;
+        }
+
+        @include Tabscreen{
+            height: 417px;
+            width: 300px;
+        }
+
+        @include Mobscreen{
+            display: none;
+        }
+    }
+
+    &__benifits-3 {
+        @extend .ForWhom__benifits;
+        margin-left: 18%;
+
+        @include Tabscreen{
+            margin-left: 5%;
+        }        
+    }
+
+    &__box-3 {
+        display: flex;
+        margin-left: 100px;
+        flex-direction: column;
+
+        @media (max-width:996px) {
+            margin-left: 15px;
+            justify-content: flex-start;
+        }
+
+        @include Tabscreen {
+            margin-left: 15px;
+            justify-content: flex-start;
+        }
+
+
+        @include Mobscreen{
+            margin-left: 0;
+        }
+    }
+
+    &__info-con-3 {
+        display: flex;
+        flex-direction: column;
+    }
+}
