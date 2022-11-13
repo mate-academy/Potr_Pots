@@ -1,0 +1,172 @@
+.potr-team {
+  @include onTablet {
+    padding-inline: 34px;
+  }
+
+  @include onDesktop {
+    padding-inline: 135px;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+
+    color: $c-title;
+
+    padding-inline: 30px;
+    padding-bottom: 25px;
+
+    @include onTablet {
+      padding-inline: 0;
+      padding-bottom: 177px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 142px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    padding-bottom: 58px;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+      // align-items: flex-end;
+
+      padding-bottom: 112px;
+    }
+
+    @include onDesktop {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      padding-right: 100px;
+      padding-bottom: 226px;
+    }
+
+    &-bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      z-index: -5;
+
+      width: 320px;
+      height: 292px;
+      background-image: url(/images/icons/bg-rectangle-team.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include onTablet {
+        left: -15%;
+        top: -18%;
+      }
+
+      @include onDesktop {
+        width: 435px;
+        height: 310px;
+        background-image: url(/images/icons/bg-rect-team-desk.svg);
+        left: -12%;
+        top: -4%;
+      }
+    }
+
+    &-name {
+      display: none;
+      position: absolute;
+
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 230px;
+      line-height: 278px;
+      letter-spacing: 0.15em;
+
+      color: transparent;
+      -webkit-text-stroke: 0.68px $c-turquoise;
+
+      @include onTablet {
+        display: inline;
+      }
+
+      &-1 {
+        bottom: 75%;
+        right: 5%;
+
+        @include onDesktop {
+          bottom: 70%;
+          right: 40%;
+        }
+      }
+
+      &-2 {
+        bottom: -10%;
+        right: -4%;
+
+        @include onDesktop {
+          bottom: -1%;
+          right: -10%;
+        }
+      }
+    }
+
+    &-img {
+      width: 320px;
+      height: 240px;
+
+      margin: 0 auto 30px;
+
+      @include onTablet {
+        width: 340px;
+        height: 255px;
+      }
+
+      @include onDesktop {
+        width: 678px;
+        height: 508px;
+
+        margin-bottom: 0;
+      }
+    }
+
+    &-text {
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-list;
+
+      padding-inline: 30px;
+
+      @include onTablet {
+        padding: 50px 47px 0 0;
+      }
+
+      @include onDesktop {
+        padding: 0 57px 10px 0;
+      }
+    }
+  }
+
+  &__side-text {
+    display: none;
+    position: absolute;
+    bottom: -25%;
+    right: -7%;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
