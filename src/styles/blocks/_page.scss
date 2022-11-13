@@ -1,0 +1,25 @@
+.page {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+  background-color: #fff;
+
+  &__body {
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 1440px;
+
+    &__menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+
+      transform: translateX(100%);
+      transition: transform $anim-duration;
+
+      &:target {
+        transform: translateX(0);
+      }
+    }
+  }
+}

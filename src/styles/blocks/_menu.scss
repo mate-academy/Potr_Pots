@@ -1,0 +1,73 @@
+.menu {
+  background-color: $c-turquoise;
+  width: 70%;
+  height: 100vh;
+
+  z-index: 20;
+
+  padding: 138px 30px 44px 80px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__item {
+    &:first-child::after {
+      content: "";
+      display: inline-block;
+      position: relative;
+      bottom: 5px;
+      width: 14px;
+      height: 14px;
+      background-image: url(/images/icons/basket-count.svg);
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-greylight;
+  }
+
+  &__close {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 110px;
+    margin-top: 90px;
+
+    &-title {
+      display: inline-block;
+      width: 38px;
+      height: 18px;
+      font-size: 12px;
+      line-height: 150%;
+      color: $c-greylight;
+      text-transform: uppercase;
+
+      transform: rotate(-90deg);
+    }
+
+    &-line {
+      display: block;
+      width: 44px;
+      height: 1px;
+      background-image: url(/images/icons/menu-line.svg);
+
+      transform: rotate(-90deg) translateX(-70%);
+    }
+
+    &-cross {
+      display: block;
+      width: 12px;
+      height: 12px;
+
+      background-image: url(/images/icons/cross.svg);
+
+      transform: translateY(70px);
+    }
+  }
+}
