@@ -1,0 +1,196 @@
+.benefits {
+  position: relative;
+  display: flex;
+  padding-inline: 30px;
+  padding-bottom: 155px;
+
+  @include onTablet {
+    padding-inline: 34px;
+    display: block;
+  }
+
+  @include onDesktop {
+    padding-right: 135px;
+    padding-left: 0;
+    padding-bottom: 200px;
+
+    align-items: center;
+  }
+
+  &__img {
+    display: none;
+    width: 632px;
+    height: 828px;
+
+    transition: all $anim-duration;
+
+    &:hover {
+      transform: rotate(5deg);
+    }
+
+    @include onDesktop {
+      display: block;
+      float: left;
+      margin-right: 20px;
+    }
+  }
+
+  &__container {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    padding-bottom: 50px;
+
+    @include onDesktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 44px;
+
+      margin-top: 172px;
+    }
+
+    &-article {
+      &-title {
+        position: relative;
+
+        font-family: "Manrope", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 150%;
+        color: $c-title;
+
+        padding-bottom: 5px;
+
+        &::before {
+          content: "";
+          display: block;
+          width: 10px;
+          height: 10px;
+
+          position: absolute;
+          top: 20px;
+          left: -15px;
+
+          background-image: url(/images/icons/benefits-dot.svg);
+        }
+      }
+
+      &-text {
+        font-family: "Manrope", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $c-side-text;
+      }
+    }
+  }
+
+  &__extra {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onDesktop {
+      gap: 70px;
+    }
+  }
+
+  &__button {
+    position: relative;
+
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 48px;
+    text-transform: uppercase;
+
+    color: $c-button;
+    border: 1px solid transparent;
+    background-color: $c-yellow;
+
+    cursor: pointer;
+
+    @include onTablet {
+      background-color: transparent;
+      border: 1px solid $c-turquoise;
+    }
+
+    @include onDesktop {
+      left: -30%;
+    }
+
+    transition: all $anim-duration;
+
+    &::after {
+      content: "";
+      position: relative;
+      top: 1px;
+      display: inline-block;
+      width: 25px;
+      height: 10px;
+      margin-left: 20px;
+
+      background-image: url(/images/icons/arrow-benefits.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &:hover {
+      background-color: $c-turquoise;
+      color: #fff;
+
+      &::after {
+        background-image: url(/images/icons/arrow-benefits-hover.svg);
+      }
+    }
+  }
+
+  &__discount {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: $c-red;
+
+    &-offer {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      color: $c-turquoise;
+    }
+  }
+
+  &__side-text {
+    display: none;
+    position: absolute;
+    top: 130px;
+    right: -40px;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
