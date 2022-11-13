@@ -127,3 +127,10 @@ five.addEventListener('click', function () {
   //   one.style.background = "rgba(0, 0, 0, 0.4)";
   // }
 });
+
+const form = document.getElementById("myform");
+
+form.addEventListener("submit",(event)=>{
+  event.preventDefault();
+  form.reset();
+})
