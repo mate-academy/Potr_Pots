@@ -1,5 +1,6 @@
 'use strict';
 
+// This function stop the scrolling of the page when the menu is opened
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#Menu') {
@@ -10,123 +11,59 @@ window.addEventListener('hashchange', () => {
 });
 
 
-const one = document.getElementById("C1");
-const two = document.getElementById("C2");
-const three = document.getElementById("C3");
-const four = document.getElementById("C4");
-const five = document.getElementById("C5");
+//The toggle modals
 
-const b1 = document.getElementById("Mod");
-const b2 = document.getElementById("Mod2");
-const b3 = document.getElementById("Mod3");
-const b4 = document.getElementById("Mod4");
-const b5 = document.getElementById("Mod5");
+const btn1 = document.querySelector('.Materials__circle--1');
+const card1 = document.querySelector('.Materials__mod--1');
 
+btn1.addEventListener("click", () => {
 
-one.addEventListener('click', function () {
-
-  if (b1.style.visibility == "visible") {
-    b1.style.visibility = "collapse";
-  }
-
-  else {
-    b1.style.visibility = "visible";
-  }
-
-  // if (one.innerHTML == "-") {
-  //   one.innerHTML = "+"
-  //   one.style.background = "#eb5757";
-  // }
-
-  // else {
-  //   one.innerHTML = "-";
-  //   one.style.background = "rgba(0, 0, 0, 0.4)";
-  // }
+  card1.classList.toggle('Materials__mod--show');
+ 
+  btn1.classList.toggle('Materials__circle--show');
 });
 
-two.addEventListener('click', function () {
+const btn2 = document.querySelector('.Materials__circle--2');
+const card2 = document.querySelector('.Materials__mod--2');
 
-  if (b2.style.visibility == "visible") {
-    b2.style.visibility = "collapse"
-  }
+btn2.addEventListener("click", () => {
 
-  else {
-    b2.style.visibility = "visible"
-  }
-
-  // if (one.innerHTML == "-") {
-  //   one.innerHTML = "+"
-  //   one.style.background = "#eb5757";
-  // }
-
-  // else {
-  //   one.innerHTML = "-";
-  //   one.style.background = "rgba(0, 0, 0, 0.4)";
-  // }
+  card2.classList.toggle('Materials__mod--show');
+ 
+  btn2.classList.toggle('Materials__circle--show');
 });
 
-three.addEventListener('click', function () {
+const btn3 = document.querySelector('.Materials__circle--3');
+const card3 = document.querySelector('.Materials__mod--3');
 
-  if (b3.style.visibility == "visible") {
-    b3.style.visibility = "collapse"
-  }
+btn3.addEventListener("click", () => {
 
-  else {
-    b3.style.visibility = "visible"
-  }
-
-  // if (one.innerHTML == "-") {
-  //   one.innerHTML = "+"
-  //   one.style.background = "#eb5757";
-  // }
-
-  // else {
-  //   one.innerHTML = "-";
-  //   one.style.background = "rgba(0, 0, 0, 0.4)";
-  // }
+  card3.classList.toggle('Materials__mod--show');
+ 
+  btn3.classList.toggle('Materials__circle--show');
 });
 
-four.addEventListener('click', function () {
+const btn4 = document.querySelector('.Materials__circle--4');
+const card4 = document.querySelector('.Materials__mod--4');
 
-  if (b4.style.visibility == "visible") {
-    b4.style.visibility = "collapse"
-  }
+btn4.addEventListener("click", () => {
 
-  else {
-    b4.style.visibility = "visible"
-  }
-
-  // if (one.innerHTML == "-") {
-  //   one.innerHTML = "+"
-  //   one.style.background = "#eb5757";
-  // }
-
-  // else {
-  //   one.innerHTML = "-";
-  //   one.style.background = "rgba(0, 0, 0, 0.4)";
-  // }
+  card4.classList.toggle('Materials__mod--show');
+ 
+  btn4.classList.toggle('Materials__circle--show');
 });
 
-five.addEventListener('click', function () {
+const btn5 = document.querySelector('.Materials__circle--5');
+const card5 = document.querySelector('.Materials__mod--5');
 
-  if (b5.style.visibility == "visible") {
-    b5.style.visibility = "collapse"
-  }
+btn5.addEventListener("click", () => {
 
-  else {
-    b5.style.visibility = "visible"
-  }
-
-  // if (one.innerHTML == "-") {
-  //   one.innerHTML = "+"
-  //   one.style.background = "#eb5757";
-  // }
-
-  // else {
-  //   one.innerHTML = "-";
-  //   one.style.background = "rgba(0, 0, 0, 0.4)";
-  // }
+  card5.classList.toggle('Materials__mod--show');
+ 
+  btn5.classList.toggle('Materials__circle--show');
 });
+
+// This function resets the form
 
 const form = document.getElementById("myform");
 
