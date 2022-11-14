@@ -1,0 +1,57 @@
+.footer {
+  margin-top: 200px;
+  
+  @include tablet() {
+    margin-top: 0;
+  }
+  
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  &__link {
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
+  
+    &:hover {
+      color: $color--grey;
+    }
+  }
+  
+  &__centre {
+    width: max-content;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 70px;
+  }
+  
+  &__about {
+    display: none;
+  
+    @include tablet() {
+      display: block;
+    }
+  }
+  
+  &__adress {
+    display: none;
+  
+    @include tablet() {
+      display: block;
+    }
+  }
+  
+  &__content {
+    @include tablet() {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

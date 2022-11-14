@@ -1,0 +1,64 @@
+.contact {
+  position: relative;
+  height: 600px;
+
+  &--bgc {
+    background-image: url(../images/yellow--bgc-header.svg);
+    @extend %icon;
+    background-size: cover;
+    height: 600px;
+    position: absolute;
+    right: 0;
+    left: -10px;
+    z-index: -1;
+  
+    @include tablet() {
+      right: 50px;
+    }
+  }
+  
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  
+  &__list {
+    list-style: none;
+  
+    @include tablet() {
+      width: 600px;
+    }
+  }
+  
+  &__item {
+    margin-top: 50px;
+
+    &-title {
+      font-size: 24px;
+      color: rgba(0, 0, 0, 0.39);
+      margin-bottom: 5px;
+    }
+  }
+  
+  &__link {
+    text-decoration: none;
+    color: #000;
+    width: min-content;
+  
+    &:hover {
+      color: #828282;
+    }
+  }
+  
+  &__content {
+    @include tablet() {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+  }
+}

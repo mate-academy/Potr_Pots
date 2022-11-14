@@ -1,0 +1,56 @@
+.icon {
+  &--shop {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icon--bag-shop.svg);
+    @extend %icon;
+    background-size: contain;
+    background-position: top;
+  
+    display: none;
+  
+    @include desktop() {
+      display: block;
+    }
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  &--menu {
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/menu_icon.svg);
+    @extend %icon;
+  
+    display: block;
+  
+    @include desktop() {
+      display: none;
+    }
+  }
+  
+  &--arrow {
+    width: 10px;
+    transform: rotate(-90deg);
+  }
+  
+  &--cross {
+    width: 20px;
+    height: 20px;
+  
+    background-image: url(../images/icon--cross.svg);
+  
+    @extend %icon;
+  }
+  
+  &--socials {
+    width: 30px;
+    height: 30px;
+  
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+}

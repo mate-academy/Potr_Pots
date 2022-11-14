@@ -2,6 +2,1656 @@
 @import "fonts";
 @import "typography";
 
-body {
-  background: $c-gray;
-}
+@import "./block/button.scss";
+@import "./block/contact.scss";
+@import "./block/container.scss";
+@import "./block/features.scss";
+@import "./block/footer.scss";
+@import "./block/form.scss";
+@import "./block/grid.scss";
+@import "./block/header.scss";
+@import "./block/icon.scss";
+@import "./block/link.scss";
+@import "./block/materials.scss";
+@import "./block/menu.scss";
+@import "./block/nav.scss";
+@import "./block/page.scss";
+@import "./block/plan.scss";
+@import "./block/sales.scss";
+@import "./block/socials.scss";
+@import "./block/swiper.scss";
+@import "./block/team.scss";
+@import "./block/title.scss";
+@import "./block/whom.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+// $color--blue: #03839E;
+// $color--yellow: #FFE339;
+// $color--yellow-light: #FFEC7A;
+// $color--grey: #B3B3B3;
+// $color--grey-light: #F8F8F8;
+// $color--red: #EB5757;
+
+// @mixin tablet {
+//   @media (min-width:640px) {
+//     @content;
+//   }
+// }
+
+// @mixin desktop {
+//   @media (min-width:1280px) {
+//     @content;
+//   }
+// }
+
+// %icon {
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   background-size: contain;
+// }
+
+// %title-black {
+//   font-family: "Bebas Neue", sans-serif;
+//   font-weight: 400;
+//   font-size: 32px;
+//   line-height: 150%;
+// }
+
+// %text {
+//   color: #4F4F4F;;
+// }
+
+// * {
+//   margin: 0;
+//   padding: 0;
+
+//   transition: 300ms;
+// }
+
+// .page {
+//   font-family: "Manrope", sans-serif;
+//   font-weight: 400;
+//   font-size: 16px;
+//   color: #000;
+//   background: #f9f8f8;
+//   scroll-behavior: smooth;
+// }
+
+// .grid {
+//   display: grid;
+//   grid-template-columns: repeat(2,1fr);
+//   column-gap: 20px;
+    
+//   @include tablet() {
+//     grid-template-columns: repeat(6,1fr);
+//     column-gap: 39px;
+//   }
+    
+//   @include desktop() {
+//     grid-template-columns: repeat(12,1fr);
+//     column-gap: 55px;
+//   }
+    
+//   &--desktop {
+//     display: block;
+    
+//     @include tablet() {
+//       display: grid;
+//     }
+//   }
+    
+//   &--onlyDesktop {
+//     display: block;
+    
+//     @include desktop() {
+//       display: grid;
+//     }
+//   }
+    
+//   &__item {
+//     @include tablet() {
+//       @for $start from 1 through 6 {
+//         @for $end from $start through 6 {
+//           &--tablet--#{$start}-#{$end} {
+//             grid-column: #{$start} / #{$end + 1};
+//           }
+//         }
+//       }
+//     }
+    
+//     @include desktop() {
+//       @for $start from 1 through 12 {
+//         @for $end from $start through 12 {
+//           &--#{$start}-#{$end} {
+//             grid-column: #{$start} / #{$end + 1};
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .container {
+//   padding: 15px 20px;
+//   max-width: 1280px;
+//   margin: 0 auto;
+  
+//   @include tablet() {
+//     padding: 15px 39px;
+//   }
+  
+//   @include desktop() {
+//     padding: 15px 55px;
+//   }
+// }
+
+// .header {
+//   &--bgc {
+//     height: 500px;
+//     background-image: url(../images/yellow--bgc-header.svg);
+//     @extend %icon;
+//     background-size: cover;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 200px;
+//     z-index: -1;
+//     display: none;
+
+//     @include tablet() {
+//       display: block;
+//     }
+
+//     @include desktop() {
+//       right: 350px;
+//     }
+//   }
+
+//   &__top {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+
+//   &__title {
+//     width: 100%;
+//     margin: 0 auto;
+
+//     @include tablet() {
+//       height: 300px;
+//       margin-left: 0;
+//     }
+//   }
+
+//   &__get {
+//     margin-top: 20px;
+//     width: max-content;
+//     padding: 5px;
+
+//     @include tablet() {
+//       margin-top: 150px;
+//       margin-left: 200px;
+//     }
+
+//     @media (min-width:640px) and (max-width:900px) {
+//       background-color: #FFEC7A70;
+//       border-radius: 5px;
+//     }
+
+//     @include desktop() {
+//       margin-top: 70px;
+//       margin-left: 300px;
+//     }
+//   }
+
+//   &__price {
+//     font-weight: 700;
+//     font-size: 26px;
+//   }
+
+//   &__text {
+//     color: #4F4F4F;
+//     margin-top: 10px;
+//   }
+
+//   &__img {
+//     width: 100%;
+//     position: absolute;
+//     top: 55px;
+//     right: 0;
+//     left: 0;
+
+//     &:hover {
+//       @include tablet() {
+//         transform: scale(1.07);
+//       }
+//     }
+
+//     @media (min-width:500px) {
+//       height: 500px;
+//     }
+
+//     @include tablet() {
+//       position: absolute;
+//       right: 0;
+//       left: initial;
+
+//       width: 500px;
+//       height: 500px;
+//     }
+
+//     @include desktop() {
+//       position: static;
+//       height: 600px;
+//       width: 550px;
+//     }
+//   }
+
+//   &__content {
+//     display: flex;
+//     flex-direction: column-reverse;
+
+//     @include tablet() {
+//       justify-content: space-between;
+//       flex-direction: row;
+//       margin-top: 70px;
+
+//       position: relative;
+//     }
+//   }
+
+//   &__wrapper {
+//     position: absolute;
+//     top: 75%;
+//     z-index: 1;
+//     margin: 0 auto;
+
+//     @include tablet() {
+//       position: absolute;
+//       left: 0;
+//       top: initial;
+//       margin-top: 0;
+//     }
+
+//     @include desktop() {
+//       position: static;
+//     }
+//   }
+// }
+
+// .nav {
+//   display: none;
+
+//   @include desktop() {
+//     display: flex;
+//   }
+
+//   &__list {
+//     list-style: none;
+//     gap: 20px;
+//     display: flex;
+
+  
+//   }
+
+//   &__link {
+//     color: #4F4F4F;
+//     text-decoration: none;
+
+//     &--line {
+//       width: 0px;
+//       height: 1px;
+//       background-color: #4F4F4F;
+//       margin-top: 5px;
+//     }
+
+//     &:hover {
+//       .nav__link--line {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
+
+// .icon {
+//   &--shop {
+//     width: 30px;
+//     height: 30px;
+//     background-image: url(../images/icon--bag-shop.svg);
+//     @extend %icon;
+//     background-size: contain;
+//     background-position: top;
+
+//     display: none;
+
+//     @include desktop() {
+//       display: block;
+//     }
+
+//     &:hover {
+//       transform: scale(1.1);
+//     }
+//   }
+
+//   &--menu {
+//     width: 30px;
+//     height: 30px;
+//     background-image: url(../images/menu_icon.svg);
+//     @extend %icon;
+
+//     display: block;
+
+//     @include desktop() {
+//       display: none;
+//     }
+//   }
+
+//   &--arrow {
+//     width: 10px;
+//     transform: rotate(-90deg);
+//   }
+
+//   &--cross {
+//     width: 20px;
+//     height: 20px;
+
+//     background-image: url(../images/icon--cross.svg);
+
+//     @extend %icon;
+//   }
+
+//   &--socials {
+//     width: 30px;
+//     height: 30px;
+
+//     &:hover {
+//       transform: scale(1.15);
+//     }
+//   }
+// }
+
+// .button {
+//   width: 100%;
+//   height: 50px;
+//   line-height: 50px;
+//   text-align: center;
+//   text-decoration: none;
+
+//   @include tablet() {
+//     width: 300px;
+//   }
+
+//   &--yellow {
+//     display: block;
+//     background-color: $color--yellow;
+//     color: #000;
+//     font-weight: 500;
+
+//     &:hover {
+//       opacity: 0.8;
+//     }
+
+//     &--header {
+//       margin-top: 30px;
+
+//       @include tablet() {
+//         margin-left: 30px;
+//         margin-top: 40px;
+//       }
+
+//       @include desktop() {
+//         margin-left: 270px;
+//         margin-top: 50px;
+//       }
+//     }
+
+//     &-arrow {
+//       margin-left: 20px;
+//       width: 40px;
+//     }
+//   }
+
+//   &--blue {
+//     display: block;
+
+//     border: 1px solid $color--blue;
+//     background-color: #fff;
+//     color: #000;
+//     text-decoration: none;
+
+//     &:hover {
+//       border-color: transparent;
+//       background-color: $color--blue;
+//       color: #fff;
+//     }
+
+//     &-full {
+//       background-color: $color--blue;
+//       border: 1px solid transparent;
+//       color: #fff;
+
+//       &:hover {
+//         background-color: #0195b3;
+//       }
+//     }
+//   }
+// }
+
+// .link {
+
+//   &--more {
+//     display: none;
+//     align-items: center;
+//     gap: 50px;
+//     text-decoration: none;
+//     height: 5px;
+//     width: max-content;
+
+//     position: absolute;
+//     transform: rotate(90deg);
+//     top: 220px;
+//     right: -135px;
+
+//     @include tablet() {
+//       left: -80px;
+//       top: 420px;
+//       display: flex;
+//     }
+
+//     @include desktop() {
+//       left: 0px;
+//       top: 440px;
+//     }
+
+//     &__text {
+//       color: $color--blue;
+//     }
+
+//     &__line {
+//       width: 0px;
+//       height: 1px;
+//       background-color: $color--blue;
+//     }
+
+//     &:hover {
+//       .morelink__line {
+//         width: 100%;
+//       }
+//     }
+//   }
+
+//   &--pots {
+//     display: none; 
+//     align-items: center;
+//     gap: 20px;
+
+//     text-decoration: none;
+
+//     position: absolute;
+//     right: -80px;
+//     top: 700px;
+
+//     transform: rotate(90deg);
+
+//     @include tablet() {
+//       display: flex;
+//     }
+
+//     &__line {
+//       display: block;
+//       width: 70px;
+//       height: 1px;
+//       background-color: #828282;
+//     }
+
+//     &__text {
+//       width: max-content;
+//       color: #828282;
+//       font-weight: 400;
+//       font-family: "Bebas Neue", sans-serif;
+//       letter-spacing: 0.22em;
+//     }
+
+//     &--whom {
+//       position: absolute;
+//       bottom: 0;
+//       right: 95%;
+
+//       display: none;
+
+//       @include tablet() {
+//         display: flex;
+//       }
+//     }
+
+//     &--materials {
+//       top: -200px;
+
+//       &-2 {
+//         top: 200px;
+//         right: 92%;
+//       }
+//     }
+//   }
+
+//   &--close {
+//     margin-top: 100px;
+//     display: flex;
+//     align-items: center;
+//     gap: 20px;
+
+//     position: absolute;
+//     bottom: 150px;
+//     right: -50px;
+
+//     transform: rotate(-90deg);
+
+//     &__line {
+//       height: 1px;
+//       width: 100px;
+//       background-color: #fff;
+//     }
+
+//     &__wrapper {
+//       display: flex;
+//       gap: 20px;
+//       align-items: center;
+//     }
+
+//     &__text {
+//       color: #fff;
+//       text-transform: uppercase;
+//     }
+//   }
+// }
+
+// .menu {
+//   height: 100vh;
+//   background-color: $color--blue;
+//   font-family: "Manrope", sans-serif;
+//   font-weight: 300;
+//   font-size: 20px;
+
+//   z-index: 1;
+
+//   position: fixed;
+//   top: 0;
+//   left: 100px;
+//   right: 0;
+
+//   @include tablet() {
+//     left: 50%;
+//   }
+
+//   transform: translateX(100%);
+
+//   display: flex;
+//   align-items: center;
+
+//   &:target {
+//     transform: translate(0%);
+//   }
+
+//   &__list {
+//     list-style: none;
+//     margin-top: -150px;
+//   }
+
+//   &__item {
+//     margin-top: 15px;
+
+//     &--1 {
+//       display: flex;
+//       gap: 10px;
+//     }
+//   }
+
+//   &__link {
+//     text-decoration: none;
+//     color: #fff;
+
+//     &--line {
+//       width: 0;
+//       height: 1px;
+//       background-color: #fff;
+//       margin-top: 5px;
+//     }
+
+//     &:hover {
+//       .menu__link--line {
+//         width: 100%;
+//       }
+//     }
+//   }
+
+//   &__circle {
+//     background-color: #EB5757;
+//     width: 20px;
+//     height: 20px;
+//     line-height: 20px;
+//     text-align: center;
+//     border-radius: 50%;
+//     font-size: 12px;
+//     color: #fff;
+//   }
+// }
+
+// .title {
+//   &--def {
+//     color: #333;
+//     font-size: 32px;
+//     font-weight: 700;
+//   }
+
+//   &--whom {
+//     margin-top: 20px;
+
+//     &__number {
+//       font-size: 36px;
+//       font-weight: 700;
+//     }
+
+//     &__count {
+//       display: flex;
+//     }
+
+//     &__title {
+//       color: #333;
+//     }
+
+//     &__text {
+//       font-size: 18px;
+//       font-weight: 700;
+//       text-transform: uppercase;
+//       line-height: 34px;
+
+//       letter-spacing: 0.15em;
+
+//       @media (min-width:750px) {
+//         font-size: 32px;
+//         line-height: 54px;
+//       }
+
+//       @media (min-width:640px) {
+//         font-size: 18px;
+//         line-height: 25px;
+//       }
+//     }
+
+//     &__content {
+//       display: flex;
+//       gap: 50px;
+
+//       margin-top: 20px;
+//     }
+
+//     &__line {
+//       background-size: cover;
+//       height: 50px;
+
+//       &--close {
+//         display: none;
+//         width: 35px;
+//         height: 35px;
+
+//         @include tablet() {
+//           display: inline-block;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .whom {
+//   margin-top: 1100px;
+
+//   position: relative;
+
+//   @media (min-width: 260px) and  (max-width: 400px) {
+//     margin-top: 1100px; 
+//   }
+
+//   @media (min-width: 400px) and  (max-width: 640px) {
+//     margin-top: 1200px;
+//   }
+
+//   @include tablet() {
+//     margin-top: 700px;
+//   }
+
+//   @include desktop() {
+//     margin-top: 100px;
+//   }
+
+//   &__img {
+//     display: none;
+
+//     &:hover {
+//       transform: scale(1.05);
+//     }
+
+//     @include tablet() {
+//       display: block;
+//     }
+
+//     &--1 {
+//       width: 300px;
+//       height: 300px;
+
+//       object-fit: contain;
+
+//       @include tablet() {
+//         margin-top: 40px;
+//       }
+
+//       @media (min-width:850px) and (max-width: 1280px){
+//         height: 400px;
+//         width: 400px;
+//       }
+
+//       @include desktop() {
+//         width: 550px;
+//         height: 550px;
+//       }
+//     }
+
+//     &--2 {
+//       width: 270px;
+//       height: 270px;
+//       margin: 0 auto;
+
+//       @media (min-width:850px) and (max-width: 1280px){
+//         height: 370px;
+//         width: 370px;
+//       }
+
+//       @include desktop() {
+//         width: 420px;
+//         height: 420px;
+//       }
+//     }
+
+//     &--3 {
+//       width: 320px;
+//       height: 320px;
+
+//       @media (min-width:850px) and (max-width: 1280px){
+//         height: 420px;
+//         width: 420px;
+//       }
+
+//       @include desktop() {
+//         width: 550px;
+//         height: 550px;
+//       }
+//     }
+//   }
+
+//   &__item {
+//     margin-top: 100px;
+//     display: flex;
+//     align-items: center;
+
+//     position: relative; 
+//   }
+
+//   &__text {
+//     color: #4F4F4F;
+//     margin-top: 50px;
+//   }
+
+//   &__wrapper {
+//     display: none;
+
+//     @include desktop() {
+//       display: block;
+//     }
+
+//     &--tablet {
+//       display: block;
+//       margin-top: 40px;
+
+//       @include desktop() {
+//         display: none;
+//       }
+//     }
+//   }
+// }
+
+// .features {
+//   &__content {
+//     margin-top: 170px;
+//   }
+
+//   &__title {
+//     width: 100%;
+
+//     @include tablet() {
+//       width: 330px;
+//     }
+//   }
+
+//   &__cards {
+//     @include tablet() {
+//       display: flex;
+//       gap: 20px;
+//       justify-content: space-between;
+//     }
+//   }
+
+//   &-card {
+//     text-align: center;
+//     margin-top: 50px;
+
+//     &:hover {
+//       transform: scale(1.1);
+//     }
+
+//     &__img {
+//       width: 180px;
+
+//       @media (min-width:350px) and (max-width:639px) {
+//         width: 300px;
+//       }
+
+//       @media (min-width:800px) and (max-width:1280px) {
+//         width: 250px;
+//       }
+
+//       @include desktop() {
+//         width: max-content;
+//       }
+//     }
+
+//     &__title {
+//       margin-top: 20px;
+//       font-family: "Bebas Neue", sans-serif;
+
+//       font-weight: 400;
+//       font-size: 24px;
+//       line-height: 24px;
+//       letter-spacing: 0.155em;
+//       text-transform: uppercase;
+//     }
+
+//     &__text {
+//       color: #4F4F4F;
+//       line-height: 24px;
+
+//       margin-top: 20px;
+
+//       @include desktop() {
+//         width: 380px;
+//       }
+//     }
+//   }
+// }
+
+// .team {
+//   position: relative;
+//   margin-top: 70px;
+
+//   &__img {
+//     position: absolute;
+
+//     &-martin {
+//       display: none;
+//       left: 0;
+//       top: 100px;
+//       z-index: 2;
+//       width: 500px;
+
+//       @include tablet() {
+//         display: block;
+//         width: 600px;
+//       }
+
+//       @include desktop() {
+//         width: 800px;
+//       }
+//     }
+
+//     &-andy {
+//       display: none;
+//       right: 0;
+//       top: 350px;
+//       bottom: 0;
+//       z-index: 1;
+//       width: 400px;
+
+//       @include tablet() {
+//         display: block;
+//         width: 500px;
+//       }
+
+//       @include desktop() {
+//         width: 700px;
+//       }
+//     }
+
+//     &--both {
+//       width: 100%;
+//       height: 200xp;
+//       position: static;
+
+//       @include tablet() {
+//         width: 280px;
+//       }
+
+//       @media (min-width:720px) and (max-width:900px) {
+//         width: 350px;
+//       }
+
+//       @media (min-width:900px) and (max-width:1280px){
+//         width: 400px;
+//       }
+
+//       @include desktop() {
+//         width: 50%;
+//       }
+
+//     }
+//   }
+
+//   &__content {
+//     position: relative;
+//     margin-top: 50px;
+//   }
+
+//   &__container {
+//     display: flex;
+//     flex-direction: column-reverse;
+
+//     @include tablet() {
+//       display: flex;
+//       flex-direction: row;
+//       gap: 30px;
+//     }
+//   }
+
+//   &__title {
+//     font-family: 'Bebas Neue';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 38px;
+//     line-height: 70px;
+//     margin-bottom: 50px;
+
+//     letter-spacing: 0.15em;
+
+//     color: #333;
+//   }
+
+//   &__text {
+//     position: relative;
+//     z-index: 1;
+//     line-height: 30px;
+//   }
+
+//   &__paragraphs {
+//     margin-top: 20px;
+//     z-index: 1;
+
+//     @include tablet() {
+//       margin-top: 200px;
+//     }
+
+//     @include desktop() {
+//       margin-top: 250px;
+//     }
+//   }
+
+//   &__paragraph {
+//     margin-top: 30px;
+
+//     @include desktop() {
+//       margin-top: 50px;
+//     }
+//   }
+
+//   &--bgc {
+//     background-image: url(../images/yellow--bgc-header.svg);
+//     @extend %icon;
+//     background-size: cover;
+//     position: absolute;
+//     width: 100%;
+//     height: 200px;
+//     margin-top: 30px;
+
+//     z-index: -1;
+
+//     @include tablet() {
+//       margin-top: 0;
+//     }
+//   }
+// }
+
+// .materials {
+//   height: 1100px;
+
+//   @include tablet() {
+//     height: 950px;
+//   }
+//   &__friendly {
+//     width: 400px;
+//     display: none;
+
+//     @include desktop() {
+//       display: block;
+//       position: absolute;
+//       right: 20%;
+//       top: -150px;
+//     }
+
+//     &-title {
+//       font-weight: 700;
+//       font-size: 20px;
+//       line-height: 150%;
+//       color: #4F4F4F;
+//     }
+
+//     &-text {
+//       color: #4F4F4F;
+//       margin-top: 20px;
+//       font-size: 14px;
+//     }
+//   }
+
+//   &__title {
+//     margin-top: 50px;
+//     font-family: 'Bebas Neue';
+//     font-weight: 700;
+//     font-size: 50px;
+//     line-height: 70px;
+//     letter-spacing: 0.155em;
+//     width: 200px;
+
+//     color: $color--blue;
+
+//     top: 100px;
+
+//     z-index: 1;
+
+//     @include tablet() {
+//       font-size: 80px;
+//       width: initial;
+//       line-height: 90px;
+//     }
+
+//     @include desktop() {
+//       font-size: 130px;
+//       line-height: 130px;
+//     }
+//   }
+
+//   &__content {
+//     background-image: url(../images/material-img.png);
+//     @extend %icon;
+//     height: 500px;
+//     width: 100%;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+
+//     position: relative;
+
+//     @media (min-width:800px) {
+//       background-size: contain;
+//       height: 650px;
+//     }
+//   }
+
+//   &__circle {
+//     width: 45px;
+//     height: 45px;
+//     background-color: $color--red;
+//     border-radius: 50%;
+//     text-align: center;
+//     line-height: 45px;
+//     font-size: 28px;
+//     color: #fff;
+//     font-weight: 200;
+//     text-decoration: none;
+//     display: none;
+
+//     position: absolute;
+
+//     &:hover {
+//       transform: rotate(45deg);
+//     }
+
+//     @include tablet() {
+//       display: inline-block;
+//     }
+
+
+//     &--1 {
+//       bottom: 20%;
+//       left: 10%;
+//       right: 80%;
+
+//       @media (min-width: 950px) {
+//         left: 20%;
+//       }
+
+//       @include desktop() {
+//         left: 25%;
+//       }
+//     }
+
+//     &--2 {
+//       left: 30%;
+//       top: 65%;
+//       bottom: 100px;
+
+//       @media (min-width:950px) {
+//         left: 35%;
+//       }
+
+//       @include desktop() {
+//         left: 40%;
+//       }
+//     }
+
+//     &--3 {
+//       right: 30%;
+//       top: 65%;
+
+
+//       @media (min-width:950px) {
+//         right: 40%;
+//       }
+//     }
+
+//     &--4 {
+//       right: 6%;
+//       top: 63%;
+
+//       @media (min-width:720px) {
+//         right: 10%;
+//       }
+
+//       @media (min-width:950px) {
+//         right: 18%;
+//       }
+
+//       @include desktop() {
+//         right: 25%;
+//       }
+//     }
+//   }
+
+//   &__slide {
+//     background: rgba(0, 0, 0, 0.45);
+//     mix-blend-mode: normal;
+//     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
+//     backdrop-filter: blur(17px);
+//     color: #fff;
+//     align-items: center;
+//     font-size: 14px;
+//     line-height: 30px;
+//     display: none;
+
+//     height: 250px;
+//     width: 200px;
+//     padding: 0 50px;
+
+//     &:target {
+//       @include tablet() {
+//         display: flex;
+//         align-items: center;
+//         position: absolute;
+//       }
+//     }
+
+//     &--1 {
+//       top: 18%;
+
+//       @media (min-width:950px) {
+//         left: 15%;
+//       }
+//     }
+
+//     &--2 {
+//       left: 30%;
+//       top: 25%;
+//     }
+
+//     &--3 {
+//       right: 10%;
+
+//       @media (min-width:950px) {
+//         right: 15%;
+//       }
+
+//       @include desktop() {
+//         right: 20%;
+//       }
+//     }
+
+//     &--4 {
+//       right: 5%;
+//       top: 12%;
+
+//       @media (min-width:720px) {
+//         right: 10%;
+//       }
+
+//       @include desktop() {
+//         right: 18%;
+//       }
+//     }
+//   }
+
+//   &__slider {
+//     width: 100%;
+//   }
+// }
+
+// .swiper {
+//   width: 90%;
+//   top: 70%;
+//   height: 400px; 
+//   padding: 10px;
+
+//   @include tablet() {
+//     width: 300px;
+//     height: 350px;
+//   }
+
+//   &-slide {
+//     background: rgba(0, 0, 0, 0.45);
+//     mix-blend-mode: normal;
+//     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
+//     backdrop-filter: blur(17px);
+//     color: #fff;
+//     display: flex;
+//     align-items: center;
+//     font-size: 16px;
+//     line-height: 30px;
+
+//     @include tablet() {
+//       display: none;
+//     }
+
+//     &__wrapper {
+//       width: 200px;
+//       margin: 0 auto;
+//     }
+//   }
+
+//   .swiper-pagination-bullet {
+//     background-color: transparent!important;
+
+//     background-image: url(../images/swiper--bullet-black.svg);
+//     height: 15px;
+//     width: 15px;
+//     @extend %icon;
+//   }
+// }
+
+// .plan {
+//   margin-top: 80px;
+
+//   &__title {
+//     font-family: "Bebas Neue", sans-serif;
+//     font-weight: 400;
+//     font-size: 32px;
+//     line-height: 36px;
+//     letter-spacing: 0.155em;
+//     text-transform: uppercase;
+//   }
+
+//   &__container {
+//     height: max-content;
+//     display: flex;
+//     margin-top: 80px;
+//   }
+
+//   &__wrapper {
+//     color: #4F4F4F;
+//     padding-right: 15px;
+//     display: none;
+
+//     margin-top: -110px;
+
+//     @include desktop() {
+//       display: block;
+//       width: 300px;
+//     }
+//   }
+
+//   &__shell {
+//     margin-top: 70px;
+
+//     @include tablet() {
+//       margin-top: 0;
+//     }
+//   }
+
+//   &__content {
+//     display: flex;
+//     flex-direction: column-reverse;
+
+//     margin-top: 70px;
+//     @include tablet() {
+//       display: flex;
+//       flex-direction: row;
+//       align-items: center;
+//       gap: 15px;
+//     }
+//   }
+
+//   &__text {
+//     color: #4F4F4F;
+//     display: none;
+//     margin-top: 30px;
+
+//     @include tablet() {
+//       display: block;
+//     }
+
+//     @include desktop() {
+//       display: none;
+//     }
+//   }
+
+//   &__img {
+//     width: 100%;
+
+//     @include tablet() {
+//       width: 60%;
+//     }
+
+//     @media (min-width:750px) {
+//       width: 80%;
+//     }
+//   }
+
+//   &__subtitle {
+//     margin-top: 80px;
+//     color: #4F4F4F;
+//     font-size: 14px;
+
+//     @include desktop() {
+//       margin-top: 130px;
+//     }
+//   }
+
+//   &__size {
+//     margin-top: -150px;
+//     @include desktop() {
+//       border-left: 1px solid #ddd;
+//       padding-left: 15px;
+//     }
+//   }
+
+//   &__item {
+//     margin-top: 40px;
+//     &-title {
+//       font-family: "Bebas Neue", sans-serif;
+//       font-weight: 400;
+//       font-size: 18px;
+//       line-height: 18px;
+//       letter-spacing: 0.155em;
+//     }
+
+//     &-text {
+//       color: #4F4F4F;
+//       margin-top: 15px;
+//     }
+//   }
+// }
+
+// .sales {
+//   &__list {
+//     list-style: none;
+//     margin-bottom: 50px;
+//   }
+
+//   &__item {
+//     display: flex;
+//     gap: 10px;
+//     margin-top: 20px;
+
+//     &-wrapper {
+//       @include desktop() {
+//         display: flex;
+//         gap: 20px;
+//       }
+//     }
+//   }
+
+//   &__text {
+//     font-weight: 700;
+//     font-size: 30px;
+//     line-height: 150%;
+//     color: #333;
+
+//     &-sub {
+//       color: #828282;
+//       font-size: 16px;
+//       font-weight: 400;
+//       line-height: initial;
+//     }
+//   }
+
+//   &__sale {
+//     color: $color--red;
+//     font-size: 24px;
+//     font-weight: 500;
+//     margin-top: 50px;
+//     font-family: "Bebas Neue", sans-serif;
+//     letter-spacing: 0.155em;
+
+//     &--blue {
+//       color: $color--blue;
+//       font-size: 20px;
+//       font-weight: 700;
+//       margin-top: 20px;
+//     }
+//   }
+
+//   &__content {
+//     @include tablet() {
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       gap: 60px;
+//     }
+//   }
+
+//   &__shell {
+//     display: flex;
+//     justify-content: center;
+//   }
+
+//   &-card {
+//     display: none;
+
+//     @include desktop() {
+//       display: block;
+//     }
+//     &__img {
+//       height: 550px;
+
+//       object-fit: cover;
+//     }
+//   }
+// }
+
+// .footer {
+//   margin-top: 200px;
+
+//   @include tablet() {
+//     margin-top: 0;
+//   }
+
+//   &__title {
+//     font-family: "Bebas Neue", sans-serif;
+//     font-weight: 400;
+//     font-size: 24px;
+//     line-height: 24px;
+//     letter-spacing: 0.155em;
+//     text-transform: uppercase;
+//     margin-bottom: 10px;
+//   }
+
+//   &__link {
+//     color: #000;
+//     text-decoration: none;
+//     font-size: 14px;
+
+//     &:hover {
+//       color: $color--grey;
+//     }
+//   }
+
+//   &__centre {
+//     width: max-content;
+//     margin: 0 auto;
+//     text-align: center;
+//     margin-top: 70px;
+//   }
+
+//   &__about {
+//     display: none;
+
+//     @include tablet() {
+//       display: block;
+//     }
+//   }
+
+//   &__adress {
+//     display: none;
+
+//     @include tablet() {
+//       display: block;
+//     }
+//   }
+
+//   &__content {
+//     @include tablet() {
+//       display: flex;
+//       align-items: center;
+//     }
+//   }
+// }
+
+// .socials {
+//   &__list {
+//     list-style: none;
+//     display: flex;
+//     justify-content: center;
+//     gap: 50px;
+
+//     margin-bottom: 40px;
+//   }
+// }
+
+// .contact {
+//   position: relative;
+//   height: 600px;
+//   &--bgc {
+//     background-image: url(../images/yellow--bgc-header.svg);
+//     @extend %icon;
+//     background-size: cover;
+//     height: 600px;
+//     position: absolute;
+//     right: 0;
+//     left: -10px;
+//     z-index: -1;
+
+//     @include tablet() {
+//       right: 50px;
+//     }
+//   }
+
+//   &__title {
+//     font-family: "Bebas Neue", sans-serif;
+//     font-weight: 400;
+//     font-size: 36px;
+//     line-height: 150%;
+//     letter-spacing: 0.155em;
+//     text-transform: uppercase;
+//   }
+
+//   &__list {
+//     list-style: none;
+
+//     @include tablet() {
+//       width: 600px;
+//     }
+//   }
+
+//   &__item {
+//     margin-top: 50px;
+//     &-title {
+//       font-size: 24px;
+//       color: rgba(0, 0, 0, 0.39);
+//       margin-bottom: 5px;
+//     }
+//   }
+
+//   &__link {
+//     text-decoration: none;
+//     color: #000;
+//     width: min-content;
+
+//     &:hover {
+//       color: #828282;
+//     }
+//   }
+
+//   &__content {
+//     @include tablet() {
+//       display: flex;
+//       align-items: center;
+//       gap: 50px;
+//     }
+//   }
+// }
+
+// .form {
+//   &__title {
+//     font-size: 24px;
+//     margin-top: 50px;
+//   }
+
+//   &__wrapper {
+//     margin-top: 20px;
+//   }
+
+//   &__field {
+//     background-color: transparent;
+//     border: 0px;
+//     border-bottom: 1px solid #0003;
+//     width: 100%;
+//     font-family: "Manrope", sans-serif;
+//     padding-bottom: 5px;
+//     margin-top: 25px;
+//     font-size: 17px;
+//     outline: none;
+//     transition: 300ms;
+
+//     &:hover {
+//       &::placeholder {
+//         color: #000;
+//       }
+//     }
+
+//     &:focus {
+//       border-bottom: 1px solid #000;
+
+//       &::placeholder {
+//         color: #000;
+//       }
+//     }
+
+//     &--textarea {
+//       margin-top: 35px;
+//       margin-bottom: 35px;
+//     }
+//   }
+// }

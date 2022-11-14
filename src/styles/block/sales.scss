@@ -1,0 +1,77 @@
+.sales {
+  &__list {
+    list-style: none;
+    margin-bottom: 50px;
+  }
+  
+  &__item {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  
+    &-wrapper {
+      @include desktop() {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+  
+  &__text {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 150%;
+    color: #333;
+  
+    &-sub {
+      color: #828282;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: initial;
+    }
+  }
+  
+  &__sale {
+    color: $color--red;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 50px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.15em;
+  
+    &--blue {
+      color: $color--blue;
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+  }
+  
+  &__content {
+    @include tablet() {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+    }
+  }
+  
+  &__shell {
+    display: flex;
+    justify-content: center;
+  }
+  
+  &-card {
+    display: none;
+  
+    @include desktop() {
+      display: block;
+    }
+
+    &__img {
+      height: 550px;
+  
+      object-fit: cover;
+    }
+  }
+}

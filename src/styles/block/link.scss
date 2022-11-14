@@ -1,0 +1,126 @@
+.link {
+  &--more {
+    display: none;
+    align-items: center;
+    gap: 50px;
+    text-decoration: none;
+    height: 5px;
+    width: max-content;
+  
+    position: absolute;
+    transform: rotate(90deg);
+    top: 220px;
+    right: -135px;
+  
+    @include tablet() {
+      left: -80px;
+      top: 420px;
+      display: flex;
+    }
+  
+    @include desktop() {
+      left: 0;
+      top: 440px;
+    }
+  
+    &__text {
+      color: $color--blue;
+    }
+  
+    &__line {
+      width: 0;
+      height: 1px;
+      background-color: $color--blue;
+    }
+  
+    &:hover {
+      .morelink__line {
+        width: 100%;
+      }
+    }
+  }
+  
+  &--pots {
+    display: none;
+    align-items: center;
+    gap: 20px;
+  
+    text-decoration: none;
+  
+    position: absolute;
+    right: -80px;
+    top: 700px;
+  
+    transform: rotate(90deg);
+  
+    @include tablet() {
+      display: flex;
+    }
+  
+    &__line {
+      display: block;
+      width: 70px;
+      height: 1px;
+      background-color: #828282;
+    }
+  
+    &__text {
+      width: max-content;
+      color: #828282;
+      font-weight: 400;
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.22em;
+    }
+  
+    &--whom {
+      position: absolute;
+      bottom: 0;
+      right: 95%;
+  
+      display: none;
+  
+      @include tablet() {
+        display: flex;
+      }
+    }
+  
+    &--materials {
+      top: -200px;
+  
+      &-2 {
+        top: 200px;
+        right: 92%;
+      }
+    }
+  }
+  
+  &--close {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    position: absolute;
+    bottom: 150px;
+    right: -50px;
+  
+    transform: rotate(-90deg);
+  
+    &__line {
+      height: 1px;
+      width: 100px;
+      background-color: #fff;
+    }
+  
+    &__wrapper {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  
+    &__text {
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+}

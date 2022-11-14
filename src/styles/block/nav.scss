@@ -1,0 +1,31 @@
+.nav {
+  display: none;
+  
+  @include desktop() {
+    display: flex;
+  }
+  
+  &__list {
+    list-style: none;
+    gap: 20px;
+    display: flex;
+  }
+  
+  &__link {
+    color: #4f4f4f;
+    text-decoration: none;
+  
+    &--line {
+      width: 0;
+      height: 1px;
+      background-color: #4f4f4f;
+      margin-top: 5px;
+    }
+  
+    &:hover {
+      .nav__link--line {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+.plan {
+  margin-top: 80px;
+  
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  
+  &__container {
+    height: max-content;
+    display: flex;
+    margin-top: 80px;
+  }
+  
+  &__wrapper {
+    color: #4f4f4f;
+    padding-right: 15px;
+    display: none;
+  
+    margin-top: -110px;
+  
+    @include desktop() {
+      display: block;
+      width: 300px;
+    }
+  }
+  
+  &__shell {
+    margin-top: 70px;
+  
+    @include tablet() {
+      margin-top: 0;
+    }
+  }
+  
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+  
+    margin-top: 70px;
+    @include tablet() {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+  
+  &__text {
+    color: #4f4f4f;
+    display: none;
+    margin-top: 30px;
+  
+    @include tablet() {
+      display: block;
+    }
+  
+    @include desktop() {
+      display: none;
+    }
+  }
+  
+  &__img {
+    width: 100%;
+  
+    @include tablet() {
+      width: 60%;
+    }
+  
+    @media (min-width:750px) {
+      width: 80%;
+    }
+  }
+  
+  &__subtitle {
+    margin-top: 80px;
+    color: #4f4f4f;
+    font-size: 14px;
+  
+    @include desktop() {
+      margin-top: 130px;
+    }
+  }
+  
+  &__size {
+    margin-top: -150px;
+    @include desktop() {
+      border-left: 1px solid #ddd;
+      padding-left: 15px;
+    }
+  }
+  
+  &__item {
+    margin-top: 40px;
+    &-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0.15em;
+    }
+  
+    &-text {
+      color: #4f4f4f;
+      margin-top: 15px;
+    }
+  }
+}
