@@ -1,17 +1,21 @@
-@mixin onMobile {
-  @media screen and (max-width: 320px) {
-    @content;
-  }
-}
 
 @mixin onTablet {
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
     @content;
   }
 }
 
 @mixin onDesktop {
-  @media screen and (max-width: 1440px) {
+  @media screen and (min-width: 1360px) {
     @content;
   }
+}
+
+@mixin image($image, $width, $height) {
+  height: $height;
+  width: $width;
+  background-image: $image;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

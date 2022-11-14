@@ -1,0 +1,68 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translateX(100%);
+
+  &__list {
+    width: 120px;
+
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    transform: translate(16%, -50%);
+    list-style: none;
+    padding: 0;
+
+    @include onDesktop {
+      width: unset;
+      transform: unset;
+      flex-direction: row;
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin: 0 0 25px;
+
+    @include onDesktop {
+      margin: 0 60px 0 0;
+    }
+  }
+
+  &__link {
+    @extend %str3;
+    color: $white;
+    text-decoration: none;
+
+    @include onDesktop {
+      color: $grey-2;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 100px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 40vh;
+    transform: translate(50%) rotate(-90deg);
+    color: $white;
+    @extend %str5;
+
+    &-decor {
+      @include image(url(../images/vectors/cross.svg), 12px, 12px);
+      margin-right: 16px;
+      &-2 {
+        @include image(url(../images/vectors/line.svg), 44px, 1px);
+        margin-right: 5px;
+      }
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

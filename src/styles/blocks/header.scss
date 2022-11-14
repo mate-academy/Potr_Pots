@@ -1,0 +1,72 @@
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @extend %container;
+
+  &__logo {
+    @extend %h2;
+    margin: 15px 0;
+
+    cursor: pointer;
+  }
+
+  &__nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 72vw;
+    padding: 0 30px;
+    background-color: $turquoise;
+
+    transition: transform 0.3s;
+
+    @include onDesktop {
+      position: unset;
+      width: unset;
+      height: unset;
+      background-color: unset;
+      display: block;
+      padding: unset;
+    }
+  }
+
+  &__toggler-checkbox {
+    position: absolute;
+    left: -9999px;
+  }
+
+  &__toggler-checkbox:checked ~ &__nav {
+    transform: translateX(1%);
+  }
+
+  &__toggler-label {
+    background-image: url(../images/vectors/menu_icon.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 32px;
+    width: 32px;
+
+    cursor: pointer;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__cart {
+    display: none;
+    @include image(url(../images/icons/cart.png), 30px, 30px);
+
+    cursor: pointer;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}
