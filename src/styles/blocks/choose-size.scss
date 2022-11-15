@@ -1,0 +1,109 @@
+.choose-size {
+  font-size: 16px;
+
+  &__title {
+    @extend %title-main;
+    @extend %title-smaller;
+    color: #000;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 38px;
+      grid-area: 1/1/2/7;
+    }
+
+    @include onDesktop {
+      position: relative;
+      margin-bottom: 0;
+      padding-right: 16px;
+      grid-area: 1/1/2/4;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 1px;
+        height: 100%;
+        content: "";
+        background-color: #d8d8d8;
+      }
+    }
+  }
+
+  &__image {
+    max-height: 100%;
+    object-fit: contain;
+
+    &-container {
+      margin-bottom: 30px;
+      max-height: 260px;
+      display: flex;
+      justify-content: center;
+
+      @include onTablet {
+        margin-bottom: 20px;
+        max-height: 337px;
+        justify-content: end;
+        grid-area: 2/3/4/7;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+        max-height: 428px;
+        justify-content: end;
+        grid-area: 1/7/4/13;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 15px;
+    @include onTablet {
+      margin-bottom: 0;
+      grid-area: 2/1/3/3;
+    }
+
+    @include onDesktop {
+      margin-bottom: 56px;
+      grid-area: 1/4/2/7;
+    }
+  }
+
+  &__type-title {
+    @extend %title-main;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+    margin-bottom: 10px;
+  }
+
+  &__pot-type:first-child {
+    margin-bottom: 40px;
+  }
+
+  &__star {
+    margin: 0 3px 0 -10px;
+  }
+
+  &__hint {
+    grid-area: 5/1/6/7;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+      grid-area: 3/1/4/6;
+    }
+  }
+}
