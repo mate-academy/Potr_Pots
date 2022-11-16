@@ -1,33 +1,35 @@
 @import "../utils";
 
-.Porteco{
-    width: 80%;
+.Porteco {
     display: grid;
-    grid-template-columns: repeat(2, auto);
-    margin: 77px auto;
+    position: relative;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 77px 135px;
     height: 500px;
     column-gap: 30px;
 
-    @media (max-width:996px) {
-        margin: 49px auto;
+    @include Bigscreen {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    @media (max-width:1280px) {
+        margin: 49px 34px;
         height: auto;
-        grid-template-columns: repeat(2, 1fr);
+
     }
 
 
     @include Tabscreen {
-        margin: 49px auto;
+        margin: 49px 34px;
         height: auto;
-        grid-template-columns: repeat(2, 1fr);
-        // grid-template-columns: repeat(6, 100px);
-        column-gap:0;
+        column-gap: 0;
     }
 
-    @include Mobscreen{
+    @include Mobscreen {
         height: auto;
         margin-left: 0;
         margin-right: 0;
-        width: 100vw;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
@@ -38,30 +40,31 @@
         justify-content: center;
         flex-direction: column;
         height: 100%;
+
         width: 100%;
 
-     
+
         @include Tabscreen {
             grid-column: 1/2;
             width: 40vw;
         }
 
 
-        @include Mobscreen{
-            width: 80vw;
-            margin: auto;
-            margin-top: 25px;
+        @include Mobscreen {
+            margin: 25px 30px;
 
         }
 
     }
-    
+
 
     &__more {
         display: flex;
         grid-column: 1/7;
+
         justify-content: space-between;
         margin-top: 20px;
+
         @include Tabscreen {
             grid-column: 1/5;
             column-gap: 5%;
@@ -70,26 +73,35 @@
 
         @include Mobscreen {
             flex-direction: row-reverse;
-            width: 89vw;
+            margin-left: 30px;
         }
     }
 
-    &__upsidedown{
+    &__upsidedown {
         writing-mode: vertical-lr;
         font-size: 12px;
+        color: $primary-color;
         margin-top: 30px;
+
+        &:hover{
+            color: $menu-bg;
+            transform: scale(1.1);
+        }
     }
 
-    &__price-con{
+    &__price-con {
         display: flex;
         width: 270px;
         flex-direction: column;
 
-        @include Mobscreen{
+        @include Mobscreen {
             margin-top: 30px;
         }
+
+
     }
-    &__number{
+
+    &__number {
         display: flex;
         font-size: 26px;
         font-weight: 700;
@@ -97,11 +109,12 @@
         margin-left: 100px;
         color: $primary-color;
 
-        @include Mobscreen{
+        @include Mobscreen {
             margin-left: 0;
         }
     }
-    &__get{
+
+    &__get {
         display: flex;
         margin-top: 5px;
         font-size: 14px;
@@ -111,12 +124,12 @@
         line-height: 150%;
         font-weight: 400;
 
-        @include Mobscreen{
+        @include Mobscreen {
             margin-left: 0;
         }
     }
 
-    &__buy{
+    &__buy {
         display: flex;
         width: 100%;
         column-gap: 10px;
@@ -126,43 +139,68 @@
         height: 48px;
         align-items: center;
         border: none;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.1);
+            opacity:.6;
+        }
     }
 
-    &__arrow{
+    &__arrow {
         display: flex;
-   }
+    }
 
-       &__info{
+    &__info {
         display: flex;
-        height: 256px;
-        align-self: flex-end;
+        width: 100%;
+        padding-left: 5vw;
+
+        @media (max-width:1280px) {
+            padding-left: 0;
+        }
+
         @include Tabscreen {
             margin-left: 0px;
             align-self: flex-start;
         }
 
-        @include Mobscreen{
+        @include Mobscreen {
             height: auto;
+            width: fit-content;
+            margin: auto 30px;
         }
     }
-    &__info-img1{
-        width: 100%;
+
+
+    &__info-img1 {
+        width: 70%;
         height: 100%;
 
+        @media (max-width:1280px) {
+            width: 80%;
+        }
 
-        @include Tabscreen{
+        @include Tabscreen {
             width: 50vw;
         }
 
-   
+        @include Mobscreen {
+            width: 70%;
+        }
+
+
     }
 
- 
+
     &__img {
         display: flex;
-        height: 500px;
+        position: absolute;
+        height: 100%;
+        z-index: -1;
+        right: 0;
         margin-left: auto;
-        width: 100%;
+
         @media (max-width:996px) {
             margin-left: 0;
         }
@@ -172,13 +210,13 @@
             display: flex;
             margin-left: 0;
             height: 306px;
-            position: relative;
-            z-index: -1;
+
         }
 
-        @include Mobscreen{
+        @include Mobscreen {
+            position: relative;
             height: auto;
-            width: 100vw;
+            width: 100%;
         }
     }
 

@@ -2,10 +2,9 @@
 
 
 .Features {
-    width: 80%;
     display: flex;
     flex-direction: column;
-    margin: 150px auto;
+    margin: 150px 135px;
     margin-bottom: 0;
 
     @include Bigscreen{
@@ -13,16 +12,16 @@
         margin-right: 10%;
     }
 
-    @media (max-width:996px) {
-        margin: 135px auto;
+    @media (max-width:1280px) {
+        margin: 135px 34px;
     }
 
     @include Tabscreen {
-        margin: 135px auto;
+        margin: 135px 34px;
     }
 
     @include Mobscreen {
-        margin: 110px auto;
+        margin: 110px 30px;
     }
 
     &__head{
@@ -43,11 +42,11 @@
 
     &__all-con{
         display: grid;
-        grid-template-columns: repeat(3, auto);
-        column-gap: 2%;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 30px;
 
-        @include Tabscreen{
-            column-gap: 5%;
+        @media (max-width:1280px) {
+            column-gap: 20px;
         }
 
         @include Mobscreen{
@@ -57,19 +56,11 @@
 
     &__img{
         width: 100%;
-        height: 386px;
+      
         cursor: pointer;
 
         &:hover{
             transform: scale(1.1);
-        }
-
-        @include Tabscreen{
-            height: 223px;
-        }
-
-        @include Mobscreen{
-            height: 260px;
         }
     }
 

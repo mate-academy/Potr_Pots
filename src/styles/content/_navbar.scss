@@ -2,23 +2,22 @@
 
 
 .Navigation{
-    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     column-gap: 5%;
-    margin: 31px auto;
+    margin: 31px 135px;
   
-    @media (max-width:996px) {
-      margin: 29px auto;
+    @media (max-width:1280px) {
+      margin: 29px 34px;
     }
 
     @include Tabscreen{
-      margin: 29px auto;
+      margin: 29px 34px;
     }
 
     @include Mobscreen{
-      margin: 15px auto;
+      margin: 15px 30px;
     }
   
     &__title {
@@ -27,6 +26,11 @@
       font-weight: 400;
       letter-spacing: 0.06em;
       font-size: 36px;
+      cursor: pointer;
+
+      &:hover{
+        transform: scale(1.1);
+      }
     }
   
     &__Link-con {
@@ -47,6 +51,12 @@
       font-family: $manrope-family;
       font-weight: 400;
       font-size: 16px;
+      cursor: pointer;
+
+      &:hover{
+        color: $menu-bg;
+        transform: scale(1.1);
+      }
     }
   
     &__bar{
@@ -62,6 +72,10 @@
     }
   
     &__bag{
+      &:hover{
+        transform: scale(1.1);
+      }
+      
       @include Tabscreen{
         display: none;
       }

@@ -2,10 +2,13 @@
 
 .Flatpack{
     display: grid;
-    width: 80%;
     grid-template-columns: repeat(2 , auto);
     column-gap: 5%;
-    margin: 96px auto;
+    margin: 96px 135px;
+
+    @media (max-width:1280px) {
+        margin: 96px 34px;
+    }
 
     @include Mobscreen{
         display: flex;
@@ -26,13 +29,15 @@
         margin-top: 196px;
         flex-direction: column;
 
-        @media (max-width:996px) {
+        @media (max-width:1280px) {
             margin-top: 0;
+            
         }
     }
 
     &__test{
         display: flex;
+        margin-left: 10px;
     }
     &__test-2{
         display: flex;
@@ -127,6 +132,12 @@
         border: 1px solid $menu-bg;
         height: 48px;
         align-items: center;
+
+        &:hover{
+            background: #ffe339;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
 
         @include Mobscreen{
             background: #ffe339;
