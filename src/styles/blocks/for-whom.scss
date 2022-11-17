@@ -4,7 +4,6 @@
     grid-template-columns: repeat(12, 1fr);
     column-gap: 30px;
     grid-template-rows: repeat(3, auto);
-    //   grid-template-rows: repeat(10, 168px);
   }
 
   &__title {
@@ -23,20 +22,59 @@
     }
 
     @include onDesktop {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+
       margin-bottom: 34px;
     }
   }
 
   &__section {
+    margin-bottom: 70px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+      margin-bottom: 120px;
     }
-  }
 
-  &__section:not(:last-child) {
-    margin-bottom: 70px;
+    @include onDesktop {
+      &--1 {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 30px;
+
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+
+        margin-bottom: 80px;
+      }
+
+      &--2 {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+        grid-column: 2 / 6;
+        grid-row: 3 / -1;
+
+        margin-bottom: 0;
+      }
+
+      &--3 {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+
+        grid-column: 8 / 13;
+        grid-row: 3 / -1;
+      }
+    }
   }
 
   &__container {
@@ -47,8 +85,16 @@
       max-width: 80%;
     }
 
+    @include onDesktop {
+      max-width: fit-content;
+    }
+
     &--1 {
       grid-column: 1 / 2;
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+      }
     }
 
     &--2 {
@@ -64,6 +110,11 @@
   &__content {
     &--1 {
       grid-column: 2 / -1;
+
+      @include onDesktop {
+        grid-column: 8 / -2;
+        align-self: center;
+      }
     }
 
     &--2 {
@@ -74,6 +125,11 @@
 
     &--3 {
       grid-column: 2 / -1;
+
+      @include onDesktop {
+        align-self: flex-end;
+        width: 80%;
+      }
     }
   }
 
@@ -90,21 +146,42 @@
         line-height: 29px;
         letter-spacing: 0.15em;
         color: #000;
+
+        @include onDesktop {
+          margin-right: 30px;
+        }
       }
       &--1 {
         top: -25px;
         left: -20px;
+
+        @include onDesktop {
+          left: -40px;
+        }
       }
 
       &--2 {
         top: -30px;
         left: 75%;
+
+        @include onDesktop {
+          left: -10%;
+        }
       }
 
       &--3 {
         top: -16px;
         left: -15px;
+
+        @include onDesktop {
+          left: -135px;
+        }
       }
+    }
+
+    @include onDesktop {
+      top: 0;
+      margin-bottom: 40px;
     }
   }
 
@@ -124,39 +201,28 @@
     color: #000;
     margin-bottom: 20px;
 
-    &::before {
-      content: "";
-      display: block;
-      padding: 20px 25px 0;
-      line-height: 30px;
-      margin-bottom: 30px;
-      background-image: url(../images/icon/slash.svg);
-      background-size: contain;
-      background-position: 0;
-      background-repeat: no-repeat;
-    }
+    //  /1 /2 /3
+    @for $index from 1 through 3 {
+      &--#{$index}::before {
+        content: "#{$index}";
+        display: block;
+        padding: 20px 25px 0;
+        line-height: 30px;
+        margin-bottom: 30px;
+        background-image: url(../images/icon/slash.svg);
+        background-size: contain;
+        background-position: 0;
+        background-repeat: no-repeat;
 
-    &--1::before {
-      content: "1";
+        @include onTablet {
+          display: block;
+          position: absolute;
+          transform: translateX(-85%);
 
-      @include onTablet {
-        display: inline-block;
-        position: absolute;
-        transform: translateX(-85%);
-      }
-    }
-
-    &--2::before {
-      content: "2";
-    }
-
-    &--3::before {
-      content: "3";
-
-      @include onTablet {
-        display: inline-block;
-        position: absolute;
-        transform: translateX(-85%);
+          @include onDesktop {
+            transform: translateX(-135%);
+          }
+        }
       }
     }
 
@@ -172,6 +238,18 @@
         background-repeat: no-repeat;
         transform: translate(-50%, 20%);
       }
+    }
+
+    &--2::before {
+      @include onTablet {
+        position: static;
+        transform: translateX(0);
+        margin-bottom: 20px;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 10px;
     }
   }
 
@@ -202,6 +280,18 @@
     @include onTablet {
       bottom: -12%;
       right: 8px;
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        bottom: -142%;
+        right: auto;
+        left: 5%;
+        transform: rotate(270deg);
+      }
     }
   }
 }
