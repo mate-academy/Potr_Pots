@@ -62,17 +62,8 @@
   }
 
   &__background {
+    
     @include onTablet {
-      // position: absolute;
-      // z-index: -1;
-      // background-image: url(../images/photo/header_background.svg);
-      // background-size: contain;
-      // background-position: center;
-      // background-repeat: no-repeat;
-      // width: 1121px;
-      // height: 466px;
-      // top: -10%;
-      // left: -10%;
       position: absolute;
       left: -50%;
       right: 17%;
@@ -84,10 +75,6 @@
         transparent 0,
         #ffec7a 100%
       );
-    }
-
-    @include onDesktop {
-      // background-image: url(../images/photo/header_background_1.svg);
     }
   }
 
@@ -131,13 +118,10 @@
   }
 
   &__title {
-    font-family: $font-secondary;
+    @extend %Bebas-transparent;
     font-size: 36px;
     line-height: 43px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 0.6px $blue;
+
     margin-bottom: 30px;
 
     &--blue {

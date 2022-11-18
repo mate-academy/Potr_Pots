@@ -10,8 +10,17 @@
   }
 }
 
-// @mixin onMobile {
-//   @media (max-width: 480px) {
-//     @content;
-//   }
-// }
+@mixin photo-container ($size) {
+  position: relative;
+
+  box-sizing: border-box;
+  width: 100%;
+  max-height: $size;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
