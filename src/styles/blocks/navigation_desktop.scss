@@ -35,5 +35,31 @@
     text-decoration: none;
 
     padding: 24px 0;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $turquoiseMain;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 30%;
+        right: 0;
+        width: 100%;
+        border-bottom: 1.5px solid $turquoiseMain;
+        animation: onHover 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes onHover {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
   }
 }

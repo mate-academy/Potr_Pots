@@ -117,8 +117,7 @@ form.addEventListener('submit', e => {
       el.value = '';
     });
 
-    window.location.hash = 'message-us';
-    window.location.reload();
+    window.scrollTo(window.top);
   }
 });
 /* form behaviour end */
