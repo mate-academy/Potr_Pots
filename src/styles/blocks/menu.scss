@@ -28,11 +28,29 @@
     padding-bottom: 8px;
     border-bottom: 1px solid transparent;
 
-    transition: border-color 0.3s;
+    transition: border-color 0.3s ease-out;
     color: $greyLight;
 
     &:hover {
       border-color: $greyLight;
+    }
+
+    &--basket {
+      position: relative;
+      &::after {
+        position: absolute;
+        top: 0;
+        right: -15px;
+        width: 14px;
+        height: 14px;
+        font-size: 9px;
+        line-height: 14px;
+        text-align: center;
+        content: "0";
+        display: block;
+        background-color: $red;
+        border-radius: 50%;
+      }
     }
   }
 }

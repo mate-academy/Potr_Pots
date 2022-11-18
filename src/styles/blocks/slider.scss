@@ -7,8 +7,9 @@
   }
 
   @include onTabletAndOnDesktop {
-    height: 74vh;
     position: relative;
+    height: 74vh;
+    padding-top: 10vh;
   }
 
   &__item {
@@ -22,26 +23,26 @@
       position: absolute;
 
       &--1 {
-        bottom: 15%;
+        bottom: 7%;
         left: 10%;
       }
       &--2 {
-        bottom: 40%;
+        bottom: 30%;
         left: 30%;
       }
       &--3 {
-        bottom: 5%;
+        bottom: 0;
         left: 50%;
         & .slider__description {
           transform: translate(-100%,45%);
         }
       }
       &--4 {
-        bottom: 25%;
+        bottom: 17%;
         left: 60%;
       }
       &--5 {
-        bottom: 50%;
+        bottom: 40%;
         left: 80%;
       }
     }
@@ -59,6 +60,7 @@
       }
     }
   }
+
   &__item--active {
     display: block;
   }
@@ -103,7 +105,7 @@
     text-align: center;
     line-height: 51px;
     font-size: 30px;
-
+    
     @include onTabletAndOnDesktop {
       position: relative;
       display: block;
@@ -112,20 +114,16 @@
         position: absolute;
         content: "";
         display: block;
-        width: 1px;
-        height: 12px;
-        background-color: $greyLight;
-      }
-      &::after {
-        top: calc(50% - 6px);
-        left: 49%;
-      }
-
-      &::before {
         width: 12px;
         height: 1px;
+        background-color: $greyLight;
         top: 49%;
         left: calc(50% - 6px);
+      }
+      &::after {
+        transform-origin: center;
+        transform: rotate(90deg);
+        transition: transform 0.3s ease-in-out;
       }
     }
 
@@ -134,10 +132,9 @@
       opacity: 0.65;
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-      transition: width 0.3s ease;
 
       &.slider__spoiler::after {
-        width: 0;
+        transform: rotate(0deg);
       }
     }
   }
