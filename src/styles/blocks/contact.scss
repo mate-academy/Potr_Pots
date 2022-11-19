@@ -1,3 +1,102 @@
 .contact {
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+
+
+  background-image: url(../images/Rectangle.svg);
+  background-size: cover;
+
+  padding-top: 38px;
+
+  @include onTablet {
+    flex-direction: row;
+  }
+
+  @include onDesktop {
+    position: relative;
+    background-image: none;
+  }
+
+  &__bg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    display: none;
+    @include image(url(../images/Rectangle.svg), 1390px, 567px);
+    background-position: top;
+
+    @include onDesktop {
+      height: 900px;
+      display: block;
+    }
+  }
+
+  &__seperator {
+    width: 1px;
+    height: 140px;
+
+    @include onTablet {
+      height: 600px;
+    }
+
+    @include onDesktop {
+      height: 740px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  &__title {
+    @extend %h2;
+    margin: 0;
+  }
+
+  &__text {
+    @extend %str3;
+    color: #000;
+
+    margin: 0 0 25px;
+  }
+
+  &__title-2 {
+    @extend %str2;
+    margin: 0 0 40px;
+  }
+
+  &__title-3 {
+    @extend %str2;
+    text-decoration: none;
+    color: #0006;
+  }
+
+  &__key {
+    margin: 0 0 5px;
+  }
+
+  &__input {
+    border-color: #0005;
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    margin: 40px 0 70px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include onTablet {
+      margin: 70px 0 0 30px;
+      width: 40%;
+    }
+  }
 }

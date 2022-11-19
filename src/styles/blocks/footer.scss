@@ -1,0 +1,78 @@
+.footer {
+
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+    padding: 34px;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    margin: -17vw auto 40px;
+
+    @include onTablet {
+      margin-top: 10px;
+    }
+  }
+
+  &__img-tw {
+    @include image(url(../images/desktop/tw.svg), 20px, 20px);
+  }
+
+  &__img-ir {
+    @include image(url(../images/desktop/ir.svg), 20px, 20px);
+  }
+
+  &__img-fb {
+    @include image(url(../images/desktop/fb.svg), 20px, 20px);
+  }
+
+  &__title {
+    @extend %h2;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__title-2 {
+    display: none;
+    margin: 0;
+    @extend %h3;
+    text-align: left;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__text {
+    @extend %str3;
+    margin: 0;
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__copyright {
+    @extend %str3;
+    text-align: center;
+    margin: 0 0 30px;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__tile {
+    display: block;
+    width: 230px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 170px;
+    }
+
+  }
+}

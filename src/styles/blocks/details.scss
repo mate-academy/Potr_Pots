@@ -85,7 +85,7 @@
     flex-wrap: wrap;
 
     @include onDesktop {
-      max-height: 200px;
+      max-height: 220px;
       margin-bottom: 60px;
     }
   }
@@ -95,19 +95,29 @@
 
     @include onDesktop {
       align-self: flex-start;
+      margin: 0 0 60px;
     }
   }
 
   &__alert {
-    margin: 0 0 10;
+    margin: 0 0 10px;
     @extend %h2;
     color: $red;
+
+    @include onDesktop {
+      transform: translateX(70px);
+    }
   }
 
   &__alert-2 {
-    margin: 0 0 110px;
+    max-width: 90%;
+    margin: 0;
     @extend %h3;
     color: $turquoise;
+
+    @include onDesktop {
+      transform: translateX(70px);
+    }
   }
 
   &__container {
@@ -159,15 +169,16 @@
   }
 
   &__actions {
-    margin-left: 20px;
     @include onTablet {
       max-width: 40%;
-    }
-    @include onDesktop {
-      max-width: 100%;
+      padding: 50px 0 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    @include onDesktop {
+      max-width: 100%;
+      padding: 0;
     }
   }
 
@@ -179,10 +190,12 @@
   &__second {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
 
     @include onDesktop {
-      flex-direction: column;
       align-items: flex-start;
+      margin-left: 20px;
     }
   }
 }

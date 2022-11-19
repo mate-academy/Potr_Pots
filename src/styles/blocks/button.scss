@@ -6,6 +6,8 @@
   height: 48px;
   width: 100%;
 
+  cursor: pointer;
+
   @extend %btn-font;
   text-decoration: none;
 
@@ -32,72 +34,22 @@
   }
 
   &--primary {
-    color: $white;
-    background-color: $turquoise;
-    border: 1px solid $turquoise;
-
-    &:after {
-      background-image: url(../images/vectors/arrow-white.svg);
-    }
-
-    &:hover {
-      color: $white;
-      background-color: $light-turquoise;
-      border: 1px solid $light-turquoise;
-    }
+    @extend %btn--primary;
   }
 
   &--primary-2 {
-    color: $black;
-    background-color: $yellow;
-    border: 1px solid $yellow;
-
-    &:after {
-      background-image: url(../images/vectors/arrow-black.svg);
-    }
-
-    &:hover {
-      color: $light-black;
-      background-color: $light-yellow;
-      border: 1px solid $light-yellow;
-
-      &:after {
-        background-image: url(../images/vectors/arrow-light-black.svg);
-      }
-    }
+    @extend %btn--primary-2;
   }
 
   &--secondary {
-    color: $black;
-    background-color: transparent;
-    border: 1px solid $turquoise;
-
-    &:after {
-      background-image: url(../images/vectors/arrow-black.svg);
-    }
-
-    &:hover {
-      color: $white;
-      background-color: $turquoise;
-
-      &:after {
-        background-image: url(../images/vectors/arrow-white.svg);
-      }
-    }
+    @extend %btn--secondary;
   }
 
   &--secondary-2 {
-    color: $black;
-    background-color: transparent;
-    border: 1px solid $black;
+    @extend %btn--secondary-2;
+  }
 
-    &:after {
-      background-image: url(../images/vectors/arrow-black.svg);
-    }
-
-    &:hover {
-      color: $black;
-      background-color: $white;
-    }
+  &--theone {
+    @extend %theweirderbutton;
   }
 }
