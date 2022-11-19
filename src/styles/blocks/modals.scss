@@ -6,6 +6,7 @@
   &__text {
     @include onTablet {
       opacity: 0;
+      z-index: -1;
       transition: opacity $transition-time;
     }
   }
@@ -14,8 +15,8 @@
 
     @include onTablet {
       position: absolute;
-      display: block;
-      z-index: 1;
+      max-height: unset;
+      overflow: visible;
       padding: 35px;
 
       &-1 {
@@ -51,7 +52,7 @@
       }
 
       &-5 {
-        right: 55vw;
+        right: 62vw;
         bottom: 22vw;
         height: 100px;
         width: 210px;

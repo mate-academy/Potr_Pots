@@ -31,6 +31,10 @@
 
     transition: transform 0.3s;
 
+    &:target {
+      transform: translateX(1%);
+    }
+
     @include onTablet {
       padding: 0 40px;
     }
@@ -47,15 +51,6 @@
   }
 
   &__toggler-checkbox {
-    position: absolute;
-    left: -9999px;
-  }
-
-  &__toggler-checkbox:checked ~ &__nav {
-    transform: translateX(1%);
-  }
-
-  &__toggler-label {
     background-image: url(../images/vectors/menu_icon.svg);
     background-position: center;
     background-size: cover;

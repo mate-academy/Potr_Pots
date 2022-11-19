@@ -13,19 +13,30 @@
     mix-blend-mode: normal;
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(17px);
+
+    opacity: 0;
+
+    transition: opacity $transition-time;
   }
 
   &__item {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height $transition-time;
   }
 
   /* Default limit is 5 */
   @for $i from 1 through 5 {
+
     &--selected-#{$i}>&__item:nth-child(#{$i}) {
-      display: block;
+      max-height: 500px;
     }
     &--selected-#{$i} &--#{$i} {
       background-color: rgba(0, 0, 0, 0.3);
+    }
+    &--selected-#{$i}>&__item:nth-child(#{$i}) &__effects {
+      opacity: 1;
     }
   }
 
@@ -56,7 +67,7 @@
     transform: rotate(45deg);
 
     & + & {
-      margin-left: 7px;
+      margin-left: 15px;
     }
   }
 }
