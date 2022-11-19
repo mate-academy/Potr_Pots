@@ -1,0 +1,30 @@
+.product {
+  &__price {
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+      grid-row: 5 / 6;
+    }
+  }
+  &__info {
+    grid-column: 3 / 4;
+    grid-row: 5 / 6;
+    @include onDesktop {
+      grid-column: 5 / 7;
+      grid-row: 6 / 7;
+      transform: translateY(-25px);
+      max-width: 140px;
+    }
+  }
+  &__action {
+    grid-column: 2 / 4;
+    grid-row: 6 / 7;
+    @include onDesktop {
+      grid-column: 4 / 7;
+      grid-row: 7 / 8;
+      transform: translateY(-25px);
+    }
+  }
+}

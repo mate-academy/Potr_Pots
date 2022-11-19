@@ -1,0 +1,109 @@
+.potrteam {
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+
+  &__h1 {
+    margin: 0 0 25px;
+    @extend %h1;
+    @extend %container;
+
+    @include onTablet {
+      margin: 0 0 26px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 27px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+    margin-top: 606px;
+
+    @include image--via-padding(url(../images/Rectangle.svg), 100%);
+
+    @include onTablet {
+      right: 67%;
+      margin-top: 168px;
+      @include image--via-padding(url(../images/Rectangle.svg), 2721px);
+    }
+
+    @include onDesktop {
+      right: calc(70vw - (50vw - 585px));
+      padding: 0;
+      @include image(url(../images/Rectangle.svg), 30vw, 21vw);
+    }
+  }
+
+  &__bg--text {
+    display: none;
+    margin-bottom: -60px;
+
+    @extend %giant;
+    @include str--outlined(transparent);
+
+    @include onTablet {
+      display: block;
+    }
+
+    &-nd {
+      position: absolute;
+      top: 49vw;
+      right: 14px;
+      transform: translateY(32%);
+
+      font-size: 220px;
+      line-height: 264px;
+
+      &-fitter {
+        letter-spacing: 0;
+      }
+
+      @include onDesktop {
+        top: unset;
+        right: calc(585px - 50vw);
+        transform: translate(-30px, 30px);
+        font-size: 288px;
+        line-height: 346px;
+      }
+    }
+  }
+
+  &__text {
+    @extend %str3;
+    @extend %container;
+
+    @include onTablet {
+      margin: 0;
+      width: 40%;
+    }
+
+    @include onDesktop {
+      max-width: 336px;
+    }
+  }
+
+  &__image {
+
+    @include image--via-padding(url(../images/mobile/martin-and-andy.jpg), 100%, contain);
+
+    @include onTablet {
+      position: absolute;
+      top: 0;
+      right: 34px;
+      z-index: -1;
+      @include image--via-padding(url(../images/desktop/martin-and-andy.jpg), 44%, contain);
+    }
+
+    @include onDesktop {
+      position: absolute;
+      right: unset;
+      left: 37%;
+      top: 213px;
+      padding: 0;
+      @include image(url(../images/desktop/martin-and-andy.jpg), 677px, 508px);
+    }
+  }
+}

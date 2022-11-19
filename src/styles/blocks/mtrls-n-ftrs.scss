@@ -1,0 +1,89 @@
+.mtrls-n-ftrs {
+  position: relative;
+  @extend %container;
+
+  &__seperator {
+    width: 1px;
+    height: 130px;
+
+    @include onDesktop {
+      height: 227px;
+    }
+  }
+
+  &__text-zone {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: 290px;
+      right: 34px;
+      display: block;
+      width: 340px;
+    }
+
+    @include onDesktop {
+      top: 360px;
+      width: 470px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    color: $turquoise;
+    margin-bottom: 200px;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__subtitle {
+    @extend %str1;
+    font-size: 20px;
+  }
+
+  &__text {
+    @extend %str3;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__bg {
+    margin-top: -172px;
+    margin-left: -30px;
+    @include image--via-padding(url(../images/mobile/large-pots.jpg), 100vw);
+
+    @include onTablet {
+      margin-left: -34px;
+      @include image--via-padding(url(../images/desktop/large-pots.jpg), 99.3vw, contain);
+    }
+
+    @include onDesktop {
+      margin-left: calc(585px - 50vw);
+    }
+  }
+
+  &__slider {
+    transform: scale(1.1);
+    min-height: 220px;
+    margin-top: -60px;
+
+    @include onTablet {
+      position: absolute;
+      right: 36px;
+      bottom: 72px;
+      z-index: 1;
+      transform: none;
+      height: 237px;
+      width: 303px;
+    }
+  }
+}

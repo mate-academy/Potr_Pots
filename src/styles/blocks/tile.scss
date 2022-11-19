@@ -1,0 +1,110 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include onTablet {
+    flex-direction: row;
+  }
+
+  @include onDesktop {
+    justify-content: space-between;
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  &:nth-child(2) &__text {
+    @include onDesktop {
+      margin-left: 70px;
+    }
+  }
+
+  &__grouper & {
+    @include onDesktop {
+      max-width: 40%;
+      flex-direction: column;
+    }
+  }
+
+  &__grouper {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    display: none;
+    @include onTablet {
+      display: block;
+    }
+    flex-shrink: 0;
+  }
+
+  &__grouper &:nth-child(1) &__image {
+    @include onDesktop {
+      align-self: flex-start;
+      margin-bottom: 80px;
+    }
+  }
+
+  &__image-1 {
+    @include image(url(../images/tablet/pot2.jpg), 284px, 284px);
+
+    @include onDesktop {
+      @include image(url(../images/desktop/pot2.jpg), 500px, 500px);
+    }
+  }
+  &__image-2 {
+    @include image(url(../images/tablet/pot3.jpg), 300px, 417px);
+
+    @include onDesktop {
+      @include image(url(../images/desktop/pot3.jpg), 300px, 417px);
+    }
+  }
+  &__image-3 {
+    @include image(url(../images/tablet/quarter-watch.jpg), 284px, 405px);
+
+    @include onDesktop {
+      @include image(url(../images/desktop/quarter-watch.jpg), 470px, 670px);
+    }
+  }
+
+  & + & {
+    @include onTablet {
+      margin-top: 110px;
+    }
+  }
+
+  &__sticker {
+    display: none;
+    align-items: center;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      transform: translateX(-10%);
+    }
+  }
+
+  &__sticker-2 {
+    float: right;
+    margin: 0 57px;
+    transform: translateY(-64px);
+
+    @include onDesktop {
+      transform: translate(-320%, -58px);
+    }
+  }
+  &__sticker-3 {
+    transform: translateY(-10px);
+    @include onDesktop {
+      transform: translate(-30%, -30px);
+    }
+  }
+}

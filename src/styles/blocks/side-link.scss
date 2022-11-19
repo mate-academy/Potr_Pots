@@ -1,0 +1,54 @@
+.side-link {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  color: $turquoise;
+  @extend %str5;
+  text-decoration: none;
+
+  transform: translate(44%, -100%) rotate(90deg) translateX(-45%);
+
+  @include onTablet {
+    right: unset;
+    left: 0;
+    transform: translate(-28%, 0) rotate(90deg) translate(200%, 0);
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    margin-left: 10px;
+
+    @include image(url(../images/vectors/arrow-turquoise.svg), 44px, 8px);
+  }
+
+  &__landing {
+    position: absolute;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+
+    color: $grey-3;
+    transform: translate(40%, -100%) rotate(90deg) translateX(-97%);
+
+    @include onTablet {
+      transform: translate(40%, 0) rotate(90deg) translateX(-66%);
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      margin: 0 10px 0 0;
+
+      @include image(url(../images/vectors/line-grey-3.svg), 65px, 2px);
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+}

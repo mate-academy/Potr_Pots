@@ -3,7 +3,48 @@
 }
 
 .h2 {
+  margin: 0 0 20px;
   @extend %h2;
+}
+
+.h2--main {
+  margin: 0 0 25px;
+  color: $grey-1;
+  @extend %h2;
+}
+
+.h2--count {
+  display: flex;
+  align-items: flex-start;
+  align-self: flex-start;
+  margin: 0 0 30px;
+
+  @include onTablet {
+    margin: 0 15px 30px;
+  }
+
+  @extend %h2;
+  &::before {
+    content: "";
+    @include image(url(../images/vectors/slash.svg), 18px, 42px);
+    display: block;
+  }
+
+  @include onDesktop {
+    transform: translate(100%, 300%);
+  }
+
+  &-2 {
+    @include onDesktop {
+      transform: translate(-14px, 16px);
+    }
+  }
+
+  &-3 {
+    @include onDesktop {
+      transform: translate(-14px, 220%);
+    }
+  }
 }
 
 .h3 {
@@ -22,12 +63,32 @@
   @extend %str1--secondary;
 }
 
+.price-tag {
+  @extend %str1--tertiary;
+  margin: 0;
+}
+
 .str2 {
   @extend %str2;
 }
 
 .str3 {
+  margin: 0 0 70px;
   @extend %str3;
+}
+
+.str3--adj {
+  margin: 0 0 10px 10px;
+
+  @include onDesktop {
+    margin: 0 0 10px 30px;
+  }
+  @extend %str3;
+}
+
+.price-info {
+  @extend %str4--normal;
+  margin: 0 0 20px;
 }
 
 .str4 {
@@ -36,4 +97,9 @@
 
 .str5 {
   @extend %str5;
+}
+
+.outlined {
+  @include str--outlined(transparent);
+  @extend %h1;
 }

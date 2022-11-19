@@ -20,7 +20,32 @@
   background-repeat: no-repeat;
 }
 
+@mixin image--via-padding($image, $width, $bg-sz: cover) {
+  width: $width;
+  padding-bottom: 100%;
+  background-image: $image;
+  background-position: center;
+  background-size: $bg-sz;
+  background-repeat: no-repeat;
+}
+
 @mixin str--outlined($bg-color) {
   color: $bg-color;
   -webkit-text-stroke: 0.7px $turquoise;
+}
+
+@mixin container {
+  min-width: 260px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @include onTablet {
+    max-width: 700px;
+    padding: 0 34px;
+  }
+
+  @include onDesktop {
+    max-width: 1170px;
+    padding: 0 100px;
+  }
 }

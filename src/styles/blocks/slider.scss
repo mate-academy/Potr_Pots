@@ -1,0 +1,62 @@
+.slider {
+  position: relative;
+  padding: 28px 45px 37px;
+
+  &__effects {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+  }
+
+  &__item {
+    display: none;
+  }
+
+  /* Default limit is 5 */
+  @for $i from 1 through 5 {
+    &--selected-#{$i}>&__item:nth-child(#{$i}) {
+      display: block;
+    }
+    &--selected-#{$i} &--#{$i} {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    @extend %str3;
+    color: $white;
+    font-weight: 100;
+  }
+
+  &__pages {
+    position: absolute;
+    bottom: 37px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    width: fit-content;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__page {
+    width: 7px;
+    height: 7px;
+    border: 1px solid $white;
+    transform: rotate(45deg);
+
+    & + & {
+      margin-left: 7px;
+    }
+  }
+}

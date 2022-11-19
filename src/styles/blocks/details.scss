@@ -1,0 +1,188 @@
+.details {
+
+  &__seperator {
+    width: 1px;
+    height: 110px;
+  }
+
+  &__title {
+    @extend %h2;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    grid-area: c;
+    margin-left: -30px;
+    margin-bottom: 30px;
+    @include image--via-padding(url(../images/mobile/pots-design.jpg), 100vw);
+
+    @include onTablet {
+      @include image(url(../images/tablet/pots-design.jpg), 416px, 337px);
+      padding: 0;
+    }
+
+    @include onDesktop {
+      @include image(url(../images/desktop/pots-design.jpg), 528px, 427px);
+    }
+  }
+
+  &__subtitle {
+    @extend %h4;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    position: relative;
+    @extend %str3;
+    margin-bottom: 30px;
+
+    &--grey {
+      margin: 0 0 40px;
+      color: $grey-3;
+
+      @include onDesktop {
+        max-width: 300px;
+        margin: 0 0 20px;
+      }
+    }
+
+    &--first {
+      grid-area: a;
+    }
+  }
+
+  &--bf-ast {
+    grid-area: e;
+    margin-bottom: 110px;
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -10px;
+    }
+  }
+
+  &__point {
+    position: relative;
+    @extend %str1--secondary;
+    margin: 0 0 5px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -18px;
+      width: 7px;
+      height: 7px;
+      background-color: $grey-4;
+      border: 1px solid $grey-4;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__points {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include onDesktop {
+      max-height: 200px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__button {
+    margin: 0 0 40px;
+
+    @include onDesktop {
+      align-self: flex-start;
+    }
+  }
+
+  &__alert {
+    margin: 0 0 10;
+    @extend %h2;
+    color: $red;
+  }
+
+  &__alert-2 {
+    margin: 0 0 110px;
+    @extend %h3;
+    color: $turquoise;
+  }
+
+  &__container {
+    @include onTablet {
+      display: grid;
+      gap: 20px;
+    }
+
+    grid-template-areas: "a a a a a a"
+      "b b b . c c"
+      "b b b . c c"
+      "d d d . c c"
+      "d d d . c c"
+      ". . . . c c"
+      "e e e e e e";
+
+    @include onDesktop {
+      gap: 40px;
+      grid-template-areas: "a . b . c c"
+        "a . d . c c"
+        "e e e . c c"
+        "e e e . c c";
+    }
+  }
+
+  &__text-zone {
+    @include onDesktop {
+      border-left: 1px solid $grey-5;
+      padding-left: 30px;
+    }
+  }
+
+  &__text-zone-1 {
+    grid-area: b;
+
+  }
+
+  &__text-zone-2 {
+    grid-area: d;
+  }
+
+  &__frame-o-six {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      @include image(url(../images/desktop/frame-o-six-photoes.jpg), 583px, 792px);
+    }
+  }
+
+  &__actions {
+    margin-left: 20px;
+    @include onTablet {
+      max-width: 40%;
+    }
+    @include onDesktop {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__first-flex {
+    display: flex;
+    align-items: center;
+  }
+
+  &__second {
+    display: flex;
+    align-items: center;
+
+    @include onDesktop {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}

@@ -4,6 +4,14 @@
   align-items: center;
   @extend %container;
 
+  @include onTablet {
+    padding-bottom: 30px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 70px;
+  }
+
   &__logo {
     @extend %h2;
     margin: 15px 0;
@@ -19,16 +27,22 @@
     width: 72vw;
     padding: 0 30px;
     background-color: $turquoise;
+    z-index: 999;
 
     transition: transform 0.3s;
+
+    @include onTablet {
+      padding: 0 40px;
+    }
 
     @include onDesktop {
       position: unset;
       width: unset;
       height: unset;
-      background-color: unset;
       display: block;
       padding: unset;
+      transform: unset;
+      background-color: unset;
     }
   }
 
