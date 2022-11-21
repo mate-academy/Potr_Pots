@@ -37,9 +37,9 @@
     @include onMobile {
       margin: 0 0 10px;
     }
-  }
 
-  transition: all 0.3s;
+    transition: all 0.3s;
+  }
 
   &:hover {
     cursor: pointer;
@@ -50,6 +50,16 @@
 
     .arrow::after {
       content: url(../images/Arrow_yellow.svg);
+      animation: arrow 0.3s ease-in-out;
     }
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
   }
 }
