@@ -1,0 +1,119 @@
+.port-team {
+  position: relative;
+  // overflow: hidden;
+
+  &__background {
+    position: absolute;
+    top: 67%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -2;
+    background: conic-gradient(
+      from 73deg at 0 100%,
+      transparent 0,
+      $yellow-light 100%
+    );
+
+    @include onTablet {
+      top: 31%;
+      bottom: 28%;
+      right: 68%;
+      background: conic-gradient(
+        from 75deg at 0 100%,
+        transparent 0,
+        $yellow-light 100%
+      );
+    }
+  }
+
+  &__partner {
+    display: none;
+    @extend %Bebas-transparent;
+    font-size: 220px;
+    line-height: 264px;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &--martin {
+      top: 17%;
+      left: -5%;
+    }
+
+    &--andy {
+      top: 83%;
+      right: -5%;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+      grid-template-rows: 1fr 155px 155px;
+    }
+  }
+
+  &__title {
+    grid-area: 1 / 1 / 2 / -1;
+
+    font-family: $font-secondary;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $gray-dark;
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 177px;
+    }
+  }
+
+  &__images-container {
+    @include photo-container(240px);
+    margin: 0 auto 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    max-width: 320px;
+
+    @include onTablet {
+      position: sticky;
+      grid-area: 2 / 4 / -1 / -1;
+      max-width: 100%;
+      max-height: 255px;
+    }
+  }
+
+  &__images {
+    @extend %picture-size;
+  }
+
+  &__paragraph {
+    color: $main-color;
+    padding-bottom: 58px;
+    grid-area: 2 / 1 / -1 / 4;
+    align-self: end;
+
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__description {
+    &:not(:last-child) {
+      padding-top: 270px;
+      margin-bottom: 24px;
+
+      @include onTablet {
+        padding: 0;
+      }
+    }
+  }
+}
