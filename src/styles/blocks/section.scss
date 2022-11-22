@@ -6,6 +6,7 @@
     position: absolute;
     padding-bottom: 100%;
     margin-bottom: 25px;
+    z-index: -1;
     @include image(url(../images/desktop/pot1.jpg), 100%, auto);
 
     @include onTablet {
@@ -52,16 +53,21 @@
   }
 
   &--landing {
+
+    @include onDesktop {
+    }
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(6, 1fr);
+      padding-top: 30px;
     }
 
     @include onDesktop {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: repeat(6, 1fr);
+      padding-top: 70px;
     }
   }
 
