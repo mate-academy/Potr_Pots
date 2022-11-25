@@ -2,9 +2,8 @@
   &__block {
     @include onDesktop {
       position: relative;
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      column-gap: 30px;
+
+      @include grid-columns (12, 30px);
       grid-template-rows: repeat(3, auto);
     }
   }
@@ -40,18 +39,13 @@
     }
 
     @include onTablet {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      @include grid-columns (2, 20px);
       margin-bottom: 120px;
     }
 
     @include onDesktop {
       &--1 {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        column-gap: 30px;
-
+        @include grid-columns (12, 30px);
         grid-column: 1 / -1;
         grid-row: 2 / 3;
 

@@ -1,6 +1,5 @@
 .port-team {
   position: relative;
-  // overflow: hidden;
 
   &__background {
     position: absolute;
@@ -17,13 +16,18 @@
 
     @include onTablet {
       top: 31%;
-      bottom: 28%;
-      right: 68%;
+      bottom: 29%;
+      right: 72%;
       background: conic-gradient(
         from 75deg at 0 100%,
         transparent 0,
         $yellow-light 100%
       );
+    }
+
+    @include onDesktop {
+      top: 27%;
+      bottom: 30%;
     }
   }
 
@@ -31,31 +35,50 @@
     display: none;
     @extend %Bebas-transparent;
     font-size: 220px;
-    line-height: 264px;
+    line-height: 220px;
+    letter-spacing: 0.1em;
 
     @include onTablet {
-      display: block;
+      display: inline;
       position: absolute;
       z-index: 1;
     }
 
     &--martin {
-      top: 17%;
+      top: 21%;
       left: -5%;
     }
 
     &--andy {
-      top: 83%;
-      right: -5%;
+      top: 87%;
+      right: 0;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 288px;
+      &--martin {
+        top: 18%;
+        left: 5%;
+      }
+
+      &--andy {
+        top: 97%;
+        right: 0;
+      }
     }
   }
 
   &__content {
     @include onTablet {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      column-gap: 20px;
+      @include grid-columns(6, 20px);
       grid-template-rows: 1fr 155px 155px;
+    }
+
+    @include onDesktop {
+      @include grid-columns(12, 30px);
+      grid-template-rows: auto 1fr;
     }
   }
 
@@ -73,6 +96,10 @@
     @include onTablet {
       margin-bottom: 177px;
     }
+
+    @include onDesktop {
+      margin-bottom: 143px;
+    }
   }
 
   &__images-container {
@@ -89,6 +116,12 @@
       max-width: 100%;
       max-height: 255px;
     }
+
+    @include onDesktop {
+      grid-column: 5/-2;
+      max-height: 508px;
+      margin: 0;
+    }
   }
 
   &__images {
@@ -103,6 +136,11 @@
 
     @include onTablet {
       padding: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1/5;
+      width: 336px;
     }
   }
 
