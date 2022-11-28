@@ -55,10 +55,18 @@
     }
   }
 
-  &__image-1 {
-    @include image(url(../images/mobile/abst-pot-1.jpg), 100%, 325px);
+  &__image {
     max-width: 325px;
     margin: 0 auto;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image-1 {
+    @include image(url(../images/mobile/abst-pot-1.jpg), 100%, 325px);
     @include onTablet {
       @include image(url(../images/tablet/abst-pot-1.jpg), 220px, 220px);
     }
@@ -68,8 +76,6 @@
   }
   &__image-2 {
     @include image(url(../images/mobile/abst-pot-2.jpg), 100%, 325px);
-    max-width: 325px;
-    margin: 0 auto;
     @include onTablet {
       @include image(url(../images/tablet/abst-pot-2.jpg), 220px, 220px);
     }
@@ -79,8 +85,6 @@
   }
   &__image-3 {
     @include image(url(../images/mobile/abst-pot-3.jpg), 100%, 325px);
-    max-width: 325px;
-    margin: 0 auto;
     @include onTablet {
       @include image(url(../images/tablet/abst-pot-3.jpg), 220px, 220px);
     }

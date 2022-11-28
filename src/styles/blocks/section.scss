@@ -6,15 +6,20 @@
     position: absolute;
     padding-bottom: 100%;
     margin-bottom: 25px;
-    z-index: -1;
+    z-index: 0;
     @include image(url(../images/desktop/pot1.jpg), 100%, auto);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     @include onTablet {
       width: 306px;
       height: 306px;
       right: 40px;
       padding-bottom: 0;
-      z-index: -1;
+      z-index: 0;
     }
 
     @include onDesktop {
@@ -34,6 +39,7 @@
     margin: 0 0 30px;
     @include str--outlined(transparent);
     @extend %h2;
+    z-index: 1;
 
     @include onTablet {
       width: 70%;
@@ -53,9 +59,6 @@
   }
 
   &--landing {
-
-    @include onDesktop {
-    }
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(6, 1fr);

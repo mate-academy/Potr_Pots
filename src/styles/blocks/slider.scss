@@ -31,6 +31,10 @@
 
     &--selected-#{$i}>&__item:nth-child(#{$i}) {
       max-height: 300px;
+
+      @include onTablet {
+        max-height: unset;
+      }
     }
     &--selected-#{$i} &--#{$i} {
       background-color: rgba(0, 0, 0, 0.3);

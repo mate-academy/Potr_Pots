@@ -20,10 +20,15 @@ const moveImage = (to, action = 0) => {
 
   const To = to === -1 ? Number.parseInt(from) : to;
 
-  controls.classList.remove('modals--selected-' + from);
-  controls.classList.add('modals--selected-' + (To + action));
-  controls.classList.remove('slider--selected-' + from);
-  controls.classList.add('slider--selected-' + (To + action));
+  if (from) {
+    controls.classList.remove('modals--selected-' + from);
+    controls.classList.remove('slider--selected-' + from);
+  }
+
+  if (!from || to !== Number.parseInt(from)) {
+    controls.classList.add('slider--selected-' + (To + action));
+    controls.classList.add('modals--selected-' + (To + action));
+  }
 };
 
 for (let i = 0; i < openers.length; i++) {
