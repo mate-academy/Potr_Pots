@@ -1,4 +1,12 @@
 .footer {
+  &__about {
+    align-self: flex-end;
+  }
+
+  &__link {
+    color: #111;
+    text-decoration: none;
+  }
 
   @include onTablet {
     display: flex;
@@ -7,6 +15,7 @@
   }
 
   &__social {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin: -17vw auto 40px;
@@ -19,9 +28,11 @@
   &__img-tw {
     @include image(url(../images/desktop/tw.svg), 20px, 20px);
     transition: transform 0.3s;
+    cursor: pointer;
 
     &:hover {
       transform: scale(1.1);
+      @include image(url(../images/desktop/tw_hover.svg), 20px, 20px);
     }
   }
 
@@ -44,11 +55,12 @@
   }
 
   &__title {
+    align-self: center;
+    margin: 0;
     color: #000;
     text-decoration: none;
     @extend %h2;
     text-align: center;
-    margin: 0;
   }
 
   &__title-2 {
@@ -63,8 +75,9 @@
   }
 
   &__text {
-    @extend %str3;
+    display: block;
     margin: 0;
+    @extend %str3;
     display: none;
 
     @include onTablet {
@@ -76,14 +89,18 @@
     @extend %str3;
     text-align: center;
     margin: 0 0 30px;
+    align-self: center;
 
     @include onTablet {
       text-align: left;
+      align-self: flex-end;
     }
   }
 
   &__tile {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 230px;
     margin: 0 auto;
 

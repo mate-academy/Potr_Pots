@@ -7,17 +7,21 @@
   @extend %container;
   z-index: 9;
 
-  @include onTablet {
-    padding-bottom: 30px;
-  }
-
-  @include onDesktop {
-    padding-bottom: 70px;
+  .header__blur {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    z-index: -1;
   }
 
   &__logo {
-    @extend %h2;
     margin: 15px 0;
+    color: #111;
+    @extend %h2;
+    text-decoration: none;
 
     cursor: pointer;
   }
