@@ -1,0 +1,167 @@
+.slide {
+  height: 260px;
+  margin: 0 10px;
+  overflow: hidden;
+
+  @include onTablet {
+    height: fit-content;
+    margin: 0;
+  }
+
+  &__list {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 260px;
+    padding: 30px 40px;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+
+    @include onTablet {
+      position: absolute;
+      justify-content: center;
+      gap: 20px;
+      width: fit-content;
+      height: fit-content;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+
+      &--1 {
+        top: 80%;
+        right: 6%;
+      }
+
+      &--2 {
+        top: 70%;
+        right: 24%;
+      }
+
+      &--3 {
+        top: 80%;
+        left: 29%;
+      }
+
+      &--4 {
+        top: 61%;
+        left: 15%;
+      }
+
+      &--5 {
+        top: 83%;
+        right: 67%;
+
+        & :nth-child(3) {
+          transform: translateX(33%);
+        }
+      }
+
+      &:not(:first-of-type) {
+        flex-direction: column-reverse;
+      }
+
+      &:target &-description {
+        @include onTablet {
+          z-index: 2;
+          visibility: visible;
+        }
+      }
+
+      &:target &-link {
+        @include onTablet {
+          display: none;
+        }
+
+        &--close {
+          display: block;
+        }
+      }
+    }
+
+    &-link {
+      display: none;
+
+      @include onTablet {
+        position: relative;
+        display: block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $red;
+        z-index: 1;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 12px;
+          height: 0.1px;
+          border-top: 1px solid #f8f8f8;
+          transform: translate(-50%, -50%);
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &--close {
+          display: none;
+          background-color: rgba(36, 35, 35, 0.75);
+
+          &::after {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+
+    &-description {
+      color: $gray-light;
+
+      @include onTablet {
+        box-sizing: border-box;
+        width: 283px;
+        padding: 35px;
+        background-color: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(40px);
+        visibility: hidden;
+      }
+    }
+  }
+
+  &__pointer {
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &-item {
+      background-image: url(../images/icon/list-item.svg);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 11px;
+      height: 11px;
+
+      &:not(:last-child) {
+        margin-right: 7px;
+      }
+
+      &--active {
+        background-image: url(../images/icon/list-item--active.svg);
+      }
+    }
+
+    &-link {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+  }
+}

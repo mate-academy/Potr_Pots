@@ -10,7 +10,7 @@
   }
 }
 
-@mixin photo-container ($size) {
+@mixin photo-container($size) {
   position: relative;
 
   box-sizing: border-box;
@@ -25,8 +25,16 @@
   }
 }
 
-@mixin grid-columns ($columns, $gap) {
+@mixin grid-columns($columns, $gap) {
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
   column-gap: $gap;
+}
+
+@mixin title($font, $color, $f-s, $l-h) {
+  font-family: $font;
+  font-size: $f-s;
+  line-height: $l-h;
+  letter-spacing: 0.15em;
+  color: $color;
 }

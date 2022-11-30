@@ -1,0 +1,106 @@
+.materials {
+  background-image: url(../images/photo/materials.png);
+  background-size: contain;
+  background-position: 50% 39%;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    background-position: bottom;
+
+    padding-bottom: 108%;
+  }
+
+  &__content {
+    @include onTablet {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &__title {
+    @include title($font-secondary, $blue, 58px, 70px);
+    margin-bottom: 100px;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__images-container {
+    @include photo-container(240px);
+    position: absolute;
+    top: 130px;
+    left: 0;
+    right: 0;
+    max-width: 320px;
+    z-index: -2;
+    margin: 0 auto;
+
+    @include onTablet {
+      position: relative;
+      max-width: 768px;
+      max-height: 576px;
+      top: 0;
+    }
+  }
+
+  &__images {
+    @extend %picture-size;
+  }
+
+  &__block {
+    display: none;
+    width: 340px;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: 140px;
+      right: 34px;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 30px;
+      color: $main-color;
+      margin-bottom: 10px;
+    }
+
+    &-description {
+      color: $main-color;
+    }
+
+    &-strong {
+      @include onDesktop {
+        font-weight: 400;
+      }
+    }
+
+    &-more {
+      cursor: pointer;
+
+      &-hidden {
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity 0.3s;
+      }
+
+      &:hover &-hidden {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    // &-more-hidden {
+    //   opacity: 0;
+    //   pointer-events: none;
+
+    //   transition: opacity 0.3s;
+    // }
+  }
+}
