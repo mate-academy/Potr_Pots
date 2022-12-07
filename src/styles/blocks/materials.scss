@@ -6,8 +6,13 @@
 
   @include onTablet {
     background-position: bottom;
+    position: relative;
 
     padding-bottom: 108%;
+  }
+
+  @include onDesktop {
+    padding-bottom: 93%;
   }
 
   &__content {
@@ -26,6 +31,12 @@
       font-size: 80px;
       line-height: 96px;
       letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 139px;
+      line-height: 167px;
+      transform: translateY(30%);
     }
   }
 
@@ -62,6 +73,11 @@
       right: 34px;
     }
 
+    @include onDesktop {
+      width: 470px;
+      transform: translate(-23%, 64%);
+    }
+
     &-title {
       font-weight: 700;
       font-size: 20px;
@@ -83,11 +99,22 @@
     &-more {
       cursor: pointer;
 
+      &-pointer {
+        @include onDesktop {
+          display: none;
+        }
+      }
+
       &-hidden {
         opacity: 0;
         pointer-events: none;
 
         transition: opacity 0.3s;
+
+        @include onDesktop {
+          opacity: 1;
+          cursor: auto;
+        }
       }
 
       &:hover &-hidden {
@@ -95,12 +122,27 @@
         pointer-events: all;
       }
     }
+  }
 
-    // &-more-hidden {
-    //   opacity: 0;
-    //   pointer-events: none;
+  &__link {
+    display: none;
 
-    //   transition: opacity 0.3s;
-    // }
+    @include onTablet {
+      display: block;
+      top: 18%;
+      right: 8px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--2 {
+      @include onTablet {
+        top: 42%;
+        right: auto;
+        left: -5%;
+      }
+    }
   }
 }
