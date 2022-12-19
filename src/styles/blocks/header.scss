@@ -28,10 +28,11 @@
     top: 0;
     right: 0;
     transform: translateX(100%);
-    transition: transform $transition;
+    transition: transform $duration;
 
     &:target {
       transform: translateX(0);
+      transition: transform $duration;
     }
 
     @include onDesktop {
@@ -47,14 +48,11 @@
   &__content {
     @include onTablet {
       position: relative;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      column-gap: 20px;
+      @include grid-columns(6, 20px);
       grid-template-rows: repeat(4, 100px);
     }
 
     @include onDesktop {
-      display: grid;
       grid-template-columns: repeat(12, 70px);
       column-gap: 30px;
       grid-template-rows: repeat(4, 125px);
@@ -62,7 +60,6 @@
   }
 
   &__background {
-
     @include onTablet {
       position: absolute;
       left: -50%;

@@ -1,6 +1,6 @@
 .potr-size {
   &__title {
-    @include title($font-secondary, #000, 36px, 54px);
+    @include title($font-secondary, $black, 36px, 54px);
     @include container;
 
     text-transform: uppercase;
@@ -15,15 +15,13 @@
   &__container {
     @include onTablet {
       @include container;
-      display: grid;
+      @include grid-columns(6, 20px);
       grid-template-rows: repeat(3, auto);
-      grid-template-columns: repeat(6, 1fr);
-      gap: 0 20px;
     }
 
     @include onDesktop {
       grid-template-columns: repeat(12, 1fr);
-      gap: 0 30px;
+      column-gap: 30px;
     }
   }
 
@@ -40,7 +38,7 @@
     }
 
     @include onDesktop {
-      grid-area: 1 / 1 / 2 / 4;
+      grid-column: 1 / 4;
       margin: 0;
     }
   }
@@ -97,7 +95,7 @@
     }
 
     &-title {
-      @include title($font-secondary, #000, 18px, 18px);
+      @include title($font-secondary, $black, 18px, 18px);
       margin-bottom: 10px;
     }
 
@@ -123,7 +121,7 @@
     }
 
     @include onDesktop {
-      grid-area: 3 / 1 / -1 / 7;
+      grid-column: 1 / 7;
       margin: 0 0 50px;
     }
   }

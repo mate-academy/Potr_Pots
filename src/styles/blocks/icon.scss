@@ -2,8 +2,7 @@
   position: relative;
   display: block;
 
-  width: 32px;
-  height: 32px;
+  @include square(32px);
 
   background-size: contain;
   background-position: center;
@@ -19,8 +18,7 @@
 
   &--cross {
     background-image: url(../images/icon/icon_cross.svg);
-    width: 12px;
-    height: 12px;
+    @include square(12px);
   }
 
   &--basket {
@@ -30,6 +28,32 @@
     @include onDesktop {
       display: block;
     }
+  }
 
+  &--twitter {
+    background-image: url(../images/icon/twitter.svg);
+    @include square(20px);
+
+    @include onDesktop {
+      @include square(30px);
+    }
+  }
+
+  &--instagram {
+    background-image: url(../images/icon/instagram.svg);
+    @include square(20px);
+
+    @include onDesktop {
+      @include square(30px);
+    }
+  }
+
+  &--facebook {
+    background-image: url(../images/icon/facebook.svg);
+    @include square(20px);
+
+    @include onDesktop {
+      @include square(30px);
+    }
   }
 }

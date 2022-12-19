@@ -1,0 +1,54 @@
+.form {
+  &__title {
+    color: $black;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+
+    margin-bottom: 25px;
+  }
+
+  &__field {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $main-color;
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    &:nth-last-child(2) {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+    }
+
+    &:valid {
+      color: $blue;
+      border-bottom-color: $blue;
+    }
+
+    // &:invalid {
+    //   color: $red;
+    //   border-bottom-color: $red;
+    // }
+
+    &:focus {
+      border-bottom-color: $blue;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      width: 219px;
+    }
+
+    @include onDesktop {
+      width: 238px;
+    }
+  }
+}

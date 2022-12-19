@@ -16,7 +16,7 @@
     @include onDesktop {
       grid-template-columns: repeat(12, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      gap: 0 30px;
+      column-gap: 30px;
     }
   }
 
@@ -31,6 +31,8 @@
   }
 
   &__card {
+    transition-duration: $duration;
+
     @each $order, $matrix in $cards-rotation {
       &--#{$order} {
         transform: $matrix;
@@ -46,7 +48,6 @@
     &:hover {
       transform: scale(1.5);
       z-index: 2;
-      transition: all $transition;
     }
   }
 
@@ -114,8 +115,7 @@
     &::before {
       content: "";
       position: absolute;
-      width: 7px;
-      height: 7px;
+      @include square(7px);
       background-color: $gray-dark;
       transform: rotate(45deg);
       top: 25px;

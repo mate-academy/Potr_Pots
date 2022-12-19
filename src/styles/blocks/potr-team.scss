@@ -71,13 +71,13 @@
 
   &__content {
     @include onTablet {
-      display: grid;
       @include grid-columns(6, 20px);
       grid-template-rows: 1fr 155px 155px;
     }
 
     @include onDesktop {
-      @include grid-columns(12, 30px);
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
       grid-template-rows: auto 1fr;
     }
   }
@@ -104,6 +104,7 @@
     left: 0;
     right: 0;
     max-width: 320px;
+    transition-duration: $duration;
 
     @include onTablet {
       position: sticky;
@@ -116,6 +117,10 @@
       grid-column: 5/-2;
       max-height: 508px;
       margin: 0;
+    }
+
+    &:hover {
+      transform: scale(1.15);
     }
   }
 
