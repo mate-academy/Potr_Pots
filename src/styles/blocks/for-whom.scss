@@ -1,7 +1,9 @@
 .for-whom {
   &__block {
-    @include onDesktop {
+    @include onTablet {
       position: relative;
+    }
+    @include onDesktop {
 
       @include grid-columns(12, 30px);
       grid-template-rows: repeat(3, auto);
@@ -268,13 +270,17 @@
   }
 
   &__link {
+    transform: rotate(90deg);
+    transform-origin: 100% 0;
+    right: 5px;
+
     @include onTablet {
-      top: 130%;
-      right: 8px;
+      top: 0;
+      right: -23px;
     }
 
     @include onDesktop {
-      top: 10%;
+      top: 8%;
       right: 8px;
     }
 
@@ -283,7 +289,8 @@
 
       @include onDesktop {
         display: block;
-        top: 90%;
+        top: auto;
+        bottom: 7%;
         right: auto;
         left: -5%;
         transform: rotate(270deg);
