@@ -15,3 +15,17 @@ form.addEventListener('submit', function(event) {
 
   form.reset();
 });
+
+// const slideLink = document.querySelector('.slide__list-link');
+
+// slideLink.addEventListener('click', function(event) {
+//   event.preventDefault();
+// });
+
+const slideLink = document.querySelectorAll('.slide__list-link');
+
+slideLink.forEach(el => {
+  el.addEventListener('click', function(event) {
+    event.preventDefault();
+  });
+});
