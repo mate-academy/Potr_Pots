@@ -20,6 +20,10 @@
     background-color: rgba(0, 0, 0, 0.45);
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
 
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
     @include onTablet {
       position: absolute;
       justify-content: center;
@@ -102,20 +106,11 @@
         flex-direction: column-reverse;
       }
 
-      &:target &-description {
-        @include onTablet {
-          z-index: 2;
-          visibility: visible;
-        }
-      }
-
       &:target &-link {
-        @include onTablet {
-          display: none;
-        }
+        background-color: rgba(36, 35, 35, 0.75);
 
-        &--close {
-          display: block;
+        &::after {
+          visibility: hidden;
         }
       }
     }
@@ -126,34 +121,13 @@
       @include onTablet {
         position: relative;
         display: block;
-        @include square (50px);
-        border-radius: 50%;
-        background-color: $red;
+        @include square(50px);
+        background-image: url(../images/icon/Component.svg);
+        background-size: contain;
         z-index: 1;
 
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 12px;
-          height: 0.1px;
-          border-top: 1px solid #f8f8f8;
-          transform: translate(-50%, -50%);
-        }
-
-        &::after {
-          transform: translate(-50%, -50%) rotate(90deg);
-        }
-
         &--close {
-          display: none;
-          background-color: rgba(36, 35, 35, 0.75);
-
-          &::after {
-            visibility: hidden;
-          }
+          background-image: url(../images/icon/Component-close.svg);
         }
       }
     }
@@ -168,6 +142,13 @@
         background-color: rgba(0, 0, 0, 0.45);
         backdrop-filter: blur(40px);
         visibility: hidden;
+      }
+
+      &--on {
+        @include onTablet {
+          z-index: 2;
+          visibility: visible;
+        }
       }
     }
   }
@@ -184,7 +165,7 @@
       background-size: contain;
       background-position: center center;
       background-repeat: no-repeat;
-      @include square (11px);
+      @include square(11px);
 
       &:not(:last-child) {
         margin-right: 7px;
@@ -196,7 +177,7 @@
     }
 
     &-link {
-      @include square (100%);
+      @include square(100%);
       display: flex;
     }
   }

@@ -16,16 +16,18 @@ form.addEventListener('submit', function(event) {
   form.reset();
 });
 
-// const slideLink = document.querySelector('.slide__list-link');
+const slide = document.querySelectorAll('.slide__list');
 
-// slideLink.addEventListener('click', function(event) {
-//   event.preventDefault();
-// });
+slide.forEach(element => {
+  element.addEventListener('click', (e) => {
+    e.preventDefault();
 
-const slideLink = document.querySelectorAll('.slide__list-link');
+    const item = e.target.closest('.slide__list-link');
 
-slideLink.forEach(el => {
-  el.addEventListener('click', function(event) {
-    event.preventDefault();
+    item.classList.toggle('slide__list-link--close');
+
+    const description = e.target.nextElementSibling;
+
+    description.classList.toggle('slide__list-description--on');
   });
 });
