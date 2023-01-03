@@ -16,6 +16,8 @@ form.addEventListener('submit', function(event) {
   form.reset();
 });
 
+// popup
+
 const slide = document.querySelectorAll('.slide__list');
 
 slide.forEach(element => {
@@ -28,6 +30,6 @@ slide.forEach(element => {
 
     const description = e.target.nextElementSibling;
 
-    description.classList.toggle('slide__list-description--on');
+    description.classList.toggle('slide__list-description--open');
   });
 });
