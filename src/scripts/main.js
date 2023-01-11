@@ -18,22 +18,6 @@ form.addEventListener('submit', function(event) {
 
 // popup
 
-// const slide = document.querySelectorAll('.slide__list');
-
-// slide.forEach(element => {
-//   element.addEventListener('click', (e) => {
-//     e.preventDefault();
-
-//     const item = e.target.closest('.slide__list-link');
-
-//     item.classList.toggle('slide__list-link--close');
-
-//     const description = e.target.nextElementSibling;
-
-//     description.classList.toggle('slide__list-description--open');
-//   });
-// });
-
 const list = document.querySelector('.materials__slide');
 const slideDescription = document
   .getElementsByClassName('slide__list-description');
@@ -69,8 +53,6 @@ list.addEventListener('click', event => {
 
     if (Number(liId) !== Number(descriptionListItemId)) {
       descriptionItem.classList.remove('slide__list-description--open');
-    } else {
-      descriptionItem.classList.add('slide__list-description--open');
     }
   });
 
