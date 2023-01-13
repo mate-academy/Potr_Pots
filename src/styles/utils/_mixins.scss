@@ -1,6 +1,17 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin media-Mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-Tablet {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin media-Desktop {
+  @media (min-width: 1024px) {
+    @content;
   }
 }

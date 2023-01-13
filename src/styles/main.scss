@@ -1,7 +1,18 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./reset/reset";
+@import "./utils";
+
+:root {
+  color: $c-black;
+  background: $c-grey-light;
+  @extend %font-manrope;
+}
 
 body {
-  background: $c-gray;
+  overflow-x: hidden;
 }
+
+@import "./components/header";
+@import "./components/nav";
+@import "./components/hero";
+@import "./components/buy-now";
+@import "./components/for-whom";

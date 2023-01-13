@@ -1,0 +1,51 @@
+.for-whom {
+  @include media-Mobile {
+    margin-top: 110px;
+  }
+
+  &__title {
+    @extend %h2-bebas;
+    color: $c-grey-dark;
+  }
+
+  &__item:not(:first-child) {
+    margin-top: 71px;
+  }
+
+  &__image {
+    @include media-Mobile {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    @extend %h2-bebas;
+
+    &-number {
+      margin-top: 25px;
+      position: relative;
+      left: 25px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 40%;
+        left: -40px;
+        transform: rotate(-70deg);
+        width: 55px;
+        height: 1px;
+        background: #000;
+      }
+    }
+
+    &-content {
+      margin-top: 30px;
+    }
+
+  }
+
+  &__desc {
+    margin-top: 20px;
+    max-width: 75%;
+  }
+}

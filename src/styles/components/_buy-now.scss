@@ -1,0 +1,95 @@
+.buy-now {
+  margin-top: 25px;
+  position: relative;
+
+  //card is parent of all below
+  &__card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    @extend %h2-bebas;
+    color: $c-blue;
+    @media (min-width: $max-hero-width) {
+      max-width: 75%;
+    }
+  }
+
+  &__price {
+    margin-top: 35px;
+    @extend %font-manrope;
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+  &__discount {
+    max-width: 50%;
+    @extend %font-manrope;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  &__button {
+    @extend %button-styles;
+    margin-top: 20px;
+    background: $c-yelllow;
+    transition: color 0.2s ease-in-out,
+      background-color
+      color
+      0.2s ease-in-out;
+
+    &:hover {
+      color: rgba($c-black, 0.75);
+      background-color: rgba($c-yelllow, 0.75);
+    }
+
+    &__arrow {
+      margin-left: 24px;
+      line-height: 100%;
+    }
+
+  }
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px $c-blue;
+  -webkit-text-fill-color: white;
+}
+
+%button-styles {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+
+  width: 100%;
+  max-width: 500px;
+
+  padding: 13px 0;
+  text-transform: uppercase;
+  @extend %font-manrope;
+  font-weight: 600;
+}
+
+.more-about {
+  position: absolute;
+  right: 11px;
+  bottom: 6px;
+  height: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  color: $c-blue;
+  width: max-content;
+  font-size: 12px;
+  line-height: 12px;
+
+  transform: rotate(90deg);
+  transform-origin: right top;
+
+  &__arrow {
+    transform: rotate(-90deg);
+  }
+}
