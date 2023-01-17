@@ -1,0 +1,131 @@
+.team {
+  margin-top: $mobile-section-margin-top;
+  position: relative;
+
+  @include media-Tablet {
+    display: grid;
+    gap: 40px;
+    grid-template-rows: min-content 1fr;
+    margin-top: 130px;
+    height: 100vh;
+  }
+
+  @include media-Desktop {
+    margin-top: 174px;
+  }
+
+  &::after {
+    @include display-none-phone;
+    @include huge-decor-text("Martin", 50px, unset, unset, -25px);
+
+    @include media-Desktop {
+      @include huge-decor-text("Martin", 120px, unset, unset, -25px);
+      font-size: 230px;
+    }
+  }
+
+  &::before {
+    content: "";
+    background-image: url("/images/team/yellow-bg.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 74%;
+
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: top 0.3s ease-in-out;
+
+    @media (min-width: 380px) {
+      top: 80%;
+    }
+
+    @include media-Tablet {
+      background-image: url("/images/yellow-team-tablet.png");
+      top: 23%;
+      left: -150px;
+    }
+
+    @include media-Desktop {
+      background-image: url("/images/team-desk.png");
+      left: -200px;
+    }
+  }
+
+  &__title {
+    @extend %h1-bebas;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-self: flex-end;
+
+    @include media-Tablet {
+      justify-self: center;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 47px;
+    }
+
+    @include media-Desktop {
+      align-items: flex-end;
+      justify-content: unset;
+    }
+
+    &::before {
+      @include display-none-phone;
+
+      @include huge-decor-text("Andy", unset, -5%, -13%, unset);
+
+      @media (min-width: 920px) {
+        @include huge-decor-text("Andy", unset, -15%, -13%, unset);
+      }
+
+      @include media-Desktop {
+        font-size: 230px;
+      }
+    }
+  }
+
+  &__desc {
+    @include media-Mobile {
+      margin-top: 30px;
+    }
+
+    @extend %s3-manrope-16;
+    order: 2;
+
+    @include media-Tablet {
+      max-width: 40%;
+      order: -1;
+    }
+  }
+
+  &__img-wrapper {
+    margin-top: 25px;
+    width: 100vw;
+    max-width: $max-hero-width;
+
+    @include media-Tablet {
+      width: 100%;
+    }
+
+    @include media-Desktop {
+      margin: 0;
+      max-width: 650px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+}

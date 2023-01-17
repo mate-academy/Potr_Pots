@@ -1,12 +1,26 @@
 .container {
   @include media-Mobile {
-    padding: 0 $container-block-padding;
-
+    padding: 0 $container-block-padding-mobile;
     max-width: $max-hero-width;
     margin: 0 auto;
   }
 
   @media (min-width: $max-hero-width) {
-    padding: 0;
+    padding: 0 30px;
+  }
+
+  @include media-Tablet {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  @include from-tablet-to-max-w-padding;
+
+  @include media-Desktop {
+    max-width: 1024px;
+  }
+
+  @include media-Desktop-large {
+    max-width: 1200px;
   }
 }

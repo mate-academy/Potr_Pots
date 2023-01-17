@@ -1,14 +1,43 @@
 .header {
   padding-top: 15px;
 
+  @include media-Desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-wrapper {
+    position: relative;
+  }
+
   &__logo {
     @extend %h2-bebas;
   }
 
   &__burger {
     position: absolute;
-    right: $container-block-padding;
+    right: 0;
     top: 23px;
+    transform: translateY(-50%);
+
     cursor: pointer;
+
+    @include media-Desktop {
+      display: none;
+    }
+  }
+
+  &__cart {
+    cursor: pointer;
+
+    @include display-none-phone;
+    @include media-Tablet {
+      display: none;
+    }
+
+    @include media-Desktop {
+      display: inline-block;
+    }
   }
 }

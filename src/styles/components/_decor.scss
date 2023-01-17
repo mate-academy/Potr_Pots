@@ -1,0 +1,108 @@
+.decor-more-about {
+  @extend %decor-style;
+  right: 11px;
+
+  &__arrow {
+    height: 44px;
+    transform: rotate(-90deg);
+  }
+
+  @include media-Tablet {
+    left: -164px;
+    bottom: -12px;
+    right: unset;
+  }
+}
+
+.decor-potr-pots {
+  @extend %decor-style;
+  color: $c-grey;
+  bottom: -45px;
+  right: 0;
+
+  &__arrow {
+    height: 44px;
+    transform: rotate(-90deg);
+  }
+
+  & :first-child {
+    order: 2;
+  }
+
+  @media (min-width: 500px) {
+    bottom: -65px;
+  }
+
+  @media (min-width: 678px) and (max-width: 850px) {
+    right: 25px;
+  }
+
+  @media (min-width: 850px) {
+    right: -10px;
+  }
+
+  @include media-Tablet {
+    top: 0;
+  }
+}
+
+.is-text-stroke {
+  -webkit-text-stroke: 1px $c-blue;
+  -webkit-text-fill-color: transparent;
+}
+
+.shift-number {
+  @include media-Tablet {
+    position: absolute;
+    left: -45px;
+    top: 0;
+  }
+}
+
+.materials__decor--1 {
+  top: 150px;
+  right: 11px;
+
+  @include display-none-phone;
+  @include media-Desktop {
+    display: none;
+  }
+}
+
+.materials__decor--2 {
+  bottom: 0;
+  right: unset;
+  left: -85px;
+
+  @include display-none-phone;
+  @include media-Desktop {
+    display: none;
+  }
+}
+
+.relative-for-img {
+  position: relative;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.for-whom-decor-potr-pots {
+  @media (max-width: 1024) {
+    display: none;
+  }
+
+  @include media-Desktop {
+    top: unset;
+    right: unset;
+    bottom: -60px;
+    left: -9%;
+  }
+}
+
+.new_p {
+  @include display-none-phone;
+
+  height: 20px;
+}

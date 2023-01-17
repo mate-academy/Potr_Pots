@@ -1,0 +1,161 @@
+.contact-us {
+  padding-bottom: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+
+  @include media-Mobile {
+    margin-top: $mobile-section-margin-top;
+  }
+
+  @include media-Tablet {
+    margin-top: 105px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: min-content;
+    padding-bottom: 170px;
+  }
+
+  @include media-Desktop {
+    justify-content: unset;
+    gap: 256px;
+  }
+
+  &--right {
+    @include media-Tablet {
+      margin-top: -55px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: -5;
+    background-image: url("/images/yellow-bg-long.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include media-Tablet {
+      top: 0;
+      background-position: 0 40%;
+      background-image: url("/images/yellow-bg-contact-tablet.png");
+    }
+
+    @include media-Desktop {
+      background-image: url("/images/footer-bg-desk.png");
+      background-size: cover;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -23px;
+    top: -55px;
+    background-image: url("/images/icons/circle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 170px;
+    height: 170px;
+
+    @include media-Tablet {
+      top: -100px;
+    }
+  }
+
+  &__title {
+    padding-top: 45px;
+    @extend %h2-bebas;
+  }
+
+  &__desc {
+    @extend %s3-manrope-16;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  &__item-title {
+    @extend %s2-manrope-24;
+    color: $c-contact-us-title;
+  }
+
+  &__item-link {
+    margin-top: 5px;
+  }
+}
+
+.message-us {
+  margin-top: 40px;
+
+  &__form {
+    margin-top: 25px;
+  }
+
+  &__title {
+    @extend %s2-manrope-24;
+  }
+}
+
+.form__button {
+  margin-top: 30px;
+  @extend %button-styles;
+  background: $c-blue;
+  color: $c-white;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: #4c8b9b;
+  }
+
+  @include media-Tablet {
+    max-width: 220px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__name {
+    @extend %input-style;
+  }
+
+  &__email {
+    @extend %input-style;
+  }
+
+  &__text {
+    @extend %input-style;
+  }
+}
+
+.invalid {
+  border-color: $c-red;
+  color: $c-red;
+
+  &::placeholder {
+    color: $c-red;
+  }
+}
+
+.success {
+  border-color: $c-blue;
+
+  &::placeholder {
+    color: $c-blue;
+  }
+}

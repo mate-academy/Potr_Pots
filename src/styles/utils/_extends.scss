@@ -39,7 +39,6 @@
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
-  line-height: 100%;
 }
 
 %h4-bebas {
@@ -98,4 +97,61 @@
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
+}
+
+%button-styles {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  width: 100%;
+  max-width: 450px;
+  height: 48px;
+
+  text-transform: uppercase;
+  @extend %font-manrope;
+  font-weight: 600;
+
+  & > * {
+    align-self: center;
+  }
+}
+
+%input-style {
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 350px;
+  color: #000;
+  cursor: pointer;
+
+  &::placeholder {
+    color: $c-input-placeholder;
+  }
+
+  &:focus {
+    border-color: $c-blue;
+  }
+}
+
+%decor-style {
+  position: absolute;
+  bottom: 6px;
+  height: 12px;
+  transition: bottom 0.3s ease;
+
+  @media (min-width: 500px) {
+    bottom: 75px;
+  }
+
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  color: $c-blue;
+  font-size: 12px;
+  line-height: 12px;
+
+  transform: rotate(90deg);
+  transform-origin: right top;
 }
