@@ -1,0 +1,119 @@
+.features {
+  &__title-block {
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 70px;
+    }
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+  }
+
+  &__block {
+    padding-bottom: 70px;
+
+    @include onTablet {
+      width: 222px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+
+    &--1 {
+      @include onTablet {
+        order: 1;
+      }
+
+      @include onDesktop {
+        order: 0;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        order: -1;
+      }
+
+      @include onDesktop {
+        order: 0;
+      }
+    }
+  }
+
+  &__photo {
+    @extend %photo;
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 30px;
+
+    @include onTablet {
+      width: 220px;
+      height: 220px;
+    }
+
+    @include onDesktop {
+      width: 375px;
+      height: 375px;
+    }
+
+    &--1 {
+      background-image: url(../images/image_fe_1.png);
+    }
+
+    &--2 {
+      background-image: url(../images/image_fe_2.png);
+    }
+
+    &--3 {
+      background-image: url(../images/image_fe_3.png);
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-dark-grey;
+
+    padding-bottom: 20px;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    @extend %text;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+}

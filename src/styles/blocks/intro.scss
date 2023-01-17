@@ -1,0 +1,123 @@
+.intro {
+  position: relative;
+
+  &__comment {
+    position: relative;
+    display: block;
+    transform-origin: bottom right;
+    transform: rotate(90deg) translate(-50%);
+    right: 0;
+    bottom: 0;
+
+    @include onTablet {
+      transform-origin: bottom left;
+      transform: rotate(90deg) translateX(-15%);
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  &__comment-arrow {
+    @extend %photo;
+    position: absolute;
+    display: block;
+    background-size: contain;
+    background-image: url(../images/Arrow.png);
+    width: 10px;
+    height: 44px;
+    transform-origin: right top;
+    transform: rotate(-90deg) translateY(300%) translateX(12px);
+  }
+
+  &__title-block {
+    padding-bottom: 30px;
+
+    @include onTablet {
+      width: 480px;
+      height: 266px;
+      grid-column: 1 / 7;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 13;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 43px;
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+    }
+  }
+
+  &__photo-container {
+    width: 100vw;
+    transform: translateX(-30px);
+
+    position: relative;
+    z-index: -1;
+    right: 0;
+    padding-bottom: 25px;
+
+    @include onTablet {
+      position: absolute;
+      transform: translateX(0);
+      width: 306px;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 500px;
+    }
+  }
+
+  &__photo {
+    @extend %photo;
+    height: 320px;
+
+    background-image: url(../images/photo-1.svg);
+
+    @include onTablet {
+      height: 306px;
+      width: 306px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+      width: 500px;
+    }
+  }
+
+  &__promotion {
+    width: 140px;
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__price {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: $c-dark-grey;
+
+    @include onDesktop {
+      padding-bottom: 5px;
+    }
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-grey;
+  }
+}

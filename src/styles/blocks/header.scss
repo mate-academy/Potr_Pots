@@ -1,0 +1,92 @@
+.header {
+  &__backgroung {
+    display: none;
+    position: absolute;
+    width: 1035px;
+    height: 466px;
+    top: 0;
+    right: 154px;
+    z-index: -1;
+
+    background-image: url(../images/Rectangle.png);
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      right: 260px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: all $animat-time;
+    color: $c-dark-grey;
+
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $c-grey;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__busket {
+    display: none;
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/icons8-сумка-для-покупок-100.png);
+    transition: all $animat-time;
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
+  &__menu-icon {
+    display: block;
+
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/menu_icon.png);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

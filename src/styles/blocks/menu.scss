@@ -1,0 +1,72 @@
+.menu {
+  background-color: $c-turquoise;
+  z-index: 1;
+  width: 230px;
+
+  @include onTablet {
+    display: none;
+  }
+
+  &__list {
+    list-style: none;
+    display: inline;
+    margin-top: 140px;
+  }
+
+  &__item {
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  &__link {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $c-light-grey;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__cross {
+    display: block;
+    position: absolute;
+    bottom: 42px;
+    right: 33px;
+    height: 12px;
+    width: 12px;
+    background-image: url(../images/cross.png);
+  }
+
+  &__comment {
+    display: block;
+    transform-origin: bottom right;
+
+    transform: rotate(-90deg) translate(100%);
+    right: 30px;
+    bottom: 122px;
+
+    &::before {
+      display: block;
+      position: absolute;
+      content: "";
+      background: $c-light-grey;
+      width: 44px;
+      height: 1px;
+      transform: translateX(-110%) translateY(8px);
+    }
+  }
+
+  &__comment-text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: uppercase;
+
+    color: $c-light-grey;
+  }
+}

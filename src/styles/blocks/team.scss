@@ -1,0 +1,144 @@
+.team {
+  margin-bottom: 168px;
+
+  @include onTablet {
+    margin-bottom: 186px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 226px;
+  }
+
+  &__name {
+    position: absolute;
+    display: none;
+
+    @include onTablet {
+      display: block;
+      font-size: 232px;
+      line-height: 278px;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+    }
+
+    &--martin {
+      @include onTablet {
+        padding-top: 100px;
+        transform: translate(-70px);
+      }
+
+      @include onDesktop {
+        transform: translate(-50px);
+      }
+    }
+
+    &--andy {
+      @include onTablet {
+        bottom: 0;
+        right: 0;
+        transform: translateY(70%);
+      }
+
+      @include onDesktop {
+        bottom: 0;
+        padding-left: 700px;
+        transform: translateY(85%);
+      }
+    }
+  }
+
+  &__background {
+    @extend %photo;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    transform: translateY(80px) translateX(-30px);
+    width: 100vw;
+    height: 310px;
+
+    background-image: url(../images/Rectangle_team.png);
+
+    @include onTablet {
+      margin-top: 180px;
+      transform: translate(-220px);
+      width: 435px;
+    }
+
+    @include onDesktop {
+      transform: translate(-150px);
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $c-dark-grey;
+    padding-bottom: 25px;
+
+    @include onTablet {
+      padding-bottom: 177px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 143px;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: start;
+      gap: 57px;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      width: 335px;
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      padding-top: 250px;
+    }
+  }
+
+  &__paragraf {
+    @extend %text;
+    color: $c-grey;
+
+    padding-bottom: 15px;
+
+    &--last {
+      padding-bottom: 0;
+    }
+  }
+
+  &__photo {
+    @extend %photo;
+    width: 100vw;
+    transform: translate(-30px);
+    height: 240px;
+    background-image: url(../images/team.png);
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      width: 340px;
+      height: 255px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 680px;
+      height: 500px;
+    }
+  }
+}

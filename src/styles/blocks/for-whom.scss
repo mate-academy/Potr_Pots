@@ -1,0 +1,256 @@
+.for-whom {
+  &__comment {
+    &--right {
+      display: block;
+      bottom: 0;
+      right: 0;
+      transform-origin: top right;
+      transform: rotate(90deg);
+
+      @include onTablet {
+        top: 0;
+        right: 30px;
+        transform: rotate(90deg) translate(0);
+      }
+
+      @include onDesktop {
+        right: 0;
+        transform: rotate(90deg) translate(200%);
+      }
+    }
+
+    &--left {
+      display: none;
+      transform-origin: top left;
+      transform: rotate(-90deg) translate(100%);
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    color: $c-dark-grey;
+    padding-bottom: 100px;
+
+    @include onTablet {
+      padding-bottom: 42px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 35px;
+    }
+  }
+
+  &__block-container {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__block {
+    display: flex;
+
+    &--durable {
+      gap: 76px;
+      margin-bottom: 110px;
+
+      @include onDesktop {
+        gap: 200px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &--design {
+      flex-direction: row-reverse;
+      margin-bottom: 122px;
+      justify-content: space-between;
+
+      @include onDesktop {
+        flex-direction: column;
+        margin: 0 0 0 100px;
+      }
+    }
+
+    &--time {
+      justify-content: space-between;
+
+      @include onDesktop {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__photo {
+    @extend %photo;
+    display: none;
+    flex-shrink: 0;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--durable {
+      background-image: url(../images/1-flower.png);
+      width: 284px;
+      height: 284px;
+
+      @include onDesktop {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    &--design {
+      background-image: url(../images/2-cactus.png);
+      width: 300px;
+      height: 417px;
+
+      @include onDesktop {
+        margin-bottom: 45px;
+      }
+    }
+
+    &--time {
+      background-image: url(../images/3-clock.png);
+      width: 284px;
+      height: 404px;
+
+      @include onDesktop {
+        width: 470px;
+        height: 670px;
+        margin-bottom: 45px;
+
+      }
+    }
+  }
+
+  &__info {
+    width: 370px;
+    height: 100%;
+    margin: auto 0;
+
+    position: relative;
+  }
+
+  &__word {
+    @extend %text;
+    display: none;
+    color: $c-grey;
+
+    @include onTablet {
+      display: block;
+
+      &::before {
+        content: url(../images/star.png);
+        position: absolute;
+        transform: translate(-300%);
+      }
+    }
+
+    &--durable {
+      padding-bottom: 25px;
+
+      @include onDesktop {
+        padding-bottom: 40px;
+      }
+    }
+
+    &--design {
+      text-align: right;
+      position: absolute;
+      right: 0;
+      transform: translateY(-90px);
+
+      @include onDesktop {
+        position: relative;
+        transform: translateY(0);
+        text-align: left;
+        padding-bottom: 113px;
+      }
+    }
+
+    &--time {
+      padding-bottom: 17px;
+
+      @include onDesktop {
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  &__subtitle {
+    @extend %h2;
+    color: $c-dark-grey;
+
+    padding-bottom: 10px;
+
+    &::after {
+      content: url(../images/after.png);
+      position: absolute;
+    }
+
+    &--durable {
+      &::before {
+        content: url(../images/1.png);
+        position: absolute;
+        transform: translateY(-100%);
+
+        @include onTablet {
+          transform: translate(-200%);
+
+        }
+
+        @include onDesktop {
+          transform: translate(-300%);
+        }
+      }
+    }
+
+    &--design {
+
+      &::before {
+        content: url(../images/2.png);
+        position: absolute;
+        transform: translateY(-100%);
+      }
+    }
+
+    &--time {
+      @include onDesktop {
+        padding-left: 90px;
+      }
+
+      &::before {
+        content: url(../images/3.png);
+        position: absolute;
+        transform: translateY(-100%);
+
+        @include onTablet {
+          transform: translate(-200%);
+        }
+
+        @include onDesktop {
+          transform: translate(-300%);
+        }
+      }
+    }
+  }
+
+  &__text {
+    @extend %text;
+    color: $c-grey;
+
+    &--time {
+      @include onDesktop {
+        padding-left: 90px;
+      }
+    }
+  }
+}

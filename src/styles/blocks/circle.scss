@@ -1,0 +1,138 @@
+.circle {
+  display: none;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: $c-red;
+  cursor: pointer;
+
+  color: #e0e0e0;
+  font-size: 20px;
+  text-align: center;
+  line-height: 50px;
+
+  @include onTablet {
+    display: block;
+  }
+
+  &::before {
+    content: "+";
+  }
+
+  &:hover {
+    background: rgba(36, 35, 35, 0.75);
+    z-index: 2;
+
+    &::before {
+      content: "-";
+    }
+  }
+
+  &__block {
+    display: none;
+
+    &--1 {
+      height: 166px;
+      width: 283px;
+      transform: translateX(-30%) translateY(-235px);
+
+      @include onDesktop {
+        transform: translateX(-40%) translateY(-235px);
+      }
+    }
+
+    &--2 {
+      height: 166px;
+      width: 283px;
+      transform: translateX(-40%) translateY(-235px);
+
+      @include onDesktop {
+        transform: translateX(-90%) translateY(-235px);
+      }
+    }
+
+    &--3 {
+      width: 283px;
+      height: 214px;
+      transform: translateX(-40%) translateY(-135%);
+
+      @include onDesktop {
+        transform: translateX(-105%) translateY(-135px);
+      }
+    }
+
+    &--4 {
+      width: 283px;
+      height: 214px;
+      transform: translateX(-35%) translateY(-140%);
+    }
+
+    &--5 {
+      height: 237px;
+      width: 300px;
+      transform: translateX(-40%) translateY(5px);
+
+      @include onDesktop {
+        top: 53%;
+        left: 78%;
+      }
+    }
+  }
+
+  &__text {
+    color: #e0e0e0;
+    background: rgba(0, 0, 0, 0.41);
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 35px;
+    text-align: left;
+  }
+
+  &--1 {
+    top: 75%;
+    left: 15%;
+
+    &:hover .circle__block--1 {
+      display: block;
+    }
+  }
+
+  &--2 {
+    top: 50%;
+    left: 40%;
+
+    &:hover .circle__block--2 {
+      display: block;
+    }
+  }
+
+  &--3 {
+    top: 80%;
+    left: 50%;
+
+    &:hover .circle__block--3 {
+      display: block;
+    }
+  }
+
+  &--4 {
+    top: 65%;
+    left: 58%;
+
+    &:hover .circle__block--4 {
+      display: block;
+    }
+  }
+
+  &--5 {
+    top: 40%;
+    left: 70%;
+
+    &:hover .circle__block--5 {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.form {
+  padding-bottom: 55px;
+  @include onTablet {
+    padding-bottom: 0;
+  }
+
+  &__title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+
+    padding-bottom: 20px;
+
+    @include onTablet {
+      padding-bottom: 35px;
+    }
+  }
+
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    height: 32px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-turquoise;
+    text-transform: capitalize;
+
+    transition: all $animat-time;
+
+    margin-bottom: 16px;
+
+    @include onTablet {
+      width: 338px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+
+    &::placeholder {
+      color: $c-grey;
+    }
+
+    &:hover {
+      border-color: $c-turquoise;
+    }
+
+    &:focus {
+      color: $c-turquoise;
+      border-color: $c-turquoise;
+      outline: none;
+    }
+
+    &:-moz-ui-invalid {
+      color: $c-red;
+      border-color: $c-red;
+    }
+
+    &--textarea {
+      resize: none;
+    }
+
+    &--last {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
