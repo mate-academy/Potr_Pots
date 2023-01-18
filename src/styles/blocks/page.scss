@@ -1,0 +1,26 @@
+.page {
+  font-family: "Manrope", "Bebas Neue", sans-serif;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translate(0);
+    }
+  }
+}
