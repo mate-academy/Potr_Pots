@@ -1,7 +1,157 @@
 @import "utils";
-@import "fonts";
-@import "typography";
+@import "./blocks/header.scss";
+@import "./blocks/grid.scss";
 
-body {
-  background: $c-gray;
+@font-face {
+  font-family: "Manrope", "Bebas Neue", sans-serif;
+  src: initial;
+}
+
+.page {
+  font-family: "Manrope", "Bebas Neue", sans-serif;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    margin: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translate(0);
+    }
+  }
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 38px;
+  margin: 0 auto;
+
+  @include onTablet {
+    padding: 0 34px;
+  }
+
+  @include onDesktop {
+    padding: 0 135px;
+  }
+}
+
+.title {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #000;
+  margin: 0;
+}
+
+.icon {
+  background-size: cover;
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 48px;
+}
+
+.menu {
+  height: 100vh;
+  width: 70%;
+  background-color: $colorTurquoise;
+
+  &__container {
+    position: relative;
+  }
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    list-style: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $colorGreylight;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 32px;
+    }
+  }
+
+  &__close {
+    transform: translateY(-42px) rotate(-90deg);
+    position: absolute;
+    right: 0;
+    bottom: 42px;
+    margin: 0;
+    width: min-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    text-transform: uppercase;
+    margin: 0;
+    margin-left: 5px;
+    color: $colorGreylight;
+    font-size: 12px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__line {
+    margin-left: 18px;
+    height: 44px;
+    width: 44px;
+    transform: rotate(90deg);
+
+    @include onTablet {
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+  &__cross_image {
+    @include onTablet {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }
