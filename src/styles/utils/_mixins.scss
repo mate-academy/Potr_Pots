@@ -1,17 +1,17 @@
 @mixin media-Mobile {
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
     @content;
   }
 }
 
 @mixin media-Tablet {
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     @content;
   }
 }
 
 @mixin media-Desktop {
-  @media (min-width: 1100px) {
+  @media (min-width: 1199px) {
     @content;
   }
 }
@@ -23,11 +23,11 @@
 }
 
 @mixin from-tablet-to-max-w-padding {
-  @media (min-width: 768px) and (max-width: 850px) {
+  @media (min-width: 767px) and (max-width: 850px) {
     padding: 0 $container-block-padding-tablet;
   }
 
-  @media (min-width: 850px) {
+  @media (min-width: 849px) {
     padding: 0;
   }
 }
@@ -93,4 +93,5 @@
   letter-spacing: 0.15em;
   -webkit-text-stroke: 1px $c-blue;
   -webkit-text-fill-color: transparent;
+  z-index: -1;
 }

@@ -2,12 +2,18 @@
   margin-top: $mobile-section-margin-top;
   position: relative;
 
+  @include media-Mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   @include media-Tablet {
     display: grid;
     gap: 40px;
     grid-template-rows: min-content 1fr;
     margin-top: 130px;
-    height: 100vh;
+    height: 800px;
   }
 
   @include media-Desktop {
@@ -17,6 +23,7 @@
   &::after {
     @include display-none-phone;
     @include huge-decor-text("Martin", 50px, unset, unset, -25px);
+    font-size: 230px;
 
     @include media-Desktop {
       @include huge-decor-text("Martin", 120px, unset, unset, -25px);
@@ -85,9 +92,12 @@
       @include display-none-phone;
 
       @include huge-decor-text("Andy", unset, -5%, -13%, unset);
+      font-size: 230px;
+
 
       @media (min-width: 920px) {
-        @include huge-decor-text("Andy", unset, -15%, -13%, unset);
+        @include huge-decor-text("Andy", unset, -25%, -13%, unset);
+        font-size: 230px;
       }
 
       @include media-Desktop {
@@ -112,11 +122,13 @@
 
   &__img-wrapper {
     margin-top: 25px;
-    width: 100vw;
-    max-width: $max-hero-width;
+    @include media-Mobile {
+      width: 100%;
+      max-width: 420px;
+    }
 
     @include media-Tablet {
-      width: 100%;
+      max-width: 340px;
     }
 
     @include media-Desktop {

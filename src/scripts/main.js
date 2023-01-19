@@ -57,6 +57,7 @@ form.addEventListener('submit', (e) => {
   if (inputWithoutValue.length > 0) {
     inputs.forEach(el => {
       if (el.value.length === 0) {
+        el.classList.remove('success');
         el.classList.add('invalid');
       } else {
         el.classList.remove('invalid');
