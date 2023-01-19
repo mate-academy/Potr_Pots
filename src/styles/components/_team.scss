@@ -10,7 +10,7 @@
 
   @include media-Tablet {
     display: grid;
-    gap: 40px;
+    gap: 49px;
     grid-template-rows: min-content 1fr;
     margin-top: 130px;
     height: 800px;
@@ -22,12 +22,12 @@
 
   &::after {
     @include display-none-phone;
-    @include huge-decor-text("Martin", 50px, unset, unset, -25px);
+    @include huge-decor-text("Martin", 80px, unset, unset, -30px);
     font-size: 230px;
 
     @include media-Desktop {
       @include huge-decor-text("Martin", 120px, unset, unset, -25px);
-      font-size: 230px;
+      font-size: 288px;
     }
   }
 
@@ -90,18 +90,12 @@
 
     &::before {
       @include display-none-phone;
-
-      @include huge-decor-text("Andy", unset, -5%, -13%, unset);
+      @include huge-decor-text("Andy", unset, -6%, 5%, unset);
       font-size: 230px;
 
-
-      @media (min-width: 920px) {
-        @include huge-decor-text("Andy", unset, -25%, -13%, unset);
-        font-size: 230px;
-      }
-
       @include media-Desktop {
-        font-size: 230px;
+        @include huge-decor-text("Andy", unset, -15%, -12.8%, unset);
+        font-size: 288px;
       }
     }
   }
@@ -128,12 +122,16 @@
     }
 
     @include media-Tablet {
-      max-width: 340px;
+      width: 340px;
+      margin-top: -150px;
+      z-index: -2;
     }
 
     @include media-Desktop {
       margin: 0;
-      max-width: 650px;
+      min-width: 500px;
+      max-width: 677px;
+      z-index: 5;
     }
   }
 
