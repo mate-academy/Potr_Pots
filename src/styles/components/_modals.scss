@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  pointer-events: none;
 
   &__icon {
     position: relative;
@@ -11,7 +12,7 @@
     width: 51px;
     height: 51px;
     border-radius: 50%;
-    z-index: 1;
+    pointer-events: all;
   }
 
   &__icon-line-v {
@@ -43,7 +44,7 @@
     max-width: 310px;
     padding: 35px;
     color: $c-white;
-    z-index: 5;
+    z-index: -1;
     opacity: 0;
     pointer-events: none;
 
@@ -104,6 +105,7 @@
 
   .modal__content {
     order: -1;
+
   }
 }
 
@@ -150,10 +152,11 @@
   }
 
   .modal__content {
+    height: 100%;
     position: relative;
     display: block;
     opacity: 1;
     pointer-events: all;
-    z-index: 10;
+    z-index: 40 !important;
   }
 }
