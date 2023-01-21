@@ -1,6 +1,12 @@
 .decor-more-about {
+  pointer-events: all;
   @extend %decor-style;
   right: 11px;
+  transition: translate 0.3s ease;
+
+  &:hover {
+    translate: 0 10px;
+  }
 
   &__arrow {
     height: 44px;
@@ -34,7 +40,7 @@
   }
 
   @media (min-width: 678px) and (max-width: 850px) {
-    right: 25px;
+    right: 0;
   }
 
   @media (min-width: 850px) {
@@ -98,15 +104,15 @@
 }
 
 .for-whom-decor-potr-pots {
-  @media (max-width: 1024) {
-    display: none;
-  }
-
   @include media-Desktop {
     top: unset;
     right: unset;
     bottom: -60px;
     left: -9%;
+  }
+
+  @media (max-width: 1024) {
+    display: none;
   }
 }
 
@@ -122,4 +128,17 @@
   display: block;
 
   @include display-none-phone;
+}
+
+img {
+  transition: transform 0.3s ease;
+}
+
+.scalable-img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 }

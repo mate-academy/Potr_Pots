@@ -24,9 +24,14 @@
     @include display-none-phone;
     @include huge-decor-text("Martin", 80px, unset, unset, -30px);
     font-size: 230px;
+    pointer-events: none;
+
+    @include media-Tablet {
+      z-index: 5;
+    }
 
     @include media-Desktop {
-      @include huge-decor-text("Martin", 110px, unset, unset, -25px);
+      @include huge-decor-text("Martin", 90px, unset, unset, -25px);
       font-size: 288px;
       z-index: 5;
     }
@@ -34,6 +39,8 @@
 
   &::before {
     content: "";
+    pointer-events: none;
+
     background-image: url("/images/team/yellow-bg.png");
     background-repeat: no-repeat;
     position: absolute;
@@ -95,7 +102,12 @@
       font-size: 230px;
 
       @include media-Desktop {
-        @include huge-decor-text("Andy", unset, -15%, -12.8%, unset);
+        @include huge-decor-text("Andy", unset, -15%, -19.8%, unset);
+        font-size: 288px;
+      }
+
+      @include media-Desktop-large {
+        @include huge-decor-text("Andy", unset, -15%, -22.8%, unset);
         font-size: 288px;
       }
     }
@@ -113,6 +125,10 @@
       max-width: 40%;
       order: -1;
     }
+
+    @include media-Desktop {
+      max-width: 340px;
+    }
   }
 
   &__img-wrapper {
@@ -125,18 +141,26 @@
     @include media-Tablet {
       width: 340px;
       margin-top: -150px;
-      z-index: -2;
+      z-index: 1;
     }
 
     @include media-Desktop {
       margin: 0;
+      width: 677px;
       min-width: 500px;
-      max-width: 677px;
       z-index: 5;
+
+      & img {
+        max-width: 677px;
+      }
     }
   }
 
   &__img {
     width: 100%;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
