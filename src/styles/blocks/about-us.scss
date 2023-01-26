@@ -1,0 +1,137 @@
+.about-us {
+  max-width: 1440px;
+  margin: 110px auto;
+  overflow: hidden;
+
+  @include tablet {
+    margin: 130px auto 0;
+  }
+
+  @include desktop {
+    margin: 150px auto 10px;
+  }
+
+  &__content {
+    position: relative;
+
+    @include tablet {
+      @include grid;
+      height: 514px;
+    }
+
+    @include desktop {
+      display: block;
+      height: 744px;
+    }
+  }
+
+  &__title {
+    @extend %bebas-neue;
+    margin: 0 30px 25px;
+    font-size: 58px;
+    line-height: 70px;
+    color: $c-black;
+
+    @include tablet {
+      margin: 0 0 100px;
+    }
+
+    @include desktop {
+      margin-bottom: 116px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include tablet {
+      height: 256px;
+      margin-top: 78px;
+      grid-column: 4 / -1;
+    }
+
+    @include desktop {
+      position: absolute;
+      right: 100px;
+      margin-top: 28px;
+      width: 678px;
+      height: 508px;
+    }
+  }
+
+  &__desc {
+    margin: 30px 30px 0;
+    padding-bottom: 58px;
+
+    @include tablet {
+      margin: 130px 20px 0 0;
+      padding-bottom: 0;
+      grid-column: 1 / 4;
+      grid-row: 1 / -1;
+    }
+
+    @include desktop {
+      width: 336px;
+      margin: 0;
+      position: absolute;
+      top: 258px;
+    }
+  }
+
+  &__rectangle {
+    position: absolute;
+    bottom: -18px;
+    left: -50px;
+    z-index: -1;
+
+    @include tablet {
+      bottom: initial;
+      top: 0;
+      left: -214px;
+    }
+
+    @include desktop {
+      top: 0;
+      left: -135px;
+    }
+  }
+
+  &__bg-text {
+    display: none;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: -84px;
+      left: -78px;
+      @include title-text;
+      font-size: 232px;
+      line-height: 278px;
+    }
+
+    @include desktop {
+      font-size: 288px;
+      line-height: 346px;
+      top: -88px;
+      left: -60px;
+    }
+
+    &--bottom {
+      top: initial;
+      bottom: -48px;
+      left: initial;
+      right: -66px;
+      font-size: 220px;
+      line-height: 264px;
+
+      @include desktop {
+        bottom: -84px;
+        right: -174px;
+        font-size: 288px;
+        line-height: 346px;
+      }
+    }
+  }
+}

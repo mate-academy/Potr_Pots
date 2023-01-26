@@ -1,0 +1,49 @@
+.menu {
+  display: grid;
+  place-items: center;
+  background-color: $c-turquoise;
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transform: translateY(-30%);
+
+    @include tablet {
+      gap: 30px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 13%;
+    bottom: 7.4%;
+    line-height: 150%;
+    font-size: 12px;
+    color: $c-grey-light;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    transition: color $animation-time;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    & :nth-child(2) {
+      margin: 18px 0 5px;
+    }
+
+    & svg {
+      fill: $c-grey-light;
+      transition: fill $c-yellow-light;
+    }
+
+    &:hover {
+      color: $c-yellow-light;
+
+      & svg {
+        fill: $c-yellow-light;
+      }
+    }
+  }
+}

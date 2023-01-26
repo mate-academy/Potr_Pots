@@ -1,0 +1,39 @@
+.page {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $c-grey-dark;
+  scroll-behavior: smooth;
+  user-select: none;
+
+  &__body {
+    background-color: $c-grey-light;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 72%;
+    transform: translateX(100%);
+    transition: transform $animation-time;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__title {
+    @extend %bebas-neue;
+    font-size: 36px;
+    line-height: 150%;
+    color: $c-black;
+  }
+}

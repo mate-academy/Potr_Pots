@@ -1,0 +1,242 @@
+.benefits {
+  position: relative;
+
+  &__content {
+    @include tablet {
+      @include grid;
+      grid-template-rows: 100px 48px 35px auto;
+    }
+
+    @include desktop {
+      height: 828px;
+      grid-template-rows: 188px 206px 60px 48px 70px auto;
+    }
+  }
+
+  &__cards {
+    position: relative;
+    display: none;
+
+    @include desktop {
+      display: block;
+      grid-column: 1 / 6;
+    }
+
+    &:hover > :not(:hover) {
+      opacity: 0.4;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    padding: 16px 16px 26px;
+    background-color: #fff;
+    width: max-content;
+
+    font-size: 9px;
+    line-height: 130%;
+
+    cursor: pointer;
+    position: absolute;
+    transition: all $animation-time;
+
+    &:hover {
+      transform: scale(1.2) rotate(0);
+      z-index: 1;
+    }
+
+    &--1 {
+      top: 90px;
+      left: -12px;
+      transform: rotate(-15deg);
+    }
+
+    &--2 {
+      top: 30px;
+      left: 220px;
+      transform: rotate(-28.9deg);
+    }
+
+    &--3 {
+      top: 356px;
+      left: -58px;
+      transform: rotate(0deg);
+      z-index: 1;
+    }
+
+    &--4 {
+      top: 256px;
+      left: 164px;
+      transform: rotate(-15.2deg);
+    }
+
+    &--5 {
+      top: 554px;
+      left: 42px;
+      transform: rotate(-15.8deg);
+    }
+
+    &--6 {
+      top: 510px;
+      left: 274px;
+      transform: rotate(-30.4deg);
+    }
+  }
+
+  &__desc-box {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include tablet {
+      gap: 30px;
+      grid-column: 1 / 4;
+      grid-row: 1 / -1;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+      grid-column: 6 / -1;
+      grid-row: 2 / 3;
+      column-gap: 20px;
+    }
+  }
+
+  &__desc {
+    @include tablet {
+      padding-left: 26px;
+      &:nth-child(1) {
+        order: 1;
+      }
+
+      &:nth-child(2) {
+        order: 3;
+      }
+
+      &:nth-child(3) {
+        order: 2;
+      }
+    }
+
+    @include desktop {
+      &:nth-child(n) {
+        order: initial;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    color: $c-black;
+    position: relative;
+    margin-bottom: 5px;
+
+    @include tablet {
+      font-size: 36px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 42%;
+      left: -20px;
+      display: block;
+      width: 7px;
+      height: 7px;
+      transform: rotate(45deg);
+      background-color: $c-grey-dark;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      margin: 0;
+      grid-column: 4 / -1;
+      grid-row: 2 / 3;
+    }
+
+    @include desktop {
+      grid-column: 6 / 9;
+      grid-row: 4 / 5;
+    }
+
+    &--hidden {
+      margin: 50px 0 40px;
+      display: flex;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__sale {
+    @extend %bebas-neue;
+    font-size: 36px;
+    line-height: 50px;
+    color: $c-red;
+
+    @include tablet {
+      font-size: 24px;
+      line-height: 27px;
+    }
+
+    @include desktop {
+      font-size: 36px;
+      line-height: 50px;
+    }
+
+    & p {
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      margin-top: 10px;
+      color: $c-turquoise;
+
+      @include tablet {
+        font-size: 18px;
+        line-height: 18px;
+      }
+
+      @include desktop {
+        line-height: 50px;
+        font-size: 24px;
+        margin-top: 5px;
+      }
+    }
+
+    @include tablet {
+      grid-column: 4 / 6;
+      grid-row: 4 / -1;
+    }
+
+    @include desktop {
+      grid-column: 7 / 12;
+      grid-row: 6 / 7;
+    }
+  }
+
+  &__marker {
+    display: none;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 10px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+}

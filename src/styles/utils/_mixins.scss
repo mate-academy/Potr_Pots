@@ -1,6 +1,45 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin grid {
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin title-text {
+  @extend %bebas-neue;
+  color: transparent;
+  -webkit-text-stroke: 1px $c-turquoise;
+
+  & span {
+    -webkit-text-stroke: initial;
+    color: $c-turquoise;
+  }
+}
+
+@mixin img-hover {
+  transition: all $animation-time;
+  cursor: pointer;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: scale(1.03);
+    filter: hue-rotate(100deg);
   }
 }

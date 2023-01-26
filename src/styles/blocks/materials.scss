@@ -1,0 +1,277 @@
+.materials {
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+
+  &__content {
+    @include grid;
+  }
+
+  &__title {
+    @include title-text;
+    font-size: 58px;
+    line-height: 70px;
+    color: $c-turquoise;
+
+    @include tablet {
+      grid-column: 1 / 6;
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include desktop {
+      grid-column: 1 / 11;
+      font-size: 139px;
+      line-height: 167px;
+    }
+  }
+
+  &__desc {
+    display: none;
+
+    @include tablet {
+      display: block;
+      grid-column: 4 / -1;
+      position: relative;
+      top: -60px;
+      height: 112px;
+      overflow: hidden;
+
+      & span {
+        font-weight: 700;
+      }
+    }
+
+    @include desktop {
+      height: auto;
+      top: -170px;
+      grid-column: 8 / -1;
+
+      & span {
+        font-weight: 400;
+      }
+    }
+
+    & h3 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      margin-bottom: 10px;
+
+      @include desktop {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    margin-top: -80px;
+    position: relative;
+    z-index: -1;
+
+    @include tablet {
+      margin-top: -60px;
+    }
+
+    @include desktop {
+      margin-top: -370px;
+    }
+  }
+
+  &__card {
+    position: absolute;
+    width: 283px;
+    background: rgba(0, 0, 0, 0.41);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(17px);
+    padding: 35px;
+
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey-light;
+    text-align: start;
+    opacity: 0;
+    transition: opacity $animation-time;
+    pointer-events: none;
+
+    &--swiper {
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+      padding: 28px 43px 0;
+    }
+
+    &--1 {
+      top: -186px;
+      left: -46px;
+
+      @include desktop {
+        top: -196px;
+        left: -122px;
+      }
+    }
+
+    &--2 {
+      top: -186px;
+      left: -116px;
+
+      @include desktop {
+        left: -264px;
+      }
+    }
+
+    &--3 {
+      top: -234px;
+      left: -116px;
+
+      @include desktop {
+        top: -77px;
+        left: -294px;
+      }
+    }
+
+    &--4 {
+      top: -234px;
+      left: -100px;
+
+      @include desktop {
+        top: -256px;
+        left: -98px;
+      }
+    }
+
+    &--5 {
+      padding: 35px 45px;
+      width: 303px;
+      bottom: -248px;
+      left: -126px;
+
+      @include desktop {
+        bottom: -244px;
+      }
+    }
+  }
+
+  &__btn {
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: 51px;
+      height: 51px;
+      border: none;
+      cursor: pointer;
+      background-color: transparent;
+      background-image: url(../images/materials/btn.svg);
+      position: absolute;
+      transition: background-image $animation-time;
+    }
+
+    &:hover {
+      background-image: url(../images/materials/btn-hover.svg);
+    }
+
+    &--active {
+      background-image: url(../images/materials/btn-active.svg);
+      z-index: 1;
+
+      & .materials__card {
+        pointer-events: auto;
+        opacity: 1;
+      }
+
+      &:hover {
+        background-image: url(../images/materials/btn-active-hover.svg);
+      }
+    }
+
+    &--1 {
+      bottom: 13.3%;
+      left: 10.8%;
+
+      @include desktop {
+        bottom: 156px;
+        left: 254px;
+      }
+    }
+
+    &--2 {
+      bottom: 30.08%;
+      left: 30.08%;
+
+      @include desktop {
+        bottom: 400px;
+        left: 547px;
+      }
+    }
+
+    &--3 {
+      bottom: 9.37%;
+      left: 44%;
+
+      @include desktop {
+        bottom: 104px;
+        left: 684px;
+      }
+    }
+
+    &--4 {
+      bottom: 17.45%;
+      right: 39.06%;
+
+      @include desktop {
+        bottom: 272px;
+        right: 554px;
+      }
+    }
+
+    &--5 {
+      bottom: 41.4%;
+      right: 21.09%;
+
+      @include desktop {
+        bottom: 360px;
+        right: 274px;
+      }
+    }
+  }
+
+  &__swiper {
+    width: 100%;
+    padding: 0 10px;
+    height: 254px;
+    position: absolute;
+    bottom: -204px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__marker {
+    display: none;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 10px;
+    }
+
+    &--left {
+      left: 10px;
+      top: 200px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.for-whom {
+  margin: 110px 0;
+
+  @include tablet {
+    margin-bottom: 134px;
+  }
+
+  @include desktop {
+    margin: 150px 0;
+  }
+
+  &__content {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    position: relative;
+
+    @include tablet {
+      gap: 110px;
+      margin-top: 20px;
+    }
+
+    @include desktop {
+      margin-top: 34px;
+      @include grid;
+      row-gap: 80px;
+
+      & :nth-child(1) {
+        grid-column: 1 / -1;
+      }
+
+      & :nth-child(2) {
+        grid-column: 2 / 6;
+      }
+
+      & :nth-child(3) {
+        grid-column: 8 / -1;
+      }
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    right: -24px;
+    bottom: 0;
+
+    @include tablet {
+      top: -210px;
+    }
+
+    @include desktop {
+      top: -88px;
+      right: 0;
+    }
+
+    &--bottom {
+      display: none;
+
+      @include desktop {
+        display: block;
+        top: initial;
+        right: initial;
+        left: 0;
+        bottom: 0;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
