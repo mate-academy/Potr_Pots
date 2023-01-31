@@ -2,7 +2,7 @@
   position: relative;
   padding-top: 40px;
 
-  color: black;
+  color: $black;
 
   @include onTablet {
     padding-top: 20px;
@@ -20,11 +20,11 @@
     right: 0;
     left: 0;
 
-    @include page-bg (77deg);
+    @include page-bg(77deg);
 
     @include onTablet {
       bottom: -90px;
-      @include page-bg (83deg);
+      @include page-bg(83deg);
     }
 
     @include onDesktop {
@@ -38,14 +38,14 @@
     top: 0;
     right: 0;
 
-    @include shape (149px);
-    @include image (circle, contain, image, 40px 0);
+    @include shape(149px);
+    @include image(circle, contain, image, 40px 0);
 
     transform: translateY(-50%);
 
     @include onDesktop {
-      @include shape (160px);
-      @include image (circle, contain, image);
+      @include shape(160px);
+      @include image(circle, contain, image);
 
       transform: translate(50%, -60%);
     }
@@ -53,7 +53,7 @@
 
   &__container {
     @extend %container;
-    @include grid ($tab-rows: (3, auto));
+    @include grid($tab-rows: (3, auto));
 
       @include onDesktop {
         position: relative;
@@ -62,8 +62,8 @@
   }
 
   &__title {
-    @include h2 ($font-secondary);
-    color: black;
+    @include h2($font-secondary);
+    color: $black;
 
     @include onTablet {
       grid-row: 1;
@@ -73,7 +73,7 @@
 
   &__subtitle {
     margin-bottom: 40px;
-    color: black;
+    color: $black;
 
     @include onTablet {
       grid-row: 2;
@@ -130,7 +130,7 @@
   &__info-title {
     margin-bottom: 5px;
 
-    @include h3 ($font-main);
+    @include h3($font-main);
     color: scaleColor(61%);
   }
 

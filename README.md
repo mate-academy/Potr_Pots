@@ -1,41 +1,33 @@
-# POTR POTS landing page (HARD)
+# POTR POTS landing page
 
-**⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).** 
+Landing page for [Potr Pots](https://potrpots.com/) company. Presents the company itself, its goals and mission, team, products and services. Describes the benefits of the company's products and services. Contains a form for sending a request for a consultation.
 
-Implement landing page according to [Figma design](https://www.figma.com/file/50zgLU65Mcd3MisFHMfLfx/POTR-POTS_FE-students?node-id=1760%3A281) - Use BEM and SCSS
-- The design 1440px
-- Desktop 1280px
-- Tablet 640px
-- Mobile (> 320px)
+# [DEMO](https://anastasiia-tilikina.github.io/Potr_Pots/)
 
-1. Implement the header with `nav`.
-1. Implement `For whom` block.
-1. Implement `Features` block.
-1. Implement `POTR team` block with the card reused 3 times.
-1. Implement `Materials` block with 4 process cards.
-1. Implement `POTR size` block.
-1. Implement `Benefits` block.
-1. Implement `Questions` block
-1. Implement the footer.
+# Technologies used
+- HTML
+- CSS
+- Sass (SCSS)
+- BEM
+- JavaScript
 
+# Features overview
 
-## Github flow
-1. **Fork** the repo.
-2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
-3. Run `npm install` (or just `npm i`)
-4. Run `npm start`.
-5. Open one more terminal window for the next steps
-6. `git checkout -b develop` - to create new branch and switch on it
-7. Write you code in `src` folder
-8. Run `npm run lint` and fix code style errors.
-9. Run `npm run deploy` to deploy your solution to `gh-pages`
-10. `git add . && git commit -m 'solution'` to save your changes
-11. `git push origin develop` - to send you code for PR
-12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
-13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://anastasiia-tilikina.github.io/Potr_Pots/)
-14. Copy `DEMO LINK` to the PR description
+A Pixel Perfect Layout is adaptive and responsive as well as cross-browser compatible. It works correctly on all screen sizes (mobile, tablet and desktop versions). Is is implemented using the mobile-first approach.
 
-> To update you PR repeat steps 7-11
+The code is valid HTML5 and CSS3. In order to decrease user load and avoid code duplication, styles are implemented using Sass (SCSS) including advanced features like mixins, extends, functions, conditional operators etc. 
+BEM methodology is used for naming classes. This naming convention makes the code more readable and understandable, helps to avoid naming conflicts and makes the code easier to maintain and reuse.
 
---> [CHECKLIST](https://github.com/mate-academy/Potr_Pots/blob/master/checklist.md)
+User interaction is implemented using hover effects, transition and JavaScript. The page is interactive and has a smooth animation.
+
+Semantic and meta tags are used. SEO optimization is done. Accessibility is improved. The page is optimized for loading speed.
+
+*see google lighthouse report below*
+
+![Report](./src/images/README-lighthouse-report.png)
+
+# Reflections
+
+After practicing with easier Landing page layout I decided to try to implement a more complex one combining all the knowledge in HTML/CSS I have gained so far along with some JavaScript and DOM manipulations in order to make the page more interactive.
+
+The main challenge of this project was to implement more difficult Design then I did before and to make it responsive. I had to use more advanced CSS features like flexbox, grid, media queries, pseudo-classes and pseudo-elements along with Sass (SCSS) features like mixins, extends, functions, conditional operators etc.

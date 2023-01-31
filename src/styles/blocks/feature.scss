@@ -10,23 +10,24 @@
   }
   
   &__photo-container {
-    @include photo-container (386px);
+    @include photo-container(386px);
+    overflow: hidden;
 
     margin-bottom: 30px;
-
-    @include hover {
-      transform: scale(1.1);
-    }
   }
 
   &__img {
-    @include photo (cover);
+    @include photo(cover);
+
+    @include hover {
+      transform: scale(1.1) translate(-5%, -5%);
+    }
   }
 
   &__title {
     margin-bottom: 20px;
 
-    @include text ($font-secondary, 24px);
+    @include text($font-secondary, 24px);
     color: $gray-dark;
   }
 }

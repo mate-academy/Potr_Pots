@@ -1,5 +1,5 @@
 .unit {
-  @include grid ($tab-cols: (2, 1fr));
+  @include grid($tab-cols: (2, 1fr));
 
   @for $index from 1 through 3 {
     &--#{$index} &__title::before {
@@ -10,7 +10,7 @@
 
       line-height: 30px;
 
-      @include image (more-about_before, contain, icon, 0);
+      @include image(more-about_before, contain, icon, 0);
 
       @include onTablet {
         position: absolute;
@@ -30,7 +30,7 @@
     @include onTablet {
       display: block;
 
-      @include photo-container (500px, 85%);
+      @include photo-container(500px, 85%);
     }
 
 
@@ -40,7 +40,6 @@
     }
 
     @include hover {
-
       & :first-child {
         filter: blur(4px);
       }
@@ -63,7 +62,7 @@
   }
 
   &__img {
-    @include photo (cover);
+    @include photo(cover);
   }
 
   &__content {
@@ -88,7 +87,7 @@
         content: "*";
         position: absolute;
         font-size: 27px;
-        color: black;
+        color: $black;
         transform: translateX(-20px);
       }
     }
@@ -105,8 +104,8 @@
 
   &__title {
     margin-bottom: 20px;
-    @include h2 ($font-secondary);
-    color: black;
+    @include h2($font-secondary);
+    color: $black;
 
     @include onTablet {
       position: relative;
@@ -119,7 +118,7 @@
         width: 23px;
         padding-bottom: 50px;
 
-        @include image (more-about_after, contain, icon, 0);
+        @include image(more-about_after, contain, icon, 0);
       }
     }
   }
@@ -127,7 +126,7 @@
   &--2,
   &--3 {
     @include onDesktop {
-      @include flex (column);
+      @include flex(column);
     }
   }
 
@@ -136,7 +135,7 @@
       grid-column: -1 / -2;
       justify-self: end;
 
-      @include shape (90%, 420px);
+      @include shape(90%, 420px);
       margin-bottom: 45px;
     }
 
@@ -183,7 +182,7 @@
     }
 
     @include onDesktop {
-      @include shape (100%, 670px);
+      @include shape(100%, 670px);
       margin-bottom: 45px;
     }
   }

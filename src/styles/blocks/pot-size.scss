@@ -1,10 +1,9 @@
 .pot-size {
-
   &__title {
     @extend %container;
     margin-bottom: 20px;
 
-    @include h2 ($font-secondary);
+    @include h2($font-secondary);
 
     @include onTablet {
       margin-bottom: 30px;
@@ -18,7 +17,7 @@
   &__container {
     @extend %container-tablet;
 
-    @include grid ($tab-rows: (3, auto), $desk-rows: (2, auto));
+    @include grid($tab-rows: (3, auto), $desk-rows: (2, auto));
   }
 
   &__intro {
@@ -45,8 +44,7 @@
   &__photo-container {
     margin-bottom: 30px;
 
-    @include photo-container (337px);
-
+    @include photo-container(337px);
 
     @include onTablet {
       grid-row: 2;
@@ -70,7 +68,7 @@
   }
 
   &__img {
-    @include photo (contain);
+    @include photo(contain);
   }
 
   &__sizes {
@@ -104,7 +102,7 @@
   }
 
   &__subtitle {
-    @include text ($font-secondary, 18px);
+    @include text($font-secondary, 18px);
     margin-bottom: 10px;
   }
 

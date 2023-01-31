@@ -1,10 +1,10 @@
 .materials {
   position: relative;
-  @include image (materials, contain, image);
+  @include image(materials, contain, image);
 
   @include onTablet {
     padding-top: 100%;
-    @include image (materials, contain, image, bottom);
+    @include image(materials, contain, image, bottom);
   }
 
   &__container {
@@ -20,16 +20,16 @@
     @extend %container;
     margin-bottom: 120px;
 
-    @include text ($font-secondary, 58px, 70px);
+    @include text($font-secondary, 58px, 70px);
     color: $blue;
 
     @include onTablet {
-      @include text ($font-secondary, 80px, 96px);
+      @include text($font-secondary, 80px, 96px);
       margin-bottom: 0;
     }
 
     @include onDesktop {
-      @include text ($font-secondary, 138px, 166px);
+      @include text($font-secondary, 138px, 166px);
       transform: translateY(30%);
     }
   }
@@ -63,13 +63,48 @@
     }
   }
 
-  &__highlight-link {
+  &__highlight-paragraph {
     @include onTablet {
-      display: inline;
+      display: inline-block;
+      
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     @include onDesktop {
+      display: inline;
       pointer-events: none;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    &--hidden {
+      @include onTablet {
+        opacity: 0;
+        pointer-events: none;
+
+        z-index: 1;
+      }
+
+      @include onDesktop {
+        opacity: 1;
+      }
+    }
+
+    &--shown {
+      @include onTablet {
+        z-index: 3;
+        padding-left: 5px;
+        color: $gray-light;
+        background-color: scaleColor(65%);
+        backdrop-filter: blur(30px);
+        opacity: 1;
+
+        pointer-events: all;
+      }
     }
   }
 
@@ -91,50 +126,27 @@
     }
   }
 
-
-  &__highlight-hidden {
-    @include onTablet {
-      display: inline-block;
-      opacity: 0;
-      pointer-events: none;
-
-      z-index: 1;
-
-      &:target {
-        z-index: 3;
-        padding-left: 5px;
-        color: $gray-light;
-        background-color: scaleColor(65%);
-        backdrop-filter: blur(30px);
-        opacity: 1;
-
-        pointer-events: all;
-      }
-    }
-
-    @include onDesktop {
-      display: inline;
-      opacity: 1;
-    }
-  }
-
   &__advantages {
+    display: flex;
     height: 260px;
     margin: 0 10px;
     overflow: hidden;
 
     @include onTablet {
+      display: block;
       height: fit-content;
       margin: 0;
     }
   }
 
   &__advantage {
+    flex-shrink: 0;
+    transition: all $duration linear;
 
     @include onTablet {
       position: absolute;
 
-      & :first-child, :nth-child(2) {
+      & :first-child {
         order: 1;
         z-index: 1;
       }
@@ -145,12 +157,11 @@
     }
 
     &--1 {
-
       @include onTablet {
         top: 50%;
         right: 5%;
 
-        & :first-child, :nth-child(2) {
+        & :first-child {
           order: 0;
         }
       }
@@ -196,7 +207,7 @@
         top: 55%;
         right: 49%;
 
-        & :nth-child(3) {
+        & :nth-child(2) {
           transform: translateX(-50%);
         }
       }
@@ -207,7 +218,7 @@
         top: 55%;
         right: 67%;
 
-        & :nth-child(3) {
+        & :nth-child(2) {
           transform: translateX(30%);
         }
       }
@@ -216,7 +227,7 @@
         top: 73%;
         right: 70%;
 
-        & :nth-child(3) {
+        & :nth-child(2) {
           transform: translateX(0);
         }
       }

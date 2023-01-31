@@ -1,27 +1,26 @@
 .button {
   box-sizing: border-box;
-  @include flex ($content: center, $items: center, $gap: 10px);
+  @include flex($content: center, $items: center, $gap: 10px);
 
-  @include shape (100%, 48px);
+  @include shape(100%, 48px);
 
-  @include text ($font-main, 14px, 21px);
-  color: black;
+  @include text($font-main, 14px, 21px);
+  color: $black;
   text-transform: uppercase;
 
   cursor: pointer;
 
   &::after {
     content: "";
-    @include shape (25px, 8px);
+    @include shape(25px, 8px);
   }
-  
-  
+
   &--primary {
     color: white;
     background-color: $blue;
 
     &::after {
-      @include image (Arrow_white, contain, icon)
+      @include image(Arrow_white, contain, icon)
     }
 
     &:hover {
@@ -33,7 +32,7 @@
     background-color: $yellow;
 
     &::after {
-      @include image (Arrow_black, contain, icon);
+      @include image(Arrow_black, contain, icon);
     }
 
     &:hover {
@@ -45,7 +44,7 @@
     border: 1px solid $blue;
 
     &::after {
-      @include image (Arrow_black, contain, icon);
+      @include image(Arrow_black, contain, icon);
     }
 
     &:hover {
@@ -53,7 +52,7 @@
       background-color: $blue;
 
       &::after {
-        @include image (Arrow_white, contain, icon);
+        @include image(Arrow_white, contain, icon);
       }
     }
   }
@@ -62,7 +61,7 @@
     border: 1px solid $gray-dark;
 
     &::after {
-      @include image (Arrow_gray, contain, icon);
+      @include image(Arrow_gray, contain, icon);
     }
   }
 
@@ -71,16 +70,14 @@
     border: 1px solid white;
 
     &::after {
-      @include image (Arrow_white, contain, icon);
+      @include image(Arrow_white, contain, icon);
     }
   }
 
-
-
   &--side-header {
-    @include shape (max-content, min-content);
+    @include shape(max-content, min-content);
     text-transform: none;
-    @include text ($font-main, 12px, 18px);
+    @include text($font-main, 12px, 18px);
     color: $blue;
     
     &::after {
@@ -92,12 +89,12 @@
     @include shape(fit-content);
     padding: 5px;
     
-    @include text ($font-secondary, 12px);
+    @include text($font-secondary, 12px);
     letter-spacing: 0.22em;
     color: $gray-secondary;
 
     &::after {
-      @include shape (65px, 0.1px);
+      @include shape(65px, 0.1px);
       border-bottom: 1px solid $gray-secondary;
       order: -1;
     }

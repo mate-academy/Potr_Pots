@@ -1,8 +1,8 @@
 .menu {
   box-sizing: border-box;
-  @include flex (column, space-between);
+  @include flex(column, space-between);
 
-  @include shape (70vw, 100vh);
+  @include shape(70vw, 100vh);
   padding: 40px 30px;
 
   background-color: $blue;
@@ -15,7 +15,7 @@
   overflow-y: auto;
 
   @include onDesktop {
-    @include shape (fit-content);
+    @include shape(fit-content);
     padding: 0;
 
     background-color: transparent;
@@ -69,14 +69,16 @@
 
           @include shape(30px);
 
-          @include image (basket, contain, icon);
+          @include image(basket, contain, icon);
           transform: translate(-50%, -50%);
         }
       }
 
       @include hover {
-        & :first-child {
-          color: transparent;
+        @include onDesktop {
+          & :first-child {
+            color: transparent;
+          }
         }
       }
     }
@@ -108,11 +110,11 @@
     box-sizing: border-box;
     display: inline-block;
 
-    @include shape (14px, 14px, 50%);
+    @include shape(14px, 14px, 50%);
     margin-left: 5px;
     padding: 1px 0 0 1.5px;
 
-    @include text ($font-secondary, 9px, 14px);
+    @include text($font-secondary, 9px, 14px);
     text-align: center;
     color: $gray-light;
 
@@ -149,10 +151,10 @@
       content: "";
       position: absolute;
 
-      @include shape (11px, 48px);
+      @include shape(11px, 48px);
       margin-top: 30px;
 
-      @include image (close_after, contain, icon);
+      @include image(close_after, contain, icon);
     }
 
     &::after {
@@ -162,7 +164,7 @@
       top: 50%;
       left: 50%;
 
-      @include text ($font-main, 12px, 18px);
+      @include text($font-main, 12px, 18px);
       text-transform: uppercase;
 
       transform: translate(-50%, 90px) rotate(90deg);

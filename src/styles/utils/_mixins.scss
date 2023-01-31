@@ -1,22 +1,22 @@
 @mixin onDesktop {
-  @media (min-width: 1280px) {
+  @media(min-width: 1280px) {
     @content;
   }
 }
 
 @mixin onTablet {
-  @media (min-width: 640px) {
+  @media(min-width: 640px) {
     @content;
   }
 }
 
 @mixin onMobile {
-  @media (max-width: 639px) {
+  @media(max-width: 639px) {
     @content;
   }
 }
 
-@mixin text ($font,
+@mixin text($font,
   $size,
   $line: $size,
   $weight: false) {
@@ -34,7 +34,7 @@
   }
 }
 
-@mixin h2 ($font: $font-secondary) {
+@mixin h2($font: $font-secondary) {
   @include text($font, 36px, 54px);
 
   @if $font == $font-main {
@@ -42,7 +42,7 @@
   }
 }
 
-@mixin h3 ($font) {
+@mixin h3($font) {
   @if $font ==$font-main {
     @include text($font, 24px, 36px);
   }
@@ -52,7 +52,7 @@
   }
 }
 
-@mixin image ($name, $size, $type, $position: center) {
+@mixin image($name, $size, $type, $position: center) {
   @if $type =="icon" {
     background-image: url(../images/icons/#{$name}.svg);
   }
@@ -66,7 +66,7 @@
   background-repeat: no-repeat;
 }
 
-@mixin shape ($width,
+@mixin shape($width,
   $height: $width,
   $radius: false
 ) {
@@ -75,14 +75,14 @@
 
     @if $radius {
       border-radius: $radius;
-   }
- }
+    }
+}
 
-@mixin page-bg ($deg) {
+@mixin page-bg($deg) {
   background: conic-gradient(from $deg at 0% 100%, transparent 0%, $yellow-light 100%);
 }
 
-@mixin flex ($direction: row,
+@mixin flex($direction: row,
   $content: false,
   $items: false,
   $gap: false,
@@ -110,14 +110,13 @@
   }
 }
 
-
-@mixin grid (
+@mixin grid(
   $tab-rows: false,
-  $desk-rows: false, 
-  $tab: true, 
+  $desk-rows: false,
+  $tab: true,
   $tab-cols: (6, 1fr),
   $desk: true,
-  $desk-cols:(12, 1fr)
+  $desk-cols: (12, 1fr)
 ) {
 
   display: block;
@@ -149,7 +148,7 @@
   }
 }
 
-@mixin photo-container ($max-height, $width: 100%) {
+@mixin photo-container($max-height, $width: 100%) {
   position: relative;
   box-sizing: border-box;
   width: $width;
@@ -164,9 +163,9 @@
   }
 }
 
-@mixin photo ($fit, $pos: center) {
+@mixin photo($fit, $pos: center) {
   position: absolute;
-  @include shape (100%);
+  @include shape(100%);
   object-fit: $fit;
   object-position: $pos;
 }
@@ -181,7 +180,7 @@
   }
 }
 
-@mixin stroke ($border: 0.6px) {
+@mixin stroke($border: 0.6px) {
   color: transparent;
   -webkit-text-stroke: $border $blue;
 }

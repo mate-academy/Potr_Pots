@@ -8,7 +8,7 @@
   &__container {
     @extend %container;
 
-    @include grid ($tab-rows: (2, 1fr), $desk-rows: (3, 1fr));
+    @include grid($tab-rows: (2, 1fr), $desk-rows: (3, 1fr));
   }
 
   &__gallery {
@@ -18,7 +18,7 @@
       grid-row: 1 / -1;
       grid-column: 1 / 6;
 
-      @include flex ($wrap: true);
+      @include flex($wrap: true);
     }
   }
 
@@ -47,10 +47,9 @@
     @include onTablet {
       grid-row: 1 / -1;
       grid-column: 1 / 4;
-      @include flex (column);
+      @include flex(column);
       
       margin-bottom: 0;
-
     }
 
     @include onDesktop {
@@ -61,7 +60,6 @@
   }
 
   &__feature {
-
     @include onTablet {
       padding-left: 17px;
     }
@@ -120,21 +118,23 @@
     position: relative;
     margin-bottom: 5px;
 
-    @include text ($font-main, 32px, 48px);
+    @include text($font-main, 32px, 48px);
 
     @include onTablet {
-      @include h2 ($font-main);
+      @include h2($font-main);
     }
 
     &::before {
       content: "";
       position: absolute;
 
-      @include shape (7px);
+      @include shape(7px);
       background-color: $gray-dark;
       transform: rotate(45deg);
       top: 25px;
       left: -15px;
+
+      transition: all $duration linear;
     }
 
     @include hover {
@@ -214,29 +214,29 @@
 
   &__discount-value {
     margin-bottom: 10px;
-    @include h2 ($font-secondary);
+    @include h2($font-secondary);
     color: $red;
 
     @include onTablet {
-      @include h3 ($font-secondary);
+      @include h3($font-secondary);
       margin-bottom: 5px;
     }
 
     @include onDesktop {
-      @include h2 ($font-secondary);
+      @include h2($font-secondary);
     }
   }
 
   &__discount-detail {
-    @include h3 ($font-secondary);
+    @include h3($font-secondary);
     color: $blue;
 
     @include onTablet {
-      @include text ($font-secondary, 18px)
+      @include text($font-secondary, 18px)
     }
 
     @include onDesktop {
-      @include h3 ($font-secondary);
+      @include h3($font-secondary);
     }
   }
 }

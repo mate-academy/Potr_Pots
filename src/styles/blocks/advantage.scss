@@ -2,9 +2,9 @@
   position: relative;
   box-sizing: border-box;
 
-  @include flex (column, space-between, center);
+  @include flex(column, space-between, center);
 
-  @include shape (100%, 260px);
+  @include shape(100%, 260px);
   padding: 30px 40px;
 
   background-color: scaleColor(55%);
@@ -14,38 +14,21 @@
     justify-content: center;
     gap: 20px;
 
-    @include shape (fit-content);
+    @include shape(fit-content);
     padding: 0;
 
     background-color: transparent;
     box-shadow: none;
   }
 
-  &:target &__description {
-    @include onTablet {
-      z-index: 2;
-      visibility: visible;
-    }
-  }
-
-  &:target &__link {
-    @include onTablet {
-      display: none;
-    }
-
-    &--close {
-      display: block;
-    }
-  }
-
-  &__link {
+  &__button {
     display: none;
 
     @include onTablet {
       position: relative;
       display: block;
 
-      @include shape (50px, 50px, 50%);
+      @include shape(50px, 50px, 50%);
       background-color: $red;
 
       &::before,
@@ -55,7 +38,7 @@
         top: 50%;
         left: 50%;
 
-        @include shape (12px, 00.1px);
+        @include shape(12px, 00.1px);
         border-top: 1px solid $gray-light;
 
         transform: translate(-50%, -50%);
@@ -66,7 +49,6 @@
       }
 
       &--close {
-        display: none;
         background-color: scaleColor(25%);
         backdrop-filter: blur(12px);
         opacity: 0.65;
@@ -96,14 +78,21 @@
       width: 300px;
       backdrop-filter: blur(35px);
     }
+
+    &--shown {
+      @include onTablet {
+        z-index: 2;
+        visibility: visible;
+      }
+    }
   }
 
-  &__description-link {
+  &__description-button {
     position: absolute;
     right: 0;
     top: 0;
 
-    @include shape (33%, 100%);
+    @include shape(33%, 100%);
 
     &--back {
       left: 0;
@@ -114,7 +103,7 @@
     }
   }
 
-  &__links-list {
+  &__buttons-list {
     @include onTablet {
       display: none;
     }

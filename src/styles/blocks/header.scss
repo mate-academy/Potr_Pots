@@ -1,7 +1,6 @@
 .header {
-
   &__top {
-    @include flex ($content: space-between, $items: center);
+    @include flex($content: space-between, $items: center);
     @extend %container;
 
     margin-bottom: 10px;
@@ -45,7 +44,7 @@
 
   &__container {
     @extend %container-tablet;
-    @include grid ($tab-rows: (3, auto));
+    @include grid($tab-rows: (3, auto));
 
     @include onTablet {
       position: relative;
@@ -61,13 +60,13 @@
       left: -50%;
       z-index: -1;
 
-      @include page-bg (77deg);
+      @include page-bg(77deg);
     }
 
     @include onDesktop {
       right: 25.2%;
       bottom: 10%;
-      @include page-bg (75deg);
+      @include page-bg(75deg);
     }
   }
 
@@ -88,7 +87,7 @@
   &__photo-container {
     z-index: -1;
     
-    @include photo-container (400px);
+    @include photo-container(400px);
 
     margin-bottom: 25px;
 
@@ -97,26 +96,25 @@
       grid-column: 4 / -1;
       justify-self: end;
 
-      @include photo-container (306px, 90%);
+      @include photo-container(306px, 90%);
       aspect-ratio: 1 / 1;
       margin-bottom: 0;
     }
 
     @include onDesktop {
       grid-column: 7 / -1;
-      @include photo-container (500px, 88%);
-
+      @include photo-container(500px, 88%);
     }
   }
 
   &__img {
-    @include photo (contain);
+    @include photo(contain);
   }
 
   &__title {
     margin-bottom: 30px;
 
-    @include text ($font-secondary, 36px, 43px);
+    @include text($font-secondary, 36px, 43px);
     color: $blue;
 
     &--stroke {
@@ -128,7 +126,7 @@
       grid-column: 1 / 5;
       margin-bottom: 0;
 
-      @include text ($font-secondary, 64px);
+      @include text($font-secondary, 64px);
     }
 
     @include onDesktop {
@@ -153,7 +151,7 @@
   }
 
   &__proposal-price {
-    @include h3 ($font-main);
+    @include h3($font-main);
     color: $gray-dark;
 
     @include onDesktop {
@@ -162,7 +160,7 @@
   }
 
   &__proposal-description {
-    @include text ($font-main, 14px, 21px);
+    @include text($font-main, 14px, 21px);
   }
 
   &__button {
