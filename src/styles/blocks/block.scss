@@ -1,0 +1,259 @@
+.block {
+  display: block;
+
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--2 {
+    @include onDesktop {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 40vw;
+
+      margin-left: 100px;
+      margin-top: 185px;
+    }
+  }
+
+  &--3 {
+    @include onDesktop {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      object-fit: cover;
+
+      &--1 {
+        width: 284px;
+        height: 284px;
+
+        margin-top: 19px;
+
+        @include onDesktop {
+          width: 500px;
+          height: 500px;
+          margin-top: 8px;
+          margin-right: clamp(113px, calc(100vw - 970px), 320px);
+        }
+      }
+
+      &--2 {
+        width: 300px;
+        height: 417px;
+
+        margin-bottom: 111px;
+
+        @include onDesktop {
+          margin-bottom: 39px;
+        }
+      }
+
+      &--3 {
+        margin-top: 11px;
+        width: 284px;
+        height: 405px;
+
+        @include onDesktop {
+          margin-top: 80px;
+          width: 470px;
+          height: 670px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      &--1 {
+        width: 278px;
+
+        @include onDesktop {
+          width: 370px;
+        }
+      }
+
+      &--2 {
+        order: -1;
+        width: 340px;
+
+        @include onDesktop {
+          order: 2;
+        }
+      }
+
+      &--3 {
+        width: 340px;
+      }
+    }
+  }
+
+  &__heshteg {
+    display: none;
+    @extend %fons--16-p;
+
+    @include onTablet {
+      position: relative;
+      display: block;
+      color: #333;
+
+      &--1 {
+        margin-bottom: 25px;
+
+        &::before {
+          position: absolute;
+          content: "*";
+          left: -20px;
+        }
+
+        @include onDesktop {
+          margin-top: 120px;
+          margin-bottom: 39px;
+
+          &::before {
+            left: -30px;
+          }
+        }
+      }
+
+      &--2 {
+        margin-bottom: 96px;
+        text-align: right;
+
+        &::before {
+          position: absolute;
+          content: "*";
+          right: 80px;
+        }
+
+        @include onDesktop {
+          text-align: left;
+
+          &::before {
+            left: -30px;
+          }
+        }
+      }
+
+      &--3 {
+        margin-bottom: 25px;
+
+        &::before {
+          position: absolute;
+          content: "*";
+          left: -20px;
+        }
+
+        @include onDesktop {
+          margin-top: 39px;
+
+          &::before {
+            left: -30px;
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    &--3 {
+      @include onDesktop {
+        margin-left: 100px;
+        width: 340px;
+      }
+    }
+  }
+
+  &__number {
+    position: relative;
+
+    @extend %fons--36-b;
+    letter-spacing: 0.09em;
+
+    left: 15px;
+    margin-bottom: 28px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      width: 1px;
+      height: 46px;
+      background-color: #000;
+      transform: rotate(22deg);
+    }
+
+    @include onTablet {
+      position: absolute;
+
+      &--1 {
+        left: -30px;
+
+        @include onDesktop {
+          left: -78px;
+        }
+      }
+
+      &--2 {
+        left: 0;
+        top: -70px;
+
+        @include onDesktop {
+          left: 15px;
+          margin-bottom: 22px;
+        }
+      }
+
+      &--3 {
+        left: -30px;
+      }
+    }
+  }
+
+  &__title-text {
+    margin-bottom: 28px;
+
+    @extend %fons--36-b;
+    letter-spacing: 0.09em;
+
+    @include onTablet {
+      margin-bottom: 11px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 70px;
+
+    @extend %fons--16-p;
+    color: #4f4f4f;
+
+    &--1 {
+      @include onTablet {
+        margin-bottom: 94px;
+      }
+    }
+
+    &--3 {
+      margin-bottom: 112px;
+
+      @include onTablet {
+        margin-bottom: 130px;
+      }
+
+      @include onDesktop {
+        margin-left: 100px;
+        width: 340px;
+        margin-bottom: 150px;
+      }
+    }
+  }
+}

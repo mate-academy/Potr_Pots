@@ -1,6 +1,20 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 780px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin addImg ($size) {
+  height: #{$size}px;
+  width: #{$size}px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

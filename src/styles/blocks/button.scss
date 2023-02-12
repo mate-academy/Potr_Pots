@@ -1,0 +1,39 @@
+.button {
+  position: relative;
+  width: 238px;
+  height: 48px;
+  border: 1px solid $col-yellow;
+  background-color: $col-yellow;
+
+  display: flex;
+  align-items: center;
+  padding-left: 62px;
+
+  @extend %fons--14-p;
+  text-transform: uppercase;
+  color: #4f4f4f;
+
+  @include onTablet {
+    border: 1px solid $col-turquoise;
+    background-color: transparent;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border: 1px solid #333;
+
+    @include onTablet {
+      background-color: $col-turquoise;
+      border: 1px solid $col-turquoise;
+      color: #fff;
+    }
+  }
+
+  &::after {
+    position: absolute;
+
+    content: "⟶";
+    font-size: 28px;
+    transform: translateX(80px);
+  }
+}

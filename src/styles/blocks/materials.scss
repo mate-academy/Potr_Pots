@@ -1,0 +1,168 @@
+.materials {
+  position: relative;
+
+  &__img {
+    overflow: hidden;
+  }
+
+  &__title {
+    @extend %fons--58-b;
+    color: $col-turquoise;
+    letter-spacing: 0.15em;
+    line-height: 58px;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 80px;
+    }
+
+    @include onDesktop {
+      font-size: 140px;
+      line-height: 140px;
+    }
+  }
+
+  &__back {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__environment {
+    display: none;
+
+    font-family: "Proxima Nova Regullar", sans-serif;
+    font-size: 20px;
+    line-height: 150%;
+    color: #4f4f4f;
+
+    @include onTablet {
+      background-color: rgba($color: #fff, $alpha: 0.4);
+      border-radius: 10px;
+      display: block;
+      width: calc((100% - 30px) / 2);
+      max-width: 400px;
+      padding: 0 35px;
+    }
+
+    position: absolute;
+    right: 0;
+    top: 82px;
+
+    @include onDesktop {
+      top: 175px;
+      width: calc((100% - 200px) / 2);
+      padding: 0 40px;
+    }
+  }
+
+  &__env-totle {
+    margin-bottom: 14px;
+  }
+
+  &__env-text {
+    font-size: 16px;
+  }
+
+  &__btn {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-image: url(../images/icons__svg/add.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: none;
+
+    transition: box-shadow 0.3s;
+
+    @include onTablet {
+      height: 52px;
+      width: 52px;
+    }
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px,
+        rgba(0, 0, 0, 0.24) 0 1px 2px;
+    }
+
+    &:active {
+      box-shadow: rgb(38, 57, 77) 0 20px 30px -10px;
+    }
+
+    &--1 {
+      left: 18%;
+      bottom: 13%;
+    }
+
+    &--2 {
+      left: 38%;
+      bottom: 30%;
+    }
+
+    &--3 {
+      left: 48%;
+      bottom: 8%;
+    }
+
+    &--4 {
+      left: 58%;
+      bottom: 23%;
+    }
+
+    &--5 {
+      left: 77%;
+      bottom: 28%;
+    }
+  }
+
+  &__btn-info {
+    position: absolute;
+
+    padding: 35px 45px 45px;
+
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    background-color: #00000069;
+    color: #f8f8f8;
+    @extend %fons--16-p;
+    text-align: left;
+    border-radius: 10px;
+    pointer-events: none;
+
+    @include onTablet {
+      display: block;
+      width: 300px;
+      transform: translate(calc(26px - 50%), calc(26px + 20px));
+    }
+  }
+
+  &__info-mob {
+    position: absolute;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__block {
+    display: none;
+
+    &--active {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.materials__btn--active {
+  background-image: url(../images/icons__svg/component.png);
+  border: none;
+  pointer-events: auto;
+
+  .materials__btn-info {
+    opacity: 1;
+    z-index: 3;
+  }
+}

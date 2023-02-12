@@ -1,0 +1,45 @@
+.main {
+  margin-top: 100px;
+
+  @include onTablet {
+    margin-top: 120px;
+  }
+
+  @include onDesktop {
+    margin-top: 150px;
+  }
+
+  &__title {
+    @extend %fons--36-b;
+    letter-spacing: 0.09em;
+    margin-bottom: 26px;
+
+    @include onTablet {
+      margin-bottom: 19px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__blocks {
+    @include onDesktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__materials {
+    margin-top: 100px;
+
+    @include onTablet {
+      margin-top: 170px;
+    }
+
+    @include onDesktop {
+      margin-top: 225px;
+    }
+  }
+}

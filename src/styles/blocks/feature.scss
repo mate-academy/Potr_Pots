@@ -1,0 +1,71 @@
+.feature {
+  &__cards {
+    margin-bottom: 95px;
+
+    @include onTablet {
+      margin-bottom: 152px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 126px;
+    }
+  }
+  &__title {
+    @extend %fons--58-b;
+    color: $col-turquoise;
+
+    margin-bottom: 50px;
+
+    @include onDesktop {
+      margin-bottom: 77px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    margin-bottom: 35px;
+  }
+
+  &__card-title {
+    @extend %fons--24-b;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+    color: #333;
+  }
+
+  &__text {
+    @extend %fons--16-p;
+    margin-bottom: 64px;
+    color: #4f4f4f;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+}
