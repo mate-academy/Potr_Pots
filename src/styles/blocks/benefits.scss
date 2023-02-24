@@ -1,0 +1,178 @@
+.benefits {
+
+  &__event {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      letter-spacing: 0.22em;
+      position: absolute;
+      right: 0;
+      transform: rotate(90deg) translate(100%, -45px);
+      color: $c-light-grey;
+
+      @include onDesktop {
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        transform: translate(-115%, -8px);
+        display: block;
+        height: 1px;
+        width: 65px;
+        background-color: $c-light-grey;
+      }
+    }
+  }
+
+  &__content {
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      right: 0;
+      height: 790px;
+      width: 610px;
+      background-image: url(../images/benefits/benefits.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &-container {
+
+      @include onDesktop {
+        position: relative;
+        width: 40%;
+        height: 790px;
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      margin-left: 30px;
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+    list-style: none;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    margin-bottom: 5px;
+    color: $c-grey-black;
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 7px;
+      height: 7px;
+      background-color: $c-grey;
+      transform: translate(-20px, 20px) rotate(-45deg);
+    }
+  }
+
+  &__sibtitle {
+    @extend %sibtitle;
+    color: $c-light-grey;
+  }
+
+  &__block {
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 60px;
+      width: 60%;
+    }
+  }
+
+  &__sale {
+    font-family: "Bebas Neue", cursive;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 35px;
+    }
+
+    @include onDesktop {
+      padding-left: 90px;
+      margin-top: 70px;
+    }
+
+    &-procent {
+      font-size: 36px;
+      line-height: 54px;
+      color: $c-red;
+      margin-bottom: 10px;
+
+      @include onTablet {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &-order {
+      font-size: 24px;
+      line-height: 24px;
+      color: $c-green;
+
+      @include onTablet {
+        font-size: 18px;
+        line-height: 18px;
+      }
+    }
+  }
+}

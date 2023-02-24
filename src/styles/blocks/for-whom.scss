@@ -1,0 +1,285 @@
+.for-whom {
+
+  &__content {
+    position: relative;
+  }
+
+  &__event {
+    font-family: "Bebas Neue", cursive;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    position: absolute;
+    color: $c-light-grey;
+
+    &--right {
+      bottom: 0;
+      right: -10px;
+      transform-origin: bottom right;
+      transform: rotate(90deg);
+
+      @include onTablet {
+        transform-origin: top right;
+        transform: rotate(90deg);
+        top: 0;
+        right: -20px;
+      }
+
+      @include onDesktop {
+        transform-origin: top right;
+        transform: rotate(90deg);
+        top: 150px;
+        right: 0;
+      }
+    }
+
+    &--left {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        transform-origin: bottom left;
+        transform: rotate(-90deg);
+        bottom: 76px;
+        left: 10px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      transform: translate(-115%, -8px);
+      display: block;
+      height: 1px;
+      width: 65px;
+      background-color: $c-light-grey;
+    }
+  }
+
+  &__photo {
+
+    @include onTablet {
+      display: block;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: transform 300ms;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &--1 {
+        width: 284px;
+        height: 284px;
+        background-image: url(../images/for-whom/photo_number1.jpg);
+
+        @include onDesktop {
+          width: 500px;
+          height: 500px;
+        }
+      }
+
+      &--2 {
+        width: 300px;
+        height: 417px;
+        background-image: url(../images/for-whom/photo_number2.jpg);
+      }
+
+      &--3 {
+        width: 284px;
+        height: 405px;
+        background-image: url(../images/for-whom/photo_number3.jpg);
+
+        @include onDesktop {
+          width: 470px;
+          height: 670px;
+        }
+      }
+    }
+  }
+
+  &__info {
+    width: 370px;
+
+    @include onTablet {
+      width: 340px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__page {
+    display: flex;
+    margin-bottom: 146px;
+
+    @include onTablet {
+      margin-bottom: 110px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 80px;
+    }
+
+    &--first {
+
+      @include onDesktop {
+        margin-bottom: 80px;
+        justify-content: start;
+        gap: 200px;
+      }
+    }
+
+    &--second {
+      flex-direction: row-reverse;
+
+      @include onDesktop {
+        flex-direction: column;
+        gap: 45px;
+        align-items: flex-start;
+        padding-left: 100px;
+        margin-bottom: 0;
+      }
+    }
+
+    &--third {
+
+      @include onDesktop {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 45px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__block-bottom {
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    color: $c-grey-black;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__sibtitle {
+    @extend %h2;
+    color: $c-black;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+
+      &::after {
+        position: absolute;
+        content: url(../images/Rectangle.svg);
+      }
+    }
+
+    &--1 {
+      position: relative;
+
+      &::before {
+        content: url(../images/number1.svg);
+        position: absolute;
+        transform: translateY(-100%);
+
+        @include onTablet {
+          transform: translate(-200%);
+        }
+
+        @include onDesktop {
+          transform: translate(-300%);
+        }
+      }
+    }
+
+    &--2 {
+      position: relative;
+
+      &::before {
+        content: url(../images/number2.svg);
+        position: absolute;
+        transform: translateY(-100%);
+      }
+    }
+
+    &--3 {
+      position: relative;
+
+      &::before {
+        content: url(../images/number3.svg);
+        position: absolute;
+        transform: translateY(-100%);
+
+        @include onTablet {
+          transform: translate(-200%);
+        }
+
+        @include onDesktop {
+          transform: translate(-300%);
+        }
+      }
+    }
+  }
+
+  &__paragraph {
+    @extend %sibtitle;
+    color: $c-grey;
+  }
+
+  &__element {
+    display: none;
+
+    @include onTablet {
+      position: relative;
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $c-grey-black;
+      margin-bottom: 25px;
+
+      &--second {
+        text-align: end;
+        margin-bottom: 96px;
+
+        @include onDesktop {
+          text-align: start;
+          margin-bottom: 112px;
+        }
+      }
+
+      &--third {
+        margin-bottom: 17px;
+
+        @include onDesktop {
+          margin-left: -100px;
+          margin-bottom: 40px;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: url(../images/for-whom/star.svg);
+        transform: translate(-200%, -30%);
+      }
+    }
+  }
+}
