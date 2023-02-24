@@ -1,0 +1,42 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__input {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #0000004d;
+    color: $dark-gray;
+    outline: none;
+    
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    }
+
+    &:valid {
+      color: $turquoise;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $turquoise;
+    }
+
+    &:invalid {
+      color: $red;
+      border-bottom: 1px solid $red;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,269 @@
+.for-whom {
+  &__container {
+    position: relative;
+  }
+
+  &__more {
+    color: #828282;
+    position: absolute;
+
+    &--top {
+      transform: rotate(90deg) translateY(100%);
+      transform-origin: center left;
+      left: 100%;
+      top: 0;
+    }
+
+    &--bottom {
+      transform: rotate(-90deg) translatex(100%);
+      transform-origin: center right;
+      right: 100%;
+      bottom: 0;
+    }
+  }
+
+  &__item {
+    transition: transform 1s, opacity 1s;
+
+    &--robust {
+      display: flex;
+    }
+
+    &--beautiful {
+      display: flex;
+      flex-direction: column;
+      max-width: 370px;
+      padding-left: 100px;
+
+      @include tablet {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        max-width: none;
+        padding-left: 0;
+        gap: 50px;
+      }
+    }
+
+    &--saves {
+      display: flex;
+      flex-direction: column;
+      max-width: 470px;
+
+      @include tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: none;
+        padding-left: 0;
+        gap: 50px;
+      }
+    }
+  }
+
+  &__photo {
+    &--robust {
+      flex: 0 1 50%;
+    }
+
+    &--beautiful {
+      flex: 0 1 100%;
+
+      @include tablet {
+        display: flex;
+        justify-content: end;
+      }
+    }
+
+    &--saves {
+      flex: 0 1 100%;
+      display: flex;
+      justify-content: end;
+      align-items: start;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__image {
+    &--robust {
+      width: 100%;
+      max-width: 500px;
+      min-width: 290px;
+    }
+
+    &--beautiful {
+      width: 100%;
+      min-width: 300px;
+      object-fit: contain;
+
+      @include tablet {
+        max-width: 300px;
+      }
+    }
+
+    &--saves {
+      width: 100%;
+      min-width: 290px;
+      object-fit: contain;
+    }
+  }
+
+  &__text {
+    &--robust {
+      flex: 0 1 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include mobile {
+        flex: 0 1 100%;
+      }
+    }
+
+    &--beautiful {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--saves {
+      margin-left: 80px;
+
+      @include mobile {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__text-wrapper {
+    &--robust {
+      width: 100%;
+      max-width: 390px;
+      padding-left: 100px;
+
+      @include mobile {
+        padding-left: 0;
+        max-width: none;
+      }
+    }
+  }
+
+  &__note {
+    position: relative;
+
+    &--beautiful {
+      margin-top: 40px;
+
+      @include tablet {
+        align-self: end;
+      }
+    }
+
+    &--saves {
+      margin-top: 45px;
+    }
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -30px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__headline {
+    margin-top: 40px;
+    position: relative;
+    line-height: 150%;
+
+    &--robust {
+      &::before {
+        content: "";
+        position: absolute;
+        left: -80px;
+        width: 29px;
+        height: 44px;
+        background-image: url(../images/first.svg);
+        background-repeat: no-repeat;
+
+        @include mobile {
+          left: 0;
+          top: -70px;
+          width: 35px;
+          height: 44px;
+        }
+      }
+
+      @include mobile {
+        margin-top: 100px;
+      }
+    }
+
+    &--beautiful {
+      margin-top: 110px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -70px;
+        width: 35px;
+        height: 44px;
+        background-image: url(../images/second.svg);
+        background-repeat: no-repeat;
+      }
+
+      @include mobile {
+        margin-top: 150px;
+      }
+    }
+
+    &--saves {
+      &::before {
+        content: "";
+        position: absolute;
+        left: -80px;
+        width: 35px;
+        height: 44px;
+        background-image: url(../images/third.svg);
+        background-repeat: no-repeat;
+
+        @include mobile {
+          left: 0;
+          top: -70px;
+          width: 35px;
+          height: 44px;
+        }
+      }
+
+      @include mobile {
+        margin-top: 150px;
+      }
+    }
+
+  }
+
+  &__description {
+    margin-top: 10px;
+  }
+
+  &__horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    margin-top: 80px;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    @include mobile {
+      margin-top: 0;
+      gap: 0;
+    }
+  }
+}

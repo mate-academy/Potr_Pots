@@ -1,0 +1,60 @@
+.slider {
+  width: 100%;
+  padding: 0 10px;
+  position: relative;
+
+  &__viewport {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  &__line {
+    display: flex;
+    transition: transform 0.3s;
+  }
+
+  &__slide {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px 45px;
+    padding-bottom: 70px;
+  }
+
+  &__text {
+    color: #fff;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  &__dots {
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  &__dot {
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/white-dot.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--selected {
+      background-image: url(../images/dot.svg);
+    }
+  }
+}

@@ -1,0 +1,118 @@
+.team {
+  position: relative;
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 200px;
+    z-index: -1;
+    left: 0;
+    width: 40%;
+    height: 32vh;
+    background-color: $light-yellow;
+    clip-path: polygon(0 0, 100% 0, 100% 42%, 0% 100%);
+
+    @include mobile {
+      width: 100%;
+      top: 50vh;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    color: $dark-gray;
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+    margin-top: 200px;
+    gap: 50px;
+
+    &::before {
+      content: "Martin";
+      position: absolute;
+      font-size: 288px;
+      z-index: 99;
+      font-family: "Bebas", sans-serif;
+      letter-spacing: 0.15em;
+      -webkit-text-stroke: 1px $turquoise;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      transform: translate(-10%, -45%);
+      top: 0;
+
+      @include tablet {
+        transform: translate(-10%, -65%);
+        font-size: 230px;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 25px;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    flex: 0 1 100%;
+    color: #4f4f4f;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 70px;
+    line-height: 24px;
+    transition: transform 1s, opacity 1s;
+
+    @include mobile {
+      order: 1;
+      padding-top: 0;
+    }
+  }
+
+  &__photo {
+    position: relative;
+    flex: 0 1 100%;
+    min-width: 340px;
+    display: flex;
+    align-items: start;
+
+    &::after {
+      content: "Andy";
+      position: absolute;
+      font-size: 288px;
+      font-family: "Bebas", sans-serif;
+      letter-spacing: 0.15em;
+      -webkit-text-stroke: 1px $turquoise;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      bottom: 0;
+      right: 0;
+      transform: translate(25%, 100%);
+
+      @include tablet {
+        font-size: 230px;
+        transform: translate(15%, 60%);
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      min-width: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 677px;
+    transition: transform 1s, opacity 1s;
+  }
+}
