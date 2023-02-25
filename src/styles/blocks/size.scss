@@ -1,0 +1,119 @@
+.size {
+  margin-bottom: 110px;
+
+  @include onTablet {
+    margin-bottom: 105px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 90px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__container {
+    grid-row: 1;
+    justify-self: end;
+    &:first-child {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 38px;
+      }
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+
+    letter-spacing: 0.15em;
+
+    color: #000;
+    margin: 0 0 10px;
+  }
+
+  &__item {
+    &-text {
+      @include onTablet {
+        grid-row: 2;
+      }
+      @include onDesktop {
+        grid-row: 1;
+      }
+    }
+
+    &-last {
+      @include onDesktop {
+        grid-row: 1;
+        align-self: flex-end;
+      }
+    }
+  }
+
+  &__text {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 15px;
+
+      @include onTablet {
+        margin: 0;
+      }
+    }
+  }
+
+  &__image {
+    margin: 0 -38px 30px;
+    background-position: 100%;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      margin: 0 0 20px;
+      width: 100%;
+      background-position: center;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+}

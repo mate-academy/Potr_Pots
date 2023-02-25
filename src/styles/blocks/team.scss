@@ -1,0 +1,116 @@
+.team {
+  margin-bottom: 168px;
+  padding-bottom: 100px;
+  background-repeat: no-repeat;
+  position: relative;
+  background-image: url(../images/team_back-phone.svg);
+  background-position: bottom;
+  background-size: 100%;
+
+  @include onTablet {
+    margin-bottom: 186px;
+    padding-bottom: 0;
+    background-image: url(../images/team_back--desktop.svg);
+    background-position: left -50% top 15%;
+    background-size: auto;
+  }
+
+  @include onDesktop {
+    margin-bottom: 226px;
+    background-image: url(../images/team_back--desktop.svg);
+    background-position: left top 70%;
+  }
+
+  &__image {
+    background-position: 100%;
+    margin: 0 -38px;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+
+    text-transform: uppercase;
+    margin: 0;
+
+    color: $colorGrey1;
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 177px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__item {
+    grid-row: 1;
+  }
+
+  &__text {
+    align-self: flex-end;
+  }
+
+  &__big-text {
+    display: none;
+    margin: 0;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      z-index: 1;
+      font-size: 231.88px;
+      line-height: 278px;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+    }
+
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 1px $colorTurquoise;
+    letter-spacing: 0.15em;
+
+    &--1 {
+      @include onTablet {
+        top: 20px;
+        right: 53px;
+      }
+
+      @include onDesktop {
+        top: 0;
+        left: 74px;
+        right: auto;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        bottom: -235px;
+        right: 0;
+      }
+
+      @include onDesktop {
+        bottom: -300px;
+      }
+    }
+  }
+}

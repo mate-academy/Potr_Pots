@@ -1,7 +1,8 @@
 .header {
-  height: 100vh;
+  height: max-content;
   width: 100%;
   background-repeat: no-repeat;
+  margin-bottom: 110px;
 
   @include onTablet {
     background-image: url(../images/Rectangle.svg);
@@ -11,6 +12,7 @@
 
   @include onDesktop {
     background-size: 1035px;
+    margin-bottom: 150px;
   }
 
   &__top {
@@ -56,6 +58,9 @@
     &-arrow {
       transform: rotate(-90deg) translateY(30px);
     }
+
+    @include hover(border-bottom, 2px solid #000);
+    @include hover(color,#000);
   }
 
   &__menu {
@@ -112,11 +117,16 @@
         width: max-content;
         left: 0;
         bottom: 0;
-        transform: translateX(-70px) rotate(90deg);
+        transform: translateX(-70px) translateY(-70px) rotate(90deg);
       }
 
       @include onDesktop {
         transform: translateX(-70px) translateY(-87px) rotate(90deg);
+      }
+
+      &:hover {
+        transition: transform 0.3s;
+        transform: translateX(-70px) translateY(10px) rotate(90deg);
       }
     }
 
@@ -138,7 +148,7 @@
     }
     margin: 0 0 30px;
     font-family: "Bebas Neue", sans-serif;
-    display: inline;
+    display: inline-block;
     width: max-content;
     font-weight: 400;
     font-size: 36px;
@@ -193,11 +203,11 @@
     font-size: 14px;
     line-height: 150%;
     color: $colorGrey2;
-    margin-bottom: 20px;
+    margin-bottom: 33px;
   }
 
   &__button {
-    width: 100%;
+    @include hover(color, $colorGrey3);
 
     @include onTablet {
       grid-column: 2 / 4;
@@ -209,13 +219,7 @@
 
     background-color: #ffe339;
     border: 1px solid #ffe339;
-
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 150%;
-    text-transform: uppercase;
     color: #121212;
-    text-decoration: none;
   }
 
   &__img {
@@ -229,6 +233,7 @@
     @include onTablet {
       margin: 0;
       width: 100%;
+      @include hover(transform, scale(105%));
     }
   }
 

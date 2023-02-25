@@ -1,0 +1,38 @@
+.form-field {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding: 4px 5px;
+
+  color: $colorGrey2;
+  outline: none;
+
+  &:focus {
+    border-color: $colorTurquoise;
+  }
+
+  &:valid {
+    color: $colorTurquoise;
+  }
+
+  &:invalid {
+    border-color: $colorRed;
+    color: $colorRed;
+  }
+
+  &--textarea {
+    resize: none;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+}

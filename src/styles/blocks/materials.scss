@@ -1,0 +1,312 @@
+.materials {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 110px;
+  background-image: url(../images/materials__back--mob.png);
+
+  @include onTablet {
+    background-image: url(../images/materials__back--tablet.png);
+    background-position: bottom;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/materials_back--desktop.png);
+    margin-bottom: 106px;
+  }
+  height: 100%;
+
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    color: $colorTurquoise;
+    letter-spacing: 0.15em;
+    font-size: 58px;
+    line-height: 70px;
+    margin: 0;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 138.81px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+
+    color: $colorGrey2;
+    margin: 0;
+    margin-top: 141px;
+    margin-bottom: 10px;
+
+    @include onDesktop {
+      margin-bottom: 15px;
+      margin-top: 167px;
+    }
+  }
+
+  &__block {
+    grid-row: 1;
+
+    &--2 {
+      align-self: flex-end;
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__text {
+
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorGrey2;
+    margin: 0;
+
+    &--black {
+      @include onTablet {
+        font-weight: 700;
+      }
+
+      @include onDesktop {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__head {
+    margin-bottom: 120px;
+    position: relative;
+
+    @include onTablet {
+      margin-bottom: 207px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 435px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    transition: all 0.3s;
+    display: none;
+    @include onTablet {
+      display: block;
+      background-color: transparent;
+
+      background-image: url(../images/materials__circle.svg);
+      border: none;
+      width: $materials__button-size;
+      height: $materials__button-size;
+
+      &:hover {
+        background-image: url(../images/materials__close.svg);
+        cursor: pointer;
+      }
+
+      &:hover > .materials__card {
+        display: block;
+      }
+
+    }
+  }
+
+  &__grid {
+    @include onTablet {
+      grid-template-rows: repeat(8, 36px);
+      padding-bottom: 71px;
+    }
+    @include onDesktop {
+      grid-template-rows: repeat(6, 51px);
+      padding-bottom: 105px;
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      justify-self: end;
+    }
+
+    &--1 {
+
+      @include onTablet {
+        grid-row: 7;
+      }
+
+      @include onDesktop {
+        grid-row: 5;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-row: 3;
+      }
+
+      @include onDesktop {
+        grid-row: 1;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        grid-row: 8;
+      }
+
+      @include onDesktop {
+        grid-row: 6;
+      }
+    }
+
+    &--4 {
+      @include onTablet {
+        grid-row: 6;
+      }
+
+      @include onDesktop {
+        grid-row: 4;
+      }
+    }
+
+    &--5 {
+      @include onTablet {
+        grid-row: 1;
+      }
+
+      @include onDesktop {
+        grid-row: 2;
+      }
+    }
+  }
+
+  &__card {
+    transition: all 0.3s;
+    margin: 0;
+    height: max-content;
+    position: absolute;
+    width: $materials__card-size;
+    padding: 35px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    display: none;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $colorGreylight;
+    z-index: 1;
+    /* or 24px */
+
+    &--horizontal {
+      right: calc((-#{$materials__card-size} + #{$materials__button-size}) / 2);
+    }
+
+    &--1 {
+      --text-gap: 20px;
+      bottom: calc(#{$materials__button-size} + var(--text-gap));
+
+      @include onTablet {
+        right: calc((-#{$materials__card-size} ) / 2);
+      }
+
+      @include onDesktop {
+        --text-gap: 30px;
+        right: calc((-#{$materials__card-size} +
+        #{$materials__button-size}) / 2);
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        right: calc((-#{$materials__card-size} +
+        #{$materials__button-size}) / 2);
+        bottom: calc(#{$materials__button-size} + 20px);
+      }
+
+      @include onDesktop {
+        bottom: calc(#{$materials__button-size} + 20px);
+        right: 30px;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        right: calc((-#{$materials__card-size} +
+        #{$materials__button-size}) / 2);
+        bottom: calc(#{$materials__button-size} + 20px);
+      }
+
+      @include onDesktop {
+        right: calc(#{$materials__button-size} + 11px);
+        top: calc((-214px + #{$materials__button-size}) / 2);
+      }
+    }
+
+    &--4 {
+      --text-gap: 20px;
+      bottom: calc(#{$materials__button-size} + var(--text-gap));
+
+      @include onDesktop {
+        --text-gap: 42px;
+      }
+    }
+
+    &--5 {
+      --text-gap: 9px;
+      top: calc(#{$materials__button-size} + var(--text-gap));
+
+      @include onDesktop {
+        --text-gap: 6px;
+      }
+    }
+  }
+
+  &__swiper {
+    width: calc(100% - (9px * 2));
+    margin: 0 9px;
+    height: 254px;
+
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    @include onTablet {
+      display: none;
+    }
+
+    &-text {
+      width: 100%;
+      padding: 28px 44px 0 ;
+
+      margin: 0;
+
+      font-family: "Manrope", sans-serif;
+      color: $colorGreylight;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}

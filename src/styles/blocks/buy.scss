@@ -1,0 +1,149 @@
+.buy {
+  margin-bottom: 110px;
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 103px;
+  }
+
+  @include onDesktop {
+    margin: 0 0 338px;
+  }
+
+  &__grid {
+    align-items: center;
+  }
+
+  &__title {
+    display: inline-block;
+    margin: 0 0 5px;
+    font-family: "Manrope", sans-serif;
+    color: $colorGrey1;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+
+    &-red {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorGrey3;
+  }
+  
+  &__arrow {
+    margin-left: 15px;
+    height: 8px;
+    width: 30px;
+    background-image: url(../images/arrow.svg);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__button {
+    background-color: #ffe339;
+    margin-bottom: 40px;
+    border: 1px solid #ffe339;
+    @include hover(color, #fff);
+    @include hover(background-color, $colorTurquoise);
+
+    color: #121212;
+
+    &:hover > .buy__arrow {
+      background-image: url(../images/white-arrow.svg);
+    }
+
+    @include onTablet {
+      margin-bottom: 35px;
+      border: 1px solid $colorTurquoise;
+      background: rgba(0,0,0,0);
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__discount-text {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    margin: 0;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: $colorTurquoise;
+  }
+
+  &__image {
+    transform: translateY(-7px);
+
+    @include onTablet {
+      transform: translateY(-9px);
+    }
+  }
+
+  &__side {
+    &-text {
+      transform: tra;
+    }
+  }
+
+  &__container {
+    margin-bottom: 40px;
+  }
+
+  &__content {
+    align-self: baseline;
+    &--1 {
+      @include onTablet {
+        grid-row: 2;
+      }
+
+      @include onDesktop {
+        grid-row: inherit;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-row: 2;
+        transform: translateY(83px);
+      }
+
+      @include onDesktop {
+        grid-row: inherit;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__card {
+    display: none;
+    @include onDesktop {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 30px;
+    }
+  }
+
+  &__cards {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+  }
+}

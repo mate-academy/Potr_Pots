@@ -1,0 +1,139 @@
+.message-us {
+  position: relative;
+  margin-bottom: 102px;
+
+  @include onTablet {
+    margin-bottom: 113px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 184px;
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    display: block;
+
+    margin: 0 0 34px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__title {
+    font-family: "Manrope", sans-serif;
+
+    color: #000;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    margin: 0 0 15px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    &-title {
+      margin: 0 0 5px;
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-link {
+      text-decoration: none;
+
+      &:hover {
+        color: blueviolet;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      width: 219px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      width: 238px;
+    }
+
+    height: 48px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $colorTurquoise;
+    border: none;
+    color: #fff;
+
+    @include hover(background-color, rgba(3, 128, 158, 0.4));
+  }
+
+  &__form-field {
+    margin-bottom: 10px;
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: url(../images/message-us__back--mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onTablet {
+      background-image: url(../images/message-us__back.png);
+      top: 0;
+      right: 0;
+      height: 500px;
+
+      background-position: center;
+    }
+
+    @include onDesktop {
+      width: 90%;
+      top: 0;
+      left: 0;
+      height: 600px;
+
+    }
+  }
+
+  &__grid {
+    padding-top: 45px;
+
+    @include onTablet {
+      padding-top: 17px;
+    }
+
+    @include onDesktop {
+      padding-top: 39px;
+    }
+  }
+}
