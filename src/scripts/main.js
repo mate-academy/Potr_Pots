@@ -141,3 +141,45 @@ function initObserver() {
 }
 
 initObserver();
+
+function initForm() {
+  const form = document.querySelector('.questions__form');
+  const name = document.querySelector('#formName');
+  const email = document.querySelector('#formEmail');
+  const message = document.querySelector('#formMessage');
+
+  [name, email, message].forEach(input => {
+    input.addEventListener('input', () => {
+      input.classList.remove('form__input--invalid');
+    });
+  });
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    let formIsValid = true;
+
+    if (!name.value) {
+      formIsValid = false;
+      name.classList.add('form__input--invalid');
+    }
+
+    if (!email.value.includes('@')) {
+      formIsValid = false;
+      email.classList.add('form__input--invalid');
+    }
+
+    if (!message.value) {
+      formIsValid = false;
+      message.classList.add('form__input--invalid');
+    }
+
+    if (formIsValid) {
+      name.value = '';
+      email.value = '';
+      message.value = '';
+    }
+  });
+}
+
+initForm();

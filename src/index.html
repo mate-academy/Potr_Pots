@@ -27,10 +27,10 @@
 
   <body>
     <div class="general-container">
-      <header class="header">
+      <header class="header" id="header">
         <div class="container">
           <div class="header__bar">
-            <a href="/">
+            <a href="#header">
               <img src="./images/assets/logo.svg" alt="logo">
             </a>
             <nav class="nav header__nav">
@@ -640,6 +640,7 @@
                 action="#"
                 class="questions__form form hidden--left"
                 data-observed="questions-observed"
+                autocomplete="on"
               >
                 <h3 class="text__t2 form__title">
                   Message us
@@ -649,17 +650,20 @@
                   type="text"
                   class="form__input"
                   placeholder="Name"
-                >
-                <input
-                  type="email"
-                  class="form__input"
-                  placeholder="Email"
+                  id="formName"
                 >
                 <input
                   type="text"
                   class="form__input"
-                  placeholder="Message"
+                  placeholder="Email"
+                  id="formEmail"
                 >
+                
+                <textarea
+                  class="form__input form__textarea"
+                  placeholder="Message"
+                  id="formMessage"
+                ></textarea>
 
                 <button type="submit" class="button button--turquoise form__button">
                   <span class="button__text">
@@ -715,21 +719,33 @@
           </div>
           <div class="footer__center">
             <div class="footer__social">
-              <a href="/" class="footer__link">
+              <a
+                href="https://twitter.com/"
+                class="footer__link"
+                target="_blank"
+              >
                 <img
                   src="./images/assets/twitter.svg"
                   alt="twitter"
                   class="footer__icon"
                 >
               </a>
-              <a href="/" class="footer__link">
+              <a
+                href="https://www.instagram.com/"
+                class="footer__link"
+                target="_blank"
+              >
                 <img
                   src="./images/assets/instagram.svg"
                   alt="instagram"
                   class="footer__icon"
                 >
               </a>
-              <a href="/" class="footer__link">
+              <a
+                href="https://uk-ua.facebook.com/"
+                class="footer__link"
+                target="_blank"
+              >
                 <img
                   src="./images/assets/facebook.svg"
                   alt="facebook"
@@ -737,7 +753,7 @@
                 >
               </a>
             </div>
-            <a href="/" class="footer__link footer__logo">
+            <a href="#header" class="footer__link footer__logo">
               <img
                 src="./images/assets/logo.svg"
                 alt="logo"

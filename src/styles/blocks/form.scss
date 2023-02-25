@@ -22,17 +22,29 @@
       margin-top: 20px;
     }
 
-    &:valid {
-      color: $turquoise;
-    }
-
     &:focus {
       border-bottom: 1px solid $turquoise;
     }
 
-    &:invalid {
+    &--invalid {
       color: $red;
       border-bottom: 1px solid $red;
+
+      &::placeholder {
+        color: $red;
+      }
+    }
+  }
+
+  &__textarea {
+    margin-top: 20px;
+    overflow-y: hidden;
+    resize: none;
+    height: 28px;
+    transition: height 0.3s;
+
+    &:focus {
+      height: 100px;
     }
   }
 
