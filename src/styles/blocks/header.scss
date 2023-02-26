@@ -96,40 +96,6 @@
     @include onDesktop {
       padding-top: 76px;
     }
-
-    &_link {
-      position: absolute;
-      font-weight: 400;
-
-      right: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      height: 18px;
-      font-size: 12px;
-      line-height: 150%;
-      color: $colorTurquoise;
-      text-decoration: none;
-
-      transform: translateX(85px) translateY(-110px) rotate(90deg);
-
-      @include onTablet {
-        width: max-content;
-        left: 0;
-        bottom: 0;
-        transform: translateX(-70px) translateY(-70px) rotate(90deg);
-      }
-
-      @include onDesktop {
-        transform: translateX(-70px) translateY(-87px) rotate(90deg);
-      }
-
-      &:hover {
-        transition: transform 0.3s;
-        transform: translateX(-70px) translateY(10px) rotate(90deg);
-      }
-    }
-
   }
 
   &__title {
@@ -265,5 +231,40 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+  }
+
+  &__box {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateX(85px) translateY(-110px) rotate(90deg);
+
+    @include onTablet {
+      width: max-content;
+      left: 0;
+      bottom: 0;
+      transform: translateX(-70px) translateY(-70px) rotate(90deg);
+    }
+
+    @include onDesktop {
+      transform: translateX(-70px) translateY(-87px) rotate(90deg);
+    }
+
+    &_link {
+      font-weight: 400;
+
+      display: flex;
+      align-items: center;
+      height: 18px;
+      font-size: 12px;
+      line-height: 150%;
+      color: $colorTurquoise;
+      text-decoration: none;
+    }
+
+    &:hover > &_link {
+      transition: transform 0.3s;
+      transform: translateX(80px);
+    }
   }
 }
