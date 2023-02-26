@@ -17,13 +17,20 @@
     border-bottom: 1px solid #0000004d;
     color: $dark-gray;
     outline: none;
-    
+
     &:not(:first-of-type) {
       margin-top: 20px;
     }
 
     &:focus {
       border-bottom: 1px solid $turquoise;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-transition-delay: 99999s;
     }
 
     &--invalid {
