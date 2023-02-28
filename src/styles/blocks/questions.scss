@@ -1,5 +1,5 @@
 .questions {
-  margin-top: 0;
+  margin-top: 50px;
   position: relative;
 
   &::after {
@@ -12,6 +12,11 @@
     height: 100%;
     background-color: $light-yellow;
     clip-path: polygon(0 0, 100% 0, 100% 42%, 0% 100%);
+
+    @include mobile {
+      height: 120%;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    }
   }
 
   &__container {
@@ -37,7 +42,7 @@
       gap: 100px;
     }
 
-    @include mobile-small {
+    @include mobile {
       flex-direction: column;
       gap: 40px;
     }
@@ -50,12 +55,16 @@
   }
 
   &__contacts {
+    margin-left: 15px;
     width: 50%;
     transition: transform 1s, opacity 1s;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__headline {
-    margin-left: 15px;
     color: #00000063;
   
     &:not(:first-of-type) {
@@ -64,7 +73,8 @@
   }
 
   &__value {
-    margin-left: 15px;
     margin-top: 5px;
+    text-decoration: none;
+    color: $dark-gray;
   }
 }

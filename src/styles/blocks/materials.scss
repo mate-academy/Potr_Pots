@@ -1,13 +1,48 @@
 .materials {
-  position: relative;
   height: 100%;
+  position: relative;
+
+  &__section {
+    margin-top: 80px;
+  }
 
   &__container {
     transform: translateY(50%);
 
-    @include mobile-small {
+    @include mobile {
       margin-top: 100px;
       transform: translateY(0);
+    }
+  }
+
+  &__more {
+    color: #828282;
+    position: absolute;
+    font-family: "Bebas", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &--top {
+      transform: rotate(90deg) translateY(100%);
+      transform-origin: center left;
+      left: 100%;
+      top: 0;
+    }
+
+    &--bottom {
+      transform: rotate(90deg) translateY(-100%);
+      transform-origin: center right;
+      right: 100%;
+      bottom: 0;
     }
   }
 
@@ -23,6 +58,16 @@
     @include tablet {
       padding-top: 100px;
     }
+
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__info {
+    @include mobile {
+      transform: translateY(40%);
+    }
   }
 
   &__title {
@@ -36,7 +81,7 @@
       font-size: 80px;
     }
 
-    @include mobile-small {
+    @include mobile {
       font-size: 58px;
     }
   }
@@ -54,7 +99,7 @@
       margin-left: 50px;
     }
 
-    @include mobile-small {
+    @include mobile {
       display: none;
     }
   }
@@ -97,16 +142,16 @@
       left: 77%;
     }
 
-    @include mobile-small {
+    @include mobile {
       display: none;
     }
   }
 
   &__slider {
-    transform: translateY(-30%);
+    transform: translateY(-15%);
     display: none;
 
-    @include mobile-small {
+    @include mobile {
       display: block;
     }
   }

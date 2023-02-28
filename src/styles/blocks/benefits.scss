@@ -1,11 +1,31 @@
 .benefits {
-
-  @media (max-width: 800px) {
+  @include tablet {
     margin-bottom: 100px;
   }
 
   &__container {
     display: flex;
+    position: relative;
+  }
+
+  &__more {
+    position: absolute;
+    transform: rotate(90deg) translateY(100%);
+    transform-origin: center left;
+    left: 100%;
+    top: 0;
+    font-family: "Bebas", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__cards {
@@ -18,7 +38,7 @@
       filter: blur(1.5px);
     }
 
-    @media (max-width: 800px) {
+    @include tablet {
       display: none;
     }
   }
@@ -29,17 +49,15 @@
     flex-direction: column;
     justify-content: center;
 
-    @media (max-width: 1190px) {
-      align-items: start;
-    }
-
-    @media (max-width: 800px) {
+    @include tablet {
+      justify-content: start;
       flex-direction: row;
       gap: 15px;
     }
 
-    @media (max-width: 767.9px) {
+    @include mobile {
       flex-direction: column;
+      gap: 50px;
     }
   }
 
@@ -48,13 +66,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-    @media (max-width: 800px) {
+    @include tablet {
+      flex: 0 1 50%;
       flex-wrap: nowrap;
       flex-direction: column;
-      min-width: 345px;
-    }
-
-    @media (max-width: 767.9px) {
       min-width: 0;
     }
   }
@@ -71,10 +86,21 @@
       height: 14px;
       top: 15px;
     }
+
+    @include tablet {
+      max-width: 320px;
+      &:nth-of-type(2) {
+        order: 1;
+      }
+    }
   }
 
   &__description {
     margin-top: 5px;
+
+    @include mobile {
+      margin-left: 25px;
+    }
   }
 
   &__headline {
@@ -84,16 +110,39 @@
     margin-left: 25px;
   }
 
+  &__order {
+    @include tablet {
+      max-width: 240px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
   &__button {
     margin-top: 60px;
+
+    @include tablet {
+      margin-top: 0;
+    }
+
+    @include mobile {
+      background-color: $yellow;
+      border: none;
+
+      &:hover {
+        background-color: $light-yellow;
+      }
+    }
   }
 
   &__discount {
     margin-top: 120px;
     margin-left: 100px;
 
-    @media (max-width: 1190px) {
+    @include tablet {
       margin-left: 0;
+      margin-top: 35px;
     }
   }
 

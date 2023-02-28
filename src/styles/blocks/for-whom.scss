@@ -6,6 +6,13 @@
   &__more {
     color: #828282;
     position: absolute;
+    font-family: "Bebas", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+
+    @include mobile {
+      display: none;
+    }
 
     &--top {
       transform: rotate(90deg) translateY(100%);
@@ -15,10 +22,14 @@
     }
 
     &--bottom {
-      transform: rotate(-90deg) translatex(100%);
+      transform: rotate(-90deg) translateX(100%);
       transform-origin: center right;
       right: 100%;
       bottom: 0;
+
+      @include tablet {
+        display: none;
+      }
     }
   }
 
@@ -27,12 +38,13 @@
 
     &--robust {
       display: flex;
+      margin-top: 35px;
     }
 
     &--beautiful {
       display: flex;
+      max-width: 500px;
       flex-direction: column;
-      max-width: 370px;
       padding-left: 100px;
 
       @include tablet {
@@ -62,6 +74,12 @@
   &__photo {
     &--robust {
       flex: 0 1 50%;
+
+      @include tablet {
+        display: flex;
+        align-items: center;
+        flex: 0 1 40%;
+      }
     }
 
     &--beautiful {
@@ -94,12 +112,8 @@
 
     &--beautiful {
       width: 100%;
-      min-width: 300px;
+      max-width: 300px;
       object-fit: contain;
-
-      @include tablet {
-        max-width: 300px;
-      }
     }
 
     &--saves {
@@ -138,12 +152,19 @@
   &__text-wrapper {
     &--robust {
       width: 100%;
-      max-width: 390px;
       padding-left: 100px;
 
       @include mobile {
         padding-left: 0;
         max-width: none;
+      }
+    }
+
+    &--saves {
+      margin-top: 45px;
+
+      @include mobile {
+        margin-top: 0;
       }
     }
   }
@@ -157,10 +178,6 @@
       @include tablet {
         align-self: end;
       }
-    }
-
-    &--saves {
-      margin-top: 45px;
     }
 
     &::before {
@@ -180,6 +197,7 @@
     line-height: 150%;
 
     &--robust {
+      max-width: 470px;
       &::before {
         content: "";
         position: absolute;

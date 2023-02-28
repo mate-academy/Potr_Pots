@@ -5,10 +5,6 @@
     &--stroked {
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke: 1px $turquoise;
-
-      @include mobile-small {
-        letter-spacing: 0.1em;
-      }
     }
   }
 
@@ -18,10 +14,10 @@
     margin-top: 75px;
     gap: 29px;
 
-    @include mobile-small {
-      margin-top: 10px;
+    @include mobile {
       flex-direction: column;
-      align-items: center;
+      margin-top: 25px;
+      gap: 70px;
     }
   }
 
@@ -31,8 +27,18 @@
     align-items: center;
     width: 100%;
 
-    @include mobile-small {
-      max-width: 450px;
+    @include tablet {
+      &:nth-of-type(1) {
+        order: 2;
+      }
+
+      &:nth-of-type(2) {
+        order: 3;
+      }
+
+      &:nth-of-type(3) {
+        order: 1;
+      }
     }
   }
 
@@ -49,5 +55,14 @@
   &__description {
     margin-top: 20px;
     color: #4f4f4f;
+    text-align: center;
+
+    @include tablet {
+      text-align: start;
+    }
+
+    @include mobile {
+      text-align: center;
+    }
   }
 }
