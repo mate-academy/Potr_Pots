@@ -50,3 +50,10 @@ spoilers.forEach((item) => {
     item.previousElementSibling.classList.toggle('slider__description--active');
   });
 });
+
+const form = document.querySelector('.contacts__form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  form.reset();
+});
