@@ -56,4 +56,10 @@ const form = document.querySelector('.contacts__form');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   form.reset();
+
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth',
+  });
 });
