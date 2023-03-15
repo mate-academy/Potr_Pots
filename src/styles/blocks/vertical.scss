@@ -1,0 +1,43 @@
+.vertical {
+  &__text {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    writing-mode: vertical-rl;
+
+    &--close {
+      text-transform: uppercase;
+      color: $colorGreyLight;
+
+      &::after {
+        display: inline-block;
+        content: "";
+        height: 44px;
+        padding-left: 1px;
+        background-color: $colorGreyLight;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: $colorTurquoise;
+  }
+
+  &__arrow {
+    background-image: url(../images/arrow-vertical.svg);
+    width: 8px;
+    height: 45px;
+    transform: translateX(5px);
+  }
+
+  &__cross {
+    background-image: url(../images/cross.svg);
+    width: 12px;
+    height: 12px;
+    transform: translateX(3px);
+  }
+}

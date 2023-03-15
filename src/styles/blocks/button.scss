@@ -1,0 +1,31 @@
+.button {
+  display: block;
+  width: 260px;
+  height: 48px;
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 48px;
+  color: $colorTextBlack;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: $colorYellow;
+
+  @include onTablet {
+    width: 240px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 30px;
+    height: 8px;
+    margin-left: 15px;
+    background-image: url(../images/arrow-horizontal.svg);
+  }
+}

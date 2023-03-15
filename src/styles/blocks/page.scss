@@ -1,0 +1,40 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    font-family: $_manrope;
+    color: $colorTextGrey;
+    background-color: $colorGreyLight;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin: 0 auto 110px;
+    max-width: 1440px;
+
+    @include onTabletAndDesktop {
+      background-image: url(../images/rectangle-yellow.png);
+      background-repeat: no-repeat;
+      background-position: top 0 right 154px;
+    }
+
+    @media (min-width: 1180px) {
+      background-position: top 0 left 0;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
