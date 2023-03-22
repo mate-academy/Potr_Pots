@@ -1,0 +1,41 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 14px 0;
+  font-family: $ff-strings;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #121212;
+  background-color: $c-yellow;
+  text-decoration: none;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $c-yellow-light;
+  }
+
+  @include onTablet {
+    max-width: 240px;
+  }
+
+  @include onDesktop {
+    max-width: 270px;
+  }
+
+  &__text {
+    text-transform: uppercase;
+  }
+
+  &__element {
+    width: 28px;
+    height: 21px;
+    background-image: url(../images/button-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
