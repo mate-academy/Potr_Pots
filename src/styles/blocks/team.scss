@@ -1,0 +1,104 @@
+.team {
+  &__title {
+    margin: 0 0 25px;
+    font-family: $_bebas;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: #333;
+  }
+
+  &__name {
+    display: none;
+
+    @include onTabletAndDesktop {
+      display: block;
+      position: absolute;
+      font-family: $_bebas;
+      font-weight: 400;
+      font-size: 220px;
+      line-height: 264px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 1px $colorTurquoise;
+      z-index: 1;
+
+      &--first {
+        left: -5%;
+      }
+
+      &--second {
+        right: 0;
+        transform: translateY(143%);
+
+        @include onTablet {
+          width: 459px;
+          overflow: hidden;
+        }
+      }
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+
+      &--first {
+        left: 0;
+      }
+
+      &--second {
+        right: -30px;
+        transform: translateY(162%);
+      }
+    }
+  }
+
+  &__image {
+    width: 100vw;
+    margin-left: calc((-100vw + 100%) / 2);
+    margin-bottom: 30px;
+
+    @include onTablet {
+      position: absolute;
+      width: 45%;
+      height: 255px;
+      object-fit: cover;
+      right: 34px;
+      top: 250px;
+    }
+
+    @media (min-width: 1100px) {
+      height: 300px;
+      top: 200px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 677px;
+      height: 508px;
+      right: 10%;
+    }
+  }
+
+  &__text {
+    
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorTextGrey;
+
+    @include onTablet {
+      padding-top: 200px;
+      width: 320px;
+      margin-bottom: 113px;
+    }
+
+    @include onDesktop {
+      width: 340px;
+      padding-top: 375px;
+      margin-bottom: 180px;
+    }
+  }
+}

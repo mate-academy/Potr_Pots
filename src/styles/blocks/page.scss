@@ -23,8 +23,11 @@
     }
 
     @media (min-width: 1180px) {
-      margin-bottom: 150px;
       background-position: top 0 left 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
     }
   }
 
@@ -43,11 +46,46 @@
     margin-bottom: 110px;
 
     @include onTablet {
-      margin-bottom: 135px;
+      margin-bottom: 130px;
     }
 
     @include onDesktop {
-      margin-bottom: 350px;
+      margin-bottom: 150px;
     }
   }
+
+  &__features {
+    margin-bottom: 110px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__team {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding-bottom: 168px;
+
+    background-image: url(../images/rectangle-yellow.png);
+    background-repeat: no-repeat;
+    background-position: top 550px right 0;
+
+    @include onTabletAndDesktop {
+      padding-bottom: 40px;
+      background-position: top 170px right 514px;
+    }
+
+    @include onDesktop {
+      background-position: top 180px right 1005px;
+    }
+  }
+
+  // &__materials {
+
+  // }
 }

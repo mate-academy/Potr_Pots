@@ -1,0 +1,125 @@
+.circle {
+  display: none;
+
+  @include onTabletAndDesktop {
+    display: block;
+    position: absolute;
+    width: 51px;
+    height: 51px;
+    background-color: $colorRed;
+    border-radius: 50%;
+    text-align: center;
+    transition: background-color $smoothTime;
+
+    &:hover {
+      background-color: rgba(36, 35, 35, 0.85);
+      opacity: 0.85;
+      backdrop-filter: blur(6px);
+    }
+
+    &::before {
+      content: "+";
+      font-size: 22px;
+      line-height: 51px;
+      color: $colorGreyLight;
+    }
+
+    &:hover::before {
+      content: "-";
+    }
+
+    &__text {
+      box-sizing: border-box;
+      position: absolute;
+      width: 283px;
+      padding: 35px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $colorGreyLight;
+      background-color: rgba(36, 35, 35, 0.85);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity $smoothTime;
+
+      &--num-1 {
+        top: -170px;
+        left: -50px;
+      }
+
+      &--num-2 {
+        top: -170px;
+        left: -150px;
+      }
+
+      &--num-3 {
+        top: -130px;
+        left: -290px;
+      }
+
+      &--num-4 {
+        top: -220px;
+        left: -140px;
+      }
+
+      &--num-5 {
+        top: -150px;
+        left: -290px;
+      }
+    }
+
+    &:hover &__text {
+      opacity: 1;
+    }
+
+    &--num-1 {
+      bottom: 12vw;
+      left: 11vw;
+
+      @media (min-width: 1280px) {
+        bottom: 170px;
+        left: 120px;
+      }
+    }
+
+    &--num-2 {
+      bottom: 27vw;
+      left: 30vw;
+
+      @media (min-width: 1440px) {
+        bottom: 400px;
+        left: 400px;
+      }
+    }
+
+    &--num-3 {
+      bottom: 7vw;
+      left: 45vw;
+
+      @media (min-width: 1440px) {
+        bottom: 100px;
+        left: 600px;
+      }
+    }
+
+    &--num-4 {
+      bottom: 20vw;
+      left: 55vw;
+
+      @media (min-width: 1440px) {
+        bottom: 280px;
+        left: 730px;
+      }
+    }
+
+    &--num-5 {
+      bottom: 20vw;
+      left: 75vw;
+
+      @media (min-width: 1440px) {
+        bottom: 330px;
+        left: 1100px;
+      }
+    }
+  }
+}

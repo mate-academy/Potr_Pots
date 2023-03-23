@@ -39,12 +39,23 @@
     line-height: 150%;
     text-decoration: none;
     color: $colorGreyLight;
+    border-bottom: 1px solid transparent;
+    transition: border-color $smoothTime;
+
+    &:hover {
+      border-color: $colorGreyLight;
+    }
   }
 
   &__vertical {
     position: absolute;
     right: 30px;
     bottom: 40px;
+    transition: transform $smoothTime;
+
+    &:hover {
+      transform: translateY(10px);
+    }
   }
 
   @include onDesktop {

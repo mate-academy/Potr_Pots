@@ -1,7 +1,6 @@
 .button {
   display: block;
   height: 48px;
-  margin-bottom: 40px;
   font-weight: 600;
   font-size: 14px;
   line-height: 48px;
@@ -10,6 +9,11 @@
   text-transform: uppercase;
   text-decoration: none;
   background-color: $colorYellow;
+  transition: background-color $smoothTime;
+
+  &:hover {
+    background-color: $colorYellowLight;
+  }
 
   @include onTablet {
     width: 240px;

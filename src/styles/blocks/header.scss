@@ -34,6 +34,15 @@
     }
   }
 
+  &__menu-item {
+    border-bottom: 1px solid transparent;
+    transition: border-color $smoothTime;
+
+    &:hover {
+      border-color: $colorTextGrey;
+    }
+  }
+
   &__link {
     display: inline-block;
     padding: 5px 0;
@@ -55,22 +64,38 @@
     }
   }
 
+  &__card {
+    transition: transform $smoothTime;
+
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
+  &__menu-icon {
+    transition: transform $smoothTime;
+
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
   &__content {
     position: relative;
 
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      height: 500px;
+      // grid-template-rows: repeat(3, 1fr);
+      // height: 500px;
     }
 
     @include onDesktop {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(3, 1fr);
+      // grid-template-rows: repeat(3, 1fr);
       grid-column-gap: 30px;
-      grid-row-gap: 20px;
+      // grid-row-gap: 20px;
       height: 500px;
     }
   }
@@ -152,6 +177,10 @@
     font-size: 14px;
     line-height: 150%;
     color: $colorTextGrey;
+
+    @include onTabletAndDesktop {
+      margin-bottom: 50px;
+    }
   }
 
   &__button {
@@ -168,17 +197,20 @@
     position: absolute;
     right: -25px;
     bottom: 0;
+    transition: transform $smoothTime;
 
-    @include onTablet {
-      position: static;
-      grid-area: 2 / 1 / 4 / 2;
-      transform: translateY(20px);
+    &:hover {
+      transform: translateY(10px);
+    }
+
+    @include onTabletAndDesktop {
+      right: 100%;
+      left: 0;
+      bottom: -30px;
     }
 
     @include onDesktop {
-      position: static;
-      grid-area: 1 / 1 / 4 / 2;
-      transform: translateY(320px);
+      bottom: 0;
     }
   }
 }
