@@ -1,0 +1,124 @@
+.team {
+  position: relative;
+  @include grid;
+  grid-auto-flow: dense;
+
+  &:after {
+    position: absolute;
+    content: "";
+    z-index: -5;
+    bottom: -60px;
+    left: -30px;
+    width: 0;
+    height: 0;
+    border-top: 175px solid $c-yellow-light;
+    border-left: 100vw solid $c-yellow-light;
+    border-bottom: 115px solid transparent;
+
+    @include onTablet {
+      bottom: 15vh;
+      left: -34px;
+      border-top: 150px solid $c-yellow-light;
+      border-left: 33vw solid $c-yellow-light;
+      border-bottom: 80px solid transparent;
+    }
+
+    @include onDesktop {
+      bottom: 21vh;
+      left: -135px;
+      border-top: 150px solid $c-yellow-light;
+      border-left: 30vw solid $c-yellow-light;
+      border-bottom: 200px solid transparent;
+    }
+  }
+
+  &__title {
+    margin: 0 0 25px;
+    @extend %h1;
+    color: $c-darck-gray;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+      margin: 0 0 177px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin: 0 0 143px;
+    }
+  }
+
+  &__picture {
+    margin: 0 -30px 30px;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 12;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__about {
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin: 55px 0 0;
+      max-width: 320px;
+
+      &::before {
+        position: absolute;
+        transform: translate(-10%, -75%);
+        content: "martin";
+        font-family: $ff-titles;
+        font-size: 230px;
+        line-height: 278px;
+        letter-spacing: 0.15em;
+        -webkit-text-stroke: 1px $c-turquoise;
+        -webkit-text-fill-color: transparent;
+
+        @include onDesktop {
+          transform: translate(-7%, -110%);
+          font-size: 288px;
+          line-height: 346px;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        transform: translate(50%, -37%);
+        content: "andy";
+        font-family: $ff-titles;
+        font-size: 220px;
+        line-height: 264px;
+        letter-spacing: 0.15em;
+        -webkit-text-stroke: 1px $c-turquoise;
+        -webkit-text-fill-color: transparent;
+
+        @include onDesktop {
+          transform: translate(110%, -17%);
+          font-size: 288px;
+          line-height: 346px;
+        }
+      }
+    }
+
+    @include onDesktop {
+      max-width: 340px;
+      grid-column: 1 / 5;
+      align-self: end;
+      margin: 0;
+    }
+  }
+
+  &__paragraf {
+    margin: 0;
+    @extend %s1;
+  }
+}
