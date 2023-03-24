@@ -1,0 +1,142 @@
+.header {
+
+  @include onTablet {
+    background-repeat: no-repeat;
+    background-size: 80vw;
+    background-image: url(../images/Background_yellow.png);
+    background-color: $c-grey-light;
+  }
+
+  @include onDesktop {
+    background-size: 70vw;
+  }
+
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-right: 8px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 77px;
+    }
+  }
+
+  &__logo {
+    &-img {
+      height: 43px;
+      width: 134px;
+    }
+  }
+
+  &__menu {
+    @media (max-width: 1279px) {
+      display: inline-flex;
+      color: $c-grey-light;
+    }
+  }
+
+  &__icon {
+    display: block;
+
+    &-menu {
+      width: 32px;
+      height: 32px;
+      transition: transform $time-trans;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+    }
+
+    &-close {
+      display: none;
+      width: 18px;
+      height: 38px;
+    }
+
+    &-strip {
+      display: none;
+      width: 1px;
+      height: 44px;
+    }
+
+    &-cross {
+      display: none;
+      height: 15px;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+}
+
+#header__vector,
+.header__icon {
+  @include onDesktop {
+    display: none;
+  }
+}
+
+#header__vector:checked ~ .menu {
+  @media (max-width: 1279px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    width: 75%;
+    height: 100vh;
+    background-color: $c-turquoise;
+    transition: $time-trans;
+    transform: translate(0);
+  }
+}
+
+#header__vector:checked ~ .header__icon {
+  @media (max-width: 1279px) {
+    .header__icon {
+      display: none;
+    }
+
+    .header__icon-cross {
+      position: fixed;
+      display: block;
+      right: 43px;
+      bottom: 40px;
+      z-index: 99;
+      transition: transform $time-trans;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+    }
+
+    .header__icon-close {
+      position: fixed;
+      z-index: 99;
+      display: block;
+      right: 42px;
+      bottom: 110px;
+      transition: transform $time-trans;
+
+      &:hover {
+        transform: scale(1.04);
+      }
+    }
+
+    .header__icon-strip {
+      position: fixed;
+      z-index: 99;
+      display: block;
+      right: 51px;
+      bottom: 63px;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $c-grey-light;
+
+    &:has(#header__vector:checked) {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    padding: 15px 0 110px;
+
+    @include onTablet {
+      padding: 30px 0 220px;
+    }
+
+    @include onDesktop {
+      padding: 20px 0 150px;
+    }
+  }
+
+  &__main {
+    padding-bottom: 110px;
+
+    @include onTablet {
+      padding-bottom: 103px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 130px;
+    }
+  }
+
+  &__footer {
+    padding-bottom: 30px;
+
+    @include onTablet {
+      padding-bottom: 117px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 64px;
+    }
+  }
+}
