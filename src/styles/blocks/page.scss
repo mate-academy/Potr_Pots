@@ -36,6 +36,7 @@
     top: 0;
     right: 0;
     transform: translateX(101%);
+    transition: transform $smoothTime;
 
     &:target {
       transform: translateX(0);
@@ -85,7 +86,35 @@
     }
   }
 
-  // &__materials {
+  &__materials {
+    margin-bottom: 110px;
+  }
 
-  // }
+  &__potr-size {
+    margin-bottom: 110px;
+  }
+
+  &__benefits {
+    margin-bottom: 110px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__questions {
+    margin-bottom: 100px;
+
+    @include onTabletAndDesktop {
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 180px;
+    }
+  }
+
+  &__footer {
+    margin-bottom: 30px;
+  }
 }

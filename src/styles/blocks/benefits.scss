@@ -1,0 +1,200 @@
+.benefits {
+  &__desktop {
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__cards {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 583px;
+      margin-left: -30px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 214px;
+    height: 240px;
+    padding: 16px 16px 40px;
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    transition: transform $smoothTime;
+
+    &--num-1 {
+      transform: matrix(0.97, -0.26, 0.26, 0.97, 0, 0);
+    }
+
+    &--num-2 {
+      transform: matrix(0.88, -0.48, 0.48, 0.88, 0, 0);
+    }
+
+    &--num-3 {
+      transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+
+    &--num-4 {
+      transform: matrix(0.96, -0.26, 0.26, 0.97, 0, 0);
+    }
+
+    &--num-5 {
+      transform: matrix(0.96, -0.27, 0.27, 0.96, 0, 0);
+    }
+
+    &--num-6 {
+      transform: matrix(0.86, -0.51, 0.51, 0.86, 0, 0);
+    }
+
+    &:hover {
+      transform: scale(130%);
+      z-index: 1;
+    }
+  }
+
+  &__photo {
+    width: 182px;
+    height: 182px;
+    margin-bottom: 5px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  &__card-text {
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 130%;
+    color: $colorTextGrey;
+  }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    @include onDesktop {
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+
+  &__flex-left {
+    width: 320px;
+
+    @include onDesktop {
+      width: 670px;
+    }
+  }
+
+  &__flex-right {
+    width: 250px;
+
+    @include onDesktop {
+      width: max-content;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    @media (min-width: 400px) and (max-width: 629px) {
+      text-align: center;
+    }
+
+    &:nth-of-type(3) {
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      display: inline-block;
+
+      &:first-child {
+        margin-right: 44px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 5px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    color: $colorTextBlack;
+    
+    @include onTablet {
+      font-size: 36px;
+    }
+
+    &::before {
+      display: inline-block;
+      position: absolute;
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: $colorTextBlack;
+      transform: translate(-17px, 22px) rotate(-45deg);
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorTextGrey;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__sale {
+    font-family: $_bebas;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    @include onDesktop {
+      margin-left: 110px;
+    }
+  }
+
+  &__sale-percent {
+    margin-bottom: 10px;
+    font-size: 36px;
+    line-height: 150%;
+    color: $colorRed;
+  }
+
+  &__sale-order {
+    font-size: 24px;
+    line-height: 24px;
+    color: $colorTurquoise;
+  }
+
+  &__side-text-right {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 8px;
+    }
+  }
+}
