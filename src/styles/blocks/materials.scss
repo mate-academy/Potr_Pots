@@ -1,0 +1,231 @@
+.materials {
+  position: relative;
+
+  &__title {
+    @extend %h1-mat;
+    margin: 0 30px -60px;
+
+    @include onTablet {
+      margin: 0 34px 27px;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      margin: 0 134px;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__about {
+    width: 100%;
+    height: 75vw;
+    background: linear-gradient
+      (180deg,
+      rgb(255, 255, 255) 0%, rgba(248, 248, 248, 0) 20%),
+      url(../images/photos/materials-bgi.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &-title {
+      display: none;
+      @extend %s1-mat;
+
+      @include onTablet {
+        display: inline-block;
+        position: absolute;
+        top: 17%;
+        left: 50%;
+        margin: 0;
+
+        @include onDesktop {
+          top: 0;
+        }
+      }
+    }
+
+    &-info {
+      display: none;
+      position: absolute;
+      @extend %s3;
+      width: 340px;
+
+      @include onTablet {
+        display: inline-block;
+        top: 22%;
+        left: 50%;
+        margin: 0;
+
+        &--hide {
+          visibility: hidden;
+        }
+      }
+
+      @include onDesktop {
+        width: 470px;
+        top: 5%;
+
+        &--hide {
+          visibility: visible;
+        }
+      }
+
+      
+    }
+  }
+
+  &__content {
+    // position: relative;
+  }
+
+  &__button {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+    }
+    &--1 {
+      bottom: 40%;
+      left: 70%;
+
+      @include onDesktop {
+        bottom: 35%;
+        left: 77%;
+      }
+    }
+
+    &--2 {
+      bottom: 17%;
+      left: 54%;
+
+      @include onDesktop {
+        bottom: 25%;
+        left: 58%;
+      }
+    }
+
+    &--3 {
+      bottom: 8%;
+      left: 42%;
+
+      @include onDesktop {
+        bottom: 10%;
+        left: 47%;
+      }
+    }
+
+    &--4 {
+      bottom: 30%;
+      left: 30%;
+
+      @include onDesktop {
+        bottom: 37%;
+        left: 38%;
+      }
+    }
+
+    &--5 {
+      bottom: 13%;
+      left: 10%;
+
+      @include onDesktop {
+        bottom: 14%;
+        left: 18%;
+      }
+    }
+  }
+
+  &__description {
+    position: absolute;
+    display: none;
+    box-sizing: border-box;
+    width: 300px;
+    padding: 35px 45px;
+    @extend %s3;
+    color: $c-gray-light;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(17px);
+
+    &--1 {
+      display: none;
+      bottom: 8%;
+      right: 5%;
+
+      @include onDesktop {
+        bottom: 12%;
+        right: 11%;
+      }
+    }
+
+    &--2 {
+      display: none;
+      bottom: 26%;
+      right: 22%;
+
+      @include onDesktop {
+        bottom: 33%;
+        right: 29%;
+      }
+    }
+
+    &--3 {
+      display: none;
+      bottom: 17%;
+      right: 33%;
+
+      @include onDesktop {
+        bottom: 5%;
+        right: 54%;
+      }
+
+    }
+
+    &--4 {
+      display: none;
+      bottom: 39%;
+      right: 45%;
+
+      @include onDesktop {
+        bottom: 43%;
+        right: 61%;
+      }
+    }
+
+    &--5 {
+      display: none;
+      bottom: 22%;
+      right: 55%;
+
+      @include onDesktop {
+        bottom: 20%;
+        right: 70%;
+      }
+    }
+  }
+
+  &__slidershow {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__pagination {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__tassel--left {
+    position: absolute;
+    right: 98vw;
+    top: 38%;
+  }
+
+  &__tassel--right {
+    position: absolute;
+    right: 2%;
+    top: 18%;
+  }
+}

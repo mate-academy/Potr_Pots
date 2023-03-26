@@ -53,3 +53,23 @@
     }
   }
 }
+
+@mixin gridAreasSize {
+  @include onTablet {
+    display: grid;
+    column-gap: 0;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "title title"
+      "about about"
+      "size pic"
+      "rem rem";
+
+    @include onDesktop {
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-areas: "title title title"
+        "about size pic"
+        "rem rem pic";
+    }
+  }
+}
