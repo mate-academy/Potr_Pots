@@ -95,21 +95,18 @@
       display: inline-block;
     }
 
-    &-continue {
+    &-checkbox {
+      display: none;
+    }
+
+    &-toggle {
       font-family: $font-text;
       font-weight: 400;
       font-size: 10px;
       line-height: 10px;
       color: $c-turquoise;
       transition: all $time-trans;
-
-      @include onTablet {
-
-        &:hover ~ .materials__text-full,
-        &:active ~ .materials__text-full {
-          transform: scale(1);
-        }
-      }
+      cursor: pointer;
 
       @include onDesktop {
         display: none;
@@ -120,17 +117,14 @@
 
       @include onTablet {
         position: absolute;
-        top: 95px;
+        bottom: -150%;
         left: 0;
         color: #4e4242;
-        background-color: rgba(149, 137, 137, 0.6);
-        transition: transform $time-trans;
-        transform: scaleY(0);
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(3px);
+        transition: all $time-trans;
+        visibility: hidden;
         z-index: 9;
-
-        &:hover {
-          transform: scaleY(1);
-        }
       }
 
       @include onDesktop {
@@ -140,170 +134,84 @@
         opacity: 1;
       }
     }
-  }
 
-  &__details {
-    display: flex;
-    flex-direction: column;
-    padding: 0 45px;
+    @include onTablet {
+      &-checkbox:checked ~ &-toggle ~ &-full {
+        visibility: visible;
+        animation: translate 0.5s ease-in-out;
+        transition: all $time-trans;
 
-    @include onMobile {
-      min-height: 260px;
-      width: 100%;
-      transform: translateY(-40%);
-      background-color: rgba(0, 0, 0, 0.45);
-    }
-  }
+        @keyframes translate {
+          0% {
+            transform: translateY(25%);
+          }
 
-  &__descriptions {
-
-    @include onMobile {
-      display: flex;
-      height: 260px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        display: none;
-      }
-    }
-
-    @media (min-width: 768px) and (max-width: 1279px) {
-      position: absolute;
-
-      & div:nth-child(5) {
-        @include materials;
-        bottom: -35vw;
-        left: -3vw;
-        display: none;
-      }
-
-      & div:nth-child(4) {
-        @include materials;
-        bottom: -25vw;
-        left: 12vw;
-        display: none;
-      }
-
-      & div:nth-child(3) {
-        @include materials;
-        bottom: -45vw;
-        left: 22vw;
-        display: none;
-      }
-
-      & div:nth-child(2) {
-        @include materials;
-        bottom: -40vw;
-        left: 35vw;
-        display: none;
-      }
-
-      & div:nth-child(1) {
-        @include materials;
-        top: 30vw;
-        left: 53vw;
-        display: none;
+          100% {
+            transform: translateY(0%);
+          }
+        }
       }
     }
 
     @include onDesktop {
-      position: absolute;
-
-      & div:nth-child(5) {
-        @include materials;
-        bottom: -40vw;
-        left: 7vw;
-        display: none;
-      }
-
-      & div:nth-child(4) {
-        @include materials;
-        bottom: -25vw;
-        left: 12vw;
-        display: none;
-      }
-
-      & div:nth-child(3) {
-        @include materials;
-        bottom: -52vw;
-        left: 20vw;
-        display: none;
-      }
-
-      & div:nth-child(2) {
-        @include materials;
-        bottom: -32vw;
-        left: 45vw;
-        display: none;
-      }
-
-      & div:nth-child(1) {
-        @include materials;
-        top: 32vw;
-        left: 64vw;
-        display: none;
+      &-checkbox:not(:checked) ~ &-toggle ~ &-full {
+        visibility: visible;
       }
     }
   }
 
-  &__description {
-    @extend %text-s3;
-    color: $c-grey-light;
+  &__details {
+    position: relative;
+    min-height: 255px;
     width: 100%;
+    transform: translateY(-40%);
+    background-color: rgba(0, 0, 0, 0.45);
 
-    @include onMobile {
-      display: flex;
-      align-items: center;
-      scroll-snap-align: start;
-      flex-shrink: 0;
-      width: 100%;
-      transform-origin: center center;
-      transform: scale(1);
-      transition: transform $time-trans;
-
-      @include onDesktop {
-        position: absolute;
-      }
+    @include onTablet {
+      background-color: transparent;
     }
   }
 
   &__toggle {
-
-    @include onMobile {
-      display: flex;
-      gap: 14px;
-      flex-direction: row;
-      justify-content: center;
-      text-align: center;
-      transform: translateY(-25px);
-
-      @include onTablet {
-        position: absolute;
-      }
-    }
 
     &-box {
       display: none;
     }
 
     &-unit {
+      position: absolute;
       transition: all $time-trans;
 
       @include onMobile {
+        bottom: 25px;
         width: 10px;
         height: 10px;
         background-color: $c-grey-light;
         border: 2px solid $c-grey-light;
         transform: rotate(45deg);
+
+        &--1 {
+          left: 38%;
+        }
+
+        &--2 {
+          left: 43%;
+        }
+
+        &--3 {
+          left: 48%;
+        }
+
+        &--4 {
+          left: 53%;
+        }
+
+        &--5 {
+          left: 58%;
+        }
       }
 
       @include onTablet {
-        position: absolute;
         width: 51px;
         height: 51px;
         border-radius: 50%;
@@ -330,57 +238,132 @@
           background-color: #e0e0e0;
         }
 
-        &:nth-of-type(1) {
-          bottom: -45vw;
-          left: 9vw;
+        &--1 {
+          bottom: -10vw;
+          left: 70vw;
         }
 
-        &:nth-of-type(2) {
-          bottom: -33vw;
-          left: 30vw;
-        }
-
-        &:nth-of-type(3) {
-          bottom: -55vw;
-          left: 41vw;
-        }
-
-        &:nth-of-type(4) {
-          bottom: -48vw;
+        &--2 {
+          bottom: -28vw;
           left: 54vw;
         }
 
-        &:nth-of-type(5) {
-          bottom: -28vw;
-          left: 70vw;
+        &--3 {
+          bottom: -35vw;
+          left: 41vw;
+        }
+
+        &--4 {
+          bottom: -15vw;
+          left: 29vw;
+        }
+
+        &--5 {
+          bottom: -30vw;
+          left: 10vw;
         }
       }
 
       @include onDesktop {
 
-        &:nth-of-type(1) {
-          bottom: -45vw;
+        &--1 {
+          bottom: -18vw;
+          left: 75vw;
+        }
+
+        &--2 {
+          bottom: -25vw;
+          left: 59vw;
+        }
+
+        &--3 {
+          bottom: -37vw;
+          left: 47vw;
+        }
+
+        &--4 {
+          bottom: -20vw;
+          left: 37vw;
+        }
+
+        &--5 {
+          bottom: -32vw;
           left: 17vw;
         }
+      }
+    }
 
-        &:nth-of-type(2) {
-          bottom: -30vw;
-          left: 36vw;
+    &-text {
+      position: absolute;
+      @extend %text-s3;
+      color: $c-grey-light;
+
+      @include onMobile {
+        top: 25%;
+        left: 45px;
+        right: 45px;
+        overflow: hidden;
+        transform: translateX(-150%);
+      }
+
+      @include onTablet {
+        box-sizing: content-box;
+        background-color: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(3px);
+        min-width: 215px;
+        padding: 35px;
+        display: none;
+
+        &--1 {
+          bottom: -40vw;
+          left: 60vw;
         }
 
-        &:nth-of-type(3) {
-          bottom: -47vw;
-          left: 46vw;
+        &--2 {
+          top: 28vw;
+          left: 40vw;
         }
 
-        &:nth-of-type(4) {
-          bottom: -38vw;
-          left: 58vw;
+        &--3 {
+          top: 30vw;
+          left: 25vw;
         }
 
-        &:nth-of-type(5) {
-          bottom: -30vw;
-          left: 75vw;
+        &--4 {
+          top: 15vw;
+          left: 15vw;
+        }
+
+        &--5 {
+          top: 35vw;
+          left: 2vw;
+        }
+      }
+
+      @include onDesktop {
+        &--1 {
+          bottom: -35vw;
+          left: 68vw;
+        }
+
+        &--2 {
+          top: 23vw;
+          left: 52vw;
+        }
+
+        &--3 {
+          top: 35vw;
+          left: 40vw;
+        }
+
+        &--4 {
+          top: 20vw;
+          left: 30vw;
+        }
+
+        &--5 {
+          top: 35vw;
+          left: 9vw;
         }
       }
     }
@@ -399,6 +382,27 @@
           height: 1px;
           background-color: #e0e0e0;
         }
+      }
+    }
+
+    &-box:checked ~ &-unit ~ &-text {
+      transform: translateX(0%);
+      animation: scale 0.5s ease-in-out;
+      transition: all $time-trans;
+
+      @keyframes scale {
+        0% {
+          transform: scale(0.95);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @include onTablet {
+        display: block;
+        z-index: 1;
       }
     }
   }

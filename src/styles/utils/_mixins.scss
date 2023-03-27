@@ -38,16 +38,6 @@
   }
 }
 
-@mixin materials {
-  position: absolute;
-  min-width: 280px;
-  height: max-content;
-  background-color: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(3px);
-  padding: 35px;
-  z-index: 1;
-}
-
 @mixin name {
   font-family: $font-title;
   font-size: 232px;
@@ -69,8 +59,26 @@
 
   &:focus {
     outline: none;
-    color: $c-turquoise;
+    color: $c-grey-2;
     border-color: $c-turquoise;
+  }
+
+  &:placeholder-shown:not(:focus) {
+    border-color: $c-red;
+
+    &::placeholder {
+      color: $c-red;
+    }
+  }
+
+  &:-webkit-autofill:not(:invalid),
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-text-fill-color: $c-turquoise;
+  }
+
+  &:-webkit-autofill:invalid {
+    -webkit-text-fill-color: $c-red;
   }
 
   &:not(:focus):not(:placeholder-shown):invalid {
