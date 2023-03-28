@@ -291,38 +291,43 @@
 
             <div class="materials__content">
               <button 
-                class="button-circle materials__button materials__button--1"
-                id="button1"
+                class="button-circle active materials__button materials__button--1"
+                id="button1" 
+                onclick="toggleBlock('block1', 'button1')"
               >
-                +
+                &#43;
               </button>
 
               <button
                 class="button-circle materials__button materials__button--2"
-                data-target="descriprion2"
+                id="button2" 
+                onclick="toggleBlock('block2', 'button2')"
               >
-                +
+                &#43;
               </button>
 
               <button 
                 class="button-circle materials__button materials__button--3"
-                data-target="descriprion3"
+                id="button3" 
+                onclick="toggleBlock('block3', 'button3')"
               >
-                +
+                &#43;
               </button>
 
               <button 
                 class="button-circle materials__button materials__button--4"
-                data-target="descriprion4"
+                id="button4" 
+                onclick="toggleBlock('block4', 'button4')"
               >
-                +
+                &#43;
               </button>
 
               <button 
                 class="button-circle materials__button materials__button--5"
-                data-target="descriprion5"
+                id="button5" 
+                onclick="toggleBlock('block5', 'button5')"
               >
-                +
+                &#43;
               </button>
 
               <div 
@@ -334,31 +339,48 @@
   
               <div 
                 class="materials__description materials__description--2"
-                id="descriprion2"
+                id="block2"
               >
                 Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.
               </div>
               
               <div 
                 class="materials__description materials__description--3"
-                id="descriprion3"
+                id="block3"
               >
                 Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.
               </div>
   
               <div 
                 class="materials__description materials__description--4"
-                id="descriprion4"
+                id="block4"
               >
                 POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.
               </div>
               
               <div
                 class="materials__description materials__description--5"
-                id="descriprion5"
+                id="block5"
               >
                 POTR Pots are constructed using recycled polypropylene which can be fully recycled.
               </div>
+
+              <script>
+                function toggleBlock(blockId, buttonId) {
+                  const block = document.getElementById(blockId);
+                  const button = document.getElementById(buttonId);
+            
+                  if (block.style.display === "none") {
+                    block.style.display = "block";
+                    button.innerHTML = "&#8722;";
+                    button.classList.add("active");
+                  } else {
+                    block.style.display = "none";
+                    button.innerHTML = "&#43;";
+                    button.classList.remove("active");
+                  }
+                }
+              </script>
             </div>
           </div>
 
@@ -438,6 +460,98 @@
           </div>
 
           <p class="size__remark">POTR Pots have a little bit of give around the top rim so can fit slightly larger sizes than the recommended sizes stated above if necessary.</p>
+        </section>
+
+        <section class="benefits main__benefits">
+          <div class="benefits__benefit">
+            <h3 class="benefits__benefit-title">Easy assembly</h3>
+            <p class="benefits__benefit-info">Pull the draw string to assemble!</p>
+          </div>
+
+          <div class="benefits__benefit">
+            <h3 class="benefits__benefit-title">Flat pack postage </h3>
+            <p class="benefits__benefit-info">POTR pots arrive flat packed in an envelope!</p>
+          </div>
+
+          <div class="benefits__benefit">
+            <h3 class="benefits__benefit-title">Self-watering</h3>
+            <p class="benefits__benefit-info">Add water to POTR and watch your plant drink!</p>
+          </div>
+
+          <div class="benefits__order">
+            <a href="#" class="button button--benefits benefits__button">
+              <span class="button__text">Buy now</span>
+              <span class="button__element button__element--benefits"></span>
+            </a>
+  
+            <div class="benefits__offer">
+              <p class="benefits__offer-discount">50% off</p>
+              <p class="benefits__offer-about">Get the second order in half price</p>
+            </div>
+          </div>
+
+          <div class="benefits__frame">
+            <figure class="benefits__picture">
+              <img 
+                class="benefits__picture-image" 
+                src="./images/photos/benefits-image1.jpg" 
+                alt="Origami"
+              >
+              <figcaption class="benefits__picture-text">Origami experiments</figcaption>
+            </figure>
+
+            <figure class="benefits__picture">
+              <img 
+                class="benefits__picture-image" 
+                src="./images/photos/benefits-image2.jpg" 
+                alt="Pot"
+              >
+              <figcaption class="benefits__picture-text">A plant pot for the 21st century.</figcaption>
+            </figure>
+
+            <figure class="benefits__picture">
+              <img 
+                class="benefits__picture-image" 
+                src="./images/photos/benefits-image3.jpg" 
+                alt="Bobbiny cotton cord"
+              >
+              <figcaption class="benefits__picture-text">Bobbiny cotton cord colour options</figcaption>
+            </figure>
+
+            <figure class="benefits__picture">
+              <img 
+                class="benefits__picture-image" 
+                src="./images/photos/benefits-image4.jpg" 
+                alt="other house hold objects"
+              >
+              <figcaption class="benefits__picture-text">POTR Pots compliment other house hold objects.</figcaption>
+            </figure>
+
+            <figure class="benefits__picture">
+              <img 
+                class="benefits__picture-image" 
+                src="./images/photos/benefits-image5.jpg" 
+                alt="Bobbiny cotton cord colour options"
+              >
+              <figcaption class="benefits__picture-text">Bobbiny cotton cord colour options</figcaption>
+            </figure>
+
+            <figure class="benefits__picture">
+              <img 
+                class="benefits__picture-image" 
+                src="./images/photos/benefits-image6.jpg" 
+                alt="Origami"
+              >
+              <figcaption class="benefits__picture-text">POTR pots ready to go!</figcaption>
+            </figure>
+          </div>
+
+          <div class="benefits__tassel tassel--benefits">
+            <span class="tassel--benefits__line"></span>
+            <span class="tassel--benefits__text">POTR Pots Features</span>
+          </div>
+
+          <div class="benefits__stamp"></div>
         </section>
       </div>
     </main>

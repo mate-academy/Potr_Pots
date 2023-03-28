@@ -93,4 +93,36 @@
       }
     }
   }
+
+  &--benefits {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: max-content;
+      gap: 10px;
+      font-family: $ff-titles;
+      font-size: 12px;
+      line-height: 14px;
+      color: #828282;
+      letter-spacing: 0.22em;
+      transform-origin: right top;
+      transform: rotate(90deg) translate(100%, -150%);
+  
+      @include onDesktop {
+        display: none;
+      }
+  
+      &__line {
+        width: 65px;
+        height: 5px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+        background-image: url(../images/tassel-line.png);
+      }
+    }
+  }
 }
