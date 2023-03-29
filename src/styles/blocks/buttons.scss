@@ -40,6 +40,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+
+    &--questions {
+      background-image: url(../images/button-arrow-hover.png);
+    }
   }
 
   &--benefits {
@@ -58,6 +62,21 @@
       &:hover .button__element--benefits {
         background-image: url(../images/button-arrow-hover.png);
       }
+    }
+  }
+
+  &--questions {
+    color: #fff;
+    background-color: $c-turquoise;
+    border: 1px solid $c-turquoise;
+
+    @include onTablet {
+      max-width: 238px;
+    }
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.4);
+      border-color: 1px solid rgba(3, 128, 158, 0.4);
     }
   }
 

@@ -24,7 +24,7 @@
       url(../images/photos/materials-bgi.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 
     &-title {
       display: none;
@@ -141,10 +141,8 @@
     mix-blend-mode: normal;
     backdrop-filter: blur(17px);
 
-    @include onTablet {
-      & .active {
-        display: block;
-      }
+    &.active {
+      display: block;
     }
 
     &--1 {

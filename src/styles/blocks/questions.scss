@@ -1,0 +1,128 @@
+.questions {
+  position: relative;
+  @include grid;
+  grid-auto-flow: dense;
+
+  &:after {
+    position: absolute;
+    content: "";
+    z-index: -5;
+    top: -45px;
+    left: -30px;
+    width: 0;
+    height: 0;
+    border-top: 150vh solid $c-yellow-light;
+    border-left: 100vw solid $c-yellow-light;
+    border-bottom: 115px solid transparent;
+
+    @include onTablet {
+      top: -17px;
+      left: -34px;
+      border-top: 40vh solid $c-yellow-light;
+      border-left: 100vw solid $c-yellow-light;
+      border-bottom: 80px solid transparent;
+    }
+
+    @include onDesktop {
+      top: -38px;
+      left: -135px;
+      border-top: 40vh solid $c-yellow-light;
+      border-left: 91vw solid $c-yellow-light;
+      border-bottom: 170px solid transparent;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    @extend %h2;
+    color: #000;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__about {
+    margin: 0 0 40px;
+    @extend %s1;
+    color: #000;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin: 0 0 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      margin: 0 0 20px;
+    }
+  }
+
+  &__form-title {
+    margin: 0 0 25px;
+    @extend %s2;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__form {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+
+    &-field {
+      &:nth-child(3) {
+        margin-bottom: 30px;
+
+        @include onTablet {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    @include onTablet {
+      grid-column: 5 / 7;
+      grid-row: 1 / 5;
+      align-self: center;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+      grid-row: 1 / 5;
+      align-self: center;
+    }
+  }
+
+  &__info {
+    &:not(:last-of-type) {
+      margin: 0 0 34px;
+
+      @include onTablet {
+        margin: 0 0 20px;
+      }
+    }
+
+    &-title {
+      margin: 0 0 5px;
+      @extend %s2;
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-link {
+      @extend %s1;
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}
