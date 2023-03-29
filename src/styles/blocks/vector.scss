@@ -1,0 +1,132 @@
+.vertical-text {
+  display: flex;
+  position: absolute;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #03839e;
+  letter-spacing: 0.22em;
+  writing-mode: vertical-lr;
+  text-decoration: none;
+  gap: 20px;
+  bottom: 60px;
+  right: 10px;
+
+  @include onTABS {
+    left: 20px;
+  }
+
+  @include onDesktop {
+    left: 130px;
+  }
+
+  &-menu {
+    position: absolute;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #f8f8f8;
+    writing-mode: vertical-rl;
+    transform: rotate(-180deg);
+    margin: 20px 42px;
+    bottom: 50px;
+    right: 10px;
+  }
+
+}
+
+.vertical__img {
+  position: absolute;
+  height: 44px;
+  object-fit: contain;
+  bottom: -60px;
+  left: 5px;
+}
+
+.vertical-text1 {
+  display: flex;
+  gap: 10px;
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.22em;
+  writing-mode: vertical-rl;
+  color: #828282;
+  align-items: center;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 1px;
+    height: 65px;
+    align-items: center;
+    background-color: #828282;
+  }
+
+  &-first {
+    display: flex;
+    position: absolute;
+    bottom: 40px;
+    right: 10px;
+
+    @include onTABS {
+      display: flex;
+      position: absolute;
+      top: -110px;
+      right: 20px;
+    }
+
+    @include onDesktop {
+      top: 0;
+      right: 50px;
+    }
+  }
+
+  &-seconds {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      position: absolute;
+      bottom: 110px;
+      transform: rotate(180deg);
+    }
+
+  }
+
+  &-mater1 {
+    display: none;
+
+    @include onTABS {
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 20px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &-mater2 {
+    display: none;
+
+    @include onTABS {
+      display: flex;
+      position: absolute;
+      top: 170px;
+      left: 20px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+}

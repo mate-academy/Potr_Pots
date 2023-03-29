@@ -1,0 +1,55 @@
+.message {
+  position: relative;
+  background-image: url(../images/Contactmono.png);
+  background-position: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+  margin: 0 0 110px;
+
+  @include onTABS {
+    background-image: url(../images/Contacttablet.png);
+  }
+
+  @include onDesktop {
+    background-image: url(../images/contactdesktop.png);
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__field {
+    display: block;
+    height: 24px;
+    margin: 20px 0 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+    background-color: #ffec7a;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+  }
+
+  &__emblem {
+    position: absolute;
+    right: -40px;
+    top: -80px;
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+}
