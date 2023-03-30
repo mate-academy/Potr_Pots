@@ -19,12 +19,13 @@
   &__about {
     width: 100%;
     height: 75vw;
+    max-height: 1080px;
     background: linear-gradient(180deg, $c-gray-light 0%,
     rgba(255, 255, 255, 0) 30.93%),
-      url(../images/photos/materials-bgi.jpg);
+      url(../images/photos/materials-bgi2.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 
     &-title {
       display: none;
@@ -39,6 +40,7 @@
 
         @include onDesktop {
           top: 0;
+          left: 59%;
         }
       }
     }
@@ -63,6 +65,7 @@
       @include onDesktop {
         width: 470px;
         top: 5%;
+        left: 59%;
 
         &--hide {
           visibility: visible;
@@ -140,9 +143,15 @@
     background: rgba(0, 0, 0, 0.45);
     mix-blend-mode: normal;
     backdrop-filter: blur(17px);
+    transition: opacity 0.3 ease-in-out;
+
+    @include onTablet {
+      display: block;
+      opacity: 0;
+    }
 
     &.active {
-      display: block;
+      opacity: 1;
     }
 
     &--1 {

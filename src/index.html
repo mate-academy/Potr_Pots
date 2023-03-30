@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POTR Pots</title>
+    <link rel="icon" href="./images/favicon.png">
     <link rel="stylesheet" href="./styles/main.scss">
-    <script type="text/javascript" src="scripts/main.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link 
       rel="preconnect" 
@@ -288,8 +288,9 @@
             <div class="materials__content">
               <button 
                 class="button-circle materials__button materials__button--1"
-                id="button1" 
-                onclick="toggleBlock('block1', 'button1')"
+                id="button1"
+                data-target="block1"
+                data-active="false"
               >
                 &#43;
               </button>
@@ -297,7 +298,8 @@
               <button
                 class="button-circle materials__button materials__button--2"
                 id="button2" 
-                onclick="toggleBlock('block2', 'button2')"
+                data-target="block2"
+                data-active="false"
               >
                 &#43;
               </button>
@@ -305,7 +307,8 @@
               <button 
                 class="button-circle materials__button materials__button--3"
                 id="button3" 
-                onclick="toggleBlock('block3', 'button3')"
+                data-target="block3"
+                data-active="false"
               >
                 &#43;
               </button>
@@ -313,15 +316,17 @@
               <button 
                 class="button-circle materials__button materials__button--4"
                 id="button4" 
-                onclick="toggleBlock('block4', 'button4')"
+                data-target="block4"
+                data-active="false"
               >
                 &#43;
               </button>
 
               <button 
                 class="button-circle materials__button materials__button--5"
-                id="button5" 
-                onclick="toggleBlock('block5', 'button5')"
+                id="button5"
+                data-target="block5"
+                data-active="false"
               >
                 &#43;
               </button>
@@ -360,23 +365,6 @@
               >
                 POTR Pots are constructed using recycled polypropylene which can be fully recycled.
               </div>
-
-              <script>
-                function toggleBlock(blockId, buttonId) {
-                  const block = document.getElementById(blockId);
-                  const button = document.getElementById(buttonId);
-            
-                  if (block.style.display === "none") {
-                    block.style.display = "block";
-                    button.innerHTML = "&#8722;";
-                    button.classList.add("active");
-                  } else {
-                    block.style.display = "none";
-                    button.innerHTML = "&#43;";
-                    button.classList.remove("active");
-                  }
-                }
-              </script>
             </div>
           </div>
 
@@ -679,5 +667,6 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
