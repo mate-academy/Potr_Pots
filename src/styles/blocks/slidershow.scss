@@ -1,19 +1,31 @@
 .pagination {
   display: flex;
+  gap: 15px;
   bottom: -160px;
   justify-content: center;
   position: absolute;
   width: 100%;
 
+  @include onTablet {
+    display: none;
+  }
+
   &__link {
-    background: rgba(#fff,0.75);
-    border-radius: 50%;
+    background: rgba(#f8f8f8,0.75);
+    border: 1px solid #f8f8f8;
+    transform: rotate(45deg);
     display: block;
-    height: 10px;
-    width: 10px;
-    &:not(:last-child) {
-      margin-right: 5px;
+    height: 7px;
+    width: 7px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.3);
     }
+
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
     span {
       display: none;
     }
