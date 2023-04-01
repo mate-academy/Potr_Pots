@@ -1,0 +1,167 @@
+.message-us {
+  position: relative;
+  height: 568px;
+  max-width: 1390px;
+  margin-bottom: 0;
+  background: url(../images/yellow-big.png) no-repeat;
+  background-position: top left;
+
+  @include iPad {
+    height: 530px;
+    background-position-x: 105%;
+  }
+
+  @include mobile {
+    background-position: top left;
+    height: max-content;
+  }
+
+  &__title {
+    @include h2;
+    color: #000;
+    padding-top: 38px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    @include mobile {
+      padding-bottom: 14px;
+    }
+  }
+
+  &__ways {
+    @include s3;
+    color: #000;
+    padding-bottom: 28px;
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__form {
+    @include flex-column;
+    height: 277px;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      height: 250px;
+      padding-bottom: 88px;
+    }
+  }
+
+  &__form-title {
+    @include s2;
+    color: #000;
+    padding-bottom: 7px;
+  }
+
+  &__field {
+    position: relative;
+    width: 370px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+    background-color: transparent;
+    padding-top: 25px;
+    @include s3;
+    color: $gray2;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      -webkit-text-fill-color: $gray2;
+      -webkit-background-: 0 0 0 1000px #000 inset;
+    }
+
+    &::placeholder {
+      position: absolute;
+      @include s3;
+      color: $gray2;
+      bottom: 2px;
+    }
+
+    @include iPad {
+      width: 340px;
+      padding-top: 30px;
+    }
+
+    @include mobile {
+      width: 100%;
+      padding-top: 35px;
+    }
+  }
+
+  &__submit {
+    align-self: center;
+    background-color: transparent;
+    padding-top: 60px;
+    cursor: pointer;
+
+    @include mobile {
+      padding-top: 30px;
+    }
+  }
+
+  &__contacts {
+    @include flex-column;
+    width: 300px;
+    padding-bottom: 4px;
+    gap: 25px;
+
+    @include iPad {
+      width: 205px;
+    }
+
+    @include mobile {
+      align-items: flex-start;
+      gap: 38px;
+      width: 100%;
+    }
+  }
+
+  &__sections {
+    @include flex-column;
+  }
+
+  &__section-name {
+    @include s2;
+    color: rgba(0, 0, 0, 0.39);
+    z-index: 10;
+  }
+
+  &__section-contact {
+    position: relative;
+    @include link;
+    @include s3;
+    color: #000;
+    &:hover {
+      border-bottom: 1px solid #000;
+      transition-duration: 0.3s;
+    }
+  }
+
+  &__stamp {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    right: 82px;
+
+    @include iPad {
+      right: 0;
+      transform: translate(20%, -50%);
+    }
+
+    @include mobile {
+      right: -56px;
+    }
+  }
+}

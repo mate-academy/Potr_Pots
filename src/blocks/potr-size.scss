@@ -1,0 +1,212 @@
+.potr-size {
+  position: relative;
+  padding-top: 114px;
+  height: auto;
+  z-index: 10;
+
+  @media (min-width: 1024px) {
+    &::after {
+      content: "";
+      display: block;
+      width: 90%;
+      height: 125px;
+      background-color: #f8f8f8;
+    }
+  }
+
+  @include mobile {
+    padding-top: 280px;
+  }
+
+  &__conteiner {
+    margin-bottom: 0;
+
+    @include iPad {
+      margin-bottom: 125px;
+    }
+
+    @include mobile {
+      margin-bottom: 100px;
+    }
+  }
+
+  &__title {
+    @include h2;
+    letter-spacing: 5px;
+    color: #000;
+    padding-bottom: 56px;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      padding-bottom: 30px;
+    }
+
+    @include mobile {
+      width: 90%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 96px;
+
+    @include iPad {
+      padding: 66px 0 74px;
+    }
+
+    @include mobile {
+      flex-direction: column-reverse;
+      gap: 0;
+      padding-top: 104px;
+    }
+  }
+
+  &__info-block {
+    @include flex-column;
+    width: 49%;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    width: 47%;
+    height: auto;
+    background: url(../images/pot.png) no-repeat;
+    background-size: contain;
+
+    @include mobile {
+      width: 100vw;
+      height: 320px;
+      transform: translateX(-$padding);
+      background-position: center;
+    }
+  }
+
+  &__introduction {
+    position: relative;
+    @include s3;
+    color: $gray2;
+    width: 50%;
+    padding-right: 16px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 1px;
+      height: 100%;
+      background-color: #d8d8d8;
+    }
+
+    @include iPad {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding-bottom: 38px;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @include mobile {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__categories {
+    @include flex-column;
+    gap: 70px;
+    width: 50%;
+    padding-left: 30px;
+    padding-bottom: 68px;
+
+    @include tablet {
+      gap: 50px;
+    }
+
+    @include iPad {
+      gap: 38px;
+      padding-left: 0;
+      width: 100%;
+    }
+
+    @include mobile {
+      padding: 40px 0;
+      width: 100%;
+      gap: 40px;
+    }
+  }
+
+  &__pot {
+    @include flex-column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  &__pot-size {
+    @include h4;
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: 3px;
+  }
+
+  &__pot-about {
+    @include s3;
+    color: $gray2;
+
+    @include mobile {
+      line-height: 130%;
+    }
+  }
+
+  &__note {
+    position: relative;
+    @include s3;
+    color: $gray2;
+    background-color: #f8f8f8;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -5px;
+      top: 0;
+      display: block;
+      @include s3;
+      color: $gray2;
+    }
+
+    @include iPad {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin-top: 0;
+    }
+
+    @include mobile {
+      margin-top: 40px;
+      line-height: 130%;
+    }
+  }
+}

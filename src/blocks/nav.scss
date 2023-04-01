@@ -1,0 +1,35 @@
+.nav {
+  @media (min-width: 320px) and (max-width: 1023px) {
+    padding-top: 140px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    gap: 64px;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      position: relative;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      padding-top: 130px;
+    }
+  }
+
+  &__item {
+    @include link;
+    @include s3;
+    color: #4f4f4f;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid #4f4f4f;
+      transition-duration: 0.3s;
+    }
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      color: $grey-light;
+    }
+  }
+}

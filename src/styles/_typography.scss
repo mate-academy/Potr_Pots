@@ -1,3 +1,71 @@
-h1 {
-  @extend %h1;
+@mixin title {
+  font-family: "Bebas Neue", cursive;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 100%;
+}
+
+@mixin h1 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: bold;
+  font-size: 58px;
+  line-height: 150%;
+}
+
+@mixin h2 {
+  @include h1;
+  font-size: 36px;
+}
+
+@mixin h3 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 100%;
+}
+
+@mixin h4 {
+  font-family: "Bebas Neue", cursive;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+@mixin s1 {
+  font-family: "Proxima Nova Semibold", "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 150%;
+
+  @include mobile {
+    font-size: 32px;
+  }
+}
+
+@mixin s2 {
+  font-family: "Proxima Nova", "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+@mixin s3 {
+  font-family: "Proxima Nova", "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin s4 {
+  font-family: "Proxima Nova Semibold", "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+@mixin s5 {
+  font-family: "Proxima Nova Semibold", "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 150%;
 }

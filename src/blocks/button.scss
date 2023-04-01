@@ -1,0 +1,51 @@
+.button {
+  box-sizing: border-box;
+  @include flex-center;
+  width: 238px;
+  height: 48px;
+  border: 1px solid $turquoise;
+  @include s4;
+  color: #121212;
+  text-transform: uppercase;
+  @include link;
+
+  &:hover {
+    background-color: $turquoise;
+    color: #fff;
+    transition-duration: 0.3s;
+  }
+
+  @include mobile {
+    background-color: $yellow;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: #fff;
+      border: 1px solid #333;
+      transition-duration: 0.3s;
+    }
+  }
+
+  &--checkout {
+    border-color: #e0e0e0;
+
+    &:hover {
+      border-color: $red;
+      color: $red;
+      transition-duration: 0.3s;
+    }
+  }
+
+  &__submit {
+    border: none;
+    @include s3;
+    color: $gray;
+    text-decoration: underline dotted $gray;
+
+    &:hover {
+      color: $red;
+      text-decoration-color: $red;
+      transition-duration: 0.3s;
+    }
+  }
+}
