@@ -11,16 +11,22 @@
 
     @include onDesktop {
       display: grid;
+      height: 828px;
+      background-image: url(../images/Frame.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: translateX(-60px);
     }
 
   }
 
   &__img {
-    width: 110%;
+    width: 100%;
     height: 828px;
-    object-fit: fill;
+    object-fit: contain;
     object-position: center;
-    transform: translateX(-60px);
+
   }
 
   &__box {
@@ -49,18 +55,20 @@
     @include onDesktop {
       display: flex;
       padding: 0;
-      flex: 30%;
       flex-direction: row;
       flex-wrap: wrap;
+      min-width: 582px;
+      max-width: 583px;
     }
   }
 
   &__item {
     display: block;
+    width: min-content;
     position: relative;
     font-family: "Manrope", sans-serif;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 30px;
     line-height: 150%;
     height: 100px;
     align-items: flex-end;
@@ -80,7 +88,7 @@
 
     @include onDesktop {
       &:first-child {
-        padding: 0 40px 0 0;
+        padding: 0 22px 0 0;
       }
     }
 
@@ -138,7 +146,7 @@
     color: #03839e;
 
     @include onDesktop {
-      margin: 0 0 0 100px;
+      margin: 0  0 150px 100px;
     }
   }
 }
