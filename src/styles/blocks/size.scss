@@ -1,0 +1,121 @@
+.size {
+  @include gridAreasSize;
+
+  &__title {
+    grid-area: title;
+    margin: 0 0 20px;
+    @extend %h2;
+    color: #000;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__about {
+    position: relative;
+    grid-area: about;
+    margin: 0 0 30px;
+    @extend %s3;
+
+    @include onTablet {
+      margin-bottom: 38px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      width: 260px;
+    }
+  }
+
+  &__picture {
+    grid-area: pic;
+    box-sizing: border-box;
+    max-width: 640px;
+    margin: 0 -30px 30px;
+
+    @include onTablet {
+      justify-self: end;
+      width: 416px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      justify-self: end;
+      width: 528px;
+      height: 427px;
+    }
+
+    &-image {
+      width: 100%;
+    }
+  }
+
+  &__sizes {
+    position: relative;
+    grid-area: size;
+    margin: 0 0 15px;
+
+    @include onTablet {
+      margin: 0;
+      width: 246px;
+    }
+
+    @include onDesktop {
+      &::before {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 1px;
+        height: 257px;
+        background-color: #d8d8d8;
+        transform: translate(-30px);
+      }
+    }
+
+    &-title {
+      margin: 0 0 10px;
+      @extend %h5;
+    }
+
+    &-info {
+      margin: 0;
+      @extend %s3;
+
+      &:first-of-type {
+        margin-bottom: 40px;
+
+        @include onTablet {
+          margin-bottom: 50px;
+        }
+      }
+    }
+  }
+
+  &__remark {
+    grid-area: rem;
+    position: relative;
+    margin: 0;
+    @extend %s3;
+
+    &::before {
+      position: absolute;
+      content: "*";
+      @extend %s3;
+      transform: translate(-10px);
+    }
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+      align-self: center;
+    }
+  }
+}

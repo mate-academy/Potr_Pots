@@ -4,3 +4,72 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin grid {
+  @media (min-width: 640px) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+  }
+
+  @media (min-width: 1280px) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin gridAreas {
+  @include onTablet {
+    display: grid;
+    column-gap: 0;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "tit tit tit"
+      "pic1 num1 art1"
+      "num2 num2 pic2"
+      "art2 art2 pic2"
+      "pic3 num3 art3";
+
+    @include onDesktop {
+      grid-template-columns: auto 200px 80px auto;
+      grid-template-areas: "tit tit tit tit"
+        "pic1 num1 art1 art1"
+        "pic2 space pic3 pic3"
+        "num2 space pic3 pic3"
+        "art2 space num3 art3";
+    }
+  }
+}
+
+@mixin gridAreasSize {
+  @include onTablet {
+    display: grid;
+    column-gap: 0;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: "title title"
+      "about about"
+      "size pic"
+      "rem rem";
+
+    @include onDesktop {
+      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-areas: "title title title"
+        "about size pic"
+        "rem rem pic";
+    }
+  }
+}
