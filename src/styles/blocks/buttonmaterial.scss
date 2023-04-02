@@ -10,14 +10,12 @@
     background-size: auto;
     background-repeat: no-repeat;
     border-radius: 50%;
-
   }
 
   &__text {
     position: absolute;
-    margin: -280px -150px 0;
+    box-sizing: border-box;
     padding: 35px;
-    height: 162px;
     width: 284px;
     background-color: rgba(0, 0, 0, 0.4);
     mix-blend-mode: normal;
@@ -33,21 +31,67 @@
     z-index: 10;
 
     &-1 {
-      margin: -280px -100px 0;
+
+      @include onTABS {
+        bottom: 120%;
+        left: -100%;
+      }
+
+      @include onDesktop {
+        bottom: 120%;
+        left: -100%;
+      }
+
     }
 
     &-2 {
-      left: 200px;
-      bottom: 120px;
+      @include onTABS {
+        bottom: 120%;
+        left: -500%;
+      }
+
+      @include onDesktop {
+        bottom: 120%;
+        left: -650%;
+      }
     }
 
     &-3 {
-      left: 390px;
-      bottom: 0;
+      @include onTABS {
+        bottom: -120%;
+        left: -600%;
+      }
+
+      @include onDesktop {
+        bottom: -120%;
+        left: -700%;
+      }
+    }
+
+    &-4 {
+
+      @include onTABS {
+        bottom: 120%;
+        right: -200%;
+      }
+
+      @include onDesktop {
+        bottom: 120%;
+        right: -200%;
+      }
     }
 
     &-5 {
-      margin: 60px -300px -300px;
+
+      @include onTABS {
+        top: 120%;
+        right: -280%;
+      }
+
+      @include onDesktop {
+        top: 120%;
+        right: -280%;
+      }
     }
   }
 
@@ -63,11 +107,15 @@
 .button__1 {
 
   @include onTABS {
-    margin: 20% 0 10% 12%;
+    display: block;
+    position: absolute;
+    bottom: 13%;
+    left: 10%;
   }
 
   @include onDesktop {
-    margin: 40% 0 0 10%;
+    bottom: 6%;
+    left: 16%;
   }
 
 }
@@ -75,45 +123,44 @@
 .button__2 {
 
   @include onTABS {
-    margin: 16% 0 0 16%;
+    display: block;
+    position: absolute;
+    bottom: 30%;
+    left: 30%;
   }
 
   @include onDesktop {
-    margin: 24% 0 0 20%;
+    bottom: 28%;
+    left: 37%;
   }
-
 }
 
 .button__3 {
 
   @include onTABS {
-    margin: 200px 0 324px;
+    display: block;
+    position: absolute;
+    bottom: 7%;
+    left: 47%;
   }
-
-  @include onDesktop {
-    margin: 44% 0 0 10%;
-  }
-
 }
 
 .button__4 {
 
   @include onTABS {
-    margin: 20% 0 0 15%;
-  }
-
-  @include onDesktop {
-    margin: 30% 0 0 10%;
+    display: block;
+    position: absolute;
+    bottom: 17%;
+    left: 58%;
   }
 }
 
 .button__5 {
 
   @include onTABS {
-    margin: 15% 0 0  15%;
-  }
-
-  @include onDesktop {
-    margin: 24% 15% 0;
+    display: block;
+    position: absolute;
+    bottom: 23%;
+    left: 78%;
   }
 }
