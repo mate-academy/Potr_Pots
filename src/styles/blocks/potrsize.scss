@@ -7,8 +7,13 @@
 
   &__container {
 
+    @include onTABS {
+      padding: 0 34px;
+    }
+
     @include onDesktop {
       display: flex;
+      padding: 0 135px;
     }
   }
 
@@ -30,13 +35,21 @@
     letter-spacing: 0.15em;
     color: #000;
   }
-
-  &__img {
-    padding: 30px 0 12px;
-    width: 120%;
+  .img {
+    display: block;
+    width: 100%;
     object-fit: cover;
     object-position: center;
-    transform: translateX(-22px);
+
+    @include onTABS {
+      display: none;
+    }
+  }
+  &__img {
+    padding: 30px 0 12px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 
     @include onTABS {
       width: 100%;
@@ -69,6 +82,8 @@
   }
 
   &__text {
+    padding: 0 30px;
+
     @include onTABS {
       padding: 0 36px;
     }
@@ -80,7 +95,7 @@
 
   &__about3 {
     padding: 0 0 16px;
- 
+
     @include onTABS {
       width: 100%;
     }
