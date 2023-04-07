@@ -11,6 +11,12 @@
   }
 }
 
+@mixin onMiddleDesktop {
+  @media (min-width: 960px) {
+    @content;
+  }
+}
+
 @mixin onDesktop {
   @media (min-width: 1280px) {
     @content;
@@ -65,7 +71,9 @@
       "size pic"
       "rem rem";
 
-    @include onDesktop {
+      
+
+    @include onMiddleDesktop() {
       grid-template-columns: 1fr 1fr 2fr;
       grid-template-areas: "title title title"
         "about size pic"

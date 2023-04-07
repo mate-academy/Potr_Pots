@@ -32,7 +32,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-bottom: 67px;
+    max-width: 260px;
+    margin: 0 auto 68px;
 
     &:last-child {
       margin-bottom: 0;
@@ -59,6 +60,7 @@
     @include onDesktop {
       align-items: center;
       text-align: center;
+      max-width: none;
 
       &:nth-of-type(1) {
         grid-column: 1 / 5;
@@ -74,20 +76,14 @@
     }
 
     &-picture {
-      width: 260px;
-      height: 260px;
-      margin-bottom: 35px;
+      margin-bottom: 34px;
 
       @include onTablet {
-        width: 222px;
-        height: 222px;
         margin-bottom: 30px;
       }
 
       @include onDesktop {
-        width: 375px;
-        height: 375px;
-        margin-bottom: 25px;
+        margin-bottom: 24px;
       }
     }
 
