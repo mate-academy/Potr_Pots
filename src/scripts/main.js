@@ -235,3 +235,11 @@ if (document.documentElement.scrollWidth < 768) {
   largePotOrder.textContent = 0;
   smallPotOrder.textContent = 0;
 }
+
+const form = document.getElementById('contact-form');
+
+form.addEventListener('submit', function handleSubmit(event) {
+  event.preventDefault();
+
+  form.reset();
+});
