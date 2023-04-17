@@ -1,0 +1,58 @@
+.button {
+  display: flex;
+  padding-left: 28%;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  color: #121212;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  background-image: url(../images/button-arrow.svg);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: 72% center;
+  border: 1px solid $colorTurquoise;
+  cursor: pointer;
+
+  @include onTablet {
+    margin-top: 35px;
+  }
+
+  @include onDesktop {
+    margin-top: 410px;
+  }
+
+  &--primary {
+    background-color: $colorTurquoise;
+    color: #fff;
+    background-image: url(../images/button-arrow-primary.svg);
+    margin: 0;
+
+    &:hover {
+      color: $colorBlack;
+      background-image: url(../images/button-arrow.svg);
+    }
+
+    @include onTablet {
+      width: 64%;
+      padding-left: 18%;
+      background-position: 70% center;
+    }
+  }
+
+  &:hover {
+    border: 1px solid $colorGreyFirst;
+    background-color: #ffe339;
+  }
+
+  &--2 {
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+}

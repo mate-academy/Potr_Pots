@@ -1,0 +1,29 @@
+.desktop-menu {
+  display: none;
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  &__link {
+    display: block;
+    color: $colorMainText;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 68px;
+    transition-duration: 0.5s;
+
+    &:hover {
+      transform: rotate(-7deg) scale(1.2);
+    }
+  }
+
+  @include onDesktop {
+    display: flex;
+  }
+}

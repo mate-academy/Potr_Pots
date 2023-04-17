@@ -1,0 +1,52 @@
+.place {
+  &--1 {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &--2 {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 122px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      height: 100%;
+      width: 83%;
+    }
+
+    @include onDesktop {
+      display: block;
+      height: 100%;
+    }
+
+    &--2 {
+      @include onTablet {
+        width: 100%;
+      }
+    }
+    transition: transform 1s;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
+}

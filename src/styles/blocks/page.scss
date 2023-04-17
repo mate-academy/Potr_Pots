@@ -1,0 +1,301 @@
+.page {
+  box-sizing: border-box;
+  font-family: "Manrope", "Bebas Neue", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: $colorMainText;
+  scroll-behavior: smooth;
+  text-align: center;
+  overflow-x: hidden;
+
+  &__body {
+    background: $c-gray;
+    margin: 0;
+  }
+
+  &__section {
+    overflow-x: hidden;
+
+    margin-bottom: 110px;
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+
+    &-title-turquoise {
+      margin: 0;
+      margin-bottom: 30px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 36px;
+      line-height: 43px;
+      text-align: left;
+      color: $colorTurquoise;
+      letter-spacing: 0.14em;
+  
+      &-transparent {
+        color: transparent;
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: $colorTurquoise;
+      }
+
+      &--size {
+        font-size: 58px;
+        line-height: 70px;
+        text-align: center;
+      }
+
+      &--cactus {
+        white-space: nowrap;
+        margin-bottom: 30px;
+
+        @include onTablet {
+          font-size: 64px;
+          line-height: 64px;
+          margin-bottom: 7px;
+        }
+
+        @include onDesktop {
+          font-size: 64px;
+          line-height: 64px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &-title-gray {
+      text-align: center;
+      margin: 0 0 25px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 36px;
+      line-height: 54px;
+      letter-spacing: 0.15em;
+      color: $colorGreyFirst;
+  
+      &--size {
+        font-size: 58px;
+        line-height: 70px;
+      }
+  
+      &--margin {
+        @include onTablet {
+          margin: 0 0 42px;
+        }
+  
+        @include onDesktop {
+          margin: 0 0 34px;
+        }
+
+        &-1 {
+          @include onTablet {
+            margin: 0 0 177px;
+          }
+    
+          @include onDesktop {
+            margin: 0 0 143px;
+          }
+        }
+      }
+    }
+
+    &-title-black {
+      margin: 0 0 20px;
+  
+      @include onTablet {
+        margin: 0 0 10px;
+      }
+  
+      @include onDesktop {
+        margin: 0 0 10px;
+      }
+  
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 36px;
+      line-height: 54px;
+      letter-spacing: 0.15em;
+      color: $colorBlack;
+  
+      &--number-1::before {
+        content: "1";
+        display: block;
+        margin: 0;
+        padding: 0;
+        padding-left: 45px;
+        margin-left: -30px;
+        margin-bottom: 30px;
+        width: 33px;
+        height: 46px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 36px;
+        line-height: 65px;
+        color: $colorBlack;
+        background-image: url(../images/slash.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+  
+        @include onTablet {
+          padding-left: 45px;
+          margin-left: -91px;
+          margin-bottom: -46px;
+        }
+  
+        @include onDesktop {
+          padding-left: 45px;
+          margin-left: -131px;
+          margin-bottom: -46px;
+        }
+      }
+  
+      &--number-2::before {
+        content: "2";
+        display: block;
+        padding-left: 45px;
+        margin-left: -30px;
+        margin-bottom: 30px;
+        width: 33px;
+        height: 46px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 36px;
+        line-height: 65px;
+        color: $colorBlack;
+        background-image: url(../images/slash.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+  
+        @include onTablet {
+          margin-bottom: 22px;
+        }
+  
+        @include onDesktop {
+          margin-bottom: 27px;
+        }
+      }
+  
+      &--number-3::before {
+        content: "3";
+        display: block;
+        padding-left: 45px;
+        margin-left: -30px;
+        margin-bottom: 30px;
+        width: 33px;
+        height: 46px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 36px;
+        line-height: 65px;
+        color: $colorBlack;
+        background-image: url(../images/slash.svg);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+  
+        @include onTablet {
+          padding-left: 45px;
+          margin-left: -86px;
+          margin-bottom: -46px;
+        }
+  
+        @include onDesktop {
+          padding-left: 45px;
+          margin-left: -130px;
+          margin-bottom: -46px;
+        }
+      }
+
+      &--size {
+        @include onTablet {
+          margin-bottom: 30px;
+        }
+    
+        @include onDesktop {
+          margin-bottom: 66px;
+        }
+      }
+
+      &--position {
+        margin-bottom: 0;
+        @include onMobile {
+          text-align: center;
+        }
+      }
+    }
+
+    &-text {
+      margin: 0;
+    }
+    
+    &-pretitle {
+      display: none;
+      color: $colorGreyFirst;
+      margin: 0;
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+
+      &:before {
+        content: "*";
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        margin-left: -15px;
+        width: 11px;
+        height: 21px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 24px;
+        line-height: 29px;
+        color: $colorBlack;
+
+        @include onDesktop {
+          margin-left: -40px;
+          padding-right: 25px;
+        }
+      }
+
+      &--1 {
+        @include onTablet {
+          margin: 0 0 25px;
+        }
+
+        @include onDesktop {
+          padding-top: 120px;
+          margin: 0 0 40px;
+        }
+      }
+
+      &--2 {
+        @include onTablet {
+          margin: 0 0 29px;
+          text-align: right;
+        }
+
+        @include onDesktop {
+          margin: 0 0 41px;
+        }
+      }
+
+      &--3 {
+        @include onTablet {
+          margin: 0 0 17px;
+        }
+
+        @include onDesktop {
+          margin: 0 0 40px;
+          position: relative;
+          right: 100px;
+        }
+      }
+    }
+  }
+  margin-bottom: 10px;
+    
+  &__section:nth-child(2) {
+    @include onTablet {
+      margin-bottom: 131px;
+    }
+  }
+}

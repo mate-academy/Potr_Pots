@@ -1,0 +1,131 @@
+.materials {
+  // overflow-y: hidden;
+
+  &__title {
+    @include onMobile {
+      margin-bottom: $materials-title-margin;
+    }
+
+    @include onTablet {
+      text-align: left;
+      font-size: 80px;
+      line-height: 96px;
+    }
+    
+    @include onDesktop {
+      text-align: left;
+      font-size: 139px;
+      line-height: 167px;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    font-style: "Manrope";
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0 0 10px;
+
+    @include onTablet {
+      display: block;
+      padding-top: 141px;
+    }
+
+    @include onDesktop {
+      display: block;
+      margin: 0 0 15px;
+      padding-top: 167px;
+    }
+  }
+
+  &__info {
+    display: none;
+    margin: 0;
+
+    @include onTablet {
+      display: block;
+      padding-top: 181px;
+    }
+
+    @include onDesktop {
+      display: block;
+      padding-top: 212px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    // height: 100%;
+    z-index: -1;
+    position: absolute;
+
+    left: 0;
+    margin-top: $materials-image-margin;
+
+    @include onTablet {
+      position: relative;
+      margin-top: -115px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      margin-top: -195px;
+    }
+  }
+
+  &__scroll {
+    overflow-x: scroll;
+    display: none;
+    width: 100%;
+
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__container {
+    display: block;
+    position: relative;
+  }
+
+  &__row {
+    display: flex;
+    width: calc(500% + 10px);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(25% - 10px);
+    margin: 0 9px;
+    padding: 28px 45px 37px;
+    height: 198px;
+    color: $colorGreyLight;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+  }
+
+  &__rectangles {
+    display: flex;
+    justify-content: flex-end;
+    width: 79px;
+    height: 7px;
+  }
+
+  &__photo-container {
+    @include onTablet {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+}

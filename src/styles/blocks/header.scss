@@ -1,0 +1,30 @@
+.header {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__mobile-menu {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    // left: 48px;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(28%);
+    }
+  }
+}
