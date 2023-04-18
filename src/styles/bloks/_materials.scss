@@ -1,0 +1,105 @@
+.materials {
+  position: relative;
+  height: 1080px;
+  background: linear-gradient(180deg, $color-light 0%, 
+  rgba(255, 255, 255, 0) 30.93%);
+  background-image: url(../images/materials-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  @include tablet {
+    height: 576px;
+  }
+
+  @include mobile {
+    border-image: url(../images/materials-bg-mobile.png);
+    background-position: 0 38%;
+    background-size: 100%, contain;
+    height: 100%;
+  }
+
+  &__content {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 139px;
+    line-height: 167px;
+    letter-spacing: 0.12em;
+    color: $color-turquoise;
+    transform: translateY(-50%);
+    grid-column: 1/8;
+    position: absolute;
+
+    @include tablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+      transform: translateY(-260px);
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0;
+    color: $grey-color-text;
+    grid-column: 8 / 13;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    color: $grey-color-text;
+
+    & strong {
+      font-weight: inherit;
+      font-style: inherit;
+      @include tablet {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__text-none {
+    @include tablet {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__desc {
+    grid-column: 8 / 13;
+
+    @include tablet {
+      grid-column: 4 / 7;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__tag {
+    display: none;
+
+    @include tablet {
+      display: block;
+      top: -165px;
+      right: -12px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__swiper {
+    display: none;
+    @include mobile {
+      display: block;
+    }
+  }
+}

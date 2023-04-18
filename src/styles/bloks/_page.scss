@@ -1,0 +1,50 @@
+.page {
+  scroll-behavior: smooth;
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+  color: $grey-color-text;
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: $color-light;
+
+  &__header {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+  }
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+      background-color: rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transition: transform 0.3s;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__materials {
+    margin-bottom: 106px;
+
+    @include tablet {
+      margin-bottom: 110px;
+    }
+  }
+}

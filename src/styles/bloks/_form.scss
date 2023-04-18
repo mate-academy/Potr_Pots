@@ -1,0 +1,78 @@
+.form {
+  &__title {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    color: $color-black;
+
+    @include mobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__field {
+    outline: none;
+    height: 48px;
+    border: none;
+    padding: 10px 5px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    width: 100%;
+    resize: none;
+    transition: color 0.3s, border-color 0.3s;
+
+    &:focus {
+      border-color: $color-turquoise;
+    }
+
+    &:not(:focus):not(:invalid) {
+      color: $grey-color-text;
+    }
+    
+    
+    &:not(:focus):valid {
+      color: $color-turquoise;
+      border-color: $color-turquoise;
+    }
+    
+    &:not(:focus):not(:placeholder-shown):invalid {
+      color: $color-red;
+      border-color: $color-red;
+    }
+
+  }
+  
+
+  &__field-text {
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__btn {
+    max-width: 238px;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+    background-color: $color-turquoise;
+
+    & svg {
+      fill: $color-light;
+    }
+
+    @include hover {
+      background-color: rgba(3, 128, 158, 0.4);
+    }
+
+    @include tablet {
+      max-width: 220px;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.header {
+  padding-top: 20px;
+
+  @include tablet {
+    padding-top: 30px;
+  }
+
+  @include mobile {
+    padding-top: 15px;
+  }
+
+  &__nav,
+  &__action {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__basket {
+    transition: transform 0.3s;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include hover {
+      transform: rotate(10deg);
+    }
+  }
+
+  &__icon-menu {
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    @include hover {
+      transform: scale(1.1);
+    }
+  }
+}

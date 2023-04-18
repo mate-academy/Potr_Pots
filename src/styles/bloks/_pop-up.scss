@@ -1,0 +1,184 @@
+.pop-up {
+  position: absolute;
+
+  &--1 {
+    left: 17.5%;
+    bottom: 14.5%;
+
+    @include tablet {
+      left: 11%;
+      bottom: 17%;
+    }
+  }
+
+  &--2 {
+    left: 38%;
+    bottom: 37%;
+
+    @include tablet {
+      left: 30%;
+      bottom: 39%;
+    }
+  }
+
+  &--3 {
+    left: 47.5%;
+    bottom: 9.7%;
+
+    @include tablet {
+      left: 43%;
+      bottom: 11%;
+    }
+  }
+
+  &--4 {
+    left: 58%;
+    bottom: 25%;
+
+    @include tablet {
+      left: 55%;
+      bottom: 23%;
+    }
+  }
+
+  &--5 {
+    left: 77.5%;
+    bottom: 34%;
+
+    @include tablet {
+      left: 72%;
+      bottom: 55%;
+    }
+  }
+
+  &__chec {
+    position: relative;
+    display: none;
+  }
+
+  &__btn {
+    position: relative;
+    width: 51px;
+    height: 51px;
+    background-color: $color-red;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 11px;
+      height: 1px;
+      background-color: #e0e0e0;
+    }
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 1px;
+      height: 11px;
+      background-color: #e0e0e0;
+      transition: all 0.4s;
+    }
+
+    @include hover {
+      transform: scale(1.1);
+    }
+  }
+  
+  &__text {
+    width: 283px;
+    position: absolute;
+    color: $color-light;
+    padding: 35px;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: all 0.3s;
+    visibility: hidden;
+    backdrop-filter: blur(40px);
+
+    &--1 {
+      bottom: 100%;
+      margin-bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include tablet {
+        left: -100%;
+        transform: translateX(0);
+        margin-bottom: 20px;
+      }
+    }
+
+    &--2 {
+      bottom: 100%;
+      margin-bottom: 20px;
+      right: 30px;
+
+      @include tablet {
+        right: 0;
+        transform: translateX(40%);
+      }
+    }
+
+    &--3 {
+      bottom: -83px;
+      margin-right: 11px;
+      right: 50px;
+
+      @include tablet {
+        bottom: 100%;
+        margin: 0 0 20px;
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+
+    &--4 {
+      bottom: 100%;
+      margin-bottom: 42px;
+      transform: translateX(-50%);
+      left: 100%;
+
+      @include tablet {
+        margin-bottom: 20px;
+        transform: translateX(-55%);
+      }
+    }
+
+    &--5 {
+      top: 100%;
+      transform: translateX(-46%);
+      margin-top: 6px;
+
+      @include tablet {
+        margin-top: 9px;
+        transform: translateX(-40%);
+        padding: 35px 45px;
+      }
+    }
+  }
+
+  &__chec:checked + &__btn + &__text {
+    opacity: 1;
+    z-index: 5;
+    visibility: visible;
+    transition: all 0.3s;
+  }
+
+  &__chec:checked + &__btn {
+    background-color: rgba(36, 35, 35, 0.75);
+    opacity: 0.65;
+    transition: all 0.4s;
+  }
+
+  &__chec:checked + &__btn::before {
+    transform: rotate(90deg);
+    transition: transform 0.4s;
+  }
+}

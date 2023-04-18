@@ -1,0 +1,35 @@
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  max-width: 270px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  justify-content: center;
+  gap: 0 25px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  @include tablet {
+    max-width: 240px;
+    gap: 0 17px;
+  }
+
+  & svg {
+    @include tablet {
+      width: 25px;
+    }
+  }
+
+  @include hover {
+    svg {
+      animation-name: wobble-horizontal;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+    }
+  }
+}
