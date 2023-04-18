@@ -22,25 +22,29 @@
     }
   }
 
-  &__background-trapese {
+  &__button {
+    background-color: $colorYellowButton;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  
+  &__background {
     display: none;
+    width: 80vw;
+    z-index: -1;
     position: absolute;
     top: 0;
-    height: 466px;
-    width: 100%;
-    z-index: -1;
-    background-image: url(../images/yellowbackground.svg);
-    background-size: cover;
-    background-repeat: no-repeat;
 
     @include onTablet {
       display: block;
-      background-position: top 0 right 154px;
+      right: 20vw;
     }
 
     @include onDesktop {
       display: block;
-      background-position: top 0 right 335px;
+      right: calc(50% - 315px);
     }
   }
 

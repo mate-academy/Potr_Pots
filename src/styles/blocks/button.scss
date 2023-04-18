@@ -12,11 +12,11 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 21px;
+  background-color: none;
   background-image: url(../images/button-arrow.svg);
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: 72% center;
-  border: 1px solid $colorTurquoise;
   cursor: pointer;
 
   @include onTablet {
@@ -30,12 +30,12 @@
   &--primary {
     background-color: $colorTurquoise;
     color: #fff;
+    border: none;
     background-image: url(../images/button-arrow-primary.svg);
     margin: 0;
 
     &:hover {
-      color: $colorBlack;
-      background-image: url(../images/button-arrow.svg);
+      opacity: 0.4;
     }
 
     @include onTablet {
@@ -45,14 +45,38 @@
     }
   }
 
-  &:hover {
-    border: 1px solid $colorGreyFirst;
-    background-color: #ffe339;
-  }
-
   &--2 {
+    @include onMobile {
+      background-color: $colorYellowButton;
+    }
+
     @include onTablet {
       margin-top: 0;
+      border: 1px solid $colorTurquoise;
+    }
+
+    @include onDesktop {
+      border: 1px solid $colorTurquoise;
+    }
+
+    &:hover {
+      @include onMobile {
+        opacity: 0.6;
+      }
+
+      @include onTablet {
+        background-color: $colorTurquoise;
+        opacity: 1;
+        color: $colorWhite;
+        background-image: url(../images/button-arrow-primary.svg);
+      }
+  
+      @include onDesktop {
+        opacity: 1;
+        background-color: $colorTurquoise;
+        color: $colorWhite;
+        background-image: url(../images/button-arrow-primary.svg);
+      }
     }
   }
 }

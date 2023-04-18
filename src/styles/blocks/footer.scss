@@ -67,9 +67,15 @@
     }
   }
 
-  &__logo:hover {
-    transition: transform 0.5s;
-    transform: rotate(360deg);
+  &__logo {
+    @include onDesktop {
+      height: 30px;
+    }
+
+    &:hover {
+      transition: transform 0.5s;
+      transform: rotate(360deg);
+    }
   }
 
   &__copyright {
