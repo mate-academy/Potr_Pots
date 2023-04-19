@@ -1,0 +1,116 @@
+.footer {
+  &__content {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 117px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__address {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  &__title {
+    font-family: $fontBebas;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__about-us {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 32px;
+    }
+
+    @include onDesktop {
+      gap: 74px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 85px;
+  }
+
+  &__social-link {
+    display: flex;
+    text-decoration: none;
+    color: $colorBlack;
+    transition: all 0.3s;
+
+    path {
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      color: $colorTurquoise;
+
+      path {
+        fill: $colorTurquoise;
+      }
+    }
+
+    @include onDesktop {
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo-link {
+    font-family: $fontBebas;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    line-height: 150%;
+    color: $colorBlack;
+  }
+
+  &__copyright-mobile {
+    @include onTablet {
+      display: none;
+    }
+  }
+}
