@@ -1,12 +1,9 @@
 .circle {
-  display: none;
+  display: block;
+  width: 0;
 
-  @include onTablet {
-    display: block;
-  }
-
-  @include onDesktop {
-    display: block;
+  @include onMobile {
+    display: none;
   }
 
   &__text {
@@ -79,6 +76,7 @@
 
     &:hover {
       background-color: rgba(36, 35, 35, 0.45);
+
       .circle__text {
         display: flex;
       }
