@@ -33,15 +33,26 @@
     border: none;
     background-image: url(../images/button-arrow-primary.svg);
     margin: 0;
+    
 
     &:hover {
-      opacity: 0.4;
+      background-color: rgba(3, 128, 158, 0.4);
+    }
+    @include onMobile {
+      padding-left: $calcPaddingButtonArrowMobile;
+      background-position: $calcPaddingButtonArrow center;
     }
 
     @include onTablet {
-      width: 64%;
-      padding-left: 18%;
-      background-position: 70% center;
+      width: 66.5%;
+      padding-left: $calcPaddingButtonTextTablet;
+      background-position: $calcPaddingButtonArrow center;
+    }
+
+    @include onDesktop {
+      padding-left: 78px;
+      width: 238px;
+      background-position: 141px center;
     }
   }
 
