@@ -1,7 +1,170 @@
-@import "utils";
-@import "fonts";
-@import "typography";
-
-body {
-  background: $c-gray;
+@mixin onMobile {
+  @media (min-width: 300px) {
+    @content;
+  }
 }
+
+
+@mixin onTablet {
+  @media (min-width: 426px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@import "reset";
+@import "menu";
+
+
+.page {
+  &__body {
+    background-color: #fff;
+
+    // justify-content: center;
+    // align-items: center;
+
+    font-family: 'Manrope', sans-serif;
+  }
+
+  &__menu {
+    position: fixed;
+    height: 100vh;
+    transition: transform 0.3s;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(31%);
+    }
+  }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+
+  // @include onMobile {
+  //   padding-right: 30px;
+  //   padding-left: 30px;
+  // }
+
+  @include onTablet {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+
+  @include onDesktop {
+    padding-right: 135px;
+    padding-left: 135px;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  // justify-items: center;
+  align-items: center;
+  height: 68px;
+
+  @include onMobile {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+
+  @media (min-width: 700px) {
+    height: 120px;
+    font-size: 64px;
+    line-height: 64px;
+  }
+
+  @media (min-width: 1440px) {
+    height: 140px;
+    font-size: 64px;
+    line-height: 64px;
+  }
+}
+
+.header {
+  &__title {
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.16rem;
+
+    color: rgba(51, 51, 51, 1);
+  }
+
+  &__menu-opener {
+    display: flex;
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.advertising {
+  // display: grid;
+  // position: relative;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // // width: 100%;
+
+  &__text {
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.13em;
+    font-weight: bold;
+    order: 0;
+    // align-self: center;
+
+    color: rgba(3, 131, 158, 1);
+
+    @include onMobile {
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    @media (min-width: 700px) {
+      max-width: 490px;
+      // z-index: 1;
+      order: 0;
+      font-size: 64px;
+      line-height: 64px;
+      // position: absolute;
+      // top: 0;
+    }
+  }
+
+  &__img {
+    display: flex;
+
+    order: 1;
+
+    justify-content: center;
+    padding-bottom: 25px;
+
+    @media (min-width: 430px) {
+      justify-content: right;
+    }
+  }
+}
+
+.text-decoration {
+  -webkit-text-stroke: 0.7px #03839e;
+  color: transparent;
+
+  font-weight: normal;
+}
+@import "grid";
