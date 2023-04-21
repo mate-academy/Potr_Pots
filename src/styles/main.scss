@@ -4,22 +4,21 @@
   }
 }
 
-
 @mixin onTablet {
-  @media (min-width: 426px) {
+  @media (min-width: 760px) {
     @content;
   }
 }
 
 @mixin onDesktop {
-  @media (min-width: 1024px) {
+  @media (min-width: 1170px) {
     @content;
   }
 }
 
 @import "reset";
 @import "menu";
-
+@import "grid";
 
 .page {
   &__body {
@@ -54,11 +53,7 @@
 .container {
   max-width: 1170px;
   margin: 0 auto;
-
-  // @include onMobile {
-  //   padding-right: 30px;
-  //   padding-left: 30px;
-  // }
+  padding: 0 30px;
 
   @include onTablet {
     padding-right: 35px;
@@ -74,15 +69,13 @@
 .header-container {
   display: flex;
   justify-content: space-between;
-  // justify-items: center;
   align-items: center;
   height: 68px;
 
-  @include onMobile {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-
+  // @include onMobile {
+  //   padding-right: 30px;
+  //   padding-left: 30px;
+  // }
 
   @media (min-width: 700px) {
     height: 120px;
@@ -114,49 +107,50 @@
 }
 
 .advertising {
-  // display: grid;
-  // position: relative;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // // width: 100%;
 
   &__text {
     font-size: 36px;
     line-height: 43px;
     letter-spacing: 0.13em;
+    word-spacing: 1px;
     font-weight: bold;
-    order: 0;
-    // align-self: center;
 
     color: rgba(3, 131, 158, 1);
 
-    @include onMobile {
-      padding-right: 30px;
-      padding-left: 30px;
-    }
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+      z-index: 1;
+      order: 1;
+      margin-bottom: 0;
+      grid-row: 1;
+      display: inline;
 
-    @media (min-width: 700px) {
-      max-width: 490px;
-      // z-index: 1;
-      order: 0;
       font-size: 64px;
       line-height: 64px;
-      // position: absolute;
-      // top: 0;
+
+      @media (min-width: 430px) {
+        width: 490px;
+      }
     }
   }
 
   &__img {
     display: flex;
 
-    order: 1;
-
     justify-content: center;
     padding-bottom: 25px;
 
-    @media (min-width: 430px) {
-      justify-content: right;
+    @include onTablet {
+      column-gap: 20px;
+
+      @media (min-width: 760px) {
+        // display: inline;
+        margin-top: 0;
+        z-index: 0;
+        grid-row: 1;
+        // grid-column: 4;
+      }
     }
   }
 }
@@ -167,4 +161,4 @@
 
   font-weight: normal;
 }
-@import "grid";
+
