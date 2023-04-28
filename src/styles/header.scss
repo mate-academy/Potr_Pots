@@ -1,0 +1,80 @@
+.header {
+
+  @media (max-width: 767px) {
+    padding: 0 30px;
+  }
+
+  &__title {
+    font-size: 36px;
+    letter-spacing: 0.16rem;
+
+    color: rgba(51, 51, 51, 1);
+  }
+
+  &__menu-opener {
+    height: 32px;
+    width: 32px;
+    margin-bottom: 5px;
+
+    background-image: url(/images/menu_icon.svg);
+
+    @include onDesktop {
+
+      background-image: url(/images/icons8-сумка-для-покупок-100.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    height: 100vh;
+    transition: transform 0.3s;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(31%);
+    }
+  }
+
+  &__big-menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      list-style: none;
+      gap: 60px;
+
+      &__item {
+        display: flex;
+        align-items: center;
+      }
+
+      &__link {
+
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    padding: 10px 0 46px;
+    font-size: 64px;
+    line-height: 64px;
+  }
+
+  @media (min-width: 1440px) {
+    padding: 10px 0 66px;
+  }
+}
