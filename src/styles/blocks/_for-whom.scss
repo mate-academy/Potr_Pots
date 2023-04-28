@@ -26,19 +26,20 @@
 
   &__img {
     display: none;
-
-    z-index: 2;
-    transition: transform $animationTime;
+    z-index: 100;
+    position: relative;
 
     img {
       width: 100%;
-      transition: border-radius $animationTime;
+      transition: border-radius $animationTime, transform $animationTime;
+      z-index: 100;
+      position: relative;
     }
 
     &:hover {
-      transform: scale(1.05);
       img {
         border-radius: 10px;
+        transform: scale(1.05);
       }
     }
 
