@@ -4,7 +4,6 @@
   background-position: top;
   background-repeat: no-repeat;
   padding: 15px 0 55px;
-  overflow-x: hidden;
 
   @include onTablet {
     padding: 68px 0;
@@ -25,20 +24,32 @@
       letter-spacing: 0.12em;
       transform: translateY(0);
     }
+
+    @include onDesktop {
+      transform: translateY(100px);
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 139px;
+      line-height: 167px;
+      transform: translateY(167px);
+    }
   }
 
   &__wrapper {
     display: none;
+    // overflow-x: hidden;
 
     @include onTablet {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: 96px 1fr;
+      column-gap: 20px;
     }
 
-    // @include onDesktop {
-    //   grid-template-rows: 1fr 1fr;
-    // }
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
   }
 
   &__info {
@@ -46,6 +57,10 @@
     grid-row: 1 / 2;
 
     color: $textColor2;
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+    }
   }
 
   &__headline {
@@ -89,6 +104,10 @@
       background-size: cover;
       background-position: top;
       height: 1081px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 13;
     }
   }
 
