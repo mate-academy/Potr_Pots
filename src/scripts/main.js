@@ -1,12 +1,6 @@
 'use strict';
 /* global Swiper */
 
-const swiper = new Swiper('.materials__swiper', {
-  pagination: {
-    el: '.swiper-pagination',
-  },
-});
-
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu') {
     document.body.classList.add('page__body--with-menu');
@@ -15,11 +9,23 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+const slider = document.getElementByClassName('materials__swiper');
+
+if (slider !== null) {
+  const swiper = new Swiper('.materials__swiper', {
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+
+  swiper.enable();
+}
+
 const form = document.getElementById('form');
 
-form.addEventListener('submit', function(event) {
-  event.preventDefault();
-  form.reset();
-});
-
-swiper.enable();
+if (form !== null) {
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    form.reset();
+  });
+}
