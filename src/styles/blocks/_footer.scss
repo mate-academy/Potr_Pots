@@ -13,6 +13,7 @@
     @include onDesktop {
       grid-template-columns: repeat(12, 1fr);
       gap: 0 30px;
+      justify-items: center;
     }
   }
 
@@ -27,33 +28,43 @@
     }
 
     @include onDesktop {
-      max-width: 220px;
-      grid-column: 6 / 8;
+      max-width: 230px;
+      grid-column: 5 / 9;
     }
   }
 
   &__link {
     transition: color $animationTime;
 
-    path {
-      transition: fill $animationTime;
-    }
-
-    svg {
+    img {
       width: 20px;
+      transition: transform $animationTime;
+
+      @include onDesktop {
+        width: 30px;
+      }
     }
 
     &:nth-child(2) {
-      svg {
+      img {
         width: 24px;
+        @include onDesktop {
+          width: 34px;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      @include onDesktop {
+        margin-right: 70px;
       }
     }
 
     &:hover {
       color: $titleColor;
 
-      path {
-        fill: $titleColor;
+      img {
+        transform: scale(1.1);
       }
     }
   }
