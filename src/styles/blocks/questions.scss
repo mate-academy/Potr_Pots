@@ -1,0 +1,124 @@
+.questions {
+
+  &__container {
+    position: relative;
+
+  }
+
+  &__backround-container {
+    @include onDesktop {
+      padding: 0 0 $marginSidesDesktop $marginSidesDesktop 0;
+      right: 0;
+      margin: 0;
+      height: 568px;
+      background-image: url(../images/message_backraund_image_1440.png);
+      background-position: right bottom;
+    }
+
+    @include onTabled {
+      top: 0;
+      right: 0;
+      margin: 0 #{-$marginSidesTabled} 0 #{-$marginSidesTabled};
+      height: 552px;
+      padding: 0 $marginSidesTabled 0 $marginSidesTabled;
+      background-image: url(../images/message_backraund_image_768.png);
+      background-position: right bottom;
+    }
+
+    position: absolute;
+    z-index: -2;
+    right: -30px;
+    height: 1000px;
+    width: 100%;
+    background-image: url(../images/message_backraund_image_320.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: cover;
+    padding: 0 $marginSides 0 $marginSides;
+  }
+
+  &__stamp-container {
+    @include onDesktop {
+      top: -68px;
+      right: 0;
+      transform: translateX(50%);
+      width: 100%;
+    }
+
+    position: absolute;
+    top: -94px;
+    right: -$marginSides;
+    width: 115px;
+    height: 160px;
+    max-width: 164px;
+    background-image: url(../images/stamp.png);
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    @include onDesktop {
+      @include grid;
+      padding-top: 38px;
+    }
+
+    @include onTabled {
+      @include gridTabled;
+      padding-top: 16px;
+    }
+    padding-top: 45px;
+    position: relative;
+  }
+
+  &__message-us {
+    @include onDesktop {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+    }
+
+    @include onTabled {
+      grid-column: 1 / 4;
+      margin-bottom: 0;
+    }
+
+    margin-bottom:  56px;
+  }
+
+  &__title {
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+
+    @include onTabled {
+      margin: 0 #{-$gridGapTabled} 30px 0;
+    }
+      margin-bottom: 40px;
+
+  }
+
+  &__title-name {
+    font-family: 'Bebas Neue';
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.155em;
+    color: $textBlack;
+  }
+
+  &__title-sign {
+    font-family: 'Manrope';
+    font-size: 16px;
+    line-height: 150%;
+    color: $textBlack;
+  }
+
+  &__contacts {
+    @include onDesktop {
+      grid-column: 7 / 10;
+      padding-top: 80px;
+    }
+
+    @include onTabled {
+      padding-top: 70px;
+      grid-column: 5 / 7;
+    }
+  }
+}

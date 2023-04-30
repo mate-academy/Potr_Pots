@@ -1,0 +1,173 @@
+.potr-team {
+
+  &__container {
+    @include onDesktop {
+      @include grid;
+      grid-template-rows: repeat(2, min-content);
+      align-items: end;
+    }
+
+    @include onTabled {
+      @include gridTabled;
+    }
+
+    position: relative;
+  }
+
+  &__title {
+    @include onDesktop {
+      margin: 0 0 144px 0;
+    }
+
+    @include onTabled {
+      margin: 0 0 100px 0;
+    }
+
+    margin: 0 0 25px 0;
+  }
+
+  &__photo {
+    @include onDesktop {
+      grid-column: 5 / 12;
+      grid-row: 1 / 2;
+      justify-self: end;
+      margin: 0;
+    }
+
+    @include onTabled {
+      grid-column: 4 / 7;
+      grid-row: 1 / 2;
+      margin-bottom: 122px;
+      align-self: end;
+    }
+
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    @include onDesktop {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+      align-self: end;
+    }
+
+    @include onTabled {
+      grid-column: 1 / 4;
+      grid-row:  1 / 2;
+      align-self: end;
+      margin-bottom: 62px;
+    }
+
+    font-family: 'Manrope';
+    font-size: 16px;
+    line-height: 24px;
+    color: $gray_2;
+  }
+
+  &__paragraph {
+    margin: 0;
+  }
+
+  &__paragraph:first-child {
+    margin-bottom: 1.5em;
+  }
+
+  &__backraund-writing {
+    @include onDesktop {
+      display: block;
+    }
+
+    @include onTabled {
+      display: block;
+    }
+
+    display: none;
+    height: min-content;
+
+    font-family: 'Bebas Neue';
+    font-size: 288px;
+    letter-spacing: 0.155em;
+    line-height: 346px;
+    color: transparent;
+    -webkit-text-stroke: 1.6px $turquoise;
+
+    &--top {
+      @include onDesktop {
+        grid-column: 1 / 10;
+        grid-row: 1 / 2;
+        top: -116px;
+        left: -60px;
+        fill-opacity: 1;
+        z-index: -1;
+      }
+
+      @include onTabled {
+        top: -82px;
+        left: -78px;
+        font-size: 231.884px;
+        line-height: 278px;
+        letter-spacing: 0.155em;
+      }
+
+      position: absolute;
+    }
+
+    &--bottom {
+      @include onDesktop {
+        bottom: -292px;
+        grid-column: 8 / 13;
+        grid-row: 2/ 3;
+      }
+
+      @include onTabled {
+        grid-column:  1 / 7;
+        left: 275px;
+        top: 320px;
+        box-sizing: content-box;
+        font-size: 219.588px;
+        line-height: 1em;
+      }
+      position: absolute;
+    }
+  }
+
+  &__backraund {
+    @include onDesktop {
+      position: relative;
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+      align-self: start;
+      top: -26px;
+      margin: 0 #{-$gridGap} 0 #{-$marginSidesDesktop};
+      width: auto;
+      height: 466px;
+      padding: 0;
+      background-position: right;
+    }
+
+    @include onTabled {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+      position: relative;
+      bottom: auto;
+      margin: 0 0 0 #{-$marginSidesTabled};
+      height: 466px;
+      padding: 0 0 0 $marginSidesTabled ;
+      background-position: right;
+    }
+
+    position: absolute;
+    z-index: -2;
+    bottom: -56px;
+    left: 0;
+    height: 292px;
+    width: 100%;
+    margin: 0 #{-$marginSides} 0 #{-$marginSides};
+    padding: 0 $marginSides 0 $marginSides;
+
+
+    background-image: url(../images/backraund_image.png);
+    background-size: cover;
+    background-position: left;
+  }
+}

@@ -1,0 +1,117 @@
+.footer {
+  &__container {
+    @include onDesktop {
+      box-sizing: border-box;
+      height: 296px;
+      padding-top: 74px;
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      @include grid;
+    }
+
+    @include onTabled {
+      @include gridTabled;
+      margin-bottom: 116px;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+  }
+
+  &__adrress {
+    @include onDesktop {
+      grid-column: 1 / 3;
+      display: block;
+    }
+
+    @include onTabled {
+      display: block;
+      grid-column: 1 / 3;
+    }
+
+    display: none;
+  }
+
+  &__title {
+    @include onDesktop {
+      display: block;
+    }
+
+    @include onTabled {
+      display:  block;
+    }
+
+    display: none;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue';
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    color: $textBlack;
+  }
+
+  &__deskription {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $textBlack;
+  }
+
+
+  &__social-networks-container {
+    @include onDesktop {
+      grid-column: 5 / 9;
+    }
+
+    @include onTabled {
+      grid-column:  3 / 5;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__social-networks {
+    @include onDesktop {
+      justify-content: space-evenly;
+      margin-bottom: 74px;
+    }
+
+    @include onTabled {
+      margin-bottom: 32px;
+    }
+
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__copyright {
+    @include onDesktop {
+      grid-column: 11 / 13;
+      display: block;
+      justify-self: end;
+    }
+
+    @include onTabled {
+      display: block;
+      justify-self: end;
+      grid-column: 5 / 7;
+    }
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+}

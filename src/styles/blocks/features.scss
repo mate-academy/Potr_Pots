@@ -1,0 +1,71 @@
+.features {
+  &__title {
+    @include onDesktop {
+      margin: 0 0 22px;
+    }
+
+    @include onTabled {
+      margin: 0 0 52px;
+    }
+
+  }
+
+  &__feature {
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    @include onTabled {
+      margin-bottom: 0;
+    }
+
+    &--self-watering {
+      @include onDesktop {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+      }
+
+      @include onTabled {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+      }
+
+    }
+
+    &--flat-pack {
+      @include onDesktop {
+        grid-column: 5 / 9;
+      }
+
+      @include onTabled {
+        grid-column: 3 / 5;
+      }
+    }
+
+    &--easy-assembly {
+      @include onDesktop {
+        grid-column: 9 / 13;
+      }
+
+      @include onTabled {
+        grid-column: 5 / 7;
+      }
+    }
+
+    margin-bottom: 70px;
+  }
+
+  &__feature:last-child {
+    margin-bottom: 0;
+  }
+
+  &__content {
+    @include onDesktop {
+      @include grid;
+    }
+
+    @include onTabled {
+      @include gridTabled;
+    }
+  }
+}

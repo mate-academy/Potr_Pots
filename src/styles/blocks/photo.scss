@@ -1,0 +1,56 @@
+ .photo {
+
+  &__container {
+    @include onDesktop {
+      margin: 0;
+    }
+
+    @include onTabled {
+      margin: 0;
+    }
+
+    height: min-content;
+    margin:  0 #{-$marginSides} 0;
+    box-sizing: border-box;
+
+    &--header {
+      @include onTabled {
+        max-width: 306px;
+        max-height: 306px;
+      }
+
+      max-width: 500px;
+      max-height: 500px;
+
+
+      &::after {
+        @include onDesktop {
+          height: 500px;
+        }
+      }
+    }
+  }
+
+   &__image {
+     width: 100%;
+
+    &--potr-team {
+      @include onDesktop {
+        width: 677px;
+      }
+      max-height: 508px;
+      min-height: 240px;
+    }
+
+    &--PORT-size {
+      @include onTabled {
+        position: relative;
+        min-height: 338px;
+      }
+
+      max-height: 428px;
+      min-height: 258px;
+      max-width: 528px;
+    }
+   }
+ }

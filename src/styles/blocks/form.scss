@@ -1,0 +1,56 @@
+.form {
+  &__field-container {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+
+    @include onTabled {
+      margin-bottom: 40px;
+    }
+    
+    margin-bottom: 25px;
+    font-family: 'Manrope';
+    font-size: 24px;
+    line-height: 150%;
+    color: $textBlack;
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    padding: 0 0 4px 4px;
+    font-family: 'Manrope';
+    font-size: 16px;
+    line-height: 150%;
+    color: $gray_2;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent;
+    outline: none;
+
+    &:hover {
+      border-bottom: 1px solid $turquoise;
+    }
+
+    &--textarea {
+      resize: none;
+    }
+
+    &--last {
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+
+      @include onTabled {
+        margin-bottom: 40px;
+      }
+
+      margin-bottom: 30px;
+    }
+  }
+}
