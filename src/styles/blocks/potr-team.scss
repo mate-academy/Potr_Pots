@@ -16,14 +16,14 @@
 
   &__title {
     @include onDesktop {
-      margin: 0 0 144px 0;
+      margin: 0 0 144px ;
     }
 
     @include onTabled {
-      margin: 0 0 100px 0;
+      margin: 0 0 100px ;
     }
 
-    margin: 0 0 25px 0;
+    margin: 0 0 25px ;
   }
 
   &__photo {
@@ -53,12 +53,12 @@
 
     @include onTabled {
       grid-column: 1 / 4;
-      grid-row:  1 / 2;
+      grid-row: 1 / 2;
       align-self: end;
       margin-bottom: 62px;
     }
 
-    font-family: 'Manrope';
+    font-family: "Manrope", sans-serif;
     font-size: 16px;
     line-height: 24px;
     color: $gray_2;
@@ -84,9 +84,9 @@
     display: none;
     height: min-content;
 
-    font-family: 'Bebas Neue';
+    font-family: "Bebas Neue", cursive;
     font-size: 288px;
-    letter-spacing: 0.155em;
+    letter-spacing: 0.15em;
     line-height: 346px;
     color: transparent;
     -webkit-text-stroke: 1.6px $turquoise;
@@ -98,15 +98,15 @@
         top: -116px;
         left: -60px;
         fill-opacity: 1;
-        z-index: -1;
+        z-index: 1;
       }
 
       @include onTabled {
         top: -82px;
         left: -78px;
-        font-size: 231.884px;
+        font-size: 232px;
         line-height: 278px;
-        letter-spacing: 0.155em;
+        letter-spacing: 0.15em;
       }
 
       position: absolute;
@@ -120,13 +120,16 @@
       }
 
       @include onTabled {
-        grid-column:  1 / 7;
+        grid-column: 1 / 7;
         left: 275px;
         top: 320px;
-        box-sizing: content-box;
-        font-size: 219.588px;
+        margin-left: #{-$marginSidesTabled};
+        box-sizing: border-box;
+        font-size: 220px;
         line-height: 1em;
+        width: 458px;
       }
+
       position: absolute;
     }
   }
@@ -164,7 +167,6 @@
     width: 100%;
     margin: 0 #{-$marginSides} 0 #{-$marginSides};
     padding: 0 $marginSides 0 $marginSides;
-
 
     background-image: url(../images/backraund_image.png);
     background-size: cover;
