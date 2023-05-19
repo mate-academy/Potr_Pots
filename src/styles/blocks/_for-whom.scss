@@ -1,0 +1,339 @@
+.for-whom {
+  position: relative;
+  overflow: hidden;
+
+  @include onTablet {
+    padding-bottom: 135px;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    color: $color-grey-dark;
+    margin-bottom: 26px;
+
+    @extend %h;
+
+    @include onTablet {
+      margin-bottom: 19px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__number {
+    font-size: 36px;
+    line-height: 65px;
+    display: flex;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    &--1 {
+
+      @include onTablet {
+        padding-top: 24px;
+        margin-right: 20px;
+      }
+
+      @include onDesktop {
+        margin-right: 68px;
+      }
+    }
+
+    &--2 {
+
+      @include onTablet {
+        margin-bottom: 22px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 27px;
+      }
+    }
+
+    &--3 {
+
+      @include onTablet {
+        padding-top: 28px;
+        margin-right: 20px;
+      }
+
+      @include onDesktop {
+        padding-top: 64px;
+        margin-right: 67px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 20px;
+    display: inline-block;
+
+    @extend %h;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-grey-secondary;
+
+    @extend %p;
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__block {
+    margin-bottom: 71px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 110px;
+    }
+
+    &--1 {
+      height: fit-content;
+
+      @include onDesktop {
+        align-items: center;
+        margin-bottom: 80px;
+      }
+    }
+
+    &--2 {
+      flex-direction: row-reverse;
+
+      @include onTablet {
+        align-items: center;
+        justify-content: start;
+      }
+
+      @include onDesktop {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+
+    &--3 {
+      margin-bottom: 0;
+
+      @include onTablet {
+        justify-content: start;
+      }
+
+      @include onDesktop {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__grey-text {
+
+    &--1 {
+      bottom: 28px;
+      right: -16px;
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: flex;
+        bottom: unset;
+        right: 22px;
+        top: 100px;
+      }
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        bottom: 100px;
+        left: 16px;
+        transform: rotate(270deg);
+      }
+    }
+  }
+
+  &__image-container {
+    display: none;
+    align-self: start;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--1 {
+      @include onTablet {
+        min-width: 284px;
+        min-height: 284px;
+        margin-right: 15px;
+      }
+
+      @include onDesktop {
+        width: 500px;
+        margin-right: 100px;
+      }
+    }
+
+    &--2 {
+      width: 40vw;
+
+      @include onDesktop {
+        width: 300px;
+        margin-bottom: 45px;
+      }
+    }
+
+    &--3 {
+      width: 45vw;
+      margin-right: 20px;
+
+      @include onDesktop {
+        width: 100%;
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__text-block {
+    display: flex;
+    flex-direction: column;
+
+    &--1 {
+
+      @include onTablet {
+        width: 340px;
+      }
+
+      @include onDesktop {
+        width: 470px;
+      }
+    }
+
+    &--2 {
+
+      @include onTablet {
+        width: 45vw;
+        margin-right: 57px;
+      }
+
+      @include onDesktop {
+        margin-right: 0;
+        width: auto;
+      }
+    }
+
+    &--3 {
+
+      @include onTablet {
+        width: 45vw;
+      }
+
+      @include onDesktop {
+        width: 100%;
+      }
+    }
+  }
+
+  &__svg {
+    display: none;
+
+    @include onTablet {
+      display: inline-block;
+    }
+  }
+
+  &__asterisk-block {
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-grey-dark;
+    position: relative;
+    display: none;
+    align-items: center;
+
+    @extend %p;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--1 {
+      top: -24px;
+      left: -18px;
+
+      @include onDesktop {
+        left: -40px;
+      }
+    }
+
+    &--2 {
+      margin-left: auto;
+      margin-bottom: 29px;
+
+      @include onDesktop {
+        margin-left: unset;
+        left: -47px;
+        margin-bottom: 40px;
+      }
+    }
+
+    &--3 {
+      top: -18px;
+      left: -24px;
+
+      @include onDesktop {
+        top: 0;
+        left: -140px;
+        margin-bottom: 40px;
+      }
+    }
+
+  }
+
+  &__asterisk {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.15em;
+    color: black;
+    align-items: center;
+
+    @include onTablet {
+      margin-right: 10px;
+    }
+
+    @include onDesktop {
+      margin-right: 30px;
+    }
+  }
+
+  &__third-block {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
