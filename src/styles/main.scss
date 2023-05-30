@@ -6,12 +6,24 @@ $colorBlue: #03839e;
 $colorDark: #333;
 
 .page {
-  font-family: "BebasNeue", "Manrope", sans-serif;
+  font-family: "Bebas Neue", "Manrope", sans-serif;
   font-size: 14px;
   scroll-behavior: smooth;
 
   &__body {
     margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: transform 0.3s;
+    transform: translateX(100%);
+  }
+
+  &:target {
+    transform: translateX(0);
   }
 }
 
@@ -45,49 +57,48 @@ $colorDark: #333;
   }
 
   &__title {
-    font-family: "BebasNeue";
+    font-family: "Bebas Neue";
     font-size: 36px;
     line-height: 43px;
-    letter-spacing: 0.155em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
     color: $colorBlue;
     margin: 25px 0 30px;
 
     &-transparent {
       color: transparent;
-    -webkit-text-stroke: 1px $colorBlue;
+      -webkit-text-stroke: 1px $colorBlue;
     }
   }
 
   &__prise {
-    font-family: 'Manrope';
+    font-family: "Manrope";
     font-weight: 700;
     font-size: 26px;
     line-height: 36px;
   }
 
   &__info {
-    font-family: 'Manrope';
+    font-family: "Manrope";
     font-size: 14px;
     line-height: 150%;
     margin: 10px 0 20px;
   }
 
   &__about {
-    position: relative;
+    position: fixed;
     bottom: 0;
     right: 3px;
     transform: rotate(90deg);
 
     &-text {
       position: relative;
-      font-family: 'Manrope';
+      font-family: "Manrope";
       font-style: normal;
       font-weight: 400;
       font-size: 12px;
       line-height: 150%;
       color: $colorBlue;
-
 
       &::after {
         position: absolute;
@@ -115,7 +126,7 @@ $colorDark: #333;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Manrope';
+  font-family: "Manrope";
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -134,11 +145,12 @@ $colorDark: #333;
 }
 
 .menu {
-  position: absolute;
-  top: 0;
-  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: $colorBlue;
-  padding: 138px 58px 250px 84px;
+  width: 231px;
+  height: 568px;
 
   &__list {
     margin: 0;
@@ -151,7 +163,7 @@ $colorDark: #333;
   }
 
   &__link {
-    font-family: 'Manrope';
+    font-family: "Manrope";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
