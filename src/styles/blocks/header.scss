@@ -18,13 +18,13 @@
     }
   }
 
-  &__background{
+  &__background {
     max-width: 1036px;
 
     &-image {
       position: absolute;
       left: 0;
-      top: 0;
+      top: -30px;
       background-image: url(../images/Rectangle.svg);
       height: 466px;
       width: 72%;
@@ -40,7 +40,6 @@
 
       @include onMobile {
         display: none;
-        
       }
     }
   }
@@ -64,17 +63,16 @@
       color: #4f4f4f;
       transition: all 0.2s ease-in;
       @include hoverForLinks($turquoise);
-      }
     }
-
+  }
 
   &__orders {
     display: flex;
     justify-content: flex-end;
+    @include hoverTransform;
 
-      @include onMobileAndTablet {
-        display: none;
-      }
+    @include onMobileAndTablet {
+      display: none;
     }
   }
-
+}

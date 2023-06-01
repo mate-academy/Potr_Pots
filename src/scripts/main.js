@@ -1,6 +1,20 @@
 'use strict';
 /* global Swiper */
 
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    const loader = document.querySelector('.page-loader');
+
+    if (loader) {
+      loader.style.opacity = '0';
+
+      setTimeout(function() {
+        loader.style.display = 'none';
+      }, 1000);
+    }
+  }, 500);
+});
+
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#menu') {
     document.body.classList.add('page__body--with-menu');
