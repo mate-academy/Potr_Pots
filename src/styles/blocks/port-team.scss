@@ -1,0 +1,106 @@
+.port-team {
+  position: relative;
+  margin-top: 100px;
+
+  &--name {
+    font-family: "Bebas Neue", sans-serif;
+    z-index: 1;
+
+    font-size: 288px;
+    color: $turquoise;
+    letter-spacing: 0.155em;
+    position: absolute;
+    -webkit-text-stroke: 2px;
+
+    @include onTablet {
+      font-size: 190px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &-first {
+      top: 35px;
+
+
+      @include onTablet {
+        left: -40px;
+        background-position: -780px 72px;
+
+      }
+    }
+
+    &-second {
+      top: 500px;
+      right: 0px;
+
+      @include onTablet {
+        top: 360px;
+      }
+    }
+  }
+
+  &--rectangle {
+    position: absolute;
+    background-image: url(../images/Rectangle.svg);
+    background-repeat: no-repeat;
+    z-index: -2;
+    background-position: -680px 70px;
+
+    @include onTabletAndDesktop {
+      min-height: 410px;
+      min-width: 434px;
+    }
+
+    @include onMobile {
+      top: 360px;
+      min-height: 410px;
+      min-width: 100%;
+      background-position: -600px 70px;
+    }
+
+  }
+
+  &__content {
+    transform: translateY(74px);
+    align-items: end;
+
+    @include onMobile {
+      transform: translateY(14px);
+    }
+
+    &--text {
+      @include onTablet {
+        position: absolute;
+        top: 120px;
+        grid-column: 1 / 4;
+      }
+
+      @include onMobile {
+        margin-top: 30px;
+
+      }
+    }
+
+    &--image{
+      @include onMobile {
+        grid-row: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      &--item {
+        @include onTablet {
+          width: 340px;
+          height: 255px;
+        }
+
+        @include onMobile {
+          min-width: 320px;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

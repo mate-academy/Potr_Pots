@@ -1,0 +1,77 @@
+.size-port {
+        margin-top: 220px;
+
+  &__content {
+    // @include onMobile {
+    //   display: flex;
+    //   justify-content: center;
+    //   flex-direction: column;
+    // }
+
+    @include onDesktop {
+      margin-top: 66px;
+    }
+
+    &--pre-potted {
+      margin-top: 32px;
+      order: 1;
+    }
+
+    &__sizes {
+      order: 1;
+
+      @include onDesktop {
+        padding: 0 0 30px 30px;
+        margin-bottom: 40px;
+        border-left: 1px solid;
+      }
+
+      @include onMobile {
+        order: 2;
+
+      }
+    }
+
+    &--under-sizes {
+      order: 2;
+      position: relative;
+
+      @include onMobileAndTablet {
+        margin-top: 20px;
+      }
+
+      &::before {
+        content: "*";
+        position: absolute;
+        left: -12px;
+      }
+    }
+  }
+
+  &__image {
+    order: 1;
+    position: relative;
+
+    @include onDesktop {
+      margin-top: 40px;
+    }
+
+    @include onMobileAndTablet {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &--item {
+      @include onTablet {
+        width: 416px;
+        height: 337px;
+      }
+
+      @include onMobile {
+        min-width: 320px;
+        max-height: 359px;
+      }
+    }
+  }
+}

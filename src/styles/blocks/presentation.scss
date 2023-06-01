@@ -1,0 +1,120 @@
+.presentation {
+  position: relative;
+
+  @include onTablet {
+    margin-top: 48px;
+    order: 1;
+  }
+
+  @include onDesktop {
+    order: 1;
+    grid-row: 1;
+    margin-top: 58px;
+  }
+
+  &__main-text {
+    color: $turquoise;
+  }
+
+  &__content {
+    display: grid;
+
+    @include onMobile {
+      margin-top: 25px;
+    }
+  }
+
+  &__buying {
+    position: relative;
+
+    @include onMobile {
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-top: 20px;
+      order: 3;
+      grid-row: 2;
+    }
+
+    &--price {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 36px;
+    }
+  }
+
+  &__image {
+    display: grid;
+
+    @include onMobile {
+      display: flex;
+      justify-content: center;
+      grid-row: 1 / 2;
+    }
+
+    @include onDesktop {
+      order: 2;
+      grid-row: 1/4;
+    }
+
+    @include onTablet {
+      z-index: -1;
+      grid-row: 1/4;
+    }
+
+    &--item {
+      height: 320px;
+      width: 320px;
+      margin-top: 5px;
+
+      @include onTablet {
+        position: absolute;
+        height: 300px;
+        width: 300px;
+      }
+
+      @include onDesktop {
+        height: 500px;
+        width: 500px;
+      }
+    }
+  }
+
+  &__link-to-about-block {
+    display: grid;
+
+    &--text {
+      position: relative;
+      top: -96px;
+      right: 94px;
+      min-width: max-content;
+      color: $turquoise;
+      transform: rotate(90deg);
+
+
+      @include onTablet {
+        top: -26px;
+        right: -568px;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+
+      &::after {
+        content: url(../images/Arrow.png);
+        position: absolute;
+        left: 186px;
+        transition: all 0.3s;
+
+        @include onMobile {
+          left: 140px;
+        }
+      }
+
+      @include hoverForLinks($turquoise);
+
+    }
+  }
+}

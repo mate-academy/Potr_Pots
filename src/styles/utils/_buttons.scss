@@ -1,0 +1,48 @@
+.button {
+  &__primary-2 {
+    @include button($yellow, $yellow-light);
+      margin: 50px 0 0;
+      color: #121212;
+
+      @include onMobile {
+        margin: 20px 0 0;
+        max-width: 250px;
+      }
+
+    &::after {
+      content: url(../images/arrow_black.svg);
+    }
+  }
+
+  &__primary-1 {
+    @include button($turquoise, $turquoiseHover);
+
+    margin-top: 40px;
+    color: #fff;
+    border: 1px solid $turquoise;
+
+    &::after {
+      content: url(../images/arrow_white.svg);
+      right: 64px;
+    }
+
+
+  }
+
+  &__secondary-1 {
+    @include button(#fff, $turquoise);
+
+    border: 1px solid $turquoise;
+    color: #121212;
+
+    &::after {
+      content: url(../images/arrow_black.svg);
+      right: 64px;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+

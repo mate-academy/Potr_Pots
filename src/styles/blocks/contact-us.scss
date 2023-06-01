@@ -1,0 +1,136 @@
+.contact-us {
+  position: relative;
+  margin-top: 250px;
+  color: #000;
+
+  @include onMobileAndTablet {
+    margin-top: 120px;
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__form-title {
+    margin: 30px 0;
+    font-size: 24px;
+  }
+
+  &--rectangle {
+    position: absolute;
+    background-image: url(../images/Rectangle-1.svg);
+    background-repeat: no-repeat;
+    z-index: -2;
+    background-position: 0px -40px;
+
+    @include onDesktop {
+      height: 522px;
+      width: 90%;
+    }
+
+    @include onTablet {
+      height: 522px;
+      width: 100%;
+    }
+
+    @include onMobile {
+      background-size: 500%;
+      top: 10px;
+      min-height: 1100px;
+      min-width: 100%;
+      background-position: -19px -17px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    &--input {
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      outline: none;
+      height: 48px;
+      padding: 10px 5px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      width: 100%;
+      transition: color 0.3s, border-color 0.3s;
+      resize: none;
+
+      &:focus {
+        border-color: $turquoise;
+      }
+
+      &:not(:focus):not(:invalid) {
+        color: $grey;
+      }
+
+      &:not(:focus):valid {
+        color: $turquoise;
+        border-color: $turquoise;
+      }
+
+      &:not(:focus):not(:placeholder-shown):invalid {
+        color: $red;
+        border-color: $red;
+      }
+    }
+  }
+
+  &__list{
+    margin-top: 80px;
+
+    &--item {
+      &:not(:last-child){
+        margin-bottom: 25px;
+      }
+
+      &--title {
+        font-size: 24px;
+        line-height: 150%;
+        color: $grey-dark;
+      }
+
+      &--link {
+        @include hoverForLinks($turquoise);
+        color: #000;
+      }
+    }
+  }
+
+  &__rug {
+    position: absolute;
+
+    background-repeat: no-repeat;
+    background-image: url(../images/contact-us-rug.png);
+
+    @include onMobileAndTablet {
+      background-image: url(../images/contact-us-rug-for-tablet-and-mobile.png);
+      width: 134px;
+      height: 167px;
+    }
+
+    @include onMobile {
+      top: -140px;
+      right: 0px;
+    }
+
+    @include onTablet {
+      top: -108px;
+      right: 0px;
+    }
+
+    @include onDesktop {
+      width: 161px;
+      height: 164px;
+      top: -74px;
+      left: 1206px;
+      @include spiner;
+    }
+
+
+  }
+}
