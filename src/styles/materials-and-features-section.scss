@@ -1,0 +1,461 @@
+.materials-and-features-section {
+
+  @include onMobile {
+    padding-bottom: 300px;
+  }
+
+  @include onTablet {
+    margin-bottom: 110px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 250px ;
+  }
+
+  padding-top: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+
+  .title {
+    @include onDesktop {
+      position: absolute;
+      z-index: 100;
+    }
+  }
+
+  .title-text {
+    font-family: Bebas Neue,sans-serif;
+    letter-spacing: .15em;
+    color: #03839e;
+    display: block;
+    font-size: 58px;
+    max-width: 935px;
+
+    @include onMobile {
+      padding-left: 30px;
+    }
+
+    @include onTablet {
+      font-size: 80px;
+      padding-left: 35px;
+    }
+
+    @include onDesktop {
+      font-size: 140px;
+      padding-left: 0;
+      padding-left: 135px;
+    }
+  }
+
+  .info {
+    z-index: 1;
+    width: 300px;
+    position: absolute;
+
+    @include onMobile {
+      display: none;
+    }
+
+    @include onTablet {
+      right: 6%;
+      top: 23%;
+    }
+
+    @include onDesktop {
+      width: 410px;
+      right: 1%;
+      top: 22%;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  .section-img {
+    z-index: -1;
+    margin: 0 auto;
+    max-width: 100vw;
+    z-index: -1;
+
+    .img {
+      object-fit: contain;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+
+  .slider-box {
+    position: relative;
+
+    @include onTablet {
+      top: 60px;
+    }
+
+    @include onDesktop {
+      top: 185px;
+    }
+
+    .small-slider-section {
+      transform: translateY(70px);
+
+      @include onTablet {
+        display: none;
+      }
+
+      .slider {
+        width: 302px;
+        height: 254px;
+        background-color:rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(5px);
+        overflow: hidden;
+
+        .slides {
+          width: max-content;
+          display: flex;
+
+          .slide {
+            height: 168px;
+            width: 213px;
+            padding: 28px 45px;
+          }
+
+          #r1:checked:active ~ .s1 {
+            margin-left: 0;
+          }
+          #r2:checked ~ .s1 {
+            margin-left: -20%;
+          }
+          #r3:checked ~ .s1 {
+            margin-left: -40%;
+          }
+          #r4:checked ~ .s1 {
+            margin-left: -60%;
+          }
+          #r5:checked ~ .s1 {
+            margin-left: -80%;
+          }
+
+          h2 {
+            color: #fff;
+          }
+        }
+      }
+
+      .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .navigation {
+        position: absolute;
+        bottom: 37px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+      }
+
+      .bar {
+        height: 7px;
+        width: 7px;
+        box-sizing: border-box;
+        margin: 7px;
+        cursor: pointer;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid #fff;
+        transition: all .4s ease;
+        transform: rotate(45deg);
+      }
+
+      .bar:hover {
+        transform: rotate(45deg) scale(1.15);
+        border: 1px solid rgb(170, 151, 151);
+        opacity: .8;
+      }
+
+      .active {
+        background-color: rgb(92, 79, 79);
+        border: 1px solid #fff;
+      }
+
+      input[name="r"] {
+        position: absolute;
+        visibility: hidden;
+      }
+    }
+
+    .big-slider-section {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+
+      .info-button {
+        position: absolute;
+        height: 51px;
+        width: 51px;
+        border-radius: 50%;
+        background-color: rgba(235, 87, 87, 1);
+        color: #fff;
+        font-size: 16px;
+
+        border: none;
+        transition: transform 0.5s ease;
+
+        cursor: pointer;
+      }
+
+      .info-button.active {
+        background-color:rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(5px);
+        overflow: hidden;
+      }
+
+      .info-button:not(.active)::before {
+        content: "+";
+      }
+
+      .info-button.active::after {
+        content: "-";
+      }
+
+      .info-button:hover {
+        transform: scale(1.18);
+      }
+
+      @include onTablet {
+        .button-1 {
+          top: 75%;
+          left: 11%;
+        }
+
+        .button-2 {
+          top: 51%;
+          left: 30%;
+        }
+
+        .button-3 {
+          top: 79%;
+          left: 44%;
+        }
+
+        .button-4 {
+          top: 68%;
+          left: 54%;
+        }
+
+        .button-5 {
+          top: 35%;
+          left: 73%;
+        }
+      }
+
+      @include onDesktop {
+        .button-1 {
+          top: 79%;
+          left: 17%;
+        }
+
+        .button-2 {
+          top: 57%;
+          left: 38%;
+        }
+
+        .button-3 {
+          top: 82%;
+          left: 46%;
+        }
+
+        .button-4 {
+          top: 69%;
+          left: 59%;
+        }
+
+        .button-5 {
+          top: 60%;
+          left: 77%;
+        }
+      }
+
+      #info-modal {
+        position: absolute;
+        height: min-content;
+
+        background-color:rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(35px);
+        overflow: hidden;
+
+        color: #fff;
+        line-height: 24px;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+
+        @include onTablet {
+          width: 235px;
+          padding: 35px;
+        }
+
+        @include onDesktop {
+          width: 229px;
+          padding: 40px;
+        }
+      }
+
+      @include onTablet {
+        display: block;
+
+        #info-modal[data-modal-position="top-left"] {
+          bottom: 30%;
+          left: 5%;
+        }
+
+        #info-modal[data-modal-position="top-right"] {
+          top: 16%;
+          right: 46%;
+        }
+
+        #info-modal[data-modal-position="bottom-left"] {
+          bottom: 25%;
+          left: 29%;
+        }
+
+        #info-modal[data-modal-position="bottom-right"] {
+          bottom: 37%;
+          right: 19%;
+        }
+
+        #info-modal[data-modal-position="center"] {
+          top: 47%;
+          left: 56%;
+        }
+      }
+
+      @include onDesktop {
+        width: 20%;
+        word-spacing: 5px;
+
+        #info-modal[data-modal-position="top-left"] {
+          bottom: 24%;
+          left: 9%;
+        }
+
+        #info-modal[data-modal-position="top-right"] {
+          top: 36%;
+          right: 62%;
+        }
+
+        #info-modal[data-modal-position="bottom-left"] {
+          bottom: 4%;
+          left: 22%;
+        }
+
+        #info-modal[data-modal-position="bottom-right"] {
+          bottom: 34%;
+          right: 28%;
+        }
+
+        #info-modal[data-modal-position="center"] {
+          top: 66%;
+          left: 68%;
+        }
+      }
+    }
+
+    .for-side-text {
+      position: absolute;
+
+      @include onTablet {
+        left: -15px;
+        top: 50px;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+
+      .side-box {
+        @include onTablet {
+          display: flex;
+          transform: rotate(90deg);
+          position: absolute;
+          width: 65px;
+          height: min-content;
+
+          .side-text {
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: .22em;
+            color: #828282;
+
+            &::before {
+              content: " ";
+              left: -75px;
+              top: 5px;
+              position: absolute;
+              width: 65px;
+              height: 1px;
+              background-color: #828282;
+            }
+          }
+        }
+
+        @include onMobile {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .for-side-text {
+    position: absolute;
+
+    @include onTablet {
+      right: 50px;
+      top: 135px;
+    }
+
+    @include onDesktop {
+      right: -5px;
+    }
+
+    .side-box {
+      @include onTablet {
+        display: flex;
+        position: absolute;
+        width: 65px;
+        height: min-content;
+        transform: rotate(90deg);
+
+        .side-text {
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: .22em;
+          color: #828282;
+
+           &::before {
+            content: " ";
+            left: -75px;
+            top: 5px;
+            position: absolute;
+            width: 65px;
+            height: 1px;
+            background-color: #828282;
+          }
+        }
+      }
+
+      @include onMobile {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+}

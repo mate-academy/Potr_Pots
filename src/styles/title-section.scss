@@ -1,0 +1,251 @@
+.title-section {
+  position: relative;
+  margin-bottom: 110px;
+
+  @include onMobile {
+   margin-bottom: 124px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 190px;
+   }
+
+  .title-img-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-right: 0;
+      z-index: -1;
+      position: absolute;
+    }
+
+    &__foto {
+      margin: 0 auto;
+      transition: 0.3s;
+      height: 320px;
+      width: 320px;
+
+      @include onTablet {
+        margin-right: 0;
+        height: 345px;
+        width: 345px;
+      }
+
+      @include onDesktop {
+        height: 500px;
+        width: 500px;
+
+        &:hover {
+          border-radius: 25%;
+        }
+      }
+    }
+
+    .for-side-text {
+      position: absolute;
+
+      @include onTablet {
+        right: -20px;
+      }
+
+      @include onDesktop {
+        right: 5px;
+        top: 240px;
+      }
+
+      .side-box {
+        @include onTablet {
+          display: flex;
+          transform: rotate(90deg);
+          position: absolute;
+          top: 525px;
+          right: 555px;
+          width: 65px;
+          height: min-content;
+
+          .side-text {
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: .22em;
+            color: #828282;
+
+             &::before {
+              content: " ";
+              left: -75px;
+              top: 5px;
+              position: absolute;
+              width: 65px;
+              height: 1px;
+              background-color: #828282;
+            }
+          }
+        }
+
+        @include onMobile {
+          display: none;
+        }
+
+        @include onTablet {
+          display: flex;
+          transform: rotate(90deg);
+          position: absolute;
+          bottom: -330px;
+          right: -30px;
+          width: 65px;
+        }
+      }
+    }
+  }
+
+  .title-container {
+    margin: 0 30px;
+
+    @include onTablet {
+      width: 70%;
+      padding: 0;
+      order: 1;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      padding-left: 85px;
+    }
+
+    .title {
+      @include onMobile {
+        margin-bottom: 30px;
+      }
+
+      @include onTablet {
+        padding-bottom: 10px;
+      }
+
+      .bebas-neue-stules {
+        font-size: 36px;
+
+        @include onTablet {
+          font-size: 64px;
+          line-height: 64px;
+          max-width: 460px;
+          letter-spacing:10px;
+        }
+
+        @include onDesktop {
+          max-width: 550px;
+        }
+      }
+    }
+  }
+
+  .price-container {
+    display: flex;
+
+    @include onTablet {
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      padding-right: 250px;
+    }
+
+    .price {
+      font-size: 26px;
+      font-weight: bold;
+
+      @include onTablet {
+        font-size: 36px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 5px;
+      }
+    }
+
+      .price-info {
+        padding-bottom: 20px;
+
+      @include onTablet {
+        padding-bottom: 50px;
+      }
+    }
+  }
+
+  .buy-container {
+    display: flex;
+
+    @include onTablet {
+      justify-content: end;
+      padding-right: 200px;
+    }
+
+    @include onDesktop {
+      justify-content: center;
+      padding-right: 350px;
+    }
+
+    .button {
+      width: min-content;
+      width: 260px;
+    }
+
+    .buy {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 227, 57, 1);
+      line-height: 48px;
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+
+      &::after {
+        content: url(/images/hand.svg);
+        padding-left: 20px;
+        margin-top: -2px;
+      }
+
+      &:hover {
+        background-color: #ffEc7a;
+      }
+    }
+  }
+
+  .section-link {
+    text-decoration: none;
+    color: #03839e;
+    position: absolute;
+    right: -68px;
+    bottom: -145px;
+    display: block;
+    width: max-content;
+    font-size: 12px;
+    line-height: 18px;
+    transition: transform 0.5s;
+    transform: rotate(90deg) translateX(-200%) translateY(115%);
+
+    @include onTablet {
+      left: -40px;
+      bottom: -190px;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 44px;
+      bottom: -11px;
+      left: 124%;
+      background-image: url(/images/column-hand.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: rotate(-90deg);
+    }
+
+    &:hover {
+      transform: rotate(90deg) translateX(-150%) translateY(110%);
+    }
+  }
+}
+
+

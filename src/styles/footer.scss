@@ -1,0 +1,136 @@
+.footer {
+
+  .footer-container {
+    margin: 0 auto;
+    max-width: 1170px;
+    display: flex;
+    justify-content: space-around;
+
+    @include onTablet {
+      justify-content: space-between;
+      padding: 0 34px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 24px;
+      letter-spacing: .15em;
+      padding-bottom: 10px;
+    }
+
+    .adreess-link, .about-link {
+      transition: all .5s;
+      text-decoration: none;
+      color: #000;
+      max-width: 170px;
+
+      &:hover {
+        color: #03839e;
+      }
+    }
+
+    .adrress, .about {
+      text-decoration: none;
+      color: #000;
+      max-width: 144px;
+
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    .social-network {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      width: 250px;
+
+      .social-link {
+        display: flex;
+        justify-content: space-between;
+
+        @include onTablet {
+          gap: 75px;
+        }
+      }
+
+      .title-box {
+        justify-content: center;
+        box-sizing: border-box;
+
+        .copyring {
+          @include onTablet {
+            display: none;
+          }
+        }
+
+        .title-container {
+          width: 100%;
+          text-align: center;
+          border-top: 1px solid transparent;
+
+          &:hover {
+            border-top: 1px solid black;
+          }
+
+          @include onMobile {
+            padding-bottom: 30px;
+          }
+
+          @include onTablet {
+            padding-bottom: 110px;
+          }
+
+          @include onDesktop {
+            padding-bottom: 65px;
+          }
+        }
+
+        .title {
+          width: 100%;
+          display: block;
+          font-family: Bebas Neue,sans-serif;
+          font-size: 36px;
+          letter-spacing: .15em;
+          line-height: 54px;
+          color: #000;
+          text-decoration: none;
+        }
+      }
+
+      .link {
+        display: flex;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        transition: transform .5s;
+
+        @include onTablet {
+          width: 30px;
+          height: 30px;
+        }
+
+        &:hover {
+          transform: scale(150%);
+        }
+      }
+
+      .instagram-box {
+        align-items: center;
+
+        .instagram {
+            margin-bottom: 40px;
+          @include onMobile {
+          }
+
+          @include onDesktop {
+            margin-bottom: 75px;
+          }
+        }
+      }
+    }
+  }
+}

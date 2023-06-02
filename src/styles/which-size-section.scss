@@ -1,0 +1,181 @@
+.which-size-section {
+
+  max-width: 1170px;
+
+  margin: 0 auto;
+
+  .title {
+    grid-area: title;
+    padding: 0 0 10px;
+    letter-spacing: 5.5px;
+
+    @include onMobile {
+      padding: 0 30px;
+    }
+
+    &__text {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+
+  .info {
+    grid-area: info;
+    margin-bottom: 30px;
+    position: relative;
+
+    @include onMobile {
+      padding: 0 30px;
+    }
+
+    @include onDesktop {
+      max-width: 300px;
+      margin-bottom: 270px;
+      margin-right: 12px;
+    }
+  }
+
+  .img-section {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    grid-area: img-section;
+
+    @include onTablet {
+      min-width: 416px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 0;
+    }
+
+
+    .img {
+      margin: 0 auto;
+      transition: all .5s;
+
+      @include onMobile {
+        width: 100%;
+      }
+
+      @include onTablet {
+        max-width: 100%;
+      }
+
+      @include onDesktop {
+        max-width: 528px;
+        min-height: 427px;
+        padding-left: 25px;
+        padding-bottom: 0;
+      }
+    }
+
+    .img:hover {
+      border-radius: 18%;
+    }
+  }
+
+  .size {
+    @include onTablet {
+      min-width: 250px;
+    }
+
+    @include onDesktop {
+      border-left: 1px solid #4f4f4f;
+    }
+
+    .large {
+      grid-area: large;
+
+      @include onMobile {
+        padding: 0 30px;
+        padding-bottom: 40px;
+      }
+
+      @include onTablet {
+        padding-bottom: 50px;
+      }
+
+      @include onDesktop {
+        margin: 0 0 0 30px;
+      }
+
+      .large-title {
+        padding-bottom: 10px;
+        font-size: 18px;
+        letter-spacing: 3px;
+      }
+    }
+
+    .small {
+      grid-area: small;
+      margin-bottom: 15px;
+
+      @include onMobile {
+        padding-bottom: 15px;
+        padding: 0 30px;
+      }
+
+      @include onTablet {
+        padding-bottom: 50px;
+
+      }
+
+      @include onDesktop {
+        margin: 0 0 0 30px;
+      }
+
+      .small-title {
+        padding-bottom: 10px;
+        font-size: 18px;
+        letter-spacing: 3px;
+      }
+    }
+  }
+
+  .potr-info {
+    grid-area: potr-info;
+    margin-bottom: 110px;
+
+    @include onMobile {
+      padding: 0 30px;
+      margin-bottom: 110px;
+    }
+  }
+
+  .potr-info-text::before {
+    content: "*";
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    left: 20px;
+
+    @include onDesktop {
+      left: 120px;
+    }
+  }
+
+  @include onTablet {
+    padding-inline: 34px;
+    display: grid;
+    grid-template-areas:
+      "title title title"
+      "info info info"
+      "large img-section img-section"
+      "small img-section img-section"
+      "small img-section img-section"
+      "potr-info potr-info potr-info";
+  }
+
+  @include onDesktop {
+    padding-inline: 135px;
+    margin-bottom: 130px;
+    display: grid;
+    grid-template-areas:
+      "title title title title"
+      "info large img-section img-section"
+      "info small img-section img-section"
+      "info small img-section img-section"
+      "potr-info potr-info img-section img-section";
+  }
+}

@@ -1,0 +1,444 @@
+.for-those-box {
+  margin-bottom: 110px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+  }
+
+  .for-those-beautiful {
+    position: relative;
+    @include onMobile {
+      margin: 0 30px;
+    }
+
+    @include onTablet {
+      margin: 0 0 90px;
+    }
+
+    .section-title-stule {
+      font-size: 36px;
+      text-transform: uppercase;
+      line-height: 53px;
+      letter-spacing: 0.15em;
+      color: #333;
+      padding-bottom: 10px;
+
+      @include onTablet {
+        max-width: 395px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 25px;
+      }
+    }
+
+    .section-text-stule {
+      font-family: Manrope,sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: #4f4f4f;
+      padding-bottom: 70px;
+
+      @include onTablet {
+        width: 380px;
+      }
+    }
+
+    .for-those-info {
+      justify-content: space-between;
+
+      @include onTablet {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      @include onDesktop {
+        display: block;
+        margin-top: 100px;
+      }
+
+      .beautiful  {
+
+        @include onMobile {
+          display: none;
+        }
+
+        @include onTablet {
+          display: inline-block;
+          margin-right: 15px;
+          order: 1;
+        }
+
+        @include onDesktop {
+          display: flex;
+          margin-left: 86px;
+        }
+
+        &__img {
+          transition: all .5s;
+        }
+
+        &__img:hover {
+          transform: scale(1.15);
+          border-radius: 18%;
+        }
+      }
+
+      .beautiful-info {
+        @include onDesktop {
+          padding-right: 70px;
+          margin-left: 86px;
+        }
+
+        .beautiful-article {
+          display: flex;
+          margin-bottom: 20px;
+          justify-content: end;
+
+          @include onMobile {
+            display: none;
+          }
+
+          @include onTablet {
+            margin: 30px 40px 40px 0;
+          }
+
+          @include onDesktop {
+            justify-content: start;
+            margin-top: 50px;
+          }
+
+          :before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            bottom: 5px;
+            left: -10px;
+            width: 11px;
+            height: 11px;
+            background-image: url(/images/star.svg);
+            background-repeat: no-repeat;
+          }
+        }
+
+        .beautiful-info-container {
+          line-height: 65px;
+          align-items: center;
+
+          .number {
+            font-size: 36px;
+            font-family: 'Bebas Neue', sans-serif;
+
+            @include onTablet {
+              display: inline-block;
+              width: 68px;
+              padding-right: 27px;
+            }
+
+            @include onDesktop {
+              margin-bottom: 10px;
+            }
+
+            &::before {
+              content: " ";
+              width: 15px;
+              height: 46px;
+              background-image: url(/images/Rectangle.svg);
+              display: inline-block;
+              background-size: cover;
+            }
+          }
+
+          &__title-box {
+            @include onTablet {
+              display: flex;
+            }
+
+            .title-box {
+              @include onTablet {
+                ::after {
+                  content: " ";
+                  position: relative;
+                  right: 10px;
+                  top: 6px;
+                  width: 15px;
+                  height: 46px;
+                  background-image: url(/images/Rectangle.svg);
+                  display: inline-block;
+                  background-size: cover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .for-side-text {
+      position: absolute;
+      display: none;
+      width: 30px;
+      @include onTablet {
+        display: flex;
+        right: 10px;
+        top: 135px;
+      }
+
+      @include onDesktop {
+        right: 0;
+        justify-content: end;
+        align-items: flex-end;
+        left: 8px;
+        height: 85%;
+      }
+
+      .side-box {
+        @include onDesktop {
+          width: 65px;
+          display: flex;
+
+          transform: rotate(-90deg);
+          position: relative;
+
+          .side-text {
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: .22em;
+            color: #828282;
+            width: max-content;
+
+             &::before {
+              content: " ";
+              left: -75px;
+              top: 5px;
+              position: absolute;
+              width: 65px;
+              height: 1px;
+              background-color: #828282;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .for-side-text {
+    position: relative;
+
+    .side-box {
+      @include onMobile {
+        display: flex;
+        transform: rotate(90deg);
+        position: absolute;
+        bottom: 25px;
+        right: -50px;
+        width: 65px;
+        height: min-content;
+
+        .side-text {
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: .22em;
+          color: #828282;
+
+           &::before {
+            content: " ";
+            left: -75px;
+            top: 5px;
+            position: absolute;
+            width: 65px;
+            height: 1px;
+            background-color: #828282;
+          }
+        }
+      }
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  .for-those-saves-time {
+    @include onMobile {
+      margin: 0 30px;
+    }
+
+
+
+    .section-title-stule {
+      font-size: 36px;
+      text-transform: uppercase;
+      line-height: 53px;
+      letter-spacing: 0.15em;
+      color: #333;
+      padding-bottom: 10px;
+
+      @include onTablet {
+        width: 340px;
+      }
+
+      @include onDesktop {
+        width: 380px;
+        padding-bottom: 25px;
+      }
+    }
+
+    .section-text-stule {
+      font-family: Manrope,sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: #4f4f4f;
+
+      @include onTablet {
+        width: 340px;
+        padding-left: 54px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+        padding-left: 92px;
+      }
+    }
+
+    .for-those-saves-info {
+      justify-content: space-between;
+
+      @include onTablet {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+
+      .saves-time {
+        @include onMobile {
+          display: none;
+        }
+
+        @include onTablet {
+          display: inline-block;
+          margin-right: 15px;
+        }
+
+        &__img {
+          transition: all .5s;
+
+          @include onTablet {
+            height: 404px;
+            width: 284px;
+          }
+
+          @include onDesktop {
+            height: 665px;
+            width: 455px;
+          }
+        }
+
+        &__img:hover {
+          transform: scale(1.10);
+          border-radius: 17%;
+        }
+      }
+
+      .saves-time-info {
+
+        .saves-time-article {
+          margin-left: 50px;
+          margin-bottom: 15px;
+
+          @include onMobile {
+            display: none;
+          }
+
+          @include onDesktop {
+            margin: 45px 0 40px;
+            display: block;
+          }
+
+          :before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            bottom: 5px;
+            left: -10px;
+            width: 11px;
+            height: 11px;
+            background-image: url(/images/star.svg);
+            background-repeat: no-repeat;
+          }
+        }
+
+        .saves-time-info-container {
+          line-height: 65px;
+          align-items: center;
+
+          &__number-box {
+            @include onTablet {
+              display: flex;
+            }
+
+            .number {
+              font-size: 36px;
+              font-family: 'Bebas Neue', sans-serif;
+
+              @include onTablet {
+                display: flex;
+                padding-right: 27px;
+              }
+
+              @include onDesktop {
+                padding-right: 62px;
+              }
+
+              &::before {
+                content: " ";
+                width: 15px;
+                height: 46px;
+                background-image: url(/images/Rectangle.svg);
+                display: inline-block;
+                background-size: cover;
+              }
+            }
+
+            .text-box {
+              @include onTablet {
+                ::after {
+                  content: " ";
+                  position: relative;
+                  right: 10px;
+                  top: 6px;
+                  width: 15px;
+                  height: 46px;
+                  background-image: url(/images/Rectangle.svg);
+                  display: inline-block;
+                  background-size: cover;
+                }
+              }
+            }
+          }
+
+          &__text-box {
+            position: relative;
+
+            @include onTablet {
+              padding-left: 68px;
+            }
+
+            @include onDesktop {
+              padding-left: 70px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

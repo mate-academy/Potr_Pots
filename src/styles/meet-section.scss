@@ -1,0 +1,191 @@
+.meet-section{
+  position: relative;
+  transition: all .5s;
+
+  @include onMobile {
+    margin-bottom: 168px;
+  }
+
+  .rectangle {
+    z-index: -1;
+    left: 0;
+
+    .bg-rectangle {
+      z-index: -1;
+      background-image: url(../images/Rectangle_body.svg);
+      position: absolute;
+      left: 0;
+      top: 74%;
+      width: 320px;
+      height: 430px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @include onTablet {
+        height: 394px;
+        width: 33%;
+        top: 28%;
+      }
+
+      @include onDesktop {
+        height: 62%;
+        width: 34%;
+        top: 28%;
+      }
+    }
+  }
+
+  .potr-team {
+    position: relative;
+    margin: auto;
+
+    @include onDesktop {
+      max-width: 1440px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    .name {
+      font-family: Bebas Neue,sans-serif;
+      font-size: 230px;
+      line-height: 278px;
+      letter-spacing: .15em;
+      color: transparent;
+      -webkit-text-stroke: 1px #03839e;
+
+      @include onDesktopPlus {
+        font-size: 288px;
+        -webkit-text-stroke: 1.3px #03839e;
+      }
+
+      span {
+        letter-spacing: 0em;
+      }
+    }
+
+    .martin {
+      top: 80px;
+      left: -25px;
+      position: absolute;
+      width: 80%;
+
+      @include onDesktop {
+        top: 140px;
+        margin-left: 115px;
+      }
+
+      @include onDesktopPlus {
+        top: 160px;
+      }
+
+    }
+
+    .andy {
+      text-align: end;
+      width: 100%;
+
+      @include onTablet {
+        bottom: -750px;
+        position: absolute;
+      }
+
+      @include onDesktop {
+        bottom: -1000px;
+      }
+
+      @include onDesktopPlus {
+        bottom: -1020px;
+      }
+    }
+  }
+
+  .meet-box {
+    max-width: 1140px;
+    margin: 0 auto;
+
+    .title {
+      @include onMobile {
+        margin: 0 30px 25px;
+      }
+
+      @include onTablet {
+        margin-bottom: 177px;
+        display: flex;
+        justify-content: center;
+      }
+
+      @include onDesktop {
+        justify-content: start;
+      }
+
+      .title-text {
+        font-size: 58px;
+        letter-spacing: 0.15em;
+      }
+
+    }
+
+    .info-box {
+
+      @include onTablet {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 113px;
+      }
+
+      @include onDesktop {
+        justify-content: space-between;
+        margin-bottom: 200px;
+      }
+
+      .meet-photo {
+        display: flex;
+        justify-content: space-around;
+
+        @include onMobile {
+          margin: 0 0 30px;
+        }
+
+        @include onTablet {
+          order: 2;
+        }
+
+        .img {
+          width: 320px;
+          height: 240px;
+
+          @include onTablet {
+            width: 340px;
+            height: 255px;
+          }
+
+          @include onDesktop {
+            width: 677px;
+            height: 508px;
+          }
+        }
+      }
+    }
+
+    .meet-text {
+
+      @include onMobile {
+        margin: 0  30px;
+      }
+
+      @include onTablet {
+        width: 313px;
+        margin-top: 55px;
+      }
+
+      @include onDesktop {
+        width: 336px;
+        margin-top: 230px;
+      }
+
+    }
+  }
+}

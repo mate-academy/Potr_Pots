@@ -1,0 +1,185 @@
+.for-whom {
+  @include onMobile {
+    margin: 0 30px;
+  }
+
+  @include onTablet {
+    margin: 0 0 50px;
+  }
+
+  &__title-box {
+    margin-bottom: 15px;
+
+    @include onTablet {
+      margin-bottom: 35px;
+    }
+  }
+
+  .section-title-stule {
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 53px;
+    letter-spacing: 0.15em;
+    color: #333;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      max-width: 395px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 25px;
+    }
+  }
+
+  .section-text-stule {
+    font-family: Manrope,sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+    padding-bottom: 70px;
+
+    @include onTablet {
+      max-width: 395px;
+    }
+  }
+
+  .for-whome-info {
+    justify-content: space-between;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .robust {
+      @include onMobile {
+        display: none;
+      }
+
+      @include onTablet {
+        display: flex;
+        width: 40%;
+        margin-right: 15px;
+        justify-content: center;
+      }
+
+      @include onDesktop {
+        display: block;
+        width: 60%;
+      }
+
+      &__img {
+        transition: all .5s;
+
+        @include onTablet {
+          height: 284px;
+          width: 284px;
+        }
+
+        @include onDesktop {
+          height: 500px;
+          width: 500px;
+        }
+      }
+
+      &__img:hover {
+        transform: scale(1.08);
+        border-radius: 25%;
+      }
+    }
+
+    .robust-info {
+
+      .robust-article {
+        margin-left: 50px;
+        margin-bottom: 20px;
+
+        @include onMobile {
+          display: none;
+        }
+
+        @include onDesktop {
+          margin-top: 110px;
+          margin-bottom: 40px;
+          display: block;
+        }
+
+        :before {
+          content: "";
+          display: inline-block;
+          position: relative;
+          bottom: 5px;
+          left: -10px;
+          width: 11px;
+          height: 11px;
+          background-image: url(/images/star.svg);
+          background-repeat: no-repeat;
+        }
+      }
+
+      .robust-info-container {
+        line-height: 65px;
+        align-items: center;
+
+        &__number-box {
+          @include onTablet {
+            display: flex;
+          }
+
+          .number {
+            font-size: 36px;
+            font-family: 'Bebas Neue', sans-serif;
+
+            @include onTablet {
+              display: inline-block;
+              width: 68px;
+            }
+
+            @include onDesktop {
+              padding-right: 27px;
+            }
+
+            &::before {
+              content: " ";
+              width: 15px;
+              height: 46px;
+              background-image: url(/images/Rectangle.svg);
+              display: inline-block;
+              background-size: cover;
+            }
+          }
+
+          .text-box {
+
+            @include onTablet {
+              ::after {
+                content: " ";
+                position: relative;
+                right: 10px;
+                top: 6px;
+                width: 15px;
+                height: 46px;
+                background-image: url(/images/Rectangle.svg);
+                display: inline-block;
+                background-size: cover;
+              }
+            }
+          }
+        }
+
+        &__text-box {
+          @include onTablet {
+            padding-left: 62px;
+          }
+
+          @include onDesktop {
+            padding-left: 95px;
+          }
+        }
+      }
+    }
+  }
+}
+
+

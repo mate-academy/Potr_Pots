@@ -1,0 +1,133 @@
+.potr-pots-features-section {
+  letter-spacing: 0.09em;
+  margin-bottom: 110px;
+
+  @include onTablet {
+    margin-bottom: 135px;
+  }
+
+  .section-title {
+    @include onMobile {
+      margin: 0 30px 23px;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      justify-content: start;
+    }
+  }
+
+  .title {
+    margin-bottom: 21px;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+
+    @include onMobile {
+      margin: 0 30px 21px;
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: center;
+
+    @include onMobile {
+      margin: 0 30px 67px;
+    }
+
+    .text {
+      text-align: center;
+      width: 260px;
+
+      @include onTablet {
+        width: 220px;
+      }
+
+      @include onDesktop {
+        width: 300px;
+      }
+
+      @include onDesktopPlus {
+        width: 370px;
+        letter-spacing: normal;
+      }
+    }
+  }
+
+  .picture {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    .img {
+      width: 260px;
+      height: 260px;
+      transition: all .5s;
+
+      @include onTablet {
+        width: 220px;
+        height: 220px;
+      }
+
+      @include onDesktop {
+        width: 300px;
+        height: 300px;
+      }
+
+      @include onDesktopPlus {
+        width: 370px;
+        height: 370px;
+      }
+    }
+
+    .img:hover {
+      transform: scale(1.04);
+      border-radius: 18%;
+
+      @include onDesktop {
+        transform: scale(1.12);
+      }
+    }
+  }
+
+  .section-box {
+    @include onTablet {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .flat-pack-postage-box {
+      @include onTablet {
+        order: 1;
+      }
+    }
+
+    .easy-assembly-box {
+      @include onTablet {
+        order: 1;
+      }
+    }
+
+    .self-watering-box {
+      @include onTablet {
+        order: 0;
+      }
+
+      @include onDesktop {
+        order: 2;
+      }
+    }
+  }
+}
