@@ -73,7 +73,7 @@ toggleButton.addEventListener('click', function() {
   }
 });
 
-const form = document.querySelector('.message-us');
+const form = document.querySelector('#message-us__form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
