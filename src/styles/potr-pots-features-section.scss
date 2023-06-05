@@ -14,7 +14,6 @@
     @include onTablet {
       margin-bottom: 50px;
       display: flex;
-      justify-content: center;
     }
 
     @include onDesktop {
@@ -32,6 +31,14 @@
     @include onMobile {
       margin: 0 30px 21px;
     }
+
+    @include onTablet {
+      justify-content: start;
+    }
+
+    @include onDesktop {
+      justify-content: center;
+    }
   }
 
   .info {
@@ -48,10 +55,12 @@
 
       @include onTablet {
         width: 220px;
+        text-align: start;
       }
 
       @include onDesktop {
         width: 300px;
+        text-align: center;
       }
 
       @include onDesktopPlus {
@@ -99,11 +108,6 @@
 
   .section-box {
     @include onTablet {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    @include onDesktop {
       display: flex;
       justify-content: space-between;
     }
