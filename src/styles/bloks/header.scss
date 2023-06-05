@@ -10,11 +10,16 @@
       top: 0;
       right: 154px;
       z-index: -10;
-      width: 1120px;
+      width: 100%;
       height: 466px;
-      background-image: url("../images/bg-yellow.png");
-      background-position: 80%;
-      background-size: cover;
+      background-color: #ffec7a;
+      clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+    }
+
+    @include onDesktop {
+      right: 500px;
+      height: 586px;
+      clip-path: polygon(0 0, 100% 0, 100% 20%, 0% 100%);
     }
   }
 
@@ -29,18 +34,40 @@
     background-image: url("../images/menu-open.svg");
     height: 32px;
     width: 32px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__basket {
+    display: none;
+    background-image: url("../images/basket.svg");
+    height: 30px;
+    width: 30px;
+
+    @include onDesktop {
+      display: block;
+    }
   }
 
   &__imag {
     width: 320px;
-    height: auto;
-    overflow: hidden;
+    height: 320px;
+    background-image: url("../images/small-pot.jpg");
+    background-size: cover;
 
     @include onTablet {
       position: absolute;
       top: 120px;
       right: 34px;
       z-index: -5;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      height: 500px;
+      right: 135px;
     }
   }
 
@@ -64,13 +91,15 @@
       margin: 50px 0 0;
       z-index: 10;
     }
+
+    @include onDesktop {
+      margin: 50px 100px 20px;
+    }
   }
 
   &__shop {
-    @include pageGrid;
-
     @include onTablet {
-      grid-column: span 3;
+      @include pageGrid;
     }
   }
 
@@ -84,6 +113,11 @@
       grid-column: 3;
       margin-top: -10px;
     }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+      margin-top: 0;
+    }
   }
 
   &__info {
@@ -96,23 +130,33 @@
       grid-column: 3 / 5;
       margin: 0 0 50px;
     }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+    }
   }
 
   &__button {
     @include onTablet {
       grid-column: 2 / 5;
     }
+
+    @include onDesktop {
+      grid-column: 4 / 7;
+    }
   }
 
   &__about {
     position: absolute;
     bottom: 0;
-    right: 5px;
     display: flex;
     justify-content: flex-end;
 
+    @media (max-width: 640px) {
+      right: 5px;
+    }
+
     @include onTablet {
-      left: 0;
       bottom: 60px;
     }
 

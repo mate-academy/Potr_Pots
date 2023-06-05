@@ -14,6 +14,11 @@
     transition: transform 0.3s;
     transform: translateX(100%);
 
+    @include onDesktop {
+      position: sticky;
+      transform: translateX(0);
+    }
+
     &:target {
       transform: translateX(0);
     }
