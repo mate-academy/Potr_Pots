@@ -63,22 +63,23 @@ window.addEventListener('load', function() {
   }
 });
 
-const toggleButton = document.querySelector('.toggle-button');
-
-toggleButton.addEventListener('click', function() {
-  if (this.textContent === '+') {
-    this.textContent = '-';
-  } else {
-    this.textContent = '+';
-  }
-});
-
 const form = document.querySelector('#message-us__form');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   form.reset();
 });
+
+// const toggleButton = document.querySelector('.info-button');
+
+// toggleButton.addEventListener('click', function() {
+//   if (this.textContent === '+') {
+//     this.textContent = '-';
+//   }
+//   else {
+//     this.textContent = '+';
+//   }
+// });
 
 //   var buttons = document. жжжжж  querySelectorAll('.info-button');
 //   var infoModal = document.getElementById('info-modal');
