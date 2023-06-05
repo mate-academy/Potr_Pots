@@ -73,6 +73,13 @@ toggleButton.addEventListener('click', function() {
   }
 });
 
+const form = document.querySelector('.message-us');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.reset();
+});
+
 //   var buttons = document.querySelectorAll('.info-button');
 //   var infoModal = document.getElementById('info-modal');
 
