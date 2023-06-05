@@ -80,7 +80,7 @@ form.addEventListener('submit', (e) => {
   form.reset();
 });
 
-//   var buttons = document.querySelectorAll('.info-button');
+//   var buttons = document. жжжжж  querySelectorAll('.info-button');
 //   var infoModal = document.getElementById('info-modal');
 
 //   buttons.forEach(function(button) {
