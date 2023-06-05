@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-
+  padding-bottom: 110px;
 
   &__bg {
     @include onTablet {
@@ -61,7 +61,7 @@
     @include onTablet {
       font-size: 64px;
       line-height: 64px;
-      margin: 50px 0 30px;
+      margin: 50px 0 0;
       z-index: 10;
     }
   }
@@ -79,6 +79,11 @@
     font-weight: 700;
     font-size: 26px;
     line-height: 36px;
+
+    @include onTablet {
+      grid-column: 3;
+      margin-top: -10px;
+    }
   }
 
   &__info {
@@ -86,20 +91,30 @@
     font-size: 14px;
     line-height: 150%;
     margin: 0 0 20px;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      margin: 0 0 50px;
+    }
   }
 
   &__button {
     @include onTablet {
-      grid-column: span 2;
+      grid-column: 2 / 5;
     }
   }
 
   &__about {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 5px;
     display: flex;
     justify-content: flex-end;
+
+    @include onTablet {
+      left: 0;
+      bottom: 60px;
+    }
 
     &-text {
       font-family: "Manrope", sans-serif;
