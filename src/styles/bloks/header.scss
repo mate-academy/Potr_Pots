@@ -1,0 +1,119 @@
+.header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+
+  &__bg {
+    @include onTablet {
+      position: absolute;
+      top: 0;
+      right: 154px;
+      z-index: -10;
+      width: 1120px;
+      height: 466px;
+      background-image: url("../images/bg-yellow.png");
+      background-position: 80%;
+      background-size: cover;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+
+  &__menu-open {
+    background-image: url("../images/menu-open.svg");
+    height: 32px;
+    width: 32px;
+  }
+
+  &__imag {
+    width: 320px;
+    height: auto;
+    overflow: hidden;
+
+    @include onTablet {
+      position: absolute;
+      top: 120px;
+      right: 34px;
+      z-index: -5;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $colorBlue;
+    margin: 25px 0 30px;
+
+    &-transparent {
+      color: transparent;
+      -webkit-text-stroke: 1px $colorBlue;
+    }
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+      margin: 50px 0 30px;
+      z-index: 10;
+    }
+  }
+
+  &__shop {
+    @include pageGrid;
+
+    @include onTablet {
+      grid-column: span 3;
+    }
+  }
+
+  &__prise {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  &__info {
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    margin: 0 0 20px;
+  }
+
+  &__button {
+    @include onTablet {
+      grid-column: span 2;
+    }
+  }
+
+  &__about {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+
+    &-text {
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 150%;
+      color: $colorBlue;
+      writing-mode: vertical-rl;
+
+      &::after {
+        content: url("../images/Arrow.svg");
+        transform: rotate(270deg);
+      }
+    }
+  }
+}
