@@ -17,24 +17,34 @@
 
     @include onTablet {
       display: block;
+      grid-column: 1 / 3;
+      width: 284px;
+      height: auto;
 
-      &--robust {
-        width: 284px;
-        height: 284px;
-        grid-column: 1 / 3;
+      &--beautiful {
+        width: 300px;
+        grid-column: 4 / -1;
+        margin-left: 40px;
       }
     }
   }
 
   &__number {
-    position: relative;
+    position: absolute;
     left: 15px;
+    top: -65px;
     line-height: 65px;
     color: #000;
     margin-bottom: 30px;
 
     @include onTablet {
       top: 25px;
+      left: -50px;
+
+      &--two {
+        top: -45px;
+        left: 20px;
+      }
     }
 
     &::before {
@@ -49,17 +59,59 @@
     }
   }
 
-  &__h3 {
-    color: #000;
-    margin-bottom: 20px;
+  &__text {
+    position: relative;
 
     @include onTablet {
       grid-column: 4 / -1;
-      margin: 25px 0 10px;
+
+      &--left {
+        grid-column: 1 / 4;
+      }
     }
   }
 
-  &__text {
+  &__characteristic {
+    display: block;
+    position: absolute;
+    top: -25px;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 50px;
+    color: $colorDark;
+
+    &::after {
+      content: "\2605";
+      display: block;
+      position: absolute;
+      top: -5px;
+      left: -20px;
+    }
+  }
+
+  &__h3 {
+    color: #000;
+    margin: 0 0 20px;
+
+    @include onTablet {
+      margin: 25px 0 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 46px;
+        margin-left: 15px;
+        background-color: $colorDark;
+        transform: rotate(25deg);
+      }
+    }
+  }
+
+  &__paragraf {
     font-family: "Manrope", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -68,7 +120,6 @@
     color: $colorGray;
 
     @include onTablet {
-      grid-column: 4 / -1;
       margin: 0;
     }
   }
