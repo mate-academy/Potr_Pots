@@ -1,0 +1,75 @@
+.for-whom {
+  &__item {
+    padding-bottom: 110px;
+
+    @include onTablet {
+      padding-bottom: 135px;
+      @include pageGrid;
+    }
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 70px;
+  }
+
+  &__imag {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      &--robust {
+        width: 284px;
+        height: 284px;
+        grid-column: 1 / 3;
+      }
+    }
+  }
+
+  &__number {
+    position: relative;
+    left: 15px;
+    line-height: 65px;
+    color: #000;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      top: 25px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      display: block;
+      width: 1px;
+      height: 46px;
+      background-color: $colorDark;
+      transform: rotate(25deg);
+    }
+  }
+
+  &__h3 {
+    color: #000;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      margin: 25px 0 10px;
+    }
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorGray;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      margin: 0;
+    }
+  }
+}
