@@ -1,10 +1,37 @@
 .for-whom {
+  padding-bottom: 110px;
+
+  @include onTablet {
+    padding-bottom: 135px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 150px;
+  }
+
+  &__wrapper--for-desktop {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__item {
-    padding-bottom: 110px;
+    padding-bottom: 140px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
 
     @include onTablet {
-      padding-bottom: 135px;
       @include pageGrid;
+    }
+
+    @include onDesktop {
+      &--for-desktop {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 
@@ -17,14 +44,60 @@
 
     @include onTablet {
       display: block;
-      grid-column: 1 / 3;
+      grid-column: span 3;
       width: 284px;
       height: auto;
 
       &--beautiful {
         width: 300px;
-        grid-column: 4 / -1;
+        order: 1;
         margin-left: 40px;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+      width: 500px;
+
+      &--beautiful {
+        width: 300px;
+        margin: 105px 0 0 100px;
+      }
+
+      &--saves-time {
+        width: 470px;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+
+    @include onTablet {
+      grid-column: span 3;
+      padding-left: 30px;
+
+      &--left {
+        order: 0;
+        padding-left: 0;
+        margin: 120px 0 0;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 12;
+      padding-left: 0;
+      margin: auto;
+
+      &--left {
+        order: 1;
+        width: 380px;
+        margin: 182px 0 0 100px;
+      }
+
+      &--three {
+        width: 370px;
+        padding: 110px 0 0 100px;
       }
     }
   }
@@ -39,10 +112,24 @@
 
     @include onTablet {
       top: 25px;
-      left: -50px;
+      left: -30px;
+      margin-bottom: 0;
 
       &--two {
         top: -45px;
+        left: 20px;
+      }
+    }
+
+    @include onDesktop {
+      left: -70px;
+
+      &--two {
+        left: 25px;
+      }
+
+      &--three {
+        top: 135px;
         left: 20px;
       }
     }
@@ -59,20 +146,8 @@
     }
   }
 
-  &__text {
-    position: relative;
-
-    @include onTablet {
-      grid-column: 4 / -1;
-
-      &--left {
-        grid-column: 1 / 4;
-      }
-    }
-  }
-
   &__characteristic {
-    display: block;
+    display: none;
     position: absolute;
     top: -25px;
     font-family: "Manrope", sans-serif;
@@ -80,8 +155,24 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    margin-bottom: 50px;
     color: $colorDark;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @media (max-width: 1280px) {
+      &--two {
+        top: -75px;
+        right: 0;
+      }
+    }
+
+    @include onDesktop {
+      &--two {
+        top: -130px;
+      }
+    }
 
     &::after {
       content: "\2605";
@@ -89,6 +180,11 @@
       position: absolute;
       top: -5px;
       left: -20px;
+
+      @include onDesktop {
+        top: 0;
+        left: -40px;
+      }
     }
   }
 
