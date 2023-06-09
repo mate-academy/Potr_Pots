@@ -1,0 +1,184 @@
+.slide {
+  height: 260px;
+  margin: 0 10px;
+  overflow: hidden;
+
+  @include onTablet {
+    height: fit-content;
+    margin: 0;
+  }
+
+  &__list {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 260px;
+    padding: 30px 40px;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    @include onTablet {
+      position: absolute;
+      justify-content: center;
+      gap: 20px;
+      width: fit-content;
+      height: fit-content;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+
+      &--1 {
+        top: 56%;
+        right: 6%;
+      }
+
+      &--2 {
+        top: 49%;
+        right: 24%;
+      }
+
+      &--3 {
+        top: 58%;
+        left: 29%;
+      }
+
+      &--4 {
+        top: 43%;
+        left: 15%;
+      }
+
+      &--5 {
+        top: 59%;
+        right: 67%;
+
+        & :nth-child(2) {
+          transform: translateX(33%);
+        }
+      }
+
+      @include onDesktop {
+        &--1 {
+          top: 68%;
+          right: 12%;
+        }
+
+        &--2 {
+          top: 59%;
+          right: 31%;
+        }
+
+        &--3 {
+          top: 69%;
+          left: 39%;
+
+          & :nth-child(2) {
+            transform: translate(-63%, 70%);
+          }
+        }
+
+        &--4 {
+          top: 52%;
+          left: 30%;
+
+          & :nth-child(2) {
+            transform: translate(-53%, 0%);
+          }
+        }
+
+        &--5 {
+          top: 70%;
+          right: 71%;
+
+          & :nth-child(2) {
+            transform: translateX(0);
+          }
+        }
+      }
+
+      &:not(:first-of-type) {
+        flex-direction: column-reverse;
+      }
+
+      &:target &-link {
+        background-color: rgba(36, 35, 35, 0.75);
+
+        &::after {
+          visibility: hidden;
+        }
+      }
+    }
+
+    &-link {
+      display: none;
+
+      @include onTablet {
+        position: relative;
+        display: block;
+        @include square(50px);
+        background-image: url(../images/icon/Component.svg);
+        background-size: contain;
+        z-index: 1;
+
+        &--close {
+          background-image: url(../images/icon/Component-close.svg);
+        }
+      }
+    }
+
+    &-description {
+      color: $gray-light;
+
+      @include onTablet {
+        box-sizing: border-box;
+        width: 283px;
+        padding: 35px;
+        background-color: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(40px);
+        visibility: hidden;
+      }
+
+      &--open {
+        @include onTablet {
+          z-index: 2;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &__pointer {
+    display: flex;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &-item {
+      background-image: url(../images/icon/list-item.svg);
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      @include square(11px);
+
+      &:not(:last-child) {
+        margin-right: 7px;
+      }
+
+      &--active {
+        background-image: url(../images/icon/list-item--active.svg);
+      }
+    }
+
+    &-link {
+      @include square(100%);
+      display: flex;
+    }
+  }
+}

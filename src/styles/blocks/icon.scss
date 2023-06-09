@@ -1,0 +1,59 @@
+.icon {
+  position: relative;
+  display: block;
+
+  @include square(32px);
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/icon/icon_menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--cross {
+    background-image: url(../images/icon/icon_cross.svg);
+    @include square(12px);
+  }
+
+  &--basket {
+    background-image: url(../images/icon/icon_basket.svg);
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &--twitter {
+    background-image: url(../images/icon/twitter.svg);
+    @include square(20px);
+
+    @include onDesktop {
+      @include square(30px);
+    }
+  }
+
+  &--instagram {
+    background-image: url(../images/icon/instagram.svg);
+    @include square(20px);
+
+    @include onDesktop {
+      @include square(30px);
+    }
+  }
+
+  &--facebook {
+    background-image: url(../images/icon/facebook.svg);
+    @include square(20px);
+
+    @include onDesktop {
+      @include square(30px);
+    }
+  }
+}

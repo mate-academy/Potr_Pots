@@ -1,6 +1,60 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
   }
+}
+
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin container {
+  margin: 0 auto;
+  max-width: 260px;
+  padding: 0 20px;
+
+  @include onTablet {
+    max-width: 700px;
+    padding: 0 40px;
+  }
+
+  @include onDesktop {
+    max-width: 1170px;
+    padding: 0 50px;
+  }
+}
+
+@mixin photo-container($size) {
+  position: relative;
+
+  box-sizing: border-box;
+  width: 100%;
+  max-height: $size;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}
+
+@mixin grid-columns($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  column-gap: $gap;
+}
+
+@mixin title($font, $color, $f-s, $l-h) {
+  font-family: $font;
+  font-size: $f-s;
+  line-height: $l-h;
+  color: $color;
+}
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
 }

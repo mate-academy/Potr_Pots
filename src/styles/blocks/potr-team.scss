@@ -1,0 +1,166 @@
+.potr-team {
+  position: relative;
+
+  &__background {
+    position: absolute;
+    top: 67%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -2;
+    background: conic-gradient(
+      from 73deg at 0 100%,
+      transparent 0,
+      $yellow-light 100%
+    );
+
+    @include onTablet {
+      top: 31%;
+      bottom: 29%;
+      right: 72%;
+      background: conic-gradient(
+        from 75deg at 0 100%,
+        transparent 0,
+        $yellow-light 100%
+      );
+    }
+
+    @include onDesktop {
+      top: 27%;
+      bottom: 30%;
+    }
+  }
+
+  &__partner {
+    display: none;
+    @extend %Bebas-transparent;
+    font-size: 220px;
+    line-height: 220px;
+    letter-spacing: 0.1em;
+    transition-duration: $duration;
+
+    @include onTablet {
+      display: inline;
+      position: absolute;
+      z-index: 1;
+    }
+
+    &--martin {
+      top: 21%;
+      left: -5%;
+
+      &:hover {
+        transform: scale(1.15);
+      }
+    }
+
+    &--andy {
+      top: 87%;
+      right: 0;
+
+      &:hover {
+        transform: translateX(-45px) scale(1.15);
+      }
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 288px;
+      &--martin {
+        top: 18%;
+        left: 5%;
+      }
+
+      &--andy {
+        top: 97%;
+        right: 0;
+      }
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      @include grid-columns(6, 20px);
+      grid-template-rows: 1fr 155px 155px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      grid-template-rows: auto 1fr;
+    }
+  }
+
+  &__title {
+    grid-area: 1 / 1 / 2 / -1;
+
+    @include title($font-secondary, $gray-dark, 58px, 70px);
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 177px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__images-container {
+    @include photo-container(240px);
+    margin: 0 auto 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    max-width: 320px;
+    transition-duration: $duration;
+
+    @include onTablet {
+      position: sticky;
+      grid-area: 2 / 4 / -1 / -1;
+      max-width: 100%;
+      max-height: 255px;
+    }
+
+    @include onDesktop {
+      grid-column: 5/-2;
+      max-height: 508px;
+      margin: 0;
+    }
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+
+  &__images {
+    @extend %picture-size;
+  }
+
+  &__paragraph {
+    color: $main-color;
+    padding-bottom: 58px;
+    grid-area: 2 / 1 / -1 / 4;
+    align-self: end;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1/5;
+      width: 336px;
+    }
+  }
+
+  &__description {
+    &:not(:last-child) {
+      padding-top: 270px;
+      margin-bottom: 24px;
+
+      @include onTablet {
+        padding: 0;
+      }
+    }
+  }
+}

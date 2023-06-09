@@ -1,0 +1,128 @@
+.potr-size {
+  &__title {
+    @include title($font-secondary, $black, 36px, 54px);
+    @include container;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__container {
+    @include onTablet {
+      @include container;
+      @include grid-columns(6, 20px);
+      grid-template-rows: repeat(3, auto);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__description {
+    @include container;
+    color: $main-color;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / -2;
+
+      padding: 0;
+      margin: 0 0 38px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+      margin: 0;
+    }
+  }
+
+  &__images-container {
+    @include photo-container(259px);
+    margin: 0 auto 30px;
+    left: 0;
+    right: 0;
+    max-width: 320px;
+
+    @include onTablet {
+      grid-area: 2 / 3 / 3 / -1;
+      justify-self: end;
+      max-width: 416px;
+      max-height: 337px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 7 / -1 / -1;
+      max-width: 528px;
+      max-height: 427px;
+    }
+  }
+
+  &__images {
+    @extend %picture-size;
+  }
+
+  &__sizes {
+    @include container;
+    margin-bottom: 15px;
+
+    @include onTablet {
+      grid-area: 2 / 1 / 3 / 4;
+      width: 246px;
+      padding: 0;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 4 / 2 / 7;
+    }
+  }
+
+  &__post {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 50px;
+      }
+    }
+
+    &-title {
+      @include title($font-secondary, $black, 18px, 18px);
+      margin-bottom: 10px;
+    }
+
+    &-description {
+      color: #4f4f4f;
+    }
+  }
+
+  &__note {
+    @include container;
+    color: #4f4f4f;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      transform: translateX(-10px);
+    }
+
+    @include onTablet {
+      grid-area: 3 / 1 / -1 / -1;
+      margin-top: 20px;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      margin: 0 0 50px;
+    }
+  }
+}

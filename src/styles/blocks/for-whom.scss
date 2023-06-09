@@ -1,0 +1,300 @@
+.for-whom {
+  &__block {
+    @include onTablet {
+      position: relative;
+    }
+    @include onDesktop {
+
+      @include grid-columns(12, 30px);
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+
+  &__title {
+    grid-column: 1 / 2;
+
+    @include title($font-secondary, $gray-dark, 36px, 54px);
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+
+      margin-bottom: 34px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 70px;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    @include onTablet {
+      @include grid-columns(2, 20px);
+      margin-bottom: 120px;
+    }
+
+    @include onDesktop {
+      &--1 {
+        @include grid-columns(12, 30px);
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+
+        margin-bottom: 80px;
+      }
+
+      &--2 {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+
+        grid-column: 2 / 6;
+        grid-row: 3 / -1;
+
+        margin-bottom: 0;
+      }
+
+      &--3 {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+
+        grid-column: 8 / 13;
+        grid-row: 3 / -1;
+      }
+    }
+  }
+
+  &__container {
+    display: none;
+    transition-duration: $duration;
+
+    @include onTablet {
+      display: block;
+      @include photo-container(100%);
+
+      max-width: 80%;
+    }
+
+    @include onDesktop {
+      max-width: 100%;
+    }
+
+    &--1 {
+      grid-column: 1 / 2;
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+        height: 500px;
+        width: 500px;
+      }
+    }
+
+    &--2 {
+      grid-column: 2 / -1;
+      justify-self: end;
+
+      @include onDesktop {
+        height: 417px;
+        width: 300px;
+        margin-bottom: 45px;
+      }
+    }
+
+    &--3 {
+      grid-column: 1 / 2;
+
+      @include onDesktop {
+        height: 670px;
+        width: 470px;
+        margin-bottom: 45px;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+
+  &__content {
+    &--1 {
+      grid-column: 2 / -1;
+
+      @include onDesktop {
+        grid-column: 8 / -2;
+        align-self: center;
+      }
+    }
+
+    &--2 {
+      grid-column: 1 / 2;
+      grid-row: 1;
+      align-self: center;
+    }
+
+    &--3 {
+      grid-column: 2 / -1;
+
+      @include onDesktop {
+        align-self: flex-end;
+        width: 80%;
+      }
+    }
+  }
+
+  &__comments {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      color: $gray-dark;
+      position: relative;
+
+      &::before {
+        content: "*";
+        line-height: 29px;
+        letter-spacing: 0.15em;
+        color: $black;
+
+        @include onDesktop {
+          margin-right: 30px;
+        }
+      }
+      &--1 {
+        top: -25px;
+        left: -20px;
+
+        @include onDesktop {
+          left: -40px;
+        }
+      }
+
+      &--2 {
+        top: -30px;
+        left: 75%;
+
+        @include onDesktop {
+          left: -10%;
+        }
+      }
+
+      &--3 {
+        top: -16px;
+        left: -15px;
+
+        @include onDesktop {
+          left: -135px;
+        }
+      }
+    }
+
+    @include onDesktop {
+      top: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__pictures {
+    @extend %picture-size;
+  }
+
+  &__heading {
+    font-family: $font-secondary;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $black;
+    margin-bottom: 20px;
+
+    //  /1 /2 /3
+    @for $index from 1 through 3 {
+      &--#{$index}::before {
+        content: "#{$index}";
+        display: block;
+        padding: 20px 25px 0;
+        line-height: 30px;
+        margin-bottom: 30px;
+        background-image: url(../images/icon/slash.svg);
+        background-size: contain;
+        background-position: 0;
+        background-repeat: no-repeat;
+
+        @include onTablet {
+          display: block;
+          position: absolute;
+          transform: translateX(-85%);
+
+          @include onDesktop {
+            transform: translateX(-135%);
+          }
+        }
+      }
+    }
+
+    &::after {
+      @include onTablet {
+        content: "";
+        display: inline-block;
+        width: 18px;
+        height: 43px;
+        background-image: url(../images/icon/slash.svg);
+        background-size: contain;
+        background-position: 0;
+        background-repeat: no-repeat;
+        transform: translate(-50%, 20%);
+      }
+    }
+
+    &--2::before {
+      @include onTablet {
+        position: static;
+        transform: translateX(0);
+        margin-bottom: 20px;
+      }
+    }
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__description {
+    color: $main-color;
+  }
+
+  &__link {
+    transform: rotate(90deg);
+    transform-origin: 100% 0;
+    right: 5px;
+
+    @include onTablet {
+      top: 0;
+      right: -23px;
+    }
+
+    @include onDesktop {
+      top: 8%;
+      right: 8px;
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        top: auto;
+        bottom: 7%;
+        right: auto;
+        left: -5%;
+        transform: rotate(270deg);
+      }
+    }
+  }
+}

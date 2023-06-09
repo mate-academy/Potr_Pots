@@ -1,0 +1,58 @@
+.feature {
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  @include onTablet {
+    text-align: left;
+  }
+
+  @include onDesktop {
+    text-align: center;
+  }
+
+  &__images-container {
+    @include photo-container(260px);
+    display: flex;
+    transition-duration: $duration;
+
+    margin-bottom: 35px;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+    @include onTablet {
+      max-height: 220px;
+    }
+
+    @include onDesktop {
+      max-height: 370px;
+    }
+  }
+
+  &__images {
+    @extend %picture-size;
+  }
+
+  &__title {
+    font-family: $font-secondary;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $gray-dark;
+
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    color: $main-color;
+  }
+}
