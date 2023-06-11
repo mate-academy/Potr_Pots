@@ -1,0 +1,376 @@
+.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @extend %h2;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    color: #333;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+
+      &::before {
+        @include logoLine;
+        content: url(../images/Potr_line.svg);
+        display: inline-block;
+        position: absolute;
+        bottom: 160px;
+        left: $padding-d;
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+    }
+
+    &::after {
+      content: url(../images/Potr_line.svg);
+      @include logoLine;
+
+      @include onMobile {
+        position: absolute;
+        right: 5px;
+        bottom: 110px;
+      }
+
+      @include onTablet {
+        position: absolute;
+        top: -120px;
+        right: 8px;
+      }
+
+      @include onDesktop {
+        position: absolute;
+        top: 0;
+        right: $padding-d;
+      }
+    }
+  }
+
+  &__containers {
+    @include onDesktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: end;
+      align-items: center;
+    }
+  }
+
+  &__container {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &--2 {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+
+      &:nth-child(2) {
+        flex-direction: column;
+        align-items: start;
+        width: 33%;
+        transform: translateY(-15%);
+      }
+
+      &:nth-child(3) {
+        flex-direction: column;
+        align-items: end;
+        width: 33%;
+        margin-left: 300px;
+      }
+    }
+
+    &__picture {
+      position: relative;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+
+      @include onTablet {
+        &--1 {
+          min-height: 285px;
+          min-width: 285px;
+          margin-right: 75px;
+        }
+
+        &--2 {
+          min-height: 417px;
+          min-width: 300px;
+          margin-right: 0;
+        }
+
+        &--3 {
+          min-height: 405px;
+          min-width: 285px;
+          margin-right: 76px;
+        }
+      }
+
+      @include onDesktop {
+        &--1 {
+          min-height: 500px;
+          min-width: 500px;
+          margin-right: 200px;
+        }
+
+        &--2 {
+          min-height: 417px;
+          min-width: 300px;
+          margin-bottom: 182px;
+        }
+
+        &--3 {
+          min-height: 670px;
+          min-width: 470px;
+          margin-right: 0;
+          margin-bottom: 110px;
+        }
+      }
+    }
+
+    &__img {
+      display: none;
+      transition: all $time-trans;
+
+      @include onTablet {
+        display: block;
+        min-width: 80%;
+        max-width: 100%;
+      }
+
+      @include onDesktop {
+        display: block;
+        min-width: 80%;
+        max-width: 100%;
+      }
+
+      &-word {
+        display: none;
+
+        @include onTablet {
+          display: block;
+        }
+      }
+
+      &-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1.2rem;
+        @extend %h4;
+        text-align: center;
+        color: #3f3939;
+        opacity: 0;
+        border: 1px solid #3f3939;
+        transition: all $time-trans;
+
+        @include onDesktop {
+          font-size: 24px;
+          line-height: 24px;
+          padding: 1.6rem;
+        }
+      }
+    }
+
+    &__picture:hover .about__container__img {
+      opacity: 0.5;
+      box-shadow: 3px 3px 6px $c-grey, -3px -3px 6px $c-grey;
+      transform: scale(1.02);
+    }
+
+    &__picture:hover .about__container__img-text {
+      transition-delay: 0.15s;
+      opacity: 100%;
+    }
+
+    &__details {
+
+      @include onTablet {
+        display: block;
+
+        &--2 {
+          margin-right: 57px;
+        }
+      }
+
+      @include onDesktop {
+        &--2 {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &__description {
+      display: none;
+      @extend %text-s3;
+      color: #333;
+
+      @include onTablet {
+        display: block;
+
+        &--1 {
+          position: absolute;
+          transform: translateY(-200%);
+        }
+
+        &--2 {
+          position: absolute;
+          transform: translateY(-400%);
+          right: 46%;
+        }
+
+        &--3 {
+          position: absolute;
+          transform: translateY(-150%);
+        }
+
+        &::before {
+          content: "*";
+          position: absolute;
+          transform: translateX(-200%);
+        }
+      }
+
+      @include onDesktop {
+        display: block;
+
+        &--1 {
+          margin-bottom: 40px;
+        }
+
+        &--2 {
+          display: block;
+          width: 190px;
+          padding-bottom: 10px;
+        }
+
+        &--3 {
+          position: absolute;
+          transform: translate(-120px, -250%);
+        }
+
+        &::before {
+          content: "*";
+          position: absolute;
+          transform: translateX(-400%);
+        }
+      }
+    }
+
+    &__title {
+      position: relative;
+      @extend %h2;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: #000;
+
+      &--1 {
+        &::before {
+          content: url(../images/One.svg);
+          display: block;
+          height: 46px;
+          width: 35px;
+          margin-bottom: 30px;
+        }
+      }
+
+      &--2 {
+        &::before {
+          content: url(../images/Two.svg);
+          display: block;
+          height: 46px;
+          width: 35px;
+          margin-bottom: 30px;
+        }
+      }
+
+      &--3 {
+        &::before {
+          content: url(../images/Three.svg);
+          display: block;
+          height: 46px;
+          margin-bottom: 30px;
+        }
+      }
+
+      @include onTablet {
+        margin-bottom: 10px;
+
+        &::after {
+          content: url(../images/Slash.svg);
+          position: absolute;
+          bottom: 5px;
+          height: 46px;
+        }
+
+        &--1 {
+          &::before {
+            content: url(../images/One.svg);
+            position: absolute;
+            height: 46px;
+            margin-bottom: 0;
+            transform: translateX(-66px);
+          }
+        }
+
+        &--2 {
+          &::before {
+            content: url(../images/Two.svg);
+            position: absolute;
+            height: 46px;
+            margin-bottom: 0;
+            transform: translateY(-68px);
+          }
+        }
+
+        &--3 {
+          &::before {
+            content: url(../images/Three.svg);
+            position: absolute;
+            height: 46px;
+            margin-bottom: 0;
+            transform: translateX(-66px);
+          }
+        }
+      }
+
+      @include onDesktop {
+        &--1 {
+          &::before {
+            transform: translateX(-100px);
+          }
+        }
+
+        &--2 {
+          &::before {
+            transform: translateY(-75px);
+          }
+        }
+
+        &--3 {
+          &::before {
+            transform: translateX(-120px);
+          }
+        }
+      }
+    }
+
+    &__text {
+      @extend %text-s3;
+      color: $c-grey-2;
+    }
+  }
+}

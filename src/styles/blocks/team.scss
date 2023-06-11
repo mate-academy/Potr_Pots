@@ -1,0 +1,132 @@
+.team {
+  position: relative;
+
+  &__container-background {
+    position: absolute;
+    top: 77%;
+    bottom: -15%;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+
+    @include onTablet {
+      top: 30%;
+      right: 75%;
+    }
+
+    @include onDesktop {
+      top: 32%;
+      left: 0;
+      margin: 0 -35%;
+    }
+  }
+
+  &__background {
+    width: 100%;
+    height: 290px;
+
+    @include onTablet {
+      width: 200%;
+      height: 230px;
+    }
+
+    @include onDesktop {
+      width: 72%;
+      height: 310px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    color: #333;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 177px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__container-img {
+
+    @include onMobile {
+      margin: 0 -30px 30px;
+    }
+
+    @include onTablet {
+      margin: 0;
+
+      &::after {
+        position: absolute;
+        top: 465px;
+        right: 0;
+        content: "Andy";
+        @include name;
+      }
+    }
+
+    @include onDesktop {
+      &::after {
+        top: 93%;
+        right: -45px;
+        font-size: 288px;
+        line-height: 346px;
+      }
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+
+    @include onTablet {
+      min-width: 340px;
+      max-width: 35%;
+      margin-left: 47px;
+      margin-right: 34px;
+      float: right;
+      text-align: right;
+    }
+
+    @include onDesktop {
+      min-width: 50%;
+      margin-left: 57px;
+      margin-right: 100px;
+      width: 42%;
+    }
+  }
+
+  &__text {
+    @extend %text-s3;
+    color: $c-grey-2;
+
+    @include onTablet {
+      padding-top: 30px;
+      max-width: 50%;
+
+      &::before {
+        position: absolute;
+        top: 65px;
+        left: -70px;
+        content: "Martin";
+        @include name;
+      }
+    }
+
+    @include onDesktop {
+      padding-top: 130px;
+      width: 45%;
+
+      &::before {
+        top: 70px;
+        left: -70px;
+        font-size: 288px;
+        line-height: 346px;
+      }
+    }
+  }
+}

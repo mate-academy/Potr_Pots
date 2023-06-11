@@ -1,0 +1,409 @@
+.materials {
+  position: relative;
+
+  &__title {
+    @extend %h1;
+    color: $c-turquoise;
+    transform: translateY(40%);
+
+    @media (min-width: 768px) and (max-width: 1279px) {
+      margin-bottom: 60px;
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+
+      &::before {
+        content: url(../images/Potr_line.svg);
+        @include logoLine;
+        position: absolute;
+        bottom: -160px;
+        left: -25px;
+      }
+
+      &::after {
+        content: url(../images/Potr_line.svg);
+        @include logoLine;
+        position: absolute;
+        top: 0;
+        right: -25px;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 139px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+      transform: translateY(70%);
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__content {
+    @include position;
+
+    @include onTablet {
+      position: absolute;
+      top: 23vw;
+      right: 7vw;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      top: 30vw;
+      right: 10vw;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    font-family: $font-text;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: $c-grey-2;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+      display: block;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    position: relative;
+    display: none;
+    @extend %text-s3;
+    color: $c-grey-2;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      display: inline-block;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+      display: inline-block;
+    }
+
+    &-checkbox {
+      display: none;
+    }
+
+    &-toggle {
+      font-family: $font-text;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 10px;
+      color: $c-turquoise;
+      transition: all $time-trans;
+      cursor: pointer;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &-full {
+
+      @include onTablet {
+        position: absolute;
+        bottom: -150%;
+        left: 0;
+        color: #4e4242;
+        background-color: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(3px);
+        transition: all $time-trans;
+        visibility: hidden;
+        z-index: 9;
+      }
+
+      @include onDesktop {
+        position: static;
+        top: 0;
+        background-color: transparent;
+        opacity: 1;
+      }
+    }
+
+    @include onTablet {
+      &-checkbox:checked ~ &-toggle ~ &-full {
+        visibility: visible;
+        animation: translate 0.5s ease-in-out;
+        transition: all $time-trans;
+
+        @keyframes translate {
+          0% {
+            transform: translateY(25%);
+          }
+
+          100% {
+            transform: translateY(0%);
+          }
+        }
+      }
+    }
+
+    @include onDesktop {
+      &-checkbox:not(:checked) ~ &-toggle ~ &-full {
+        visibility: visible;
+      }
+    }
+  }
+
+  &__details {
+    position: relative;
+    min-height: 255px;
+    width: 100%;
+    transform: translateY(-40%);
+    background-color: rgba(0, 0, 0, 0.45);
+
+    @include onTablet {
+      background-color: transparent;
+    }
+  }
+
+  &__toggle {
+
+    &-box {
+      display: none;
+    }
+
+    &-unit {
+      position: absolute;
+      transition: all $time-trans;
+
+      @include onMobile {
+        bottom: 25px;
+        width: 10px;
+        height: 10px;
+        background-color: $c-grey-light;
+        border: 2px solid $c-grey-light;
+        transform: rotate(45deg);
+
+        &--1 {
+          left: 38%;
+        }
+
+        &--2 {
+          left: 43%;
+        }
+
+        &--3 {
+          left: 48%;
+        }
+
+        &--4 {
+          left: 53%;
+        }
+
+        &--5 {
+          left: 58%;
+        }
+      }
+
+      @include onTablet {
+        width: 51px;
+        height: 51px;
+        border-radius: 50%;
+        background-color: $c-red;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 34%;
+          width: 17px;
+          height: 1px;
+          background-color: #e0e0e0;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 34%;
+          left: 50%;
+          width: 1px;
+          height: 17px;
+          background-color: #e0e0e0;
+        }
+
+        &--1 {
+          bottom: -10vw;
+          left: 70vw;
+        }
+
+        &--2 {
+          bottom: -28vw;
+          left: 54vw;
+        }
+
+        &--3 {
+          bottom: -35vw;
+          left: 41vw;
+        }
+
+        &--4 {
+          bottom: -15vw;
+          left: 29vw;
+        }
+
+        &--5 {
+          bottom: -30vw;
+          left: 10vw;
+        }
+      }
+
+      @include onDesktop {
+
+        &--1 {
+          bottom: -18vw;
+          left: 75vw;
+        }
+
+        &--2 {
+          bottom: -25vw;
+          left: 59vw;
+        }
+
+        &--3 {
+          bottom: -37vw;
+          left: 47vw;
+        }
+
+        &--4 {
+          bottom: -20vw;
+          left: 37vw;
+        }
+
+        &--5 {
+          bottom: -32vw;
+          left: 17vw;
+        }
+      }
+    }
+
+    &-text {
+      position: absolute;
+      @extend %text-s3;
+      color: $c-grey-light;
+
+      @include onMobile {
+        top: 25%;
+        left: 45px;
+        right: 45px;
+        overflow: hidden;
+        transform: translateX(-150%);
+      }
+
+      @include onTablet {
+        box-sizing: content-box;
+        background-color: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(3px);
+        min-width: 215px;
+        padding: 35px;
+        display: none;
+
+        &--1 {
+          bottom: -40vw;
+          left: 60vw;
+        }
+
+        &--2 {
+          top: 28vw;
+          left: 40vw;
+        }
+
+        &--3 {
+          top: 30vw;
+          left: 25vw;
+        }
+
+        &--4 {
+          top: 15vw;
+          left: 15vw;
+        }
+
+        &--5 {
+          top: 35vw;
+          left: 2vw;
+        }
+      }
+
+      @include onDesktop {
+        &--1 {
+          bottom: -35vw;
+          left: 68vw;
+        }
+
+        &--2 {
+          top: 23vw;
+          left: 52vw;
+        }
+
+        &--3 {
+          top: 35vw;
+          left: 40vw;
+        }
+
+        &--4 {
+          top: 20vw;
+          left: 30vw;
+        }
+
+        &--5 {
+          top: 35vw;
+          left: 9vw;
+        }
+      }
+    }
+
+    &-box:checked + &-unit {
+      background-color: rgba(0, 0, 0, 0.45);
+      transition: all $time-trans;
+
+      @include onTablet {
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 34%;
+          width: 17px;
+          height: 1px;
+          background-color: #e0e0e0;
+        }
+      }
+    }
+
+    &-box:checked ~ &-unit ~ &-text {
+      transform: translateX(0%);
+      animation: scale 0.5s ease-in-out;
+      transition: all $time-trans;
+
+      @keyframes scale {
+        0% {
+          transform: scale(0.95);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @include onTablet {
+        display: block;
+        z-index: 1;
+      }
+    }
+  }
+}
