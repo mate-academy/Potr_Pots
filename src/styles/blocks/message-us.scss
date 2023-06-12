@@ -1,0 +1,111 @@
+.message-us {
+  margin-top: 110px;
+  padding-top: 45px;
+  position: relative;
+
+  @include tablet {
+    margin-top: 100px;
+    padding-top: 16px;
+  }
+
+  @include desktop {
+    position: static;
+    margin-top: 0;
+    padding-top: 38px;
+  }
+
+  &__content {
+    @include tablet {
+      @include grid;
+    }
+
+    @include desktop {
+      position: relative;
+    }
+  }
+
+  &__rectangle {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1003px;
+
+    @include tablet {
+      height: auto;
+      max-height: 600px;
+      right: 0;
+    }
+
+    @include desktop {
+      top: -38px;
+      right: 0;
+      left: initial;
+      width: 1305px;
+    }
+  }
+
+  &__box {
+    color: $c-true-black;
+    grid-column: 1 / 4;
+
+    @include desktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__title {
+    @extend %bebas-neue;
+    font-size: 36px;
+    line-height: 150%;
+
+    @include tablet {
+      width: max-content;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 150%;
+    margin: 40px 0 25px;
+
+    @include tablet {
+      margin: 30px 0 40px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    margin-top: 56px;
+
+    @include tablet {
+      grid-column: 5 / -1;
+      margin-top: 54px;
+      gap: 20px;
+    }
+
+    @include desktop {
+      margin-top: 42px;
+      grid-column: 7 / 10;
+      gap: 25px;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: -72px;
+    right: 0;
+
+    @include tablet {
+      top: -107px;
+    }
+
+    @include desktop {
+      top: -133px;
+      right: -75px;
+    }
+  }
+}

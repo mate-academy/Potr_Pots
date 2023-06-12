@@ -1,0 +1,59 @@
+.nav {
+  &__link {
+    position: relative;
+    transition: all $animation-time;
+
+    &::after {
+      content: "";
+      display: block;
+      background-color: $c-turquoise;
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      transition: all $animation-time;
+    }
+
+    &:hover {
+      text-shadow: -0.2px -0.2px 0 $c-turquoise, 0.2px 0.2px $c-turquoise;
+      color: $c-turquoise;
+    }
+
+    &:hover::after {
+      left: 0;
+      width: 100%;
+    }
+
+    &--menu {
+      color: $c-grey-light;
+      position: relative;
+
+      @include tablet {
+        font-size: 24px;
+      }
+
+      &::after {
+        background-color: $c-yellow-light;
+      }
+
+      &:hover {
+        color: $c-yellow-light;
+      }
+
+      & p {
+        position: absolute;
+        top: 0;
+        right: -20px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: $c-red;
+        font-size: 9.16px;
+        line-height: 14px;
+        text-align: center;
+        color: $c-grey-light;
+      }
+    }
+  }
+}
