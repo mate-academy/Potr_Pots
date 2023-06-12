@@ -1,0 +1,197 @@
+.hero {
+  padding-top: 140px;
+  padding-bottom: 192px;
+  position: relative;
+
+  @include tablet {
+    padding-top: 120px;
+    padding-bottom: 102px;
+  }
+
+  @include mobile {
+    padding-top: 68px;
+    padding-bottom: 110px;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../images/hero-bg.png);
+    height: 466px;
+    width: 72%;
+    max-width: 1035px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+    @include tablet {
+      width: 80%;
+      height: 360px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+  
+  &__content {
+    position: relative;
+    
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: $color-turquoise;
+    line-height: 1;
+    max-width: 470px;
+    margin-bottom: 20px;
+    grid-column: 2 / 7;
+
+    @include tablet {
+      grid-column: 1/5;
+      margin-bottom: 100px;
+    }
+
+    @include mobile {
+      font-size: 36px;
+      line-height: 43px;
+      letter-spacing: 0.15em;
+      margin-bottom: 30px;
+    }
+
+    & span {
+      -webkit-text-stroke: 0.7px $color-turquoise;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__buy {
+    grid-column: 5 / 7;
+
+    @include tablet {
+      position: absolute;
+      top: 236px;
+      grid-column: 3 / 5;
+    }
+
+    @include mobile {
+      position: static;
+    }
+  }
+
+  &__buy-price {
+    display: block;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 5px;
+
+    @include mobile {
+      margin-bottom: 1px;
+    }
+  }
+
+  &__buy-promotion {
+    font-size: 14px;
+    line-height: 21px;
+    max-width: 140px;
+    margin-bottom: 50px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__btn {
+    background-color: $yellow-color;
+    grid-column: 4 / 7;
+
+    @include mobile {
+      max-width: 100%;
+    }
+
+    @include tablet {
+      grid-column: 2 / 5;
+    }
+
+    @include hover {
+      background-color: #ffed7b;
+    }
+  }
+
+  &__img {
+    background-image: url(../images/hero-img.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 42.8%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    @include tablet {
+      height: 306px;
+      width: 44%;
+    }
+
+    @include mobile {
+      margin-left: -$offset;
+      margin-bottom: 25px;
+      position: static;
+      width: 100vw;
+      height: 319px;
+      order: -1;
+    }
+  }
+
+  &__sticker {
+    position: absolute;
+    top: 446px;
+    writing-mode: vertical-rl;
+    color: $color-turquoise;
+    font-size: 12px;
+    left: 30px;
+
+    @include tablet {
+      top: 390px;
+    }
+
+    @include mobile {
+      right: 2px;
+      top: 577px;
+    }
+
+    & svg {
+      margin-top: 9px;
+      transition: transform 0.3s;
+    }
+
+    @include hover {
+      &:hover {
+        animation-name: wobble-vertical;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+      }
+
+      &:hover svg {
+        transform: translateY(150px);
+
+        @include tablet {
+          transform: translateY(50px);
+        }
+      }
+    }
+  }
+}

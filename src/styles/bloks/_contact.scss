@@ -1,0 +1,154 @@
+.contact-us {
+  position: relative;
+  padding-bottom: 184px;
+
+  @include tablet {
+    padding-bottom: 113px;
+  }
+
+  @include mobile {
+    padding-bottom: 102px;
+  }
+  
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(../images/contact-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    top: 0;
+    max-height: 567px;
+    height: 100%;
+    width: 90%;
+    z-index: -1;
+
+    @include tablet {
+      width: 100%;
+      max-height: 570px;
+    }
+
+    @include mobile {
+      background-image: url(../images/bg-mobile.png);
+      background-size: cover;
+      background-position: bottom;
+      min-height: 1025px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-38%, -55%);
+    background-image: url(../images/stamp-decor.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 164px;
+    height: 164px;
+    
+    @include tablet {
+      right: 0;
+      background-image: url(../images/stamp-decor-tablet.png);
+      background-position: right;
+      transform: translate(0, -64%);
+    }
+
+    @include mobile {
+      transform: translate(0, -44%);
+    }
+  }
+
+  &__content {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    color: $color-black;
+    grid-column: 1 / 5;
+    padding-top: 38px;
+
+    @include tablet {
+      padding-top: 17px;
+    }
+
+    @include mobile {
+      padding-top: 45px;
+    }
+  }
+
+  &__subtitle {
+    grid-column: 1 / 5;
+    margin-bottom: 30px;
+
+    @include tablet {
+      grid-column: 1/4;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    grid-column: 1 / 5;
+
+    @include tablet {
+      grid-column: 1/4;
+    }
+  }
+
+  &__contacts {
+    grid-column: 7 / 10;
+    grid-row: 1 / 5;
+    padding-top: 80px;
+
+    @include tablet {
+      grid-column: 5 / 7;
+      padding-top: 71px;
+    }
+
+    @include mobile {
+      padding-top: 55px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    @include tablet {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      @include mobile {
+        &:not(:last-child) {
+          margin-bottom: 34px;
+        }
+      }
+    }
+  }
+
+  &__type {
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.39);
+    margin-bottom: 5px;
+  }
+
+  &__link {
+    transition: color 0.3s;
+    color: $color-black;
+
+    @include hover {
+      color: $color-turquoise;
+    }
+  }
+}

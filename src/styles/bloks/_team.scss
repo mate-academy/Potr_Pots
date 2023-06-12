@@ -1,0 +1,149 @@
+.team {
+  position: relative;
+  padding-bottom: 387px;
+
+  @include tablet {
+    padding-bottom: 444px;
+  }
+
+  @include mobile {
+    padding-bottom: 168px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url(../images/team-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    left: 0;
+    top: 185px;
+    width: calc(clamp(16rem, 3.21rem + 26.64vw, 27.19rem));
+    height: 52%;
+    z-index: -1;
+
+    @include tablet {
+      height: 50%;
+      top: 165px;
+    }
+
+    @include mobile {
+      height: 57%;
+      top: 600px;
+      width: 100%;
+    }
+  }
+
+  &__martin-bg {
+    display: block;
+    position: absolute;
+    background-image: url(../images/team-martin.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 95px;
+    left: 5.5%;
+    height: 346px;
+    width: 893px;
+
+    @include tablet {
+      left: -5.5%;
+      height: 231px;
+      width: 719px;
+      top: 110px;
+    }
+  }
+
+  &__andy-bg {
+    display: block;
+    position: absolute;
+    background-image: url(../images/team-andy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 95px;
+    right: 0;
+    width: 598px;
+    height: 346px;
+
+    @include tablet {
+      width: 455px;
+      height: 220px;
+      bottom: 280px;
+    }
+  }
+
+  &__andy-bg,
+  &__martin-bg {
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    margin-bottom: 143px;
+    color: $color-grey;
+
+    @include tablet {
+      margin-bottom: 177px;
+    }
+    
+    @include mobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__desc {
+    grid-column: 1 / 5;
+    max-width: 336px;
+    align-self: self-end;
+    padding-bottom: 8px;
+
+    @include tablet {
+      grid-column: 1/4;
+      max-width: 313px;
+      transform: translateY(53px);
+    }
+
+    @include mobile {
+      transform: translate(0);
+      font-family: inherit;
+    }
+  }
+
+  &__info {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__photo {
+    grid-column: 7 span;
+    width: 100%;
+    height: auto;
+    transition: all 0.3s;
+
+    @include tablet {
+      grid-column: 3 span;
+    }
+
+    @include mobile {
+      order: -1;
+      margin-bottom: 25px;
+      margin-left: -$offset;
+      width: 100vw;
+    }
+
+    @include hover {
+      transform: scale(1.1);
+    }
+  }
+}

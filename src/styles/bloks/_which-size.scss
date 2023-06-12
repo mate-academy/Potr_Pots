@@ -1,0 +1,157 @@
+.which-size {
+  padding-bottom: 100px;
+
+  @include tablet {
+    padding-bottom: 105px;
+  }
+
+  @include mobile {
+    padding-bottom: 110px;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: $color-black;
+    text-transform: uppercase;
+    margin-bottom: 69px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text-content {
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__categories {
+    max-width: 253px;
+    grid-column: 1 / 4;
+
+    @include tablet {
+      grid-column: 1 / 6;
+      max-width: 579px;
+      margin-bottom: 38px;
+    }
+
+    @include mobile {
+      margin-bottom: 30px;
+      order: 1;
+    }
+  }
+
+  &__category-list {
+    position: relative;
+    max-width: 246px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px 0;
+    margin-bottom: 109px;
+    grid-column: 4 / 7;
+
+    @include tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 131px;
+      gap: 50px 0;
+      grid-row: 2;
+
+      @include mobile {
+        order: 2;
+        margin-bottom: 15px;
+        gap: 40px 0;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -30px;
+      width: 1px;
+      height: 257px;
+      background-color: #d8d8d8;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__category-title {
+    color: $color-black;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  &__img {
+    max-width: 528px;
+    width: 100%;
+    object-fit: cover;
+    height: 427px;
+    grid-column: 7 / 13;
+    top: 0;
+    justify-self: end;
+    grid-row: 1;
+
+    @include tablet {
+      grid-column: 3 / 7;
+      max-width: 416px;
+      height: 337px;
+      margin-bottom: 20px;
+      grid-row: 2;
+    }
+
+    @include mobile {
+      width: 100vw;
+      margin-left: -$offset;
+      object-fit: contain;
+      height: auto;
+      order: 1;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__info {
+    max-width: 550px;
+    text-align: center;
+    grid-column: 1 / 7;
+    grid-row: 2;
+    transform: translateY(-100px);
+    margin-bottom: -100px;
+    padding-right: 35px;
+
+    @include tablet {
+      position: relative;
+      padding: 0;
+      margin-bottom: 0;
+      transform: translateY(0);
+      grid-row: 3;
+      max-width: 700px;
+      text-align: left;
+
+      & span {
+        content: "*";
+        position: absolute;
+        top: 0;
+        left: -12px;
+      }
+    }
+
+    @include mobile {
+      order: 2;
+    }
+  }
+}
