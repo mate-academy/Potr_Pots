@@ -1,0 +1,130 @@
+.circle {
+  display: none;
+
+  @include onTablet {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $c-red;
+    color: $c-grey-white;
+    text-align: center;
+    cursor: pointer;
+    line-height: 50px;
+
+    &::before {
+      content: "+";
+    }
+
+    &__block {
+      display: none;
+
+      &--1 {
+        height: 166px;
+        width: 283px;
+        transform: translateX(-20%) translateY(-140%);
+      }
+
+      &--2 {
+        height: 166px;
+        width: 283px;
+        transform: translateX(-40%) translateY(-140%);
+      }
+
+      &--3 {
+        height: 214px;
+        width: 283px;
+        transform: translateX(-40%) translateY(-140%);
+      }
+
+      &--4 {
+        height: 214px;
+        width: 283px;
+        transform: translateX(-40%) translateY(-140%);
+      }
+
+      &--5 {
+        width: 303px;
+        height: 237px;
+        transform: translateX(-40%) translateY(5%);
+      }
+    }
+
+    &:hover {
+      background-color: rgba(36, 35, 35, 0.75);
+      backdrop-filter: blur(6px);
+      z-index: 1;
+
+      &:hover .circle__block {
+        display: block;
+        background-color: rgba(0, 0, 0, 0.45);
+        backdrop-filter: blur(17px);
+      }
+
+      &::before {
+        content: "-";
+      }
+    }
+
+    &__text {
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: $c-light-white;
+      padding: 35px;
+      text-align: start;
+    }
+
+    &--1 {
+      bottom: 10%;
+      left: 10%;
+
+      @include onDesktop {
+        bottom: 25%;
+        left: 13%;
+      }
+    }
+
+    &--2 {
+      left: 30%;
+      bottom: 28%;
+
+      @include onDesktop {
+        left: 35%;
+        bottom: 43%;
+      }
+    }
+
+    &--3 {
+      bottom: 8%;
+      left: 47%;
+
+      @include onDesktop {
+        bottom: 20%;
+        left: 47%;
+      }
+    }
+
+    &--4 {
+      bottom: 17%;
+      left: 56%;
+
+      @include onDesktop {
+        bottom: 35%;
+        left: 60%;
+      }
+    }
+
+    &--5 {
+      bottom: 40%;
+      left: 75%;
+
+      @include onDesktop {
+        bottom: 40%;
+        left: 80%;
+      }
+    }
+  }
+}

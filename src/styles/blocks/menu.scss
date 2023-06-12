@@ -1,0 +1,87 @@
+.menu {
+  display: flex;
+  padding-top: 138px;
+  height: 100vh;
+  width: 230px;
+  background-color: $c-green;
+  z-index: 1;
+
+  @include onTablet {
+    width: 400px;
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__list {
+    position: relative;
+    margin: 0 auto;
+    list-style: none;
+
+    &:first-child::before {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      content: "0";
+      font-family: "Bebas Neue", cursive;
+      font-weight: 400;
+      font-size: 10px;
+      color: $c-light-white;
+      width: 14px;
+      height: 14px;
+      background-color: $c-red;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 16px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    @extend %sibtitle;
+    color: $c-light-white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 29px;
+    bottom: 160px;
+    transform-origin: bottom right;
+    transform: rotate(-90deg);
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: $c-light-white;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      transform: translate(-115%, 10px);
+      display: block;
+      height: 1px;
+      width: 44px;
+      background-color: $c-light-white;
+    }
+  }
+
+  &__cross {
+    position: absolute;
+    right: 32px;
+    bottom: 42px;
+    display: block;
+    width: 12px;
+    height: 12px;
+    @extend %photo;
+    background-image: url(../images/header/cross.svg);
+  }
+}

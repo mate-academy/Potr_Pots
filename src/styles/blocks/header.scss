@@ -1,0 +1,190 @@
+.header {
+
+  &__background {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      width: 1035px;
+      height: 466px;
+      top: 0;
+      right: 250px;
+      z-index: -1;
+      background-image: url(../images/Rectangle-2.png);
+    }
+
+    @include onDesktop {
+      right: 330px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0 10px;
+
+    @include onTablet {
+      padding: 30px 0 50px;
+    }
+
+    @include onDesktop {
+      padding: 20px 0 76px;
+    }
+  }
+
+  &__block {
+    position: relative;
+  }
+
+  &__logo {
+    font-family: "Bebas Neue", cursive;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+    color: $c-grey-black;
+    text-decoration: none;
+    transition: transform $-time-transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/header/menu_icon.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__basket {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+      background-image: url(../images/header/basket.svg);
+    }
+  }
+
+  &__photo {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-bottom: 25px;
+    z-index: -1;
+
+    @include onTablet {
+      position: absolute;
+      right: 0;
+      margin-bottom: 0;
+      width: 40vw;
+
+      @include onDesktop {
+        max-height: 500px;
+        width: 500px;
+      }
+
+      &-container {
+        display: flex;
+        justify-content: end;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", cursive;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 0.68px $c-green;
+
+    &--color {
+      color: $c-green;
+    }
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+      width: 460px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__total {
+    font-family: "Manrope", sans-serif;
+    width: 140px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin: -15px 0 50px;
+    }
+
+    &-price {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 36px;
+      color: $c-grey-black;
+    }
+
+    &-order {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      color: $c-grey;
+    }
+  }
+
+  &__ivent {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    position: absolute;
+    bottom: 0;
+    right: -5px;
+    transform-origin: bottom right;
+    transform: rotate(90deg) translateX(-48%);
+    text-decoration: none;
+    color: $c-green;
+    transition: 300ms;
+
+    &:hover {
+      transform: rotate(90deg) translateX(-140px);
+    }
+
+    @include onTablet {
+      bottom: 0;
+      left: 0;
+      transform: rotate(90deg) translateX(-15%);
+      transform-origin: bottom left;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 10px;
+      height: 44px;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(-90deg) translate(130%, 165px);
+      background-image: url(../images/header/Arrow-ivent.svg);
+    }
+  }
+}

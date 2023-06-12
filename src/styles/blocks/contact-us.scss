@@ -1,0 +1,149 @@
+.contact-us {
+
+  &__background {
+    position: absolute;
+    right: 0;
+    width: 100vw;
+    height: 1000px;
+    background-image: url(../images/contacts/Rectangle.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+    @include onTablet {
+      height: 552px;
+      background-position: right;
+    }
+
+    @include onDesktop {
+      right: 55px;
+      height: 585px;
+      width: 1390px;
+    }
+  }
+
+  &__stamp {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -75px;
+    height: 170px;
+    width: 149px;
+    background-image: url(../images/contacts/commentS.png);
+
+    @include onTablet {
+      top: -110px;
+    }
+
+    @include onDesktop {
+      height: 164px;
+      width: 161px;
+      right: -20px;
+      top: -95px;
+      background-image: url(../images/contacts/commentM.png);
+    }
+  }
+
+  &__title {
+    @extend %h2;
+    color: $c-black;
+  }
+
+  &__sibtitle {
+    @extend %sibtitle;
+    margin-bottom: 40px;
+    color: $c-black;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__content {
+    padding-top: 45px;
+
+    @include onTablet {
+      padding-top: 17px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      padding-top: 38px;
+      justify-content: start;
+      gap: 230px;
+    }
+  }
+
+  &__request {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contact {
+
+    @include onTablet {
+      width: 205px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 34px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      @extend %h3;
+      color: rgba(0, 0, 0, 0.39);
+      margin-bottom: 5px;
+    }
+
+    &-link {
+      @extend %sibtitle;
+      color: $c-black;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__form-title {
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__field {
+    margin-bottom: 16px;
+
+    &--last {
+      margin: 0 0 30px;
+
+      @include onTablet {
+        margin: 0 0 40px;
+      }
+    }
+  }
+}

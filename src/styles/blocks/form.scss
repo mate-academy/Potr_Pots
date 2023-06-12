@@ -1,0 +1,58 @@
+.form {
+
+  &-title {
+    @extend %h3;
+    color: $c-black;
+  }
+
+  &-field {
+    @extend %sibtitle;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 32px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    background-color: transparent;
+    transition: all 300ms;
+
+    &::placeholder {
+      @extend %sibtitle;
+      color: $c-grey;
+    }
+
+    &:hover {
+      border-bottom-color: $c-green;
+    }
+
+    &:focus {
+      color: $c-green;
+      border-bottom-color: $c-green;
+      outline: none;
+    }
+
+    &:user-invalid {
+      color: $c-red;
+      border-bottom-color: $c-red;
+    }
+
+    &--textarea {
+      line-height: 30px;
+      resize: none;
+    }
+  }
+  
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(128, 124, 124, 0.1);
+    border-radius: 10px;
+  }
+}

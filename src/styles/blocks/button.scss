@@ -1,0 +1,87 @@
+.button {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: $c-light-black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 48px;
+  width: 100%;
+  background-color: $c-yellow;
+  text-decoration: none;
+  transition: 300ms linear;
+  cursor: pointer;
+  border: transparent;
+  text-transform: uppercase;
+
+  &::after {
+    content: url(../images/Arrow-button.svg);
+  }
+
+  @include onTablet {
+    width: 240px;
+  }
+
+  &__header {
+
+    &:hover {
+      background-color: $c-light-yellow;
+      color: $c-grey;
+    }
+
+    @include onTablet {
+      width: 240px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__benefits {
+    width: 238px;
+
+    &:hover {
+      background-color: $c-light-yellow;
+      color: $c-grey;
+    }
+
+    @include onTablet {
+      border: 1px solid $c-green;
+      background-color: transparent;
+
+      &:hover {
+        background-color: $c-green;
+        color: $c-white;
+
+        &::after {
+          content: url(../images/contacts/Arrow.svg);
+        }
+      }
+    }
+  }
+
+  &__contact-us {
+    color: $c-white;
+    background-color: $c-green;
+
+    &::after {
+      content: url(../images/contacts/Arrow.svg);
+    }
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.4);
+    }
+
+    @include onTablet {
+      width: 219px;
+    }
+
+    @include onDesktop {
+      width: 238px;
+    }
+  }
+}
