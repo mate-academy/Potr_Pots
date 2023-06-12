@@ -1,0 +1,154 @@
+.assembly {
+  @include media-Mobile {
+    margin-top: $mobile-section-margin-top;
+  }
+
+  @include media-Desktop {
+    display: flex;
+    gap: 135px;
+    margin-top: 200px;
+  }
+
+  &__img-wrapper {
+    width: 450px;
+
+    @include display-none-phone;
+    @include media-Tablet {
+      display: none;
+    }
+    @include media-Desktop {
+      display: block;
+
+      & img {
+        scale: 1.3;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    @include media-Tablet {
+      margin-top: 105px;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @include media-Desktop {
+      flex-direction: column;
+      margin-top: 60px;
+      gap: 60px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include media-Desktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & :last-child {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  &__item-title {
+    @extend %s1-manrope-32;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      left: -19px;
+      width: 7px;
+      height: 7px;
+      background: $c-grey-dark;
+      transform: rotate(45deg);
+    }
+
+    @include media-Tablet {
+      font-size: 36px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1440px) {
+      font-size: 32px;
+    }
+  }
+
+  &--right {
+    align-self: center;
+
+    @include media-Tablet {
+      translate: 0 40px;
+    }
+
+    @include media-Desktop {
+      align-self: flex-start;
+      translate: 0;
+    }
+  }
+
+  &__item-desc {
+    margin-top: 5px;
+  }
+
+  &__button {
+    @include media-Tablet {
+      margin: 0;
+      position: static;
+      background: transparent;
+      border: 1px solid $c-blue;
+      transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+
+      &:hover {
+        background-color: $c-blue;
+        color: $c-white;
+      }
+    }
+
+    @include media-Desktop {
+      translate: -13px;
+    }
+  }
+
+  &__discount {
+    margin-top: 40px;
+
+    @include media-Tablet {
+      margin-top: 30px;
+      font-size: 24px;
+    }
+
+    @include media-Desktop {
+      translate: 75px;
+    }
+
+    @extend %h2-bebas;
+    color: $c-red;
+  }
+
+  &__discount-text {
+    margin-top: 10px;
+
+    @extend %h3-bebas;
+    color: $c-blue;
+
+    @include media-Tablet {
+      max-width: 60%;
+      font-size: 18px;
+    }
+
+    @include media-Desktop {
+      translate: 75px;
+      max-width: 100%;
+    }
+  }
+}

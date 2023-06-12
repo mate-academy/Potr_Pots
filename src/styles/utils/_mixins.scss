@@ -1,6 +1,97 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin media-Mobile {
+  @media (max-width: 767px) {
+    @content;
   }
+}
+
+@mixin media-Tablet {
+  @media (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin media-Desktop {
+  @media (min-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin media-Desktop-large {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin from-tablet-to-max-w-padding {
+  @media (min-width: 767px) and (max-width: 850px) {
+    padding: 0 $container-block-padding-tablet;
+  }
+
+  @media (min-width: 849px) {
+    padding: 0;
+  }
+}
+
+@mixin after-star($content, $top, $right, $left) {
+  content: $content;
+  position: absolute;
+  left: $left;
+  top: $top;
+  right: $right;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+@mixin before-text($content, $top, $right, $left) {
+  content: $content;
+  position: absolute;
+  left: $left;
+  top: $top;
+  right: $right;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+@mixin line-before($top, $right, $left, $bottom) {
+  content: "";
+  background-image: url("/images/icons/title-line.png");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 46px;
+
+  position: absolute;
+  top: $top;
+  right: $right;
+  left: $left;
+  bottom: $bottom;
+}
+
+@mixin display-none-phone {
+  @include media-Mobile {
+    display: none;
+  }
+}
+
+@mixin huge-decor-text($content, $top, $right, $bottom, $left) {
+  content: $content;
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 170px;
+  line-height: 278px;
+  letter-spacing: 0.15em;
+  -webkit-text-stroke: 1px $c-blue;
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
 }

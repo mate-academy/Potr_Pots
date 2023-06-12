@@ -1,0 +1,162 @@
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  pointer-events: none;
+
+  &__icon {
+    position: relative;
+    margin: 0 auto;
+    background: $c-red;
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    pointer-events: all;
+  }
+
+  &__icon-line-v {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    translate: 50% 50%;
+
+    width: 11px;
+    height: 1px;
+    background: $c-white;
+    rotate: 90deg;
+
+    transition: transform 0.1s ease-in-out;
+  }
+
+  &__icon-line-h {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    translate: 50% 50%;
+
+    width: 11px;
+    height: 1px;
+    background: $c-white;
+  }
+
+  &__content {
+    max-width: 310px;
+    padding: 35px;
+    color: $c-white;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    transition: opacity 0.1s ease-in-out;
+  }
+
+  @include display-none-phone;
+  @media (min-width: 768px) and (max-width: 850px) {
+    transform: translateY(-50px);
+  }
+
+  @include media-Desktop {
+    transform: translateY(100px);
+  }
+
+  @media (min-width: 1250px) {
+    transform: translateY(300px);
+  }
+}
+
+.modal--1 {
+  top: 500px;
+  left: 0;
+
+  .modal__content {
+    order: -1;
+    transform: translateX(20%);
+  }
+}
+
+.modal--2 {
+  top: 400px;
+  left: 20%;
+
+  .modal__content {
+    order: 1;
+  }
+}
+
+.modal--3 {
+  top: 500px;
+  left: 35%;
+
+  .modal__content {
+    translate: -60px;
+    order: -1;
+  }
+}
+
+.modal--4 {
+  top: 425px;
+  left: 47%;
+
+  .modal__content {
+    order: -1;
+
+  }
+}
+
+.modal--5 {
+  top: 425px;
+  left: 63%;
+
+  .modal__content {
+    order: 1;
+  }
+}
+
+.modal.is-active {
+  .modal__icon {
+    background: rgba(36, 35, 35, 0.75);
+    opacity: 0.65;
+    backdrop-filter: blur(6px);
+  }
+
+  .modal__icon-line-v {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    translate: 50% 50%;
+
+    width: 11px;
+    height: 1px;
+    background: $c-white;
+
+    transform: rotate(90deg);
+  }
+
+  .modal__icon-line-h {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    translate: 50% 50%;
+
+    width: 11px;
+    height: 1px;
+    background: $c-white;
+
+    opacity: 0;
+  }
+
+  .modal__content {
+    height: 100%;
+    position: relative;
+    display: block;
+    opacity: 1;
+    pointer-events: all;
+    z-index: 40 !important;
+  }
+}

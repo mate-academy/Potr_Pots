@@ -1,0 +1,95 @@
+.materials {
+  @include media-Mobile {
+    margin-top: 170px;
+    height: 600px;
+  }
+
+  @include media-Tablet {
+    margin-top: 113px;
+    height: 1000px;
+  }
+
+  @media (min-width: 767px) and (max-width: 850px) {
+    height: 772px;
+  }
+
+  @media (min-width: 850px) and (max-width: 1100px) {
+    height: 840px;
+  }
+
+  @include media-Desktop {
+    margin-top: 150px;
+    height: 1160px;
+  }
+
+  background-image: url("/images/materials-big.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 35% center;
+
+  @include media-Tablet {
+    background-position: 0 195px;
+    background-size: contain;
+  }
+
+  @include media-Desktop-large {
+    background-size: cover;
+    background-position: top;
+  }
+
+  &__title {
+    color: $c-blue;
+    @extend %h1-bebas;
+
+    @include media-Tablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include media-Desktop {
+      font-size: 130px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__desc {
+    @include display-none-phone;
+
+    @include media-Tablet {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -50px;
+    }
+
+    @include media-Desktop {
+      margin-top: -165px;
+      margin-right: 5%;
+
+      max-width: 470px;
+    }
+
+    @include media-Desktop-large {
+      margin-right: 15%;
+    }
+  }
+
+  &__desc-wrapper {
+    max-width: 50%;
+
+    @include media-Desktop {
+      max-width: 100%;
+    }
+  }
+
+  .materials__desc__title {
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  .materials__desc-p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+}

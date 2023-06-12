@@ -1,0 +1,140 @@
+.sizes {
+  @include media-Mobile {
+    margin-top: $mobile-section-margin-top;
+  }
+
+  @include media-Tablet {
+    margin-top: 110px;
+  }
+
+  @include media-Desktop {
+    margin-top: 106px;
+  }
+
+  &__title {
+    @extend %h2-bebas;
+  }
+
+  &__desc {
+    @extend %s3-manrope-16;
+
+    @include media-Mobile {
+      margin-top: 20px;
+    }
+
+    @include media-Tablet {
+      margin-top: 30px;
+    }
+  }
+
+  &__content {
+    display: flex;
+
+    @include media-Mobile {
+      margin-top: 30px;
+      flex-direction: column;
+    }
+
+    @include media-Tablet {
+      margin-top: 38px;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 36px;
+    }
+  }
+
+  &__content--left {
+    display: flex;
+
+    @include media-Mobile {
+      margin-top: 30px;
+      order: 1;
+    }
+
+    @include media-Desktop {
+      max-width: 50%;
+    }
+  }
+
+  &__content--right {
+    @include media-Mobile {
+      order: 0;
+    }
+
+    @include media-Tablet {
+      min-width: 415px;
+    }
+
+    @include media-Desktop-large {
+      & img {
+        min-width: 500px;
+      }
+    }
+  }
+
+  &__content--left-left {
+    @include display-none-phone;
+    @include media-Tablet {
+      display: none;
+    }
+
+    @include media-Desktop {
+      display: flex;
+      border-right: 1px solid #d8d8d8;
+      padding-right: 16px;
+      height: 257px;
+    }
+    @extend %s3-manrope-16;
+  }
+
+  &__content--left-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-Desktop {
+      padding-left: 16px;
+    }
+
+    gap: 30px;
+  }
+
+  &__note {
+    @extend %s3-manrope-16;
+    position: relative;
+    margin-top: 15px;
+
+    @include media-Tablet {
+      margin-top: 20px;
+    }
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -9px;
+      top: 0;
+    }
+
+    @include media-Desktop {
+      max-width: 45%;
+      margin-top: -20px;
+    }
+  }
+}
+
+.size {
+  &:not(:first-child) {
+    margin-top: 40px;
+  }
+
+  &__title {
+    @extend %h4-bebas;
+    letter-spacing: 0.15em;
+  }
+
+  &__desc {
+    margin-top: 10px;
+    @extend %s3-manrope-16;
+  }
+}
