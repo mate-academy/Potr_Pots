@@ -1,0 +1,122 @@
+.pot-size {
+
+  @include onTablet {
+    padding-bottom: 105px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 100px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    margin-bottom: 20px;
+
+    @extend %h;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__paragraph {
+
+    &--first {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 38px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 0;
+        display: flex;
+        height: fit-content;
+
+        &::after {
+          content: "";
+          display: block;
+          border-right: 1px solid #d8d8d8;
+          height: 257px;
+        }
+      }
+    }
+
+    &--asterisk {
+      position: relative;
+
+      &::before {
+        content: "*";
+        display: block;
+        position: absolute;
+        left: -9px;
+      }
+    }
+  }
+
+  &__image-container {
+    width: 100vw;
+    position: relative;
+    left: -30px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      width: 100%;
+      display: flex;
+      left: unset;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 1.1s ease;
+    }
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 10px;
+
+    @extend %h;
+  }
+
+  &__text-block {
+    margin-bottom: 15px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      height: fit-content;
+    }
+  }
+
+  &__large {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+}

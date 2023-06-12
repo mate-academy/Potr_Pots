@@ -1,0 +1,204 @@
+.form {
+  position: relative;
+
+  &__background-image {
+    background-image: url(../images/formrectanglephone.svg);
+
+    @extend %icon;
+
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: bottom;
+
+    @include onTablet {
+      background-image: url(../images/formrectangletablet.png);
+    }
+
+    @include onDesktop {
+      background-image: url(../images/Rectangle.svg);
+      right: unset;
+      width: 90%;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    padding-top: 45px;
+
+    @extend %h;
+
+    @include onTablet {
+      padding-top: 17px;
+    }
+  }
+
+  &__paragraph {
+    font-size: 16px;
+    line-height: 150%;
+    color: black;
+    margin-bottom: 40px;
+
+    @extend %p;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    &--message {
+      font-size: 24px;
+      margin-bottom: 25px;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 113px;
+    }
+  }
+
+  &__input {
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 0 4px 4px;
+    font-size: 16px;
+    line-height: 150%;
+    outline: none;
+
+    @extend %p;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:-webkit-autofill {
+      border-bottom: 1px solid $color-turquoise;
+      -webkit-text-fill-color: $color-turquoise;
+      transition-delay: 3600s;
+    }
+
+    &::placeholder {
+      color: $color-grey-secondary;
+    }
+
+    &:focus {
+      border-color: $color-turquoise;
+    }
+
+    &:valid {
+      color: $color-turquoise;
+      border-color: $color-turquoise;
+    }
+
+    // &:invalid {
+    //   -webkit-text-fill-color: $color-red;
+    //   border-color: $color-red;
+    // }
+
+    &--textarea {
+      height: 28px;
+      resize: none;
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__contact {
+    margin-bottom: 34px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25px;
+    }
+
+    &:last-child {
+      padding-bottom: 102px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__contact-name {
+    font-size: 24px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.39);
+    margin-bottom: 5px;
+
+    @extend %p;
+  }
+
+  &__contact-link {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    line-height: 150%;
+
+    @extend %p;
+
+    &:hover {
+      text-decoration: underline;
+      color: rgb(10, 10, 10);
+      cursor: pointer;
+    }
+  }
+
+  &__bottom-line {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 85px;
+    padding-bottom: 31px;
+
+    @include onTablet {
+      padding-bottom: 0;
+      gap: 80px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 24px;
+    display: none;
+
+    &:last-child {
+      text-align: right;
+    }
+
+    @extend %h;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}
