@@ -1,0 +1,70 @@
+.size {
+  @include onDesktop {
+    margin-bottom: 220px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    color: #000;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+  }
+
+  &__image-container {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__image {
+    @include onPhone {
+      width: calc(100% + #{$padding-s * 2});
+      margin-left: -#{$padding-s};
+    }
+  }
+
+  &__sizes-container {
+    @include onTabletAndDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: 36px;
+    }
+
+    @include onDesktop {
+      gap: 96px;
+    }
+  }
+
+  &__sizes {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 50px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  &__note {
+    position: relative;
+
+    @include onDesktop {
+      transform: translate(12px, -120px);
+    }
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -12px;
+    }
+  }
+}

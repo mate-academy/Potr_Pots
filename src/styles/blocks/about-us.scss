@@ -1,0 +1,161 @@
+.about-us {
+  position: relative;
+
+  &__title {
+    margin-bottom: 24px;
+    font-size: 58px;
+    line-height: 70px;
+
+    @include onTablet {
+      margin-bottom: 177px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    @include onTabletAndDesktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 48px;
+    }
+
+    @include onDesktop {
+      gap: 56px;
+    }
+  }
+
+  &__image-container {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    margin-bottom: 32px;
+
+    @include onTabletAndDesktop {
+      flex-shrink: 2;
+      order: 1;
+      max-width: fit-content;
+
+      font-family: Bebas, sans-serif;
+      font-size: 232px;
+      line-height: 278px;
+      letter-spacing: 0.15em;
+
+      @include transparent-title($c-turquoise);
+
+      @include onDesktop {
+        flex-shrink: 1;
+        margin-right: 100px;
+        font-size: 288px;
+        line-height: 346px;
+      }
+
+      &::before {
+        content: "Martin";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-10%, -50%);
+        pointer-events: none;
+
+        @include onDesktop {
+          transform: translate(-6%, -36%);
+        }
+      }
+
+      &::after {
+        content: "Andy";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(6%, 50%);
+        pointer-events: none;
+
+        @include onDesktop {
+          transform: translate(12%, 50%);
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+
+    @include onPhone {
+      width: calc(100% + #{$padding-s * 2});
+      margin-left: -#{$padding-s};
+    }
+
+    @include onTabletAndDesktop {
+      max-width: fit-content;
+      @include hover(border-radius, 48px);
+    }
+  }
+
+  &__text-container {
+    position: relative;
+    flex-shrink: 3;
+  }
+
+  &__text-background {
+    position: absolute;
+    top: 30%;
+    left: -#{$padding-s};
+    right: -#{$padding-s};
+    height: 88%;
+
+    clip-path: polygon(0 0, 100% 0, 100% 67%, 0 100%);
+    background-color: $c-yellow-light;
+    z-index: -1;
+
+    @include onTablet {
+      top: -28%;
+      left: -#{$padding-m};
+      right: 28%;
+      height: 88%;
+    }
+
+    @include onDesktop {
+      top: -8%;
+      left: -#{$padding-l};
+      right: 10%;
+      height: 310px;
+    }
+  }
+
+  &__text {
+
+    @include onTablet {
+      position: relative;
+      top: 20%;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: 36%;
+    }
+
+    &--last {
+      @include onTablet {
+        display: block;
+        width: 70%;
+      }
+    }
+  }
+
+  &__side-text {
+    bottom: 0;
+    right: 10px;
+    transform: translateY(380%);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

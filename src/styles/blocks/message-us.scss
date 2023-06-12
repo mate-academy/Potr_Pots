@@ -1,0 +1,198 @@
+.message-us {
+  position: relative;
+  padding-top: 45px;
+
+  @include onTablet {
+    margin-bottom: 64px;
+    padding-top: 16px;
+    align-items: center;
+  }
+
+  @include onDesktop {
+    padding-top: 38px;
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -20%;
+
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    background-color: $c-yellow-light;
+    z-index: -1;
+
+    @include onTablet {
+      clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%);
+      bottom: 0;
+    }
+
+    @include onDesktop {
+      clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+      bottom: -12%;
+      transform: translateX(-#{$padding-l});
+    }
+  }
+
+  &__watermark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 170px;
+    width: 149px;
+
+    background-image: url("./../images/watermark_s.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translateY(-43%);
+
+    @include onTablet {
+      height: 167px;
+      width: 134px;
+
+      background-image: url("./../images/watermark_m.png");
+      transform: translateY(-64%);
+    }
+
+    @include onDesktop {
+      height: 164px;
+      width: 161px;
+
+      background-image: url("./../images/watermark_l.png");
+      transform: translate(calc(-#{$padding-l} + 50%), -60%);
+    }
+  }
+
+  &__title {
+    color: #000;
+
+    @include onTabletAndDesktop {
+      white-space: nowrap;
+    }
+  }
+
+  &__welcome {
+    color: #000;
+    margin-bottom: 40px;
+
+    @include onTabletAndDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__action {
+    margin-bottom: 24px;
+    font-family: Manrope, sans-serif;
+    font-size: 24px;
+    letter-spacing: initial;
+
+    color: #000;
+  }
+
+  &__form {
+    margin-bottom: 56px;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 4px 8px;
+
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-grey-text;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #0004;
+
+    outline: none;
+
+    transition-property: color, border-color;
+    transition-duration: $animation-time;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+
+      @include onTabletAndDesktop {
+        margin-bottom: 40px;
+      }
+    }
+
+    &:focus {
+      border-color: $c-turquoise;
+    }
+
+    &:valid {
+      color: $c-turquoise;
+      border-color: $c-turquoise;
+    }
+
+    &:not(:placeholder-shown):invalid {
+      color: $c-red;
+      border-color: $c-red;
+    }
+
+    &::placeholder {
+      color: $c-grey-text;
+    }
+
+    &--message {
+      margin-top: -16px;
+      overflow: hidden;
+      resize: none;
+      height: 32px;
+
+      transition: height $animation-time;
+
+      &:focus {
+        border-color: $c-turquoise;
+        height: 96px;
+      }
+    }
+  }
+
+  &__button {
+    @include onTabletAndDesktop {
+      width: 60%;
+
+      &:hover {
+        transform: translateX(8%);
+      }
+    }
+  }
+
+  &__contacts {
+    @include onTablet {
+      transform: translateY(-32px);
+    }
+  }
+
+  &__contacts-title {
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 24px;
+
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 32px;
+    color: #000;
+    text-decoration: none;
+
+    @include hover(opacity, 0.7);
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 24px;
+    }
+  }
+}

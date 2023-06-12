@@ -1,0 +1,82 @@
+.button {
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  text-decoration: none;
+
+  border: 1px solid transparent;
+
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    width: 28px;
+    height: 10px;
+
+    background-image: url("./../images/arrow_right.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--primary-yellow {
+    color: $c-black;
+    background-color: $c-yellow;
+
+    transition-property: opacity, transform;
+    transition-duration: $animation-time;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &--primary-blue {
+    color: #fff;
+    background-color: $c-turquoise;
+
+    transition-property: opacity, transform;
+    transition-duration: $animation-time;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &::after {
+      background-image: url("./../images/arrow_right_white.svg");
+    }
+  }
+
+  &--secondary-blue {
+    color: $c-black;
+    background-color: transparent;
+    border-color: $c-turquoise;
+
+    transition-property: color, background-color, transform;
+    transition-duration: $animation-time;
+
+    &::after {
+      transition: background-image $animation-time;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $c-turquoise;
+
+      &::after {
+        background-image: url("./../images/arrow_right_white.svg");
+      }
+    }
+  }
+}

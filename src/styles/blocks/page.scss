@@ -1,0 +1,49 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    background-color: $c-grey-light;
+  }
+
+  &__header {
+    margin-bottom: 110px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__basket-counter {
+    position: relative;
+
+    &::after {
+      content: "0";
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(14px, 2px);
+      @include circle(14px);
+
+      font-family: Bebas, sans-serif;
+      font-size: 8px;
+      line-height: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      color: $c-grey-light;
+      background-color: $c-red;
+    }
+  }
+
+  &__section {
+    margin-bottom: 110px;
+    @extend %section-padding;
+  }
+}

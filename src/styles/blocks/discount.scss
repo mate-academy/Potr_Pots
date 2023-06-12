@@ -1,0 +1,235 @@
+.discount {
+  position: relative;
+
+  @include onTablet {
+    align-items: center;
+  }
+
+  @include onDesktop {
+    margin-bottom: 220px;
+    align-items: start;
+  }
+
+  &__gallery {
+    position: relative;
+
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__picture {
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    width: 216px;
+    height: 240px;
+    padding: 16px 16px 24px;
+
+    background: #fff;
+
+    transition-property: box-shadow, transform;
+    transition-duration: $animation-time;
+
+    &:hover {
+      z-index: 1;
+      box-shadow: 0 0 10px #aaa6;
+      transform: scale(1.2);
+    }
+
+    &--1 {
+      top: -64px;
+      left: -32px;
+      transform: matrix(0.97, -0.26, 0.26, 0.97, 0, 0);
+    }
+
+    &--2 {
+      top: -120px;
+      left: 180px;
+      transform: matrix(0.88, -0.48, 0.48, 0.88, 0, 0);
+    }
+
+    &--3 {
+      top: 200px;
+      left: -76px;
+    }
+
+    &--4 {
+      top: 128px;
+      left: 150px;
+      transform: matrix(0.97, -0.26, 0.26, 0.97, 0, 0);
+    }
+
+    &--5 {
+      top: 400px;
+      left: 16px;
+      transform: matrix(0.96, -0.27, 0.27, 0.96, 0, 0);
+    }
+
+    &--6 {
+      top: 360px;
+      left: 240px;
+      transform: matrix(0.86, -0.51, 0.51, 0.86, 0, 0);
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__picture-text {
+    font-size: 10px;
+    line-height: 130%;
+    color: $c-grey-light-text;
+  }
+
+  &__promo {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
+
+    @include onTabletAndDesktop {
+      transform: translateX(20px);
+      padding-right: 20px;
+    }
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      flex-flow: row wrap;
+    }
+  }
+
+  &__feature {
+    &--1 {
+      @include onTablet {
+        order: 1;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        order: 3;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        order: 2;
+      }
+    }
+  }
+
+  &__feature-title {
+    position: relative;
+    margin-bottom: 4px;
+
+    @include onTabletAndDesktop {
+      font-size: 36px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.64em;
+      left: -16px;
+
+      width: 8px;
+      height: 8px;
+      background-color: $c-grey-text;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__feature-text {
+    color: $c-grey-light-text;
+  }
+
+  &__buy {
+    width: 240px;
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    width: 90%;
+    margin-bottom: 40px;
+
+    &:hover {
+      transform: translateX(10%);
+    }
+
+    @include onTablet {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+
+    @include onDesktop {
+      width: 240px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__percent {
+    margin-bottom: 10px;
+    color: $c-red;
+
+    @include onTablet {
+      margin-bottom: 4px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include onDesktop {
+      transform: translateX(100px);
+    }
+  }
+
+  &__proposal {
+    font-size: 24px;
+    line-height: 24px;
+
+    color: $c-turquoise;
+
+    @include onTablet {
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    @include onDesktop {
+      transform: translateX(100px);
+    }
+  }
+
+  &__side-text {
+    bottom: 50%;
+    right: 10px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &::before {
+      top: -50%;
+    }
+  }
+}

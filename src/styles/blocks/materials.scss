@@ -1,0 +1,331 @@
+.materials {
+  position: relative;
+
+  @include onPhone {
+    padding: 0;
+  }
+
+  &--bold-on-tablet {
+    @include onTablet {
+      font-weight: 700;
+    }
+  }
+
+  &--hidden-on-tablet {
+    @include onTablet {
+      visibility: hidden;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-size: 58px;
+    line-height: 70px;
+    color: $c-turquoise;
+    -webkit-text-stroke: $c-turquoise 1px;
+
+    margin-bottom: -1.4em;
+    z-index: 1;
+
+    @include onPhone {
+      margin-left: $padding-s;
+    }
+
+    @include onTablet {
+      margin-bottom: -0.6em;
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      margin-bottom: -1em;
+      font-size: 138px;
+      line-height: 166px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__subtext {
+    position: relative;
+    z-index: 1;
+
+    @include onTablet {
+      margin-bottom: -18%;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+
+    font-family: Manrope, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: initial;
+    color: $c-grey-text;
+
+    @include onDesktop {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__canvas {
+    position: relative;
+  }
+
+  &__image-container {
+    display: block;
+    z-index: -1;
+
+    @include onPhone {
+      margin-bottom: -50px;
+    }
+  }
+
+  &__image {
+    height: auto;
+    pointer-events: none;
+
+    @include onPhone {
+      width: 100%;
+    }
+
+    @include onTablet {
+      width: calc(100% + #{$padding-m * 2});
+      margin-left: -#{$padding-m};
+    }
+
+    @include onDesktop {
+      width: calc(100% + #{$padding-l * 2});
+      margin-left: -#{$padding-l};
+    }
+  }
+
+  &__button {
+    position: absolute;
+    @include circle(51px);
+
+    font-size: 24px;
+    color: #e0e0e0;
+    background-color: $c-red;
+    border: none;
+
+    transition-property: background-color, opacity, backdrop-filter, box-shadow;
+    transition-duration: $animation-time;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      bottom: 20px;
+      right: 20px;
+
+      transition: background-image $animation-time, transform $animation-time;
+
+      background-image: url("./../images/plus.svg");
+      transform: rotate(-90deg);
+    }
+
+    &::before {
+      display: block;
+      position: absolute;
+      box-sizing: content-box;
+      width: 220px;
+      padding: 35px;
+      background: rgba(36, 35, 35, 0.75);
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+
+      opacity: 0;
+      pointer-events: none;
+
+      transition-property: opacity, box-shadow;
+      transition-duration: $animation-time;
+    }
+
+    &:hover {
+      background-color: rgba(36, 35, 35, 0.75);
+
+      &::before {
+        box-shadow: 0 0 30px #2205;
+      }
+    }
+
+    @include onPhone {
+      display: none;
+    }
+
+    &--active {
+      background-color: rgba(36, 35, 35, 0.75);
+      backdrop-filter: blur(34px);
+      z-index: 1;
+
+      &:hover {
+        background-color: rgba(36, 35, 35, 0.95);
+      }
+
+      &::after {
+        background-image: url("./../images/minus.svg");
+        transform: rotate(0);
+      }
+
+      &::before {
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+
+    &--1 {
+      top: 36%;
+      right: 18%;
+
+      @include onDesktop {
+        bottom: 35%;
+        right: 12%;
+      }
+
+      &::before {
+        content: "We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.";
+
+        transform: translate(-44%, 20%);
+
+        @include onTablet {
+          transform: translate(-110%, -70%);
+        }
+      }
+    }
+
+    &--2 {
+      bottom: 24%;
+      right: 38%;
+
+      @include onDesktop {
+        bottom: 26%;
+        right: 36%;
+      }
+
+      &::before {
+        content: "Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.";
+
+        transform: translate(20%, -60%);
+
+        @include onTablet {
+          transform: translate(-46%, -120%);
+        }
+      }
+    }
+
+    &--3 {
+      bottom: 13%;
+      left: 43%;
+
+      @include onDesktop {
+        bottom: 10%;
+        left: 46%;
+      }
+
+      &::before {
+        content: "Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.";
+
+        transform: translate(-110%, -80%);
+
+        @include onTablet {
+          transform: translate(-44%, -120%);
+        }
+      }
+    }
+
+    &--4 {
+      bottom: 40%;
+      left: 28%;
+
+      @include onDesktop {
+        bottom: 38%;
+        left: 35%;
+      }
+
+      &::before {
+        content: "POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.";
+
+        transform: translate(-40%, -128%);
+      }
+    }
+
+    &--5 {
+      bottom: 18%;
+      left: 8%;
+
+      @include onDesktop {
+        bottom: 14%;
+        left: 10%;
+      }
+
+      &::before {
+        content: "POTR Pots are constructed using recycled polypropylene which can be fully recycled.";
+
+        transform: translate(-40%, -140%);
+
+        @include onTablet {
+          transform: translate(-20%, -128%);
+        }
+      }
+    }
+  }
+
+  &__container {
+    display: none;
+
+    @include onPhone {
+      display: block;
+      position: relative;
+      width: 302px;
+      height: 256px;
+
+      color: $c-grey-light;
+      background-color: rgba(0, 0, 0, 0.45);
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(34px);
+    }
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    padding: 28px 44px 10px;
+  }
+
+  &__pagination {
+    @include onTabletAndDesktop {
+      display: none;
+    }
+  }
+
+  &__bullet {
+    @include square(8px);
+    margin: 0 8px 16px;
+    display: inline-block;
+    background-color: $c-grey-light;
+    border: 1px solid $c-grey-light;
+    opacity: 1;
+    transform: rotate(45deg);
+
+    &--active {
+      background-color: $c-grey-dark;
+    }
+  }
+
+  &__side-text {
+    top: 0;
+    left: 8px;
+    transform: translateY(450%);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

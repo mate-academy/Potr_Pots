@@ -1,0 +1,27 @@
+.side-text {
+  position: absolute;
+
+  font-family: Bebas, sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.22em;
+  color: $c-grey-light-text;
+
+  writing-mode: vertical-lr;
+
+  @include onPhone {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateY(-10px);
+
+    width: 1px;
+    height: 64px;
+    background-color: $c-grey-light-text;
+  }
+}

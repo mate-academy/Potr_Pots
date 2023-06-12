@@ -1,0 +1,172 @@
+.for-whom {
+  position: relative;
+
+  &__block {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    &--3 {
+      @include onDesktop {
+        & > .for-whom__description {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+
+          & .for-whom__thesis {
+            grid-column: 1 / 6;
+          }
+
+          & > .for-whom__description-title {
+            grid-column: 2 / 6;
+          }
+
+          & > .for-whom__description-text {
+            grid-column: 2 / 6;
+          }
+
+          & .for-whom__number--left {
+            grid-column: 1 / 2;
+            transform: translate(100%, 100%);
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__image-container {
+    display: inline-grid;
+    overflow: hidden;
+    width: max-content;
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__image {
+    @include hover(transform, scale(1.05));
+  }
+
+  &__description {
+    align-self: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include onTabletAndDesktop {
+      gap: 10px;
+    }
+  }
+
+  &__thesis {
+    display: block;
+    margin-bottom: 30px;
+
+    color: $c-grey-dark;
+
+    &::before {
+      content: "*";
+      display: block;
+      position: absolute;
+      left: -30px;
+      top: 0;
+
+      font-family: Bebas, sans-serif;
+      font-size: 24px;
+      line-height: 150%;
+      color: #000;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+
+    &--2 {
+      @include onTablet {
+        width: max-content;
+        position: relative;
+        align-self: end;
+      }
+    }
+  }
+
+  &__number {
+    display: block;
+    width: max-content;
+
+    font-family: Bebas, sans-serif;
+    font-size: 36px;
+    line-height: 65px;
+
+    color: #000;
+
+    transform: translateX(100%);
+
+    &--left {
+      @include onTabletAndDesktop {
+        position: absolute;
+        left: 0;
+        transform: translate(-300%, calc(50% + 30px));
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -50%;
+
+      @extend %for-whom-slash;
+    }
+  }
+
+  &__description-title {
+    display: inline;
+
+    &::after {
+      content: "";
+      position: relative;
+      display: inline-block;
+      bottom: -12px;
+
+      @extend %for-whom-slash;
+
+      @include onPhone {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    align-items: center;
+
+    & .for-whom__image-container {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__side-text {
+    bottom: 128px;
+    left: $padding-l;
+    transform: rotate(180deg);
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

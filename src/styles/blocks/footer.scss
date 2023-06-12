@@ -1,0 +1,81 @@
+.footer {
+  @extend %section-padding;
+  padding-bottom: 30px;
+  color: #000;
+
+  @include onTablet {
+    padding-bottom: 120px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 64px;
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 0 16px;
+
+    @include onDesktop {
+      justify-content: space-evenly;
+      padding: 0;
+    }
+  }
+
+  &__social {
+    display: block;
+    @include square(20px);
+
+    @include onDesktop {
+      @include square(30px);
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+  }
+
+  &__segment {
+    @include onPhone {
+      text-align: center;
+    }
+
+    &--last {
+      @include onTabletAndDesktop {
+        justify-self: end;
+      }
+    }
+
+    &--hide-on-phones {
+      @include onPhone {
+        display: none;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 24px;
+
+    @include onTabletAndDesktop {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link {
+    line-height: 150%;
+    text-decoration: none;
+    color: inherit;
+
+    @include hover(opacity, 0.7);
+
+    &--about-us {
+      @include onPhone {
+        display: none;
+      }
+    }
+  }
+}

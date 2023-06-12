@@ -1,0 +1,104 @@
+.features {
+  &__title {
+    margin-bottom: 20px;
+
+    font-size: 58px;
+    line-height: 70px;
+    color: $c-turquoise;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    @include onDesktop {
+      margin-bottom: 72px;
+    }
+
+    &--nosplit {
+      white-space: nowrap;
+    }
+
+    &--transparent {
+      @include transparent-title($c-turquoise);
+    }
+  }
+
+  &__container {
+    @include onTabletAndDesktop {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__feature {
+    min-width: 0;
+
+    align-self: start;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 64px;
+    }
+
+    @include onPhone {
+      margin: 0 auto;
+    }
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    &--1 {
+      @include onTablet {
+        order: 2;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        order: 3;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        order: 1;
+      }
+    }
+  }
+
+  &__image-container {
+    margin-bottom: 36px;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__image {
+    width: 100%;
+    max-width: fit-content;
+    height: auto;
+
+    @include hover(border-radius, 4%);
+  }
+
+  &__feature-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    line-height: 24px;
+    color: $c-grey-dark;
+  }
+
+  &__feature-text {
+    max-width: fit-content;
+  }
+}
