@@ -1,0 +1,33 @@
+.page {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background: #f8f8f8;
+
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__body--with-menu {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform 1s;
+    z-index: 1;
+
+    &:target {
+      transform: translateX(31%);
+    }
+  }
+}
