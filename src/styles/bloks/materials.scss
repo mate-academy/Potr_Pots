@@ -145,18 +145,81 @@
       }
 
       &--four {
-        left: 55%;
-        bottom: 134px;
+        left: 58%;
+        bottom: 25%;
       }
 
       &--five {
-        left: 72%;
-        bottom: 55%;
+        left: 77%;
+        bottom: 35%;
       }
     }
   }
 
-    &__link {
+  &__description {
+    display: none;
+    position: absolute;
+    left: 40px;
+    bottom: 174px;
+    width: 284px;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorWhite;
+    margin: 0;
+    padding: 35px;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s;
+  }
+
+  &__checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: $colorWhite;
+    background-color: #eb5757;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-image: url("../images/plus.svg");
+      background-size: cover;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    & input {
+      position: absolute;
+      z-index: -10;
+      opacity: 0;
+    }
+
+    & input:checked {
+      background-color: rgba(36, 35, 35, 0.5);
+
+      &::after {
+        width: 15px;
+        height: 1px;
+        background-image: url("../images/minus.svg");
+      }
+    }
+  }
+
+  &__checkbox input:checked + &__description {
+    display: block;
+  }
+
+  &__link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -200,28 +263,6 @@
     }
 
     &:active::before {
-      opacity: 1;
-    }
-
-    &-description {
-      position: absolute;
-      left: 40px;
-      bottom: 174px;
-      width: 284px;
-      font-family: "Manrope", sans-serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 150%;
-      color: $colorWhite;
-      margin: 0;
-      padding: 35px;
-      background-color: rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    &:active &-description {
       opacity: 1;
     }
   }
