@@ -1,0 +1,108 @@
+.features {
+  padding-bottom: 110px;
+
+  @include onTablet {
+    padding-bottom: 132px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 150px;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 52px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $colorBlue;
+    margin: 0 0 22px;
+
+    &--transparent {
+      @include transparentText;
+    }
+
+    @include onTablet {
+      font-size: 58px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 70px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      padding-bottom: 68px;
+    }
+
+    @include onTablet {
+      grid-column: span 2;
+
+      &:not(:last-child) {
+        padding-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__imag {
+    width: 240px;
+    height: auto;
+
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include onDesktop {
+      width: 325px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    padding-top: 38px;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+  &__sub-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $colorDark;
+    margin: 0 0 20px;
+  }
+
+  &__description {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorGray;
+  }
+}
