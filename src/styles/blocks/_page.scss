@@ -1,0 +1,83 @@
+.page {
+  background-color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(+100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    padding-bottom: 110px;
+
+    @include onDesktop {
+      padding-bottom: 150px;
+    }
+  }
+
+  &__logo {
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+    color: $color-grey-dark;
+
+    @include hover(scale, 110%);
+  }
+
+  &__title {
+    color: $color-turquoise;
+
+    &--outline {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0.5px;
+    }
+  }
+
+  &__grey-text {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    color: $color-grey-third;
+    transform: rotate(90deg);
+    position: absolute;
+
+
+    &::before {
+      content: "";
+      border-bottom: 1px solid $color-grey-third;
+      width: 65px;
+      height: 1px;
+      display: flex;
+      position: absolute;
+      top: 6px;
+      left: -76px;
+
+    }
+  }
+
+  &__paragraph {
+    color: $color-grey-secondary;
+    font-size: 16px;
+    line-height: 150%;
+
+    @extend %p;
+  }
+}
