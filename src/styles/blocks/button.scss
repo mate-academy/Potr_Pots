@@ -1,0 +1,128 @@
+.button {
+
+  @include onTablet {
+    grid-column: 2 / 4;
+  }
+
+  @include onDesktop {
+    grid-column: 4 / 7;
+  }
+
+  @-webkit-keyframes scaling {
+    from {
+      transform: scale(1);
+    }
+
+    to {
+      transform: scale(0.8);
+    }
+  }
+
+  &__content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    background-color: $c-yellow;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #121212;
+
+    transition: color 0.5s;
+
+    &:hover {
+      background-color: $c-yellow-light;
+    }
+
+    &--shopify {
+      @include onTablet {
+        width: 240px;
+      }
+
+      @include onDesktop {
+        width: 270px;
+      }
+    }
+
+    &--offer {
+      @include onTablet {
+        background-color: transparent;
+        border: 1px solid $c-turquoise;
+        width: 238px;
+
+        transition: color 0.5s;
+
+        &:hover {
+          background-color: $c-turquoise;
+        }
+      }
+    }
+
+    &--connect {
+      color: #fff;
+      background-color: $c-turquoise;
+
+      transition: color 0.5s;
+
+      &:hover {
+        background-color: $c-turquoise-light;
+      }
+
+      @include onTablet {
+        width: 219px;
+      }
+
+      @include onDesktop {
+        width: 238px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--shopify {
+    -webkit-animation: scaling linear 1.5s infinite alternate;
+  }
+
+  &--offer {
+    margin-bottom: 40px;
+
+    -webkit-animation: scaling linear 1.5s infinite alternate;
+
+    @include onTablet {
+      margin-bottom: 35px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__arrow-wrapper {
+    display: grid;
+    place-items: center;
+  }
+
+  &__arrow {
+    width: 30px;
+    height: 10px;
+    margin-left: 24px;
+
+    background-image: url(../images/svg/arrow-button-black.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--connect {
+      background-image: url(../images/svg/arrow-button-white.svg);
+    }
+  }
+}

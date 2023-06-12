@@ -1,0 +1,104 @@
+.menu {
+  // position: relative;
+  width: 72%;
+  height: 100vh;
+  padding: 20% 0 0 20%;
+
+  background-color: $c-turquoise;
+
+  overflow-y: auto;
+
+  @include onTablet {
+    width: 52%;
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    max-width: 50%;
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    max-width: max-content;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    &--first {
+      position: relative;
+    }
+  }
+
+  &__link {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $c-gray-light;
+    transition: color 0.5s;
+
+    &:hover {
+      color: $c-yellow-light;
+    }
+  }
+
+  &__item-badge {
+    position: absolute;
+    top: -0.2rem;
+    left: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $c-red;
+    width: 14px;
+    height: 14px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    color: $c-gray-light;
+
+    border-radius: 50%;
+  }
+
+  &__arrow {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    bottom: 30%;
+    right: 10%;
+  }
+
+  &__arrow-word {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: $c-gray-light;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+  }
+
+  &__arrow-line {
+    height: 44px;
+    width: 1px;
+    background-image: url(../images/svg/menu-arrow-line.svg);
+  }
+
+  &__arrow-cross {
+    height: 12px;
+    width: 12px;
+    background-image: url(../images/svg/cross.svg);
+  }
+}

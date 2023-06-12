@@ -1,0 +1,222 @@
+.offer {
+  position: relative;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__image-wrapper {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      margin-left: -130px;
+    }
+  }
+
+  &__image {
+    width: 633px;
+    height: 828px;
+  }
+
+  &__description {
+
+    @include onTablet {
+      display: flex;
+      justify-content: start;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+
+      width: 670px;
+    }
+  }
+
+  &__benefits-wrapper {
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      order: -1;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 185px 0 30px;
+
+      &:first-child,
+      &:last-child {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &__benefits {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: 5px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 150%;
+    color: $c-gray-dark;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: -15px;
+
+      width: 7px;
+      height: 7px;
+
+      background: $c-gray-mid;
+      transform: rotate(45deg);
+
+      @include onTablet {
+        top: 25px;
+        left: -20px;
+      }
+
+      @include onDesktop {
+        top: 20px;
+      }
+    }
+  }
+
+  &__info {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #828282;
+  }
+
+  &__buy-now {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      max-width: 238px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__off {
+    margin-bottom: 10px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-red;
+
+    @include onTablet {
+      margin-bottom: 5px;
+
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 5px;
+      margin-left: 90px;
+
+      font-size: 36px;
+      line-height: 150%;
+    }
+  }
+
+  &__get {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-turquoise;
+
+    @include onTablet {
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    @include onDesktop {
+      width: max-content;
+
+      font-size: 24px;
+      line-height: 24px;
+      margin-left: 90px;
+    }
+  }
+
+  &__arrow {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      top: 0;
+      right: 3%;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__arrow-word {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #828282;
+    letter-spacing: 0.22em;
+    writing-mode: vertical-lr;
+  }
+
+  &__arrow-line {
+    display: block;
+    height: 65px;
+    width: 10px;
+    background-image: url(../images/svg/arrow-line.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

@@ -1,0 +1,195 @@
+.footer {
+  &__content {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 64px;
+      padding-top: 74px;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+
+      margin-bottom: 110px;
+    }
+  }
+
+  &__adress {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+  }
+
+  &__adress-title {
+    margin-bottom: 10px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__adress-map {
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+
+    transition: color 0.5s;
+
+    &:hover {
+      color: $c-turquoise-light;
+    }
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 40px;
+    padding: 0 15px;
+
+    @include onDesktop {
+      width: 230px;
+      margin-bottom: 74px;
+    }
+
+    @include onTablet {
+      width: 220px;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__logo-twitter {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(../images/svg/twitter.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__logo-instagram {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(../images/svg/instagram.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__logo-facebook {
+    width: 20px;
+    height: 20px;
+
+    background-image: url(../images/svg/facebook.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__logo-main {
+    align-self: center;
+    width: 170px;
+    height: 54px;
+
+    background-image: url(../images/svg/potrpots-logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      width: 220px;
+    }
+  }
+
+  &__about-us-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__about-us {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-bottom: 10px;
+
+      text-decoration: none;
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #000;
+
+      transition: color 0.5s;
+
+      &:hover {
+        color: $c-turquoise-light;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-bottom: 30px;
+
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+  }
+}

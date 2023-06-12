@@ -1,0 +1,148 @@
+.shopify {
+  position: relative;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0 0;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0 20px;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 0 30px;
+      padding: 0;
+    }
+  }
+
+  @-webkit-keyframes translating {
+    from {
+      transform: translate(-100%);
+    }
+
+    to {
+      transform: translate(0);
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 0.68px $c-turquoise;
+
+    -webkit-animation: translating 0.7s ease-out 0.5s 1 alternate;
+
+    & span {
+      color: $c-turquoise;
+    }
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      margin-bottom: 20px;
+      font-size: 64px;
+      line-height: 64px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__price-amount {
+    font-family: "Manrope", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+    color: $c-gray-dark;
+    margin-bottom: 1px;
+  }
+
+  &__price-info {
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: $c-gray-mid;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 15px;
+    bottom: 0;
+    right: 3%;
+
+    transition: transform 0.5s ease-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      width: 10px;
+      bottom: -10%;
+      left: 5%;
+    }
+
+    @include onDesktop {
+      width: 10px;
+      bottom: -10%;
+      left: 10%;
+    }
+  }
+
+  &__arrow-word {
+    display: block;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: $c-turquoise;
+    writing-mode: vertical-lr;
+  }
+
+  &__arrow-line {
+    display: block;
+    height: 48px;
+    width: 10px;
+    background-image: url(../images/svg/shopify-arrow-line.svg);
+    background-repeat: no-repeat;
+  }
+}

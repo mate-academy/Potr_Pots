@@ -1,0 +1,110 @@
+.page {
+  background-color: $c-gray-light;
+  scroll-behavior: smooth;
+
+  &__body {
+    position: relative;
+    min-width: 320px;
+    width: 100vw;
+    margin: 0 auto;
+
+    @include onTablet {
+      min-width: 768px;
+    }
+
+    @include onDesktop {
+      min-width: 1440px;
+      max-width: 1440px;
+    }
+
+    &--with-menu {
+      overflow: hidden;
+      z-index: 3;
+    }
+  }
+
+  &__section {
+    margin-bottom: 110px;
+    width: 100vw;
+    max-width: 1440px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-header {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 466px;
+      width: 507px;
+      background-image: url(../images/svg/rectangle-tablet.svg);
+    }
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 1035px;
+      height: 466px;
+
+      background-image: url(../images/svg/rectangle-desktop.svg);
+    }
+  }
+
+  &__image-shopify {
+    min-width: 320px;
+    width: 100vw;
+    height: 319px;
+
+    object-position: center;
+    object-fit: cover;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: 121px;
+      right: 34px;
+      z-index: -1;
+
+      width: 306px;
+      height: 306px;
+
+      object-position: center;
+      object-fit: cover;
+    }
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      top: 140px;
+      right: 135px;
+      z-index: -1;
+
+      width: 500px;
+      height: 500px;
+
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

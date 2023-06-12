@@ -1,0 +1,372 @@
+.for-whom {
+  position: relative;
+
+  &__title {
+    margin-bottom: 100px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-gray-dark;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__section-wrapper {
+    margin-bottom: 110px;
+
+    @include onTablet {
+      position: relative;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 76px;
+    }
+
+    &--desktop-robust {
+      @include onDesktop {
+        display: flex;
+        justify-content: space-between;
+        gap: 201px;
+      }
+    }
+
+    &--desktop-beautiful {
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        margin-left: 100px;
+        gap: 110px;
+      }
+    }
+
+    &--desktop-saves-time {
+      @include onDesktop {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__wrapper-section-2-3 {
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      gap: 300px;
+    }
+  }
+
+  &__section-image-wrapper {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--desktop-beautiful {
+      @include onDesktop {
+        order: -1;
+        margin-top: 105px;
+      }
+    }
+  }
+
+  &__section-image {
+    width: 284px;
+    height: 284px;
+    object-position: center;
+    object-fit: cover;
+
+    transition: transform 0.5s ease-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &--desktop-robust {
+      @include onDesktop {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    &--tablet-beautiful {
+      @include onTablet {
+        width: 300px;
+        height: 417px;
+      }
+    }
+
+    &--desktop-beautiful {
+      @include onDesktop {
+        width: 300px;
+        height: 417px;
+      }
+    }
+
+    &--desktop-saves-time {
+      @include onTablet {
+        width: 284px;
+        height: 405px;
+      }
+
+      @include onDesktop {
+        width: 470px;
+        height: 670px;
+      }
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--desktop-robust {
+      @include onDesktop {
+        margin-top: 180px;
+      }
+    }
+
+    &--tablet-beautiful {
+      @include onTablet {
+        margin-top: 100px;
+      }
+
+    }
+
+    &--desktop-saves-time {
+      @include onDesktop {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__section-title-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__section-title-wrap {
+    position: relative;
+  }
+
+  &__item {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-gray-dark;
+    }
+
+    &:before {
+      content: "*";
+      position: absolute;
+      bottom: -5px;
+      left: -20px;
+
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 29px;
+      letter-spacing: 0.15em;
+
+      color: #000;
+    }
+
+    &--robust {
+      @include onTablet {
+        top: -30px;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: -60px;
+        left: 0;
+      }
+    }
+
+    &--beautiful {
+      @include onTablet {
+        top: -70px;
+        right: 0;
+      }
+
+      @include onDesktop {
+        top: -150px;
+        left: 0;
+      }
+    }
+
+    &--saves-time {
+      @include onTablet {
+        top: -30px;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: -50px;
+        left: -100px;
+      }
+    }
+  }
+
+  &__slash {
+    position: absolute;
+    top: -70px;
+    left: 0;
+
+    @include onTablet {
+      display: block;
+      top: 0;
+      left: -55px;
+    }
+
+    @include onDesktop {
+      left: -115px;
+    }
+
+    &--two {
+      @include onTablet {
+        top: -65px;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: -80px;
+      }
+    }
+  }
+
+  &__number-title {
+    position: absolute;
+    top: -70px;
+    left: 15px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 65px;
+    letter-spacing: 0.15em;
+
+    color: #000;
+
+    &--one {
+      @include onTablet {
+        top: 0;
+        left: -40px;
+      }
+
+      @include onDesktop {
+        left: -95px;
+      }
+    }
+
+    &--two {
+      @include onTablet {
+        top: -65px;
+        left: 20px;
+      }
+
+      @include onDesktop {
+        top: -80px;
+      }
+    }
+
+    &--three {
+      @include onTablet {
+        top: 0;
+        left: -40px;
+      }
+
+      @include onDesktop {
+        left: -95px;
+      }
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__section-info {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray-mid;
+  }
+
+  &__arrow {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    bottom: 0;
+    right: 3%;
+
+    @include onTablet {
+      width: 10px;
+      top: -10%;
+      right: 3%;
+    }
+
+    @include onDesktop {
+      top: 0;
+      right: 9%;
+    }
+  }
+
+  &__arrow-word {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #828282;
+    letter-spacing: 0.22em;
+    writing-mode: vertical-lr;
+  }
+
+  &__arrow-line {
+    display: block;
+    height: 65px;
+    width: 10px;
+    background-image: url(../images/svg/arrow-line.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
