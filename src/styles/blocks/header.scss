@@ -1,0 +1,181 @@
+.header {
+  position: relative;
+
+  &__bar {
+    padding: 26px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__cart {
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__burger-button {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 0;
+    right: 25%;
+    height: 48vh;
+    background-color: $light-yellow;
+    clip-path: polygon(0 0, 100% 0, 100% 42%, 0% 100%);
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__content {
+    margin-top: 50px;
+    display: flex;
+    gap: 15px;
+    min-height: 500px;
+
+    @include mobile {
+      flex-direction: column-reverse;
+      margin-top: 0;
+    }
+
+  }
+
+  &__left {
+    flex: 0 1 100%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    position: relative;
+    padding-bottom: 45px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 30px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    min-width: 470px;
+    -webkit-text-fill-color: $turquoise;
+
+    &--stroked {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px $turquoise;
+    }
+
+    @include tablet {
+      left: 0;
+    }
+
+    @include mobile {
+      position: static;
+    }
+
+    @media (max-width: 485px) {
+      font-size: 54px;
+      min-width: 0;
+    }
+
+    @media (max-width: 440px) {
+      font-size: 45px;
+      line-height: 43.2px;
+    }
+
+    @media (max-width: 380px) {
+      font-size: 36px;
+      line-height: 43.2px;
+    }
+  }
+
+  &__order {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    flex: 1 1 100%;
+
+    @include mobile {
+      align-items: start;
+      margin-right: 10px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 5px;
+  }
+
+  &__half-price {
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+
+  &__right {
+    flex: 0 1 100%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+  }
+
+  &__image {
+    width: 100%;
+    object-fit: contain;
+    max-width: 500px;
+    min-width: 310px;
+
+    @include mobile {
+      max-width: none;
+      min-width: 0;
+    }
+  }
+
+  &__more {
+    color: $turquoise;
+    position: absolute;
+    transform: rotate(90deg) translateX(-100%);
+    transform-origin: center left;
+    left: 0;
+    bottom: 0;
+    transition: bottom 0.3s;
+
+    &:hover {
+      bottom: -20px;
+    }
+
+    @include mobile {
+      left: 100%;
+      transform: rotate(90deg) translateX(-100%);
+    }
+  }
+}

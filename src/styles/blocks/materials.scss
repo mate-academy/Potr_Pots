@@ -1,0 +1,158 @@
+.materials {
+  height: 100%;
+  position: relative;
+
+  &__section {
+    margin-top: 80px;
+  }
+
+  &__container {
+    transform: translateY(50%);
+
+    @include mobile {
+      margin-top: 100px;
+      transform: translateY(0);
+    }
+  }
+
+  &__more {
+    color: #828282;
+    position: absolute;
+    font-family: "Bebas", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &--top {
+      transform: rotate(90deg) translateY(100%);
+      transform-origin: center left;
+      left: 100%;
+      top: 0;
+    }
+
+    &--bottom {
+      transform: rotate(90deg) translateY(-100%);
+      transform-origin: center right;
+      right: 100%;
+      bottom: 0;
+    }
+  }
+
+  &__background {
+    width: 100%;
+    z-index: -99;
+    background: linear-gradient(
+      180deg,
+      $background 0%,
+      rgba(255, 255, 255, 0) 30.93%
+    );
+
+    @include tablet {
+      padding-top: 100px;
+    }
+
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+
+  &__info {
+    @include mobile {
+      transform: translateY(40%);
+    }
+  }
+
+  &__title {
+    font-family: "Bebas", sans-serif;
+    letter-spacing: 0.15em;
+    font-size: 138px;
+    color: $turquoise;
+    text-transform: uppercase;
+
+    @include tablet {
+      font-size: 80px;
+    }
+
+    @include mobile {
+      font-size: 58px;
+    }
+  }
+
+  &__subtitle {
+    display: flex;
+  }
+
+  &__description {
+    color: #4f4f4f;
+    margin-left: 100px;
+
+    @include tablet {
+      margin-top: 40px;
+      margin-left: 50px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__headline {
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__article {
+    margin-top: 15px;
+  }
+
+  &__card {
+    position: absolute;
+
+    &--1 {
+      bottom: 12%;
+      left: 18%;
+    }
+
+    &--2 {
+      bottom: 29%;
+      left: 38%;
+    }
+
+    &--3 {
+      bottom: 9%;
+      left: 50%;
+    }
+
+    &--4 {
+      bottom: 20%;
+      left: 58%;
+    }
+
+    &--5 {
+      bottom: 26%;
+      left: 77%;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__slider {
+    transform: translateY(-15%);
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+}

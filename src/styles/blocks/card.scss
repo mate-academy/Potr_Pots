@@ -1,0 +1,71 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+  align-items: center;
+  gap: 5px;
+  width: 300px;
+  user-select: none;
+
+  &__button {
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background-image: url(../images/assets/materials-button-red.svg);
+    transition: background-image 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    width: 300px;
+    padding: 35px 45px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.41);
+    backdrop-filter: blur(17px);
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    box-sizing: border-box;
+
+    &--1 {
+      transform: translateY(-120%);
+    }
+
+    &--2 {
+      transform: translateX(-50%) translateY(-115%);
+    }
+
+    &--3 {
+      transform: translateX(-60%) translateY(-32%);
+    }
+
+    &--4 {
+      transform: translateY(-125%);
+    }
+
+    &--5 {
+      transform: translateY(50%);
+    }
+  }
+
+  &--active {
+    opacity: 1;
+    z-index: 2;
+
+    & .card__button {
+      background: url(../images/assets/materials-button-gray.svg);
+    }
+
+    & .card__content {
+      opacity: 1;
+    }
+  }
+}

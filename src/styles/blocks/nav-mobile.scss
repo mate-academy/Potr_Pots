@@ -1,0 +1,60 @@
+.nav-mobile {
+  position: fixed;
+  width: 70vw;
+  height: 100vh;
+  top: 0;
+  right: -100%;
+  background-color: $turquoise;
+  z-index: 99;
+  transition: right 0.3s;
+
+  &:target {
+    right: 0;
+  }
+
+  &__list {
+    list-style-type: none;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+  }
+
+  &__item {
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+
+    &:not(:first-of-type) {
+      margin-top: 15px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 14px;
+    height: 14px;
+    background-color: $red;
+    border-radius: 50%;
+    font-size: 9px;
+    line-height: 14px;
+    text-align: center;
+  }
+
+  &__more {
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #fff;
+    transform: rotate(90deg) translateX(-100%);
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+  }
+}
