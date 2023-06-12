@@ -1,0 +1,268 @@
+.for-whom {
+  &__title {
+    position: relative;
+    @extend %title-main;
+    color: $color-grey-dark;
+    margin-bottom: 26px;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    @extend %title-main;
+  }
+
+  &__subtitle-line {
+    display: none;
+    width: 18px;
+    height: 46px;
+    position: absolute;
+    bottom: 7px;
+    background-image: url(../images/icons/for-whom-line.svg);
+    @include backgroundCenter;
+
+    @include onTablet {
+      display: inline-block;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: grid;
+    row-gap: 71px;
+
+    @include onDesktop {
+      @include pageGrid;
+      row-gap: 80px;
+    }
+  }
+
+  &__article {
+    position: relative;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    &--1 {
+      @include onDesktop {
+        flex-direction: row;
+        justify-content: space-between;
+        grid-area: 1 / 1 / 2 / -1;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        flex-direction: row-reverse;
+      }
+
+      @include onDesktop {
+        flex-direction: column;
+        padding-top: 105px;
+        grid-area: 2 / 2 / 3 / 6;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        grid-area: 2 / 8 / 3 / -1;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    width: 284px;
+
+    &--1 {
+      @include onTablet {
+        margin-right: 10px;
+      }
+
+      @include onDesktop {
+        width: 500px;
+      }
+    }
+
+    &--2 {
+      width: 300px;
+
+      @include onDesktop {
+        margin-bottom: 110px;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        margin-right: 10px;
+      }
+
+      @include onDesktop {
+        margin-right: 0;
+        margin-bottom: 109px;
+        width: 470px;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  &__wrapper {
+    display: grid;
+    row-gap: 30px;
+
+    @include onTablet {
+      padding-top: 26px;
+      height: fit-content;
+      display: flex;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      padding-top: 184px;
+      padding-right: 100px;
+      gap: 68px;
+    }
+
+    &--2 {
+      @include onTablet {
+        padding-top: 81px;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      @include onDesktop {
+        padding: 0;
+        gap: 27px;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        padding-top: 30px;
+      }
+
+      @include onDesktop {
+        padding: 0;
+      }
+    }
+  }
+
+  &__number {
+    width: 33px;
+    height: 46px;
+    flex-shrink: 0;
+    background-image: url(../images/icons/icon-for-whom-1.svg);
+    @include backgroundCenter;
+
+    &--2 {
+      background-image: url(../images/icons/icon-for-whom-2.svg);
+    }
+
+    &--3 {
+      background-image: url(../images/icons/icon-for-whom-3.svg);
+    }
+  }
+
+  &__text-content {
+    display: grid;
+    row-gap: 20px;
+
+    @include onTablet {
+      max-width: 340px;
+      row-gap: 10px;
+    }
+
+    @include onDesktop {
+      max-width: 370px;
+    }
+  }
+
+  &__comment {
+    width: max-content;
+    color: $color-grey-dark;
+    position: absolute;
+    &::before {
+      content: "*";
+      position: absolute;
+      top: 50%;
+      left: -17px;
+      transform: translateY(-50%);
+    }
+
+    &--1 {
+      top: -23px;
+      left: 339px;
+
+      @include onDesktop {
+        top: 122px;
+        left: 660px;
+      }
+    }
+
+    &--2 {
+      top: 29px;
+      right: 357px;
+
+      @include onDesktop {
+        top: 567px;
+        left: -17px;
+      }
+    }
+
+    &--3 {
+      top: -12px;
+      left: 329px;
+
+      @include onDesktop {
+        top: 715px;
+        left: -17px;
+      }
+    }
+  }
+
+  &__side {
+    position: absolute;
+
+    &--right {
+      bottom: 0;
+      right: -17px;
+      transform-origin: right;
+      transform: rotate(90deg);
+
+      @include onTablet {
+        right: -26px;
+        top: -50px;
+        bottom: auto;
+      }
+
+      @include onDesktop {
+        right: 7px;
+        top: 77px;
+      }
+    }
+
+    &--left {
+      left: 0;
+      bottom: -14px;
+      transform-origin: left top;
+      transform: rotate(-90deg);
+    }
+  }
+}

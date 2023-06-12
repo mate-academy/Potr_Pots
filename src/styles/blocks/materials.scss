@@ -1,0 +1,229 @@
+.materials {
+  background: linear-gradient(
+    180deg,
+    #fff 0%,
+    #f8f8f8 20px,
+    rgba(255, 255, 255, 0) 20.93%),
+    url(../images/mobile/materials-bg-mobile.png);
+  background-position: top 130px center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+
+  @include onTablet {
+    background: linear-gradient(
+      180deg,
+      #fff 0%,
+      #f8f8f8 130px,
+      rgba(255, 255, 255, 0) 30.93%),
+      url(../images/tablet/materials-bg-tablet.png);
+    background-position: bottom center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  @include onDesktop {
+    background: linear-gradient(
+      180deg,
+      #fff 0%,
+      #f8f8f8 160px,
+      rgba(255, 255, 255, 0) 30.93%),
+      url(../images/desktop/materials-bg-desktop.png);
+    background-position: bottom center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    position: relative;
+    @include onTablet {
+      min-height: 108vw;
+    }
+    @media(min-width: 900px) {
+      min-height: 98vw;
+    }
+    @media(min-width: 1100px) {
+      min-height: 88vw;
+    }
+    @include onDesktop {
+      min-height: 86vw;
+    }
+  }
+
+  &__title {
+    margin-bottom: 120px;
+    @extend %title-large;
+    -webkit-text-stroke: 1px $color-turquoise;
+    -webkit-text-fill-color: $color-turquoise;
+
+    @include onTablet {
+      max-width: 532px;
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 139px;
+      line-height: 167px;
+      max-width: none;
+    }
+  }
+
+  &__text {
+    width: 340px;
+    position: absolute;
+    top: 145px;
+    right: 0;
+
+    @include onDesktop {
+      width: 470px;
+      top: 167px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &__button {
+    position: absolute;
+
+    &--1 {
+      left: 10%;
+      bottom: 12%;
+
+      @include onDesktop {
+        left: 18%;
+        bottom: 13%;
+      }
+    }
+
+    &--2 {
+      left: 30%;
+      bottom: 27%;
+
+      @include onDesktop {
+        left: 38%;
+        bottom: 32%;
+      }
+    }
+
+    &--3 {
+      left: 44%;
+      bottom: 9%;
+
+      @include onDesktop {
+        left: 47%;
+        bottom: 8%;
+      }
+    }
+
+    &--4 {
+      right: 40%;
+      bottom: 16%;
+
+      @include onDesktop {
+        right: 38%;
+        bottom: 22%;
+      }
+    }
+
+    &--5 {
+      right: 21%;
+      bottom: 38%;
+
+      @include onDesktop {
+        right: 19%;
+        bottom: 30%;
+      }
+    }
+  }
+  
+  &__window {
+    padding: 35px;
+    width: 283px;
+
+    position: absolute;
+    bottom: 71px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    color: $color-grey-light;
+
+    transition: opacity 0.5s;
+    opacity: 0;
+    pointer-events: none;
+
+    &--active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    &--1 {
+      left: -46px;
+      transform: none;
+
+      @include onDesktop {
+        bottom: 81px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        left: -264px;
+        transform: none;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        left: -294px;
+        bottom: 50%;
+        transform: translateY(50%);
+      }
+    }
+
+    &--4 {
+      left: -100px;
+      transform: none;
+
+      @include onDesktop {
+        bottom: 93px;
+      }
+    }
+
+    &--5 {
+      bottom: auto;
+      top: 60px;
+
+      @include onDesktop {
+        width: 303px;
+        top: 57px;
+      }
+    }
+  }
+
+  &__side {
+    position: absolute;
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+
+    &--right {
+      right: -10px;
+      top: 131px;
+    }
+
+    &--left {
+      left: -161px;
+      top: 330px;
+    }
+  }
+}

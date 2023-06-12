@@ -1,0 +1,67 @@
+.form {
+
+  &__field {
+    margin-bottom: 14px;
+
+    @include onDesktop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 21px;
+    font-size: 24px;
+    line-height: 150%;
+    color: $color-black;
+
+    @include onDesktop {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 16px;
+    padding-left: 6px;
+    display: block;
+    width: 100%;
+    height: 33px;
+    line-height: 150%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+
+    &:-webkit-autofill {
+      font: inherit;
+      -webkit-text-fill-color: $color-main-text;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-turquoise;
+    }
+
+    &:not(:focus):not(:placeholder-shown):valid {
+      border-color: $color-turquoise;
+      color: $color-turquoise;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      border-color: $color-red;
+      color: $color-red;
+    }
+
+    &--textarea {
+      resize: none;
+      overflow: hidden;
+    }
+  }
+
+  &__button {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}

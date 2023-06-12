@@ -1,0 +1,66 @@
+.menu {
+  width: 231px;
+  height: 100vh;
+  z-index: 1;
+  background-color: $color-turquoise;
+
+  &__list {
+    padding-top: 138px;
+    padding-left: 81px;
+    list-style: none;
+    display: grid;
+    row-gap: 15px;
+  }
+
+  &__link {
+    position: relative;
+    color: $color-grey-light;
+
+    &--basket::after {
+      content: "0";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 61px;
+      background-color: $color-red;
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 9px;
+      line-height: 11px;
+      color: $color-grey-light;
+    }
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: -76px;
+    bottom: 42px;
+    transform-origin: left;
+    transform: rotate(-90deg);
+  }
+
+  &__close-text {
+    margin-left: 5px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $color-grey-light;
+  }
+
+  &__close-line {
+    margin-left: 18px;
+    display: block;
+    width: 44px;
+    height: 1px;
+    background-color: $color-grey-light;
+  }
+}

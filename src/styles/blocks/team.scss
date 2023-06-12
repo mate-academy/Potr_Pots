@@ -1,0 +1,119 @@
+.team {
+  padding-bottom: 58px;
+  background-image: url(../images/mobile/team-bg-mobile.png);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    padding: 0;
+    background-image: url(../images/tablet/team-bg-tablet.png);
+    background-position: top 170px left;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/desktop/team-bg-desktop.png);
+    background-position: top 185px left;
+  }
+
+  &__content {
+    @include onTablet {
+      position: relative;
+      min-height: 688px;
+    }
+
+    @include onDesktop {
+      min-height: 947px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    @extend %title-large;
+    color: $color-grey-dark;
+
+    @include onTablet {
+      margin-bottom: 177px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 30px;
+    display: block;
+    width: 320px;
+    transform: translateX(-30px);
+
+    @include onTablet {
+      margin: 0;
+      width: 340px;
+      transform: none;
+      float: right;
+    }
+
+    @include onDesktop {
+      width: 677px;
+      margin-right: 100px;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      max-width: 319px;
+      padding-top: 53px;
+    }
+    @include onDesktop {
+      max-width: 336px;
+      padding-top: 230px;
+    }
+  }
+
+  &__bg {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 220px;
+    line-height: 264px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-text-stroke: 1px $color-turquoise;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    opacity: 0;
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+    }
+
+    &--martin {
+      top: 87px;
+      left: -78px;
+      width: 719px;
+      height: 231px;
+
+      @include onDesktop {
+        top: 97px;
+        left: -61px;
+        width: 893px;
+        height: 346px;
+      }
+    }
+
+    &--andy {
+      bottom: 0;
+      right: -34px;
+      width: 459px;
+      height: 220px;
+
+      @include onDesktop {
+        bottom: -66px;
+        right: -135px;
+        width: 598px;
+        height: 346px;
+      }
+    }
+  }
+}

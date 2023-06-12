@@ -1,0 +1,168 @@
+.header {
+  opacity: 0;
+
+  @include onTablet {
+    background-image: url(../images/tablet/header-bg-tablet.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/desktop/header-bg-desktop.png);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__main-content {
+    @include onTablet {
+      @include pageGrid;
+
+      background-image: url(../images/tablet/header-tablet.png);
+      background-size: 306px 306px;
+      background-position: right top;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/desktop/header-desktop.png);
+      min-height: 500px;
+      background-size: 500px 500px;
+      background-position: right bottom;
+    }
+  }
+
+  &__details {
+    position: relative;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__top {
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      height: 101px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      height: 83px;
+      margin-bottom: 57px;
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
+    &--menu {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    margin-bottom: 25px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px $color-turquoise;
+    -webkit-text-fill-color: transparent;
+
+    @include onTablet {
+      margin: 0;
+      font-size: 64px;
+      line-height: 100%;
+      width: 460px;
+    }
+
+    &--filled {
+      -webkit-text-fill-color: $color-turquoise;
+    }
+  }
+
+  &__price {
+    max-width: 140px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      position: relative;
+      left: 240px;
+      top: -20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      top: 20px;
+      left: 300px;
+    }
+  }
+
+  &__price-num {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: $color-grey-dark;
+  }
+
+  &__price-text {
+    font-size: 14px;
+  }
+
+  &__button {
+    @include onTablet {
+      position: relative;
+      left: 120px;
+    }
+
+    @include onDesktop {
+      left: 200px;
+    }
+  }
+
+  &__more {
+    display: flex;
+    width: 185px;
+    height: 18px;
+    position: absolute;
+    right: -7px;
+    bottom: 0;
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+
+    @include onTablet {
+      left: 0;
+      right: auto;
+      bottom: 128px;
+      transform-origin: left bottom;
+    }
+
+    @include onDesktop {
+      left: 0;
+      bottom: 193px;
+    }
+  }
+}

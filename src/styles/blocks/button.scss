@@ -1,0 +1,69 @@
+.button {
+  padding: 14px 72px;
+  width: 260px;
+  height: 48px;
+  position: relative;
+  background-color: $color-yellow;
+  border: 1px solid $color-yellow;
+
+  display: flex;
+  align-items: center;
+
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #121212;
+
+  @include hover(transform, scale(1.2));
+  @include hover(background-color, #ffec7a);
+  @include hover(border-color, #ffec7a);
+
+  &::after {
+    content: "";
+    display: block;
+    width: 27px;
+    height: 8px;
+
+    position: absolute;
+    right: 72px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background-image: url(../images/icons/buy-now-arrow.svg);
+    @include backgroundCenter;
+  }
+
+  &--secondary {
+    @include onTablet {
+      background-color: transparent;
+      border-color: $color-turquoise;
+
+      &:hover {
+        background-color: $color-turquoise;
+        border-color: $color-turquoise;
+        color: #fff;
+        &::after {
+          background-image: url(../images/icons/buy-now-arrow-white.svg);
+        }
+      }
+    }
+  }
+
+  &--submit {
+    background-color: $color-turquoise;
+    border: 1px solid $color-turquoise;
+    color: #fff;
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.4);
+      border-color: rgba(3, 128, 158, 0.4);
+    }
+
+    &::after {
+      background-image: url(../images/icons/buy-now-arrow-white.svg);
+    }
+  }
+}

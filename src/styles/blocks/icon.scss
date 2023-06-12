@@ -1,0 +1,57 @@
+.icon {
+  height: 32px;
+  width: 32px;
+  @include backgroundCenter;
+  
+  @include hover(z-index, 1);
+  @include hover(transform, scale(1.2));
+
+  &__menu {
+    background-image: url(../images/icons/menu-icon.svg);
+  }
+
+  &__cart {
+    height: 31px;
+    background-image: url(../images/icons/icon-cart.svg);
+  }
+
+  &__close {
+    width: 12px;
+    height: 12px;
+    background-image: url(../images/icons/icon-close.svg);
+  }
+
+  &__socials {
+    width: 20px;
+    height: 20px;
+    transform-origin: top;
+    background-size: contain;
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+
+    &--twitter {
+      background-image: url(../images/icons/twitter-icon.svg);
+    }
+
+    &--insta {
+      background-image: url(../images/icons/insta-icon.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/facebook-icon.svg);
+    }
+  }
+
+  &__materials {
+    width: 51px;
+    height: 51px;
+    background-image: url(../images/icons/icon-materials.svg);
+
+    &--active {
+      background-image: url(../images/icons/icon-materials-active.svg);
+    }
+  }
+}
