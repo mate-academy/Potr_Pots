@@ -1,0 +1,177 @@
+.button {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @extend %manrope-600;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  gap: 15px;
+  cursor: pointer;
+
+
+  &-primary {
+    color: #fff;
+    background-color: $c-blue;
+    border: 1px solid #03839E;
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.9);
+      border: 1px solid rgba(3, 128, 158, 0.9);
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 25px;
+      background-image: url(../images/icon/Arrow-w.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 10px;
+    }
+  }
+
+  &-primary2 {
+    color: #121212;
+    background-color: $c-yellow;
+    border: 1px solid #FFE339;
+
+    &:hover {
+      background-color: #FFEC7A;
+      border: 1px solid 1px solid #FFEC7A;
+    }
+
+    &::after {
+      display: block;
+      content: "";
+      width: 25px;
+      background-image: url(../images/icon/Arrow-b.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 10px;
+    }
+  }
+
+  &-secondary {
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #03839E;
+
+
+    &::after {
+      display: block;
+      content: "";
+      width: 25px;
+      background-image: url(../images/icon/Arrow-b.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 10px;
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: $c-blue;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 25px;
+        background-image: url(../images/icon/Arrow-w.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 10px;
+      }
+    }
+  }
+
+  &-secondary2 {
+    color: #000;
+    background-color: transparent;
+    border: 1px solid #000;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 25px;
+      background-image: url(../images/icon/Arrow-b.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: 10px;
+    }
+
+    &:hover {
+      color: #000;
+      background-color: #fff;
+      border: 1px solid #000;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 25px;
+        background-image: url(../images/icon/Arrow-b.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 10px;
+      }
+    }
+  }
+}
+
+.input {
+  @extend %manrope-400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #4F4F4F;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  outline: none;
+  padding-left: 6px;
+  overflow-y: hidden;
+
+  &::placeholder {
+    @extend %manrope-400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4F4F4F;
+  }
+
+  &:focus {
+    border-bottom: 1px solid #03839E;
+  }
+
+  &:valid {
+    color: #03839E;
+    border-bottom: 1px solid #03839E;
+  }
+
+  &:invalid {
+    color: brown;
+    border-bottom: 1px solid brown;
+  }
+
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border-bottom: 1px solid inherit;
+  -webkit-text-fill-color: inherit;
+  box-shadow: none;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

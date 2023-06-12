@@ -1,0 +1,150 @@
+.about {
+  position: relative;
+  padding-bottom: 168px;
+  background-image: url(../images/icon/rect-about.svg);
+  background-repeat: no-repeat;
+  background-size: 430px;
+  background-position: left 604px;
+  overflow: hidden;
+
+  @include onTablet {
+    background-position: -170px 170px;
+    padding-bottom: 113px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 240px;
+    background-position: 0 185px;
+  }
+
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      justify-content: flex-end;
+    }
+  }
+
+
+  &__title {
+    @extend %bebas-400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.155em;
+    color: #333;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 230px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__image {
+    display: block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 320px;
+    height: 240px;
+    background-image: url(../images/img/founders.png);
+    position: relative;
+    left: -30px;
+    margin-bottom: 30px;
+    transition: all 0.3s;
+
+    &:hover {
+      border-radius: 15px;
+      box-shadow: 5px 5px 2px 0.2px rgba(3, 132, 158, .2);
+      transition: all 0.3s;
+    }
+
+    @include onTablet {
+      width: 340px;
+      height: 255px;
+      left: 0;
+      top: -53px;
+    }
+
+    @include onDesktop {
+      width: 677px;
+      height: 508px;
+      margin-left: 57px;
+      top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+
+    @extend %manrope-400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4F4F4F;
+
+    @include onTablet {
+      max-width: 320px;
+      line-height: 24px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__stroke-text {
+
+    display: none;
+    @extend %bebas-400;
+
+    @include onTablet {
+      display: flex;
+      position: absolute;
+      font-size: 233px;
+      line-height: 278px;
+      letter-spacing: 0.155em;
+      color: transparent;
+      -webkit-text-stroke: 0.67px $c-blue;
+      z-index: 10;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+    }
+
+
+    &--1 {
+      top: 85px;
+      left: -45px;
+
+      @include onDesktop {
+        left: 74px;
+        top: 97px;
+      }
+    }
+
+    &--2 {
+      bottom: 10px;
+      right: -34px;
+
+      @include onDesktop {
+        bottom: -55px;
+      }
+    }
+  }
+
+
+}

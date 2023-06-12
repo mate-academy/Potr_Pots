@@ -1,0 +1,326 @@
+.footer {
+  padding-top: 45px;
+  padding-bottom: 30px;
+  position: relative;
+  overflow-x: clip;
+
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../images/icon/footer-yellow-mob.svg);
+
+  @include onTablet {
+    padding-top: 17px;
+    padding-bottom: 117px;
+
+    background-position: top;
+    background-size: 1260px;
+    background-repeat: no-repeat;
+    background-image: url(../images/icon/footer-yellow.svg);
+  }
+
+  @include onDesktop {
+    padding-top: 38px;
+    padding-bottom: 64px;
+    background-position: top left;
+    background-size: 1305px;
+  }
+
+
+  &__container-main {
+
+    &-title {
+      @extend %bebas-400;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.155em;
+      text-transform: uppercase;
+      color: #000;
+
+      @include onTablet {
+        width: max-content
+      }
+    }
+
+    &-text {
+      @extend %manrope-400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #000;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 30px;
+      }
+    }
+
+    &-form {
+      padding-bottom: 56px;
+
+      @include onTablet {
+        padding-bottom: 113px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 184px;
+      }
+
+      &-title {
+      @extend %manrope-400;
+      font-size: 24px;
+      line-height: 150%;
+      color: #000;
+      margin-bottom: 25px;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+      }
+
+      &-input {
+        @extend %manrope-400;
+        padding: 4px;
+        font-size: 16px;
+        line-height: 150%;
+        color: #4F4F4F;
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        outline: 0;
+        border-bottom: 1px solid #4F4F4F;
+        margin-bottom: 20px;
+
+        &--last {
+          margin-bottom: 30px;
+
+          @include onTablet {
+            margin-bottom: 40px;
+          }
+        }
+
+
+      }
+    }
+  }
+
+  &__container-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    margin-bottom: 102px;
+
+    @include onTablet {
+      padding-top: 42px;
+    }
+
+    &-card {
+
+      &-title {
+        @extend %manrope-400;
+        font-size: 24px;
+        line-height: 150%;
+        color: rgba(0, 0, 0, 0.39);
+        margin-bottom: 5px;
+      }
+
+      &-link {
+        @extend %manrope-400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #000;
+
+        &:hover {
+          color: $c-blue;
+        }
+      }
+    }
+  }
+
+  &__container-adress {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &-title {
+      @extend %bebas-400;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.155em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    &-link {
+      text-decoration: none;
+
+      @extend %manrope-400;
+      font-size: 16px;
+      line-height: 150%;
+      display: flex;
+      align-items: flex-end;
+      color: #000;
+
+      &:hover {
+        color: $c-blue;
+      }
+
+    }
+  }
+
+  &__container-socials {
+
+
+    &-links {
+      display: flex;
+      flex-direction: row;
+      padding: 0 18px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin-bottom: 32px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 74px;
+      }
+    }
+
+    &-link {
+      display: block;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+
+      @include onDesktop {
+        width: 30px;
+        height: 30px;
+      }
+
+      &--tw {
+        background-image: url(../images/icon/tw.svg);
+
+        &:hover {
+          background-image: url(../images/icon/tw-blue.svg);
+        }
+      }
+
+      &--inst {
+        background-image: url(../images/icon/inst2.png);
+
+        &:hover {
+          background-image: url(../images/icon/icons8-instagram-blue.png);
+        }
+      }
+
+      &--fb {
+        background-image: url(../images/icon/fb.svg);
+
+        &:hover {
+          background-image: url(../images/icon/fb-blue.svg);
+        }
+      }
+    }
+
+    &-logo {
+      display: block;
+      content: "";
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 170px;
+      height: 54px;
+      background-image: url(../images/icon/potrpots.svg);
+      margin: 0 auto;
+    }
+
+    &-copywrite {
+      @extend %manrope-400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #000;
+      text-align: center;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__container-about {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-title {
+      @extend %bebas-400;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.155em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      @extend %manrope-400;
+      font-size: 16px;
+      line-height: 150%;
+      display: flex;
+      align-items: flex-end;
+      color: #000;
+    }
+  }
+
+  &__decorative {
+    position: absolute;
+    top: -60px;
+    right: -50px;
+    display: block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url(../images/img/circle.png);
+    width: 161px;
+    height: 164px;
+
+    @include onDesktop {
+      top: -90px;
+      right: calc(50px + (100vw - 1440px));
+    }
+  }
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid transparent;
+  border-bottom: 1px solid #4F4F4F;
+  -webkit-text-fill-color: #4F4F4F;
+  box-shadow: none;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
