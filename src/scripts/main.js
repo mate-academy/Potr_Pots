@@ -65,14 +65,16 @@ discountObserver.observe(discount);
 
 const sections = document.querySelectorAll('.section, .header, .footer');
 
-sections.forEach((el) => {
-  const sectionObserver = new IntersectionObserver(entries => {
-    if (entries[0].isIntersecting) {
-      el.classList.add('animated--section', entries[0].isIntersecting);
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animated--section', entry.isIntersecting);
     }
   });
+});
 
-  sectionObserver.observe(el);
+sections.forEach(section => {
+  sectionObserver.observe(section);
 });
 
 const textarea = document.querySelector('.form__input--textarea');
