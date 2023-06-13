@@ -1,0 +1,79 @@
+.page {
+  font-family: "Bebas Neue", "Manrope", sans-serif;
+  font-size: 14px;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transition: transform 0.3s;
+    transform: translateX(100%);
+
+    @include onDesktop {
+      position: sticky;
+      transform: translateX(0);
+    }
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    margin: 0 0 100px;
+    color: $colorDark;
+  }
+
+  &__about {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      position: absolute;
+      top: 66px;
+      color: #828282;
+      transform: rotate(90deg);
+      z-index: 10;
+
+      &--right {
+        right: -50px;
+      }
+
+      &--left {
+        top: 300px;
+        left: -50px;
+      }
+
+      &-text {
+        font-family: "Bebas Neue", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        letter-spacing: 0.22em;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: 65px;
+        height: 1px;
+        background-color: #828282;
+        margin: 5px 10px 0 0;
+      }
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $colorBlue;
+  width: 231px;
+  height: 568px;
+
+  @include onDesktop {
+    background-color: transparent;
+    width: auto;
+    height: auto;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    &:first-child {
+      display: none;
+    }
+
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+  }
+
+  &__link {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $colorWhite;
+
+    @include onDesktop {
+      color: $colorGray;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 82px;
+    right: -15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #f8f8f8;
+    transform: rotate(270deg);
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-text {
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 150%;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        display: block;
+        content: "";
+        width: 44px;
+        height: 1px;
+        background-color: #f8f8f8;
+        margin: 0 5px 0 18px;
+      }
+    }
+
+    &-button {
+      background-image: url("../images/cross.svg");
+      height: 12px;
+      width: 12px;
+    }
+  }
+}

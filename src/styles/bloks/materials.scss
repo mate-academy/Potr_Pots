@@ -1,0 +1,269 @@
+.materials {
+  position: relative;
+  padding-bottom: 110px;
+  overflow: hidden;
+
+  &__title {
+    font-size: 52px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $colorBlue;
+    margin: 0;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      position: relative;
+      font-size: 138px;
+      line-height: 167px;
+      z-index: 10;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      justify-content: flex-end;
+      font-family: "Manrope", sans-serif;
+      margin-top: -50px;
+
+      &-wrapp {
+        width: 340px;
+      }
+    }
+
+    @include onDesktop {
+      position: relative;
+      z-index: 10;
+      margin-top: -160px;
+    }
+  }
+
+  &__sub-title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $colorGray;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  &__paragraf {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0;
+
+    &--bold {
+      font-weight: 700;
+
+      @include onDesktop {
+        font-weight: 400;
+      }
+    }
+
+    &--transparent {
+      color: transparent;
+
+      @include onDesktop {
+        color: $colorGray;
+      }
+    }
+  }
+
+  &__imag {
+    width: 320px;
+    height: 240px;
+    margin: -75px auto 0;
+    background-image: url("../images/materials.jpg");
+    background-size: cover;
+
+    @include onTablet {
+      position: relative;
+      width: 768px;
+      height: 576px;
+      background-image: url("../images/materials.jpg");
+      background-size: cover;
+    }
+
+    @include onDesktop {
+      width: 1440px;
+      height: 1080px;
+      margin: -245px auto 0;
+    }
+  }
+
+  &__item {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      left: 80px;
+      bottom: 100px;
+
+      &--two {
+        left: 230px;
+        bottom: 230px;
+      }
+
+      &--free {
+        left: 45%;
+        bottom: 72px;
+      }
+
+      &--four {
+        left: 55%;
+        bottom: 134px;
+      }
+
+      &--five {
+        left: 72%;
+        bottom: 55%;
+      }
+    }
+
+    @include onDesktop {
+      left: 254px;
+      bottom: 156px;
+
+      &--two {
+        left: 35%;
+        bottom: 38%;
+      }
+
+      &--free {
+        left: 48%;
+        bottom: 9%;
+      }
+
+      &--four {
+        left: 58%;
+        bottom: 25%;
+      }
+
+      &--five {
+        left: 77%;
+        bottom: 35%;
+      }
+    }
+  }
+
+  &__description {
+    display: none;
+    position: absolute;
+    left: 40px;
+    bottom: 174px;
+    width: 284px;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorWhite;
+    margin: 0;
+    padding: 35px;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s;
+  }
+
+  &__checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: $colorWhite;
+    background-color: #eb5757;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-image: url("../images/plus.svg");
+      background-size: cover;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    & input {
+      position: absolute;
+      z-index: -10;
+      opacity: 0;
+    }
+
+    & input:checked {
+      background-color: rgba(36, 35, 35, 0.5);
+
+      &::after {
+        width: 15px;
+        height: 1px;
+        background-image: url("../images/minus.svg");
+      }
+    }
+  }
+
+  &__checkbox input:checked + &__description {
+    display: block;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: $colorWhite;
+    background-color: #eb5757;
+    transition: background-color 0.3s;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-image: url("../images/plus.svg");
+      background-size: cover;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 15px;
+      height: 1px;
+      background-image: url("../images/minus.svg");
+      background-size: cover;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    &:active {
+      background-color: rgba(36, 35, 35, 0.5);
+    }
+
+    &:active::after {
+      opacity: 0;
+    }
+
+    &:active::before {
+      opacity: 1;
+    }
+  }
+}
