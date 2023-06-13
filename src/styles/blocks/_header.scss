@@ -1,0 +1,323 @@
+.header {
+  display: block;
+  padding-top: 15px;
+
+  @include onTablet {
+    padding-top: 30px;
+    padding-inline: 34px;
+  }
+
+  @include onDesktop {
+    padding-top: 20px;
+    padding-inline: 134px;
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -10;
+    background-image: url(/images/icons/bg-rectangle.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      width: 600px;
+      height: 465px;
+    }
+
+    @include onDesktop {
+      background-image: url(/images/icons/bg-rectangle-desk.svg);
+      width: 1030px;
+      height: 466px;
+    }
+  }
+
+  &__nav {
+    display: grid;
+    grid-template-columns: auto 1fr 32px;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 10px;
+    padding-inline: 30px;
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    &-logo {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 36px;
+      line-height: 43px;
+      letter-spacing: 0.06em;
+
+      color: $c-title;
+      border-top: 2px solid transparent;
+      transition: border-color $anim-duration;
+
+      &:hover {
+        border-color: inherit;
+      }
+    }
+
+    &-list {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+      }
+
+      &__link {
+        font-family: "Manrope", sans-serif;
+        font-size: 16px;
+        line-height: 150%;
+        color: $c-list;
+
+        border-top: 1px solid transparent;
+        transition: border-color $anim-duration, color $anim-duration;
+
+        &:hover {
+          color: $c-turquoise;
+          border-color: $c-turquoise;
+        }
+      }
+    }
+
+    &-cart {
+      display: none;
+
+      &:hover {
+        background-image: url(/images/icons/cart-hover.svg);
+      }
+
+      @include onDesktop {
+        display: block;
+        width: 32px;
+        height: 32px;
+
+        background-image: url(/images/icons/cart-icon.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &-menu {
+      display: block;
+      width: 32px;
+      height: 32px;
+
+      grid-column: 3 / 4;
+
+      background-image: url(/images/icons/menu_icon.svg);
+      cursor: pointer;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &-image {
+      width: 320px;
+      height: 320px;
+
+      margin: 0 auto;
+      padding-bottom: 25px;
+
+      transition: all $anim-duration;
+
+      @include onTablet {
+        float: right;
+
+        width: 306px;
+        height: 306px;
+      }
+
+      @include onDesktop {
+        float: right;
+
+        min-width: 500px;
+        min-height: 500px;
+
+        &:hover {
+          transform: scale(105%);
+          border-radius: 20%;
+        }
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      padding-inline: 30px;
+    }
+
+    &-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 43px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      padding-bottom: 30px;
+
+      color: transparent;
+      -webkit-text-stroke: 0.68px $c-turquoise;
+
+      &--span {
+        color: $c-turquoise;
+      }
+
+      @include onTablet {
+        font-size: 64px;
+        line-height: 64px;
+
+        padding-bottom: 0;
+
+        width: 490px;
+      }
+
+      @include onDesktop {
+        font-size: 64px;
+        line-height: 64px;
+
+        padding-left: 100px;
+        padding-bottom: 0;
+
+        width: 600px;
+        height: 256px;
+      }
+    }
+
+    &-price {
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 36px;
+      color: $c-title;
+
+      @include onTablet {
+        align-self: flex-end;
+        margin-right: 76px;
+      }
+
+      @include onDesktop {
+        align-self: flex-end;
+        margin-right: 195px;
+      }
+    }
+
+    &-info {
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $c-list;
+
+      padding-bottom: 20px;
+
+      @include onTablet {
+        align-self: flex-end;
+        margin-right: 15px;
+
+        padding-bottom: 50px;
+      }
+
+      @include onDesktop {
+        align-self: flex-end;
+        margin-right: 132px;
+
+        padding-bottom: 50px;
+      }
+    }
+
+    &-button {
+      margin: 0 auto 110px;
+
+      @include onDesktop {
+        margin-right: 100px;
+        margin-bottom: 192px;
+      }
+    }
+
+    &-link {
+      position: absolute;
+      right: 0;
+      bottom: 5px;
+
+      display: block;
+      width: max-content;
+
+      font-family: "Manrope", sans-serif;
+      font-size: 12px;
+      line-height: 150%;
+      color: $c-turquoise;
+
+      transform-origin: right bottom;
+      transition: transform $anim-duration;
+      transform: rotate(90deg) translateX(-125%) translateY(110%);
+
+      @include onTablet {
+        left: -110px;
+        bottom: -40px;
+      }
+
+      @include onDesktop {
+        left: -110px;
+        bottom: 30px;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 44px;
+        bottom: -11px;
+        left: 124%;
+        background-image: url(/images/icons/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        transform: rotate(-90deg);
+      }
+
+      &:hover {
+        transform: rotate(90deg) translateX(-70%) translateY(110%);
+      }
+    }
+  }
+
+  &__side-text {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: inline-block;
+      right: -45px;
+      bottom: -100px;
+    }
+
+    @include onDesktop {
+      display: inline-block;
+      right: -30px;
+      bottom: -150px;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+.features {
+  padding-inline: 30px;
+  padding-bottom: 110px;
+
+  @include onTablet {
+    padding-inline: 34px;
+    padding-bottom: 132px;
+  }
+
+  @include onDesktop {
+    padding-inline: 135px;
+    padding-bottom: 174px;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+
+    color: transparent;
+    -webkit-text-stroke: 0.68px $c-turquoise;
+
+    padding-bottom: 22px;
+
+    @include onTablet {
+      padding-bottom: 52px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 70px;
+    }
+
+    &--span {
+      color: $c-turquoise;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &__block {
+    text-align: center;
+    @include onTablet {
+      &--1 {
+        order: 2;
+      }
+
+      &--2 {
+        order: 2;
+      }
+
+      &--3 {
+        order: 1;
+      }
+    }
+
+    &-img {
+      width: 260px;
+      height: 260px;
+
+      padding-bottom: 37px;
+
+      transition: all $anim-duration;
+
+      &:hover {
+        transform: scale(105%);
+        border-radius: 20%;
+      }
+
+      @include onTablet {
+        width: 220px;
+        height: 220px;
+
+        padding-bottom: 27px;
+      }
+
+      @include onDesktop {
+        width: 370px;
+        height: 370px;
+
+        padding-bottom: 17px;
+      }
+    }
+
+    &-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
+
+      text-align: center;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      color: $c-title;
+
+      padding-bottom: 20px;
+    }
+
+    &-info {
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+
+      text-align: center;
+
+      color: $c-list;
+    }
+  }
+}
