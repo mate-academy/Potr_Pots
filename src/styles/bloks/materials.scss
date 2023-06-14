@@ -157,11 +157,10 @@
   }
 
   &__description {
-    display: none;
     position: absolute;
-    left: 40px;
-    bottom: 174px;
-    width: 284px;
+    left: -110px;
+    bottom: 70px;
+    width: 204px;
     font-family: "Manrope", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -171,7 +170,39 @@
     margin: 0;
     padding: 35px;
     background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    opacity: 0;
     transition: opacity 0.3s;
+    z-index: 10;
+
+    &--one {
+      left: -50px;
+    }
+
+    &--five {
+      bottom: -245px;
+    }
+
+    @include onDesktop {
+      &--one {
+        left: -110px;
+      }
+
+      &--two {
+        left: -260px;
+      }
+
+      &--free {
+        width: 214px;
+        left: -290px;
+        bottom: -80px;
+      }
+
+      &--four {
+        bottom: 90px;
+        left: -90px;
+      }
+    }
   }
 
   &__checkbox {
@@ -213,56 +244,8 @@
         background-image: url("../images/minus.svg");
       }
     }
-  }
 
-  &__input:checked + &__description {
-    display: block;
-  }
-
-  &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: $colorWhite;
-    background-color: #eb5757;
-    transition: background-color 0.3s;
-
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 15px;
-      height: 15px;
-      background-image: url("../images/plus.svg");
-      background-size: cover;
-      opacity: 1;
-      transition: opacity 0.3s;
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 15px;
-      height: 1px;
-      background-image: url("../images/minus.svg");
-      background-size: cover;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    &:active {
-      background-color: rgba(36, 35, 35, 0.5);
-    }
-
-    &:active::after {
-      opacity: 0;
-    }
-
-    &:active::before {
+    &:checked ~ p {
       opacity: 1;
     }
   }
