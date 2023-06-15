@@ -5,6 +5,7 @@ const slides = document.querySelector('.slider__slides');
 const slidesIndicators = document.querySelectorAll('.slider__indicator');
 const materialsImageButtons = document.querySelectorAll('.materials__button');
 const materialsSlides = document.querySelectorAll('.materials__slide');
+const form = document.querySelector('.message__form');
 
 let activeSlide = 0;
 let startX = 0;
@@ -82,4 +83,9 @@ document.addEventListener('click', (e) => {
   materialsSlides.forEach(slide => {
     slide.classList.remove('materials__slide--show');
   });
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  form.reset();
 });
