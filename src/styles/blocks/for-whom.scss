@@ -382,19 +382,11 @@
   }
 
   &__vertical-link {
+    @include vertcalLinkStyle;
+
     position: absolute;
     right: 3px;
     bottom: 0;
-
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
-
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.22em;
-    color: #828282;
-    text-transform: uppercase;
 
     transform-origin: right bottom;
     transform: rotateZ(90deg) translateY(100%);
@@ -409,15 +401,6 @@
       bottom: 95%;
     }
 
-    &::before {
-      display: block;
-      content: "";
-      width: 65px;
-      height: 1px;
-
-      background-color: #828282;
-    }
-
     &--2 {
       display: none;
 
@@ -426,10 +409,10 @@
         left: 0;
         bottom: 0;
 
-        display: flex;
-
         transform-origin: left bottom;
         transform: rotateZ(-90deg) translateY(100%);
+
+        display: flex;
       }
     }
   }

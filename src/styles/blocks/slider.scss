@@ -1,0 +1,57 @@
+.slider {
+  position: relative;
+
+  overflow: hidden;
+
+  @include onTablet {
+    position: static;
+  }
+
+  &__slides {
+    display: flex;
+    width: 500%;
+
+    transition: transform $duration;
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 28px 44px 50px;
+
+    color: #f8f8f8;
+
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(17px);
+  }
+
+  &__indicators {
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+
+    display: flex;
+    column-gap: 8px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__indicator {
+    width: 6px;
+    height: 6px;
+
+    border: 1px solid #fff;
+    background-color: #fff;
+
+    transform: rotateZ(45deg);
+
+    transition: background-color $duration;
+
+    &--active {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}
