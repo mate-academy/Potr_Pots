@@ -23,12 +23,11 @@
     background-position: top 0 right -3%;
   }
 
-  &__image {
+  &__image-wrapper {
     position: absolute;
     top: -70px;
-    right: -50px;
-
-    display: block;
+    right: 0;
+    overflow: hidden;
 
     @include onTablet {
       top: -100px;
@@ -36,6 +35,17 @@
 
     @include onDesktop {
       left: 85%;
+    }
+  }
+
+  &__image {
+    position: relative;
+    right: -50px;
+
+    display: block;
+
+    @include onDesktop {
+      right: 0;
     }
   }
 
