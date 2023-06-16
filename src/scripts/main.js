@@ -6,12 +6,21 @@ const slidesIndicators = document.querySelectorAll('.slider__indicator');
 const materialsImageButtons = document.querySelectorAll('.materials__button');
 const materialsSlides = document.querySelectorAll('.materials__slide');
 const form = document.querySelector('.message__form');
+const menuOpener = document.querySelector('.header__menu-opener');
+const menu = document.querySelector('.menu');
+const menuCloser = document.querySelector('.menu__cross-wrapper');
+const menuLinks = document.querySelectorAll('.menu__link');
 
 let activeSlide = 0;
 let startX = 0;
 let startY = 0;
 let endX = 0;
 let endY = 0;
+
+const closeMenu = () => {
+  menu.classList.remove('menu--show');
+  document.body.classList.remove('page__body--with-menu');
+};
 
 slider.addEventListener('touchstart', (e) => {
   startX = e.changedTouches[0].clientX;
@@ -88,4 +97,15 @@ document.addEventListener('click', (e) => {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   form.reset();
+});
+
+menuOpener.addEventListener('click', () => {
+  menu.classList.add('menu--show');
+  document.body.classList.add('page__body--with-menu');
+});
+
+menuCloser.addEventListener('click', closeMenu);
+
+menuLinks.forEach(item => {
+  item.addEventListener('click', closeMenu);
 });

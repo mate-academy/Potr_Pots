@@ -1,0 +1,114 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transform: translateX(110%);
+
+  box-sizing: border-box;
+  width: 70%;
+  height: 100vh;
+  padding: 30px 0;
+
+  background-color: $turquoise;
+
+  transition: transform $duration;
+
+  &--show {
+    transform: translateX(0);
+  }
+
+  &__container {
+    height: 100%;
+  }
+
+  &__content {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    color: $lightGray;
+  }
+
+  &__cart-opener {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(150%);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      content: "0";
+      width: 14px;
+      height: 14px;
+
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 10px;
+      color: $lightGray;
+
+      border-radius: 50%;
+      background-color: $red;
+
+      @include onTablet {
+        width: 20px;
+        height: 20px;
+
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__cross-wrapper {
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
+
+    transform-origin: left bottom;
+    transform: rotateZ(-90deg);
+  }
+
+  &__cross {
+    width: 14px;
+    height: 14px;
+
+    background-image: url(../images/icons/cross.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $lightGray;
+
+    &::before {
+      display: block;
+      width: 44px;
+      height: 1px;
+      content: "";
+
+      background-color: $lightGray;
+    }
+  }
+}
