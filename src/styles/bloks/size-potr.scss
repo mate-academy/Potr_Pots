@@ -3,21 +3,6 @@
   padding-bottom: 110px;
   overflow: hidden;
 
-  &::after {
-    content: "";
-    position: absolute;
-    right: -50px;
-    bottom: -90px;
-    width: 161px;
-    height: 164px;
-    background-image: url("../images/seal.png");
-
-    @include onDesktop {
-      right: 60px;
-      bottom: -70px;
-    }
-  }
-
   &__title {
     margin: 0 0 20px;
     padding: 0 30px;
@@ -74,7 +59,7 @@
     @include onTablet {
       width: 416px;
       order: 1;
-      margin: 0 0 20px 34px;
+      margin: 0 34px 20px;
 
       & img {
         width: 416px;
@@ -106,7 +91,7 @@
       font-size: 18px;
       line-height: 18px;
       letter-spacing: 0.15em;
-      color: #000000;
+      color: #000;
       margin: 0 0 10px;
     }
 
@@ -182,7 +167,7 @@
       &-item {
         position: absolute;
         background-color: #fff;
-        padding: 16px 16px 24px 16px;
+        padding: 16px 16px 24px;
 
         & img {
           width: 162px;
@@ -269,7 +254,8 @@
         top: 20px;
         left: -15px;
         content: "";
-        width: 7px;height: 7px;
+        width: 7px;
+        height: 7px;
         background-color: $colorGray;
         transform: rotate(45deg);
       }
@@ -281,7 +267,7 @@
       font-weight: 700;
       font-size: 32px;
       line-height: 150%;
-      color: #333333;
+      color: #333;
       margin: 0 0 5px;
     }
 
@@ -345,6 +331,15 @@
       color: #121212;
       margin: 0 0 35px;
 
+      &:hover {
+        background-color: $colorBlue;
+        color: #fff;
+
+        &::after {
+          content: url("../images/arrow2.svg");
+        }
+      }
+
       @include onDesktop {
         margin: 0 0 70px 45px;
       }
@@ -356,7 +351,7 @@
     line-height: 150%;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #EB5757;
+    color: #eb5757;
     padding: 0 30px;
 
     @include onTablet {

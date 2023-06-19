@@ -89,7 +89,11 @@
   &__imag {
     width: 320px;
     height: auto;
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
+
+    & img {
+      width: 320px;
+    }
 
     @include onTablet {
       position: absolute;
@@ -101,17 +105,17 @@
     @include onDesktop {
       width: 677px;
       right: 235px;
+
+      & img {
+        width: 677px;
+      }
     }
   }
 
   &__text {
-    font-family: "Manrope", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
+    @include stylesText;
     margin: 0;
-    color: #4f4f4f;
+    color: $colorGray;
 
     @include onTablet {
       width: 315px;

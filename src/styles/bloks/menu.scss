@@ -39,16 +39,20 @@
   }
 
   &__link {
-    font-family: "Manrope", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
+    @include stylesText;
     text-decoration: none;
     color: $colorWhite;
 
     @include onDesktop {
       color: $colorGray;
+      padding-bottom: 3px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.5s;
+
+      &:hover {
+        color: $colorBlue;
+        border-color: $colorBlue;
+      }
     }
   }
 
