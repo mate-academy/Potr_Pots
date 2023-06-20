@@ -1,0 +1,43 @@
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &__menu-open {
+    background-image: url(../images/menu_icon.svg);
+    margin: 16px 38px 32px;
+
+    @include onTABS {
+      margin: 32px 42px 0;
+
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    background-image: url(../images/close.svg);
+    margin: 32px 42px;
+    bottom: 0;
+    right: 10%;
+  }
+
+  &__bag {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 24px 0 0;
+    }
+  }
+}

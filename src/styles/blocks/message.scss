@@ -1,0 +1,103 @@
+.message {
+  position: relative;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000;
+  margin: 0 0 100px;
+
+  &__background-image {
+    position: absolute;
+    background-image: url(../images/Contactmono.png);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1004px;
+    width: 100%;
+    z-index: -1;
+
+    @include onTABS {
+      background-image: url(../images/Contacttablet.png);
+      height: 584px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/contactdesktop.png);
+      width: 90%;
+    }
+
+  }
+
+  @include onTABS {
+    height: 568px;
+  }
+
+  &__title {
+    margin: 38px 0 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+
+    @include onTABS {
+      white-space: nowrap;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0 0 40px;
+
+    @include onTABS {
+      white-space: nowrap;
+    }
+  }
+
+  &__field {
+    display: block;
+    height: 24px;
+    width: 260px;
+    margin: 20px 0 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+    background-color: #ffec7a;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+
+    &:focus {
+      color: #333;
+      border-bottom: 1px solid #333;
+    }
+
+    &:focus-within:invalid {
+      color: #eb5757;
+      border-bottom: 1px solid #eb5757;
+    }
+
+    @include onTABS {
+      width: 340px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__emblem {
+    position: absolute;
+    right: 0;
+    top: -90px;
+
+    @include onDesktop {
+      right: 3%;
+    }
+  }
+}

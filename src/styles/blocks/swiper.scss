@@ -1,0 +1,85 @@
+.swiper {
+  position: relative;
+
+  @include onTABS {
+    display: none;
+  }
+}
+
+.swiper-slide {
+  background-color: rgba(0, 0, 0, 0.45);
+  mix-blend-mode: normal;
+  backdrop-filter: blur(17px);
+  width: 80%;
+  height: 256px;
+  margin: 0 10px;
+}
+
+.text_slides {
+  width: 70%;
+  height: 256px;
+  padding: 28px 50px 0 44px ;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #f8f8f8;
+  text-align: center;
+}
+
+.swiper-pagination {
+  bottom: 50px;
+  right: 45%;
+
+  @include onTABS {
+    display: none;
+  }
+}
+
+.swiper-pagination-bullet {
+  cursor: pointer;
+  width: 7px;
+  height: 7px;
+  background: hsl(0, 0, 97%);
+  transform: rotate(-45deg);
+  border-radius: 0%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  opacity: 1;
+}
+
+.swiper-horizontal .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 7px);
+}
+
+.swiper-pagination-bullet--active {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #f8f8f8;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}

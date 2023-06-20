@@ -1,0 +1,79 @@
+.potrteam {
+  position: relative;
+  background-image: url(../images/teambagrmono.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  margin: 0 0 110px;
+
+  @include onTABS {
+    background-image: url(../images/teambagrtabs.png);
+    background-position: left;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include onTABS {
+      display: grid;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    align-items: center;
+    letter-spacing: 0.15em;
+    color: #333;
+  }
+
+  &__abouts {
+    padding: 30px 0 60px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+  }
+
+  &__name {
+    display: none;
+
+    @include onTABS {
+      display: block;
+      margin: 0;
+      padding: 0;
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 220px;
+      height: 240px;
+      letter-spacing: 0.15em;
+      color: transparent;
+      -webkit-text-stroke: 1px #03839e;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+    }
+  }
+}
+
+.name1 {
+  transform: translateX(-60px);
+}
+
+.name2 {
+  margin-top: -100px;
+  text-align: end;
+  transform: translateX(30px);
+
+  @include onDesktop {
+    transform: translateX(130px);
+  }
+}

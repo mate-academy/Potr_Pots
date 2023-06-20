@@ -1,0 +1,77 @@
+.materials {
+  position: relative;
+  background-image: url(../images/materialphoto.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-position-y: 130px;
+  margin-bottom: 320px;
+  width: 100%;
+  height: 440px;
+
+  @include onTABS {
+    background-image: url(../images/HeroShottablet.webp);
+    height: 75vw;
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/HeroShotdesktop.webp);
+    height: 75vw;
+  }
+
+  &__title {
+    position: relative;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: #03839e;
+    margin-bottom: 50%;
+
+    @include onTABS {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 140px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__box {
+    display: none;
+
+    @include onTABS {
+      display: block;
+      position: absolute;
+      width: 45%;
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #4f4f4f;
+      right: 40px;
+      top: 100px;
+    }
+
+    @include onDesktop {
+      width: 36%;
+      top: 140px;
+    }
+  }
+
+  &__boxtitle {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  &__button {
+    display: flex;
+  }
+}

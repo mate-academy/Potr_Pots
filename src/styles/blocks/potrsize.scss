@@ -1,0 +1,119 @@
+.potrsize {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #4f4f4f;
+  margin: 0 0 110px;
+
+  &__container {
+
+    @include onTABS {
+      padding: 0 34px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      padding: 0 135px;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__subtitle {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+    color: #000;
+  }
+  .img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTABS {
+      display: none;
+    }
+  }
+  &__img {
+    padding: 30px 0 12px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTABS {
+      width: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  &__about1 {
+
+    @include onDesktop {
+      flex: 25%;
+      padding: 12px 16px 0 0;
+      border-right: 1px solid  #d8d8d8;
+    }
+  }
+
+  &__about2 {
+    padding: 0 0 22px;
+
+    @include onTABS {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      display: flex;
+      flex: 75%;
+    }
+  }
+
+  &__text {
+    padding: 0 30px;
+
+    @include onTABS {
+      padding: 0 36px;
+    }
+
+    @include onDesktop {
+      padding: 0 10% 0 30px;
+    }
+  }
+
+  &__about3 {
+    padding: 0 0 16px;
+
+    @include onTABS {
+      width: 100%;
+    }
+
+    @include onDesktop {
+      width: 60%;
+    }
+  }
+}
+
+.largetext {
+  margin: 0;
+
+  @include onTABS {
+    padding: 0 0 50px;
+  }
+
+  @include onDesktop {
+    padding: 0 0 40px;
+  }
+}
