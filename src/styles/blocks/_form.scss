@@ -1,0 +1,63 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  &__legend {
+    font-size: 24px;
+    line-height: $lineHeight;
+    color: #000;
+    margin-bottom: 25px;
+  }
+
+  &__label {
+    display: block;
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $textColor2;
+    padding-bottom: 4px;
+    color: $textColor2;
+    font-size: inherit;
+    width: 100%;
+    outline: none;
+
+    &:focus {
+      border-color: $titleColor;
+    }
+
+    &:valid {
+      color: $titleColor;
+    }
+
+    &:invalid {
+      color: $observantColor;
+    }
+
+    &:focus:invalid {
+      border-color: $observantColor;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    background: $titleColor;
+    border: 1px solid $titleColor;
+    color: $menuTextColor;
+    margin-top: 35px;
+    font-weight: 400;
+    cursor: pointer;
+
+    @include onTablet {
+      max-width: 219px;
+    }
+
+    path {
+      fill: $menuTextColor;
+    }
+  }
+}

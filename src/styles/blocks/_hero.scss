@@ -1,0 +1,155 @@
+.hero {
+  position: relative;
+  padding-bottom: 55px;
+
+  @include onDesktop {
+    padding-bottom: 148px;
+  }
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: -190px;
+    height: 466px;
+    width: 72%;
+    max-width: 1035px;
+
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+    @include onTablet {
+      background-image: url("../images/bg-header.png");
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+    }
+  }
+
+  &__img {
+    background-image: url("../images/header-desktop.png");
+    background-size: cover;
+    background-position: 50%;
+
+    position: static;
+    margin: 0 0 25px -30px;
+
+    width: 100vw;
+    height: 319px;
+    order: -1;
+
+    @include onTablet {
+      height: 306px;
+      width: 44%;
+      margin: 0;
+
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      height: 70vh;
+      max-height: 500px;
+      width: 43%;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: $letterSpacing;
+    text-transform: uppercase;
+    color: $titleColor;
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+
+      grid-column: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 10;
+    }
+  }
+
+  &__offer {
+    margin: 25px 0 20px;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      margin: -25px 0 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: $lineHeight;
+  }
+
+  &__promotion {
+    font-size: 14px;
+    max-width: 140px;
+  }
+
+  &__btn {
+    background-color: $accentColor;
+    color: $textColor;
+
+    @include onTablet {
+      grid-column: 2 / 5;
+      max-width: 240px;
+    }
+
+    @include onDesktop {
+      max-width: 270px;
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__next {
+    position: absolute;
+    font-size: 12px;
+    right: 0;
+    bottom: 163px;
+    writing-mode: vertical-lr;
+    color: $titleColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      transition: transform $animationTime;
+      margin-top: 9px;
+    }
+
+    &:hover {
+      img {
+        transform: translateY(15px);
+      }
+    }
+
+    @include onTablet {
+      right: 94%;
+      bottom: 0;
+    }
+  }
+}

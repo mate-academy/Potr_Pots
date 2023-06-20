@@ -1,0 +1,66 @@
+.line {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #828282;
+
+  display: none;
+
+  align-items: center;
+
+  transform: rotate(90deg);
+
+  position: absolute;
+  bottom: 105px;
+  right: -40px;
+
+  @include onTablet {
+    display: flex;
+  }
+
+  &--1 {
+    flex-direction: row;
+
+    @include onTablet {
+      bottom: auto;
+      top: -170px;
+      right: -40px;
+    }
+
+    @include onDesktop {
+      right: -50px;
+      top: 50px;
+    }
+
+    &::before {
+      margin-right: 10px;
+    }
+  }
+
+  &--2 {
+    flex-direction: row-reverse;
+    display: none;
+
+    @include onDesktop {
+      right: auto;
+      top: auto;
+      left: -50px;
+      bottom: 55px;
+      display: flex;
+    }
+
+    &::before {
+      margin-left: 10px;
+    }
+  }
+
+  &::before {
+    content: "";
+
+    width: 65px;
+    height: 1px;
+    display: block;
+    background-color: #828282;
+  }
+}
