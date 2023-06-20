@@ -60,10 +60,12 @@
 
   &__imag {
     width: 320px;
-    height: 320px;
     margin: 0 auto;
-    background-image: url("../images/small-pot.jpg");
-    background-size: cover;
+
+    & img {
+      width: 320px;
+      height: auto;
+    }
 
     @include onTablet {
       position: absolute;
@@ -74,8 +76,11 @@
 
     @include onDesktop {
       width: 500px;
-      height: 500px;
       right: 135px;
+
+      & img {
+        width: 500px;
+      }
     }
   }
 
