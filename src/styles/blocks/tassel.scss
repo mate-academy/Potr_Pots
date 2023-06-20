@@ -1,0 +1,128 @@
+.tassel {
+  display: none;
+
+  @include onTablet {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 10px;
+    font-family: $ff-titles;
+    font-size: 12px;
+    line-height: 14px;
+    color: #828282;
+    letter-spacing: 0.22em;
+    transform-origin: right center;
+    transform: rotate(90deg) translate(90%, -100%);
+
+    @include onDesktop {
+      transform: rotate(90deg) translate(200%, 50%);
+    }
+
+    &__line {
+      width: 65px;
+      height: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-image: url(../images/tassel-line.png);
+    }
+  }
+
+  &--for-whom {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: 10px;
+    font-family: $ff-titles;
+    font-size: 12px;
+    line-height: 14px;
+    color: #828282;
+    letter-spacing: 0.22em;
+    transform-origin: left center;
+    transform: rotate(90deg) translate(-100%, -1100%);
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: flex;
+      bottom: 0;
+      left: 0;
+      transform-origin: left center;
+      transform: rotate(90deg) translate(-100%, -100%);
+    }
+
+    &__line {
+      width: 65px;
+      height: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      background-image: url(../images/tassel-line.png);
+    }
+  }
+
+  &--materials {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      gap: 10px;
+      font-family: $ff-titles;
+      font-size: 12px;
+      line-height: 14px;
+      color: #828282;
+      letter-spacing: 0.22em;
+      transform-origin: right center;
+      transform: rotate(90deg) translate(0%, 0%);
+
+      @include onDesktop {
+        display: none;
+      }
+
+      &__line {
+        width: 65px;
+        height: 14px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        background-image: url(../images/tassel-line.png);
+      }
+    }
+  }
+
+  &--benefits {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: max-content;
+      gap: 10px;
+      font-family: $ff-titles;
+      font-size: 12px;
+      line-height: 14px;
+      color: #828282;
+      letter-spacing: 0.22em;
+      transform-origin: right top;
+      transform: rotate(90deg) translate(100%, -150%);
+
+      @include onDesktop {
+        display: none;
+      }
+
+      &__line {
+        width: 65px;
+        height: 5px;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: contain;
+        background-image: url(../images/tassel-line.png);
+      }
+    }
+  }
+}

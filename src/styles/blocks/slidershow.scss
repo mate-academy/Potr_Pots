@@ -1,0 +1,57 @@
+.slideshow {
+  position: absolute;
+  bottom: 0;
+  transform: translate(3%, 80%);
+  width: 95vw;
+
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 240px;
+  }
+
+  .slide {
+    box-sizing: border-box;
+    display: none;
+    height: 250px;
+    position: absolute;
+    width: 100%;
+    padding: 28px 44px 0;
+    @extend %s3;
+    color: $c-gray-light;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    backdrop-filter: blur(17px);
+
+    &--active {
+      display: block;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 15px;
+  bottom: -160px;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+
+  @include onTablet {
+    display: none;
+  }
+
+  &__link {
+    background: rgba(#f8f8f8, 0.75);
+    border: 1px solid #f8f8f8;
+    transform: rotate(45deg);
+    display: block;
+    height: 7px;
+    width: 7px;
+
+    &--active {
+      display: block;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+}

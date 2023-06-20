@@ -1,0 +1,251 @@
+.for-whom {
+  position: relative;
+  @include gridAreas;
+
+  &__title {
+    grid-area: tit;
+    @extend %h2;
+    margin: 0 0 25px;
+
+    @include onTablet {
+      margin: 0 0 42px;
+    }
+
+    @include onTablet {
+      margin: 0 0 34px;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--1 {
+      grid-area: pic1;
+      width: 284px;
+      height: 284px;
+      margin: 0 0 110px;
+
+      @include onDesktop {
+        width: 500px;
+        height: 500px;
+        margin: 0 0 80px;
+      }
+    }
+
+    &--2 {
+      grid-area: pic2;
+      justify-self: end;
+      width: 300px;
+      height: 417px;
+
+      @include onDesktop {
+        justify-self: center;
+        align-self: end;
+      }
+
+    }
+
+    &--3 {
+      grid-area: pic3;
+      width: 284px;
+      height: 404px;
+      margin-top: 122px;
+
+      @include onDesktop {
+        width: 470px;
+        height: 670px;
+        margin-top: 0;
+        justify-self: end;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__number {
+    @extend %h2;
+    color: #000;
+    margin: 0 0 30px 18px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &::before {
+      position: absolute;
+      display: inline-block;
+      content: "";
+      width: 18px;
+      height: 44px;
+      transform: translate(-100%);
+      background-image: url(../images/slash.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    &--1 {
+      grid-area: num1;
+      margin-top: 25px;
+
+      @include onDesktop {
+        margin-top: 0;
+        justify-self: center;
+        align-self: center;
+      }
+    }
+
+    &--2 {
+      grid-area: num2;
+      align-self: end;
+
+      @include onTablet {
+        margin: 0 0 22px 18px;
+      }
+
+      @include onDesktop {
+        margin: 0 0 0 115px;
+      }
+    }
+
+    &--3 {
+      grid-area: num3;
+
+      @include onTablet {
+        margin-top: 152px;
+      }
+
+      @include onDesktop {
+        margin-top: 110px;
+        margin-left: 18px;
+      }
+    }
+  }
+
+  &__article {
+    position: relative;
+    margin: 0 0 70px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &--1 {
+      grid-area: art1;
+
+      @include onTablet {
+        margin-top: -25px;
+      }
+
+      @include onDesktop {
+        margin-top: 0;
+        align-self: center;
+        justify-self: end;
+      }
+    }
+
+    &--2 {
+      grid-area: art2;
+
+      @include onDesktop {
+        margin-left: 100px;
+        margin-top: 34px;
+      }
+    }
+
+    &--3 {
+      grid-area: art3;
+      margin: 0;
+
+      @include onTablet {
+        margin-top: 111px;
+      }
+    }
+
+    &-laconic {
+      @extend %s1;
+      display: none;
+
+      &::before {
+        position: absolute;
+        content: "*";
+        font-family: $ff-strings;
+        font-size: 24px;
+        line-height: 33px;
+        letter-spacing: 0.15em;
+        color: #000;
+        transform: translateX(-200%);
+      }
+
+      @include onTablet {
+        display: inline-block;
+      }
+
+      &--1 {
+        margin-bottom: 25px;
+
+        @include onDesktop {
+          margin-bottom: 40px;
+        }
+      }
+
+      &--2 {
+        position: absolute;
+        top: 0;
+        transform: translate(330%, -450%);
+
+        @include onDesktop {
+          transform: translate(0%, -600%);
+        }
+      }
+
+      &--3 {
+        margin-bottom: 17px;
+
+        @include onDesktop {
+          position: absolute;
+          top: 0;
+          margin: 0;
+          transform: translate(-100%, -300%);
+        }
+      }
+    }
+
+    &-title {
+      @extend %h2;
+      margin: 0 0 20px;
+      color: #000;
+
+      @include onTablet {
+        &::after {
+          position: absolute;
+          display: inline-block;
+          content: "";
+          width: 18px;
+          height: 44px;
+          background-image: url(../images/slash.png);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+    }
+
+    &-paragraf {
+      @extend %s1;
+      margin: 0;
+    }
+  }
+
+  &__tassel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

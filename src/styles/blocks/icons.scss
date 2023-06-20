@@ -1,0 +1,24 @@
+.icon {
+  object-fit: cover;
+  object-position: center;
+
+  &--menu {
+    height: 32px;
+    width: 32px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--cart {
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/cart_icon.svg);
+    transition: background-image 0.3s;
+
+    &:hover {
+      background-image: url(../images/cart_icon-hover.svg);
+    }
+  }
+}
