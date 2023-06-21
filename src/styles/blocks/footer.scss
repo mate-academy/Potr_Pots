@@ -1,0 +1,84 @@
+.footer {
+
+  &__container {
+    width: 100%;
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0 0 10px;
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0;
+
+    color: #000;
+
+    &--center {
+      display: block;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--link {
+      text-decoration: none;
+      
+      @include hover(border-bottom, 1px solid #000);
+    }
+  }
+
+  &__box {
+
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--center {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+  }
+
+  &__links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+      width: 230px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 74px;
+    }
+  }
+
+  &__link {
+    @include hover(transform, scale(130%));
+  }
+}

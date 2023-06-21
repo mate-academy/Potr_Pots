@@ -1,0 +1,76 @@
+.side {
+
+  &-text {
+    display: inline-block;
+    font-family: "Bebas Neue", sans-serif;
+    width: max-content;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.4px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+
+    color: $colorGrey3;
+
+    &--left {
+      transform: rotate(-90deg) translateX(34px);
+    }
+
+    &--right {
+      transform: rotate(90deg) translateX(34px);
+    }
+
+    &--buy {
+      transform: rotate(90deg) translateX(150px) translateY(1px);
+    }
+  }
+
+  &-box {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 14px;
+
+    &--right {
+      right: 0;
+    }
+
+    &--left {
+      left: 0;
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+
+    &--top {
+      bottom: 0;
+      transform: translateY(-60px) translateX(20px);
+
+      @include onTablet {
+        display: flex;
+        top: 0;
+        transform: translateY(0) translateX(0);
+      }
+    }
+
+    &--bottom {
+      bottom: 0;
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+}

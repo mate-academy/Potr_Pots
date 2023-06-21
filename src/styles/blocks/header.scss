@@ -1,0 +1,270 @@
+.header {
+  height: max-content;
+  width: 100%;
+  background-repeat: no-repeat;
+  margin-bottom: 110px;
+
+  @include onTablet {
+    background-image: url(../images/Rectangle.svg);
+
+    background-size: 614px;
+  }
+
+  @include onDesktop {
+    background-size: 1035px;
+    margin-bottom: 150px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+
+    @include onTablet {
+      padding-top: 29px;
+    }
+
+    @include onDesktop {
+      padding-top: 20px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__item {
+    display: none;
+    @include onDesktop {
+      display: inline;
+      margin-right: 60px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorGrey2;
+
+    &-arrow {
+      transform: rotate(-90deg) translateY(30px);
+    }
+
+    @include hover(border-bottom, 2px solid #000);
+    @include hover(color,#000);
+  }
+
+  &__menu {
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/menu_icon.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__bag {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-image: url(../images/icon_bag.svg);
+    }
+  }
+
+  &__content {
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 10px;
+
+    @include onTablet {
+      padding-top: 49px;
+    }
+
+    @include onDesktop {
+      padding-top: 76px;
+    }
+  }
+
+  &__title {
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin: 0;
+    }
+
+    &_link {
+      text-decoration: none;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      margin-bottom: 20px;
+    }
+    margin: 0 0 30px;
+    font-family: "Bebas Neue", sans-serif;
+    display: inline-block;
+    width: max-content;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+    }
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 1px $colorTurquoise;
+
+    &--blue {
+      color: $colorTurquoise;
+      display: inline;
+    }
+
+    letter-spacing: 0.15em;
+  }
+
+  &__subtitle {
+    @include onTablet {
+      margin-top: -30px;
+      grid-column: 2 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 3 / 4;
+      margin: 0 0 5px;
+    }
+
+    margin: 0 0 1px;
+    font-size: 26px;
+    line-height: 36px;
+
+    font-weight: 700;
+  }
+
+  &__text {
+    @include onTablet {
+      margin-bottom: 50px;
+      grid-column: 2 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 3 / 5;
+    }
+
+    margin: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $colorGrey2;
+    margin-bottom: 33px;
+  }
+
+  &__button {
+    @include hover(color, $colorGrey3);
+
+    @include onTablet {
+      grid-column: 2 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 5;
+    }
+
+    background-color: #ffe339;
+    border: 1px solid #ffe339;
+    color: #121212;
+  }
+
+  &__img {
+    background-image: url(../images/header_img.png);
+    background-size: cover;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    margin: 0 -38px;
+    width: 100vw;
+
+    @include onTablet {
+      margin: 0;
+      width: 100%;
+      @include hover(transform, scale(105%));
+    }
+  }
+
+  &__arrow {
+    margin-left: 15px;
+  }
+
+  &__info {
+    grid-row: 1;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 20px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 20px;
+    }
+
+  }
+
+  &__container {
+    grid-row: 1;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  &__box {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateX(85px) translateY(-110px) rotate(90deg);
+
+    @include onTablet {
+      width: max-content;
+      left: 0;
+      bottom: 0;
+      transform: translateX(-70px) translateY(-70px) rotate(90deg);
+    }
+
+    @include onDesktop {
+      transform: translateX(-70px) translateY(-87px) rotate(90deg);
+    }
+
+    &_link {
+      font-weight: 400;
+
+      display: flex;
+      align-items: center;
+      height: 18px;
+      font-size: 12px;
+      line-height: 150%;
+      color: $colorTurquoise;
+      text-decoration: none;
+    }
+
+    &:hover > &_link {
+      transition: transform 0.3s;
+      transform: translateX(80px);
+    }
+  }
+}
