@@ -1,0 +1,270 @@
+.questions {
+  position: relative;
+  color: $colorBlack;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 1030px;
+
+    @include onTablet {
+      height: 135%;
+    }
+
+    @include onDesktop {
+      margin-right: calc((100vw - 1170px) / 2);
+      margin-left: calc(((100vw - 1170px) / 2) - 135px);
+      height: 150%;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &--tablet {
+      display: none;
+    }
+
+    @include onTablet {
+      &--mobile {
+        display: none;
+      }
+
+      &--tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__stamp {
+    position: absolute;
+    top: -35px;
+    right: 0;
+
+    &--desktop {
+      display: none;
+    }
+
+    @include onTablet {
+      top: -54px;
+    }
+
+    @include onDesktop {
+      top: -83px;
+      right: -37px;
+
+      &--mobile {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $fontBebas;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding-top: 45px;
+
+    @include onTablet {
+      padding-top: 17px;
+    }
+  }
+
+  &__content {
+    margin-bottom: 102px;
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+      margin-bottom: 113px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      margin-bottom: 184px;
+    }
+  }
+
+  &__text {
+    line-height: 150%;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / 4;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 1 / 2 / 5;
+    }
+  }
+
+  &__title-form {
+    font-size: 24px;
+    line-height: 150%;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      grid-area: 2 / 1 / 3 / 3;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    @include onTablet {
+      grid-area: 3 / 1 / 4 / 4;
+    }
+
+    @include onDesktop {
+      grid-area: 3 / 1 / 4 / 5;
+    }
+  }
+
+  &__form-field {
+    background-color: transparent;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 35px;
+    padding: 5px 6px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorTurquoise;
+    transition: all 0.3s;
+
+    &:nth-last-child(2) {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 16px;
+      line-height: 150%;
+      color: $colorGray;
+    }
+
+    &:hover {
+      cursor: pointer;
+      border-bottom: 1px solid $colorTurquoise;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $colorTurquoise;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px #ffec7a inset;
+      -webkit-text-fill-color: $colorTurquoise;
+    }
+  }
+
+  &__form-textarea {
+    resize: none;
+
+    &::placeholder {
+      font-family: inherit;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    background-color: $colorTurquoise;
+    border: 1px solid $colorTurquoise;
+    margin-bottom: 56px;
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.4;
+    }
+
+    @include onTablet {
+      width: 220px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      width: 238px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    @include onTablet {
+      grid-area: 1 / 5 / 4 / -1;
+      gap: 20px;
+      margin-bottom: 85px;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 7 / 4 / 10;
+      margin-bottom: 88px;
+    }
+  }
+
+  &__contacts-name {
+    font-size: 24px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.39);
+    margin-bottom: 5px;
+  }
+
+  &__contacts-link {
+    line-height: 150%;
+    color: $colorBlack;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $colorTurquoise;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px orange;
+    border-radius: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: orange;
+    border-radius: 15px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(181, 121, 16);
+  }
+}

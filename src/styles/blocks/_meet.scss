@@ -1,0 +1,165 @@
+.meet {
+  overflow: hidden;
+
+  &__title {
+    font-family: $fontBebas;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+    color: $colorDarkGray;
+
+    @include onTablet {
+      margin-bottom: 17px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    margin-bottom: 168px;
+
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+      margin-bottom: -200px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      margin-bottom: -350px;
+    }
+  }
+
+  &__rectangle {
+    grid-area: 2 / 1 / 3 / -1;
+    margin: 0 -30px;
+    transform: translateY(100px);
+    z-index: -1;
+    height: 295px;
+
+    &--desktop {
+      display: none;
+    }
+
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / 3;
+      margin: 0 0 0 -34px;
+      height: 235px;
+      transform: translateY(85px);
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 1 / 2 / 4;
+      margin: 0 -30px 0 -135px;
+      transform: translateY(95px);
+
+      &--mobile {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+      }
+    }
+  }
+
+  &__name {
+    display: none;
+    font-family: $fontBebas;
+    font-size: 232px;
+    line-height: 278px;
+    letter-spacing: 0.15em;
+    color: transparent;
+    -webkit-text-stroke: 0.8px $colorTurquoise;
+    z-index: 1;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+      -webkit-text-stroke: 1px $colorTurquoise;
+
+    }
+  }
+
+  &__name-martin {
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / -1;
+      margin-left: -75px;
+    }
+
+    @include onDesktop {
+      margin-left: -65px;
+    }
+  }
+
+  &__name-andy {
+    font-size: 220px;
+    line-height: 264px;
+
+    @include onTablet {
+      grid-area: 3 / 3 / 4 / -1;
+      justify-self: end;
+      margin-right: -70px;
+      transform: translateY(-160px);
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      line-height: 346px;
+      -webkit-text-stroke: 1px $colorTurquoise;
+      transform: translateY(-285px);
+      margin-right: -165px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__photo {
+    grid-area: 1 / 1 / 2 / -1;
+    margin: 0 -30px 30px;
+
+    @include onTablet {
+      grid-area: 2 / 4 / 3 / -1;
+      margin: 0;
+      transform: translateY(-120px);
+    }
+
+    @include onDesktop {
+      grid-area: 2 / 5 / 3 / 12;
+      transform: translateY(-230px);
+    }
+  }
+
+  &__text {
+    grid-area: 2 / 1 / 3 / -1;
+    line-height: 150%;
+
+    @include onTablet {
+      grid-area: 2 / 1 / 4 / 4;
+      transform: translateY(-65px);
+    }
+
+    @include onDesktop {
+      grid-area: 2 / 1 / 4 / 5;
+      transform: translateY(0);
+
+      // margin-bottom: 240px;
+      width: 336px;
+    }
+  }
+}

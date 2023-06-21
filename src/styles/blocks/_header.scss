@@ -1,0 +1,91 @@
+.header {
+  &__content {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    margin-bottom: 18px;
+
+    @include onTablet {
+      padding-top: 30px;
+      margin-bottom: 60px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      padding-top: 20px;
+      margin-bottom: 88px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $colorGray;
+    line-height: 150%;
+    min-width: 90px;
+    text-align: center;
+    transition: all 0.3s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &__nav {
+    display: none;
+    align-items: center;
+    gap: 40px;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__image {
+    display: block;
+  }
+
+  &__bag {
+    display: none;
+    transition: all 0.3s;
+
+    @include onDesktop {
+      display: block;
+      padding: 0 9px;
+    }
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
+  }
+
+  &__menu {
+    padding: 0 8px;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__background {
+    display: none;
+
+    @include onTablet {
+      z-index: -1;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 120px;
+    }
+
+    @media (min-width: 1160px) {
+      left: -135px;
+    }
+  }
+}
