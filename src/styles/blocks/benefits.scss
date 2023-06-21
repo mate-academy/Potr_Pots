@@ -1,0 +1,196 @@
+.benefits {
+  overflow-y: hidden;
+  margin-bottom: 0;
+
+  &__photos {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__images {
+    margin-left: -102px;
+    transition: transform 1s;
+    cursor: pointer;
+
+    @include onDesktop {
+      &:hover {
+        transform: scale(1.16) translateX(19px) translateY(33px);
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    &:nth-child(4) {
+      margin-bottom: 50px;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+
+      &:nth-child(4) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+
+      &:nth-child(4) {
+        margin-bottom: 0;
+        margin-top: 296px;
+      }
+
+      grid-row: 1;
+      margin-top: 173px;
+    }
+
+  }
+
+  &__titles {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: $colorGreyFirst;
+    margin: 0 0 5px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      margin-bottom: 8.5px;
+      background-image: url(../images/benefits/rhombus.svg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 7px;
+      height: 7px;
+    }
+
+    @include onTablet {
+      white-space: nowrap;
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+
+  &__about {
+    margin: 0;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin: 0;
+      grid-row: 2;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      grid-row: 1;
+    }
+  }
+
+  &__rebate {
+    @include onTablet {
+      grid-row: 2;
+      margin-top: 83px;
+    }
+
+    @include onDesktop {
+      grid-row: 1;
+      margin-top: 557px;
+      text-align: left;
+    }
+  }
+
+  &__discount {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: $colorCircleRed;
+    margin: 0 0 5px;
+
+    @include onMobile {
+      margin: 0 0 10px;
+    }
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 24px;
+      margin: 0;
+    }
+  }
+
+  &__connection {
+    margin-bottom: 37px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-row: 3;
+      margin-top: -19px;
+
+      @media (min-width: 716px) {
+        margin-top: 5px;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-row: 1;
+      margin-top: 613px;
+      text-align: left;
+
+    }
+  }
+
+  &__link {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $colorTurquoise;
+    text-decoration: none;
+    margin: 0;
+
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  &__seal {
+    @include onMobile {
+      width: max-content;
+    }
+
+    @include onDesktop {
+      margin-top: -82px;
+    }
+  }
+
+  &__ring {
+    z-index: 1;
+
+    @include onMobile {
+      margin-left: calc(100vw - 145px);
+    }
+
+    @include onTablet {
+      margin-left: calc(100vw - 145px);
+    }
+
+    @include onDesktop {
+      margin-left: calc(50% + 504.5px);
+    }
+  }
+}

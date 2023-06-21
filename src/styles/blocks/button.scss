@@ -1,0 +1,94 @@
+.button {
+  display: flex;
+  padding-left: 28%;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 48px;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  color: #121212;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  background-color: none;
+  background-image: url(../images/button-arrow.svg);
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: 72% center;
+  cursor: pointer;
+
+  @include onTablet {
+    margin-top: 35px;
+  }
+
+  @include onDesktop {
+    margin-top: 410px;
+  }
+
+  &--primary {
+    background-color: $colorTurquoise;
+    color: #fff;
+    border: none;
+    background-image: url(../images/button-arrow-primary.svg);
+    margin: 0;
+    
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.4);
+    }
+    @include onMobile {
+      padding-left: $calcPaddingButtonArrowMobile;
+      background-position: $calcPaddingButtonArrow center;
+    }
+
+    @include onTablet {
+      width: 66.5%;
+      padding-left: $calcPaddingButtonTextTablet;
+      background-position: $calcPaddingButtonArrow center;
+    }
+
+    @include onDesktop {
+      padding-left: 78px;
+      width: 238px;
+      background-position: 141px center;
+    }
+  }
+
+  &--2 {
+    @include onMobile {
+      background-color: $colorYellowButton;
+    }
+
+    @include onTablet {
+      margin-top: 0;
+      border: 1px solid $colorTurquoise;
+    }
+
+    @include onDesktop {
+      margin-top: 439px;
+      border: 1px solid $colorTurquoise;
+    }
+
+    &:hover {
+      @include onMobile {
+        opacity: 0.6;
+      }
+
+      @include onTablet {
+        background-color: $colorTurquoise;
+        opacity: 1;
+        color: $colorWhite;
+        background-image: url(../images/button-arrow-primary.svg);
+      }
+  
+      @include onDesktop {
+        opacity: 1;
+        background-color: $colorTurquoise;
+        color: $colorWhite;
+        background-image: url(../images/button-arrow-primary.svg);
+      }
+    }
+  }
+}

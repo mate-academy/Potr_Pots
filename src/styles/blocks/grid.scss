@@ -1,0 +1,127 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 16px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+
+  }
+
+  &--position {
+    grid-row: 1;
+  }
+
+  &--desktop {
+    display: block;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &__item {
+    @for $start from 1 through 12 {
+      @for $end from $start through 12 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+
+        &--desktop-#{$start}-#{$end} {
+          @include onDesktop {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    @for $start from 1 through 6 {
+      @for $end from $start through 6 {
+        &--tablet-#{$start}-#{$end} {
+          @include onTablet {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+
+    &--position-1 {
+
+      @include onTablet {
+        margin-bottom: 122px;
+      }
+
+      @include onDesktop {
+        padding-top: 105px;
+        grid-row: 1 / 3;
+      }
+    }
+
+    &--position-2 {
+      @include onDesktop {
+        margin-top: -103px;
+        grid-row: 3 / 4;
+      }
+    }
+
+    &--position-3 {
+      @include onDesktop {
+        grid-row: 1 / 3;
+      }
+    }
+
+    &--position-4 {
+      @include onDesktop {
+        padding-top: 109px;
+      }
+    }
+
+    &--position-5 {
+      @include onTablet {
+        grid-row: 1;
+      }
+
+      @include onDesktop {
+        grid-row: 1;
+      }
+    }
+
+    &--position-6 {
+      @include onDesktop {
+        grid-row: 1;
+      }
+    }
+
+    &--position-7 {
+      @include onTablet {
+        grid-row: 2;
+      }
+    }
+
+    &--position-8 {
+      @include onTablet {
+        grid-row: 2;
+      }
+
+      @include onDesktop {
+        grid-row: 1;
+      }
+    }
+
+    &--position-9 {
+      @include onTablet {
+        grid-row: 2;
+      }
+    }
+  }
+}

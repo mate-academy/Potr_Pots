@@ -1,0 +1,98 @@
+.circle {
+  display: block;
+  width: 0;
+
+  @include onMobile {
+    display: none;
+  }
+
+  &__text {
+    z-index: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    min-width: calc(25vw - 10px);
+
+    margin: 0 9px;
+    padding: 35px;
+    height: max-content;
+    color: $colorGreyLight;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+
+    @include onTablet {
+      margin-bottom: 71px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  &__elips {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 51px;
+    height: 51px;
+    background-color: $colorCircleRed;
+    border-radius: 50%;
+    transition-duration: 1s;
+    cursor: pointer;
+
+    &--position-1 {
+      margin-top: -20vw;
+      margin-left: 10vw;
+
+      @include onDesktop {
+        margin-left: 13vw;
+      }
+    }
+  
+    &--position-2 {
+      margin-top: -20vw;
+      margin-left: 30vw;
+    }
+
+    &--position-3 {
+      margin-top: 10vw;
+      margin-left: 44vw;
+    }
+
+    &--position-4 {
+      margin-top: -16vw;
+      margin-left: 57vw;
+    }
+
+    &--position-5 {
+      margin-top: -16vw;
+      margin-left: 77vw;
+    }
+
+    &:hover {
+      background-color: rgba(36, 35, 35, 0.45);
+
+      .circle__text {
+        display: flex;
+      }
+    }
+  }
+
+  &__plus-vertical {
+    width: 1px;
+    height: 11px;
+    background-color: $colorGray5;
+  }
+  
+  &__plus-horizontal {
+    position: absolute;
+    width: 11px;
+    height: 1px;
+    background-color: $colorGray5;
+  }
+}

@@ -1,0 +1,138 @@
+.about-us {
+  overflow: hidden;
+  @include onMobile {
+    margin-bottom: 168px;
+  }
+
+  @include onTablet {
+    margin-bottom: 186px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 226px;
+  }
+
+  &__photo {
+    transition: transform 1s;
+
+    @include onMobile {
+      width: 100vw;
+      margin: 0 0 30px -30px;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    @include onTablet {
+      width: 100%;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    @include onDesktop {
+      width: 100%;
+
+      &:hover {
+        transform: scale(1.35) translateX(33px);
+      }
+    }
+  }
+
+  &__about {
+    margin: 0;
+
+    @include onTablet {
+      width: 92%;
+      margin-top: 53px;
+    }
+
+    @include onDesktop {
+      width: 90%;
+      margin-top: 230px;
+    }
+  }
+
+  &__background {
+    display: block;
+    width: 100%;
+    margin-left: -30px;
+    margin-top: 371px;
+    height: 320px;
+    z-index: -1;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      width: 33%;
+      margin-left: -28px;
+      margin-top: -77px;
+    }
+
+    @include onDesktop {
+      height: 467px;
+      width: 100%;
+      margin-top: -28px;
+      position: absolute;
+      right: 67%;
+      left: -67%;
+    }
+  }
+
+  &__martin {
+    display: none;
+    position: absolute;
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    text-align: left;
+    letter-spacing: 0.14em;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $colorTurquoise;
+    transition-duration: 1s;
+
+    @include onTablet {
+      left: 0;
+      display: block;
+      font-size: 202px;
+      line-height: 278px;
+      margin-top: -149px;
+    }
+
+    @include onDesktop {
+      display: block;
+      left: calc(50% - 646px);
+      font-size: 288px;
+      line-height: 346px;
+      margin-top: -116px;
+    }
+
+    &:hover {
+      color: $colorTurquoise;
+      transform: skew(-15deg);
+    }
+
+    &--andy {
+      @include onTablet {
+        display: block;
+        margin-top: 28%;
+        left: initial;
+        right: 0;
+      }
+
+      @include onDesktop {
+        display: block;
+        margin-top: 448px;
+        left: initial;
+        right: calc(50% - 640px);
+      }
+
+      &:hover {
+        transform: skew(15deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.section {
+
+  @include onDesktop {
+    margin-bottom: 125px;
+  }
+  
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    padding: 0 30px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: left;
+    color: $colorTurquoise;
+    letter-spacing: 0.14em;
+
+    &-transparent {
+      color: transparent;
+      -webkit-text-stroke-width: 0.1px;
+      -webkit-text-stroke-color: $colorTurquoise;
+    }
+  }
+
+  &__button {
+    background-color: $colorYellowButton;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  
+  &__background {
+    display: none;
+    width: 80vw;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+
+    @include onTablet {
+      display: block;
+      right: 20vw;
+    }
+
+    @include onDesktop {
+      display: block;
+      right: calc(50% - 315px);
+    }
+  }
+
+  &__image {
+    margin-bottom: 25px;
+    display: block;
+    width: 100%;
+
+    @include onTablet {
+      width: 90%;
+      margin-left: 10%;
+    }
+
+    @include onDesktop {
+      width: 500px;
+    }
+
+    @include onMobile {
+      width: 100vw;
+      margin-left: -30px;
+    }
+  }
+
+  &__description {
+    height: max-content;
+    align-self: end;
+
+    @include onDesktop {
+      margin-bottom: 140px;
+    }
+
+    &-price {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 36px;
+      color: $colorGreyFirst;
+      margin: 0 0 1px;
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 21px;
+      margin: 0 0 20px;
+    }
+  }
+}

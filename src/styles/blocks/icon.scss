@@ -1,0 +1,88 @@
+.icon {
+  &-menu-mobile {
+    display: block;
+    width: 48px;
+    height: 48px;
+
+    background-image: url(../images/menu.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &-menu-desktop {
+    display: none;
+    width: 48px;
+    height: 48px;
+
+    background-image: url(../images/menu.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onDesktop {
+      display: block;
+      width: 48px;
+      height: 48px;
+      background-image: url(../images/baskett.png);
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition-duration: 0.5s;
+
+      &:hover {
+        transform: rotate(-7deg) scale(1.2);
+      }
+    }
+  }
+
+  &__cross {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: max-content;
+    text-decoration: none;
+    transform: rotate(-90deg);
+    transform-origin: 9px;
+    position: absolute;
+    bottom: 43px;
+    left: calc(72% - 50px);
+    transition-duration: 0.5s;
+
+    &:hover {
+      transform: rotate(-90deg) translateX(10px);
+    }
+
+    &-text {
+      display: inline-flex;
+      padding-left: 5px;
+      font-size: 12px;
+      line-height: 18px;
+      color: $colorGreyLight;
+
+    }
+    
+    &-rectangle {
+      display: inline-flex;
+      margin-left: 18px;
+      width: 44px;
+      height: 1px;
+      background-image: url(../images/menu-Rectangle.svg);
+    }
+
+    &-cross {
+      display: inline-flex;
+      width: 13px;
+      height: 13px;
+      background-image: url(../images/cross.svg);
+      background-repeat: no-repeat;
+      background-position: right 0.5px;
+    }
+  }
+}

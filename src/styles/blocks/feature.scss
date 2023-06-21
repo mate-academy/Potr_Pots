@@ -1,0 +1,55 @@
+.feature {
+  &__photo-container {
+    margin-bottom: 35px;
+
+    @include onTablet {
+      margin-bottom: 27px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    transition: transform 1s;
+
+    @include onTablet {
+      &:hover {
+        transform: scale(1.08) translateY(-26px);
+      }
+    }
+
+    @include onMobile {
+      &:hover {
+        transform: scale(1.11);
+      }
+    }
+
+    @include onDesktop {
+      &:hover {
+        transform: scale(1.08) translateY(-26px);
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $colorGreyFirst;
+    text-align: center;
+    margin: 0 0 20px;
+
+    @include onTablet {
+      white-space: nowrap;
+    }
+  }
+
+  &__about {
+    margin: 0;
+    text-align: center;
+  }
+}
