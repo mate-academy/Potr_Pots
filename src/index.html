@@ -503,12 +503,17 @@
               <p class="message-us__text">
                 Here few ways to get in touch with us:
               </p>
-              <form action="#" class="form">
+              <form
+                action="#"
+                class="form"
+                onsubmit="this.reset(); return false;"
+              >
                 <p class="form__title">
                   Message us
                 </p>
                 <label class="form__item">
                   <input
+                    name="name"
                     type="text"
                     placeholder="Name"
                     class="form__input"
@@ -516,6 +521,7 @@
                 </label>
                 <label class="form__item">
                   <input
+                    name="email"
                     type="email"
                     placeholder="Email"
                     class="form__input"
@@ -530,7 +536,7 @@
                     class="form__texterea"
                   ></textarea>
                 </label>
-                <button class="form__button button">
+                <button class="form__button button" type="submit">
                   Submit
                 </button>
               </form>
