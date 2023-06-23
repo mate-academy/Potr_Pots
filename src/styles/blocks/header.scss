@@ -1,0 +1,156 @@
+.header {
+  &__content {
+    margin-bottom: 100px;
+  }
+  &__menu {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__top {
+    @include top-actions;
+  }
+
+  &__nav {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      list-style: none;
+      gap: 60px;
+      text-transform: capitalize;
+      
+      &--link {
+        text-decoration: none;
+        color: $main-text-color;
+      }
+    }
+  }
+
+  &__background {
+    background-image: url(../images/svg/Rectangle_header.svg);
+    @extend %background-images-settings;
+    height: 466px;
+    width: 100%;
+    display: none;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: -20px;
+      right: 20%;
+    }
+
+    @include desktop {
+      background-size: contain;
+      top: 0;
+      right: 205px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  &__text {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 43.2px;
+    letter-spacing: 0.15em;
+    color: transparent;
+    -webkit-text-stroke: 1px $big-headers-color;
+    grid-row: 1;
+    margin-bottom: 20px;
+
+    &--colored {
+      color: $big-headers-color;
+    }
+
+    @include tablet {
+      font-size: 64px;
+      line-height: 64px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: relative;
+
+    background-image: url(../images/png/pot_header.png);
+    @extend %background-images-settings;
+    z-index: -1;
+    height: 319px;
+    width: auto;
+    margin: 0 -20px 25px;
+    
+    @include tablet {
+      margin: 0;
+      grid-row: 1 / 4;
+      height: 306.06px;
+      min-width: 306.16px;
+      width: auto;
+    }
+
+    @include desktop {
+      height: 500px;
+      width: auto;
+    }
+  }
+
+  &__price {
+    &--amount {
+      font-weight: 700;
+      font-size: 26px;
+      color: $headers-color;
+      @include desktop {
+        margin-bottom: 5px;
+      }
+    }
+
+    &--extra {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: $main-text-color;
+      @include tablet {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__arrow {
+    @media (max-width: 639px) {
+      position: absolute;
+      right: -3%;
+      bottom: 0;
+    }
+
+    @include tablet {
+      bottom: 60px;
+      grid-row: 2 / 5;
+    }
+
+    &--text {
+      margin-top: 10px;
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 150%;
+      color: $big-headers-color;
+      writing-mode: vertical-rl;
+
+      &::after {
+        content: url("../images/svg/Arrow.svg");
+        transform: rotate(270deg);
+        margin-top: 9px;
+      }
+    }
+  }
+}

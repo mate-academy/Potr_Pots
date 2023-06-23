@@ -1,0 +1,294 @@
+.for-whom {
+  &__container {
+    position: relative;
+  }
+
+  &__section {
+    display: flex;
+    margin-bottom: 70px;
+    box-sizing: border-box;
+
+    @include tablet {
+      margin-bottom: 110px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 80px;
+    }
+
+    &--1 {
+      @include desktop {
+        margin-bottom: 80px;
+        justify-content: start;
+        gap: 200px;
+      }
+    }
+
+    &--2 {
+      flex-direction: row-reverse;
+
+      @include desktop {
+        flex-direction: column;
+        gap: 45px;
+        align-items: flex-start;
+        padding-left: 100px;
+        margin-bottom: 0;
+      }
+    }
+
+    &--3 {
+      @include desktop {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 45px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__img {
+    @extend %background-images-settings;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+    
+    &--1 {
+      background-image: url(../images/png/pot_for_whom_1.png);
+      width: 284px;
+      height: 284px;
+
+      @include desktop {
+        width: 500px;
+        height: 500px;
+      }
+    }
+    &--2 {
+      background-image: url(../images/png/pot_for_whom_2.png);
+      width: 300px;
+      height: 417px;
+
+      @include desktop {
+        width: 300px;
+        height: 417px;
+      }
+    }
+    &--3 {
+      background-image: url(../images/png/pot_for_whom_3.png);
+      width: 284px;
+      height: 405px;
+
+      @include desktop {
+        width: 470px;
+        height: 670px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    font-family: "Manrope", sans-serif;
+    width: 370px;
+    color: $main-text-color;
+
+    @include tablet {
+      width: 340px;
+    }
+
+    @include desktop {
+      width: 370px;
+    }
+  }
+
+  &__title,
+  &__section_title {
+    font-size: 36px;
+    line-height: 54px;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 5.58px;
+  }
+
+  &__title {
+    color: $headers-color;
+    margin-bottom: 101px;
+
+    @include tablet {
+      margin-bottom: 19px;
+    }
+
+    @include desktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__section_title {
+    color: $subtitles-color;
+    &--1,
+    &--2,
+    &--3 {
+      @include tablet {
+        &::after {
+          content: url("../images/svg/slash.svg");
+          position: absolute;
+          transform: translateX(-10%);
+        }
+      }
+    }
+
+    &--1 {
+
+      position: relative;
+      &::before {
+        content: url("../images/svg/1.svg");
+        position: absolute;
+        transform: translateY(-100%);
+
+        @include tablet {
+          transform: translate(-200%);
+        }
+
+        @include desktop {
+          transform: translate(-300%);
+        }
+      }
+    }
+
+    &--2 {
+      position: relative;
+
+      &::before {
+        content: url("../images/svg/2.svg");
+        position: absolute;
+        transform: translateY(-100%);
+      }
+    }
+
+    &--3 {
+      position: relative;
+
+      &::before {
+        content: url("../images/svg/3.svg");
+        position: absolute;
+        transform: translateY(-100%);
+
+        @include tablet {
+          transform: translate(-200%);
+        }
+
+        @include desktop {
+          transform: translate(-300%);
+        }
+      }
+    }
+  }
+
+  &__element {
+    display: none;
+
+    @include tablet {
+      position: relative;
+      display: block;
+      font-family: "Manrope", sans-serif;
+      color: $main-text-color;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 25px;
+
+      &--second {
+        text-align: end;
+        margin-bottom: 96px;
+
+        @include desktop {
+          text-align: start;
+          margin-bottom: 112px;
+        }
+      }
+
+      &--third {
+        margin-bottom: 17px;
+
+        @include desktop {
+          margin-left: -100px;
+          margin-bottom: 40px;
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: "*";
+        transform: translate(-300%, -30%);
+      }
+    }
+
+    @include desktop {
+      &::before {
+        position: absolute;
+        content: "*";
+        transform: translate(-300%, 12%);
+      }
+    }
+  }
+
+  &__bottom {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__label {
+    font-family: "Bebas Neue", cursive;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    position: absolute;
+    color: $sides-color;
+
+    &--top {
+      bottom: 0;
+      right: -10px;
+      transform-origin: bottom right;
+      transform: rotate(90deg);
+
+      @include tablet {
+        transform-origin: top right;
+        transform: rotate(90deg);
+        top: 0;
+        right: -20px;
+      }
+
+      @include desktop {
+        transform-origin: top right;
+        transform: rotate(90deg);
+        top: 150px;
+        right: 0;
+      }
+    }
+
+    &--bottom {
+      display: none;
+
+      @include desktop {
+        display: block;
+        transform-origin: bottom left;
+        transform: rotate(-90deg);
+        bottom: 76px;
+        left: 10px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      transform: translate(-115%, -8px);
+      display: block;
+      height: 1px;
+      width: 65px;
+      background-color: $sides-color;
+    }
+  }
+}
