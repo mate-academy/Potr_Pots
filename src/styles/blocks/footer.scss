@@ -1,0 +1,135 @@
+.footer {
+  padding-bottom: 30px;
+
+  @include onTablet {
+    padding-bottom: 115px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 64px;
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__block {
+    width: 170px;
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &--one {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__block-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+    text-decoration: none;
+
+    padding-bottom: 10px;
+
+    &--about {
+      display: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__block-content {
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    &--adrress {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__media-networks {
+    display: flex;
+    justify-content: center;
+    background-size: contain;
+    gap: 70px;
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 32px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__media-icon {
+    @extend %photo;
+    width: 30px;
+    height: 30px;
+    transition: all $animat-time;
+
+    &--tweeter {
+      background-image: url(../images/twitter.png);
+    }
+
+    &--insta {
+      background-image: url(../images/instagram.png);
+    }
+
+    &--fb {
+      background-image: url(../images/fb.png);
+    }
+
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+
+  &__media-title {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+    transition: all $animat-time;
+
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+}

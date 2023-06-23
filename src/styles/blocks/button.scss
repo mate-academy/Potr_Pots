@@ -1,0 +1,56 @@
+.button {
+  display: block;
+  box-sizing: border-box;
+  height: 50px;
+  width: 260px;
+  cursor: pointer;
+  border: none;
+
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+
+  transition: all $animat-time;
+
+  @include onTablet {
+    width: 240px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &--yellow {
+    background-color: $c-yellow;
+    color: #121212;
+
+    &:hover {
+      background: $c-yellow-light;
+      color: $c-grey;
+    }
+  }
+
+  &--turquoise {
+    background-color: $c-turquoise;
+    color: #fff;
+
+    &:hover {
+      background: rgba(3, 128, 158, 0.4);
+    }
+  }
+
+  &--secondary {
+    border: 1px solid $c-turquoise;
+    background-color: transparent;
+    color: #121212;
+
+    &:hover {
+      background: $c-turquoise;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__section {
+    margin-bottom: 110px;
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    overflow-x: hidden;
+    margin: 0;
+
+    background: $c-light-grey;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__main {
+    flex-grow: 1;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform $animat-time;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

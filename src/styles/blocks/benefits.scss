@@ -1,0 +1,188 @@
+.benefits {
+  &__container {
+    display: flex;
+    position: relative;
+
+    @include onDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__comment {
+    display: none;
+    top: 100px;
+    right: 0;
+    transform: rotate(90deg) translateX(100%);
+    transform-origin: top right;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__photo-container {
+    @include onDesktop {
+      width: 40%;
+      height: 790px;
+      position: relative;
+    }
+  }
+
+  &__photo {
+    @extend %photo;
+    display: none;
+    right: 0;
+    position: absolute;
+    height: 790px;
+    width: 580px;
+    background-image: url(../images/collage.png);
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__information {
+    @include onTablet {
+      display: flex;
+
+      @include onDesktop {
+        flex-direction: column;
+        width: 60%;
+        padding-top: 150px;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    gap: 30px;
+    list-style: none;
+    padding-bottom: 50px;
+
+    @include onTablet {
+      padding-right: 30px;
+    }
+
+    @include onDesktop {
+      box-sizing: border-box;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+
+      padding: 0 0 60px;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: relative;
+      display: block;
+      width: 7px;
+      height: 7px;
+      background-color: black;
+      transform: translate(-20px, 30px) rotate(45deg);
+    }
+  }
+
+  &__name {
+    position: relative;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    color: $c-dark-grey;
+
+    padding-bottom: 5px;
+  }
+
+  &__text {
+    @extend %text;
+  }
+
+  &__part {
+    @include onTablet {
+      margin: auto 0;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__button {
+    display: none;
+    margin-bottom: 35px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+
+    &--phone {
+      display: block;
+      width: 240px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__sale {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: $c-red;
+    padding-bottom: 5px;
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include onDesktop {
+      padding-left: 100px;
+    }
+  }
+
+  &__sale-description {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+
+    @include onTablet {
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    @include onDesktop {
+      padding-left: 100px;
+    }
+  }
+}
