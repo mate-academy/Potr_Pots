@@ -1,0 +1,281 @@
+.for-whom {
+  position: relative;
+  padding-inline: 30px;
+  padding-bottom: 110px;
+
+  @include onTablet {
+    padding-inline: 34px;
+    padding-bottom: 130px;
+  }
+
+  @include onDesktop {
+    padding-inline: 135px;
+    padding-bottom: 150px;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $c-title;
+
+    padding-bottom: 25px;
+  }
+
+  &__box {
+    @include onDesktop {
+      display: flex;
+      gap: 230px;
+    }
+  }
+
+  &__container {
+    display: flex;
+
+    &--2 {
+      @include onTablet {
+        flex-direction: row-reverse;
+      }
+
+      @include onDesktop {
+        flex-direction: column;
+        padding-left: 100px;
+        padding-top: 100px;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__article {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-img {
+      display: none;
+
+      transition: all $anim-duration;
+
+      @include onTablet {
+        display: block;
+        margin-right: 76px;
+      }
+
+      &:hover {
+        transform: scale(105%);
+        border-radius: 20%;
+      }
+
+      &--1 {
+        float: left;
+        width: 284px;
+        height: 284px;
+
+        margin: 20px 76px 110px 0;
+
+        @include onDesktop {
+          width: 500px;
+          height: 500px;
+          margin: 32px 200px 80px 0;
+        }
+      }
+
+      &--2 {
+        width: 300px;
+        height: 417px;
+
+        margin: 0 0 122px 57px;
+
+        @include onDesktop {
+          margin: 0;
+        }
+      }
+
+      &--3 {
+        width: 284px;
+        height: 405px;
+
+        @include onDesktop {
+          width: 470px;
+          height: 670px;
+
+          margin: 0;
+        }
+      }
+    }
+
+    &-description {
+      display: none;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-title;
+
+      padding-bottom: 20px;
+
+      @include onDesktop {
+        padding-bottom: 40px;
+      }
+
+      &--2 {
+        align-self: flex-end;
+
+        @include onDesktop {
+          align-self: flex-start;
+        }
+      }
+
+      @include onTablet {
+        display: inline-block;
+        position: relative;
+
+        &::before {
+          content: "";
+          display: block;
+          position: relative;
+          bottom: -25px;
+          left: -20px;
+          width: 11px;
+          height: 21px;
+          background-image: url(/images/icons/article-star.svg);
+          background-repeat: no-repeat;
+        }
+      }
+
+      @include onDesktop {
+        &::before {
+          left: -40px;
+        }
+      }
+    }
+
+    &-number {
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 65px;
+      color: $c-article;
+
+      &--1 {
+        @include onTablet {
+          position: absolute;
+          top: 110px;
+          left: -60px;
+        }
+
+        @include onDesktop {
+          position: absolute;
+          top: 220px;
+          left: -100px;
+        }
+      }
+
+      &--2 {
+        @include onDesktop {
+          padding-bottom: 25px;
+        }
+      }
+
+      &--3 {
+        @include onTablet {
+          position: absolute;
+          top: 110px;
+          left: -60px;
+        }
+
+        @include onDesktop {
+          position: absolute;
+          top: 80px;
+          left: 0;
+        }
+      }
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: 15px;
+        height: 46px;
+        background-image: url(/images/icons/article-slash.svg);
+      }
+    }
+
+    &-title {
+      position: relative;
+
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: $c-article;
+
+      padding-bottom: 20px;
+
+      @include onTablet {
+        &::after {
+          content: "";
+          position: relative;
+          left: -10px;
+          top: 10px;
+
+          display: inline-block;
+          width: 15px;
+          height: 46px;
+          background-image: url(/images/icons/article-slash.svg);
+        }
+      }
+
+      &--3 {
+        @include onDesktop {
+          padding: 0 0 0 100px;
+        }
+      }
+    }
+
+    &-info {
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      color: $c-list;
+
+      padding-bottom: 70px;
+
+      &--3 {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__side-text {
+    position: absolute;
+    bottom: 10%;
+    right: -15px;
+
+    &:before {
+      top: 5px;
+      right: 4px;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      max-width: 65px;
+      position: absolute;
+      display: inline-block;
+      bottom: 10%;
+      left: 8%;
+      transform: rotate(-90deg);
+    }
+  }
+}

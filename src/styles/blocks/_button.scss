@@ -1,0 +1,36 @@
+.button {
+  display: block;
+  line-height: 48px;
+  width: 260px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  background-color: $c-yellow;
+
+  transition: background-color $anim-duration;
+
+  &:hover {
+    background-color: $c-yellowlight;
+  }
+
+  &-text {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-button;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 8px;
+
+      margin-left: 24px;
+
+      background-image: url(/images/icons/arrow-button.svg);
+    }
+  }
+}
