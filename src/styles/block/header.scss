@@ -1,0 +1,132 @@
+.header {
+  &--bgc {
+    height: 500px;
+    background-image: url(../images/yellow--bgc-header.svg);
+    @extend %icon;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 200px;
+    z-index: -1;
+    display: none;
+  
+    @include tablet() {
+      display: block;
+    }
+  
+    @include desktop() {
+      right: 350px;
+    }
+  }
+  
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__title {
+    width: 100%;
+    margin: 0 auto;
+  
+    @include tablet() {
+      height: 300px;
+      margin-left: 0;
+    }
+  }
+  
+  &__get {
+    margin-top: 20px;
+    width: max-content;
+    padding: 5px;
+  
+    @include tablet() {
+      margin-top: 150px;
+      margin-left: 200px;
+    }
+  
+    @media (min-width:640px) and (max-width:900px) {
+      background-color: #ffec7a70;
+      border-radius: 5px;
+    }
+  
+    @include desktop() {
+      margin-top: 70px;
+      margin-left: 300px;
+    }
+  }
+  
+  &__price {
+    font-weight: 700;
+    font-size: 26px;
+  }
+  
+  &__text {
+    color: #4f4f4f;
+    margin-top: 10px;
+  }
+  
+  &__img {
+    width: 100%;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    left: 0;
+  
+    &:hover {
+      @include tablet() {
+        transform: scale(1.07);
+      }
+    }
+  
+    @media (min-width:500px) {
+      height: 500px;
+    }
+  
+    @include tablet() {
+      position: absolute;
+      right: 0;
+      left: initial;
+  
+      width: 500px;
+      height: 500px;
+    }
+  
+    @include desktop() {
+      position: static;
+      height: 600px;
+      width: 550px;
+    }
+  }
+  
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+  
+    @include tablet() {
+      justify-content: space-between;
+      flex-direction: row;
+      margin-top: 70px;
+  
+      position: relative;
+    }
+  }
+  
+  &__wrapper {
+    position: absolute;
+    top: 75%;
+    z-index: 1;
+    margin: 0 auto;
+  
+    @include tablet() {
+      position: absolute;
+      left: 0;
+      top: initial;
+      margin-top: 0;
+    }
+  
+    @include desktop() {
+      position: static;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.swiper {
+  width: 90%;
+  top: 70%;
+  height: 400px;
+  padding: 10px;
+  
+  @include tablet() {
+    width: 300px;
+    height: 350px;
+  }
+  
+  &-slide {
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 30px;
+  
+    @include tablet() {
+      display: none;
+    }
+  
+    &__wrapper {
+      width: 200px;
+      margin: 0 auto;
+    }
+  }
+  
+  .swiper-pagination-bullet {
+    background-color: transparent !important;
+  
+    background-image: url(../images/swiper--bullet-black.svg);
+    height: 15px;
+    width: 15px;
+    @extend %icon;
+  }
+}
