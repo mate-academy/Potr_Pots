@@ -1,6 +1,310 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin title-text {
+  font-family: "Bebas Neue", cursive;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 64px;
+}
+
+@mixin h1-text {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 70px;
+  letter-spacing: 0.155em;
+}
+
+@mixin h2-text {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 0.155em;
+}
+
+@mixin h3-text {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.155em;
+}
+
+@mixin h4-text {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.155em;
+}
+
+@mixin s1-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 150%;
+}
+
+@mixin s1-text-mob {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 150%;
+}
+
+@mixin s2-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+}
+
+@mixin s3-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+@mixin s4-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+@mixin s5-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+@mixin button-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+@mixin primary-button {
+  @include button-text;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: $white;
+  border-radius: 0;
+  background-color: $turqoise;
+  border: 1px solid transparent;
+  width: 238px;
+  height: 48px;
+  padding: 14px 96px 14px 67px;
+  text-align: left;
+  position: relative;
+  transition: 0.5s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 65px;
+    width: 25px;
+    height: 20px;
+
+    background-color: #fff;
+    -webkit-mask-image: url("../images/Arrow.svg");
+    mask-image: url("../images/Arrow.svg");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+  }
   &:hover {
-    #{$_property}: $_toValue;
+    background-color: #{$turqoise}BB;
+  }
+}
+
+@mixin primary-button-2 {
+  @include button-text;
+  text-transform: uppercase;
+  color: $button-black;
+  border-radius: 0;
+  background-color: $yellow;
+  border: 1px solid transparent;
+  width: 238px;
+  height: 48px;
+  padding: 14px 96px 14px 67px;
+  text-align: left;
+  position: relative;
+  transition: 0.5s;
+  cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 65px;
+    width: 25px;
+    height: 20px;
+
+    background-color: $button-black;
+    -webkit-mask-image: url("../images/Arrow.svg");
+    mask-image: url("../images/Arrow.svg");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: 0.5s;
+  }
+  &:hover {
+    background-color: #{$yellow}BB;
+  }
+}
+
+@mixin secondary-button {
+  @include button-text;
+  text-transform: uppercase;
+  color: $button-black;
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px solid $turqoise;
+  width: 238px;
+  height: 48px;
+  padding: 14px 96px 14px 67px;
+  text-align: left;
+  position: relative;
+  transition: 0.5s;
+  cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 65px;
+    width: 25px;
+    height: 20px;
+
+    background-color: $button-black;
+    -webkit-mask-image: url("../images/Arrow.svg");
+    mask-image: url("../images/Arrow.svg");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: 0.5s;
+  }
+  &:hover {
+    background-color: $turqoise;
+    color: $white;
+    &::after {
+      background-color: $white;
+    }
+  }
+}
+
+@mixin secondary-button-2 {
+  @include button-text;
+  text-transform: uppercase;
+  color: #121212;
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px solid #121212;
+  width: 238px;
+  height: 48px;
+  padding: 14px 96px 14px 67px;
+  text-align: left;
+  position: relative;
+  transition: 0.5s;
+  cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
+    right: 65px;
+    width: 25px;
+    height: 20px;
+
+    background-color: #121212;
+    -webkit-mask-image: url("../images/Arrow.svg");
+    mask-image: url("../images/Arrow.svg");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: 0.5s;
+  }
+  &:hover {
+    background-color: $white;
+  }
+}
+
+@mixin input {
+  @include s3-text;
+  border: 1px solid transparent;
+  position: relative;
+  height: 40px;
+  background-color: transparent;
+  border-bottom: 1px solid $grey;
+  &:focus {
+    border-bottom: 1px solid $turqoise;
+    outline-width: 0;
+    &:valid {
+      color: $turqoise;
+    }
+    &:invalid {
+      color: $red;
+      border-bottom: 1px solid $red;
+    }
+  }
+}
+
+@mixin link_hover($color) {
+  -webkit-transition: color 0.3s, transform 0.3s;
+  -o-transition: color 0.3s, transform 0.3s;
+  transition: color 0.3s, transform 0.3s;
+  &:hover {
+    color: $color;
+    transform: scale(105%)
+  }
+}
+
+@mixin card_hover($deg) {
+  -webkit-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  &:hover {
+    transform: rotate($deg)
+  }
+}
+
+@mixin gridpos($rowstart, $rowend, $colstart, $colend) {
+  grid-row-start: $rowstart;
+  grid-row-end: $rowend;
+  grid-column-start: $colstart;
+  grid-column-end: $colend;
+
+}
+
+@mixin forTablet {
+  @media (max-width: 768px) {
+    @content
+  };
+}
+
+@mixin forMobile {
+  @media (max-width: 480px) {
+    @content
   }
 }

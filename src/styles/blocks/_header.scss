@@ -1,0 +1,188 @@
+.header {
+  display: flex;
+  height: 80px;
+  width: 98vw;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+
+  &__rectangle {
+    @media (max-width: 1023px) {
+      display: none;
+    }
+    position: absolute;
+    z-index: 0;
+    background-color: $yellow-light;
+    width: 1236px;
+    height: 500px;
+    bottom: 10px;
+    left: 0;
+    transform: rotate(-15deg);
+    transform-origin: bottom left;
+    &-container {
+      position: absolute;
+      overflow: hidden;
+      width: 70vw;
+      height: 450px;
+      top: 0;
+      left: 0;
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    z-index: 5;
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+    @include link_hover($red);
+  }
+  &__link-logo {
+    display: block;
+    width: 200px;
+    z-index: 5;
+    text-decoration: none;
+    color: inherit;
+    @include link_hover($red);
+  }
+  &__nav {
+    z-index: 5;
+    transition: right 0.5s;
+    width: 910px;
+    margin-left: auto;
+    @media (max-width: 768px) {
+      border: 1px solid $yellow;
+      padding-top: 100px;
+      position: fixed;
+      right: -1000px;
+      height: 100%;
+      width: 300px;
+      background-color: $turqoise;
+    }
+  }
+
+  &__logo {
+    @include h2-text;
+    text-transform: uppercase;
+    padding: 17px;
+    z-index: 1;
+    margin: 0 20px
+  }
+  &__ul {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    padding-right: 100%;
+    padding: 27px 0;
+    @include forTablet {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 100px;
+      gap: 15px;
+    }
+  }
+  &__li {
+    @include s3-text;
+    @include forTablet {
+      color: $grey-light;
+    }
+    &:last-child {
+      position: absolute;
+      bottom: 50px;
+      right: 20px;
+      @media (min-width: 1024px) {
+        display: none;
+      }
+      &::before {
+        content: " ⎯⎯⎯⎯ \00a0 \00a0 close";
+        text-transform: uppercase;
+        position: absolute;
+        width: 200px;
+        transform: rotate(-90deg);
+        top: -120px;
+        left: -90px;
+        @media (min-width: 769px) {
+          display: none;
+        }
+      }
+    }
+  }
+  &__close-button {
+    transform: rotate(90deg);
+    padding: 10px;
+    border: transparent;
+    background-color: transparent;
+    color: $white;
+    background-image: url("../images/X.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+}
+
+.basket {
+  position: relative;
+  @media (min-width: 768px) {
+    -webkit-mask-image: url("../images/cart.svg");
+    mask-image: url("../images/cart.svg");
+    background-color: $black;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 60%;
+    mask-size: cover;
+    -webkit-mask-position: center;
+    mask-position: center;
+    order: 2;
+    margin-left: auto;
+    height: 35px;
+    padding: 0 5px;
+  }
+  &:after {
+    content: "0";
+    font-size: 9px;
+    text-align: center;
+    line-height: 140%;
+    padding: 3px;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: -5px;
+    right: -15px;
+    border-radius: 50%;
+    background-color: $red;
+  }
+}
+
+.burger-button {
+  z-index: 1;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+  margin: 20px 20px 20px auto;
+  border: transparent;
+  background-image: url(../images/menu_icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  background-color: transparent;
+  border-radius: 50%;
+  grid-column-start: 9;
+  grid-row-start: 1;
+  @media (max-width: 480px) {
+    grid-column-start: 5;
+  }
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.active {
+  top: 0px;
+  right: 0px;
+}

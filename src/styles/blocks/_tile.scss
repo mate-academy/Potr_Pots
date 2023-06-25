@@ -1,0 +1,27 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 4;
+  flex-basis: 33%;
+  @include forMobile {
+    max-width: 450px;
+  }
+  &__img {
+    width: 100%;
+    transition: $trans;
+    &:hover {
+      transform: scale(98%);
+    }
+  }
+  &__title {
+    @include h3-text;
+  }
+  &__info {
+    @include s3-text;
+    color: $paragraph-grey;
+    margin: 20px;
+  }
+}

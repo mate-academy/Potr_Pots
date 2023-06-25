@@ -1,0 +1,173 @@
+.for-whom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &__title {
+    @include h2-text;
+    color: $title-grey;
+    margin: 0 auto 16px;
+    flex: 0 1 80%;
+  }
+  &__card {
+    margin: 0 auto 100px;
+    @include forTablet {
+      margin: 0 60px 100px;
+    }
+    @include forMobile {
+      margin: 0 auto 70px;
+    }
+  }
+  &__potr {
+    position: absolute;
+
+    writing-mode: vertical-rl;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $paragraph-grey;
+    &::before {
+      content: "";
+      -webkit-mask-image: url("../images/potr.svg");
+      mask-image: url("../images/potr.svg");
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      -webkit-mask-position: center;
+      mask-position: center;
+      position: absolute;
+      width: 2px;
+      height: 70px;
+      bottom: -80px;
+      left: 50%;
+      background-color: $paragraph-grey;
+    }
+    &--1 {
+      bottom: 0;
+      left: 20px;
+      @include forMobile {
+        display: none;
+      }
+    }
+    &--2 {
+      top: 0;
+      right: 20px;
+      @include forMobile {
+        top: 90%;
+
+      }
+    }
+  }
+}
+
+.card {
+  max-width: 1024px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  @media (min-width: 481px) {
+    &:first-of-type {
+      flex: 0 1 90%;
+    }
+    &:not(:first-of-type) {
+      flex: 1 0 50%;
+    }
+  }
+
+  &__img {
+    margin-bottom: 25px;
+    max-width: 525px;
+    transition: $trans;
+    &:hover {
+      transform: scale(101%);
+    }
+    @include forTablet {
+      width: 100%;
+      height: auto;
+    }
+    @include forMobile {
+      display: none;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 450px;
+    margin-left: 50px;
+    @include forMobile {
+      margin: 35px;
+    }
+  }
+  &__body {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  &__explainer {
+    @include s3-text;
+
+    margin-bottom: 40px;
+    @include forMobile {
+      display: none;
+    }
+    &::before {
+      content: "*";
+      margin-right: 40px;
+      @include s2-text;
+    }
+  }
+
+  &__paragraph {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    @include h2-text;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    &:after {
+      content: "";
+
+      background-image: url("../images/line.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 25px;
+      height: 50px;
+      position: absolute;
+    }
+  }
+  &__number {
+    @include h2-text;
+    line-height: 64px;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      background-image: url("../images/line.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 25px;
+      height: 45px;
+      top: 0;
+      left: -20px;
+    }
+  }
+
+  &__info {
+    @include s3-text;
+    color: $paragraph-grey;
+  }
+}
+

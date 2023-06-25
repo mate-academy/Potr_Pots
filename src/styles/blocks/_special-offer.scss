@@ -1,0 +1,127 @@
+.special-offer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 120px;
+  gap: 60px;
+  &__imgs {
+    width: 184px;
+    height: 184px;
+    object-fit: cover;
+    object-position: top;
+  }
+  &__img {
+    max-width: 634px;
+    max-height: 838px;
+    width: 100%;
+    height: auto;
+    flex: 0 0 50%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    @include forTablet {
+      display: none;
+    }
+    &-1 {
+      @include gridpos(2, span 3, 2, span 3);
+      transform: rotate(-30deg);
+      @include card_hover(-20deg);
+    }
+    &-2 {
+      @include gridpos(1, span 3, 6, span 7);
+      transform: rotate(25deg);
+      @include card_hover(30deg);
+    }
+    &-3 {
+      @include gridpos(5, span 7, 4, span 5);
+      transform: rotate(20deg);
+      @include card_hover(10deg);
+    }
+    &-4 {
+      @include gridpos(4, span 5, 8, span 9);
+      transform: rotate(-30deg);
+      @include card_hover(-20deg);
+    }
+    &-5 {
+      @include gridpos(8, span 9, 2, span 3);
+      transform: rotate(-20deg);
+      @include card_hover(-10deg);
+    }
+    &-6 {
+      @include gridpos(8, span 9, 7, span 8);
+      transform: rotate(10deg);
+      @include card_hover(20deg);
+    }
+    &-par {
+      @include s5-text;
+      font-size: 9px;
+      color: $paragraph-grey;
+      align-self: flex-start;
+      margin: 0 5px 0;
+    }
+  }
+  &__card {
+    width: 190px;
+    height: 214px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    @include forTablet {
+      margin: 0 50px 0;
+    }
+    @include forMobile {
+      margin: 0 20px 0;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  &__term {
+    @include s1-text;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      background-color: $black;
+      transform: rotate(45deg);
+    }
+  }
+  &__explainer {
+    @include s3-text;
+    color: $grey;
+  }
+  &__button {
+    @include secondary-button;
+    margin-bottom: 60px;
+  }
+  &__title {
+    @include h2-text;
+    color: $red;
+    letter-spacing: 0.155em;
+  }
+  &__paragraph {
+    @include h3-text;
+    color: $turqoise;
+    letter-spacing: 0.155em;
+  }
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+  }
+}

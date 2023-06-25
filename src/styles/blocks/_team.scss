@@ -1,0 +1,95 @@
+.team {
+  overflow: hidden;
+  margin-bottom: 27px;
+  width: 95vw;
+  height: auto;
+  &__title {
+    @include h1-text;
+    margin-left: 9vw;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
+    @include forMobile {
+      grid-template-columns: minmax(120px, 1fr);
+      grid-template-rows: repeat(auto-fill, minmax(70px, 1fr));
+    }
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+    @include gridpos(4, span 11, 8, span 10);
+    z-index: 1;
+    @include forTablet {
+      @include gridpos(5, span 9, 5, 10);
+    }
+    @include forMobile {
+      @include gridpos(1, span 7, 1, span 4);
+      margin-left: 0;
+    }
+  }
+  &__paragraph {
+    @include s3-text;
+    @include gridpos(7, span 12, 1, span 6);
+    margin: 0 10px;
+    z-index: 1;
+
+    @include forTablet {
+      @include gridpos(5, span 9, 1, 4);
+      padding: 15px;
+    }
+    @include forMobile {
+      @include gridpos(10, 18, 1, span 2);
+      z-index: 1;
+      width: 300px;
+      margin: 30px auto 0;
+    }
+  }
+  &__martin {
+    @include h1-text;
+    font-size: 20vw;
+    line-height: 23vw;
+    -webkit-text-stroke: 1px $turqoise;
+    color: transparent;
+    @include gridpos(2, span 5, 2, span 13);
+    z-index: 2;
+    @include forMobile {
+      display: none;
+    }
+  }
+  &__andy {
+    @include h1-text;
+    font-size: 20vw;
+    line-height: 22vw;
+    -webkit-text-stroke: 1px $turqoise;
+    color: transparent;
+    @include gridpos(14, span 16, 9, 12);
+    z-index: 2;
+    @media (max-width: 900px) {
+      @include gridpos( 10, span 13, 7, span 12)
+    }
+    @include forTablet {
+      @include gridpos(11, span 13, 6, span 12);
+    }
+    @include forMobile {
+      display: none;
+    }
+  }
+  &__box {
+    background-color: $yellow-light;
+    transform-origin: bottom left;
+    transform: rotate(-17deg);
+    width: 535px;
+    height: 310px;
+    &-container {
+      height: 310px;
+      width: 435px;
+      overflow: hidden;
+      @include gridpos(3, span 5, 1, span 5);
+      @include forMobile {
+        @include gridpos(14, span 18, 1, 2);
+      }
+    }
+  }
+}

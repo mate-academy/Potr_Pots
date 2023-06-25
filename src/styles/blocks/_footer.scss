@@ -1,0 +1,62 @@
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  height: 300px;
+  @include forMobile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__block {
+    flex: 0 0 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include forMobile {
+      justify-content: flex-start;
+    }
+  }
+  &__title {
+    @include h3-text;
+    margin-bottom: 20px;
+    @include forMobile {
+      display: none;
+    }
+  }
+  &__adress {
+    @include s3-text;
+    @include link_hover($red);
+    text-decoration: none;
+    color: $black;
+    @include forMobile {
+      display: none;
+    }
+  }
+  &__mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 50%;
+  }
+  &__social {
+    display: flex;
+  }
+  &__link {
+    margin: 20px;
+    text-decoration: none;
+    transition: $trans;
+    &:hover {
+      transform: scale(110%);
+    }
+  }
+  &__logo {
+    @include h2-text;
+    text-decoration: none;
+    color: inherit;
+    @include link_hover($red);
+  }
+  &__copy {
+    @include s3-text;
+  }
+}

@@ -1,0 +1,47 @@
+.button {
+  &--1 {
+    left: 50%;
+    top: -60px;
+  }
+  &--2 {
+    left: 50%;
+    bottom: -60px;
+  }
+  &--3 {
+    right: -90px;
+    bottom: 0;
+    @include forTablet {
+      right: -40px;
+      top: -50px;
+    }
+  }
+  &--4 {
+    right: -50px;
+    bottom: -40px;
+    @include forTablet {
+      right: 50%;
+      bottom: -60px;
+    }
+  }
+  &--5 {
+    right: -60px;
+    bottom: 50%;
+    @include forTablet {
+      right: 50%;
+      bottom: -60px;
+    }
+  }
+  &--active {
+    background: rgba(36, 35, 35, 0.75);
+    opacity: 0.65;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    visibility: visible;
+    &:after {
+      content: "-";
+    }
+  }
+  &--invis {
+    visibility: hidden;
+  }
+}

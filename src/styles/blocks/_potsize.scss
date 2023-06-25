@@ -1,0 +1,99 @@
+.potsize {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  color: $paragraph-grey;
+  margin-bottom: 60px;
+  @include forMobile {
+    flex-direction: column;
+    margin: 0 30px 0;
+  }
+
+  &__title {
+    @include h2-text;
+
+    flex: 0 0 90%;
+    margin: 0 0 66px 30px;
+    color: $black;
+
+    @include forMobile {
+      order: 1;
+      margin: 0 20px 66px ;
+      font-size: 35px;
+    }
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    max-width: 528px;
+    max-height: 427px;
+    height: auto;
+    align-items: center;
+    margin-bottom: 30px;
+    @media (max-width: 480px) {
+      order: 3;
+    }
+  }
+  &__sizes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    height: 100%;
+    margin-bottom: 30px;
+    align-content: stretch;
+    justify-content: flex-end;
+    align-items: center;
+    @include s3-text;
+    @include forMobile {
+      flex-direction: column;
+      margin: 0 20px 30px;
+    }
+  }
+  &__secondary-title {
+    flex: 0 0 40%;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 257px;
+      width: 2px;
+      border-left: 1px solid $title-grey;
+      opacity: 0.2;
+      right: -10px;
+      top: 20px;
+      @include forMobile {
+        display: none;
+      }
+    }
+  }
+  &__paragraph {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    &-title {
+      @include h4-text;
+      letter-spacing: 0.155em;
+      color: $black;
+    }
+  }
+  &__explainer {
+    @include s3-text;
+    @include forMobile {
+      margin: 0 20px 0;
+    }
+  }
+  &__img {
+    max-width: 528px;
+    max-height: 427px;
+    width: 100%;
+    height: auto;
+    @include forMobile {
+      order: 1;
+      margin-bottom: 30px;
+    }
+  }
+}
