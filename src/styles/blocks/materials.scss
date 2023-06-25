@@ -1,4 +1,7 @@
 .materials {
+
+  position: relative;
+
   &__background {
     position: relative;
     background-size: 100%;
@@ -6,19 +9,22 @@
     left: 50%;
     z-index: -1;
     @extend %background-images-settings;
-    background-image: url(../images/png/materials.png);
+    background-image: linear-gradient(180deg,
+    #f8f8f8 0%,
+    rgba(255, 255, 255, 0) 30.93%),
+      url(../images/png/materials.png);
     width: 100vw;
-  
     height: 241px;
   
     @include tablet {
       height: 577px;
-  
+      margin-top: -30px;
     }
   
     @include desktop {
       height: 1081px;
       max-width: 1440px;
+      margin-top: -100px;
     }
   }
 
@@ -26,17 +32,192 @@
     font-size: 58px;
     line-height: 100%;
     font-family: "Bebas Neue", sans-serif;
-    letter-spacing: 8.99px;
+    letter-spacing: 0.15em;
     color: $big-headers-color;
 
     @include tablet {
       font-size: 80px;
-      letter-spacing: 9.6px;
     }
 
     @include desktop {
-      font-size: 138.805px;
-      letter-spacing: 16.657px;
+      font-size: 138px;
+    }
+  }
+
+  &__main-text {
+    display: none;
+    font-family: "Manrope", sans-serif;
+    line-height: 150%;
+    font-size: 16px;
+    font-weight: 400;
+    color: $main-text-color;
+
+    &--subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+
+      @include desktop {
+        margin-bottom: 15px;
+      }
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__checkbox {
+    opacity: 0;
+  }
+
+  &__button {
+    display: none;
+    @include tablet {
+      width: 51px;
+      height: 51px;
+      background-color: red;
+      border-radius: 50%;
+      cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+
+  &__card {
+    display: none;
+    position: absolute;
+    width: 283px;
+    background: rgba(0, 0, 0, 0.41);
+    backdrop-filter: blur(17px);
+    padding: 35px;
+    font-size: 16px;
+
+    &--1 {
+      bottom: 70px;
+      right: -250px;
+
+      @include desktop {
+        bottom: 70px;
+        right: -80px;
+      }
+    }
+
+    &--2 {
+      bottom: 80px;
+      right: -110px;
+
+      @include desktop {
+        bottom: 80px;
+        right: -110px;
+      }
+    }
+
+    &--3 {
+      bottom: -40px;
+      right: 60px;
+
+      @include desktop {
+        bottom: -60px;
+        right: 60px;
+      }
+    }
+
+    &--4 {
+      bottom: 80px;
+      right: -120px;
+      
+      @include desktop {
+        bottom: 80px;
+        right: -120px;
+      }
+    }
+
+    &--5 {
+      top: 75px;
+      right: -30px;
+
+      @include desktop {
+        top: 90px;
+        right: -100px;
+      }
+    }
+  }
+
+  &__pop-up {
+    display: none;
+    position: relative;
+
+    @include tablet {
+      display: inline-block;
+    }
+
+    
+    &--1 {
+      top: -240px;
+      right: -10%;
+
+      @include desktop {
+        top: -380px;
+        right: -10%;
+      }
+    }
+
+    &--2 {
+      top: -400px;
+      right: -25%;
+
+      @include desktop {
+        top: -650px;
+        right: -30%;
+      }
+    }
+
+    &--3 {
+      top: -220px;
+      right: -40%;
+
+      @include desktop {
+        top: -300px;
+        right: -40%;
+      }
+    }
+
+    &--4 {
+      top: -370px;
+      right: -45%;
+
+      @include desktop {
+        top: -550px;
+        right: -50%;
+      }
+    }
+
+    &--5 {
+      top: -350px;
+      right: -56%;
+
+      @include desktop {
+        top: -450px;
+        right: -70%;
+      }
+    }
+  }
+
+  &__checkbox:checked + &__button + &__card {
+    display: block;
+    z-index: 2;
+
+  }
+
+  &__checkbox:checked + &__button {
+    background-color: green;
+    opacity: 0.65;
+    &::before {
+      content: "-";
     }
   }
 }

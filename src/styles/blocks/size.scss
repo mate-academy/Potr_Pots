@@ -1,0 +1,99 @@
+.size {
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 52px;
+      text-align: start;
+    }
+
+    @include desktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__category {
+    margin-bottom: 15px;
+
+    @include tablet {
+      display: inline-block;
+      max-width: 246px;
+      grid-row: 2;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      display: inline-block;
+      grid-row: 1;
+    }
+  }
+
+  &__img {
+    @extend %background-images-settings;
+    background-image: url("../images/png/size.png");
+    background-size: contain;
+    width: 100%;
+    height: 260px;
+    margin-bottom: 30px;
+
+    @include tablet {
+      min-width: 416px;
+      min-height: 337px;
+      grid-row: 2 / 3;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      height: 427px;
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 18px;
+    color: #000;
+  }
+
+  &__paragraph {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: $main-text-color;
+
+    &:first-child {
+      margin-bottom: 30px;
+
+      @include tablet {
+        margin-bottom: 0;
+      }
+
+      @include desktop {
+        border-right: 1px solid #d8d8d8;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 40px;
+    }
+
+    &--extra {
+      @include tablet {
+        padding-top: 20px;
+      }
+      @include desktop {
+        padding-top: 70px;
+      }
+      &::before {
+        content: "*";
+      }
+    }
+  }
+}
