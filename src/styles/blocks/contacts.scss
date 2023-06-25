@@ -1,0 +1,86 @@
+.contacts {
+  position: relative;
+  color: #000;
+  font-size: 24px;
+
+  &::before {
+    @include rectangleStyle (100%, 100vw, 90px);
+
+    @include onDesktop {
+      border-left-width: 90vw;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    top: -82px;
+    right: -80px;
+    display: block;
+    content: "";
+    width: 160px;
+    height: 164px;
+    background-image: url("../images/question_element.svg");
+    background-size: contain;
+
+    @include onDesktop {
+      right: calc(-80px + 10vw);
+    }
+  }
+
+  &__title {
+    @extend %title-main;
+    @extend %title-smaller;
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+
+  &__form {
+    margin-bottom: 56px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-title {
+      margin-bottom: 25px;
+    }
+
+    &-button {
+      background-color: $turquoise;
+      border-color: $turquoise;
+      color: #fff;
+    }
+  }
+
+  &__info {
+    &:not(:last-child) {
+      margin-bottom: 34px;
+    }
+
+    &-title {
+      margin-bottom: 5px;
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-data {
+      font-size: 16px;
+      color: #000;
+      text-decoration: none;
+      transition: transform ease-in-out 0.3s;
+
+      &:hover {
+        display: block;
+        transform: scale(1.3) translate(12%, 15%);
+        color: $turquoise;
+      }
+    }
+
+    &__input--last {
+      margin-bottom: 40px;
+    }
+  }
+
+}

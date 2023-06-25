@@ -1,0 +1,43 @@
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+
+  &--menu {
+    background-image: url("../images/menu.png");
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--basket {
+    background-image: url("../images/basket.png");
+
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &--cross {
+    width: 12px;
+    height: 12px;
+    background-image: url("../images/cross.svg");
+
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 44px;
+      background-color: $greyLight;
+      transform-origin: 0 0;
+      transform: rotate(-90deg) translate(18px,500%);
+    }
+  }
+}

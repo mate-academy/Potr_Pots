@@ -1,0 +1,55 @@
+.header {
+  &::after {
+    top: 0;
+    left: 0;
+    @include onTabletAndOnDesktop {
+      @include rectangleStyle (55vh,72vw,36vh);
+    }
+
+    @include onTablet {
+      @include rectangleStyle (42vh,72vw,12vh);
+
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+
+    @include onTablet {
+      height: 110px;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      height: 84px;
+      margin-bottom: 56px;
+    }
+
+    &-list {
+      display: none;
+      padding: 0;
+      column-gap: 60px;
+      list-style: none;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+    &-link {
+      font-size: 16px;
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: $turquoise;
+      }
+      &:focus {
+        color: $turquoise;
+        font-weight: 600;
+      }
+    }
+  }
+}

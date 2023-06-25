@@ -1,0 +1,246 @@
+.useful-for {
+  position: relative;
+
+  &__title {
+    @extend %title-smaller;
+    @extend %title-main;
+    color: $grey;
+    margin-bottom: 26px;
+  }
+
+  &__list {
+    list-style: none;
+
+    @include onDesktop {
+      @include useGrid(12, 30px);
+      grid-template-areas: "a a a a a a a a a a a a"
+        ". b b b b . . c c c c c"
+        ". . . . . . . c c c c c";
+    }
+  }
+
+  &__image {
+    display: none;
+    width: 84%;
+    max-width: max-content;
+
+    @include onTablet {
+      display: block;
+      max-height: 404px;
+      grid-row: 1/5;
+    }
+
+    @include onDesktop {
+      display: block;
+      grid-row: 1/6;
+    }
+  }
+
+  &__star {
+    margin-right: 10px;
+    @include onDesktop {
+      margin-right: 30px;
+    }
+  }
+
+  &__hint {
+    display: none;
+    @include onTabletAndOnDesktop {
+      display: block;
+    }
+
+    @include onTablet {
+      grid-row: 1/2;
+      margin-left: -22px;
+    }
+
+    @include onDesktop {
+      grid-row: 2/3;
+      margin-left: -32px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__number {
+    position: relative;
+    margin-bottom: 30px;
+    @extend %title-main;
+    font-size: 36px;
+    line-height: 65px;
+
+    color: #000;
+
+    &::before {
+      @extend %slash;
+      background-color: $grey;
+    }
+
+    @include onTablet {
+      grid-row: 2/3;
+      justify-self: end;
+    }
+
+    @include onDesktop {
+      grid-row: 3/4;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    @include onTablet {
+      grid-row: 3/4;
+    }
+
+    @include onDesktop {
+      grid-row: 4/5;
+    }
+  }
+
+  &__item {
+    &-title {
+      margin-bottom: 20px;
+      @extend %title-main;
+      @extend %title-smaller;
+      color: #000;
+
+      &::after {
+        @extend %slash;
+      }
+
+      @include onTabletAndOnDesktop {
+        &::after {
+          background-color: $grey;
+        }
+      }
+
+      @include onTablet {
+        grid-row: 2/3;
+      }
+
+      @include onDesktop {
+        grid-row: 3/4;
+        margin-bottom: 10px;
+      }
+    }
+    @include onDesktop {
+      &:first-child {
+        grid-area: a;
+      }
+
+      &:nth-child(2) {
+        grid-area: b;
+        @include useGrid (4, 30px);
+        grid-template-areas: "image image image image "
+          "hint hint hint hint "
+          "number number number number"
+          "title title title title"
+          "desc desc desc desc"
+          ". . . .";
+
+        .useful-for__image {
+          height: 417px;
+          padding-top: 100px;
+          margin-bottom: 45px;
+          grid-area: image;
+        }
+
+        .useful-for__hint {
+          grid-area: hint;
+        }
+
+        .useful-for__number {
+          grid-area: number;
+        }
+
+        .useful-for__item-title {
+          grid-area: title;
+        }
+        .useful-for__description {
+          grid-area: desc;
+        }
+      }
+      &:last-child {
+        grid-area: c;
+        @include useGrid (5, 30px);
+        grid-template-areas: "image image image image image"
+          "hint hint hint hint  hint "
+          "number title title title title"
+          ". desc desc desc desc";
+
+        .useful-for__image {
+          height: 670px;
+          margin-bottom: 44px;
+          grid-area: image;
+        }
+
+        .useful-for__hint {
+          grid-area: hint;
+        }
+
+        .useful-for__number {
+          grid-area: number;
+          margin-bottom: 26px;
+        }
+
+        .useful-for__item-title {
+          grid-area: title;
+        }
+        .useful-for__description {
+          grid-area: desc;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      @include onTablet {
+        .useful-for__image {
+          grid-row: 1/6;
+          justify-self: end;
+        }
+        .useful-for__hint {
+          justify-self: end;
+        }
+        .useful-for__number {
+          justify-self: start;
+        }
+        .useful-for__item-title {
+          grid-row: 3/4;
+        }
+        .useful-for__description {
+          grid-row: 4/5;
+        }
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__potrpots {
+    position: absolute;
+    &--top {
+      display: none;
+      right: 10px;
+
+      @include onTabletAndOnDesktop {
+        display: block;
+      }
+    }
+
+    &--bottom {
+      display: block;
+      bottom: 0;
+      right: 5px;
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: block;
+        left: 5px;
+      }
+    }
+  }
+}

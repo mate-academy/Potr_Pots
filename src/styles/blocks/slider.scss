@@ -1,0 +1,141 @@
+.slider {
+  @media (max-width: 767px) {
+    @include slide-box("height");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  @include onTabletAndOnDesktop {
+    position: relative;
+    height: 74vh;
+    padding-top: 10vh;
+  }
+
+  &__item {
+    display: none;
+    color: $greyLight;
+    margin-bottom: 10px;
+    list-style: none;
+
+    @include onTabletAndOnDesktop {
+      display: block;
+      position: absolute;
+
+      &--1 {
+        bottom: 7%;
+        left: 10%;
+      }
+      &--2 {
+        bottom: 30%;
+        left: 30%;
+      }
+      &--3 {
+        bottom: 0;
+        left: 50%;
+        & .slider__description {
+          transform: translate(-100%,45%);
+        }
+      }
+      &--4 {
+        bottom: 17%;
+        left: 60%;
+      }
+      &--5 {
+        bottom: 40%;
+        left: 80%;
+      }
+    }
+  }
+
+  &__description {
+    @include onTabletAndOnDesktop {
+      display: none;
+      @include slide-box("max-height");
+      width: 282px;
+
+      &--active {
+        display: block;
+        transform: translate(-40%,-20px);
+      }
+    }
+  }
+
+  &__item--active {
+    display: block;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+
+    @include onTabletAndOnDesktop {
+      display: none;
+    }
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: block;
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+    background-color: $greyLight;
+    border: 1px solid transparent;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform-origin: center;
+      transform: scale(1.2) rotate(45deg);
+    }
+
+    &--active {
+      background: rgba(0, 0, 0, 0.3);
+      border-color: $greyLight;
+    }
+  }
+
+  &__spoiler {
+    display: none;
+    width: 51px;
+    height: 51px;
+    background-color: $red;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 51px;
+    font-size: 30px;
+    
+    @include onTabletAndOnDesktop {
+      position: relative;
+      display: block;
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 12px;
+        height: 1px;
+        background-color: $greyLight;
+        top: 49%;
+        left: calc(50% - 6px);
+      }
+      &::after {
+        transform-origin: center;
+        transform: rotate(90deg);
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+
+    &--active {
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+
+      &.slider__spoiler::after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}

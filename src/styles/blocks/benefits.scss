@@ -1,0 +1,94 @@
+.benefits {
+  position: relative;
+
+  &__potrpots {
+    position: absolute;
+    right: 5px;
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+  &__image {
+    max-height: 100%;
+    &-container {
+      display: none;
+      max-height: 744px;
+      @include onDesktop {
+        display: block;
+        grid-row: 1/5;
+        justify-self: end;
+      }
+
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
+    grid-row: 1/5;
+
+    @include onDesktop {
+      grid-row: 1/2;
+      padding-top: 186px;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    list-style: none;
+
+    &-title {
+      position: relative;
+      margin-bottom: 5px;
+      @extend %title-main;
+      @extend %title-smaller;
+      color: $grey;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        width: 8px;
+        height: 8px;
+        display: block;
+        content: "";
+        background: $mainFontColor;
+        transform: translate(-100%, -50%) rotate(-45deg);
+      }
+    }
+
+    &-text {
+      font-size: 16px;
+      color: #828282;
+    }
+  }
+
+  &__button {
+    margin: 0 auto 40px;
+    width: 80%;
+
+    @include onTabletAndOnDesktop {
+      margin: 0 0 36px;
+      grid-row: 2/3;
+      background-color: transparent;
+      border-color: $turquoise;
+
+      &:hover {
+        background-color: $turquoise;
+        color: #fff;
+        .button__arrow {
+          background-image: url("../images/button-arrow--white.svg");
+        }
+      }
+    }
+  }
+
+  &__offer {
+    grid-row: 3/4;
+  }
+}

@@ -1,0 +1,93 @@
+.footer {
+  color: #000;
+  padding: 0 0 30px;
+
+  @include onTablet {
+    padding: 0 0 117px;
+  }
+  @include onDesktop {
+    padding: 74px 0 64px;
+  }
+
+  &__data {
+    text-align: center;
+    @include onTabletAndOnDesktop {
+      text-align: left;
+      max-width: 150px;
+    }
+
+  }
+  &__title {
+    @extend %title-main;
+    font-size: 24px;
+    font-weight: 100%;
+    display: none;
+
+    @include onTabletAndOnDesktop {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    @include onTabletAndOnDesktop {
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+
+    &--hidden {
+      display: none;
+
+      @include onTabletAndOnDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__icons {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__link {
+    margin-bottom: 10px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+
+    &--twitter {
+      background-image: url("../images/twiter.svg");
+    }
+    &--facebook {
+      background-image: url("../images/facebook.svg");
+    }
+    &--instagram {
+      background-image: url("../images/instagram.svg");
+    }
+  }
+  &__logo {
+    text-decoration: none;
+    @extend %title-main;
+    @extend %title-smaller;
+    color: #000;
+    text-align: center;
+  }
+}

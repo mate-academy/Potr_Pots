@@ -1,0 +1,71 @@
+.materials {
+  position: relative;
+
+  &__bg {
+    height: 100vh;
+    background: linear-gradient(180deg,#fff,hsla(0,0%,100%,0) 40.93%), url("../images/materials.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -15%;
+  }
+
+  &__title {
+    @extend %title-main;
+    @extend %title-bigger;
+    color: $turquoise;
+    margin-bottom: 120px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      font-size: 80px;
+      line-height: 96px;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      line-height: 167px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    display: none;
+    width: 40%;
+    margin-left: 60%;
+    margin-top: -96px;
+
+    @include onTabletAndOnDesktop {
+      display: block;
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+
+    &--bold {
+      font-weight: 700;
+    }
+    &-title {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__potrpots {
+    position: absolute;
+    display: none;
+    @include onTablet {
+      display: block;
+    }
+
+    &--top {
+      right: 0;
+    }
+    &--bottom {
+      top: 200px;
+      left: 0;
+    }
+  }
+}
