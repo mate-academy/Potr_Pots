@@ -1,0 +1,127 @@
+/*
+FLEX
+--------------------------------------------- */
+
+$flexClass: ".flex";
+
+#{$flexClass} {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: $mobile-grid-gap;
+
+  @include mediaPad {
+    column-gap: $pad-grid-gap;
+  }
+
+  @include mediaDesktop {
+    column-gap: $desktop-grid-gap;
+  }
+
+  &__cols {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+  }
+
+  @each $size in "s", "m", "l" {
+    @include sizeToMedia($size) {
+      &--#{$size}-justify-start {
+        justify-content: flex-start;
+      }
+
+      &--#{$size}-justify-center {
+        justify-content: center;
+      }
+
+      &--#{$size}-justify-end {
+        justify-content: flex-end;
+      }
+
+      &--#{$size}-justify-space-between {
+        justify-content: space-between;
+      }
+
+      &--#{$size}-justify-space-around {
+        justify-content: space-around;
+      }
+
+      &--#{$size}-align-start {
+        align-items: flex-start;
+      }
+
+      &--#{$size}-align-center {
+        align-items: center;
+      }
+
+      &--#{$size}-align-end {
+        align-items: flex-end;
+      }
+
+      &--#{$size}-direction-row {
+        flex-direction: row;
+      }
+
+      &--#{$size}-direction-column {
+        flex-direction: column;
+        flex-wrap: nowrap;
+      }
+
+      &--#{$size}-nowrap {
+        flex-wrap: nowrap;
+      }
+
+      &--#{$size}-wrap {
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+
+@include flexColsGenerator(
+  $flexClass,
+  "s",
+  $mobile-grid-columns,
+  $mobile-grid-gap
+);
+
+@include mediaPad {
+  @include flexColsGenerator(
+    $flexClass,
+    "s",
+    $mobile-grid-columns,
+    $pad-grid-gap,
+    $pad-grid-columns / $mobile-grid-columns,
+  );
+
+  @include flexColsGenerator(
+    $flexClass,
+    "m",
+    $pad-grid-columns,
+    $pad-grid-gap
+  );
+}
+
+@include mediaDesktop {
+  @include flexColsGenerator(
+    $flexClass,
+    "s",
+    $mobile-grid-columns,
+    $desktop-grid-gap,
+    $desktop-grid-columns / $mobile-grid-columns,
+  );
+
+  @include flexColsGenerator(
+    $flexClass,
+    "m",
+    $pad-grid-columns,
+    $desktop-grid-gap,
+    $desktop-grid-columns / $pad-grid-columns,
+  );
+
+  @include flexColsGenerator(
+    $flexClass,
+    "l",
+    $desktop-grid-columns,
+    $desktop-grid-gap
+  );
+}

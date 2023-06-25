@@ -1,0 +1,72 @@
+/*
+COMMON STYLES
+--------------------------------------------- */
+
+%heading {
+  font-family: $ff-heading;
+  font-weight: $fw-regular;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+%title {
+  @extend %heading;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke-width: 0.68px;
+  -webkit-text-stroke-color: var(--color-primary1-500);
+}
+
+%paragraph {
+  font-family: $ff-primary;
+  font-weight: $fw-regular;
+  line-height: 1.5;
+}
+
+%icon {
+  width: 100%;
+  padding-bottom: 100%;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+%link {
+  cursor: pointer;
+  color: var(--color, inherit);
+
+  @include transition(color);
+
+  &:hover {
+    text-decoration: underline 1px wavy
+      var(--color-hover, var(--color-primary1-500));
+    color: var(--color-hover, var(--color-primary1-500));
+  }
+}
+
+%section {
+  padding-top: 110px;
+
+  @include mediaPad {
+    padding-top: 150px;
+  }
+}
+
+%strong {
+  font-weight: $fw-bold;
+}
+
+%img-hover-effect {
+  @include transition(transform);
+
+  &:hover {
+    transform: scale(1.05) translateY(-1%);
+  }
+}
+
+%img-wrapper {
+  overflow: hidden;
+  display: flex;
+}

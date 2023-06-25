@@ -1,0 +1,342 @@
+/*
+MATERIALS
+--------------------------------------------- */
+
+.materials {
+
+  --trigger-diameter: 50px;
+  --trigger-offset-left-1: 17%;
+  --trigger-offset-bottom-1: 15%;
+  --trigger-offset-left-2: 35%;
+  --trigger-offset-bottom-2: 30%;
+  --trigger-offset-left-3: 47%;
+  --trigger-offset-bottom-3: 11%;
+  --trigger-offset-left-4: 58%;
+  --trigger-offset-bottom-4: 25%;
+  --trigger-offset-left-5: 77%;
+  --trigger-offset-bottom-5: 23%;
+
+  position: relative;
+
+  @include mediaMobile-only {
+    padding-top: 0;
+  }
+
+  @include mediaPad-only {
+    padding-top: 0;
+  }
+
+  &__wrapper {
+    position: absolute;
+    inset: 0;
+
+    height: calc(100% + 240px);
+
+    @include mediaMobile-only {
+      padding-top: 110px;
+    }
+
+    @include mediaPad-only {
+      height: auto;
+      padding-top: 75px;
+    }
+
+    @include mediaDesktop {
+      height: 100%;
+    }
+  }
+
+  &__container {
+    overflow: initial;
+    height: 100%;
+
+    &-wrapper {
+      @include mediaMobile-only {
+        padding-top: 170px;
+      }
+    }
+  }
+
+  &__img {
+    &-wrapper {
+      padding-top: 210px;
+
+      @include mediaPad {
+        padding-top: 170px;
+      }
+
+      @include mediaDesktop {
+        overflow: hidden;
+
+        max-height: 1200px;
+        padding-top: 0;
+      }
+    }
+  }
+
+  &__title {
+    &-wrapper {
+      z-index: 1;
+      grid-row: 1 / 4;
+    }
+  }
+
+  &__description {
+    z-index: 1;
+    grid-row: 1 / 5;
+    display: none;
+
+    color: var(--color-secondary-500);
+
+    @include mediaPad {
+      display: block;
+    }
+
+    @include mediaDesktop {
+      grid-row: 2 / 5;
+    }
+  }
+
+  &__triggers {
+    position: static;
+    display: none;
+
+    @include mediaPad {
+      display: block;
+    }
+  }
+
+  &__sliders {
+    position: absolute;
+    display: block;
+    inset: 0 30px;
+
+    @include mediaPad {
+      position: static;
+    }
+  }
+
+  &__slider {
+    $root: &;
+
+    --slider-width: 100%;
+
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    z-index: 1;
+
+    width: var(--slider-width);
+    padding: 28px 44px 58px;
+
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+
+    pointer-events: none;
+
+    @include transition(margin, left, width, opacity);
+
+    @include mediaPad {
+      --slider-width: 35%;
+
+      top: auto;
+
+      min-width: auto;
+      min-height: auto;
+      height: max-content;
+      padding: 35px;
+
+      box-shadow: none;
+      backdrop-filter: blur(40px);
+
+      &--1 {
+        left: 2%;
+        bottom: calc(var(--trigger-offset-bottom-1) +
+        var(--trigger-diameter) + 20px);
+      }
+
+      &--2 {
+        left: 20%;
+        bottom: calc(var(--trigger-offset-bottom-2) +
+        var(--trigger-diameter) + 20px);
+      }
+
+      &--3 {
+        left: 32%;
+        bottom: calc(var(--trigger-offset-bottom-3) +
+        var(--trigger-diameter) + 20px);
+      }
+
+      &--4 {
+        left: 43%;
+        bottom: calc(var(--trigger-offset-bottom-4) +
+        var(--trigger-diameter) + 20px);
+      }
+
+      &--5 {
+        left: 62%;
+        bottom: calc(var(--trigger-offset-bottom-5) +
+        var(--trigger-diameter) + 20px);
+      }
+    }
+
+    @include mediaDesktop {
+      --slider-width: 320px;
+
+      &--1 {
+        left: 8%;
+      }
+
+      &--2 {
+        left: 26%;
+      }
+
+      &--3 {
+        left: 38%;
+      }
+
+      &--4 {
+        left: 49%;
+      }
+
+      &--5 {
+        left: 68%;
+      }
+    }
+
+    &-control {
+      display: none;
+    }
+
+    &-trigger {
+      position: absolute;
+      bottom: 0;
+
+      display: block;
+      width: var(--trigger-diameter);
+      height: var(--trigger-diameter);
+
+      color: var(--color-neutral-500);
+      background-color: var(--color-accent-500);
+      border-radius: 50%;
+      opacity: 1;
+
+      cursor: pointer;
+
+      @include transition(box-shadow, color, transform, opacity);
+
+      &--1 {
+        left: var(--trigger-offset-left-1);
+        bottom: var(--trigger-offset-bottom-1);
+      }
+
+      &--2 {
+        left: var(--trigger-offset-left-2);
+        bottom: var(--trigger-offset-bottom-2);
+      }
+
+      &--3 {
+        left: var(--trigger-offset-left-3);
+        bottom: var(--trigger-offset-bottom-3);
+      }
+
+      &--4 {
+        left: var(--trigger-offset-left-4);
+        bottom: var(--trigger-offset-bottom-4);
+      }
+
+      &--5 {
+        left: var(--trigger-offset-left-5);
+        bottom: var(--trigger-offset-bottom-5);
+      }
+
+      &::after {
+        content: "+";
+
+        display: block;
+
+        font-size: $fs-300;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      &:hover {
+        box-shadow: 3px 5px 15px var(--color-accent-900);
+        color: var(--color-neutral-100);
+
+        transform: scale(1.15);
+      }
+    }
+
+    &-pins {
+      position: absolute;
+      bottom: 32px;
+      z-index: 2;
+
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      width: 100%;
+
+      @include mediaPad {
+        display: none;
+      }
+    }
+
+    &-pin {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+
+      background-color: var(--color-neutral-200);
+      border: 1px solid var(--color-neutral-200);
+      transform: rotate(45deg);
+
+      cursor: pointer;
+
+      @include transition(background-color, border-color);
+
+      &:hover {
+        background-color: var(--color-neutral-500);
+      }
+    }
+
+    &-text {
+      color: var(--color-neutral-200);
+    }
+  }
+}
+
+@for $i from 1 through 5 {
+  #slide-#{$i}:checked {
+    & ~ .materials__triggers .materials__slider-trigger--#{$i} {
+      background-color: var(--color-secondary-900);
+      opacity: 0.4;
+
+      cursor: auto;
+
+      &::after {
+        content: "↑";
+      }
+
+      &:hover {
+        box-shadow: none;
+        color: var(--color-neutral-500);
+
+        transform: scale(1);
+      }
+    }
+
+    & ~ .materials__sliders .materials__slider-pin--#{$i} {
+      background-color: var(--color-accent-500);
+    }
+
+    & ~ .materials__sliders .materials__slider--#{$i} {
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+/*
+CONTAINER
+--------------------------------------------- */
+
+.container {
+  --padding-inline: #{$mobile-grid-padding-inline};
+
+  position: relative;
+
+  display: block;
+  max-width: 1540px;
+  padding-inline: var(--padding-inline);
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  @include transition(padding-inline);
+
+  @include mediaPad {
+    --padding-inline: #{$pad-grid-padding-inline};
+  }
+
+  @include mediaDesktop {
+    --padding-inline: #{$desktop-grid-padding-inline};
+  }
+}

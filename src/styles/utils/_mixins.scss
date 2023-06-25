@@ -1,6 +1,113 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+// Adding transition properties and duration
+// depending on user preferred settings
+
+@mixin transition($properties...) {
+  @media (prefers-reduced-motion: no-preference) {
+    transition-duration: $transition-duration;
+    transition-property: $properties;
+  }
+}
+
+// Utilities for generating grid system
+
+@mixin gridColumnSpan($colStart, $colSpan) {
+  grid-column: #{$colStart} / span #{$colSpan};
+}
+
+@mixin gridColumnTo($colStart, $colEnd) {
+  grid-column: #{$colStart} / #{$colEnd + 1};
+}
+
+@mixin gridColsGenerator($root, $name, $colsCount, $colSize: 1) {
+  @for $colStart from 1 through $colsCount {
+    $maxSpan: $colsCount + 1 - $colStart;
+
+    // 1 column only
+    #{$root}__cols--#{$name}-col-#{$colStart} {
+      @include gridColumnSpan(
+        if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
+        $colSize
+      );
+    }
+
+    // Any available column spans
+    @for $colSpan from 1 through $maxSpan {
+      #{$root}__cols--#{$name}-col-#{$colStart}-span-#{$colSpan} {
+        @include gridColumnSpan(
+          if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
+          $colSpan * $colSize
+        );
+      }
+
+      // Fill to last
+      @if $colSpan == $maxSpan {
+        #{$root}__cols--#{$name}-col-#{$colStart}-fill {
+          @include gridColumnSpan(
+            if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
+            $maxSpan * $colSize
+          );
+        }
+      }
+    }
+
+    // Any available column end (inclusive)
+    @for $colEnd from $colStart through $colsCount {
+      #{$root}__cols--#{$name}-col-#{$colStart}-to-#{$colEnd} {
+        @include gridColumnTo(
+          if($colSize == 1, $colStart, ($colStart - 1) * $colSize + 1),
+          $colEnd * $colSize
+        );
+      }
+    }
+  }
+}
+
+@mixin flexColsGenerator($root, $name, $colsCount, $colGap, $colSize: 1) {
+  $totalGapsWidth: $colGap * (($colsCount * $colSize) - 1);
+
+  @for $cols from 1 through $colsCount {
+    $gapWidth: (($cols * $colSize) - 1) * $colGap;
+
+    #{$root}__cols--#{$name}-#{$cols} {
+      flex-basis: #{
+        "calc((100% - " +
+        $totalGapsWidth +
+        ") * " +
+        ($cols / $colsCount) +
+        " + " +
+        $gapWidth +
+        ")"};
+    }
+
+    #{$root}__cols--#{$name}-offset-#{$cols} {
+      margin-left: #{
+        "calc((100% - " +
+        $totalGapsWidth +
+        ") * " +
+        ($cols / $colsCount) +
+        " + " +
+        ($gapWidth + $colGap) +
+        ")"};
+    }
+  }
+}
+
+@mixin sizeToMedia($size) {
+  @if $size == "s" {
+    @include mediaMobile {
+      @content;
+    }
+  }
+
+  @if $size == "m" {
+    @include mediaPad {
+      @content;
+    }
+  }
+
+  @if $size == "l" {
+    @include mediaDesktop {
+      @content;
+    }
   }
 }

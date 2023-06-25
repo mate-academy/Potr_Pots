@@ -1,0 +1,34 @@
+/*
+FEATURES
+--------------------------------------------- */
+
+.features {
+  &__articles {
+    row-gap: 68px;
+    padding-top: 24px;
+
+    @include mediaPad {
+      padding-top: 50px;
+    }
+  }
+
+  &__article {
+    grid-template-rows: min-content;
+    row-gap: 36px;
+
+    &-img {
+      @extend %img-hover-effect;
+
+      &-wrapper {
+        @extend %img-wrapper;
+      }
+    }
+
+    &-title {
+      margin-bottom: 20px;
+
+      color: var(--color-secondary-600);
+    }
+  }
+
+}

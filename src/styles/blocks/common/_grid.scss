@@ -1,0 +1,151 @@
+/*
+GRID
+--------------------------------------------- */
+
+/*
+  Principle:
+
+  This template grid generates classes for
+  3 media breakpoints set in variables:
+  - mobile (s)  = 2 columns
+  - pad (m)     = 6 columns
+  - desktop (l) = 12 columns
+
+  Class defines grid system with exact number of columns for
+  every media.
+
+  Structure for html:
+
+  .grid                            <-- parent grid block
+    |_  .grid__cols                <-- child column block = full grid width
+    |  ...
+    |_  .grid__cols                <-- (obligatory)
+      | .grid__cols--modifiers...  <-- (optional)
+      |_  .some-block              <-- children of column
+
+  Modifiers:
+
+  1) col start only:
+
+    .grid__cols--{SIZE}-col-{START}
+
+  2) col start with colspan:
+
+    .grid__cols--{SIZE}-col-{START}-span-{COUNT}
+
+  3) col start with col end (inclusive):
+
+    .grid__cols--{SIZE}-col-{START}-to-{END}
+
+      where
+      {SIZE}  - one of [s, m, l];
+      {START} - column start index [1 ... total of media columns];
+      {COUNT} - columns span count [1 ... (total of media columns - {START})];
+      {END}   - column end index [{START} ... total of media columns];
+
+  Example:
+
+    .grid__cols
+    .grid__cols--s-col-2-to-2
+    .grid__cols--m-col-2-span-3
+
+    - Mobile version:
+
+      |                             |                             |
+      |<-          empty          ->|<-         content         ->|
+
+    - Pad version:
+
+      |         |         |         |         |         |         |
+      |<-empty->|<-         content         ->|<-     empty     ->|
+
+    - Desktop version:
+
+      |    |    |    |    |    |    |    |    |    |    |    |    |
+      |<-empty->|<-         content         ->|<-     empty     ->|
+
+      *  here {START} and {COUNT} are recalculated automatically for
+        larger media, so you don't need to define it if it occupies
+        same area. It works for all modifiers: s --> m --> l
+
+*/
+
+$gridClass: ".grid";
+
+#{$gridClass} {
+  --columns-count: #{$mobile-grid-columns};
+
+  display: grid;
+  grid-template-columns: repeat(
+    var(--columns-count),
+    1fr
+  );
+  column-gap: $mobile-grid-gap;
+
+  &__cols {
+    grid-column: 1 / -1;
+  }
+
+  @include mediaPad {
+    --columns-count: #{$pad-grid-columns};
+
+    column-gap: $pad-grid-gap;
+  }
+
+  @include mediaDesktop {
+    --columns-count: #{$desktop-grid-columns};
+
+    column-gap: $desktop-grid-gap;
+  }
+}
+
+@include gridColsGenerator(
+  $gridClass,
+  "s",
+  $mobile-grid-columns,
+);
+
+@include mediaPad {
+  @include gridColsGenerator(
+    $gridClass,
+    "s",
+    $mobile-grid-columns,
+    $pad-grid-columns / $mobile-grid-columns,
+  );
+
+  @include gridColsGenerator(
+    $gridClass,
+    "m",
+    $pad-grid-columns,
+  );
+}
+
+@include mediaDesktop {
+  @include gridColsGenerator(
+    $gridClass,
+    "s",
+    $mobile-grid-columns,
+    $desktop-grid-columns / $mobile-grid-columns,
+  );
+
+  @include gridColsGenerator(
+    $gridClass,
+    "m",
+    $pad-grid-columns,
+    $desktop-grid-columns / $pad-grid-columns,
+  );
+
+  @include gridColsGenerator(
+    $gridClass,
+    "l",
+    $desktop-grid-columns
+  );
+}
+
+@each $size in "s", "m", "l" {
+  @include sizeToMedia($size) {
+    #{$gridClass}__cols--#{$size}-no-gap {
+      column-gap: 0;
+    }
+  }
+}
