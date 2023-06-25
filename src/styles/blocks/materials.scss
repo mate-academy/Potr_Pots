@@ -1,25 +1,42 @@
 .materials {
-  &__title {
-    font-size: 100px;
-    line-height: 100%;
-  }
   &__background {
     position: relative;
+    background-size: 100%;
     transform: translateX(-50%) translateY(-80px);
     left: 50%;
     z-index: -1;
     @extend %background-images-settings;
     background-image: url(../images/png/materials.png);
     width: 100vw;
+  
     height: 241px;
-
+  
     @include tablet {
       height: 577px;
+  
+    }
+  
+    @include desktop {
+      height: 1081px;
+      max-width: 1440px;
+    }
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 100%;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 8.99px;
+    color: $big-headers-color;
+
+    @include tablet {
+      font-size: 80px;
+      letter-spacing: 9.6px;
     }
 
     @include desktop {
-      height: 1081px;
+      font-size: 138.805px;
+      letter-spacing: 16.657px;
     }
-
   }
 }
