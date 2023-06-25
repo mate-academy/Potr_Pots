@@ -1,0 +1,110 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  gap: 24px;
+  width: 100%;
+  padding: 14px 0;
+  font-family: $ff-strings;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  color: #121212;
+  background-color: $c-yellow;
+  border: 1px solid $c-yellow;
+  text-decoration: none;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $c-yellow-light;
+    border-color: $c-yellow-light;
+  }
+
+  @include onTablet {
+    max-width: 240px;
+  }
+
+  @include onDesktop {
+    max-width: 270px;
+  }
+
+  &__text {
+    text-transform: uppercase;
+  }
+
+  &__element {
+    width: 28px;
+    height: 21px;
+    background-image: url(../images/button-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &--questions {
+      background-image: url(../images/button-arrow-hover.png);
+    }
+  }
+
+  &--benefits {
+    width: 238px;
+
+    @include onTablet {
+      background-color: transparent;
+      border-color: $c-turquoise;
+
+      &:hover {
+        background-color: $c-turquoise;
+        border-color: $c-turquoise;
+        color: #fff;
+      }
+
+      &:hover .button__element--benefits {
+        background-image: url(../images/button-arrow-hover.png);
+      }
+    }
+  }
+
+  &--questions {
+    color: #fff;
+    background-color: $c-turquoise;
+    border: 1px solid $c-turquoise;
+
+    @include onTablet {
+      max-width: 238px;
+    }
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.4);
+      border-color: 1px solid rgba(3, 128, 158, 0.4);
+    }
+  }
+
+  &-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $c-gray-red;
+    color: #e0e0e0;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(6px);
+    }
+  }
+}
+
+.active {
+  background: rgba(36, 35, 35, 0.75);
+  opacity: 0.65;
+  backdrop-filter: blur(6px);
+}

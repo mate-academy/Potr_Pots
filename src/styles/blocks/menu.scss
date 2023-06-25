@@ -1,0 +1,89 @@
+.menu {
+  background-color: $c-turquoise;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    display: flex;
+    position: relative;
+  }
+  
+  &__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 15px;
+  }
+
+  &__link {
+    font-family: $ff-strings;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: $c-gray-light;
+    @include hover (color, $c-gray-red);
+
+    &--basket::before {
+      position: absolute;
+      content: "0";
+      width: 14px;
+      height: 14px;
+      top: 0;
+      right: 20px;
+      font-family: $ff-titles;
+      font-size: 10px;
+      line-height: 14px;
+      color: $c-gray-light;
+      text-align: center;
+      border-radius: 50%;
+      background-color: $c-gray-red;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    right: 0;
+    align-items: center;
+    width: max-content;
+    text-decoration: none;
+    transform-origin: bottom right;
+    transform: rotate(-90deg) translatex(-50%);
+
+    &::before {
+      content: "";
+      transform: translate(-5px,0);
+      display: block;
+      height: 1px;
+      width: 44px;
+      background-color: #f8f8f8;
+    }
+
+    &-text {
+      font-family: $ff-strings;
+      font-size: 12px;
+      line-height: 18px;
+      color: #f8f8f8;
+      text-transform: uppercase;
+      margin-right: 10px;
+      @include hover (color, $c-gray-red);
+
+    }
+
+    &-icon {
+      display: block;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      transform: translate(-300%);
+      background-image: url(../images/close_icon.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+}
