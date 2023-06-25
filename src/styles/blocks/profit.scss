@@ -1,0 +1,72 @@
+.profit {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content 1fr;
+
+  position: relative;
+  font-family: "Manrope", sans-serif;
+
+  &__title {
+    @include onDesktop {
+      font-size: 36px;
+    }
+
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-bottom: 5px;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 48px;
+    font-size: $profitTitleHite;
+    color: $gray_1;
+  }
+
+  &__sign-container {
+    @include onDesktop {
+      position: static;
+      align-self: center;
+      transform: translateX(0);
+      left: 0;
+    }
+
+    @include onTabled {
+      position: static;
+      align-self: center;
+      transform: translateX(0);
+      left: 0;
+    }
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: self-start;
+    margin-right: 12px;
+
+    top: $profitTitleHite / 2;
+    width: 14px;
+    height: 14px;
+    left: -10px;
+    transform: translateX(-100%);
+  }
+
+  &__sign {
+    grid-column: 1 /2;
+    grid-row: 1 / 2;
+    align-self: center;
+    display: block;
+    width: 7px;
+    height: 7px;
+    background: $gray_2;
+    transform-origin: center;
+    transform: rotate(-45deg);
+  }
+
+  &__description {
+    grid-column: 2 / 2;
+    grid-row: 2 / 3;
+    font-family: inherit;
+    font-size: 16px;
+    color: $gray_3;
+  }
+}

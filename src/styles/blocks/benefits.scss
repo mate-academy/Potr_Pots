@@ -1,0 +1,132 @@
+.benefits {
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+  }
+
+  &__image {
+    @include onDesktop {
+      position: absolute;
+      bottom: -140px;
+      margin-left: #{-$marginSidesDesktop};
+      display: block;
+      height: 792px;
+    }
+
+    display: none;
+  }
+
+  &__content {
+    @include onDesktop {
+      @include grid;
+      grid-template-rows: repeat(5, min-content);
+      align-self: start;
+    }
+
+    @include onTabled {
+      @include gridTabled;
+      grid-template-rows: repeat(3, min-content);
+    }
+
+    width: 100%;
+  }
+
+  &__profit {
+
+    margin-bottom: 40px;
+
+    &--first-left {
+      @include onDesktop {
+        grid-column: 6 / 10;
+        grid-row: 1 / 2;
+        margin-bottom: 0;
+      }
+
+      @include onTabled {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+        margin-bottom: 30px;
+      }
+    }
+
+    &--second-left {
+      @include onDesktop {
+        grid-column: 9 / 13;
+        grid-row: 1 / 2;
+        margin-bottom: 40px;
+      }
+
+      @include onTabled {
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+        margin-bottom: 0;
+      }
+    }
+
+    &--third-left {
+      @include onDesktop {
+        grid-column: 6 / 10;
+        grid-row: 2 / 3;
+        margin-bottom: 60px;
+      }
+
+      @include onTabled {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        margin-bottom: 30px;
+      }
+
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include onDesktop {
+      grid-column: 6 / 9;
+      grid-row: 3 / 4;
+      margin-bottom: 70px;
+    }
+
+    @include onTabled {
+      grid-column: 4 / 7;
+      grid-row: 1 / 3;
+      align-self: end;
+      margin-bottom: 100px;
+    }
+
+    margin-bottom: 50px;
+  }
+
+  &__discount {
+    @include onDesktop {
+      grid-column: 7 / 13;
+      grid-row: 5 /6;
+    }
+
+    @include onTabled {
+      grid-column: 4 / 6;
+      grid-row: 2 / 4;
+      align-self: end;
+      margin-bottom: 94px;
+    }
+  }
+
+  &__side-sign {
+    @include onTabled {
+      position: relative;
+      display: flex;
+      grid-column: 6 / 7;
+      grid-row: 1 / 3;
+      justify-self: end;
+      align-self: start;
+      right: -12px;
+      transform: translateX(100%);
+    }
+
+    display: none;
+  }
+}

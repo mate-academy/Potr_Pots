@@ -1,0 +1,107 @@
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 238px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  color: #121212;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 23px;
+    right: 66px;
+    height: 8px;
+    width: 25px;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+    transform: translate(50%, 50%);
+  }
+
+  &--yellow {
+    background-color: $yellow;
+    transition: all 0.3s;
+
+    &::after {
+      background-image: url(../images/arrow_black.svg);
+    }
+
+    &:hover {
+      background-color: #dfd817;
+    }
+  }
+
+  &--transparent {
+    @include onDesktop {
+      background-color: transparent;
+      border: 1px solid $turquoise;
+    }
+
+    @include onTabled {
+      background-color: transparent;
+      border: 1px solid $turquoise;
+    }
+
+    background-color: $yellow;
+    transition: all 0.3s;
+
+    &::after {
+      background-image: url(../images/arrow_black.svg);
+    }
+
+    &:hover {
+      background-color: $turquoise;
+      color: #fff;
+
+      &::after {
+        background-image: url(../images/arrow_wite.svg);
+        transition: background-image 0.3s;
+      }
+    }
+  }
+
+  &--submit {
+    background-color: $turquoise;
+    transition: all 0.3s;
+    color: #fff;
+
+    &::after {
+      background-image: url(../images/arrow_wite.svg);
+    }
+
+    &:hover {
+      background: rgba(3, 128, 158, 0.4);
+      border: 1px solid rgba(3, 128, 158, 0.4);
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  &__title {
+    width: max-content;
+    margin-right: 24px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+    text-transform: uppercase;
+  }
+}

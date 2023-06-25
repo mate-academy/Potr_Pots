@@ -1,0 +1,30 @@
+.window-position {
+  @include onDesktop {
+    display: none;
+  }
+
+  @include onTabled {
+    display: none;
+  }
+
+  display: flex;
+  margin-bottom: 38px;
+
+  &__item {
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    background: #fff;
+
+    transform: rotate(45deg);
+
+    &--active {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid $greyLight;
+    }
+  }
+
+  &__item:last-child {
+    margin-right: 0;
+  }
+}
