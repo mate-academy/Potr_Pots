@@ -1,0 +1,203 @@
+.header {
+  position: relative;
+
+  @include onTablet {
+    height: 90vh;
+  }
+
+  &__nav {
+    @include grid;
+    padding-top: 15px;
+    justify-content: space-between;
+    margin: 0 0 10px;
+    width: 100%;
+
+    @include onTablet {
+      padding: 29px 0 49px;
+    }
+
+    @include onTablet {
+      padding-bottom: 80px;
+    }
+  }
+
+  &__logo-link {
+    text-decoration: none;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+    color: $grey-dark;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+  }
+
+  &__menu-icon {
+    height: 32px;
+    width: 32px;
+    justify-self: end;
+  }
+
+  &__icon-box {
+    width: 100%;
+    flex-direction: row-reverse;
+
+    @include onTablet {
+      grid-column: -1;
+    }
+  }
+
+  &__links {
+    grid-column: 5/10;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__link:link,
+  &__link:visited {
+    text-decoration: none;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey-dark-2;
+    transition: 0.3s;
+  }
+
+  &__link:hover,
+  &__link:active {
+    color: $turquoise;
+    transform: translateY(-10%);
+  }
+
+  &__cart-icon {
+    height: 30px;
+    width: 30px;
+    grid-column: -1;
+    align-self: center;
+  }
+
+  &__content {
+    margin: 0 20px;
+
+    @include onTablet {
+      @include grid;
+      margin: 0 34px;
+    }
+
+    @include onDesktop {
+      max-width: 1440px;
+      @include grid;
+      margin: 0 135px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      position: absolute;
+      height: 60%;
+      width: auto;
+      right: 34px;
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      right: 135px;
+      height: 65%;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    -webkit-text-stroke: 0.67px $turquoise;
+    color: $turquoise;
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+      grid-column: 1/-1;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 2/-1;
+    }
+  }
+
+  &__price-text {
+    font-family: "Manrope", Helvetica, sans-serif;
+
+    @include onTablet {
+      grid-column: 3/5;
+    }
+
+    @include onDesktop {
+      grid-column: 5/7;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: $grey-dark;
+  }
+
+  &__offer {
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $grey-dark-2;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    grid-column: 2/4;
+    @include onDesktop {
+      grid-column: 4/7;
+    }
+
+  }
+
+  &__more {
+    position: absolute;
+    bottom: 0;
+    right: -55px;
+    font-family: "Manrope", Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: $turquoise;
+    transform: rotate(90deg) translate(-50%, -50%);
+
+    @include onTablet {
+      width: max-content;
+      bottom: 45px;
+      left: -60px;
+    }
+
+    @include onDesktop {
+      left: 5%;
+    }
+
+    &:hover {
+      transform: rotate(90deg) translate(-40%, -50%);
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.content-mobile,
+.content-mobile-tablet {
+  display: flex;
+}
+ 
+.content-tablet,
+.content-tablet-desktop,
+.content-desktop {
+  display: none;
+}
+
+@include onTablet {
+  .content-mobile {
+    display: none;
+  }
+
+  .content-tablet,
+  .content-tablet-desktop {
+    display: flex;
+  }
+}
+
+@include onDesktop {
+  .content-mobile-tablet,
+  .content-tablet {
+    display: none;
+  }
+
+  .content-desktop,
+  .content-tablet-desktop {
+    display: flex;
+  }
+}

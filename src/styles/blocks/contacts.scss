@@ -1,0 +1,173 @@
+.contacts {
+  position: relative;
+  background-image: url(../images/icons/contact-mobile.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  padding: 45px 0 100px;
+  margin-bottom: 0;
+  color: #000;
+
+  @include onDesktop {
+    background-image: url(../images/icons/contacts-desktop.svg);
+    background-size: contain;
+    background-position: top left;
+  }
+
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: 0;
+    height: 164px;
+    width: 130px;
+    background-image: url(../images/photos/contacts.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+
+    @include onDesktop {
+      width: 164px;
+      right: 20%;
+    }
+  }
+
+  &__section {
+    margin-bottom: 0;
+  }
+  &__container {
+    @include onTablet {
+      @include grid;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__form-container {
+    grid-column: 1/4;
+
+    @include onDesktop {
+      grid-column: 1/5;
+    }
+  }
+
+  &__info-container {
+    grid-column: 5/-1;
+
+    @include onDesktop {
+      grid-column: 7/10;
+    }
+  }
+  
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__title-explained {
+    margin: 0 0 40px;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__legend {
+    margin: 0 0 25px;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    margin-bottom: 20px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $turquoise;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $turquoise;
+
+    &::placeholder {
+      font-family: "Manrope", Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $grey-dark-2;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $turquoise;
+    }
+
+    &:invalid {
+      color: $red;
+      border-color: $red;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px #ffec7a inset;
+      -webkit-text-fill-color: $turquoise;
+    }
+
+    &--textarea {
+      margin-bottom: 30px;
+  
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 55px;
+  }
+
+  &__subtitle {
+    margin: 0 0 5px;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: $grey-dark-3;
+  }
+
+  &__link {
+    display: block;
+    margin: 0 0 34px;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      color: $turquoise;
+      transform: translateY(-10%);
+    }
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+}

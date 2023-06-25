@@ -1,0 +1,80 @@
+.features {
+  &__title {
+    margin: 0 0 23px;
+    font-weight: normal;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    -webkit-text-stroke: 0.67px $turquoise;
+    color: $turquoise;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    @include onTablet {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include onDesktop {
+      gap: 30px;
+    }
+
+  }
+  &__item {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+
+    &:not(:last-child) {
+      margin-bottom: 67px;
+    }
+
+    &:hover {
+      transform: scale(110%);
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 37px;
+
+    @include onTablet {
+      margin-bottom: 25px;
+    }
+  }
+  &__subtitle {
+    margin: 0 0 20px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $grey-dark;
+  }
+  &__description {
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $grey-dark-2;
+  }
+}

@@ -1,0 +1,223 @@
+.for-whom {
+  position: relative;
+
+  &__container {
+    @include grid;
+  }
+
+  &__title {
+    grid-column: 1/-1;
+    margin: 0 0 25px;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: $grey-dark;
+  }
+    
+  &__text-container {
+    grid-column: 1/-1;
+
+    &--1 {
+      @include onTablet {
+        grid-column: 4/-1;
+      }
+
+      @include onDesktop {
+        grid-column: 7/-2;
+        align-self: center;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-column: 1/4;
+        grid-row: 3;
+      }
+
+      @include onDesktop {
+        grid-column: 2/6;
+        grid-row: 6/9;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        grid-column: 4/-1;
+      }
+      @include onDesktop {
+        grid-column: -6/-1;
+        grid-row: 8/9;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__number {
+    height: 46px;
+    width: 30px;
+    margin-bottom: 30px;
+    @include onTablet {
+      &--1,
+      &--3 {
+        position: absolute;
+        transform: translate(-170%, 70%);
+      }
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+
+    &:after {
+      @include onTablet {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 130px;
+        transform: rotate(22deg);
+        height: 40px;
+        width: 1px;
+        background-color: #000;
+      }
+    }
+
+    &--1 {
+      @include onTablet {
+        &:before {
+          content: "* Robust";
+          @include starBefore;
+          top: -30%;
+        }
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        &:before {
+          content: "* Beautiful";
+          @include starBefore;
+          top: -60%;
+          right: 0;
+          @include onDesktop {
+            top: -70%;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    &--3 {
+      &::after {
+        left: 260px;
+      }
+
+      @include onTablet {
+        &::before {
+          content: "* Saves time";
+          @include starBefore;
+          top: -20%;
+        }
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-family: "Manrope", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey-dark-2;
+  }
+
+  &__img {
+    width: 100%;
+    padding-bottom: 110px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(110%);
+    }
+
+    &--1 {
+      grid-column: 1/4;
+      padding-right: 50px;
+
+      @include onDesktop {
+        grid-column: 1/7;
+      }
+    }
+
+    &--2 {
+      grid-column: 4/-1;
+      padding-left: 50px;
+
+      @include onDesktop {
+        padding: 0 0 45px;
+        grid-column: 2/5;
+        grid-row: 3/6;
+        align-self: flex-end;
+      }
+    }
+
+    &--3 {
+      grid-column: 1/4;
+      padding-right: 50px;
+
+      @include onDesktop {
+        padding: 0 0 45px;
+        grid-column: 8/-1;
+        grid-row: 3/8;
+      }
+    }
+  }
+
+  &:after {
+    content: "potr pots";
+    position: absolute;
+    right: 0;
+    transform: rotate(90deg) translate(-100%, -100%);
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    color: #828282;
+
+    @include onTablet {
+      top: 30px;
+    }
+
+    @include onDesktop {
+      top: 13%;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 100px;
+    right: 17px;
+    width: 1px;
+    height: 65px;
+    background-color: #828282;
+
+    @include onTablet {
+      top: -130px;
+    }
+
+    @include onDesktop {
+      top: 2%;
+    }
+  }
+}
