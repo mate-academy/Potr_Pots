@@ -1,0 +1,154 @@
+.modals {
+  $root: &;
+  position: relative;
+
+  &__effects,
+  &__text {
+    @include onTablet {
+      opacity: 0;
+      z-index: -1;
+      transition: opacity $transition-time;
+    }
+  }
+
+  &__item {
+
+    @include onTablet {
+      position: absolute;
+      max-height: unset;
+      overflow: visible;
+      padding: 35px;
+
+      &-1 {
+        right: 0;
+        bottom: 4vw;
+        height: 200px;
+        width: 220px;
+
+        & #{$root}__opener {
+          top: -70px;
+          bottom: unset;
+        }
+      }
+      &-2 {
+        right: 21vw;
+        bottom: 25vw;
+        height: 155px;
+        width: 190px;
+      }
+
+      &-3 {
+        right: 29vw;
+        bottom: 16vw;
+        height: 160px;
+        width: 210px;
+      }
+
+      &-4 {
+        right: 44vw;
+        bottom: 39vw;
+        height: 100px;
+        width: 210px;
+      }
+
+      &-5 {
+        right: 62vw;
+        bottom: 22vw;
+        height: 100px;
+        width: 210px;
+
+        & #{$root}__opener {
+          left: 30%;
+        }
+      }
+    }
+
+    @include onDesktop {
+      &-3 {
+        right: 44vw;
+        bottom: 0;
+
+        & #{$root}__opener {
+          right: -70px;
+          left: unset;
+          bottom: 50%;
+          transform: translateY(50%);
+        }
+      }
+
+      &-4 {
+        right: 51vw;
+        bottom: 33vw;
+        & #{$root}__opener {
+          right: -25px;
+          left: unset;
+          bottom: -70px;
+          transform: none;
+        }
+      }
+      &-5 {
+        right: 56.4vw;
+        bottom: 16vw;
+        & #{$root}__opener {
+          left: 30%;
+        }
+      }
+    }
+  }
+
+  &__opener {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+
+    transform: translateX(-50%);
+    height: 50px;
+    width: 50px;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: $red;
+    z-index: 1;
+
+    cursor: pointer;
+
+    transition: background $transition-time,
+      backdrop-filter $transition-time;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &::before {
+      content: "+";
+      @extend %str2;
+      font-weight: 100;
+      color: $white;
+    }
+  }
+
+  /* Default limit is 5 */
+  @for $i from 1 through 5 {
+    &--selected-#{$i}>&__item:nth-child(#{$i}) {
+
+      & #{$root}__effects,
+      & #{$root}__text {
+        @include onTablet {
+          opacity: 1;
+        }
+      }
+
+      & #{$root}__opener {
+        background: rgba(36, 35, 35, 0.75);
+        backdrop-filter: blur(6px);
+
+        &::before {
+          content: "-";
+        }
+      }
+    }
+  }
+}

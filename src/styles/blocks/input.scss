@@ -1,0 +1,37 @@
+.input {
+  width: 100%;
+
+  padding: 4px 0;
+  border: none;
+  border-bottom: 1px solid $turquoise;
+
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  color: $grey-2;
+
+  &--success {
+    color: $turquoise;
+  }
+
+  &--error {
+    color: $red;
+  }
+
+  @extend %str3;
+
+  @include onTablet {
+    width: 340px;
+  }
+
+  @include onDesktop {
+    width: 370px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

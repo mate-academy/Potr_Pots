@@ -1,0 +1,98 @@
+.section {
+
+  @extend %container;
+
+  &__image {
+    position: absolute;
+    padding-bottom: 100%;
+    margin-bottom: 25px;
+    z-index: 0;
+    @include image(url(../images/desktop/pot1.jpg), 100%, auto);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @include onTablet {
+      width: 306px;
+      height: 306px;
+      right: 40px;
+      margin-top: 30px;
+      padding-bottom: 0;
+      z-index: 0;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+      right: 135px;
+    }
+
+    &--spaceholder {
+      background: none;
+      position: unset;
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    @include str--outlined(transparent);
+    @extend %h2;
+    z-index: 1;
+
+    @include onTablet {
+      width: 70%;
+      font-size: 64px;
+      line-height: 64px;
+      grid-column: 1 / 7;
+      grid-row: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 9;
+    }
+
+    &--filled {
+      color: $turquoise;
+    }
+  }
+
+  &--landing {
+
+
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      padding-top: 30px;
+    }
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      padding-top: 70px;
+    }
+  }
+
+  & + & {
+    margin-top: 110px;
+  }
+
+  &__yellow-rect {
+    position: absolute;
+    top: 0;
+    right: 20%;
+    z-index: -9;
+    @include image(url(../images/Rectangle.svg), 1121px, 467px);
+
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

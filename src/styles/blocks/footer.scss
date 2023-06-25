@@ -1,0 +1,112 @@
+.footer {
+  &__about {
+    align-self: flex-end;
+  }
+
+  &__link {
+    color: #111;
+    text-decoration: none;
+  }
+
+  @include onTablet {
+    display: flex;
+    justify-content: space-between;
+    padding: 34px;
+  }
+
+  &__social {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: -17vw auto 40px;
+
+    @include onTablet {
+      margin-top: 10px;
+    }
+  }
+
+  &__img-tw {
+    @include image(url(../images/desktop/tw.svg), 20px, 20px);
+    transition: transform 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      @include image(url(../images/desktop/tw_hover.svg), 20px, 20px);
+    }
+  }
+
+  &__img-ir {
+    @include image(url(../images/desktop/ir.svg), 20px, 20px);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__img-fb {
+    @include image(url(../images/desktop/fb.svg), 20px, 20px);
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__title {
+    align-self: center;
+    margin: 0;
+    color: #000;
+    text-decoration: none;
+    @extend %h2;
+    text-align: center;
+  }
+
+  &__title-2 {
+    display: none;
+    margin: 0;
+    @extend %h3;
+    text-align: left;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__text {
+    display: block;
+    margin: 0;
+    @extend %str3;
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__copyright {
+    @extend %str3;
+    text-align: center;
+    margin: 0 0 30px;
+    align-self: center;
+
+    @include onTablet {
+      text-align: left;
+      align-self: flex-end;
+    }
+  }
+
+  &__tile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 230px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 170px;
+    }
+
+  }
+}

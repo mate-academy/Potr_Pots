@@ -1,0 +1,86 @@
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @extend %container;
+  z-index: 9;
+
+  .header__blur {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    z-index: -1;
+  }
+
+  &__logo {
+    margin: 15px 0;
+    color: #111;
+    @extend %h2;
+    text-decoration: none;
+
+    cursor: pointer;
+  }
+
+  &__nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 72vw;
+    padding: 0 30px;
+    background-color: $turquoise;
+    z-index: 999;
+
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(1%);
+    }
+
+    @include onTablet {
+      padding: 0 40px;
+    }
+
+    @include onDesktop {
+      position: unset;
+      width: unset;
+      height: unset;
+      display: block;
+      padding: unset;
+      transform: unset;
+      background-color: unset;
+    }
+  }
+
+  &__toggler-checkbox {
+    background-image: url(../images/vectors/menu_icon.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 32px;
+    width: 32px;
+
+    cursor: pointer;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__cart {
+    display: none;
+    @include image(url(../images/icons/cart.png), 30px, 30px);
+
+    cursor: pointer;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

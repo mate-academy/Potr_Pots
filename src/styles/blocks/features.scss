@@ -1,0 +1,95 @@
+.features {
+
+  &__h1 {
+    color: $turquoise;
+    @extend %h1;
+    margin: 0 0 70px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: unset;
+      justify-content: space-between;
+    }
+  }
+
+  &__feature {
+    text-align: center;
+    width: 100%;
+
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__title {
+    @extend %h3;
+  }
+
+  &__text {
+    @extend %str3;
+    margin-bottom: 67px;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__text:last-child {
+    margin-bottom: 110px;
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__image {
+    max-width: 325px;
+    margin: 0 auto;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image-1 {
+    @include image(url(../images/mobile/abst-pot-1.jpg), 100%, 325px);
+    @include onTablet {
+      @include image(url(../images/tablet/abst-pot-1.jpg), 220px, 220px);
+    }
+    @include onDesktop {
+      @include image(url(../images/desktop/abst-pot-1.jpg), 370px, 370px);
+    }
+  }
+  &__image-2 {
+    @include image(url(../images/mobile/abst-pot-2.jpg), 100%, 325px);
+    @include onTablet {
+      @include image(url(../images/tablet/abst-pot-2.jpg), 220px, 220px);
+    }
+    @include onDesktop {
+      @include image(url(../images/desktop/abst-pot-2.jpg), 370px, 370px);
+    }
+  }
+  &__image-3 {
+    @include image(url(../images/mobile/abst-pot-3.jpg), 100%, 325px);
+    @include onTablet {
+      @include image(url(../images/tablet/abst-pot-3.jpg), 220px, 220px);
+    }
+    @include onDesktop {
+      @include image(url(../images/desktop/abst-pot-3.jpg), 370px, 370px);
+    }
+  }
+}
