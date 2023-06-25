@@ -1,0 +1,160 @@
+.slider {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 254px;
+  width: 90%;
+
+  background: rgba(0, 0, 0, 0.45);
+  mix-blend-mode: normal;
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(34px);
+
+  @include onTablet {
+    display: none;
+    width: 250px;
+    height: 200px;
+  }
+
+  &__text {
+    display: none;
+    font-family: $fontFamilyMonrope;
+    font-size: 16px;
+    line-height: $lineHeight-150;
+
+    color: $c-white;
+
+    &--is-active {
+      display: block;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 7px;
+    position: absolute;
+    bottom: 20px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__button {
+    padding: 0;
+    width: 7px;
+    height: 7px;
+
+    background-color: $c-white;
+    transform: rotate(-45deg);
+    border: none;
+
+    &--is-active {
+      width: 8px;
+      height: 8px;
+
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid $c-lightWhite;
+    }
+  }
+
+  &__tb {
+    @include onTablet {
+      box-sizing: border-box;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+
+      height: 200px;
+      width: 200px;
+      padding: 0 30px;
+      background: rgba(0, 0, 0, 0.45);
+      mix-blend-mode: normal;
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(34px);
+
+      &--num-1 {
+        position: absolute;
+        bottom: 22%;
+        left: 2%;
+      }
+      &--num-2 {
+        position: absolute;
+        bottom: 45%;
+        left: 20%;
+      }
+      &--num-3 {
+        position: absolute;
+        bottom: 18%;
+        left: 34%;
+      }
+      &--num-4 {
+        position: absolute;
+        bottom: 30%;
+        left: 48%;
+      }
+      &--num-5 {
+        position: absolute;
+        bottom: 60%;
+        left: 60%;
+      }
+
+      @include onDesktop {
+        height: 250px;
+        width: 300px;
+
+        &--num-1 {
+          position: absolute;
+          bottom: 18%;
+          left: 2%;
+        }
+        &--num-2 {
+          position: absolute;
+          bottom: 42%;
+          left: 25%;
+        }
+        &--num-3 {
+          position: absolute;
+          bottom: 15%;
+          left: 36%;
+        }
+        &--num-4 {
+          position: absolute;
+          bottom: 25%;
+          left: 58%;
+        }
+        &--num-5 {
+          position: absolute;
+          bottom: 56%;
+          left: 62%;
+        }
+
+      }
+    }
+
+    &--active {
+      display: flex;
+    }
+
+    &--text {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        font-family: $fontFamilyMonrope;
+        font-size: 12px;
+        line-height: $lineHeight-150;
+
+        color: $c-white;
+      }
+
+      @include onDesktop {
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,135 @@
+.footer {
+  padding-bottom: 50px;
+
+  &__container {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-name {
+      @include onTablet {
+        flex-grow: 2;
+      }
+    }
+
+    &-address {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 200px;
+        align-items: flex-start;
+
+        border-bottom: 1px solid transparent;
+        transition: border-color $transition;
+
+        &:hover {
+          cursor: pointer;
+          border-color: $c-black;
+        }
+      }
+    }
+
+    &-about-us {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    padding-bottom: 40px;
+    justify-content: center;
+
+  }
+
+  &__icon {
+
+    height: 21px;
+
+    &-twitter {
+      background-image: url("../images/twitter_icon.png");
+      width: 21px;
+      background-size: contain;
+    }
+
+    &-instagram {
+      background-image: url("../images/instagram_icon.png");
+      width: 21px;
+      background-size: contain;
+    }
+
+    &-facebook {
+      background-image: url("../images/facebook_icon.png");
+      width: 21px;
+      background-size: contain;
+    }
+
+    margin-right: 70px;
+    transition: transform $transition;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    &:hover {
+      transform: scale(150%);
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+    font-size: 36px;
+    line-height: $transition;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    transition: color $transition;
+
+    &:hover {
+      cursor: pointer;
+      color: $c-lightGray;
+    }
+
+    color: $c-black;
+
+    @include onTablet {
+      text-align: start;
+
+      &:nth-child(2) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__copyright {
+    font-family: $fontFamilyMonrope;
+    font-size: 16px;
+    line-height: $lineHeight-150;
+
+    text-decoration: none;
+    text-align: center;
+    color: $c-black;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    &-name {
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+}

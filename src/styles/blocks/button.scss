@@ -1,0 +1,54 @@
+.button {
+  position: relative;
+
+  width: 100%;
+  height: 48px;
+
+  border: none;
+  color: $btnTextColor;
+  text-transform: uppercase;
+  font-family: $fontFamilyMonrope;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: $lineHeight-150;
+  transition: background $transition, border $transition;
+
+  &::after {
+    position: relative;
+    content: "";
+    display: inline-block;
+
+    width: 28px;
+    height: 10px;
+    top: 2px;
+
+    background-image: url("../images/arrow_button.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 24px;
+  }
+
+  &--primary2 {
+    background-color: $c-yellow;
+    color: $c-black;
+
+    &:hover {
+      cursor: pointer;
+      background: $c-darkYellow;
+    }
+  }
+
+  &--primary1 {
+    background: $c-blue;
+    color: $c-white;
+
+    &::after {
+      background-image: url("../images/arrow_button2.svg");
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: $c-darkBlue;
+    }
+  }
+}

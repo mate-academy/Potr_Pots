@@ -1,0 +1,106 @@
+.features {
+
+  &__content {
+    margin-bottom: 66px;
+
+    &:last-child {
+      margin: 0;
+    }
+
+    width: 260px;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0;
+
+      &:first-child {
+        order: 0;
+      }
+      &:last-child {
+        order: -1;
+      }
+    }
+
+    @include onDesktop {
+
+      align-items: center;
+
+      &:first-child {
+        order: -1;
+      }
+      &:last-child {
+        order: 2;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+
+  &__title {
+    font-size: 56px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.68px $c-blue;
+
+    margin-bottom: 22px;
+
+    @include onDesktop {
+      margin-bottom: 71px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    margin-bottom: 36px;
+    transition: transform $transition;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale($scaleSize);
+    }
+  }
+
+  &__block-title {
+
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+  }
+
+  &__block-text {
+    font-family: $fontFamilyMonrope;
+    font-size: 16px;
+    line-height: $lineHeight-150;
+    text-align: center;
+    color: $c-lightGray;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+}

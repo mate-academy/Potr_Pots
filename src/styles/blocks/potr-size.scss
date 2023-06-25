@@ -1,0 +1,131 @@
+.potr-size {
+
+  &__container {
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onDesktop {
+      position: relative;
+      width: 240px;
+
+      margin-right: 80px ;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -28px;
+        top: 0;
+
+        width: 1px;
+        height: 250px;
+
+        background-color: $c-lightWhite;
+      }
+    }
+  }
+
+  &__tablet-container {
+    padding: 0;
+
+    @include onTablet {
+      padding: 0 30px;
+
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: $lineHeight-150;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    margin: 0 30px 20px;
+    color: $c-black;
+
+    @include onDesktop {
+      margin-bottom: 66px;
+      padding: 0 135px;
+    }
+  }
+
+  &__text {
+    font-family: $fontFamilyMonrope;
+    font-size: 16px;
+    line-height: $lineHeight-150;
+
+    margin: 0 30px;
+
+    color: $c-lightGray;
+
+    @include onTablet {
+      width: 579px;
+    }
+
+    @include onDesktop {
+      width: 40%;
+    }
+
+    &--small {
+      margin: 0 0 40px;
+      width: 100%;
+    }
+
+    &-container {
+
+      @include onDesktop {
+        display: flex;
+        padding: 0 135px;
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+
+    transition: transform $transition;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale($scaleSize);
+    }
+
+    @include onDesktop {
+      width: 528px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__size-title {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+
+    color: $c-black;
+  }
+
+  &__bottom-text {
+    position: relative;
+
+    &::before {
+      content: "*";
+    }
+
+    @include onDesktop {
+      padding: 0 135px;
+      text-align: center;
+      width: 36%;
+      transform: translateY(-250%);
+    }
+  }
+}

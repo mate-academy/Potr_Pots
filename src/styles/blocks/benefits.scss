@@ -1,0 +1,156 @@
+.benefits {
+  position: relative;
+
+  &__content {
+
+    @include onDesktop {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__images {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__logo {
+
+    &-2 {
+      position: absolute;
+      left: 14%;
+      top: 30%;
+    }
+  }
+
+  &__side-text {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      right: 0;
+      top: 20%;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__container {
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+    }
+  }
+
+  &__btn-text-container {
+    @include onTablet {
+      padding-left: 20px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-family: $fontFamilyMonrope;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: $lineHeight-150;
+    color: $c-gray;
+
+    padding-left: 30px;
+
+    &::before {
+
+      content: "";
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      transform: rotate(45deg);
+
+      width: 7px;
+      height: 7px;
+
+      background-color: $c-lightGray;
+    }
+  }
+
+  &__text {
+    font-family: $fontFamilyMonrope;
+    font-size: 16px;
+    line-height: $lineHeight-150;
+
+    margin: 0 0 40px 30px;
+
+    color: $c-whiteGray;
+
+    &-container {
+      @include onDesktop {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__button {
+    max-width: 240px;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      background-color: transparent;
+      border: 1px solid $c-blue;
+
+      &:hover {
+        color: $c-white;
+        background: $c-blue;
+        &::after {
+          background-image: url("../images/arrow_button_hover.svg");
+        }
+      }
+    }
+
+    @include onDesktop {
+      margin: 0 0 84px;
+      transform: translateX(-90%);
+    }
+  }
+
+  &__discount {
+    font-size: 36px;
+    line-height: $lineHeight-150;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: $c-red;
+
+    margin-bottom: 10px;
+
+    &-text {
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+
+      color: $c-blue;
+      @include onDesktop {
+        transform: translateX(-30%);
+      }
+    }
+
+    @include onDesktop {
+      transform: translateX(-30%);
+    }
+  }
+}

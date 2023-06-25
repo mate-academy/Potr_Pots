@@ -1,0 +1,182 @@
+.materials {
+  position: relative;
+
+  &__side-text {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      top: 35%;
+      z-index: 3;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__text {
+    position: relative;
+
+    &-container {
+      display: none;
+      right: 10%;
+      top: 72%;
+      width: 340px;
+      position: absolute;
+
+      @include onTablet {
+        display: block;
+        z-index: -2;
+      }
+
+      @include onDesktop {
+        transform: translateX(-20%) translateY(-30%);
+        z-index: 1;
+        width: 400px;
+      }
+    }
+
+    &-title {
+      font-family: $fontFamilyMonrope;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: $lineHeight-150;
+
+      color: #4f4f4f;
+    }
+
+    &-text {
+      font-family: $fontFamilyMonrope;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: $lineHeight-150;
+
+      color: $c-lightGray;
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0 30px;
+
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $c-blue;
+
+    z-index: 5;
+
+    @include onTablet {
+      max-width: 600px;
+      margin-bottom: 140px;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+
+      max-width: max-content;
+
+      padding: 30px 0 0 135px;
+      margin: 0;
+
+    }
+  }
+
+  &__logo {
+    height: 70vw;
+    max-height: 1080px;
+
+    background: linear-gradient(180deg, $c-white 0%,
+    rgba(255, 255, 255, 0) 40.93%),
+      url(../images/materials_logo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transform: translateY(-82px);
+    z-index: -1;
+
+    &-content {
+      position: relative;
+    }
+  }
+
+  &__slider {
+    margin: 0 auto;
+    padding: 30px 45px;
+
+    transform: translateY(-130px);
+
+    @include onTablet {
+      position: absolute;
+      bottom: 15%;
+      left: 5%;
+    }
+  }
+
+  &__tablet-button {
+    display: none;
+    position: absolute;
+
+    width: 51px;
+    height: 51px;
+
+    border: none;
+    border-radius: 50%;
+    color: $c-white;
+
+    background-color: $c-red;
+    transition: transform $transition;
+
+    &::after {
+      content: "+";
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale($scaleSize);
+    }
+
+    &--active {
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(12px);
+
+      &::after {
+        content: "-";
+      }
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    &-1 {
+      bottom: 10%;
+      left: 10%;
+    }
+
+    &-2 {
+      bottom: 35%;
+      left: 30%;
+    }
+
+    &-3 {
+      bottom: 8%;
+      left: 44%;
+    }
+
+    &-4 {
+      bottom: 18%;
+      left: 58%;
+    }
+
+    &-5 {
+      bottom: 50%;
+      left: 70%;
+    }
+  }
+}

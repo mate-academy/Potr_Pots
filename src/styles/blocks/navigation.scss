@@ -1,0 +1,51 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 15px 38px 0 30px;
+
+  @include onTablet {
+    padding-top: 30px;
+  }
+
+  &__title {
+    text-decoration: none;
+    color: $c-gray;
+    border-bottom: 1px solid transparent;
+
+    transition: border-color $transition;
+
+    &:hover {
+      border-color: $c-gray;
+      cursor: pointer;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      margin-right: 100px;
+    }
+  }
+
+  &__item {
+    margin-right: 60px;
+  }
+
+  &__link {
+    text-decoration: none;
+    font-family: $fontFamilyMonrope;
+    font-size: 16px;
+    line-height: $lineHeight-150;
+
+    color: $c-lightGray;
+
+    transition: color $transition;
+
+    &:hover {
+      color: $c-blue;
+    }
+  }
+}

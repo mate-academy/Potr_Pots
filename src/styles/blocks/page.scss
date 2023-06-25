@@ -1,0 +1,47 @@
+.page {
+  font-family: "Bebas Neue", cursive;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: $lineHeight-150;
+  color: $c-gray;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 20%;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform $transition;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__section {
+    margin-bottom: 110px;
+
+    &:nth-child(4) {
+      margin: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+      &:nth-child(4) {
+        margin: 0;
+      }
+    }
+
+  }
+}
