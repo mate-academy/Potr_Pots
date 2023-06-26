@@ -1,0 +1,315 @@
+@import "../utils";
+
+.Materials {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width:996px) {
+        margin-top: 20%;
+    }
+
+    @include Tabscreen{
+        margin-top: 20vw;
+    }
+
+    @include Mobscreen{
+        margin-top: 50vw;
+    }
+
+    &__title {
+        display: flex;
+        position: absolute;
+        height: 350px;
+        margin-top: -10%;
+        justify-content: flex-end;
+        margin-left: 135px;
+        margin-right: 135px;
+      
+
+
+        @media (max-width:996px) {
+            position: relative;
+            margin-left: 34px;
+            margin-right: 34px;
+        }
+
+        @include Tabscreen {
+            margin-left: 34px;
+            margin-right: 34px;
+        }
+
+        @include Mobscreen {
+            margin-left: 30px;
+            position: absolute;
+            margin-top: -20%;
+            margin-right: 30px;
+        }
+    }
+
+    &__img {
+        display: flex;
+        height: 289px;
+        z-index: 1;
+        left: 0;
+        width: 70%;
+        position: absolute;
+        @media (max-width:996px) {
+            width: 80%;
+            height: auto;
+          
+        }
+
+        @include Mobscreen{
+            display: none;
+        }
+    }
+
+    &__img-mobile{
+        display: none;
+
+        @include Mobscreen{
+            display: flex;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &__container{
+        display: flex;
+        position: relative;
+        z-index: 3;
+        justify-self: flex-end;
+        flex-direction: column;
+        width: 40%;
+        align-self: flex-end;
+
+        @media (max-width:996px) {
+            z-index: -1;
+        }
+
+        @include Mobscreen{
+            display: none;
+        }
+    }
+
+    &__h2{
+      font-weight: 700;
+      font-size: 20px;
+      font-family: $manrope-family;
+      color: $secondary-color;
+    }
+
+    &__txt{
+        margin-top: 15px;
+        font-weight: 400;
+        font-size: 16px;
+        font-family: $manrope-family;
+        color: $secondary-color;
+    }
+
+    &__plants-bg {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        
+        @media (max-width:1373px) {
+            background-size: contain;
+        }
+
+        @media (max-width:996px) {
+            background-size: contain;
+            margin-top: 20%;
+            position: absolute;
+        }
+
+        @include Tabscreen {
+            height: 576px;
+            background-size: contain;
+        }
+
+        @include Mobscreen {
+            display: flex;
+            width: 100%;
+            background: url("../images/plants.jpg") no-repeat;
+            background-size: contain;
+            height: auto;
+        }
+    }
+
+    &__plant-bg{
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        @include Mobscreen{
+            display: none;
+        }
+    }
+
+    &__circle{
+        display: flex;
+        position: absolute;
+        background:rgba(0,0,0,0.4);
+        border-radius: 50%;
+        width: 51px;
+        height: 51px;
+        color: #e0e0e0;
+        font-size: x-large;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        @include Mobscreen{
+            display: none;
+        }
+
+        &::after{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: "-";
+            color: #e0e0e0;
+        }
+
+
+        &--1{
+             top: 80%;
+             left:17.6%;
+            
+        }
+
+        &--2{
+            top: 58%;
+            left: 38%;
+        }
+
+        &--3{
+            top: 85%;
+            left: 47%;
+        }
+
+        &--4{
+            top: 70%;
+            left: 58%;
+        }
+
+        &--5{
+            top: 60%;
+            left: 77%;
+        }
+
+        &--show{
+         background:#eb5757;
+
+         &::after{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: "+";
+            color: #e0e0e0;
+        }
+        }
+
+    }
+
+    &__mod{
+        visibility: visible;
+        position: absolute;
+        z-index: 3;
+        padding: 35px;
+        width: 283px;
+        font-family: $manrope-family;
+        font-weight: 400;
+        font-size: 16px;
+        color: $menu-links;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(20px);
+
+        &--1{
+            bottom: 100%;
+
+            @include Tabscreen{
+              left: -80%;
+            }
+        }
+
+        &--2{
+            bottom: 100%;
+            right: 100%;
+
+            @include Tabscreen{
+            right: -100%;
+              
+            }
+        }
+
+        &--3{
+            right: 100%;
+
+            @include Tabscreen{
+                bottom: 100%;
+                right: -100%;
+            }
+        }
+
+        &--4{
+            bottom: 100%;
+        }
+
+        &--5{
+            top: 100%;
+            width: 303px;
+
+            @include Tabscreen{
+               top: -400%;
+               right: 20%;
+               
+            }
+        }
+
+        &--show{
+            visibility: collapse;
+        }
+    }
+
+   
+
+    &__info-mobile {
+
+        display: none;
+
+        @include Mobscreen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(20px);
+            margin-right: 9px;
+            margin-left: 9px;
+            padding: 28px 45px 58px 45px;
+           
+            margin-top: 50%;
+        }
+    }
+
+    &__info-para-mobile {
+        display: flex;
+        width: 213px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        font-family: $manrope-family;
+        color: $menu-links;
+    }
+
+    &__info-con-img-mobile {
+        display: flex;
+        justify-content: center;
+        margin-top: 11px;
+        align-items: center;
+        column-gap: 7px;
+    }
+}

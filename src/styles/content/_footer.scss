@@ -1,0 +1,125 @@
+@import "../utils";
+
+
+.Foot {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 150px auto;
+    margin-bottom: 64px;
+
+
+    @media (max-width:996px) {
+        margin: 135px auto;
+    }
+
+    @include Tabscreen {
+        margin: 135px auto;
+    }
+
+    @include Mobscreen {
+        margin: 50vw auto;
+        margin-bottom: 30px;
+    }
+
+    &__con {
+        display: flex;
+        justify-content: space-between;
+
+        @include Tabscreen {
+            column-gap: 5%;
+        }
+
+        @media (max-width:610px) {
+            justify-content: center;
+        }
+    }
+
+    &__Txt {
+        display: flex;
+        flex-direction: column;
+        max-width: 170px;
+        font-weight: 400;
+        font-size: 24px;
+        font-family: $bebas-family;
+        color: #000000;
+        row-gap: 10px;
+
+        @media (max-width:610px) {
+            display: none;
+        }
+    }
+
+    &__adress {
+        font-weight: 400;
+        font-size: 16px;
+        color: #000000;
+        font-family: $manrope-family;
+
+        &:hover {
+            color: $menu-bg;
+        }
+    }
+
+    &__socials-con {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__social-links {
+        display: flex;
+        margin-bottom: 74px;
+        column-gap: 80px;
+    }
+
+    &__socials--1 {
+        display: block;
+
+        &:hover {
+            transform: scale(1.1);
+            filter: invert(42%) sepia(90%) saturate(3575%) hue-rotate(189deg) brightness(103%) contrast(90%);
+        }
+    }
+
+
+    &__socials--2 {
+        display: block;
+
+        &:hover {
+            transform: scale(1.1);
+            filter: invert(23%) sepia(75%) saturate(6754%) hue-rotate(332deg) brightness(96%) contrast(103%);
+        }
+    }
+
+    &__copyright {
+        font-weight: 400;
+        font-size: 16px;
+        color: #000000;
+        font-family: $manrope-family;
+    }
+
+    &__copyright-mobile {
+        @extend .Foot__copyright;
+        display: none;
+        justify-content: center;
+
+        @media (max-width:610px) {
+            display: flex;
+        }
+        @include Mobscreen{
+            display: flex;
+        }
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        font-family: $bebas-family;
+        color: $primary-color;
+        font-weight: 400;
+        letter-spacing: 0.06em;
+        font-size: 36px;
+        margin-top: 5px;
+    }
+}

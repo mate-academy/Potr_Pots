@@ -1,7 +1,61 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./content/navbar";
+@import "./content/menu";
+@import "./content/Porteco";
+@import "./content/forwhom";
+@import "./content/features";
+@import "./content/team";
+@import "./content/materials";
+@import "./content/PlanHouse.scss";
+@import "./content/flat";
+@import "./content/contact-us";
+@import "./content/footer";
+
+*{
+  padding: 0;
+  margin: 0;
+  transition: ease-in-out 0.3s;
+  scroll-behavior: smooth;
+}
 
 body {
   background: $c-gray;
 }
+
+a{
+  text-decoration: none;
+}
+
+section{
+  margin-top: 150px;
+
+  @include Tabscreen{
+    margin-top: 135px;
+  }
+  @include Mobscreen{
+    margin-top: 110px;
+  }
+}
+
+// .bg-yellow{
+//   display: flex;
+
+//   @include Mobscreen{
+//     display: none;
+//   }
+// }
+
+.bg-img{
+  display: flex;
+  top: 0;
+  position: absolute;
+  width: 70%;
+  z-index: -1;
+
+  @include Mobscreen{
+    display: none;
+  }
+}
+

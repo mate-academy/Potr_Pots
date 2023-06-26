@@ -4,3 +4,21 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin Bigscreen {
+  @media (min-width:2000px) {
+    @content;
+  }
+}
+
+@mixin Tabscreen {
+  @media (max-width:768px) and (min-width:500px) {
+    @content;
+  }
+}
+
+@mixin Mobscreen {
+  @media (max-width:500px) {
+    @content;
+  }
+}
