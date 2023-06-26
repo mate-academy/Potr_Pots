@@ -1,0 +1,136 @@
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 16px 30px 10px;
+
+  @include onTablet {
+    position: relative;
+    padding: 30px 0 50px;
+    width: $tablet-max-width;
+  }
+
+  @include onDesktop {
+    padding: 20px 0 76px;
+    width: $desktop-max-width;
+
+    align-items: center;
+  }
+
+  &__title {
+    @include fontBebas;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 2px;
+    color: $grey1;
+
+    transition: transform $smooth-transition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform $smooth-transition;
+
+    &:target {
+      z-index: 10;
+      transform: translateX(0);
+    }
+
+    @include onDesktop {
+      position: static;
+      transform: translateX(0);
+    }
+  }
+
+  &__menu-link {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    width: 32px;
+    height: 32px;
+
+    transition: transform $smooth-transition;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__aside-comment {
+    display: none;
+
+    justify-content: flex-end;
+    position: absolute;
+
+    font-size: 12px;
+    line-height: 18px;
+    color: $turquoise;
+
+    transform: rotate(90deg);
+    transform-origin: right;
+
+    transition: top $smooth-transition;
+
+    @include onTablet {
+      display: flex;
+
+      top: 310%;
+      left: -25px;
+      justify-content: flex-start;
+      transform-origin: bottom left;
+    }
+
+    @include onDesktop {
+      left: 0;
+    }
+
+    &:hover {
+      @include onTablet {
+        top: 320%;
+      }
+    }
+
+    &::after {
+      display: inline-block;
+      content: "";
+      width: 44px;
+      height: 8px;
+      margin-left: 8px;
+
+      background-image: url(../images/right_turquoise_arrow.png);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      transform: translateY(50%);
+    }
+
+    &--mobile {
+      display: flex;
+
+      position: relative;
+      top: 30px;
+      right: -15px;
+
+      @include onTablet {
+        display: none;
+      }
+
+      &:hover {
+        bottom: -20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.header {
+  @include onTablet {
+    background-image: url(../images/tablet/header_background.svg);
+    background-size: contain;
+    background-position: top left;
+    background-repeat: no-repeat;
+  }
+
+  &__container {
+    &--width {
+      @media (min-width: $desktop-max-width) {
+        width: $desktop-max-width;
+      }
+    }
+
+    &--center {
+      @media (min-width: $desktop-max-width) {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  &__image {
+    margin-bottom: 25px;
+    width: 100%;
+
+    transition: transform $smooth-transition;
+
+    @include onTablet {
+      width: 306px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 496px;
+    }
+
+    &:hover {
+      @include onTablet {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__content {
+    padding: 0 30px;
+
+    @include onTablet {
+      position: absolute;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include fontBebas;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 5px;
+    color: $turquoise;
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 1px;
+    width: max-content;
+
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: $grey1;
+
+    @include onTablet {
+      position: relative;
+      top: -20px;
+      left: 240px;
+      margin-bottom: 6px;
+    }
+
+    @include onDesktop {
+      top: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    width: max-content;
+
+    font-size: 14px;
+    line-height: 21px;
+
+    @include onTablet {
+      position: relative;
+      top: -20px;
+      left: 240px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      top: 0;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+
+    @include onDesktop {
+      margin-right: 0;
+    }
+  }
+}

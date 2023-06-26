@@ -1,0 +1,112 @@
+.pot-size {
+  padding: 0;
+
+  @include onTablet {
+    padding: 0 34px;
+  }
+
+  &__container {
+    padding: 0 30px;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onDesktop {
+      position: relative;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include fontBebas;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: $black;
+
+    @include onTablet {
+      max-width: $tablet-max-width;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    @include onDesktop {
+      height: 256px;
+      padding-right: 10px;
+      border-right: 1px solid $grey;
+    }
+  }
+
+  &__image {
+    margin-bottom: 30px;
+    width: 100%;
+
+    @include onTablet {
+      width: 416px;
+      height: 336px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+
+      width: 468px;
+      height: 374px;
+    }
+  }
+
+  &__sizes {
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 15px;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+      width: 246px;
+    }
+
+    @include onDesktop {
+      width: 240px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+
+    @include fontBebas;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 3px;
+
+    color: $black;
+  }
+
+  &__note {
+    &::before {
+      position: relative;
+      margin-left: -10px;
+      content: "*";
+    }
+
+    @include onDesktop {
+      position: absolute;
+      width: 465px;
+      top: -80px;
+      left: 10px;
+    }
+  }
+}

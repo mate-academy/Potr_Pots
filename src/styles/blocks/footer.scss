@@ -1,0 +1,106 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @include onTablet {
+    display: block;
+  }
+
+  &__subtitle {
+    display: none;
+
+    margin-bottom: 10px;
+
+    @include fontBebas;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 4px;
+    color: $black;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__adrress {
+    display: none;
+
+    width: 170px;
+    color: $black;
+
+    transition: color $smooth-transition;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-bottom: 40px;
+    padding: 0 44px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+      width: 240px;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 74px;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    object-position: center;
+
+    transition: transform $smooth-transition;
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+    justify-content: center;
+
+    @include fontBebas;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 5px;
+    color: $black;
+
+    transition: transform $smooth-transition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: center;
+
+    color: $black;
+  }
+}

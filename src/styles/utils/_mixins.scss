@@ -1,6 +1,22 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
   }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin fontBebas {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+@mixin outlinedText {
+  color: $turquoise;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: $turquoise;
+  -webkit-text-stroke-width: 0.81px;
 }

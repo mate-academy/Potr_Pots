@@ -1,0 +1,129 @@
+.nav {
+  height: 100vh;
+  width: 230px;
+
+  padding: 138px 0 0 80px;
+
+  background-color: $turquoise;
+
+  @include onTablet {
+    width: 320px;
+    padding-top: 120px;
+  }
+
+  @include onDesktop {
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    width: 475px;
+
+    padding: 0;
+
+    background-color: transparent;
+  }
+
+  &__list {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 475px;
+    }
+  }
+
+  &__item {
+    padding-bottom: 16px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: $greyLight;
+
+    transition: color $smooth-transition;
+
+    &:hover {
+      color: $yellow;
+    }
+
+    @include onDesktop {
+      color: $grey2;
+
+      &:hover {
+        color: $turquoise;
+      }
+    }
+  }
+
+  &__close {
+    position: relative;
+    top: 60px;
+    left: 0;
+
+    width: max-content;
+
+    display: flex;
+    align-items: center;
+
+    transform: rotate(-90deg);
+    transform-origin: right;
+
+    @include onTablet {
+      top: 0;
+      left: 30px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__close-cross {
+    transform: rotate(-90deg);
+
+    &:hover {
+      transform: rotate(-70deg);
+    }
+  }
+
+  &__close-word {
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $greyLight;
+
+    transition: color $smooth-transition;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: 5px;
+      margin-left: 18px;
+
+      width: 44px;
+      height: 1px;
+      background-color: $greyLight;
+
+      transform: translateY(-400%);
+
+      transition: background-color $smooth-transition;
+    }
+
+    &:hover {
+      color: $yellow;
+
+      &::before {
+        background-color: $yellow;
+      }
+    }
+  }
+}

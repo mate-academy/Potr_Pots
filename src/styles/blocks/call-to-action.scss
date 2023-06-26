@@ -1,0 +1,142 @@
+.call-to-action {
+  @include onDesktop {
+    margin-bottom: 60px;
+  }
+
+  &__container {
+    display: block;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__feature {
+    margin-bottom: 40px;
+
+    &--last-item {
+      margin-bottom: 50px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+
+      @include onDesktop {
+        margin-bottom: 60px;
+      }
+    }
+
+    @include onDesktop {
+      margin-left: 20px;
+    }
+  }
+
+  &__feature-title {
+    margin-bottom: 5px;
+
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    color: $grey1;
+
+    @include onDesktop {
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    &::before {
+      display: inline-block;
+      position: relative;
+      left: -20px;
+      margin-right: -20px;
+
+      transform: translateY(-50%);
+
+      content: "";
+
+      width: 10px;
+      height: 10px;
+
+      background-image: url(../images/rhomb_grey1_icon.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__button {
+    margin: 0 auto 40px;
+
+    @include onTablet {
+      margin: 0 0 35px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 70px;
+    }
+  }
+
+  &__proposition-1 {
+    margin-bottom: 10px;
+
+    @include fontBebas;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: $red;
+
+    @include onTablet {
+      margin-bottom: 5px;
+      width: 320px;
+
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 4px;
+    }
+
+    @include onDesktop {
+      margin-left: 100px;
+
+      font-size: 36px;
+      line-height: 54px;
+      letter-spacing: 5px;
+    }
+  }
+
+  &__proposition-2 {
+    @include fontBebas;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $turquoise;
+
+    @include onTablet {
+      width: 240px;
+
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 3px;
+    }
+
+    @include onDesktop {
+      margin-left: 100px;
+      width: 420px;
+
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 4px;
+    }
+  }
+
+  &__aside-comment {
+    top: 150px;
+    right: -20px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

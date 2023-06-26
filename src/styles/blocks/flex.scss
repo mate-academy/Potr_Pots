@@ -1,0 +1,66 @@
+.flex {
+  display: block;
+  width: 100%;
+
+  @include onTablet {
+    width: $tablet-max-width;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include onDesktop {
+    width: $desktop-max-width;
+  }
+
+  &--align-right {
+    @include onDesktop {
+      align-items: flex-end;
+    }
+  }
+
+  &--header {
+    @include onDesktop {
+      width: 1070px;
+    }
+  }
+
+  &--for-whom {
+    @include onDesktop {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &--call-to-action {
+    position: relative;
+    
+    @include onDesktop {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &--order-1 {
+      @include onTablet {
+        order: 1;
+      }
+    }
+
+    &--order-2 {
+      @include onTablet {
+        order: 2;
+      }
+    }
+
+    &--justify-center {
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.questions {
+  padding: 45px 30px 155px;
+  background-image: url(../images/questions_background.png);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    padding: 16px 34px 155px;
+    background-image: url(../images/tablet/questions_background.png);
+    background-position: bottom right;
+  }
+
+  @include onDesktop {
+    padding: 38px 34px 184px;
+    background-image: url(../images/desktop/footer_background.svg);
+  }
+
+  &__title {
+    @include fontBebas;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: $black;
+  }
+
+  &__text {
+    color: $black;
+  }
+
+  &__form {
+    margin: 40px 0 56px;
+
+    @include onTablet {
+      margin: 30px 0 0;
+    }
+  }
+
+  &__contact {
+    margin-bottom: 34px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 24px;
+      padding-right: 160px;
+    }
+  }
+
+  &__contact-name {
+    margin-bottom: 5px;
+
+    font-size: 24px;
+    line-height: 36px;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__contact-link {
+    color: $black;
+
+    &:hover {
+      color: $turquoise;
+    }
+
+    @include onTablet {
+      display: block;
+      width: 205px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+}

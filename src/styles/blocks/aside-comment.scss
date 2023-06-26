@@ -1,0 +1,36 @@
+.aside-comment {
+  display: none;
+
+  width: max-content;
+  position: absolute;
+
+  @include fontBebas;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 3px;
+  color: $grey2;
+
+  transform: rotate(90deg);
+  transform-origin: right;
+
+  @include onTablet {
+    display: flex;
+  }
+
+  &::before {
+    display: inline-block;
+    content: "";
+    width: 65px;
+    height: 1;
+    margin-right: 8px;
+
+    background-image: url(../images/aside-grey-line.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &--rotate-left {
+    transform: rotate(-90deg);
+  }
+}
