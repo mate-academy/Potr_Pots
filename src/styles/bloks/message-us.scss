@@ -23,23 +23,25 @@
     }
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    right: -50px;
-    top: -90px;
-    width: 161px;
-    height: 164px;
-    background-image: url("../images/seal.png");
-    z-index: 10;
-
-    @include onDesktop {
-      right: 60px;
-      bottom: -70px;
-    }
-  }
-
   &__container {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -135px;
+      width: 161px;
+      height: 164px;
+      background-image: url("../images/seal.png");
+      z-index: 10;
+
+      @include onDesktop {
+        right: 60px;
+        bottom: -70px;
+      }
+    }
+
     @include onTablet {
       @include pageGrid;
     }
