@@ -1,0 +1,75 @@
+.team {
+  align-items: end;
+
+  @include onMobile {
+    align-items: unset;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $textMainColor;
+
+    grid-column: 1 / -1;
+    margin: 0 0 144px;
+
+    @include onTablet {
+      margin-bottom: 176px;
+    }
+
+    @include onMobile {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / span 4;
+    margin: 0;
+    justify-self: end;
+
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $textSecondaryColor;
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+      align-self: center;
+    }
+
+    @include onMobile {
+      order: 1;
+    }
+  }
+
+  &-picture-container {
+    grid-column: 5 / -2;
+    max-height: 508px;
+    max-width: 677px;
+    position: relative;
+    justify-self: end;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+
+      margin-bottom: 72px;
+    }
+
+    @include onMobile {
+      margin-bottom: 30px;
+    }
+  }
+  
+  &__picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

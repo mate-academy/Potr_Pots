@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  @include onTablet {
+    box-sizing: border-box;
+    padding: 24px 34px 0;
+    justify-content: space-between;
+  }
+
+  @include onMobile {
+    box-sizing: border-box;
+    padding: 16px 30px 0;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    font-family: "Bebas Neue", cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+    color: $textMainColor;
+    text-decoration: none;
+
+    margin: 0;
+  }
+
+  &__basket {
+    &--desktop-display {
+      @include onTablet {
+        display: none;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+
+  &__menu {
+    &--display {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+}
+
+.basket-image,
+.menu-image {
+  vertical-align: bottom;
+}

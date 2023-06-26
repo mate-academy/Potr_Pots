@@ -1,0 +1,313 @@
+.for-whom-list {
+  padding: 0;
+  display: flex;
+  counter-increment: list-item;
+  
+  &--desktop-1 {
+    justify-content: space-between;
+    margin-bottom: 80px;
+  }
+ 
+  &--desktop-2,
+  &--desktop-3 {
+    flex-direction: column;
+  }
+
+  &--desktop-2 {
+    align-items: flex-start;
+    justify-content: center;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--desktop-3 {
+    align-items: flex-end;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  @include onTablet {
+    margin-bottom: 110px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @include onMobile {
+    margin-bottom: 146px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $textSecondaryColor;
+    margin: 0 0 70px;
+
+    position: relative;
+
+    &::marker {
+      content: none;
+    }
+
+    @include onTablet {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 110px;
+
+      &:nth-child(even) {
+        flex-direction: row-reverse;
+        align-items: center;
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $textBlack;
+    margin: 0 0 20px;
+    
+    position: relative;
+
+    margin-bottom: 10px;
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      content: "";
+      border-left: 2px solid $textBlack;
+      position: absolute;
+      height: 1.3em;
+      top: 0;
+      left: 0;
+      transform: translate(-1.8em, -0.2em) rotateZ(22deg);
+
+      @include onTablet {
+        transform: translateX(-56px) rotateZ(22deg);
+      }
+
+      @include onMobile {
+        transform: translate(8px, -140%) rotateZ(22deg);
+      }
+    }
+
+    &-even {
+      &::before {
+        transform: translate(0.2em, -2.15em) rotateZ(22deg);
+      }
+
+      @include onTablet {
+        &::before {
+          transform: translate(0.3em, -1.8em) rotateZ(22deg);
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      border-left: 2px solid $textBlack;
+      position: absolute;
+      height: 45px;
+      transform: translateX(0.3em) rotateZ(22deg);
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+
+  &__picture {
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &--desktop-1 {
+      max-width: 40%;
+    }
+
+    &--desktop-3 {
+      max-width: 125%;
+      object-fit: contain;
+      margin-bottom: 40px;
+
+      @include onTablet {
+        margin: 0;
+      }
+    }
+
+    &-even {
+      margin-bottom: 48px;
+      max-width: 75%;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    @include onTablet {
+      min-width: 288px;
+      margin-right: 16px;
+      align-self: center;
+
+      &-even {
+        margin: 0;
+      }
+    }
+  }
+
+  &__content {
+    &--desktop-1 {
+      max-width: 40%;
+      align-self: center;
+    }
+
+    &::before {
+      font-family: "Bebas Neue", cursive;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 65px;
+      letter-spacing: 0.15em;
+      color: $textBlack;
+      content: counter(list-item);
+      position: absolute;
+      transform: translate(-1.6em, 1.75em);
+
+      @include onTablet {
+        padding: 0 24px 0 0;
+        position: absolute;
+        transform: translate(-100%, 1.3em);
+      }
+
+      @include onMobile {
+        position: absolute;
+        transform: translate(0.5em, -1.75em);
+      }
+    }
+
+    @include onTablet {
+      padding-left: 72px;
+    }
+
+    &-even {
+      &::before {
+        transform: translate(0.5em, 1.8em);
+
+        @include onMobile {
+          position: absolute;
+          transform: translate(0.5em, -2.1em);
+        }
+      }
+
+      @include onTablet {
+        display: flex;
+        flex-direction: column;
+        padding: 0 56px 0 0;
+
+        &::before {
+          padding: 0 0 0 0.7em;
+          transform: translateY(1.7em);
+        }
+      }
+    }
+
+    @include onMobile {
+      max-width: fit-content;
+      margin-bottom: 146px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__short-describe {
+    display: inline-block;
+    transform: translateX(-2.7em);
+    margin: 0 0 40px;
+
+    &-even {
+      margin-bottom: 112px;
+    }
+
+    &--desktop-3 {
+      transform: translateX(-100%);
+
+      @include onTablet {
+        transform: translateX(-1.3em);
+      }
+    }
+
+    &::before {
+      content: "*";
+      font-family: "Bebas Neue", cursive;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 29px;
+      letter-spacing: 0.15em;
+      color: $textBlack;
+      vertical-align: top;
+      padding-right: 30px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    @include onTablet {
+      display: inline-block;
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $textMainColor;
+      margin: 0 0 16px;
+
+      &::before {
+        content: "*";
+        font-family: "Bebas Neue", cursive;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.15em;
+        color: $textBlack;
+        vertical-align: top;
+        padding-right: 10px;
+      }
+
+      &-even {
+        align-self: flex-end;
+        margin-bottom: 96px;
+      }
+    }
+  }
+}

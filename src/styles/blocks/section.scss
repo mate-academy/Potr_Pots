@@ -1,0 +1,138 @@
+.section {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 30px;
+  position: relative;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+  }
+
+  @include onMobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    grid-column: 8 / -1;
+    grid-row: 1 / span 2;
+    justify-self: end;
+    z-index: -1;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 1 / span 2;
+      max-height: 500px;
+      z-index: -1;
+      align-self: start;
+    }
+
+    @include onMobile {
+      order: -1;
+      margin-bottom: 24px;
+      align-self: center;
+    }
+  }
+
+  &__title {
+    grid-column: 2 / span 5;
+    margin: 0 0 20px;
+
+    @include onTablet {
+      grid-column: 1 / span 4;
+      margin: 0 0 8px;
+    }
+
+    &--features {
+      grid-column: 1 / -1;
+      margin: 0 0 72px;
+
+      @include onTablet {
+        margin: 0 0 50px;
+      }
+
+      @include onMobile {
+        margin: 0 auto 24px;
+      }
+    }
+
+    &--materials {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+
+      @include onTablet {
+        grid-row: 1 / 2;
+      }
+    }
+  }
+
+  &-head {
+    font-family: "Bebas Neue", cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: $turquoiseMain;
+
+    max-width: 470px;
+    max-height: 256px;
+    resize: both;
+
+    @include onMobile {
+      display: inline-block;
+    }
+
+    &--features {
+      font-size: 58px;
+      line-height: 70px;
+
+      max-width: 770px;
+      max-height: 70px;
+      resize: both;
+
+      @include onMobile {
+        max-height: 140px;
+      }
+    }
+
+    &--materials {
+      font-size: 138.81px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+      margin: 0;
+      max-width: max-content;
+      max-height: max-content;
+      resize: unset;
+
+      @media (min-width: 1024px) and (max-width: 1100px) {
+        font-size: 109px;
+        line-height: 152px;
+      }
+
+      @include onTablet {
+        grid-column: 1 / -2;
+        font-size: 80px;
+        line-height: 96px;
+      }
+
+      @include onMobile {
+        font-size: 58px;
+        line-height: 70px;
+        letter-spacing: 0.15em;
+      }
+    }
+  }
+
+  &--materials {
+    grid-template-rows: 167px auto;
+
+    @include onTablet {
+      grid-template-rows: 192px 40px auto;
+    }
+  }
+}

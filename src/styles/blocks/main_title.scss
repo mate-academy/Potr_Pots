@@ -1,0 +1,28 @@
+.title {
+  fill: $turquoiseMain;
+  display: inline-block;
+
+  &__transparent {
+    display: inline-block;
+    box-sizing: border-box;
+    fill: none;
+    stroke-width: 1px;
+    stroke: $turquoiseMain;
+  }
+
+  &--features {
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &--on-mobile {
+    display: none;
+
+    @include onMobile {
+      display: inline-block;
+      width: 100%;
+      max-height: 140px;
+    }
+  }
+}

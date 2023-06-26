@@ -1,0 +1,42 @@
+.menu {
+  height: 100vh;
+  padding: 136px 56px 40px 84px;
+  background-color: $turquoiseMain;
+  margin: 0;
+  z-index: 2;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &-close-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__close {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $greyLigth;
+
+    margin: 0 0 0 20px;
+    align-self: end;
+    position: relative;
+
+    transform: rotate(-90deg) translateY(150%);
+
+    &::before {
+      content: "";
+      width: 44px;
+      height: 0;
+      position: absolute;
+      border-bottom: 1px solid $greyLigth;
+      transform: translate(-120%, 8px);
+    }
+  }
+}

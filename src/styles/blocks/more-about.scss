@@ -1,0 +1,65 @@
+.more-about {
+  grid-column: 1 / 1;
+  justify-self: start;
+
+  writing-mode: vertical-rl;
+  box-sizing: border-box;
+
+  padding-top: 8px;
+  position: relative;
+
+  @include onMobile {
+    padding-bottom: unset;
+    order: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateX(-$productLabelShiftMobile);
+  }
+  
+  &__text {
+    display: inline-block;
+    margin: 30px 0 10px;
+
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    text-decoration: none;
+  
+    color: $turquoiseMain;
+
+    @include onTablet {
+      margin: 0 0 10px;
+    }
+
+    @include onMobile {
+      margin: 0 0 10px;
+    }
+
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .more-about__text {
+      color: $yellowMain;
+    }
+
+    .arrow::after {
+      content: url(../images/Arrow_yellow.svg);
+      animation: arrow 0.3s ease-in-out;
+    }
+  }
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}

@@ -1,0 +1,99 @@
+.materials {
+  height: 100vw;
+
+  @include onTablet {
+    height: 110vw;
+  }
+
+  @include onMobile {
+    height: max-content;
+  }
+
+  &-content-container {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    position: relative;
+
+    @include onTablet {
+      grid-row: 3 / -1;
+    }
+    @include onMobile {
+      height: 100vw;
+    }
+  }
+
+  &__content {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include onTablet {
+      width: 48%;
+      transform: translateY(-7em);
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &--title {
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+      color: $textSecondaryColor;
+      margin: 0 0 16px;
+
+      @include onTablet {
+        margin-bottom: 10px;
+      }
+    }
+
+    &--description {
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $textSecondaryColor;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    right: -$paddingDesktop;
+
+    @include onTablet {
+      top: unset;
+      bottom: 0;
+      right: -$paddingTablet;
+    }
+
+    @include onMobile {
+      right: -$paddingMobile;
+      transform: translateY(-70px);
+    }
+  }
+
+  &__carousel {
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onMobile {
+      display: flex;
+    }
+  }
+}
