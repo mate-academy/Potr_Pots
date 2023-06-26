@@ -7,7 +7,7 @@
     background-size: 100%;
     transform: translateX(-50%) translateY(-80px);
     left: 50%;
-    z-index: -1;
+
     @extend %background-images-settings;
     background-image: linear-gradient(180deg,
     #f8f8f8 0%,
@@ -34,6 +34,8 @@
     font-family: "Bebas Neue", sans-serif;
     letter-spacing: 0.15em;
     color: $big-headers-color;
+    z-index: 2;
+    position: relative;
 
     @include tablet {
       font-size: 80px;
@@ -51,6 +53,7 @@
     font-size: 16px;
     font-weight: 400;
     color: $main-text-color;
+    z-index: 2;
 
     &--subtitle {
       font-size: 20px;
@@ -67,10 +70,6 @@
     }
   }
 
-  &__checkbox {
-    opacity: 0;
-  }
-
   &__button {
     display: none;
     @include tablet {
@@ -79,12 +78,11 @@
       background-color: red;
       border-radius: 50%;
       cursor: pointer;
-
+      border: none;
       display: flex;
       justify-content: center;
       align-items: center;
     }
-
   }
 
   &__card {
@@ -95,6 +93,11 @@
     backdrop-filter: blur(17px);
     padding: 35px;
     font-size: 16px;
+    color: white;
+
+    &--active {
+      display: block;
+    }
 
     &--1 {
       bottom: 70px;
@@ -157,67 +160,50 @@
 
     
     &--1 {
-      top: -240px;
+      top: 80%;
       right: -10%;
 
       @include desktop {
-        top: -380px;
+
         right: -10%;
       }
     }
 
     &--2 {
-      top: -400px;
+      top: 50%;
       right: -25%;
 
       @include desktop {
-        top: -650px;
+
         right: -30%;
       }
     }
 
     &--3 {
-      top: -220px;
+      top: 75%;
       right: -40%;
 
       @include desktop {
-        top: -300px;
         right: -40%;
       }
     }
 
     &--4 {
-      top: -370px;
+      top: 55%;
       right: -45%;
 
       @include desktop {
-        top: -550px;
         right: -50%;
       }
     }
 
     &--5 {
-      top: -350px;
+      top: 60%;
       right: -56%;
 
       @include desktop {
-        top: -450px;
         right: -70%;
       }
-    }
-  }
-
-  &__checkbox:checked + &__button + &__card {
-    display: block;
-    z-index: 2;
-
-  }
-
-  &__checkbox:checked + &__button {
-    background-color: green;
-    opacity: 0.65;
-    &::before {
-      content: "-";
     }
   }
 }

@@ -1,0 +1,37 @@
+.swiper {
+  width: 90%;
+  top: 70%;
+  height: 254px;
+
+  @include tablet {
+    display: none !important;
+  }
+
+  &-slide {
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+    color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 150%;
+    font-family: "Manrope", sans-serif;
+  }
+
+  &-text {
+    padding: 28px 45px 0;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: transparent !important;
+    background-image: url(../images/svg/swiper-bullet-notactive.svg);
+    height: 15px;
+    width: 15px;
+    @extend %background-images-settings;
+
+    &-active {
+      background-image: url(../images/svg/swiper-bullet.svg);
+    }
+  }
+}
