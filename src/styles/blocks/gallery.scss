@@ -1,0 +1,77 @@
+.gallery {
+
+  &__main-container {
+    display: inline-block;
+    grid-row: 1;
+  }
+
+  &__cards {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -30px;
+      width: 500px;
+    }
+  }
+
+  &__card-container {
+    padding: 20px 20px 15px;
+    background-color: white;
+    width: min-content;
+
+    &--1 {
+      transform: matrix(0.97, -0.26, 0.26, 0.97, -30.5, -28);
+    }
+    &--2 {
+      transform: matrix(0.88, -0.48, 0.48, 0.88, -11, -83);
+    }
+    &--3 {
+      transform: matrix(1, 0, 0, 1, -78, 0);
+      z-index: 1;
+    }
+    &--4 {
+      transform: matrix(0.97, -0.26, 0.26, 0.97, -85.5, -85);
+    }
+    &--5 {
+      transform: matrix(0.96, -0.27, 0.27, 0.96, 4.4, -42.5);
+    }
+    &--6 {
+      transform: matrix(0.86, -0.51, 0.51, 0.86, 15.5, -83);
+    }
+
+    &:hover {
+      transform: scale(1.5);
+      z-index: 2;
+    }
+  }
+
+  &__card-image {
+    @extend %background-images-settings;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5px;
+
+    &--1 {
+      background-image: url(../images/png/gallery1.png);
+    }
+    &--2 {
+      background-image: url(../images/png/gallery2.png);
+    }
+    &--3 {
+      background-image: url(../images/png/gallery3.png);
+    }
+    &--4 {
+      background-image: url(../images/png/gallery4.png);
+    }
+    &--5 {
+
+      background-image: url(../images/png/gallery5.png);
+    }
+    &--6 {
+      background-image: url(../images/png/gallery6.png);
+    }
+  }
+
+}
