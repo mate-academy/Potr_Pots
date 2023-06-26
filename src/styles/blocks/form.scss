@@ -1,0 +1,74 @@
+.form {
+  @include flex-colum;
+  padding-top: 44px;
+
+  &__title {
+    letter-spacing: 0.15em;
+    font-size: 36px;
+    color: $c-black;
+
+    @include onTablet {
+      white-space: nowrap;
+    }
+  }
+
+  &__description {
+    @extend %manrope-16;
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 25px;
+  }
+
+  &__input {
+    @extend %manrope-16;
+    line-height: 24px;
+
+    display: block;
+    width: 100%;
+
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-bottom: 1px solid rgba($c-black, 0.3);
+
+    -webkit-text-fill-color: $c-gray;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    margin-bottom: 20px;
+
+    &::placeholder {
+      @extend %manrope-16;
+      line-height: 24px;
+      -webkit-text-fill-color: $c-gray;
+    }
+
+    &:active,
+    &:focus-visible {
+      -webkit-text-fill-color: $c-gray;
+      border-bottom-color: $c-turquoise;
+    }
+
+    &:not(:placeholder-shown):valid {
+      border-bottom-color: $c-turquoise;
+      -webkit-text-fill-color: $c-turquoise;
+    }
+
+    &:not(:placeholder-shown):invalid {
+      border-bottom-color: $c-red;
+      -webkit-text-fill-color: $c-red;
+    }
+
+    &--textarea {
+      min-height: 31px;
+      max-height: 300px;
+      margin-bottom: 30px;
+      overflow: auto;
+      resize: none;
+    }
+  }
+}

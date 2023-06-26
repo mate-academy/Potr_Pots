@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  font-family: "Bebas Neue", cursive;
+  font-size: 36px;
+  line-height: 150%;
+  color: $c-gray-dark;
+  scroll-behavior: smooth;
+  background-color: $c-white;
+
+  &__body {
+    overflow-x: hidden;
+
+    &--with-menu {
+      overflow: hidden;
+
+      @include onDesktop {
+        overflow: auto;
+      }
+    }
+  }
+
+  &__header {
+    &--container {
+      padding: 0 30px;
+
+      @include onDesktop {
+        padding: 0 135px;
+        padding-bottom: 76px;
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    left: 50%;
+    right: 0;
+    top: 0;
+
+    transition: transform $anim-time $cubic-bezier;
+    transform: translateX(100%);
+
+    &--open {
+      transform: translateX(0);
+    }
+
+    @include onTablet {
+      left: 74%;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__section {
+    margin-bottom: 100px;
+  }
+}

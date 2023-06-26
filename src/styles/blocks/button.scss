@@ -1,0 +1,86 @@
+.button {
+  $root: &;
+  display: flex;
+  @include flex-center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 48px;
+
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0;
+  cursor: pointer;
+  color: $c-black;
+
+  transition: all $anim-time $cubic-bezier;
+
+  &__arrow {
+    margin-left: 24px;
+
+    &--white {
+      filter: (
+        invert(100%)
+        sepia(4%)
+        saturate(0%)
+        hue-rotate(152deg)
+        brightness(103%)
+        ontrast(101%)
+      );
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -75px;
+    top: -50px;
+    transform: rotate(35deg);
+
+    height: 155px;
+    width: 50px;
+    opacity: 0.4;
+    background: $c-white;
+    transition: all 1s $cubic-bezier;
+  }
+
+  &:hover {
+    letter-spacing: 2px;
+    @include boxShadow($c-yellow-light);
+
+    &::after {
+      left: 120%;
+    }
+  }
+
+  @include onTablet {
+    width: 240px;
+  }
+
+  &--primary {
+    border: 1px solid $c-turquoise;
+    background-color: $c-turquoise;
+    color: $c-white;
+
+    &:hover {
+      background-color: rgba($c-turquoise, 0.85);
+    }
+  }
+
+  &--primary2 {
+    background-color: $c-yellow;
+  }
+
+  &--secondary {
+    color: $c-black;
+    border: 1px solid $c-turquoise;
+
+    &:hover {
+      background-color: $c-turquoise;
+    }
+  }
+}

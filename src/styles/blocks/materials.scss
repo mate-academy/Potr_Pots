@@ -1,0 +1,136 @@
+.materials {
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+
+    margin-bottom: 120px;
+
+    @include onTablet {
+      padding-top: 30px;
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      font-size: 140px;
+      line-height: 167px;
+      transform: translateY(20%);
+    }
+  }
+
+  &__text-wrap {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    max-width: 340px;
+    position: absolute;
+    top: -100px;
+    right: 0;
+
+    @include onDesktop {
+      max-width: 470px;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  &__text {
+    @extend %manrope-16;
+    line-height: 150%;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -2;
+    width: 100vw;
+    left: -30px;
+    transform: translateY(-60%);
+
+    @include onTablet {
+      position: relative;
+      transform: none;
+    }
+
+    @include onDesktop {
+      left: auto;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include flex-center;
+
+    position: absolute;
+    bottom: 0;
+
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background-color: $c-red;
+
+    &--1 {
+      left: 10%;
+      bottom: 17%;
+    }
+
+    &--2 {
+      left: 30%;
+      bottom: 40%;
+    }
+
+    &--3 {
+      left: 43%;
+      bottom: 10%;
+    }
+
+    &--4 {
+      left: 55%;
+      bottom: 22%;
+    }
+
+    &--5 {
+      left: 75%;
+      bottom: 55%;
+    }
+  }
+
+  &__text-box {
+    @extend %manrope-16;
+    line-height: 150%;
+    color: $c-white;
+    width: 283px;
+    height: auto;
+    padding: 35px;
+
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(40px);
+
+    position: absolute;
+    z-index: 1;
+
+    &--1 {
+      transform: translate(20%, -80%);
+    }
+  }
+}

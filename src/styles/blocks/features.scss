@@ -1,0 +1,43 @@
+.features {
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.13em;
+
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.68px $c-turquoise;
+
+    margin-bottom: 22px;
+
+    &--full {
+      -webkit-text-fill-color: $c-turquoise;
+      -webkit-text-stroke: 1px $c-turquoise;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    width: 100%;
+    margin-bottom: 64px;
+
+    @include onTablet {
+      transition: all $anim-time;
+
+      @include hover (transform, scale(1.05));
+    }
+  }
+}

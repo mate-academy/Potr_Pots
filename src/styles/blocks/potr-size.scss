@@ -1,0 +1,119 @@
+.potr-size {
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    color: $c-black;
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__container {
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__description {
+    @extend %manrope-16;
+    line-height: 150%;
+    color: $c-gray;
+
+    margin-bottom: 30px;
+
+    @include onDesktop {
+      max-width: 253px;
+      margin-bottom: 38px;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      gap: 36px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100vw;
+    left: -30px;
+
+    margin-bottom: 30px;
+    @include boxShadow($c-gray-light);
+
+    @include onTablet {
+      left: auto;
+      width: 416px;
+      height: 337px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 528px;
+      height: 427px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 15px;
+
+    @include onTablet {
+      @include flex-colum;
+
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 18px;
+    color: $c-black;
+
+    margin-bottom: 10px;
+  }
+
+  &__paragraph {
+    @extend %manrope-16;
+    line-height: 150%;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__post-script {
+    @extend %manrope-16;
+    line-height: 150%;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      transform: translateX(-100%);
+    }
+
+    @include onDesktop {
+      position: absolute;
+      transform: translateY(-100%);
+      max-width: 500px;
+    }
+  }
+}

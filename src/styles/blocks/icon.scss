@@ -1,0 +1,66 @@
+.icon {
+  display: block;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &--menu {
+    background-image: url(../images/icons/menu_icon.svg);
+    @include square(32px);
+
+    @include onDesktop {
+      background-image: url(../images/icons/bag.png);
+
+      &:hover {
+        animation: wiggle 0.3s linear alternate;
+      }
+    }
+  }
+
+  &--cross {
+    @include square(16px);
+    background-image: url(../images/icons/cross.svg);
+  }
+
+  &--line {
+    height: 1px;
+    width: 44px;
+    background-color: $c-white;
+  }
+
+  &--number-line {
+    display: inline-block;
+    height: 46px;
+    width: 18px;
+    background-image: url(../images/icons/number-line.svg);
+  }
+
+  &--plus {
+    @include square(11px);
+    background-image: url(../images/icons/plus.svg);
+  }
+
+  &--minus {
+    @include square(11px);
+    background-image: url(../images/icons/minus.svg);
+  }
+
+  &--twitter {
+    display: block;
+    @include square(20px);
+    background-image: url(../images/icons/twitter.svg);
+  }
+
+  &--insta {
+    display: block;
+    @include square(20px);
+    background-size: contain;
+    background-image: url(../images/icons/instagram.svg);
+
+  }
+
+  &--facebook {
+    display: block;
+    @include square(20px);
+    background-image: url(../images/icons/facebook.svg);
+  }
+}

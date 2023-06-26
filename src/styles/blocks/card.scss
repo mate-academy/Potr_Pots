@@ -1,0 +1,26 @@
+.card {
+  &__image {
+    @include square(100%);
+
+    object-fit: cover;
+    object-position: center;
+
+    @include onTablet {
+      // @include hover(border-radius, 8px)
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    text-align: center;
+
+    @extend %manrope-16;
+    line-height: 150%;
+    color: $c-gray;
+  }
+}

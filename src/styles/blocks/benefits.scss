@@ -1,0 +1,119 @@
+.benefits {
+  @include onDesktop {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 670px;
+      height: 828px;
+    }
+  }
+
+  &__images {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      left: -15%;
+      width: 50%;
+      z-index: 0;
+
+      @include hover(transform, scale(1.03));
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+
+  &__text-box {
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    position: relative;
+    font-family: "Manrope", sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    text-transform: none;
+    letter-spacing: 0;
+    width: 316px;
+
+    margin-bottom: 5px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      @include square(7px);
+      top: 50%;
+      left: -10px;
+      transform: translate(-100%, -50%) rotate(45deg);
+      background-color: $c-gray;
+    }
+  }
+
+  &__paragraph {
+    @extend %manrope-16;
+    line-height: 150%;
+
+    color: $c-gray;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+  }
+
+  &__lable {
+    @include flex-colum;
+    position: relative;
+    letter-spacing: 0.15em;
+
+    &-price {
+      color: $c-red;
+      margin-bottom: 10px;
+
+      @include onDesktop {
+        transform: translateX(25%);
+      }
+    }
+
+    &-text {
+      font-size: 24px;
+      line-height: 24px;
+      color: $c-turquoise;
+
+      @include onDesktop {
+        transform: translateX(25%);
+      }
+    }
+
+    @include onTablet {
+      width: min-content;
+      justify-content: center;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.for-whom {
+  &__articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  &__title {
+    margin-bottom: 101px;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__article {
+    margin-bottom: 146px;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    &--1 {
+      @include onDesktop {
+        margin-bottom: 80px;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        flex-direction: row-reverse;
+      }
+
+      @include onDesktop {
+        max-width: 370px;
+        flex-direction: column;
+        margin-left: 100px;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        width: min-content;
+        flex-direction: column;
+        flex-grow: 1;
+
+        .article__container {
+          max-width: 370px;
+        }
+      }
+
+    }
+  }
+}

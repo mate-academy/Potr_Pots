@@ -1,0 +1,68 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 15px;
+
+  @include onTablet {
+    padding-top: 28px;
+  }
+
+  @include onDesktop {
+    padding-top: 20px;
+  }
+
+  &__title {
+    text-decoration: none;
+    color: $c-gray-dark;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+
+    &::after,
+    &::before {
+      content: "";
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      bottom: 0;
+      width: 0;
+
+      backface-visibility: hidden;
+      border: 1px solid rgba($c-turquoise, 0);
+      transition: all $anim-time ease-in-out;
+    }
+
+    &:hover::after,
+    &:hover::before {
+      width: 100%;
+
+      backface-visibility: hidden;
+      border-color: $c-turquoise;
+      transition: width $anim-time ease-in-out;
+    }
+
+    &:hover::before {
+      bottom: auto;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      gap: 60px;
+    }
+  }
+
+  &__link {
+    @extend %manrope-16;
+    color: $c-gray;
+    text-decoration: none;
+
+    @include link-animation;
+  }
+}

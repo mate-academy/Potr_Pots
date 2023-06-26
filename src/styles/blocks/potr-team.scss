@@ -1,0 +1,131 @@
+.potr-team {
+  position: relative;
+
+  &__name {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      width: max-content;
+      top: 0;
+      left: 0;
+
+      font-size: 232px;
+      line-height: 278px;
+      letter-spacing: 0.15em;
+
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0.68px $c-turquoise;
+
+      &--martin {
+        position: absolute;
+        top: 90px;
+        left: -80px;
+
+        z-index: 1;
+      }
+
+      &--andy {
+        position: absolute;
+        top: auto;
+        left: auto;
+        bottom: -180px;
+        right: -70px;
+      }
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 48px;
+    }
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 172px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 140px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100vw;
+    left: -30px;
+
+    @include onTablet {
+      width: 50%;
+      left: 0;
+
+      object-fit: contain;
+
+      transition: all $anim-time;
+
+      &:hover {
+        transform: scale(1.01);
+        @include boxShadow($c-yellow);
+      }
+    }
+
+    @include onDesktop {
+      margin-right: 100px;
+      width: 677px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    position: relative;
+  }
+
+  &__text {
+    align-self: flex-end;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray;
+
+    padding-bottom: 58px;
+
+    @include onTablet {
+      padding-top: 53px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__rectangle {
+    position: absolute;
+    width: 100vw;
+    height: 75%;
+    left: -30px;
+    bottom: 0;
+    z-index: -5;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+    background-color: $c-yellow-light;
+
+    @include onTablet {
+      top: 0;
+      left: -75px;
+      width: 293px;
+    }
+
+    @include onDesktop {
+      width: 435px;
+      height: 310px;
+      left: -220px;
+      clip-path: polygon(0 0, 100% 0, 100% 30%, 0 100%);
+    }
+  }
+}

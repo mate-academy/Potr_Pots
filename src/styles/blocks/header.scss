@@ -1,0 +1,149 @@
+.header {
+  &__content {
+    position: relative;
+  }
+
+  &__nav {
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 72px;
+    }
+  }
+
+  &__container {
+    @include flex-colum;
+
+    @include onDesktop {
+      padding: 0 100px;
+    }
+  }
+
+  &__main {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  &__side-text {
+    position: absolute;
+    width: max-content;
+    bottom: 30px;
+    right: -24px;
+    transform: rotate(90deg);
+    transform-origin: right top;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+    color: $c-turquoise;
+    text-decoration: none;
+
+    z-index: 5;
+
+    @include onTablet {
+      transform-origin: left bottom;
+      transform: rotate(90deg) translateX(-100%);
+      left: 0;
+      bottom: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 44px;
+      cursor: pointer;
+
+      transform: rotate(-90deg) translate(150%, 50%);
+
+      background-image: url(../images/icons/Arrow.svg);
+      color: $c-turquoise;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__title {
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.68px $c-turquoise;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      position: relative;
+      min-width: 490px;
+      font-size: 64px;
+      line-height: 64px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+    }
+
+    &--full {
+      -webkit-text-fill-color: $c-turquoise;
+      -webkit-text-stroke: 1px $c-turquoise;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+
+    transition: all $anim-time;
+
+    @include onTablet {
+      left: 0;
+      float: right;
+      width: 306px;
+
+      &:hover {
+        transform: rotateY(-10deg);
+        @include boxShadow($c-turquoise);
+      }
+    }
+
+    @include onDesktop {
+      width: 500px;
+    }
+  }
+
+  &__lable {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      align-self: flex-end;
+      margin-right: 15px;
+    }
+  }
+
+  &__price {
+    font-family: "Manrope", sans-serif;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 36px;
+    display: inline-block;
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-gray;
+  }
+
+  &__icon--arrow {
+    margin-left: 24px;
+  }
+
+  &__button {
+    align-self: flex-end;
+  }
+}

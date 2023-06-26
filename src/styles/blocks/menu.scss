@@ -1,0 +1,63 @@
+.menu {
+  z-index: 1;
+  height: 100vh;
+  background-color: $c-turquoise;
+
+  &__content {
+    margin: 138px 58px 42px auto;
+    width: max-content;
+  }
+
+  &__list {
+    @include flex-colum;
+
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 15px;
+
+    &:first-child::after {
+      content: "0";
+      position: relative;
+      display: flex;
+      @include flex-center;
+      @include square(14px);
+
+      left: 8px;
+
+      background-color: #eb5757;
+      border-radius: 50%;
+
+      color: $c-white;
+      font-size: 9px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    @extend %manrope-16;
+    line-height: 150%;
+    text-decoration: none;
+    color: $c-white;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    position: absolute;
+    right: 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+
+    align-items: center;
+    text-transform: uppercase;
+
+    color: $c-white;
+    text-decoration: none;
+
+    transform: rotate(-90deg) translateX(-100%);
+  }
+}

@@ -1,0 +1,16 @@
+.rectangle {
+  transition: all $anim-time;
+
+  @include onTablet {
+    position: absolute;
+    width: 600px;
+    height: 465px;
+    clip-path: polygon(0 0, 100% 0, 100% 37%, 0 71%);
+    background-color: $c-yellow-light;
+  }
+
+  @include onDesktop {
+    width: 1035px;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 100%);
+  }
+}
