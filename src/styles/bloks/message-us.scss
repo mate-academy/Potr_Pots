@@ -23,24 +23,42 @@
     }
   }
 
+  &__stamp {
+    position: absolute;
+    top: -15%;
+    max-width: 1325px;
+    width: 100%;
+
+    &-img {
+      display: flex;
+      justify-content: flex-end;
+      overflow-x: hidden;
+
+      & img {
+        transform: translate(30%);
+      }
+    }
+  }
+
   &__container {
     position: relative;
 
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: -135px;
-      width: 161px;
-      height: 164px;
-      background-image: url("../images/seal.png");
-      z-index: 10;
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   right: 0;
+    //   transform: translateX(100px);
+    //   top: -135px;
+    //   width: 161px;
+    //   height: 164px;
+    //   background-image: url("../images/seal.png");
+    //   z-index: 10;
 
-      @include onDesktop {
-        right: 60px;
-        bottom: -70px;
-      }
-    }
+    //   @include onDesktop {
+    //     right: 60px;
+    //     bottom: -70px;
+    //   }
+    // }
 
     @include onTablet {
       @include pageGrid;
