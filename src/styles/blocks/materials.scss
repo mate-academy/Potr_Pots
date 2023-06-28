@@ -206,4 +206,55 @@
       }
     }
   }
+
+  &__label {
+    font-family: "Bebas Neue", cursive;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    position: absolute;
+    color: $sides-color;
+    transform-origin: top right;
+    transform: rotate(90deg);
+
+    &--top {
+      display: none;
+
+      @include tablet {
+        display: block;
+        top: 16%;
+        right: 10px;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--bottom {
+      display: none;
+
+      @include tablet {
+        display: block;
+        top: 36%;
+        left: -40px;
+        z-index: 2;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      transform: translate(-115%, -8px);
+      display: block;
+      height: 1px;
+      width: 65px;
+      background-color: $sides-color;
+    }
+  }
 }
