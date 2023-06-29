@@ -1,0 +1,86 @@
+.button {
+  &-buy-now {
+    background-color: $yellow-color;
+    display: flex;
+    justify-content: center;
+    @include fs-14;
+    line-height: 48px;
+    max-height: 48px;
+    width: 100%;
+    max-width: 260px;
+    text-transform: uppercase;
+    color: $black-12;
+    font-weight: 600;
+
+    transition: opacity $transition-duration ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 28px;
+      height: auto;
+      background-image: url(../images/Arrow2.png);
+      @include img-contain;
+      margin-left: 24px;
+    }
+
+    &--bgrd--trans {
+      transition: background-color $transition-duration,
+        color $transition-duration,
+        background-image $transition-duration;
+
+      @include onDesktop {
+        background-color: transparent;
+
+        &:hover {
+          background-color: $page-main-color;
+          color: $white-color;
+          border-color: transparent;
+
+          &::after {
+            background-image: url(../images/arrow-white.png);
+          }
+        }
+      }
+    }
+
+    &--border--blue {
+      @include onDesktop {
+        border: 1px solid $page-main-color;
+      }
+    }
+  }
+
+  &-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $page-main-color;
+    @include fs-14;
+    width: 100%;
+    max-width: 260px;
+    text-transform: uppercase;
+    color: $white-color;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity $transition-duration;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 48px;
+      background-image: url(../images/arrow-white.png);
+      @include img-contain;
+      margin-left: 24px;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

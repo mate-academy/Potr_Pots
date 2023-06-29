@@ -1,0 +1,275 @@
+.materials {
+  position: relative;
+
+  &__grid {
+    @include onTablet {
+      @include grid-6;
+      @include padding-tablet;
+      grid-template-areas: "titl titl titl titl titl ."
+        "title2 title2 title2 txt txt txt";
+    }
+    @include onDesktop {
+      margin: 0 auto;
+      @include width-1440;
+      @include padding-desktop;
+      @include grid-12;
+      grid-template-areas: "titl titl titl titl titl titl titl titl titl . . ."
+        "title2 title2 title2 title2 title2 title2 . txt txt txt txt txt";
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    @extend %bebas;
+    text-transform: uppercase;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $page-main-color;
+    grid-area: titl;
+    @include padding-mobile;
+
+    @include onTablet {
+      @include fs-80;
+      letter-spacing: 0.12em;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      @include fs-138;
+    }
+
+    &--grid--title2 {
+      grid-area: title2;
+    }
+  }
+
+  &__description {
+    z-index: 2;
+    display: none;
+    color: $gray-4f;
+
+    @include onTablet {
+      display: block;
+      grid-area: txt;
+    }
+  }
+
+  &__desr-title {
+    margin-bottom: 10px;
+    @include fs-20;
+    @include onDesktop {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__bckgrnd {
+    width: 100%;
+    min-height: 240px;
+    position: relative;
+    object-fit: cover;
+    bottom: 70px;
+
+    @include onTablet {
+      bottom: 96px;
+    }
+
+    @include onDesktop {
+      bottom: 200px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__about {
+    width: calc(100vw - 60px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 254px;
+    padding-bottom: 34px;
+    position: relative;
+    background-color: $bgrnd-radio;
+    border-radius: 5px;
+    bottom: 120px;
+
+    @include onTablet {
+      position: absolute;
+      background-color: unset;
+      backdrop-filter: unset;
+      padding: 0;
+      top: 0;
+      left: 34px;
+    }
+  }
+
+  &__label-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    @include onTablet {
+      position: absolute;
+      @include square(100%);
+    }
+
+    @include onDesktop {
+      @include width-1440;
+    }
+  }
+
+  &__radio-label {
+    display: block;
+    @include square(10px);
+    background-color: $white-color;
+    transform: rotate(45deg);
+    cursor: pointer;
+
+    @include onTablet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include square(50px);
+      background-color: $red-57;
+      border-radius: 50%;
+      transform: none;
+      color: #fff;
+      font-size: 24px;
+      will-change: contents;
+      transition: background-color $transition-duration;
+
+      &::after {
+        content: "";
+        display: block;
+        @include square(16px);
+        background-color: $white-color;
+        border-radius: 50%;
+        transition: transform $transition-duration;
+      }
+
+      &:hover {
+        background-color: $page-main-color;
+      }
+
+      &:hover::after {
+        transform: scale(1.4);
+      }
+    }
+
+    @each $ind, $left, $bottom in $button-pos-tablet {
+      &--num--#{$ind} {
+        @include onTablet {
+          position: absolute;
+          left: $left;
+          bottom: $bottom;
+        }
+      }
+    }
+
+    @each $ind, $left, $bottom in $button-pos-desktop {
+      &--num--#{$ind} {
+        @include onDesktop {
+          left: $left;
+          bottom: $bottom;
+        }
+      }
+    }
+  }
+
+  &__cards {
+    padding: 24px 24px 0;
+    color: $white-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include onTablet {
+      display: flex;
+      @include square(100%);
+    }
+
+    @include onDesktop {
+      @include width-1440;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__text {
+    @for $ind from 1 through 5 {
+      &--num--#{$ind} {
+        display: none;
+      }
+    }
+
+    @include onTablet {
+      z-index: 2;
+      position: absolute;
+      width: 284px;
+      padding: 24px;
+      background-color: $bgrnd-radio;
+      color: $white-color;
+      border-radius: 5px;
+      transform-origin: 50% 50%;
+    }
+
+    @each $ind, $left, $bottom, $transX, $transY in $card-pos-tablet {
+      &--num--#{$ind} {
+        @include onTablet {
+          left: $left;
+          bottom: $bottom;
+          transform: translate($transX, $transY);
+        }
+      }
+    }
+
+    @each $ind, $left, $bottom, $transX, $transY in $card-pos-desktop {
+      &--num--#{$ind} {
+        @include onDesktop {
+          left: $left;
+          bottom: $bottom;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    @for $ind from 1 through 5 {
+      &--num--#{$ind}:checked ~ .materials__cards
+      > .materials__text--num--#{$ind} {
+        display: block;
+      }
+    }
+
+    @for $ind from 1 through 5 {
+      &--num--#{$ind}:checked ~ .materials__label-box
+      > .materials__radio-label--num--#{$ind} {
+        background-color: $gray-4f;
+        border: 1px solid $white-color;
+
+        @include onTablet {
+          border: none;
+          box-shadow: none;
+          transform: none;
+          opacity: 0.65;
+
+          &::after {
+            content: "\21e7";
+            line-height: 51px;
+            text-align: center;
+            @include square(100%);
+            background-color: transparent;
+          }
+
+          &:hover::after {
+            transform: none;
+          }
+        }
+      }
+    }
+  }
+}

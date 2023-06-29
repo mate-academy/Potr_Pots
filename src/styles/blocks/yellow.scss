@@ -1,0 +1,25 @@
+.yellow {
+  display: none;
+  @include square(100%);
+  position: absolute;
+  background-image: url(../images/Rectangle_big.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  right: 20%;
+  z-index: -1;
+
+  @include onTablet {
+    display: block;
+
+  }
+
+  @include onDesktop {
+    right: 50%;
+    transform: translateX(50%);
+    @include padding-desktop;
+    max-width: 1440px;
+    height: 100%;
+    background-size: 70%;
+    background-position: top left;
+  }
+}

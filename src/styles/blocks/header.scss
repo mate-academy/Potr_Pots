@@ -1,0 +1,64 @@
+.header {
+  width: 100%;
+  @include padding-mobile;
+
+  @include onTablet {
+    padding: 26px 34px 0;
+  }
+
+  @include onDesktop {
+    margin: 0 auto;
+    @include width-1440;
+    padding: 20px 134px 0;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 14px;
+    @include onTablet {
+      margin: 0 auto 50px;
+    }
+  }
+
+  &__logo {
+    @extend %bebas;
+    @include fs-36-lh-44;
+    letter-spacing: 0.06em;
+    color: $black-333;
+  }
+
+  &__menu-opener {
+    display: block;
+    background-image: url(../images/menu_icon.svg);
+    @include square(48px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px 32px;
+    justify-self: end;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-basket {
+    display: none;
+    @include onDesktop {
+      display: block;
+      background-image: url(../images/basket.png);
+      @include square(34px);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 30px 30px;
+
+      transition: transform $transition-duration ease-in-out;
+    }
+
+    &:hover {
+      transform: skew(-15deg, 10deg);
+      background-size: 34px 34px;
+    }
+  }
+}

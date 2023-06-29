@@ -1,0 +1,55 @@
+.for-whom {
+  position: relative;
+
+  &__side-box {
+    position: absolute;
+
+    &--open {
+      top: 0;
+      right: 4px;
+    }
+
+    &--close {
+      bottom: 0;
+      left: 4px;
+    }
+  }
+
+  &__container {
+    width: 100%;
+    @include flex-col;
+    @include padding-mobile;
+
+    @include onTablet {
+      @include padding-tablet;
+    }
+
+    @include onDesktop {
+      position: relative;
+      margin: 0 auto;
+      @include width-1440;
+      @include padding-desktop;
+    }
+  }
+
+  &__title {
+    @extend %bebas;
+    @include fs-36;
+    @extend %title-upper;
+    color: $black-333;
+    margin-bottom: 34px;
+  }
+
+  &__a-b-box {
+    @include onTablet {
+      @include flex-col;
+      gap: 122px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 30px;
+      align-items: center;
+    }
+  }
+}

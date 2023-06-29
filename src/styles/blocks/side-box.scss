@@ -1,0 +1,22 @@
+.side-box {
+  &__text {
+    @extend %bebas;
+    @include fs-12-lh-14;
+    letter-spacing: 0.22em;
+    color: $gray-82;
+    writing-mode: tb-rl;
+
+    &--close {
+      transform: rotate(180deg);
+    }
+
+    &::before {
+      display: inline-block;
+      content: "";
+      height: 66px;
+      width: 1px;
+      border-left: 1px solid $gray-82;
+      margin-bottom: 10px;
+    }
+  }
+}

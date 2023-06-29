@@ -1,0 +1,124 @@
+.footer {
+  @include flex-col;
+  padding: 110px 30px;
+
+  @include onTablet {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 110px 34px;
+  }
+
+  @include onDesktop {
+    padding: 110px 134px;
+    @include width-1440;
+  }
+
+  &__adrress {
+    display: none;
+
+    @include onTablet {
+      @include flex-col;
+      gap: 10px;
+    }
+
+    &-title {
+      @extend %bebas;
+      @include fs-24;
+      @extend %title-upper;
+    }
+
+    &-link {
+      color: $black-100;
+    }
+  }
+
+  &__middle-box {
+    @include flex-col;
+    justify-content: center;
+  }
+
+  &__socials {
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 85px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    @include square(20px);
+    transition: transform $transition-duration ease-in-out;
+
+    &--twitter {
+      background-image: url(../images/twitter.svg);
+    }
+
+    &--insta {
+      background-image: url(../images/instagram.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/facebook.svg);
+    }
+
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+
+  &__logo {
+    @extend %bebas;
+    @include fs-36;
+    @extend %title-upper;
+    color: $black-100;
+    text-align: center;
+  }
+
+  &__copyright {
+    @include flex-col;
+    gap: 10px;
+
+    &-title {
+      @extend %bebas;
+      @include fs-24;
+      @extend %title-upper;
+      display: none;
+      color: $black-100;
+      position: relative;
+
+      @include onTablet {
+        display: inline-block;
+        width: fit-content;
+      }
+
+      &::after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        right: 0;
+        position: absolute;
+        background-color: $black-100;
+        transition: width 1s ease 0s, right 0.5s ease 0s;
+        width: 0;
+      }
+
+      &:hover:after {
+        width: 100%;
+        right: 0;
+      }
+    }
+
+    &-text {
+      text-align: center;
+
+      @include onTablet {
+        text-align: left;
+      }
+    }
+  }
+}

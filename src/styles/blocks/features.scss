@@ -1,0 +1,67 @@
+.features {
+  position: relative;
+  width: 100%;
+  @include flex-col;
+  @include padding-mobile;
+
+  @include onTablet {
+    @include padding-tablet;
+  }
+
+  @include onDesktop {
+    @include width-1440;
+    @include padding-desktop;
+  }
+
+  &__side-box {
+    position: absolute;
+
+    &--open {
+      top: 0;
+      right: 4px;
+    }
+
+    &--close {
+      bottom: 0;
+      left: 4px;
+    }
+  }
+
+  &__title {
+    @extend %bebas;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: transparent;
+    -webkit-text-stroke: 0.5px $page-main-color;
+    @include fs-58;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      letter-spacing: 0.15em;
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 74px;
+    }
+
+    &-filled {
+      color: $page-main-color;
+      -webkit-text-stroke: none;
+    }
+  }
+
+  &__cards {
+    @include flex-col;
+    gap: 70px;
+
+    @include onTablet {
+      flex-direction: row-reverse;
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+    }
+  }
+}

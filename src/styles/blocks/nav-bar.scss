@@ -1,0 +1,36 @@
+.nav-bar {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    gap: 60px;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    color: $gray-4f;
+
+    &::after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      right: 0;
+      position: absolute;
+      background-color: $gray-4f;
+      transition: width 1s ease 0s, right 0.5s ease 0s;
+      width: 0;
+    }
+
+    &:hover::after {
+      width: 100%;
+      right: 0;
+    }
+  }
+}

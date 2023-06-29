@@ -1,0 +1,170 @@
+.potr-size {
+  position: relative;
+
+  @include onDesktop {
+    @include width-1440;
+  }
+
+  &__side-box {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--open {
+      top: 0;
+      right: 4px;
+    }
+
+    &--close {
+      bottom: 0;
+      left: 4px;
+    }
+  }
+
+  &__title {
+    @extend %bebas;
+    @extend %title-upper;
+    @include padding-mobile;
+    margin-bottom: 20px;
+    @include fs-36;
+    color: #000;
+
+    @include onTablet {
+      @include padding-tablet;
+    }
+
+    @include onDesktop {
+      @include padding-desktop;
+    }
+  }
+
+  &__about {
+    @include onTablet {
+      @include padding-tablet;
+      @include grid-6;
+      grid-template-areas: "answ answ answ answ answ ."
+        "pots pots im im im im"
+        "star star star star star star";
+    }
+
+    @include onDesktop {
+      @include padding-desktop;
+      @include grid-12;
+      grid-template-areas: "answ answ answ pots pots pots im im im im im im"
+        "star star star star star star im im im im im im";
+    }
+  }
+
+  &__answer {
+    color: $gray-4f;
+    @include padding-mobile;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      padding: 0;
+      margin-bottom: 38px;
+      grid-area: answ;
+    }
+    @include onDesktop {
+      max-width: 250px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__image-box {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      padding-left: 50px;
+      margin-bottom: 20px;
+      grid-area: im;
+    }
+
+    @include onDesktop {
+      padding-left: 0;
+      align-self: end;
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__dimensions {
+    @include padding-mobile;
+    @include flex-col;
+    gap: 40px;
+    margin-bottom: 16px;
+
+    @include onTablet {
+      gap: 26px;
+      padding: 0;
+      grid-area: pots;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      gap: 40px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 258px;
+        border-bottom: 1px solid $gray-d8;
+        transform-origin: 0 0;
+        transform: rotate(-90deg);
+        left: -30px;
+        top: 258px;
+      }
+    }
+  }
+
+  &__card {
+    &-title {
+      @extend %bebas;
+      @extend %title-upper;
+      @include fs-18;
+      color: #000;
+
+      margin-bottom: 10px;
+    }
+
+    &-about {
+      color: $gray-4f;
+    }
+  }
+
+  &__with-star {
+    position: relative;
+    color: $gray-4f;
+    @include padding-mobile;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      top: 0;
+      left: 16px;
+    }
+
+    @include onTablet {
+      padding: 0;
+      grid-area: star;
+
+      &::before {
+        left: -16px;
+      }
+    }
+
+    @include onDesktop {
+      align-self: end;
+    }
+  }
+}

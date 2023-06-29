@@ -1,0 +1,67 @@
+.card {
+  width: 100%;
+  @include flex-col;
+  text-align: center;
+
+  @include onTablet {
+    width: 33.33%;
+    text-align: left;
+  }
+
+  @include onDesktop {
+    text-align: center;
+  }
+
+  &--order--1 {
+    @include onTablet {
+      order: 1;
+    }
+  }
+
+  &--order--2 {
+    @include onTablet {
+      order: 2;
+    }
+    @include onDesktop {
+      order: 1;
+    }
+  }
+
+  &--order--3 {
+    @include onTablet {
+      order: 3;
+    }
+    @include onDesktop {
+      order: 1;
+    }
+  }
+
+  &__img-box {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    @include onTablet {
+      min-height: 220px;
+    }
+
+    @include onDesktop {
+      min-height: 370px;
+    }
+
+  }
+
+  &__img {
+    @include square(100%);
+    @extend %img-hover;
+  }
+
+  &__title {
+    @extend %bebas;
+    @extend %title-upper;
+    @include fs-24;
+    color: $black-333;
+    margin-bottom: 20px;
+  }
+}

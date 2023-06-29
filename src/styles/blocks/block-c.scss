@@ -1,0 +1,146 @@
+.block-c {
+
+  @include onTablet {
+    width: 100%;
+    @include grid-6;
+    grid-auto-rows: minmax(min-content, max-content);
+    align-items: center;
+    grid-template-areas: "im im txt txt txt txt";
+  }
+
+  @include onDesktop {
+    width: 50%;
+    @include grid-6-desktop;
+    grid-template-areas: ". im im im im im"
+      "txt txt txt txt txt txt";
+  }
+
+  &__img-box {
+    display: none;
+    overflow: hidden;
+
+    @include onTablet {
+      grid-area: im;
+      display: block;
+    }
+
+    @include onDesktop {
+      margin-bottom: 44px;
+    }
+  }
+
+  &__img {
+    width: 130%;
+    object-fit: contain;
+    object-position: center;
+    @extend %img-hover;
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__grid {
+    @include onTablet {
+      grid-area: txt;
+      @include grid-4;
+      grid-auto-rows: minmax(min-content, max-content);
+      grid-template-areas: "star type . ."
+        "pos descr descr descr";
+    }
+
+    @include onDesktop {
+      @include grid-6-desktop;
+      grid-template-areas: "star type type . . ."
+        ". pos descr descr descr descr";
+    }
+  }
+
+  &__star {
+    display: none;
+    @include fs-24-lh-32;
+    @extend %title-upper;
+    color: black;
+
+    @include onTablet {
+      display: block;
+      grid-area: star;
+      justify-self: end;
+    }
+  }
+
+  &__type {
+    display: none;
+    color: $black-333;
+
+    @include onTablet {
+      display: block;
+      grid-area: type;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__position {
+    display: inline-block;
+    position: relative;
+    @extend %bebas;
+    @include fs-36;
+    color: $black-100;
+    margin-bottom: 5px;
+    padding-left: 18px;
+
+    @include onTablet {
+      grid-area: pos;
+      justify-self: end;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-area: pos;
+      justify-self: start;
+      margin-bottom: 5px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-image: url(../images/slash.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 19px;
+      height: 46px;
+      right: 18px;
+    }
+  }
+
+  &__product-descr {
+    color: $gray-4f;
+
+    @include onTablet {
+      grid-area: descr;
+    }
+  }
+
+  &__title {
+    position: relative;
+    @extend %bebas;
+    color: $black-100;
+    @include fs-36;
+    @extend %title-upper;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      &::after {
+        content: "";
+        display: inline;
+        position: absolute;
+        background-image: url(../images/slash.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 19px;
+        height: 46px;
+      }
+    }
+  }
+}

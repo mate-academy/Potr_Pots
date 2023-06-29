@@ -1,6 +1,193 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin transition($prop) {
+  transition: $prop $transition-duration ease-in-out;
+}
+
+@mixin onDesktop {
+  @media (min-width: 1440px) {
+    @content;
   }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin square($x) {
+  width: $x;
+  height: $x;
+}
+
+@mixin grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+}
+
+@mixin grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+}
+
+@mixin grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 20px;
+
+}
+
+@mixin grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 20px;
+}
+
+@mixin grid-6-desktop {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 30px;
+}
+
+@mixin grid-12 {
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 30px;
+}
+
+@mixin padding-mobile {
+  padding: 0 34px;
+}
+
+@mixin padding-tablet {
+  padding: 0 34px;
+}
+
+@mixin padding-desktop {
+  padding: 0 134px;
+}
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@mixin img-contain {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@mixin fs-9 {
+  font-size: 9px;
+  line-height: 12px;
+}
+
+@mixin fs-12 {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+@mixin fs-12-lh-14 {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+@mixin fs-14 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin fs-16 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin fs-18 {
+  font-size: 18px;
+  line-height: 18px;
+}
+
+@mixin fs-20 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+@mixin fs-24 {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+@mixin fs-24-lh-28 {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@mixin fs-24-lh-32 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin fs-24-lh-36 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+@mixin fs-26 {
+  font-size: 26px;
+  line-height: 36px;
+}
+
+@mixin fs-32 {
+  font-size: 32px;
+  line-height: 48px;
+}
+
+@mixin fs-36 {
+  font-size: 36px;
+  line-height: 54px;
+}
+
+@mixin fs-36-lh-44 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
+@mixin fs-58 {
+  font-size: 58px;
+  line-height: 70px;
+}
+
+@mixin fs-64 {
+  font-size: 64px;
+  line-height: 64px;
+}
+
+@mixin fs-80 {
+  font-size: 80px;
+  line-height: 96px;
+}
+
+@mixin fs-138 {
+  font-size: 138px;
+  line-height: 166px;
+}
+
+@mixin fs-232 {
+  font-size: 232px;
+  line-height: 278px;
+}
+
+@mixin fs-288 {
+  font-size: 288px;
+  line-height: 346px;
+}
+
+@mixin width-1440 {
+  max-width: 1440px;
 }

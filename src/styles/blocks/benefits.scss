@@ -1,0 +1,168 @@
+.benefits {
+  position: relative;
+  @include padding-mobile;
+
+  @include onTablet {
+    @include padding-tablet;
+    @include grid-2;
+    grid-template-areas: "list ."
+      "list btn"
+      "list dsc"
+      "list .";
+  }
+
+  @include onDesktop {
+    @include width-1440;
+    @include padding-desktop;
+    @include grid-12;
+    grid-template-areas: "im im im im im . . . . . . ."
+      "im im im im im list list list list list list list"
+      "im im im im im btn btn btn . . . ."
+      "im im im im im . dsc dsc dsc dsc dsc  ."
+      "im im im im im . . . . . . .";
+  }
+
+  &__side-box {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--open {
+      top: 0;
+      right: 4px;
+    }
+
+    &--close {
+      bottom: 0;
+      left: 4px;
+    }
+  }
+
+  &__img-box {
+    display: none;
+    transition: transform $transition-duration ease-in-out;
+
+    @include onDesktop {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      grid-area: im;
+      margin-left: -134px;
+    }
+
+    &:hover {
+      transform: skew(10deg, -10deg);
+    }
+  }
+
+  &__list {
+    @include flex-col;
+    gap: 40px;
+    margin-bottom: 50px;
+
+    @include onTablet {
+      grid-area: list;
+    }
+    @include onDesktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__items {
+    @include onTablet {
+      padding-left: 16px;
+    }
+    @include onDesktop {
+      flex-grow: 1;
+    }
+
+    &--order--last {
+      @include onTablet {
+        order: 3;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    @include fs-32;
+    color: $black-333;
+    margin-bottom: 5px;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      @include square(8px);
+      transform: rotate(45deg);
+      background-color: $gray-4f;
+      position: absolute;
+      top: 20px;
+      left: -16px;
+    }
+  }
+
+  &__about {
+    color: $gray-82;
+
+    @include onDesktop {
+      white-space: nowrap;
+    }
+  }
+
+  &__buy-now {
+    margin: 0 auto 40px;
+    @include onTablet {
+      grid-area: btn;
+      margin: 0 0 35px;
+    }
+  }
+
+  &__discount {
+    @include flex-col;
+    gap: 10px;
+
+    @include onTablet {
+      grid-area: dsc;
+      gap: 5px;
+    }
+  }
+
+  &__promo {
+    @extend %bebas;
+    @extend %title-upper;
+    @include fs-24;
+
+    @include onTablet {
+      @include fs-18;
+    }
+
+    @include onDesktop {
+      @include fs-24;
+    }
+
+    &--color--blue {
+      color: $page-main-color;
+    }
+
+    &--color--red {
+      color: $red-57;
+    }
+
+    &--size--big {
+      @include fs-36;
+
+      @include onTablet {
+        @include fs-24;
+      }
+
+      @include onDesktop {
+        @include fs-36;
+      }
+    }
+  }
+}

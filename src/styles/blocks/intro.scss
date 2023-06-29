@@ -1,0 +1,137 @@
+.intro {
+  @include flex-col;
+
+  &__box {
+    @include flex-col;
+    position: relative;
+    justify-content: center;
+
+    @include onTablet {
+      margin: 0 auto;
+      @include padding-tablet;
+      @include grid-6;
+      grid-template-areas: "text text text text img img"
+        ". . price price img img"
+        ". butt butt butt . .";
+    }
+
+    @include onDesktop {
+      @include width-1440;
+      grid-template-columns: repeat(12, minmax(70px, 1fr));
+      column-gap: 30px;
+      @include padding-desktop;
+      grid-template-areas: ". text text text text text . img img img img img"
+        ". . . . price price . img img img img img"
+        ". . . butt butt butt . img img img img img";
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 320px;
+    margin-bottom: 25px;
+    object-fit: cover;
+
+    @include onTablet {
+      width: calc(100% + 66px);
+      grid-area: img;
+      margin: 0 -66px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+
+  &__title {
+    @extend %bebas;
+    @include padding-mobile;
+    @include fs-36-lh-44;
+    @extend %title-upper;
+    color: transparent;
+    -webkit-text-stroke: 0.5px $page-main-color;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-area: text;
+      @include fs-64;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__text-filled {
+    color: $page-main-color;
+    -webkit-text-stroke: none;
+  }
+
+  &__price-info {
+    @include padding-mobile;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-area: price;
+      margin-bottom: 50px;
+      padding: 0;
+    }
+  }
+
+  &__price {
+    font-weight: 700;
+    @include fs-26;
+    color: $black-333;
+  }
+
+  &__order-info {
+    @include fs-14;
+    color: $gray-4f;
+  }
+
+  &__more-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include flex-col;
+    width: fit-content;
+    align-items: center;
+    color: $page-main-color;
+    @include fs-12;
+    gap: 8px;
+
+    transition: gap $transition-duration ease-in-out,
+      bottom $transition-duration ease-in-out;
+
+    @include onTablet {
+      left: 34px;
+    }
+
+    &:hover {
+      gap: 18px;
+      bottom: -10px;
+    }
+  }
+
+  &__more-about {
+    writing-mode: tb-rl;
+  }
+
+  &__buy-now {
+    margin: 0 auto;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: auto;
+      background-image: url(../images/Arrow2.png);
+      @include img-contain;
+      margin-left: 24px;
+    }
+
+    @include onTablet {
+      grid-area: butt;
+    }
+  }
+}

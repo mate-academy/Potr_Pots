@@ -1,0 +1,68 @@
+.form {
+  @include flex-col;
+  padding-top: 44px;
+
+  &__title {
+    @extend %bebas;
+    @extend %title-upper;
+    @include fs-36;
+    color: #000;
+
+    @include onTablet {
+      white-space: nowrap;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 40px;
+  }
+
+  &__anonce {
+    @include fs-24-lh-36;
+    margin-bottom: 25px;
+  }
+
+  &__input {
+    @extend %form-font;
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    -webkit-text-fill-color: $gray-4f;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    &::placeholder {
+      @extend %form-font;
+      -webkit-text-fill-color: $gray-4f;
+    }
+
+    &:active,
+    &:focus-visible {
+      -webkit-text-fill-color: $gray-4f;
+      border-bottom-color: $page-main-color;
+    }
+
+    &:where(:not(:placeholder-shown):valid) {
+      border-bottom-color: $page-main-color;
+      -webkit-text-fill-color: $page-main-color;
+    }
+
+    &:where(:not(:placeholder-shown):invalid) {
+      border-bottom-color: $red-57;
+      -webkit-text-fill-color: $red-57;
+    }
+
+    &--textarea {
+      margin-bottom: 30px;
+      resize: none;
+    }
+  }
+
+  &__submit {
+    align-self: center;
+  }
+}

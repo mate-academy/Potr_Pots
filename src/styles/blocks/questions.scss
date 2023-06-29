@@ -1,0 +1,84 @@
+.questions {
+  @include padding-mobile;
+  position: relative;
+  overflow-x: clip;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: -72px;
+    right: -46px;
+    width: 160px;
+    height: 164px;
+    background-image: url(../images/sail.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onTablet {
+      top: -96px;
+    }
+
+    @include onDesktop {
+      right: 56px;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    height: 1000px;
+    background-image: url(../images/Rectangle-footer.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onTablet {
+      height: 550px;
+    }
+
+    @include onDesktop {
+      background-position: 0 0;
+      height: 570px;
+      background-size: contain;
+    }
+  }
+
+  @include onTablet {
+    @include grid-6;
+    @include padding-tablet;
+  }
+
+  @include onDesktop {
+    @include width-1440;
+    @include padding-desktop;
+    @include grid-12;
+  }
+
+  &__form {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__contacts {
+    @include onTablet {
+      grid-column: 5 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+}
