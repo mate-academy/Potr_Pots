@@ -47,6 +47,7 @@
 
   &__img {
     @extend %background-images-settings;
+    @extend %hover-images;
     display: none;
 
     @include tablet {
@@ -86,9 +87,8 @@
   }
 
   &__text {
+    @extend %p2;
     font-size: 16px;
-    line-height: 24px;
-    font-family: "Manrope", sans-serif;
     width: 370px;
     color: $main-text-color;
 
@@ -103,10 +103,7 @@
 
   &__title,
   &__section_title {
-    font-size: 36px;
-    line-height: 54px;
-    font-family: "Bebas Neue", sans-serif;
-    letter-spacing: 5.58px;
+    @extend %h2;
   }
 
   &__title {
@@ -124,10 +121,12 @@
 
   &__section_title {
     color: $subtitles-color;
+    
     &--1,
     &--2,
     &--3 {
       @include tablet {
+
         &::after {
           content: url("../images/svg/slash.svg");
           position: absolute;
@@ -137,7 +136,6 @@
     }
 
     &--1 {
-
       position: relative;
       &::before {
         content: url("../images/svg/1.svg");
@@ -185,15 +183,12 @@
 
   &__element {
     display: none;
+    @extend %p2;
 
     @include tablet {
       position: relative;
       display: block;
-      font-family: "Manrope", sans-serif;
       color: $main-text-color;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
       margin-bottom: 25px;
 
       &--second {
@@ -236,59 +231,6 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-  }
-
-  &__label {
-    font-family: "Bebas Neue", cursive;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.22em;
-    position: absolute;
-    color: $sides-color;
-
-    &--top {
-      bottom: 0;
-      right: -10px;
-      transform-origin: bottom right;
-      transform: rotate(90deg);
-
-      @include tablet {
-        transform-origin: top right;
-        transform: rotate(90deg);
-        top: 0;
-        right: -20px;
-      }
-
-      @include desktop {
-        transform-origin: top right;
-        transform: rotate(90deg);
-        top: 150px;
-        right: 10px;
-      }
-    }
-
-    &--bottom {
-      display: none;
-
-      @include desktop {
-        display: block;
-        transform-origin: bottom left;
-        transform: rotate(-90deg);
-        bottom: 76px;
-        left: 10px;
-      }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      transform: translate(-115%, -8px);
-      display: block;
-      height: 1px;
-      width: 65px;
-      background-color: $sides-color;
     }
   }
 }

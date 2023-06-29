@@ -1,5 +1,4 @@
 .materials {
-
   position: relative;
 
   &__background {
@@ -10,7 +9,7 @@
 
     @extend %background-images-settings;
     background-image: linear-gradient(180deg,
-    #f8f8f8 0%,
+    $background-color 0%,
     rgba(255, 255, 255, 0) 30.93%),
       url(../images/png/materials.png);
     width: 100vw;
@@ -29,9 +28,7 @@
   }
 
   &__title {
-    font-size: 58px;
-    line-height: 100%;
-    font-family: "Bebas Neue", sans-serif;
+    @extend %h1;
     letter-spacing: 0.15em;
     color: $big-headers-color;
     z-index: 2;
@@ -48,10 +45,8 @@
 
   &__main-text {
     display: none;
-    font-family: "Manrope", sans-serif;
-    line-height: 150%;
+    @extend %p2;
     font-size: 16px;
-    font-weight: 400;
     color: $main-text-color;
     z-index: 2;
 
@@ -75,13 +70,34 @@
     @include tablet {
       width: 51px;
       height: 51px;
-      background-color: red;
+      background: $error-color;
+      content: "+";
       border-radius: 50%;
       cursor: pointer;
       border: none;
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    &::after {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      content: "+";
+      color: #e0e0e0;
+    }
+
+    &--active {
+      background: rgba(0,0,0,0.4);
+
+      &::after {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: "-";
+        color: #e0e0e0;
+      }
     }
   }
 
@@ -165,7 +181,7 @@
 
       @include desktop {
 
-        right: -10%;
+        right: -15%;
       }
     }
 
@@ -208,13 +224,6 @@
   }
 
   &__label {
-    font-family: "Bebas Neue", cursive;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.22em;
-    position: absolute;
-    color: $sides-color;
     transform-origin: top right;
     transform: rotate(90deg);
 
@@ -233,8 +242,6 @@
     }
 
     &--bottom {
-      display: none;
-
       @include tablet {
         display: block;
         top: 36%;
@@ -245,16 +252,6 @@
       @include desktop {
         display: none;
       }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      transform: translate(-115%, -8px);
-      display: block;
-      height: 1px;
-      width: 65px;
-      background-color: $sides-color;
     }
   }
 }

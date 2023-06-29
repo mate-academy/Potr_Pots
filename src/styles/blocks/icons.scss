@@ -3,6 +3,7 @@
   width: 32px;
   height: 32px;
   @extend %background-images-settings;
+  @extend %hover-images;
   
   &__menu {
     background-image: url(../images/svg/menu_icon.svg);
@@ -17,6 +18,10 @@
 
     @include desktop {
       display: block;
+    }
+
+    &:hover {
+      transform: rotateY(180deg);
     }
   }
 
@@ -40,13 +45,19 @@
   }
 
   &__instagram,
-  &__facebook {
-    width: 24px;
-    height: 24px;
+  &__facebook,
+  &__twitter {
+    background-size: contain;
+    width: 30px;
+    height: 30px;
   }
 
   &__instagram {
     background-image: url(../images/svg/instagram.svg);
+  }
+
+  &__twitter {
+    background-image: url(../images/svg/twitter.svg);
   }
 
   &__facebook {

@@ -26,6 +26,12 @@
       &--link {
         text-decoration: none;
         color: $main-text-color;
+
+        &:hover,
+        &:active {
+          padding-bottom: 5px;
+          border-bottom: 2px solid $main-text-color;
+        }
       }
     }
   }
@@ -60,14 +66,14 @@
   }
 
   &__text {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 36px;
+    @extend %h2;
     line-height: 43.2px;
     letter-spacing: 0.15em;
     color: transparent;
     -webkit-text-stroke: 1px $big-headers-color;
     grid-row: 1;
     margin-bottom: 20px;
+    z-index: 2;
 
     &--colored {
       color: $big-headers-color;
@@ -82,13 +88,13 @@
 
   &__image {
     position: relative;
-
     background-image: url(../images/png/pot_header.png);
+    @extend %hover-images;
     @extend %background-images-settings;
-    z-index: -1;
     height: 319px;
     width: auto;
     margin: 0 -20px 25px;
+    
     
     @include tablet {
       margin: 0;
@@ -138,13 +144,11 @@
 
     &--text {
       margin-top: 10px;
-      font-family: "Manrope", sans-serif;
-      font-style: normal;
-      font-weight: 400;
+      @extend %p2;
       font-size: 12px;
-      line-height: 150%;
       color: $big-headers-color;
       writing-mode: vertical-rl;
+      text-decoration: none;
 
       &::after {
         content: url("../images/svg/Arrow.svg");
