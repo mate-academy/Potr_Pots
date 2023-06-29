@@ -1,0 +1,188 @@
+.for-who {
+  position: relative;
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    &-column {
+      @include onDeskTop {
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        top: 500px;
+        right: 10%;
+        gap: 100px;
+      }
+    }
+
+
+    &-reverse {
+      @include onDeskTop{
+        flex-direction: column-reverse;
+        align-items: unset;
+        justify-content: space-around;
+        gap: 150px;
+      }
+    }
+  }
+
+  &__text-block {
+    @include onTablet {
+      width: 340px;
+    }
+    @include onDeskTop {
+      width: 370px
+    }
+  }
+
+  &__title,
+  &__subtitle {
+    @include f-bebas-400;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.155em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    color: #333333;
+  }
+  &__image-block {
+    position: relative;
+  }
+
+  &__image {
+    display: none;
+    position: relative;
+    transition: 0.3s;
+
+    @include onTablet {
+      &:hover {
+        @include hover-scale;
+        border-radius: 40px;
+        box-shadow: 1px 2px 18px 3px #BDC4FF;
+      }
+    }
+
+    &--one {
+      @include onTablet {
+        display: block;
+        width: 280px;
+      }
+
+      @include onDeskTop {
+        width: 500px;
+      }
+    }
+
+    &--two {
+      @include onTablet {
+        display: block;
+        width: 300px;
+      }
+
+      @include onDeskTop {
+      }
+
+    }
+
+    &--three {
+      @include onTablet {
+        display: block;
+        width: 284px;
+      }
+
+      @include onDeskTop {
+        width: 100%;
+        max-width: 470px;
+        height: 670px;
+      }
+    }
+
+  }
+
+  &__number {
+    margin-bottom: 30px;
+    background-repeat: no-repeat;
+    height: 35px;
+    width: 35px;
+
+    &-one {
+      @include onTablet {
+        position: absolute;
+        top: 97px;
+        left: 46%;
+      }
+
+      @include onDeskTop {
+        left: 55%;
+        top: 240px;
+      }
+
+      @include onBigDesk {
+        left: 62%;
+        top: 235px;
+      }
+    }
+
+    &-two {
+      @include onTablet {
+        position: absolute;
+        top: 540px;
+        left: 30px;
+      }
+
+      @include onDeskTop {
+        top: auto;
+        left: 220px;
+        bottom: 290px;
+      }
+
+      @include onBigDesk {
+        left: 240px;
+      }
+    }
+
+    &-three {
+      @include onTablet {
+        position: absolute;
+        bottom: 437px;
+        left: 46%;
+      }
+
+      @include onDeskTop {
+        left: 53%;
+        bottom: 255px;
+      }
+
+      @include onBigDesk {
+        left: 58%;
+      }
+    }
+
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    color: #000000
+  }
+
+  &__description {
+    @include f-manrope-400;
+    font-size: 16px;
+    margin-bottom: 70px;
+    color: $c-gray-dark;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}

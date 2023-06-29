@@ -1,0 +1,144 @@
+.team {
+  background-image: url(../images/png/bg-smal.png);
+  background-position: bottom;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 320px 293px cover;
+
+  @include onTablet {
+    background-position: -175px 200px;
+  }
+
+  @include onDeskTop {
+    min-height: 800px;
+    background-position: 0 200px;
+  }
+
+  &__title {
+    @include f-bebas-400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.155em;
+    color: #333333;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 200px;
+    }
+
+    @include onDeskTop {
+      margin-bottom: 300px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+
+    @media (min-width: 340px) {
+      position: absolute;
+      right: 35px;
+    }
+
+    @include onTablet {
+      width: 360px;
+      position: absolute;
+      right: 40px;
+      top: 280px
+    }
+
+    @include onDeskTop {
+      width: 670px;
+      height: 500px;
+      right: 130px;
+      top: 300px;
+    }
+    @include onBigDesk {
+      @include onDeskTop {
+        width: 677px;
+        height: 507px;
+        right: 250px;
+        top: 200px
+      }
+    }
+  }
+
+  &__about {
+    @include f-manrope-400;
+    font-size: 16px;
+    color: $c-gray-dark;
+    padding-bottom: 50px;
+
+    @include onTablet {
+      width: 320px;
+    }
+  }
+
+  &__martin {
+
+    display: none;
+
+    &-photo {
+      width: 700px;
+      transition: 0.5s;
+
+      &:hover {
+        transform: translateX(70px);
+        transition: 0.5s ease;
+      }
+
+      @include onDeskTop {
+        width: 900px;
+        height: 350px;
+      }
+    }
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: 150px;
+      left: -30px;
+      z-index: 1;
+    }
+
+    @include onDeskTop {
+      left: 80px;
+      top: 100px;
+      &:hover {
+        transform: translateX(80px);
+        transition: transform 1s;
+        cursor: pointer;
+      }
+    }
+
+
+  }
+
+  &__andy {
+    display: none;
+
+    &-photo {
+      width: 450px;
+      transition: 0.5s ease;
+
+      &:hover {
+        transform: translateX(-100px);
+        transition: 0.5s ease;
+      }
+
+      @include onDeskTop {
+        width: 600px;
+      }
+    }
+    @include onTablet {
+      display: block;
+      position: absolute;
+      bottom: -70px;
+      right: 0;
+      z-index: 1;
+    }
+
+    @include onDeskTop {
+      bottom: -120px;
+    }
+  }
+}

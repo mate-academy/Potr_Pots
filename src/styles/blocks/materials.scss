@@ -1,0 +1,327 @@
+.materials {
+  min-height: 450px;
+  position: relative;
+  background-image: url(../images/lpg/bg-down.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center 150px;
+
+  @media (min-width: 330px) {
+    background-size: cover;
+    background-position: center;
+  }
+
+  @include onTablet {
+    min-height: 800px;
+    background-size: contain;
+    background-position: center 150px;
+  }
+
+  @include onDeskTop {
+    min-height: 1080px;
+    background-size: cover;
+  }
+
+
+  &__title {
+    @include f-bebas-400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.155em;
+    color: $c-Turquoise;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDeskTop {
+      font-size: 138.805px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+      min-height: 900px;
+    }
+
+  }
+
+  &__text {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: block;
+      top: 100px;
+      right: 35px;
+    }
+
+    @include onDeskTop {
+      top: 150px;
+      right: 100px;
+    }
+
+    &-title {
+      @include f-manrope-400;
+      font-size: 20px;
+      line-height: 150%;
+      color: #4f4f4f;
+    }
+
+    &-paaragraph {
+      width: 340px;
+      font-size: 16px;
+      line-height: 150%;
+      color: #4f4f4f;
+
+      @include onDeskTop {
+        width: 470px;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    background: rgba(0, 0, 0, 0.65);
+    height: 250px;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.15);
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    @include f-manrope-400;
+    font-size: 16px;
+    text-align: center;
+    color: #f8f8f8;
+    padding: 28px 45px 58px;
+    line-height: 150%;
+
+    &--1 {
+      position: absolute;
+      bottom: -100px;
+      right: 10px;
+
+      @include onTablet {
+        right: 0;
+        bottom: 15%;
+        opacity: 0;
+        z-index: 1;
+      }
+
+      @include onDeskTop {
+        right: 30px;
+        bottom: 25%;
+      }
+    }
+
+    &--2 {
+      display: none;
+      @include onTablet {
+        display: block;
+        position: absolute;
+        right: 220px;
+        top: 200px;
+        opacity: 0;
+      }
+
+      @include onDeskTop {
+        top: 460px;
+        right: 330px;
+        opacity: 0;
+      }
+    }
+
+    &--3 {
+      display: none;
+      @include onTablet {
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 530px;
+        opacity: 0;
+      }
+
+      @include onDeskTop {
+        top: 820px;
+        right: 290px;
+        opacity: 0;
+      }
+    }
+
+    &--4 {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 200px;
+        opacity: 0;
+      }
+
+      @include onDeskTop {
+        left: 250px;
+        top: 500px;
+        opacity: 0;
+      }
+    }
+    &--5 {
+      display: none;
+      height: 200px;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+        left: 20px;
+        bottom: -5px;
+        opacity: 0;
+      }
+
+      @include onDeskTop {
+        left: 240px;
+        bottom: 30px;
+        opacity: 0;
+      }
+    }
+
+  }
+
+  &__btn {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #e0e0e0;
+    font-size: 18px;
+    background-color: $c-red;
+    height: 51px;
+    width: 51px;
+    border-radius: 50%;
+    text-decoration: none;
+    position: absolute;
+    transition: 0.5s;
+
+    &::before {
+      content: "+";
+      color: #fff;
+    }
+
+    &:hover {
+      transition: 0.3s;
+      opacity: 1;
+      @include hover-scale;
+      cursor: pointer;
+      background: rgba(36, 35, 35, 0.75);
+      &::before {
+        content: "-";
+      }
+    }
+
+
+    @include onTablet {
+      display: flex
+    }
+
+    &--1 {
+      background: $c-red;
+      opacity: 0.65;
+      backdrop-filter: blur(12px);
+      top: 45%;
+      right: 20%;
+
+      @include onTablet {
+        &:hover {
+          & + .materials__description--1 {
+            opacity: 1;
+          }
+        }
+      }
+
+      @include onDeskTop {
+        top: 45%;
+        right: 162px;
+        bottom: 100px;
+      }
+
+    }
+
+    &--2 {
+      bottom: 35%;
+      right: 35%;
+
+      @include onTablet {
+        right: 40%;
+        &:hover {
+          & + .materials__description--2 {
+            opacity: 1;
+          }
+        }
+      }
+
+      @include onDeskTop {
+        bottom: 25%;
+        right: 35%;
+      }
+    }
+
+    &--3 {
+      bottom: 20%;
+      left: 45%;
+
+      @include onTablet {
+        // right: 40%;
+        &:hover {
+          & + .materials__description--3 {
+            opacity: 1;
+          }
+        }
+      }
+
+      @include onDeskTop {
+        bottom: 15%;
+        left: 48%;
+      }
+    }
+
+    &--4 {
+      bottom: 35%;
+      left: 30%;
+
+      @include onTablet {
+        // right: 40%;
+        &:hover {
+          & + .materials__description--4 {
+            opacity: 1;
+          }
+        }
+      }
+
+      @include onDeskTop {
+        bottom: 25%;
+        left: 30%;
+      }
+    }
+
+    &--5 {
+      bottom: 25%;
+      left:10%;
+
+      @include onTablet {
+        // right: 40%;
+        &:hover {
+          & + .materials__description--5 {
+            opacity: 1;
+          }
+        }
+      }
+
+      @include onDeskTop {
+        bottom: 10%;
+        right: 30px;
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+  }
+}
+
+

@@ -1,0 +1,290 @@
+.header {
+  position: relative;
+  margin-bottom: 100px;
+  min-height: 100vh;
+
+  @include onTablet {
+    margin-bottom: 0;
+    min-height: 60vh;
+    background: url(../images/png/bg-big.png);
+    background-repeat: no-repeat;
+  }
+
+  @include onDeskTop {
+    background: url(../images/png/bg-big.png);
+    background-repeat: no-repeat;
+    background-size: 1121px 470px;
+    background-position: -100px 0;
+    min-height: 100vh;
+  }
+
+ @media (min-height: 1800px) {
+  height: 800px;
+ }
+
+  &__menu {
+    display: none;
+    list-style: none;
+
+    @include onDeskTop {
+      position: absolute;
+      display: flex;
+      left: 25%;
+    }
+
+    &-item {
+      padding: 30px;
+      transition: 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: 0.3s;
+      }
+    }
+
+    &-link {
+      @include f-manrope-400;
+      text-decoration: none;
+      color: $c-gray-dark;
+      line-height: 24px;
+      font-size: 16px;
+      transition: 0.3s;
+
+
+    }
+  }
+
+  &__top-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+
+    @include onTablet {
+      padding: 30px 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    @include f-bebas-400;
+    font-size: 36px;
+    letter-spacing: 0.06em;
+  }
+
+  &__bottom-content {
+    padding: 0 30px;
+    margin-bottom: 100px;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onDeskTop {
+      padding: 0;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include onTablet {
+      position: absolute;
+      top: 120px;
+      right: 30px;
+
+      width: 300px;
+    }
+
+    @include onDeskTop {
+      width: 450px;
+      right: 135px;
+      animation-name: Appearance-radius;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+
+    }
+
+    @include onBigDesk {
+      width: 500px;
+    }
+  }
+
+  &__subtitle {
+    margin: 25px 0;
+
+    @include f-bebas-400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 0.68px $c-Turquoise;
+
+    & span {
+      color: $c-Turquoise;
+    }
+
+    @include onTablet {
+      margin: 0;
+      display: block;
+      position: absolute;
+      left: 34px;
+      top: 120px;
+      width: 470px;
+      font-size: 64px;
+      line-height: 64px
+    }
+
+    @include onDeskTop {
+      top: 140px;
+      left: 240px;
+
+      animation-name: sliderLeft;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+    }
+
+  }
+
+  &__prise {
+    @include f-manrope-700;
+    font-size: 26px;
+    color: #333333;
+    margin-bottom: 1px;
+
+  }
+
+  &__prise-block {
+    @include onTablet {
+      position: absolute;
+      top: 360px;
+      left: 275px;
+    }
+
+    @include onDeskTop {
+      left: 530px;
+
+      animation-name: appearance;
+      animation-duration: 2s;
+
+    }
+  }
+
+  &__paragraph {
+    @include f-manrope-400;
+    font-size: 14px;
+    color: #4f4f4f;
+    margin: 0 0 20px;
+  }
+
+  &__buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    background-color: $c-yellow;
+    border: 1px solid #FFE339;
+    width: 100%;
+    @include f-manrope-400;
+    text-transform: uppercase;
+    font-size: 14px;
+    gap: 20px;
+    transition: 0.5s;
+    margin-bottom: 100px;
+
+    &:hover {
+      background-color: $c-yellow-light;
+      border: 1px #FFE339;
+      @include hover-scale;
+
+    }
+
+    @include onTablet {
+      width: 240px;
+      position: absolute;
+      left: 170px;
+      top: 460px;
+    }
+
+    @include onDeskTop {
+      left: 430px;
+      animation: apperiance 5s linear;
+    }
+
+  }
+
+  &__arrow {
+    width: 25px
+  }
+
+  &__button {
+    @include f-manrope-400;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    color: $c-gray-dark;
+  }
+
+  &__left-link {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      bottom: 50px;
+      left: 30px;
+      display: block;
+      writing-mode: vertical-rl;
+      height: 185px;
+
+      @include f-manrope-400;
+      color: $c-Turquoise;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 150%;
+
+      background-image: url(../images/svg/Arrow-blu.svg);
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
+
+    @include onDeskTop {
+      left: 130px;
+      bottom: 50px;
+    }
+  }
+
+  &__bottom-text {
+    display: none;
+    height: 140px;
+    @include f-bebas-400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-align: end;
+    color: #828282;
+    writing-mode: vertical-rl;
+    background-image: url(../images/svg/potr-line.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 2px 60px;
+
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      bottom: -100px;
+      right: 30px;
+    }
+
+    @include onDeskTop {
+      right: 135px;
+      bottom: -100px
+    }
+  }
+}
+

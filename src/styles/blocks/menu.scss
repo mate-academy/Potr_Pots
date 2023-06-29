@@ -1,0 +1,89 @@
+.menu {
+  display: block;
+  padding: 0;
+  background-color: $c-Turquoise;
+  height: 100vh;
+  width: 70%;
+  position: relative;
+  z-index: 1;
+
+
+  &__list {
+    padding: 0;
+    list-style: none;
+    position: fixed;
+    top: 25%;
+    left: 30%;
+
+    @include onTablet {
+      top: 20%;
+      left: 40%;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    @include f-manrope-400;
+    font-size: 16px;
+    text-decoration: none;
+    color: $c-gray-light;
+
+    @include onTablet {
+      font-size: 22px;
+    }
+  }
+
+  &__cross {
+    position: absolute;
+    bottom: 30px;
+    right: 25px;
+
+    @include onTablet {
+      right: 38px;
+    }
+  }
+
+  &__close {
+    margin: 0;
+    @include f-manrope-400;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: absolute;
+    right: 21px;
+    bottom: 60px;
+    height: 110px;
+    text-align: end;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    background-image: url(../images/svg/menu-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 49% 0;
+    background-size: 1px 60px;
+
+    @include onTablet {
+      height: 120px;
+      font-size: 20px;
+      right: 34px;
+    }
+  }
+
+  &__basket {
+    position: absolute;
+    right: 39%;
+    top: 27%;
+
+    @include onTablet {
+      right: 43%;
+      top: 21%;
+    }
+  }
+}

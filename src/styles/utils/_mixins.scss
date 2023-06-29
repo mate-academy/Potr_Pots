@@ -1,6 +1,37 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onDeskTop {
+  @media (min-width: 1240px) {
+    @content;
   }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onBigDesk {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin f-manrope-400 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+}
+
+@mixin f-manrope-700 {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+}
+
+@mixin f-bebas-400 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+}
+
+@mixin hover-scale {
+  transition: 0.3s;
+  transform: scale(1.09);
 }

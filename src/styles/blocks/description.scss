@@ -1,0 +1,53 @@
+.description {
+  @include f-manrope-400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $c-gray-dark;
+  position: relative;
+  display: none;
+  @include onTablet {
+    display: block;
+  }
+
+  &:before {
+    content: '*';
+    position: absolute;
+    left: -25px;
+    top: 4px;
+    font-size: 24px;
+  }
+
+  &__robust {
+    position: absolute;
+    right: 39%;
+    top: 50px;
+
+    @include onDeskTop {
+      right: 33%;
+      top: 150px;
+    }
+  }
+
+  &__beautiful {
+    position: absolute;
+    left: 46%;
+    top: 35%;
+
+    @include onDeskTop {
+      left: 17%;
+      top: 75%;
+    }
+  }
+
+  &__save {
+    position: absolute;
+    right: 37%;
+    top: 65%;
+
+    @include onDeskTop {
+      right: 37%;
+      top: 75%;
+    }
+  }
+
+}
