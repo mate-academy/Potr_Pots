@@ -5,7 +5,7 @@
 
   &__section {
     display: flex;
-    margin-bottom: 70px;
+    margin-bottom: 146px;
     box-sizing: border-box;
 
     @include tablet {
@@ -36,11 +36,11 @@
     }
 
     &--3 {
+      margin-bottom: 0;
       @include desktop {
         flex-direction: column;
         align-items: flex-end;
         gap: 45px;
-        margin-bottom: 0;
       }
     }
   }
@@ -101,12 +101,12 @@
     }
   }
 
-  &__title,
-  &__section_title {
+  &__main-title,
+  &__section-title {
     @extend %h2;
   }
 
-  &__title {
+  &__main-title {
     color: $headers-color;
     margin-bottom: 101px;
 
@@ -127,14 +127,15 @@
     }
   }
 
-  &__section_title {
+  &__section-title {
     color: $subtitles-color;
+    margin-bottom: 20px;
     
     &--1,
     &--2,
     &--3 {
       @include tablet {
-
+        margin-bottom: 10px;
         &::after {
           content: url("../images/svg/slash.svg");
           position: absolute;
