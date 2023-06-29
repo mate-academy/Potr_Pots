@@ -19,6 +19,7 @@
     width: min-content;
     color: $sides-color;
     font-size: 9px;
+    transition: transform 300ms;
 
     &--1 {
       transform: matrix(0.97, -0.26, 0.26, 0.97, -30.5, -28);
@@ -41,7 +42,6 @@
     }
 
     &:hover {
-      @extend %hover-images;
       transform: scale(1.5);
       z-index: 2;
     }
@@ -135,14 +135,11 @@
       position: absolute;
       top: 20px;
       left: -18px;
-
       display: block;
       content: "";
       width: 8px;
       height: 8px;
-
       background-color: $main-text-color;
-
       transform: rotateZ(45deg);
 
       @include tablet {
