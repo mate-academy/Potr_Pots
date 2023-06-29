@@ -1,0 +1,63 @@
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include onDesktop {
+    display: none;
+  }
+
+  &--menu {
+    background-image: url(../images/menu.svg);
+    transition: all 0.3s;
+
+    &:hover {
+      background-image: url(../images/Vector.svg);
+    }
+
+    @include onTablet {
+      transform: translateY(10px);
+    }
+  }
+
+  &--cross {
+    width: 16px;
+    height: 16px;
+    padding: 10px 0;
+    background-image: url(../images/cross.svg);
+    transition: all 0.6s;
+
+    &:hover {
+      transform: scale(1.5) rotate(0.5turn);
+    }
+  }
+
+  &--bonus-text {
+    font-size: 12px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: $greyLight-color;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: translateY(2px);
+
+    @include onTablet {
+      font-size: 16px;
+      line-height: 24px;
+      transform: translateY(-2px);
+    }
+
+    &::before {
+      content: "";
+      display: flex;
+      width: 44px;
+      height: 1px;
+      background-color: $greyLight-color;
+    }
+  }
+}

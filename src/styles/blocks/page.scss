@@ -1,0 +1,40 @@
+.page {
+  @extend %main-font;
+  scroll-behavior: smooth;
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 90px;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform 0.7s;
+
+    &:target {
+      transform: translateX(0);
+    }
+
+    @include onTablet {
+      left: 250px;
+    }
+  }
+}
+
+.page__body {
+  background-color: $greyLight-color;
+
+  &--with-menu {
+    overflow: hidden;
+  }
+
+  @include onTablet {
+    background-image: url(../images/tablet-images/yellow-tablet-header.png);
+    background-repeat: no-repeat;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/desktop-images/yellow-desktop-header.png);
+    background-repeat: no-repeat;
+  }
+}

@@ -1,0 +1,57 @@
+.form-field {
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  width: 260px;
+  @extend %main-font;
+  border: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: $yellowLight-color;
+
+  @include onTablet {
+    width: 338px;
+  }
+
+  @include onDesktop {
+    width: 370px;
+  }
+
+  &--last {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &::placeholder {
+    line-height: 150%;
+    color: $greyDark-color;
+  }
+
+  &:hover::placeholder {
+    color: $turquoise-color;
+  }
+
+  &:valid {
+    color: $turquoise-color;
+    border-color: $turquoise-color;
+  }
+
+  &:invalid {
+    color: $red-color;
+    border-color: $red-color;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $turquoise-color;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $turquoise-color;
+  -webkit-box-shadow: 0 0 0 1000px $yellowLight-color inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

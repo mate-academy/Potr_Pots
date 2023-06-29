@@ -1,0 +1,38 @@
+.nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 480px;
+
+  &--hidden {
+    display: none;
+  }
+
+  @include onDesktop {
+    display: flex;
+    margin-top: 26px;
+  }
+
+  &__item {
+    list-style: none;
+    transition: all 0.3s;
+    
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $greyDark-color;
+    line-height: 150%;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $greyDark-color;
+    }
+  }
+}

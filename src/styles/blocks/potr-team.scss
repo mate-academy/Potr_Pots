@@ -1,0 +1,166 @@
+.potr-team {
+  margin-bottom: 110px;
+
+  @include onTablet {
+    background-size: 255px 290px;
+    background-position: 0 170px;
+    background-repeat: no-repeat;
+    background-image: url(../images/desktop-images/Rectangle-desktop-small.png);
+  }
+
+  @include onDesktop {
+    margin-bottom: 80px;
+    background-size: 29%;
+    background-repeat: no-repeat;
+    background-position: 0 185px;
+    background-image: url(../images/desktop-images/Rectangle-desktop-small.png);
+  }
+
+  &__title {
+    margin-bottom: 26px;
+    @extend %second-font;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $greyX-color;
+
+    @include onTablet {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__name {
+    display: none;
+    position: absolute;
+    margin-left: 40px;
+    @extend %second-font;
+    font-size: 288px;
+    line-height: 346px;
+    letter-spacing: 44px;
+    color: transparent;
+    -webkit-text-stroke: 1px $turquoise-color;
+    z-index: 3;
+
+    &--hidden {
+      @include onTablet {
+        display: block;
+        font-size: 230px;
+        line-height: 278px;
+        letter-spacing: 35px;
+        margin: 0;
+        transform: translateX(-40px);
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__name-2 {
+    display: none;
+    @extend %second-font;
+    color: transparent;
+    -webkit-text-stroke: 1px $turquoise-color;
+
+    &--hidden {
+      @include onTablet {
+        display: block;
+        width: 455px;
+        font-size: 219px;
+        line-height: 100%;
+        letter-spacing: 34px;
+        transform: translate(61%,-100px);
+        margin-bottom: -230px;
+      }
+
+      @include onDesktop {
+        display: block;
+        max-width: 598px;
+        transform: translateX(380px);
+        font-size: 288px;
+        line-height: 146px;
+        letter-spacing: 44px;
+      }
+
+      @include onDesign {
+        transform: translate(600px, 50px);
+      }
+    }
+  }
+
+  &__content {
+    @include onDesktop {
+      margin: 0 40px;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__image {
+    margin: 0 auto 30px;
+    width: 100%;
+    cursor: pointer;
+
+    @include onTablet {
+      margin: 0;
+      width: 340px;
+      position: relative;
+      left: 380px;
+      top: 150px;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    @include onDesktop {
+      height: 450px;
+      width: 600px;
+      margin: 114px 60px 0 0;
+      background-image: url(../images/potr-team-image.jpg);
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    @include onDesign {
+      height: 500px;
+      width: 677px;
+      margin: 114px 160px 0 0;
+    }
+  }
+
+  &__about {
+    padding: 0 30px 60px;
+    line-height: 24px;
+    color: $greyDark-color;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0 100px;
+    background-image: url(../images/mobile-images/Rectangle.small.png);
+
+    @include onTablet {
+      font-family: "Proxima Nova", sans-serif;
+      background-image: none;
+      width: 310px;
+      padding: 0 0 0 34px;
+      transform: translateY(-50px);
+    }
+
+    @include onDesktop {
+      max-width: 336px;
+      background-image: none;
+      margin: 334px 20px 20px 0;
+      padding: 0;
+    }
+
+    @include onDesign {
+      margin: 334px 35px 0 70px;
+
+    }
+  }
+}

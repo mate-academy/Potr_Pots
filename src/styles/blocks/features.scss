@@ -1,0 +1,91 @@
+.features {
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    @extend %second-font;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px $turquoise-color;
+
+    &--color {
+      color: $turquoise-color;
+      white-space: nowrap;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+}
+
+.feature {
+  &__photo-container {
+    margin-bottom: 36px;
+
+    @include onTablet {
+      margin-bottom: 30;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    transition: transform 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__name {
+    margin-bottom: 20px;
+    @extend %second-font;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $greyX-color;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__description {
+    margin-bottom: 68px;
+    line-height: 150%;
+    text-align: center;
+    color: $greyDark-color;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    @include onTablet {
+      transform: translateY(-398px);
+      margin-bottom: -400px;
+    }
+  }
+}
