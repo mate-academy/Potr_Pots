@@ -7,6 +7,5 @@ module.exports = {
     "stylelint-scss"
   ],
   rules: {
-    "max-len": 300,
   }
 };
