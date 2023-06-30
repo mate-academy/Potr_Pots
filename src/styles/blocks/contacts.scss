@@ -1,0 +1,124 @@
+.contacts {
+  padding-bottom: 150px;
+
+  @include onTablet {
+    padding-bottom: 0;
+  }
+
+  @include onDesktop {
+    padding-bottom: 0;
+  }
+
+  padding-top: 45px;
+
+  background-image: url(../images/contacts_bg-mob.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  position: relative;
+
+  @include onTablet {
+    background-image: url(../images/contacts_bg-tab.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-top: 26px;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/contacts_bg.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-top: 38px;
+  }
+
+  &__mark {
+    position: absolute;
+    display: none;
+
+    @include onTablet {
+      display: block;
+      top: -100px;
+      right: 0;
+    }
+
+    @include onDesktop {
+      display: block;
+      top: -120px;
+      right: 0;
+    }
+
+    &--mobile {
+      position: absolute;
+      top: -100px;
+      right: 0;
+
+      @include onTablet {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    color: #000;
+    font-size: 36px;
+    font-family: "Bebas Neue", serif;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    color: #000;
+    font-size: 16px;
+    font-family: "Manrope", serif;
+    line-height: 150%;
+
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    margin-bottom: 34px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25px;
+    }
+
+    &_title {
+      color: rgba(0, 0, 0, 0.39);
+      font-size: 24px;
+      font-family: "Manrope", serif;
+      line-height: 150%;
+    }
+
+    &_link {
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+      font-family: "Manrope", serif;
+      line-height: 150%;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__form {
+    @include onTablet {
+      grid-row: 3/6;
+    }
+
+    @include onDesktop {
+      grid-row: 3/6;
+    }
+  }
+}

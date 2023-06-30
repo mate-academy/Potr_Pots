@@ -1,0 +1,115 @@
+.footer {
+  &__container {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      height: 300px;
+      justify-content: space-between;
+      padding-bottom: 0;
+    }
+
+    @include onDesktop {
+      height: 300px;
+      justify-content: space-between;
+      padding-bottom: 0;
+    }
+  }
+
+  &__item {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &--1 {
+      flex: 0 0 33%;
+      display: block;
+    }
+
+    &_title {
+      color: #000;
+      font-size: 24px;
+      font-family: "Bebas Neue", serif;
+      line-height: 24px;
+      letter-spacing: 3.72px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    &_link {
+      display: block;
+      max-width: 170px;
+      text-decoration: none;
+      color: #000;
+      font-size: 16px;
+      font-family: "Manrope", serif;
+      line-height: 150%;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 34px;
+
+    &_link {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all 0.3s;
+
+      &:hover {
+        scale: 120%;
+      }
+
+      &--1 {
+        background-image: url(../images/icons/tw.svg);
+      }
+
+      &--2 {
+        background-image: url(../images/icons/inst.svg);
+      }
+
+      &--3 {
+        background-image: url(../images/icons/face.svg);
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    width: 170px;
+    height: 54px;
+    background-image: url(../images/Logo.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+
+    // transform: translateY(70px);
+
+    @include onTablet {
+      transform: translateY(70px);
+    }
+
+    @include onDesktop {
+      transform: translateY(70px);
+    }
+  }
+}
