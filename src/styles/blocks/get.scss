@@ -1,6 +1,19 @@
 .get {
   position: relative;
-  overflow: hidden;
+  height: 100%;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+
+  @include onTablet {
+    height: 100%;
+    margin-bottom: 100px;
+  }
+
+  @include onDesktop {
+    height: 1100px;
+    margin-bottom: 0;
+  }
 
   &__image-wrapper {
     display: none;
@@ -10,8 +23,8 @@
       flex-wrap: wrap;
       width: 600px;
       position: absolute;
-      left: 0;
-      top: 0;
+      right: 55%;
+      z-index: 200;
     }
   }
 

@@ -1,8 +1,18 @@
 .footer {
+  transform: translateY(-60px);
+
+  @include onTablet {
+    transform: translateY(-50px);
+  }
+
+  @include onDesktop {
+    transform: translateY(-50px);
+  }
+
   &__container {
-    height: 70px;
+    // height: 70px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     position: relative;
     z-index: 10;
@@ -23,6 +33,7 @@
 
   &__item {
     display: none;
+    align-self: center;
 
     @include onTablet {
       display: block;
@@ -64,7 +75,8 @@
 
   &__social {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 85px;
     margin-bottom: 34px;
 
     &_link {
