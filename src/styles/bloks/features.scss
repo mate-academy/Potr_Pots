@@ -45,6 +45,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    order: 1;
 
     &:not(:last-child) {
       padding-bottom: 68px;
@@ -53,15 +54,21 @@
     @include onTablet {
       grid-column: span 2;
       align-items: start;
+      max-width: 220px;
 
       &:not(:last-child) {
         padding-bottom: 0;
+      }
+
+      &--watering {
+        order: 0;
       }
     }
 
     @include onDesktop {
       grid-column: span 4;
       align-items: center;
+      max-width: 320px;
     }
   }
 
@@ -70,11 +77,18 @@
     height: auto;
 
     @include onTablet {
-      width: 190px;
+      width: 220px;
     }
 
     @include onDesktop {
       width: 320px;
+      transform: scale(1);
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+        border-radius: 50px;
+      }
     }
   }
 
@@ -93,11 +107,9 @@
 
   &__sub-title {
     font-family: "Bebas Neue", sans-serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 24px;
     line-height: 24px;
-    letter-spacing: 0.15em;
+    letter-spacing: 3.72px;
     text-transform: uppercase;
     color: $colorDark;
     margin: 0 0 20px;

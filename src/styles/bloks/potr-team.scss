@@ -1,55 +1,55 @@
 .potr-team {
   position: relative;
   padding: 0 0 168px;
-  // overflow: hidden;
-  // color: $colorBlue;
+
+  &__name {
+    display: none;
+    position: absolute;
+    z-index: 10;
+
+    &--martin {
+      top: 90px;
+      left: -40px;
+    }
+
+    &--andy {
+      bottom: -20px;
+      right: 0;
+    }
+
+    &-text {
+      font-size: 232px;
+      line-height: 278px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px;
+      margin: 0;
+
+      & span {
+        letter-spacing: 0;
+      }
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      &--martin {
+        left: 114px;
+      }
+
+      &-text {
+        font-size: 288px;
+        -webkit-text-stroke: 1.5px;
+      }
+    }
+  }
 
   @include onTablet {
     padding: 0 0 110px;
-    // overflow: hidden;
     color: $colorBlue;
-
-    &::before {
-      content: "martin";
-      display: block;
-      position: absolute;
-      top: 90px;
-      left: -45px;
-      font-size: 232px;
-      line-height: 278px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 1px;
-      z-index: 10;
-
-      @include onDesktop {
-        font-size: 288px;
-        line-height: 346px;
-        left: 74px;
-      }
-    }
-
-    &::after {
-      content: "andy";
-      display: block;
-      position: absolute;
-      bottom: -35px;
-      right: -35px;
-      font-size: 232px;
-      line-height: 278px;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 1px;
-      z-index: 10;
-
-      @include onDesktop {
-        font-size: 288px;
-        line-height: 346px;
-        bottom: -90px;
-      }
-    }
 
     @include onDesktop {
       padding: 0 0 240px;
@@ -75,7 +75,7 @@
     }
 
     @include onDesktop {
-      top: 180px;
+      top: 140px;
       left: 0;
     }
   }
@@ -85,7 +85,19 @@
     line-height: 70px;
     letter-spacing: 0.15em;
     color: $colorGray;
-    margin: 0 0 25px;
+    margin: 0 0 180px;
+  }
+
+  &__container {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 35px;
+    }
+
+    @include onDesktop {
+      padding: 0 135px;
+    }
   }
 
   &__imag {
@@ -98,15 +110,14 @@
     }
 
     @include onTablet {
-      position: absolute;
-      top: 230px;
-      right: 34px;
       z-index: -10;
+      order: 2;
+      margin: 0;
     }
 
     @include onDesktop {
       width: 677px;
-      right: 235px;
+      margin-right: 100px;
 
       & img {
         width: 677px;
@@ -121,11 +132,12 @@
 
     @include onTablet {
       width: 315px;
-      margin-top: 230px;
+      margin-top: 60px;
     }
 
     @include onDesktop {
-      margin-top: 370px;
+      width: 336px;
+      margin-top: 170px;
     }
   }
 }

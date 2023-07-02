@@ -163,6 +163,7 @@
     bottom: 110px;
     display: flex;
     justify-content: flex-end;
+    text-decoration: none;
 
     @media (max-width: 640px) {
       right: 5px;
@@ -174,16 +175,25 @@
 
     &-text {
       font-family: "Manrope", sans-serif;
-      font-style: normal;
-      font-weight: 400;
       font-size: 12px;
       line-height: 150%;
       color: $colorBlue;
       writing-mode: vertical-rl;
+      cursor: pointer;
 
       &::after {
         content: url("../images/Arrow.svg");
         transform: rotate(270deg);
+        margin-top: 10px;
+      }
+    }
+
+    @include onDesktop {
+      transition: transform 0.3s;
+      transform: translateY(0);
+
+      &:hover {
+        transform: translateY(50px);
       }
     }
   }
