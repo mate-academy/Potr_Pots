@@ -4,7 +4,8 @@
   align-items: center;
   background-color: $colorBlue;
   width: 231px;
-  height: 568px;
+  height: 90vh;
+  z-index: 10;
 
   @include onDesktop {
     background-color: transparent;
@@ -25,16 +26,34 @@
   &__item {
     margin-bottom: 15px;
 
+    &--basket {
+      position: relative;
+
+      & span {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        font-size: 9px;
+        padding: 1px 5px;
+        width: 14px;
+        height: 14px;
+        color: #f8f8f8;
+        background-color: #eb5757;
+        border-radius: 50%;
+      }
+    }
+
     @include onDesktop {
       margin-bottom: 0;
-    }
 
-    &:first-child {
-      display: none;
-    }
+      &--basket {
+        display: none;
+      }
 
-    &:not(:last-child) {
-      margin-right: 60px;
+      &:not(:last-child) {
+        margin-right: 60px;
+      }
     }
   }
 
