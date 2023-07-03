@@ -1,0 +1,309 @@
+.materials {
+  @include onTablet {
+    margin-bottom: 100px;
+  }
+
+  &__title {
+    color: #03839e;
+    font-size: 58px;
+    letter-spacing: 9.6px;
+    font-family: "Bebas Neue", serif;
+    position: relative;
+    z-index: 10;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: 9.6px;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      letter-spacing: 16px;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__text-block {
+    display: none;
+    position: absolute;
+    z-index: 20;
+
+    @include onTablet {
+      display: block;
+      max-width: 40%;
+      top: 50%;
+      right: 80px;
+    }
+
+    @include onDesktop {
+      display: block;
+      max-width: 470px;
+      top: 50%;
+      right: 0;
+    }
+
+    &_title {
+      font-size: 20px;
+      font-family: "Manrope", serif;
+      font-weight: 700;
+      line-height: 150%;
+      color: #4f4f4f;
+    }
+
+    &_paragraf {
+      font-size: 16px;
+      font-family: "Manrope", serif;
+      line-height: 150%;
+      color: #4f4f4f;
+    }
+  }
+
+  &__image-wrapper {
+    max-width: 1680px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    transform: translateY(-80px);
+
+    @include onTablet {
+      transform: translateY(40px);
+    }
+
+    @include onDesktop {
+      transform: translateY(-180px);
+    }
+  }
+
+  &__trees {
+    width: 100%;
+  }
+
+  &__icon {
+    display: none;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/icons/plus.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+
+    &:hover {
+      background-image: url(../images/icons/minus.svg);
+    }
+
+    &--1 {
+      position: absolute;
+      bottom: 15%;
+      left: 17%;
+
+      &:hover {
+        &::after {
+          content:
+            "We have chosen Bobbiny recycled cotton cord \
+            to use as our draw string and wicking cord. \
+            Not only is it 100% recycled, it looks great and works really well at wicking water.";
+          display: block;
+          width: 200px;
+          padding: 35px 45px;
+          background-color: #00000041;
+          backdrop-filter: blur(17px);
+          color: #f8f8f8;
+          position: absolute;
+          bottom: 60px;
+          left: -120px;
+          z-index: 20;
+        }
+      }
+    }
+
+    &--2 {
+      position: absolute;
+      bottom: 35%;
+      left: 37%;
+
+      &:hover {
+        &::after {
+          content:
+            "We have chosen Bobbiny recycled cotton cord \
+            to use as our draw string and wicking cord. \
+            Not only is it 100% recycled, it looks great and works really well at wicking water.";
+          display: block;
+          width: 200px;
+          padding: 35px 45px;
+          background-color: #00000041;
+          backdrop-filter: blur(17px);
+          color: #f8f8f8;
+          position: absolute;
+          bottom: 60px;
+          left: -120px;
+        }
+      }
+    }
+
+    &--3 {
+      position: absolute;
+      bottom: 12%;
+      left: 47%;
+
+      &:hover {
+        &::after {
+          content:
+            "We have chosen Bobbiny recycled cotton cord \
+            to use as our draw string and wicking cord. \
+            Not only is it 100% recycled, it looks great and works really well at wicking water.";
+          display: block;
+          width: 200px;
+          padding: 35px 45px;
+          background-color: #00000041;
+          backdrop-filter: blur(17px);
+          color: #f8f8f8;
+          position: absolute;
+          top: -80px;
+          left: -300px;
+        }
+      }
+    }
+
+    &--4 {
+      position: absolute;
+      bottom: 30%;
+      left: 57%;
+
+      &:hover {
+        &::after {
+          content:
+            "We have chosen Bobbiny recycled cotton cord \
+            to use as our draw string and wicking cord. \
+            Not only is it 100% recycled, it looks great and works really well at wicking water.";
+          display: block;
+          width: 200px;
+          padding: 35px 45px;
+          background-color: #00000041;
+          backdrop-filter: blur(17px);
+          color: #f8f8f8;
+          position: absolute;
+          bottom: 60px;
+          left: -120px;
+        }
+      }
+    }
+
+    &--5 {
+      position: absolute;
+      bottom: 33%;
+      left: 77%;
+
+      &:hover {
+        &::after {
+          content:
+            "We have chosen Bobbiny recycled cotton cord \
+            to use as our draw string and wicking cord. \
+            Not only is it 100% recycled, it looks great and works really well at wicking water.";
+          display: block;
+          width: 200px;
+          padding: 35px 45px;
+          background-color: #00000041;
+          backdrop-filter: blur(17px);
+          color: #f8f8f8;
+          position: absolute;
+          top: 60px;
+          left: -120px;
+        }
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 28px 45px;
+    height: 170px;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #00000045;
+    backdrop-filter: blur(17px);
+    transform: translateY(-150px);
+    position: relative;
+    z-index: 50;
+
+    &_paragraf {
+      font-size: 16px;
+      font-family: "Manrope", serif;
+      line-height: 150%;
+      display: none;
+
+      &:target {
+        display: block;
+      }
+    }
+
+    color: #f8f8f8;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &_links {
+      height: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    &_link {
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-image: url(../images/icons/card_icon.png);
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:hover {
+        background-image: url(../images/icons/card_icon_active.png);
+      }
+
+      &:active {
+        background-image: url(../images/icons/card_icon_active.png);
+      }
+    }
+  }
+
+  &__decor {
+    display: none;
+    position: absolute;
+    top: -200px;
+    right: -80px;
+    width: 90px;
+    height: 50px;
+
+    &--2 {
+      top: -10px;
+      left: 36px;
+    }
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+}

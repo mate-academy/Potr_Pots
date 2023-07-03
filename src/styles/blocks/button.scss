@@ -1,0 +1,84 @@
+.button {
+  width: 238px;
+  height: 48px;
+
+  color: #121212;
+  font-size: 14px;
+  font-family: "Manrope", serif;
+  font-weight: 600;
+  line-height: 150%;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  background-image: url(../images/icons/Arrow-btn.svg);
+  background-repeat: no-repeat;
+  background-position: 160px 20px;
+
+  background-color: #ffe339;
+  border: none;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: #fff;
+    border: 1px solid #121212;
+  }
+
+  @include onTablet {
+    border: 1px solid $--titleColor;
+    background-color: transparent;
+
+    &:hover {
+      background-color: #333;
+      background-image: url(../images/icons/Arrow-btn-white.svg);
+
+      @include onTablet {
+        background-color: $--titleColor;
+        color: #fff;
+      }
+
+      @include onDesktop {
+        background-color: $--titleColor;
+        color: #fff;
+      }
+    }
+  }
+
+  @include onDesktop {
+    border: 1px solid $--titleColor;
+    background-color: transparent;
+
+    &:hover {
+      background-color: #333;
+      background-image: url(../images/icons/Arrow-btn-white.svg);
+
+      @include onTablet {
+        background-color: $--titleColor;
+        color: #fff;
+      }
+
+      @include onDesktop {
+        background-color: $--titleColor;
+        color: #fff;
+      }
+    }
+  }
+
+  &--header {
+    background-color: #ffe339;
+    border: 1px solid #ffe339;
+
+    &:hover {
+      background-color: #fff;
+      border: 1px solid #121212;
+      color: #000;
+      background-image: url(../images/icons/Arrow-btn.svg);
+    }
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  transition: all 0.3s;
+}

@@ -1,0 +1,101 @@
+.features {
+  margin-bottom: 110px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+  @include onDesktop {
+    margin-bottom: 170px;
+  }
+
+  // &__container {
+  //   overflow: hidden;
+  // }
+
+  &__title {
+    color: $--titleColor;
+    font-size: 58px;
+    font-family: "Bebas Neue", serif;
+    letter-spacing: 8.99px;
+
+    &--opacity {
+      color: transparent;
+      -webkit-text-stroke: 0.1px $--titleColor;
+    }
+
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 71px;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+
+    @include onTablet {
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 10px;
+      align-items: normal;
+    }
+
+    @include onDesktop {
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 10px;
+      align-items: normal;
+    }
+
+    &_card {
+      flex: 0 0 33%;
+      max-width: 370px;
+      position: relative;
+      z-index: 100;
+
+      transition: all 0.3s;
+
+      &:hover {
+        scale: 105%;
+      }
+
+      @include onTablet {
+        max-width: 250px;
+      }
+
+      &-img {
+        display: block;
+        margin-bottom: 33px;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      &-title {
+        text-align: center;
+        color: #333;
+        font-size: 24px;
+        font-family: "Bebas Neue", serif;
+        line-height: 24px;
+        letter-spacing: 3.72px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      &-paragraf {
+        display: block;
+        text-align: center;
+        font-size: 16px;
+        font-family: "Manrope", serif;
+        line-height: 150%;
+        color: $--grey;
+      }
+    }
+  }
+}

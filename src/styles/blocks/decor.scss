@@ -1,0 +1,48 @@
+.decor {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  transform: rotate(90deg) translateX(100px) translateY(115px);
+  grid-row-start: 2;
+  grid-row-end: 6;
+  position: absolute;
+  cursor: pointer;
+  text-decoration: none;
+
+  bottom: 180px;
+  right: -180px;
+
+  @include onTablet {
+    align-items: center;
+    position: static;
+    transform: rotate(90deg) translateX(30px) translateY(120%);
+  }
+
+  @include onDesktop {
+    align-items: center;
+    position: static;
+    transform: rotate(90deg) translateX(60px) translateY(115px);
+  }
+
+  &__title {
+    font-size: 12px;
+    font-family: "Manrope", serif;
+    line-height: 150%;
+    font-weight: normal;
+    color: $--titleColor;
+    white-space: nowrap;
+  }
+
+  &__arr {
+    height: 44px;
+    width: 5px;
+    transform: rotate(-90deg);
+    background-image: url(../images/icons/Arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--1 {
+      background-image: url(../images/icons/decor_arr--1.svg);
+    }
+  }
+}

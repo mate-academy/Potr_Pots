@@ -1,0 +1,107 @@
+.team {
+  background-image: url(../images/bg-header_desk.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 530px;
+
+  @include onTablet {
+    background-position: -650px 120px;
+    margin-bottom: 120px;
+  }
+
+  @include onDesktop {
+    background-position: -650px 120px;
+    margin-bottom: 240px;
+  }
+
+  position: relative;
+
+  &__title {
+    font-size: 58px;
+    font-family: "Bebas Neue", serif;
+    letter-spacing: 8.99px;
+    color: #333;
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 170px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 115px;
+    }
+  }
+
+  &__martin {
+    display: none;
+    position: absolute;
+    z-index: 10;
+
+    @include onTablet {
+      display: block;
+      top: 150px;
+      left: -5%;
+      width: 650px;
+      height: 150px;
+    }
+
+    @include onDesktop {
+      display: block;
+      top: 100px;
+    }
+  }
+
+  &__andy {
+    display: none;
+    position: absolute;
+    z-index: 10;
+
+    @include onTablet {
+      display: block;
+      bottom: -19%;
+      left: 39%;
+      width: 450px;
+      height: 200px;
+    }
+
+    @include onDesktop {
+      display: block;
+      bottom: -90px;
+      left: 45%;
+    }
+  }
+
+  &__img {
+    z-index: 1;
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-row: 1/5;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+      grid-row: 1/5;
+    }
+  }
+
+  &__paragraf {
+    grid-row: 4/5;
+    font-size: 16px;
+    line-height: 150%;
+    color: $--grey;
+    margin-bottom: 170px;
+
+    @include onTablet {
+      grid-row: 2/6;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+}

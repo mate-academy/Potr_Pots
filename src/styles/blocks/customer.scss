@@ -1,0 +1,383 @@
+.customer {
+  margin-bottom: 110px;
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 150px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-family: "Bebas Neue", serif;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 101px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    &--1 {
+      grid-row: 1/4;
+
+      @include onTablet {
+        display: block;
+        width: 280px;
+        height: 300px;
+      }
+
+      @include onDesktop {
+        display: block;
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-row: 5/8;
+        display: block;
+        width: 300px;
+        height: 417px;
+      }
+
+      @include onDesktop {
+        grid-row: 6/9;
+        display: block;
+        width: 300px;
+        height: 417px;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        grid-row: 9/14;
+        display: block;
+        width: 284px;
+        height: 424px;
+      }
+
+      @include onDesktop {
+        grid-row: 5/10;
+        display: block;
+        width: 470px;
+        height: 670px;
+      }
+    }
+  }
+
+  &__empty-space {
+    @include onTablet {
+      width: 100%;
+      height: 110px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      height: 80px;
+    }
+
+    &--2 {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+
+    align-self: end;
+    position: relative;
+
+    &::after {
+      content: "*";
+      display: block;
+      position: absolute;
+      left: -40px;
+      top: 3px;
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: block;
+      transform: translateY(50px);
+    }
+
+    &--1 {
+      @include onCustom {
+        grid-column: 4/4;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        grid-row: 8/8;
+      }
+    }
+
+    &--3 {
+      @include onCustom {
+        grid-column: 4/4;
+      }
+
+      @include onTablet {
+        grid-row: 9/10;
+      }
+
+      @include onDesktop {
+        grid-row: 10/11;
+        transform: translateY(-50px);
+      }
+    }
+  }
+
+  &__card-title {
+    color: #000;
+    font-size: 36px;
+    font-family: "Bebas Neue", serif;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    align-self: end;
+    position: relative;
+    margin-bottom: 10px;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 46px;
+      background-color: #000;
+      position: absolute;
+      left: 10px;
+      top: -70px;
+      transform: rotate(20deg);
+
+      @include onTablet {
+        left: -70px;
+        top: 4px;
+      }
+
+      @include onDesktop {
+        left: -90px;
+        top: 4px;
+      }
+    }
+
+    &--num {
+      display: block;
+      position: absolute;
+      left: 20px;
+      top: -70px;
+      font-size: 36px;
+      font-family: "Bebas Neue", serif;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 180%;
+
+      @include onTablet {
+        left: -60px;
+        top: 4px;
+      }
+
+      @include onDesktop {
+        left: -80px;
+        top: 4px;
+      }
+
+      &--2 {
+        @include onTablet {
+          left: 20px;
+          top: -60px;
+        }
+
+        @include onDesktop {
+          left: 20px;
+          top: -50px;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      display: none;
+      width: 1px;
+      height: 46px;
+      background-color: #000;
+      position: absolute;
+      left: 120px;
+      bottom: 4px;
+      transform: rotate(20deg);
+
+      @include onTablet {
+        right: 400px;
+        display: block;
+      }
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+
+    &--1 {
+      @include onCustom {
+        grid-column: 4/7;
+      }
+    }
+
+    &--2 {
+      word-spacing: nowrap;
+
+      @include onTablet {
+        grid-row: 6/6;
+      }
+
+      @include onDesktop {
+        grid-row: 10/11;
+      }
+
+      &::after {
+        @include onTablet {
+          left: 250px;
+        }
+
+        @include onDesktop {
+          left: 10px;
+          top: -50px;
+        }
+      }
+
+      &::before {
+        @include onTablet {
+          left: 10px;
+          top: -60px;
+        }
+
+        @include onDesktop {
+          left: 260px;
+          top: 60px;
+        }
+      }
+    }
+
+    &--3 {
+      @include onCustom {
+        grid-column: 4/7;
+      }
+
+      @include onTablet {
+        grid-row: 10/12;
+      }
+
+      @include onDesktop {
+        grid-row: 11/12;
+      }
+    }
+  }
+
+  &__paragraf {
+    color: $--grey;
+    font-size: 16px;
+    font-family: "Manrope", serif;
+    line-height: 150%;
+    margin-bottom: 110px;
+
+    align-self: start;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+
+    &--1 {
+      @include onCustom {
+        grid-column: 4/7;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-row: 7/7;
+      }
+      @include onDesktop {
+        grid-row: 11/12;
+      }
+    }
+
+    &--3 {
+      @include onCustom {
+        grid-column: 4/7;
+      }
+
+      @include onTablet {
+        grid-row: 12/13;
+        width: 100%;
+      }
+
+      @include onDesktop {
+        grid-row: 13/13;
+      }
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    bottom: 220px;
+    right: -140px;
+    width: 100px;
+    height: 50px;
+
+    @include onTablet {
+      top: -30px;
+      right: -80px;
+    }
+
+    @include onDesktop {
+      top: -30px;
+      right: -80px;
+    }
+
+    &_title {
+      transform: rotate(180deg);
+    }
+
+    &--2 {
+      position: absolute;
+      bottom: 90px;
+      left: 120px;
+      width: 100px;
+      height: 50px;
+      visibility: hidden;
+
+      @include onDesktop {
+        visibility: visible;
+      }
+    }
+  }
+}
