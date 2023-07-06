@@ -1,0 +1,149 @@
+.potr-team {
+  position: relative;
+  padding: 0 0 168px;
+
+  &__name {
+    display: none;
+    position: absolute;
+    z-index: 10;
+
+    &--martin {
+      top: 90px;
+      left: -40px;
+    }
+
+    &--andy {
+      bottom: -20px;
+      right: 0;
+    }
+
+    &-text {
+      font-size: 232px;
+      line-height: 278px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px;
+      margin: 0;
+
+      & span {
+        letter-spacing: 0;
+      }
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      &--martin {
+        left: 114px;
+      }
+
+      &-text {
+        font-size: 288px;
+        -webkit-text-stroke: 1.5px;
+      }
+    }
+  }
+
+  @include onTablet {
+    padding: 0 0 110px;
+    color: $colorBlue;
+
+    @include onDesktop {
+      padding: 0 0 240px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -10;
+    background-color: $bgColorYellow;
+    clip-path: polygon(0 0, 100% 0, 100% 67%, 0% 100%);
+    width: 100%;
+    height: 290px;
+
+    @media (max-width: 768px) {
+      bottom: 150px;
+    }
+
+    @include onTablet {
+      width: 435px;
+      top: 170px;
+      left: -185px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      top: 140px;
+      left: 0;
+      transform: translateX(-67%);
+    }
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $colorGray;
+    margin: 0 0 25px;
+  }
+
+  &__container {
+    padding: 0 30px;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 180px;
+      padding: 0 35px;
+    }
+
+    @include onDesktop {
+      padding: 0 135px;
+    }
+  }
+
+  &__imag {
+    margin-bottom: 30px;
+
+    & img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @include onTablet {
+      width: 320px;
+      z-index: -10;
+      order: 2;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      width: 677px;
+      margin-right: 40px;
+
+      & img {
+        width: 677px;
+      }
+    }
+  }
+
+  &__text {
+    @include stylesText;
+    margin: 0;
+    color: $colorGray;
+
+    @include onTablet {
+      width: 315px;
+      margin-top: 60px;
+    }
+
+    @include onDesktop {
+      width: 336px;
+      margin-top: 170px;
+    }
+  }
+}

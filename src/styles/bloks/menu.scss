@@ -1,0 +1,116 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $colorBlue;
+  width: 231px;
+  height: 100vh;
+  z-index: 10;
+
+  @include onDesktop {
+    background-color: transparent;
+    width: auto;
+    height: auto;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+    &--basket {
+      position: relative;
+
+      & span {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        font-size: 9px;
+        padding: 1px 5px;
+        width: 14px;
+        height: 14px;
+        color: #f8f8f8;
+        background-color: #eb5757;
+        border-radius: 50%;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+
+      &--basket {
+        display: none;
+      }
+
+      &:not(:last-child) {
+        margin-right: 60px;
+      }
+    }
+  }
+
+  &__link {
+    @include stylesText;
+    text-decoration: none;
+    color: $colorWhite;
+
+    @include onDesktop {
+      color: $colorGray;
+      padding-bottom: 3px;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $colorBlue;
+        border-color: $colorBlue;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 82px;
+    right: -15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #f8f8f8;
+    transform: rotate(270deg);
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &-text {
+      font-family: "Manrope", sans-serif;
+      font-size: 12px;
+      line-height: 150%;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+
+      &::before {
+        display: block;
+        content: "";
+        width: 44px;
+        height: 1px;
+        background-color: #f8f8f8;
+        margin: 0 5px 0 18px;
+      }
+    }
+
+    &-button {
+      background-image: url("../images/cross.svg");
+      height: 12px;
+      width: 12px;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  @include stylesText;
+  -webkit-text-fill-color: $colorGray;
+  border-bottom: 1px solid $colorGray;
+  -webkit-box-shadow: 0 0 0 1000px $bgColorYellow inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-family: "Manrope", sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+    color: #000;
+    margin: 0 0 20px;
+
+    @include onTablet {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__input {
+    @include stylesText;
+    color: $colorGray;
+    background-color: transparent;
+    padding: 4px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 5px rgba(3, 131, 158, 0);
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:auto-fill {
+      @include stylesText;
+      color: $colorGray;
+    }
+
+    &:hover {
+      outline: 0;
+      border-bottom: 1px solid $colorGray;
+    }
+
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid $colorGray;
+    }
+
+    &:visited {
+      outline: 0;
+      color: $colorBlue;
+      border-bottom: 1px solid $colorGray;
+    }
+
+    &:not(:placeholder-shown):invalid {
+      outline: 0;
+      color: #eb5757;
+      border-bottom: 1px solid #eb5757;
+    }
+  }
+
+  &__texterea {
+    @include stylesText;
+    color: $colorGray;
+    height: 34px;
+    background-color: transparent;
+    padding: 4px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 5px rgba(3, 131, 158, 0);
+    resize: none;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      outline: 0;
+      border-bottom: 1px solid $colorGray;
+    }
+
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid $colorGray;
+    }
+
+    &:visited {
+      outline: 0;
+      color: $colorBlue;
+      border-bottom: 1px solid $colorGray;
+    }
+  }
+
+  &__button {
+    background-color: $colorBlue;
+    border: 1px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    margin: 30px 0 56px;
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.8);
+      border-color: $colorBlue;
+      color: #fff;
+    }
+
+    &:focus {
+      border-color: $colorBlue;
+    }
+
+    &::after {
+      content: url("../images/arrow2.svg");
+      width: 24px;
+      height: 24px;
+      margin-left: 24px;
+    }
+
+    @include onTablet {
+      margin: 40px 0 0;
+    }
+  }
+
+  @include onTablet {
+    width: 338px;
+  }
+}

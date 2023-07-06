@@ -1,0 +1,383 @@
+.size-potr {
+  position: relative;
+  padding-bottom: 110px;
+  overflow: hidden;
+
+  &__title {
+    margin: 0 0 20px;
+    padding: 0 30px;
+
+    @include onTablet {
+      padding: 0 34px;
+    }
+
+    @include onDesktop {
+      padding: 0 135px;
+      margin: 0 0 66px;
+    }
+  }
+
+  &__text {
+    @include stylesText;
+    margin: 0 0 30px;
+    padding: 0 30px;
+
+    @include onTablet {
+      padding: 0 34px;
+    }
+
+    @include onDesktop {
+      padding: 0;
+      margin: 0 16px 0 135px;
+      width: 253px;
+    }
+  }
+
+  &__wrap-for-desktop {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__wrap-for-tablet {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__imag {
+    width: 320px;
+    margin: 0 auto 30px;
+
+    & img {
+      width: 320px;
+      height: auto;
+    }
+
+    @include onTablet {
+      width: 416px;
+      order: 1;
+      margin: 0 34px 20px;
+
+      & img {
+        width: 416px;
+      }
+    }
+
+    @include onDesktop {
+      width: 100%;
+      margin: 0 135px 0 0;
+
+      & img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__sizes {
+    margin: 0;
+    padding: 0 30px 15px;
+    list-style: none;
+
+    &-item {
+      &:not(:last-child) {
+        padding-bottom: 40px;
+      }
+    }
+
+    &-title {
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0.15em;
+      color: #000;
+      margin: 0 0 10px;
+    }
+
+    &-text {
+      @include stylesText;
+      margin: 0;
+    }
+
+    @include onTablet {
+      padding: 0 0 0 34px ;
+    }
+
+    @include onDesktop {
+      padding: 0 96px 40px 30px;
+      position: relative;
+
+      &::after {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 1px;
+        height: 257px;
+        background-color: #d8d8d8;
+      }
+    }
+  }
+
+  &__note {
+    position: relative;
+    @include stylesText;
+    margin: 0 30px 110px;
+
+    &::before {
+      content: "\2605";
+      position: absolute;
+      top: -5px;
+      left: -7px;
+      font-size: 7px;
+    }
+
+    @include onTablet {
+      margin: 0 34px 110px;
+    }
+
+    @include onDesktop {
+      margin: -100px 0 151px 147px;
+      width: 546px;
+    }
+  }
+
+  &__container {
+    @include onDesktop {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+  }
+
+  &__images {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+      width: 513px;
+      height: 622px;
+      margin-left: 52px;
+      padding: 0;
+      list-style: none;
+
+      &-item {
+        position: absolute;
+        background-color: #fff;
+        padding: 16px 16px 24px;
+
+        & img {
+          width: 162px;
+          height: auto;
+        }
+
+        &--one {
+          transform: rotate(-15deg);
+          left: 40px;
+        }
+
+        &--two {
+          top: -50px;
+          right: 80px;
+          transform: rotate(-30deg);
+        }
+
+        &--free {
+          left: 0;
+          top: 39%;
+          z-index: 10;
+        }
+
+        &--four {
+          right: 25%;
+          top: 27%;
+          transform: rotate(-15deg);
+          z-index: 10;
+        }
+
+        &--five {
+          left: 110px;
+          bottom: -30px;
+          transform: rotate(-15deg);
+        }
+
+        &--six {
+          bottom: 20px;
+          right: 0;
+          transform: rotate(-30deg);
+        }
+      }
+
+      &-text {
+        font-family: "Proxima Nova", sans-serif;
+        font-size: 9px;
+        line-height: 131.5%;
+        color: #828282;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        margin: 0;
+      }
+    }
+  }
+
+  &__benefits-wrap {
+    @include onTablet {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 692px;
+    }
+  }
+
+  &__benefits {
+    margin: 0;
+    padding: 0 30px 50px;
+    list-style: none;
+
+    &-item {
+      position: relative;
+
+      &:not(:last-child) {
+        padding-bottom: 40px;
+      }
+
+      &::before {
+        position: absolute;
+        top: 20px;
+        left: -15px;
+        content: "";
+        width: 7px;
+        height: 7px;
+        background-color: $colorGray;
+        transform: rotate(45deg);
+      }
+    }
+
+    &-title {
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 150%;
+      color: #333;
+      margin: 0 0 5px;
+    }
+
+    &-text {
+      @include stylesText;
+      margin: 0;
+    }
+
+    @include onTablet {
+      padding: 0 0 0 58px;
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        width: 316px;
+
+        &:not(:last-child) {
+          padding-bottom: 30px;
+        }
+
+        &--last {
+          order: 2;
+        }
+      }
+
+      &-title {
+        font-size: 36px;
+      }
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+
+      &-item--last {
+        order: 0;
+      }
+    }
+  }
+
+  &__action {
+    @include onTablet {
+      width: 240px;
+      margin-left: 20px;
+
+      @include onDesktop {
+        width: auto;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__button {
+    width: 240px;
+    margin: 0 auto 40px;
+
+    @include onTablet {
+      background-color: transparent;
+      border: 1px solid $colorBlue;
+      color: #121212;
+      margin: 0 0 35px;
+
+      &:hover {
+        background-color: $colorBlue;
+        color: #fff;
+
+        &::after {
+          content: url("../images/arrow2.svg");
+        }
+      }
+
+      @include onDesktop {
+        margin: 0 0 70px 45px;
+      }
+    }
+  }
+
+  &__sale {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #eb5757;
+    padding: 0 30px;
+
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onDesktop {
+      margin-left: 120px;
+    }
+  }
+
+  &__appeal {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $colorBlue;
+    margin: 10px 0 0;
+    padding: 0 30px;
+
+    @include onTablet {
+      padding: 0;
+      margin-top: 5px;
+    }
+
+    @include onDesktop {
+      margin-left: 120px;
+    }
+  }
+}

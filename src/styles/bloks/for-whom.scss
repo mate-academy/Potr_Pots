@@ -1,0 +1,226 @@
+.for-whom {
+  padding-bottom: 110px;
+
+  @include onTablet {
+    padding-bottom: 135px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 150px;
+  }
+
+  &__wrapper--for-desktop {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    padding-bottom: 140px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      &--for-desktop {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__imag {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: span 3;
+      width: 284px;
+      height: auto;
+
+      &--beautiful {
+        width: 300px;
+        order: 1;
+        margin-left: 40px;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+      width: 500px;
+      transform: scale(1);
+      transition: all 0.3s;
+
+      &:hover {
+        transform: scale(1.05);
+        border-radius: 50px;
+      }
+
+      &--beautiful {
+        width: 300px;
+        margin: 105px 0 0 100px;
+      }
+
+      &--saves-time {
+        width: 470px;
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+
+    @include onTablet {
+      grid-column: span 3;
+      padding-left: 30px;
+
+      &--left {
+        order: 0;
+        padding-left: 0;
+        margin: 120px 0 0;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 12;
+      padding-left: 0;
+      margin: auto;
+
+      &--left {
+        order: 1;
+        width: 380px;
+        margin: 182px 0 0 100px;
+      }
+
+      &--three {
+        width: 370px;
+        padding: 110px 0 0 100px;
+      }
+    }
+  }
+
+  &__number {
+    position: absolute;
+    left: 15px;
+    top: -65px;
+    line-height: 65px;
+    color: #000;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      top: 25px;
+      left: -30px;
+      margin-bottom: 0;
+
+      &--two {
+        top: -45px;
+        left: 20px;
+      }
+    }
+
+    @include onDesktop {
+      left: -70px;
+
+      &--two {
+        left: 25px;
+      }
+
+      &--three {
+        top: 135px;
+        left: 20px;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      display: block;
+      width: 1px;
+      height: 46px;
+      background-color: $colorDark;
+      transform: rotate(25deg);
+    }
+  }
+
+  &__characteristic {
+    display: none;
+    position: absolute;
+    top: -25px;
+    @include stylesText;
+    color: $colorDark;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @media (max-width: 1280px) {
+      &--two {
+        top: -75px;
+        right: 0;
+      }
+    }
+
+    @include onDesktop {
+      &--two {
+        top: -130px;
+      }
+
+      &--three {
+        top: 55px;
+        left: 0;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -5px;
+      left: -20px;
+      background-image: url("../images/star.svg");
+      background-size: cover;
+      width: 10px;
+      height: 10px;
+
+      @include onDesktop {
+        top: 0;
+        left: -40px;
+      }
+    }
+  }
+
+  &__h3 {
+    color: #000;
+    margin: 0 0 20px;
+
+    @include onTablet {
+      margin: 25px 0 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 46px;
+        margin-left: 15px;
+        background-color: $colorDark;
+        transform: rotate(25deg);
+      }
+    }
+  }
+
+  &__paragraf {
+    @include stylesText;
+    color: $colorGray;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+}
