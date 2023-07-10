@@ -1,0 +1,59 @@
+.header {
+  opacity: 1;
+
+  @include onTablet {
+    background-image: url(../images/pictures/Rectangle.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/pictures/Rectangle.png);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 68px;
+
+    @include onTablet {
+      height: 101px;
+    }
+
+    @include onDesktop {
+      height: 83px;
+
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
+
+    &--menu {
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &__image {
+      width: 100%;
+
+      &--wrapper {
+        margin-bottom: 25px;
+        width: 100w;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+      }
+    }
+  }
+
+}
