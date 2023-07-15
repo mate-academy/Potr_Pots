@@ -1,0 +1,171 @@
+.about {
+  background: $backround-color;
+  padding-bottom: 110px;
+
+  @include smartphone {
+    padding-bottom: 0;
+  }
+
+  &__title {
+    color: $tiitle-color;
+    font-family: $font-family;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+    margin-bottom: 25px;
+    padding: 0 30px;
+
+    @include smartphone {
+      margin-bottom: 17px;
+      padding: 0 34px;
+    }
+
+    @include smalldesktop {
+      padding: 0 135px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    overflow: hidden;
+
+    @include smartphone {
+      padding-right: 34px;
+      padding-bottom: 100px;
+    }
+
+    @include smalldesktop {
+      padding-right: 135px;
+      padding-bottom: 150px;
+    }
+  }
+
+  &__name {
+    display: none;
+
+    @include smartphone {
+      position: absolute;
+      display: inline-block;
+      font-family: $font-family;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 35.942px;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 1px $blue-color;
+    }
+
+  &--top {
+    font-family: $font-family;
+    transform: translateX(-63px) translateY(0);
+    font-size: 231.884px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 35.942px;
+    max-width: 719px;
+
+    @include smalldesktop {
+      transform: translateX(22px) translateY(34px);
+      font-size: 288px;
+      line-height: 346px;
+    }
+  }
+
+    &--bottom {
+      font-family: $font-family;
+      text-align: right;
+      bottom: -35px;
+      right: -30px;
+      font-size: 220px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 34.036px;
+
+
+      @include smalldesktop {
+        bottom: -41px;
+        right: 0px;
+        font-size: 288px;
+        line-height: 100%;
+      }
+    }
+  }
+
+  &__main {
+    background-image: url(../images/section3-yellow.png);
+    background-repeat: no-repeat;
+    background-size: 100% calc(100% - 380px);
+    background-position-y: 100%;
+    padding-bottom: 60px;
+    background-clip: padding-box;
+
+    @include smartphone {
+      display: flex;
+      flex-direction: row-reverse;
+      @include gridPage;
+      background-position-y: 70px;
+      background-size: auto;
+    }
+
+    @include smalldesktop {
+      background-position-y: 110px;
+    }
+  }
+
+  &__photo {
+    background-image: url(../images/team.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 30px;
+    height: 240px;
+    width: 100%;
+    padding: 0;
+
+    @include smartphone {
+      margin-top: 160px;
+      grid-column: 4 / -1;
+    }
+
+    @include smalldesktop {
+      grid-column: 5 / 12;
+      height: 507px;
+    }
+  }
+
+  &__subtitle {
+    padding: 0 30px;
+
+    @include smartphone {
+      margin-top: 215px;
+      grid-column: 1 / 4;
+      grid-row: 1;
+    }
+
+    @include smalldesktop {
+      padding-left: 135px;
+      padding-right: 0;
+      grid-column: 1 / 5;
+      margin-top: 350px;
+    }
+  }
+
+  &__text {
+    color: $grey-2;
+    font-family: $font-family-2;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 30px;
+
+    @include smartphone {
+      font-size: 14px;
+    }
+  }
+}

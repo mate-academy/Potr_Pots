@@ -1,0 +1,224 @@
+.easy {
+  background-color: $backround-color;
+
+  &__content {
+    padding-bottom: 110px;
+
+    @include smartphone {
+     padding-bottom: 103px;
+     @include gridPage;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include smalldesktop {
+      display: flex;
+      grid-column: 1 / 6;
+      padding-left: 50px;
+      grid-row: 1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
+    padding: 0 30px;
+
+    @include smartphone {
+      padding-left: 34px;
+      padding-right: 0;
+      margin-bottom: 0;
+      grid-column: 1 / 4;
+    }
+
+    @include smalldesktop {
+      grid-column: 6 / -1;
+      grid-row: 1;
+      padding-left: 0;
+      padding-right: 135px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include smalldesktop {
+
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 25px;
+    }
+  }
+
+  &__item1 {
+    position: relative;
+    padding-left: 25px;
+  }
+
+  &__icon1 {
+    position: absolute;
+    top: 23px;
+    left: 5px;
+  }
+
+  &__item2 {
+    position: relative;
+    padding-left: 25px;
+  }
+
+  &__icon2 {
+    position: absolute;
+    top: 22px;
+    left: 5px;
+  }
+
+  &__item3 {
+    position: relative;
+    padding-left: 25px;
+  }
+
+  &__icon3 {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+  }
+
+  &__name {
+    color: $tiitle-color;
+    font-family: $font-family-2;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    align-items: center;
+    margin-bottom: 5px;
+
+    @include smartphone {
+      font-size: 36px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    color: $grey-3;
+    font-family: $font-family-2;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__bottom {
+    padding: 0 30px;
+
+    @include smartphone {
+      grid-column: 4 / -1;
+      padding: 0;
+      margin: auto 0;
+    }
+
+    @include smalldesktop {
+      grid-column: 6 / -1;
+      grid-row: 1;
+      padding-top: 60px;
+    }
+  }
+
+  &__button {
+    width: 238px;
+    height: 48px;
+    background: $yellow-color;
+    color: #121212;
+    font-family: $font-family-3;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: 0.5s all;
+
+    &:hover {
+      background-color: $yellow-color;
+    }
+
+    @include hover (transform, scale(1.1));
+
+    @include smartphone {
+      margin-bottom: 35px;
+      background-color: $backround-color;
+      border: 1px solid $blue-color;
+    }
+
+    @include smalldesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__discont {
+    color: $red-color;
+    font-family: $font-family;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include smartphone {
+      margin-bottom: 5px;
+    }
+
+    @include smalldesktop {
+      margin-left: calc(100% - (100% - 70px - 45px));
+    }
+  }
+
+  &__price {
+    color: $blue-color;
+    font-family: $font-family;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+
+    @include smartphone {
+      max-width: 240px;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 2.79px;
+    }
+
+    @include smalldesktop {
+      margin-left: calc(100% - (100% - 70px - 45px));
+      max-width: 100%;
+    }
+  }
+
+  &__port {
+    display: none;
+
+    @include smartphone {
+      display: flex;
+      position: absolute;
+      right: 4px;
+    }
+
+    @include smalldesktop {
+      display: none;
+    }
+  }
+}
