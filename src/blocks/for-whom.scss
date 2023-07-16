@@ -1,0 +1,361 @@
+.for-whom {
+  @include flex-column;
+  position: relative;
+
+  &__title {
+    @include h2;
+    text-transform: uppercase;
+    color: $gray;
+    letter-spacing: 5px;
+
+    @include mobile {
+      padding-bottom: 26px;
+    }
+
+    @include iPad {
+      padding-bottom: 42px;
+    }
+  }
+
+  /*_____sections_____*/
+  &__sections-2-3 {
+    display: flex;
+    justify-content: space-between;
+
+    @include iPad {
+      flex-direction: column;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 34px;
+
+    @include full {
+      justify-content: center;
+      gap: 200px;
+
+      @include iPad {
+        padding-top: 110px;
+        align-items: center;
+      }
+
+      @include mobile {
+        padding-top: 66px;
+      }
+    }
+
+    &--1 {
+      padding-top: 0;
+    }
+
+    &--2 {
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 40px;
+      max-width: 400px;
+      padding-top: 148px;
+      padding-left: 100px;
+
+      @media (max-width: 1340px) {
+        padding-left: 0;
+      }
+
+      @include iPad {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        max-width: 100%;
+        padding-left: 0;
+        padding-top: 94px;
+      }
+
+      @include mobile {
+        padding-left: 0;
+        padding-top: 70px;
+      }
+    }
+
+    &--3 {
+      flex-direction: column;
+      padding-top: 46px;
+
+      @include iPad {
+        flex-direction: row;
+        padding-top: 94px;
+      }
+
+      @include mobile {
+        padding-top: 70px;
+      }
+    }
+  }
+
+  &__images {
+    object-fit: cover;
+    object-position: center;
+
+    @include mobile {
+      display: none;
+    }
+
+    &--1 {
+      height: 500px;
+      width: 500px;
+
+      @media (max-width: 1340px) {
+        width: 400px;
+        height: auto;
+      }
+
+      @include iPad {
+        height: 284px;
+        width: 284px;
+      }
+    }
+
+    &--2 {
+      height: 417px;
+      width: 300px;
+      padding-bottom: 39px;
+
+      @include iPad {
+        padding-bottom: 0;
+      }
+    }
+
+    &--3 {
+      height: 670px;
+      width: 470px;
+      padding-bottom: 39px;
+
+      @media (max-width: 1340px) {
+        width: 400px;
+        height: auto;
+      }
+
+      @include iPad {
+        height: 404px;
+        width: 284px;
+      }
+    }
+  }
+
+  /*_____for-those_____*/
+  &__for-those {
+    position: relative;
+    justify-content: center;
+    @include flex-column;
+    width: 470px;
+
+    @media (max-width: 1340px) {
+      width: 400px;
+    }
+
+    @media (max-width: 1180px) {
+      width: 370px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
+    @include iPad {
+      width: 340px;
+    }
+
+    &--3 {
+      @include iPad {
+        top: -30px;
+      }
+    }
+  }
+
+  &__comment {
+    position: relative;
+    @include s3;
+    color: $gray;
+    padding-bottom: 28px;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -30px;
+      top: 5px;
+      display: block;
+      font-size: 24px;
+      color: #000;
+
+      @include iPad {
+        top: 0;
+        left: -10px;
+      }
+    }
+
+    &--2 {
+      padding-bottom: 112px;
+
+      @include iPad {
+        text-align: right;
+        padding-bottom: 28px;
+      }
+
+      &::before {
+        @include iPad {
+          left: unset;
+          right: 74px;
+        }
+      }
+    }
+
+    &--3 {
+      @include iPad {
+        padding-bottom: 18px;
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__number {
+    @include h2;
+    position: absolute;
+    top: 180px;
+    left: -70px;
+    color: #000;
+    display: block;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -8px;
+      height: 46px;
+      width: 1px;
+      background-color: $gray;
+      transform: rotate(22deg);
+    }
+
+    &--1 {
+      @media (max-width: 1200px) {
+        top: 0;
+        left: 0;
+      }
+
+      @include iPad {
+        top: 72px;
+        left: -30px;
+      }
+    }
+
+    &--2 {
+      left: 18px;
+      top: 76px;
+    }
+
+    &--3 {
+      left: 12px;
+      top: 48px;
+
+      @include iPad {
+        top: 70px;
+        left: -35px;
+      }
+    }
+
+    @include mobile {
+      position: relative;
+      padding-bottom: 26px;
+      left: 16px;
+      top: auto;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    @include h2;
+    text-transform: uppercase;
+    color: $gray;
+    letter-spacing: 5px;
+    padding-bottom: 11px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 260px;
+      bottom: 10px;
+      height: 46px;
+      width: 1px;
+      background-color: $gray;
+      transform: rotate(22deg);
+    }
+
+    &--2 {
+      &::before {
+        left: 250px;
+      }
+    }
+
+    &--3 {
+      max-width: 370px;
+      align-self: flex-end;
+
+      &::before {
+        left: 120px;
+
+        @include iPad {
+          left: 240px;
+        }
+      }
+
+      @media (max-width: 1340px) and (min-width: 1024px) {
+        padding-top: 60px;
+      }
+
+      @include mobile {
+        align-self: flex-start;
+        max-width: 100%;
+      }
+    }
+
+    @include mobile {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 370px;
+    @include s3;
+    color: $gray2;
+
+    &--3 {
+      padding-left: 100px;
+
+      @media (max-width: 1340px) {
+        padding-left: 30px;
+      }
+
+      @media (min-width: 320px) and (max-width: 1180px) {
+        padding-left: 0;
+      }
+    }
+
+    @include iPad {
+      max-width: 100%;
+    }
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+}

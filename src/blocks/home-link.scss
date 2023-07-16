@@ -1,0 +1,63 @@
+.home-link {
+  position: absolute;
+  @include link;
+  font-family: "Bebas Neue", cursive;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 2.6px;
+  color: #828282;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 120%;
+    bottom: 50%;
+    width: 65px;
+    height: 1px;
+    background-color: #828282;
+  }
+
+  &:hover {
+    border-bottom: 1px solid #828282;
+    transition-duration: 0.3s;
+  }
+
+  &--for-whom-start {
+    transform: rotate(90deg);
+    top: 18px;
+    right: 10px;
+
+    @include mobile {
+      top: unset;
+      bottom: 30%;
+      right: 0;
+    }
+  }
+
+  &--for-whom-end {
+    transform: rotate(-90deg);
+    bottom: 18px;
+    left: 10px;
+
+    @media (min-width: 320px) and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  &--benefits {
+    top: 0;
+    right: 10px;
+    transform: rotate(90deg);
+
+    @include iPad {
+      top: 58px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

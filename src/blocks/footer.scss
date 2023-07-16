@@ -1,0 +1,121 @@
+.footer {
+  position: relative;
+  @include flex-column;
+  height: 296px;
+  width: 100%;
+  padding-top: 74px;
+  margin-bottom: 0;
+
+  @include iPad {
+    height: 170px;
+    padding-top: 0;
+  }
+
+  @include mobile {
+    height: 280px;
+    padding-top: 90px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @include mobile {
+      justify-content: center;
+    }
+  }
+
+  &__block {
+    @include flex-column;
+    gap: 11px;
+
+    &--address {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    @include h3;
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: 0.15em;
+
+    &--link {
+      @include link;
+
+      &:hover {
+        transform: scale(1,1.2);
+        transition-duration: 0.3s;
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__block-map {
+    width: 170px;
+  }
+
+  &__block-info {
+    @include s3;
+    @include link;
+    color: #000;
+
+    &--address {
+      &:hover {
+        border-bottom: 1px solid #000;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &--copyright {
+      cursor: auto;
+      @include mobile {
+        display: block;
+        position: absolute;
+        bottom: 46px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+      }
+    }
+  }
+
+  &__logo {
+    align-self: center;
+    bottom: 64px;
+
+    &:hover {
+      transform: scale(0.9);
+      transition-duration: 0.3s;
+    }
+  }
+
+  &__networks {
+    display: flex;
+    gap: 85px;
+
+    @include iPad {
+      gap: 80px;
+    }
+
+    @include mobile {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__network-link {
+    @include link;
+    height: 20px;
+    width: 20px;
+
+    &:hover {
+      transform: scale(1.2);
+      transition-duration: 0.3s;
+    }
+  }
+}

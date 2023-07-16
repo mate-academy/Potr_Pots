@@ -1,13 +1,833 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="./styles/main.scss">
+    <title>POTR POTS</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="images/Ellipse.png"
+    >
+    <link rel="stylesheet" href="styles/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    >
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+
+  <body class="page__body">
+    <div class="page__wrapper">
+      <header class="page__section header" id="header">
+        <a class="header__logo logo" href="#home-page">POTR POTS</a>
+        <a class="header__menu" href="#menu">
+          <img src="images/menu_icon.png" alt="menu_icon">
+        </a>
+        <nav class="header__nav nav">
+          <ul class="nav__items">
+            <li><a class="nav__item" href="#features">Features</a></li>
+            <li><a class="nav__item" href="#about-us">About us</a></li>
+            <li><a class="nav__item" href="#materials">Materials</a></li>
+            <li><a class="nav__item" href="#message-us">Message us</a></li>
+          </ul>
+        </nav>
+        <div class="header__basket basket__img"></div>
+      </header>
+
+      <main class="page__content">
+        <div class="page__menu menu" id="menu">
+          <nav class="menu__nav nav">
+            <ul class="nav__items">
+              <li class="menu__basket">
+                <a class="nav__item" href="#basket">Basket</a>
+                <span class="menu__basket--quantity" data-number="0"></span>
+              </li>
+              <li><a class="nav__item" href="#features">Features</a></li>
+              <li><a class="nav__item" href="#about-us">About us</a></li>
+              <li><a class="nav__item" href="#materials">Materials</a></li>
+              <li><a class="nav__item" href="#message-us">Message us</a></li>
+            </ul>
+          </nav>
+
+          <div class="menu__close-block">
+            <a class="menu__close" href="#"></a>
+            <a class="menu__close-link" href="#">Close</a>
+          </div>
+        </div>
+
+        <div class="dropdownPage basket" id="basket">
+          <h2 class="dropdownPage__title basket__title">Shopping bag</h2>
+          <div class="dropdownPage__close basket__close"></div>
+          <div class="basket__content">
+            <span class="basket__tablet-header basket__tablet-header--items">Item</span>
+            <span class="basket__tablet-header basket__tablet-header--quantity">Quantity</span>
+            <span class="basket__tablet-header basket__tablet-header--unit-price">Unit price</span>
+            <span class="basket__tablet-header basket__tablet-header--total-price">Total price</span>
+            <span class="basket__tablet-header basket__tablet-header--unit-price2">Unit price</span>
+            <span class="basket__tablet-header basket__tablet-header--total-price2">Total price</span>
+            <span class="basket__decor basket__decor--1"></span>
+
+            <img
+              class="basket__large basket__large--img"
+              src="images/largePotr.png"
+              alt="largePotr icon"
+            >
+            <span class="basket__large basket__large--title">Large POTR Pot</span>
+            <span class="basket__large basket__large--remove"></span>
+            <div
+              class="basket__large basket__large--order"
+              data-order="0 order"
+              data-quantity="0"
+            ></div>
+            <span class="basket__large basket__large--add"></span>
+            <div
+              class="basket__large basket__large--unit-price"
+              data-price="7.50"
+            ></div>
+            <div
+              class="basket__large basket__large--total-price"
+              data-sum="0"
+            ></div>
+            <span class="basket__large basket__large--delete"></span>
+            <span class="basket__decor basket__decor--2"></span>
+
+            <img
+              class="basket__small basket__small--img"
+              src="images/smallPotr.png"
+              alt="smallPotr icon"
+            >
+            <span class="basket__small basket__small--title">Small POTR Pot</span>
+            <span class="basket__small basket__small--remove"></span>
+            <div
+              class="basket__small basket__small--order"
+              data-order="0 order"
+              data-quantity="0"
+            ></div>
+            <span class="basket__small basket__small--add"></span>
+            <div
+              class="basket__small basket__small--unit-price"
+              data-price="5.50"
+            ></div>
+            <div
+              class="basket__small basket__small--total-price"
+              data-sum="1"></div>
+            <span class="basket__small basket__small--delete"></span>
+            <span class="basket__decor basket__decor--3"></span>
+
+            <button
+              class="basket__checkout dropdownPage__button"
+              type="submit"
+              disabled
+            >
+              checkout
+            </button>
+            <span class="basket__total">Total</span>
+            <span class="basket__sum"></span>
+          </div>
+        </div>
+
+        <div class="dropdownPage checkout">
+          <h2 class="dropdownPage__title checkout__title">checkout</h2>
+          <span class="dropdownPage__close checkout__close"></span>
+          <form class="checkout__content" action="/">
+            <h5 class="checkout__block-title" data-phase="1">
+              Provide your address
+            </h5>
+            <div class="checkout__address-form">
+              <input
+                type="text"
+                class="checkout__input-form checkout__input-form--firstName formInput"
+                placeholder="First name"
+                minlength="4"
+                required
+                data-input="firstName"
+              >
+              <input
+                type="text"
+                class="checkout__input-form checkout__input-form--lastName formInput"
+                placeholder="Last name"
+                minlength="2"
+                required
+                data-input="lastName"
+              >
+              <input
+                autocomplete="email"
+                type="email"
+                name="email"
+                class="checkout__input-form checkout__input-form--email formInput"
+                placeholder="Email"
+                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                required
+                data-input="email"
+              >
+              <input
+                type="text"
+                class="checkout__input-form checkout__input-form--city formInput"
+                placeholder="City"
+                minlength="4"
+                required
+              >
+              <input
+                type="text"
+                class="checkout__input-form checkout__input-form--street formInput"
+                placeholder="Street"
+                minlength="4"
+                required
+              >
+              <input
+                inputmode="numeric"
+                class="checkout__input-form checkout__input-form--house formInput"
+                placeholder="House number"
+                min="1"
+                required
+              >
+              <select
+                class="checkout__input-form checkout__input-form--country"
+                required
+              >
+                <option>Canada</option>
+                <option>Turkey</option>
+                <option>United Kingdom</option>
+                <option>Germany</option>
+                <option>USA</option>
+              </select>
+            </div>
+
+            <h5 class="checkout__block-title" data-phase="2">
+              Select a payment method
+            </h5>
+            <div class="checkout__payment">
+              <label class="checkout__payment-method" for="masterCard">
+                <input
+                  id="masterCard"
+                  class="checkout__checkbox"
+                  type="radio"
+                  name="payment-method"
+                  required
+                >
+                <img
+                  class="checkout__payment-card"
+                  src="images/Mastercard_icon-icons.svg"
+                  alt="masterCard icon"
+                >
+                <img
+                  class="checkout__payment-card"
+                  src="images/iconfinder_Visa.svg"
+                  alt="visa icon"
+                >
+                <span class="checkout__payment-info">MasterCard / Visa</span>
+              </label>
+              <label class="checkout__payment-method" for="payPal">
+                <input
+                  class="checkout__checkbox"
+                  id="payPal"
+                  type="radio"
+                  name="payment-method"
+                >
+                <img
+                  class="checkout__payment-card"
+                  src="images/paypal_icon.svg"
+                  alt="paypal icon"
+                >
+                <span class="checkout__payment-info">PayPal</span>
+              </label>
+            </div>
+            <h5 class="checkout__block-title" data-phase="3">Your payment</h5>
+            <div class="checkout__clientPaymentData">
+              <span class="checkout__info-name checkout__info-name--amount">Amount:</span>
+              <span class="checkout__amount" data-amount="0"></span>
+              <span class="checkout__info-name checkout__info-name--name">Name on card:</span>
+              <input
+                class="checkout__cardInfo checkout__cardInfo--name formInput"
+                type="text"
+                placeholder="your name"
+                required
+              >
+              <span class="checkout__info-name checkout__info-name--card">Card number:</span>
+              <input
+                class="checkout__cardInfo checkout__cardInfo--number formInput"
+                inputmode="numeric"
+                placeholder="* * * *    * * * *    * * * *   * * * *"
+                pattern="[\d ]{10,30}"
+                required
+              >
+              <span class="checkout__info-name checkout__info-name--date">Expiration date:</span>
+              <select class="checkout__date checkout__date--month" required>
+                <option class="checkout__date--option">01</option>
+                <option class="checkout__date--option">02</option>
+                <option class="checkout__date--option">03</option>
+                <option class="checkout__date--option">04</option>
+                <option class="checkout__date--option">05</option>
+                <option class="checkout__date--option">06</option>
+                <option class="checkout__date--option">07</option>
+                <option class="checkout__date--option">08</option>
+                <option class="checkout__date--option">09</option>
+                <option class="checkout__date--option">10</option>
+                <option class="checkout__date--option">11</option>
+                <option class="checkout__date--option">12</option>
+              </select>
+              <select class="checkout__date checkout__date--year" required>
+                <option class="checkout__date--option">2020</option>
+                <option class="checkout__date--option">2021</option>
+                <option class="checkout__date--option">2022</option>
+                <option class="checkout__date--option">2023</option>
+                <option class="checkout__date--option">2024</option>
+                <option class="checkout__date--option">2025</option>
+                <option class="checkout__date--option">2026</option>
+                <option class="checkout__date--option">2027</option>
+              </select>
+              <span class="checkout__info-name checkout__info-name--cvc">CVC:</span>
+              <input
+                inputmode="numeric"
+                class="checkout__cardInfo checkout__cardInfo--cvc formInput"
+                data-input="cvc"
+                pattern="[\d]{3}"
+                placeholder="* * *"
+                minlength="3"
+                required
+              >
+            </div>
+            <input
+              class="checkout__submit dropdownPage__button"
+              type="submit"
+              value="submit"
+            >
+          </form>
+        </div>
+
+        <div class="dropdownPage succesfullPayment" id="succesfullPayment">
+          <img
+            class="succesfullPayment__logo"
+            src="images/logo.png"
+            alt="logo"
+          >
+          <span class="dropdownPage__close succesfullPayment__close"></span>
+          <span class="succesfullPayment__notification">Thank you, payment was successful!</span>
+          <span class="succesfullPayment__message">Expect a message to ship the item</span>
+        </div>
+
+        <div class="page__section home-page" id="home-page">
+          <div class="home-page__blocks">
+            <div class="home-page__main-block">
+              <h1 class="home-page__title">
+                <p class="home-page__title--transparent">POTR ~ Eco,</p>
+                <div class="home-page__title-block">
+                  <p class="home-page__title--transparent">self-</p>
+                  <p>watering,</p>
+                </div>
+                <div class="home-page__title-block">
+                  <p>origami&nbsp</p>
+                  <p class="home-page__title--transparent">plant</p>
+                </div>
+                <p>pots</p>
+              </h1>
+
+              <div class="home-page__offer-price">
+                <p class="home-page__price">$ 7,50</p>
+                <p class="home-page__offer">
+                  Get the second order in half price
+                </p>
+              </div>
+
+              <a class="home-page__button button" href="#basket">
+                <p>Buy now</p>
+                <img src="images/right-arrow.png" alt="right-arrow">
+              </a>
+            </div>
+            <div class="home-page__img-block"></div>
+          </div>
+
+          <div class="home-page__more-label">
+            <a class="home-page__more" href="#about-us">More about POTR POTS</a>
+          </div>
+        </div>
+
+        <div class="page__section for-whom">
+          <h2 class="for-whom__title">For whom?</h2>
+          <div class="for-whom__section for-whom__section--1">
+            <img
+              class="for-whom__images for-whom__images--1"
+              src="images/kasimpati.png"
+              alt="kasimpati"
+            >
+            <div class="for-whom__for-those">
+              <p class="for-whom__comment">Robust</p>
+              <p class="for-whom__number for-whom__number--1">1</p>
+              <h2 class="for-whom__subtitle">
+                For those who value durable things
+              </h2>
+              <p class="for-whom__text">
+                Don’t worry if you happen to knock your POTR on the floor,
+                unlike a traditional ceramic pot it will take the fall in its
+                stride.
+              </p>
+            </div>
+          </div>
+
+          <div class="for-whom__sections-2-3">
+            <div class="for-whom__section for-whom__section--2">
+              <img
+                class="for-whom__images for-whom__images--2"
+                src="images/cactus2.png"
+                alt="cactus2"
+              >
+              <div class="for-whom__for-those for-whom__for-those--2">
+                <p class="for-whom__comment for-whom__comment--2">Beautiful</p>
+                <p class="for-whom__number for-whom__number--2">2</p>
+                <h2 class="for-whom__subtitle for-whom__subtitle--2">
+                  For those who love modern design
+                </h2>
+                <p class="for-whom__text">
+                  We strived to achieve something that would look beautiful in
+                  your home while being incredibly functional and intuitive to
+                  use.
+                </p>
+              </div>
+            </div>
+
+            <div class="for-whom__section for-whom__section--3">
+              <img
+                class="for-whom__images for-whom__images--3"
+                src="images/saves-time.png"
+                alt="save time"
+              >
+              <div class="for-whom__for-those for-whom__for-those--3">
+                <p class="for-whom__comment for-whom__comment--3">Saves time</p>
+                <p class="for-whom__number for-whom__number--3">3</p>
+                <h2 class="for-whom__subtitle for-whom__subtitle--3">
+                  For those who don't have enough time to regular water indoor
+                  plants
+                </h2>
+                <p class="for-whom__text for-whom__text--3">
+                  Water is drawn up through the cotton by the plant using tried
+                  and tested wicking technology. It’s particularly useful if you
+                  aren’t able to water them yourself on a regular basis!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a class="home-link home-link--for-whom-start" href="#header">potr pots</a>
+          <a class="home-link home-link--for-whom-end" href="#footer">potr pots</a>
+        </div>
+
+        <div class="page__section features" id="features">
+          <span class="features__title-block">
+            <h1 class="features__title">POTR Pots</h1>
+            <p class="features__title features__title--transparent">Features</p>
+          </span>
+          <div class="features__blocks">
+            <div class="features__block features__block--postage">
+              <img
+                class="features__img"
+                src="images/flat-pack.png"
+                alt="postage"
+              >
+              <h3 class="features__process">Flat pack postage</h3>
+              <p class="features__explanation">
+                The pots will be shipped flat packed so they can be slipped
+                through your letter box
+              </p>
+            </div>
+            <div class="features__block features__block--assembly">
+              <img
+                class="features__img"
+                src="images/easy-assembly.png"
+                alt="easy-assembly"
+              >
+              <h3 class="features__process">Easy assembly</h3>
+              <p class="features__explanation">
+                POTR Pots are super easy (and super satisfying) to assemble
+                using the quick draw cotton cord
+              </p>
+            </div>
+            <div class="features__block features__block--watering">
+              <img
+                class="features__img"
+                src="images/self-watering.png"
+                alt="self-watering"
+              >
+              <h3 class="features__process">Self-watering</h3>
+              <p class="features__explanation">
+                Simply add water into the pot — if your plant is thirsty it will
+                automatically start drinking the water through the cotton cord.
+                Magic!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="page__section about-us" id="about-us">
+          <p class="about-us__name about-us__name--Martin">Martin</p>
+          <p class="about-us__name about-us__name--Andy">Andy</p>
+          <h1 class="about-us__title">Meet the POTR team!</h1>
+          <img
+            class="about-us__decor"
+            src="images/yellow-little.png"
+            alt="decor"
+          >
+          <div class="about-us__team">
+            <p class="about-us__history">
+              Andy and Martin are experienced product designers with a love
+              of plants and the environment. They have over ten years combined
+              industry experience in bringing products to market at some of the
+              worlds largest consumer product companies.
+              <br>
+              <br>
+              Having studied Product Design Engineering together at the Glasgow
+              School of Art, they have a long history of working as a team
+              on a variety of design projects.
+            </p>
+            <div class="about-us__foto"></div>
+          </div>
+        </div>
+
+        <div class="materials" id="materials">
+          <div class="page__section materials__container">
+            <h1 class="materials__title">Materials and Features</h1>
+            <div class="materials__benefits">
+              <p class="materials__subtitle">Environmentally friendly</p>
+              <p class="materials__text">
+                All materials used in our pots are made from
+                <strong>100% recycled materials</strong> and are
+                <strong> 100% recyclable at the end of life </strong> (should
+                you ever choose to get rid of your POTR!). All materials have
+                been sourced from within Europe to reduce our carbon footprint
+                when transporting the raw materials, and all manufacturing is
+                carried out in the UK.
+              </p>
+            </div>
+
+            <div class="materials__opensInfo">
+              <div
+                class="materials__open materials__open--1"
+                data-open="1"
+              ></div>
+              <div
+                class="materials__open materials__open--2"
+                data-open="2"
+              ></div>
+              <div
+                class="materials__open materials__open--3"
+                data-open="3"
+              ></div>
+              <div
+                class="materials__open materials__open--4"
+                data-open="4"
+              ></div>
+              <div
+                class="materials__open materials__open--5"
+                data-open="5"
+              ></div>
+              <div class="materials__bobbiny">
+                <p
+                  class="materials__about-bobbiny materials__about-bobbiny--1"
+                  data-about="1"
+                >
+                  We have chosen Bobbiny recycled cotton cord to use as our draw
+                  string.
+                </p>
+                <p
+                  class="materials__about-bobbiny materials__about-bobbiny--2"
+                  data-about="2"
+                >
+                  We have chosen Bobbiny recycled cotton cord to use as our draw
+                  string and wicking cord. Not only is it 100% recycled.
+                </p>
+                <p
+                  class="materials__about-bobbiny materials__about-bobbiny--3"
+                  data-about="3"
+                >
+                  We have chosen Bobbiny recycled cotton cord to use as our draw
+                  string and wicking cord. Not only is it 100% recycled, it
+                  looks great and works really well at wicking water.
+                </p>
+                <p
+                  class="materials__about-bobbiny materials__about-bobbiny--4"
+                  data-about="4"
+                >
+                  We have chosen Bobbiny recycled cotton cord to use as our draw
+                  string and wicking cord. Not only is it 100% recycled.
+                </p>
+                <p
+                  class="materials__about-bobbiny materials__about-bobbiny--5"
+                  data-about="5"
+                >
+                  We have chosen Bobbiny recycled cotton cord to use as our draw
+                  string and wicking cord. Not only is it 100% recycled, it
+                  looks great and works really well at wicking water.
+                </p>
+                <p
+                  class="materials__about-bobbiny materials__about-bobbiny--slide"
+                  data-about="1"
+                >
+                  We have chosen Bobbiny recycled cotton cord to use as our draw
+                  string.
+                </p>
+              </div>
+              <div class="materials__labels">
+                <div
+                  class="materials__label materials__label--active"
+                  data-label="1"
+                ></div>
+                <div class="materials__label" data-label="2"></div>
+                <div class="materials__label" data-label="3"></div>
+                <div class="materials__label" data-label="4"></div>
+                <div class="materials__label" data-label="5"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="potr-size">
+          <div class="potr-size__conteiner page__section">
+            <h2 class="potr-size__title">
+              Which size POTR for my house plant ?
+            </h2>
+            <div class="potr-size__content">
+              <div class="potr-size__info-block">
+                <div class="potr-size__info">
+                  <p class="potr-size__introduction">
+                    Pre potted plants come in fairly standard sized pots, and
+                    can be classified into one of two categories:
+                  </p>
+                  <div class="potr-size__categories">
+                    <div class="potr-size__pot">
+                      <h4 class="potr-size__pot-size">large</h4>
+                      <p class="potr-size__pot-about">
+                        Large POTR Pot = <strong>14cm diameter</strong> (1.5
+                        litre) house plant pot or less
+                      </p>
+                    </div>
+                    <div class="potr-size__pot">
+                      <h4 class="potr-size__pot-size">Small</h4>
+                      <p class="potr-size__pot-about">
+                        Small POTR Pot = <strong>10cm diameter</strong> (0.49
+                        litre) house plant pot or less
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <p class="potr-size__note">
+                  POTR Pots have a little bit of give around the top rim so can
+                  fit slightly larger sizes than the recommended sizes stated
+                  above if necessary.
+                </p>
+              </div>
+              <div class="potr-size__image"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefits">
+          <div class="benefits__foto">
+            <img
+              class="benefits__card benefits__card--1"
+              src="images/card1.png"
+              alt="card1"
+            >
+            <img
+              class="benefits__card benefits__card--2"
+              src="images/card2.png"
+              alt="card2"
+            >
+            <img
+              class="benefits__card benefits__card--3"
+              src="images/card3.png"
+              alt="card3"
+            >
+            <img
+              class="benefits__card benefits__card--4"
+              src="images/card4.png"
+              alt="card4"
+            >
+            <img
+              class="benefits__card benefits__card--5"
+              src="images/card5.png"
+              alt="card5"
+            >
+            <img
+              class="benefits__card benefits__card--6"
+              src="images/card6.png"
+              alt="card6"
+            >
+          </div>
+
+          <a class="home-link home-link--benefits" href="#features">
+            POTR Pots Features
+          </a>
+
+          <div class="benefits__page">
+            <div class="benefits__all">
+              <div class="benefits__items benefits__items--assembly">
+                <h3 class="benefits__item">Easy assembly</h3>
+                <p class="benefits__interpretation">
+                  Pull the draw string to assemble!
+                </p>
+              </div>
+              <div class="benefits__items benefits__items--self">
+                <h3 class="benefits__item">Self-watering</h3>
+                <p class="benefits__interpretation">
+                  Add water to POTR and watch your plant drink!
+                </p>
+              </div>
+              <div class="benefits__items benefits__items--pack">
+                <h3 class="benefits__item">Flat pack postage</h3>
+                <p class="benefits__interpretation">
+                  POTR pots arrive flat packed in an envelope!
+                </p>
+              </div>
+            </div>
+
+            <div class="benefits__buy">
+              <a class="benefits__button button" href="#basket">
+                <p>Buy now</p>
+                <img src="images/right-arrow.png" alt="right-arrow">
+              </a>
+
+              <h2 class="benefits__discount">50% off</h2>
+              <h3 class="benefits__conditions">
+                Get the second order in half price
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="page__section message-us" id="message-us">
+          <h2 class="message-us__title">have any questions?</h2>
+          <p class="message-us__ways">Here few ways to get in touch with us:</p>
+          <div class="message-us__block">
+            <form
+              class="message-us__form"
+              autocomplete="on"
+              id="contact-form"
+            >
+              <p class="message-us__form-title">Message us</p>
+              <input
+                class="message-us__field"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+              >
+              <input
+                class="message-us__field"
+                type="email"
+                name="email"
+                placeholder="Email"
+                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$"
+                required
+              >
+              <input
+                autocomplete="email"
+                class="message-us__field"
+                type="text"
+                name="text"
+                placeholder="Message"
+                required
+              >
+              <input
+                class="message-us__submit button__submit"
+                type="submit"
+                value="Submit  &rarr;"
+              >
+            </form>
+
+            <div class="message-us__contacts">
+              <div class="message-us__sections">
+                <p class="message-us__section-name">Our phone</p>
+                <span class="message-us__section-label">
+                  <a
+                    class="message-us__section-contact"
+                    href="tel:+7 098 454 56 34"
+                  >
+                    +7 098 454 56 34
+                  </a>
+                </span>
+              </div>
+              <div class="message-us__sections">
+                <p class="message-us__section-name">Our email</p>
+                <span class="message-us__section-label">
+                  <a
+                    class="message-us__section-contact"
+                    href="mailto:potrpots@gmail.com"
+                    >
+                    potrpots@gmail.com
+                  </a>
+                </span>
+              </div>
+              <div class="message-us__sections">
+                <p class="message-us__section-name">Our office</p>
+                <span class="message-us__section-label">
+                  <a
+                    class="message-us__section-contact"
+                    href="https://goo.gl/maps/gHZTVQW3LPdFH7d38"
+                    >
+                    United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <img
+            class="message-us__stamp"
+            src="images/seal.png"
+            alt="seal"
+          >
+        </div>
+      </main>
+
+      <footer class="page__section footer">
+        <div class="footer__content">
+          <div class="footer__block footer__block--address">
+            <h3 class="footer__title">Adrress</h3>
+            <span class="footer__block-map">
+              <a
+                class="footer__block-info footer__block-info--address"
+                href="https://goo.gl/maps/5JLC8KVGhMPstw8b9"
+                target="_blank"
+              >
+                United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD
+              </a>
+            </span>
+          </div>
+          <div class="footer__networks">
+            <a
+              class="footer__network-link"
+              href="https://ru.linkedin.com/"
+              target="blank"
+            >
+              <img src="images/LINK.svg" alt="linkendin">
+            </a>
+            <a
+              class="footer__network-link"
+              href="https://instagram.com"
+              target="blank"
+            >
+              <img src="images/INSTA.svg" alt="instagram">
+            </a>
+            <a
+              class="footer__network-link"
+              href="https://www.facebook.com/"
+              target="blank"
+            >
+              <img src="images/FACEBOOK.svg" alt="facebook">
+            </a>
+          </div>
+          <div class="footer__block">
+            <a class="footer__title--link" href="#about-us">
+              <h3 class="footer__title">aBOUT uS</h3>
+            </a>
+            <p class="footer__block-info footer__block-info--copyright">
+              Copyright © 2019
+            </p>
+          </div>
+        </div>
+        <a class="footer__logo logo" href="#home-page">POTR POTS</a>
+      </footer>
+    </div>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>

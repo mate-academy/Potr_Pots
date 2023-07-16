@@ -1,0 +1,148 @@
+.about-us {
+  position: relative;
+
+  &__title {
+    @include h1;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: $gray;
+    letter-spacing: 5px;
+    padding-bottom: 150px;
+
+    @include iPad {
+      padding-bottom: 242px;
+    }
+
+    @include mobile {
+      padding-bottom: 60px;
+      line-height: 100%;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    z-index: 0;
+
+    @include iPad {
+      left: -200px;
+    }
+
+    @include mobile {
+      top: unset;
+      bottom: -18%;
+    }
+  }
+
+  &__team {
+    position: relative;
+    display: flex;
+    height: 510px;
+    gap: 56px;
+    flex: 1 0 auto;
+
+    @include iPad {
+      height: max-content;
+      justify-content: space-between;
+    }
+
+    @include mobile {
+      flex-direction: column-reverse;
+      height: max-content;
+      gap: 36px;
+    }
+  }
+
+  &__history {
+    width: 336px;
+    @include s3;
+    color: $gray2;
+    z-index: 10;
+    padding-bottom: 90px;
+    align-self: flex-end;
+
+    @include tablet {
+      padding-bottom: 50px;
+    }
+
+    @include iPad {
+      padding-bottom: 0;
+      width: 314px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__foto {
+    background: url(../images/team.png) no-repeat;
+    width: 678px;
+    height: 100%;
+    background-size: contain;
+    z-index: 5;
+
+    @include iPad {
+      position: absolute;
+      right: 0;
+      top: -50px;
+      width: 340px;
+      height: 255px;
+    }
+
+    @include mobile {
+      width: 320px;
+      height: 240px;
+      align-self: center;
+    }
+  }
+
+  &__name {
+    position: absolute;
+    @include title;
+    font-weight: normal;
+    font-size: 288px;
+    color: transparent;
+    -webkit-text-stroke: 1px $turquoise;
+    letter-spacing: 44px;
+    z-index: 100;
+
+    @include tablet {
+      font-size: 260px;
+    }
+
+    @include iPad {
+      font-size: 232px;
+      right: -5vw;
+      bottom: -100px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &--Martin {
+      top: 90px;
+      left: 74px;
+
+      @include iPad {
+        left: -44px;
+      }
+    }
+
+    &--Andy {
+      bottom: -170px;
+      right: 0;
+
+      @include tablet {
+        bottom: -120px;
+      }
+
+      @include iPad {
+        font-size: 220px;
+        bottom: -82px;
+      }
+    }
+  }
+}

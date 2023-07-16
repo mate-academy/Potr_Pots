@@ -1,0 +1,45 @@
+.succesfullPayment {
+  display: none;
+
+  &--active {
+    @include flex-column;
+    box-sizing: border-box;
+    position: relative;
+    margin: 120px auto 0;
+    width: 830px;
+    height: max-content;
+    padding: 45px 0 170px 130px;
+    z-index: 10;
+    background-color: #fff;
+
+    @include iPad {
+      width: 700px;
+      padding: 44px 0 136px 120px;
+    }
+
+    @include mobile {
+      width: 296px;
+      padding: 18px 18px 136px;
+    }
+  }
+
+  &__logo {
+    width: 122px;
+    object-fit: contain;
+  }
+
+  &__notification {
+    @include s1;
+    font-size: 32px;
+    padding-top: 40px;
+
+    @include mobile {
+      @include s2;
+    }
+  }
+
+  &__message {
+    @include s3;
+    padding-top: 12px;
+  }
+}

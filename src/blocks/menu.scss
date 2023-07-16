@@ -1,0 +1,83 @@
+.menu {
+  background-color: $turquoise;
+  display: block;
+  height: 100vh;
+  width: 80%;
+  z-index: 100;
+
+  @include iPad {
+    width: 50%;
+  }
+
+  &__close-block {
+    position: absolute;
+    bottom: 90px;
+    right: -22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    transform: rotate(-90deg);
+  }
+
+  &__close-link {
+    position: relative;
+    @include link;
+    @include s5;
+    color: $grey-light;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 120%;
+      top: 50%;
+      display: block;
+      width: 44px;
+      height: 1px;
+      background-color: $grey-light;
+    }
+  }
+
+  &__close {
+    display: block;
+    @include link;
+    width: max-content;
+    height: max-content;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 1px;
+      background-color: #fff;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 1px;
+      background-color: #fff;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__basket {
+    position: relative;
+
+    &--quantity {
+      position: absolute;
+      top: 0;
+      right: -15px;
+      @include flex-center;
+      height: 13px;
+      width: 13px;
+      background-color: $red;
+      border-radius: 50%;
+      color: $grey-light;
+      font-size: 9px;
+    }
+  }
+}
