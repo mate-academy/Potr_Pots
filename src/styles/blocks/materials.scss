@@ -70,8 +70,8 @@
     }
 
     @include smartphone {
-     width: 340px;
-     right: -60px;
+      width: 340px;
+      right: -60px;
     }
   }
 
@@ -167,14 +167,66 @@
     }
   }
 
+  &__text1 {
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    position: absolute;
+    width: 303px;
+    height: 237px;
+    bottom: -25%;
+    left: calc(10% + 20px);
+    z-index: 1;
+    display: none;
+
+    @include smalldesktop {
+      top: 80%;
+      left: calc(10% + 20px);
+    }
+  }
+
   &__circle1 {
     position: absolute;
     top: 80%;
     left: 10%;
     cursor: pointer;
 
-    &:hover .materials__text1 {
+    .closed {
       display: block;
+    }
+    .opened {
+      display: none;
+    }
+
+    &:target {
+      .materials__text1 {
+        display: block;
+      }
+      .closed {
+        display: none;
+      }
+      .opened {
+        display: block;
+      }
+    }
+  }
+
+  &__text2 {
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    position: absolute;
+    width: 303px;
+    height: 237px;
+    top: -65%;
+    left: calc(10% + 20px);
+    display: none;
+    z-index: 1;
+
+    @include smalldesktop {
+      top: 80%;
     }
   }
 
@@ -184,8 +236,41 @@
     left: 30%;
     cursor: pointer;
 
-    &:hover .materials__text2 {
+    .closed {
       display: block;
+    }
+    .opened {
+      display: none;
+    }
+
+    &:target {
+      .materials__text2 {
+        display: block;
+      }
+      .closed {
+        display: none;
+      }
+      .opened {
+        display: block;
+      }
+    }
+  }
+
+  &__text3 {
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    position: absolute;
+    width: 303px;
+    height: 237px;
+    top: -173px;
+    left: calc(10% + 20px);
+    display: none;
+    z-index: 1;
+
+    @include smalldesktop {
+      top: 80%;
     }
   }
 
@@ -195,8 +280,42 @@
     left: 45%;
     cursor: pointer;
 
-    &:hover .materials__text3 {
+    .closed {
       display: block;
+    }
+    .opened {
+      display: none;
+    }
+
+    &:target {
+      .materials__text3 {
+        display: block;
+      }
+      .closed {
+        display: none;
+      }
+      .opened {
+        display: block;
+      }
+    }
+  }
+
+  &__text4 {
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    position: absolute;
+    width: 303px;
+    height: 237px;
+    top: -150%;
+    left: -42%;
+    display: none;
+    z-index: 1;
+
+    @include smalldesktop {
+      top: 80%;
+      left: calc(10% + 20px);
     }
   }
 
@@ -206,8 +325,42 @@
     left: 55%;
     cursor: pointer;
 
-    &:hover .materials__text4 {
+    .closed {
       display: block;
+    }
+    .opened {
+      display: none;
+    }
+
+    &:target {
+      .materials__text4 {
+        display: block;
+      }
+      .closed {
+        display: none;
+      }
+      .opened {
+        display: block;
+      }
+    }
+  }
+
+  &__text5 {
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    position: absolute;
+    width: 303px;
+    height: 237px;
+    top: 55%;
+    left: -120px;
+    display: none;
+    z-index: 1;
+
+    @include smalldesktop {
+      top: 80%;
+      left: calc(10% + 20px);
     }
   }
 
@@ -217,8 +370,23 @@
     left: 70%;
     cursor: pointer;
 
-    &:hover .materials__text5 {
+    .closed {
       display: block;
+    }
+    .opened {
+      display: none;
+    }
+
+    &:target {
+      .materials__text5 {
+        display: block;
+      }
+      .closed {
+        display: none;
+      }
+      .opened {
+        display: block;
+      }
     }
 
     @include smalldesktop {
@@ -260,99 +428,6 @@
     line-height: 150%;
     padding: 28px 44px 0 45px;
     margin-bottom: 11px;
-  }
-
-  &__text1 {
-    background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(17px);
-
-    position: absolute;
-    width: 303px;
-    height: 237px;
-    bottom: -25%;
-    left: calc(10% + 20px);
-    z-index: 1;
-    display: none;
-
-    @include smalldesktop {
-      top: 80%;
-      left: calc(10% + 20px);
-    }
-  }
-
-  &__text2 {
-    background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(17px);
-
-    position: absolute;
-    width: 303px;
-    height: 237px;
-    top: -65%;
-    left: calc(10% + 20px);
-    display: none;
-    z-index: 1;
-
-    @include smalldesktop {
-      top: 80%;
-    }
-  }
-
-  &__text3 {
-    background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(17px);
-
-    position: absolute;
-    width: 303px;
-    height: 237px;
-    top: -173px;
-    left: calc(10% + 20px);
-    display: none;
-    z-index: 1;
-
-    @include smalldesktop {
-      top: 80%;
-    }
-  }
-
-  &__text4 {
-    background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(17px);
-
-    position: absolute;
-    width: 303px;
-    height: 237px;
-    top: -150%;
-    left: -42%;
-    display: none;
-    z-index: 1;
-
-    @include smalldesktop {
-      top: 80%;
-      left: calc(10% + 20px);
-    }
-  }
-
-  &__text5 {
-    background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(17px);
-
-    position: absolute;
-    width: 303px;
-    height: 237px;
-    top: 55%;
-    left: -120px;
-    display: none;
-    z-index: 1;
-
-    @include smalldesktop {
-      top: 80%;
-      left: calc(10% + 20px);
-    }
   }
 
   &__dots {
