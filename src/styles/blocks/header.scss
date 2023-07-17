@@ -1,0 +1,353 @@
+.header {
+  background: $backround-color;
+  max-width: 100%;
+
+  &__content {
+    background: $backround-color;
+    padding-top: 15px;
+    padding-bottom: 110px;
+    position: relative;
+    @include smartphone {
+
+      padding-top: 31px;
+      margin-bottom: 550px;
+    }
+
+    @include smalldesktop {
+      padding-top: 20px;
+    }
+  }
+
+  &__yellow {
+    display: none;
+
+    @include smartphone {
+      display: flex;
+    }
+  }
+
+  &__left {
+    @include smartphone {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 100px - 20px);
+    }
+
+    @include smalldesktop {
+      width: calc(100% - 280px - 90px);
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin-bottom: 10px;
+
+    @include smartphone {
+      position: absolute;
+      width: 100%;
+      padding: 0 34px;
+      margin-bottom: 0;
+    }
+
+    @include smalldesktop {
+      padding: 0 135px;
+    }
+  }
+
+  &__logo {
+    cursor: pointer;
+    @include hover(transform, scale(1.1));
+  }
+
+  &__menu {
+    display: none;
+
+    @include smalldesktop {
+      display: flex;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: 61px;
+  }
+
+  &__link {
+    color: $grey-2;
+    font-family: $font-family-2;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    cursor: pointer;
+    transition: 0.5s all;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+
+  &__icons {
+    @include hover(transform, scale(1.1));
+    @include smalldesktop {
+      display: none;
+    }
+  }
+
+  &__shop {
+    display: none;
+
+    @include smalldesktop {
+      display: flex;
+      cursor: pointer;
+      @include hover(transform, scale(1.1));
+    }
+  }
+
+  &__photo {
+    margin-bottom: 25px;
+
+    @include smartphone {
+      padding-right: 34px;
+
+      position: absolute;
+      top: 125px;
+      right: -4px;
+      margin-bottom: 0;
+    }
+
+    @include smalldesktop {
+      padding-right: 135px;
+      top: 200px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @include smartphone {
+      width: 306px;
+      height: 306px;
+    }
+
+    @include smalldesktop {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  &__card {
+    padding: 0 30px;
+
+    @include smartphone {
+      padding-left: 34px;
+      padding-right: 0;
+      position: absolute;
+      top: 125px;
+      left: 0;
+    }
+
+    @include smalldesktop {
+      margin-bottom: 20px;
+      padding: 0;
+      top: 200px;
+      left: 128px;
+    }
+  }
+
+  &__block {
+    color: $blue-color;
+    font-family: $font-family;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @include smartphone {
+      color: $blue-color;
+      font-family: $font-family;
+      font-size: 48px;
+      line-height: 64px;
+      letter-spacing: 6px;
+    }
+
+    @include  smalldesktop {
+      font-size: 64px;
+      letter-spacing: 9px;
+    }
+  }
+
+  &__title1 {
+    color: $blue-color;
+    font-family: $font-family;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    @include smartphone {
+      color: $blue-color;
+      font-family: $font-family;
+      font-size: 48px;
+      line-height: 64px;
+      letter-spacing: 6px;
+
+      @include  smalldesktop {
+        font-size: 64px;
+        letter-spacing: 9px;
+      }
+    }
+  }
+
+  &__text {
+    padding: 0 30px;
+    margin-bottom: 20px;
+
+    @include smartphone {
+      padding: 0;
+      position: absolute;
+      top: 365px;
+      left: 185px;
+      margin-bottom: 0;
+    }
+
+    @include smalldesktop {
+      top: 500px;
+      left: 465px;
+    }
+  }
+
+  &__price {
+    color: $tiitle-color;
+    font-family: $font-family-2;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__title {
+    color: $grey-2;
+    font-family: $font-family-2;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    width: 139px;
+  }
+
+  &__btn {
+    padding: 0 30px;
+    position: relative;
+
+    @include smartphone {
+      padding: 0;
+      position: absolute;
+      bottom: -400px;
+      left: 65px;
+    }
+
+    @include smalldesktop {
+      top: 652px;
+      left: 370px;
+    }
+  }
+
+  &__button {
+    width: 260px;
+    height: 48px;
+    border: 1px solid $yellow-color;
+    background: $yellow-color;
+    color: #121212;
+    font-family: $font-family-2;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.5s all;
+
+    &:hover {
+      transform: scale(1.1);
+      border: 2px solid $blue-color;
+    }
+
+    @include smartphone {
+      width: 240px;
+    }
+  }
+
+  &__right {
+    position: absolute;
+    top: 20px;
+    left: 225px;
+
+    @include smartphone {
+      left: 170px;
+    }
+  }
+
+  &__arrow {
+    // position: absolute;
+
+    @include smartphone {
+      position: absolute;
+      bottom: -410px;
+      left: 32px;
+    }
+  }
+
+  &__arrow1 {
+    position: absolute;
+    transform: rotate(90deg);
+
+    bottom: 189px;
+    right: -88px;
+    width: 200px;
+
+    color: $blue-color;
+    font-family: $font-family-2;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include smartphone {
+      width: 150px;
+      top: -53px;
+      right: -69px;
+    }
+
+    @include smalldesktop {
+      left: 29px;
+      top: 60px;
+    }
+  }
+
+  &__down {
+    position: absolute;
+    bottom: 111px;
+    right: 9px;
+    cursor: pointer;
+
+    @include smartphone {
+      top: 25px;
+      right: 12px;
+    }
+
+    @include smalldesktop {
+      top: 140px;
+      left: 90px;
+    }
+  }
+}

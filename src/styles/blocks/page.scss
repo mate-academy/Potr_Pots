@@ -1,0 +1,42 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.page {
+  background-color: $backround-color;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    width: 231px;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__title1 {
+    color: $blue-color;
+
+    &--outline {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0.5px;
+    }
+  }
+}
