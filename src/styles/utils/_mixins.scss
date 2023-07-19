@@ -4,3 +4,20 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat($columns-no, 1fr);
+  column-gap: $column-gap;
+  margin: 0 $margin-lr;
+}
+
+@mixin visually-hidden() {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

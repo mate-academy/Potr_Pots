@@ -1,0 +1,73 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 $margin-lr;
+  align-items: stretch;
+  margin-bottom: 56px;
+
+  &__label {
+    @include visually-hidden;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+    background-color: $yellow-light;
+    margin-bottom: 20px;
+    padding: 0 0 5px 6px;
+    outline: none;
+    line-height: 150%;
+
+    transition-property: border-bottom, color;
+    transition-duration: 0.3s;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    &::placeholder {
+      @include body-font(16px);
+      color: $grey-2;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $turquoise;
+      transition-duration: 0.3s;
+
+    }
+
+    &:valid {
+      color: $turquoise;
+      transition-duration: 0.3s;
+
+    }
+
+    &:invalid {
+      color: $red;
+      transition-duration: 0.3s;
+
+    }
+  }
+
+  &__button {
+    margin: 0;
+    background-color: $turquoise;
+    border: 1px solid $turquoise;
+    color: $grey-light;
+
+    transition-duration: 0.3s;
+    transition-property: border, background-color;
+
+    &:hover {
+      border: rgba(3, 128, 158, 0.40);
+      background-color: rgba(3, 128, 158, 0.40);
+      transition-duration: 0.3s;
+
+    }
+  }
+
+
+}
+
+
