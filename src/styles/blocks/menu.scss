@@ -1,0 +1,61 @@
+.menu {
+  width: 70%;
+  height: 100vh;
+  background-color: $turquoise;
+  right: 0;
+  top: 0;
+  position: absolute;
+  transform: translateX(100%);
+
+  &:target {
+    transform: translateX(0);
+  }
+  &__list {
+    padding-top: 138px;
+    padding-left: 81px;
+    color: $grey-light;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    & > a {
+      text-decoration: none;
+      color: $grey-light;
+    }
+  }
+
+  &__close {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transform: rotate(-90deg);
+    position: absolute;
+    bottom: 60px;
+    right: -40px;
+    cursor: pointer;
+
+
+    &-x {
+      background-image: url('../images/mobile/x.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 12px;
+      height: 12px;
+      margin-right: 18px;
+    }
+
+    &-line {
+      height: 1px;
+      width: 44px;
+      background-color: $grey-light;
+      margin-right: 5px;
+    }
+
+    &-text {
+      text-transform: uppercase;
+      color: $grey-light;
+    }
+
+  }
+}
