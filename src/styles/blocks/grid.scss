@@ -1,0 +1,107 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+
+  @include onTablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+
+  &__buy {
+    grid-template-rows: 186px 126px 133px 118px 1fr;
+
+    @include onTablet {
+      grid-template-rows: 102px 126px 133px 118px 1fr;
+    }
+  }
+  &__header {
+    @include onMobile {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__buyers {
+    grid-template-rows: none;
+  }
+
+  &__item {
+    @for $start from 1 through 2 {
+      @for $end from $start through 2 {
+        &--#{$start}-#{$end}-mobile {
+          grid-column: #{$start}/#{$end + 1};
+        }
+      }
+    }
+
+    @include onTablet {
+      @for $start from 1 through 6 {
+        @for $end from $start through 6 {
+          &--#{$start}-#{$end}-tablet {
+            grid-column: #{$start}/#{$end + 1};
+          }
+        }
+      }
+    }
+
+    @include onDesktop {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--#{$start}-#{$end}-desktop {
+            grid-column: #{$start}/#{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &__row {
+    @for $row from 1 through 5 {
+      @for $end from $row through 5 {
+        @include onTablet {
+          &--#{$row}-#{$end}-tablet {
+            grid-row: #{$row}/#{$end + 1};
+          }
+        }
+
+        @include onDesktop {
+          &--#{$row}-#{$end}-desktop {
+            grid-row: #{$row}/#{$end + 1};
+          }
+        }
+
+        @include onMobile {
+          &--#{$row}-#{$end}-mobile {
+            grid-row: #{$row}/#{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-rows: 100px 122px;
+
+    @include onMobile {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+      grid-template-rows: repeat(1, 1fr);
+    }
+  }
+}
+
+.grid__flex {
+  @include onMobile {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,113 @@
+.header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  &__background {
+    display: none;
+    position: absolute;
+    height: 466px;
+    width: 1035px;
+    right: 28%;
+    background: url(../images/header-background-desktop.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+
+    @include onTablet {
+      display: block;
+      right: 19%;
+    }
+
+    @include onDesktop {
+      display: block;
+      right: 28%;
+    }
+  }
+
+  &__content {
+    padding-top: 20px;
+
+    @include onTablet {
+      padding-top: 27px;
+    }
+  }
+
+  &__logo {
+    color: $black;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 43px;
+    text-decoration: none;
+
+    @include onTablet {
+      letter-spacing: 2px;
+    }
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    min-width: 340px;
+  }
+
+  &__item {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $gray2;
+
+    & svg:hover {
+      width: 40px;
+      height: 40px;
+      transition: 0.3s;
+    }
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: end;
+    height: 100%;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    height: 100%;
+    width: 32px;
+  }
+  &__basket {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

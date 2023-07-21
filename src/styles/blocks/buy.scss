@@ -1,0 +1,218 @@
+.buy {
+
+  &__content {
+    padding-top: 105px;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: end;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    display: flex;
+    position: relative;
+    font-family: "Manrope", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+    letter-spacing: 0;
+    text-align: left;
+
+    &::before {
+      position: absolute;
+      content: url(../images/photos/buy-recangle.png);
+      top: -5px;
+      left: -17px;
+
+    }
+
+    @include onTablet {
+      margin-top: 0;
+
+    }
+
+    @include onMobile {
+      margin: 0;
+      font-size: 32px;
+
+    }
+
+  }
+
+  &__text {
+
+    margin-right: -112px;
+    color: $gray4;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      margin-right: 20px;
+    }
+
+    @include onMobile {
+      margin-bottom: 40px;
+      margin-right: 0;
+
+    }
+
+  }
+
+  &__rectangle {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+
+    & svg {
+      align-items: center;
+    }
+
+    @include onMobile {
+      margin-right: 7px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 87%;
+    height: 48px;
+    cursor: pointer;
+    border: solid 1px $green;
+    background-color: $gray3;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @include onTablet {
+      width: 112%;
+      margin-top: -6px;
+
+      &:after {
+        position: absolute;
+        content: url(../images/line1.svg) " potr pots features";
+        bottom: -101px;
+        right: -190px;
+        width: 70px;
+        height: 300px;
+        writing-mode: vertical-lr;
+        font-size: 12px;
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: $gray4;
+        word-spacing: 3px;
+      }
+
+    }
+
+    @include onMobile {
+      width: 92%;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      background-color: #ffe339;
+      border: none;
+
+    }
+  }
+
+  &__button:hover {
+    color: #fff;
+    background-color: $green;
+  }
+
+  &__arrow-hover {
+    display: none;
+  }
+
+  &__button:hover &__arrow-default {
+    display: none;
+  }
+
+  &__button:hover &__arrow-hover {
+    display: inline;
+  }
+
+  &__legend {
+    margin-right: 10px;
+  }
+
+  &__discount {
+    margin-bottom: 5px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-align: left;
+    color: #eb5757;
+
+    @include onTablet {
+      margin-top: -75px;
+      margin-bottom: -5px;
+      font-size: 24px;
+    }
+
+    @include onMobile {
+      margin: 0 0 10px;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 54px;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  &__offer {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $green;
+    letter-spacing: 0.15em;
+
+    @include onTablet {
+      margin-right: 91px;
+      font-size: 18px;
+    }
+
+    @include onMobile {
+
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+    }
+  }
+}
+
+.grid__buy div:nth-child(2) .buy__subtitle {
+  margin-right: -88px;
+
+  @include onTablet {
+    margin: 0;
+  }
+
+  @include onMobile {
+    margin: 0;
+  }
+}
+
+.grid div:nth-child(2) .buy__rectangle svg {
+  padding-bottom: 54px;
+}
