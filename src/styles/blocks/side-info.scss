@@ -1,10 +1,10 @@
 .side-info {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
   gap: 62px;
   color: $turquoise;
+  cursor: pointer;
 
   &__line {
     background-color: $grey-3;
@@ -13,8 +13,9 @@
   }
 
   &__text {
-    // width: 160px;
     transform: rotate(90deg);
+
+    transition: height 0.3s;
 
      &--grey {
       color: $grey-3;
@@ -23,6 +24,8 @@
       margin-top: 20px;
       text-transform: uppercase;
      }
+
+
   }
 
   &__arrow {
@@ -34,5 +37,17 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    transition: height 0.3s;
+    &:hover {
+      transition: height 0.3s;
+
+      height: 202px;
+    }
+  }
+
+  &:hover &__arrow  {
+    transition: height 0.3s;
+
+    height: 202px;
   }
 }
