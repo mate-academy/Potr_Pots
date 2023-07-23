@@ -18,6 +18,16 @@ document.getElementById('footer-logo')
       .scrollIntoView({ behavior: 'smooth' });
   });
 
+// scroll lock
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#menu') {
+    document.body.classList.add('page--with-menu');
+  } else {
+    document.body.classList.remove('page--with-menu');
+  }
+});
+
+
 // info slidera
 
 // function addClassToVisibleElement() {
@@ -50,8 +60,10 @@ document.getElementById('footer-logo')
 //   return (
 //     rect.top >= 0
 //       && rect.left >= 0
-//       && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-//       && rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+//       && rect.bottom <= (window.innerHeight
+// || document.documentElement.clientHeight)
+//       && rect.right <= (window.innerWidth
+// || document.documentElement.clientWidth)
 //   );
 // }
 
