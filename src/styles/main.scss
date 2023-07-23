@@ -1,16 +1,52 @@
 @import "./utils/reset.scss";
 
+@mixin for-tablet() {
+  @media (min-width: 768px) and (max-width: 1019px) {
+    @content;
+  }
+}
+
 body {
-  margin: 0;
-  display: grid;
-  justify-content: center;
+  margin: 0 auto;
+  width: 320px;
+
+  @include for-tablet() {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    gap: 20px;
+    width: 768px;
+  }
+}
+
+.header {
+  @include for-tablet() {
+    grid-column: span 7;
+    background-image: url(../images/tablet-nav-background.svg);
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 19px;
+  }
+
+  &__image {
+    @include for-tablet() {
+      width: 306px;
+      height: 306px;
+      position: absolute;
+      right: 36px;
+    }
+  }
 }
 
 .navigation {
-  margin: 10px 30px;
+  grid-column: span 7;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include for-tablet() {
+    padding: 10px 36px;
+  }
 
   &__icon {
     width: 32px;
@@ -148,13 +184,33 @@ body {
 .main {
   width: 320px;
 
+  @include for-tablet() {
+    width: 768px;
+  }
+
   &__title {
     letter-spacing: 5.58px;
     margin: 25px 30px;
     color: #03839e;
+    font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @include for-tablet() {
+      position: relative;
+      color: var(--turquoise, #03839E);
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9.92px;
+      text-transform: uppercase;
+      width: 460px;
+      margin: 25px 36px;
+    }
 
     &--border {
-      color: white;
+      color: transparent;
       -webkit-text-stroke: 1px #03839e;
     }
   }
@@ -162,6 +218,11 @@ body {
 
 .offer {
   margin: 30px;
+  position: relative;
+
+  @include for-tablet() {
+    margin: 36px;
+  }
 
   &__title {
     font-family: Manrope, Arial, Helvetica, sans-serif;
@@ -171,6 +232,12 @@ body {
     line-height: normal;
     color: #333;
     display: block;
+
+    @include for-tablet() {
+      position: absolute;
+      top: -43px;
+      left: 32%;
+    }
   }
 
   &__paragraph {
@@ -183,6 +250,11 @@ body {
     line-height: 150%;
     margin-top: 1px;
     margin-bottom: 20px;
+
+    @include for-tablet() {
+      margin-left: 205px;
+      margin-bottom: 50px;
+    }
   }
 
   &__button {
@@ -198,14 +270,54 @@ body {
     line-height: 150%;
     text-transform: uppercase;
 
+    @include for-tablet() {
+      margin-left: 154px;
+      width: 240px;
+    }
+
     &--image {
       padding-left: 24px;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    transform: rotate(90deg);
+    right: -85px;
+    top: 19px;
+
+    @include for-tablet() {
+      top: 46px;
+      left: -58px;
+      right: unset;
+    }
+
+    &--text {
+      color: #03839E;
+      font-family: Manrope, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 18px */
+    }
+
+    &--image {
+      transform: rotate(-90deg);
+      margin-left: 28px;
+      position: absolute;
+      top: -13px;
+      left: 128px;
     }
   }
 }
 
 .section {
   margin: 110px 30px;
+  position: relative;
+
+  @include for-tablet() {
+    margin: 110px 36px;
+  }
 
   &__title {
     font-family: Bebas Neue, Arial, Helvetica, sans-serif;
@@ -246,6 +358,14 @@ body {
     position: absolute;
     z-index: -1;
   }
+
+  &__wrapper {
+    @include for-tablet() {
+      grid-template-columns: repeat(3, 220px);
+      display: grid;
+      gap: 20px;
+    }
+  }
 }
 
 .article {
@@ -253,6 +373,10 @@ body {
 
   &:not(:first-of-type) {
     margin-top: 70px;
+
+    @include for-tablet() {
+      margin-top: 0;
+    }
   }
 
   &__title {
@@ -266,6 +390,19 @@ body {
     display: flex;
     gap: 9px;
 
+    @include for-tablet() {
+      position: absolute;
+      left: -17%;
+    }
+
+    &--2 {
+      @include for-tablet() {
+        position: unset;
+        left: unset;
+        padding-top: 50px;
+      }
+    }
+
     &--slash {
       display: inline-block;
       width: 1px;
@@ -273,6 +410,17 @@ body {
       transform: rotate(22deg);
       background-color: #000;
       margin-left: 9px;
+    }
+
+    &--slash-hidden {
+      display: none;
+
+      @include for-tablet() {
+        display: block;
+        position: absolute;
+        bottom: 7px;
+        left: 117px;
+      }
     }
   }
 
@@ -285,6 +433,10 @@ body {
     line-height: 150%; /* 54px */
     letter-spacing: 5.58px;
     text-transform: uppercase;
+
+    @include for-tablet() {
+      position: relative;
+    }
   }
 
   &__tertiary-title {
@@ -309,6 +461,10 @@ body {
     line-height: 150%; /* 24px */
     margin-top: 12px;
 
+    @include for-tablet() {
+      position: relative;
+    }
+
     &--middle {
       text-align: center;
     }
@@ -328,6 +484,36 @@ body {
       letter-spacing: 3.72px;
       text-transform: uppercase;
     }
+
+    &--hidden {
+      display: none;
+      color: #333;
+
+      @include for-tablet() {
+        display: block;
+        margin: 0 0 25px 0;
+      }
+    }
+
+    &--hidden-2 {
+      display: none;
+      color: #333;
+
+      @include for-tablet() {
+        display: block;
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &--hidden-star {
+      @include for-tablet() {
+        position: absolute;
+        font-size: 24px;
+        left: -17px;
+        top: 2px;
+      }
+    }
   }
 
   &__image {
@@ -338,6 +524,32 @@ body {
   &__button {
     margin-top: 50px;
     margin-bottom: 40px;
+  }
+
+  &__more {
+    display: flex;
+    align-items: center;
+    transform: rotate(90deg);
+    position: absolute;
+    right: -85px;
+    bottom: 60px;
+
+    &--line {
+      height: 1px;
+      width: 65px;
+      background: #828282;
+      margin-right: 9px;
+    }
+
+    &--text {
+      color: var(--gray-3, #828282);
+      font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 2.64px;
+    }
   }
 }
 
@@ -651,4 +863,37 @@ body {
   display: flex;
   justify-content: space-between;
   padding-bottom: 32px;
+}
+
+.for-whom {
+  &__article {
+    @include for-tablet() {
+      display: flex;
+      gap: 76px;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 70px;
+
+      @include for-tablet() {
+        margin-top: 110px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include for-tablet() {
+      display: block;
+    }
+  }
+}
+
+.feature {
+  &__image {
+    @include for-tablet() {
+      width: 220px;
+    }
+  };
 }
