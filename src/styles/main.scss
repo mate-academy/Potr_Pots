@@ -560,6 +560,20 @@ body {
 
   &__paragraph {
     padding: 0 30px;
+
+    @include for-tablet() {
+      top: 193px;
+      position: absolute;
+      width: 357px;
+    }
+
+    &--2 {
+      @include for-tablet() {
+        top: 360px;
+        position: absolute;
+        width: 310px;
+      }
+    }
   }
 
   &__article {
@@ -567,6 +581,50 @@ body {
     background-repeat: no-repeat;
     background-position: 0 417px;
     padding-bottom: 70px;
+
+    @include for-tablet() {
+      height: 500px;
+      background-position: -59px 82px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__name {
+    &--hidden {
+      display: none;
+
+      @include for-tablet() {
+        display: block;
+        font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+        font-size: 231.884px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 35.942px;
+        color: transparent;
+        -webkit-text-stroke: 1px #03839e;
+      }
+    }
+
+    &--hidden1 {
+      position: absolute;
+      left: -40px;
+    }
+
+    &--hidden2 {
+      position: absolute;
+      bottom: -160px;
+      right: 0;
+    }
+  }
+
+  &__image {
+    @include for-tablet() {
+      width: 340px;
+      margin-top: 155px;
+      float: right;
+      margin-right: 36px;
+    }
   }
 }
 
@@ -579,8 +637,29 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 
+  @include for-tablet() {
+    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 5.93%), url(../images/materials-background.jpg);
+    background-position-y: 177px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 754px;
+  }
+
   &__title {
     margin: 0 30px;
+
+    @include for-tablet() {
+      font-size: 80px;
+    }
+
+    &--small {
+      color: #4f4f4f;
+      font-family: Manrope, Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 30px */
+    }
   }
 
   &__article {
@@ -602,6 +681,16 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 24px */
+
+    &--hidden {
+      color: #4f4f4f;
+      line-height: 150%;
+      padding: 10px 0 0;
+    }
+
+    &--strong {
+      font-weight: 700;
+    }
   }
 
   &__slide {
@@ -630,6 +719,21 @@ body {
     &--black {
       background-color: #4f4f4f;
       border: 1px solid #f8f8f8;
+    }
+  }
+
+  &__info {
+    display: none;
+
+    @include for-tablet() {
+      display: block;
+      position: absolute;
+      right: 33px;
+      top: 95px;
+    }
+
+    &--hidden {
+      width: 320px;
     }
   }
 }
