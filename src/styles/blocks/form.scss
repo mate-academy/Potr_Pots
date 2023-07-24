@@ -1,0 +1,92 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 $margin-lr;
+  align-items: stretch;
+  margin-bottom: 56px;
+  overflow-y: hidden;
+
+  &__label {
+    @include visually-hidden;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+    background-color: $yellow-light;
+    margin-bottom: 20px;
+    padding: 0 0 5px 6px;
+    outline: none;
+    line-height: 150%;
+
+    transition-property: border-bottom, color;
+    transition-duration: 0.3s;
+
+    &:hover {
+      border-bottom: 1px solid black;
+      &::placeholder {
+        color: black;
+      }
+    }
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    &::placeholder {
+      @include body-font(16px);
+      color: $grey-2;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $turquoise;
+      transition-duration: 0.3s;
+
+    }
+
+    &:valid {
+      color: $turquoise;
+      transition-duration: 0.3s;
+
+    }
+
+    &:invalid {
+      color: $red;
+      transition-duration: 0.3s;
+
+    }
+  }
+
+  &__button {
+    margin: 0;
+    background-color: $turquoise;
+    border: 1px solid $turquoise;
+    color: $grey-light;
+
+    transition-duration: 0.3s;
+    transition-property: border, background-color;
+
+    &:hover {
+      border: rgba(3, 128, 158, 0.40);
+      background-color: rgba(3, 128, 158, 0.40);
+      transition-duration: 0.3s;
+
+    }
+  }
+
+
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid green;
+  -webkit-text-fill-color: green;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

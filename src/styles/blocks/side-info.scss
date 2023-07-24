@@ -1,0 +1,53 @@
+.side-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 62px;
+  color: $turquoise;
+  cursor: pointer;
+
+  &__line {
+    background-color: $grey-3;
+    height: 65px;
+    width: 1px;
+  }
+
+  &__text {
+    transform: rotate(90deg);
+
+    transition: height 0.3s;
+
+     &--grey {
+      color: $grey-3;
+      width: 160px;
+      transform: rotate(90deg);
+      margin-top: 20px;
+      text-transform: uppercase;
+     }
+
+
+  }
+
+  &__arrow {
+    background-image: url('../images/mobile/icons/Arrow.svg');
+    z-index: 2;
+    width: 12px;
+    height: 50px;
+    // transform: rotate(-90deg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: height 0.3s;
+    &:hover {
+      transition: height 0.3s;
+
+      height: 202px;
+    }
+  }
+
+  &:hover &__arrow  {
+    transition: height 0.3s;
+
+    height: 202px;
+  }
+}

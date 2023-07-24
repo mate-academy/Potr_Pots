@@ -1,0 +1,102 @@
+@import '../utils/variables';
+// Variables
+$base-font-size: 16px;
+$heading-font-family: 'Bebas';
+$heading-font-weight: 400;
+$body-font-family: 'Manrope';
+$paragraph-line-height: 150%;
+
+// Mixins
+@mixin heading-font($size) {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  line-height: $paragraph-line-height;
+  font-size: $size;
+}
+
+@mixin body-font($size) {
+  font-family: $body-font-family;
+  line-height: $paragraph-line-height;
+  font-size: $size;
+  font-weight: 400;
+}
+
+// Typography styles
+
+title {
+  @include heading-font(64px);
+  letter-spacing: 9.92px;
+  line-height: 64px;
+  text-transform: uppercase;
+}
+h1 {
+  @include heading-font(58px);
+  letter-spacing: 8.99px;
+  text-transform: uppercase;
+
+}
+
+h2 {
+  @include heading-font(36px);
+  letter-spacing: 5.58px;
+  text-transform: uppercase;
+}
+
+h3 {
+  @include heading-font(24px);
+  line-height: 24px;
+  letter-spacing: 3.72px;
+  text-transform: uppercase;
+}
+
+h4 {
+  @include heading-font(18px);
+  line-height: 130%;
+  letter-spacing: 2.79px;
+  text-transform: uppercase;
+
+}
+
+.s1 {
+  @include body-font(36px);
+  font-weight: 700;
+}
+
+.s1-mob {
+  @include body-font(32px);
+  font-weight: 700;
+}
+
+.s2 {
+  @include body-font(24px);
+}
+
+.s3 {
+  @include body-font(16px);
+}
+
+.s4 {
+  @include body-font(14px);
+  font-weight: 700;
+}
+
+.s5 {
+  @include body-font(12px);
+}
+
+.button {
+  @include body-font(14px);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+.text {
+
+  -webkit-text-stroke: $turquoise 1px;
+  -webkit-text-fill-color: $turquoise;
+
+  &--empty {
+    -webkit-text-fill-color: transparent;
+  }
+  }
