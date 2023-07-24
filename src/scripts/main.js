@@ -27,47 +27,67 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-
 // info slidera
 
-// function addClassToVisibleElement() {
-//   const boxes = document.querySelectorAll('[id*="box"]');
-//   const checkedDots = document
-//     .getElementsByClassName('materials__dots--checked');
+function addClassToVisibleElement() {
+  const boxes = document.querySelectorAll('[id*="box"]');
+  const checkedDots = document
+    .getElementById('checked');
 
-//   boxes.forEach((box) => {
-//     const id = box.getAttribute('id');
-//     const number = id.match(/\d+/); // Pobieramy cyfrę z id
+  boxes.forEach((box) => {
+    const id = box.getAttribute('id');
+    const number = id.match(/\d+/); // Pobieramy cyfrę z id
 
-//     if (number) {
-//       const className
-//       = `materials__dots--checked_${number[0]}`; // Tworzymy klasę z cyfrą
+    if (number) {
+      const className
+      = `materials__dots--checked_${number[0]}`; // Tworzymy klasę z cyfrą
 
-//       if (isVisibleOnScreen(box)) {
-//         checkedDots.classList.add(className); // Dodajemy klasę do elementu
-//       } else {
-//         checkedDots.classList
-//           .remove(className); // Usuwamy klasę z elementu,
-//         // jeśli nie jest widoczny
-//       }
-//     }
-//   });
-// }
+      if (isVisibleOnScreen(box)) {
+        checkedDots.classList
+          .remove('materials__dots--checked_1');
 
-// function isVisibleOnScreen(element) {
-//   const rect = element.getBoundingClientRect();
+        checkedDots.classList
+          .remove('materials__dots--checked_2');
 
-//   return (
-//     rect.top >= 0
-//       && rect.left >= 0
-//       && rect.bottom <= (window.innerHeight
-// || document.documentElement.clientHeight)
-//       && rect.right <= (window.innerWidth
-// || document.documentElement.clientWidth)
-//   );
-// }
+        checkedDots.classList
+          .remove('materials__dots--checked_3');
 
-// // Wywołujemy funkcję po załadowaniu strony
-// window.onload = addClassToVisibleElement;
-// // Wywołujemy funkcję także po przewinięciu strony
-// window.addEventListener('scroll', addClassToVisibleElement);
+        checkedDots.classList
+          .remove('materials__dots--checked_4');
+
+        checkedDots.classList
+          .remove('materials__dots--checked_5');
+
+        checkedDots.classList.add(className);
+      }
+      // } else {
+      //   checkedDots.classList
+      //     .remove(className); // Usuwamy klasę z elementu,
+      //   // jeśli nie jest widoczny
+      // }
+    }
+  });
+}
+
+function isVisibleOnScreen(element) {
+  const rect = element.getBoundingClientRect();
+
+  return (
+    rect.top >= 0
+      && rect.left >= 0
+      && rect.bottom <= (window.innerHeight
+|| document.documentElement.clientHeight)
+      && rect.right <= (window.innerWidth
+|| document.documentElement.clientWidth)
+  );
+}
+
+// Wywołujemy funkcję po załadowaniu strony
+window.onload = addClassToVisibleElement;
+
+// Wywołujemy funkcję także po przewinięciu strony
+window.addEventListener('scroll', addClassToVisibleElement);
+
+// Wywołujemy funkcję także po przewinięciu slidera
+document.getElementById('slider')
+  .addEventListener('scroll', addClassToVisibleElement);
