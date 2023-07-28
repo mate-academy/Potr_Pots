@@ -1,0 +1,60 @@
+.potr-size {
+  &__main-title {
+    @include contentPaddingInLineForDevices;
+
+    margin-bottom: 20px;
+
+    line-height: 150%;
+  }
+
+  &__main-text {
+    @include contentPaddingInLineForDevices;
+
+    margin-bottom: 30px;
+
+    font-size: 16px;
+    line-height: 150%;
+    color: $text-color;
+  }
+
+  &__img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  &__descr {
+    @include contentPaddingInLineForDevices;
+
+    display: grid;
+    row-gap: 40px;
+
+    margin-bottom: 15px;
+  }
+
+  &__descr-title {
+    margin-bottom: 10px;
+  }
+
+  &__descr-text {
+    color: $text-color;
+  }
+
+  &__explains-text {
+    @include contentPaddingInLineForDevices;
+
+    display: flex;
+    position: relative;
+
+    color: $text-color;
+    font-size: 16px;
+
+    &::before {
+      content: "*";
+
+      position: absolute;
+
+      left: 20px;
+      // top: 0;
+    }
+  }
+}
