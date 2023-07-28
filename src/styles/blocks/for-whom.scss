@@ -1,0 +1,93 @@
+.for-whom {
+  &__container {
+    @include contentPaddingInLineForDevices;
+    position: relative;
+    // @include pageGrid;
+    // display: grid;
+    // row-gap: 25px;
+  }
+
+  &__primary-title {
+    margin-bottom: 25px;
+
+    line-height: 150%;
+    color: $title-color;
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 70px;
+  }
+
+  &__number-box {
+    display: flex;
+    height: 47px;
+    margin-bottom: 30px;
+
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 1px;
+      height: 50px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateX(9px);
+
+      rotate: 22deg;
+      background-color: $title-color;
+    }
+  }
+
+  &__title-number {
+    line-height: 208%;
+    padding-left: 19px;
+  }
+
+  &__title-text {
+    margin-bottom: 20px;
+    line-height: 150%;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: $text-color;
+  }
+
+  &__side-text-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: 5px;
+
+    display: flex;
+    gap: 9px;
+    rotate: 90deg;
+    transform-origin: right;
+    transform: translate(8px, 50%);
+  }
+
+  &__side-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2.64px;
+    color: #828282;
+
+    &::before {
+      position: absolute;
+
+      content: "";
+
+      width: 65px;
+      margin-right: 10px;
+      right: 100%;
+      border-bottom: 1px solid #828282;
+    }
+  }
+}
