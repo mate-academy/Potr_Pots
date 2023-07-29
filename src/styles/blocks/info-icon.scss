@@ -1,0 +1,90 @@
+.info-icon {
+  display: block;
+  height: 51px;
+  width: 51px;
+  border-radius: 50%;
+  background-color: $red;
+  transition: all $duration;
+
+  &::after {
+    content: "\002B";
+    display: block;
+    position: absolute;
+    color: $grayLight;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    background-color: #242323BF;
+
+    &::after {
+      content: "\002D";
+    }
+  }
+
+  &__text-box {
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 283px;
+    padding: 35px;
+    color: $grayLight;
+    background-color: #00000066;
+    backdrop-filter: blur(17px);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $duration;
+
+    &--1 {
+      left: -80%;
+      bottom: 130%;
+
+      @include onDesktop {
+        left: -240%;
+        bottom: 150%;
+      }
+    }
+
+    &--2 {
+      right: -230%;
+      bottom: 145%;
+
+      @include onDesktop {
+        left: -510%;
+        bottom: 150%;
+      }
+    }
+
+    &--3 {
+      left: -230%;
+      bottom: 145%;
+
+      @include onDesktop {
+        left: -580%;
+        bottom: -170%;
+      }
+    }
+
+    &--4 {
+      left: -190%;
+      bottom: 145%;
+
+      @include onDesktop {
+        left: -220%;
+        bottom: 190%;
+      }
+    }
+
+    &--5 {
+      left: -230%;
+      top: 120%;
+    }
+  }
+
+  &:hover &__text-box {
+    opacity: 1;
+  }
+}

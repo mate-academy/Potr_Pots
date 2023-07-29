@@ -1,0 +1,157 @@
+.materials {
+  background-image: url(../images/tablet/materials-&-features.png);
+  background-repeat: no-repeat;
+  background-position-y: 140px;
+  background-size: contain;
+
+
+  @include onTablet {
+    background-image: none;
+  }
+
+  &__content {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__top {
+    position: relative;
+  }
+
+  &__bookmark {
+    display: none;
+    transform: rotate(90deg);
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop{
+      display: none;
+    }
+
+    &--top {
+      transform-origin: right center;
+      top: 131px;
+      right: -15px;
+    }
+
+    &--bottom {
+      z-index: 2;
+      transform-origin: left;
+      bottom: 50px;
+      left: -17px;
+    }
+  }
+
+  &__title {
+    font-size: 80px;
+    line-height: 120%;
+    letter-spacing: 0.12em;
+    -webkit-text-stroke: .85px $turquoise;
+    margin: 0 0 -44px;
+
+    @include onDesktop {
+      font-size: 139px;
+      margin-bottom: -152px;
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include onDesktop {
+      margin-bottom: -200px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+  }
+
+  &__text {
+    margin: 0;
+    max-height: 72px;
+    overflow: hidden;
+
+    &--bold {
+      font-weight: 700;
+    }
+
+    @include onDesktop {
+      max-height: none;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+
+    @include onDesktop {
+      position: relative;
+      z-index: -1;
+    }
+  }
+
+  &__info-icon {
+    position: absolute;
+
+    &--1 {
+      left: 11%;
+      bottom: 18%;
+
+      @include onDesktop {
+        left: 18%;
+        bottom: 15%;
+      }
+    }
+
+    &--2 {
+      left: 30%;
+      bottom: 40%;
+
+      @include onDesktop {
+        left: 38%;
+        bottom: 37%;
+      }
+    }
+
+    &--3 {
+      left: 44%;
+      bottom: 14%;
+
+      @include onDesktop {
+        left: 48%;
+        bottom: 10%;
+      }
+    }
+
+    &--4 {
+      left: 54%;
+      bottom: 25%;
+
+      @include onDesktop {
+        left: 58.2%;
+        bottom: 25%;
+      }
+    }
+
+    &--5 {
+      left: 73%;
+      bottom: 57%;
+
+      @include onDesktop {
+        left: 77%;
+        bottom: 35%;
+      }
+    }
+  }
+}

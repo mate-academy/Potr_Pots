@@ -1,0 +1,38 @@
+.contacts {
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  &__info-title {
+    @include s2;
+    color: #00000063;
+  }
+
+  &__info-link {
+    position: relative;
+    width: fit-content;
+
+    --text-color-main: #000;
+    --text-color-hover: #{$red};
+    @include textEffect;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid $red;
+      bottom: -8px;
+
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform $duration;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

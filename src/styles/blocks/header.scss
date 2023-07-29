@@ -1,0 +1,67 @@
+.header {
+  padding-top: 16px;
+
+  @include onTablet {
+    padding-top: 24px;
+
+    background-image: url(../images/tablet/header-rectangle.png);
+    background-repeat: no-repeat;
+    background-size: 80vw;
+    background-position: top left;
+  }
+
+  @include onDesktop {
+    padding-top: 12px;
+
+    background-image: url(../images/desktop/rectangle.png);
+    background-repeat: no-repeat;
+    background-size: 72vw;
+    background-position: top left;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    width: 100%;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__top-bar {
+    @include onTablet {
+      margin-bottom: 48px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__mob-bg {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__mob-bg-img {
+    width: 100%;
+  }
+
+  &__show-more {
+    right: -15px;
+    bottom: -6px;
+
+    @include onTablet {
+      right: auto;
+      left: 4px;
+      bottom: 124px;
+    }
+
+    @include onDesktop {
+      bottom: 176px;
+    }
+  }
+}

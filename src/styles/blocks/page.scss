@@ -1,0 +1,51 @@
+.page {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+  color: $gray-2;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    background-color: $grayLight;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin-bottom: 116px;
+
+    @include onTablet {
+      margin-bottom: 100px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 148px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateX(100%);
+    transition: opacity $duration, transform $duration;
+
+    &:target {
+      z-index: 2;
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+.menu {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+
+  height: 100vh;
+  width: 72%;
+  padding: 140px 30px 80px 80px;
+  background-color: $turquoise;
+
+  &__list {
+    display: grid;
+    row-gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    color: $grayLight;
+    transition: color $duration;
+
+    &:active {
+    color: $red;
+  }
+
+    &--basket {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 14px;
+        width: 14px;
+        background-image: url(../images/icons/attachment-to-basket.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: translateX(50%);
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 18px;
+    transform-origin: right;
+    transform: rotate(-90deg);
+    right: 34px;
+    bottom: 172px;
+
+    &--text {
+      @include s5;
+      text-transform: uppercase;
+      color: $grayLight;
+      padding-left: 4px;
+      transition: color $duration;
+    }
+
+    &--line {
+      height: 1px;
+      width: 44px;
+      background-color: $grayLight;
+      transition: background-color $duration;
+    }
+
+    &--cross {
+      display: flex;
+      padding-right: 18px;
+      transition: color $duration;
+    }
+
+    &--cross svg {
+      color: $grayLight;
+    }
+
+    &:active &--text {
+      color: $red;
+    }
+
+    &:active &--line {
+      background-color: $red;
+    }
+
+    &:active &--cross svg {
+      color: $red;
+    }
+  }
+}
