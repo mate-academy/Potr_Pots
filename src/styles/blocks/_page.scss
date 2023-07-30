@@ -32,4 +32,20 @@
     }
     animation: slideDown 2s forwards;
   }
+
+  &__menu {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+    transition: all .3s;
+    transform: translateX(100%);
+
+    &:target {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(0);
+    }
+  }
 }

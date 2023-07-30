@@ -18,6 +18,7 @@
 
   text-decoration: none;
   text-transform: uppercase;
+  transition: all .3s;
 
 
 
@@ -28,15 +29,20 @@
   }
 
   &:hover {
+    transform: scale(1.2);
     background-color: $colorYellowLight;
-    border: $colorYellowLight;
-    transform: translateY(scale 1.2);
+    border-color: $colorYellowLight;
   }
 
   &::after {
+    display: block;
+    width: 27px;
+    height: 8px;
+    position: absolute;
     content: "";
     transform: translateY(-50%);
+    right: 72px;
+    top: 50%;
+
   }
-
-
 }
