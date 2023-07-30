@@ -12,15 +12,33 @@
 
 @mixin contentPaddingInline {
   margin: 0 auto;
-  max-width: 1170px;
+  max-width: 320px;
   padding-inline: 30px;
 
   @include onTablet {
+    max-width: 768px;
     padding-inline: 34px;
   }
 
   @include onDesktop {
-    padding: 0;
+    max-width: 1440px;
+    padding-inline: 133px;
+  }
+}
+
+@mixin pageGrid {
+  display: grid;
+  --columns: 2;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: 20px;
+
+  @include onTablet {
+    --columns: 6;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+    column-gap: 30px;
   }
 }
 

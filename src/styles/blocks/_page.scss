@@ -1,11 +1,12 @@
 * {
   box-sizing: border-box;
+  font-weight: 400;
+
 }
 
 .page {
   scroll-behavior: smooth;
   font-family: "Manrope", sans-serif;
-  font-weight: 400;
   font-size: 14px;
   line-height: 150%;
   color: $colorGrayMainText;
@@ -13,5 +14,22 @@
   &__body {
     margin: 0;
     padding: 0;
+    border: 0;
+    font: inherit;
+  }
+
+  &__header {
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: tarslateY(-25%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    animation: slideDown 2s forwards;
   }
 }
