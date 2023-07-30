@@ -25,6 +25,10 @@
     color: $gray-light;
     background-color: $blue-title-color;
     line-height: 150%;
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.7);
+    }
   }
 }
 
@@ -39,10 +43,20 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     outline: none;
 
+    background-color: transparent;
     color: $text-color;
     font-size: 16px;
     font-family: "Manrope", sans-serif;
     line-height: 150%;
+
+    &:focus {
+      border-bottom: 1px solid $blue-title-color;
+    }
+
+    // &:invalid {
+    //   color: #eb5757;
+    //   border-bottom: 1px solid #eb5757;
+    // }
 
     &--text-area {
       margin-bottom: 30px;
@@ -51,4 +65,9 @@
       overflow: hidden;
     }
   }
+}
+
+.invalid {
+  color: #eb5757;
+  border-bottom: 1px solid #eb5757;
 }
