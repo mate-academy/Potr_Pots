@@ -61,4 +61,4 @@ function handleTouchMove(event) {
   }
 
   x1 = null;
-}
+};
