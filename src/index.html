@@ -1,13 +1,997 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
+
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
     <link rel="stylesheet" href="./styles/main.scss">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"> -->
+    <link
+      rel="shortcut icon"
+      href="./images/favicon/favicon.ico"
+      type="image/x-icon"
+    >
+    <title>POTR POTS</title>
   </head>
-  <body>
-    <h1>Hello Mate Academy</h1>
+
+  <body id="page-body" class="page__body">
+    <div class="page__wrapper">
+      <header class="page__header header">
+        <div class="header__wrapper">
+          <div class="header__container">
+            <div class="header__body">
+              <div class="header__logo">
+                <a href="#home" class="logo">
+                  POTR POTS
+                </a>
+              </div>
+              <div class="header__menu menu">
+                <nav class="menu__body">
+                  <ul class="menu__list">
+                    <li class="menu__item menu__item--basket">
+                      <a
+                        data-target="shopping-bag"
+                        href="#!"
+                        class="menu__link modal-open"
+                      >
+                        Basket
+                      </a>
+                      <span>0</span>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#features" class="menu__link">Features</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#potr-team" class="menu__link">About us</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#materials" class="menu__link">Materials</a>
+                    </li>
+                    <li class="menu__item">
+                      <a href="#questions" class="menu__link">Message us</a>
+                    </li>
+                  </ul>
+                  <button type="button" class="icon-close">
+                    <span class="icon-close__cross _icon-cross"></span>
+                    <span class="icon-close__text">Close</span>
+                  </button>
+                </nav>
+              </div>
+              <div class="header__basket-wrapper">
+                <button
+                  data-target="shopping-bag"
+                  type="button"
+                  class="header__basket _icon-basket"
+                ></button>
+              </div>
+              <button
+                type="button"
+                class="icon-menu"
+              >
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page__main">
+        <div data-modal="shopping-bag" class="shopping-bag">
+          <div class="shopping-bag__wrapper">
+            <div data-content="body" class="shopping-bag__body">
+              <div class="shopping-bag__top">
+                <h2 class="shopping-bag__title modal-title">Shopping bag</h2>
+                <button type="button" class="shopping-bag__button-close modal-close"></button>
+              </div>
+              <div class="shopping-bag__content">
+                <div class="shopping-bag__table-header table-header">
+                  <div class="table-header__lable table-header__lable--items">Item</div>
+                  <div class="table-header__lable table-header__lable--quantity">Quantity</div>
+                  <div class="table-header__lable table-header__lable--price-currency">Unit price</div>
+                  <div class="table-header__lable table-header__lable--price-total">Total price</div>
+                </div>
+
+                <div class="shopping-bag__row product">
+                  <div class="product__info">
+                    <div class="product__image product__image--ibg">
+                      <img src="./images/shopping-bag/01.png" alt="Product photo">
+                    </div>
+                    <div data-da=".info-and-quantity, 767.98, 0" class="product__name">Large POTR Pot</div>
+                  </div>
+                  <div data-da=".info-and-quantity--l, 767.98, 1" class="product__counter">
+                    <button
+                      type="button"
+                      class="product__control product__control--minus"
+                      data-action="minus"
+                   ></button>
+                    <div class="product__current" data-counter="0">
+                      <span>1</span><span class="product__current-text">ORDER</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="product__control product__control--plus"
+                      data-action="plus"
+                   ></button>
+                  </div>
+                  <div
+                    data-da=".unit-price-mob--l, 767.98, 1"
+                    class="product__price-unit"
+                  >
+                    $ <span>7,50</span>
+                  </div>
+                  <div
+                    data-da=".total-price-mob--l, 767.98, 1"
+                    class="product__price-total"
+                  >
+                    $ <span>7,50</span>
+                  </div>
+                  <button type="button" class="product__reset"></button>
+                </div>
+
+                <div class="shopping-bag__row product">
+                  <div class="product__info">
+                    <div class="product__image product__image--ibg">
+                      <img src="./images/shopping-bag/02.png" alt="Product photo">
+                    </div>
+                    <div data-da=".info-and-quantity--s, 767.98, 0" class="product__name">Small POTR Pot</div>
+                  </div>
+                  <div data-da=".info-and-quantity--s, 767.98, 1" class="product__counter">
+                    <button
+                      type="button"
+                      class="product__control product__control--minus"
+                      data-action="minus"
+                   ></button>
+                    <div class="product__current" data-counter="0">
+                      <span>0</span> <span class="product__current-text">ORDER</span>
+                    </div>
+                    <button
+                      type="button"
+                      class="product__control product__control--plus"
+                      data-action="plus"
+                   ></button>
+                  </div>
+                  <div
+                    data-da=".unit-price-mob--s, 767.98, 1"
+                    class="product__price-unit"
+                  >
+                    $ <span>0.00</span>
+                  </div>
+                  <div
+                    data-da=".total-price-mob--s, 767.98, 1"
+                    class="product__price-total"
+                  >
+                    $ <span>0.00</span>
+                  </div>
+                  <button type="button" class="product__reset"></button>
+                </div>
+
+                <div class="shopping-bag__row-mobile product-mobile">
+                  <div class="product-mobile__row info-and-quantity info-and-quantity--l"></div>
+                  <div class="product-mobile__row unit-price-mob unit-price-mob--l">Unit price</div>
+                  <div class="product-mobile__row total-price-mob total-price-mob--l">Total price</div>
+                </div>
+
+                <div class="shopping-bag__row-mobile product-mobile">
+                  <div class="product-mobile__row info-and-quantity info-and-quantity--s"></div>
+                  <div class="product-mobile__row unit-price-mob unit-price-mob--s">Unit price</div>
+                  <div class="product-mobile__row total-price-mob total-price-mob--s">Total price</div>
+                </div>
+
+                <div class="shopping-bag__bottom">
+                  <div class="shopping-bag__amount amount-shopping">
+                    <div class="amount-shopping__lable">Total</div>
+                    <div class="amount-shopping__price">$ <span>7,50</span></div>
+                  </div>
+                  <div class="shopping-bag__wrapper-button">
+                    <button
+                      data-target="order"
+                      type="button"
+                      class="shopping-bag__button-checkout button button--checkout"
+                    >
+                      checkout
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-modal="order" class="order">
+          <div data-content="wrapper" class="order__wrapper">
+            <div class="order__body">
+              <div class="order__header">
+                <h2 class="order__title modal-title">Shopping bag</h2>
+                <button type="button" class="order__button-close modal-close"></button>
+              </div>
+              <form
+                class="form form--order"
+                action="#"
+                novalidate
+              >
+                <fieldset class="form__fields form__fields--address">
+                  <h3 class="form__step-name form__step-name--1">
+                    <span class="circle circle--1"></span>
+                    Provide your address
+                  </h3>
+                  <div class="form__item">
+                    <input
+                      id="firstname"
+                      class="form__input"
+                      type="text"
+                      name="first-name"
+                      autocomplete="off"
+                      data-error="Please, fill your name*"
+                      data-placeholder="First name*"
+                      required
+                    >
+                    <label class="form__label" for="firstname"></label>
+                  </div>
+                  <div class="form__item">
+                    <input
+                      id="lastname"
+                      class="form__input"
+                      type="text"
+                      name="last-name"
+                      autocomplete="off"
+                      data-error="Please, fill your last name*"
+                      data-placeholder="Last Name*"
+                      required
+                    >
+                    <label class="form__label" for="lastname"></label>
+                  </div>
+                  <div class="form__item form__item--email">
+                    <input
+                      id="email"
+                      class="form__input form__input--email"
+                      type="email"
+                      name="email"
+                      autocomplete="on"
+                      data-error="Incorrect email format*"
+                      data-placeholder="Email*"
+                      required
+                    >
+                    <label class="form__label" for="email"></label>
+                  </div>
+                  <div class="form__item">
+                    <input
+                      id="street"
+                      class="form__input"
+                      type="text"
+                      name="street"
+                      autocomplete="off"
+                      data-error="Please, fill in name of the street*"
+                      data-placeholder="Street*"
+                      required
+                    >
+                    <label class="form__label" for="street"></label>
+                  </div>
+                  <div class="form__item">
+                    <input
+                      id="сity"
+                      class="form__input"
+                      type="text"
+                      name="сity"
+                      autocomplete="off"
+                      data-error="Please, fill in name of the сity*"
+                      data-placeholder="City*"
+                      required
+                    >
+                    <label class="form__label" for="сity"></label>
+                  </div>
+                  <div class="form__item">
+                    <input
+                      id="house-number"
+                      class="form__input"
+                      type="number"
+                      name="house-number"
+                      data-error="Please, fill your house number*"
+                      data-placeholder="House number*"
+                      required
+                    >
+                    <label class="form__label" for="house-number"></label>
+                  </div>
+                  <select
+                    class="select"
+                    name="form[]"
+                    data-class-modif="country"
+                    data-scroll="200"
+                  >
+                    <option value="1" selected>Ukraine</option>
+                    <option value="2">France</option>
+                    <option value="3">Spain</option>
+                    <option value="4">United States</option>
+                    <option value="5">China</option>
+                    <option value="6">Italy</option>
+                    <option value="7">Turkey</option>
+                    <option value="8">Poland</option>
+                  </select>
+                </fieldset>
+
+                <fieldset class="form__fields">
+                  <h3 class="form__step-name form__step-name--2">
+                    <span class="circle circle--2"></span>
+                    Select a payment method
+                  </h3>
+                  <label class="form__payment-method">
+                    <input
+                      type="radio"
+                      name="method"
+                      value="credit-cards"
+                      class="form__credit-cards"
+                    >
+                    <span class="form__custom-radio"></span>
+                    <div class="form__icon">
+                      <div class="form__icon-card"><img src="./images/order/master.svg" alt="Icon master card"></div>
+                      <div class="form__icon-card"><img src="./images/order/visa.svg" alt="Icon visa card"></div>
+                    </div>
+                    <span>MasterCard / Visa</span>
+                  </label>
+                  <label class="form__payment-method">
+                    <input
+                      type="radio"
+                      name="method"
+                      value="pay-pal"
+                      class="form__pay-pal"
+                      checked
+                    >
+                    <span class="form__custom-radio"></span>
+                    <div class="form__icon">
+                      <img src="./images/order/paypal.svg" alt="Icon PayPal">
+                    </div>
+                    <span>PayPal</span>
+                  </label>
+                </fieldset>
+
+                <fieldset class="form__fields form__fields--payment">
+                  <h3 class="form__step-name form__step-name--3">
+                    <span class="circle circle--3"></span>
+                    Your payment
+                  </h3>
+                  <div class="form__amount">
+                    <p class="form__amount-text">Amount:</p>
+                    <div class="form__amount-price">USD <span>7,50</span></div>
+                  </div>
+
+                  <div class="form__item-label">Name on card:</div>
+                  <div class="form__item form__item--payment">
+                    <input
+                      id="holder-name"
+                      class="form__input form__input--payment"
+                      type="text"
+                      name="holder-name"
+                      autocomplete="off"
+                      data-error="Please, fill your cardholder's name*"
+                      data-placeholder="Your name*"
+                      required
+                    >
+                    <label class="form__label" for="holder-name"></label>
+                  </div>
+
+                  <div class="form__item-label">Card number:</div>
+                  <div class="form__item form__item--payment">
+                    <input
+                      id="card-number"
+                      class="form__input"
+                      type="tel"
+                      name="card-number"
+                      autocomplete="off"
+                      data-placeholder="****  ****  ****  ****"
+                      data-error="Please, fill your card number*"
+                      maxlength="16"
+                      required
+                    >
+                    <label class="form__label" for="card-number"></label>
+                  </div>
+
+                  <label class="form__item-label">Expiration date:</label>
+                  <div class="form__item form__item--selects">
+                    <select
+                      class="select select--month"
+                      name="form[]"
+                      data-class-modif="month"
+                      data-scroll="200"
+                    >
+                      <option value="1" selected>08</option>
+                      <option value="8">01</option>
+                      <option value="2">02</option>
+                      <option value="3">03</option>
+                      <option value="4">04</option>
+                      <option value="5">05</option>
+                      <option value="6">06</option>
+                      <option value="7">07</option>
+                      <option value="9">09</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                    <select
+                      class="select select--year"
+                      name="form[]"
+                      data-class-modif="year"
+                      data-scroll="200"
+                    >
+                      <option value="1" selected>2019</option>
+                      <option value="2">2020</option>
+                      <option value="3">2021</option>
+                      <option value="4">2022</option>
+                      <option value="5">2023</option>
+                      <option value="6">2024</option>
+                      <option value="7">2025</option>
+                      <option value="8">2026</option>
+                      <option value="9">2027</option>
+                      <option value="10">2028</option>
+                    </select>
+                  </div>
+
+                  <div class="form__item-label form__item-label--cvc">CVC:</div>
+                  <div class="form__item form__item--payment">
+                    <input
+                      id="cvc"
+                      class="form__input form__input--cvc"
+                      type="tel"
+                      name="cvc"
+                      autocomplete="off"
+                      data-placeholder="***"
+                      data-error="Please, fill in cvc*"
+                      required
+                      maxlength="3"
+                    >
+                    <label class="form__label" for="cvc"></label>
+                  </div>
+                </fieldset>
+
+                <button
+                  data-target="completed"
+                  class="form__button button button--order"
+                  type="submit"
+                  data-next="pay"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div data-modal="completed" class="payment-completed">
+          <div class="payment-completed__wrapper">
+            <div data-content="body" class="payment-completed__body">
+              <header class="payment-completed__header">
+                <a href="#page-body" class="payment-completed__logo">
+                  potrpots
+                </a>
+                <button
+                  type="button"
+                  class="payment-completed__button-close modal-close"
+                ></button>
+              </header>
+              <div class="payment-completed__content">
+                <h2 class="payment-completed__title">
+                  Thank you, payment was successful!
+                </h2>
+                <p class="payment-completed__text">
+                  Expect a message to ship the item
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section id="home" class="page__section home">
+          <div class="home__body">
+            <div class="home__content">
+              <h1 class="home__title">
+                <span>POTR ~ Eco,</span>
+                <br>
+                <span>self-</span>watering,
+                <br>
+                origami <span>plant</span>
+                <br>
+                pots
+              </h1>
+              <p class="home__text">
+                <span>$ 7,50</span>
+                <br>
+                Get the second order
+                <br>
+                in half price
+              </p>
+              <button
+                data-target="shopping-bag"
+                type="button"
+                class="home__button button _icon-arrow"
+              >
+                Buy now
+              </button>
+            </div>
+            <div class="home__image-wrapper">
+              <div class="home__image home__image--ibg">
+                <img src="./images/home/d.jpg" alt="Сactus photography">
+              </div>
+            </div>
+            <a href="#for-whom" class="home__more-about _icon-arrow-down">
+              <span>POTR POTS</span>
+              More about
+            </a>
+          </div>
+        </section>
+
+        <section id="for-whom" class="page__section for-whom">
+          <div class="for-whom__container">
+            <div class="for-whom__body">
+              <a href="#home" class="for-whom__prev vertical-nav">potr pots</a>
+              <h2 class="for-whom__title">For whom?</h2>
+              <div class="for-whom__cards">
+                <article class="card-robust">
+                  <div class="card-robust__image-wrapper">
+                    <div class="card-robust__image card-robust__image--ibg">
+                      <img src="./images/for-whom/01-d.jpg" alt="Potted plant POTR">
+                    </div>
+                  </div>
+                  <div class="card-robust__content">
+                    <div class="type-card _icon-snowflake">Robust</div>
+                    <div class="card-robust__description description">
+                      <div class="description__num">1</div>
+                      <div class="description__content">
+                        <h3 class="description__title">
+                          For those who value durable <span>things</span>
+                        </h3>
+                        <p class="description__text">
+                          Don’t worry if you happen to knock your POTR on the floor,
+                          unlike a traditional ceramic pot it will take the fall in its stride.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="card-beautiful">
+                  <div class="card-beautiful__image-wrapper">
+                    <div class="card-beautiful__image card-beautiful__image--ibg">
+                      <img src="./images/for-whom/02-d.jpg" alt="Potted plant POTR">
+                    </div>
+                  </div>
+                  <div class="card-beautiful__content">
+                    <div class="type-card type-card--beautiful _icon-snowflake">Beautiful</div>
+                    <div class="card-beautiful__description description description--beautiful">
+                      <div class="description__num">2</div>
+                      <div class="description__content">
+                        <h3 class="description__title">
+                          For those who love modern <span>design</span>
+                        </h3>
+                        <p class="description__text">
+                          We strived to achieve something that would look beautiful in
+                          your home while being incredibly functional and intuitive to use.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <article class="card-savetime">
+                  <div class="card-savetime__image-wrapper">
+                    <div class="card-savetime__image card-savetime__image--ibg">
+                      <img src="./images/for-whom/03-d.jpg" alt="Potted plant POTR">
+                    </div>
+                  </div>
+                  <div class="card-savetime__content">
+                    <div class="type-card type-card--savetime _icon-snowflake">Saves time</div>
+                    <div class="card-savetime__description description description--savetime">
+                      <div class="description__num">3</div>
+                      <div class="description__content">
+                        <h3 class="description__title">
+                          For those who don't have enough time to regular water indoor <span>plants</span>
+                        </h3>
+                        <p class="description__text">
+                          Water is drawn up through the cotton by the plant using tried and tested wicking technology.
+                          It’s particularly useful if you aren’t able to water them yourself on a regular basis!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <a href="#features" class="for-whom__next vertical-nav">potr pots</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="page__section features">
+          <div class="features__container">
+            <div class="features__body">
+              <h2 class="features__title">POTR Pots <span>Features</span></h2>
+              <div class="features__cards">
+                <article class="card-features">
+                  <div class="card-features__body">
+                    <div class="card-features__image--ibg">
+                      <img src="./images/features/01-d.jpg" alt="Eco-friendly POTR pots">
+                    </div>
+                    <div class="card-features__content">
+                      <h3 class="card-features__title">Flat pack postage</h3>
+                      <p class="card-features__text">
+                        The pots will be shipped flat packed so they can be slipped through your letter box
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <article class="card-features">
+                  <div class="card-features__body">
+                    <div class="card-features__image--ibg">
+                      <img src="./images/features/02-d.jpg" alt="Eco-friendly POTR pots">
+                    </div>
+                    <div class="card-features__content">
+                      <h3 class="card-features__title">Easy assembly</h3>
+                      <p class="card-features__text">
+                        POTR Pots are super easy (and super satisfying) to assemble using the quick draw cotton cord
+                      </p>
+                    </div>
+                  </div>
+                </article>
+                <article class="card-features">
+                  <div class="card-features__body">
+                    <div class="card-features__image--ibg">
+                      <img src="./images/features/03-d.jpg" alt="Eco-friendly POTR pots">
+                    </div>
+                    <div class="card-features__content">
+                      <h3 class="card-features__title">Self-watering</h3>
+                      <p class="card-features__text">
+                        Simply add water into the pot - if your plant is thirsty it will
+                        automatically start drinking the water through the cotton cord. Magic!
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="potr-team" class="potr-team">
+          <div class="potr-team__body">
+            <h2 class="potr-team__title">Meet the POTR team!</h2>
+            <article class="potr-team__content">
+              <div class="potr-team__name potr-team__name--martin">Martin</div>
+              <p class="potr-team__text">
+                Andy and Martin are experienced product designers with a love of plants and the environment.
+                They have over ten years combined industry experience in bringing products to market
+                at some of the worlds largest consumer product companies.
+                <br>
+                <br>
+                Having studied Product Design Engineering together at the Glasgow School of Art,
+                they have a long history of working as a team on a variety of design projects.
+              </p>
+              <div class="potr-team__image-wrapper">
+                <div class="potr-team__image potr-team__image--ibg">
+                  <img src="./images/potr-team/01-d.jpg" alt="Designers Andy and Martin.">
+                </div>
+              </div>
+            </article>
+            <div class="potr-team__name potr-team__name--andy">Andy</div>
+          </div>
+        </section>
+
+        <section id="materials" class="materials">
+          <div class="materials__container">
+            <a href="#potr-size" class="materials__next vertical-nav">potr pots</a>
+            <a href="#potr-team" class="materials__prev vertical-nav">potr pots</a>
+            <div class="materials__body">
+              <div class="materials__content">
+                <h2 class="materials__title">
+                  Materials and Features
+                </h2>
+                <div class="materials__description">
+                  <h3 class="materials__subtitle">Environmentally friendly</h3>
+                  <p class="materials__text">
+                    All materials used in our pots are made from <span>100% recycled materials</span> and
+                    are <span>100% recyclable at the end of life</span> (should you ever choose to get rid of your POTR!).
+                    All materials have been sourced from within Europe to reduce
+                    our carbon footprint when transporting the raw materials, and all manufacturing is carried out in the UK.
+                  </p>
+                </div>
+              </div>
+              <div class="materials__tips-cards">
+                <p id="info-1" class="tips-card">
+                  We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord.
+                  Not only is it 100% recycled, it looks great and works really well at wicking water.
+                </p>
+                <p id="info-2" class="tips-card">
+                  Shipped flat packed so they can be slipped through your letterbox,
+                  POTR Pots have the smallest carbon footprint possible during transit.
+                </p>
+                <p id="info-3" class="tips-card">
+                  Once assembled the cotton cord doubles as the watering system,
+                  allowing your plants to self-regulate their water intake
+                  using tried and tested wicking technology.
+                </p>
+                <p id="info-4" class="tips-card">
+                  POTR pots are flat pack, origami planters designed to self-water your plants,
+                  made from recycled materials.
+                </p>
+                <p id="info-5" class="tips-card">
+                  POTR Pots are constructed using recycled polypropylene which can be fully recycled.
+                </p>
+              </div>
+              <div class="materials__tips-buttons">
+                <div data-template="info-1" class="tip-button tip-button--1">
+                </div>
+                <div data-template="info-2" class="tip-button tip-button--2">
+                </div>
+                <div data-template="info-3" class="tip-button tip-button--3">
+                </div>
+                <div data-template="info-4" class="tip-button tip-button--4">
+                </div>
+                <div data-template="info-5" class="tip-button tip-button--5">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="materials-slider swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p class="tips-card">
+                  We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord.
+                  Not only is it 100% recycled, it looks great and works really well at wicking water.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <p class="tips-card">
+                  Shipped flat packed so they can be slipped through your letterbox,
+                  POTR Pots have the smallest carbon footprint possible during transit.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <p class="tips-card">
+                  Once assembled the cotton cord doubles as the watering system,
+                  allowing your plants to self-regulate their water intake
+                  using tried and tested wicking technology.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <p class="tips-card">
+                  POTR pots are flat pack, origami planters designed to self-water your plants,
+                  made from recycled materials.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <p class="tips-card">
+                  POTR Pots are constructed using recycled polypropylene which can be fully recycled.
+                </p>
+              </div>
+            </div>
+            <div class="materials-bullets"></div>
+          </div>
+        </section>
+
+        <section id="potr-size" class="potr-size">
+          <div class="potr-size__container">
+            <article class="potr-size__body">
+              <h2 class="potr-size__title">Which size POTR for my house plant ?</h2>
+              <div class="potr-size__content">
+                <div class="potr-size__description">
+                  <div class="potr-size__main-info">
+                    <p data-da=".potr-size__body, 991, 1" class="potr-size__introduction potr-size-text">
+                      Pre potted plants come in fairly standard sized pots, and can be classified into one of two categories:
+                    </p>
+                    <div class="potr-size__categories">
+                      <div class="potr-size__category">
+                        <h3 class="potr-size__sub-title">large</h3>
+                        <p class="potr-size__description potr-size-text">
+                          Large POTR Pot = 14cm diameter (1.5 litre) house plant pot or less
+                        </p>
+                      </div>
+                      <div class="potr-size__category">
+                        <h3 class="potr-size__sub-title">Small</h3>
+                        <p class="potr-size__description potr-size-text">
+                          Small POTR Pot = 10cm diameter (0.49 litre) house plant pot or less
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <p data-da=".potr-size__body, 991, 4" class="potr-size__additional-info potr-size-text">
+                    * POTR Pots have a little bit of give around the top rim so can fit slightly larger sizes than the recommended sizes stated above if necessary.
+                  </p>
+                </div>
+                <div class="potr-size__image--ibg-contain">
+                  <img src="./images/potr-size/01-d.jpg" alt="Image with sizes of pots">
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="benefits" class="benefits">
+          <div class="benefits__content">
+            <div class="benefits__container">
+              <a href="#potr-team" class="benefits__prev vertical-nav">POTR Pots Features</a>
+              <div class="benefits__body">
+                <div class="benefits__list">
+                  <div class="benefits__item">
+                    <h2 class="benefits__title _icon-rhombus">Easy assembly</h2>
+                    <p class="benefits__text">Pull the draw string to assemble!</p>
+                  </div>
+                  <div class="benefits__item">
+                    <h2 class="benefits__title _icon-rhombus">Flat pack postage </h2>
+                    <p class="benefits__text">POTR pots arrive flat packed in an envelope!</p>
+                  </div>
+                  <div class="benefits__item">
+                    <h2 class="benefits__title _icon-rhombus">Self-watering</h2>
+                    <p class="benefits__text">Add water to POTR and watch your plant drink!</p>
+                  </div>
+                </div>
+                <div class="benefits__action">
+                  <button
+                    data-target="shopping-bag"
+                    type="button"
+                    class="benefits__button button button--benefits _icon-arrow"
+                  >
+                    Buy now
+                  </button>
+                  <div class="benefits__discounts">
+                    <span>50% off</span>
+                    Get the second order in half price
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="benefits__image-wrapper">
+            <div class="benefits__image benefits__image--ibg">
+              <img src="./images/benefits/01.png" alt="several photos with pots of the 21st century">
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div class="footer-wrapper">
+        <section id="questions" class="questions">
+          <div class="questions__container">
+            <div class="questions__body">
+              <div class="text-around text-around--questions">
+                self - watering origami plant pots environmentally friendly
+              </div>
+              <div class="questions__column questions__column--form">
+                <h2 class="questions__title">have any questions?</h2>
+                <p class="questions__text">Here few ways to get in touch with us:</p>
+                <h3 class="questions__subtitle">Message us</h3>
+                <form
+                  class="questions__form form"
+                  action="#"
+                  novalidate
+                >
+                  <div class="form__fields">
+                    <div class="form__item">
+                      <input
+                        id="username-questions"
+                        class="form__input"
+                        type="text"
+                        name="user-name"
+                        autocomplete="off"
+                        data-error="Please, fill your name*"
+                        data-placeholder="Name*"
+                        required
+                      >
+                      <label class="form__label" for="username-questions"></label>
+                    </div>
+                    <div class="form__item">
+                      <input
+                        id="email-questions"
+                        class="form__input form__input--email"
+                        type="email"
+                        name="email"
+                        data-error="Incorrect email format*"
+                        data-placeholder="Email*"
+                        required
+                      >
+                      <label class="form__label" for="email-questions"></label>
+                    </div>
+                    <div class="form__item">
+                      <textarea
+                        id="message"
+                        class="form__input form__input--textarea"
+                        name="user-message"
+                        maxlength="250"
+                        data-error="Please fill out this field!"
+                        data-placeholder="Message"
+                     ></textarea>
+                      <label
+                        class="form__label form__label--textarea"
+                        for="message"
+                     ></label>
+                    </div>
+                  </div>
+                  <button
+                    class="form__button button button--blue _icon-arrow"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+              <div class="questions__column questions__column--our-contacts">
+                <div class="questions__item">
+                  <div class="questions__lable">Our phone</div>
+                  <a
+                    href="tel:2705550117"
+                    class="questions__link"
+                    target="blank"
+                  >
+                    (270) 555-0117
+                  </a>
+                </div>
+                <div class="questions__item">
+                  <div class="questions__lable">Our email</div>
+                  <a
+                    href="mailto:potrpots@gmail.com"
+                    class="questions__link"
+                    target="blank"
+                  >
+                    potrpots@gmail.com
+                  </a>
+                </div>
+                <div class="questions__item">
+                  <div class="questions__lable">Our office</div>
+                  <a
+                    href="https://goo.gl/maps/y3u4WCy5cnEJ3kK59"
+                    class="questions__link"
+                    target="blank"
+                  >
+                    United Kingdom  99 Staple Hill Road,
+                    Bristol, BS16 5AD
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="footer__container">
+            <div class="footer__body">
+              <div class="footer__address">
+                <h3 class="footer__address-title title-footer">Adrress</h3>
+                <a
+                  href="https://goo.gl/maps/y3u4WCy5cnEJ3kK59"
+                  class="footer__address-text footer-text"
+                  target="blank"
+                >
+                  United Kingdom
+                  <br>
+                  99 Staple Hill Road,
+                  <br>
+                  Bristol, BS16 5AD
+                </a>
+              </div>
+              <div class="footer__action">
+                <div class="footer__socials">
+                  <a
+                    target="blank"
+                    class="footer__social-link _icon-twitter"
+                    href="https://twitter.com"
+                 ></a>
+                  <a
+                    target="blank"
+                    class="footer__social-link _icon-instagram"
+                    href="https://www.instagram.com"
+                 ></a>
+                  <a
+                    target="blank"
+                    class="footer__social-link _icon-facebook"
+                    href="https://facebook.com"
+                 ></a>
+                </div>
+                <a href="#home" class="footer__logo">
+                  potrpots
+                </a>
+              </div>
+              <div class="footer__about">
+                <h3 class="footer__about-title title-footer">aBOUT uS</h3>
+                <div data-da=".footer__action, 767.98, 2" class="footer-text">Copyright © 2023</div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
     <script type="text/javascript" src="scripts/main.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
   </body>
+
 </html>

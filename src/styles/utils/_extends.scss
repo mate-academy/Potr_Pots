@@ -1,4 +1,32 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+%text-outline {
+  -webkit-text-stroke: rem(1) $turquoiseLight;
+  -webkit-text-fill-color: transparent;
+  // text-stroke: 0.2px black;
+  // text-fill-color: transparent;
+}
+
+%button-control {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include square(34px);
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  transition: background-color 0.3s;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: rem(7);
+    height: rem(1);
+    background-color: #000;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $turquoiseLight;
+    }
+  }
 }
