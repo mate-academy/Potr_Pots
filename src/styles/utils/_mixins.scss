@@ -1,6 +1,168 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin onTablet {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin constantPaddingInline {
+  box-sizing: border-box;
+  padding-inline: 30px;
+  min-width: 320px;
+
+  margin-inline: auto;
+
+  @include onTablet {
+    max-width: 768px;
+    padding-inline: 34px;
+  }
+
+  @include onDesktop() {
+    max-width: 1440px;
+    padding-inline: 135px;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  @include onTablet() {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include onDesktop() {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+}
+
+@mixin buttonBackground {
+  background: linear-gradient(
+    to left,
+    var(--color-main-bg) 50%,
+    var(--color-hover-bg) 50%
+  )
+    right;
+  background-size: 201%;
+  transition: $duration ease-out;
+
   &:hover {
-    #{$_property}: $_toValue;
+    background-position: left;
+    border-left: var(--color-hover-bg);
+  }
+}
+
+@mixin title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 64px;
+  letter-spacing: 0.15em;
+}
+
+@mixin h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.15em;
+}
+
+@mixin h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.15em;
+}
+
+@mixin h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15em;
+}
+
+@mixin h4 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.15em;
+}
+
+@mixin s1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@mixin s1-mob {
+  font-family: "Manrope", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@mixin s2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin s3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin s4 {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@mixin s5 {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin buttonFont {
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+@mixin textEffect {
+  color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    var(--text-color-hover) 50%,
+    var(--text-color-main) 50%
+  );
+  background-position: 100%;
+  background-size: 200%, 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  transition: background-position $duration ease;
+
+  &:hover {
+    background-position: 0;
   }
 }

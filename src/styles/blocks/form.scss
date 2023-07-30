@@ -1,0 +1,71 @@
+.form {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: none;
+    border-bottom: 1px solid $turquoise;
+    -webkit-text-fill-color: $turquoise;
+    -webkit-box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  &__field {
+    padding: 3px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #0000004d;
+
+    @include s3;
+
+    &--textarea {
+      resize: none;
+      height: 24px;
+    }
+
+    &:focus {
+      border-bottom-color: $turquoise;
+    }
+
+    &:not(:focus):not(:invalid) {
+      color: $gray-1;
+    }
+
+    &:not(:focus):valid {
+      color: $turquoise;
+      border-color: $turquoise;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      color: $red;
+      border-color: $red;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    color: #fff;
+
+    --color-main-bg: #{$turquoise};
+    --color-hover-bg: #03809e66;
+    border: 1px solid transparent;
+
+    &::after {
+      background-image: url(../images/icons/arrow-submit.svg);
+    }
+
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include onTablet {
+      width: 238px;
+    }
+  }
+}

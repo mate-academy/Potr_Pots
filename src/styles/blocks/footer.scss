@@ -1,0 +1,174 @@
+.footer {
+  margin-top: -52px;
+  padding-bottom: 30px;
+
+  @include onTablet {
+    padding-bottom: 116px;
+  }
+
+  @include onDesktop {
+    margin-top: 0;
+    padding-bottom: 64px;
+
+  }
+
+  &__content {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__adress {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+  }
+
+  &__adress-title {
+    @include h3;
+
+    --text-color-main: #000;
+    --text-color-hover: #{$turquoise};
+    @include textEffect;
+  }
+
+  &__adress-link {
+    width: fit-content;
+    --text-color-main: #000;
+    --text-color-hover: #{$red};
+    @include textEffect;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid $red;
+      bottom: -8px;
+
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform $duration;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__links-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    @include onTablet {
+      row-gap: 32px;
+    }
+
+    @include onDesktop {
+      row-gap: 72px;
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0 15px;
+
+    @include onTablet {
+      padding-inline: 0;
+    }
+
+    @include onDesktop {
+      padding-inline: 70px;
+    }
+  }
+
+  &__social-item {
+    height: 20px;
+  }
+
+  &__social-link svg {
+    color: #000;
+
+    transition: color $duration;
+
+    @include onDesktop {
+      height: 30px;
+      width: 30px;
+    }
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  &__link {
+    @include h2;
+    align-self: center;
+
+    --text-color-main: #000;
+    --text-color-hover: #{$turquoise};
+    @include textEffect;
+  }
+
+  &__right-wrapper {
+    display: flex;
+    justify-content: center;
+
+    @include onTablet {
+      flex-direction: column;
+      justify-self: end;
+      row-gap: 10px;
+
+      position: relative;
+      top: -24px;
+    }
+  }
+
+  &__about-us {
+    display: none;
+    @include h3;
+    --text-color-main: #000;
+    --text-color-hover: #{$turquoise};
+    @include textEffect;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__rights {
+    justify-self: center;
+    position: relative;
+
+    --text-color-main: #000;
+    --text-color-hover: #{$red};
+    @include textEffect;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid $red;
+      bottom: -8px;
+
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform $duration;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

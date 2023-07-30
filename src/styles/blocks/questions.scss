@@ -1,0 +1,106 @@
+.questions {
+  background-image: url(../images/mobile/bg-questions-mob.png);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: cover;
+
+  @include onTablet {
+    background-image: url(../images/tablet/bg-questions-tab.png);
+  }
+
+  @include onDesktop {
+    background-image: url(../images/desktop/bg-questions-desk.png);
+    background-position-x: -9.3vw;
+  }
+
+  &__content {
+    position: relative;
+    padding-top: 44px;
+    margin-bottom: 156px;
+
+    @include onTablet {
+      padding-top: 18px;
+      margin-bottom: 136px;
+
+    }
+  }
+
+  &__stamp {
+    position: absolute;
+    top: -82px;
+    right: -30px;
+
+    @include onTablet {
+      top: -82px;
+      right: -34px;
+    }
+
+    @include onDesktop {
+      top: -82px;
+      right: -82px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+
+    color: #000;
+  }
+
+  &__few-ways {
+    margin: 0 0 40px;
+    color: #000;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 36px;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      row-gap: 40px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__form-title {
+    margin: 0;
+    @include s2;
+    color: #000;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    @include onTablet {
+      row-gap: 20px;
+    }
+  }
+
+  &__field {
+    &--textarea {
+      margin-bottom: 10px;
+
+      @include onTablet {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 34px;
+
+    @include onTablet {
+      margin-top: -60px;
+      row-gap: 20px;
+    }
+  }
+}

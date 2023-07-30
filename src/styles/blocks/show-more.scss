@@ -1,0 +1,37 @@
+.show-more {
+  display: block;
+  position: absolute;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 18px;
+  color: $turquoise;
+  padding-right: 54px;
+
+  transform: rotate(90deg);
+  transform-origin: right center;
+
+  @include onTablet {
+    transform-origin: left center;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 44px;
+
+    background-image: url(../images/icons/arrow-show-more.png);
+    background-repeat: no-repeat;
+    background-size: 44px;
+    top: 50%;
+    right: 0;
+
+    transform: translate(0, -25%);
+    transition: transform $duration;
+  }
+
+  &:hover::after {
+    transform: translate(50%, -25%);
+  }
+}

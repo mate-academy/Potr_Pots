@@ -1,0 +1,40 @@
+.icon {
+  height: 48px;
+  width: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: transform $duration;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &--menu {
+    background-image: url(../images/icons/menu.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--basket {
+    display: none;
+
+    width: 30px;
+    height: 30px;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &--basket svg {
+    color: #000;
+    transition: color $duration;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}

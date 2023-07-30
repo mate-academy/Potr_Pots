@@ -1,0 +1,118 @@
+.potr-team {
+  position: relative;
+
+  background-image: url(../images/mobile/bg-potr-team-mb.png);
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: contain;
+
+  @include onTablet {
+    background-image: url(../images/tablet/bg-potr-team-tab.png);
+    background-size: 33%;
+    background-position-y: 156px;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/desktop/bg-potr-team-desktop.png);
+    background-size: 31%;
+    background-position-y: 180px;
+  }
+
+  &__title {
+    line-height: 120%;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__designer-name {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: relative;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+
+    &--martin {
+      margin-bottom: -88px;
+      margin-left: -70px;
+      height: 231px;
+      width: 719px;
+      background-image: url(../images/desktop/martin.svg);
+      background-size: contain;
+      background-position: center;
+
+      @include onDesktop {
+        margin-left: -52px;
+        margin-bottom: -212px;
+
+        width: 893px;
+        height: 346px;
+      }
+    }
+
+    &--andy {
+      height: 220px;
+      width: 459px;
+      background-image: url(../images/tablet/andy.svg);
+      background-position: center;
+      transform: translateX(36px);
+
+      @include onDesktop {
+        background-image: url(../images/desktop/andy.svg);
+        background-position: bottom;
+        height: 346px;
+        width: 598px;
+
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    padding-bottom: 75%;
+    overflow: hidden;
+
+    background-image: url(../images/mobile/andy-&-martin-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      position: relative;
+      margin-bottom: -200px;
+      background-image: url(../images/tablet/andy-&-martin.png);
+    }
+
+    @include onDesktop {
+      margin-bottom: -140px;
+      background-image: url(../images/desktop/andy-&-martin.png);
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    margin-bottom: 58px;
+
+    @include onTablet {
+      position: relative;
+      margin-bottom: -78px;
+    }
+
+    @include onDesktop {
+      width: 336px;
+      margin-bottom: 0;
+      margin-top: -136px;
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+  }
+}

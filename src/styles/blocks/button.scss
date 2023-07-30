@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  height: 48px;
+  color: #121212;
+  @include buttonFont;
+  text-transform: uppercase;
+  @include buttonBackground;
+
+  &::after {
+    content: "";
+    width: 28px;
+    height: 8px;
+    background-image: url(../images/icons/arrow-buy-now.svg);
+    background-position: center right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform $duration;
+    margin-left: 20px;
+  }
+
+  &:hover::after {
+    transform: translateX(100%);
+  }
+}

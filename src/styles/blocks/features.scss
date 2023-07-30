@@ -1,0 +1,78 @@
+.features {
+  &__content {
+    row-gap: 68px;
+  }
+
+  &__title {
+    line-height: 120%;
+    margin-bottom: 24px;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__picture {
+    content: "";
+    width: 100%;
+    padding-bottom: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0 0 36px;
+    overflow: hidden;
+
+    &--1 {
+      background-image: url(../images/mobile/flat-pack-postage-mobile.png);
+
+      @include onDesktop {
+        background-image: url(../images/desktop/flat-pack-postage.png);
+      }
+    }
+
+    &--2 {
+      background-image: url(../images/mobile/easy-assembly-mobile.png);
+
+      @include onDesktop {
+        background-image: url(../images/desktop/easy-assembly.png);
+      }
+    }
+
+    &--3 {
+      background-image: url(../images/mobile/self-watering-mobile.png);
+
+      @include onDesktop {
+        background-image: url(../images/desktop/self-watering.png);
+      }
+    }
+  }
+
+  &__subtitle {
+    @include h3;
+    color: $gray-1;
+    margin: 0 0 20px;
+
+    @include onTablet {
+      align-self: start;
+    }
+
+    @include onDesktop {
+      align-self: center;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    text-align: center;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+}

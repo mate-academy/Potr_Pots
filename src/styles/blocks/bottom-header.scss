@@ -1,0 +1,105 @@
+.bottom-header {
+  position: relative;
+
+  @include onTablet {
+    background-image: url(../images/mobile/header-bg-mobile.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 306px;
+
+    @include onDesktop {
+      height: 500px;
+      background-image: url(../images/desktop/header.png);
+      background-size: 500px;
+    }
+  }
+
+  &__wrapper {
+    @include grid;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 120%;
+    color: $turquoise;
+    letter-spacing: 0.15em;
+
+    &--outline {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px $turquoise;
+    }
+
+    margin: 0 0 24px;
+    grid-column: span 2;
+
+    @include onTablet {
+      margin-bottom: -30px;
+      grid-column: 1 / 7;
+
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 20px;
+      grid-column: 2 / 7;
+    }
+  }
+
+  &__price {
+    align-self: center;
+    color: $gray-1;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 137%;
+
+    margin: 0;
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      margin-bottom: 4px;
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__offer {
+    align-self: center;
+    color: $gray-2;
+    font-size: 14px;
+
+    margin: 0 0 18px;
+    grid-column: span 2;
+
+    @include onTablet {
+      margin-bottom: 48px;
+      grid-column: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__button {
+    --color-main-bg: #{$yellow};
+    --color-hover-bg: #{$yellowLight};
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      width: 240px;
+      grid-column: 2 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / 7;
+      width: 270px;
+    }
+  }
+}

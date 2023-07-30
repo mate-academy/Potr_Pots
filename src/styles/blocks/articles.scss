@@ -1,0 +1,26 @@
+.article {
+  &__title {
+    margin: 0;
+
+    @include h2;
+    color: #000;
+
+    @include onTablet {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 46px;
+        width: 1px;
+        background-color: $gray-1;
+        transform: rotate(22deg);
+        margin-left: 8px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+  }
+}
