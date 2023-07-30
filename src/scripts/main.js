@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   const sliderList = document.querySelector('.materials__slider-list');
+  // eslint-disable-next-line no-undef
   const hammer = new Hammer(sliderList);
 
   let currentIndex = 0;
