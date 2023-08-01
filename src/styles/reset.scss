@@ -14,9 +14,9 @@ select:-webkit-autofill:focus {
 .page {
   scroll-behavior: smooth;
 
-  &:has(.page__menu:target) {
-    overflow: hidden;
-  }
+  // &:has(.page__menu:target) {
+  //   overflow: hidden;
+  // }
 
   &__body {
     min-width: 320px;
@@ -27,12 +27,25 @@ select:-webkit-autofill:focus {
     font-family: "Bebas Neue", sans-serif;
 
     background: $gray-light;
+
+    @include onTablet {
+      background-image: url(/images/main/bg-potr-this-tab.png);
+      background-position-x: -154px;
+      background-repeat: no-repeat;
+      background-size: 100% 525px;
+    }
+
+    @include onDescktop {
+      background-image: url(/images/main/bg-potr-this-desctop.png);
+      background-position-x: -405px;
+      background-repeat: no-repeat;
+      background-size: 100% 565px;
+    }
   }
 
   &__body * {
     margin: 0;
     padding: 0;
-    // box-sizing: border-box;
   }
 
   &__menu {
@@ -56,6 +69,15 @@ select:-webkit-autofill:focus {
 .main {
   display: grid;
   row-gap: 110px;
+
+  @include onTablet {
+    display: block;
+  }
+
+  @include onDescktop {
+    display: grid;
+    row-gap: 150px;
+  }
 }
 
 p {
