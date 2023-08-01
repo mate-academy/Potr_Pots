@@ -1,6 +1,101 @@
+/* stylelint-disable */
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@mixin manrope-font(
+  $font-size: 16px, 
+  $letter-spacing: 1px, 
+  $font-family: "Manrope"
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin bebas-font(
+  $font-size: 36px, 
+  $letter-spacing: 1px, 
+  $font-family: "Bebas Neue"
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin poppins-font(
+  $font-size: 16px, 
+  $letter-spacing: 1px, 
+  $font-family: "Poppins"
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onLaptop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@function rem($px) {
+  $result: $px / 16 * 1rem;
+  @return $result;
+}
+
+@function em($px, $current: 16) {
+  $result: $px / $current * 1em;
+  @return $result;
+}
+ 
+@mixin adaptiveValue(
+  $property,
+  $startSize,
+  $minSize,
+  $widthFrom: 1440,
+  $widthTo: 320,
+  $maxWidthContainer: 1920,
+  $keepSize: 0,
+) {
+  $addSize: ($startSize - $minSize) / 16;
+  $containerWidth: $widthFrom / 16;
+  $maxWidth: $widthFrom / 16;
+  $minSizeValue: rem($minSize);
+  $minWidth: $widthTo / 16;
+  $startSizeValue: rem($startSize);
+  $widthFrom: $widthFrom / 16;
+  $widthFromMedia: em($widthFrom);
+  $widthTo: $widthTo / 16;
+  $widthToMedia: em($widthTo);
+
+  @if ($maxWidthContainer > 0 or $widthFrom != $containerWidth or $widthTo != $minWidth) and $widthFrom > $widthTo {
+    @if $widthFrom == $containerWidth or $keepSize == 1 or $keepSize == 2 {
+      @media (min-width: $widthFromMedia) {
+        #{$property}: $startSizeValue;
+      }
+    }
+
+    @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+      #{$property}: calc(#{$minSizeValue} + #{$addSize} * (((100vw - #{$widthTo * 1rem})) / (#{$widthFrom - $widthTo})));
+    }
+
+    @if $widthTo == $minWidth or $keepSize == 1 or $keepSize == 3 {
+      @media (max-width: $widthToMedia) {
+        #{$property}: $minSizeValue;
+      }  
+    }
+  } @else {
+    #{$property}: calc(#{$minSizeValue} + #{$addSize} * (((100vw - #{$widthTo * 1rem})) / (#{$maxWidth - $widthTo}))); 
   }
 }
