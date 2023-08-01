@@ -1,25 +1,102 @@
 .potr-this {
   position: relative;
 
+  @include onTablet {
+    padding-block: 20px 47px;
+
+    @include contentPaddingInLineForDevices;
+  }
+
+  @include onDescktop {
+    padding-block: 57px 48px;
+    // margin-bottom: 150px;
+    margin-bottom: 0;
+  }
+
   &__img {
     width: 100%;
     margin-bottom: 25px;
+    grid-column: span 2;
+
+    @include onTablet {
+      width: 306px;
+      height: 306px;
+
+      position: absolute;
+      top: 20px;
+      right: 34px;
+
+      z-index: -1;
+    }
+
+    @include onDescktop {
+      width: 500px;
+      height: 500px;
+
+      top: 57px;
+      right: 135px;
+    }
   }
 
   &__main-content {
-    @include contentPaddingInLineForDevices;
+    padding-inline: 30px;
 
+    grid-column: span 2;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      padding-inline: 0;
+
+      @include pageGrid;
+    }
   }
 
   &__title {
     margin-bottom: 30px;
 
+    font-size: 36px;
+    letter-spacing: 5.58px;
+    font-weight: 400;
     color: $blue-title-color;
     -webkit-text-stroke: 1px $blue-title-color;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin-bottom: 32px;
+
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9.92px;
+    }
+
+    @include onDescktop {
+      grid-column: 2 / 7;
+
+      margin-bottom: 20px;
+    }
   }
 
   &__title-clear-inside {
     color: $gray-light;
+  }
+
+  &__offer {
+    width: 139px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      margin-bottom: 0;
+
+      transform: translateY(-50px);
+    }
+
+    @include onDescktop {
+      grid-column: 5 / 7;
+      margin-bottom: 50px;
+
+      transform: translateY(0);
+    }
   }
 
   &__price {
@@ -28,9 +105,6 @@
   }
 
   &__discount {
-    width: 139px;
-    margin-bottom: 20px;
-
     font-size: 14px;
     line-height: 150%;
     color: $text-color;
@@ -38,6 +112,14 @@
 
   &__link {
     text-decoration: none;
+
+    @include onTablet {
+      grid-column: 2 / 5;
+    }
+
+    @include onDescktop {
+      grid-column: 4 / 7;
+    }
   }
 
   &__button {
@@ -47,8 +129,14 @@
     color: $title-color;
     background-color: #ffe339;
 
-    &:hover {
-      opacity: 0.7;
+    @include hover(opacity, 0.7);
+
+    @include onTablet {
+      width: 240px;
+    }
+
+    @include onDescktop {
+      width: 100%;
     }
   }
 
@@ -56,13 +144,23 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    padding-top: 5px;
 
     display: flex;
     gap: 9px;
     rotate: 90deg;
     transform-origin: right;
-    transform: translate(12px, 50%);
+    transform: translate(10px, calc(50% + 5px));
+
+    @include onTablet {
+      right: auto;
+      left: 0;
+      transform-origin: left;
+      transform: translate(calc(-100% + 10px), calc(-50% - 34px));
+    }
+
+    // @include onDescktop {
+    //   transform: translate(calc(-100% + 10px), calc(-50% - 135px));
+    // }
   }
 
   &__more-about {

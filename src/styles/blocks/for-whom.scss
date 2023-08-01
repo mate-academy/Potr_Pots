@@ -1,10 +1,19 @@
 .for-whom {
+  @include onTablet {
+    padding-top: 62px;
+    margin-bottom: 135px;
+  }
+
+  @include onDescktop {
+    padding-top: 0;
+    // margin-bottom: 150px;
+    margin-bottom: 0;
+  }
+
   &__container {
     @include contentPaddingInLineForDevices;
+
     position: relative;
-    // @include pageGrid;
-    // display: grid;
-    // row-gap: 25px;
   }
 
   &__primary-title {
@@ -12,31 +21,183 @@
 
     line-height: 150%;
     color: $title-color;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onDescktop {
+      margin-bottom: 34px;
+    }
   }
 
   &__list {
     display: grid;
     row-gap: 70px;
+
+    @include onTablet {
+      row-gap: 110px;
+    }
+
+    @include onDescktop {
+      row-gap: 80px;
+    }
   }
 
-  &__number-box {
+  &__box {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    &--2 {
+      @include onDescktop {
+        position: absolute;
+        right: 135px;
+        left: 135px;
+        top: 773px;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 1 / 4;
+
+      &--top {
+        display: none;
+      }
+
+      &--bottom {
+        grid-column: -4 / -1;
+        margin-left: auto;
+      }
+    }
+
+    @include onDescktop {
+      &--1 {
+        grid-column: 1 / 7;
+        width: 500px;
+      }
+
+      &--top {
+        display: block;
+        grid-column: 2 / 6;
+
+        margin-bottom: 109px;
+      }
+
+      &--bottom {
+        display: none;
+      }
+
+      &--3 {
+        grid-column: 8 / -1;
+        width: 100%;
+        margin-bottom: 109px;
+      }
+    }
+  }
+
+  &__text-wrapper-1 {
+    grid-column: 4 / 7;
+    margin-block: auto 14px;
+
+    position: relative;
+
+    @include onDescktop {
+      grid-column: 8 / -2;
+      margin-block: auto 120px;
+    }
+  }
+
+  &__text-wrapper-2 {
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-block: auto 74px;
+
+      position: relative;
+    }
+
+    @include onDescktop {
+      grid-column: 2 / 6;
+    }
+  }
+
+  &__text-wrapper-3 {
+    grid-column: 4 / 7;
+    margin-top: auto;
+
+    position: relative;
+
+    @include onDescktop {
+      grid-column: 9 / -1;
+    }
+  }
+
+  &__box-benefits {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      // position: relative;
+      position: absolute;
+
+      &--1 {
+        top: -25px;
+        transform: translateY(-100%);
+
+        @include onDescktop {
+          top: -40px;
+        }
+      }
+
+      &--2 {
+        top: -28px;
+        right: 0;
+        transform: translateY(-100%);
+
+        @include onDescktop {
+          right: auto;
+        }
+      }
+
+      &--3 {
+        top: -17px;
+        transform: translateY(-100%);
+      }
+
+      @include pseudoStar;
+    }
+  }
+
+  &__number {
     display: flex;
     height: 47px;
     margin-bottom: 30px;
 
     position: relative;
 
-    &::before {
-      content: "";
-      width: 1px;
-      height: 50px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      transform: translateX(9px);
+    @include pseudoObliqueNumber;
 
-      rotate: 22deg;
-      background-color: $title-color;
+    @include onTablet {
+      margin-bottom: 22px;
+    }
+
+    &--1,
+    &--3 {
+      @include onTablet {
+        position: absolute;
+        left: -20px;
+        transform: translateX(-100%);
+      }
+
+      @include onDescktop {
+        left: -56px;
+      }
     }
   }
 
@@ -48,12 +209,23 @@
   &__title-text {
     margin-bottom: 20px;
     line-height: 150%;
+
+    @include onTablet {
+      grid-column: -4 / -1;
+      margin-bottom: 10px;
+
+      @include pseudoObliqueTitleText;
+    }
   }
 
   &__text {
     font-size: 16px;
     line-height: 150%;
     color: $text-color;
+
+    @include onTablet {
+      grid-column: -4 / -1;
+    }
   }
 
   &__side-text-container {
@@ -67,6 +239,18 @@
     rotate: 90deg;
     transform-origin: right;
     transform: translate(8px, 50%);
+
+    @include onTablet {
+      bottom: auto;
+      top: 0;
+      padding-top: 8px;
+      transform: translate(-5px, 50%);
+    }
+
+    @include onDescktop {
+      transform: translate(calc(100% + 66px), calc(135px + 50%));
+      padding-top: 0;
+    }
   }
 
   &__side-text {

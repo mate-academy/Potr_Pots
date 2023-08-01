@@ -33,3 +33,23 @@
 //     this.classList.remove('invalid');
 //   });
 // }
+
+// function validateForm(event, form) {
+//   event.preventDefault(); // Зупинити стандартну відправку форми
+
+//   const inputs = form.getElementsByClassName('input__fields');
+
+//   // Проходимося по всіх полях форми і перевіряємо їх на валідність
+//   for (let i = 0; i < inputs.length; i++) {
+//     if (!inputs[i].checkValidity()) {
+//       inputs[i].classList.add('input__fields--invalid');
+//     } else {
+//       inputs[i].classList.remove('input__fields--invalid');
+//     }
+//   }
+
+//   // Якщо всі поля валідні, можна відправити форму
+//   if (form.checkValidity()) {
+//     form.submit();
+//   }
+// }

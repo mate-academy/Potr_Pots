@@ -26,9 +26,11 @@
     background-color: $blue-title-color;
     line-height: 150%;
 
-    &:hover {
-      background-color: rgba(3, 128, 158, 0.7);
-    }
+    @include hover(background-color, rgba(3, 128, 158, 0.7));
+
+    // &:hover {
+    //   background-color: rgba(3, 128, 158, 0.7);
+    // }
   }
 }
 
@@ -53,10 +55,10 @@
       border-bottom: 1px solid $blue-title-color;
     }
 
-    // &:invalid {
-    //   color: #eb5757;
-    //   border-bottom: 1px solid #eb5757;
-    // }
+    &--invalid {
+      color: #eb5757;
+      border-bottom: 1px solid #eb5757;
+    }
 
     &--text-area {
       margin-bottom: 30px;
@@ -65,9 +67,4 @@
       overflow: hidden;
     }
   }
-}
-
-.invalid {
-  color: #eb5757;
-  border-bottom: 1px solid #eb5757;
 }
