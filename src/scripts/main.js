@@ -165,7 +165,7 @@
   };
 
   const validateInput = (input, regex, minLength) => {
-    if (regex.test(input.value) && input.value.length > minLength) {
+    if (regex.test(input.value) & input.value.length > minLength) {
       removeClasses(input, 'invalid');
       addClass(input, 'valid');
 
@@ -205,5 +205,30 @@
         input => removeClasses(input, 'valid', 'invalid')
       );
     }
+  });
+})();
+
+(function IntersectionObserverModule() {
+  // eslint-disable-next-line no-undef
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      // Если элемент в поле зрения и еще не был анимирован
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        // Добавьте класс для анимации
+        entry.target.classList.add('animate');
+        entry.target.classList.remove('hide');
+        // Отметьте элемент как анимированный
+        entry.target.dataset.animated = true;
+      }
+    });
+  }, {
+    rootMargin: '-10% 0px',
+  });
+
+  const elements = document.querySelectorAll('.animate-on-scroll');
+
+  elements.forEach((element) => {
+    element.classList.add('hide');
+    observer.observe(element);
   });
 })();
