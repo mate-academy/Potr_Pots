@@ -164,8 +164,8 @@
     input.classList.add(className);
   };
 
-  const validateInput = (input, regex, minLength) => {
-    if (regex.test(input.value) & input.value.length > minLength) {
+  const validateInput = (input, regex) => {
+    if (regex.test(input.value)) {
       removeClasses(input, 'invalid');
       addClass(input, 'valid');
 
@@ -187,15 +187,15 @@
     event.preventDefault();
 
     // Regular expressions for input fields
-    // _NAME At least 2 words, no numbers
+    // _NAME At least 2 symbols
     // _EMAIL generally accepted email form
-    const regex = /^([A-Za-zА-Яа-яЁё]+\s){1}[A-Za-zА-Яа-яЁё]+$/;
+    const regex = /.{2,}/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    let isFormValid = validateInput(nameInput, regex, 3);
+    let isFormValid = validateInput(nameInput, regex);
 
     isFormValid
-      = validateInput(emailInput, emailRegex, 0) && isFormValid;
+      = validateInput(emailInput, emailRegex) && isFormValid;
     addClass(messageInput, 'valid');
 
     if (isFormValid) {
