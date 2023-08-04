@@ -6,6 +6,10 @@
 
   &--menu {
     background-image: url(/images/icons/icon-menu.svg);
+
+    @include onDescktop {
+      display: none;
+    }
   }
 
   &--close {
@@ -13,5 +17,16 @@
     width: 12px;
 
     background-image: url(/images/icons/icon-close.svg);
+  }
+
+  &--bag {
+    display: none;
+
+    background-image: url(/images/icons/bag.png);
+    background-size: contain;
+
+    @include onDescktop {
+      display: flex;
+    }
   }
 }
