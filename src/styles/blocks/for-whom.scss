@@ -1,4 +1,9 @@
 .for-whom {
+  margin-bottom: 110px;
+  position: relative;
+
+  @include contentPaddingInLineForDevices;
+
   @include onTablet {
     padding-top: 62px;
     margin-bottom: 135px;
@@ -6,15 +11,14 @@
 
   @include onDescktop {
     padding-top: 0;
-    // margin-bottom: 150px;
-    margin-bottom: 0;
+    margin-bottom: 150px;
   }
 
-  &__container {
-    @include contentPaddingInLineForDevices;
+  // &__container {
+  //   @include contentPaddingInLineForDevices;
 
-    position: relative;
-  }
+  //   position: relative;
+  // }
 
   &__primary-title {
     margin-bottom: 25px;
@@ -50,7 +54,14 @@
     }
 
     &--2 {
+      @include onTablet {
+        grid-template-areas: "text-2 text-2 text-2 img-2 img-2 img-2";
+      }
+
       @include onDescktop {
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "img-2" "text-2";
+
         position: absolute;
         right: 135px;
         left: 135px;
@@ -66,13 +77,8 @@
       display: block;
       grid-column: 1 / 4;
 
-      &--top {
-        display: none;
-      }
-
-      &--bottom {
-        grid-column: -4 / -1;
-        margin-left: auto;
+      &--2 {
+        grid-area: img-2;
       }
     }
 
@@ -82,15 +88,8 @@
         width: 500px;
       }
 
-      &--top {
-        display: block;
+      &--2 {
         grid-column: 2 / 6;
-
-        margin-bottom: 109px;
-      }
-
-      &--bottom {
-        display: none;
       }
 
       &--3 {
@@ -114,9 +113,8 @@
   }
 
   &__text-wrapper-2 {
-
     @include onTablet {
-      grid-column: 1 / 4;
+      grid-area: text-2;
       margin-block: auto 74px;
 
       position: relative;
@@ -124,6 +122,8 @@
 
     @include onDescktop {
       grid-column: 2 / 6;
+
+      margin-block: 109px auto;
     }
   }
 
@@ -143,16 +143,11 @@
 
     @include onTablet {
       display: flex;
-      // position: relative;
       position: absolute;
 
       &--1 {
         top: -25px;
         transform: translateY(-100%);
-
-        @include onDescktop {
-          top: -40px;
-        }
       }
 
       &--2 {
@@ -171,6 +166,10 @@
       }
 
       @include pseudoStar;
+    }
+
+    @include onDescktop {
+      top: -40px;
     }
   }
 
@@ -230,26 +229,39 @@
 
   &__side-text-container {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    padding-top: 5px;
 
     display: flex;
     gap: 9px;
     rotate: 90deg;
     transform-origin: right;
-    transform: translate(8px, 50%);
 
-    @include onTablet {
-      bottom: auto;
-      top: 0;
-      padding-top: 8px;
-      transform: translate(-5px, 50%);
+    &--right {
+      bottom: 0;
+      right: 0;
+      padding-top: 5px;
+      transform: translate(8px, 50%);
+
+      @include onTablet {
+        bottom: auto;
+        top: 0;
+        padding-top: 8px;
+        transform: translate(-5px, 50%);
+      }
+
+      @include onDescktop {
+        transform: translate(calc(100% + 67px), calc(135px + 50%));
+        padding-top: 0;
+      }
     }
 
-    @include onDescktop {
-      transform: translate(calc(100% + 66px), calc(135px + 50%));
-      padding-top: 0;
+    &--left {
+      display: none;
+
+      @include onDescktop {
+        display: flex;
+        left: 0;
+        transform: translate(calc(-84px), calc(-94px + 100%));
+      }
     }
   }
 
@@ -263,15 +275,30 @@
     letter-spacing: 2.64px;
     color: #828282;
 
-    &::before {
-      position: absolute;
+    &--right {
+      &::before {
+        position: absolute;
 
-      content: "";
+        content: "";
 
-      width: 65px;
-      margin-right: 10px;
-      right: 100%;
-      border-bottom: 1px solid #828282;
+        width: 65px;
+        margin-right: 10px;
+        right: 100%;
+        border-bottom: 1px solid #828282;
+      }
+    }
+
+    &--left {
+      &::after {
+        position: absolute;
+
+        content: "";
+
+        width: 65px;
+        margin-left: 10px;
+        left: 100%;
+        border-bottom: 1px solid #828282;
+      }
     }
   }
 }

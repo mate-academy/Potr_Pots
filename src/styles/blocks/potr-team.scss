@@ -1,17 +1,109 @@
 .potr-team {
   position: relative;
 
-  &__primary-title {
-    @include contentPaddingInLineForDevices;
+  margin-bottom: 110px;///
 
+  @include onTablet {
+    @include pageGrid;
+    @include contentPaddingInLineForDevices;
+    margin-bottom: 0;///
+
+    grid-template-rows: repeat(2, auto);
+    column-gap: 20px;
+    grid-template-areas: "title title title title title title"
+      "text text text img img img ";
+  }
+
+  @include onDescktop {
+    margin-bottom: 226px;
+  }
+
+  &__primary-title {
     margin-bottom: 25px;
+    padding-inline: 30px;
+
+    @include onTablet {
+      padding-inline: 0;
+      margin-bottom: 177px;
+      grid-column: 1 / 6;
+      grid-area: title;
+    }
+
+    @include onDescktop {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__name {
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      position: absolute;
+
+      color: transparent;
+      -webkit-text-stroke: 1.5px $blue-title-color;
+
+      &--top {
+        top: 80px;
+        right: 57px;
+        letter-spacing: 35.94px;
+        font-size: 231.88px;
+
+        @include onDescktop {
+          right: auto;
+          left: 74px;
+        }
+      }
+
+      &--bottom {
+        // bottom: -172px;
+        bottom: -50px;
+        right: 0;
+        width: 459px;
+        letter-spacing: 34.03px;
+        overflow: hidden;
+        font-size: 219.59px;
+
+        @include onDescktop {
+          width: 598px;
+        }
+      }
+    }
+
+    @include onDescktop {
+      font-size: 288px;
+      letter-spacing: 44.64px;
+    }
   }
 
   &__img {
     display: flex;
     width: 100%;
-    // margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      grid-area: img;
+      margin-bottom: 186px;
+    }
+
+    @include onDescktop {
+      grid-column: 5 / -2;
+    }
   }
+
+  &__back-ground-wrapper {///
+    @include onTablet {///
+      @include pageGrid;///
+      @include contentPaddingInLineForDevices;///
+
+      direction: rtl;///
+      position: absolute;///
+      left: 0;///
+      right: 0;///
+    }///
+  }///
 
   &__back-ground {
     width: 100%;
@@ -21,38 +113,56 @@
     bottom: 0;
 
     background-image: url(/images/team/back-ground.png);
-    background-size: cover;
-    // background-size: 100% auto;
+    // background-size: cover;
+    background-size: 100% auto;
     background-repeat: no-repeat;
     background-position: bottom;
 
     z-index: -1;
 
-    // background-size: contain;
-    // background-position-x: 10%;
+    @include onTablet {
+      position: absolute;
+      top: 170px;
+      left: 0;
+      bottom: auto;
+      // background-position-x: left;
 
-    // transform-origin: right;
-    // background: linear-gradient(-15deg, $gray-light 70%, #ffec7a 70%);
-    // background: linear-gradient(-15deg, $gray-light 70%, #ffec7a 70%);
+      height: 245px;
+      grid-column: 5;///
+
+      background-size: 100% 100%;///
+      // background-size: 254px 100%;
+    }
+
+    @include onDescktop {
+      top: 180px;
+      height: 310px;
+      width: 435px;
+      grid-column: 10;
+      background-size: 120%;
+    }
   }
 
   &__text {
-    // position: relative;
-    // background-image: url(/images/team/back-ground.png);
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-position: bottom;
-
-    // transform-origin: right;
-    // background: linear-gradient(-15deg, $gray-light 70%, #ffec7a 70%);
-    // background: linear-gradient(-15deg, $gray-light 70%, #ffec7a 70%);
-
-    @include contentPaddingInLineForDevices;
-    padding-block: 30px 58px;
+    padding: 30px 30px 58px;
 
     box-sizing: border-box;
 
     font-size: 16px;
     line-height: 150%;
+
+    @include onTablet {
+      margin-top: 53px;
+      padding: 0;
+      width: 340px;
+      grid-column: 1 / 4;
+      grid-area: text;
+    }
+
+    @include onDescktop {
+      grid-column: 1 / 5;
+      width: 336px;
+      margin-top: 240px;
+    }
   }
 }

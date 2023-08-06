@@ -1,22 +1,67 @@
 .features {
-  &__wrapper {
-    @include contentPaddingInLineForDevices;
-    display: grid;
-    row-gap: 23px;
+  margin-bottom: 110px;
+
+  @include contentPaddingInLineForDevices;
+
+  @include onTablet {
+    margin-bottom: 135px;
   }
 
+  @include onDescktop {
+    margin-bottom: 150px;
+  }
+
+  // &__wrapper {
+  //   @include contentPaddingInLineForDevices;
+  // }
+
   &__primary-title {
+    margin-bottom: 23px;
+
     color: $blue-title-color;
     -webkit-text-stroke: 1px $blue-title-color;
+
+    @include onTablet {
+      margin-bottom: 50px;
+
+      font-size: 58px;
+    }
+
+    @include onDescktop {
+      margin-bottom: 71px;
+    }
   }
 
   &__list {
-    display: grid;
+    @include pageGrid;
     row-gap: 67px;
+
+    @include onTablet {
+      grid-template-areas: "l l m m r r";
+    }
+    @include onDescktop {
+      grid-template-areas: "m m m m r r r r l l l l";
+    }
   }
 
   &__box {
     text-align: center;
+    grid-column: span 2;
+
+    @include onTablet {
+
+      &--1 {
+        grid-area: m;
+      }
+
+      &--2 {
+        grid-area: r;
+      }
+
+      &--3 {
+        grid-area: l;
+      }
+    }
   }
 
   &__primary-title-clear-inside {
@@ -26,10 +71,26 @@
   &__img {
     width: 100%;
     margin-bottom: 37px;
+
+    @include onTablet {
+      margin-bottom: 29px;
+    }
+
+    @include onDescktop {
+      margin-bottom: 25px;
+    }
   }
 
   &__tertiary-title {
     margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 21px;
+    }
+
+    @include onDescktop {
+      margin-bottom: 20px;
+    }
     // letter-spacing: 3.72px;
   }
 
