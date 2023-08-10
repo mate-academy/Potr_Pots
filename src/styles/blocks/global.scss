@@ -34,7 +34,7 @@ p {
 
 .title-block {
   margin: 0;
-  font-family: Bebas Neue;
+  font-family: Bebas Neue, sans-serif;
   font-size: 58px;
   font-weight: 400;
   letter-spacing: 8.99px;
@@ -49,7 +49,7 @@ p {
 
 .vertical-text {
   position: absolute;
-  font-family: Bebas Neue;
+  font-family: Bebas Neue, sans-serif;
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 2.64px;
@@ -57,7 +57,6 @@ p {
 
   &::before {
     content: "";
-    background-color: #000;
     width: 65px;
     height: 1px;
     position: absolute;
@@ -77,17 +76,14 @@ p {
     padding-left: 75px;
     transform: rotate(-90deg);
     transform-origin: bottom left;
-
-
   }
 }
 
 .button {
   font-size: 14px;
   font-weight: 600;
-  line-height: 150%;
   text-transform: uppercase;
-  background-color: #FFE339;
+  background-color: #ffe339;
   border: none;
   color: #121212;
   font-family: Manrope, sans-serif;
@@ -100,7 +96,6 @@ p {
   text-align: center;
   line-height: 48px;
   transition: $transition;
-
 
   &::after {
     content: "";
@@ -118,7 +113,7 @@ p {
   }
 
   &:hover {
-   opacity: 0.8;
+    opacity: 0.8;
   }
 
   &:hover::after {
@@ -131,22 +126,22 @@ p {
   overflow-x: hidden;
   display: block;
   transition: $transition;
-    &:hover {
-      color: $bigTitlesColor;
-    }
+  &:hover {
+    color: $bigTitlesColor;
+  }
 
-    &::after {
-      content: "";
-      border-bottom: 1px solid $bigTitlesColor;
-      width: 100%;
-      position: absolute;
-      bottom: 0px;
-      left: 0;
-      transform: translateX(-100%);
-      transition: $transition;
-    }
+  &::after {
+    content: "";
+    border-bottom: 1px solid $bigTitlesColor;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: $transition;
+  }
 
-    &:hover::after {
-      transform: translateX(0);
-    }
+  &:hover::after {
+    transform: translateX(0);
+  }
 }
