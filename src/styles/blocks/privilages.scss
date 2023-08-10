@@ -24,6 +24,9 @@
   }
 
   &__image {
+    transition: $transition;
+    cursor: pointer;
+
     &:nth-child(1) {
       transform: translate(-20px, 0) rotate(-20deg);
     }
@@ -47,6 +50,15 @@
 
     &:nth-child(6) {
       transform: translate(10px, 25px) rotate(-26deg);
+    }
+  }
+
+  @for $i from 1 through 6 {
+    &__image:hover {
+      &:nth-child(#{$i}) {
+        transform: rotate(0deg) scale(1.2);
+        z-index: 2;
+      }
     }
   }
 

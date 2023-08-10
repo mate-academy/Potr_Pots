@@ -20,6 +20,7 @@ materialsItems.forEach((item) => {
       const activeDescr = activeItem.querySelector('.materials__paragraph');
 
       activeDescr.style.opacity = '0';
+      activeDescr.style.pointerEvents = 'none';
     }
 
     if (item.classList.contains('materials__item--active')) {
@@ -27,11 +28,13 @@ materialsItems.forEach((item) => {
       btn.textContent = '+';
       btn.style.backgroundColor = '#EB5757';
       descr.style.opacity = '0';
+      descr.style.pointerEvents = 'none';
     } else {
       item.classList.add('materials__item--active');
       btn.textContent = '-';
       btn.style.backgroundColor = '#00000069';
       descr.style.opacity = '1';
+      descr.style.pointerEvents = 'auto';
     }
   });
 });
