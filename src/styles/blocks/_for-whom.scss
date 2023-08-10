@@ -1,7 +1,7 @@
 .for-whom {
   &__title {
     position: relative;
-    margin: 0 0 28px;
+    margin: 0 0 26px;
 
     color: $colorDarkGray;
     font-family: "Bebas Neue", sans-serif;
@@ -10,6 +10,14 @@
     line-height: 150%;
     letter-spacing: 5.58px;
     text-transform: uppercase;
+
+    @include onTablet {
+      margin: 0 0 42px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 34px;
+    }
   }
 
   &__content {
@@ -111,6 +119,7 @@
   &__wrapper {
     display: grid;
     row-gap: 30px;
+    width: 260px;
 
     @include onTablet {
       padding-top: 26px;
@@ -220,10 +229,14 @@
   }
 
   &__comment {
-    display: block;
-    width: max-content;
-    color: $colorBlack;
-    position: absolute;
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: max-content;
+      color: $colorBlack;
+      position: absolute;
+    }
 
     &::before {
       content: "*";
@@ -266,6 +279,7 @@
 
   &__side {
     position: absolute;
+
     &--right {
       bottom: 0;
       right: -17px;
@@ -285,10 +299,14 @@
     }
 
     &--left {
-      bottom: -14px;
-      left: 0;
-      transform-origin: left top;
-      transform: rotate(-90deg);
+      display: none;
+
+      @include onTablet {
+        bottom: -14px;
+        left: 0;
+        transform-origin: left top;
+        transform: rotate(-90deg);
+      }
     }
   }
 }
