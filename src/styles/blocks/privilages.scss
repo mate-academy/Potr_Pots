@@ -1,0 +1,201 @@
+.privileges {
+  position: relative;
+  margin-bottom: 130px;
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 30px;
+
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__images {
+    grid-column: 1 / 6;
+    display: grid;
+    grid-template-rows: repeat(3, 215px);
+    grid-template-columns: repeat(2, 240px);
+    gap: 8px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__image {
+    transition: $transition;
+    cursor: pointer;
+
+    &:nth-child(1) {
+      transform: translate(-20px, 0) rotate(-20deg);
+    }
+
+    &:nth-child(2) {
+      transform: translate(-20px, 0) rotate(-30deg);
+    }
+
+    &:nth-child(3) {
+      transform: translate(-65px, 35px) rotate(-2deg);
+      z-index: 1;
+    }
+
+    &:nth-child(4) {
+      transform: translate(-70px, 25px) rotate(-20deg);
+    }
+
+    &:nth-child(5) {
+      transform: translate(10px, 25px) rotate(-15deg);
+    }
+
+    &:nth-child(6) {
+      transform: translate(10px, 25px) rotate(-26deg);
+    }
+  }
+
+  @for $i from 1 through 6 {
+    &__image:hover {
+      &:nth-child(#{$i}) {
+        transform: rotate(0deg) scale(1.2);
+        z-index: 2;
+      }
+    }
+  }
+
+  &__content {
+    grid-column: 6 / -1;
+    margin-top: 150px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin-top: 0;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-gap: 20px;
+    }
+
+    @include onMobile {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__titles {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      gap: 30px;
+    }
+
+    @include onMobile {
+      grid-column: 1 / -1;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title-wrapper {
+    position: relative;
+    width: 50%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 22%;
+      width: 10px;
+      height: 10px;
+      background-color: #333;
+      transform: rotate(45deg);
+    }
+
+    @include onTablet {
+      width: 100%;
+    }
+  }
+
+  &__title-text {
+    margin: 0;
+    color: #333;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__action {
+    @include onTablet {
+      grid-column: 4 / 7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include onMobile {
+      grid-column: 1 / -1;
+    }
+
+  }
+
+  &__btn {
+    background-color: #fff;
+    border: 1px solid $bigTitlesColor;
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onMobile {
+      margin-bottom: 50px;
+      background-color: #ffe339;
+      border: none;
+      width: 100%;
+    }
+  }
+
+  &__persentage {
+    color: #eb5757;
+    font-family: Bebas Neue, sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    margin-left: 50px;
+
+    @include onTablet {
+      margin-left: 0;
+    }
+  }
+
+  &__descr-persentage {
+    color: $bigTitlesColor;
+    font-family: Bebas Neue, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    margin-left: 50px;
+
+    @include onTablet() {
+      margin-left: 0;
+    }
+  }
+
+  &__vertical-text {
+    top: 200px;
+    right: 4px;
+    display: none;
+
+    @include onTablet() {
+      display: block;
+    }
+
+    @include onMobile() {
+      display: none;
+    }
+  }
+}

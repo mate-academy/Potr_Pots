@@ -1,0 +1,61 @@
+.page {
+  margin: 0;
+  font-family: Manrope, sans-serif;
+  position: relative;
+  height: 100vh;
+  scroll-behavior: smooth;
+
+  &::after {
+    content: "";
+    background-image: url("../images/background-header.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+
+    @include onMobile() {
+      display: none;
+    }
+  }
+
+  &__body {
+    margin: 0;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: $transition;
+    transform: translateX(100%);
+    z-index: 1;
+    background-color: $bigTitlesColor;
+    display: none;
+
+    &:target {
+      pointer-events: auto;
+      opacity: 1;
+      transform: translateX(0);
+      overflow: auto;
+    }
+
+    @include onTablet() {
+      display: block;
+    }
+
+    @include onMobile() {
+      width: 70%;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}

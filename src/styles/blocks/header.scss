@@ -1,0 +1,38 @@
+.header {
+  @include retreatTopHeader();
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+
+    @include onMobile() {
+      margin-bottom: 0;
+    }
+  }
+
+  &__btn {
+    all: unset;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__bag {
+    @include onTablet() {
+      display: none;
+    }
+  }
+
+  &__menu-icon {
+    display: none;
+
+    @include onTablet() {
+      display: block;
+    }
+  }
+}
