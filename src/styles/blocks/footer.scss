@@ -2,9 +2,11 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 65px;
 
     @include onMobile {
       flex-wrap: wrap;
+      padding-bottom: 30px;
     }
   }
 
@@ -48,6 +50,10 @@
     color: $blackColor;
     text-decoration: none;
     display: block;
+
+    &::after {
+      display: none;
+    }
   }
 
   &__socials-media {
@@ -82,6 +88,10 @@
     text-transform: uppercase;
     text-decoration: none;
     margin-bottom: 3px;
+
+    &::after {
+      display: none;
+    }
 
     @include onMobile {
       display: none;

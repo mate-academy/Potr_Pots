@@ -1,7 +1,11 @@
 .contacts {
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 180px;
   overflow-x: clip;
+
+  @include onMobile {
+    margin-bottom: 110px;
+  }
 
   &__container {
     position: relative;
@@ -155,6 +159,10 @@
     font-weight: 400;
     line-height: 150%;
     text-decoration: none;
+
+    &::after {
+      display: none;
+    }
   }
 
   &__img-cirlce-text {
