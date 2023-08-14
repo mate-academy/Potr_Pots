@@ -1,0 +1,61 @@
+.feature {
+  display: flex;
+  flex-direction: column;
+
+  @include onDesktop {
+    align-items: center;
+  }
+
+  &__img-container {
+    display: block;
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 37px;
+
+    @include onTablet {
+      width: 222px;
+      height: 222px;
+      margin-bottom: 27px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+      height: 370px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__img {
+    @extend %img-fit;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 18px;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      margin-bottom: 17px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    @extend %main-text;
+    text-align: center;
+
+    @include onTablet {
+      max-width: 220px;
+      text-align: start;
+    }
+
+    @include onDesktop {
+      max-width: 370px;
+      text-align: center;
+    }
+  }
+}

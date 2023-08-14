@@ -1,0 +1,133 @@
+.team {
+  padding-bottom: 168px;
+  background: url(../images/team/team-bcg.svg) no-repeat 0 84.5%;
+
+  @include onTablet {
+    padding-bottom: 0;
+    background: url(../images/team/team-bcg-tablet.svg) no-repeat 0% 169px;
+  }
+
+  @include onDesktop {
+    background: url(../images/team/team-bcg-desctop.svg) no-repeat 0% 178px;
+    padding-bottom: 0;
+  }
+
+  &__content {
+    position: relative;
+    @extend %grid-system;
+
+    @include onTablet {
+      padding: 160px 0 126px;
+    }
+
+    @include onDesktop {
+      padding: 125px 0 225px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-weight: 400;
+
+    @include onTablet {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__name {
+    @extend %display-notMobile;
+    // display: none;
+    font-family: $font-heading;
+    color: transparent;
+    -webkit-text-stroke: 1px $color-turquoise;
+
+    @include onTablet {
+      // display: block;
+      position: absolute;
+      overflow: hidden;
+    }
+
+    @include onDesktop {
+      font-size: 28.8rem;
+      letter-spacing: 4.464rem;
+    }
+
+    &--first {
+      font-size: 23.1884rem;
+      letter-spacing: 3.5942rem;
+      top: 0;
+      transform: translateX(-78px);
+
+      @include onDesktop {
+        font-size: 28.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 126%;
+        letter-spacing: 44.64px;
+        transform: translateX(-63px);
+      }
+
+    }
+
+    &--second {
+      width: 454px;
+      font-size: 21.9588rem;
+      letter-spacing: 3.4036rem;
+      bottom: -40px;
+      transform: translateX(60%);
+
+      @include onDesktop {
+        transform: translateX(155%);
+        font-size: 28.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: 44.64px;
+      }
+    }
+  }
+
+  &__img-container {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -30px;
+    width: 320px;
+    height: 240px;
+
+    @include onTablet {
+      position: static;
+      grid-column: 4/7;
+      grid-row: 1/2;
+      width: 340px;
+      height: 255px;
+    }
+
+    @include onDesktop {
+      width: 677px;
+      height: 507.75px;
+      grid-column: 5/12;
+    }
+  }
+
+  &__img {
+    @extend %img-fit;
+  }
+
+  &__text {
+    @extend %main-text;
+    padding-top: 270px;
+
+    @include onTablet {
+      grid-column: 1/4;
+      grid-row: 1/2;
+      padding-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 1/5;
+      padding-top: 230px;
+      width: 336px;
+    }
+  }
+}

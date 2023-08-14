@@ -1,0 +1,78 @@
+.features {
+  margin-bottom: 110px;
+
+  @include onTablet {
+    margin-bottom: 132px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 150px;
+  }
+
+  &__title {
+    margin-bottom: 27px;
+    color: transparent;
+    -webkit-text-stroke: 1px $color-turquoise;
+
+    @include onTablet {
+      margin-bottom: 43px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 73px;
+    }
+
+    &--accent {
+      white-space: nowrap;
+      color: $color-turquoise;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 18px;
+
+      @include onDesktop {
+        column-gap: 25px;
+      }
+    }
+  }
+
+  &__feature {
+    @include onTablet {
+      max-width: 222px;
+    }
+
+    @include onTablet {
+      max-width: 375px;
+    }
+
+    &:nth-child(1) {
+      margin-bottom: 67px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 70px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      @include onTablet {
+        order: -1;
+      }
+
+      @include onDesktop {
+        order: unset;
+      }
+    }
+  }
+}

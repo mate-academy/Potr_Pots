@@ -1,0 +1,66 @@
+.questions {
+  position: relative;
+  padding: 45px 0 40px;
+  background: url(../images/question/Rectangle-mobile.svg) no-repeat;
+
+  @include onTablet {
+    margin-bottom: 55px;
+    padding-top: 17px;
+    background: url(../images/question/Rectangle-tablet.svg) no-repeat;
+  }
+
+  @include onDesktop {
+    margin-bottom: 60px;
+    padding: 38px 0 122px;
+    background: url(../images/question/Rectangle-desktop.svg) no-repeat;
+  }
+
+  &__stamp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(31%, -44%);
+    width: 170px;
+    height: 170px;
+
+    @include onTablet {
+      width: 167px;
+      height: 167px;
+      transform: translate(33%, -62%);
+    }
+
+    @include onDesktop {
+      transform: translate(-36%, -58%);
+      width: 161px;
+      height: 164px;
+    }
+  }
+
+  &__content {
+    @extend %grid-system;
+  }
+
+  &__message {
+    grid-column: 1/4;
+
+    @include onDesktop {
+      grid-column: 1/5;
+    }
+  }
+
+  &__contacts {
+    grid-column: 5/7;
+
+    @include onDesktop {
+      grid-column: 7/10;
+    }
+  }
+
+  &__socials {
+    justify-content: center;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

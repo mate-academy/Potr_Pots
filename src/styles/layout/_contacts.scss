@@ -1,0 +1,45 @@
+.contacts {
+  margin-bottom: 102px;
+
+  @include onDesktop {
+    margin-bottom: 0;
+    transform: translateY(-12px);
+  }
+
+  &__list {
+    margin: 0;
+
+    @include onTablet {
+      max-width: 205px;
+    }
+
+    @include onDesktop {
+      max-width: 270px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    @extend %small-heading2;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 34px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__info {
+    &-link {
+      @extend %main-text;
+      color: $color-dark;
+    }
+  }
+}
