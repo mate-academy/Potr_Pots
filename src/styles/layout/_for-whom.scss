@@ -26,246 +26,8 @@
     @extend %grid-system;
   }
 
-  &__card {
-    @extend %grid-system;
-
-    &--robust {
-      grid-row: 1/2;
-      grid-column: 1/7;
-
-      @include onDesktop {
-        grid-column: 1/13;
-        grid-template-rows: 1fr 2fr;
-      }
-
-      >.for-whom__img-container {
-        @include onTablet {
-          margin-top: 23px;
-          grid-column: 1/4;
-          grid-row: 1/3;
-          align-self: end;
-          width: 284px;
-          height: 284px;
-        }
-
-        @include onDesktop {
-          grid-column: 1/7;
-          width: 500px;
-          height: 500px;
-        }
-      }
-
-      >.for-whom__sign {
-        margin-bottom: 10px;
-
-        @include onTablet {
-          grid-column: 4/6;
-          grid-row: 1/2;
-        }
-
-        @include onDesktop {
-          grid-column: 8/12;
-          align-self: flex-end;
-
-          &::before {
-            transform: translate(-40px, 40%);
-          }
-        }
-      }
-
-      >.for-whom__desc {
-        @include onTablet {
-          position: relative;
-          grid-column: 4/7;
-          grid-row: 2/3;
-
-          >.for-whom__desc-count {
-            position: absolute;
-            top: 0;
-            transform: translateX(-160%);
-
-            @include onDesktop {
-              top: 13%;
-              transform: translateX(-262%);
-            }
-          }
-        }
-
-        @include onDesktop {
-          grid-column: 8/12;
-          padding-top: 32px;
-          align-self: flex-start;
-
-          >.for-whom__desc-count {
-            top: 13%;
-            transform: translateX(-262%);
-          }
-        }
-      }
-    }
-
-    &--beautiful {
-      grid-column: 1/7;
-      grid-template-rows: 1fr 4fr;
-      grid-row: 2/3;
-
-      @include onDesktop {
-        grid-template-rows: auto auto 1fr;
-        grid-column: 2/7;
-        padding-top: 100px;
-      }
-
-      >.for-whom__img-container {
-        grid-column: 4/7;
-        grid-row: 1/3;
-        justify-self: end;
-        width: 300px;
-        height: 417px;
-
-        @include onDesktop {
-          grid-column: 1/9;
-          grid-row: 1/2;
-        }
-      }
-
-      >.for-whom__sign {
-        grid-column: 1/4;
-        grid-row: 1/2;
-        justify-self: end;
-        align-self: center;
-
-        @include onDesktop {
-          padding-top: 50px;
-          grid-column: 1/5;
-          grid-row: 2/3;
-          justify-self: start;
-        }
-
-        &::before {
-          @include onDesktop {
-            transform: translate(-47px, 22%);
-          }
-        }
-      }
-
-      >.for-whom__desc {
-        position: relative;
-        grid-column: 1/4;
-        grid-row: 2/3;
-
-        @include onDesktop {
-          grid-column: 1/11;
-          grid-row: 3/4;
-          padding-top: 35px;
-        }
-
-        >.for-whom__desc-count {
-          @include onDesktop {
-            margin-bottom: 10px;
-          }
-        }
-      }
-
-
-    }
-
-    &--saves {
-      grid-column: 1/7;
-      grid-template-rows: 1fr 9fr;
-      grid-row: 3/4;
-
-      @include onDesktop {
-        grid-column: 8/13;
-        grid-template-rows: auto auto 1fr;
-        grid-row: 2/3;
-      }
-
-      >.for-whom__img-container {
-        @include onTablet {
-          grid-column: 1/4;
-          grid-row: 1/3;
-          align-self: end;
-          width: 284px;
-          height: 404.851px;
-        }
-
-        @include onDesktop {
-          margin-bottom: 45px;
-          grid-row: 1/2;
-          grid-column: 1/13;
-          width: 470px;
-          height: 670px;
-        }
-      }
-
-      >.for-whom__sign {
-        margin-bottom: 25px;
-
-        @include onTablet {
-          margin-bottom: 0;
-          grid-column: 4/6;
-          grid-row: 1/2;
-        }
-
-        @include onDesktop {
-          grid-column: 1/6;
-          grid-row: 2/3;
-        }
-
-        &::before {
-          @include onTablet {
-            position: absolute;
-            transform: translate(-40px, 20%);
-          }
-        }
-      }
-
-      >.for-whom__desc {
-        @include onTablet {
-          position: relative;
-          grid-column: 4/7;
-          grid-row: 2/3;
-
-          >.for-whom__desc-count {
-            position: absolute;
-            top: 0;
-            transform: translateX(-150%);
-          }
-        }
-
-        @include onDesktop {
-          grid-column: 3/13;
-          grid-row: 3/4;
-          padding: 40px 0 0 14px;
-
-          >.for-whom__desc-count {
-            top: 10%;
-            transform: translateX(-254%);
-          }
-        }
-      }
-    }
-
-    &:not(:last-child) {
-      margin-bottom: 71px;
-
-      @include onTablet {
-        margin-bottom: 110px;
-      }
-
-      @include onDesktop {
-        margin-bottom: 80px;
-      }
-    }
-  }
-
   &__img-container {
     @extend %display-notMobile;
-    // display: none;
-
-    // @include onTablet {
-    //   display: block;
-    // }
   }
 
   &__sign {
@@ -279,7 +41,7 @@
       position: absolute;
       transform: translate(-150%, 10%);
       margin-right: 10px;
-      content: '*';
+      content: "*";
       color: $color-dark;
       font-family: $font-heading;
       font-size: 2.4rem;
@@ -305,9 +67,9 @@
 
       &::before {
         display: inline-block;
-        content: '';
+        content: "";
         width: 1px;
-        height: 46.289px;
+        height: 46.29px;
         transform: rotate(22deg);
         background: $color-grey1;
       }
@@ -323,9 +85,9 @@
       &::after {
         display: none;
         margin-left: 10px;
-        content: '';
+        content: "";
         width: 1px;
-        height: 46.289px;
+        height: 46.29px;
         transform: rotate(22deg);
         background: $color-grey1;
 
@@ -366,6 +128,237 @@
       @include onDesktop {
         display: block;
         transform-origin: -2% -22%;
+      }
+    }
+  }
+
+  &__card {
+    @extend %grid-system;
+
+    &--robust {
+      grid-row: 1/2;
+      grid-column: 1/7;
+
+      @include onDesktop {
+        grid-column: 1/13;
+        grid-template-rows: 1fr 2fr;
+      }
+
+      > .for-whom__img-container {
+        @include onTablet {
+          margin-top: 23px;
+          grid-column: 1/4;
+          grid-row: 1/3;
+          align-self: end;
+          width: 284px;
+          height: 284px;
+        }
+
+        @include onDesktop {
+          grid-column: 1/7;
+          width: 500px;
+          height: 500px;
+        }
+      }
+
+      > .for-whom__sign {
+        margin-bottom: 10px;
+
+        @include onTablet {
+          grid-column: 4/6;
+          grid-row: 1/2;
+        }
+
+        @include onDesktop {
+          grid-column: 8/12;
+          align-self: flex-end;
+
+          &::before {
+            transform: translate(-40px, 40%);
+          }
+        }
+      }
+
+      > .for-whom__desc {
+        @include onTablet {
+          position: relative;
+          grid-column: 4/7;
+          grid-row: 2/3;
+
+          > .for-whom__desc-count {
+            position: absolute;
+            top: 0;
+            transform: translateX(-160%);
+
+            @include onDesktop {
+              top: 13%;
+              transform: translateX(-262%);
+            }
+          }
+        }
+
+        @include onDesktop {
+          grid-column: 8/12;
+          padding-top: 32px;
+          align-self: flex-start;
+
+          > .for-whom__desc-count {
+            top: 13%;
+            transform: translateX(-262%);
+          }
+        }
+      }
+    }
+
+    &--beautiful {
+      grid-column: 1/7;
+      grid-template-rows: 1fr 4fr;
+      grid-row: 2/3;
+
+      @include onDesktop {
+        grid-template-rows: auto auto 1fr;
+        grid-column: 2/7;
+        padding-top: 100px;
+      }
+
+      > .for-whom__img-container {
+        grid-column: 4/7;
+        grid-row: 1/3;
+        justify-self: end;
+        width: 300px;
+        height: 417px;
+
+        @include onDesktop {
+          grid-column: 1/9;
+          grid-row: 1/2;
+        }
+      }
+
+      > .for-whom__sign {
+        grid-column: 1/4;
+        grid-row: 1/2;
+        justify-self: end;
+        align-self: center;
+
+        @include onDesktop {
+          padding-top: 50px;
+          grid-column: 1/5;
+          grid-row: 2/3;
+          justify-self: start;
+        }
+
+        &::before {
+          @include onDesktop {
+            transform: translate(-47px, 22%);
+          }
+        }
+      }
+
+      > .for-whom__desc {
+        position: relative;
+        grid-column: 1/4;
+        grid-row: 2/3;
+
+        @include onDesktop {
+          grid-column: 1/11;
+          grid-row: 3/4;
+          padding-top: 35px;
+        }
+
+        > .for-whom__desc-count {
+          @include onDesktop {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    &--saves {
+      grid-column: 1/7;
+      grid-template-rows: 1fr 9fr;
+      grid-row: 3/4;
+
+      @include onDesktop {
+        grid-column: 8/13;
+        grid-template-rows: auto auto 1fr;
+        grid-row: 2/3;
+      }
+
+      > .for-whom__img-container {
+        @include onTablet {
+          grid-column: 1/4;
+          grid-row: 1/3;
+          align-self: end;
+          width: 284px;
+          height: 404.85px;
+        }
+
+        @include onDesktop {
+          margin-bottom: 45px;
+          grid-row: 1/2;
+          grid-column: 1/13;
+          width: 470px;
+          height: 670px;
+        }
+      }
+
+      > .for-whom__sign {
+        margin-bottom: 25px;
+
+        @include onTablet {
+          margin-bottom: 0;
+          grid-column: 4/6;
+          grid-row: 1/2;
+        }
+
+        @include onDesktop {
+          grid-column: 1/6;
+          grid-row: 2/3;
+        }
+
+        &::before {
+          @include onTablet {
+            position: absolute;
+            transform: translate(-40px, 20%);
+          }
+        }
+      }
+
+      > .for-whom__desc {
+        @include onTablet {
+          position: relative;
+          grid-column: 4/7;
+          grid-row: 2/3;
+
+          > .for-whom__desc-count {
+            position: absolute;
+            top: 0;
+            transform: translateX(-150%);
+          }
+        }
+
+        @include onDesktop {
+          grid-column: 3/13;
+          grid-row: 3/4;
+          padding: 40px 0 0 14px;
+
+          > .for-whom__desc-count {
+            top: 10%;
+            transform: translateX(-254%);
+          }
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 71px;
+
+      @include onTablet {
+        margin-bottom: 110px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 80px;
       }
     }
   }
