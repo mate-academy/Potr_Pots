@@ -36,13 +36,11 @@
 
   &__name {
     @extend %display-notMobile;
-    // display: none;
     font-family: $font-heading;
     color: transparent;
     -webkit-text-stroke: 1px $color-turquoise;
 
     @include onTablet {
-      // display: block;
       position: absolute;
       overflow: hidden;
     }
@@ -93,6 +91,8 @@
     left: -30px;
     width: 320px;
     height: 240px;
+    cursor: pointer;
+    transition: all $transition;
 
     @include onTablet {
       position: static;
@@ -106,6 +106,10 @@
       width: 677px;
       height: 507.75px;
       grid-column: 5/12;
+    }
+
+    &:hover {
+      transform: scale(1.02);
     }
   }
 
