@@ -1,17 +1,32 @@
 .main {
   display: grid;
   row-gap: 110px;
-  margin-top: 110px;
 
   @include onTablet {
-    row-gap: 135px;
-    margin-top: 109px;
+    display: block;
   }
 
-  @include onDesktop {
-    row-gap: 150px;
+  &__for-whom {
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
   }
 
+  &__features {
+    @include onTablet {
+      margin-bottom: 130px;
+    }
 
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
 
+  &__team {
+    overflow: hidden;
+  }
 }
