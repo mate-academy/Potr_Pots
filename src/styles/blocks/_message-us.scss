@@ -19,16 +19,11 @@
     height: 1002px;
     z-index: -1;
 
-    background-image: url(/images/icons/q-rectangle-s.svg);
+    background-image: url(/images/icons/q-rectangle-b.svg);
     background-repeat: no-repeat;
 
     @include onTablet {
       height: 567px;
-      background-image: url(/images/icons/q-rectangle-b.svg);
-    }
-
-    @include onTablet {
-      background-image: url(/images/icons/q-rectangle-b.svg);
     }
   }
 
@@ -83,23 +78,32 @@
       background-color: transparent;
       border: none;
       border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-      resize: none;
+      outline: none;
       margin-bottom: 25px;
+
 
       &:focus {
         border-color: $c-turquoise;
-        outline: none;
       }
+
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $c-yellowlight inset;
+      -webkit-text-fill-color: $c-list;
+    }
 
       &:valid {
         color: $c-turquoise;
         border-color: $c-turquoise;
+        background-color: transparent;
+        outline: none;
       }
 
       &:invalid:not(:placeholder-shown) {
         color: $c-red;
         border-color: $c-red;
       }
+
     }
 
     &-button {
