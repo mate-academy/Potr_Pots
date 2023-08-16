@@ -1,47 +1,85 @@
 .materials {
+  margin-bottom: 60px;
+
+  @include onTablet {
+    margin-bottom: 110px;
+    // position: relative;
+  }
+
   &__title {
     font-size: 58px;
     color: $blue-title-color;
     letter-spacing: 8.99px;
 
+    transform: translateY(70px);
+
     @include contentPaddingInLineForDevices;
   }
 
   &__eco-wrapper {
-    display: none;
+    display: none;///
   }
 
   &__img-wrapper {
-    position: relative;
-    width: 100%;
-    padding-bottom: 75%;
+    // position: relative;
+    // width: 100%;
+    // height: 120px;
+    // padding-bottom: 75%;
   }
 
-  &__img {
+  &__img-mobile {
     display: flex;
     width: 100%;
 
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 70px;
+    //   position: absolute;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 70px;
 
-    z-index: -1;
+    //   z-index: -1;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__img-tablet {
+    display: none;
+    width: 100%;
+
+    //   // position: absolute;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+
+    //   z-index: -1;
+
+    @include onTablet {
+      display: flex;
+      position: relative;
+    }
   }
 
   &__slider-list {
-    height: 134px;
+    // display: none;///
+    //   height: 134px;
     width: 302px;
+    // width: auto;
     margin: 0 auto;
 
-    position: relative;
+    //   position: relative;
+
+    @include onTablet {
+      height: auto;
+      position: absolute;
+    }
   }
 
   &__slider-box {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    // position: absolute;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
 
     height: 254px;
     width: 302px;
@@ -58,5 +96,42 @@
     font-size: 16px;
     line-height: 150%;
     color: $gray-light;
+
+    transform: translateY(-50px);
+
+    @include onTablet {
+      height: auto;
+      width: 303px;
+      padding: 35px;
+
+      transform: translateY(0);
+    }
+
+    &--1 {
+      @include onTablet {
+        position: absolute;
+        left: 429px;
+        right: 36px;
+        // transform-origin: center;
+        // right: 429px;
+        bottom: 72px;
+        // top: -267px;
+        // transform: translate(100%, 100%);
+      }
+    }
+  }
+
+  &__plus-minus {
+    height: 51px;
+    width: 51px;
+
+    position: absolute;
+    // margin-inline: auto;
+    // top: -60px;
+    // right: 0;
+    // left: 0;
+
+    background-color: #eb5757;
+    border-radius: 50%;
   }
 }
