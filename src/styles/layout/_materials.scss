@@ -1,0 +1,115 @@
+.materials {
+  margin-bottom: 125px;
+  padding-bottom: 240px;
+  background: url(../images/materials/materials-mobile.png) no-repeat 0 41%;
+  background-size: contain;
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 112px;
+    padding-bottom: 72px;
+    background: url(../images/materials/materials-tablet.png) no-repeat bottom;
+  }
+
+  @include onDesktop {
+    margin-bottom: 110px;
+    padding-bottom: 0;
+    background: url(../images/materials/materials-desktop.png) no-repeat bottom;
+  }
+
+  &__content {
+    @extend %grid-system;
+  }
+
+  &__title {
+    margin-bottom: 110px;
+
+    @include onTablet {
+      grid-column: 1/6;
+      grid-row: 1/2;
+    }
+
+    @include onDesktop {
+      grid-column: 1/11;
+    }
+  }
+
+  &__desc {
+    @extend %display-notMobile;
+
+    @include onTablet {
+      margin-bottom: 272px;
+      padding-top: 141px;
+      grid-column: 4/7;
+      grid-row: 1/2;
+    }
+
+    @include onDesktop {
+      margin-bottom: 519px;
+      padding-top: 168px;
+      grid-column: 8/13;
+    }
+
+    &-heading {
+      margin-bottom: 10px;
+      @extend %small-heading3;
+
+      @include onDesktop {
+        margin-bottom: 15px;
+      }
+    }
+
+    &-text {
+      @extend %main-text;
+
+      &--accent {
+        font-weight: 700;
+
+        @include onDesktop {
+          font-weight: normal;
+        }
+      }
+
+      &--desktop {
+        display: none;
+
+        @include onDesktop {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__slider {
+    position: relative;
+
+    @include onTablet {
+      position: static;
+      grid-column: 1/7;
+      grid-row: 2/3;
+    }
+
+    @include onDesktop {
+      grid-column: 1/13;
+    }
+  }
+
+  &__side {
+    position: absolute;
+    @extend %display-notMobile;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--right {
+      right: -6.5%;
+      top: 7.5%;
+    }
+
+    &--left {
+      left: -6.5%;
+      top: 32%;
+    }
+  }
+}

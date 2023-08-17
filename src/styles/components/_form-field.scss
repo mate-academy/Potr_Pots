@@ -1,0 +1,59 @@
+.form-field {
+  display: block;
+  width: 100%;
+  padding: 7px 6px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  background: transparent;
+  @extend %main-text;
+
+  @include onTablet {
+    margin-bottom: 48px;
+  }
+
+  &:nth-child(1) {
+    margin-bottom: 10px;
+  }
+
+  &:nth-child(2) {
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    border-bottom-color: $color-turquoise;
+  }
+
+  &:focus,
+  &:-webkit-autofill {
+    outline: none;
+    border-bottom-color: $color-turquoise;
+    color: $color-turquoise;
+    -webkit-text-fill-color: $color-turquoise;
+    box-shadow: 0 0 0 1000px $color-yellow-light inset;
+  }
+
+  &--textarea {
+    padding: 0 6px;
+    margin-bottom: 28px;
+    resize: none;
+    line-height: 85%;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 42px;
+    }
+  }
+
+  &::placeholder {
+    @extend %main-text;
+  }
+
+  &__button {
+    height: 48px;
+    line-height: 2.25rem;
+  }
+}

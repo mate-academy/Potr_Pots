@@ -1,0 +1,70 @@
+.icon {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  transition: all $transition;
+
+  &:hover {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+
+  &--basket {
+    background: url(../images/svg/basket.svg) no-repeat;
+    width: 30px;
+    height: 30px;
+  }
+
+  &--menu {
+    background-image: url(../images/svg/menu_icon.svg);
+    width: 32px;
+    height: 32px;
+  }
+
+  &--plus {
+    background-image: url(../images/svg/plus.svg);
+    width: 51px;
+    height: 51px;
+    cursor: pointer;
+
+    &-active {
+      background-image: url(../images/svg/minus.svg);
+      pointer-events: none;
+    }
+  }
+
+  &--stamp {
+    background: url(../images/svg/stamp.svg) 50% no-repeat;
+  }
+
+  &--twitter {
+    background-image: url(../images/svg/twitter.svg);
+    height: 20px;
+
+    @include onDesktop {
+      height: 30px;
+    }
+  }
+
+  &--instagram {
+    background-image: url(../images/svg/instagram.svg);
+    height: 20px;
+
+    @include onDesktop {
+      height: 30px;
+    }
+  }
+
+  &--facebook {
+    background-image: url(../images/svg/facebook.svg);
+    height: 20px;
+
+    @include onDesktop {
+      height: 30px;
+    }
+  }
+}

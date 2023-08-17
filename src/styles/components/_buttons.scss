@@ -1,0 +1,130 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 48px;
+  padding: 0;
+  cursor: pointer;
+  border: 1px solid;
+  transition: all $transition;
+
+  &-text {
+    margin-right: 20px;
+    color: #121212;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    transition: all $transition;
+  }
+
+  &-icon {
+    background: url(../images/svg/Arrow-right.svg) no-repeat;
+    height: 8px;
+    width: 25px;
+    transition: all $transition;
+
+    &--primary {
+      background: url(../images/svg/Arrow-right-white.svg) no-repeat;
+
+      @include onTablet {
+        width: 26px;
+      }
+    }
+  }
+
+  &--primary {
+    width: 260px;
+    border: 1px solid $color-turquoise;
+    background: $color-turquoise;
+    transition: all $transition;
+
+    @include onTablet {
+      width: 219px;
+    }
+
+    @include onDesktop {
+      width: 238px;
+    }
+
+    > .button-text {
+      margin-right: 35px;
+      color: #fff;
+
+      @include onTablet {
+        margin-right: 20px;
+      }
+    }
+
+    &:hover {
+      background: rgba(3, 131, 158, 0.7);
+      border-color: rgba(3, 131, 158, 0.7);
+    }
+  }
+
+  &--primary2 {
+    border-color: $color-yellow;
+    background: $color-yellow;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &--cross {
+    background-color: transparent;
+    border: none;
+    height: 12.31px;
+
+    > .button-text {
+      color: $color-grey-light;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 150%;
+      text-transform: uppercase;
+    }
+
+    > .button-icon {
+      width: 12.31px;
+      height: 12.02px;
+      margin-right: 18px;
+    }
+
+    > .button-line {
+      margin-right: 5px;
+      height: 1px;
+      width: 44px;
+      background-color: $color-grey-light;
+    }
+  }
+
+  &--secondary {
+    width: 238px;
+    margin-bottom: 40px;
+    border-color: $color-yellow;
+    background: $color-yellow;
+
+    @include onTablet {
+      background: transparent;
+      border-color: $color-turquoise;
+    }
+
+    > .button-icon--hover {
+      display: none;
+      background: url(../images/svg/Arrow-right-white.svg) no-repeat;
+    }
+
+    &:hover {
+      background-color: $color-turquoise;
+
+      > .button-icon {
+        background: url(../images/svg/Arrow-right-white.svg) no-repeat;
+      }
+
+      > .button-text {
+        color: #fff;
+      }
+    }
+  }
+}

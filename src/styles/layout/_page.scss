@@ -1,0 +1,40 @@
+.page {
+  font-family: $font-main;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  scroll-behavior: smooth;
+  background: $color-grey-light;
+
+  &__body {
+    margin: 0;
+    background: $color-grey-light;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__main {
+    overflow: hidden;
+
+    @include onTablet {
+      overflow: visible;
+    }
+  }
+
+  &__menu-mobile {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    height: 100%;
+    transform: translateX(100%);
+    transition: transform $transition;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

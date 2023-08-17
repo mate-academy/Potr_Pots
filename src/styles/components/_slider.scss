@@ -1,0 +1,113 @@
+.slider {
+  &__content {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    padding: 28px 44px 37px 45px;
+    width: 302px;
+    height: 254px;
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    @include onTablet {
+      position: relative;
+      left: unset;
+      transform: none;
+      padding: 35px 45px;
+      margin: 0 2px 0 auto;
+      height: 237px;
+    }
+
+    @include onDesktop {
+      margin: 0 17px 130px auto;
+    }
+  }
+
+  &__text {
+    margin-bottom: 11px;
+    @extend %main-text;
+    color: $color-grey-light;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &-item {
+      width: 7px;
+      height: 7px;
+      transform: rotate(-45deg);
+      background: $color-grey-light;
+
+      &--active {
+        border: 1px solid $color-grey-light;
+        background: $color-grey1;
+      }
+    }
+  }
+
+  &__dropdown {
+    @extend %display-notMobile;
+
+    &-item {
+      position: absolute;
+
+      &:nth-child(1) {
+        left: 10.8%;
+        bottom: 12.3%;
+
+        @include onDesktop {
+          left: 17.6%;
+          bottom: 12.5%;
+        }
+      }
+
+      &:nth-child(2) {
+        left: 30%;
+        bottom: 27.5%;
+
+        @include onDesktop {
+          left: 38%;
+          bottom: 32%;
+        }
+      }
+
+      &:nth-child(3) {
+        left: 44%;
+        bottom: 8.5%;
+
+        @include onDesktop {
+          left: 47.5%;
+          bottom: 8.5%;
+        }
+      }
+
+      &:nth-child(4) {
+        left: 54.5%;
+        bottom: 16%;
+
+        @include onDesktop {
+          left: 58%;
+          bottom: 22%;
+        }
+      }
+
+      &:nth-child(5) {
+        left: 72.3%;
+        bottom: 38.3%;
+
+        @include onDesktop {
+          left: 77%;
+          bottom: 30%;
+        }
+      }
+    }
+  }
+}
