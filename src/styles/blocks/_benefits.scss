@@ -17,106 +17,101 @@
   }
 
   &__img {
-	display: none;
-	width: 633px;
+	  display: none;
+	  width: 633px;
     height: 828px;
+    transition: all $anim-duration;
 
-	transition: all $anim-duration;
+	  &:hover {
+		  transform: rotate(5deg);
+	  }
 
-	&:hover {
-		transform: rotate(5deg);
-	}
-
-	@include onDesktop {
-		display: block;
-		float: left;
-		margin-right: 20px;
-	}
+	  @include onDesktop {
+		  display: block;
+		  float: left;
+		  margin-right: 20px;
+	  }
   }
 
   &__container {
-	@include onTablet{
-		display: flex;
-		align-items: center;
-		gap: 30px;
-	}
 
-	@include onDesktop {
-		flex-direction: column;
-	}
+	  @include onTablet {
+		  display: flex;
+		  align-items: center;
+		  gap: 30px;
+	  }
+
+	  @include onDesktop {
+		  flex-direction: column;
+	  }
   }
 
   &__info {
-	display: flex;
-	flex-direction: column;
-	gap: 40px;
+	  display: flex;
+	  flex-direction: column;
+	  gap: 40px;
+    padding-bottom: 50px;
 
-	padding-bottom: 50px;
+	  @include onDesktop {
+		  flex-direction: row;
+		  flex-wrap: wrap;
+		  gap: 44px;
+		  margin-top: 172px;
+	  }
 
-	@include onDesktop {
-		flex-direction: row;
-		flex-wrap: wrap;
-		gap: 44px;
-		margin-top: 172px;
-	}
+	  &-article {
+		  &-title {
+			  position: relative;
+			  color: $c-title;
+        font-family: $main-font;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 150%;
+        padding-bottom: 5px;
 
-	&-article {
-		&-title {
-			position: relative;
-			color: $c-title;
-      font-family: $main-font;
-      font-size: 36px;
-      font-weight: 700;
-      line-height: 150%;
+        &::before {
+          content: "";
+          display: block;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: 20px;
+          left: -15px;
+          background-image: url(/images/benegits/Rectangle.svg);
+        }
+		  }
 
-      padding-bottom: 5px;
-
-      &::before {
-        content: "";
-        display: block;
-        width: 10px;
-        height: 10px;
-        position: absolute;
-        top: 20px;
-        left: -15px;
-        background-image: url(/images/benegits/Rectangle.svg);
+      &-text {
+        color: $c-side-text;
+        font-family: $main-font;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
       }
-		}
-
-    &-text {
-      color: $c-side-text;
-      font-family: $main-font;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 150%;
-    }
-	}
-}
-
-&__extra {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-
-  @include onDesktop {
-    gap: 70px;
+	  }
   }
-}
 
-&__button {
-  position: relative;
+  &__extra {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 
-  font-family: $main-font;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 48px;
-  text-transform: uppercase;
+    @include onDesktop {
+      gap: 70px;
+    }
+  }
 
-  color: $c-button;
-  border: 1px solid transparent;
-  background-color: $c-yellow;
+  &__button {
+    position: relative;
+    font-family: $main-font;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: $c-button;
+    border: 1px solid transparent;
+    background-color: $c-yellow;
 
-  &::after {
     &::after {
       content: "";
       display: inline-block;
@@ -125,10 +120,9 @@
       margin-left: 24px;
       background-image: url(/images/icons/arrow-button-1.svg);
     }
-  }
 
-  &:hover {
-    background-color: $c-yellowlight;
+    &:hover {
+      background-color: $c-yellowlight;
 
     &::after {
       background-image: url(/images/benegits/Arrow.svg);
@@ -137,81 +131,78 @@
 
   cursor: pointer;
 
-  @include onTablet {
-    background-color: $c-white;
-    border: 1px solid $c-turquoise;
+    @include onTablet {
+      background-color: $c-white;
+      border: 1px solid $c-turquoise;
 
-    &:hover {
-      background-color: $c-turquoise;
-      color: $c-white;
+      &:hover {
+        background-color: $c-turquoise;
+        color: $c-white;
+
+        &::after {
+          background-image: url(/images/benegits/Arrow-hover.svg);
+        }
+      }
+
+      @include onDesktop {
+        left: -30%;
+        background-color: $c-white;
+        border: 1px solid $c-turquoise;
+      }
+
+      transition: all $anim-duration;
 
       &::after {
-        background-image: url(/images/benegits/Arrow-hover.svg);
+        content: "";
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        width: 25px;
+        height: 10px;
+        margin-left: 20px;
+
+        background-image: url(/images/benegits/Arrow.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
       }
+    }
   }
 
-  @include onDesktop {
-    left: -30%;
-    background-color: $c-white;
-    border: 1px solid $c-turquoise;
+  &__discount {
+    &-info {
+      color: $c-red;
+      font-family: $text-font;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    &-ofer {
+      color: $c-turquoise;
+      font-family: $text-font;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
   }
 
-  transition: all $anim-duration;
-
-  &::after {
-    content: "";
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    width: 25px;
-    height: 10px;
-    margin-left: 20px;
-
-    background-image: url(/images/benegits/Arrow.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-
-  }
-}
-
-
-&__discount {
-  &-info {
-    color: $c-red;
-    font-family: $text-font;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  &-ofer {
-    color: $c-turquoise;
-    font-family: $text-font;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-}
-
-&__side-text {
-  display: none;
-  position: absolute;
-  top: 130px;
-  right: -40px;
-
-  @include onTablet {
-    display: block;
-  }
-
-  @include onDesktop {
+  &__side-text {
     display: none;
+    position: absolute;
+    top: 130px;
+    right: -40px;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
   }
-}
 }

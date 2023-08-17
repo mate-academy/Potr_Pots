@@ -51,8 +51,6 @@
       font-size: 36px;
       line-height: 43px;
       letter-spacing: 0.06em;
-
-
       color: $c-title;
       border-top: 2px solid transparent;
       transition: border-color $anim-duration;
@@ -88,35 +86,33 @@
         }
       }
     }
-      &-cart {
-        display: none;
 
-        @include onDesktop {
-          display: block;
-          width: 32px;
-          height: 32px;
-          cursor: pointer;
+    &-cart {
+      display: none;
 
-          background-image: url(/images/icons/icons8-100.svg);
-          background-repeat: no-repeat;
-          background-size: contain;
-        }
-      }
-
-      &-menu {
+      @include onDesktop {
         display: block;
         width: 32px;
         height: 32px;
-
-        grid-column: 3 / 4;
-
-        background-image: url(/images/icons/menu_icon.svg);
         cursor: pointer;
-
-        @include onDesktop {
-          display: none;
-        }
+        background-image: url(/images/icons/icons8-100.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
       }
+    }
+
+    &-menu {
+      display: block;
+      width: 32px;
+      height: 32px;
+      grid-column: 3 / 4;
+      background-image: url(/images/icons/menu_icon.svg);
+      cursor: pointer;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
   }
 
   &__section {
@@ -133,8 +129,6 @@
     }
     &-image {
       width: 100%;
-
-
       margin: 0 auto;
       padding-bottom: 25px;
 
@@ -165,7 +159,7 @@
     }
 
     &-title {
-      font-family: Bebas Neue;
+      font-family: $text-font;
       font-size: 36px;
       font-weight: 400;
       line-height: 43px;
@@ -218,26 +212,25 @@
       }
     }
 
-      &-info {
-        font-family: "Manrope", sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 150%;
-        color: $c-list;
+    &-info {
+      font-family: "Manrope", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: $c-list;
+      padding-bottom: 20px;
 
-        padding-bottom: 20px;
+      @include onTablet {
+        align-self: flex-end;
+        margin-right: 15px;
+        padding-bottom: 50px;
+      }
 
-        @include onTablet {
-          align-self: flex-end;
-          margin-right: 15px;
-          padding-bottom: 50px;
-        }
-
-        @include onDesktop {
-          align-self: flex-end;
-          margin-right: 132px;
-          padding-bottom: 50px;
-        }
+      @include onDesktop {
+        align-self: flex-end;
+        margin-right: 132px;
+        padding-bottom: 50px;
+      }
     }
 
     &-button {
@@ -300,16 +293,16 @@
     display: none;
     position: absolute;
 
-  @include onTablet {
-    display: inline-block;
-    right: -45px;
-    bottom: -100px,
-  }
+    @include onTablet {
+      display: inline-block;
+      right: -45px;
+      bottom: -100px;
+    }
 
-  @include onTablet {
-    display: inline-block;
-    right: -30px;
-    bottom: -150px,
+    @include onTablet {
+      display: inline-block;
+      right: -30px;
+      bottom: -150px;
+    }
   }
-}
 }
