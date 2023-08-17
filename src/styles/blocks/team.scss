@@ -1,0 +1,74 @@
+.team {
+  &__title {
+    margin: 0 30px;
+  }
+
+  &__paragraph {
+    padding: 0 30px;
+
+    @include for-tablet() {
+      top: 193px;
+      position: absolute;
+      width: 357px;
+    }
+
+    &--2 {
+      @include for-tablet() {
+        top: 360px;
+        position: absolute;
+        width: 310px;
+      }
+    }
+  }
+
+  &__article {
+    background: url(../images/yellow-background.svg);
+    background-repeat: no-repeat;
+    background-position: 0 417px;
+    padding-bottom: 70px;
+
+    @include for-tablet() {
+      height: 500px;
+      background-position: -59px 82px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__name {
+    &--hidden {
+      display: none;
+
+      @include for-tablet() {
+        display: block;
+        font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+        font-size: 232px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 36px;
+        color: transparent;
+        -webkit-text-stroke: 1px #03839e;
+      }
+    }
+
+    &--hidden1 {
+      position: absolute;
+      left: -40px;
+    }
+
+    &--hidden2 {
+      position: absolute;
+      bottom: -160px;
+      right: 0;
+    }
+  }
+
+  &__image {
+    @include for-tablet() {
+      width: 340px;
+      margin-top: 155px;
+      float: right;
+      margin-right: 36px;
+    }
+  }
+}

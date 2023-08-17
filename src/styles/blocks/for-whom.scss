@@ -1,0 +1,24 @@
+.for-whom {
+  &__article {
+    @include for-tablet() {
+      display: flex;
+      gap: 76px;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 70px;
+
+      @include for-tablet() {
+        margin-top: 110px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include for-tablet() {
+      display: block;
+    }
+  }
+}
