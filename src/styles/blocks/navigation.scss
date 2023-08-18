@@ -9,8 +9,24 @@
     padding: 10px 36px;
   }
 
+  @include for-desktop() {
+    padding: 0 135px;
+  }
+
   &__icon {
     width: 32px;
     height: 32px;
+
+    @include for-desktop() {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include for-desktop() {
+        display: block;
+      }
+    }
   }
 }

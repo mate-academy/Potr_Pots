@@ -12,11 +12,23 @@
       width: 357px;
     }
 
+    &:first-of-type {
+      @include for-desktop() {
+        width: 336px;
+        padding: 300px 135px 0;
+      }
+    }
+
     &--2 {
       @include for-tablet() {
         top: 360px;
         position: absolute;
         width: 310px;
+      }
+
+      @include for-desktop() {
+        width: 336px;
+        padding: 30px 135px 0;
       }
     }
   }
@@ -28,6 +40,12 @@
     padding-bottom: 70px;
 
     @include for-tablet() {
+      height: 500px;
+      background-position: -59px 82px;
+      padding-bottom: 0;
+    }
+
+    @include for-desktop() {
       height: 500px;
       background-position: -59px 82px;
       padding-bottom: 0;
@@ -49,17 +67,37 @@
         color: transparent;
         -webkit-text-stroke: 1px #03839e;
       }
+
+      @include for-desktop() {
+        display: block;
+        font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+        font-size: 232px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 36px;
+        color: transparent;
+        -webkit-text-stroke: 1px #03839e;
+      }
     }
 
     &--hidden1 {
       position: absolute;
       left: -40px;
+
+      @include for-desktop() {
+        left: 74px;
+      }
     }
 
     &--hidden2 {
       position: absolute;
       bottom: -160px;
       right: 0;
+
+      @include for-desktop() {
+        bottom: -370px;
+      }
     }
   }
 
@@ -69,6 +107,13 @@
       margin-top: 155px;
       float: right;
       margin-right: 36px;
+    }
+
+    @include for-desktop() {
+      width: 677px;
+      float: right;
+      margin-right: 235px;
+      margin-top: 130px;
     }
   }
 }

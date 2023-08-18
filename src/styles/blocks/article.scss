@@ -7,6 +7,16 @@
     @include for-tablet() {
       margin-top: 0;
     }
+
+    @include for-desktop() {
+      margin-top: 0;
+    }
+  }
+
+  &__desktop {
+    @include for-desktop() {
+      width: 370px;
+    }
   }
 
   &__title {
@@ -25,11 +35,21 @@
       left: -17%;
     }
 
+    @include for-desktop() {
+      position: absolute;
+      left: -20%;
+    }
+
     &--2 {
       @include for-tablet() {
         position: unset;
         left: unset;
         padding-top: 50px;
+      }
+
+      @include for-desktop() {
+        position: unset;
+        padding-top: 40px;
       }
     }
 
@@ -50,6 +70,11 @@
         position: absolute;
         bottom: 7px;
         left: 117px;
+      }
+
+      @include for-desktop() {
+        display: inline-block;
+        position: absolute;
       }
     }
   }
@@ -95,6 +120,10 @@
       position: relative;
     }
 
+    @include for-desktop() {
+      width: 370px;
+    }
+
     &--middle {
       text-align: center;
     }
@@ -102,6 +131,17 @@
     &--full {
       margin-right: 30px;
       margin-left: 30px;
+
+      @include for-desktop() {
+        position: absolute;
+        margin-left: 0;
+        top: 15px;
+        left: 135px;
+        width: 237px;
+        height: 257px;
+        padding-right: 16px;
+        border-right: 1px solid #d8d8d8;
+      }
     }
 
     &--offer {
@@ -113,6 +153,10 @@
       line-height: 24px; /* 100% */
       letter-spacing: 3.72px;
       text-transform: uppercase;
+
+      @include for-desktop() {
+        margin-left: 100px;
+      }
     }
 
     &--hidden {
@@ -122,6 +166,11 @@
       @include for-tablet() {
         display: block;
         margin: 0 0 25px;
+      }
+
+      @include for-desktop() {
+        display: block;
+        margin-bottom: 40px;
       }
     }
 
@@ -134,6 +183,10 @@
         position: absolute;
         right: 0;
       }
+
+      @include for-desktop() {
+        display: block;
+      }
     }
 
     &--hidden-star {
@@ -142,6 +195,13 @@
         font-size: 24px;
         left: -17px;
         top: 2px;
+      }
+
+      @include for-desktop() {
+        position: absolute;
+        font-size: 24px;
+        left: -30px;
+        top: 15px;
       }
     }
   }
@@ -176,7 +236,7 @@
         bottom: 0;
         top: 100px;
         right: -120px;
-        height: 10px;
+        height: 0;
       }
     }
 
@@ -188,7 +248,7 @@
         bottom: 0;
         top: 25px;
         right: -60px;
-        height: 10px;
+        height: 0;
       }
     }
 
@@ -200,7 +260,7 @@
         top: 230px;
         left: -60px;
         right: unset;
-        height: 10px;
+        height: 0;
       }
     }
 
@@ -212,7 +272,7 @@
         bottom: -60px;
         top: unset;
         right: -60px;
-        height: 10px;
+        height: 0;
       }
     }
 
@@ -239,6 +299,13 @@
       margin-top: 38px;
       display: flex;
       flex-direction: row-reverse;
+    }
+
+    @include for-desktop() {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0 120px;
+      gap: 72px;
     }
   }
 }

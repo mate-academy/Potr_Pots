@@ -22,15 +22,24 @@
 @import "./blocks/for-whom.scss";
 @import "./blocks/feature.scss";
 @import "./blocks/additional-info.scss";
+@import "./blocks/frames.scss";
 
 body {
   margin: 0 auto;
   width: 320px;
+  background-color: #f8f8f8;
 
   @include for-tablet() {
     display: grid;
     grid-template-columns: repeat(6, 100px);
     gap: 20px;
     width: 768px;
+  }
+
+  @include for-desktop() {
+    display: grid;
+    grid-template-columns: repeat(12, 70px);
+    gap: 30px;
+    width: 1440px;
   }
 }

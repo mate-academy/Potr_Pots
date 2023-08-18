@@ -6,7 +6,15 @@
     grid-template-columns: 170px 220px 130px;
     justify-content: space-between;
     gap: 70px;
-    margin: 50px 0 110px;
+    margin: 50px 34px 110px;
+  }
+
+  @include for-desktop() {
+    display: grid;
+    grid-template-columns: 170px 220px 130px;
+    justify-content: space-between;
+    gap: 70px;
+    margin: 50px 135px 64px;
   }
 
   &__title {
@@ -33,12 +41,34 @@
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 24px */
+
+    @include for-desktop() {
+      display: none;
+    }
+
+    @include for-tablet() {
+      display: none;
+    }
+
+    &--t {
+      @include for-tablet() {
+        display: block;
+      }
+
+      @include for-desktop() {
+        display: block;
+      }
+    }
   }
 
   &__section {
     display: none;
 
     @include for-tablet() {
+      display: block;
+    }
+
+    @include for-desktop() {
       display: block;
     }
   };

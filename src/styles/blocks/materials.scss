@@ -1,19 +1,28 @@
 .materials {
   margin: 110px 0 0;
   position: relative;
-  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 1.93%),
+  background: linear-gradient(180deg, #f8f8f8 0%, rgba(255, 255, 255, 0) 1.93%),
     url("../images/materials-background.jpg");
   background-position-y: 120px;
   background-repeat: no-repeat;
   background-size: contain;
 
   @include for-tablet() {
-    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 5.93%),
-      url(../images/materials-background.jpg);
+    background: linear-gradient(180deg, #f8f8f8 0%, rgba(255, 255, 255, 0) 5.93%),
+      url(../images/materials-background-desktop.svg);
     background-position-y: 177px;
     background-repeat: no-repeat;
     background-size: contain;
     height: 754px;
+  }
+
+  @include for-desktop() {
+    margin: 300px 0 0;
+    background: linear-gradient(180deg, #f8f8f8 0%, rgba(255, 255, 255, 0) 5.93%),
+      url(../images/materials-background-desktop.svg);
+    background-repeat: no-repeat;
+    height: 1225px;
+    background-position-y: 177px;
   }
 
   &__title {
@@ -21,6 +30,12 @@
 
     @include for-tablet() {
       font-size: 80px;
+    }
+
+    @include for-desktop() {
+      font-size: 139px;
+      letter-spacing: 17px;
+      margin-left: 135px;
     }
 
     &--small {
@@ -47,11 +62,24 @@
       box-shadow: none;
     }
 
+    @include for-desktop() {
+      box-shadow: none;
+    }
+
     &--1 {
       @include for-tablet() {
         position: absolute;
         right: 36px;
         bottom: 20px;
+        width: 303px;
+        display: none;
+        z-index: 1;
+      }
+
+      @include for-desktop() {
+        position: absolute;
+        right: 134px;
+        bottom: 66px;
         width: 303px;
         display: none;
         z-index: 1;
@@ -67,6 +95,15 @@
         display: none;
         z-index: 1;
       }
+
+      @include for-desktop() {
+        position: absolute;
+        width: 303px;
+        right: 380px;
+        bottom: 304px;
+        display: none;
+        z-index: 1;
+      }
     }
 
     &--3 {
@@ -75,6 +112,15 @@
         width: 303px;
         right: 260px;
         bottom: 143px;
+        display: none;
+        z-index: 1;
+      }
+
+      @include for-desktop() {
+        position: absolute;
+        width: 303px;
+        right: 38%;
+        bottom: 139px;
         display: none;
         z-index: 1;
       }
@@ -89,10 +135,28 @@
         display: none;
         z-index: 1;
       }
+
+      @include for-desktop() {
+        position: absolute;
+        width: 303px;
+        left: 30%;
+        top: 40%;
+        display: none;
+        z-index: 1;
+      }
     }
 
     &--5 {
       @include for-tablet() {
+        position: absolute;
+        width: 303px;
+        left: 37px;
+        bottom: 174px;
+        display: none;
+        z-index: 1;
+      }
+
+      @include for-desktop() {
         position: absolute;
         width: 303px;
         left: 37px;
@@ -113,6 +177,13 @@
       height: 51px;
     }
 
+    @include for-desktop() {
+      display: block;
+      background-image: url(../images/open-red.svg);
+      width: 51px;
+      height: 51px;
+    }
+
     &--visible {
       display: block;
       background-image: url(../images/close-grey.svg);
@@ -124,6 +195,12 @@
         right: 162px;
         bottom: 227px;
       }
+
+      @include for-desktop() {
+        position: absolute;
+        right: 269px;
+        bottom: 332px;
+      }
     }
 
     &--2 {
@@ -132,12 +209,24 @@
         right: 320px;
         bottom: 135px;
       }
+
+      @include for-desktop() {
+        position: absolute;
+        right: 526px;
+        bottom: 237px;
+      }
     }
 
     &--3 {
       @include for-tablet() {
         position: absolute;
         left: 338px;
+        bottom: 72px;
+      }
+
+      @include for-desktop() {
+        position: absolute;
+        left: 50%;
         bottom: 72px;
       }
     }
@@ -148,12 +237,24 @@
         left: 231px;
         bottom: 231px;
       }
+
+      @include for-desktop() {
+        position: absolute;
+        left: 35%;
+        bottom: 30%;
+      }
     }
 
     &--5 {
       @include for-tablet() {
         position: absolute;
         left: 83px;
+        bottom: 110px;
+      }
+
+      @include for-desktop() {
+        position: absolute;
+        left: 16%;
         bottom: 110px;
       }
     }
@@ -200,6 +301,10 @@
       display: none;
     }
 
+    @include for-desktop() {
+      display: none;
+    }
+
     &--link {
       box-sizing: border-box;
       margin: 2px;
@@ -226,8 +331,19 @@
       top: 95px;
     }
 
+    @include for-desktop() {
+      display: block;
+      position: absolute;
+      right: 135px;
+      top: 148px;
+    }
+
     &--hidden {
       width: 320px;
+
+      @include for-desktop() {
+        width: 470px;
+      }
     }
   }
 }
