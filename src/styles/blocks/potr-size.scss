@@ -1,34 +1,105 @@
 .potr-size {
-  &__main-title {
+  margin-bottom: 110px;
+
+  @include onTablet {
+    @include pageGrid;
     @include contentPaddingInLineForDevices;
+
+    margin-bottom: 105px;
+  }
+
+  @include onDescktop {
+    margin-bottom: 100px;
+    position: relative;
+  }
+
+  &__main-title {
+    @media (max-width: 767px) {
+      @include contentPaddingInLineForDevices;
+    }
 
     margin-bottom: 20px;
 
     line-height: 150%;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      margin-bottom: 30px;
+    }
+
+    @include onDescktop {
+      margin-bottom: 66px;
+    }
   }
 
   &__main-text {
-    @include contentPaddingInLineForDevices;
+    @media (max-width: 767px) {
+      @include contentPaddingInLineForDevices;
+    }
 
     margin-bottom: 30px;
 
     font-size: 16px;
     line-height: 150%;
     color: $text-color;
+
+    @include onTablet {
+      grid-column: span 5;
+      margin-bottom: 38px;
+    }
+
+    @include onDescktop {
+      grid-column: 1 / 4;
+      // margin-bottom: 0;
+      // height: fit-content;
+    }
+  }
+
+  &__descr-wrapper {
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 36px;
+    }
+
+    @include onDescktop {
+      grid-column: 4 / -1;
+      gap: 96px;
+    }
   }
 
   &__img {
     width: 100%;
     margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onDescktop {
+      margin-bottom: 0;
+      width: 528px;
+      height: 437px;
+    }
   }
 
   &__descr {
-    @include contentPaddingInLineForDevices;
+    @media (max-width: 767px) {
+      @include contentPaddingInLineForDevices;
+    }
 
     display: grid;
     row-gap: 40px;
 
     margin-bottom: 15px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      row-gap: 50px;
+      height: fit-content;
+    }
   }
 
   &__descr-title {
@@ -40,7 +111,9 @@
   }
 
   &__explains-text {
-    @include contentPaddingInLineForDevices;
+    @media (max-width: 767px) {
+      @include contentPaddingInLineForDevices;
+    }
 
     display: flex;
     position: relative;
@@ -50,11 +123,23 @@
 
     &::before {
       content: "*";
-
       position: absolute;
 
       left: 20px;
-      // top: 0;
+
+      @include onTablet {
+        left: -10px;
+      }
+    }
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+
+    @include onDescktop {
+      position: absolute;
+      bottom: 51px;
+      grid-column: 1 / 7;
     }
   }
 }

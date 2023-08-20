@@ -1,20 +1,83 @@
 .benefits {
   margin-bottom: 110px;
 
-  &__container {
-    @include contentPaddingInLineForDevices;
+  @include contentPaddingInLineForDevices;
+
+  @include onTablet {
+    @include pageGrid;
+
+    margin-bottom: 105px;
+    position: relative;
   }
 
-  &__list {
-    display: grid;
-    row-gap: 40px;
+  @include onDescktop {
+    height: 828px;
 
-    margin-bottom: 50px;
+    margin-bottom: 0;
   }
+
+  &__collage {
+    display: none;
+
+    @include onDescktop {
+      display: block;
+      position: absolute;
+    }
+  }
+
+  // &__list {
+  //   display: grid;
+  //   row-gap: 40px;
+
+  //   margin-bottom: 50px;
+
+  //   @include onTablet {
+  //     grid-column: 1 / 4;
+
+  //     margin-bottom: 0;
+  //   }
+
+  //   @include onDescktop {
+  //     grid-column: 6 / -1;
+  //     display: flex;
+  //   }
+  // }
 
   &__item {
     display: grid;
     row-gap: 5px;
+
+      &--1,
+      &--2 {
+        margin-bottom: 40px;
+      }
+
+      &--3 {
+        margin-bottom: 50px;
+      }
+
+    @include onTablet {
+      margin-left: 24px;
+      grid-column: 1 / 4;
+
+      &--1,
+      &--2 {
+        margin-bottom: 30px;
+      }
+
+      &--3 {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDescktop {
+      grid-column: 6 / -1;
+      height: fit-content;
+    }
+
+    // &--1 {
+    //   grid-column: 6 / 9;
+    // }
   }
 
   &__title {
@@ -46,6 +109,15 @@
 
   &__link {
     text-decoration: none;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+
+      width: 240px;
+
+      position: absolute;
+      top: 100px;
+    }
   }
 
   &__button {
@@ -57,14 +129,50 @@
     background-color: #ffe339;
 
     @include hover(opacity, 0.7);
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
   }
 
   &__discount {
-    color: #eb5757;
     margin-bottom: 10px;
+
+    font-size: 36px;
+    letter-spacing: 5.58px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #eb5757;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      width: 160px;
+      position: absolute;
+      top: 185px;
+
+      font-size: 24px;
+      letter-spacing: 3.72px;
+      line-height: 100%;
+    }
   }
 
   &__second-order {
     color: $blue-title-color;
+
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 3.72px;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      width: 240px;
+      position: absolute;
+      top: 215px;
+
+      font-size: 18px;
+      line-height: 100%;
+      letter-spacing: 2.79px;
+    }
   }
 }

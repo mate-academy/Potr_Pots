@@ -3,40 +3,129 @@
 
   @include onTablet {
     margin-bottom: 110px;
-    // position: relative;
+
+    @include pageGrid;
+    position: relative;
+  }
+
+  @include onDescktop {
+    margin-top: -110px;
+  }
+
+  &__side-text {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+
+      position: absolute;
+
+      rotate: 90deg;
+      color: #828282;
+      font-size: 12px;
+      letter-spacing: 2.64px;
+    }
+
+    @include onDescktop {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      width: 65px;
+      height: 1px;
+      margin-right: 10px;
+      right: 100%;
+      border-bottom: 1px solid #828282;
+      position: absolute;
+    }
+
+    &--left {
+      left: 10px;
+      transform-origin: left;
+      transform: translate(calc(0% + 65px + 204px), -50%);
+    }
+
+    &--right {
+      right: 10px;
+      transform-origin: right;
+      transform: translate(calc(100% + 68px), 50%);
+    }
   }
 
   &__title {
     font-size: 58px;
-    color: $blue-title-color;
     letter-spacing: 8.99px;
+    color: $blue-title-color;
 
     transform: translateY(70px);
 
     @include contentPaddingInLineForDevices;
+
+    @include onTablet {
+      transform: translateY(0);
+      margin-bottom: 27px;
+
+      grid-column: span 5;
+      font-size: 80px;
+      letter-spacing: 9.6px;
+    }
+
+    @include onDescktop {
+      font-size: 138.8px;
+      grid-column: span 10;
+      transform: translateY(129px);
+      letter-spacing: 16.65px;
+    }
   }
 
   &__eco-wrapper {
-    display: none;///
+    display: none;
+
+    @include onTablet {
+      display: grid;
+      row-gap: 10px;
+      padding-right: 34px;
+      grid-column: 4 / -1;
+
+      position: absolute;
+      top: 141px;
+    }
+
+    @include onDescktop {
+      grid-column: 8 / -1;
+      padding-right: 135px;
+      row-gap: 15px;
+      top: 315px;
+    }
+  }
+
+  &__eco-title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__eco-descr {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__eco-descr-weight {
+    font-weight: 700;
   }
 
   &__img-wrapper {
-    // position: relative;
-    // width: 100%;
-    // height: 120px;
-    // padding-bottom: 75%;
+    @include onTablet {
+      grid-column: 1 / -1;
+      position: relative;
+      z-index: -1;
+    }
   }
 
   &__img-mobile {
     display: flex;
     width: 100%;
-
-    //   position: absolute;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 70px;
-
-    //   z-index: -1;
 
     @include onTablet {
       display: none;
@@ -47,40 +136,23 @@
     display: none;
     width: 100%;
 
-    //   // position: absolute;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-
-    //   z-index: -1;
-
     @include onTablet {
       display: flex;
-      position: relative;
     }
   }
 
   &__slider-list {
-    // display: none;///
-    //   height: 134px;
     width: 302px;
-    // width: auto;
     margin: 0 auto;
 
-    //   position: relative;
-
     @include onTablet {
-      height: auto;
+      height: 100%;
+      width: 100%;
       position: absolute;
     }
   }
 
   &__slider-box {
-    // position: absolute;
-    //   left: 0;
-    //   right: 0;
-    //   bottom: 0;
-
     height: 254px;
     width: 302px;
     margin: 0 auto;
@@ -91,6 +163,7 @@
     background-color: rgba(0, 0, 0, 0.45);
     box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(17px);
+    z-index: 1;
 
     font-family: "Manrope", sans-serif;
     font-size: 16px;
@@ -101,37 +174,154 @@
 
     @include onTablet {
       height: auto;
-      width: 303px;
       padding: 35px;
 
+      cursor: auto;
+      pointer-events: none;
       transform: translateY(0);
+      position: absolute;
+
+      transition: opacity, 0.5s;
+
+      &--1 {
+        width: 303px;
+
+        left: calc(72.26% - 152px + 26px);
+        bottom: calc(39.23% - 237px - 9px);
+
+        opacity: 0;
+      }
+
+      &--2 {
+        width: 283px;
+
+        left: calc(54.29% - 141px + 26px);
+        bottom: calc(16.6% + 51px + 9px);
+
+        opacity: 0;
+      }
+
+      &--3 {
+        width: 283px;
+
+        left: calc(44.01% - 141px + 26px);
+        bottom: calc(8.85% + 51px + 9px);
+
+        opacity: 0;
+      }
+
+      &--4 {
+        width: 283px;
+
+        left: calc(30.17% - 141px + 26px);
+        bottom: calc(28.41% + 51px + 9px);
+
+        opacity: 0;
+      }
+
+      &--5 {
+        width: 283px;
+
+        left: calc(10.8% - 46px);
+        bottom: calc(12.67% + 51px + 9px);
+
+        opacity: 0;
+      }
     }
 
-    &--1 {
-      @include onTablet {
-        position: absolute;
-        left: 429px;
-        right: 36px;
-        // transform-origin: center;
-        // right: 429px;
-        bottom: 72px;
-        // top: -267px;
-        // transform: translate(100%, 100%);
+    @include onDescktop {
+      &--1 {
+        left: calc(77.15% - 152px + 26px);
+        bottom: calc(25.34% - 237px - 9px);
+      }
+
+      &--2 {
+        left: calc(57.98% - 141px + 26px);
+        bottom: calc(18.47% + 51px + 9px);
+      }
+
+      &--3 {
+        left: calc(47.5% - 283px - 9px);
+        bottom: calc(7.13% - 107px + 26px);
+      }
+
+      &--4 {
+        left: calc(37.98% - 283px + 26px);
+        bottom: calc(27.17% + 51px + 9px);
+      }
+
+      &--5 {
+        left: calc(17.63% - 141px + 26px);
+        bottom: calc(10.59% + 51px + 9px);
       }
     }
   }
 
   &__plus-minus {
-    height: 51px;
-    width: 51px;
+    display: none;
 
-    position: absolute;
-    // margin-inline: auto;
-    // top: -60px;
-    // right: 0;
-    // left: 0;
+    @include onTablet {
+      display: block;
+      cursor: pointer;
+      position: absolute;
 
-    background-color: #eb5757;
-    border-radius: 50%;
+      // transform: translate(-50%, -50%);
+
+      &--1 {
+        left: 72.26%;
+        bottom: 39.23%;
+      }
+
+      &--2 {
+        left: 54.29%;
+        bottom: 16.6%;
+      }
+
+      &--3 {
+        left: 44.01%;
+        bottom: 8.85%;
+      }
+
+      &--4 {
+        left: 30.07%;
+        bottom: 28.41%;
+      }
+
+      &--5 {
+        left: 10.8%;
+        bottom: 12.67%;
+      }
+    }
+
+    @include onDescktop {
+      &--1 {
+        left: 77.15%;
+        bottom: 25.34%;
+      }
+
+      &--2 {
+        left: 57.98%;
+        bottom: 18.47%;
+      }
+
+      &--3 {
+        left: 47.5%;
+        bottom: 7.13%;
+      }
+
+      &--4 {
+        left: 37.98%;
+        bottom: 27.17%;
+      }
+
+      &--5 {
+        left: 17.63%;
+        bottom: 10.59%;
+      }
+    }
+  }
+
+  &__minus {
+    display: none;
   }
 }
