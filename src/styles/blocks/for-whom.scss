@@ -14,12 +14,6 @@
     margin-bottom: 150px;
   }
 
-  // &__container {
-  //   @include contentPaddingInLineForDevices;
-
-  //   position: relative;
-  // }
-
   &__primary-title {
     margin-bottom: 25px;
 
@@ -79,13 +73,15 @@
 
       &--2 {
         grid-area: img-2;
+        margin-left: auto;
       }
     }
 
     @include onDescktop {
       &--1 {
-        grid-column: 1 / 7;
         width: 500px;
+
+        grid-column: 1 / 7;
       }
 
       &--2 {
@@ -93,29 +89,35 @@
       }
 
       &--3 {
-        grid-column: 8 / -1;
         width: 100%;
         margin-bottom: 109px;
+
+        grid-column: 8 / -1;
       }
     }
   }
 
   &__text-wrapper-1 {
-    grid-column: 4 / 7;
-    margin-block: auto 14px;
+    @include onTablet {
+      margin-top: 26px;
 
-    position: relative;
+      grid-column: 4 / 7;
+
+      position: relative;
+    }
 
     @include onDescktop {
-      grid-column: 8 / -2;
       margin-block: auto 120px;
+
+      grid-column: 8 / -2;
     }
   }
 
   &__text-wrapper-2 {
     @include onTablet {
+      margin-top: 72px;
+
       grid-area: text-2;
-      margin-block: auto 74px;
 
       position: relative;
     }
@@ -128,10 +130,13 @@
   }
 
   &__text-wrapper-3 {
-    grid-column: 4 / 7;
-    margin-top: auto;
+    @include onTablet {
+      margin-top: 30px;
 
-    position: relative;
+      grid-column: 4 / 7;
+
+      position: relative;
+    }
 
     @include onDescktop {
       grid-column: 9 / -1;
@@ -144,6 +149,17 @@
     @include onTablet {
       display: flex;
       position: absolute;
+
+      &::before {
+        content: "*";
+        position: absolute;
+        left: -10px;
+        transform: translateX(-100%);
+
+        @include onDescktop {
+          left: -30px;
+        }
+      }
 
       &--1 {
         top: -25px;
@@ -165,7 +181,7 @@
         transform: translateY(-100%);
       }
 
-      @include pseudoStar;
+      // @include pseudoStar;///
     }
 
     @include onDescktop {
@@ -180,7 +196,20 @@
 
     position: relative;
 
-    @include pseudoObliqueNumber;
+    &::after {
+      content: "";
+      width: 1px;
+      height: 50px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateX(9px);
+
+      rotate: 22deg;
+      background-color: $title-color;
+    }
+
+    // @include pseudoObliqueNumber;///
 
     @include onTablet {
       margin-bottom: 22px;
@@ -213,7 +242,17 @@
       grid-column: -4 / -1;
       margin-bottom: 10px;
 
-      @include pseudoObliqueTitleText;
+      // @include pseudoObliqueTitleText;///
+      &::after {
+        content: "";
+        width: 1px;
+        height: 50px;
+        position: absolute;
+        margin-left: 11px;
+
+        rotate: 22deg;
+        background-color: $title-color;
+      }
     }
   }
 
@@ -259,8 +298,10 @@
 
       @include onDescktop {
         display: flex;
-        left: 0;
-        transform: translate(calc(-84px), calc(-94px + 100%));
+        bottom: 0;
+        transform-origin: left;
+        transform: translate(65px, 50%);
+        rotate: -90deg;
       }
     }
   }
@@ -271,9 +312,9 @@
     align-items: center;
 
     font-family: "Bebas Neue", sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 2.64px;
-    color: #828282;
+    color: $gray-side-color;
 
     &--right {
       &::before {
@@ -284,20 +325,20 @@
         width: 65px;
         margin-right: 10px;
         right: 100%;
-        border-bottom: 1px solid #828282;
+        border-bottom: 1px solid $gray-side-color;
       }
     }
 
     &--left {
-      &::after {
+      &::before {
         position: absolute;
 
         content: "";
 
         width: 65px;
-        margin-left: 10px;
-        left: 100%;
-        border-bottom: 1px solid #828282;
+        margin-right: 10px;
+        right: 100%;
+        border-bottom: 1px solid $gray-side-color;
       }
     }
   }

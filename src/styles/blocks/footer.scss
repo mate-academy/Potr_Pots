@@ -1,13 +1,40 @@
 .footer {
-  // display: grid;
-  // row-gap: 102px;
   padding-bottom: 30px;
   position: relative;
 
-  &__stamp {
+  @include onTablet {
+    padding-bottom: 117px;
+  }
+
+  @include onDescktop {
+    padding-bottom: 64px;
+  }
+
+  &__stamp-half {
     position: absolute;
     transform: translateY(-43%);
     right: 0;
+
+    @include onTablet {
+      transform: translateY(-64%);
+    }
+
+    @include onDescktop {
+      display: none
+    }
+  }
+
+  &__stamp-full {
+    display: none;
+
+    position: absolute;
+    transform: translateY(-56%);
+    z-index: 1;
+    right: 61px;
+
+    @include onDescktop {
+      display: block
+    }
   }
 
   &__contact {
@@ -15,8 +42,25 @@
     display: grid;
     row-gap: 56px;
 
-    background-image: url(/images/main/bg-col-yellow.png);
+    background-image: url(/images/back-ground/footer-mob.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+
+    @include onTablet {
+      @include pageGrid;
+      margin-bottom: 50px;
+
+      row-gap: 0;
+      background-image: url(/images/back-ground/footer-tab.png);
+      background-repeat: no-repeat;
+      background-size: 100% 115%;
+    }
+
+    @include onDescktop {
+      position: relative;
+
+      background-position-x: -135px;
+      background-size: 100% 115%;
+    }
   }
 }

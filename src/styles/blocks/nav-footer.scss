@@ -1,18 +1,47 @@
 .nav-footer {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -87px;
+  @include contentPaddingInLineForDevices;
 
-  &__address {
-    display: none;
+  @media (max-width: 767px) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -87px;
   }
 
-  // &__about-us {
-  // }
+  @include onTablet {
+    @include pageGrid;
+  }
 
-  &__about-us-title {
+  &__address {
+    width: 170px;
+
     display: none;
+
+    font-style: normal;
+
+    @include onTablet {
+      height: fit-content;
+
+      display: grid;
+      row-gap: 10px;
+
+      grid-column: span 2;
+    }
+  }
+
+  &__address-link {
+    text-decoration: none;
+    color: #000;
+  }
+
+  &__links-wrapper {
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDescktop {
+      grid-column: 5 / 9;
+    }
   }
 
   &__our-socials {
@@ -21,16 +50,31 @@
     justify-content: center;
 
     margin-bottom: 40px;
+
+    @include onTablet {
+      gap: 80px;
+      margin-bottom: 32px;
+    }
+
+    @include onDescktop {
+      gap: 70px;
+      margin-bottom: 74px;
+    }
   }
 
   &__our-socials-link {
     display: flex;
   }
 
-  // &__our-socials-icon {
-  //   height: 20px;
-  //   width: 20px;
-  // }
+  &__our-socials-icon {
+    height: 20px;
+    width: 20px;
+
+    @include onDescktop {
+      height: 30px;
+      width: 30px;
+    }
+  }
 
   &__logo-link {
     text-decoration: none;
@@ -42,11 +86,35 @@
     text-align: center;
   }
 
+  &__about-us {
+    @include onTablet {
+      grid-column: span 2;
+      margin-left: auto;
+    }
+
+    @include onDescktop {
+      grid-column: -3 / -1;
+    }
+  }
+
+  &__about-us-title {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+
   &__about-us-copyright {
     margin-bottom: 30px;
 
     text-align: center;
     font-size: 16px;
     line-height: 150%;
+
+    @include onTablet {
+      text-align: left;
+    }
   }
 }

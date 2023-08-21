@@ -1,6 +1,21 @@
 .questions {
+  @include onTablet {
+    // @include pageGrid;
+    grid-column: 1 / 4;
+  }
+
+  @include onDescktop {
+    grid-column: 1 / 5;
+  }
+
   &__primary-title {
     margin-top: 45px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      // position: absolute;
+      // margin-top: 17px;
+    }
   }
 
   &__text {
@@ -8,6 +23,11 @@
 
     font-size: 16px;
     line-height: 150%;
+
+    @include onTablet {
+      margin-block: 0 30px;
+      grid-column: 1 / 5;
+    }
   }
 
   &__second-title {
@@ -15,6 +35,17 @@
 
     font-size: 24px;
     line-height: 150%;
+
+    @include onTablet {
+      grid-column: 1 / 3;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
   }
 
   &__button {
@@ -28,6 +59,10 @@
 
     @include hover(background-color, rgba(3, 128, 158, 0.7));
 
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
     // &:hover {
     //   background-color: rgba(3, 128, 158, 0.7);
     // }
@@ -35,6 +70,18 @@
 }
 
 .input {
+  @include onTablet {
+    margin-bottom: 70px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+
+  @include onDescktop {
+    margin-bottom: 130px;
+  }
+
   &__fields {
     width: 100%;
     padding: 0 0 4px 6px;
@@ -65,6 +112,14 @@
 
       resize: none;
       overflow: hidden;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+    }
+
+    @include onTablet {
+      grid-column: span 3;
     }
   }
 }

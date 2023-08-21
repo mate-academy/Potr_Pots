@@ -1,25 +1,84 @@
 .benefits {
   margin-bottom: 110px;
 
-  &__container {
-    @include contentPaddingInLineForDevices;
+  @include contentPaddingInLineForDevices;
+
+  @include onTablet {
+    @include pageGrid;
+
+    margin-bottom: 105px;
+    position: relative;
   }
 
-  &__list {
-    display: grid;
-    row-gap: 40px;
+  @include onDescktop {
+    height: 828px;
 
-    margin-bottom: 50px;
+    margin-bottom: 0;
+  }
+
+  &__collage {
+    display: none;
+
+    @include onDescktop {
+      display: block;
+      position: absolute;
+    }
   }
 
   &__item {
     display: grid;
     row-gap: 5px;
+
+      &--1,
+      &--2 {
+        margin-bottom: 40px;
+      }
+
+      &--3 {
+        margin-bottom: 50px;
+      }
+
+    @include onTablet {
+      margin-left: 24px;
+      grid-column: 1 / 4;
+
+      &--1,
+      &--2 {
+        margin-bottom: 30px;
+      }
+
+      &--3 {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDescktop {
+      height: fit-content;
+
+      &--1 {
+        grid-column: 6 / 9;
+        top: 190px;
+        position: absolute;
+        width: max-content;
+      }
+
+      &--2 {
+        grid-column: 9 / -1;
+        margin-top: 190px;
+      }
+
+      &--3 {
+        grid-column: 6 / 10;
+        position: absolute;
+        top: 313px;
+      }
+    }
   }
 
   &__title {
     font-family: "Manrope", sans-serif;
     font-size: 32px;
+    line-height: 150%;
     color: $title-color;
     position: relative;
 
@@ -36,6 +95,10 @@
       background-color: $text-color;
       rotate: 45deg;
     }
+
+    @include onTablet {
+      font-size: 36px;
+    }
   }
 
   &__text {
@@ -46,6 +109,20 @@
 
   &__link {
     text-decoration: none;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+
+      width: 240px;
+
+      position: absolute;
+      top: 100px;
+    }
+
+    @include onDescktop {
+      grid-column: 6 / 9;
+      top: 456px;
+    }
   }
 
   &__button {
@@ -53,18 +130,110 @@
     gap: 24px;
     margin-bottom: 40px;
 
-    color: $title-color;
+    color: #121212;
     background-color: #ffe339;
 
-    @include hover(opacity, 0.7);
+    @media (max-width: 767px) {
+      @include hover(opacity, 0.7);
+    }
+
+    @include onTablet {
+      margin-bottom: 0;
+
+      background-color: transparent;
+      border: 1px solid $blue-title-color;
+
+      @include hover(background-color, $blue-title-color);
+    }
   }
 
   &__discount {
-    color: #eb5757;
     margin-bottom: 10px;
+
+    font-size: 36px;
+    letter-spacing: 5.58px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #eb5757;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      width: 160px;
+      position: absolute;
+      top: 185px;
+
+      font-size: 24px;
+      letter-spacing: 3.72px;
+      line-height: 100%;
+    }
+
+    @include onDescktop {
+      grid-column: 7 / 9;
+      top: 574px;
+
+      font-size: 36px;
+    }
   }
 
   &__second-order {
     color: $blue-title-color;
+
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 3.72px;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      width: 240px;
+      position: absolute;
+      top: 215px;
+
+      font-size: 18px;
+      line-height: 100%;
+      letter-spacing: 2.79px;
+    }
+
+    @include onDescktop {
+      grid-column: 7 / -1;
+      width: fit-content;
+      top: 630px;
+
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__side-text {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+
+      position: absolute;
+      right: 10px;
+      rotate: 90deg;
+      transform-origin: right;
+      transform: translate(calc(100% + 68px), 50%);
+
+      font-size: 12px;
+      color: $gray-side-color;
+      letter-spacing: 2.64px;
+
+      &::before {
+        content: "";
+        width: 65px;
+        height: 1px;
+        margin-right: 10px;
+        right: 100%;
+        border-bottom: 1px solid $gray-side-color;
+        position: absolute;
+      }
+    }
+  
+    @include onDescktop {
+      display: none;
+    }
   }
 }

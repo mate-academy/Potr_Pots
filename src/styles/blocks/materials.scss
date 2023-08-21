@@ -10,6 +10,7 @@
 
   @include onDescktop {
     margin-top: -110px;
+    // @include contentPaddingInLineForDevices;
   }
 
   &__side-text {
@@ -22,7 +23,7 @@
       position: absolute;
 
       rotate: 90deg;
-      color: #828282;
+      color: $gray-side-color;
       font-size: 12px;
       letter-spacing: 2.64px;
     }
@@ -37,8 +38,14 @@
       height: 1px;
       margin-right: 10px;
       right: 100%;
-      border-bottom: 1px solid #828282;
+      border-bottom: 1px solid $gray-side-color;
       position: absolute;
+    }
+
+    &--left {
+      left: 10px;
+      transform-origin: left;
+      transform: translate(calc(0% + 65px + 204px), -50%);
     }
 
     &--right {
@@ -114,6 +121,9 @@
       grid-column: 1 / -1;
       position: relative;
       z-index: -1;
+
+      // max-width: 1440px;
+      // margin-inline: auto;
     }
   }
 
