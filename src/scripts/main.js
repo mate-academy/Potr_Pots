@@ -1,42 +1,5 @@
 'use strict';
 
-// (document).ready(function() {
-//   ('.rhombuses-container__rhombus').click(function() {
-//     const index = (this).data('index');
-
-//     ('.materials__slider-box').hide();
-
-//     ('.materials__slider-box--' + index).show();
-//   });
-// });
-
-// document.addEventListener('DOMContentLoaded', function() {
-//   const sliderBoxes = document.querySelectorAll('.materials__slider-box');
-
-//   for (let i = 1; i < sliderBoxes.length; i++) {
-//     sliderBoxes[i].style.display = 'none';
-//   }
-
-//   const sliderList = document.querySelector('.materials__slider-list');
-//   // eslint-disable-next-line no-undef
-//   const hammer = new Hammer(sliderList);
-
-//   let currentIndex = 0;
-
-//   hammer.on('swipeleft swiperight', function(event) {
-//     sliderBoxes[currentIndex].style.display = 'none';
-
-//     if (event.type === 'swipeleft') {
-//       currentIndex = (currentIndex + 1) % sliderBoxes.length;
-//     } else if (event.type === 'swiperight') {
-//       currentIndex = (currentIndex - 1 + sliderBoxes.length)
-//         % sliderBoxes.length;
-//     }
-
-//     sliderBoxes[currentIndex].style.display = 'block';
-//   });
-// });
-
 document.addEventListener('DOMContentLoaded', function() {
   const sliderBoxes = document.querySelectorAll('.materials__slider-box');
   const sliderList = document.querySelector('.materials__slider-list');
@@ -80,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  handleWindowSizeChange(); // Викликати функцію при завантаженні сторінки
-
+  handleWindowSizeChange();
   // eslint-disable-next-line max-len
   window.addEventListener('resize', handleWindowSizeChange); // Додати слухач події для зміни розміру вікна
 });
@@ -100,12 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
       plusButton.style.display = 'none';
       minusButton.style.display = 'block';
       sliderBox.style.opacity = '1';
+      sliderBox.style.pointerEvents = 'all';
     });
 
     minusButton.addEventListener('click', function() {
       plusButton.style.display = 'block';
       minusButton.style.display = 'none';
       sliderBox.style.opacity = '0';
+      sliderBox.style.pointerEvents = 'none';
     });
   });
 
@@ -113,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
     sliderBoxes.forEach((box, index) => {
       if (index !== currentIndex) {
         box.style.opacity = '0';
+        box.style.pointerEvents = 'none';
 
         // eslint-disable-next-line max-len
         const plusButton = plusMinusElements[index].querySelector('.materials__plus');

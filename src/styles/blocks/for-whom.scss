@@ -180,8 +180,6 @@
         top: -17px;
         transform: translateY(-100%);
       }
-
-      // @include pseudoStar;///
     }
 
     @include onDescktop {
@@ -208,8 +206,6 @@
       rotate: 22deg;
       background-color: $title-color;
     }
-
-    // @include pseudoObliqueNumber;///
 
     @include onTablet {
       margin-bottom: 22px;
@@ -242,7 +238,6 @@
       grid-column: -4 / -1;
       margin-bottom: 10px;
 
-      // @include pseudoObliqueTitleText;///
       &::after {
         content: "";
         width: 1px;
@@ -266,80 +261,30 @@
     }
   }
 
-  &__side-text-container {
-    position: absolute;
-
+  &__side-text-right {
     display: flex;
-    gap: 9px;
-    rotate: 90deg;
+    right: 5px;
+    transform: translate(-8px, 50%);
     transform-origin: right;
 
-    &--right {
-      bottom: 0;
-      right: 0;
-      padding-top: 5px;
-      transform: translate(8px, 50%);
-
-      @include onTablet {
-        bottom: auto;
-        top: 0;
-        padding-top: 8px;
-        transform: translate(-5px, 50%);
-      }
-
-      @include onDescktop {
-        transform: translate(calc(100% + 67px), calc(135px + 50%));
-        padding-top: 0;
-      }
+    @include onTablet {
+      right: 8px;
+      top: 0;
+      transform: translate(62px, 50%);
     }
 
-    &--left {
-      display: none;
-
-      @include onDescktop {
-        display: flex;
-        bottom: 0;
-        transform-origin: left;
-        transform: translate(65px, 50%);
-        rotate: -90deg;
-      }
+    @include onDescktop {
+      right: 135px;
+      transform: translate(calc(100% + 70px), 50%);
     }
   }
 
-  &__side-text {
-    position: relative;
-    display: flex;
-    align-items: center;
+  &__side-text-left {
+    display: none;
 
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 12px;
-    letter-spacing: 2.64px;
-    color: $gray-side-color;
-
-    &--right {
-      &::before {
-        position: absolute;
-
-        content: "";
-
-        width: 65px;
-        margin-right: 10px;
-        right: 100%;
-        border-bottom: 1px solid $gray-side-color;
-      }
-    }
-
-    &--left {
-      &::before {
-        position: absolute;
-
-        content: "";
-
-        width: 65px;
-        margin-right: 10px;
-        right: 100%;
-        border-bottom: 1px solid $gray-side-color;
-      }
+    @include onDescktop {
+      display: flex;
+      transform: translate(calc(8px + 65px + 10px), 50%);
     }
   }
 }

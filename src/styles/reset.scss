@@ -14,39 +14,24 @@ select:-webkit-autofill:focus {
 .page {
   scroll-behavior: smooth;
 
-  // &:has(.page__menu:target) {
-  //   overflow: hidden;
-  // }
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
 
   &__body {
     min-width: 320px;
-    // max-width: 1440px;///
-    margin: 0;
+    max-width: 1440px;
+    margin: 0 auto;
 
     font-family: "Bebas Neue", sans-serif;
 
     background: $gray-light;
-
-    @include onTablet {
-      background-image: url(/images/back-ground/potr-this-tab.png);
-      background-position-x: -154px;
-      background-repeat: no-repeat;
-      background-size: 100% 520px;
-    }
-
-    @include onDescktop {
-      background-image: url(/images/back-ground/potr-this-desctop.png);
-      // background-position-x: calc(100% - 21%);
-      background-position-x: -405px;
-      background-repeat: no-repeat;
-      background-size: 100% 560px;
-      // background-size: 83% 560px;
-    }
   }
 
   &__body * {
     margin: 0;
     padding: 0;
+    transition: all 0.3s;
   }
 
   &__menu {
@@ -54,7 +39,7 @@ select:-webkit-autofill:focus {
     top: 0;
     right: 0;
 
-    transition: transform 0.3s;
+    // transition: transform 0.3s;
     opacity: 0;
     transform: translateX(100%);
     pointer-events: none;
