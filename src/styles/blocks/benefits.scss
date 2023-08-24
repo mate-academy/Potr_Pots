@@ -108,7 +108,18 @@
   }
 
   &__link {
+    width: 100%;
+    gap: 24px;
+    margin-bottom: 40px;
+
+    background-color: #ffe339;
+
     text-decoration: none;
+    color: #121212;
+
+    @media (max-width: 767px) {
+      @include hover(opacity, 0.7);
+    }
 
     @include onTablet {
       grid-column: 4 / 7;
@@ -117,33 +128,18 @@
 
       position: absolute;
       top: 100px;
-    }
 
-    @include onDescktop {
-      grid-column: 6 / 9;
-      top: 456px;
-    }
-  }
-
-  &__button {
-    width: 100%;
-    gap: 24px;
-    margin-bottom: 40px;
-
-    color: #121212;
-    background-color: #ffe339;
-
-    @media (max-width: 767px) {
-      @include hover(opacity, 0.7);
-    }
-
-    @include onTablet {
       margin-bottom: 0;
 
       background-color: transparent;
       border: 1px solid $blue-title-color;
 
       @include hover(background-color, $blue-title-color);
+    }
+
+    @include onDescktop {
+      grid-column: 6 / 9;
+      top: 456px;
     }
   }
 
