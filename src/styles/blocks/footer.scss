@@ -2,12 +2,22 @@
   padding-bottom: 30px;
   position: relative;
 
+  background-image: url(/images/back-ground/footer-mob.png);
+  background-repeat: no-repeat;
+  background-size: 100% 98%;
+
   @include onTablet {
     padding-bottom: 117px;
+
+    background-image: url(/images/back-ground/footer-tab.png);
+    background-size: 100% 74%;
   }
 
   @include onDescktop {
     padding-bottom: 64px;
+
+    background-size: 100% 76%;
+    background-position-x: -135px;
   }
 
   &__stamp-half {
@@ -42,25 +52,11 @@
     display: grid;
     row-gap: 56px;
 
-    background-image: url(/images/back-ground/footer-mob.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-
     @include onTablet {
       @include pageGrid;
       margin-bottom: 50px;
 
       row-gap: 0;
-      background-image: url(/images/back-ground/footer-tab.png);
-      background-repeat: no-repeat;
-      background-size: 100% 115%;
-    }
-
-    @include onDescktop {
-      position: relative;
-
-      background-position-x: -135px;
-      background-size: 100% 115%;
     }
   }
 }
