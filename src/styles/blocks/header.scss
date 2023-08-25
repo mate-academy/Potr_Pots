@@ -1,0 +1,76 @@
+.header {
+  padding-block: 15px 10px;
+  box-sizing: border-box;
+
+  @include onTablet {
+    padding-block: 29px;
+  }
+
+  @include onDescktop {
+    padding-block: 20px;
+  }
+
+  &__container {
+    @include contentPaddingInLineForDevices;
+
+    height: $head-height;
+  }
+
+  &__bg-col {
+    display: none;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+
+    &--tab {
+      @include onTablet {
+        display: block;
+        width: calc(100% - 154px);
+        height: 467px;
+        grid-column: 1 / -2;
+      }
+
+      @include onDescktop {
+        display: none;
+      }
+    }
+
+    &--desctop {
+      @include onDescktop {
+        display: block;
+      }
+    }
+  }
+
+  &__top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+  }
+
+  &__nav {
+    display: none;
+    height: 100%;
+
+    @include onDescktop {
+      display: flex;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    gap: 60px;
+    height: 100%;
+  }
+
+  &__nav-link {
+    height: 100%;
+    color: $text-color;
+    display: flex;
+    align-items: center;
+
+    @include hover(scale, 1.2);
+  }
+}

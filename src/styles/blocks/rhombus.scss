@@ -1,0 +1,33 @@
+.rhombuses-container {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+
+  position: absolute;
+  bottom: 37px;
+  right: 0;
+  left: 0;
+
+  &__rhombus {
+    height: 7px;
+    width: 7px;
+    background-color: $gray-light;
+    rotate: 45deg;
+  }
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+@for $rhombusCount from 1 through 5 {
+  .materials__slider-box--#{$rhombusCount} {
+    .rhombuses-container {
+      .rhombuses-container__rhombus:nth-child(#{$rhombusCount}) {
+        border: 1px solid $gray-light;
+        background: rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+      }
+    }
+  }
+}

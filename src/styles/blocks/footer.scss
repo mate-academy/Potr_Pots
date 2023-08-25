@@ -1,0 +1,62 @@
+.footer {
+  padding-bottom: 30px;
+  position: relative;
+
+  background-image: url(/images/back-ground/footer-mob.png);
+  background-repeat: no-repeat;
+  background-size: 100% 98%;
+
+  @include onTablet {
+    padding-bottom: 117px;
+
+    background-image: url(/images/back-ground/footer-tab.png);
+    background-size: 100% 74%;
+  }
+
+  @include onDescktop {
+    padding-bottom: 64px;
+
+    background-size: 100% 76%;
+    background-position-x: -135px;
+  }
+
+  &__stamp-half {
+    position: absolute;
+    transform: translateY(-43%);
+    right: 0;
+
+    @include onTablet {
+      transform: translateY(-64%);
+    }
+
+    @include onDescktop {
+      display: none;
+    }
+  }
+
+  &__stamp-full {
+    display: none;
+
+    position: absolute;
+    transform: translateY(-56%);
+    z-index: 1;
+    right: 61px;
+
+    @include onDescktop {
+      display: block;
+    }
+  }
+
+  &__contact {
+    @include contentPaddingInLineForDevices;
+    display: grid;
+    row-gap: 56px;
+
+    @include onTablet {
+      @include pageGrid;
+      margin-bottom: 50px;
+
+      row-gap: 0;
+    }
+  }
+}

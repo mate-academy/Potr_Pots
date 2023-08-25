@@ -1,0 +1,138 @@
+.nav-footer {
+  @include contentPaddingInLineForDevices;
+
+  @media (max-width: 767px) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -87px;
+  }
+
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  &__address {
+    width: 170px;
+
+    display: none;
+
+    font-style: normal;
+
+    @include onTablet {
+      height: fit-content;
+
+      display: grid;
+      row-gap: 10px;
+
+      grid-column: span 2;
+    }
+  }
+
+  &__address-link {
+    text-decoration: none;
+    color: #000;
+
+    @include hover (color, $blue-title-color);
+  }
+
+  &__links-wrapper {
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDescktop {
+      grid-column: 5 / 9;
+    }
+  }
+
+  &__our-socials {
+    display: flex;
+    gap: 85px;
+    justify-content: center;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      gap: 80px;
+      margin-bottom: 32px;
+    }
+
+    @include onDescktop {
+      gap: 70px;
+      margin-bottom: 74px;
+    }
+  }
+
+  &__our-socials-link {
+    display: flex;
+  }
+
+  &__our-socials-icon {
+    height: 20px;
+    width: 20px;
+
+    @include hover (scale, 1.2);
+
+    @include onDescktop {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+    margin-inline: auto;
+    width: fit-content;
+
+    text-decoration: none;
+    color: #000;
+  }
+
+  &__logo-title {
+    line-height: 150%;
+
+    @include hover (scale, 1.2);
+  }
+
+  &__about-us {
+    @include onTablet {
+      grid-column: span 2;
+      margin-left: auto;
+    }
+
+    @include onDescktop {
+      grid-column: -3 / -1;
+    }
+  }
+
+  &__about-us-link {
+    display: flex;
+    width: fit-content;
+    text-decoration: none;
+  }
+
+  &__about-us-title {
+    display: none;
+    color: #000;
+
+    @include hover (color, $blue-title-color);
+
+    @include onTablet {
+      display: block;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__about-us-copyright {
+    margin-bottom: 30px;
+
+    text-align: center;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+}

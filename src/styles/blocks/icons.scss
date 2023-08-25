@@ -1,0 +1,32 @@
+.icon {
+  height: 32px;
+  width: 32px;
+
+  @include hover(scale, 1.2);
+
+  &--menu {
+    background-image: url(/images/icons/icon-menu.svg);
+
+    @include onDescktop {
+      display: none;
+    }
+  }
+
+  &--close {
+    height: 12px;
+    width: 12px;
+
+    background-image: url(/images/icons/icon-close.svg);
+  }
+
+  &--bag {
+    display: none;
+
+    background-image: url(/images/icons/bag.png);
+    background-size: contain;
+
+    @include onDescktop {
+      display: flex;
+    }
+  }
+}

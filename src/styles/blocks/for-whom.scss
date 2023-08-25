@@ -1,0 +1,290 @@
+.for-whom {
+  margin-bottom: 110px;
+  position: relative;
+
+  @include contentPaddingInLineForDevices;
+
+  @include onTablet {
+    padding-top: 62px;
+    margin-bottom: 135px;
+  }
+
+  @include onDescktop {
+    padding-top: 0;
+    margin-bottom: 150px;
+  }
+
+  &__primary-title {
+    margin-bottom: 25px;
+
+    line-height: 150%;
+    color: $title-color;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onDescktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 70px;
+
+    @include onTablet {
+      row-gap: 110px;
+    }
+
+    @include onDescktop {
+      row-gap: 80px;
+    }
+  }
+
+  &__box {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-template-areas: "text-2 text-2 text-2 img-2 img-2 img-2";
+      }
+
+      @include onDescktop {
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "img-2" "text-2";
+
+        position: absolute;
+        right: 135px;
+        left: 135px;
+        top: 773px;
+      }
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 1 / 4;
+
+      &--2 {
+        grid-area: img-2;
+        margin-left: auto;
+      }
+    }
+
+    @include onDescktop {
+      &--1 {
+        width: 500px;
+
+        grid-column: 1 / 7;
+      }
+
+      &--2 {
+        grid-column: 2 / 6;
+      }
+
+      &--3 {
+        width: 100%;
+        margin-bottom: 109px;
+
+        grid-column: 8 / -1;
+      }
+    }
+  }
+
+  &__text-wrapper-1 {
+    @include onTablet {
+      margin-top: 26px;
+
+      grid-column: 4 / 7;
+
+      position: relative;
+    }
+
+    @include onDescktop {
+      margin-block: auto 120px;
+
+      grid-column: 8 / -2;
+    }
+  }
+
+  &__text-wrapper-2 {
+    @include onTablet {
+      margin-top: 72px;
+
+      grid-area: text-2;
+
+      position: relative;
+    }
+
+    @include onDescktop {
+      grid-column: 2 / 6;
+
+      margin-block: 109px auto;
+    }
+  }
+
+  &__text-wrapper-3 {
+    @include onTablet {
+      margin-top: 30px;
+
+      grid-column: 4 / 7;
+
+      position: relative;
+    }
+
+    @include onDescktop {
+      grid-column: 9 / -1;
+    }
+  }
+
+  &__box-benefits {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      position: absolute;
+
+      &::before {
+        content: "*";
+        position: absolute;
+        left: -10px;
+        transform: translateX(-100%);
+
+        @include onDescktop {
+          left: -30px;
+        }
+      }
+
+      &--1 {
+        top: -25px;
+        transform: translateY(-100%);
+      }
+
+      &--2 {
+        top: -28px;
+        right: 0;
+        transform: translateY(-100%);
+
+        @include onDescktop {
+          right: auto;
+        }
+      }
+
+      &--3 {
+        top: -17px;
+        transform: translateY(-100%);
+      }
+    }
+
+    @include onDescktop {
+      top: -40px;
+    }
+  }
+
+  &__number {
+    display: flex;
+    height: 47px;
+    margin-bottom: 30px;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 50px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateX(9px);
+
+      rotate: 22deg;
+      background-color: $title-color;
+    }
+
+    @include onTablet {
+      margin-bottom: 22px;
+    }
+
+    &--1,
+    &--3 {
+      @include onTablet {
+        position: absolute;
+        left: -20px;
+        transform: translateX(-100%);
+      }
+
+      @include onDescktop {
+        left: -56px;
+      }
+    }
+  }
+
+  &__title-number {
+    line-height: 208%;
+    padding-left: 19px;
+  }
+
+  &__title-text {
+    margin-bottom: 20px;
+    line-height: 150%;
+
+    @include onTablet {
+      grid-column: -4 / -1;
+      margin-bottom: 10px;
+
+      &::after {
+        content: "";
+        width: 1px;
+        height: 50px;
+        position: absolute;
+        margin-left: 11px;
+
+        rotate: 22deg;
+        background-color: $title-color;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+    color: $text-color;
+
+    @include onTablet {
+      grid-column: -4 / -1;
+    }
+  }
+
+  &__side-text-right {
+    display: flex;
+    right: 5px;
+    transform: translate(-8px, 50%);
+    transform-origin: right;
+
+    @include onTablet {
+      right: 8px;
+      top: 0;
+      transform: translate(62px, 50%);
+    }
+
+    @include onDescktop {
+      right: 135px;
+      transform: translate(calc(100% + 70px), 50%);
+    }
+  }
+
+  &__side-text-left {
+    display: none;
+
+    @include onDescktop {
+      display: flex;
+      transform: translate(calc(8px + 65px + 10px), 50%);
+    }
+  }
+}
