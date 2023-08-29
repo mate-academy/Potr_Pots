@@ -1,0 +1,127 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-inline: 30px;
+  margin-bottom: 117px;
+
+  @include onTablet {
+    padding-inline: 30px;
+    flex-direction: row;
+  }
+
+  @include onDesktop {
+    padding-inline: 135px;
+  }
+
+  &__address {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    display: block;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    color: $c-article;
+
+    padding-bottom: 10px;
+
+    &--mobile {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__map {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    width: 170px;
+
+    color: $c-article;
+
+    transition: all $duration;
+    &:hover {
+      color: $c-turquoise;
+      transform: scale(110%);
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 80px;
+
+    margin-bottom: 32px;
+  }
+
+  &__social {
+    display: block;
+    width: 20px;
+    height: 20px;
+
+    background-size: contain;
+
+    transition: transform $duration;
+    &:hover {
+      transform: scale(150%);
+    }
+
+    &--1 {
+      background-image: url("../images/social/twitter.svg");
+    }
+
+    &--2 {
+      background-image: url("../images/social/instagram.svg");
+    }
+
+    &--3 {
+      background-image: url("../images/social/facebook.svg");
+    }
+  }
+
+  &__logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    text-align: center;
+
+    color: $c-article;
+
+    transition: all $duration;
+    &:hover {
+      border-bottom: 1px solid $c-article;
+      transform: scale(110%);
+    }
+  }
+
+  &__copyright {
+    line-height: 150%;
+  }
+}
