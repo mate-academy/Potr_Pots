@@ -1,6 +1,116 @@
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+  --width: auto;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), var(--width));
+  column-gap: 20px;
+
+  @include onTablet {
+    --columns: 6;
+    --width: 100px;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+    --width: 70px;
+    column-gap: 30px;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $effectDuration;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin hoverLink($_colorNew, $_colorText) {
+  background-image: linear-gradient(
+    to right,
+    #{$_colorNew},
+    #{$_colorNew} 50%,
+    #{$_colorText} 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all $effectDuration ease-in-out;
+
+  &:before {
+    content: "";
+    background: #{$_colorNew};
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all $effectDuration ease-in-out;
+  }
+
+  &:hover {
+    background-position: 0;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}
+
+@mixin hoverImg {
+  transition: all $effectDuration ease-in-out;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
+
+@mixin slash {
+  width: 1px;
+  height: 46.29px;
+  transform: rotate(22deg);
+  background: $grey-1;
+}
+
+@mixin plus-line {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 11px;
+  background: #e0e0e0;
+}
+
+@mixin mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  transform: rotate(90deg);
+  color: #828282;
+  font-family: Bebas Neue, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.64px;
 }

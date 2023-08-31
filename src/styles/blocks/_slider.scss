@@ -1,0 +1,47 @@
+.slider {
+  position: relative;
+  top: -65px;
+  margin: 0;
+  width: 100%;
+  height: 254px;
+  padding-inline: 9px;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.gallery-cell {
+  width: 100%;
+  min-height: 254px;
+  color: $grey-light-color;
+  line-height: 150%; /* 24px */
+  padding: 28px 44px 58px;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(17px);
+  counter-increment: gallery-cell;
+}
+
+.flickity-button {
+  display: none;
+}
+
+.flickity-page-dots {
+  bottom: 37px;
+}
+/* white circles */
+.flickity-page-dots .dot {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+  background: $grey-light-color;
+  border-radius: 0;
+  transform: rotate(45deg);
+  border: 1.5px solid white;
+  margin: 0 6px;
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  background: $grey-1;
+}

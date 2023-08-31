@@ -1,0 +1,34 @@
+.features {
+  &__title {
+    text-align: center;
+    -webkit-text-stroke: 0.01px $turquoise-color;
+    color: transparent;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 58px;
+    letter-spacing: 8.09px;
+
+    &--full {
+      color: $turquoise-color;
+    }
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__wrapper {
+    margin-top: 20px;
+    @include pageGrid;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 70px;
+
+    @include onTablet {
+      margin-top: 50px;
+      grid-template-rows: auto;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+    }
+  }
+}

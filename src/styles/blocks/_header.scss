@@ -1,0 +1,146 @@
+.header {
+  position: relative;
+
+  &__img {
+    &--mobile {
+      background: url("../images/header__img.jpg") center bottom/cover no-repeat;
+      width: 100%;
+      max-width: 400px;
+      margin: auto;
+      height: 320px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        width: 306px;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+      }
+
+      @include onDesktop {
+        width: 500px;
+      }
+    }
+  }
+
+  &__title {
+    margin-top: 25px;
+    -webkit-text-stroke: 1px $turquoise-color;
+    color: transparent;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 36px;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    z-index: 1;
+
+    @include onTablet {
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9.92px;
+    }
+
+    @include onDesktop {
+      margin-left: 100px;
+    }
+
+    &--full {
+      color: $turquoise-color;
+    }
+  }
+
+  &__price {
+    margin-top: 30px;
+    color: $grey-1;
+    font-family: Manrope, Helvetica, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+
+    @include onTablet {
+      padding-left: 240px;
+      margin-top: -20px;
+    }
+
+    @include onDesktop {
+      padding-left: 400px;
+      margin-top: 20px;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 1px;
+    color: $grey-2;
+    font-family: Manrope, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+
+    @include onTablet {
+      padding-left: 240px;
+    }
+
+    @include onDesktop {
+      padding-left: 400px;
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+
+    @include onTablet {
+      margin-left: 120px;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-left: 300px;
+    }
+  }
+
+  &__more-link {
+    position: absolute;
+    color: $turquoise-color;
+    font-family: Manrope, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+    text-decoration: none;
+    display: flex;
+    gap: 9px;
+    bottom: 0;
+    right: 0;
+    transform: rotate(90deg) translateY(calc(100% + 5px));
+    transform-origin: right bottom;
+
+    @include onTablet {
+      right: auto;
+      left: -164px;
+      bottom: -10%;
+    }
+
+    @include onDesktop {
+      &:hover {
+        animation: bounceAnimation 2s ease 0s 1 normal forwards;
+      }
+    }
+  }
+
+  &__mark {
+    display: none;
+    @include onTablet {
+      display: block;
+      @include mark;
+      bottom: -64px;
+      right: -66px;
+    }
+
+    @include onDesktop {
+      bottom: -257px;
+    }
+  }
+}

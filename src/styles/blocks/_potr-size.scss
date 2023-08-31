@@ -1,0 +1,106 @@
+.potr-size {
+  &__content {
+    margin-top: 20px;
+    display: grid;
+    row-gap: 30px;
+
+    @include onTablet {
+      grid-template: repeat(3, auto) / auto 60%;
+      column-gap: 36px;
+    }
+
+    @include onDesktop {
+      grid-template: repeat(2, auto) / 1fr 1fr 45%;
+      column-gap: 47px;
+    }
+  }
+
+  &__title {
+    color: #000;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    font-weight: 400;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: $grey-2;
+    line-height: 150%;
+  }
+
+  &__description {
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / 3;
+      max-width: 579px;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 1 / 2 / 2;
+      max-width: 253px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    @include onTablet {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 3 / 3 / 4;
+
+      @include hover(transform, (rotate(3deg) scale(1.07)));
+    }
+  }
+
+  &__sizes {
+    display: grid;
+    row-gap: 40px;
+
+    @include onTablet {
+      grid-area: 2 / 1 / 3 / 2;
+      align-self: start;
+      row-gap: 50px;
+
+      @include onDesktop {
+        grid-area: 1 / 2 / 2 / 3;
+        max-width: 246px;
+      }
+    }
+    &--size {
+      color: #000;
+      font-family: Bebas Neue, Helvetica, sans-serif;
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 2.79px;
+    }
+
+    &--descr {
+      margin-top: 10px;
+    }
+
+  }
+
+  &__note {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "*";
+      color: $grey-2;
+      left: -8px;
+      top: 0;
+    }
+
+    @include onTablet {
+      grid-area: 3 / 1 / 4 / 3;
+    }
+
+    @include onDesktop {
+      grid-area: 2 / 1 / 3 / 3;
+      max-width: 546px;
+    }
+  }
+}
