@@ -1,0 +1,51 @@
+.slider {
+  position: relative;
+  overflow: hidden;
+
+  &__slides {
+    display: flex;
+    width: 500%;
+    transition: transform .3s;
+  }
+
+  &__slide {
+    width: 302px;
+    height: 254px;
+    background: rgba(0, 0, 0, .45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, .15);
+    backdrop-filter: blur(17px);
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    color: $colorWhite;
+    padding: 28px 44px 50px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__paginations {
+    position: absolute;
+    display: flex;
+    column-gap: 7px;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__pagination {
+    cursor: pointer;
+
+    border: 1px solid $colorWhite;
+    width: 7px;
+    height: 7px;
+    background-color: $colorWhite;
+    transform: rotate(45deg);
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.30);
+    }
+  }
+}
+
