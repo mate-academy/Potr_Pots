@@ -1,0 +1,87 @@
+.button {
+  @extend %manrope-font;
+  font-size: 14px;
+  font-weight: 600;
+  @include button_press_scale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  height: 48px;
+  transition: transform 0.3s;
+  border: 0;
+  gap: 20px;
+
+  &--primary {
+    color: $grey-light-color;
+    background-color: $turquoise-color;
+    @include hover(background-color, rgba(3, 131, 158, 0.7));
+  }
+
+  &--primary--2 {
+    color: $button-text-color;
+    background-color: $yellow-color;
+    @include hover(background-color, $yellow-light-color);
+  }
+
+  &--secondary {
+    border: 1px solid $turquoise-color;
+    color: $button-text-color;
+    background-color: transparent;
+    @include hover(background-color, $turquoise-color);
+  }
+
+  &--secondary--2 {
+    border: 1px solid $gray-1-color;
+    background-color: transparent;
+    color: $button-text-color;
+    @include hover(background-color, white);
+  }
+}
+
+.input {
+  @extend %manrope-font;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0;
+  padding-left: 6px;
+  padding-bottom: 4px;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+
+  &::placeholder {
+    transition: letter-spacing 0.3s;
+    color: $gray-2-color;
+  }
+
+  &:hover::placeholder {
+    letter-spacing: 3px;
+  }
+
+  &:focus {
+    border-color: $turquoise-color;
+    outline: none;
+  }
+
+  &.error {
+    border-color: $red-color;
+    color: $red-color;
+
+    &::placeholder {
+      color: $red-color;
+    }
+  }
+
+  &.success {
+    border-color: $turquoise-color;
+    color: $turquoise-color;
+
+    &::placeholder {
+      color: $turquoise-color;
+    }
+  }
+}
