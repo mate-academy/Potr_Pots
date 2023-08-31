@@ -1,0 +1,51 @@
+.features-card {
+  grid-column: span 2;
+
+  @include onDesktop {
+    grid-column: span 4;
+  }
+
+  &__img {
+    width: 100%;
+
+    @include onDesktop {
+      @include hover(transform, rotate(-0.01turn));
+    }
+  }
+
+  &__title {
+    margin-top: 37px;
+    color: $grey-1;
+    text-align: center;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+    color: $grey-2;
+    text-align: center;
+    font-family: Manrope, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+}

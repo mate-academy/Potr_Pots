@@ -1,0 +1,41 @@
+.dropdown {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 8px 10px 8px 75px;
+
+    &--basket {
+      position: relative;
+      &::after {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 50%;
+        right: 36%;
+        content: "0";
+        width: 14px;
+        height: 14px;
+        border-radius: 100%;
+        background: $red-color;
+        color: $grey-light-color;
+        font-family: Bebas Neue, Helvetica, sans-serif;
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__item {
+    list-style: none;
+    color: $grey-light-color;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}

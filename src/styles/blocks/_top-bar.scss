@@ -1,0 +1,56 @@
+.top-bar {
+  margin-block: 15px 10px;
+  display: flex;
+  justify-content: space-between;
+
+  @include onTablet {
+    margin-block: 30px 50px;
+  }
+
+  @include onDesktop {
+    margin-block: 20px 74px;
+    align-items: center;
+  }
+
+  &__logo {
+    color: $grey-1;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 36px;
+    letter-spacing: 2.16px;
+    text-decoration: none;
+    transition: all $effectDuration;
+
+    @include onDesktop {
+      &:hover {
+        color: $turquoise-color;
+      }
+    }
+  }
+
+  &__menu-icon {
+    display: block;
+    background: url("../images/icons/menu-icon.svg") center center/cover no-repeat;
+    width: 32px;
+    height: 32px;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__basket {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      background: url("../images/icons/basket-icon.svg") center center/cover no-repeat;
+      width: 32px;
+      height: 32px;
+      transition: all $effectDuration ease-in-out;
+
+      &:hover {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}

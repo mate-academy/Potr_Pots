@@ -1,0 +1,111 @@
+.materials {
+  position: relative;
+  margin: 0 auto;
+
+  &--position {
+    @include onDesktop {
+      max-width: 1440px;
+    }
+  }
+
+  &__title-wrapper {
+    margin-top: 130px;
+    position: relative;
+
+    @include onTablet {
+      margin-top: 150px;
+    }
+
+    @include onDesktop {
+      margin-top: 45px;
+    }
+  }
+
+  &__title {
+    color: $turquoise-color;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 58px;
+    letter-spacing: 8px;
+    position: absolute;
+    font-weight: 900;
+    bottom: -85px;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: 9.6px;
+      bottom: 46px;
+    }
+
+    @include onDesktop {
+      font-size: 138.8px;
+      letter-spacing: 16.66px;
+      bottom: -181px;
+    }
+  }
+
+  &__bg {
+    width: 100%;
+  }
+
+  &__text {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: -108px;
+      right: 0;
+      width: 340px;
+      color: $grey-2;
+      line-height: 150%;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      top: 10px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    font-weight: 700;
+
+  }
+
+  &__description {
+    font-size: 16px;
+    margin-top: 10px;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__mark--right {
+    display: none;
+    @include onTablet {
+      display: block;
+      @include mark;
+      bottom: 166px;
+      right: -65px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__mark--left {
+    display: none;
+    @include onTablet {
+      display: block;
+      @include mark;
+      bottom: -42px;
+      left: -65px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

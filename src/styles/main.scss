@@ -1,7 +1,34 @@
+@import "normalize";
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "blocks";
 
-body {
-  background: $c-gray;
+.container {
+  width: 100%;
+  padding-inline: 30px;
+  position: relative;
+
+  @include onTablet {
+
+    width: 700px;
+    padding-inline: 0;
+    margin: 0 auto;
+  }
+
+  @include onDesktop {
+    width: 1170px;
+    padding-inline: 0;
+    margin: 0 auto;
+  }
+}
+
+.main {
+  margin-top: 110px;
+  display: grid;
+  row-gap: 110px;
+
+  @include onDesktop {
+    margin-top: 192px;
+  }
 }
