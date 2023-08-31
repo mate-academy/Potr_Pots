@@ -1,0 +1,240 @@
+.benefits {
+  &__wrapper {
+    display: grid;
+    row-gap: 50px;
+
+    @include onTablet {
+      @include pageGrid;
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 35px;
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(3, auto);
+      row-gap: 65px;
+    }
+  }
+
+  &__images {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      grid-area: 1 / 1 / 4 / 6;
+      position: relative;
+      min-height: 520px;
+    }
+  }
+
+  &__img {
+    @include onDesktop {
+      position: absolute;
+      transition: all $effectDuration;
+
+      &--1 {
+        top: -119px;
+        left: -66px;
+
+        &:hover {
+          transform: rotate(15deg) scale(1.2);
+          z-index: 100;
+        }
+      }
+
+      &--2 {
+        top: -159px;
+        left: 148px;
+
+        &:hover {
+          transform: rotate(28deg) scale(1.2);
+          z-index: 100;
+        }
+      }
+
+      &--3 {
+        top: 151px;
+        left: -86px;
+        z-index: 5;
+
+        &:hover {
+          transform: scale(1.2);
+          z-index: 100;
+        }
+      }
+
+      &--4 {
+        top: 69px;
+        left: 107px;
+        z-index: 5;
+
+        &:hover {
+          transform: rotate(14deg) scale(1.2);
+          z-index: 100;
+        }
+      }
+
+      &--5 {
+        top: 329px;
+        left: -43px;
+
+        &:hover {
+          transform: rotate(15deg) scale(1.2);
+          z-index: 100;
+        }
+      }
+
+      &--6 {
+        top: 288px;
+        left: 173px;
+
+        &:hover {
+          transform: rotate(30deg) scale(1.2);
+          z-index: 100;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 40px;
+
+    @include onTablet {
+      grid-area: 1 / 1 / 3 / 4;
+      margin-left: 22px;
+    }
+
+    @include onDesktop {
+      grid-area: 1 / 6 / 2 / 13;
+      grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    }
+  }
+
+  &__title {
+    color: $grey-1;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 150%;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: $grey-1;
+      transform: rotate(45deg);
+      top: 20px;
+      left: -18px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+  }
+
+  &__item {
+    &:last-child {
+      @include onDesktop {
+        grid-area: 2 / 1 / 3 / 3;
+      }
+    }
+  }
+
+  &__descr {
+    margin-top: 5px;
+    color: #828282;
+    line-height: 150%;
+  }
+
+  &__button {
+    width: 238px;
+
+    @include onTablet {
+      grid-area: 1 / 4 / 2 / 7;
+      align-self: end;
+      border: 1px solid $turquoise-color;
+      background: #fff;
+    }
+
+    @include onDesktop {
+      grid-area: 2 / 6 / 3 / 13;
+      align-self: start;
+      transition: all $effectDuration;
+
+      &:hover {
+        background: $turquoise-color;
+        color: #fff;
+      }
+    }
+  }
+
+  &__sale {
+
+    @include onTablet {
+      grid-area: 2 / 4 / 3 / 7;
+    }
+
+    @include onDesktop {
+      grid-area: 3 / 7 / 4 / 13;
+    }
+
+    &--percent {
+      color: $red-color;
+      font-family: Bebas Neue, Helvetica, sans-serif;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 5.58px;
+      text-transform: uppercase;
+
+      @include onTablet {
+        font-size: 24px;
+        line-height: 24px;
+        letter-spacing: 3.72px;
+      }
+
+      @include onDesktop {
+        font-size: 36px;
+        line-height: 150%;
+        letter-spacing: 5.58px;
+      }
+    }
+
+    &--text {
+      margin-top: 10px;
+      color: $turquoise-color;
+      font-family: Bebas Neue, Helvetica, sans-serif;
+      font-size: 24px;
+      line-height: 100%;
+      letter-spacing: 3.72px;
+      text-transform: uppercase;
+
+      @include onTablet {
+        font-size: 18px;
+        letter-spacing: 2.79px;
+        margin-top: 5px;
+        max-width: 240px;
+      }
+
+      @include onDesktop {
+        font-size: 24px;
+        letter-spacing: 3.72px;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__mark {
+    display: none;
+    @include onTablet {
+      display: block;
+      @include mark;
+      bottom: 207px;
+      right: -94px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
