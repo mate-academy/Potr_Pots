@@ -1,0 +1,63 @@
+.features {
+  &__wrapper {
+    @include pageGrid;
+    row-gap: 70px;
+    margin-bottom: 110px;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include sectionTitleStyle(58px, 70px);
+
+    margin-bottom: 25px;
+    color: $turquoise;
+  }
+
+  &__stroke {
+    color: transparent;
+    -webkit-text-stroke: 1px $turquoise;
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+
+    display: block;
+    width: 100%;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include featuresElementsGridPositions($gridRowStart: 1);
+  }
+
+  &__subtitle {
+    grid-column: 1 / -1;
+
+    margin: 35px 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $gray;
+
+    @include featuresElementsGridPositions($gridRowStart: 2);
+  }
+}
+
+.feature {
+  &-wrapper {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+}

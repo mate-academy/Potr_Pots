@@ -1,6 +1,17 @@
+<!-- На GitHub з Readme файлів видали інструкції від Mate та внеси:
+короткий опис проєкту;
+технології, які було використано;
+посилання на прев'ю;
+посилання на макет;
+додаткові інструкції для запуску.
+Швидкість анімацій на всьому лендінгу однакова (наприклад, збільшення при наведенні або виїзд блоків при скролі).
+Placeholder у формах підказують, що потрібно ввести. Якщо стоїть валідація форми, то зрозуміло, у якому форматі вводити дані (наприклад, номер телефону).
+З мобільних пристроїв лендінг виглядає акуратно й немає горизонтального прокручування.
+Є favicon. -->
+
 # POTR POTS landing page (HARD)
 
-**⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).** 
+**⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).**
 
 Implement landing page according to [Figma design](https://www.figma.com/file/50zgLU65Mcd3MisFHMfLfx/POTR-POTS_FE-students?node-id=1760%3A281) - Use BEM and SCSS
 - The design 1440px
