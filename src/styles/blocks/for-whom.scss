@@ -1,0 +1,277 @@
+.for-whom {
+  @include pageGrid;
+
+  position: relative;
+  margin-bottom: 110px;
+  row-gap: 70px;
+
+  @include onTablet {
+    row-gap: 0;
+  }
+
+  &__title,
+  &__info-title {
+    grid-column: 1 /-1;
+
+    font-family: "Bebas Neue", sans-serif;
+    color: $gray;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__info-title {
+    margin: 30px 0 20px;
+
+    @include onTablet {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    &::after {
+      display: none;
+
+      @include onTablet {
+        display: inline-block;
+        content: "";
+        width: 1px;
+        height: 46px;
+
+        background-color: #000;
+        vertical-align: middle;
+
+        transform-origin: center bottom;
+        transform: rotateZ(22deg);
+      }
+    }
+  }
+
+  &__info-wrapper {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+
+      @include pageGrid;
+
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+
+    &--2 {
+      @include onDesktop {
+        grid-column: 1 / 6;
+        grid-auto-rows: min-content;
+        align-self: center;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+      grid-column: 1 / 4;
+    }
+
+    &--1 {
+      @include onDesktop {
+        grid-column: 1 / 6;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-column: 4 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / -2;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        grid-column: 3 / -1;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 45px;
+      }
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      grid-column: 4 / -1;
+
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -2;
+      grid-auto-rows: min-content;
+      align-content: center;
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+      }
+
+      @include onDesktop {
+        grid-row: none;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        grid-column: 3 / 7;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @include onDesktop {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &_star {
+    display: none;
+
+    @include onTablet {
+      display: inline;
+      margin-right: 10px;
+      font-size: 24px;
+      color: #000;
+    }
+
+    @include onDesktop {
+      margin-right: 36px;
+    }
+  }
+
+  &__property {
+    display: none;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+
+      display: inline;
+      margin-bottom: 25px;
+      color: $gray;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / -1;
+    }
+
+    &--2 {
+      @include onTablet {
+        grid-column: 5 / 5;
+        margin-bottom: 30px;
+      }
+
+      @include onDesktop {
+        grid-column: 2 / -1;
+        margin: 45px 0 40px;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__number {
+    @include onTablet {
+      grid-column: 1 / 1;
+    }
+
+    &--2 {
+      @include onDesktop {
+        grid-column: 2;
+        margin-bottom: 27px;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        margin-inline: 33px;
+      }
+    }
+  }
+
+  &__text-wrapper {
+    @include onTablet {
+      grid-column: 2 / -1;
+    }
+  }
+
+  &__vertical-link {
+    @include vertcalLinkStyle;
+
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    writing-mode: vertical-lr;
+
+    @include onTablet {
+      display: none;
+      right: 6px;
+      bottom: 100%;
+    }
+
+    @include onDesktop {
+      right: 0;
+      bottom: 95%;
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        writing-mode: initial;
+        position: absolute;
+        left: 0;
+        bottom: 50px;
+        transform-origin: left bottom;
+        transform: rotateZ(-90deg) translateY(100%);
+        display: flex;
+
+        &::before {
+          transform: none;
+          top: 6px;
+          right: 120%;
+          position: absolute;
+        }
+      }
+    }
+  }
+}
+
+.property__description {
+  @include onTablet {
+    @include pageGrid;
+
+    grid-column: 1 / -1;
+  }
+}

@@ -1,0 +1,123 @@
+.about {
+  position: relative;
+
+  &__wrapper {
+    @include pageGrid;
+
+    margin-bottom: 110px;
+    position: relative;
+
+    &::before {
+      @include onDesktop {
+        content: "";
+        background-image: url(../images/rectangle.png);
+        background-repeat: no-repeat;
+        background-position: bottom;
+        display: block;
+        position: absolute;
+        width: 53%;
+        height: 40%;
+        left: -35%;
+        top: 20%;
+        z-index: -1;
+      }
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+
+    @include sectionTitleStyle(58px, 70px);
+
+    margin-bottom: 25px;
+    color: $gray;
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+
+    display: block;
+    width: calc(100% + 30px * 2);
+    margin-left: -30px;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+
+      width: 100%;
+      margin: 0;
+      margin-top: 110px;
+
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -2;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / -1;
+    padding-inline: 30px;
+    background-image: url(../images/rectangle.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    background-size: 100% 80%;
+    padding-bottom: 30px;
+    display: grid;
+    margin-top: 30px;
+    row-gap: 20px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 2 /3;
+      margin-top: 70px;
+      padding-inline: 34px;
+      background-position: left top;
+      margin-left: -34px;
+      background-size: 65%;
+      padding-top: 100px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+
+      background-image: none;
+    }
+  }
+
+  &__name {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      margin-left: -34px;
+      display: block;
+      height: 22%;
+    }
+
+    &--andy {
+      @include onTablet {
+        top: initial;
+        left: initial;
+        right: -34px;
+        height: 20%;
+        bottom: 5%;
+      }
+
+      @include onDesktop {
+        top: initial;
+        left: initial;
+        right: -80px;
+        position: absolute;
+        bottom: -105px;
+      }
+    }
+  }
+}

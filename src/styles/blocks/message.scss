@@ -1,0 +1,198 @@
+.message {
+  &__content {
+    position: relative;
+    color: #000;
+    padding-inline: 30px;
+    padding-top: 45px;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+
+    background-image: url(../images/rectangle.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onTablet {
+      margin-left: -34px;
+      width: calc(100% + 68px);
+      background-size: 230% 100%;
+      padding-bottom: 70px;
+    }
+
+    @include onDesktop {
+      background-image: none;
+    }
+
+    &--decor {
+      position: absolute;
+      z-index: -10;
+      left: -20%;
+      right: 0;
+      width: 110%;
+      height: 120%;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    max-width: 1170px;
+    margin: auto;
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    top: -65px;
+    right: 0;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+
+    @include onDesktop {
+      top: -90px;
+      right: 50px;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: absolute;
+    right: -45px;
+    width: 100%;
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+
+  &__title {
+    @include sectionTitleStyle(36px, 54px);
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__undertitle {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      grid-row: 2;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 25px;
+    font-size: 24px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    padding: 4px 6px;
+    margin-bottom: 20px;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+
+    transition: border-bottom-color $duration;
+
+    &:focus {
+      border-bottom-color: $turquoise;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      color: $red;
+
+      border-bottom-color: $red;
+    }
+
+    &:not(:focus):not(:placeholder-shown):valid {
+      color: $turquoise;
+
+      border-bottom-color: $turquoise;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    color: #fff;
+    background-color: $turquoise;
+    font-weight: 400;
+    margin-top: 30px;
+
+    @include hover(opacity, 0.8);
+
+    &::after {
+      background-image: url(../images/icons/icon-arrow-right-white.svg);
+    }
+
+    @include onTablet {
+      width: 70%;
+    }
+  }
+
+  &__contacts {
+    @include pageGrid;
+
+    row-gap: 34px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 3 / 5;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+      grid-row: 2 / 5;
+      row-gap: 0;
+    }
+  }
+
+  &__contact {
+    grid-column: 1 / -1;
+  }
+
+  &__contact-title {
+    margin-bottom: 5px;
+
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__contact-link {
+    transition: color $duration;
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+}
