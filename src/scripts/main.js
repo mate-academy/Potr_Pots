@@ -93,15 +93,15 @@ form.addEventListener('submit', e => {
   form.reset();
 });
 
-const closeMenu = () => {
-  menu.classList.remove('menu--show');
-  document.body.classList.remove('page__body--with-menu');
-};
-
 menuOpener.addEventListener('click', () => {
   menu.classList.add('menu--show');
   document.body.classList.add('page__body--with-menu');
 });
+
+const closeMenu = () => {
+  menu.classList.remove('menu--show');
+  document.body.classList.remove('page__body--with-menu');
+};
 
 menuCloser.addEventListener('click', closeMenu);
 
