@@ -67,21 +67,20 @@
       background-size: cover;
 
       @include onTablet {
-        left: -15%;
         top: -18%;
+        left: -15%;
       }
 
       @include onDesktop {
+        top: -4%;
+        left: -12%;
         width: 435px;
         height: 310px;
-        background-image: url("../images/team/bg-rectangle-team-desktop.svg");
-        left: -12%;
-        top: -4%;
       }
     }
 
     &-name {
-      display: none;
+      display: none;  //в мобільному варіанті букви не відображаються
       position: absolute;
 
       font-family: "Bebas Neue", sans-serif;
@@ -89,29 +88,34 @@
       line-height: 278px;
       letter-spacing: 0.15em;
 
+      //букви з текстом Martin та Andy виглядають як обводка
       color: transparent;
-      -webkit-text-stroke: 0.68px $c-turquoise;
+      -webkit-text-stroke: 1.5px $c-turquoise;
 
       @include onTablet {
         display: inline;
       }
 
       &-1 {
-        bottom: 75%;
-        right: 5%;
+        @include onTablet {
+          bottom: 70%;
+          left: -10%;
+        }
 
         @include onDesktop {
-          bottom: 70%;
+          bottom: 80%;
           right: 40%;
         }
       }
 
       &-2 {
-        bottom: -10%;
-        right: -4%;
+        @include onTablet {
+          bottom: -15%;
+          right: -10%;
+        }
 
         @include onDesktop {
-          bottom: -1%;
+          bottom: -2%;
           right: -10%;
         }
       }
@@ -157,7 +161,7 @@
   &__side-text {
     display: none;
     position: absolute;
-    bottom: -25%;
+    bottom: -30%;
     right: -7%;
 
     @include onTablet {

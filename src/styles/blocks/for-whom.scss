@@ -78,10 +78,11 @@
 
       &--1 {
         float: left;
+
         width: 284px;
         height: 284px;
 
-        margin: 20px 76px 110px 0;
+        margin: 20px 76px 25px 0;
 
         @include onDesktop {
           width: 500px;
@@ -117,10 +118,8 @@
     &-description {
       display: none;
       font-size: 16px;
-      line-height: 150%;
-      color: $c-title;
 
-      padding-bottom: 20px;
+      color: $c-title;
 
       @include onDesktop {
         padding-bottom: 40px;
@@ -137,22 +136,26 @@
       @include onTablet {
         display: inline-block;
         position: relative;
+        top: -20px;
 
         &::before {
           content: "";
           display: block;
           position: relative;
-          bottom: -25px;
+
+          top: 15px;
           left: -20px;
-          width: 11px;
-          height: 21px;
+          height: 8px;
+
           background-image: url("../images/article/article-star.svg");
           background-repeat: no-repeat;
         }
       }
 
       @include onDesktop {
+        top: 20px;
         &::before {
+          top: 15px;
           left: -40px;
         }
       }
@@ -168,13 +171,13 @@
       &--1 {
         @include onTablet {
           position: absolute;
-          top: 110px;
+          top: 20px;
           left: -60px;
         }
 
         @include onDesktop {
           position: absolute;
-          top: 220px;
+          top: 205px;
           left: -100px;
         }
       }
@@ -188,13 +191,13 @@
       &--3 {
         @include onTablet {
           position: absolute;
-          top: 110px;
+          top: 25px;
           left: -60px;
         }
 
         @include onDesktop {
           position: absolute;
-          top: 80px;
+          top: 60px;
           left: 0;
         }
       }
@@ -236,8 +239,13 @@
       }
 
       &--3 {
+        width: 340px;
+        height: 270px;
+
         @include onDesktop {
-          padding: 0 0 0 100px;
+          width: 470px;
+          height: 216px;
+          padding-left: 100px;
         }
       }
     }
@@ -251,7 +259,19 @@
       padding-bottom: 70px;
 
       &--3 {
+        width: 470px;
+        height: 100px;
+        padding-top: 10px;
         padding-bottom: 0;
+
+        @include onTablet {
+          padding-left: 0;
+        }
+
+        @include onDesktop {
+          padding-left: 100px;
+        }
+
       }
     }
   }
