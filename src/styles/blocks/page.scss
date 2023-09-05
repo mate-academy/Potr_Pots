@@ -1,0 +1,31 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    font-family: "Manrope", sans-serif;
+    color: $c-g4f4;
+    @extend %text;
+  }
+  &__menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+    &:target {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+  }
+  &__section {
+    opacity: 0;
+    margin-bottom: 110px;
+
+    @include on768 {
+      margin-bottom: 132px;
+    }
+    @include on1440 {
+      margin-bottom: 150px;
+    }
+  }
+}

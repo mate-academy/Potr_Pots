@@ -1,0 +1,42 @@
+.grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  //
+  // grid-template-columns: 1fr 1fr;
+  // grid-template-rows: repeat(auto, 80px);
+  grid-template-rows: auto;
+  column-gap: 20px;
+  &--disable {
+    display: block;
+    @include on768 {
+      display: grid;
+    }
+  }
+
+  &--up {
+    align-items: flex-start;
+  }
+
+  &__item {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    @include grid-min;
+  }
+  @include on768 {
+    grid-template-columns: repeat(6, 1fr);
+    &__item-on768 {
+      @include grid;
+    }
+  }
+  @include on1440 {
+    column-gap: 30px;
+    grid-template-columns: repeat(12, minmax(70px, 1fr));
+
+    &__item-on1440 {
+      @include grid-max;
+    }
+  }
+  &__row {
+    @include gridRow;
+  }
+}

@@ -1,0 +1,165 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 74px;
+  width: 100%;
+  height: 48px;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: $c-w;
+  border: 1px solid transparent;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  &::before {
+    position: absolute;
+    content: "";
+    right: 48px;
+    width: 26px;
+    height: 8px;
+    background-color: $c-w;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    -webkit-mask-image: url(../images/icon/arrow.svg);
+    mask-image: url(../images/icon/arrow.svg);
+    transition: all 0.5s ease-in-out;
+  }
+  &__primary {
+    background-color: $c-t038;
+    &:hover,
+    &:focus {
+      background-color: rgba(3, 131, 158, 0.7);
+      &::before {
+        transform: translateX(10px);
+      }
+    }
+  }
+  &__primary2,
+  &__secondary {
+    color: $c-b000;
+    &::before {
+      background-color: $c-b000;
+    }
+  }
+
+  &__primary2 {
+    background-color: $c-yffe3;
+    &:hover,
+    &:focus {
+      background-color: $c-yffec;
+      &::before {
+        transform: translateX(10px);
+      }
+    }
+  }
+
+  &__secondary {
+    background-color: transparent;
+    border: 1px solid $c-t038;
+    &:hover,
+    &:focus {
+      color: $c-w;
+      background-color: $c-t038;
+
+      &::before {
+        background-color: $c-w;
+        transform: translateX(10px);
+      }
+    }
+  }
+  &__secondary2 {
+    color: $c-b333;
+    background-color: transparent;
+    border: 1px solid $c-b333;
+
+    &::before {
+      background-color: $c-b333;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $c-w;
+
+      &::before {
+        transform: translateX(10px);
+      }
+    }
+  }
+  @include on768 {
+    max-width: 240px;
+  }
+  @include on1440 {
+    max-width: 270px;
+  }
+  &__link {
+    background: none;
+    width: max-content;
+    height: max-content;
+    padding-bottom: 5px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.4s ease-in-out;
+    &:hover,
+    &:focus {
+      color: $c-w;
+      border-bottom: 1px solid $c-w;
+      background: none;
+    }
+  }
+  &__modal {
+    display: none;
+    @include on768 {
+      position: relative;
+      cursor: pointer;
+      display: block;
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+      background-color: $c-reb5;
+      transition: all 0.5s ease-in-out;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        background-color: $c-w;
+        width: 1px;
+        height: 11px;
+        top: 50%;
+        left: 50%;
+        transition: all 0.5s ease-in-out;
+      }
+      &::before {
+        transform: translate(-50%, -50%);
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+      &:hover {
+        background-color: $c-reb5;
+        outline: 1px solid $c-reb5;
+        outline-offset: 3px;
+      }
+      &--active {
+        background-color: rgba(0, 0, 0, 0.4);
+        &::before {
+          transform: translate(-50%, -50%)rotate(90deg);
+        }
+        &::after {
+          transform: translate(-50%, -50%) rotate(-90deg);
+        }
+      }
+      &:hover.button__modal--active {
+        background-color: rgba(0, 0, 0, 0.4);
+        outline: 1px solid rgba(0, 0, 0, 0.4);
+        outline-offset: 3px;
+      }
+
+    }
+  }
+}

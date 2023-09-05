@@ -1,0 +1,46 @@
+.active {
+  &__down {
+    animation: down 2s ease-in-out forwards;
+  }
+  &__names {
+    &::before {
+      animation: left 3s ease-in-out 1s forwards;
+    }
+    &::after {
+      animation: right 3s ease-in-out 2s forwards;
+    }
+  }
+}
+
+@keyframes down {
+  0% {
+    opacity: 0;
+    transform: translateY(120%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes left {
+  from {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes right {
+  from {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
