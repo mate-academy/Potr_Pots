@@ -1,0 +1,62 @@
+.feachers {
+  margin-bottom: 110px;
+  @include onTablet {
+    margin-bottom: 132px;
+  }
+  @include onDesktop {
+    margin-bottom: 150px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__title {
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $colorSecondary;
+    color: #0000;
+    margin-bottom: 22px;
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+    @include onDesktop {
+      margin-bottom: 71px;
+    }
+
+    &-solid {
+      color: $colorSecondary;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 68px;
+    @include onTablet {
+      flex-direction: row;
+      align-items: start;
+      gap: 20px;
+    }
+    @include onDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__character {
+    &-3 {
+      @include onTablet {
+        order: -1;
+      }
+      @include onDesktop {
+        order: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,228 @@
+.slider {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  @include onTablet {
+    position: static;
+  }
+
+  &__slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__label {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8px;
+    width: 8px;
+    border: 1px solid $colorBackgroundMain;
+    background-color: $colorBackgroundMain;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    z-index: 2;
+    @include onTablet {
+      height: 50px;
+      width: 50px;
+      visibility: visible;
+      transform: none;
+      border: none;
+      border-radius: 100%;
+      background-image: url(../images/materials/button.svg);
+      @include hover;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active,
+    &:focus {
+      background-color: $colorText2;
+      @include onTablet {
+        background-image: url(../images/materials/button-active.svg);
+        opacity: 75%;
+      }
+    }
+
+    &-1 {
+      transform: translate(-450%) rotate(45deg);
+      @include onTablet {
+        transform: none;
+        top: 54%;
+        left: 72%;
+      }
+      @include onDesktop {
+        top: 67%;
+        left: 77%;
+      }
+    }
+
+    &-2 {
+      transform: translate(-250%) rotate(45deg);
+      @include onTablet {
+        transform: none;
+        bottom: 18%;
+        left: 55%;
+      }
+      @include onDesktop {
+        left: 58%;
+      }
+    }
+
+    &-3 {
+      transform: translate(-50%) rotate(45deg);
+      @include onTablet {
+        transform: none;
+        bottom: 10%;
+        left: 45%;
+      }
+      @include onDesktop {
+        left: 48%;
+      }
+    }
+
+    &-4 {
+      transform: translate(150%) rotate(45deg);
+      @include onTablet {
+        transform: none;
+        bottom: 29%;
+        left: 30%;
+        @include onDesktop {
+          left: 38%;
+        }
+      }
+    }
+
+    &-5 {
+      transform: translate(350%) rotate(45deg);
+      @include onTablet {
+        transform: none;
+        bottom: 13%;
+        left: 11%;
+      }
+      @include onDesktop {
+        left: 18%;
+      }
+    }
+  }
+
+  &__slide {
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+    padding: 28px 44px;
+    transition: all 10ms ease;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    color: $colorBackgroundMain;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    display: none;
+
+    @include onTablet {
+      width: 100%;
+      max-width: 284px;
+      height: max-content;
+      display: block;
+      position: absolute;
+      visibility: hidden;
+      transform: translate(-50%);
+      z-index: 3;
+    }
+
+    &-1 {
+      @include onTablet {
+        top: calc(54% + 54px);
+        left: calc(72% + 25px);
+      }
+      @include onDesktop {
+        top: calc(67% + 80px);
+        left: calc(77% + 25px);
+      }
+    }
+
+    &-2 {
+      @include onTablet {
+        bottom: calc(18% + 54px);
+        left: calc(55% + 25px);
+      }
+      @include onDesktop {
+        bottom: calc(18% + 80px);
+        left: calc(58% + 25px);
+      }
+    }
+
+    &-3 {
+      @include onTablet {
+        bottom: calc(10% + 54px);
+        left: calc(45% + 25px);
+      }
+      @include onDesktop {
+        bottom: 20px;
+        left: calc(48% - 80px);
+        transform: translateX(-100%);
+      }
+    }
+
+    &-4 {
+      @include onTablet {
+        bottom: calc(29% + 54px);
+        left: calc(30% + 25px);
+      }
+      @include onDesktop {
+        bottom: calc(29% + 80px);
+        left: calc(38% + 25px);
+        transform: translateX(-100%);
+      }
+    }
+
+    &-5 {
+      @include onTablet {
+        transform: none;
+        bottom: calc(13% + 54px);
+        left: 30px;
+      }
+      @include onDesktop {
+        transform: translate(-50%);
+        bottom: calc(13% + 80px);
+        left: calc(18% + 25px);
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+
+    @for $slideNumber from 1 through 5 {
+      &-#{$slideNumber}:checked ~ .slider__slide-#{$slideNumber} {
+        display: block;
+        @include onTablet {
+          visibility: visible;
+        }
+      }
+      &-#{$slideNumber}:checked ~ .slider__label-#{$slideNumber} {
+        background-color: $colorText2;
+        @include onTablet {
+          background-image: url(../images/materials/button-active.svg);
+          opacity: 75%;
+        }
+      }
+    }
+  }
+}

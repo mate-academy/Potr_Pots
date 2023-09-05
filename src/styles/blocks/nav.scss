@@ -1,0 +1,78 @@
+.nav {
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 60px;
+
+    &-side-bar {
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 16px;
+      padding-left: 80px;
+      list-style: none;
+      color: $colorBackgroundMain;
+    }
+  }
+
+  &__link {
+    color: $colorText;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: $colorSecondary;
+      transition: transform $timeAnimation;
+      transform: scale(0);
+      transform-origin: right;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    &-side-bar {
+      color: $colorBackgroundMain;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: $colorBackgroundMain;
+        transition: transform $timeAnimation;
+        transform: scale(0);
+        transform-origin: right;
+      }
+    }
+
+    &-basket::before {
+      content: "0";
+      width: 14px;
+      height: 14px;
+      background-color: $colorBasket;
+      border-radius: 50%;
+      color: $colorBackgroundMain;
+      text-align: center;
+      font-family: "Bebas Neue", Arial, sans-serif;
+      font-size: 9px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -4px;
+      right: -20px;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../images/background-image.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left 0 top -112px;
+  @include onTablet {
+    background-position: left 0 top -212px;
+  }
+  @include onDesktop {
+    background-size: cover;
+    background-position: right 132px top 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    position: relative;
+  }
+
+  &__watermark {
+    position: absolute;
+    top: -68px;
+    right: -48px;
+    @include onTablet {
+      top: -100px;
+    }
+    @include onDesktop {
+      right: 48px;
+    }
+  }
+
+  &__questions {
+    margin-bottom: 100px;
+    @include onTablet {
+      margin-bottom: 112px;
+    }
+    @include onDesktop {
+      margin-bottom: 184px;
+    }
+  }
+}

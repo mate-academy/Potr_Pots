@@ -1,0 +1,111 @@
+.materials {
+  margin-bottom: 310px;
+  background-image: url(../images/materials/materials-bgi.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: bottom;
+  @include onTablet {
+    margin-bottom: 110px;
+  }
+  @include on1440px {
+    background-size: cover;
+    background-position: top;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 60%;
+    color: $colorSecondary;
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $colorSecondary;
+    @include onTablet {
+      margin-bottom: 0;
+      font-size: 80px;
+      letter-spacing: 9.6px;
+    }
+    @include onDesktop {
+      font-size: 138px;
+      letter-spacing: 16.6px;
+    }
+  }
+
+  &__intro {
+    display: none;
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 45%;
+      align-self: flex-end;
+      margin-bottom: 60%;
+      margin-top: -56px;
+      color: $colorText;
+      font-family: "Manrope", Arial, sans-serif;
+      line-height: 150%;
+    }
+    @include onDesktop {
+      gap: 15px;
+      width: 40%;
+      transform: translateY(-45%);
+      padding-bottom: 100px;
+    }
+
+    &-title {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    &-text {
+      font-size: 16px;
+    }
+
+    &-text-bold {
+      font-weight: 700;
+    }
+  }
+
+  &__slider {
+    height: 65%;
+    width: 90%;
+    max-width: 400px;
+    bottom: -50%;
+    overflow: hidden;
+    position: absolute;
+    @include onTablet {
+      position: static;
+      visibility: hidden;
+    }
+  }
+
+  &__home-left {
+    @include onTablet {
+      transform: translateX(-30%) translateY(-250%) rotate(90deg);
+      top: 40%;
+      left: 0;
+    }
+  }
+
+  &__home-right {
+    @include onTablet {
+      transform: translateX(35%) translateY(500%) rotate(90deg);
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__home-left-line,
+  &__home-right-line {
+    transform: scaleX(10);
+  }
+}
