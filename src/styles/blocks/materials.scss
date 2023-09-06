@@ -10,9 +10,11 @@
   background-position: 0 50%;
   @include on768 {
     background-position: bottom;
-    background-size: contain;
     height: 835px;
     max-height: none;
+  }
+  @include on1170 {
+    height: 1000px;
   }
   @include on1440 {
     height: 1242px;
@@ -23,6 +25,9 @@
     grid-template-rows: auto;
     @include on768 {
       height: 835px;
+    }
+    @include on1170 {
+      height: 1000px;
     }
     @include on1440 {
       height: 1243px;
@@ -132,7 +137,7 @@
       position: absolute;
       z-index: 10;
       transform: scale3d(0, 0, 0);
-      transition: all 0.5s ease-in-out;
+      transition: all 0.3s ease-in-out;
       &[data-target="one"] {
         left: 35px;
         bottom: 175px;
@@ -199,6 +204,7 @@
     position: absolute;
     top: 190px;
     left: 11px;
+    z-index: 21;
     @include on768 {
       display: block;
     }
