@@ -1,0 +1,135 @@
+.hero {
+  position: relative;
+  z-index: 99;
+  &__grid {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include on768 {
+      display: grid;
+      height: 100%;
+    }
+  }
+  &__img-container {
+    margin-left: -30px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    width: 100vw;
+    height: 320px;
+    @include on768 {
+      margin: 0;
+      width: auto;
+      height: 306px;
+    }
+    @include on1440 {
+      height: 500px;
+    }
+
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  // .hero__title
+  &__card {
+    @include on768 {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    letter-spacing: 0.13em;
+    @include on768 {
+      margin-bottom: -10px;
+    }
+    @include on1440 {
+      margin-bottom: -20px;
+    }
+  }
+
+  &__button {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    @include on1440 {
+      margin-left: 120px;
+    }
+  }
+
+  &__cost {
+    margin-bottom: 5px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+    color: $c-b333;
+    @include on768 {
+      margin-left: 240px;
+    }
+  }
+  &__discripton {
+    margin-bottom: 20px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $c-g4f4;
+    @include on768 {
+      margin-bottom: 50px;
+      margin-left: 240px;
+      margin-right: 120px;
+    }
+    @include on1440 {
+      margin-right: 0;
+    }
+  }
+  &__subtitle-container {
+    width: 16px;
+    position: absolute;
+    z-index: 111;
+    bottom: 55px;
+    right: -15px;
+    @include on768 {
+      bottom: 0;
+      left: 0;
+    }
+  }
+  &__subtitle {
+    position: relative;
+    writing-mode: vertical-rl;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: $c-t038;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 115%;
+      left: 6px;
+      width: 9px;
+      height: 45px;
+      -webkit-mask-image: url(../images/icon/arrow2.svg);
+      mask-image: url(../images/icon/arrow2.svg);
+      background-repeat: no-repeat;
+      background-color: $c-t038;
+      transition: transform 0.3s ease-in-out;
+    }
+    &:hover::before {
+      transform: translateY(-10px) scale(1.2);
+    }
+    @include on768 {
+      bottom: 62px;
+      left: 0;
+    }
+    @include on1440 {
+      top: -100%;
+      left: 0;
+    }
+  }
+}

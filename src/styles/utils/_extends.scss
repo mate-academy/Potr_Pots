@@ -1,4 +1,123 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Bebas", sans-serif;
   font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $c-t038;
+  @include on768 {
+    font-size: 64px;
+    line-height: 100%;
+  }
+}
+%h2 {
+  margin-bottom: 21px;
+  font-family: "Bebas", sans-serif;
+  font-style: normal;
+  font-size: 58px;
+  line-height: 70px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $c-b333;
+}
+%h3 {
+  font-family: "Bebas", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $c-b000;
+}
+%h4 {
+  margin-bottom: 20px;
+  font-family: "Bebas", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $c-b333;
+}
+%h5 {
+  margin-bottom: 20px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: $c-g4f4;
+  @include on1440 {
+    margin-bottom: 15px;
+  }
+}
+
+%h6 {
+  margin-bottom: 10px;
+  font-family: "Bebas", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: $c-b000;
+}
+
+%text {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $c-g4f4;
+}
+
+.color {
+  color: $c-t038;
+}
+
+.outline {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $c-t038;
+}
+
+.alt {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $c-b333;
+}
+
+.slash {
+  position: relative;
+  padding-left: 20px;
+  font-family: "Bebas", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 49px;
+  letter-spacing: 0.15em;
+  color: $c-b333;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 46px;
+    left: 10px;
+    top: 0;
+    background: $c-b333;
+    transform: rotate(22deg);
+  }
+  &-off {
+    display: none;
+    @include on768 {
+      display: inline-block;
+    }
+    &::before {
+      top: -36px;
+      bottom: 0;
+    }
+  }
 }

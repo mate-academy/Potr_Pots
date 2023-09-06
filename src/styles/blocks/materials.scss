@@ -1,0 +1,215 @@
+.materials {
+  min-height: 510px;
+  height: 570px;
+  max-height: 575px;
+  background: linear-gradient(180deg, rgba(248, 248, 248, 1) 0%,
+  rgba(255, 255, 255, 0) 41%);
+  background-image: url(../images/51.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  @include on768 {
+    background-position: bottom;
+    height: 835px;
+    max-height: none;
+  }
+  @include on1170 {
+    height: 1000px;
+  }
+  @include on1440 {
+    height: 1242px;
+  }
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto;
+    @include on768 {
+      height: 835px;
+    }
+    @include on1170 {
+      height: 1000px;
+    }
+    @include on1440 {
+      height: 1243px;
+    }
+  }
+
+  // .materials__title
+
+  &__title {
+    letter-spacing: 0.15em;
+    color: $c-t038;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $c-t038;
+    @include on768 {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+    @include on1440 {
+      font-size: 138.81px;
+      line-height: 167px;
+    }
+  }
+
+  // .materials__description
+
+  &__description {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    @include on768 {
+      position: absolute;
+      top: 140px;
+      right: 34px;
+      opacity: 1;
+      visibility: visible ;
+      width: 350px;
+      height: fit-content;
+      padding: 5px;
+    }
+    @include on1440 {
+      width: 480px;
+      top: 164px;
+      right: 135px;
+    }
+  }
+  &__info {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+    &-button {
+      position: absolute;
+      &--one {
+        left: 53px;
+        bottom: 103px;
+        @include on1440 {
+          left: 110px;
+          bottom: 153px;
+        }
+      }
+      &--two {
+        left: 200px;
+        bottom: 230px;
+        @include on1440 {
+          left: 410px;
+          bottom: 400px;
+        }
+      }
+      &--three {
+        left: 300px;
+        bottom: 74px;
+        @include on1440 {
+          left: 634px;
+          bottom: 85px;
+        }
+      }
+      &--four {
+        right: 270px;
+        bottom: 134px;
+        @include on1440 {
+          right: 420px;
+          bottom: 272px;
+        }
+      }
+      &--five {
+        right: 130px;
+        bottom: 318px;
+        @include on1440 {
+          right: 135px;
+          bottom: 363px;
+        }
+      }
+    }
+  }
+
+  &__modal {
+    width: 100%;
+    height: 100%;
+    &-window {
+      width: 283px;
+      padding: 35px;
+      color: $c-w;
+      background-color: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      z-index: 10;
+      transform: scale3d(0, 0, 0);
+      transition: all 0.3s ease-in-out;
+      &[data-target="one"] {
+        left: 35px;
+        bottom: 175px;
+        @include on1440 {
+          left: 135px;
+          bottom: 215px;
+        }
+      }
+      &[data-target="two"] {
+        left: 70px;
+        top: 380px;
+        @include on1440 {
+          left: 130px;
+          top: 630px;
+        }
+      }
+      &[data-target="three"] {
+        left: 27%;
+        bottom: 140px;
+        @include on1440 {
+          left: 24%;
+          bottom: 140px;
+        }
+      }
+      &[data-target="four"] {
+        right: 19%;
+        top: 470px;
+        @include on1440 {
+          right: 31%;
+          top: 690px;
+        }
+      }
+      &[data-target="five"] {
+        right: 3%;
+        bottom: 100px;
+        @include on1440 {
+          right: 6%;
+          bottom: 115px;
+        }
+
+      }
+      &--active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale3d(1, 1, 1);
+      }
+    }
+
+  }
+  &__vertical-right {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 11px;
+    @include on768 {
+      display: block;
+    }
+    @include on1440 {
+      display: none;
+    }
+  }
+  &__vertical-left {
+    display: none;
+    position: absolute;
+    top: 190px;
+    left: 11px;
+    z-index: 21;
+    @include on768 {
+      display: block;
+    }
+    @include on1440 {
+      display: none;
+    }
+  }
+}

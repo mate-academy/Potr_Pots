@@ -1,0 +1,121 @@
+.menu {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Manrope", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: $c-gf8f;
+  background-color: $c-t038;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  &__content {
+    padding: 138px 45px 43px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__nav-icons {
+    margin-bottom: 0;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    @include on768 {
+      margin-bottom: 50px;
+    }
+  }
+  &__icons {
+    width: 14px;
+    height: 14px;
+    transition: all 0.4s ease-in-out;
+    &:hover,
+    &:focus {
+      transform: scale(1.4);
+    }
+  }
+  &__item {
+    padding-left: 80px;
+    padding-right: 30px;
+    width: 100%;
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 90px;
+    }
+    &:hover,
+    &:focus {
+      color: $c-t038;
+      background-color: $c-w;
+    }
+  }
+  &--basket {
+    position: relative;
+  }
+  &__item-num {
+    width: 14px;
+    height: 14px;
+    padding-left: 2px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    color: $c-gf8f;
+    background-color: $c-reb5;
+    border-radius: 50%;
+    position: absolute;
+    left: 136px;
+  }
+  &__cross {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    width: 18px;
+    min-height: 110px;
+    &::after,
+    &::before {
+      content: "";
+      width: 16px;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: $c-gf8f;
+
+    }
+    &::before {
+      transform: rotate(45deg);
+      transition: all 0.4s ease-in-out;
+    }
+    &::after {
+      transform: rotate(-45deg);
+      transition: all 0.6s ease-in-out;
+    }
+    &:hover::before,
+    &:focus::before {
+      transform: rotate(-90deg);
+    }
+    &:hover::after,
+    &:focus::after {
+      transform: rotate(0deg);
+    }
+
+  }
+  &__close {
+    position: absolute;
+  }
+}
+
+.page__body--with-menu {
+  overflow: hidden;
+}
