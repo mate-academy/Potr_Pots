@@ -1,51 +1,59 @@
 .slider {
   position: relative;
-  overflow: hidden;
+  display: block;
 
-  &__slides {
-    display: flex;
-    width: 500%;
-    transition: transform .3s;
+  width: 302px;
+  height: 254px;
+
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(17px);
+
+  margin: 0 9px;
+  bottom: 65px;
+
+  @include onTablet {
+    display: none;
   }
 
   &__slide {
-    width: 302px;
-    height: 254px;
-    background: rgba(0, 0, 0, .45);
-    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, .15);
-    backdrop-filter: blur(17px);
+    position: absolute;
+    padding: 28px 44px 58px 44px;
+
   }
 
   &__text {
     font-family: "Manrope", sans-serif;
-    color: $colorWhite;
-    padding: 28px 44px 50px;
     font-size: 16px;
     font-weight: 400;
     line-height: 150%;
+    color: $colorWhite;
   }
 
   &__paginations {
     position: absolute;
     display: flex;
-    column-gap: 7px;
-    bottom: 36px;
-    left: 50%;
-    transform: translateX(-50%);
+    justify-content: space-between;
+    gap: 7px;
+
+    padding: 0;
+    margin: 0;
+    bottom: 37px;
+    left: 112px;
   }
 
   &__pagination {
-    cursor: pointer;
-
-    border: 1px solid $colorWhite;
     width: 7px;
     height: 7px;
-    background-color: $colorWhite;
-    transform: rotate(45deg);
+    transform: rotate(-45deg);
+    background: $colorWhite;
 
     &:active {
-      background-color: rgba(0, 0, 0, 0.30);
+      border: 1px solid $colorWhite;
+      background: rgba(0, 0, 0, 0.30);
     }
   }
 }
+
+
 
