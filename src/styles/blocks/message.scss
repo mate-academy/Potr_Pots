@@ -24,7 +24,7 @@
     margin-bottom: 20px;
     background-color: inherit;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid $colorText;
     resize: none;
 
     &::placeholder {
@@ -36,12 +36,29 @@
     &:active {
       outline: none;
       border: none;
-      border-bottom: 1px solid $colorTitles3;
+      border-bottom: 1px solid $colorSecondary;
+      color: $colorTitles3;
     }
 
-    &:-webkit-autofill {
+    &:valid:not(:placeholder-shown) {
+      border-bottom: 1px solid $colorSecondary;
+      color: $colorSecondary;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-bottom: 1px solid $colorBasket;
+      color: $colorBasket;
+    }
+
+    &:valid:-webkit-autofill {
       background-color: inherit;
-      -webkit-text-fill-color: $colorTitles3;
+      -webkit-text-fill-color: $colorSecondary;
+      transition: background-color 5000s;
+    }
+
+    &:invalid:-webkit-autofill {
+      background-color: inherit;
+      -webkit-text-fill-color: $colorBasket;
       transition: background-color 5000s;
     }
   }
@@ -68,6 +85,10 @@
     @include hover;
     @include onTablet {
       max-width: 240px;
+    }
+
+    &:hover {
+      opacity: 0.7;
     }
   }
 }
