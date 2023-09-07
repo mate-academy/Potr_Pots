@@ -24,21 +24,38 @@ tabletButtons.forEach(function(btn, index) {
     const slidersText = document.querySelector('.materials__slider');
 
     if (index === 0) {
-      slidersText.style.bottom = '7%';
-      slidersText.style.left = '55%';
+      slidersText.style.bottom = '10%';
+      slidersText.style.left = '71%';
     } else if (index === 1) {
-      slidersText.style.bottom = '25%';
+      slidersText.style.bottom = '45%';
       slidersText.style.left = '42%';
     } else if (index === 2) {
       slidersText.style.bottom = '10%';
-      slidersText.style.left = '28%';
+      slidersText.style.left = '16%';
     } else if (index === 3) {
-      slidersText.style.bottom = '40%';
+      slidersText.style.bottom = '57%';
       slidersText.style.left = '20%';
     } else if (index === 4) {
-      slidersText.style.bottom = '15%';
-      slidersText.style.left = '5%';
+      slidersText.style.bottom = '27%';
+      slidersText.style.left = '2%';
     }
+
+    // if (index === 0) {
+    //   slidersText.style.bottom = '7%';
+    //   slidersText.style.left = '55%';
+    // } else if (index === 1) {
+    //   slidersText.style.bottom = '25%';
+    //   slidersText.style.left = '42%';
+    // } else if (index === 2) {
+    //   slidersText.style.bottom = '10%';
+    //   slidersText.style.left = '28%';
+    // } else if (index === 3) {
+    //   slidersText.style.bottom = '40%';
+    //   slidersText.style.left = '20%';
+    // } else if (index === 4) {
+    //   slidersText.style.bottom = '15%';
+    //   slidersText.style.left = '5%';
+    // }
 
     activeText.classList.remove('slider__text--is-active');
     text[index].classList.add('slider__text--is-active');

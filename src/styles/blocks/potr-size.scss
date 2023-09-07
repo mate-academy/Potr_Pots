@@ -38,25 +38,41 @@
 
     color: $c-article;
 
-    padding-inline: 30px;
+    padding-top: 110px;
     padding-bottom: 20px;
+    padding-left: 30px;
+
+    @include onTablet {
+      padding-left: 0;
+    }
   }
 
   &__info {
     grid-area: info;
-
     position: relative;
 
     font-family: "Manrope", sans-serif;
     font-size: 16px;
     line-height: 150%;
-
     color: $c-list;
 
-    padding-inline: 30px;
-    padding-bottom: 30px;
+    width: 260px;
+    height: 96px;
+
+    margin-bottom: 30px;
+    margin-left: 30px;
+
+    @include onTablet {
+      width: 579px;
+      height: 48px;
+      margin-bottom: 38px;
+      margin-left: 0;
+    }
 
     @include onDesktop {
+      width: 253px;
+      height: 96px;
+
       &::after {
         content: "";
         position: absolute;
@@ -103,7 +119,11 @@
   &__large {
     grid-area: large;
 
-    padding-inline: 30px;
+    padding-left: 30px;
+
+    @include onTablet {
+      padding-left: 0;
+    }
 
     &-title {
       font-family: "Bebas Neue", sans-serif;
@@ -133,7 +153,11 @@
   &__small {
     grid-area: small;
 
-    padding-inline: 30px;
+    padding-left: 30px;
+
+    @include onTablet {
+      padding-left: 0;
+    }
 
     &-title {
       font-family: "Bebas Neue", sans-serif;
@@ -170,12 +194,16 @@
 
     color: $c-list;
 
-    padding-inline: 30px;
+    padding-left: 30px;
+
+    @include onTablet {
+      padding-left: 10px;
+    }
 
     &::before {
       content: "";
       position: absolute;
-      left: 17px;
+      left: 0;
       top: 8px;
 
       width: 7px;
