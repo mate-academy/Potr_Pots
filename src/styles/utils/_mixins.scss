@@ -4,3 +4,55 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin hoverAfter ($_property, $_toValue) {
+  &::after {
+    @extend %after-underline;
+    transform: scale(0);
+    transition: #{$_property} 0.5s;
+  }
+  &:hover::after {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin hoverAfterTopBar ($_property, $_toValue) {
+  &::after {
+    @extend %after-underline-top-bar;
+    transform: scale(0);
+    transition: #{$_property} 0.5s;
+  }
+  &:hover::after {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesctop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline {
+  max-width: 260px;
+  margin: 0 auto;
+
+  @include onTablet {
+    max-width: 700px;
+  }
+
+  @include onDesctop {
+    max-width: 1170px;
+  }
+}
+
+@mixin square ($size) {
+  width: $size;
+  height: $size;
+}

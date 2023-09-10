@@ -1,0 +1,26 @@
+.button {
+  width: 260px;
+  height: 48px;
+  background-color: $color-button-yellow;
+  cursor: pointer;
+
+  @include hover(background-color, $color-button-yellow-hover);
+
+  @include onTablet {
+    width: 240px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-text-button;
+    @extend %text-manrope;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+  }
+
+  &__link-arrow {
+    margin-left: 24px;
+  }
+}

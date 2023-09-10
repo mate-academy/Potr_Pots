@@ -1,0 +1,18 @@
+.container {
+  @include contentPaddingInline;
+
+  &__image {
+    width: 320px;
+    margin: 0 auto;
+    order: 1;
+
+    @include onTablet {
+      order: 2;
+      margin-left: -60px;
+    }
+
+    @include onDesctop {
+      margin-left: 120px;
+    }
+  }
+}
