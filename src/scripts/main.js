@@ -8,7 +8,7 @@ function addClassToHeader() {
   } else {
     header.classList.remove('container');
   }
-}
+};
 
 addClassToHeader();
 window.addEventListener('resize', addClassToHeader);
@@ -22,7 +22,7 @@ function removeClassIfScreenWidthIsSmall() {
   } else {
     element.classList.add('container');
   }
-}
+};
 
 window.addEventListener('load', removeClassIfScreenWidthIsSmall);
 window.addEventListener('resize', removeClassIfScreenWidthIsSmall);
