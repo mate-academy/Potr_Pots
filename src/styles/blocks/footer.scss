@@ -47,6 +47,11 @@
         display: block;
       }
     }
+
+    transition: all $duration;
+    &-about-us:hover {
+      transform: scale(110%) translateX(5px);
+    }
   }
 
   &__map {
@@ -84,20 +89,32 @@
     background-size: contain;
 
     transition: transform $duration;
-    &:hover {
-      transform: scale(150%);
-    }
 
     &--1 {
       background-image: url("../images/social/twitter.svg");
+
+      &:hover {
+        background-image: url("../images/social/twitter-color.svg");
+        transform: scale(150%);
+      }
     }
 
     &--2 {
       background-image: url("../images/social/instagram.svg");
+
+      &:hover {
+        background-image: url("../images/social/instagram-color.svg");
+        transform: scale(150%);
+      }
     }
 
     &--3 {
       background-image: url("../images/social/facebook.svg");
+
+      &:hover {
+        background-image: url("../images/social/facebook-color.svg");
+        transform: scale(150%);
+      }
     }
   }
 
@@ -117,6 +134,7 @@
     transition: all $duration;
     &:hover {
       border-bottom: 1px solid $c-article;
+      transition-delay: $duration;
       transform: scale(110%);
     }
   }

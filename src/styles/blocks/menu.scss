@@ -1,13 +1,16 @@
 .menu {
-  background-color: $c-turquoise;
+  @include onDesktop {
+    display: none;
+  }
+
   width: 70%;
   height: 100%;
 
-  z-index: 2;
+  z-index: 1;
 
-  overflow-y: hidden;
-
-  padding: 138px 30px 44px 80px;
+  padding-top: 80px;
+  padding-left: 80px;
+  background-color: $c-turquoise;
 
   &__list {
     display: flex;
@@ -55,21 +58,23 @@
 
     &-line {
       display: block;
+      margin-bottom: 15px;
+
       width: 44px;
       height: 1px;
-      background-image: url("../images/menu/menu-line.svg");
 
+      background-image: url("../images/menu/menu-line.svg");
       transform: rotate(-90deg) translateX(-70%);
     }
 
     &-cross {
       display: block;
+
       width: 12px;
       height: 12px;
 
       background-image: url("../images/menu/cross.svg");
-
-      transform: translateY(70px);
+      transform: translateY(50px);
     }
   }
 }
