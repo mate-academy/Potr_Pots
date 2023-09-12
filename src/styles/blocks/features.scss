@@ -57,8 +57,22 @@
   }
 
   &__block {
-    text-align: center;
     @include onTablet {
+      &--1 {
+        order: 2;
+      }
+
+      &--2 {
+        order: 3;
+      }
+
+      &--3 {
+        order: 1;
+      }
+    }
+
+    @include onDesktop {
+      text-align: center;
       &--1 {
         order: 1;
       }
@@ -73,6 +87,9 @@
     }
 
     &-img {
+      display: flex;
+      justify-content: space-between;
+
       width: 260px;
       height: 260px;
       margin-bottom: 37px;
@@ -104,13 +121,22 @@
       font-size: 24px;
       line-height: 24px;
 
-      text-align: center;
       letter-spacing: 0.15em;
       text-transform: uppercase;
 
       color: $c-title;
 
       padding-bottom: 20px;
+
+      text-align: center;
+
+      @include onTablet {
+        text-align: left;
+      }
+
+      @include onDesktop {
+        text-align: center;
+      }
     }
 
     &-info {
@@ -118,9 +144,20 @@
       font-size: 16px;
       line-height: 150%;
 
+      color: $c-list;
+      width: 260px;
+
       text-align: center;
 
-      color: $c-list;
+      @include onTablet {
+        width: 220px;
+        text-align: left;
+      }
+
+      @include onDesktop {
+        width: 370px;
+        text-align: center;
+      }
     }
   }
 }

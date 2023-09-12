@@ -2,6 +2,10 @@
   font-family: "Manrope", sans-serif;
   font-weight: 400;
 
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
   scroll-behavior: smooth;
 
   background-color: #fff;
@@ -11,23 +15,26 @@
     min-width: 0 auto;
     max-width: 1440px;
 
-    overflow-x: hidden;
+    height: 100vh;
 
-    &-menu {
-      overflow-y: hidden;
+    &--with-menu {
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+  }
 
-      z-index: 2;
+  &__menu {
+    z-index: 2;
 
-      position: fixed;
-      top: 0;
-      right: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
 
-      transform: translateX(100%);
-      transition: transform $duration;
+    transform: translateX(100%);
+    transition: transform $duration ease-in-out;
 
-      &:target {
-        transform: translateX(0);
-      }
+    &:target {
+      transform: translateX(0);
     }
   }
 }

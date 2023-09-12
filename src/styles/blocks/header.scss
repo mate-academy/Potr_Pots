@@ -47,6 +47,7 @@
     }
 
     &-logo {
+      padding-left: 30px;
       font-family: "Bebas Neue", sans-serif;
       font-size: 36px;
       line-height: 43px;
@@ -54,9 +55,7 @@
 
       color: $c-title;
 
-      border-bottom: 1px solid transparent;
-
-      transition: all $duration;
+      transition: all $duration ease-in-out;
       &:hover {
         border-color: inherit;
         transform: scale(110%);
@@ -107,12 +106,15 @@
 
     &-menu {
       display: block;
+
       width: 32px;
       height: 32px;
 
+      margin-left: -50px;
       grid-column: 3 / 4;
 
       background-image: url("../images/menu/menu_icon.svg");
+      background-repeat: no-repeat;
       cursor: pointer;
 
       transition: all $duration;
@@ -141,7 +143,7 @@
 
     &-image {
       width: 320px;
-      height: 320px;
+      height: 319px;
       margin: 0 auto;
 
       @include onTablet {
@@ -161,6 +163,11 @@
       display: flex;
       flex-direction: column;
       padding-inline: 30px;
+
+      @include onTablet {
+        padding-inline: 0;
+      }
+
     }
 
     &-title {
@@ -171,7 +178,8 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
 
-      padding-bottom: 30px;
+      margin-top: 25px;
+      margin-bottom: 30px;
 
       color: transparent;
       -webkit-text-stroke: 0.68px $c-turquoise;
@@ -184,7 +192,7 @@
         font-size: 64px;
         line-height: 64px;
 
-        padding-bottom: 0;
+        margin-bottom: 0;
 
         width: 490px;
       }
@@ -193,8 +201,9 @@
         font-size: 64px;
         line-height: 64px;
 
-        padding-left: 100px;
-        padding-bottom: 0;
+        margin-left: 60px;
+        margin-top: 0;
+        margin-bottom: 0;
 
         width: 600px;
         height: 256px;

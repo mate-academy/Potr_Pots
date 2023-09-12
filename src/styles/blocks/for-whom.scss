@@ -222,15 +222,13 @@
       text-transform: uppercase;
       color: $c-article;
 
-      padding-bottom: 20px;
-
+      margin-bottom: 20px;
       @include onTablet {
         &::after {
           content: "";
           position: relative;
-          left: -10px;
-          top: 10px;
-
+          top: 5px;
+          left: 0;
           display: inline-block;
           width: 15px;
           height: 46px;
@@ -238,12 +236,47 @@
         }
       }
 
-      &--3 {
-        width: 340px;
-        height: 270px;
+      &--1 {
+        width: 260px;
+        height: 157px;
+
+        @include onTablet {
+          width: 340px;
+          height: 162px;
+        }
 
         @include onDesktop {
           width: 470px;
+          height: 108px;
+        }
+      }
+
+      &--2 {
+        width: 260px;
+        height: 162px;
+
+        @include onTablet {
+          width: 340px;
+          height: 108px;
+        }
+
+        @include onDesktop {
+          width: 400px;
+          height: 108px;
+        }
+      }
+
+      &--3 {
+        width: 260px;
+        height: 270px;
+
+        @include onTablet {
+          width: 340px;
+          height: 270;
+        }
+
+        @include onDesktop {
+          width: 480px;
           height: 216px;
           padding-left: 100px;
         }
@@ -256,7 +289,7 @@
       line-height: 150%;
       color: $c-list;
 
-      padding-bottom: 70px;
+      margin-bottom: 70px;
 
       &--1 {
         width: 259px;

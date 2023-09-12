@@ -40,23 +40,6 @@ tabletButtons.forEach(function(btn, index) {
       slidersText.style.left = '2%';
     }
 
-    // if (index === 0) {
-    //   slidersText.style.bottom = '7%';
-    //   slidersText.style.left = '55%';
-    // } else if (index === 1) {
-    //   slidersText.style.bottom = '25%';
-    //   slidersText.style.left = '42%';
-    // } else if (index === 2) {
-    //   slidersText.style.bottom = '10%';
-    //   slidersText.style.left = '28%';
-    // } else if (index === 3) {
-    //   slidersText.style.bottom = '40%';
-    //   slidersText.style.left = '20%';
-    // } else if (index === 4) {
-    //   slidersText.style.bottom = '15%';
-    //   slidersText.style.left = '5%';
-    // }
-
     activeText.classList.remove('slider__text--is-active');
     text[index].classList.add('slider__text--is-active');
     actBtn.classList.remove('materials__tablet-button--active');
@@ -66,10 +49,28 @@ tabletButtons.forEach(function(btn, index) {
   });
 });
 
-const form = document.querySelector('.message-us__form');
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#menu') {
+    document.body.classList.add('page__body--with-menu');
+  } else if (window.location.hash === '#header') {
+    document.body.classList.add('page__body--with-menu');
+  } else if (window.location.hash === '#features') {
+    document.body.classList.add('page__body--with-menu');
+  } else if (window.location.hash === '#materials') {
+    document.body.classList.add('page__body--with-menu');
+  } else if (window.location.hash === '#about-us') {
+    document.body.classList.add('page__body--with-menu');
+  } else if (window.location.hash === '#message-us') {
+    document.body.classList.add('page__body--with-menu');
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+  }
+});
+
+const form2 = document.querySelector('.message-us__form');
 const inputs = document.querySelectorAll('.message-us__form-input');
 
-form.addEventListener('submit', (event) => {
+form2.addEventListener('submit', (event) => {
   event.preventDefault();
 
   inputs.forEach(input => {
