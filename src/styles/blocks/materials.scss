@@ -1,0 +1,235 @@
+.materials {
+  position: relative;
+
+  &__side-text {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: block;
+      top: 35%;
+      left: -1%;
+      z-index: 3;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__text {
+    position: relative;
+
+    &-container {
+      display: none;
+      position: absolute;
+
+      @include onTablet {
+        display: block;
+        right: 5%;
+        top: 55%;
+        width: 340px;
+        z-index: 1;
+      }
+
+      @include onDesktop {
+        transform: translateX(-20%) translateY(-30%);
+        right: 0;
+        top: 70%;
+        width: 470px;
+        z-index: 1;
+      }
+    }
+
+    &-title {
+      font-family: "Manrope", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 150%;
+
+      color: $c-list;
+    }
+
+    &-info {
+      margin-top: 10px;
+      font-family: "Manrope", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+
+      color: $c-list;
+
+      &--bold {
+        font-weight: 600;
+      }
+
+      &--hidden {
+        @include onTablet {
+          opacity: 0;
+        }
+
+        @include onTablet {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    padding-inline: 30px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.1em;
+    color: $c-turquoise;
+
+    z-index: 5;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+
+      max-width: 600px;
+      padding-inline: 30px;
+      margin-bottom: 140px;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      line-height: 167px;
+      letter-spacing: 0.15em;
+
+      max-width: max-content;
+
+      padding: 30px 0 0 135px;
+      margin: 0;
+    }
+  }
+
+  &__bg {
+    height: 70vw;
+    max-height: 1080px;
+
+    background: linear-gradient(180deg, #fff 0%,
+    rgba(255, 255, 255, 0) 40.93%),
+      url("../images/materials/materials-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    z-index: -1;
+
+    &-content {
+      position: relative;
+    }
+  }
+
+  &__slider {
+    margin: 0 auto;
+    padding: 30px 45px;
+
+    transition: all $duration;
+
+    @include onTablet {
+      position: absolute;
+
+      bottom: 27%;
+      left: 2%;
+
+      &:hover {
+        cursor: pointer;
+        border-radius: 5%;
+      }
+    }
+
+    @include onDesktop {
+      &:hover {
+        cursor: pointer;
+        border-radius: 5%;
+      }
+    }
+  }
+
+  &__tablet-button {
+    display: none;
+    position: absolute;
+
+    width: 51px;
+    height: 51px;
+
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+
+    background-color: $c-red;
+    transition: transform $duration;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(125%);
+    }
+
+    &--active {
+      background: rgba(36, 35, 35, 0.75);
+      opacity: 0.65;
+      backdrop-filter: blur(12px);
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--1 {
+      bottom: 45%;
+      left: 80%;
+
+      @include onDesktop {
+        bottom: 30%;
+        left: 80%;
+      }
+    }
+
+    &--2 {
+      bottom: 18%;
+      left: 58%;
+
+      @include onDesktop {
+        bottom: 22%;
+        left: 58%;
+      }
+    }
+
+    &--3 {
+      bottom: 8%;
+      left: 47%;
+
+      @include onDesktop {
+        bottom: 7%;
+        left: 47%;
+      }
+    }
+
+    &--4 {
+      bottom: 35%;
+      left: 30%;
+
+      @include onDesktop {
+        bottom: 40%;
+        left: 33%;
+      }
+    }
+
+    &--5 {
+      bottom: 7%;
+      left: 10%;
+
+      @include onDesktop {
+        bottom: 10%;
+        left: 5%;
+      }
+    }
+  }
+}

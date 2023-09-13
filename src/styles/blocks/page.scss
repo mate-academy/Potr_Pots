@@ -1,0 +1,39 @@
+.page {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background-color: #fff;
+
+  &__body {
+    margin: 0 auto;
+    min-width: 0 auto;
+    max-width: 1440px;
+
+    height: 100vh;
+    scroll-behavior: smooth;
+
+    &--with-menu {
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+  }
+
+  &__menu {
+    z-index: 2;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transform: translateX(100%);
+    transition: transform $duration ease-in-out;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
