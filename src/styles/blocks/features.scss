@@ -1,0 +1,59 @@
+.features {
+  padding-top: 110px;
+
+  @include onTablet {
+    padding-top: 135px;
+  }
+
+  &__content {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 50px;
+      display: flex;
+      gap: 20px;
+    }
+
+    @include onDesctop {
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 70px;
+    }
+
+    @include onTablet {
+      &:not(:first-child) {
+        margin-top: 0;
+      }
+
+      flex: 1 1 33.33%;
+    }
+  }
+
+  &__item-1 {
+    order: 1;
+
+    @include onTablet {
+      order: 2;
+    }
+  }
+
+  &__item-2 {
+    order: 2;
+
+    @include onTablet {
+      order: 3;
+    }
+  }
+
+  &__item-3 {
+    order: 3;
+
+    @include onTablet {
+      order: 1;
+    }
+  }
+}

@@ -25,11 +25,18 @@
     }
   }
 
-  &__img {
-    display: none;
+  &__image {
+    order: 1;
 
     @include onTablet {
-      display: block;
+      height: 0;
+      background: none;
+      order: 2;
+      margin-left: -60px;
+    }
+
+    @include onDesctop {
+      margin-left: 120px;
     }
   }
 
