@@ -8,7 +8,7 @@
   }
 
   &__top-bar {
-    padding: 15px 0 10px;
+    padding: 15px 30px 10px;
 
     @include onTablet {
       padding: 29px 0 49px;
@@ -22,6 +22,14 @@
   &__content {
     @include onTablet {
       display: flex;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onTablet {
+      display: block;
     }
   }
 
@@ -60,11 +68,11 @@
     font-weight: 700;
 
     @include onTablet {
-      margin-top: -100px;
+      margin-top: -26px;
     }
 
     @include onDesctop {
-      margin-top: -230px;
+      margin-top: 20px;
     }
   }
 
@@ -76,11 +84,12 @@
   }
 
   &__content-buttom {
+    margin-top: 20px;
     position: relative;
   }
 
   &__button {
-    margin-top: 20px;
+    margin: 20px 0 auto;
     @extend %flex-center;
 
     @include onTablet {
@@ -88,9 +97,7 @@
     }
 
     @include onDesctop {
-      margin: 50px 0 0 330px;
-      position: relative;
-      z-index: 5;
+      margin: 50px 0 47px 330px;
     }
   }
 
@@ -129,39 +136,10 @@
   }
 
   &__potr-pots {
-    position: relative;
-  }
-
-  &__potr {
     display: none;
 
     @include onTablet {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transform: rotate(90deg);
-
-      position: absolute;
-      right: -80px;
-      top: 50px;
+      display: block;
     }
-
-    @include onDesctop {
-      top: 250px;
-    }
-  }
-
-  &__potr-line {
-    width: 65px;
-    height: 1px;
-    background-color: $color-potr-pots;
-  }
-
-  &__potr-text {
-    color: $color-potr-pots;
-    @extend %text-bebas;
-    font-size: 12px;
-    letter-spacing: 2.64px;
-    text-transform: uppercase;
   }
 }

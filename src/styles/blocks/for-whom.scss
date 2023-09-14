@@ -1,0 +1,75 @@
+.for-whom {
+  padding-top: 110px;
+
+  @include onDesctop {
+    padding-top: 150px;
+  }
+
+  &__title {
+    color: $color-text-top-bar;
+  }
+
+  &__content-bottom {
+    @include onDesctop {
+      margin-top: 80px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    margin-top: 26px;
+
+    @include onTablet {
+      margin-top: 110px;
+      display: flex;
+      gap: 15px;
+    }
+
+    @include onDesctop {
+      margin-top: 0;
+    }
+  }
+
+  &__item-first {
+    @include onTablet {
+      margin-top: 42px;
+    }
+
+    @include onDesctop {
+      margin-top: 34px;
+      gap: 100px;
+    }
+  }
+
+  &__item-second {
+    @include onTablet {
+      gap: 57px;
+    }
+
+    @include onDesctop {
+      flex-direction: column;
+      gap: 0;
+      margin: 105px 0 0 100px;
+    }
+  }
+
+  &__item-third {
+    @include onTablet {
+      gap: 20px;
+    }
+    @include onDesctop {
+      flex-direction: column;
+    }
+  }
+
+  &__potr-pots {
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesctop {
+      display: block;
+    }
+  }
+}
