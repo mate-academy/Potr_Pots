@@ -1,0 +1,200 @@
+.materials {
+  padding-top: 110px;
+  background: url(../images/jpg/materials/background-mobile.jpg) 0 240px/100% auto no-repeat;
+
+  @include onTablet {
+    padding-top: 55px;
+    background: url(../images/jpg/materials/background-tablet.jpg) 0 313px/100% auto no-repeat;
+  }
+
+  @include onDesctop {
+    padding-top: 122px;
+    background: url(../images/jpg/materials/background-desctop.jpg) 0 282px/100% auto no-repeat;
+  }
+
+  &__title {
+    font-size: 58px;
+
+    @include onTablet {
+      width: 532px;
+      font-size: 80px;
+      line-height: normal;
+    }
+
+    @include onDesctop {
+      font-size: 139px;
+      width: 870px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onTablet {
+      margin: -67px 0 0 360px;
+      display: block;
+      width: 340px;
+    }
+
+    @include onDesctop {
+      margin: -194px 0 0 700px;
+      width: 470px;
+    }
+  }
+
+  &__text-title {
+    color: $color-text-header;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+  }
+
+  &__text-article {
+    margin-top: 10px;
+    @extend %text-main;
+  }
+
+  &__article-text-bolt {
+    font-weight: 700;
+  }
+
+  &__content-ellips {
+    @include onTablet {
+      padding-bottom: 72px;
+    }
+
+    @include onDesctop {
+      padding-bottom: 112px;
+    }
+  }
+
+  &__component {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: relative;
+      z-index: 7;
+
+      @include square(51px);
+      background-color: $color-ellipce;
+      border-radius: 50%;
+      transition: 0.5s;
+
+      &:hover,
+      &:active {
+        background-color: $color-ellips-hover;
+
+        .materials__component-line-second {
+          opacity: 0;
+        }
+
+        .item-materials__first,
+        .item-materials__second,
+        .item-materials__third,
+        .item-materials__fourth,
+        .item-materials__fifth {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__component-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 1px;
+    background-color: $color-ellips-line;
+    transform: translateX(-50%);
+  }
+
+  &__component-line-second {
+    transform: translateX(-50%) rotate(90deg);
+    transition: 0.5s;
+  }
+
+  &__component-first {
+    margin-top: 92px;
+    position: relative;
+    left: 75%;
+
+    @include onDesctop {
+      margin-top: 462px;
+    }
+  }
+
+  &__component-second {
+    margin-top: 37px;
+    position: relative;
+    left: 30%;
+
+    @include onDesctop {
+      margin-top: -75px;
+      left: 38%;
+    }
+  }
+
+  &__component-third {
+    margin-top: 45px;
+    position: relative;
+    left: 55%;
+
+    @include onDesctop {
+      margin-top: 77px;
+      left: 58%;
+    }
+  }
+
+  &__component-fourth {
+    margin-top: -25px;
+    position: relative;
+    left: 10%;
+
+    @include onDesctop {
+      margin-top: 65px;
+      left: 19%;
+    }
+  }
+
+  &__component-fifth {
+    margin-top: -25px;
+    position: relative;
+    left: 42%;
+
+    @include onDesctop {
+      margin-top: 0;
+      left: 50%;
+    }
+  }
+
+  &__item {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__top-potr {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesctop {
+      display: none;
+    }
+  }
+
+  &__swiper {
+    margin-top: 120px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

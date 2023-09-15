@@ -54,17 +54,17 @@
           <picture>
             <source
               media="(min-width: 1440px)"
-              srcset="./images/jpg/desktop/6-desctop.jpg"
+              srcset="./images/jpg/header/1-desctop.jpg"
             >
 
             <source
               media="(min-width: 768px)"
-              srcset="./images/jpg/tablet/6-tablet.jpg"
+              srcset="./images/jpg/header/1-tablet.jpg"
             >
 
             <img
               class="header__img"
-              src="./images/jpg/mobile/6-mobile.jpg"
+              src="./images/jpg/header/1-mobile.jpg"
               alt="cactus"
               width="100%"
             >
@@ -126,15 +126,15 @@
         </li>
 
         <li class="menu__item">
-          <a href="#" class="menu__link">Materials</a>
+          <a href="#materials" class="menu__link">Materials</a>
         </li>
 
         <li class="menu__item">
-          <a href="#" class="menu__link">About us</a>
+          <a href="#about" class="menu__link">About us</a>
         </li>
 
         <li class="menu__item">
-          <a href="#" class="menu__link">Message us</a>
+          <a href="#massage" class="menu__link">Message us</a>
         </li>
       </ul>
 
@@ -387,9 +387,124 @@
         </div>
       </section>
 
-      <section class="materials"></section>
+      <section class="materials" id="materials">
+        <div class="container">
+          <div class="matterials__top">
+            <h1 class="materials__title title">Materials and Features</h1>
+
+            <div class="materials__top-potr top-potr">
+              <div class="top-potr__block top-potr__block-materials-1">
+                <div class="top-potr__line"></div>
+                <div class="top-potr__text">potr pots</div>
+              </div>
+            </div>
+
+            <div class="materials__top-potr top-potr">
+              <div class="top-potr__block top-potr__block-materials-2">
+                <div class="top-potr__line"></div>
+                <div class="top-potr__text">potr pots</div>
+              </div>
+            </div>
+
+            <div class="materials__text">
+              <div class="materials__text-title">Environmentally friendly</div>
+              <div class="materials__text-article">All materials used in our pots are made from <span class="materials__article-text-bolt">100% recycled materials</span> and are <span class="materials__article-text-bolt">100% recyclable at the end of life </span>(should you ever choose to get rid of your POTR!). All materials have been sourced from within Europe to reduce our carbon footprint when transporting the raw materials, and all manufacturing is carried out in the UK.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="materials__content-ellips">
+          <div class="materials__component materials__component-first">
+            <div class="materials__component-line materials__component-line-first"></div>
+            <div class="materials__component-line materials__component-line-second"></div>
+
+            <div class="materials__item item-materials item-materials__first">
+              <div class="item-materials__text">We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.</div>
+            </div>
+          </div>
+
+          <div class="materials__component materials__component-second">
+            <div class="materials__component-line materials__component-line-first"></div>
+            <div class="materials__component-line materials__component-line-second"></div>
+
+            <div class="materials__item item-materials item-materials__second">
+              <div class="item-materials__text">POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.</div>
+            </div>
+          </div>
+
+          <div class="materials__component materials__component-third">
+            <div class="materials__component-line materials__component-line-first"></div>
+            <div class="materials__component-line materials__component-line-second"></div>
+
+            <div class="materials__item item-materials item-materials__third">
+              <div class="item-materials__text">Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.</div>
+            </div>
+          </div>
+
+          <div class="materials__component materials__component-fourth">
+            <div class="materials__component-line materials__component-line-first"></div>
+            <div class="materials__component-line materials__component-line-second"></div>
+
+            <div class="materials__item item-materials item-materials__fourth">
+              <div class="item-materials__text">POTR Pots are constructed using recycled polypropylene which can be fully recycled.</div>
+            </div>
+          </div>
+
+          <div class="materials__component materials__component-fifth">
+            <div class="materials__component-line materials__component-line-first"></div>
+            <div class="materials__component-line materials__component-line-second"></div>
+
+            <div class="materials__item item-materials item-materials__fifth">
+              <div class="item-materials__text">Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="materials__swiper swiper sample-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.
+            </div>
+
+            <div class="swiper-slide">
+              Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.
+            </div>
+
+            <div class="swiper-slide">
+              Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.
+            </div>
+
+            <div class="swiper-slide">
+              POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.
+            </div>
+
+            <div class="swiper-slide">
+              POTR Pots are constructed using recycled polypropylene which can be fully recycled.
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
     </main>
     <footer class="page__footer"></footer>
+    <script type="module">
+      import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs'
+
+      const swiper = new Swiper('.sample-slider', {
+        loop: true,
+        autoplay: {
+          delay: 2000,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clicable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
     <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
