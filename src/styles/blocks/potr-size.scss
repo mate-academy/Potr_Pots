@@ -1,0 +1,106 @@
+.potr-size {
+  padding-top: 110px;
+
+  &__title {
+    margin-top: 40px;
+    @extend %h5;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+  }
+
+  &__title-main {
+    margin-top: 0;
+    @extend %h2;
+  }
+
+  &__title-1 {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__content {
+    @include onDesctop {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 66px;
+    }
+  }
+
+  &__top-text {
+    margin-top: 20px;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
+
+    @include onDesctop {
+      margin-top: -10px;
+      width: 253px;
+
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: calc(100% + 16px);
+        top: 10px;
+
+        width: 1px;
+        height: 257px;
+        background-color: $color-line;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 10px;
+    @extend %text-main;
+  }
+
+  &__text-bottom {
+    margin-top: 15px;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onDesctop {
+      margin-top: -100px;
+      width: 546px;
+    }
+  }
+
+  &__content-bottom {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 38px;
+      display: flex;
+      gap: 36px;
+    }
+
+    @include onDesctop {
+      margin-top: 0;
+      gap: 96px;
+    }
+  }
+
+  &__image {
+    order: 1;
+
+    @include onTablet {
+      order: 2;
+    }
+  }
+
+  &__content-text {
+    @include onTablet {
+      width: 246px;
+    }
+  }
+}
