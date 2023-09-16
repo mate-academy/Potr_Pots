@@ -1,0 +1,41 @@
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo {
+    margin: 0;
+    @extend %text-bebas;
+    color: $color-text-top-bar;
+    letter-spacing: 2.16px;
+    @include hover(transform, scale(1.2));
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesctop {
+      color: $color-potr-pots;
+      padding: 0;
+      display: flex;
+      gap: 60px;
+    }
+  }
+
+  &__shop {
+    display: none;
+
+    @include onDesctop {
+      display: block;
+      @include hover(transform, scale(1.2));
+    }
+  }
+
+  &__menu-icon {
+    @include hover(transform, scale(1.2));
+
+    @include onDesctop {
+      display: none;
+    }
+  }
+}

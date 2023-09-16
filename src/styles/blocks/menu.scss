@@ -1,0 +1,100 @@
+.menu {
+  overflow: scroll;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  transform: translateX(150%);
+  height: 100vh;
+  width: 72%;
+  background-color: $color-background-aside;
+  transition: 0.5s;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__list {
+    margin: 0;
+    padding: 138px 0 90px 36%;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+
+      @include onTablet {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-text-white;
+    @extend %text-manrope;
+    font-size: 16px;
+    line-height: 150%;
+    position: relative;
+
+    @include hoverAfter(transform, scale(1));
+    @include hover(transform, scale(1.2));
+
+    @include onTablet {
+      font-size: 25px;
+    }
+  }
+
+  &__ellipse {
+    margin-left: 5px;
+    @include square($size-ellipse);
+    background-color: $color-ellipce;
+    border-radius: 50%;
+
+    color: $color-text-white;
+    font-size: 9px;
+    @extend %text-bebas;
+    @extend %flex-center;
+  }
+
+  &__span {
+    color: $color-text-white;
+
+  }
+
+  &__close {
+    width: 118px;
+    display: flex;
+    align-items: center;
+    transform: rotate(-90deg);
+    transform-origin: top right;
+    position: relative;
+    left: 28%;
+
+    @include onTablet {
+      left: 50%;
+    }
+  }
+
+  &__close-img {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__line {
+    margin-left: 18px;
+    width: 44px;
+    height: 1px;
+    background-color: $color-text-white;
+  }
+
+  &__cross-text {
+    margin-left: 5px;
+    color: $color-text-white;
+    @extend %text-manrope;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 150%;
+  }
+}

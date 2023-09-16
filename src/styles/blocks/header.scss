@@ -1,0 +1,152 @@
+.header {
+  @include onTablet {
+    background: url(../images/jpg/header/background-tablet.png) top left no-repeat;
+  }
+
+  @include onDesctop {
+    background: url(../images/jpg/header/background-desctop.png) top left no-repeat;
+  }
+
+  &__top-bar {
+    padding: 15px 30px 10px;
+
+    @include onTablet {
+      padding: 29px 0 49px;
+    }
+
+    @include onTablet {
+      padding: 20px 0 77px;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+    }
+  }
+
+  &__image {
+    order: 1;
+
+    @include onTablet {
+      height: 0;
+      background: none;
+      order: 2;
+      margin-left: -60px;
+    }
+
+    @include onDesctop {
+      margin-left: 120px;
+    }
+  }
+
+  &__title {
+    margin-top: 25px;
+    order: 2;
+
+    @include onTablet {
+      margin: 0;
+      order: 1;
+      white-space: nowrap;
+      position: relative;
+      z-index: 3;
+    }
+
+    @include onDesctop {
+      padding-left: 100px;
+    }
+  }
+
+  &__cost {
+    @include onTablet {
+      margin-left: 225px;
+    }
+
+    @include onDesctop {
+      margin-left: 400px;
+    }
+  }
+
+  &__price {
+    margin-top: 30px;
+    @extend %text-manrope;
+    color: $color-text-top-bar;
+    font-size: 26px;
+    font-weight: 700;
+
+    @include onTablet {
+      margin-top: -26px;
+    }
+
+    @include onDesctop {
+      margin-top: 20px;
+    }
+  }
+
+  &__text {
+    @extend %text-manrope;
+    color: $color-text-header;
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &__content-buttom {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  &__button {
+    margin: 20px 0 auto;
+    @extend %flex-center;
+
+    @include onTablet {
+      margin: 50px 0 0 120px;
+    }
+
+    @include onDesctop {
+      margin: 50px 0 47px 330px;
+    }
+  }
+
+  &__favicon {
+    height: 18px;
+    @extend %flex-center;
+    justify-content: flex-end;
+    gap: 29px;
+    transform: rotate(90deg);
+    transform-origin: right;
+
+    position: absolute;
+    top: 20px;
+    right: -15px;
+
+    @include onTablet {
+      margin-left: -250px;
+      right: 695px;
+      top: 75px;
+    }
+
+    @include onDesctop {
+      right: 1170px;
+    }
+  }
+
+  &__favicon-text {
+    color: $color-background-aside;
+    @extend %text-manrope;
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  &__favicon-arrow {
+    transform: rotate(-90deg);
+  }
+
+  &__potr-pots {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

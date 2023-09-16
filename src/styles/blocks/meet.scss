@@ -1,0 +1,102 @@
+.meet {
+  padding-top: 110px;
+
+  @include onTablet {
+    padding-top: 132px;
+    background: url(../images/jpg/meet/background-tablet.png) 0 302px no-repeat;
+  }
+
+  @include onDesctop {
+    padding-top: 150px;
+    background: url(../images/jpg/meet/background-desctop.png) 0 335px no-repeat;
+  }
+
+  &__title {
+    @extend %h4;
+  }
+
+  &__content {
+    @include onTablet {
+      margin-top: 177px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include onDesctop {
+      margin-top: 143px;
+      // gap: 57px;
+    }
+  }
+
+  &__image {
+    margin-top: 25px;
+    order: 1;
+
+    @include onTablet {
+      margin-top: 0;
+      order: 2;
+    }
+  }
+
+  &__text {
+    background: url(../images/jpg/meet/background-mobile.png) bottom 0 left/100% auto no-repeat;
+
+    @include onTablet {
+      background: none;
+    }
+  }
+
+  &__article {
+    margin-top: 30px;
+    @extend %text-main;
+    padding-bottom: 58px;
+    order: 2;
+
+    @include onTablet {
+      margin-top: 53px;
+      width: 313px;
+      order: 1;
+    }
+
+    @include onDesctop {
+      margin-top: 230px;
+      width: 336px;
+    }
+  }
+
+  &__front-text {
+    display: none;
+    @extend %front-title;
+
+    @include onTablet {
+      display: block;
+      position: relative;
+    }
+  }
+
+  &__title-first {
+    @include onTablet {
+      margin-left: -40px;
+      position: absolute;
+      top: -570px;
+    }
+
+    @include onDesctop {
+      margin-left: 74px;
+      top: -680px;
+    }
+  }
+
+  &__title-second {
+    @include onTablet {
+      position: absolute;
+      top: -190px;
+      right: -30px;
+    }
+
+    @include onDesctop {
+      top: -100px;
+      right: 0;
+    }
+  }
+}

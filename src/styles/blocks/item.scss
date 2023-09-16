@@ -1,0 +1,215 @@
+.item {
+  &__image {
+    display: none;
+
+    @include hover (opacity, 0.7);
+    @include hover (transform, scale(1.1));
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__image-second {
+    @include onTablet {
+      order: 2;
+    }
+
+    @include onDesctop {
+      order: 1;
+    }
+  }
+
+  &__img {
+    @include onTablet {
+      margin-top: 24px;
+    }
+
+    @include onDesctop {
+      margin-top: 0;
+    }
+  }
+
+  &__img-second,
+  &__img-third {
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__content-second {
+    @include onTablet {
+      order: 1;
+    }
+
+    @include onDesctop {
+      order: 2;
+    }
+  }
+
+  &__favicon {
+    display: none;
+    @extend %text-main;
+    position: relative;
+
+    @include onTablet {
+      display: block;
+      position: relative;
+      padding-left: 10px;
+      margin-left: 40px;
+      color: $color-text-top-bar;
+
+      &::before {
+        content: "*";
+        position: absolute;
+        left: 0;
+        bottom: 5px;
+        color: $color-black;
+      }
+    }
+
+    @include onDesctop {
+      padding-left: 40px;
+    }
+  }
+
+  &__favicon-second {
+    @include onTablet {
+      margin: 20px 0 0 270px;
+    }
+
+    @include onDesctop {
+      margin: 45px 0 0 -45px;
+    }
+  }
+
+  &__favicon-third {
+    @include onDesctop {
+      margin: 45px 0 0 -45px;
+    }
+  }
+
+  &__number {
+    display: flex;
+    gap: 17px;
+    height: max-content;
+  }
+
+  &__line {
+    width: 1px;
+    height: 46px;
+    background-color: $color-black;
+    transform: rotate(22deg);
+    transform-origin: bottom right;
+  }
+
+  &__number-number {
+    @extend %h2;
+    line-height: 180%;
+  }
+
+  &__title {
+    @include onTablet {
+      display: flex;
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    @include onDesctop {
+      margin-top: 40px;
+      gap: 45px;
+    }
+  }
+
+  &__title-second {
+    @include onTablet {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__title-main {
+    margin-top: 13px;
+    position: relative;
+
+    @include onTablet {
+      margin-top: 0;
+      width: 340px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 33%;
+        bottom: 7px;
+        height: 46px;
+        width: 1px;
+        background-color: $color-black;
+        transform: rotate(22deg);
+        transform-origin: bottom right;
+      }
+    }
+
+    @include onDesctop {
+      width: 470px;
+
+      &::before {
+        left: 55%;
+      }
+    }
+  }
+
+  &__title-main-second {
+    @include onTablet {
+      &::before {
+        left: 73%;
+      }
+    }
+
+    @include onDesctop {
+      width: 400px;
+
+      &::before {
+        left: 63%;
+      }
+    }
+  }
+
+  &__title-main-third {
+    @include onTablet {
+      &::before {
+        left: 35%;
+      }
+    }
+
+    @include onDesctop {
+      width: 380px;
+
+      &::before {
+        left: 30%;
+      }
+    }
+  }
+
+  &__inf {
+    display: flex;
+  }
+
+  &__text {
+    margin-top: 20px;
+    @extend %text-main;
+
+    @include onTablet {
+      margin: 10px 0 0 61px;
+      width: 340px;
+    }
+
+    @include onDesctop {
+      margin: 10px 0 0 85px;
+      width: 370px;
+    }
+  }
+
+  &__text-second {
+    margin: 0;
+  }
+}
