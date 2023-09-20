@@ -1,0 +1,58 @@
+.footer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+  background-image: url(../images/icons/RectangleDesctop.svg);
+  background-position: left 0 top -121px;
+  background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    background-position: left 0 top -212px;
+  }
+
+  @include onDesktop {
+    background-position: right 132px top 0;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+
+  &__mark {
+    position: absolute;
+    width: 149px;
+    height: 170px;
+    right: 0;
+    top: -68px;
+
+    @include onTablet {
+      top: -100px;
+    }
+
+    @include onDesktop {
+      right: 48px;
+    }
+  }
+
+  &__questions {
+    margin-bottom: 66px;
+
+    @include onTablet {
+      margin-bottom: 112px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 184px;
+
+    }
+  }
+}

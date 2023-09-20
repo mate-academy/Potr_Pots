@@ -19,7 +19,7 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: all .3s;
-
+  @include transformElement;
 
 
   &--arrow {
@@ -35,14 +35,14 @@
   }
 
   &::after {
+    content: "";
+    position: absolute;
+
     display: block;
     width: 27px;
     height: 8px;
-    position: absolute;
-    content: "";
     transform: translateY(-50%);
     right: 72px;
     top: 50%;
-
   }
 }
