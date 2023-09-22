@@ -1,4 +1,85 @@
 %h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-family: $font-bebas-regular;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 5.58px;
+  text-transform: uppercase;
+  color: $color-turtoise;
+
+  @include onTablet {
+    font-size: 64px;
+    letter-spacing: 9.92px;
+    max-width: 490px;
+    min-width: 490px;
+  }
+
+  & span {
+    -webkit-text-stroke: 0.1px $color-turtoise;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+%h2 {
+  font-family: $font-bebas-regular;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 5.58px;
+  text-transform: uppercase;
+  color: $color-gray-1;
+}
+
+%h3 {
+  font-family: $font-bebas-regular;
+  font-size: 58px;
+  letter-spacing: 8.99px;
+  color: $color-turtoise;
+}
+
+%h4 {
+  font-family: $font-bebas-regular;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 3.72px;
+  text-transform: uppercase;
+  color: $color-gray-1;
+}
+
+%h5 {
+  font-family: $font-bebas-regular;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 2.79px;
+  text-transform: uppercase;
+  color: $color-black;
+}
+
+%p {
+  font-family: $font-manrope-regular;
+  font-size: 16px;
+  line-height: 150%;
+  color: $color-gray-2;
+}
+
+%button {
+  font-family: $font-manrope-bold;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  border: 1px solid $color-turtoise;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+%input, %textarea {
+  font-family: $font-manrope-regular;
+  font-size: 16px;
+  line-height: 150%;
+  color: $color-gray-2;
+  resize: none;
+  border-bottom: 1px solid $color-gray;
+
+  &:focus {
+    outline: none;
+    border-color: $color-turtoise;
+  }
 }

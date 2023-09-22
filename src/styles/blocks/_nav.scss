@@ -1,0 +1,55 @@
+.nav {
+  background-color: $color-turtoise;
+  height: 100vh;
+  width: 231px;
+  z-index: 1;
+  
+  @include onDesktop {
+    display: none;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__menu {
+    padding: 138px 30px 250px 80px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item {
+    transition: transform $transition-duration-speed ease;
+
+    &::after {
+      margin-top: 5px;
+      content: "";
+      display: block;
+      height: 1px;
+      width: 1px;
+      transition: width $transition-duration-speed ease-in-out;
+    }
+    
+    &:hover {
+      transform: scale(1.1);
+
+      &:after {
+        background-color: $color-red;
+        width: 50%;
+      }
+    }
+  }
+  
+
+  &__link {
+    font-size: 12px;
+    line-height: 150%;
+    color: $color-gray-light;
+  }
+}

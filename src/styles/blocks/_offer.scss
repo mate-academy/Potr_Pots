@@ -1,0 +1,91 @@
+.offer {
+  margin-bottom: 110px;
+  position: relative;
+
+  @include onTablet {
+    margin-bottom: 25px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 22px;
+  }
+
+  &__content {
+    @include onDesktop {
+      padding-top: 220px;
+    }
+  }
+
+  &__bg {
+    @include onDesktop {
+      background-image: url(/images/benefits.png);
+      background-repeat: no-repeat;
+      background-size: fill;
+      background-position: top left;
+      height: 838px;
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: $color-gray-1;
+    position: relative;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-image: url(/images/romb-icon.svg);
+    }
+  }
+
+  &__benefits {
+    padding-bottom: 40px;
+
+    &-item {
+      @include onDesktop {
+        transform: translateY(-50px);
+      }
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      transform: translateY(160px);
+    }
+
+    @include onDesktop {
+      transform: translateY(0);
+    }
+  }
+
+  &__amount {
+    color: $color-red;
+
+    &-text {
+      color: $color-turtoise;
+    }
+  }
+
+  &__discount {
+    @include onTablet {
+      transform: translateY(-190px);
+    }
+
+    @include onDesktop {
+      transform: translateY(0);
+    }
+  }
+}

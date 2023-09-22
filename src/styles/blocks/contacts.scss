@@ -1,0 +1,74 @@
+.contacts {
+  padding: 45px 0 30px;
+  position: relative;
+  background-image: url(../images/contacts-bg-mob.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+
+  @include onTablet {
+    padding: 17px 0 100px;
+    background-image: url(../images/contacts-bg.png);
+    margin-bottom: 25px;
+  }
+
+  @include onDesktop {
+    padding: 42px 0 150px;
+    background-position: bottom right 35px;
+  }
+
+  &__tag {
+    background: url(../images/contacts-tag-mob.png), no-repeat;
+    position: absolute;
+    width: 160px;
+    height: 164px;
+    right: 0;
+    top: -80px;
+
+    @include onDesktop {
+      background: url(../images/contacts-tag.png), no-repeat;
+    }
+  }
+
+  &__subtitle {
+    padding-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 100px;
+
+    @include onTablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__item {
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 24px;
+
+    &:not(:last-child) {
+      padding-bottom: 34px;
+
+      @include onTablet {
+        padding-bottom: 20px;
+      }
+
+      @include onDesktop {
+        padding-bottom: 25px;
+      }
+    }
+  }
+
+  &__link {
+    color: $color-black;
+    font-size: 16px;
+  }
+
+  &__socials {
+    @include onTablet {
+      display: none;
+    }
+  }
+}

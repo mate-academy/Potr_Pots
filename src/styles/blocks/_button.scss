@@ -1,0 +1,59 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+  height: 48px;
+  transition: all $transition-duration-speed;
+
+  @include onTablet {
+    width: 240px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &__primary-2 {
+    background-color: $color-yellow;
+    color: $color-black;
+    border-color: $color-yellow;
+        
+    &:hover {
+      background-color: $color-yellow-light;
+      color: $color-black-2;
+      transform: scale(1.1);
+    }
+  }
+
+  &__secondary {
+    background-color: $color-yellow;
+    color: $color-black;
+    border-color: $color-yellow;
+
+    @include onTablet {
+      background-color: inherit;
+      color: $color-black;
+      border-color: $color-turtoise;
+          
+      &:hover {
+        background-color: $color-turtoise;
+        color: $color-white;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__submit {
+    background-color: $color-turtoise;
+    border-color: $color-turtoise;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-turtoise-2;
+      border-color: $color-turtoise-2;
+      transform: scale(1.1);
+    }
+  }
+}

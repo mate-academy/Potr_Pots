@@ -1,0 +1,43 @@
+.footer {
+  text-align: center;
+  padding-bottom: 64px;
+
+  @include onTablet {
+    text-align: start;
+  }
+
+  &__social {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__title {
+    color: $color-black;
+  }
+
+  &__item--display {
+    display: none;
+
+    @include onTablet {
+      display: grid;
+    }
+  }
+
+  &__item--right {
+    justify-self: end;
+  }
+
+  &__item--left {
+    justify-self: start;
+  }
+
+  &__item--center {
+    @include onTablet {
+      justify-self: center;
+    }
+  }
+}
