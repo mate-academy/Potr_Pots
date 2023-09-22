@@ -1,0 +1,140 @@
+.questions {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1440px;
+
+  @include On1440 {
+    margin: 0 auto;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    position: relative;
+    margin-bottom: 100px;
+
+    @include On768 {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__stamp {
+    position: absolute;
+    top: 0;
+    right: -100px;
+    display: block;
+
+    @include On1280 {
+      margin-right: 80px;
+    }
+  }
+
+  &__left {
+    width: 100%;
+    margin-bottom: 70px;
+
+    @include On768 {
+      width: 50%;
+      margin-bottom: 0;
+    }
+    @include On1280 {
+      margin-right: 80px;
+    }
+  }
+
+  &__right {
+    width: 100%;
+
+    @include On768 {
+      width: 33%;
+    }
+    @include On1280 {
+      width: 50%;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__ways {
+    display: block;
+    line-height: 150%;
+    color: #000;
+
+    margin-bottom: 40px;
+
+    @include On768 {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__message-us {
+    display: block;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #000;
+    margin-bottom: 25px;
+
+    @include On768 {
+      margin-bottom: 15px;
+    }
+    @include On1440 {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__contact {
+
+    margin-bottom: 30px;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      font-size: 24px;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-input {
+      position: relative;
+      line-height: 150%;
+      color: #000;
+
+      &:hover {
+        font-weight: 600;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 0;
+        background-color: $black-2-col;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        z-index: 1;
+        transition: width 0.2s linear;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+}

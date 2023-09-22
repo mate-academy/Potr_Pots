@@ -1,0 +1,47 @@
+.checkout {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 100px 0;
+  transform: translateY(-500%);
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.42);
+
+  &:target {
+    transform: translate(0);
+  }
+
+  &__content {
+    background-color: #fff;
+    padding: 20px 20px 60px;
+    margin: 40px auto 0;
+    width: 100%;
+    max-width: 400px;
+
+    @include On768 {
+      max-width: 800px;
+    }
+    @include On1440 {
+      max-width: 1000px;
+    }
+
+    &--form {
+
+      @include On768 {
+        padding: 20px 80px 60px;
+      }
+    }
+
+    &--finish {
+      padding-top: 40px;
+      max-width: 700px;
+
+      @include On1440 {
+        padding-bottom: 150px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__burger {
+    display: block;
+    transition: filter 0.2s;
+
+    @include On1440 {
+      display: none;
+    }
+
+    &:hover {
+      filter: invert(28%) sepia(64%) saturate(5644%)
+        hue-rotate(174deg) brightness(98%) contrast(102%);
+    }
+  }
+
+  &__bag {
+    display: none;
+
+    @include On1440 {
+      display: block;
+    }
+
+    &:hover {
+      filter: invert(28%) sepia(64%) saturate(5644%)
+        hue-rotate(174deg) brightness(98%) contrast(102%);
+      transition: 0.2s filter;
+    }
+  }
+}

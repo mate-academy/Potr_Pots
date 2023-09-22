@@ -1,0 +1,46 @@
+.add-text {
+  max-width: max-content;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  transform: rotate(90deg);
+  transform-origin: right bottom;
+  display: flex;
+  align-items: center;
+  color: $turquoise;
+  transition: 0.2s color;
+
+  &__arrow {
+    background-image: url(../images/Arrow.svg);
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 15px;
+    margin-left: 20px;
+    filter: invert(28%) sepia(64%) saturate(5644%)
+      hue-rotate(174deg) brightness(98%) contrast(102%);
+    transition: 0.2s filter;
+  }
+
+  &:hover {
+    color: $black-2-col;
+  }
+
+  &:hover &__arrow {
+    filter: invert(7%) sepia(0%) saturate(438%)
+      hue-rotate(316deg) brightness(97%) contrast(99%);
+  }
+
+  @include On768 {
+    transform: rotate(90deg) translateX(-40%);
+    left: 0;
+    transform-origin: left bottom;
+  }
+
+  &__word {
+    font-weight: 400;
+    font-size: 12px;
+  }
+}

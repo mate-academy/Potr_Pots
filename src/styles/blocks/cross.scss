@@ -1,0 +1,53 @@
+.cross {
+  position: relative;
+  @extend .bg-img;
+  background-image: url(../images/navigation/cross-small.svg);
+  width: 12px;
+  height: 12px;
+  transition: 0.2s filter;
+
+  @include On768 {
+    width: 18px;
+    height: 18px;
+  }
+  @include On1280 {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    filter: invert(48%) sepia(86%) saturate(1974%)
+      hue-rotate(328deg) brightness(99%) contrast(85%);
+  }
+
+  &-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__word {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    height: 100%;
+    transform-origin: left top;
+    transform: translateY(-20px) rotate(270deg);
+
+    &-line {
+      display: block;
+      width: 44px;
+      height: 1px;
+      background-color: $wite-col;
+    }
+
+    &-close {
+      text-transform: uppercase;
+      font-size: 12px;
+      color: $wite-col;
+    }
+  }
+}

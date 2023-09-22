@@ -1,0 +1,104 @@
+.features {
+  
+  &__content {
+    margin-bottom: 100px;
+
+    @include On1440 {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    @include On768 {
+      justify-content: start;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    @include On1440 {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+
+    &--first {
+      display: block;
+      margin-right: 10px;
+      color: $turquoise;
+      font-size: 48px;
+    }
+
+    &--second {
+      color: #fff;
+      font-size: 46px;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px #03839e;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include On768 {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto 65px;
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    @include On768 {
+      width: 32%;
+      margin-bottom: 0;
+    }
+
+    &-photo img {
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      transition: 0.2s transform linear;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    &-title {
+      display: block;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: "Bebas Neue", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      color: $black-col;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      line-height: 150%;
+      text-align: center;
+    }
+  }
+}

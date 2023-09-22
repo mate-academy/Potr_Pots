@@ -1,0 +1,106 @@
+.nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  width: 480px;
+
+  &--hidden {
+    display: none;
+
+    @include On1440 {
+      display: flex;
+    }
+  }
+
+  &--menu {
+    flex-direction: column;
+    align-items: start;
+    height: max-content;
+    width: max-content;
+  }
+
+  &__item--menu {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__item--basket {
+    position: relative;
+  }
+
+  &__basket {
+    position: relative;
+
+    &::after {
+      content: "0";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-58%, -42%);
+    }
+    
+    &-container {
+      position: absolute;
+      right: -20px;
+      top: 0;
+      background-color: $red-col;
+      display: grid;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      font-family: "Bebas Neue", sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 9.17px;
+      line-height: 11px;
+      color: $wite-col;
+
+      @include On768 {
+        right: -30px;
+        width: 20px;
+        height: 20px;
+        font-size: 15px;
+      }
+      
+      @include On1280 {
+        right: -40px;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__link {
+    color: $main-color;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s border-color;
+
+    &:hover {
+      border-color: $black-col;
+    }
+
+    &--menu {
+      color: $wite-col;
+      line-height: 150%;
+      transition: 0.2s color;
+
+      &:hover {
+        border-color: transparent;
+        color: $red-col;
+      }
+
+      @include On768 {
+        font-size: 20px;
+      }
+      @include On1280 {
+        font-size: 30px;
+      }
+    }
+  }
+}

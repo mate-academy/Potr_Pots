@@ -1,0 +1,72 @@
+.potr-pots {
+  position: absolute;
+  z-index: 10;
+  max-width: max-content;
+  display: none;
+  align-items: center;
+  color: $gray-col-2;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: color 0.2s linear;
+
+  &__arrow {
+    display: block;
+    width: 65px;
+    height: 1px;
+    background-color: $gray-col-2;
+    margin-right: 10px;
+    transition: background-color 0.2s linear;
+  }
+
+  &:hover {
+    color: $black-col;
+  }
+
+  &:hover &__arrow {
+    background-color: $black-col;
+  }
+
+  @include On768 {
+    display: flex;
+  }
+
+  &--right-part {
+    transform-origin: right bottom;
+    transform: rotate(90deg) translateX(100%);
+    top: 0;
+    right: 0;
+  }
+
+  &--left-part {
+    display: none;
+    transform-origin: left top;
+    transform: rotate(-90deg);
+    bottom: 0;
+    left: 0;
+
+    @include On1440 {
+      display: flex;
+    }
+
+    &--materials {
+      @include On768 {
+        display: flex;
+        transform-origin: left top;
+        transform: rotate(-90deg);
+        height: max-content;
+        top: 380px;
+        left: 0;
+      }
+      @include On1440 {
+        display: none;
+      }
+    }
+  }
+
+  &--hidden-On1440 {
+    @include On1440 {
+      display: none;
+    }
+  }
+}

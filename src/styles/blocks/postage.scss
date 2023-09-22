@@ -1,0 +1,244 @@
+.postage {
+  width: 100%;
+  max-width: 1440px;
+  position: relative;
+  overflow: hidden;
+
+  @include On1440 {
+    margin: 0 auto;
+    overflow-x: visible;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+
+    @include On1280 {
+      padding: 300px 0;
+      align-items: flex-end;
+      margin-bottom: 0;
+    }
+    @include On1440 {
+      padding: 200px 0 250px;
+      align-items: flex-end;
+    }
+  }
+
+  &__pictures {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include On1280 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 50%;
+      max-width: 800px;
+    }
+  }
+
+  &__picture {
+    display: block;
+    width: 270px;
+    height: auto;
+    background: #fff;
+    padding: 20px;
+
+    &-descr {
+      width: 100%;
+      height: auto;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 131.5%;
+      color: $gray-col-2;
+    }
+
+    &--1 {
+      transform: translate(80%, -20%) rotate(-15deg);
+
+      @include On1440 {
+        transform: translateX(-40%) rotate(-15deg);
+      }
+    }
+    &--2 {
+      transform: translate(200%, -25%) rotate(-29deg);
+
+      @include On1440 {
+        transform: translate(-25%, -30%) rotate(-29deg);
+      }
+    }
+    &--3 {
+      transform: translateX(-70%);
+      
+      @include On1440 {
+        transform: translate(-80%, 20%);
+      }
+    }
+    &--4 {
+      transform: translateX( -70%) rotate(-15deg);
+
+      @include On1440 {
+        transform: translate(-70%, -10%) rotate(-15deg);
+      }
+    }
+    &--5 {
+      transform: translate(50%, 20%) rotate(-15deg);
+
+      @include On1440 {
+        transform: translate(-15%, 10%) rotate(-15deg);
+      }
+    }
+    &--6 {
+      transform: translate(100%, 40%) rotate(-30deg);
+
+      @include On1440 {
+        transform: translate(-5%, -25%) rotate(-30deg);
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    max-width: 230px;
+    height: 230px;
+    margin: 0 auto 10px;
+  }
+
+  &__right-part {
+    display: flex;
+    flex-direction: column;
+
+    @include On768 {
+      flex-direction: row;
+      width: max-content;
+      margin: 0 auto;
+      align-items: center;
+    }
+    @include On1280 {
+      margin-right: 0;
+    }
+    
+    @include On1440 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 60%;
+      margin-right: 0;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    @include On768 {
+      margin-bottom: 0;
+      width: 50%;
+    }
+    @include On1440 {
+      flex-direction: row;
+      width: 100%;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+
+    margin-bottom: 40px;
+
+    @include On768 {
+      margin-bottom: 30px;
+    }
+    @include On1440 {
+      width: 50%;
+      margin-bottom: 40px;
+    }
+
+    &--last {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      position: relative;
+      display: block;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 150%;
+      color: #333;
+      margin-bottom: 5px;
+
+      @include On768 {
+        font-size: 36px;
+      }
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: -14px;
+        transform: translateY(-50%) rotate(-45deg);
+        content: "";
+        display: block;
+        width: 7px;
+        height: 7px;
+        background-color: $main-color;
+      }
+    }
+
+    &-text {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $gray-col-2;
+    }
+  }
+
+  &__send {
+
+    @include On768 {
+      margin-bottom: 0;
+      width: 50%;
+      height: max-content;
+    }
+    @include On1440 {
+      width: 100%;
+    }
+  }
+
+  &__order {
+    font-family: "Bebas Neue", sans-serif;
+    margin-top: 40px;
+
+    @include On768 {
+      margin-top: 30px;
+    }
+    @include On1440 {
+      width: max-content;
+      margin: 30px auto 0;
+    }
+
+    &-title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 0.15em;
+      color: $red-col;
+    }
+
+    &-info {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.15em;
+      color: $turquoise;
+    }
+  }
+}
