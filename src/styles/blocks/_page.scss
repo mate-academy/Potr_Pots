@@ -4,7 +4,6 @@
 }
 
 .page {
-  scroll-behavior: smooth;
   font-family: "Manrope", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -14,7 +13,7 @@
   &__body {
     padding: 0;
     border: 0;
-    font: inherit;
+
   }
 
   &__header {
@@ -34,20 +33,18 @@
 
   &__menu {
     position: fixed;
-    opacity: 0;
-    top: 0;
+    z-index: 2;
+    scroll-behavior: inherit;
+    overflow-X: hidden;
+
+
+    top:0;
     right: 0;
-    pointer-events: none;
-    transition: all .3s;
     transform: translateX(100%);
-    z-index: 3;
+    transition: transform .6s ease-in-out;
 
     &:target {
-      opacity: 1;
-      pointer-events: all;
-      transform: translate(0);
+      transform: translateX(0);
     }
-
-
   }
 }

@@ -26,7 +26,7 @@
                 src="./images/icons/Logo.svg"
                 alt="PotrPost"
                 class="logo"
-                href="#"
+                href="#home"
                 >
             </div>
             <nav class="header__nav nav">
@@ -105,14 +105,14 @@
               </a>
             </div>
             <div class="header__more more">
-              <a href="#" class="more__link link">More about POTR POTS</a>
+              <a href="#about" class="more__link link">More about POTR POTS</a>
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <aside class="menu page__menu" id="menu">
+    <section class="menu page__menu" id="menu">
       <nav>
         <ul class="menu__list">
           <li class="menu__item">
@@ -137,7 +137,7 @@
         <span class="menu__close--line"></span>
         <div class="menu__close--text">Close</div>
       </div>
-    </aside>
+    </section>
 
     <main class="main">
       <section class="section section--animation for-whom main__for-whom" id="for-whom">
@@ -334,7 +334,7 @@
         </div>
       </section>
 
-      <section class="materials" id="materials">
+      <section class="materials">
         <div class="container">
           <div class="materials__title--wrapper">
             <h2 class="materials__title">Materials and<br> Features</h2>
@@ -398,22 +398,71 @@
         </div>
 
         <div class="slider">
-          <div class="slider__slide">
-            <div class="slider__text">
-              We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord.
-              Not only is it 100% recycled, it looks great and works really well at wicking water.
-            </div>
+          <div class="slider__container">
+            <div class="slider__text">We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.</div>
+            <!-- <div class="slider__text">Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.</div>
+            <div class="slider__text">Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.</div>
+            <div class="slider__text">POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.</div>
+            <div class="slider__text">POTR Pots are constructed using recycled polypropylene which can be fully recycled.</div> -->
           </div>
 
-          <div class="slider__paginations">
-            <div class="slider__pagination slider__pagination--1"></div>
-            <div class="slider__pagination slider__pagination--2"></div>
-            <div class="slider__pagination slider__pagination--3"></div>
-            <div class="slider__pagination slider__pagination--4"></div>
-            <div class="slider__pagination slider__pagination--5"></div>
+          <div class="slider__pagination">
+            <div class="slider__button"></div>
+            <div class="slider__button"></div>
+            <div class="slider__button"></div>
+            <div class="slider__button"></div>
+            <div class="slider__button"></div>
           </div>
         </div>
 
+        <!-- <div class="slider slider__midle">
+          <div class="slider__slides">
+
+            <input
+              type="radio"
+              name="r"
+              id="r1"
+              checked
+            >
+
+            <input type="radio" name="r" id="r2">
+
+            <input type="radio" name="r" id="r3">
+
+            <input type="radio" name="r" id="r4">
+
+            <input type="radio" name="r" id="r5">
+
+            <div class="slider__text">
+              <p>We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.</p>
+            </div>
+
+            <div class="slider__text">
+              <p>Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.</p>
+            </div>
+
+            <div class="slider__text">
+              <p>Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.</p>
+            </div>
+
+            <div class="slider__text">
+              <p>POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.</p>
+            </div>
+
+            <div class="slider__text">
+              <p>POTR Pots are constructed using recycled polypropylene which can be fully recycled.</p>
+            </div>
+
+          </div>
+          <div class="navigation">
+            <label for="r1" class="navigation__bar"></label>
+            <label for="r2" class="navigation__bar"></label>
+            <label for="r3" class="navigation__bar"></label>
+            <label for="r4" class="navigation__bar"></label>
+            <label for="r5" class="navigation__bar"></label>
+          </div>
+
+        </div> -->
       </section>
 
       <section class="section--animation port-size" id="port-size">
@@ -510,7 +559,12 @@
             <h2 class="questions__title">have any<br> questions?</h2>
             <p class="questions__desriptions">Here few ways to get in touch with us:</p>
 
-            <form method="get" name="sendUs" class="message questions__message">
+            <form
+              onsubmit="this.reset(); return false;"
+              action="get"
+              name="sendUs"
+              class="message questions__message"
+            >
               <h3 class="message__title">Message us</h3>
               <label>
                 <input
@@ -540,9 +594,9 @@
                 class="message__field"
               ></textarea>
 
-              <button class="message__button" type="submit">
+              <button href="#" class="message__button" type="submit">
                 <p class="message__button--text">Submit</p>
-                <p class="message__button--arrow">	&rarr;</p>
+                <p class="message__button--arrow">&rarr;</p>
               </button>
             </form>
           </div>
@@ -555,23 +609,29 @@
             <a href="mailto:potrpots@gmail.com" class="contacts__link">potrpots@gmail.com</a>
 
             <p class="contacts__class">Our office</p>
-            <a href="https://maps.app.goo.gl/qNGktC7D6KYHy1Gh7" class="contacts__link">United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD</a>
+            <a href="https://maps.app.goo.gl/qNGktC7D6KYHy1Gh7" target="_blank" class="contacts__link">United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD</a>
           </div>
         </div>
 
         <div class="footer__bottom bottom">
           <div class="bottom__adres">
             <h2 class="bottom__adres--title">Adrress</h2>
-            <p class="bottom__adres--link">United Kingdom<br> 99 Staple Hill Road,<br> Bristol, BS16 5AD</p>
+            <a
+              class="bottom__adres--link"
+              href="https://maps.app.goo.gl/qNGktC7D6KYHy1Gh7"
+              target="_blank"
+            >
+              United Kingdom<br> 99 Staple Hill Road,<br> Bristol, BS16 5AD
+            </a>
           </div>
 
           <div class="bottom__socials">
             <div class="bottom__links">
-              <a href="https://twitter.com/" class="bottom__social bottom__social--twi"></a>
+              <a href="https://twitter.com/" class="bottom__social bottom__social--twi" target="_blank"></a>
 
-              <a href="https://www.instagram.com/" class="bottom__social bottom__social--inst"></a>
+              <a href="https://www.instagram.com/" class="bottom__social bottom__social--inst" target="_blank"></a>
 
-              <a href="https://uk-ua.facebook.com/" class="bottom__social bottom__social--fb"></a>
+              <a href="https://uk-ua.facebook.com/" class="bottom__social bottom__social--fb" target="_blank"></a>
 
             </div>
 
@@ -588,6 +648,5 @@
       </div>
     </footer>
     <script type="text/javascript" src="scripts/main.js"></script>
-
   </body>
 </html>
