@@ -1,0 +1,142 @@
+.sizes {
+  padding: 0 $paddingMobile;
+
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(120px, 1fr);
+  grid-template-rows: auto;
+  column-gap: 20px;
+  grid-template-areas: "hr hr"
+    "text1 text1"
+    "image image"
+    "title1 . "
+    "text2 text2"
+    "title2 . "
+    "text3 text3"
+    "text4 text4";
+
+  @include tablet {
+    padding: 0 $paddingTablet;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+    grid-template-areas: "hr hr hr hr hr hr"
+      "text1 text1 text1 text1 text1 . "
+      "title1 .  image image image image"
+      "text2 text2 image image image image"
+      "title2 .  image image image image"
+      "text3 text3 image image image image"
+      ". . image image image image"
+      "text4 text4 text4 text4 text4 text4";
+  }
+
+  @include desktop {
+    padding: 0 $paddingDesktop;
+    grid-template-columns: repeat(12, minmax(70px, 1fr));
+    column-gap: 30px;
+    grid-template-areas: "hr hr hr hr hr hr  hr . . . . ."
+      "text1 text1 text1 title1 . .  image image image image . . "
+      "text1 text1 text1 text2 text2 text2  image image image image . . "
+      "text1 text1 text1 . . .  image image image image . . "
+      ". . .  . . .  image image image image . . "
+      ". . . title2 . . image image image image . . "
+      ". . . text3 text3 text3 image image image image . ."
+      ". . .  . . .  image image image image . . "
+      ". . .  . . .  image image image image . . "
+      ". . .  . . .  image image image image . . "
+      "text4 text4 text4 text4 text4 text4  image image image image . ."
+      ". . .  . . .  image image image image . . ";
+  }
+
+  &__header {
+    grid-area: hr;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.16em;
+    color: $c-black;
+    margin-bottom: 20px;
+
+    @include toAnimate {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray2;
+    margin-bottom: 15px;
+
+    @include toAnimate {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+
+    &--star:before {
+      position: absolute;
+      content: "*";
+      transform: translate(-10px, 0);
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.16em;
+    color: $c-black;
+    margin-bottom: 10px;
+
+    @include toAnimate {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+  }
+
+  &__text1 {
+    grid-area: text1;
+  }
+
+  &__image {
+    margin: 30px -30px;
+    display: block;
+    grid-area: image;
+    width: 100vw;
+    object-fit: contain;
+
+    @include tablet {
+      align-self: end;
+      width: 416px;
+      margin: 30px 0;
+    }
+
+    @include toAnimate {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+
+    @include desktop {
+      width: 36vw;
+      max-width: 600px;
+      margin: 0;
+    }
+  }
+
+  &__title1 {
+    grid-area: title1;
+  }
+  &__text2 {
+    grid-area: text2;
+  }
+  &__title2 {
+    grid-area: title2;
+  }
+  &__text3 {
+    grid-area: text3;
+  }
+  &__text4 {
+    grid-area: text4;
+  }
+}

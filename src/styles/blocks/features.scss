@@ -1,0 +1,130 @@
+.features {
+  padding: 0 $paddingMobile;
+
+  @include tablet {
+    padding: 0 $paddingTablet;
+  }
+  @include desktop {
+    padding: 0 $paddingDesktop;
+  }
+
+  &__header {
+    font-size: 58px;
+    line-height: 70px;
+    -webkit-text-stroke: 1px $c-blue;
+    margin-bottom: 22px;
+
+    @include toAnimate {
+      opacity: 0;
+      transform: translateX(30%);
+      width: max-content;
+    }
+  }
+
+  &__container {
+    @include tablet {
+      display: flex;
+      justify-content: space-around;
+
+    }
+  }
+
+  &__item {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      &-order--1 {
+        order: 2;
+      }
+      &-order--2 {
+        order: 3;
+      }
+      &-order--3 {
+        order: 1;
+      }
+    }
+
+    @include desktop {
+      width: 370px;
+      &-order--1 {
+        order: 1;
+      }
+      &-order--2 {
+        order: 2;
+      }
+      &-order--3 {
+        order: 3;
+      }
+
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    @include tablet {
+      text-align: left;
+    }
+
+    @include toAnimate {
+      opacity: 0;
+    }
+
+    @include desktop {
+      text-align: center;
+    }
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $c-gray1;
+
+    margin-bottom: 20px;
+  }
+
+  &__desc {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray2;
+
+    text-align: center;
+    @include tablet {
+      text-align: left;
+    }
+
+    @include toAnimate {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    @include desktop {
+      text-align: center;
+    }
+    margin-bottom: 67px;
+  }
+
+  &__image {
+    display: block;
+    height: 260px;
+    margin: 0 auto 37px;
+
+    @include tablet {
+      height: 218px;
+    }
+
+    @include toAnimate {
+      opacity: 0;
+      transform: rotateX(120deg);
+    }
+
+    @include desktop {
+      height: 370px;
+      width: 99%;
+      object-fit: contain;
+    }
+  }
+}

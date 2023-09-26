@@ -1,0 +1,188 @@
+.second-order {
+  position: relative;
+  padding: 0 $paddingMobile;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  grid-template-rows: auto;
+  column-gap: 20px;
+  grid-template-areas: "tt1 tt1"
+    "tx1 tx1"
+    "tt2 tt2"
+    "tx2 tx2"
+    "tt3 tt3"
+    "tx3 tx3"
+    "btn btn"
+    "per per"
+    "bl bl";
+
+  @include tablet {
+    padding: 0 $paddingTablet;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+    row-gap: 5px;
+    grid-template-areas: "tt1 tt1 tt1 . . ."
+      "tx1 tx1 tx1  . . ."
+      ". . . btn btn btn"
+      ". . . btn btn btn"
+      "tt3 tt3 tt3 btn btn btn"
+      "tx3 tx3 . per per ."
+      ". . . per per ."
+      ". . . bl bl bl"
+      "tt2 tt2 tt2 . . ."
+      "tx2 tx2 tx2  . . .";
+  }
+
+  @include desktop {
+    padding: 0 $paddingDesktop;
+    grid-template-columns: repeat(12, minmax(70px, 1fr));
+    column-gap: 30px;
+    grid-template-rows: 50px;
+    grid-template-areas: "image image image image image . . . . . . ."
+      "image image image image image . . . . . . ."
+      "image image image image image tt1 tt1 tt1 tt2 tt2 tt2 tt2"
+      "image image image image image tx1 tx1 tx1 tx2 tx2 tx2 tx2"
+      "image image image image image tt3 tt3 tt3 . . . ."
+      "image image image image image tx3 tx3 tx3 tx3 . . ."
+      "image image image image image btn btn btn . . . ."
+      "image image image image image . per per . . . ."
+      "image image image image image . bl bl bl bl bl ."
+      "image image image image image . . . . . . ."
+  ;
+  }
+
+  &__image {
+    grid-area: image;
+    display: none;
+
+    @include desktop {
+      display: block;
+      margin-left: -135px;
+    }
+    @include toAnimate {
+      transform: translateX(-150px);
+      opacity: 0;
+    }
+  }
+
+  &__title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    color: $c-gray1;
+
+    @include toAnimate {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      background-color: #000;
+      transform: translate(-15px, 23px);
+    }
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray3;
+    margin-bottom: 20px;
+
+    @include toAnimate {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+  }
+
+  &__50percent {
+    grid-area: per;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $c-red;
+    margin-bottom: 10px;
+
+    @include toAnimate {
+      transform: scaleX(1.5);
+      opacity: 0;
+    }
+  }
+
+  &__blue-txt {
+    grid-area: bl;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $c-blue;
+
+    @include toAnimate {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  &__by-btn {
+    margin: 50px 0 40px;
+    grid-area: btn;
+    display: flex;
+    width: 238px;
+
+    @include toAnimate {
+      transform: rotate(180deg);
+      opacity: 0;
+    }
+
+    @include desktop {
+      margin: 60px 0 70px;
+    }
+  }
+
+  &__tt1 {
+    grid-area: tt1;
+  }
+
+  &__tt2 {
+    grid-area: tt2;
+  }
+
+  &__tt3 {
+    grid-area: tt3;
+  }
+
+  &__tx1 {
+    grid-area: tx1;
+  }
+
+  &__tx2 {
+    grid-area: tx2;
+  }
+
+  &__tx3 {
+    grid-area: tx3;
+  }
+
+  &__border-text-pos {
+    @include tablet {
+      position: absolute;
+      top: 90px;
+      right: 8px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+}

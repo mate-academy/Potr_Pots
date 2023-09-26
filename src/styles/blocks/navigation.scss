@@ -1,0 +1,165 @@
+.nav {
+
+  position: absolute;
+  background-color: transparent;
+  height: 50vh;
+  width: 80%;
+  right: 0;
+  top: -150%;
+  z-index: 0;
+  transition: 1s;
+  padding-top: 135px;
+
+  @media (max-height: 500px) {
+    padding-top: 40px;
+  }
+  @media (max-height: 400px) {
+    padding-top: 20px;
+  }
+
+  &--active {
+    display: block;
+    top: 0;
+    z-index: 1;
+    height: 100vh;
+    background-color: $c-blue;
+  }
+
+  @include desktop {
+    position: relative;
+    display: block;
+    width: 75%;
+    height: 0;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__list {
+    @include desktop {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+
+      padding-top: 26px;
+      z-index: 1;
+    }
+  }
+
+  &__link {
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+    text-decoration: none;
+    color: $c-white;
+    transition: color 0.3s;
+
+    position: relative;
+
+    @media (min-height: 600px) {
+      font-size: 4vh;
+    }
+
+    @include tablet {
+      font-size: 3vh;
+    }
+
+    @include desktop {
+      color: $c-gray2;
+      font-size: 16px;
+
+    }
+
+    &--no-active {
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $c-blue;
+      content: "";
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover {
+      color: $c-red;
+      transform: scale(1.2);
+    }
+    &:hover:after {
+      width: 100%;
+    }
+  }
+
+  &__close {
+    @include desktop {
+      display: none;
+    }
+    position: relative;
+    left: 60%;
+    bottom: -70px;
+    display: inline-block;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $c-white;
+
+    transform: rotate(-90deg);
+
+    @media (max-height: 415px) {
+      bottom: -30px;
+    }
+  }
+  &__close-cross {
+    @media (max-height: 450px) {
+      display: none;
+    }
+    position: absolute;
+    right: 80px;
+    top: -27px;
+    display: block;
+    width: 15px;
+    height: 72px;
+    transform: rotate(90deg);
+    background: url("../images/icons/line-cross.png") no-repeat center;
+  }
+
+  &__basket {
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    right: -8px;
+    height: 16px;
+    width: 16px;
+    background-color: $c-red;
+    color: $c-white;
+    border-radius: 50%;
+    font-size: 11px;
+
+    @include tablet {
+      height: 20px;
+      width: 20px;
+      font-size: 14px;
+    }
+  }
+}

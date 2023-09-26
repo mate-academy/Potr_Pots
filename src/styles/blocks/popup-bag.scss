@@ -1,0 +1,247 @@
+.popup-bag {
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: center;
+    grid-template-areas: "close close"
+      "title title"
+      "item qty"
+      "l1 l1"
+      "n1 q1"
+      "pt1 p1"
+      "tpt1 tp1"
+      "l2 l2"
+      "n2 q2"
+      "pt2 p2"
+      "tpt2 tp2"
+      "l3 l3"
+      "total amount"
+      "checkout-btn checkout-btn";
+
+    @include tablet {
+      grid-template-columns: repeat(6, minmax(80px, 1fr));
+      grid-template-areas: "title title title . . close"
+        ". item qty qty pt1 tpt1"
+        "l3 l3 l3 l3 l3 l3"
+        "img1 n1 q1 q1 p1 tp1"
+        "l1 l1 l1 l1 l1 l1"
+        "img2 n2 q2 q2 p2 tp2"
+        "l2 l2 l2 l2 l2 l2"
+        ". checkout-btn checkout-btn . total amount"
+    ;
+    }
+
+    position: relative;
+    background-color: $c-white;
+    color: $c-black;
+    max-width: 900px;
+    width: 90%;
+    padding: 18px;
+    @include tablet {
+      padding: 35px 30px 55px;
+    }
+
+    opacity: 0;
+    transform: translate(0, -150%) perspective(600px) rotateX(60deg);
+    transition: opacity 1s, transform 1s;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+
+    & .popup-bag__content {
+      opacity: 1;
+      transform: translate(0, 0) perspective(600px) rotateX(0deg);
+    }
+  }
+
+  &__body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  &__close {
+    grid-area: close;
+    justify-self: end;
+
+    width: 43px;
+    height: 43px;
+    background-color: $c-gray1;
+    border-radius: 50%;
+    border-color: transparent;
+    color: $c-white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: transform 1s, background-color 1s;
+    &:hover {
+      transform: rotate(360deg);
+      background-color: $c-red;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: $c-black;
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+
+    color: $c-black;
+  }
+  &__img {
+    display: none;
+    @include tablet {
+      display: block;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+  }
+
+  &__line {
+    height: 1px;
+    width: 85%;
+
+    @include tablet {
+      width: 95%;
+    }
+    background-color: $c-gray1;
+    opacity: 0.5;
+  }
+  &__qty-block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__btn {
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    font-size: 18px;
+    border-color: transparent;
+    &:hover {
+      background-color: #c5c5c5;
+    }
+    &:active {
+      background-color: #e3e3e3;
+    }
+  }
+  &__checkout-btn {
+    grid-area: checkout-btn;
+    width: 238px;
+    height: 48px;
+    justify-self: center;
+
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+
+    color: #121212;
+  }
+  &__item {
+    grid-area: item;
+    @include tablet {
+      justify-self: center;
+    }
+  }
+
+  &__qty-text {
+    grid-area: qty;
+    justify-self: center;
+  }
+  &__img1 {
+    grid-area: img1;
+  }
+  &__l1 {
+    grid-area: l1;
+  }
+  &__n1 {
+    grid-area: n1;
+  }
+  &__q1 {
+    grid-area: q1;
+  }
+  &__pt1 {
+    grid-area: pt1;
+    @include tablet {
+      justify-self: center;
+    }
+  }
+  &__p1 {
+    grid-area: p1;
+    justify-self: center;
+  }
+  &__tpt1 {
+    grid-area: tpt1;
+  }
+  &__tp1 {
+    grid-area: tp1;
+    justify-self: center;
+  }
+
+  &__l2 {
+    grid-area: l2;
+  }
+  &__n2 {
+    grid-area: n2;
+  }
+  &__q2 {
+    grid-area: q2;
+  }
+  &__pt2 {
+    grid-area: pt2;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__p2 {
+    grid-area: p2;
+    justify-self: center;
+  }
+  &__tpt2 {
+    grid-area: tpt2;
+    @include tablet {
+      display: none;
+    }
+  }
+  &__tp2 {
+    grid-area: tp2;
+    justify-self: center;
+  }
+  &__img2 {
+    grid-area: img2;
+  }
+  &__l3 {
+    grid-area: l3;
+  }
+  &__total {
+    grid-area: total;
+    @include tablet {
+      justify-self: center;
+    }
+  }
+  &__amount {
+    grid-area: amount;
+    justify-self: center;
+  }
+
+}

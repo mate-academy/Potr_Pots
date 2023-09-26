@@ -1,0 +1,117 @@
+.footer {
+  padding: 0 $paddingMobile;
+  height: 120px;
+
+  @include tablet {
+    padding: 40px $paddingTablet 0;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    padding: 90px $paddingDesktop 0;
+    height: 290px;
+  }
+
+  &__address {
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: 170px;
+    }
+
+    @include toAnimate {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+  }
+
+  &__about {
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: 170px;
+    }
+
+    @include toAnimate {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+  }
+
+  &__social-icons {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 -30px 50px;
+    }
+
+    @include desktop {
+      margin: 0 -50px 80px;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: $c-black;
+    margin-bottom: 11px;
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-black;
+    text-decoration: none;
+    transition: color 0.5s;
+    &:hover {
+      color: $c-blue;
+    }
+  }
+
+  &__logo {
+    display: block;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    color: $c-black;
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.2) ;
+    }
+  }
+
+  &__copyright {
+    display: block;
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-black;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}

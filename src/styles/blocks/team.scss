@@ -1,0 +1,169 @@
+.team {
+  position: relative;
+  @include tablet {
+    padding: 0 35px;
+  }
+  @include desktop {
+    padding: 0 135px;
+  }
+
+  &__container {
+    @include tablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      @media (min-width: 850px) {
+        justify-content: space-around;
+      }
+    }
+    @include desktop {
+      align-items: end;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.16em;
+    color: $c-gray1;
+    padding: 0 30px;
+    margin-bottom: 25px;
+
+    @include tablet {
+      padding: 0;
+      margin-bottom: 170px;
+    }
+
+    @include toAnimate {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+  }
+
+  &__image {
+    display: block;
+    position: relative;
+    height: 240px;
+    margin: 0 auto 30px;
+    z-index: 1;
+
+    @include tablet {
+      height: 240px;
+      margin: 0;
+    }
+
+    @include toAnimate {
+      opacity: 0;
+      transform: translateX(-250px);
+    }
+
+    @include desktop {
+      height: 508px;
+      margin-right: 100px;
+    }
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-gray2;
+    position: relative;
+    margin-bottom: 30px;
+    padding: 0 30px;
+
+    @include tablet {
+      width: 313px;
+      margin-top: 30px;
+      padding: 0;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    bottom: -50px;
+    background: url("../images/meet-bg-small.png") no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 293px;
+
+    @include tablet {
+      background: url("../images/meet-bg-big.png") no-repeat top;
+      background-size: cover;
+      bottom: 66px;
+      left: 0;
+      width: 33%;
+      height: 366px;
+    }
+
+    @include desktop {
+      bottom: 200px;
+      width: 26%;
+      height: 320px;
+    }
+  }
+
+  &__martin {
+    display: none;
+    @include tablet {
+      position: absolute;
+      top: 75px;
+      left: -45px;
+      z-index: 1;
+
+      display: block;
+      font-size: 231px;
+      line-height: 278px;
+      letter-spacing: 0.16em;
+    }
+
+    @include toAnimate {
+      opacity: 0;
+      transform: translate(50px, -150px);
+    }
+
+    @include desktop {
+      top: 140px;
+      left: 75px;
+    }
+  }
+
+  &__andy {
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      bottom: -120px;
+      right: 0;
+      text-align: end;
+      display: block;
+      font-size: 219px;
+      line-height: 278px;
+      letter-spacing: 0.15em;
+    }
+
+    @include toAnimate {
+      opacity: 0;
+      transform: translate(-120px, -120px);
+    }
+
+    @include desktop {
+      right: 0;
+      bottom: -230px;
+    }
+  }
+  &__border-text-pos {
+    @include tablet {
+      position: absolute;
+      bottom: -185px;
+      right: 8px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+}

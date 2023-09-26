@@ -1,0 +1,100 @@
+.contacts {
+  position: relative;
+  height: 1000px;
+  padding: 45px $paddingMobile 0;
+  background: url("../images/contacts-bg.png")  no-repeat;
+  background-size: auto;
+
+  @include tablet {
+    padding: 45px $paddingTablet 0;
+    height: 500px;
+  }
+  @include desktop {
+    padding: 45px $paddingDesktop 0;
+  }
+
+  &__round-text {
+    position: absolute;
+    background: url("../images/roumd-txt.png") center no-repeat;
+
+    @include tablet {
+      background: url("../images/roumd1-txt.png") center no-repeat;
+      width: 200px;
+    }
+
+    @include toAnimate {
+      transform: rotate(180deg);
+      opacity: 0;
+    }
+
+    height: 200px;
+    width: 100px;
+    top: -90px;
+    right: 0;
+  }
+
+  &__header {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: $c-black;
+
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $c-black;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.39);
+    margin-top: 35px;
+  }
+
+  &__container {
+    @include tablet {
+      display: flex;
+      gap: 100px;
+      justify-content: space-around;
+    }
+
+    @include toAnimate {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+  }
+
+  &__address-container {
+    width: 200px;
+
+    @media (min-width: 400px) {
+      margin: 0 auto;
+    }
+
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__social-icons-pos {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+    @include tablet {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,270 @@
+.materials {
+  position: relative;
+  height: 580px;
+  overflow-x: hidden;
+
+  @include tablet {
+    height: 815px;
+  }
+
+  @include desktop {
+    height: 1080px;
+  }
+
+  &__bg {
+    position: absolute;
+    background: url("../images/materials-bg.png") center no-repeat;
+    background-size: cover;
+    box-shadow: 0 10px 8px 0 $c-white inset;
+    min-width: 320px;
+    min-height: 240px;
+    width: 100%;
+
+    bottom: 200px;
+
+    @include tablet {
+      height: 577px;
+      bottom: 0;
+    }
+
+    @include desktop {
+      height: 980px;
+    }
+  }
+
+  &__header {
+    position: relative;
+    font-size: 58px;
+    line-height: 70px;
+    padding: 0 $paddingMobile;
+
+    @include tablet {
+      font-size: 80px;
+      padding: 0 $paddingTablet;
+      width: 600px;
+    }
+
+    @include toAnimate {
+      transform: translateX(150px);
+      opacity: 0;
+    }
+
+    @include desktop {
+      padding: 0 $paddingDesktop;
+      width: 1300px;
+      font-size: 139px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__txt-container {
+    font-family: "Manrope", sans-serif;
+    line-height: 150%;
+    color: $c-gray2;
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      display: block;
+      width: 340px;
+      right: 0;
+      top: 85px;
+      padding-right: $paddingTablet;
+    }
+
+    @include toAnimate {
+      transform: translateY(150px);
+      opacity: 0;
+    }
+
+    @include desktop {
+      padding-right: $paddingDesktop;
+      width: 600px;
+      right: -10px;
+      top: 150px;
+      color: $c-black;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__btn-1 {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+
+    @include desktop {
+      bottom: 10%;
+    }
+  }
+  &__btn-2 {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+
+    position: absolute;
+    bottom: 15%;
+    left: 31%;
+
+    @include desktop {
+      bottom: 33%;
+      left: 33%;
+    }
+  }
+
+  &__btn-3 {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+
+    position: absolute;
+    bottom: 10%;
+    left: 48%;
+
+    @include desktop {
+      bottom: 15%;
+    }
+  }
+
+  &__btn-4 {
+    display: none;
+    @include tablet {
+      display: flex;
+    }
+
+    position: absolute;
+    bottom: 20%;
+    left: 59%;
+
+    @include desktop {
+      bottom: 35%;
+    }
+  }
+  &__btn-5 {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+
+    position: absolute;
+    bottom: 31%;
+    left: 81%;
+  }
+
+  &__dropdown {
+    display: none;
+    visibility: hidden;
+    width: 240px;
+    height: 250px;
+
+    @include tablet {
+      display: block;
+    }
+
+    padding: 35px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-white;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
+    transform: translate(0, -150%) perspective(600px) rotateX(60deg);
+    transition: visibility 1s, opacity 1s, transform 1s;
+
+  }
+
+  &--active {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0) perspective(600px) rotateX(0deg);
+
+  }
+
+  &__dropdown-1 {
+    position: absolute;
+    left: 2%;
+    bottom: 22%;
+    width: 250px;
+    height: 250px;
+  }
+
+  &__dropdown-2 {
+    position: absolute;
+    left: 16%;
+    @include tablet {
+      bottom: 25%;
+    }
+    @include desktop {
+      bottom: 1%;
+    }
+  }
+
+  &__dropdown-3 {
+    position: absolute;
+    left: 33%;
+    bottom: 28%;
+    @include desktop {
+      bottom: 22%;
+      left: 38%;
+    }
+  }
+
+  &__dropdown-4 {
+    position: absolute;
+    @include tablet {
+      left: 48%;
+      bottom: 28%;
+    }
+    @include desktop {
+      bottom: 10%;
+      left: 54%;
+    }
+  }
+
+  &__dropdown-5 {
+    position: absolute;
+    bottom: 0;
+    @include tablet {
+      right: 2%;
+    }
+    @include desktop {
+      right: 5%;
+    }
+  }
+  &__border-text-pos {
+    @include tablet {
+      position: absolute;
+      top: 130px;
+      left: 8px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+}
