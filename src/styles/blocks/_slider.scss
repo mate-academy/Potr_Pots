@@ -1,132 +1,56 @@
 .slider {
-  position: relative;
-  margin:  0 9px;
+  position: absolute;
+  bottom: -200px;
+
   width: 302px;
-  height: 265px;
-  bottom: 65px;
+  height: 254px;
+  margin-left: 9px;
 
-  background-color: rgba(0, 0, 0, 0.45);
-  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(17px);
-  scroll-snap-type: mandatory;
-  scroll-snap-points-y: repeat(300px);
-  scroll-snap-type: y mandatory;
-  @include onTablet {
-    display: none;
+
+  &__slides {
+    display: flex;
+    flex-direction: row;
+    padding: 28px 44px 0 45px ;
   }
 
-  &__container {
-    padding: 28px 44px 58px;
+  &__slide {
+    flex-shrink: 0;
+    width: 100%;
 
-  }
-
-  &__text {
+    color: $colorWhite;
     font-family: "Manrope", sans-serif;
     font-size: 16px;
+    font-weight: 400;
     line-height: 24px;
-    color: $colorWhite;
-    scroll-snap-align: start;
   }
+}
 
-  &__pagination {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 37px;
-    left: 112px;
-    gap: 7px;
-  }
+.pagination {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  bottom: 37px;
+  left: 112px;
 
   &__button {
     cursor: pointer;
+    transform: rotate(45deg);
+
 
     width: 7px;
     height: 7px;
     border: 1px solid $colorWhite;
     background-color: $colorWhite;
-    transform: rotate(45deg);
-    transition: all .6s;
+    transition: background-color 0.3s ease-in-out;
+
     &:hover {
       background-color: rgba(0, 0, 0, 0.3);
     }
   }
 }
-
-// .slider {
-//   margin-bottom: 10px;
-
-//   width: 302px;
-//   height: 265px;
-//   overflow: hidden;
-//   background-color: rgba(0, 0, 0, 0.45);
-//   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
-//   backdrop-filter: blur(17px);
-
-//   @include onTablet {
-//     display: none;
-//   }
-//   &__midle {
-//     position: relative;
-
-//     bottom: -65px;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//   }
-
-//   &__slides {
-//     display: flex;
-//     padding: 44px 0 55px 0;
-//   }
-
-//   &__text {
-//     width: 100%;
-//     transition: all .6s ease;
-//   }
-// }
-
-// .navigation {
-//   position: absolute;
-//   display: block;
-//   left: 50%;
-//   transform: translateX(-50%);
-
-//   &__bar {
-//     height: 7px;
-//     width: 7px;
-//     background-color: $colorWhite;
-//     border: 1px solid $colorWhite;
-//     opacity: 0.5;
-//     cursor: pointer;
-//     transform: rotate(45deg);
-
-//     :hover {
-//       opacity: 0.8;
-//       background-color: $colorBlack;
-//     }
-//   }
-// }
-
-// input [name="r"] {
-//   position: absolute;
-//   visibility: hidden;
-// }
-
-// #r1:checked ~ .s1 {
-//   margin-left: 0;
-// }
-
-// #r2:checked ~ .s1 {
-//   margin-left: -25%;
-// }
-
-// #r3:checked ~ .s1 {
-//   margin-left: -50%;
-// }
-
-// #r4:checked ~ .s1 {
-//   margin-left: -75%;
-// }
-
-// #r5:checked ~ .s1 {
-//   margin-left: -100%;
-// }

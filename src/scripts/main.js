@@ -22,3 +22,44 @@ function OnInput() {
   this.style.height = 0;
   this.style.height = (this.scrollHeight) + 'px';
 }
+
+// for block menu;
+const menu = document.getElementById('menu');
+
+function openMenu() {
+  menu.style.transform = 'translateX(0%)';
+  document.documentElement.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  menu.style.transform = 'translateX(100%)';
+  document.documentElement.style.overflow = 'auto';
+}
+
+const menuIcon = document.querySelector('.icon__menu');
+const closeIcon = document.querySelector('.icon__close');
+
+menuIcon.addEventListener('click', openMenu);
+closeIcon.addEventListener('click', closeMenu);
+
+// slider block
+const slides = document.querySelectorAll('.slider__slide');
+const buttons = document.querySelectorAll('.pagination__button');
+
+buttons.forEach((button, index) => {
+  button.addEventListener('click', () => {
+    // При кліку на кнопку показуємо відповідний слайд, починаючи з 0
+    showSlide(index);
+  });
+});
+
+function showSlide(slideIndex) {
+  slides.forEach((slide, index) => {
+    // Встановлюємо відображення слайду відповідно до індексу кнопки
+    if (index === slideIndex) {
+      slide.style.display = 'block';
+    } else {
+      slide.style.display = 'none';
+    }
+  });
+}
