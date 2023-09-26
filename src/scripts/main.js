@@ -48,14 +48,12 @@ const buttons = document.querySelectorAll('.pagination__button');
 
 buttons.forEach((button, index) => {
   button.addEventListener('click', () => {
-    // При кліку на кнопку показуємо відповідний слайд, починаючи з 0
     showSlide(index);
   });
 });
 
 function showSlide(slideIndex) {
   slides.forEach((slide, index) => {
-    // Встановлюємо відображення слайду відповідно до індексу кнопки
     if (index === slideIndex) {
       slide.style.display = 'block';
     } else {
