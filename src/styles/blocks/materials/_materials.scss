@@ -1,0 +1,85 @@
+.materials {
+  position: relative;
+  height: auto;
+  margin-top: 240px;
+
+  background: linear-gradient(180deg, $clr--gray-light 0%, rgba(255, 255, 255, 0.00) 30.93%), url(../images/materials/materials-bg-big.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    height: 576px;
+    margin-top: 460px;
+  }
+
+  @include onDesktop {
+    height: 1080px;
+  }
+
+  &__title {
+    position: absolute;
+    top: -130px;
+    z-index: 0;
+    color: $clr--turquoise;
+    font-family:$font--main;
+    font-size: 58px;
+    line-height: normal;
+    letter-spacing: 8.99px;
+
+    @include onTablet {
+      top: -240px;
+      font-size: 80px;
+      letter-spacing: 9.6px;
+    }
+
+    @include onDesktop {
+      top: -180px;
+      font-size: 138.805px;
+      letter-spacing: 16.657px;
+    }
+  }
+
+  &__inner {
+    display: none;
+    position: relative;
+    @include onTablet {
+      display: block;
+
+      @include pageGrid;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    @include onTablet {
+      transform: translateY(-100px);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: -4;
+
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      transform: translateY(10px);
+      grid-column: 8 / -1;
+      z-index: 1;
+      gap: 15px;
+    }
+  }
+
+  &__slider {
+    min-height: 270px;
+    margin: 0 -21px;
+    transform: translateY(189px);
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

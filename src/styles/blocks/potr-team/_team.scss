@@ -1,0 +1,133 @@
+.potr-team {
+  position: relative;
+
+  margin-top: 110px;
+
+  @include onTablet {
+    margin-top: 150px;
+  }
+
+  &__background {
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    right: 0;
+    top: 590px;
+    height: 320px;
+
+    background-image: url(../images/team/team_bg.png);
+    background-repeat: no-repeat;
+
+    @include onTablet{
+    top: 184px;
+    left: -170px;
+    }
+
+    @include onDesktop {
+      left: -20px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+    }
+
+    position: absolute;
+    z-index: 0;
+
+    font-family: $font--main;
+    line-height: normal;
+    letter-spacing: 44.64px;
+    -webkit-text-stroke: 1px $clr--turquoise;
+    color: transparent;
+
+    &--m {
+      font-size: 231px;
+      left: -50px;
+      top: 95px;
+      right: 0;
+      @include onDesktop {
+        font-size: 288px;
+        left: 50px;
+        top: 90px;
+      }
+    }
+
+    &--a {
+      width: 460px;
+      font-size: 220px;
+      top: calc(100% - 30px);
+      right: 10%;
+
+      @include onDesktop {
+        font-size: 288px;
+        top: calc(100% - 50px);
+
+      }
+    }
+
+  }
+
+  &__title {
+    color: $clr--gray-1;
+    font-family: $font--main;
+    font-size: 58px;
+    line-height: normal;
+    letter-spacing: 8.99px;
+  }
+
+  &__layout {
+
+    margin-top: 50px;
+
+    @include onTablet {
+      margin-top: 177px;
+
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      margin-top: 143px;
+    }
+  }
+
+  &__image {
+    margin-left: -30px;
+    margin-right: -30px;
+
+    @include onTablet {
+      margin: 0;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -2;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    padding-top: 30px;
+
+    font-family: 'Proxima Nova', Helvetica, sans-serif;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 1;
+      padding-right: 35px;
+      padding-top: 53px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      padding-top: 230px;
+    }
+  }
+}

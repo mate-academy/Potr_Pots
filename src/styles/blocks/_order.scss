@@ -1,0 +1,34 @@
+.order {
+  width: 140px;
+  grid-column: 1 / -1;
+
+  @include onTablet {
+    grid-column: 3 / 5;
+
+  @include onDesktop {
+    grid-column: 5 / 7;
+
+  }
+  }
+
+  &__content {
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__count {
+    color: $clr--gray-1;
+    font-family: $font--secondary;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__text {
+    color: $clr--gray-2;
+    font-family: $font--secondary;
+    font-size: 14px;
+  }
+}
