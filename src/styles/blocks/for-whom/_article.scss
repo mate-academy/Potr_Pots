@@ -1,0 +1,49 @@
+.article {
+
+  &__link {
+    @include hover(transform, scale(1.05));
+    display: inline-block;
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &__num {
+    position: relative;
+    margin-left: 20px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: inline-block;
+
+      width: 20px;
+      height: 46px;
+      background-image: url(../images/icons/curve-line.svg);
+      background-repeat: no-repeat;
+      transform: translateX(-40px);
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: inline-block;
+
+      width: 20px;
+      height: 46px;
+      background-image: url(../images/icons/curve-line.svg);
+      background-repeat: no-repeat;
+      transform: translateX(20px);
+    }
+  }
+
+  &__desc {
+    max-width: 370px;
+    margin-top: 10px;
+  }
+}

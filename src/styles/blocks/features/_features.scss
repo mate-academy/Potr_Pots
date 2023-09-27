@@ -1,0 +1,32 @@
+.features {
+  margin-top: 110px;
+
+  @include onTablet {
+    margin-top: 135px;
+  }
+
+  @include onDesktop {
+    margin-top: 150px;
+  }
+
+  &__title {
+    color: $clr--turquoise;
+    font-family: $font--main;
+    font-size: 58px;
+    line-height: normal;
+    letter-spacing: 8.99px;
+
+    span {
+      -webkit-text-stroke: 1px $clr--turquoise;
+      color: transparent;
+    }
+  }
+
+  &__carts {
+    @include pageGrid;
+
+    @include onTablet {
+      margin-top: 50px;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.questions {
+  margin-top: 100px;
+  padding-bottom: 153px;
+
+  background-image: url(../images/questions/questions-bg-small.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include onTablet {
+    background-image: url(../images/questions/questions-bg.png);
+    background-position: right;
+  }
+
+  @include onDesktop {
+    margin-top: 160px;
+    background-position: bottom 0 right 135px;
+  }
+
+  &__layout {
+    position: relative;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    width: 149px;
+    height: 170px;
+    z-index: 40;
+    right: -30px;
+    top: -85px;
+    background-image: url(../images/questions/icon-circle-small.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onTablet {
+      width: 134px;
+      height: 167px;
+      right: -34px;
+      top: -105px;
+      background-image: url(../images/questions/icon-circle-table.svg);
+    }
+
+    @include onDesktop {
+      right: -65px;
+      width: 161px;
+      height: 164px;
+      background-image: url(../images/questions/icon-circle.svg);
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__title {
+    color: $clr--black;
+    font-size: 36px;
+
+    @include onTablet {
+      padding-top: 17px;
+    }
+  }
+
+  &__subtitle {
+    color: $clr--black;
+    font-family: $font--secondary;
+  }
+
+  &__form {
+    padding-top: 40px;
+
+    @include onTablet {
+      padding-top: 30px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__contacts {
+    padding-top: 56px;
+
+    @include onTablet {
+      padding-top: 71px;
+      grid-column: 5 / -1;
+      grid-row: 1 / 3;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    p {
+      color: $clr--title-contacts;
+      font-family: $font--secondary;
+      font-size: 24px;
+    }
+
+    &--link {
+      padding-top: 5px;
+      color: $clr--black;
+      font-family: $font--secondary;
+
+      @include hover(color, $clr--title-contacts);
+    }
+  }
+}

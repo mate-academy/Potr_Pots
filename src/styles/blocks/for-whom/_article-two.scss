@@ -1,0 +1,92 @@
+.article-two {
+  margin: 0;
+
+  @include pageGrid;
+
+  @include onTablet {
+    margin-top: 110px;
+  }
+
+  @include onDesktop {
+    margin-top: 185px;
+  }
+
+	&__image {
+    display: none;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      display: block;
+      width: 300px;
+      justify-self: end;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 6;
+      grid-row: 1 / 2;
+      width: 300px;
+      height: 290px;
+    }
+	}
+
+	&__content {
+    grid-column: 1 / -1;
+    margin-top: 70px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: 45px;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include onDesktop{
+      grid-column: 2 / 6;
+    }
+	}
+
+	&__note {
+    display: none;
+    color: $clr--gray-1;
+
+    @include onTablet {
+      display: block;
+      align-self: end;
+    }
+
+    @include onDesktop {
+      align-self: start;
+      margin-left: -40px;
+    }
+
+    span {
+      padding-right: 10px;
+
+      color: $clr--black;
+      font-family: $font--main;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: 3.72px;
+
+      @include onDesktop {
+        padding-right: 30px;
+      }
+    }
+	}
+
+	&__head {
+    @include onTablet {
+      margin-top: 25px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    @include onDesktop {
+      margin-top: 40px;
+      gap: 27px;
+    }
+	}
+}

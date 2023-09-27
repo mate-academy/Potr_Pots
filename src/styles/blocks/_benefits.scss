@@ -1,0 +1,175 @@
+.benefits {
+  margin-top: 110px;
+
+  @include onTablet {
+    margin-top: 105px;
+  }
+
+  @include onDesktop {
+    margin-top: 186px;
+
+  }
+
+  &__layout {
+    position: relative;
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__col1 {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__col2 {
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 30px;
+    }
+
+    @include onDesktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    &:nth-child(2) {
+      order: 3;
+    }
+  }
+
+  &__item--dot {
+    display: inline-block;
+    padding-top: 30px;
+    width: 14px;
+    height: 14px;
+    background-image: url(../images/icons/dot-list.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__item--content {
+    margin-left: -20px;
+    display: flex;
+    align-items: start;
+    gap: 8px;
+
+    @include onTablet {
+      margin-left: 0;
+    }
+
+    h5 {
+      @include onTablet {
+        font-size: 36px;
+      }
+    }
+  }
+
+  &__item--desc {
+    padding-top: 5px;
+
+    color: $clr--gray-3;
+    font-family: $font--secondary;
+
+    @include onTablet {
+      margin-left: 20px;
+    }
+
+  }
+
+  &__button {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    width: 100%;
+    background-color: $clr--yellow;
+
+    @include hover(transform, scale(1.05));
+
+    @include onTablet {
+      margin-top: 100px;
+      margin-bottom: 35px;
+      max-width: 70%;
+
+      background-color: $clr--gray-light;
+      border: 1px solid $clr--turquoise;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+      margin-bottom: 70px;
+      max-width: 30%;
+    }
+
+  }
+
+  &__count {
+    h3 {
+      color: $clr--red;
+
+      @include onTablet {
+        font-size: 24px;
+        line-height: 100%;
+      }
+
+      @include onDesktop {
+        font-size: 36px;
+        line-height: 150%;
+      }
+    }
+
+    h4 {
+      padding-top: 10px;
+      color: $clr--turquoise;
+
+      @include onTablet {
+        padding-top: 5px;
+
+        max-width: 70%;
+        font-size: 18px;
+        line-height: 100%;
+      }
+
+      @include onDesktop {
+        max-width: 100%;
+        font-size: 24px;
+      }
+    }
+
+    @include onDesktop {
+      margin-left: 100px;
+    }
+  }
+
+  &__icons {
+    display: none;
+    @include onTablet {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

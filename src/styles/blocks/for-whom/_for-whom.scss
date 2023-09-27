@@ -1,0 +1,50 @@
+.for-whom {
+  position: relative;
+  margin-top: 110px;
+
+  @include onDesktop {
+    margin-top: 150px;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: 35px;
+    right: -80px;
+    transform:  rotate(90deg);
+    width: 190px;
+
+    @include onTablet {
+      bottom: 1400px;
+    }
+
+    @include onDesktop {
+      bottom: 1750px;
+      right: 10px;
+    }
+
+    &--2 {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        bottom: 50px;
+        left: 60px;
+      }
+
+    }
+  }
+
+  &__bottom {
+   @include onDesktop {
+    @include pageGrid;
+
+    &--col1 {
+      grid-column:  2 / 5;
+    }
+
+    &--col2 {
+      grid-column: 5 / -1;
+    }
+   }
+  }
+}

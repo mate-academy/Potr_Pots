@@ -1,0 +1,152 @@
+.header {
+  position: relative;
+
+  &__background {
+
+    @include onTablet {
+      position: absolute;
+      width: 100%;
+      height: 666px;
+      top: 0;
+      left: 0;
+      z-index: -10;
+      background-image: url(../images/header-bg-yellow.png);
+      background-repeat: no-repeat;
+      background-size: calc(100% - 154px);
+    }
+
+    @include onDesktop {
+      background-size: calc(100% - 400px);
+      }
+  }
+
+  &__inner {
+    position: relative;
+    @include pageGrid;
+  }
+
+  &__arrow {
+    position: absolute;
+    bottom: -60px;
+    right: -110px;
+
+    grid-column: 1 / -1;
+    grid-row: 3 / 1;
+    transform:  rotate(90deg);
+    width: 190px;
+
+    @include onTablet {
+      grid-column: 1 / 2;
+      top: 325px;
+      left: -85px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 2;
+      top: 380px;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    margin-top: 354px;
+
+    font-size: 36px;
+    line-height: normal;
+    letter-spacing: 5.58px;
+
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      grid-row: 1 / 2;
+
+      margin-top: 0;
+
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9.92px;
+    }
+
+    @include onDesktop{
+      grid-column: 2 / 7;
+      margin-top: 0;
+    }
+
+    span {
+      -webkit-text-stroke: 1px $clr--turquoise;
+      color: transparent;
+    }
+  }
+
+  &__order {
+    max-width: 140px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+    grid-column: 3 / 5;
+    margin-top: -20px;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+      margin-top: 20px;
+    }
+  }
+
+  &__button {
+    background-color: $clr--yellow;
+    @include hover(background-color, $clr--yellow-light);
+
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: 2 / 4;
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__picture {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+
+    left: -30px;
+    right: -30px;
+    top: 10px;
+
+    height: 319px;
+
+    background-image: url(../images/header-bg-big.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      right: 0;
+      left: 55%;
+      top: 0;
+      height: 306px;
+    }
+
+    @include onDesktop {
+      height: 500px;
+    }
+  }
+}

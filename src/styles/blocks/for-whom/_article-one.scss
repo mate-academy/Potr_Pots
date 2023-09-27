@@ -1,0 +1,88 @@
+.article-one {
+  margin: 0;
+
+  @include pageGrid;
+
+  @include onTablet {
+    margin-top: 42px;
+  }
+
+  @include onDesktop {
+    margin-top: 34px;
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      display: block;
+      width: 284px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      width: 500px;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    margin-top: 26px;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      margin-top: -30px;
+    }
+
+    @include onDesktop{
+      grid-column: 8 / -1;
+      margin-top: 70px;
+    }
+  }
+
+  &__note {
+    display: none;
+    color: $clr--gray-1;
+
+    @include onTablet {
+      display: block;
+      margin-left: -20px;
+    }
+
+    @include onDesktop {
+      margin-left: -40px;
+    }
+
+    span {
+      padding-right: 10px;
+
+      color: $clr--black;
+      font-family: $font--main;
+      font-size: 24px;
+      line-height: normal;
+      letter-spacing: 3.72px;
+
+      @include onDesktop {
+        padding-right: 30px;
+      }
+    }
+  }
+
+  &__head {
+
+    @include onTablet {
+      display: flex;
+      align-items: start;
+      gap: 30px;
+      margin-left: -70px;
+      margin-top: 25px;
+    }
+
+    @include onDesktop {
+      gap: 40px;
+      margin-left: -80px;
+      margin-top: 40px;
+    }
+  }
+}

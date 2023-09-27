@@ -1,0 +1,107 @@
+.popup {
+  position: relative;
+
+  &__one {
+    z-index: 10;
+    @include onTablet {
+      transform: translate(50px, 400px);
+    }
+    @include onDesktop {
+      transform: translate(100px, 800px);
+    }
+  }
+
+  &__two {
+    @include onTablet {
+      transform: translate(100px, 280px);
+    }
+    @include onDesktop {
+      transform: translate(300px, 600px);
+    }
+  }
+
+  &__three {
+    z-index: 12;
+    @include onTablet {
+      transform: translate(100px, 480px);
+    }
+    @include onDesktop {
+      transform: translate(350px, 900px);
+    }
+  }
+
+  &__four {
+    z-index: 13;
+
+    @include onTablet {
+      transform: translate(40px, 390px);
+    }
+    @include onDesktop {
+      transform: translate(390px, 740px);
+    }
+  }
+
+  &__five {
+    @include onTablet {
+      transform: translate(40px, 200px);
+    }
+    @include onDesktop {
+      transform: translate(560px, 670px);
+    }
+  }
+
+  &__inner {
+    display: none;
+    position: absolute;
+    min-width: 290px;
+    padding: 35px;
+    left: 0;
+    top: 0;
+
+    background: rgba(0, 0, 0, 0.40);
+    backdrop-filter: blur(20px);
+
+    &--active {
+      display: block;
+    }
+
+    &--one {
+      transform: translate(-10%, calc(-100% + (-20px)));
+    }
+
+    &--two {
+      transform: translate(-40%, calc(-100% + (-20px)));
+
+      @include onDesktop {
+      transform: translate(-100%, calc(-100% + (-20px)));
+      }
+    }
+
+    &--three {
+      transform: translate(-40%, calc(-100% + (-20px)));
+
+      @include onDesktop {
+        transform: translate(calc(-100% + (-20px)), calc(-40% + (-20px)));
+        }
+    }
+
+    &--four {
+      transform: translate(-40%, calc(-100% + (-20px)));
+    }
+
+    &--five {
+      transform: translate(-40%, calc(50% + (-20px)));
+    }
+  }
+
+  &__text {
+    color: $clr--gray-light;
+
+  }
+
+  &__button {
+    display: inline-block;
+    width: 51px;
+    height: 51px;
+  }
+}
