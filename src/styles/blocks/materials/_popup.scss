@@ -21,7 +21,7 @@
   }
 
   &__three {
-    z-index: 12;
+    z-index: 16;
     @include onTablet {
       transform: translate(100px, 480px);
     }
@@ -42,6 +42,8 @@
   }
 
   &__five {
+    z-index: 15;
+
     @include onTablet {
       transform: translate(40px, 200px);
     }
@@ -53,6 +55,7 @@
   &__inner {
     display: none;
     position: absolute;
+    z-index: 100;
     min-width: 290px;
     padding: 35px;
     left: 0;
@@ -63,6 +66,8 @@
 
     &--active {
       display: block;
+      position: absolute;
+      z-index: 100;
     }
 
     &--one {
@@ -101,6 +106,8 @@
 
   &__button {
     display: inline-block;
+    position: absolute;
+    z-index: 3;
     width: 51px;
     height: 51px;
   }
