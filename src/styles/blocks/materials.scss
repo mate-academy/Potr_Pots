@@ -1,0 +1,347 @@
+.materials {
+  position: relative;
+  &__wrapper {
+    @include onTablet {
+      padding-top: 50px;
+      padding-bottom: 110px;
+    }
+  }
+
+  &__container {
+    @include contentPaddingInline;
+
+    @include onDesktop {
+      display: grid;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    letter-spacing: 8.99px;
+    color: $c-blue;
+    margin: 0;
+    z-index: 2;
+    position: relative;
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: 9.6px;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      letter-spacing: 16.7px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    background-image: url(../images/materials/image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 240px;
+    transform: translateY(-55px);
+
+    @include onTablet {
+      transform: translateY(0);
+      height: 576px;
+    }
+
+    @include onDesktop {
+      height: 1082px;
+      margin-top: -170px;
+    }
+  }
+
+  &__block-text {
+    display: none;
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      width: 340px;
+      transform: translateX(390px);
+      margin-top: -10%;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      justify-self: end;
+      transform: translateX(0);
+      margin-top: -150px;
+      z-index: 10;
+    }
+  }
+
+  &__subtitle {
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $c-main;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    p {
+      margin: 0;
+    }
+    &--bold {
+      font-weight: bold;
+      @include onDesktop {
+        font-weight: normal;
+      }
+    }
+
+    &--desktop {
+      display: none;
+      @include onDesktop {
+        display: inline;
+      }
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      position: absolute;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--1 {
+      top: 25%;
+      left: 1%;
+    }
+
+    &--2 {
+      top: 5%;
+      right: 1%;
+    }
+  }
+}
+
+.slide-container {
+  width: 300px;
+  margin: 0 auto;
+  transform: translateY(-110px);
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.card {
+  box-sizing: border-box;
+  height: 252px;
+  background-color: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(17px);
+  padding: 28px 45px 82px;
+
+  &__text {
+    p {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: $c-greyLight;
+    }
+  }
+}
+
+.swiper-pagination {
+  transform: translateY(-20px);
+}
+
+.swiper-pagination-bullet {
+  display: inline-flex;
+  width: 6px;
+  height: 6px;
+  border-radius: 0;
+  border: 1px solid #fff;
+  background-color: #fff;
+  opacity: 1;
+  transform: rotate(-45deg);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #333;
+}
+
+.dots {
+  display: none;
+
+  @include onTablet {
+    display: flex;
+  }
+}
+
+.dot {
+  color: #fff;
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  background-color: $c-red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &::before {
+    content: "+";
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+  }
+
+  &:hover::before {
+    content: "–";
+  }
+
+  &:hover::after {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 35px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(17px);
+
+    color: $c-greyLight;
+    font-size: 16px;
+    font-family: "Manrope", sans-serif;
+    line-height: 1.5;
+    bottom: 110%;
+    left: -30%;
+    transition: all 0.3s;
+  }
+
+  &--1 {
+    bottom: 15%;
+    left: 11%;
+
+    @include onDesktop {
+      bottom: 15%;
+      left: 17%;
+    }
+  }
+
+  &--2 {
+    bottom: 34%;
+    left: 33%;
+    z-index: -1;
+    @include onDesktop {
+      bottom: 35%;
+      left: 38%;
+    }
+  }
+
+  &--3 {
+    bottom: 12%;
+    left: 45%;
+    z-index: 5;
+
+    @include onDesktop {
+      bottom: 11%;
+      left: 47%;
+    }
+  }
+
+  &--4 {
+    bottom: 25%;
+    left: 54%;
+
+    @include onDesktop {
+      bottom: 25%;
+      left: 58%;
+    }
+  }
+
+  &--5 {
+    bottom: 50%;
+    right: 17%;
+
+    @include onDesktop {
+      bottom: 35%;
+      right: 20%;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 35px;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(17px);
+
+    color: $c-greyLight;
+    font-size: 16px;
+    font-family: "Manrope", sans-serif;
+    line-height: 1.5;
+    pointer-events: none;
+    transition: all 0.3s;
+
+    p {
+      margin: 0;
+    }
+
+    &--1 {
+      width: 283px;
+      height: 166px;
+      bottom: 140%;
+      left: -60%;
+
+      @include onDesktop {
+        bottom: 140%;
+        left: -200%;
+      }
+    }
+
+    &--2 {
+      width: 283px;
+      height: 166px;
+      transform: translate(5%, -85%);
+
+      @include onDesktop {
+        transform: translate(-50%, -70%);
+      }
+    }
+
+    &--3 {
+      width: 283px;
+      height: 214px;
+      transform: translate(5%, -70%);
+      z-index: 4;
+      @include onDesktop {
+        transform: translateX(-65%);
+      }
+    }
+
+    &--4 {
+      width: 275px;
+      height: 214px;
+      transform: translate(3%, -70%);
+      z-index: 2;
+    }
+
+    &--5 {
+      width: 303px;
+      height: 237px;
+      transform: translate(-4%, 70%);
+    }
+  }
+
+  &:hover &__text {
+    opacity: 1;
+  }
+}

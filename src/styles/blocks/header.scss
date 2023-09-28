@@ -1,0 +1,305 @@
+.header {
+  position: relative;
+  @include onTablet {
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      content: "";
+      background-image: url(../images/main-block/bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 80%;
+      height: 65%;
+      @include onDesktop {
+        width: 72%;
+        height: 72%;
+      }
+    }
+  }
+
+  &__top {
+    @include contentPaddingInline;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-top: 20px;
+      padding-bottom: 76px;
+    }
+  }
+}
+
+.top-header {
+  &__logo {
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__logo-link {
+    display: flex;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    letter-spacing: 2.16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $c-darkGrey;
+  }
+
+  &__menu-link {
+    background-image: url(../images/icons/menu.svg);
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__cart {
+    background-image: url(../images/icons/cart.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease 0s;
+    display: none;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}
+
+.menu-header {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  &__link {
+    position: relative;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $c-main;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    @include hoverLine;
+
+    &::after {
+      background-color: $c-main;
+    }
+  }
+}
+
+.content-header {
+  position: relative;
+
+  @include onTablet {
+    @include contentPaddingInline;
+    @include pageGrid;
+  }
+  &__image {
+    background-image: url(../images/main-block/image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 319px;
+    margin-bottom: 25px;
+    transition: transform 0.3s;
+
+    @include onTablet {
+      width: 306px;
+      height: 306px;
+      grid-column: 4 / -1;
+      grid-row: 1;
+      justify-self: end;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      height: 500px;
+      grid-column: 7 / -1;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    color: $c-blue;
+    margin: 0;
+    padding-inline: 30px;
+    span {
+      color: transparent;
+      -webkit-text-stroke: 1px $c-blue;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    @include onTablet {
+      font-size: 64px;
+      letter-spacing: 9.92px;
+      width: 460px;
+      grid-column: 1 / 5;
+      grid-row: 1;
+      padding-inline: 0;
+      z-index: 2;
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+      padding-bottom: 15px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      width: 470px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__price-box {
+    padding-left: 30px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @include onTablet {
+      grid-column: 3 / 5;
+      grid-row: 1;
+      align-self: end;
+      padding-left: 0;
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+      align-self: start;
+      transform: translateY(276px);
+    }
+  }
+
+  &__price {
+    font-family: "Manrope", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: $c-darkGrey;
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $c-main;
+    max-width: 140px;
+  }
+
+  &__button {
+    width: 260px;
+    margin: 0 auto;
+    display: flex;
+    @include onTablet {
+      grid-column: 2 / 5;
+      margin: 0;
+      margin-top: 50px;
+      z-index: 2;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / 7;
+      grid-row: 1;
+      transform: translateY(370px);
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      position: absolute;
+      right: 2%;
+      bottom: -27%;
+    }
+
+    @include onDesktop {
+      bottom: -50%;
+      right: 9%;
+    }
+  }
+
+  &__decor-blue {
+    position: absolute;
+    right: 2%;
+    bottom: 0;
+
+    @include onTablet {
+      left: 4%;
+      bottom: -14%;
+    }
+
+    @include onDesktop {
+      left: 9%;
+      bottom: 0;
+    }
+  }
+}
+
+.box-header {
+  @include contentPaddingInline;
+
+  @include onTablet {
+    padding-inline: 0;
+    grid-column: 1 / 4;
+    grid-row: 1;
+  }
+}

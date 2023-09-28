@@ -1,0 +1,166 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.button {
+  box-sizing: border-box;
+  height: 48px;
+  width: 100%;
+  background-color: $c-yellow;
+  color: #121212;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $c-yellowLight;
+  }
+
+  &__span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 14px 50px;
+    gap: 24px;
+    &::after {
+      content: "";
+      background: url("../images/icons/arrow-black.svg") center no-repeat;
+      flex: 0 0 27px;
+      height: 10px;
+      width: 27px;
+    }
+
+    &--white {
+      &:hover::after {
+        background: url("../images/icons/arrow-white.svg") center no-repeat;
+      }
+    }
+
+    &--blue {
+      &::after {
+        background: url("../images/icons/arrow-white.svg") center no-repeat;
+      }
+    }
+  }
+
+  &--white {
+    background-color: $c-greyLight;
+    border: 1px solid $c-blue;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $c-blue;
+      color: #fff;
+    }
+  }
+
+  &--blue {
+    background-color: $c-blue;
+    color: #fff;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #2aa3c1;
+    }
+  }
+
+  @include onTablet {
+    width: 240px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+}
+
+.decor-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  writing-mode: vertical-lr;
+}
+
+.decor {
+  color: #828282;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2.64px;
+}
+
+.decor-line {
+  width: 1px;
+  height: 65px;
+  background-color: #828282;
+}
+
+.decor-blue {
+  display: flex;
+  align-items: center;
+  writing-mode: vertical-lr;
+  color: $c-blue;
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: all 0.3s;
+  width: 20px;
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    gap: 10px;
+    transition: all 0.3s;
+    &::after {
+      content: "";
+      background: url("../images/icons/Arrow.svg") center no-repeat;
+      flex: 0 0 44px;
+      height: 44px;
+      width: 9px;
+    }
+  }
+}
+
+.title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 36px;
+  line-height: 1.5;
+  letter-spacing: 5.58px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.text {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $c-main;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// <a href="#" class="hero__button button button--white">
+// <span>buy Now</span>
+// </a>
+
+// <div class="about__decor decor-block">
+// <div class="decor-line"></div>
+// <div class="decor">potr pots</div>
+// </div>
+
+// <a href="#" class="decor-blue">
+// <span>More about  POTR POTS</span>
+// </a>

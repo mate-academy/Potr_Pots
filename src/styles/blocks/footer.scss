@@ -1,0 +1,131 @@
+.footer {
+  &__wrapper {
+    @include contentPaddingInline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    @include onDesktop {
+      padding-top: 70px;
+      padding-bottom: 64px;
+    }
+  }
+
+  &__label {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: none;
+    color: $c-black;
+
+    @include onTablet {
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    &--link {
+      transition: all 0.3s;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__link {
+    color: $c-black;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+    display: none;
+    transition: all 0.3s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include onTablet {
+      display: block;
+      max-width: 170px;
+    }
+  }
+
+  &__logo {
+    display: block;
+    color: $c-black;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 1.5;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 auto;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__copy {
+    color: $c-black;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+}
+
+.social {
+  display: flex;
+  gap: 85px;
+  padding-bottom: 40px;
+
+  @include onDesktop {
+    gap: 70px;
+  }
+
+  &__link {
+    width: 20px;
+    height: 20px;
+    text-decoration: none;
+    display: flex;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease 0s;
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+    &--twitter {
+      background-image: url(../images/icons/twit.svg);
+
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/inst.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/fb.svg);
+    }
+  }
+}
