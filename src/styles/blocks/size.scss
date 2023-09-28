@@ -1,0 +1,386 @@
+.size {
+  padding-bottom: 100px;
+  @include onTablet {
+    @include contentPaddingInline;
+  }
+
+  @include onDesktop {
+    padding-bottom: 30px;
+  }
+
+  &__top {
+    margin-bottom: 110px;
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      margin-bottom: 180px;
+    }
+  }
+
+  &__title {
+    padding-inline: 30px;
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-column: span 6;
+      margin-bottom: 30px;
+      padding-inline: 0;
+    }
+
+    @include onDesktop {
+      grid-column: span 12;
+      margin-bottom: 66px;
+    }
+  }
+
+  &__text {
+    padding-inline: 30px;
+    margin-bottom: 30px;
+    @include onTablet {
+      grid-column: span 6;
+      padding-inline: 0;
+      max-width: 579px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+      grid-row: 2;
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: 0;
+    padding-bottom: 83%;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 3 / -1;
+      grid-row: 3;
+      margin-bottom: 20px;
+      margin-left: 40px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      grid-row: 2;
+      margin-bottom: 0;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__items {
+    padding-inline: 30px;
+    display: grid;
+    gap: 40px;
+    margin-bottom: 15px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 3;
+      padding-inline: 0;
+      width: 246px;
+      align-self: start;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / 7;
+      grid-row: 2;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 257px;
+        background-color: #d8d8d8;
+        margin-left: -30px;
+      }
+    }
+  }
+
+  &__addition {
+    padding-inline: 30px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "*";
+      margin-left: -10px;
+    }
+
+    @include onTablet {
+      grid-column: span 6;
+      padding-inline: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1/ 7;
+      grid-row: 2;
+      align-self: end;
+      transform: translateY(-50px);
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      position: absolute;
+      right: -2%;
+      top: -1%;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
+
+.size-bottom {
+  @include onTablet {
+    @include pageGrid;
+    position: relative;
+  }
+
+  &__content {
+    padding-inline: 30px;
+
+    @include onTablet {
+      display: grid;
+      grid-column: span 6;
+      padding-inline: 0;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / -1;
+      display: block;
+      align-self: center;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-column: 4 / 6;
+      grid-row: 1;
+      background-color: $c-greyLight;
+      border: 1px solid $c-blue;
+      transform: translateY(95px);
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: $c-blue;
+        color: #fff;
+        span {
+          &:hover::after {
+            background: url("../images/icons/arrow-white.svg") center no-repeat;
+          }
+        }
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 3;
+      transform: translateY(0);
+      margin-bottom: 70px;
+    }
+  }
+
+  &__discount {
+    color: $c-red;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 1.5;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      grid-column: 4 / 6;
+      grid-row: 1;
+      transform: translateY(174px);
+      font-size: 24px;
+      letter-spacing: 3.72px;
+    }
+
+    @include onDesktop {
+      grid-column: 3 / 5;
+      transform: translateY(0);
+      margin-left: 100px;
+    }
+  }
+
+  &__explain {
+    font-family: "Bebas Neue", sans-serif;
+    color: $c-blue;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      grid-column: 4 / 6;
+      grid-row: 1;
+      transform: translateY(220px);
+      font-size: 18px;
+      letter-spacing: 2.79px;
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 4;
+      transform: translateY(0);
+      margin-left: 100px;
+    }
+  }
+}
+
+.item-size {
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    color: $c-black;
+    font-size: 18px;
+    line-height: 1;
+    letter-spacing: 2.79px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+}
+
+.images-bottom {
+  display: none;
+
+  @include onDesktop {
+    display: grid;
+    grid-column: span 5;
+    grid-template-columns: repeat(2, 215px);
+    column-gap: 10px;
+    row-gap: 10px;
+    transform: translateX(-40px);
+  }
+  &__item {
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 16px;
+
+    &--1 {
+      transform: translateX(-15px) rotate(-14deg);
+    }
+
+    &--2 {
+      transform: translateY(-15px) rotate(-30deg);
+    }
+
+    &--3 {
+      transform: translateX(-50px);
+    }
+
+    &--4 {
+      transform: translate(-25px, -25px) rotate(-12deg);
+      z-index: 2;
+    }
+
+    &--5 {
+      transform: translate(20px, -40px) rotate(-14deg);
+      z-index: -1;
+    }
+
+    &--6 {
+      transform: translate(50px, -20px) rotate(-30deg);
+    }
+  }
+
+  &__photo {
+    position: relative;
+    height: 182px;
+    width: 182px;
+    margin-bottom: 7px;
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    font-family: "Proxima Nova", sans-serif;
+    color: #828282;
+    font-size: 9px;
+    line-height: 1.31;
+  }
+}
+
+.advantages-size {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 50px;
+
+  @include onTablet {
+    grid-column: span 3;
+  }
+
+  @include onDesktop {
+    grid-column: span 6;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  &__item {
+    &--2 {
+      @include onTablet {
+        order: 2;
+      }
+
+      @include onDesktop {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    color: $c-darkGrey;
+    font-family: "Manrope", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 5px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: $c-darkGrey;
+      display: block;
+      transform: rotate(45deg);
+      margin-left: -15px;
+      margin-top: 20px;
+    }
+  }
+
+  &__text {
+    color: #828282;
+  }
+}

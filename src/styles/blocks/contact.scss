@@ -1,0 +1,245 @@
+.contact {
+  position: relative;
+  &__wrapper {
+    padding-top: 45px;
+    padding-bottom: 100px;
+    @include contentPaddingInline;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      content: "";
+      background-image: url(../images/contacts/bg.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: left;
+      width: 100%;
+      height: 1000px;
+
+      @include onTablet {
+        height: 100%;
+      }
+
+      @include onDesktop {
+        width: 90%;
+      }
+    }
+
+    @include onTablet {
+      @include pageGrid;
+      padding-top: 17px;
+    }
+
+    @include onDesktop {
+      padding-top: 48px;
+    }
+  }
+
+  &__title {
+
+    @include onTablet {
+      grid-column: span 6;
+    }
+  }
+
+  &__text {
+    color: $c-black;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: span 6;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      grid-row: 2;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    right: 0;
+    top: -8%;
+    width: 140px;
+    height: 170px;
+    background-image: url(../images/contacts/decor.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
+    overflow: hidden;
+
+    @include onTablet {
+      top: -20%;
+    }
+
+    @include onDesktop {
+      width: 164px;
+      right: 5%;
+    }
+
+  }
+}
+
+.form-contact {
+
+  &__form {
+    @include onTablet {
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    font-family: "Manrope", sans-serif;
+    color: $c-main;
+    font-size: 16px;
+    line-height: 1.5;
+    text-transform: capitalize;
+    background-color: transparent;
+
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease 0s;
+    margin-bottom: 25px;
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 150%;
+      color: $c-main;
+    }
+    &:hover {
+      border-bottom: 1px solid $c-blue;
+    }
+
+    &:focus {
+      outline: none;
+      line-height: 1.5;
+      border-bottom: 1px solid $c-blue;
+      color: $c-blue;
+    }
+
+    &:valid {
+      color: $c-blue;
+      border-bottom: 1px solid $c-blue;
+    }
+
+    &:not(:placeholder-shown):invalid {
+      color: $c-red;
+      border-bottom: 1px solid $c-red;
+    }
+
+    &--email:valid {
+      text-transform: lowercase;
+      // color: $c-blue;
+    }
+
+    &--textarea {
+      resize: none;
+      height: 30px;
+    }
+
+    &--last {
+      margin-bottom: 30px;
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__button {
+    border: 1px solid transparent;
+    margin-bottom: 56px;
+    cursor: pointer;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: none;
+  border-bottom: 1px solid $c-blue;
+  color: $c-blue;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  box-shadow: inset 0 0 5px $c-greyLight;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $c-blue;
+  border-radius: 8px;
+}
+
+.form {
+  &__title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+}
+
+.info-contact {
+  display: grid;
+  gap: 34px;
+
+  @include onTablet {
+    grid-column: 5 / -1;
+    transform: translateY(-50px);
+    gap: 20px;
+    align-self: start;
+  }
+
+  @include onDesktop {
+    grid-column: 7 / -1;
+    transform: translateY(-58px);
+  }
+
+  &__label {
+    font-family: "Manrope", sans-serif;
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  &__link {
+    font-family: "Manrope", sans-serif;
+    text-decoration: none;
+    font-size: 16px;
+    color: $c-black;
+    line-height: 1.5;
+    display: block;
+    max-width: 258px;
+    transition: all 0.3s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include onDesktop {
+      max-width: 270px;
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.about-us {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 4%;
+    left: 0;
+    z-index: -1;
+    background-image: url(../images/about-us/bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 30%;
+
+    @include onTablet {
+      top: 30%;
+      width: 34%;
+      height: 38%;
+    }
+    @include onDesktop {
+      top: 20%;
+      width: 28%;
+      height: 37%;
+    }
+  }
+  &__wrapper {
+    @include onTablet {
+      position: relative;
+      @include contentPaddingInline;
+      @include pageGrid;
+      padding-bottom: 80px;
+
+      &::before {
+        position: absolute;
+        top: 15%;
+        left: -5%;
+        overflow: hidden;
+        z-index: 3;
+        content: "Martin";
+        font-size: 230px;
+        font-family: "Bebas Neue", sans-serif;
+        letter-spacing: 36px;
+        color: transparent;
+        -webkit-text-stroke: 1px $c-blue;
+
+        @include onDesktop {
+          font-size: 288px;
+          letter-spacing: 45px;
+          left: 5%;
+          top: 10%;
+        }
+      }
+
+      &::after {
+        position: absolute;
+        bottom: -42%;
+        right: 0;
+        overflow: hidden;
+        z-index: 3;
+        content: "Andy";
+        font-size: 230px;
+        font-family: "Bebas Neue", sans-serif;
+        letter-spacing: 36px;
+        color: transparent;
+        -webkit-text-stroke: 1px $c-blue;
+
+        @include onDesktop {
+          font-size: 288px;
+          letter-spacing: 45px;
+          right: 0;
+          bottom: -30%;
+        }
+      }
+    }
+  }
+
+  &__title {
+    padding-inline: 30px;
+    font-size: 58px;
+    letter-spacing: 8.99px;
+    color: $c-darkGrey;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      grid-column: span 6;
+      padding-inline: 0;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__text {
+    padding-inline: 30px;
+    p {
+      margin: 0;
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+
+    @include onTablet {
+      padding-inline: 0;
+      grid-column: 1 / 4;
+      grid-row: 2;
+      transform: translateY(140px);
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      max-width: 336px;
+      transform: translateY(0);
+      align-self: end;
+    }
+  }
+
+  &__image {
+    background-image: url(../images/about-us/image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 240px;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+      width: 340px;
+      height: 255px;
+      transform: translateY(90px);
+    }
+
+    @include onDesktop {
+      grid-column: 5/ -1;
+      width: 678px;
+      height: 508px;
+      transform: translateY(50px);
+    }
+  }
+}
