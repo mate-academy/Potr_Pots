@@ -1,3 +1,59 @@
+.header {
+  &__menu {
+    display: flex;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+
+  &__logo-link {
+    text-decoration: none;
+    letter-spacing: 2.16px;
+    color: $first-gray;
+  }
+
+  &__photo {
+    margin-bottom: 25px;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__title {
+    display: inline;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px $turquoise;
+    -webkit-text-fill-color: transparent;
+
+    &--empty {
+      -webkit-text-stroke: 1px $turquoise;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &--full {
+      -webkit-text-fill-color: $turquoise;
+    }
+  }
+
+}
+
 .combi {
-  display: inline;
+  display: flex;
+}
+
+.number {
+  font-size: 36px;
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: 47px;
+    transform: rotate(22deg);
+    background-color: #333;
+  }
 }
