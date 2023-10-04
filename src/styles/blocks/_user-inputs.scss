@@ -1,14 +1,24 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: none;
+  -webkit-box-shadow: none;
+}
+
 .button {
   @extend %manrope-font;
   font-size: 14px;
   font-weight: 600;
-  @include button_press_scale;
   display: flex;
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
   height: 48px;
   transition: transform 0.3s;
+  @include button_press_scale;
   border: 0;
   gap: 20px;
 
@@ -73,15 +83,6 @@
 
     &::placeholder {
       color: $red-color;
-    }
-  }
-
-  &.success {
-    border-color: $turquoise-color;
-    color: $turquoise-color;
-
-    &::placeholder {
-      color: $turquoise-color;
     }
   }
 }

@@ -1,0 +1,91 @@
+.features {
+  @include contentPaddingInline;
+  @include widthBounds;
+
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  margin-top: 150px;
+
+  @include onTablet {
+    margin-top: 135px;
+    gap: 50px;
+  }
+
+  @include onMobile {
+    margin-top: 110px;
+    gap: 25px;
+  }
+
+  &__title {
+    margin: 0;
+    color: $turquoise-color;
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: 8px;
+
+    &-stroke {
+      -webkit-text-stroke-color: $turquoise-color;
+      -webkit-text-stroke-width: 1px;
+      color: transparent;
+    }
+  }
+
+  &__set {
+    @include grid;
+
+    @include onMobile {
+      row-gap: 70px;
+    }
+  }
+
+  &__item {
+    grid-column: span 4;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+
+    &-image {
+      &-content {
+        width: 100%;
+      }
+    }
+
+    &-title {
+      margin-block: 20px;
+      color: $gray-1-color;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 100%;
+      letter-spacing: 3.72px;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include onTablet {
+        margin-top: 30px;
+        text-align: left;
+      }
+
+      @include onMobile {
+        text-align: center;
+      }
+    }
+
+    &-text {
+      @extend %manrope-font;
+      color: $gray-2-color;
+      text-align: center;
+      font-size: 16px;
+
+      @include onTablet {
+        text-align: left;
+      }
+
+      @include onMobile {
+        text-align: center;
+      }
+    }
+  }
+}

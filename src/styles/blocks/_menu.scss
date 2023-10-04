@@ -1,39 +1,8 @@
 .header__nav {
-  position: relative;
-  
+
   &--menu {
     &-item.menu-only {
       display: none;
-    }
-
-    &-content {
-      display: flex;
-      align-items: center;
-
-      &-icon {
-        margin-right: 18px;
-      }
-
-      &-text {
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        transition: letter-spacing 0.3s;
-
-        color: $grey-light-color;
-        @extend %manrope-font;
-        font-size: 12px;
-        line-height: 400%;
-        text-transform: uppercase;
-
-        &::before {
-          content: "";
-          width: 44px;
-          height: 1px;
-          background-color: $grey-light-color;
-          margin-right: 5px;
-        }
-      }
     }
 
     &-close {
@@ -43,6 +12,36 @@
       transform: translateX(40px) rotate(-90deg);
       bottom: 14%;
       right: 8%;
+
+      &-content {
+        display: flex;
+        align-items: center;
+
+        &-icon {
+          margin-right: 18px;
+        }
+
+        &-text {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          transition: letter-spacing 0.3s;
+
+          color: $grey-light-color;
+          @extend %manrope-font;
+          font-size: 12px;
+          line-height: 400%;
+          text-transform: uppercase;
+
+          &::before {
+            content: "";
+            width: 44px;
+            height: 1px;
+            background-color: $grey-light-color;
+            margin-right: 5px;
+          }
+        }
+      }
 
       &:hover &-content {
         letter-spacing: 2px;
@@ -76,6 +75,7 @@
       }
 
       &-content {
+        display: flex;
         margin-top: 25vh;
         margin-left: 25vw;
       }

@@ -1,0 +1,362 @@
+.materials {
+  position: relative;
+  background-image: url(./../images/materials-bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  min-height: 90vw;
+
+  &__padding-text {
+    display: none !important;
+
+    @include onTablet {
+      display: flex !important;
+    }
+
+    @include onMobile {
+      display: none !important;
+    }
+
+    &--top {
+      top: 80px;
+      right: -50px;
+    }
+
+    &--bottom {
+      left: -55px;
+      top: 280px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    min-height: 100vw;
+  }
+
+  @media (max-width: 950px) {
+    min-height: 110vw;
+  }
+
+  @media (max-width: 750px) {
+    min-height: 120vw;
+  }
+
+  @include onMobile {
+    min-height: 90vw;
+  }
+
+  @media (max-width: 450px) {
+    min-height: 130vw;
+  }
+
+  &__indicators {
+    display: none;
+
+    @include onMobile {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      position: absolute;
+      bottom: 37px;
+      left: calc((100vw - 63px) / 2);
+
+      .indicator {
+        background-color: $grey-light-color;
+        width: 7px;
+        height: 7px;
+        transform: rotate(-45deg);
+        transition: background-color 0.5s,
+          border 0.5s;
+
+        &--active {
+          border: 1px solid $grey-light-color;
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+  }
+
+  &-container {
+    position: relative;
+    @include widthBounds;
+    @include contentPaddingInline;
+  }
+
+  &__title {
+    margin: 0;
+    color: $turquoise-color;
+    font-size: 139px;
+    font-weight: 400;
+    letter-spacing: 17px;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: 10px;
+    }
+
+    @include onMobile {
+      margin-top: 110px;
+      font-size: 58px;
+      letter-spacing: 9px;
+    }
+  }
+
+  &__article {
+    position: absolute;
+    top: 170px;
+    right: 145px;
+
+    @include onTablet {
+      top: 130px;
+      right: 34px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    @extend %manrope-font;
+    color: $gray-2-color;
+
+    &-title {
+      font-size: 20px;
+      line-height: 150%;
+    }
+
+    &-text {
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &__slider {
+
+    &-container {
+      @include onMobile {
+        position: absolute;
+        left: 9px;
+        right: 9px;
+        bottom: -200px;
+
+        overflow: hidden;
+      }
+    }
+
+    @include onMobile {
+      display: inline-flex;
+      gap: 18px;
+
+      transition: transform 0.3s ease-out;
+      cursor: grab;
+
+      transform: translateX(0);
+    }
+  }
+
+  &__popup {
+    position: absolute;
+
+    @include onMobile {
+      position: unset;
+    }
+
+    &--1 {
+      bottom: 11%;
+      left: 18%;
+
+      @include onTablet {
+        left: 11%;
+        bottom: 12%;
+      }
+
+      @include onMobile {
+        order: 5;
+      }
+    }
+
+    &--2 {
+      bottom: 33%;
+      left: 38%;
+
+      @include onTablet {
+        left: 30%;
+        bottom: 27%;
+      }
+
+      @include onMobile {
+        order: 4;
+      }
+    }
+
+    &--3 {
+      bottom: 9%;
+      left: 47%;
+
+      @include onTablet {
+        bottom: 8%;
+        left: 44%;
+      }
+
+      @include onMobile {
+        order: 3;
+      }
+    }
+
+    &--4 {
+      bottom: 20%;
+      right: 38%;
+
+      @include onTablet {
+        bottom: 17%;
+        right: 40%;
+      }
+
+      @include onMobile {
+        order: 2;
+      }
+    }
+
+    &--5 {
+      bottom: 29%;
+      right: 19%;
+
+      @include onTablet {
+        bottom: 37%;
+        right: 22%;
+      }
+
+      @include onMobile {
+        order: 1;
+      }
+    }
+
+    &-container {
+      position: relative;
+
+      @include onMobile {
+        position: unset;
+        width: calc(100vw - 18px);
+      }
+    }
+
+    &-button {
+      background-image: url(./../images/materials-button.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 51px;
+      height: 51px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      &.pressed {
+        background-image: url(./../images/materials-button-grey.svg);
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    &-text {
+      position: absolute;
+      z-index: 2;
+      background-color: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(17px);
+
+      pointer-events: none;
+      transition: transform 0.3s,
+        opacity 0.3s;
+
+      opacity: 0;
+      transform: translateY(-40%);
+
+      @extend %manrope-font;
+      font-size: 16px;
+      padding: 45px 35px;
+      color: $grey-light-color;
+      white-space: nowrap;
+
+      @include onMobile {
+        opacity: 1;
+        transform: none;
+
+        display: flex;
+        justify-content: center;
+      }
+
+      &.shown {
+        opacity: 1;
+        transform: none;
+      }
+
+      &--1 {
+        left: -115px;
+        bottom: 81px;
+
+        @include onTablet {
+          left: -30px;
+          bottom: 71px;
+        }
+      }
+
+      &--2 {
+        left: -250px;
+        bottom: 71px;
+
+        @include onTablet {
+          left: -115px;
+        }
+      }
+
+      &--3 {
+        right: 62px;
+        top: -145px;
+
+        transform: translateX(-40%);
+
+        @include onTablet {
+          top: unset;
+          right: -115px;
+          bottom: 71px;
+
+          transform: translateY(-40%);
+        }
+      }
+
+      &--4 {
+        left: -70px;
+        bottom: 93px;
+
+        @include onTablet {
+          bottom: 71px;
+        }
+      }
+
+      &--5 {
+        left: -114px;
+        top: 6px;
+
+        transform: translateY(40%);
+
+        @include onTablet {
+          top: 9px;
+        }
+      }
+
+      @include onMobile {
+        position: static;
+        transform: none;
+
+        height: 254px;
+        box-sizing: border-box;
+        padding: 28px 45px 58px;
+      }
+    }
+  }
+}

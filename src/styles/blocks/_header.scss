@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-position: left top;
   background-size: 72vw auto;
-  min-height: 100vh;
+  min-height: 740px;
   @include widthBounds;
 
   @include onTablet {
@@ -207,7 +207,7 @@
 
         @include onMobile {
           margin-top: 30px;
-          grid-column: 1/-1;
+          grid-column: 1;
         }
       }
 
@@ -244,7 +244,7 @@
         transform: rotate(90deg);
         transform-origin: bottom right;
         left: -50px;
-        bottom: 0;
+        bottom: 10px;
 
         @include onTablet {
           left: -152px;
@@ -269,8 +269,12 @@
 
           &-arrow {
             fill: $turquoise-color;
-            padding: 9px;
+            transition: transform 0.3s;
           }
+        }
+
+        &:hover &-link-arrow {
+          transform: translateX(10px);
         }
       }
     }

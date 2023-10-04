@@ -1,0 +1,225 @@
+.order {
+  position: relative;
+  padding-top: 100px;
+  @include grid;
+  @include contentPaddingInline;
+
+  @include onTablet {
+    padding-top: 105px;
+  }
+
+  &__padding-text.padding-text {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      right: -85px;
+      top: 210px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__image {
+    grid-column: 1/6;
+    transform: translateX(-135px);
+
+    @include onTablet {
+      display: none;
+    }
+
+    &-content {
+      max-width: 137%;
+    }
+  }
+
+  &__content {
+    grid-column: 6/-1;
+
+    @include onTablet {
+      grid-column: 1/-1;
+      @include grid;
+    }
+
+    &-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 20px;
+      row-gap: 40px;
+
+      padding-top: 186px;
+
+      @include onTablet {
+        grid-column: 1/4;
+        padding-top: 0;
+        row-gap: 30px;
+      }
+
+      @include onMobile {
+        grid-row: 1;
+        grid-column: 1/-1;
+        row-gap: 40px;
+      }
+
+      &-item {
+        @extend %manrope-font;
+
+        @include onTablet {
+          &:nth-of-type(2) {
+            order: 3;
+          }
+        }
+
+        @include onMobile {
+          transform: translateX(-22px);
+          &:nth-of-type(2) {
+            order: unset;
+          }
+        }
+
+        &-title {
+          display: flex;
+          margin: 0;
+          color: $gray-1-color;
+          font-size: 36px;
+          line-height: 150%;
+          white-space: nowrap;
+
+          @include onTablet {
+            white-space: unset;
+          }
+
+          @include onMobile {
+            font-size: 32px;
+          }
+
+          &:before {
+            display: flex;
+            height: 54px;
+            width: 14px;
+            content: "";
+            background-image: url(./../images/order-benefit-icon.svg);
+            background-repeat: no-repeat;
+            background-position-y: center;
+            margin-right: 20px;
+
+            @include onMobile {
+              margin-right: 8px;
+              height: 48px;
+            }
+          }
+        }
+
+        &-description {
+          padding-top: 5px;
+          color: #828282;
+          font-size: 16px;
+          margin-left: 30px;
+
+          @include onMobile {
+            margin-left: 22px;
+          }
+        }
+      }
+    }
+
+    &-button {
+      padding-inline: 66px;
+      color: #121212;
+
+      &-container {
+        padding-block: 60px 70px;
+
+        @include onTablet {
+          grid-row: 1;
+          grid-column: 4/-1;
+          padding: 0;
+          padding-top: 100px;
+        }
+
+        @include onMobile {
+          grid-row: 2;
+          grid-column: 1/-1;
+          padding-top: 50px;
+        }
+      }
+
+      &:hover {
+        color: #fff;
+
+        @include onMobile {
+          color: #121212;
+        }
+
+        .order__content-button-arrow {
+          fill: #fff;
+
+          @include onMobile {
+            fill: black;
+          }
+        }
+      }
+
+      @include onMobile {
+        color: $button-text-color;
+        border: none;
+        background-color: $yellow-color;
+        @include hover(background-color, $yellow-light-color);
+      }
+    }
+
+    &-promo {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      padding-left: 100px;
+
+      @include onTablet {
+        grid-row: 1;
+        grid-column: 4/-2;
+        padding: 0;
+        margin-top: 183px;
+      }
+
+      @include onMobile {
+        grid-row: 3;
+        grid-column: 1/-1;
+        margin-top: 40px;
+      }
+
+      &-off {
+        color: $red-color;
+        font-size: 36px;
+        line-height: 150%;
+        letter-spacing: 5.58px;
+        text-transform: uppercase;
+
+        @include onTablet {
+          font-size: 24px;
+          letter-spacing: 3.72px;
+        }
+      }
+
+      &-text {
+        color: $turquoise-color;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 3.72px;
+        text-transform: uppercase;
+
+        @include onTablet {
+          font-size: 18px;
+          letter-spacing: 2.79px;
+        }
+
+        @include onMobile {
+          font-size: 24px;
+          letter-spacing: 3.72px;
+        }
+      }
+    }
+  }
+}

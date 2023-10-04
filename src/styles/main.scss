@@ -5,6 +5,12 @@
 @import "./blocks/menu";
 @import "./blocks/main";
 @import "./blocks/for-whom";
+@import "./blocks/features";
+@import "./blocks/team";
+@import "./blocks/materials";
+@import "./blocks/sizes";
+@import "./blocks/order";
+@import "./blocks/questions";
 
 html {
   scroll-behavior: smooth;
@@ -15,7 +21,7 @@ body {
   margin: 0;
   background-color: $grey-light-color;
   align-items: center;
-
+  @include widthBounds;
 }
 
 p {
@@ -40,4 +46,34 @@ p {
     background-color: #828282;
     margin-right: 10px;
   }
+}
+
+.animated {
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+
+  &-left {
+    transform: translateX(-30%);
+  }
+
+  &-right {
+    transform: translateX(30%);
+  }
+
+  &-top {
+    transform: translateY(-30%);
+  }
+
+  &-bottom {
+    transform: translateY(30%);
+  }
+
+  &-rotate {
+    transform: rotate(360deg);
+  }
+}
+
+.visible {
+  opacity: 1;
+  transform: none;
 }
