@@ -11,10 +11,13 @@
   &__item {
     padding-inline: 30px;
     cursor: pointer;
-    width: fit-content;
+    width: max-content;
+    color: $color-text-secondary;
+    position: relative;
 
     &::after {
       content: "";
+      position: absolute;
       display: block;
       height: 2px;
       width: 0;
@@ -35,6 +38,33 @@
 
     &:last-child {
       padding-right: 0;
+    }
+
+    &--menu {
+      padding: 0;
+      @include hover(color, $color-btn-primary2);
+
+      &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0;
+        margin-top: 4px;
+        background-color: $color-btn-primary2;
+        transition: width $transition-duration;
+      }
+    }
+  }
+
+  @include onTablet {
+    display: none;
+
+    &--menu {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+      width: 120px;
     }
   }
 }

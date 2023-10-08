@@ -8,6 +8,29 @@
 
 @mixin grid {
   display: grid;
-  grid-template-columns: repeat(12, 70px);
+  grid-template-columns: repeat(12, 1fr);
   column-gap: 30px;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+  }
+}
+
+@mixin onDesktop {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onDesktop-sm {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (max-width: 768px) {
+    @content;
+  }
 }

@@ -1,4 +1,33 @@
 .icon {
   width: 30px;
   height: 30px;
+  cursor: pointer;
+
+  &--cart {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--menu {
+    display: none;
+    background-image: url(../images/icons/icon-menu.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: background-image $transition-duration;
+
+    @include hover(background-image, url(../images/icons/icon-burger-menu-hover.svg));
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &--close {
+    width: 12px;
+    height: 12px;
+
+    @include hover(transform, rotate(30deg));
+  }
 }
