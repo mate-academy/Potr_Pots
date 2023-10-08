@@ -1,0 +1,524 @@
+.footer {
+  position: relative;
+
+  &__content {
+    position: relative;
+    width: toRem(320);
+    margin: 0 auto;
+
+    @include contentPaddingInLine;
+
+    @include onTablet {
+      width: toRem(768);
+
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      width: toRem(1440);
+    }
+  }
+
+  &__top-bar {
+    padding-top: toRem(45);
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      grid-row: 1;
+
+      padding-top: toRem(17);
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      padding-top: toRem(38);
+    }
+  }
+
+  &__subtitle-icon {
+    position: absolute;
+    top: toRem(-73);
+    right: toRem(1);
+
+    @include onTablet {
+      content: url(../images/photos/footer-subtitle-icon-tablet.png);
+      top: toRem(-107);
+      right: 0;
+    }
+
+    @include onDesktop {
+      content: url(../images/photos/footer-subtitle-icon-desktop.png);
+      top: toRem(-95);
+      right: toRem(61);
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: toRem(36);
+    line-height: 150%;
+    letter-spacing: toRem(5.58);
+
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__text {
+    line-height: 150%;
+
+    color: #000;
+  }
+
+  &__main {
+    padding-top: toRem(40);
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      grid-row: 2;
+
+      display: flex;
+
+      padding-top: toRem(30);
+    }
+
+    &-title {
+      font-size: toRem(24);
+      line-height: 150%;
+
+      color: #000;
+    }
+
+    &-form {
+      @include onTablet {
+        width: toRem(340);
+      }
+
+      @include onDesktop {
+        width: toRem(371);
+      }
+    }
+
+    &-contact-us {
+      @include onTablet {
+        position: absolute;
+        top: toRem(71);
+        right: toRem(49);
+
+        width: toRem(205);
+      }
+
+      @include onDesktop {
+        top: toRem(80);
+        right: toRem(435);
+
+        width: toRem(270);
+      }
+    }
+  }
+
+  &__form-field {
+    padding-top: toRem(25);
+
+    @include onTablet {
+      padding-top: toRem(40);
+    }
+  }
+
+  &__field {
+    width: toRem(260);
+    height: toRem(29);
+
+    background-color: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    padding-bottom: toRem(4);
+    padding-left: toRem(6);
+
+    outline: none;
+    resize: none;
+
+    @include onTablet {
+      width: toRem(338);
+    }
+
+    @include onDesktop {
+      width: toRem(370);
+    }
+
+    &:focus {
+      border-bottom-color: $aquaTitleColor;
+    }
+
+    &::placeholder {
+      line-height: 150%;
+
+      color: $mainColor;
+    }
+
+    &:not(:first-child) {
+      margin-top: toRem(20);
+    }
+
+    &.error {
+      border-bottom-color: #eb5757;
+      color: #eb5757;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: toRem(30);
+    margin-top: toRem(30);
+
+    width: toRem(260);
+    height: toRem(48);
+
+    color: #fff;
+    background-color: $aquaTitleColor;
+
+    cursor: pointer;
+    transition: $transitionTime;
+
+    @include onTablet {
+      width: toRem(219);
+
+      margin-top: toRem(40);
+    }
+
+    &:hover {
+      background-color: rgba(3, 131, 158, 0.7);
+    }
+
+    &-text {
+      font-weight: 600;
+      font-size: toRem(14);
+      line-height: 150%;
+
+      text-transform: uppercase;
+    }
+  }
+
+  &__phone {
+    display: grid;
+    gap: toRem(5);
+    padding-top: toRem(56);
+
+    @include onTablet {
+      padding-top: 0;
+    }
+
+    & h3 {
+      font-size: toRem(24);
+      line-height: 150%;
+
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-link {
+      line-height: 150%;
+
+      width: toRem(109);
+      height: toRem(24);
+
+      color: #000;
+
+      @include hover(transform, scale(1.1));
+
+      @include onTablet {
+        width: 100%;
+      }
+    }
+  }
+
+  &__email {
+    display: grid;
+    gap: toRem(5);
+    padding-top: toRem(34);
+
+    @include onTablet {
+      padding-top: toRem(20);
+    }
+
+    @include onDesktop {
+      padding-top: toRem(25);
+    }
+
+    & h3 {
+      font-size: toRem(24);
+      line-height: 150%;
+
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-link {
+      line-height: 150%;
+
+      width: toRem(155);
+      height: toRem(24);
+
+      color: #000;
+
+      @include hover(transform, scale(1.1));
+
+      @include onTablet {
+        width: 100%;
+      }
+    }
+  }
+
+  &__office {
+    display: grid;
+    gap: toRem(5);
+    padding-top: toRem(34);
+
+    @include onTablet {
+      padding-top: toRem(20);
+    }
+
+    @include onDesktop {
+      padding-top: toRem(25);
+    }
+
+    & h3 {
+      font-size: toRem(24);
+      line-height: 150%;
+
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-link {
+      line-height: 150%;
+
+      width: toRem(258);
+      height: toRem(48);
+
+      color: #000;
+
+      @include hover(transform, scale(1.1));
+
+      @include onTablet {
+        width: 100%;
+      }
+    }
+  }
+
+  &__bottom {
+    width: toRem(230);
+    margin: 0 auto;
+
+    padding-top: toRem(102);
+    padding-bottom: toRem(30);
+
+    @include onTablet {
+      grid-column: 1 / -1;
+      grid-row: 3;
+
+      display: flex;
+      justify-content: space-between;
+
+      width: 100%;
+
+      padding-top: toRem(113);
+      padding-bottom: toRem(117);
+    }
+
+    @include onDesktop {
+      padding-top: toRem(184);
+      padding-bottom: toRem(64);
+    }
+  }
+
+  &__adrress {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      gap: toRem(10);
+
+      width: toRem(170);
+    }
+
+    & h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: toRem(24);
+      line-height: 100%;
+      letter-spacing: toRem(3.72);
+
+      text-transform: uppercase;
+      color: #000;
+    }
+
+    &-link {
+      line-height: 150%;
+
+      width: 100%;
+
+      color: #000;
+
+      @include hover(transform, scale(1.1));
+    }
+
+    &-link br {
+      display: none;
+
+      @include onTablet {
+        display: inline;
+      }
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      justify-content: center;
+      gap: toRem(80);
+    }
+
+    @include onDesktop {
+      gap: toRem(70);
+    }
+
+    &-twitter {
+      content: url(../images/icons/footer-icon-twitter.svg);
+
+      width: toRem(20);
+      height: toRem(20);
+
+      cursor: pointer;
+      @include hover(transform, scale(1.2));
+
+      @include onDesktop {
+        width: toRem(30);
+        height: toRem(30);
+      }
+    }
+
+    &-instagram {
+      content: url(../images/icons/footer-icon-instagram.svg);
+
+      width: toRem(20);
+      height: toRem(20);
+
+      cursor: pointer;
+      @include hover(transform, scale(1.2));
+
+      @include onDesktop {
+        width: toRem(30);
+        height: toRem(30);
+      }
+    }
+
+    &-facebook {
+      content: url(../images/icons/footer-icon-facebook.svg);
+
+      width: toRem(20);
+      height: toRem(20);
+
+      cursor: pointer;
+      @include hover(transform, scale(1.2));
+
+      @include onDesktop {
+        width: toRem(30);
+        height: toRem(30);
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+
+    margin-top: toRem(40);
+
+    cursor: pointer;
+
+    @include onTablet {
+      margin-top: toRem(32);
+    }
+
+    @include onDesktop {
+      margin-top: toRem(74);
+    }
+
+    & a {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: toRem(36);
+      line-height: 150%;
+      letter-spacing: toRem(5.58);
+
+      width: toRem(170);
+      height: toRem(54);
+
+      text-align: center;
+      color: #000;
+
+      @include hover(transform, scale(1.1));
+    }
+  }
+
+  &__about-us {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+
+      gap: toRem(10);
+    }
+
+    & h3 {
+      display: none;
+
+      @include onTablet {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: toRem(24);
+        line-height: 100%;
+        letter-spacing: toRem(3.72);
+
+        text-transform: uppercase;
+        color: #000;
+
+        display: block;
+      }
+    }
+
+    & p {
+      display: flex;
+      justify-content: center;
+
+      line-height: 150%;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: -1;
+
+    @include onTablet {
+      content: url(../images/photos/footer-bg-tablet.png);
+    }
+
+    @include onDesktop {
+      content: url(../images/photos/footer-bg-desktop.png);
+      left: 0;
+      transform: translateX(0);
+    }
+  }
+
+  &__form--success > * {
+    border-bottom-color: $aquaTitleColor !important;
+
+    &::placeholder {
+      color: $aquaTitleColor;
+    }
+  }
+}

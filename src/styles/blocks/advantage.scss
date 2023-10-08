@@ -1,0 +1,404 @@
+.advantage {
+  padding-top: toRem(110);
+  padding-bottom: toRem(110);
+
+  @include onTablet {
+    padding-top: toRem(105);
+    padding-bottom: toRem(103);
+  }
+
+  @include onDesktop {
+    padding-top: toRem(96);
+    padding-bottom: toRem(4);
+  }
+
+  &__content {
+    position: relative;
+
+    width: toRem(320);
+    margin: 0 auto;
+
+    @include contentPaddingInLine;
+
+    @include onTablet {
+      width: toRem(768);
+    }
+
+    @include onDesktop {
+      display: flex;
+
+      width: 100%;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__main {
+    @include onTablet {
+      display: flex;
+
+      width: toRem(700);
+      margin: 0 auto;
+
+      gap: toRem(20);
+    }
+
+    @include onDesktop {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__container-box {
+    display: flex;
+    flex-direction: column;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: toRem(20);
+
+      padding-top: toRem(186);
+    }
+  }
+
+  &__box-1 {
+    position: relative;
+    display: grid;
+    gap: toRem(5);
+
+    @include onTablet {
+      padding-left: toRem(24);
+    }
+
+    &::before {
+      content: url(../images/icons/advantage-icon.svg);
+
+      position: absolute;
+      top: toRem(17);
+      left: toRem(-20);
+
+      @include onTablet {
+        top: toRem(20);
+        left: 0;
+      }
+    }
+
+    & h2 {
+      font-weight: 700;
+      font-size: toRem(32);
+      line-height: 150%;
+
+      color: $blackTitleColor;
+
+      @include onTablet {
+        width: toRem(316);
+
+        font-size: toRem(36);
+      }
+
+      @include onDesktop {
+        width: toRem(256);
+      }
+    }
+
+    & p {
+      line-height: 150%;
+
+      color: $graySubtitleColor;
+    }
+  }
+
+  &__box-2 {
+    position: relative;
+    display: grid;
+    gap: toRem(5);
+
+    margin-top: toRem(40);
+
+    @include onTablet {
+      margin-top: toRem(30);
+      padding-left: toRem(24);
+
+      order: 2;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      order: 0;
+    }
+
+    &::before {
+      content: url(../images/icons/advantage-icon.svg);
+
+      position: absolute;
+      top: toRem(17);
+      left: toRem(-20);
+
+      @include onTablet {
+        top: toRem(20);
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: toRem(23);
+      }
+    }
+
+    & h2 {
+      font-weight: 700;
+      font-size: toRem(32);
+      line-height: 150%;
+
+      color: $blackTitleColor;
+
+      @include onTablet {
+        font-size: toRem(36);
+      }
+    }
+
+    & p {
+      line-height: 150%;
+
+      color: $graySubtitleColor;
+
+      @include onTablet {
+        width: toRem(316);
+      }
+    }
+  }
+
+  &__box-3 {
+    position: relative;
+    display: grid;
+    gap: toRem(5);
+
+    margin-top: toRem(40);
+
+    @include onTablet {
+      margin-top: toRem(30);
+      padding-left: toRem(24);
+
+      order: 1;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+      margin-top: toRem(40);
+
+      order: 0;
+    }
+
+    &::before {
+      content: url(../images/icons/advantage-icon.svg);
+
+      position: absolute;
+      top: toRem(17);
+      left: toRem(-20);
+
+      @include onTablet {
+        top: toRem(20);
+        left: 0;
+      }
+    }
+
+    & h2 {
+      font-weight: 700;
+      font-size: toRem(32);
+      line-height: 150%;
+
+      color: $blackTitleColor;
+
+      @include onTablet {
+        font-size: toRem(36);
+      }
+    }
+
+    & p {
+      line-height: 150%;
+
+      color: $graySubtitleColor;
+
+      @include onTablet {
+        width: toRem(316);
+      }
+
+      @include onDesktop {
+        width: 100%;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: toRem(9);
+
+    width: toRem(238);
+    height: toRem(48);
+
+    color: $blackButtonColor;
+    background-color: $yellowButtonColor;
+
+    margin-top: toRem(50);
+
+    cursor: pointer;
+
+    @include onTablet {
+      gap: toRem(5);
+
+      border: 1px solid $aquaTitleColor;
+      background-color: $mainBgColor;
+      margin-top: toRem(101);
+    }
+
+    @include onDesktop {
+      margin-top: toRem(60);
+    }
+
+    &:hover {
+      opacity: 0.7;
+
+      @include onTablet {
+        opacity: 1;
+
+        color: #fff;
+
+        background-color: $aquaTitleColor;
+
+        transition: $transitionTime;
+      }
+    }
+
+    &:hover svg {
+      fill: #fff;
+      transition: $transitionTime;
+    }
+
+    &-text {
+      font-family: "Proxima Nova", sans-serif;
+      font-weight: 600;
+      font-size: toRem(14);
+      line-height: 150%;
+
+      text-transform: uppercase;
+
+      width: toRem(75);
+    }
+
+    &-line {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__text {
+    display: grid;
+    gap: toRem(10);
+
+    padding-top: toRem(40);
+
+    @include onTablet {
+      gap: toRem(5);
+      padding-top: toRem(35);
+    }
+
+    @include onDesktop {
+      padding-top: toRem(70);
+      padding-left: toRem(100);
+    }
+
+    & h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: toRem(36);
+      line-height: 150%;
+      letter-spacing: toRem(5.58);
+
+      text-transform: uppercase;
+      color: #eb5757;
+
+      @include onTablet {
+        font-size: toRem(24);
+        line-height: 100%;
+        letter-spacing: toRem(3.72);
+      }
+
+      @include onDesktop {
+        font-size: toRem(36);
+        line-height: 150%;
+        letter-spacing: toRem(5.58);
+      }
+    }
+
+    & p {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: toRem(24);
+      line-height: 100%;
+      letter-spacing: toRem(3.72);
+
+      text-transform: uppercase;
+      color: $aquaTitleColor;
+
+      @include onTablet {
+        font-size: toRem(18);
+        letter-spacing: toRem(2.79);
+
+        width: toRem(240);
+      }
+
+      @include onDesktop {
+        font-size: toRem(24);
+        line-height: 150%;
+        letter-spacing: toRem(3.72);
+
+        width: 100%;
+      }
+    }
+  }
+
+  &__subtitle {
+    display: none;
+
+    @include onTablet {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: toRem(12);
+      line-height: 116.67%; /* 14/12 */
+      letter-spacing: toRem(2.64);
+
+      color: $graySubtitleColor;
+
+      position: absolute;
+      top: toRem(75);
+      right: toRem(10);
+
+      writing-mode: vertical-rl;
+      white-space: nowrap;
+      display: block;
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        top: toRem(-75);
+        right: toRem(6);
+
+        width: toRem(1);
+        height: toRem(65);
+
+        background-color: $graySubtitleColor;
+      }
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

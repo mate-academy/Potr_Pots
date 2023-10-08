@@ -1,0 +1,177 @@
+.int {
+  padding-top: toRem(110);
+
+  @include onTablet {
+    padding-top: toRem(132);
+  }
+
+  @include onDesktop {
+    padding-top: toRem(150);
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: toRem(58);
+    line-height: normal;
+    letter-spacing: toRem(8.99);
+
+    color: $blackTitleColor;
+
+    padding-inline: toRem(30);
+
+    @include onTablet {
+      padding-inline: toRem(34);
+    }
+
+    @include onDesktop {
+      padding-inline: toRem(135);
+    }
+  }
+
+  &__title br {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    width: toRem(320);
+    margin: 0 auto;
+
+    margin-top: toRem(25);
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+
+      width: 100%;
+      height: toRem(405);
+
+      gap: toRem(47);
+      margin-top: toRem(100);
+    }
+
+    @include onDesktop {
+      height: toRem(536);
+
+      gap: toRem(57);
+      margin: 0 auto;
+      margin-top: toRem(115);
+    }
+  }
+
+  &__subtitle-1 {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: toRem(-37);
+      left: 0;
+
+      display: block;
+    }
+
+    @include onDesktop {
+      content: url(../images/icons/int-martin-icon-desktop.svg);
+
+      top: toRem(-33.5);
+      left: toRem(85);
+    }
+  }
+
+  &__image {
+    @include onTablet {
+      padding-top: toRem(77);
+      padding-right: toRem(34);
+
+      flex: 1;
+    }
+
+    @include onDesktop {
+      padding-top: toRem(28);
+
+      flex: 1;
+    }
+  }
+
+  &__image img {
+    @include onTablet {
+      width: toRem(340);
+    }
+
+    @include onDesktop {
+      width: toRem(677);
+
+    }
+  }
+
+  &__text {
+    line-height: 150%;
+
+    padding-top: toRem(30);
+    padding-bottom: toRem(58);
+
+    padding-inline: toRem(30);
+
+    @include onTablet {
+      font-family: "Proxima Nova", sans-serif;
+
+      width: toRem(313);
+      height: toRem(275);
+
+      padding: 0;
+      margin-top: toRem(130);
+      margin-left: toRem(34);
+
+      flex: 1;
+    }
+
+    @include onDesktop {
+      width: toRem(336);
+
+      margin-top: toRem(258);
+      margin-left: toRem(135);
+
+      flex: 0 1 auto;
+    }
+  }
+
+  &__background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: -1;
+
+    @include onTablet {
+      content: url(../images/photos/int-bg-tablet.png);
+
+      top: 0;
+    }
+
+    @include onDesktop {
+      content: url(../images/photos/int-bg-desktop.png);
+    }
+  }
+
+  &__subtitle-2 {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      bottom: toRem(-88);
+      right: toRem(4);
+
+      display: block;
+    }
+
+    @include onDesktop {
+      content: url(../images/icons/int-andy-icon-desktop.svg);
+
+      right: toRem(6);
+      bottom: toRem(-206.25);
+    }
+  }
+}

@@ -1,0 +1,476 @@
+.materials {
+  padding-top: toRem(110);
+
+  @include onTablet {
+    padding-top: toRem(113);
+  }
+
+  @include onDesktop {
+    padding-top: toRem(226.25);
+  }
+
+  &__content {
+    position: relative;
+
+    height: toRem(573);
+
+    @include onTablet {
+      height: toRem(834.75);
+    }
+
+    @include onDesktop {
+      height: toRem(1242);
+    }
+  }
+
+  &__subtitle-1 {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: toRem(75);
+      right: toRem(10);
+
+      display: block;
+
+      writing-mode: vertical-rl;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: toRem(78);
+      right: toRem(9);
+
+      width: toRem(1);
+      height: toRem(65);
+      background-color: $graySubtitleColor;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: toRem(58);
+    line-height: 120.69%; /* 70/58 */
+    letter-spacing: toRem(8.99);
+
+    color: $aquaTitleColor;
+
+    height: toRem(199);
+
+    margin-left: toRem(30);
+
+    @include onTablet {
+      font-size: toRem(80);
+      line-height: 120%; /* 96/80 */
+      letter-spacing: toRem(9.6);
+
+      height: toRem(233);
+
+      margin-left: toRem(34);
+    }
+
+    @include onDesktop {
+      font-size: toRem(138.8);
+      line-height: 120.32%; /* 167/138.8 */
+
+      letter-spacing: toRem(16.6);
+
+      margin-left: toRem(135);
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: toRem(141);
+      right: toRem(34);
+
+      display: flex;
+      flex-direction: column;
+      gap: toRem(10);
+      width: toRem(340);
+    }
+
+    @include onDesktop {
+      top: toRem(167);
+      right: toRem(135);
+
+      width: toRem(470);
+
+      gap: toRem(15);
+    }
+
+    & h3 {
+      font-weight: 700;
+      font-size: toRem(20);
+      line-height: 150%;
+
+      z-index: -1;
+
+      @include onDesktop {
+        z-index: 1;
+      }
+    }
+
+    & p {
+      line-height: 150%;
+
+      position: relative;
+      z-index: -1;
+
+      @include onDesktop {
+        z-index: 1;
+      }
+    }
+
+    & span {
+      font-weight: 700;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: toRem(130);
+
+    background-image: url(../images/photos/materials-bg-image.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: toRem(240);
+
+    object-fit: cover;
+
+    z-index: -1;
+
+    @include onTablet {
+      top: auto;
+      bottom: 0;
+
+      height: toRem(576.75);
+    }
+
+    @include onDesktop {
+      height: toRem(1081.4);
+    }
+  }
+
+  &__slider {
+    position: relative;
+
+    width: 100%;
+    height: toRem(254);
+    max-width: toRem(302);
+
+    margin: 0 auto;
+    margin-top: toRem(120);
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__slides {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    display: none;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(17px);
+      z-index: -1;
+    }
+  }
+
+  &__slide p {
+    line-height: 150%;
+
+    color: $mainBgColor;
+
+    width: toRem(213);
+    margin: 0 auto;
+    margin-top: toRem(28);
+  }
+
+  &__icons {
+    position: absolute;
+    bottom: toRem(37);
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: toRem(7);
+
+    &-button {
+      width: toRem(7);
+      height: toRem(7);
+
+      transform: rotate(-45deg);
+
+      background-color: $mainBgColor;
+
+      &--active {
+        opacity: 1;
+
+        border: 1px solid $mainBgColor;
+        background-color: rgba(0, 0, 0, 0.3);
+
+      }
+    }
+  }
+
+  &__buttons {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__button {
+    &-1 {
+      position: absolute;
+      left: toRem(83);
+      bottom: toRem(103);
+
+      @include onDesktop {
+        left: toRem(254);
+        bottom: toRem(156);
+      }
+    }
+
+    &-2 {
+      position: absolute;
+      left: toRem(231);
+      bottom: toRem(230.75);
+
+      @include onDesktop {
+        left: toRem(547);
+        bottom: toRem(400);
+      }
+    }
+
+    &-3 {
+      position: absolute;
+      left: toRem(338);
+      bottom: toRem(71.75);
+
+      @include onDesktop {
+        left: toRem(684);
+        bottom: toRem(105);
+      }
+    }
+
+    &-4 {
+      position: absolute;
+      right: toRem(299);
+      bottom: toRem(134.75);
+
+      @include onDesktop {
+        right: toRem(554);
+        bottom: toRem(272);
+      }
+    }
+
+    &-5 {
+      position: absolute;
+      right: toRem(162);
+      bottom: toRem(318.75);
+
+      @include onDesktop {
+        right: toRem(278);
+        bottom: toRem(373);
+      }
+    }
+
+    &-content {
+      display: none;
+
+      &--1 {
+        @include onTablet {
+          position: absolute;
+          left: toRem(37);
+          bottom: toRem(173.75);
+
+          line-height: 150%;
+          color: $mainBgColor;
+
+          width: toRem(286);
+          height: toRem(166);
+
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(toRem(20));
+
+          z-index: 1;
+        }
+
+        @include onDesktop {
+          left: toRem(131);
+          bottom: toRem(237);
+        }
+      }
+
+      &--2 {
+        @include onTablet {
+          position: absolute;
+          left: toRem(115);
+          bottom: toRem(304.75);
+
+          line-height: 150%;
+          color: $mainBgColor;
+
+          width: toRem(283);
+          height: toRem(166);
+
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(toRem(20));
+
+          z-index: 1;
+        }
+
+        @include onDesktop {
+          left: toRem(283);
+          bottom: toRem(471);
+        }
+      }
+
+      &--3 {
+        @include onTablet {
+          position: absolute;
+          left: toRem(225);
+          bottom: toRem(142.75);
+
+          line-height: 150%;
+          color: $mainBgColor;
+
+          width: toRem(283);
+          height: toRem(214);
+
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(toRem(20));
+
+          z-index: 1;
+        }
+
+        @include onDesktop {
+          left: toRem(390);
+          bottom: toRem(19);
+        }
+      }
+
+      &--4 {
+        @include onTablet {
+          position: absolute;
+          right: toRem(168);
+          bottom: toRem(205.75);
+
+          line-height: 150%;
+          color: $mainBgColor;
+
+          width: toRem(283);
+          height: toRem(214);
+
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(toRem(20));
+
+          z-index: 1;
+        }
+
+        @include onDesktop {
+          right: toRem(420);
+          bottom: toRem(365);
+        }
+      }
+
+      &--5 {
+        @include onTablet {
+          position: absolute;
+          right: toRem(36);
+          bottom: toRem(72.75);
+
+          line-height: 150%;
+          color: $mainBgColor;
+
+          width: toRem(303);
+          height: toRem(237);
+
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(toRem(20));
+
+          z-index: 1;
+        }
+
+        @include onDesktop {
+          right: toRem(152);
+          bottom: toRem(130);
+        }
+      }
+    }
+
+    &-content p {
+      padding: toRem(35);
+    }
+
+    &-img {
+      &--active {
+        content: url(../images/icons/materials-icon-button-sellected.svg);
+      }
+    }
+  }
+
+  &__button button {
+    @include hover(transform, scale(1.1));
+  }
+
+  &__subtitle-2 {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: toRem(279);
+      left: toRem(10);
+
+      display: block;
+
+      writing-mode: vertical-rl;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: toRem(78);
+      right: toRem(10);
+
+      width: toRem(1);
+      height: toRem(65);
+      background-color: $graySubtitleColor;
+    }
+  }
+}

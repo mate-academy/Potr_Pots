@@ -1,0 +1,253 @@
+.plant {
+  padding-top: toRem(110);
+
+  &__content {
+    position: relative;
+
+    @include onDesktop {
+      @include pageGrid;
+
+      @include contentPaddingInLine;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: toRem(36);
+    line-height: 150%;
+    letter-spacing: toRem(5.58);
+
+    text-transform: uppercase;
+    color: #000;
+
+    @include contentPaddingInLine;
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+      grid-row: 1;
+
+      padding-inline: 0;
+    }
+  }
+
+  &__subtitle {
+    line-height: 150%;
+
+    padding-top: toRem(20);
+
+    @include contentPaddingInLine;
+
+    @include onTablet {
+      padding-top: toRem(30);
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+      grid-row: 2;
+
+      padding-inline: 0;
+      padding-top: toRem(66);
+    }
+  }
+
+  &__subtitle p {
+    @include onTablet {
+      width: toRem(579);
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__line {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      top: toRem(121);
+      left: toRem(404);
+
+      width: toRem(1);
+      height: toRem(257);
+
+      display: block;
+      background-color: #d8d8d8;
+    }
+  }
+
+  &__box {
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+
+      width: toRem(768);
+
+      gap: toRem(12);
+      padding-top: toRem(38);
+      margin: 0 auto;
+
+      @include contentPaddingInLine;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / -1;
+      grid-row: 2;
+      display: block;
+
+      width: 100%;
+
+      padding-inline: 0;
+      padding-top: toRem(69);
+    }
+  }
+
+  &__image {
+    padding-top: toRem(30);
+
+    @include onTablet {
+      max-width: toRem(416);
+
+      padding-top: 0;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      right: toRem(135);
+      bottom: 0;
+
+      max-width: toRem(528);
+    }
+  }
+
+  &__image img {
+    width: 100%;
+  }
+
+  &__text {
+    padding-top: toRem(30);
+    padding-inline: toRem(30);
+
+    @include onTablet {
+      padding-top: 0;
+      padding-inline: 0;
+
+      max-width: toRem(270);
+    }
+  }
+
+  &__text-large {
+    display: grid;
+    gap: toRem(10);
+
+    & h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: toRem(18);
+      line-height: 100%;
+      letter-spacing: toRem(2.8);
+
+      color: #000;
+
+      @include onTablet {
+        width: toRem(270);
+      }
+    }
+
+    & p {
+      line-height: 150%;
+
+      @include onTablet {
+        width: toRem(246);
+      }
+    }
+  }
+
+  &__text-small {
+    display: grid;
+    gap: toRem(10);
+
+    padding-top: toRem(40);
+
+    @include onTablet {
+      padding-top: toRem(50);
+    }
+
+    @include onDesktop {
+      padding-top: toRem(40);
+    }
+
+    & h3 {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: toRem(18);
+      line-height: 100%;
+      letter-spacing: toRem(2.8);
+
+      color: #000;
+
+      @include onTablet {
+        width: toRem(170);
+      }
+    }
+
+    & p {
+      line-height: 150%;
+
+      @include onTablet {
+        font-family: "Proxima Nova", sans-serif;
+
+        width: toRem(246);
+      }
+    }
+
+    & span {
+      display: none;
+
+      @include onTablet {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__text-footer {
+    padding-top: toRem(15);
+
+    @include contentPaddingInLine;
+
+    @include onTablet {
+      padding-top: toRem(20);
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 7;
+      grid-row: 3;
+
+      width: toRem(546);
+
+      padding-inline: 0;
+      padding-top: toRem(109);
+      padding-bottom: toRem(51);
+      padding-left: toRem(12);
+    }
+
+    &::before {
+      content: "*";
+
+      position: absolute;
+      left: toRem(20);
+
+      margin-top: toRem(4);
+
+      @include onTablet {
+        left: toRem(24);
+      }
+
+      @include onDesktop {
+        left: toRem(135);
+      }
+    }
+
+    & p {
+      line-height: 150%;
+    }
+  }
+}
