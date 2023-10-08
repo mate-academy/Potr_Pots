@@ -1,4 +1,5 @@
 .int {
+  position: relative;
   padding-top: toRem(110);
 
   @include onTablet {
@@ -153,6 +154,26 @@
 
     @include onDesktop {
       content: url(../images/photos/int-bg-desktop.png);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: -1;
+
+    background-image: url(../images/photos/int-bg-mobile.png);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: toRem(253);
+
+    @include onTablet {
+      background-image: none;
     }
   }
 

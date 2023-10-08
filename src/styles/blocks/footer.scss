@@ -6,6 +6,11 @@
     width: toRem(320);
     margin: 0 auto;
 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     @include contentPaddingInLine;
 
     @include onTablet {
@@ -498,19 +503,31 @@
   &__bg {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+
+    width: 100%;
+    height: toRem(1000);
+
+    background-image: url(../images/photos/footer-bg-mobile.png);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     z-index: -1;
 
     @include onTablet {
-      content: url(../images/photos/footer-bg-tablet.png);
+      background-image: url(../images/photos/footer-bg-tablet.png);
+
+      height: toRem(552);
     }
 
     @include onDesktop {
-      content: url(../images/photos/footer-bg-desktop.png);
+      background-image: url(../images/photos/footer-bg-desktop.png);
       left: 0;
-      transform: translateX(0);
+      background-position: left;
+      background-size: contain;
+
+      height: toRem(567);
     }
   }
 
