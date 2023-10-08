@@ -1,6 +1,13 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-duration;
+
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(12, 70px);
+  column-gap: 30px;
 }
