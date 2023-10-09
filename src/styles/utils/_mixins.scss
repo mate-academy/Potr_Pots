@@ -1,6 +1,142 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin typography {
+  font-family: "Bebas Neue", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+@mixin hoverTransform {
+  transition: transform, 0.3s;
+
   &:hover {
-    #{$_property}: $_toValue;
+    transform: scale(1.05);
+  }
+}
+
+@mixin onMobile {
+  @media (min-width: 320px) and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin onTablet {
+  @media (min-width: 767px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin onMobileAndTablet {
+  @media (min-width: 320px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin onTabletAndDesktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin button($color, $hoverColor) {
+  display: flex;
+  text-transform: uppercase;
+  min-width: max-content;
+  position: relative;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+
+  background-color: $color;
+  padding: 14px 100px 14px 78px;
+  transition: all 0.3s ease-in-out;
+
+  @include onTablet {
+    padding: 10px 96px 10px 66px;
+  }
+
+  &::after {
+    position: absolute;
+    top: 22%;
+    right: 94px;
+    transition: all 0.3s ease-in-out;
+
+    @include onTablet {
+      right: 58px;
+    }
+
+    @include onMobile {
+      right: 78px;
+    }
+  }
+
+  &:hover {
+    background-color: $hoverColor;
+    padding-left: 100px;
+
+    &::after {
+      right: -12px;
+      opacity: 0;
+    }
+  }
+}
+
+@mixin hoverForLinks($colorWhenHover) {
+  position: relative;
+
+  &:hover {
+    color: $colorWhenHover;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 4px;
+    background-color: $colorWhenHover;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
+
+@mixin reviewPhoto($rotateTransform, $zIndex) {
+  transform: rotate($rotateTransform+deg);
+  z-index: $zIndex;
+  transition: all, 0.3s;
+
+  &:hover {
+    transform: rotate(0deg) scale(1.3);
+    z-index: 12;
+  }
+}
+
+@mixin spiner {
+  animation: spin 10s 0s infinite linear;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    50% {
+      transform: rotate(180deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
   }
 }

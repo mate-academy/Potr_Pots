@@ -1,0 +1,44 @@
+.page {
+  font-family: "Manrope", sans-serif;
+  color: #4f4f4f;
+  max-width: 1440px;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    transition: transform 0.3s;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}
+
+.transparent-text {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.1px;
+
+  @include onMobile {
+    -webkit-text-stroke: 0.5px;
+  }
+}
+
+.logo__item {
+  &-image {
+    @include hoverTransform;
+
+  }
+}

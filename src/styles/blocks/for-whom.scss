@@ -1,0 +1,176 @@
+.for-whom {
+
+  &__second-and-third-content {
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(12, 70px);
+      column-gap: 30px;
+    }
+  }
+
+  &__title {
+    margin-top: 50px;
+  }
+
+  &__content {
+    align-items: center;
+
+    @include onMobileAndTablet {
+      margin-top: 100px;
+    }
+
+    &--image {
+      max-width: min-content;
+      
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    &-first {
+      &--image {
+        &--item {
+          @include onTablet {
+            width: 284px;
+            height: 284px;
+          }
+        }
+      }
+    }
+
+    &-second {
+      grid-row: 2;
+      align-content: center;
+
+      @include onTablet {
+        margin-top: 100px;
+      }
+    }
+
+    &-third {
+      grid-row: 3;
+      @include onDesktop {
+        grid-row: 2;
+        margin: 80px 0;
+      }
+
+      &--image {
+        &--item {
+          @include onTablet {
+            width: 284px;
+            height: 404px;
+          }
+        }
+      }
+    }
+
+    &--main-text {
+      position: relative;
+
+      @include onDesktop {
+        margin-top: 40px;
+      }
+
+      @include onTablet {
+        grid-row: 1;
+      }
+
+      &-third {
+        top: 46px;
+      }
+
+      &--description {
+        position: relative;
+
+        @include onMobile {
+          display: none;
+        }
+
+        &-2 {
+          @include onDesktop {
+            top: -30px;
+          }
+
+          @include onTablet {
+            top: -80px;
+            left: 230px;
+          }
+        }
+
+        &::before {
+          content: "*";
+          position: absolute;
+          left: -30px;
+        }
+      }
+
+      &--title {
+        color: #000;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          height: 46px;
+          width: 1px;
+          background-color: #000;
+          bottom: 0;
+          transform: rotate(22deg) translate(5px, -8px);
+
+          @include onTablet {
+            height: 34px;
+            bottom: -16px;
+          }
+
+          @include onMobile {
+            display: none;
+          }
+        }
+
+        &--num {
+          position: absolute;
+
+          @include onMobile {
+            top: -50px;
+            left: 22px;
+          }
+
+          @include onTablet {
+            left: -30px;
+          }
+
+          @include onDesktop {
+            right: 420px;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -22px;
+            height: 46px;
+            width: 1px;
+            background-color: #000;
+            bottom: 0;
+            transform: rotate(22deg) translate(5px, -8px);
+
+            @include onTablet {
+              height: 34px;
+            }
+          }
+
+          &-2 {
+            top: -44px;
+            left: 20px;
+          }
+        }
+      }
+
+      &--paragraph {
+        @include onDesktop {
+          margin-left: -10px;
+        }
+      }
+    }
+  }
+}

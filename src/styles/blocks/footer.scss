@@ -1,0 +1,74 @@
+.footer {
+  padding-bottom: 60px;
+  position: relative;
+
+  @include onMobile {
+    padding-bottom: 0;
+    z-index: 100;
+  }
+
+  &__left {
+    @include onMobile {
+      display: none;
+    }
+  }
+  @include onMobile {
+    margin-top: 80px;
+  }
+
+  @include onTablet {
+    margin-top: 200px;
+  }
+
+  &--link {
+    display: block;
+    color: #000;
+    width: fit-content;
+
+    @include hoverForLinks($turquoise);
+
+    & > .footer__title:hover {
+      transition: all 0.2s ease-in-out ;
+      color: $turquoise;
+    }
+  }
+
+  &__title {
+    color: #000;
+    margin: 0 0 8px;
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    &-links--item {
+      @include hoverTransform;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    @include onMobile {
+      margin-top: 20px;
+    }
+  }
+
+  &__copyright {
+    @include onMobile {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+}

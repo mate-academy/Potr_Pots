@@ -1,0 +1,270 @@
+.materials {
+  margin-top: 250px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  background-image: url(../photos/materials-and-features.png);
+  min-height: 66vh;
+
+  @include onTablet {
+    min-height: 86vh;
+    margin-top: 300px;
+  }
+
+  @include onDesktop {
+    min-height: 1182px;
+  }
+
+  &__top {
+    position: absolute;
+    top: -40px;
+
+    @include onMobile {
+      top: -100px;
+    }
+
+    @include onTablet {
+      top: -70px;
+    }
+  }
+
+  &__title {
+    color: $turquoise;
+    font-weight: 400;
+    font-size: 138px;
+    line-height: 167px;
+    letter-spacing: 0.12em;
+
+    @include onMobile {
+      font-size: 58px;
+      line-height: 70px;
+    }
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+    }
+  }
+
+  &__main-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include onMobile {
+      display: none;
+    }
+
+    &--title {
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    &--text {
+      &--hide-for-tablet {
+        @include onTablet {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__swiper {
+    display: none;
+
+    @include onMobile {
+      display: block;
+    }
+
+    &--padding {
+      padding: 140px;
+    }
+  }
+}
+
+.pop-up {
+  position: absolute;
+
+  @include onMobile {
+    display: none;
+  }
+
+  &--1 {
+    left: 17.5%;
+    bottom: 14.5%;
+
+    @include onTablet {
+      left: 11%;
+      bottom: 17%;
+    }
+  }
+
+  &--2 {
+    left: 38%;
+    bottom: 38%;
+
+    @include onTablet {
+      left: 30%;
+      bottom: 40%;
+    }
+  }
+
+  &--3 {
+    left: 48%;
+    bottom: 10%;
+
+    @include onTablet {
+      left: 42%;
+      bottom: 12%;
+    }
+  }
+
+  &--4 {
+    left: 58%;
+    bottom: 24%;
+
+    @include onTablet {
+      left: 54%;
+      bottom: 22%;
+    }
+  }
+
+  &--5 {
+    left: 77%;
+    bottom: 34%;
+
+    @include onTablet {
+      left: 72%;
+      bottom: 55%;
+    }
+  }
+
+  &__chec {
+    position: relative;
+    display: none;
+  }
+
+  &__btn {
+    position: relative;
+    width: 51px;
+    height: 51px;
+    background-color: $red;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 11px;
+      height: 1px;
+      background-color: #e0e0e0;
+    }
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 1px;
+      height: 11px;
+      background-color: #e0e0e0;
+      transition: all 0.4s;
+    }
+
+    @include hoverTransform;
+  }
+
+  &__text {
+    width: 283px;
+    position: absolute;
+    padding: 35px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: all 0.3s;
+    visibility: hidden;
+    backdrop-filter: blur(40px);
+
+    &--1 {
+      bottom: 100%;
+      margin-bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include onTablet {
+        left: -100%;
+        transform: translateX(0);
+        margin-bottom: 20px;
+      }
+    }
+
+    &--2 {
+      bottom: 100%;
+      margin-bottom: 20px;
+      right: 30px;
+
+      @include onTablet {
+        right: 0;
+        transform: translateX(40%);
+      }
+    }
+
+    &--3 {
+      bottom: -83px;
+      margin-right: 11px;
+      right: 50px;
+
+      @include onTablet {
+        bottom: 100%;
+        margin: 0 0 20px;
+        right: 0;
+        transform: translateX(50%);
+      }
+    }
+
+    &--4 {
+      bottom: 100%;
+      left: 100%;
+      margin-bottom: 42px;
+      transform: translateX(-50%);
+
+      @include onTablet {
+        margin-bottom: 20px;
+        transform: translateX(-56%);
+      }
+    }
+
+    &--5 {
+      top: 100%;
+      transform: translateX(-46%);
+      margin-top: 26px;
+
+      @include onTablet {
+        margin-top: 9px;
+        padding: 35px 45px;
+      }
+    }
+  }
+
+  &__chec:checked + &__btn + &__text {
+    opacity: 1;
+    z-index: 5;
+    visibility: visible;
+    transition: all 0.3s;
+  }
+
+  &__chec:checked + &__btn {
+    background-color: rgba(36, 35, 35, 0.75);
+    opacity: 0.65;
+    transition: all 0.4s;
+  }
+
+  &__chec:checked + &__btn::before {
+    transform: rotate(90deg);
+    transition: transform 0.4s;
+  }
+}

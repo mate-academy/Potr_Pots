@@ -1,0 +1,79 @@
+.header {
+  position: relative;
+  padding-top: 22px;
+
+  &__menu {
+    position: absolute;
+    @include onMobile {
+      top: 20px;
+      right: 30px;
+    }
+
+    @include onTablet {
+      text-align: end;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__background {
+    max-width: 1036px;
+
+    &-image {
+      position: absolute;
+      left: 0;
+      top: -30px;
+      background-image: url(../images/Rectangle.svg);
+      height: 466px;
+      width: 72%;
+      max-width: 1035px;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+
+      @include onTablet {
+        top: -22vh;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18%;
+
+    position: relative;
+
+    @include onMobileAndTablet {
+      display: none;
+    }
+
+    &--item {
+      min-width: max-content;
+      display: flex;
+      gap: 60px;
+      color: #4f4f4f;
+      transition: all 0.2s ease-in;
+      @include hoverForLinks($turquoise);
+    }
+  }
+
+  &__orders {
+    display: flex;
+    justify-content: flex-end;
+    max-width: fit-content;
+    @include hoverTransform;
+
+    @include onMobileAndTablet {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.features {
+  margin-top: 110px;
+
+  @include onTablet {
+    margin-top: 132px;
+  }
+
+  @include onDesktop {
+    margin-top: 150px;
+  }
+
+  &__title {
+    color: $turquoise;
+  }
+
+  &__content {
+    @include onMobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--image {
+      border: 2px solid green;
+
+      @include onMobile {
+        height: 260px;
+        width: 260px;
+      }
+
+      @include onTablet {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    margin-top: 22px;
+
+    @include onTablet {
+      margin-top: 52px;
+    }
+
+    @include onDesktop {
+      margin-top: 70px;
+    }
+
+    &__text {
+      text-align: center;
+
+      @include onMobile {
+        max-width: 260px;
+      }
+
+      &--title {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
