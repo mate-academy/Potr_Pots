@@ -1,0 +1,322 @@
+.card-about {
+  width: toRem(260);
+  margin: 0 auto;
+
+  @include onTablet {
+    width: 100%;
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &-1 {
+      width: toRem(284);
+      height: toRem(284);
+
+      align-self: flex-end;
+
+      @include onDesktop {
+        width: toRem(500);
+        height: toRem(500);
+      }
+    }
+
+    &-2 {
+      width: toRem(300);
+      height: toRem(417);
+
+    }
+
+    &-3 {
+      width: toRem(284);
+      height: toRem(405);
+
+      align-self: flex-end;
+
+      @include onDesktop {
+        width: toRem(470);
+        height: toRem(670);
+
+      }
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    display: none;
+
+    @include onTablet {
+      display: block;
+
+      font-family: "Manrope", sans-serif;
+      line-height: 150%;
+    }
+
+    &--1 {
+      @include onDesktop {
+        margin-top: toRem(120);
+      }
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: toRem(-18);
+
+        content: "*";
+
+        font-family: "Bebas Neue", sans-serif;
+        font-size: toRem(24);
+        letter-spacing: toRem(3.72);
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        text-align: right;
+
+        margin-top: toRem(29);
+      }
+
+      @include onDesktop {
+        text-align: left;
+
+        margin-top: 0;
+      }
+
+      &::before {
+        @include onTablet {
+          position: absolute;
+          top: 0;
+          right: toRem(69);
+
+          content: "*";
+
+          font-family: "Bebas Neue", sans-serif;
+          font-size: toRem(24);
+          letter-spacing: toRem(3.72);
+        }
+
+        @include onDesktop {
+          top: toRem(6);
+          left: toRem(-47);
+        }
+      }
+    }
+
+    &--3 {
+      &::before {
+        @include onTablet {
+          position: absolute;
+          top: 0;
+          left: toRem(-26);
+
+          content: "*";
+
+          font-family: "Bebas Neue", sans-serif;
+          font-size: toRem(24);
+          letter-spacing: toRem(3.72);
+        }
+
+        @include onDesktop {
+          top: toRem(5);
+          left: toRem(-43);
+        }
+      }
+    }
+  }
+
+  &__number {
+    padding-top: toRem(70);
+
+    &--1 {
+      padding-top: 0;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        padding-top: toRem(28);
+      }
+
+      @include onDesktop {
+        padding-top: toRem(40);
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: toRem(36);
+    line-height: 150%;
+    letter-spacing: toRem(5.58);
+
+    text-transform: uppercase;
+    color: #000;
+
+    margin-top: toRem(30);
+
+    @include onTablet {
+      margin-top: toRem(25);
+    }
+
+    @include onDesktop {
+      letter-spacing: toRem(5);
+    }
+
+    &--1 {
+      @include onDesktop {
+        width: toRem(470);
+
+        margin-top: toRem(40);
+      }
+
+      &::before {
+        @include onTablet {
+          position: absolute;
+          top: 0;
+          left: toRem(-60);
+          content: url(../images/icons/card-number-svg-1.svg);
+        }
+
+        @include onDesktop {
+          left: toRem(-100);
+        }
+      }
+
+      &::after {
+        @include onTablet {
+          position: absolute;
+          bottom: toRem(6);
+          left: toRem(120);
+
+          content: "";
+
+          width: toRem(1);
+          height: toRem(46);
+
+          background-color: $blackTitleColor;
+          transform: rotate(22deg);
+        }
+
+        @include onDesktop {
+          left: toRem(265);
+        }
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        margin-top: 0;
+        padding-top: toRem(22);
+      }
+
+      @include onDesktop {
+        padding-top: toRem(27);
+      }
+
+      &::after {
+        @include onTablet {
+          position: absolute;
+          bottom: toRem(6);
+          right: toRem(80);
+
+          content: "";
+
+          width: toRem(1);
+          height: toRem(46);
+
+          background-color: $blackTitleColor;
+          transform: rotate(22deg);
+        }
+
+        @include onDesktop {
+          right: toRem(150);
+        }
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        margin-top: 0;
+        padding-top: toRem(17);
+      }
+
+      @include onDesktop {
+        width: toRem(370);
+
+        margin-left: toRem(100);
+        padding-top: toRem(40);
+      }
+
+      &::before {
+        @include onTablet {
+          position: absolute;
+          top: 0;
+          left: toRem(-60);
+          content: url(../images/icons/card-number-svg-3.svg);
+        }
+
+        @include onDesktop {
+          top: toRem(40);
+          left: toRem(-100);
+        }
+      }
+
+      &::after {
+        @include onTablet {
+          position: absolute;
+          bottom: toRem(6);
+          left: toRem(125);
+
+          content: "";
+
+          width: toRem(1);
+          height: toRem(46);
+
+          background-color: $blackTitleColor;
+          transform: rotate(22deg);
+        }
+
+        @include onDesktop {
+          left: toRem(120);
+        }
+      }
+    }
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    line-height: 150%;
+
+    padding-top: toRem(20);
+
+    @include onTablet {
+      padding-top: toRem(10);
+    }
+
+    @include onDesktop {
+      width: toRem(370);
+    }
+
+    &--3 {
+      @include onDesktop {
+        margin-left: toRem(100);
+      }
+    }
+  }
+}

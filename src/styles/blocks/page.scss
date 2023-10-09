@@ -1,0 +1,33 @@
+.page {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  background-color: $mainBgColor;
+
+  max-width: toRem(1440);
+  margin: 0 auto;
+
+  &__body {
+    margin: 0;
+    min-width: $minWidth;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateX(105%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+      z-index: 1;
+    }
+  }
+}

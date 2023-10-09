@@ -1,0 +1,179 @@
+.about-us {
+  margin-top: toRem(110);
+
+  @include onDesktop {
+    margin-top: toRem(150);
+  }
+
+  &__content {
+    position: relative;
+
+    @include contentPaddingInLine;
+  }
+
+  &__subtitle-1 {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: toRem(-55);
+      right: toRem(8);
+      display: block;
+
+      writing-mode: vertical-rl;
+      color: $graySubtitleColor;
+    }
+
+    @include onDesktop {
+      top: toRem(73);
+      right: toRem(135);
+    }
+
+    &::before {
+      @include onTablet {
+        content: "";
+        position: absolute;
+        bottom: toRem(75);
+        right: toRem(9);
+
+        width: toRem(1);
+        height: toRem(65);
+        background-color: $graySubtitleColor;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: toRem(36);
+    line-height: 150%;
+    letter-spacing: toRem(5.58);
+
+    color: $blackTitleColor;
+    text-transform: uppercase;
+  }
+
+  &__cards {
+    padding-top: toRem(25);
+
+    @include onTablet {
+      display: grid;
+      gap: toRem(110);
+
+      width: 100%;
+      padding-top: toRem(19);
+    }
+
+    @include onDesktop {
+      gap: toRem(80);
+      padding-top: toRem(34);
+    }
+
+    &--box {
+      @include onDesktop {
+        display: flex;
+        gap: toRem(200);
+      }
+    }
+  }
+
+  &__card-1 {
+    @include onTablet {
+      display: flex;
+      gap: toRem(76);
+
+      height: toRem(308);
+    }
+
+    @include onDesktop {
+      gap: toRem(200);
+
+      height: toRem(500);
+    }
+  }
+
+  &__card-2 {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: toRem(57);
+
+      height: toRem(417);
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+      gap: toRem(45);
+
+      width: toRem(500);
+      height: auto;
+
+      padding-top: toRem(105);
+      padding-left: toRem(100);
+    }
+  }
+
+  &__card-3 {
+
+    @include onTablet {
+      display: flex;
+      gap: toRem(76);
+      margin-top: toRem(110);
+
+      height: toRem(417);
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+
+      height: auto;
+
+      margin-top: 0;
+    }
+  }
+
+  &__subtitle-2 {
+    position: absolute;
+    bottom: 0;
+    right: toRem(5);
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: toRem(12);
+    letter-spacing: toRem(2.64);
+
+    color: $graySubtitleColor;
+
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+
+    margin: 0;
+    padding: 0;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+      right: 100%;
+      bottom: toRem(75);
+      left: toRem(147);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: toRem(75);
+      right: toRem(4);
+
+      width: toRem(1);
+      height: toRem(65);
+      background-color: $graySubtitleColor;
+
+      @include onDesktop {
+        bottom: toRem(-75);
+      }
+    }
+  }
+}

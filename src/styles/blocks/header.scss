@@ -1,0 +1,336 @@
+.header {
+  @include onTablet {
+    height: toRem(535);
+  }
+
+  @include onDesktop {
+    height: toRem(640);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__bg-color {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+
+      content: url(../images/photos/header-bg-tablet.png);
+
+      z-index: -1;
+
+      @include onDesktop {
+        content: url(../images/photos/header-bg-desktop.png);
+      }
+    }
+  }
+
+  &__top-bar {
+    display: flex;
+    justify-content: space-between;
+
+    @include contentPaddingInLine;
+  }
+
+  &__logo {
+    padding-top: toRem(15);
+
+    @include hover(transform, scale(1.1));
+
+    @include onTablet {
+      padding-top: toRem(29);
+    }
+
+    @include onDesktop {
+      padding-top: toRem(20);
+
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+
+      padding-top: toRem(26);
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: toRem(60);
+  }
+
+  &__item {
+    @include hover(transform, scale(1.05));
+  }
+
+  &__link {
+    line-height: 150%;
+
+    cursor: pointer;
+
+  }
+
+  &__icon-shop {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: toRem(48);
+      height: toRem(48);
+
+      margin-top: toRem(14);
+
+      @include hover(transform, scale(1.2));
+    }
+  }
+
+  &__icon-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: toRem(48);
+    height: toRem(48);
+
+    margin-top: toRem(6);
+
+    @include hover(transform, scale(1.2));
+
+    @include onTablet {
+      margin-top: toRem(23);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__main {
+    padding-top: toRem(10);
+
+    @include onTablet {
+      display: flex;
+      padding-top: toRem(50);
+    }
+
+    @include onDesktop {
+      padding-top: toRem(90);
+    }
+  }
+
+  &__image {
+    max-width: toRem(500);
+    margin: 0 auto;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__image img {
+    width: 100%;
+
+    @include onTablet {
+      width: toRem(306.16);
+      position: absolute;
+      right: toRem(34);
+
+      z-index: -1;
+    }
+
+    @include onDesktop {
+      width: toRem(500);
+      right: toRem(135);
+    }
+  }
+
+  &__text-box {
+    @include contentPaddingInLine;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: toRem(36);
+    line-height: normal;
+    letter-spacing: 5.58px;
+
+    text-transform: uppercase;
+    color: $aquaTitleColor;
+
+    padding-top: toRem(25);
+    display: flex;
+    align-items: top;
+
+    @include onTablet {
+      font-size: toRem(64);
+      line-height: 100%;
+      letter-spacing: toRem(9.92);
+
+      width: toRem(460);
+
+      padding-top: 0;
+    }
+
+    @include onDesktop {
+      margin-left: toRem(100);
+    }
+  }
+
+  &__title p {
+    @include onTablet {
+      height: toRem(266);
+    }
+  }
+
+  &__title span {
+    color: transparent;
+    -webkit-text-stroke: 1px $aquaTitleColor;
+  }
+
+  &__cost {
+    font-weight: 700;
+    font-size: toRem(26);
+
+    color: $blackTitleColor;
+
+    padding-top: toRem(30);
+
+    @include onTablet {
+      position: absolute;
+      top: toRem(357);
+      left: toRem(274);
+
+      padding-top: 0;
+    }
+
+    @include onDesktop {
+      top: toRem(416);
+      left: toRem(532.82);
+    }
+  }
+
+  &__cost p {
+    height: toRem(36);
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      width: toRem(100);
+    }
+  }
+
+  &__text {
+    font-size: toRem(14);
+    line-height: 150%;
+
+    width: toRem(140);
+
+    padding-top: toRem(1);
+
+    @include onTablet {
+      position: absolute;
+      top: toRem(394);
+      left: toRem(274);
+    }
+
+    @include onDesktop {
+      top: toRem(457);
+      left: toRem(532.82);
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: toRem(260);
+    height: toRem(48);
+    background-color: $yellowButtonColor;
+
+    margin-top: toRem(20);
+    gap: toRem(24);
+
+    @include onTablet {
+      position: absolute;
+      top: toRem(487);
+      left: toRem(154);
+
+      width: toRem(240);
+    }
+
+    @include onDesktop {
+      top: toRem(550);
+      left: toRem(435);
+
+      width: toRem(270);
+    }
+
+    cursor: pointer;
+    opacity: 1;
+    transition: $transitionTime;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__subtitle {
+    &-text {
+      position: absolute;
+      top: toRem(577);
+      right: toRem(5);
+
+      font-size: toRem(12);
+      line-height: 150%;
+
+      color: $aquaTitleColor;
+      writing-mode: vertical-rl;
+
+      height: toRem(132);
+      cursor: pointer;
+
+      @include hover(transform, scale(1.1));
+
+      @include onTablet {
+        top: toRem(397);
+        left: toRem(52);
+        right: 100%;
+      }
+
+      @include onDesktop {
+        top: toRem(446);
+        left: toRem(151.23);
+      }
+    }
+
+    &-line {
+      content: url(../images/icons/header-icon-arrow.svg);
+
+      position: absolute;
+      top: toRem(718);
+      right: toRem(9);
+
+      @include onTablet {
+        top: toRem(538);
+        left: toRem(40);
+        right: 100%;
+      }
+
+      @include onDesktop {
+        top: toRem(588);
+        left: toRem(139);
+      }
+    }
+
+  }
+}

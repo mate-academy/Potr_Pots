@@ -1,0 +1,81 @@
+.menu {
+  background-color: $aquaTitleColor;
+  box-sizing: border-box;
+
+  max-width: toRem(231);
+  height: 100vh;
+  margin-left: auto;
+
+  &__content {
+    position: relative;
+  }
+
+  &__nav {
+
+    padding-top: toRem(138);
+    padding-left: toRem(81);
+  }
+
+  &__list {
+    position: relative;
+
+    display: grid;
+    gap: toRem(15);
+  }
+
+  &__item {
+    width: toRem(120);
+  }
+
+  &__link {
+    font-family: "Manrope", sans-serif;
+    line-height: 150%;
+
+    color: #fff;
+  }
+
+  &__nav--icon {
+    content: url(../images/icons/menu-icon-new.svg);
+
+    position: absolute;
+    top: 0;
+    right: toRem(75);
+  }
+
+  &__subtitle {
+    position: absolute;
+    top: toRem(408);
+    right: toRem(30);
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    &-text {
+      font-size: toRem(12);
+      line-height: 150%;
+
+      color: #fff;
+      text-transform: uppercase;
+
+      &::after {
+        position: absolute;
+        bottom: toRem(49);
+        left: 50%;
+        height: toRem(44);
+        width: toRem(1);
+
+        background-color: #fff;
+        content: "";
+      }
+
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: toRem(513);
+    right: toRem(32.7);
+
+    @include hover(transform, scale(1.2));
+  }
+}
