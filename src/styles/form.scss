@@ -1,0 +1,80 @@
+@import "./utils/mixins";
+@import "./utils/vars";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 56px;
+
+  &__title {
+    @include manrope-font(24px, 0);
+    color: #000;
+    line-height: 150%;
+    margin-bottom: 25px;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 20px;
+
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__input {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    @include manrope-font(16px, 0);
+    color: black;
+    background-color: transparent;
+    line-height: 150%;
+    padding: 4px;
+    width: 100%;
+    max-width: 320px;
+
+    &:focus {
+      border-bottom: 1px solid $torquoise;
+    }
+  }
+
+  &__button {
+    background-color: $torquoise;
+    color: #fff;
+    width: 100%;
+    max-width: 320px;
+
+    &::after {
+      content: url("../images/arrow-white.svg");
+    }
+
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $torquoise;
+      color: #000;
+
+      &::after {
+        content: url("../images/Arrow\ 2.svg");
+      }
+    }
+  }
+}
+
+.valid {
+  color: $torquoise !important;
+  border-bottom: 1px solid $torquoise;
+}
+
+.invalid {
+  color: $red-medium !important;
+  border-bottom: 1px solid $red-medium;
+}
+
+@include onTablet {
+  .form {
+    &__button {
+      max-width: 240px;
+      margin: initial;
+    }
+  }
+}

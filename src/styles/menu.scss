@@ -1,0 +1,48 @@
+@import "./utils/mixins";
+
+.menu {
+
+  &__content {
+    position: relative;
+    height: 100vh;
+    padding: 20px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link {
+    @include manrope-font(16px, 0);
+    color: #f8f8f8;
+    text-transform: uppercase;
+  }
+
+  &__close {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    gap: 10px;
+    right: 0;
+    bottom: 150px;
+  }
+}
+
+.close-menu {
+  transform: rotate(-90deg);
+
+  &__text {
+    position: relative;
+    @include manrope-font(16px, 0);
+    color: #f8f8f8;
+    text-transform: uppercase;
+  }
+}

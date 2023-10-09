@@ -1,0 +1,135 @@
+@import "./utils/mixins";
+@import "./utils/vars";
+
+.materials {
+  margin-bottom: $margin-section-mobile;
+  
+  &__title {
+    position: relative;
+    @include bebas-font(58px, 8px);
+    font-weight: 600;
+    color: $torquoise;
+    z-index: 1;
+    top: 60px;
+  }
+
+  &__top {
+    padding: 0 22px 0 30px;
+  }
+
+  &__top-text {
+    display: none;
+  }
+
+  &__background {
+    position: relative;
+    padding-bottom: 75%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url("../images/materials-bg.png");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+@include onTablet {
+  .materials {
+    &__top {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: 20px;
+    }
+
+    &__title {
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 5;
+      @include bebas-font(80px, 12px);
+      @include adaptiveValue("font-size", 80, 138, 768, 1440);
+      line-height: 125%;
+      top: 0;
+    }
+
+    &__top-text {
+      display: flex;
+      flex-direction: column;
+      margin-top: 40px;
+      grid-row: 2 / span 2;
+      grid-column: 4 / span 3;
+      @include manrope-font(20px, 0);
+      line-height: 150%;
+    }
+
+    &__subtitle {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+
+    &__background {
+      &::before {
+        background-image: url("../images/materials-bh-3x.png");
+      }
+    }
+  }
+}
+
+@include onLaptop {
+  .materials {
+    &__top {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: $gap-laptop;
+      position: relative;
+      z-index: 1;
+    }
+
+    &__title {
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 9;
+      @include bebas-font(138px, 15px);
+      line-height: 125%;
+    }
+
+    &__top-text {
+      position: relative;
+      z-index: 1;
+      grid-row: 2 / span 1;
+      grid-column: 7 / span 6;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      @include manrope-font(20px, 0);
+      line-height: 150%;
+      margin-top: 0;
+    }
+
+    &__subtitle {
+      font-weight: bold;
+    }
+
+    &__text {
+      -webkit-line-clamp: initial;
+    }
+
+    &__background {
+      margin-top: -225px;
+      &::before {
+        background-image: url("../images/materials-bh-3x.png");
+      }
+    }
+  }
+}

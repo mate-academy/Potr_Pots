@@ -1,0 +1,96 @@
+@import "./utils/mixins";
+@import "./utils/vars";
+
+.pop-up {
+  display: none;
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background-color: $red-medium;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #d85656f3;
+    }
+  }
+}
+
+.pop-up__modal-container {
+  position: absolute;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.pop-up__modal {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  height: 254px;
+  min-width: 304px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pop-up__modal-content {
+  color: #f8f8f8;
+  @include manrope-font(16px, 1px);
+  line-height: 150%;
+}
+
+@include onTablet {
+  .pop-up {
+    display: flex;
+    padding: 0 83px;
+    justify-content: space-between;
+  
+    &__block {
+      position: absolute;
+      display: flex;
+
+      &:nth-of-type(1) {
+        bottom: 20%;
+        left: 10%;
+
+        .pop-up__modal {
+          top: -275px;
+        }
+      }
+
+      &:nth-of-type(2) {
+        bottom: 40%;
+        left: 31%;
+      }
+
+      &:nth-of-type(3) {
+        bottom: 10%;
+        left: 48%;
+      }
+
+      &:nth-of-type(4) {
+        bottom: 25%;
+        left: 55%;
+      }
+
+      &:nth-of-type(5) {
+        bottom: 55%;
+        left: 73%;
+      }
+    }
+
+  }
+}
+
+.active-modal {
+  background-color: #242323af;
+
+  &:hover {
+    background-color: #24232379;
+  }
+}

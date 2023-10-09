@@ -1,0 +1,51 @@
+@import "./utils/mixins";
+@import "./utils/vars";
+
+.swiper-container {
+  position: relative;
+  top: -50px;
+  right: 0;
+  left: 0;
+  padding: 0 9px;
+  backdrop-filter: blur(10px);
+}
+
+.swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 254px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 28px 45px;
+}
+
+.swiper-contnet {
+  flex: 1 1 auto;
+}
+
+.swiper-slide {
+  color: #f8f8f8;
+  @include manrope-font(16px, 0);
+  line-height: 150%;
+  font-weight: 300;
+}
+
+.swiper-list {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.active {
+  svg {
+    rect {
+      fill: #333;
+    }
+  }
+}
+
+@include onTablet {
+  .swiper-container {
+    display: none;
+  }
+}

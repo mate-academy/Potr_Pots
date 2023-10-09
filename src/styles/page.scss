@@ -1,0 +1,27 @@
+@import "./utils/vars";
+
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    overflow: hidden;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $torquoise;
+    transform: translateX(-100%);
+    transition: all 0.3s linear 0s;
+    &:target {
+      transform: translateX(0);
+    }
+  }
+}

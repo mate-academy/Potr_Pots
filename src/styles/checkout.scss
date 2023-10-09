@@ -1,0 +1,155 @@
+@import "./utils/mixins";
+@import "./utils/vars";
+
+.checkout {
+  margin-bottom: $margin-section-mobile;
+
+  &__content {
+    padding: 0 30px;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    &::after {
+      content: url("../images/Arrow\ 2.svg");
+    }
+
+    &:hover {
+      background-color: $torquoise;
+      color: #fff;
+
+      &::after {
+        content: url("../images/arrow-white.svg");
+      }
+    }
+  }
+
+  &__discount-price {
+    @include bebas-font(32px, 3px);
+    color: $red-medium;
+    line-height: 150%;
+    margin-bottom: 10px;
+  }
+
+  &__discount-text {
+    @include bebas-font(24px, 3px);
+    line-height: 150%;
+    color: $torquoise;
+  }
+}
+
+.template-checkout {
+  margin-bottom: 40px;
+
+  &__title {
+    @include manrope-font(32px, 0);
+    line-height: 150%;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+    position: relative;
+
+    &::before {
+      content: url("../images/checkout-diamond.svg");
+      position: absolute;
+      top: -5px;
+      left: -17px;
+    }
+  }
+
+  &__text {
+    @include manrope-font(16px, 0);
+    line-height: 150%;
+    color: #828282;
+    margin-bottom: 5px;
+  }
+}
+
+@include onTablet {
+  .checkout {
+    &__row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__column {
+      flex: 1 1 50%;
+    }
+  
+    &__button {
+      background-color: transparent;
+      border: 1px solid $torquoise;
+    }
+  }
+}
+
+@include onLaptop {
+  .checkout {
+    &__row {
+      gap: $gap-laptop;
+    }
+
+    &__column {
+      &_info {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+
+    &__body {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column: 1 / span 6;
+    }
+
+    &__gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 240px);
+    }
+
+    &__card {
+      padding-bottom: 100%;
+      grid-column: span 1;
+      transition: all 0.3s ease 0s;
+
+      &:nth-child(2) {
+        transform: rotate(-30deg);
+      }
+
+      &:nth-child(6) {
+        transform: rotate(-30deg);
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    
+      &:nth-child(2):hover {
+        transform: rotate(-30deg) scale(1.1);
+      }
+    
+      &:nth-child(6):hover {
+        transform: rotate(-30deg) scale(1.1);
+      }
+    
+      &:not(:nth-child(2)):not(:nth-child(6)):hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &__template-block {
+      grid-column: span 3;
+    }
+  
+    &__button {
+      grid-column: 1 / span 6;
+    }
+
+    &__discount-block {
+      grid-column: 2 / span 5;
+    }
+  }
+}

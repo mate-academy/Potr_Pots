@@ -1,0 +1,285 @@
+@import "../styles/utils/vars";
+@import "./utils/mixins";
+
+.header {
+  margin-bottom: 150px;
+
+  &__content {
+    padding: 15px 0;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    padding: 0 30px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__list {
+    display: none;
+  }
+
+  &__item {
+    @include manrope-font(16px);
+    color: #4f4f4f;
+
+    &:hover {
+      transition: all 0.3s ease 0s;
+      color: $torquoise;
+    }
+  }
+
+  &__link:not(:last-child) {
+    margin-right: 60px;
+  }
+
+  &__cart {
+    display: none;
+  }
+
+  &__body {
+    position: relative;
+  }
+}
+
+.body-header {
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    position: relative;
+  }
+
+  &__column_text {
+    grid-column: 1 / span 2;
+    justify-self: center;
+    align-self: center;
+    order: 2;
+  }
+
+  &__column_image {
+    grid-column: 1 / span 2;
+    order: 1;
+  }
+
+  &__title {
+    @include bebas-font(36px, 5px);
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px $torquoise;
+    z-index: 2;
+    margin-bottom: 30px;
+
+    span {
+      -webkit-text-stroke: initial;
+      color: $torquoise;
+    }
+  }
+
+  &__discount-offer {
+    align-self: flex-end;
+    margin-bottom: 50px;
+    max-width: 140px;
+    text-align: left;
+  }
+
+  &__price {
+    margin-bottom: 5px;
+    @include manrope-font(26px);
+    font-weight: 700;
+  }
+
+  &__subtext {
+    @include manrope-font(14px);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__button {
+    align-self: flex-end;
+
+    &:hover {
+      background-color: $yellow-light;
+    }
+  }
+
+  &__navigate-text {
+    position: absolute;
+    color: $torquoise;
+    @include manrope-font(12px, 0);
+    line-height: 0;
+    align-self: end;
+    justify-self: start;
+    writing-mode: vertical-rl;
+    bottom: 0;
+    right: 0;
+    order: 3;
+    padding-right: 15px;
+    transition: all 0.3s ease 0s;
+
+    &::after {
+      content: url("../images/Arrow.svg");
+      padding-top: 10px;
+    }
+
+    &:hover {
+      color: hsla(190, 96%, 32%, 0.71);
+      
+    }
+  }
+
+  &__image {
+    padding: 0 0 100%;
+  }
+}
+
+.icon {
+  background-image: url("../images/menu_icon.svg");
+  width: 32px;
+  height: 32px;
+}
+
+@include onTablet {
+  .header {
+    &__content {
+      padding: 20px 35px;
+      background: url("../images/Rectangle.png") 0 0 / 73% 63% no-repeat;
+    }
+
+    &__top {
+      margin-bottom: 90px;
+    }
+  }
+
+  .body-header {
+    &__row {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      align-self: center;
+      justify-self: center;
+    }
+
+    &__title {
+      @include bebas-font(64px, 7px);
+      margin-bottom: 0;
+
+      span {
+        white-space: nowrap;
+      }
+    }
+
+    &__column_text {
+      display: flex;
+      flex-direction: column;
+      grid-column: 1 / span 3;
+      position: relative;
+      z-index: 3;
+      justify-self: flex-start;
+      align-self: flex-start;
+      order: 1;
+    }
+
+    &__column_image {
+      grid-column: 4 / span 3;
+      order: 2;
+    }
+
+    &__navigate-text {
+      position: absolute;
+      @include adaptiveValue("bottom", -30, -65, 1440, 900);
+      right: 98%;
+      color: $torquoise;
+      @include manrope-font(12px, 0);
+      line-height: 150%;
+      padding-right: 0;
+  
+      &::after {
+        content: url("../images/Arrow.svg");
+        padding-top: 10px;
+      }
+    }
+
+    &__discount-offer {
+      align-self: center;
+    }
+
+    &__button {
+      align-self: center;
+    }
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+}
+
+@include onLaptop {
+  .header {
+    &__content {
+      padding: 20px $padding-content-laptop;
+      background: url("../images/Rectangle.png") 0 0 / 73% 73% no-repeat;
+    }
+
+    &__list {
+      display: flex;
+    }
+
+    &__cart {
+      display: block;
+    }
+  }
+
+  .body-header {
+    &__row {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: $gap-laptop;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+    &__column_text {
+      order: 1;
+      grid-column: 2 / span 5;
+    }
+
+    &__column_image {
+      grid-column: 8 / span 5;
+      position: relative;
+    }
+
+    &__discount-offer {
+      align-self: flex-end;
+    }
+
+    &__button {
+      width: 270px;
+      align-self: flex-end;
+    }
+
+    &__navigate-text {
+      color: $torquoise;
+      @include manrope-font(12px, 0);
+      align-self: end;
+      justify-self: start;
+      writing-mode: vertical-rl;
+  
+      &::after {
+        content: url("../images/Arrow.svg");
+        padding-top: 10px;
+      }
+    }
+  }
+
+  .icon {
+    display: none;
+  }
+}

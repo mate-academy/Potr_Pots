@@ -1,0 +1,56 @@
+@import "./utils/mixins";
+
+.container {
+  margin: 0 auto;
+
+  @include onLaptop {
+    max-width: 1440px;
+  }
+}
+
+._img {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.button-template {
+  position: relative;
+  display: flex;
+  width: 240px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  background-color: $yellow;
+  border: none;
+  color: #121212;
+  @include manrope-font(14px, 0);
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+
+  &::after {
+    content: url("../images/Arrow 2.svg");
+    top: auto;
+    right: 20%;
+    position: absolute;
+  }
+}
+
+.animate {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.75s ease-out;
+}
+
+.hide {
+  opacity: 0;
+  transform: translateY(5%);
+}
