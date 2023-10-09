@@ -21,17 +21,25 @@
   }
 
   &--link {
-    @include hoverForLinks($turquoise);
+    display: block;
     color: #000;
+    width: fit-content;
+
+    @include hoverForLinks($turquoise);
+
+    & > .footer__title:hover {
+      transition: all 0.2s ease-in-out ;
+      color: $turquoise;
+    }
   }
 
   &__title {
+    color: #000;
+    margin: 0 0 8px;
+
     @include onMobile {
       display: none;
     }
-
-    color: #000;
-    margin: 0 0 8px;
   }
 
   &__socials {
