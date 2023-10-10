@@ -1,0 +1,66 @@
+.section {
+  &__title {
+    grid-column: span 7;
+
+    color: $color-title-secondary;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    &--forwhom {
+      margin-bottom: 34px;
+
+      @include onTablet {
+        grid-column: 1/-1;
+      }
+
+      @include onMobile {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &__vertical {
+    color: $color-text-primary;
+    font-size: 12px;
+    letter-spacing: 2.64px;
+    position: absolute;
+    top: 120px;
+    right: -15px;
+    transform: rotate(90deg);
+    transform-origin: right;
+
+    @include onTablet {
+      right: -12px;
+      top: 40px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      height: 1px;
+      background-color: $color-text-primary;
+      width: 50px;
+      display: block;
+      position: relative;
+      top: 7px;
+      left: -60px;
+    }
+
+    &--left {
+      top: 88%;
+      right: 100%;
+      width: max-content;
+      transform: rotate(-90deg);
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+  }
+}

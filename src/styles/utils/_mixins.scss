@@ -9,7 +9,7 @@
 @mixin grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 30px;
+  grid-column-gap: 30px;
 
   @include onTablet {
     grid-template-columns: repeat(6, 1fr);
@@ -23,6 +23,12 @@
 
 @mixin onDesktop {
   @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onDesktop-sm {
+  @media (max-width: 1024px) {
     @content;
   }
 }

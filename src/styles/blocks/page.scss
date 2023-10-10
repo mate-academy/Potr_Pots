@@ -1,6 +1,7 @@
 .page {
   font-family: "Bebas Neue", "Manrope", sans-serif;
   font-weight: 400;
+  background-color: #ccc;
 
   &:has(.menu:target) {
     overflow: hidden;
@@ -9,11 +10,16 @@
   &__content {
     margin: 0 auto;
     max-width: 1440px;
+    background-color: #fff;
   }
 
   &__header {
     margin-bottom: 150px;
     position: relative;
+
+    @include onTablet {
+      margin-bottom: 109px;
+    }
   }
 
   @include scrollBar;
