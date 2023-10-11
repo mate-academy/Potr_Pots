@@ -2,15 +2,29 @@
   font-family: "Bebas Neue", "Manrope", sans-serif;
   font-weight: 400;
   background-color: #ccc;
+  overflow-x: hidden;
 
   &:has(.menu:target) {
     overflow: hidden;
   }
 
+  @for $n from 1 through 5 {
+    &:has(#card-#{$n}:target) {
+      .materials__item-wr--#{$n} {
+        opacity: 1;
+      }
+
+      .materials__icon--#{$n} {
+        background-image: url(../images/icons/icon-materials-active.png);
+      }
+    }
+
+  }
+
   &__content {
     margin: 0 auto;
     max-width: 1440px;
-    background-color: #fff;
+    background-color: $color-text-secondary;
   }
 
   &__header {
@@ -23,7 +37,19 @@
   }
 
   &__features {
-    margin-bottom: 130px;
+    margin-bottom: 50px;
+
+    @include onMobile {
+      margin-bottom: 0;
+    }
+  }
+
+  &__team {
+    margin-bottom: 376px;
+
+    @include onTablet {
+      margin-bottom: 210px;
+    }
   }
 
   @include scrollBar;

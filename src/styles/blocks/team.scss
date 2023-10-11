@@ -1,0 +1,154 @@
+.team {
+  position: relative;
+
+  --img-width: 677px;
+  --img-height: 508px;
+
+  @include onTablet {
+    --img-width: 340px;
+    --img-height: 255px;
+  }
+
+  &__bg {
+    width: 435px;
+    height: 310px;
+    position: absolute;
+    top: 196px;
+    left: 0;
+
+    @include onTablet {
+      left: -182px;
+    }
+
+    @include onMobile {
+      top: initial;
+      left: initial;
+      right: 0;
+      bottom: -73px;
+    }
+  }
+
+  &__title {
+    color: $color-title-secondary;
+    font-size: 58px;
+    letter-spacing: 8.99px;
+    margin-bottom: 145px;
+
+    @include onTablet {
+      margin-bottom: 177px;
+    }
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    @include grid;
+    align-items: end;
+
+    @include onTablet {
+      align-items: start;
+    }
+  }
+
+  &__textbox {
+    grid-column: 1/5;
+    width: 336px;
+
+    @include onTablet {
+      grid-column: 1/4;
+      width: 313px;
+      padding-top: 56px;
+    }
+
+    @include onMobile {
+      width: 100%;
+      padding-top: 25px;
+    }
+  }
+
+  &__imgbox {
+    grid-column: -1/-9;
+    width: var(--img-width);
+    height: var(--img-height);
+    overflow: hidden;
+
+    @include onTablet {
+      grid-column: -1/-4;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__imgbox-mob {
+    display: none;
+
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: var(--img-width);
+    height: var(--img-height);
+    display: block;
+
+    @include hover(transform, scale($transform-scale));
+  }
+
+  &__img-mob {
+    width: 100%;
+    display: block;
+  }
+
+  &__text {
+    @include font-text;
+    z-index: 1;
+    position: relative;
+  }
+
+  &__member {
+    font-size: 288px;
+    letter-spacing: 44.64px;
+    color: transparent;
+    -webkit-text-stroke: 1px $color-title-third;
+    z-index: 1;
+
+    position: absolute;
+    top: 90px;
+    left: -60px;
+
+    @include onTablet {
+      font-size: 230px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &--bottom {
+      top: 91%;
+      left: 56%;
+
+      @include onDesktop {
+        left: 49%;
+      }
+
+      @include onTablet {
+        left: 40%;
+        top: 77%;
+        font-size: 219px;
+        letter-spacing: 27px;
+        display: block;
+        width: 60%;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+}
