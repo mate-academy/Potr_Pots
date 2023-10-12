@@ -1,0 +1,90 @@
+.slider {
+  --padding-inline: 45px;
+  --padding-top: 28px;
+
+  height: 254px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(17px);
+  overflow: hidden;
+
+  position: absolute;
+  top: 183px;
+  left: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: var(--padding-top) var(--padding-inline) 37px;
+  box-sizing: border-box;
+
+  @include onTablet {
+    display: none;
+  }
+
+  @include onMobile {
+    display: flex;
+    width: 94%;
+  }
+
+  @include onMobile-l {
+    width: 400px;
+  }
+
+  @include onMobile-m {
+    width: 350px;
+  }
+
+  @include onMobile-s {
+    width: 300px;
+  }
+
+  &__btn-box {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__btn {
+    width: 10px;
+    height: 10px;
+    background-image: url(../images/icons/slider/icon-slider.svg);
+    cursor: pointer;
+
+    &--active {
+      background-image: url(../images/icons/slider/icon-slider-active.svg);
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    transition: transform ease-in-out $transition-duration;
+
+    position: absolute;
+    top: var(--padding-top);
+    left: var(--padding-inline);
+  }
+
+  &__item {
+    @include font-text;
+    color: #fff;
+    display: block;
+    width: 210px;
+    height: 168px;
+
+    @include onMobile-l {
+      width: 325px;
+    }
+
+    @include onMobile-m {
+      width: 265px;
+    }
+
+    @include onMobile-s {
+      width: 235px;
+    }
+  }
+}
