@@ -1,0 +1,66 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  font-family: "Manrope", sans-serif;
+  line-height: 150%;
+
+  &__title {
+    color: $color-title-primary;
+    font-size: 24px;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__item {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    height: 30px;
+    background-color: #ffec7a;
+    padding: 8px;
+    box-sizing: border-box;
+
+    color: $color-text-primary;
+    font-size: 16px;
+
+    &:focus {
+      border-bottom: 1px solid $color-btn-primary;
+      @include placeholder {
+        transform: translateY(-30px);
+      }
+    }
+
+    @include placeholder {
+      transform: translateY(0);
+      transition: transform ease-in-out 200ms;
+    }
+  }
+
+  &__item--msg {
+    color: $color-text-primary;
+    font-size: 16px;
+    resize: none;
+    height: fit-content;
+
+    @include scrollBarTextarea;
+  }
+
+  &__button {
+    background-color: $color-btn-primary;
+    color: $color-text-secondary;
+
+    &::after {
+      content: url(../images/icons/icon-arrow-left--white.svg);
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

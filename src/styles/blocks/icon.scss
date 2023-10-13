@@ -1,7 +1,11 @@
 .icon {
   width: 30px;
   height: 30px;
+  padding: 5px;
+  background-repeat: no-repeat;
+  background-position: center;
   cursor: pointer;
+  @include hover(transform, scale($transform-scale));
 
   &--cart {
     @include onTablet {
@@ -28,5 +32,16 @@
     height: 12px;
 
     @include hover(transform, rotate(30deg));
+  }
+
+  &--tw {
+    background-image: url(../images/icons/social/icon-tw.svg);
+  }
+
+  &--fb {
+    background-image: url(../images/icons/social/icon-fb.svg);
+  }
+  &--ig {
+    background-image: url(../images/icons/social/icon-ig.svg);
   }
 }

@@ -1,0 +1,36 @@
+.contacts {
+  // display: flex;
+  display: none !important;
+
+  flex-direction: column;
+  gap: 25px;
+
+  font-family: "Manrope", sans-serif;
+  line-height: 150%;
+
+  &__title {
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    color: $color-title-primary;
+    font-size: 16px;
+    width: fit-content;
+
+    &::after {
+      content: "";
+      height: 2px;
+      display: block;
+      width: 0;
+      background-color: $color-btn-primary;
+      transition: width ease-in-out $transition-duration;
+      margin-top: 5px;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
