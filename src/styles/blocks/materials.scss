@@ -1,6 +1,4 @@
 .materials {
-  display: none !important;
-
   height: 1080px;
   background: linear-gradient(
     180deg, $color-text-secondary 0%, rgba(255, 255, 255, 0) 30.93%
@@ -9,7 +7,6 @@
   background-color: lightgray 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
 
   @include onMobile {
     width: 100%;
@@ -165,5 +162,15 @@
     background-image: url(../images/icons/icon-materials.png);
     transition: background-image $transition-duration;
     @include hover(transform, scale($transform-scale));
+
+    &--active {
+      background-image: url(../images/icons/icon-materials-active.png);
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    top: 183px;
+    left: 12px;
   }
 }

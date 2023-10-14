@@ -8,19 +8,6 @@
     overflow: hidden;
   }
 
-  @for $n from 1 through 5 {
-    &:has(#card-#{$n}:target) {
-      .materials__item-wr--#{$n} {
-        opacity: 1;
-      }
-
-      .materials__icon--#{$n} {
-        background-image: url(../images/icons/icon-materials-active.png);
-      }
-    }
-
-  }
-
   &__content {
     margin: 0 auto;
     max-width: 1440px;
@@ -45,15 +32,17 @@
   }
 
   &__team {
-    margin-bottom: 296px;
+    margin-bottom: 35px;
+    position: relative;
 
     @include onTablet {
-      margin-bottom: 210px;
+      margin-bottom: 63px;
     }
   }
 
   &__materials {
     margin-bottom: 100px;
+    position: relative;
 
     @include onTablet {
       margin-bottom: 110px;
@@ -66,6 +55,7 @@
 
   &__size {
     margin-bottom: 286px;
+    position: relative;
 
     @include onTablet {
       margin-bottom: 105px;

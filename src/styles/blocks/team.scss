@@ -1,9 +1,5 @@
 .team {
-  position: relative;
   overflow-x: hidden;
-  padding-bottom: 80px;
-
-  display: none !important;
 
   --img-width: 677px;
   --img-height: 508px;
@@ -11,6 +7,10 @@
   @include onTablet {
     --img-width: 340px;
     --img-height: 255px;
+  }
+
+  @include onMobile {
+    overflow: initial;
   }
 
   &__bg {
@@ -25,10 +25,11 @@
     }
 
     @include onMobile {
+      width: 100%;
       top: initial;
       left: 0;
       right: 0;
-      bottom: -73px;
+      bottom: 110px;
     }
   }
 
@@ -114,6 +115,17 @@
     position: relative;
   }
 
+  &__member-wr {
+    display: flex;
+    justify-content: flex-end;
+
+    @include onTablet {
+      position: relative;
+      top: -75px;
+      height: 170px;
+    }
+  }
+
   &__member {
     font-size: 288px;
     letter-spacing: 44.64px;
@@ -134,20 +146,15 @@
     }
 
     &--bottom {
-      top: 83%;
-      left: 56%;
-
-      @include onDesktop {
-        left: 49%;
-      }
+      display: block;
+      position: relative;
+      top: -52px;
+      right: -40px;
+      left: initial;
 
       @include onTablet {
-        left: 40%;
-        top: 77%;
         font-size: 219px;
         letter-spacing: 27px;
-        display: block;
-        width: 60%;
       }
 
       @include onMobile {

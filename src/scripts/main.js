@@ -1,19 +1,22 @@
 'use strict';
 
-// const icons = document.querySelectorAll('.materials__icon');
-// const items = document.querySelectorAll('.materials__item-wr');
+const items = document.querySelectorAll('.materials__item-wr');
+const materialsContent = document.querySelector('.materials__content');
+const icons = document.querySelectorAll('.materials__icon');
 
-// icons.forEach(icon => {
-//   icon.addEventListener('click', closeCard);
-// });
+materialsContent.addEventListener('click', handleClick);
 
-// function closeCard() {
-//   items.forEach(item => {
-//     item.style.opacity = 0;
-//   });
+function handleClick({ target }) {
+  items.forEach(el => {
+    el.style.opacity = 0;
+  });
 
-//   // icons.forEach(icon => {
-//   //   icon.style.backgroundImage
-//   //     = 'url(../images/icons/icon-materials.png)';
-//   // });
-// }
+  icons.forEach(el => {
+    el.classList.remove('materials__icon--active');
+  });
+
+  if (target.classList.contains('materials__icon')) {
+    target.nextElementSibling.style.opacity = 1;
+    target.classList.add('materials__icon--active');
+  }
+}
