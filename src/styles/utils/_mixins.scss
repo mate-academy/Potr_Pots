@@ -121,3 +121,20 @@
     @content;
   }
 }
+
+@mixin autoFill {
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    border: 1px solid $color-bg;
+    -webkit-text-fill-color: $color-text-primary;
+    -webkit-box-shadow: 0 0 0 1000px $color-bg inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
