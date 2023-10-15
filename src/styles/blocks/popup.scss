@@ -1,0 +1,61 @@
+.popup {
+  z-index: 5;
+  overflow-y: auto;
+  transform: translateY(100%);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  transition: transform 1s ease;
+  &:target {
+    transform: translateY(0);
+  }
+  &__content {
+    background-color: $light-grey-c;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid #333;
+    color: #4f4f4f;
+    text-align: center;
+    width: 80%;
+    height: 50%;
+    box-shadow: 20px 40px 80px rgba(0, 0, 0, 0.25);
+  }
+
+  &__close {
+    color: #333;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+    transition: $transition-time;
+
+    &:hover,
+    &:focus {
+      color: $red-c;
+    }
+  }
+
+  &__title {
+    color: $red-c;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 50px;
+  }
+
+  &__description {
+    font-size: 18px;
+
+    @include onTablet {
+      font-size: 24px;
+    }
+  }
+
+  &__link {
+    color: #4f4f4f;
+    transition: $transition-time;
+
+    &:hover {
+      color: $turquoise-c;
+    }
+  }
+}

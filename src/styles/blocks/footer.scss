@@ -1,0 +1,41 @@
+.footer {
+  padding-top: 46px;
+  background-image: url(../images/yell-desk.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left 0 top -112px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  position: relative;
+
+  @include onTablet {
+    padding-top: 16px;
+    background-position: left 0 top -212px;
+  }
+
+  @include onDesktop {
+    background-size: cover;
+    background-position: right 132px top 0;
+  }
+
+  &__watermark {
+    position: absolute;
+    top: -68px;
+    right: -48px;
+
+    @include onTablet {
+      top: -100px;
+    }
+
+    @include onDesktop {
+      right: 48px;
+    }
+
+    transition: $transition-time;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+}
