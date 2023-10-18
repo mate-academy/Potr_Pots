@@ -1,0 +1,96 @@
+.message {
+
+  // height: 500px;
+  margin-top: 50px;
+  // margin-bottom: 100px;
+  position: relative;
+  padding-bottom: 65px;
+  display: flex;
+  flex-wrap: wrap;
+  color: #000;
+  // background: transparent;
+  background-color: #f8f8f8;
+
+  background-image: url(../images/backMessagePhone.svg);
+  background-repeat: no-repeat;
+  background-size: contain 100px;
+  background-position: center -180px;
+
+  // z-index: 155;
+
+  @include onTablet {
+    background-image: url(../images/RectangleNew.svg);
+    background-repeat: no-repeat;
+    background-size: contain 200px;
+    background-position: left -90px;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/RectangleMessage1500.svg);
+    background-position: left -90px;
+    height: 51vh;
+  }
+
+  &__container {
+    @include onTablet {
+      display: grid;
+      grid-template-columns: 2;
+    }
+  }
+
+  &__title {
+    font-family: Bebas Neue, sans-serif;
+    font-style: bold;
+    font-weight: 700px;
+    font-size: 36px;
+    letter-spacing: 0.15em;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  &__text {
+
+    font-family: Manrope, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    cursor: default;
+  }
+
+  &__subtitle {
+    margin: 40px 0 25px;
+
+    font-family: Manrope, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    cursor: default;
+  }
+
+  &__item {
+    font-family: Manrope, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.39);
+    cursor: default;
+  }
+
+  &__link {
+    align-items: start;
+    font-family: Manrope, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+    transition: color 0.5s;
+
+    &:hover {
+      color: #03839e;
+    }
+  }
+}

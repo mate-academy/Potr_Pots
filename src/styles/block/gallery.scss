@@ -1,0 +1,73 @@
+.gallery {
+  display: none;
+
+  @include onDesktop {
+    display: block;
+    position: relative;
+    top: 0;
+    max-width: 40%;
+    z-index: 0;
+  }
+
+  &__boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-end;
+    width: 270px;
+    height: 290px;
+    background-color: #f8f8f8;
+
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &--1 {
+      transform: rotate(-15deg);
+    }
+
+    &--2 {
+      transform: rotate(-29deg) translate(55px, -85px);
+    }
+
+    &--3 {
+      transform: translateX(-145px);
+      z-index: 1;
+    }
+
+    &--4 {
+      transform: rotate(-15deg) translate(-40%, -85px);
+      z-index: 1;
+    }
+
+    &--5 {
+      transform: rotate(-15deg) translate(34%, -12%);
+    }
+
+    &--6 {
+      transform: rotate(-30deg) translate(56%, -32%);
+    }
+
+  }
+
+  &__picture {
+    padding: 40px 20px;
+
+    @include pictureSquere (230px);
+  }
+
+  &__title {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    padding-left: 20px;
+
+    font-family: Proxima Nova, sans-serif;
+    font-style: regular;
+    font-size: 11px;
+    line-height: 14px;
+  }
+}

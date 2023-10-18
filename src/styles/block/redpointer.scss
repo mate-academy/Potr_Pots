@@ -1,0 +1,81 @@
+.redpointer {
+  position: relative;
+
+  height: 51px;
+  width: 51px;
+
+  background-color: red;
+  border-radius: 50%;
+
+  transition: background-color 0.5s;
+
+  &__line-vertical {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: calc(50% - 1px);
+
+    width: 2px;
+    height: 22px;
+
+    background-color: #e0e0e0;
+    transition: transform 0.5s;
+  }
+
+  &__line-horizontal {
+    position: absolute;
+
+    top: calc(50% - 1px);
+    left: calc(50% - 11px);
+
+    width: 22px;
+    height: 2px;
+
+    background-color: #e0e0e0;
+  }
+
+  &::after {
+    box-sizing: border-box;
+    position: absolute;
+    display: inline-block;
+    top: calc(-500% + 18px);
+    /* stylelint-disable-next-line */
+    content: "We have chosen Bobbiny recycled to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.";
+
+    right: calc(50% + (-303px / 2));
+
+    padding: 35px 45px 34px;
+
+    height: 237px;
+    width: 303px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #f8f8f8;
+    background: rgba(0, 0, 0, 0.41);
+    // mix-blend-mode: normal;
+    backdrop-filter: blur(34px);
+    pointer-events: none;
+    opacity: 0;
+
+    transition: opacity 0.5s;
+  }
+
+  &--down::after {
+    top: calc(100%);
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  &:hover &__line-vertical {
+    transform: scale(-10%);
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}

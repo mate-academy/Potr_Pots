@@ -1,0 +1,131 @@
+.house {
+  display: block;
+  // height: 500px;
+  margin-bottom: 45px;
+
+  cursor: default;
+
+  // opacity: 100;
+  @include onDesktop {
+    position: relative;
+    margin-bottom: 0;
+
+    background-color: #f8f8f8;
+    // background-color: rgba(255, 255, 255, 1);
+    z-index: 1;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    font-family: Bebas Neue, sans-serif;
+    font-style: regular;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15rem;
+    color: #000;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-family: Manrope, sans-serif;
+    font-style: regular;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4f4f4f;
+
+    order: 1;
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+    font-family: Bebas Neue, sans-serif;
+    font-style: regular;
+    font-size: 18px;
+    line-height: 18px;
+
+    color: #000;
+  }
+
+  &__describe {
+    margin-bottom: 40px;
+    font-family: Manrope, sans-serif;
+    font-style: regular;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #000;
+
+    &--last {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__post {
+    // margin-bottom: 800px;
+
+    font-family: Manrope, sans-serif;
+    font-style: regular;
+    font-size: 16px;
+    line-height: 24px;
+
+    order: 4;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: 20px;
+
+      @include onDesktop {
+        left: -10px;
+      }
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: -85px;
+    }
+  }
+
+  &__list {
+    order: 3;
+
+    @include onTablet {
+      order: 1;
+    }
+  }
+
+  &__img {
+    // padding-right: -20px;
+    margin-right: -30px;
+    margin-bottom: 30px;
+    position: relative;
+    left: -30px;
+    right: 0;
+
+    transition: all 0.5s;
+
+    @include pictureSize (259px, 320px);
+
+    @include onTablet {
+      @include pictureSize (337px, 416px);
+      left: 30px;
+
+      &:hover {
+        box-shadow: 0 30px 50px rgba(0, 0 , 0, 0.8);
+        transform: scale(1.1) translateX(10px);
+      }
+    }
+
+    @include onDesktop {
+      &:hover {
+        box-shadow: 0 30px 50px rgba(0, 0 , 0, 0.8);
+        transform: scale(1.5) translateX(80px);
+      }
+    }
+  }
+
+  &__picture {
+    order: 2;
+  }
+}

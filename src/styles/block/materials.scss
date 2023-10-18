@@ -1,0 +1,172 @@
+.materials {
+  margin-bottom: 120px;
+
+  position: relative;
+  z-index: 1;
+  height: 120vh;
+  // width: 100%;
+
+  background-image: url(../images/HeroShotFINAL320.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  cursor: default;
+
+  @include onTablet {
+    background-image: url(../images/HeroShotFINAL770.jpg);
+    height: 100vh;
+  }
+
+  @include onDesktop {
+    height: 120vh;
+    background-image: url(../images/HeroShotFINAL.jpg);
+  }
+
+  &__section-title {
+    color: #03839e;
+    line-height: 1.15em;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      line-height: 168px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    display: none;
+    // font-size: 20px;
+    color: #4f4f4f;
+
+    @include onTablet {
+      display: inline-block;
+      margin-bottom: 10px;
+
+      transform: translateY(-80px);
+    }
+
+    @include onDesktop {
+      margin-bottom: 15px;
+      transform: translateY(-150px);
+    }
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 150%;
+    display: none;
+    color: #4f4f4f;
+
+    @include onTablet {
+      display: inline-block;
+      transform: translateY(-80px);
+    }
+
+    @include onDesktop {
+      transform: translateY(-150px);
+    }
+  }
+
+  &__information {
+    font-size: 16px;
+    line-height: 150%;
+    display: flex;
+    padding: 30px 50px 50px;
+
+    width: 100%;
+    height: min-content;
+
+    color: #f8f8f8;
+    background: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+    // margin-top: 550px;
+
+    transform: translate(20px, 310px);
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__info-redpointer {
+    display: none;
+
+    @include onTablet {
+      display: inline-block;
+      // position: absolute;
+      position: relative;
+    }
+
+    &--first {
+      @include onTablet {
+        top: 30vh;
+        left: -320px;
+      }
+
+      @include onDesktop {
+        left: -550px;
+        top: 38vh;
+      }
+    }
+
+    &--second {
+      @include onTablet {
+        top: 10vh;
+        left: -200px;
+      }
+
+      @include onDesktop {
+        top: 20vh;
+        left: -300px;
+      }
+    }
+
+    &--third {
+      @include onTablet {
+        top: 25vh;
+        left: -150px;
+      }
+
+      @include onDesktop {
+        top: 40vh;
+        left: -200px;
+      }
+    }
+
+    &--fourth {
+      @include onTablet {
+        top: 15vh;
+        left: -50px;
+      }
+
+      @include onDesktop {
+        top: 10vh;
+        left: -100px;
+      }
+    }
+
+    &--fifth {
+      @include onTablet {
+        top: 7vh;
+        left: 0;
+      }
+
+      @include onDesktop {
+        top: 5vh;
+        left: 100px;
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+.benefits {
+  // display: block;
+  max-width: 1440px;
+  box-sizing: border-box;
+
+  @include onTablet {
+    position: relative;
+    height: 400px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 420px;
+  }
+
+  &__gallery {
+    display: flex;
+    max-width: max-content;
+    margin: 0 auto;
+  }
+
+  &__item {
+    cursor: default;
+    &::before {
+      content: "";
+      position: relative;
+      left: -15px;
+      top: 38px;
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: #333;
+      margin-right: 10px;
+      transform: translate(0, -50%) scaleY(1.5) rotate(45deg);
+    }
+
+  }
+
+  &__subtitle {
+    font-family: Manrope, sans-serif;
+    font-style: bold;
+    font-size: 30px;
+    line-height: 54px;
+    color: #333;
+
+    @include onTablet {
+      font-size: 36px;
+    }
+  }
+
+  &__description {
+    // margin-bottom: 40px;
+
+    font-family: Manrope, sans-serif;
+    font-style: regular;
+    font-size: 16px;
+    line-height: 24px;
+
+    &--last {
+      margin-bottom: 40px;
+
+      @include onTablet {
+        // margin-bottom: 100px;
+      }
+    }
+  }
+
+  &__post {
+    max-width: fit-content;
+    font-family: Bebas Neue, sans-serif;
+    font-style: regular;
+    font-size: 36px;
+    line-height: 54px;
+
+    color: #eb5757;
+
+    @include onTablet {
+      position: relative;
+      top: -300px;
+      left: 350px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: -70px;
+      left: 600px;
+    }
+
+    &-description {
+      box-sizing: border-box;
+      font-size: 24px;
+      line-height: 24px;
+
+      color: #03839e;
+    }
+  }
+
+  &__botton {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      position: relative;
+      top: -280px;
+      left: 350px;
+    }
+
+    @include onDesktop {
+      position: relative;
+      top: 120px;
+      left: 600px;
+    }
+  }
+
+  @include onDesktop {
+    &__container {
+      position: relative;
+      top: -350px;
+    }
+  }
+
+  &__container {
+    display: block;
+    // margin-top: 500px;
+  }
+}

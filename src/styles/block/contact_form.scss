@@ -1,0 +1,89 @@
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  background-color: transparent;
+
+  input:-webkit-autofill,
+  .page input:-webkit-autofill:focus,
+  .page input:-webkit-autofill:hover,
+  .page select:-webkit-autofill,
+  .page select:-webkit-autofill:focus,
+  .page select:-webkit-autofill:hover,
+  .page textarea:-webkit-autofill,
+  .page textarea:-webkit-autofill:focus,
+  .page textarea:-webkit-autofill:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    -webkit-text-fill-color: #4f4f4f;
+    box-shadow: #ffe339;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  @include onTablet {
+    gap: 30px;
+  }
+
+  &__field {
+    display: block;
+    width: 100%;
+    padding: 0 0 4px 6px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    // background-color: transparent;
+    background-color: transparent;
+
+    // input:-webkit-autofill,
+    // input:-webkit-autofill:hover,
+    // input:-webkit-autofill:focus,
+    // textarea:-webkit-autofill,
+    // textarea:-webkit-autofill:hover,
+    // textarea:-webkit-autofill:focus,
+    // select:-webkit-autofill,
+    // select:-webkit-autofill:hover,
+    // select:-webkit-autofill:focus {
+    //   border: 1px solid green;
+    //   -webkit-text-fill-color: green;
+    //   // -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    //   background-color: transparent;
+    //   transition: background-color 5000s ease-in-out 0s;
+    // }
+
+    &::after {
+      background-color: transparent !important;
+    }
+
+    &::placeholder {
+      font-family: Manrope, sans-serif;
+      font-style: regular;
+      font-size: 16px;
+      line-height: 24px;
+      color: #03839e;
+    }
+  }
+
+  &__botton {
+    display: flex;
+    margin: 10px auto 0;
+    margin-top: 10px;
+    padding: 4px 0;
+    max-width: max-content;
+    // border-color: none;
+    border: 0;
+    background: inherit;
+    cursor: pointer;
+    // background-color: transparent;
+    border-bottom: 4px dotted #333;
+    transition: border-bottom color 0.5s;
+
+    &:hover {
+      color: #03839e;
+      border-bottom: 4px dotted #03839e;
+    }
+
+    @include onDesktop {
+      margin: 0 auto;
+    }
+  }
+
+}

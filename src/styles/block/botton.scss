@@ -1,0 +1,43 @@
+.botton {
+  padding-left: 65px;
+
+  width: 240px;
+  height: 50px;
+
+  font-size: 14px;
+  text-align: left;
+  text-transform: uppercase;
+
+  background-repeat: no-repeat;
+  background-position: top 50% right 65px;
+  background-image: url(../images/wayRight.svg);
+  background-color: $yellow-color;
+  border: none;
+  cursor: pointer;
+
+  font-family: "Manrope", sans-serif;
+
+  transition: background-color, box-shadow 0.5s;
+
+  @include onTablet {
+    font-weight: 700;
+    background-color: transparent;
+    border: 1px solid $sea-color;
+
+    &:hover {
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  @include onDesktop {
+    &:hover {
+      background-color: $sea-color;
+      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  &:active {
+    box-shadow: none;
+    border: 1px solid $sea-color;
+  }
+}

@@ -1,0 +1,159 @@
+.sidebar {
+  &__link {
+    display: flex;
+    align-items: center;
+
+    max-height: 8px;
+
+    position: absolute;
+    right: -75px;
+    bottom: 95px;
+
+    transform: rotate(90deg);
+
+    @include onTablet {
+      left: -688px;
+      top: 1030px;
+      right: 0;
+      bottom: 0;
+
+      animation-name: move;
+      animation-duration: 1.01s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+
+    @include onDesktop {
+      left: -1157px;
+      top: 1500px;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  @include onTablet {
+    @keyframes move {
+      from {
+        top: 940px;
+      }
+
+      to {
+        top: 950px;
+      }
+    }
+  }
+
+  @include onDesktop {
+    @keyframes move {
+      from {
+        top: 1450px;
+      }
+
+      to {
+        bottom: 1480px;
+      }
+    }
+  }
+
+  &__text {
+    margin-right: 25px;
+
+    font-size: 12px;
+    color: $sea-color;
+  }
+
+  &__pict {
+    width: 8px;
+    height: 45px;
+
+    transform: rotate(-90deg);
+    background-image: url(../images/wayDown.svg);
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(90deg);
+    }
+
+    to {
+      transform: rotate(92deg);
+    }
+
+    from {
+      transform: rotate(92deg);
+    }
+
+    to {
+      transform: rotate(88deg);
+    }
+  }
+
+  &__decor {
+    display: none;
+
+    &:hover {
+      animation-name: rotate;
+      animation-duration: 1.01s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    z-index: 2;
+    // transform: rotate(90deg);
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+      // position: absolute;
+      position: fixed;
+      // margin-right: 240px;
+      top: 500px;
+      right: -40px;
+
+      transform: rotate(90deg);
+
+      &_bar {
+        width: 65px;
+        height: 1px;
+        text-align: center;
+        transform: rotate(90deg);
+        color: #828282;
+      }
+
+      &_text {
+        padding-left: 10px;
+
+        font-family: "Bebas Neue", cursive;
+        color: #828282;
+        font-size: 12px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      // @include onTablet {}
+
+      @include onDesktop {
+
+        display: flex;
+        align-items: center;
+        top: 650px;
+        right: 40px;
+
+      }
+
+      @media (min-width: 1700px) {
+        display: flex;
+        align-items: center;
+        top: 650px;
+        right: 180px;
+      }
+    }
+  }
+}
