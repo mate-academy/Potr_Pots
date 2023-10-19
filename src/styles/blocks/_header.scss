@@ -17,7 +17,7 @@
     padding: 0 30px;
       
     @include onTablet {
-      padding-left: 30px;
+      padding: 0;
     }
   }
 
@@ -51,7 +51,8 @@
     }
 
     @include onDesktop {
-      width: 400px;
+      width: 500px;
+      height: 500px;
     }
   }
 
@@ -60,7 +61,7 @@
 
     @include onTablet {
       margin-bottom: 0;
-      padding-right: 34px;
+      //padding-right: 34px;
       justify-self: self-end;
     }
   }
@@ -75,6 +76,10 @@
 
   &__offer {
     margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
 
     @include onDesktop {
       margin-top: 150px;
@@ -103,6 +108,16 @@
     }
   }
 
+  &__button {
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
   &__more {
     position: absolute;
     bottom: 5px;
@@ -115,11 +130,11 @@
 
     @include onTablet {
       top: 280px;
-      left: 30px;
+      left: 0;
     }
 
     @include onDesktop {
-      top: 200px;
+      top: 320px;
     }
 
     & svg {
