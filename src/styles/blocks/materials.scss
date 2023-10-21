@@ -5,8 +5,8 @@
     object-fit: cover;
     object-position: center center;
     padding-top: 70px;
-    width: calc(100% + 2 * 30px);
-    margin: 0 -30px 25px;
+    width: calc(100% + 60px);
+    margin-left: -30px;
 
     @include onTablet {
       width: calc(100% + 2 * 34px);
@@ -120,7 +120,7 @@
       width: 300px;
       padding: 34px 44px;
       height: max-content;
-      visibility: hidden;
+      display: none;
       z-index: 3;
     }
 
@@ -185,12 +185,15 @@
     }
 
     @include onTablet {
-      background-image: url(../images/radio.svg);
+      background-image: url(../images/label.svg);
       height: 50px;
       width: 50px;
       border: none;
       border-radius: 50%;
       transition: $transition-time;
+      &.active {
+        background-image: url(../images/labelact.svg);
+      }
 
       &:hover {
         opacity: 0.7;
@@ -255,19 +258,11 @@
     @for $slideNumber from 1 through 5 {
       &--#{$slideNumber}:checked~.materials__slide--#{$slideNumber} {
         display: block;
-
-        @include onTablet {
-          visibility: visible;
-        }
       }
 
       &--#{$slideNumber}:checked~.materials__label--#{$slideNumber} {
         background-color: $grey-c;
-
-        @include onTablet {
-          background-image: url(../images/labelact.svg);
-          opacity: 0.7;
-        }
+        opacity: 0.7;
       }
     }
   }
