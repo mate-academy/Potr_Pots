@@ -1,0 +1,42 @@
+.slider {
+  width: 302px;
+  height: 254px;
+  background-color: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(17px);
+  backdrop-filter: blur(17px);
+  color: $color-gray-light;
+
+  &__slide {
+    flex-shrink: 0;
+    padding: 28px 44px;
+  }
+
+  &__pagination {
+    height: 9px;
+    position: relative;
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+
+    &--horizontal {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  &__dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background-image: url(/images/pagination-dot.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--active {
+      background-image: url(/images/pagination-dot-active.svg);
+    }
+  }
+}

@@ -1,0 +1,177 @@
+.header {
+  
+  &__content {
+    padding-top: $header-top-padding-mobile;
+    margin-bottom: 110px;
+    
+    @include onTablet {
+      padding-top: $header-top-padding-tablet;
+    }
+
+    @include onDesktop {
+      padding-top: $header-top-padding-tablet;
+    }
+  }
+
+  &__container {
+    padding: 0 30px;
+      
+    @include onTablet {
+      padding: 0;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      width: 300px;
+    }
+
+    @include onDesktop {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  &__photo-cover {
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      //padding-right: 34px;
+      justify-self: self-end;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__bottom {
+    position: relative;
+  }
+
+  &__offer {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-top: 150px;
+    }
+
+    &-price {
+      font-size: 26px;
+      font-weight: 700;
+      color: $color-gray-1;
+    }
+
+    &-desc {
+      font-size: 14px;
+    }
+  }
+
+  &__offer-container {
+    padding: 0 30px;
+    
+    @include onTablet {
+      padding: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      margin-top: 50px;
+    }
+
+    @include onDesktop {
+      margin-top: 0;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    bottom: 5px;
+    left: 97%;
+    writing-mode: vertical-rl;
+    color: $color-turtoise;
+    font-size: 12px;
+    height: 186px;
+    z-index: 1;
+
+    @include onTablet {
+      top: 280px;
+      left: 0;
+    }
+
+    @include onDesktop {
+      top: 320px;
+    }
+
+    & svg {
+      margin-top: 9px;
+      transition: transform $transition-duration-speed;
+    }
+
+    &:hover {
+      animation-name: wobble-vertical;
+      animation-duration: $transition-duration-speed;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: 1;
+
+      &:hover svg {
+        transform: translateY(50px);
+
+        @include onTablet {
+          transform: translateY(50px);
+        }
+      }
+    }
+  }
+
+  &__bg--yellow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../images/yellow-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 466px;
+    width: 80%;
+    display: none;
+    z-index: -1;
+    
+    @include onTablet {
+      display: inline-flex;
+    }
+  }
+}

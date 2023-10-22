@@ -1,0 +1,83 @@
+.features {
+  margin-bottom: 110px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 150px;
+  }
+
+  &__article {
+    text-align: center;
+    
+    &:not(:last-child) {
+      margin-bottom: 67px;
+
+      @include onTablet {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    color: $color-turtoise;
+    padding-bottom: 20px;
+
+    & span {
+      -webkit-text-stroke: 0.1px $color-turtoise;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+  
+    @include onDesktop {
+      padding-bottom: 70px;
+    }
+  }
+
+  &__photo-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: 100%;
+    height: 260px;
+    margin-bottom: 37px;
+    transition: transform $transition-duration-speed;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 25px;
+      height: 375px;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__subtitle {
+    padding-bottom: 20px;
+  }
+}

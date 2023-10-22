@@ -1,0 +1,177 @@
+.about {
+  position: relative;
+  margin-bottom: 110px;
+
+  @include onTablet {
+    margin-bottom: 130px;
+    padding-top: 60px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 150px;
+  }
+
+  &__content {
+    margin-bottom: 70px;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+    
+    @include onDesktop {
+      margin-bottom: 80px;
+
+      &-beauty {
+        transform: translateY(60px);
+      }
+    }
+  }
+  
+  &__title {
+    color: $color-black;
+    padding: 40px 0 20px;
+    position: relative;
+    
+    &-span {
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      
+      &::before {
+        content: "";
+        border-left: 1px solid $color-gray-1;
+        height: 46px;
+        margin-right: 10px;
+        padding-left: 20px;
+        transform: rotate(22deg) translate(-10px, 4px);
+        position: absolute;
+      }
+      
+      @include onTablet {
+        &--first {
+          top: 40px;
+          left: -60px;
+        }
+      }
+    }
+
+    @include onTablet {
+      padding-bottom: 10px;
+
+      &::after {
+        content: "";
+        border-left: 1px solid $color-gray-1;
+        height: 46px;
+        margin-right: 10px;
+        padding-left: 20px;
+        transform: rotate(22deg) translate(10px, 4px);
+        position: absolute;
+      }
+    }
+    
+    &-main {
+      padding-bottom: 40px;
+    }
+  }
+
+  &__tag {
+    border-left: 1px solid $color-gray-1;
+    height: 46px;
+    margin-right: 10px;
+    transform: rotate(22deg);
+  }
+
+  &__tag-picture {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      color: $color-gray-1;
+      position: relative;
+
+      &-second {
+        padding-bottom: 60px;
+        text-align: end;
+      }
+
+      &::before {
+        content: "*";
+        margin-right: 10px;
+        color: $color-black;
+
+        @include onDesktop {
+          position: absolute;
+          left: -30px;
+        }
+      }
+    }
+
+    @include onDesktop {
+      &-second {
+        text-align: start;
+      }
+
+      &-time {
+        transform: translateX(-20%);
+      }
+    }
+  }
+
+  &__photo-cover {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform $transition-duration-speed;
+
+    &:hover {
+      transform: scale(1.07);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    &-robust {
+      width: 284px;
+      height: 284px;
+
+      @include onDesktop {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    &-beauty {
+      width: 300px;
+      height: 417px;
+      justify-self: end;
+
+      @include onDesktop {
+        margin-bottom: 45px;
+      }
+    }
+    
+    &-time {
+      width: 284px;
+      height: 405px;
+      
+      @include onDesktop {
+        width: 100%;
+        height: 670px;
+        margin-bottom: 45px;
+        justify-self: end;
+      }
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
