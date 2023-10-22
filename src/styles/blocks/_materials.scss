@@ -1,6 +1,6 @@
 .materials {
   position: relative;
-  margin-bottom: 110px;
+  margin-bottom: 50px;
 
   @include onTablet {
     margin-bottom: 80px;
@@ -12,8 +12,8 @@
 
   &__bg {
     position: relative;
-    height: 500px;
-    background: linear-gradient(180deg, $color-gray-light 0%,
+    height: 100vh;
+    /* background: linear-gradient(180deg, $color-gray-light 0%,
     rgba(255, 255, 255, 0) 30.93%);
     background-image: url(/images/materials.jpg);
     background-repeat: no-repeat;
@@ -22,21 +22,22 @@
 
     @include onTablet {
       height: 930px;
-      background-position: top 270px center;
+      background-position: top 230px center;
     }
 
     @include onDesktop {
-      height: 1200px;
-    }
+      height: 100vh;
+    } */
   }
 
   &__title {
+    z-index: 1;
     @include onTablet {
       font-size: 80px;
     }
 
     @include onDesktop {
-      font-size: 140px;
+      font-size: 138px;
     }
   }
 
@@ -66,7 +67,19 @@
       }
     }
   }
- 
+  
+  &__img {
+    padding-top: 140px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    z-index: 0;
+    
+    @include onTablet {
+      height: 100%;
+      padding-top: 240px;
+    }
+  }
 
   &__slider-container {
     display: flex;
@@ -75,7 +88,7 @@
 
   &__slider--mobile {
     display: block;
-    padding-top: 120px;
+    transform: translateY(80%);
 
     @include onTablet {
       display: none;
@@ -99,52 +112,52 @@
     }
 
     &--1 {
-      left: 10%;
-      bottom: 22%;
+      left: 12%;
+      bottom: 12%;
 
       @include onDesktop {
         left: 18%;
-        bottom: 23%;
+        bottom: 10%;
       }
     }
     
     &--2 {
       left: 30%;
-      bottom: 36%;
+      bottom: 30%;
 
       @include onDesktop {
         left: 38%;
-        bottom: 36%;
+        bottom: 28%;
       }
     }
 
     &--3 {
       left: 44%;
-      bottom: 19%;
+      bottom: 10%;
 
       @include onDesktop {
-        left: 47%;
-        bottom: 19%;
+        left: 45%;
+        bottom: 6%;
       }
     }
 
     &--4 {
-      right: 40%;
-      bottom: 26%;
+      right: 39%;
+      bottom: 17%;
 
       @include onDesktop {
         right: 38%;
-        bottom: 30%;
+        bottom: 17%;
       }
     }
 
     &--5 {
       right: 21%;
-      bottom: 45%;
+      bottom: 42%;
 
       @include onDesktop {
         right: 19%;
-        bottom: 35%;
+        bottom: 24%;
       }
     }
   }
