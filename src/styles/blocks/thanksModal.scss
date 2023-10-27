@@ -1,0 +1,82 @@
+.thanksModal {
+  display: block;
+  position: absolute;
+  min-width: 830px;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  padding: 78px 171px 192px 130px;
+
+  background-color: $c-grey-light;
+  transition: transform 0.6s;
+  z-index: 999;
+
+  &_active {
+    transform: translate(-50%, 0);
+  }
+
+  &__titleWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 21px;
+  }
+
+  &__logo {
+    font-size: 17px;
+    margin: 0;
+    color: #000;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 80px;
+      background-color: $c-yellow;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 18px;
+      left: -54px;
+      z-index: -1;
+    }
+
+    &::after {
+      content: "";
+      width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      background-color: $c-turquoise;
+      display: inline-block;
+    }
+  }
+
+  &__closeBtn {
+    position: relative;
+    bottom: 35px;
+    right: -100px;
+    width: 66px;
+    height: 66px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0;
+    background: center / contain no-repeat url("../images/icons/shoppingBagModalCloseBtn.png");
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__txt {
+    font-size: 32px;
+    line-height: 150%;
+    font-weight: bold;
+
+    &_s {
+      font-size: 16px;
+      font-weight: normal;
+      margin-top: 11px;
+    }
+  }
+}
