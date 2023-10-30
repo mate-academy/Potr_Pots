@@ -1,0 +1,171 @@
+.for-whom {
+  width: 100%;
+  &__title {
+    margin: 0;
+    margin-bottom: 30px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 54px */
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+  }
+
+  &__cards {
+    display: grid;
+    gap: 70px;
+  }
+}
+
+.for-whom-card {
+  @include onTablet {
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    &--2 {
+      display: grid;
+      grid-template: 522px auto / repeat(6,70px);
+      column-gap: 30px;
+    }
+  }
+
+  &__img {
+    width: 284px;
+    height: 284px;
+    display: none;
+    @include onTablet {
+      display: block;
+      grid-column: span 3;
+    }
+
+    &--2 {
+      @include onTablet {
+        justify-self: end;
+        order: 1;
+        width: 300px;
+        height: 417px;
+      }
+    }
+    &--3 {
+      @include onTablet {
+        width: 284px;
+        height: 404px;
+      }
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      position: relative;
+      grid-column: span 3;
+    }
+  }
+
+  &__small-title {
+    margin: 0;
+    position: relative;
+    display: none;
+    @include onTablet {
+      display: inline;
+      position: absolute;
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      top: -25px;
+    }
+    &--2 {
+      @include onTablet {
+        right: 0;
+        top: 0;
+      }
+    }
+    &--3 {
+      @include onTablet {
+        top: -17px;
+      }
+    }
+  }
+
+  &__number {
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 64.8px */
+    letter-spacing: 5.58px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 48px;
+      background: black;
+      transform: rotate(22deg);
+      left: -2px;
+    }
+    @include onTablet {
+      position: absolute;
+      left: -60px;
+      top: 47px;
+    }
+    &--2 {
+      @include onTablet {
+        position: absolute;
+        left: 14px;
+        top: 81px;
+      }
+    }
+    &--3 {
+      @include onTablet {
+        position: absolute;
+        left: -40px;
+        top: 40px;
+      }
+    }
+  }
+
+  &__txt {
+    position: relative;
+    margin-top: 30px;
+    @include onTablet {
+      margin-top: 25px;
+    }
+    &--2 {
+      @include onTablet {
+        margin-top: 150px;
+      }
+    }
+    &--3 {
+      @include onTablet {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 54px */
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+}

@@ -1,0 +1,66 @@
+.features {
+  &__title {
+    margin: 0;
+    margin-bottom: 22px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+
+    color: transparent;
+    -webkit-text-stroke: 1px #03839e;
+
+    &--filling {
+      -webkit-text-fill-color: #03839e;
+    }
+  }
+
+  &__cards {
+    @include pageGrid;
+  }
+
+  &__card {
+    margin-bottom: 68px;
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      grid-column: span 2;
+    }
+    @include onDesktop {
+      grid-column: span 4;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.card {
+  &__photo {
+    width: 100%;
+    margin-bottom: 38px;
+  }
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 100% */
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  &__description {
+    margin: 0;
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+}

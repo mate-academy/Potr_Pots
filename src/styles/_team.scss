@@ -1,0 +1,106 @@
+.team {
+  background-image: url(../images/bg-mobile-desc.png) ;
+  background-position: center bottom 1%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  @include onTablet {
+    background-position: left 54%;
+  }
+  @include onDesktop {
+    background-position: left 25%;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+
+  &__photo--mobile {
+    width: 100%;
+    @include onTablet {
+      display: none;
+    }
+  }
+  &__photo--desctop {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 340px;
+      grid-column: span 3;
+      margin-top: -53px;
+    }
+    @include onDesktop {
+      width: 677px;
+      grid-column: 5 / 12;
+      margin-top: -80px;
+    }
+  }
+
+  &__description {
+    margin: 16px 0 58px;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    grid-column: span 3;
+    @include onDesktop {
+      // margin-top: 230px;
+      margin-top: 45px;
+      grid-column: span 4;
+      margin-bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    @include onTablet {
+      padding: 230px 0 112px;
+      @include pageGrid;
+      @include onDesktop {
+        padding-bottom: 160px;
+      }
+
+      &::before {
+        content: "Martin";
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 232px;
+        letter-spacing: 36px;
+        text-transform: uppercase;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #03839e;
+        color: #0000;
+        position: absolute;
+        top: 17px;
+        left: -50px;
+        @include onDesktop {
+          top: -16px;
+          left: -50px;
+        }
+      }
+      &::after {
+        content: "Andy";
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 232px;
+        letter-spacing: 36px;
+        text-transform: uppercase;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #03839e;
+        color: #0000;
+        position: absolute;
+        top: 395px;
+        right: -70px;
+        @include onDesktop {
+          top: 615px;
+        }
+      }
+    }
+  }
+}

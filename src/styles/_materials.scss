@@ -1,0 +1,112 @@
+.materials {
+  &__title {
+    margin: 0;
+    margin-bottom: -70px;
+    position: relative;
+    z-index: 2;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+    color: #03839e;
+    @include onTablet {
+      font-size: 80px;
+      font-weight: 400;
+      letter-spacing: 9.6px;
+      margin-bottom: -97px;
+      grid-column: span 5;
+    }
+    @include onDesktop {
+      font-size: 138px;
+      font-weight: 400;
+      letter-spacing: 16px;
+      margin-bottom: -173px;
+      grid-column: span 10;
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__txt {
+    position: relative;
+    z-index: 2;
+    grid-column: 4 / -1;
+    @include onDesktop {
+      grid-column: 8 / -1;
+      margin-bottom: -198px;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    @include onTablet {
+      margin: 0;
+      margin-bottom: 10px;
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 30px */
+      color: #4f4f4f;
+    }
+  }
+
+  &__descroption {
+    display: none;
+    @include onTablet {
+      margin: 0;
+      margin-bottom: -100px;
+
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      color: #4f4f4f;
+    }
+
+    &--bold {
+      font-weight: 700;
+      color: #4f4f4f;
+    }
+  }
+
+  &__bacgraund {
+    background: linear-gradient(180deg, #f8f8f8 0%,
+    rgba(255, 255, 255, 0) 30.93%) lightgray 50%;
+    width: 100%;
+  }
+}
+
+.cardinfo {
+  height: 254px;
+  width: 302;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(17px);
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  color: white;
+  padding: 28px 44px 58px 45px;
+  margin: 0 9px;
+  margin-top: -50px;
+  box-sizing: border-box;
+
+  @include onTablet {
+    width: 303px;
+    height: 237px;
+    margin-top: -300px;
+    margin-left: 430px;
+  }
+}
