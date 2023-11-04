@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 30px;
+  margin: 0 auto;
+  max-width: 1170px;
+  height: 100%;
+
+  @include iPad {
+    padding: 0 34px;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 20px;
+  }
+
+  @include iPhone {
+    padding: 0 30px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+  }
+
+  &__header {
+    z-index: 3;
+  }
+
+  &__photo {
+    max-width: 1170px;
+  }
+}

@@ -1,0 +1,92 @@
+.menu {
+  grid-column: 1 / 13;
+  display: flex;
+  z-index: 2;
+  justify-content: space-between;
+  height: 142px;
+
+  @include iPad {
+    grid-column: 1 / 7;
+    height: 121px;
+  }
+
+  @include iPhone {
+    grid-column: 1 / 3;
+    height: 67px;
+    align-items: center;
+  }
+
+  &__logo {
+    font-family: "bebas", sans-serif;
+    font-size: 36px;
+    letter-spacing: 6%;
+    text-decoration: none;
+    margin-top: 30px;
+    color: #333;
+
+    @include iPhone {
+      margin-top: 0;
+    }
+  }
+
+  &__centr {
+    margin-top: 30px;
+
+    @include iPad {
+      display: none;
+    }
+
+    @include iPhone {
+      display: none;
+    }
+  }
+
+  &__shop {
+    background-image: url(/images/sumka.svg);
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+    margin-top: 30px;
+
+    @include iPad {
+      display: none;
+    }
+
+    @include iPhone {
+      display: none;
+    }
+  }
+
+  &__item {
+    text-decoration: none;
+    line-height: 24px;
+    margin-right: 64px;
+    color: #4f4f4f;
+    display: inline-block;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__burger {
+    background-image: url(/images/burger.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+    display: none;
+    margin-top: 30px;
+    margin-right: 10px;
+
+    @include iPad {
+      display: block;
+    }
+
+    @include iPhone {
+      display: block;
+      margin-top: 0;
+    }
+  }
+}
