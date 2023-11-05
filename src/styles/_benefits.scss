@@ -16,10 +16,15 @@
       position: absolute;
       margin-left: -50px;
       margin-top: -170px;
+      z-index: 2;
+
+      @include hover (transform, rotate(3deg));
     }
     &--2 {
       margin-left: 125px;
       margin-top: -315px;
+
+      @include hover (transform, rotate(3deg));
     }
     &--3 {
       position: absolute;
@@ -27,22 +32,30 @@
       margin-left: -396px;
       margin-top: 60px;
       z-index: 3;
+
+      @include hover (transform, rotate(3deg));
     }
     &--4 {
       position: absolute;
       margin-left: -230px;
       margin-top: -32px;
       z-index: 2;
+
+      @include hover (transform, rotate(3deg));
     }
     &--5 {
       position: absolute;
       margin-left: -320px;
       margin-top: 192px;
+
+      @include hover (transform, rotate(3deg));
     }
     &--6 {
       position: absolute;
       margin-left: -153px;
       margin-top: 154px;
+
+      @include hover (transform, rotate(3deg));
     }
   }
 
@@ -65,7 +78,7 @@
       padding-left: 24px;
     }
     @include onDesktop {
-      grid-column: 6/ 10;
+      grid-column: 6 / 10;
     }
 
     &--desctop {
@@ -85,7 +98,7 @@
     font-size: 32px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150%; /* 48px */
+    line-height: 150%;
     @include onTablet {
       font-size: 36px;
     }
@@ -108,20 +121,26 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 24px */
+    line-height: 150%;
   }
 
   &__button--yellow {
     margin-bottom: 40px;
     width: 100%;
-    background-color: #ffe339;
+    background-color: $yellow;
     @include onTablet {
       grid-column: 4 / 6;
-      background-color: #f8f8f8;
-      border: 1px solid #03839e;
+      background-color: $grey-light;
+      border: 1px solid $turquoise;
     }
     @include onDesktop {
       grid-column: 6 / 9;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $turquoise;
+        color: white;
+      }
     }
   }
 
@@ -150,24 +169,24 @@
   &__percent {
     margin: 0;
     margin-bottom: 10px;
-    color: #eb5757;
+    color: $red;
     font-family: "Bebas Neue", sans-serif;
     font-size: 36px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 54px */
+    line-height: 150%;
     letter-spacing: 5.58px;
     text-transform: uppercase;
   }
 
   &__percenttxt {
     margin: 0;
-    color: #03839e;
+    color: $turquoise;
     font-family: "Bebas Neue", sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 100% */
+    line-height: 24px;
     letter-spacing: 3.72px;
     text-transform: uppercase;
     @include onTablet {

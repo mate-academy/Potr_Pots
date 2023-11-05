@@ -9,12 +9,24 @@
   }
   @include onDesktop {
     position: relative;
-    background-image: url(../images/rectangle-tablet.png);
+    background-image: url(../images/bg-desck.png);
     background-repeat: no-repeat;
     background-size: 70%;
   }
 
+  &__container {
+    position: relative;
+    padding-inline: 30px;
+    @include onTablet {
+      padding-inline: 34px;
+    }
+    @include onDesktop {
+      padding-inline: 135px;
+    }
+  }
+
   &__img {
+    box-sizing: border-box;
     object-fit: cover;
     object-position: center center;
     height: 100%;
@@ -30,11 +42,14 @@
     }
     @include onDesktop {
       position: absolute;
+      z-index: 2;
       top: 140px;
       bottom: 0;
       right: 135px;
       width: 500px;
       height: 500px;
+
+      @include hover (transform, rotate(3deg));
     }
   }
 
@@ -48,21 +63,27 @@
     text-transform: uppercase;
 
     color: transparent;
-    -webkit-text-stroke: 1px #03839e;
+    -webkit-text-stroke: 1px $turquoise;
 
     &--filling {
-      -webkit-text-fill-color: #03839e;
+      -webkit-text-fill-color: $turquoise;
     }
 
     @include onTablet {
       font-size: 64px;
       font-style: normal;
       font-weight: 400;
-      line-height: 64px; /* 100% */
+      line-height: 64px;
       letter-spacing: 9.92px;
       margin-top: -5px;
     }
+
+    @include onDesktop {
+      margin-left: 100px;
+      margin-top: 35px;
+    }
   }
+
   &__discount {
     display: flex;
     flex-direction: column;
@@ -74,9 +95,7 @@
       margin-bottom: 50px;
     }
     @include onDesktop {
-      // margin: 0;
       padding-left: 398px;
-      // margin-bottom: 50px;
     }
 
     &--price {
@@ -99,8 +118,7 @@
   }
 
   &__button--yellow {
-    background-color: #ffe339;
-    // margin-top: 20px;
+    background-color: $yellow;
     @include onTablet {
       margin-top: 50px;
       margin-left: 154px;
@@ -108,10 +126,64 @@
     @include onTablet {
       margin-top: 50px;
       margin-left: 300px;
+
+      &:hover {
+        background-color: $yellow-light;
+        cursor: pointer;
+      }
     }
   }
-}
 
-.container {
-  @include contentPaddingInline();
+  &__extra-link {
+    color: $turquoise;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    text-decoration: none;
+
+    position: absolute;
+    display: flex;
+    gap: 9px;
+    bottom: 0;
+    right: 0;
+
+    transform: rotate(90deg) translateY(100%);
+    transform-origin: right bottom;
+
+    @include onTablet {
+      right: auto;
+      left: -135px;
+    }
+    @include onDesktop {
+      right: auto;
+      left: -35px;
+      bottom: -90px;
+    }
+  }
+
+  &__decoration {
+    display: none;
+    @include onTablet {
+      display: flex;
+      gap: 10px;
+      position: absolute;
+      transform: rotate(90deg);
+
+      color: #828282;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 2.64px;
+
+      right: -50px;
+    }
+    @include onDesktop {
+      right: 67px;
+      bottom: -200px;
+    }
+  }
 }

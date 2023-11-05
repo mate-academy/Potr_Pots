@@ -1,6 +1,5 @@
 @import "utils";
 @import "typography";
-@import "icons";
 @import "header";
 @import "top-bar";
 @import "page";
@@ -14,17 +13,21 @@
 @import "benefits";
 @import "questions";
 @import "footer";
+@import "nav";
+@import "menu";
+@import "./utils/normalize";
+@import "autocomplete";
 
 body {
-  background: $c-gray;
-  width: 100%;
+  background: $grey-light;
 }
 
-// * {
-//   box-sizing: border-box;
-// }
+* {
+  box-sizing: border-box;
+}
 
 .main {
+  width: 100%;
   &__content {
     display: grid;
     row-gap: 110px;
@@ -38,7 +41,12 @@ body {
 .page {
   scroll-behavior: smooth;
   &__body {
-    margin: 0 auto;
-    min-width: 320px;//new
+    width: 100%;
+    // box-sizing: border-box;
   }
+}
+
+.container {
+  box-sizing: content-box;
+  @include contentPaddingInline();
 }

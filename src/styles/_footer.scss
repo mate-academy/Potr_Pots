@@ -1,6 +1,6 @@
 .footer {
+  padding-bottom: 117px;
   &__wrapper {
-    margin-top: -50px;
     @include onTablet {
       display: flex;
       justify-content: space-between;
@@ -15,8 +15,9 @@
     }
   }
 
-  &__title {
+  &__title-link {
     margin: 0;
+    text-decoration: none;
     color: #000;
     font-family: "Bebas Neue", sans-serif;
     font-size: 24px;
@@ -25,6 +26,22 @@
     line-height: 24px; /* 100% */
     letter-spacing: 3.72px;
     text-transform: uppercase;
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  &__title {
+    color: #000;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 100% */
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
   }
 
   &__adrress {
@@ -35,10 +52,21 @@
     font-weight: 400;
     line-height: 150%; /* 24px */
     text-decoration: none;
+
+    &:hover {
+      color: $turquoise;
+    }
   }
 
   &__links {
     text-align: center;
+  }
+
+  &__link {
+    &:hover {
+      @include hover(transform, rotate(3deg));
+      color: $turquoise;
+    }
   }
 
   &__icons {
@@ -59,6 +87,10 @@
     letter-spacing: 5.58px;
     text-transform: uppercase;
     text-decoration: none;
+
+    &:hover {
+      color: $turquoise;
+    }
   }
 
   &__copyright-mobile {

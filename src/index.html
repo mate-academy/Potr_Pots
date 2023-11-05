@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Port Pots</title>
+    <link rel="icon" href="./icons/favicon.png">
     <link rel="stylesheet" href="./styles/main.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com"
@@ -17,13 +18,29 @@
   <body class="page__body">
     <script type="text/javascript" src="scripts/main.js"></script>
 
-    <header class="header">
+    <header class="header" id="home">
 
       <div class="top-bar">
         <a href="#home" class="top-bar__logo-link">Port Pots</a>
-        <div class="top-bar__icons">
-          <a href="#menu" class="icon icon--menu"></a>
-        </div>
+        <a href="#menu" class="top-bar__icon-menu"></a>
+
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a class="nav__link" href="#features">Features</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#about-us">About us</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#materials">Materials</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#questions">Message us</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#questions" class="top-bar__basket"></a>
       </div>
 
       <div class="header__bg">
@@ -31,7 +48,7 @@
           alt="Port Pots"
           class="header__img">
       </div>
-      <div class="header__container container">
+      <div class="header__container">
         <div class="header__bottom">
           <h1 class="header__title">
             POTR ~ Eco, <br>
@@ -52,15 +69,51 @@
             Buy naw
             <img src="./icons/arrow-button.svg" alt="arrow">
           </button>
+
+          <a href="#for-whom" class="header__extra-link">
+            More about POTR POTS
+            <img src="./icons/arrow-extra.svg" alt="arrow">
+          </a>
+
+          <div class="header__decoration">
+            <img src="./icons/rectangle-decoration.svg" alt="decoration">
+              potr pots
+          </div>
         </div>
       </div>
     </header>
 
-    <aside></aside>
+    <aside class="page__menu" id="menu">
+      <div class="menu">
+        <nav class="side-bar">
+          <ul class="side-bar__list">
+            <li class="side-bar__item">
+              <a class="side-bar__link side-bar__link--basket" href="#features">Basket</a>
+            </li>
+            <li class="side-bar__item">
+              <a class="side-bar__link" href="#features">Features</a>
+            </li>
+            <li class="side-bar__item">
+              <a class="side-bar__link" href="#about-us">About us</a>
+            </li>
+            <li class="side-bar__item">
+              <a class="side-bar__link" href="#materials">Materials</a>
+            </li>
+            <li class="side-bar__item">
+              <a class="side-bar__link" href="#questions">Message us</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#" class="menu__close">
+          <img src="./icons/close-icon.svg" alt="close">
+          <p class="menu__close--txt">Close</p>
+        </a>
+      </div>
+    </aside>
 
     <main class="main">
       <div class="main__content">
-        <section class="for-whom" id="#">
+        <section class="for-whom" id="for-whom">
           <div class="container">
             <h2 class="for-whom__title">For whom?</h2>
             <div class="for-whom__cards">
@@ -69,7 +122,7 @@
                   alt="For those who value durable things"
                   class="for-whom-card__img for-whom-card__img--1">
                 <div class="for-whom-card__wrapper for-whom-card__wrapper--1">
-                  <h4 class="for-whom-card__small-title">* Robust</h4>
+                  <h4 class="for-whom-card__small-title for-whom-card__small-title--1">Robust</h4>
                   <p class="for-whom-card__number for-whom-card__number--1">1</p>
 
                   <div class="for-whom-card__txt">
@@ -86,7 +139,7 @@
                   alt="For those who value durable things"
                   class="for-whom-card__img for-whom-card__img--2">
                 <div class="for-whom-card__wrapper for-whom-card__wrapper--2">
-                  <h4 class="for-whom-card__small-title for-whom-card__small-title--2">* Beautiful </h4>
+                  <h4 class="for-whom-card__small-title for-whom-card__small-title--2">Beautiful </h4>
                   <p class="for-whom-card__number for-whom-card__number--2">2</p>
 
                   <div class="for-whom-card__txt--2">
@@ -103,7 +156,7 @@
                   alt="For those who value durable things"
                   class="for-whom-card__img for-whom-card__img--3">
                 <div class="for-whom-card__wrapper for-whom-card__wrapper--3">
-                  <h4 class="for-whom-card__small-title for-whom-card__small-title--3">* Saves time</h4>
+                  <h4 class="for-whom-card__small-title for-whom-card__small-title--3">Saves time</h4>
                   <p class="for-whom-card__number for-whom-card__number--3">3</p>
 
                   <div class="for-whom-card__txt--3">
@@ -118,7 +171,7 @@
           </div>
         </section>
 
-        <section class="features">
+        <section class="features" id="features">
           <div class="container">
             <h2 class="features__title"><span class="features__title--filling">POTR Pots</span> Features</h2>
             <div class="features__cards">
@@ -148,7 +201,7 @@
             </div>
           </div>
         </section>
-        <section class="team">
+        <section class="team" id="about-us">
           <div class="container">
             <h2 class="team__title">Meet the POTR team!</h2>
           </div>
@@ -173,7 +226,7 @@
             </div>
           </div>
         </section>
-        <section class="materials">
+        <section class="materials" id="materials">
           <div class="container">
             <div class="materials__wrapper">
               <h2 class="materials__title">Materials and Features</h2>
@@ -193,9 +246,32 @@
             alt="bacgraund"
             class="materials__bacgraund"
           >
-          <div class="cardinfo cardinfo--1">We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord.
-              Not only is it 100% recycled, it looks great and works really well at wicking water.
+          <div class="circle-button circle-button--1">
+            <div class="circle-button--vertical"></div>
+            <div class="circle-button--horizontal"></div>
           </div>
+          <div class="circle-button circle-button--2">
+            <div class="circle-button--vertical"></div>
+            <div class="circle-button--horizontal"></div>
+          </div>
+          <div class="circle-button circle-button--3">
+            <div class="circle-button--vertical"></div>
+            <div class="circle-button--horizontal"></div>
+          </div>
+          <div class="circle-button circle-button--4">
+            <div class="circle-button--vertical"></div>
+            <div class="circle-button--horizontal"></div>
+          </div>
+          <div class="circle-button circle-button--5">
+            <div class="circle-button--vertical"></div>
+            <div class="circle-button--horizontal"></div>
+          </div>
+
+          <div class="cardinfo cardinfo--1">POTR Pots are constructed using recycled polypropylene which can be fully recycled. </div>
+          <div class="cardinfo cardinfo--2">POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.</div>
+          <div class="cardinfo cardinfo--3">Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.</div>
+          <div class="cardinfo cardinfo--4">Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.</div>
+          <div class="cardinfo cardinfo--5">We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.</div>
         </section>
         <section class="size">
           <div class="container">
@@ -297,7 +373,8 @@
             </div>
           </div>
         </section>
-        <section class="questions">
+        <section class="questions" id="questions">
+          <div class="questions__print"></div>
           <div class="container">
             <div class="questions__wrapper">
               <div class="questions__text">
@@ -305,18 +382,20 @@
                 <p class="questions__subtitle">Here few ways to get in touch with us:</p>
                 <h3 class="questions__title-form">Message us</h3>
               </div>
-              <form class="form questions__form">
+              <form class="form questions__form" onsubmit="this.reset(); return false;">
                 <input
                   class="form__input"
                   type="text"
                   name="name"
                   placeholder="Name"
+                  required
                 >
                 <input
                   class="form__input"
                   type="text"
                   name="email"
                   placeholder="Email"
+                  required
                 >
                 <textarea
                   class="form__input form__input--textarea"
@@ -325,13 +404,13 @@
                   rows="1"
                   required
                 ></textarea>
-                <button class="
+                <button type="reset" class="
                   button
                   form__button
-                  form__button--tiffany"
+                  form__button--turquoise"
                 >
                 Buy naw
-                  <img src="./icons/arrow-button.svg" alt="arrow">
+                  <img src="./icons/arrow-white-bt.svg" alt="arrow">
                 </button>
               </form>
               <div class="questions__contacts">
@@ -365,7 +444,7 @@
           <div class="footer__text-adrress">
             <h3 class="footer__title">Adrress</h3>
             <a
-              href="#"
+              href="https://www.google.com/maps/place/99+Staple+Hill+Rd,+Bristol+BS16+5AD,+Великобритания/@51.4818509,-2.5185188,17z/data=!3m1!4b1!4m6!3m5!1s0x48718fe6a41edcc5:0x1d95fb4b9dab9646!8m2!3d51.4818509!4d-2.5185188!16s%2Fg%2F11c3q2n48n?entry=ttu"
               class="footer__adrress"
               target="_blank"
             >
@@ -377,7 +456,7 @@
           <div class="footer__links">
             <div class="footer__icons">
               <a
-                href="#"
+                href="https://twitter.com"
                 class="footer__link"
                 target="_blank"
               >
@@ -388,7 +467,7 @@
                 >
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/potrpots/"
                 class="footer__link"
                 target="_blank"
               >
@@ -399,7 +478,7 @@
                 >
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/potrpots/"
                 class="footer__link"
                 target="_blank"
               >
@@ -414,7 +493,7 @@
             <p class="footer__copyright-mobile">Copyright © 2019</p>
           </div>
           <div class="footer__about">
-            <h3 class="footer__title">aBOUT uS</h3>
+            <a href="#about-us" class="footer__title-link">aBOUT uS</a>
             <p class="footer__copyright">Copyright © 2019</p>
           </div>
         </div>

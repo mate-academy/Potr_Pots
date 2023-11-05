@@ -27,6 +27,7 @@
       display: none;
     }
   }
+
   &__photo--desctop {
     display: none;
 
@@ -40,6 +41,9 @@
       width: 677px;
       grid-column: 5 / 12;
       margin-top: -80px;
+
+      cursor: pointer;
+      @include hover (transform, rotate(3deg));
     }
   }
 
@@ -49,10 +53,9 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 24px */
+    line-height: 150%;
     grid-column: span 3;
     @include onDesktop {
-      // margin-top: 230px;
       margin-top: 45px;
       grid-column: span 4;
       margin-bottom: 0;
@@ -64,8 +67,9 @@
     @include onTablet {
       padding: 230px 0 112px;
       @include pageGrid;
+
       @include onDesktop {
-        padding-bottom: 160px;
+        padding-bottom: 170px;
       }
 
       &::before {
@@ -75,9 +79,10 @@
         letter-spacing: 36px;
         text-transform: uppercase;
         -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #03839e;
+        -webkit-text-stroke-color: $turquoise;
         color: #0000;
         position: absolute;
+        z-index: 2;
         top: 17px;
         left: -50px;
         @include onDesktop {
@@ -85,6 +90,7 @@
           left: -50px;
         }
       }
+
       &::after {
         content: "Andy";
         font-family: "Bebas Neue", sans-serif;
@@ -92,7 +98,7 @@
         letter-spacing: 36px;
         text-transform: uppercase;
         -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #03839e;
+        -webkit-text-stroke-color: $turquoise;
         color: #0000;
         position: absolute;
         top: 395px;

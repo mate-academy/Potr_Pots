@@ -1,4 +1,5 @@
 .materials {
+  position: relative;
   &__title {
     margin: 0;
     margin-bottom: -70px;
@@ -12,6 +13,7 @@
     letter-spacing: 8.99px;
     color: #03839e;
     @include onTablet {
+      margin-top: -110px;
       font-size: 80px;
       font-weight: 400;
       letter-spacing: 9.6px;
@@ -87,7 +89,6 @@
 }
 
 .cardinfo {
-  height: 254px;
   width: 302;
   background: rgba(0, 0, 0, 0.45);
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
@@ -98,15 +99,91 @@
   font-weight: 400;
   line-height: 150%; /* 24px */
   color: white;
-  padding: 28px 44px 58px 45px;
+  padding: 35px 45px;
   margin: 0 9px;
   margin-top: -50px;
   box-sizing: border-box;
+  position: absolute;
+  display: none;
 
   @include onTablet {
     width: 303px;
-    height: 237px;
-    margin-top: -300px;
-    margin-left: 430px;
+    margin: 0;
+  }
+
+  &--1 {
+    top: 55%;
+    left: 3%;
+  }
+  &--2 {
+    top: 35%;
+    left: 15%;
+    z-index: 2;
+  }
+  &--3 {
+    top: 45%;
+    left: 28%;
+    z-index: 2;
+  }
+  &--4 {
+    top: 35%;
+    left: 40%;
+    z-index: 2;
+  }
+  &--5 {
+    top: 60%;
+    left: 55%;
+    z-index: 2;
+  }
+}
+
+.circle-button {
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  background-color: $red;
+  border-radius: 100%;
+  z-index: 2;
+  display: none;
+  @include onTablet {
+    display: block;
+  }
+
+  &--vertical {
+    width: 1px;
+    height: 11px;
+    background-color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+  }
+  &--horizontal {
+    width: 11px;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+  }
+
+  &--1 {
+    top: 80% ;
+    left: 10%;
+  }
+  &--2 {
+    top: 60% ;
+    left: 30%;
+  }
+  &--3 {
+    top: 80% ;
+    left: 45%;
+  }
+  &--4 {
+    top: 70% ;
+    left: 55%;
+  }
+  &--5 {
+    top: 40% ;
+    left: 70%;
   }
 }

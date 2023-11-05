@@ -21,5 +21,38 @@
     text-transform: uppercase;
     cursor: pointer;
 
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  &__icon-menu {
+    width: 32px;
+    height: 32px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+
+    background-image: url(../icons/burger-icon.png);
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__basket {
+    display: none;
+    @include onDesktop {
+      display: block;
+      width: 32px;
+      height: 32px;
+      background-image: url(../icons/basket-icon.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      &:hover {
+        @include hover(transform, rotate(3deg));
+      }
+    }
   }
 }
