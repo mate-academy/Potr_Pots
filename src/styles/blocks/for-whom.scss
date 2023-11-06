@@ -1,5 +1,5 @@
 .for-whom {
-  padding: 60px 0 50px;
+  padding: 60px 0 75px;
 
   &__title {
     @extend %h2;
@@ -9,14 +9,88 @@
     display: flex;
     flex-direction: column;
     gap: 70px;
+
+    @include onDesktop {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-top: 35px;
+    }
   }
 
   &__card {
+    display: flex;
 
+    @include onTablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-column-gap: 20px;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      justify-content: space-around;
+    }
+
+    &--1 {
+      @include onDesktop {
+        width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        width: calc(50% - 135px);
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        width: calc(50% - 135px);
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: end;
+        gap: 70px;
+      }
+    }
   }
 
   &__text-wrapper {
+    position: relative;
 
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / 4;
+    }
+
+    &--1 {
+      @include onDesktop {
+        width: 380px;
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        width: 390px;
+      }
+    }
+
+    &--3 {
+      @include onDesktop {
+        width: 390px;
+      }
+    }
+  }
+
+  &__text-reverse {
+    @include onTablet {
+      grid-area: 1 / 4 / 2 / 7;
+    }
   }
 
   &__number {
@@ -34,9 +108,48 @@
       background: var(--gray-1, #333);
       margin-right: 7px;
     }
+
+    @include onTablet {
+      position: absolute;
+
+      &--first {
+        top: 5px;
+        left: -45px;
+      }
+
+      &--second {
+        top: -55px;
+        left: 8px;
+      }
+
+      &--third {
+        top: 5px;
+        left: -45px;
+      }
+    }
+
+    @include onDesktop {
+      position: absolute;
+
+      &--first {
+        top: 15%;
+        left: -30%;
+      }
+
+      &--second {
+        top: -33%;
+        left: 3%;
+      }
+
+      &--third {
+        top: 10%;
+        left: -20%;
+      }
+    }
   }
 
   &__subtitle {
+    position: relative;
     @extend %h2;
     margin-top: 30px;
   }
@@ -47,10 +160,124 @@
   }
 
   &__img-wrapper {
+    display: none;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      display: block;
+      grid-area: 1 / 4 / 2 / 7;
+      justify-self: end;
+      max-width: 300px;
+    }
+
+    &--size1 {
+      @include onTablet {
+        max-width: 284px;
+      }
+
+      @include onDesktop {
+        max-width: 500px;
+      }
+    }
+
+    &--size2 {
+      @include onDesktop {
+        max-width: 300px;
+      }
+    }
+
+    &--size3 {
+      @include onTablet {
+        max-width: 284px;
+      }
+
+      @include onDesktop {
+        max-width: 470px;
+      }
+    }
+  }
+
+  &__mini-text {
+    @extend %s3;
+    color: #333;
+    display: none;
+    gap: 20px;
+
+    &::before {
+      display: block;
+      content: "*";
+      color: #333;
+      font-size: 32px;
+    }
+
+    @include onTablet {
+      display: flex;
+
+      &--first {
+
+      }
+
+      &--second {
+        position: absolute;
+        top: -25%;
+        right: 0;
+      }
+
+      &--third {
+
+      }
+    }
+
+    @include onDesktop {
+      display: flex;
+
+      &--first {
+        position: absolute;
+        top: -25%;
+        right: 87%;
+      }
+
+      &--second {
+        position: absolute;
+        top: -65%;
+        right: 72%;
+      }
+
+      &--third {
+        position: absolute;
+        top: -10%;
+        right: 92%;
+        width: 35%;
+      }
+    }
 
   }
 
+  &__img-reverse {
+    @include onTablet {
+      grid-area: 1 / 1 / 2 / 4;
+      justify-self: auto;
+    }
+  }
+
   &__image {
-    
+    width: 100%;
+  }
+
+  &__slash {
+    @include onTablet {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 46px;
+      margin-bottom: -10px;
+      transform: rotate(22deg);
+      flex-shrink: 0;
+      background: var(--gray-1, #333);
+    }
   }
 }
