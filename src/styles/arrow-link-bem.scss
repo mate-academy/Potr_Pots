@@ -1,0 +1,142 @@
+.arrow-link {
+  position: absolute;
+  right: 2px;
+  transform: rotate(90deg);
+  transform-origin: top right;
+  width: 182px;
+
+  &__title {
+    display: flex;
+    position: relative;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: $main-title-color;
+
+    &::after {
+      content: "";
+      display: flex;
+      position: absolute;
+      transform: rotate(-90deg);
+      left: 155px;
+      background-image: url(./../images/img-arrow-blue.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 8%;
+      height: 44px;
+    }
+
+    &--description {
+      font-family: "Bebas Neue", sans-serif;
+      line-height: 14px;
+      letter-spacing: 0.22em;
+      color: #828282;
+      text-transform: uppercase;
+      margin-left: 0;
+
+      &::after {
+        content: none;
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        border: 1px solid #828282;
+        width: 65px;
+        margin-bottom: 3px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &--menu-loc {
+    display: flex;
+    top: 408px;
+    right: 30px;
+    align-items: center;
+    transform: rotate(-90deg);
+    transform-origin: bottom right;
+    width: auto;
+  }
+
+  &-menu {
+    color: $text-color;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 45%;
+      right: 42px;
+      border: 1px solid $text-color;
+      width: 44px;
+    }
+  }
+
+  &--header {
+    @include onTablet {
+      transform-origin: bottom left;
+      left: 34px;
+      margin-top: -230px;
+    }
+
+    @include onDesktop {
+      left: 133px;
+      margin-top: -210px;
+    }
+  }
+
+  &--description {
+    display: flex;
+    justify-content: flex-end;
+
+    @include onTablet {
+      bottom: 160px;
+    }
+
+    @include onDesktop {
+      right: 133px;
+      bottom: 93%;
+    }
+  }
+
+  &--slider-features {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onDesktop {
+      transform-origin: bottom left;
+      left: 133px;
+      bottom: 274%;
+    }
+  }
+
+  &--benefits {
+    display: none;
+    @include onTablet {
+      bottom: 32%;
+      width: 211px;
+    }
+  }
+}
+
+.close-button {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-image: url(./../images/icon/icon-close.svg);
+  background-color: $main-title-color;
+  margin-right: 67px;
+}

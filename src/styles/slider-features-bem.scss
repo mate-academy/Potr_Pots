@@ -1,0 +1,318 @@
+.slider {
+  margin: 0 auto;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+
+  &-features {
+    background-size: contain;
+    width: 100%;
+    height: 593px;
+
+    @include onTablet {
+      position: relative;
+      width: 100%;
+      height: 835px;
+      margin-top: 50px;
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      background-size: contain;
+      width: 100%;
+      height: 1240px;
+    }
+
+    &__title {
+      @include contentPadingInline;
+      font-size: 55px;
+      line-height: 70px;
+      letter-spacing: 0.15em;
+      color: $main-title-color;
+      -webkit-text-stroke: 1px $main-title-color;
+      position: absolute;
+      z-index: 1;
+
+      @include onTablet {
+        font-size: 80px;
+        line-height: 96px;
+        letter-spacing: 0.12em;
+      }
+
+      @include onDesktop {
+        font-size: 139px;
+        line-height: 167px;
+      }
+    }
+
+    &-tb {
+      @include contentPadingInline;
+      display: none;
+      position: absolute;
+      width: 340px;
+      top: 150px;
+      right: 0;
+      padding-left: 0;
+      z-index: -1;
+
+      @include onTablet {
+        display: block;
+      }
+
+      @include onDesktop {
+        width: 470px;
+        z-index: 1;
+      }
+
+      &__title {
+        font-family: "Manrope", sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: 0;
+        margin-bottom: 10px;
+      }
+
+      &__text {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0;
+      }
+
+      &__span {
+        font-weight: bold;
+      }
+    }
+
+    &__wrapper {
+      position: relative;
+      background: url(./../images/img-bg-2.1.png) no-repeat center 38%;
+      display: flex;
+      align-items: flex-end;
+      margin-top: 120px;
+      width: 100%;
+      height: 100%;
+
+      @include onTablet {
+        position: relative;
+        background: url(./../images/img-bg-2.2.png) no-repeat bottom center;
+        background-size: contain;
+        top: 0;
+        margin-top: 0;
+      }
+
+      @include onDesktop {
+        background: url(./../images/img-bg-2.3.png) no-repeat bottom center;
+        background-size: contain;
+        width: 100%;
+        height: 100%;
+        top: 0%;
+        position: relative;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: none;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 28px 45px 58px;
+    width: 302px;
+    height: 254px;
+    background-color: #00000073;
+    box-shadow: 0 3px 2px 0 #00000026;
+
+    @include onTablet {
+      position: absolute;
+      padding: 35px;
+      margin: 0;
+      height: auto;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.45);
+    }
+
+    &--1 {
+      @include onTablet {
+        top: 61%;
+        right: 4%;
+      }
+
+      @include onDesktop {
+        top: 58%;
+        right: 10%;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        top: 51%;
+        right: 20%;
+      }
+
+      @include onDesktop {
+        top: 40%;
+        right: 29%;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        top: 58%;
+        right: 30%;
+      }
+
+      @include onDesktop {
+        top: 68%;
+        right: 53%;
+      }
+    }
+
+    &--4 {
+      @include onTablet {
+        top: 43%;
+        right: 46%;
+      }
+
+      @include onDesktop {
+        top: 37%;
+        right: 61%;
+      }
+    }
+
+    &--5 {
+      @include onTablet {
+        top: 60%;
+        right: 56%;
+      }
+
+      @include onDesktop {
+        top: 53%;
+        right: 70%;
+      }
+    }
+  }
+
+  & .active {
+    display: block;
+  }
+
+  &__text {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: $text-color;
+
+    @include onTablet {
+      height: 100%;
+      width: 214px;
+    }
+  }
+}
+
+.dots {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: absolute;
+  bottom: 6%;
+  left: 0;
+
+  @include onTablet {
+    display: block;
+    position: initial;
+  }
+
+  &__dot {
+    display: block;
+    width: 7px;
+    height: 7px;
+    background-color: #fff;
+
+    margin-right: 7px;
+    transform: rotate(45deg);
+
+    @include onTablet {
+      position: absolute;
+      transform: rotate(0);
+      width: 51px;
+      height: 51px;
+      margin-right: 0;
+      border-radius: 50%;
+      background: url(./../images/img-bg-slider-btn.svg) no-repeat center center;
+      background-color: $main-red-color;
+    }
+
+    &--1 {
+      @include onTablet {
+        top: 54%;
+        right: 21%;
+      }
+
+      @include onDesktop {
+        top: 53%;
+        right: 19%;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        top: 78%;
+        right: 39%;
+      }
+
+      @include onDesktop {
+        top: 60%;
+        right: 38%;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        top: 86%;
+        right: 49%;
+      }
+
+      @include onDesktop {
+        top: 75%;
+        right: 49%;
+      }
+    }
+
+    &--4 {
+      @include onTablet {
+        top: 65%;
+        left: 31%;
+      }
+
+      @include onDesktop {
+        top: 51%;
+        left: 38%;
+      }
+    }
+
+    &--5 {
+      @include onTablet {
+        top: 81%;
+        left: 11%;
+      }
+
+      @include onDesktop {
+        top: 69%;
+        left: 18%;
+      }
+    }
+  }
+
+  & .active {
+    background-color: #000;
+    border: 1px solid $text-color;
+
+    @include onTablet {
+      background: url(./../images/img-bg-slider-btn-2.svg) no-repeat center center;
+      background-color: rgba(36, 35, 35, 0.75);
+      border: 1px solid $text-color;
+    }
+  }
+}

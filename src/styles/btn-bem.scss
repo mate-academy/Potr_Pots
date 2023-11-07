@@ -1,0 +1,110 @@
+.btn {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  width: 260px;
+  height: 48px;
+  background-color: #ffe339;
+  border: 1px solid #ffe339;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0;
+  padding-left: 73px;
+  padding-block: 13px 13px;
+  transition: all 0.5s ease;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 161px;
+    background-image: url(./../images/img-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 28px;
+    height: 100%;
+    transition: all 0.5s ease;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &-form {
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 56px;
+    background-color: $main-title-color;
+    color: #f8f8f8;
+    text-align: left;
+
+    &__wrapp {
+      display: inline;
+    }
+
+    &::after {
+      background-image: url(./../images/img-arrow-white.svg);
+
+      @include onTablet {
+        width: 23px;
+        left: 135px;
+      }
+
+      @include onDesktop {
+        width: 25px;
+        left: 147px;
+      }
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    @include onTablet {
+      grid-column: span 2;
+      grid-row: 4;
+      width: auto;
+      margin-top: 40px;
+      margin-bottom: 0;
+      padding: 0 61px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: span 3;
+      width: 238px;
+      padding: 0 67px;
+    }
+  }
+
+  &__list {
+    @include onTablet {
+      background-color: inherit;
+      border: 1px solid $main-title-color;
+
+      grid-column: 4 / span 3;
+      grid-row: 1;
+      align-self: end;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / span 3;
+      grid-row: 4;
+      transition: all 0.5s ease;
+
+      &:hover {
+        opacity: 1;
+        background-color: $main-title-color;
+        color: #fff;
+      }
+
+      &:hover::after {
+        background-image: url(./../images/img-arrow-white.svg);
+      }
+    }
+  }
+}
