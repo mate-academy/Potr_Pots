@@ -1,5 +1,22 @@
 'use strict';
 
+window.onresize = function() {
+  if (window.screen.width < 768) {
+    [...document.getElementsByClassName('cardinfo')].forEach(el => {
+      el.style['display'] = 'none';
+    });
+  } else {
+    [...document.getElementsByClassName('circle-button')].forEach(el => {
+      el.style['background-color'] = '#eb5757';
+      el.style['opacity'] = '100%';
+
+      const symbolVerical = el.childNodes.item(1);
+
+      symbolVerical.style['display'] = 'block';
+    });
+  }
+};
+
 window.onload = function() {
   [...document.getElementsByClassName('circle-button')].forEach(el => {
     el.addEventListener('click', function() {
