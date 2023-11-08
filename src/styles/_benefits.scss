@@ -1,0 +1,198 @@
+.benefits {
+  position: relative;
+  &__images {
+    display: none;
+    @include onDesktop {
+      display: block;
+      width: 583px;
+      position: absolute;
+      margin-top: 132px;
+    }
+  }
+
+  &__img {
+    height: 230px;
+    &--1 {
+      position: absolute;
+      margin-left: -50px;
+      margin-top: -170px;
+      z-index: 2;
+
+      @include hover (transform, rotate(3deg));
+    }
+    &--2 {
+      margin-left: 125px;
+      margin-top: -315px;
+
+      @include hover (transform, rotate(3deg));
+    }
+    &--3 {
+      position: absolute;
+      height: 200px;
+      margin-left: -396px;
+      margin-top: 60px;
+      z-index: 3;
+
+      @include hover (transform, rotate(3deg));
+    }
+    &--4 {
+      position: absolute;
+      margin-left: -230px;
+      margin-top: -32px;
+      z-index: 2;
+
+      @include hover (transform, rotate(3deg));
+    }
+    &--5 {
+      position: absolute;
+      margin-left: -320px;
+      margin-top: 192px;
+
+      @include hover (transform, rotate(3deg));
+    }
+    &--6 {
+      position: absolute;
+      margin-left: -153px;
+      margin-top: 154px;
+
+      @include hover (transform, rotate(3deg));
+    }
+  }
+
+  &__cards {
+    margin-bottom: 50px;
+    @include pageGrid;
+    row-gap: 40px;
+    @include onTablet {
+      row-gap: 30px;
+    }
+    @include onDesktop {
+      row-gap: 40px;
+    }
+  }
+
+  &__card {
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: 1 / 4;
+      padding-left: 24px;
+    }
+    @include onDesktop {
+      grid-column: 6 / 10;
+    }
+
+    &--desctop {
+      @include onDesktop {
+        grid-column: 10 / -1;
+        margin-top: -120px;
+        margin-left: -80px;
+      }
+    }
+  }
+
+  &__title {
+    color: #333;
+    position: relative;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    @include onTablet {
+      font-size: 36px;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: #333;
+      transform: rotate(45deg);
+      top: 20px;
+      left: -18px;
+    }
+  }
+
+  &__txt {
+    color: #828282;
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__button--yellow {
+    margin-bottom: 40px;
+    width: 100%;
+    background-color: $yellow;
+    transition: $transitions;
+    @include onTablet {
+      grid-column: 4 / 6;
+      background-color: $grey-light;
+      border: 1px solid $turquoise;
+    }
+    @include onDesktop {
+      grid-column: 6 / 9;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $turquoise;
+        color: white;
+      }
+    }
+  }
+
+  &__box {
+    @include onTablet {
+      @include pageGrid;
+      row-gap: 35px;
+      margin-top: -295px;
+    }
+    @include onDesktop {
+      row-gap: 5px;
+      margin: 0;
+      margin-top: 60px;
+    }
+  }
+
+  &__discount {
+    @include onTablet {
+      grid-column: 4 / -1;
+    }
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__percent {
+    margin: 0;
+    margin-bottom: 10px;
+    color: $red;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+  }
+
+  &__percenttxt {
+    margin: 0;
+    color: $turquoise;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    @include onTablet {
+      font-size: 18px;
+      padding-right: 70px;
+    }
+  }
+}

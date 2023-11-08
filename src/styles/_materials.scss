@@ -1,0 +1,195 @@
+.materials {
+  position: relative;
+  &__title {
+    margin: 0;
+    margin-bottom: -70px;
+    position: relative;
+    z-index: 2;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+    color: #03839e;
+    @include onTablet {
+      margin-top: -110px;
+      font-size: 80px;
+      font-weight: 400;
+      letter-spacing: 9.6px;
+      margin-bottom: -97px;
+      grid-column: span 5;
+    }
+    @include onDesktop {
+      font-size: 138px;
+      font-weight: 400;
+      letter-spacing: 16px;
+      margin-bottom: -173px;
+      grid-column: span 10;
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__txt {
+    position: relative;
+    z-index: 2;
+    grid-column: 4 / -1;
+    @include onDesktop {
+      grid-column: 8 / -1;
+      margin-bottom: -198px;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    @include onTablet {
+      margin: 0;
+      margin-bottom: 10px;
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%; /* 30px */
+      color: #4f4f4f;
+    }
+  }
+
+  &__descroption {
+    display: none;
+    @include onTablet {
+      margin: 0;
+      margin-bottom: -100px;
+
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 24px */
+      color: #4f4f4f;
+    }
+
+    &--bold {
+      font-weight: 700;
+      color: #4f4f4f;
+    }
+  }
+
+  &__bacgraund {
+    background: linear-gradient(180deg, #f8f8f8 0%,
+    rgba(255, 255, 255, 0) 30.93%) lightgray 50%;
+    width: 100%;
+  }
+}
+
+.cardinfo {
+  width: 302;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(17px);
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+  color: white;
+  padding: 35px 45px;
+  margin: 0 9px;
+  margin-top: -50px;
+  box-sizing: border-box;
+  position: absolute;
+  display: none;
+
+  // @include onMobile {
+  //   background-color: red;
+  //   // display: none;
+  // }
+
+  @include onTablet {
+    width: 303px;
+    margin: 0;
+  }
+
+  &--1 {
+    top: 55%;
+    left: 3%;
+    z-index: 2;
+  }
+  &--2 {
+    top: 35%;
+    left: 15%;
+    z-index: 2;
+  }
+  &--3 {
+    top: 45%;
+    left: 28%;
+    z-index: 2;
+  }
+  &--4 {
+    top: 35%;
+    left: 40%;
+    z-index: 2;
+  }
+  &--5 {
+    top: 60%;
+    left: 55%;
+    z-index: 2;
+  }
+}
+
+.circle-button {
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  background-color: $red;
+  border-radius: 100%;
+  z-index: 2;
+  display: none;
+  @include onTablet {
+    display: block;
+  }
+
+  &--vertical {
+    width: 1px;
+    height: 11px;
+    background-color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+  }
+  &--horizontal {
+    width: 11px;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+  }
+
+  &--1 {
+    top: 80% ;
+    left: 10%;
+  }
+  &--2 {
+    top: 60% ;
+    left: 30%;
+  }
+  &--3 {
+    top: 80% ;
+    left: 45%;
+  }
+  &--4 {
+    top: 70% ;
+    left: 55%;
+  }
+  &--5 {
+    top: 40% ;
+    left: 70%;
+  }
+}

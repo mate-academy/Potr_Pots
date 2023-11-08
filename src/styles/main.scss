@@ -1,7 +1,52 @@
 @import "utils";
-@import "fonts";
 @import "typography";
+@import "header";
+@import "top-bar";
+@import "page";
+@import "button";
+@import "for-whom";
+@import "section-title";
+@import "features";
+@import "team";
+@import "materials";
+@import "size";
+@import "benefits";
+@import "questions";
+@import "footer";
+@import "nav";
+@import "menu";
+@import "./utils/normalize";
+@import "autocomplete";
 
 body {
-  background: $c-gray;
+  background: $grey-light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  &__content {
+    display: grid;
+    row-gap: 110px;
+    margin-top: 110px;
+    @include onDesktop {
+      margin-top: 192px;
+    }
+  }
+}
+
+.page {
+  scroll-behavior: smooth;
+  &__body {
+    width: 100%;
+    // box-sizing: border-box;
+  }
+}
+
+.container {
+  box-sizing: content-box;
+  @include contentPaddingInline();
 }

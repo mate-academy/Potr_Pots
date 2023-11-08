@@ -1,0 +1,128 @@
+.footer {
+  padding-bottom: 117px;
+  &__wrapper {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__text-adrress {
+    display: none;
+    @include onTablet {
+      display: block;
+      width: 170px;
+    }
+  }
+
+  &__title-link {
+    margin: 0;
+    text-decoration: none;
+    color: #000;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 100% */
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  &__title {
+    color: #000;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 100% */
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__adrress {
+    color: #000;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    text-decoration: none;
+    transition: $transitions;
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  &__links {
+    text-align: center;
+  }
+
+  &__link {
+    transition: $transitions;
+    &:hover {
+      @include hover(transform, rotate(3deg));
+      color: $turquoise;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    margin-bottom: 40px;
+  }
+
+  &__logo {
+    color: #000;
+    text-align: center;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 54px */
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: $transitions;
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+
+  &__copyright-mobile {
+    margin: 0;
+    margin-bottom: 30px;
+    color: #000;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__about {
+    display: none;
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__copyright {
+    color: #000;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+}
