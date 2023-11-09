@@ -3,24 +3,24 @@
   bottom: 0;
   width: 100%;
   justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-top: -16%;
+
+  @include onTablet {
+    margin-top: 0;
+    position: initial;
+  }
 
   &-features {
     background-size: contain;
     width: 100%;
-    height: 593px;
+    height: 100%;
+    margin-bottom: 110px;
 
     @include onTablet {
       position: relative;
-      width: 100%;
-      height: 835px;
       margin-top: 50px;
-      margin-bottom: 110px;
-    }
-
-    @include onDesktop {
-      background-size: contain;
-      width: 100%;
-      height: 1240px;
     }
 
     &__title {
@@ -34,12 +34,16 @@
       z-index: 1;
 
       @include onTablet {
+        position: relative;
+        height: 180px;
         font-size: 80px;
         line-height: 96px;
         letter-spacing: 0.12em;
       }
 
       @include onDesktop {
+        position: relative;
+        height: auto;
         font-size: 139px;
         line-height: 167px;
       }
@@ -87,28 +91,25 @@
 
     &__wrapper {
       position: relative;
-      background: url(./../images/img-bg-2.1.png) no-repeat center 38%;
-      display: flex;
-      align-items: flex-end;
-      margin-top: 120px;
-      width: 100%;
-      height: 100%;
 
       @include onTablet {
-        position: relative;
-        background: url(./../images/img-bg-2.2.png) no-repeat bottom center;
-        background-size: contain;
-        top: 0;
-        margin-top: 0;
+        position: initial;
+      }
+    }
+
+    &__bg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      margin-top: 130px;
+
+      @include onTablet {
+        margin-top: 76px;
       }
 
       @include onDesktop {
-        background: url(./../images/img-bg-2.3.png) no-repeat bottom center;
-        background-size: contain;
-        width: 100%;
-        height: 100%;
-        top: 0%;
-        position: relative;
+        margin-top: -12%;
       }
     }
   }
@@ -216,6 +217,7 @@
   width: 100%;
   justify-content: center;
   position: absolute;
+  z-index: 3;
   bottom: 6%;
   left: 0;
 

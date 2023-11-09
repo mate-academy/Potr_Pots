@@ -14,7 +14,12 @@
       @include contentPadingInline;
       display: flex;
       flex-direction: row-reverse;
+
       position: relative;
+    }
+
+    @include onDesktop {
+      @include displayGrid;
     }
   }
 
@@ -25,6 +30,9 @@
 
     @include onTablet {
       position: relative;
+
+      width: auto;
+      height: auto;
     }
 
     @include onDesktop {
@@ -37,8 +45,20 @@
       @include onDesktop {
         @include hover(transform, scale(1.2));
         display: block;
-        max-width: 500px;
-        max-height: 500px;
+        object-fit: cover;
+        width: 100%;
+
+      }
+    }
+
+    &-wrapper {
+      @include onTablet {
+        position: absolute;
+      }
+
+      @include onDesktop {
+        grid-column: 8 / span 5;
+        grid-row: 1;
       }
     }
   }
@@ -48,23 +68,23 @@
     display: block;
     letter-spacing: 0;
 
-    @include onDesktop {
-      // position: absolute;
-      // width: 260px;
-      padding-right: 0;
-      right: 0;
-
+    @include onTablet {
       margin-top: 20px;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
     }
 
+    @include onDesktop {
+      padding-right: 0;
+      right: 0;
+    }
+
     &__wrapper {
       width: 140px;
 
       @include onTablet {
-        // margin-left: 190px;
+        margin-right: 90px;
       }
 
       @include onDesktop {
