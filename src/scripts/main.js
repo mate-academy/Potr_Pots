@@ -97,3 +97,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+const headerBurgerBtn = document.querySelector('.header__menu-btn');
+const pageBody = document.querySelector('.page__body');
+const menuLinks = document.querySelectorAll('.menu__link');
+const menuBurgerBtn = document.querySelector('.menu__burger-btn');
+const menuLogo = document.querySelector('.menu__logo');
+
+function addLockClass() {
+  pageBody.classList.add('lock');
+}
+
+function removeLockClass() {
+  pageBody.classList.remove('lock');
+}
+
+headerBurgerBtn.addEventListener('click', addLockClass);
+
+menuLinks.forEach(function(menuLink) {
+  menuLink.addEventListener('click', removeLockClass);
+});
+
+menuBurgerBtn.addEventListener('click', removeLockClass);
+
+menuLogo.addEventListener('click', removeLockClass);
