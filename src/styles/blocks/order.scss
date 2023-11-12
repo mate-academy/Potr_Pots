@@ -1,0 +1,173 @@
+.order {
+  padding: 55px 0 110px;
+  position: relative;
+
+  @include onTablet {
+    padding: 70px 0 110px;
+  }
+
+  @include onDesktop {
+    padding: 110px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      align-items: center;
+    }
+  }
+
+  &__info-wrapper {
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      flex-direction: column;
+      align-items: start;
+      max-width: 625px;
+    }
+  }
+
+  &__card-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onDesktop {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__title {
+    @extend %s1;
+    position: relative;
+    display: block;
+
+    &:before {
+      position: absolute;
+      top: 20px;
+      left: -20px;
+      content: "";
+      background-image: url("../images/rhombus.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      display: block;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__text {
+    @extend %s3;
+    color: var(--Gray-3, #828282);
+    margin-top: 5px;
+  }
+
+  &__btn-wrapper {
+    margin-top: 40px;
+
+    @include onTablet {
+      max-width: 250px;
+    }
+
+    @include onDesktop {
+      max-width: fit-content;
+    }
+  }
+
+  &__btn {
+    width: fit-content;
+    margin-bottom: 40px;
+    cursor: pointer;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--second {
+      display: none;
+      width: fit-content;
+      margin-bottom: 35px;
+
+      @include onTablet {
+        display: flex;
+      }
+
+      @include onDesktop {
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  &__discount {
+    @extend %h2;
+    color: var(--Red, #eb5757);
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      margin-left: 100px;
+    }
+  }
+
+  &__text-discount {
+    @extend %h3;
+    color: $blue;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      margin-left: 100px;
+    }
+  }
+
+  &__img-wrapper {
+    display: none;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__circle {
+    background-image: url(../images/circle.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0%;
+    width: 113px;
+    height: 167px;
+    display: block;
+    position: absolute;
+    bottom: -75px;
+    right: 0;
+  }
+}

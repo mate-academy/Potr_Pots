@@ -1,0 +1,172 @@
+.size {
+  padding: 55px 0;
+
+  @include onTablet {
+    padding: 70px 0;
+  }
+
+  &__title {
+    @extend %h2;
+    word-wrap: break-word;
+    color: #333;
+    width: max-content;
+    max-width: 100%;
+    transition: all 0.3s;
+  }
+
+  &__subtitle {
+    @extend %s3;
+    margin-top: 30px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
+      @extend %s3;
+      margin-top: 0;
+      max-width: 90%;
+
+      @include onDesktop {
+        display: flex;
+      }
+    }
+  }
+
+  &__wrapper {
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 36px;
+      margin-top: 38px;
+      justify-content: flex-end;
+      justify-content: space-between;
+    }
+
+    @include onDesktop {
+      margin-top: 60px;
+      gap: 96px;
+    }
+  }
+
+  &__img-wrapper {
+    margin: 30px -30px 0;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__text-wrapper {
+    @include onTablet {
+      max-width: 55%;
+    }
+
+    @include onDesktop {
+      border-left: 1px solid #d8d8d8;
+      padding-left: 30px;
+    }
+  }
+
+  &__sizes {
+    @extend %h4;
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+    }
+  }
+
+  &__paragraph {
+    @extend %s3;
+    color: var(--Gray-2, #4f4f4f);
+    margin-top: 10px;
+
+    @include onTablet {
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__info {
+    position: relative;
+    @extend %s3;
+    color: var(--Gray-2, #4f4f4f);
+    margin-top: 15px;
+    display: flex;
+
+    &:before {
+      content: "*";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -12px;
+    }
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--desk {
+      display: none;
+      position: relative;
+      @extend %s3;
+      color: var(--Gray-2, #4f4f4f);
+      margin-top: 15px;
+
+      &:before {
+        content: "*";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -12px;
+      }
+
+      @include onDesktop {
+        display: flex;
+        margin-top: 100px;
+      }
+    }
+  }
+
+  &__desktop-text {
+    max-width: 270px;
+  }
+
+  &__desk-flex {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  &__desk-wrapper {
+    @include onTablet {
+      max-width: 50%;
+    }
+
+    @include onDesktop {
+      max-width: 550px;
+    }
+  }
+}

@@ -1,0 +1,123 @@
+.primaryButton {
+  display: flex;
+  align-items: center;
+  @extend %button;
+  outline: none;
+  border: none;
+  padding: 14px 66px;
+  background-color: $blue;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &::after {
+    content: "";
+    display: block;
+    background-image: url(../images/arrWhite.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    width: 28px;
+    height: 9px;
+    margin-left: 20px;
+  }
+
+  &:hover {
+    background-color: rgba(3, 128, 158, 0.4);
+  }
+
+  &--yellow {
+    display: flex;
+    align-items: center;
+    @extend %button;
+    outline: none;
+    border: none;
+    padding: 14px 66px;
+    background-color: $yellow;
+    transition: all 0.3s;
+
+    &::after {
+      content: "";
+      display: block;
+      background-image: url(../images/arrBlack.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: cover;
+      width: 28px;
+      height: 9px;
+      margin-left: 20px;
+    }
+
+    &:hover {
+      background-color: rgba(255, 227, 57, 0.4);
+    }
+  }
+}
+
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  @extend %button;
+  outline: none;
+  border: none;
+  padding: 13px 65px;
+  background-color: transparent;
+  outline: 1px solid $blue;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: #000;
+  transition: all 0.3s ease;
+
+  &::after {
+    content: "";
+    display: block;
+    background-image: url(../images/arrBlack.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+    width: 28px;
+    height: 9px;
+    margin-left: 20px;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    background-color: $blue;
+    color: #fff;
+
+    &::after {
+      background-image: url(../images/arrWhite.svg);
+    }
+  }
+
+  &--white {
+    display: flex;
+    align-items: center;
+    @extend %button;
+    outline: none;
+    border: none;
+    padding: 13px 65px;
+    background-color: transparent;
+    outline: 1px solid #000;
+    box-sizing: border-box;
+    color: #000;
+    transition: all 0.3s ease;
+
+    &::after {
+      content: "";
+      display: block;
+      background-image: url(../images/arrBlack.svg);
+      background-repeat: no-repeat;
+      background-position: right;
+      background-size: cover;
+      width: 28px;
+      height: 9px;
+      margin-left: 20px;
+      transition: all 0.3s;
+    }
+
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}

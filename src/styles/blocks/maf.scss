@@ -1,0 +1,298 @@
+.maf {
+  padding: 55px 0;
+  position: relative;
+
+  @include onTablet {
+    padding: 70px 0;
+  }
+
+  &__title {
+    @extend %h2;
+    word-wrap: break-word;
+    font-size: 58px;
+    color: $blue;
+    line-height: 62px;
+    width: max-content;
+    max-width: 100%;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      max-width: 532px;
+    }
+  }
+
+  &__text-wrapper {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      max-width: 340px;
+      float: right;
+      margin: -40px 0 -100px;
+    }
+  }
+
+  &__desk-title {
+    @extend %s2;
+    font-size: 20px;
+
+  }
+
+  &__desk-text {
+    @extend %s3;
+    margin-top: 10px;
+
+    &--bold {
+      @extend %s4;
+      font-size: 16px;
+    }
+  }
+
+  &__slider-img {
+    margin: -70px -30px 0;
+    z-index: -1;
+    position: relative;
+
+    @include onTablet {
+      margin: -70px -34px 0;
+      z-index: 1;
+    }
+
+    @include onDesktop {
+      margin: -70px -135px 0;
+    }
+  }
+
+  &__slider-bg {
+    width: 100%;
+  }
+
+  &__slider {
+    display: none;
+    margin: -70px -20px 0;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.45);
+
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    &--active {
+      display: block;
+      z-index: 1;
+    }
+
+    &--tablet {
+
+      @include onTablet {
+        max-width: 303px;
+
+        &:nth-child(1) {
+          position: absolute;
+          top: 67%;
+          left: 59%;
+
+          @include onDesktop {
+            top: 76%;
+            left: 70%;
+          }
+        }
+
+        &:nth-child(2) {
+          position: absolute;
+          top: 57%;
+          left: 42%;
+
+          @include onDesktop {
+            top: 63%;
+            left: 51%;
+          }
+        }
+
+        &:nth-child(3) {
+          position: absolute;
+          top: 59%;
+          left: 32%;
+
+          @include onDesktop {
+            top: 83%;
+            left: 27%;
+          }
+        }
+
+        &:nth-child(4) {
+          position: absolute;
+          top: 50%;
+          left: 19%;
+
+          @include onDesktop {
+            top: 55%;
+            left: 20%;
+          }
+        }
+
+        &:nth-child(5) {
+          position: absolute;
+          top: 66%;
+          left: 5%;
+
+          @include onDesktop {
+            top: 73%;
+            left: 12%;
+          }
+        }
+      }
+
+    }
+  }
+
+  &__slider-text {
+    height: 170px;
+    @extend %s3;
+    color: #fff;
+
+    @include onTablet {
+      height: auto;
+    }
+  }
+
+  &__slider-btns {
+    margin-top: 11px;
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 7px;
+    height: 7px;
+    transform: rotate(-45deg);
+    background: $greyLight;
+
+    &--active {
+      border: 1px solid $greyLight;
+      background: var(--Grey, rgba(0, 0, 0, 0.3));
+    }
+  }
+
+  &__btn-tablet {
+    z-index: 2;
+    display: none;
+    width: 51px;
+    height: 51px;
+    background-color: #eb5757;
+    border-radius: 100%;
+    position: relative;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include onTablet {
+      display: block;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 11px;
+      height: 1px;
+      background-color: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 1px;
+      height: 11px;
+      background-color: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+    }
+
+    &--1 {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      left: 72%;
+
+      @include onDesktop {
+        top: 66%;
+        left: 77%;
+      }
+    }
+
+    &--2 {
+      position: absolute;
+      z-index: 2;
+      top: 75%;
+      left: 55%;
+
+      @include onDesktop {
+        top: 75%;
+        left: 58%;
+      }
+    }
+
+    &--3 {
+      position: absolute;
+      z-index: 2;
+      top: 85%;
+      left: 45%;
+
+      @include onDesktop {
+        top: 87%;
+        left: 48%;
+      }
+    }
+
+    &--4 {
+      position: absolute;
+      z-index: 2;
+      top: 64%;
+      left: 32%;
+
+      @include onDesktop {
+        top: 64%;
+        left: 38%;
+      }
+    }
+
+    &--5 {
+      position: absolute;
+      z-index: 2;
+      top: 80%;
+      left: 12%;
+
+      @include onDesktop {
+        top: 83%;
+        left: 18%;
+      }
+    }
+
+    &--active {
+      background: rgba(0, 0, 0, 0.4);
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
