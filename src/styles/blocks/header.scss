@@ -1,11 +1,27 @@
 .header {
   padding-bottom: 50px;
 
+  @include onTablet {
+    padding-bottom: 109px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 150px;
+  }
+
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 0 20px;
+
+    @include onTablet {
+      padding: 26px 0 58px;
+    }
+
+    @include onDesktop {
+      padding: 26px 0 90px;
+    }
   }
 
   &__logo {
@@ -120,6 +136,7 @@
     width: auto;
     height: 319px;
     margin: 0 -30px 25px;
+    cursor: pointer;
     transition: all 0.3s;
 
     &:hover {
@@ -146,6 +163,7 @@
     color: $blue;
     line-height: 43.2px;
     width: max-content;
+    cursor: pointer;
     transition: all 0.3s;
 
     &:hover,
@@ -195,6 +213,7 @@
 
   &__button {
     padding: 14px 74px;
+    cursor: pointer;
 
     @include onTablet {
       grid-column: 2/5;
