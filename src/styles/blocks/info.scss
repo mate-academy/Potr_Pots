@@ -1,0 +1,53 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 15px;
+
+  @include onTablet {
+    width: 224px;
+    gap: 50px;
+    padding-bottom: 0;
+  }
+
+  @include onSmallDesktop {
+    width: 246px;
+    gap: 40px;
+  }
+
+  &__tittle {
+    font-family: "Bebas Neue", sans-serif;
+    color: $main-text-color;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 1.8px;
+    padding-bottom: 10px;
+  }
+
+  &__subtittle {
+    color: $five-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__text {
+    list-style: url(../images/star.svg);
+    list-style-position: outside;
+    color: $five-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__list {
+    grid-column: 1 /-1;
+
+    @include onSmallDesktop {
+      grid-column: 1 / 7;
+      width: 546px;
+      transform: translateY(-100px);
+    }
+  }
+}

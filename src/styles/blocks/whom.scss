@@ -1,0 +1,125 @@
+.whom {
+  @include onTablet {
+    padding-bottom: 130px;
+  }
+
+  @include onSmallDesktop {
+    padding-bottom: 150px;
+  }
+
+  &__tittle {
+    padding-bottom: 30px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include onTablet {
+      gap: 110px;
+    }
+
+    @include onSmallDesktop {
+      @include pageGrid;
+      gap: 80px;
+    }
+  }
+
+  &__card {
+    @include onTablet {
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 1 / 12;
+    }
+
+    &--two {
+      @include onSmallDesktop {
+        display: block;
+        grid-column: 2 / 6;
+        transform: translateY(100px);
+      }
+    }
+
+    &--three {
+      @include onSmallDesktop {
+        grid-column: 8 / -1;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__items {
+    position: relative;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transform: rotate(90deg);
+    position: absolute;
+    bottom: 60px;
+    right: -50px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__link-two {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-items: center;
+      transform: rotate(90deg);
+      position: absolute;
+      gap: 10px;
+      top: -30px;
+      right: -80px;
+    }
+
+    @include onSmallDesktop {
+      top: 70px;
+      right: -60px;
+    }
+  }
+
+  &__link-three {
+    display: none;
+
+    @include onSmallDesktop {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: rotate(-90deg);
+      position: absolute;
+      left: -60px;
+      bottom: 30px;
+    }
+  }
+
+  &__text {
+    font-family: "Bebas Neue", sans-serif;
+    color: $second-item-color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.64px;
+  }
+
+  &__line {
+    background-color: $second-item-color;
+    height: 1px;
+    width: 65px;
+  }
+}

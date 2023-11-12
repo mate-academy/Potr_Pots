@@ -1,0 +1,53 @@
+.links {
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__item {
+    &--active {
+      display: block;
+      position: relative;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-bg-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      color: $main-item-color;
+    }
+
+    @include onTablet {
+      font-size: 18px;
+    }
+  }
+
+  &__basket {
+    background-color: #eb5757;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    position: absolute;
+    right: 18px;
+    top: 0;
+  }
+
+  &__number {
+    padding-block: 1px 2px;
+    font-family: "Bebas Neue", sans-serif;
+    color: $main-bg-color;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+}

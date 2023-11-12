@@ -1,0 +1,116 @@
+.question {
+  &__wrap {
+    position: relative;
+  }
+
+  &__bg {
+    background-image: url(../images/Rectangle-1.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 1000px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+
+    @include onTablet {
+      background-image: url(../images/Rectangle-2.png);
+      background-position: center;
+      left: 0;
+      height: 480px;
+    }
+
+    @include onSmallDesktop {
+      background-image: url(../images/Rectangle-3.png);
+      height: 567px;
+      left: -8%;
+    }
+  }
+
+  &__mark {
+    background-image: url(../images/bg-mark.svg);
+    background-repeat: no-repeat;
+    display: block;
+    height: 170px;
+    width: 165px;
+    position: absolute;
+    top: -80px;
+    right: -50px;
+
+    @include onTablet {
+      top: -110px;
+    }
+
+    @include onSmallDesktop {
+      display: none;
+    }
+  }
+
+  &__content {
+    padding-block: 45px 30px;
+
+    @include onTablet {
+      padding-block: 20px 64px;
+      @include pageGrid;
+    }
+
+    @include onSmallDesktop {
+      padding-block: 40px 130px;
+      position: relative;
+    }
+  }
+
+  &__mark-two {
+    background-image: url(../images/bg-mark.svg);
+    background-repeat: no-repeat;
+    display: none;
+    height: 170px;
+    width: 165px;
+
+    @include onSmallDesktop {
+      display: block;
+      position: absolute;
+      top: -80px;
+      right: 100px;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / 5;
+  }
+
+  &__block {
+    grid-column: 1 / 4;
+
+    @include onSmallDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__tittle {
+    color: $main-text-color;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__contacts {
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+}

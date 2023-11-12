@@ -1,0 +1,185 @@
+.team {
+  &__container {
+    padding-inline: 30px;
+
+    @include onTablet {
+      margin-inline: auto;
+      padding-inline: 34px;
+    }
+
+    @include onSmallDesktop {
+      padding-inline: 135px;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    @include onTablet {
+      padding-bottom: 160px;
+    }
+
+    @include onSmallDesktop {
+      padding-bottom: 240px;
+    }
+  }
+
+  &__bg {
+    background-image: url(../images/team/Rectangl-1.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 300px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+
+    @include onTablet {
+      background-image: url(../images/team/Regtangl-2.png);
+      width: 254px;
+      height: 230px;
+      bottom: 240px;
+    }
+
+    @include onSmallDesktop {
+      background-image: url(../images/team/Rectangle-3.png);
+      height: 310px;
+      width: 435px;
+      bottom: 480px;
+    }
+  }
+
+  &__wrap {
+    @include onTablet {
+      @include pageGrid;
+      position: relative;
+    }
+  }
+
+  &__tittle {
+    color: $second-text-color;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+    padding-bottom: 25px;
+    padding-inline: 30px;
+
+    @include onTablet {
+      display: none;
+      padding-inline: 0;
+      padding-bottom: 180px;
+    }
+
+    @include onSmallDesktop {
+      padding-bottom: 140px;
+    }
+
+    &--two {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        grid-column: 1 /-1;
+      }
+    }
+  }
+
+  &__img {
+    height: 240px;
+    width: 100%;
+    padding-bottom: 30px;
+
+    @include onTablet {
+      display: none;
+      padding-bottom: 0;
+    }
+
+    &--two {
+      display: none;
+
+      @include onTablet {
+        display: block;
+        height: 255px;
+        width: 340px;
+        grid-column: 4 /-1;
+      }
+
+      @include onSmallDesktop {
+        height: 508px;
+        width: 677px;
+        grid-column: 5 / 12;
+      }
+    }
+  }
+
+  &__text {
+    width: 260px;
+    margin: 0 auto;
+
+    @include onTablet {
+      width: 100%;
+      grid-column: 1 / 4;
+      grid-row: 2;
+      transform: translateY(40px);
+    }
+
+    @include onSmallDesktop {
+      grid-column: 1 /5;
+      transform: translateY(230px);
+    }
+  }
+
+  &__subtittle {
+    font-size: 16px;
+    color: $five-text-color;
+    font-weight: 400;
+    line-height: 150%;
+
+    &--one {
+      padding-bottom: 30px;
+    }
+
+    &--two {
+      padding-bottom: 60px;
+
+      @include onTablet {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__decor {
+    display: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 232px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 36px;
+    -webkit-text-stroke: 1px $forth-text-color;
+    color: transparent;
+    position: absolute;
+    z-index: -1;
+
+    @include onTablet {
+      display: block;
+    }
+
+    @include onSmallDesktop {
+      font-size: 288px;
+      letter-spacing: 45px;
+    }
+
+    &--one {
+      top: 70px;
+      left: -75px;
+    }
+
+    &--two {
+      bottom: -75px;
+      right: -35px;
+    }
+  }
+}
