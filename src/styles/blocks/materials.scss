@@ -144,6 +144,32 @@
         bottom: 130px;
       }
     }
+
+    &--hide {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--hover {
+      bottom: 0;
+      left: -80px;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+
+      &-two {
+        left: -120px;
+      }
+
+      &-three {
+        bottom: -210px;
+        left: -120px;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.4s ease-in-out;
+      }
+    }
   }
 
   &__text {
@@ -234,22 +260,27 @@
       width: 51px;
       background-color: rgba(235, 87, 87, 1);
       border-radius: 50%;
-      position: absolute;
-      bottom: 100px;
-      left: 50px;
+      position: relative;
       transition: 0.4s ease-in-out;
 
       &:hover {
-        transform: scale(1.08);
-      }
-
-      @include onSmallDesktop {
-        left: 120px;
-        bottom: 155px;
+        background-image: url(../images/materials/minus.svg);
+        background-color: rgba(36, 35, 35, 0.75);
       }
     }
+  }
 
-    &--two {
+  &__tooltip {
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+
+    @include onSmallDesktop {
+      left: 120px;
+      bottom: 155px;
+    }
+
+    &--one {
       left: 197px;
       bottom: 230px;
 
@@ -259,7 +290,7 @@
       }
     }
 
-    &--three {
+    &--two {
       left: 304px;
       bottom: 70px;
 
@@ -269,7 +300,7 @@
       }
     }
 
-    &--fore {
+    &--three {
       left: 380px;
       bottom: 135px;
       z-index: 1;
@@ -280,12 +311,9 @@
       }
     }
 
-    &--five {
-      background-image: url(../images/materials/minus.svg);
-      background-position: center;
+    &--fore {
       left: 520px;
       bottom: 318px;
-      background-color: rgba(36, 35, 35, 0.75);
 
       @include onSmallDesktop {
         left: 976px;
@@ -293,4 +321,16 @@
       }
     }
   }
+}
+
+.materials__link:hover .materials__block--hover {
+  bottom: 130%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.materials__link--one:hover .materials__block--hover-three {
+  bottom: -250px;
+  visibility: visible;
+  opacity: 1;
 }
