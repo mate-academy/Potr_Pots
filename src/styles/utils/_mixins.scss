@@ -1,5 +1,27 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin fontParams($fontSize, $lineHeight: 150%) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+
+@mixin mediaMaxSize($screenSize: $tabletSize) {
+  @media (max-width: $screenSize) {
+    @content;
+  }
+}
+
+@mixin  mediaMaxContentWidth($minWidth: $maxWidth) {
+  @media (min-width: $minWidth) {
+    @content;
+  }
+}
+
+@mixin iconSize($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin hoverState($_property, $_toValue) {
+  transition: #{$_property} $transitionDuration;
   &:hover {
     #{$_property}: $_toValue;
   }

@@ -1,0 +1,37 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mediaMaxSize {
+    display: none;
+  }
+
+  @extend %paddingNavMenu;
+
+  &__logo {
+    @include fontParams(36px, 36px);
+    white-space: nowrap;
+    font-family: "Bebas Neue", cursive;
+    color: $c-darkGray;
+  }
+
+  &__list {
+    display: flex;
+    column-gap: 64px;
+  }
+
+  &__link {
+    padding: 8px 4px;
+    color: $c-darkGrayLight;
+    @include hoverState(color, $c-turquoise);
+  }
+
+  &__shop-icon {
+    @include iconSize (24px, 24px);
+
+    background-image: url("../images/shop-icon.svg");
+    background-size: contain;
+    background-position: center;
+  }
+}

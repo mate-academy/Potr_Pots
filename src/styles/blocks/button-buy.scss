@@ -1,0 +1,80 @@
+.button-buy {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  width: 240px;
+  padding: 14px 64px;
+
+  @include fontParams(14px, 150%);
+  color: $c-blackish;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  border: 1px solid $c-turquoise;
+  background-color: #fff;
+
+  transition: color $transitionDuration,
+    background-color $transitionDuration,
+    border-color $transitionDuration;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__tip-up,
+  &__tip-down {
+    width: 5px;
+    height: 1px;
+    background-color: $c-blackish;
+    transform-origin: 70%;
+    transition: background-color $transitionDuration;
+  }
+
+  &__tip-up {
+    transform: rotate(45deg);
+  }
+
+  &__tip-down {
+    transform: rotate(-45deg);
+  }
+
+  &__arrow {
+    position: relative;
+    width: 30px;
+    height: 1px;
+
+    background-color: $c-blackish;
+    transition: background-color $transitionDuration;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: $c-turquoise;
+  }
+
+  &:hover &__arrow,
+  &:hover &__tip-up,
+  &:hover &__tip-down {
+    background-color: #fff;
+  }
+
+  @include mediaMaxSize($mobileSize) {
+    background-color: $c-yellow;
+    border-color: $c-yellow;
+
+    &:hover {
+      color: $c-blackish;
+      background-color: #fff;
+      border-color: $c-blackish;
+    }
+
+    &:hover .button-buy__arrow,
+    &:hover .button-buy__tip-up,
+    &:hover .button-buy__tip-down {
+      background-color: $c-blackish;
+    }
+  }
+}

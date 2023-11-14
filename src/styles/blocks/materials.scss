@@ -1,0 +1,99 @@
+.materials {
+  position: relative;
+  padding-top: 40px;
+
+  &__verticle-text {
+    display: none;
+
+    @include mediaMaxSize {
+      display: flex;
+      position: absolute;
+      top: 80px;
+      right: -40px;
+      transform: rotate(90deg);
+
+      &--second {
+        right: unset;
+        top: 280px;
+        left: -40px;
+      }
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+  }
+
+  &__title {
+    padding: 0 $paddingDeskNote;
+    margin-bottom: -100px;
+
+    font-size: 10vw;
+    line-height: 100%;
+    letter-spacing: 0.12em;
+    color: $c-turquoise;
+
+    @include mediaMaxContentWidth {
+      font-size: 140px;
+    }
+
+    @include mediaMaxSize {
+      margin-bottom: -140px;
+
+      @include fontParams(80px, 80px);
+      padding: 40px $paddingTablet;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      @include fontParams(58px, 58px);
+      padding: 40px 0 40px $paddingMobile;
+    }
+  }
+
+  &__text-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 200px;
+
+    padding: 0 $paddingDeskNote;
+    margin-bottom: -12%;
+
+    @include mediaMaxSize {
+      grid-template-columns: 1fr 2fr;
+      padding: 40px $paddingTablet;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+  }
+
+  &__text {
+    @include fontParams(16px, 24px);
+    color: $c-darkGrayLight;
+    max-width: 440px;
+
+    @include mediaMaxSize {
+      max-width: 360px;
+    }
+
+    &-title {
+      font-family: "Proxima Nova Bold", Arial, sans-serif;
+      @include fontParams(20px);
+      color: $c-darkGrayLight;
+    }
+
+    &-bold {
+      font-family: "Proxima Nova Bold", Arial, sans-serif;
+      @include fontParams(16px);
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: -1;
+
+    width: 100%;
+    object-fit: contain;
+  }
+}

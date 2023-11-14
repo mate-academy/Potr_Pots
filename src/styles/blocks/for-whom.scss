@@ -1,0 +1,175 @@
+.for-whom {
+  position: relative;
+
+  /* #sectionStart durable */
+  &__verticle-text {
+    position: absolute;
+    top: -48px;
+    right: 0;
+
+    transform: rotate(90deg);
+
+    @include mediaMaxSize {
+      right: -32px;
+    }
+
+    @include mediaMaxSize($mobileBreakpoint) {
+      display: none;
+    }
+  }
+
+  &__durable {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    column-gap: 32px;
+
+    margin-top: 32px;
+    @include mediaMaxSize {
+      margin-top: 24px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: block;
+    }
+  }
+
+  &__durable-img {
+    max-width: 500px;
+    width: 100%;
+    object-fit: contain;
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+
+    @include hoverState(transform, scale(1.05));
+  }
+
+  &__durable-numbered-title {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 16px;
+
+    @include mediaMaxSize {
+      column-gap: 8px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: block;
+    }
+  }
+  /* #sectionEnd durable */
+
+  /* sectionStart Pots */
+  &__pots {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+    align-items: center;
+
+    &--second {
+      justify-self: end;
+    }
+
+    @include mediaMaxSize {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, auto);
+
+      &--second {
+        justify-self: center;
+      }
+    }
+  }
+
+  &__pots-item {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    &--second {
+      max-width: 470px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: block;
+    }
+
+    @include mediaMaxSize {
+      flex-direction: row-reverse;
+
+      &--second {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        column-gap: 32px;
+        flex-basis: 50%;
+
+        margin-top: 96px;
+        max-width: unset;
+      }
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: block;
+    }
+  }
+
+  &__pots-first-img {
+    align-self: center;
+    max-width: 300px;
+    width: 100%;
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+
+    @include hoverState(transform, scale(1.05));
+  }
+
+  &__pots-first-numbered-title {
+    position: relative;
+    margin: 104px auto 0;
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 72px;
+    }
+  }
+
+  &__pots-category {
+    @extend %singleLinesOnTitles;
+  }
+
+  &__pots-second-img {
+    align-self: flex-end;
+    max-width: 470px;
+    width: 100%;
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+
+    @include hoverState(transform, scale(1.05));
+  }
+
+  &__pots-second-numbered-title {
+    margin: 104px auto 0;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 16px;
+
+    @include mediaMaxSize {
+      column-gap: 8px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 72px;
+      display: block;
+    }
+  }
+
+  &__category-wrapper {
+    position: relative;
+  }
+  /* sectionEnd Pots */
+}

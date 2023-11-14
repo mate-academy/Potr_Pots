@@ -1,4 +1,46 @@
-%h1 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+%paddingNavMenu {
+  padding: 24px $paddingDeskNote;
+
+  @include mediaMaxSize {
+    padding: 30px $paddingTablet;
+  }
+
+  @include mediaMaxSize($mobileSize) {
+    padding: 16px $paddingMobile;
+  }
+}
+
+%minMaxWidth {
+  max-width: $maxWidth;
+  min-width: $minWidth;
+}
+
+%singleLinesOnTitles {
+  position: absolute;
+  top: -64px;
+  width: max-content;
+
+  @include mediaMaxSize {
+    top: -48px;
+  }
+
+  @include mediaMaxSize($mobileBreakpoint) {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -40px;
+
+    @include iconSize(11px, 11px);
+    background-image: url("../images/asterisk.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+%turqoiseBorderWhiteText {
+  -webkit-text-stroke: 1px $c-turquoise;
+  color: transparent;
 }

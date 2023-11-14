@@ -1,0 +1,147 @@
+.menu {
+  $root: "&";
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  width: 40%;
+  height: 100%;
+
+  padding: 0 $paddingTablet 40px;
+  @include mediaMaxSize($mobileSize) {
+    padding: 0 $paddingMobile 40px;
+    width: 72%;
+    height: 80%;
+  }
+
+  background-color: $c-turquoise;
+
+  &__list {
+    margin-top: 136px;
+    width: 120px;
+  }
+
+  &__item {
+    margin-top: 8px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__link {
+    padding: 4px;
+    @include fontParams(16px);
+    color: $c-menuText;
+
+    @include hoverState(color, $c-yellow);
+  }
+
+  &__close {
+    position: relative;
+
+    margin-top: 200px;
+  }
+
+  &__cross-label {
+    position: absolute;
+    top: -64px;
+    right: -40px;
+
+    display: flex;
+    align-items: center;
+
+    text-transform: uppercase;
+    color: $c-menuText;
+
+    transform: rotate(-90deg);
+    transition: color $transitionDuration;
+  }
+
+  &__line {
+    display: inline-block;
+    margin-right: 4px;
+    width: 40px;
+    height: 1px;
+    background-color: $c-menuText;
+    transition: color $transitionDuration;
+  }
+
+  &__cross {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    @include iconSize(16px, 16px);
+
+    &-line1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 1px;
+
+      transform-origin: 0 0;
+      background-color: $c-menuText;
+      transition: color $transitionDuration,
+        transform $transitionDuration;
+    }
+
+    &-line2 {
+      position: absolute;
+      top: 50%;
+      bottom: 50%;
+      width: 100%;
+      height: 1px;
+
+      background-color: $c-menuText;
+      transition: color $transitionDuration,
+        opacity $transitionDuration;
+    }
+
+    &-line3 {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 200%;
+      height: 1px;
+
+      transform-origin: 0 100%;
+      background-color: $c-menuText;
+      transition: color $transitionDuration,
+        transform $transitionDuration;
+    }
+  }
+
+  //hover states
+  &__toggler {
+    &:hover .menu__cross-line1,
+    &:hover .menu__cross-line2,
+    &:hover .menu__cross-line3,
+    &:hover .menu__line {
+      background-color: $c-yellow;
+    }
+
+    &:hover .menu__cross-label {
+      color: $c-yellow;
+    }
+
+    &:hover .menu__cross-line1 {
+      transform: rotate(45deg);
+    }
+
+    &:hover .menu__cross-line3 {
+      transform: rotate(-45deg);
+    }
+
+    &:hover .menu__cross-line2 {
+      opacity: 0;
+    }
+  }
+}

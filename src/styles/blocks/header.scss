@@ -1,0 +1,196 @@
+.header {
+  position: relative;
+  overflow: hidden;
+
+  // since the pic gets smaller height must be fixed
+  // for the verticle p
+  height: 640px;
+
+  @include mediaMaxSize($mobileSize) {
+    height: unset;
+  }
+
+  &__yellow-bg {
+    position: absolute;
+    top: 0;
+    right: 25%;
+
+    @include mediaMaxSize($notebookSize) {
+      right: 20%;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      display: none;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+
+    transform: translateY(-200vh);
+    transition: transform $transitionDuration;
+
+    &:target {
+      transform: translateY(0);
+    }
+  }
+
+  &__main-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: end;
+
+    margin: 0 auto;
+    padding: 56px $paddingDeskNote 0;
+
+    @include mediaMaxSize {
+      padding: 24px $paddingTablet 0;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      flex-direction: column-reverse;
+      padding: 16px 0 0;
+    }
+  }
+
+  &__main {
+    position: relative;
+    width: 50%;
+
+    @include mediaMaxSize($mobileSize) {
+      display: flex;
+      flex-direction: column;
+
+      padding-right: $paddingMobile;
+      padding-left: $paddingMobile;
+      width: unset;
+      row-gap: 20px;
+    }
+  }
+
+  &__image {
+    object-fit: contain;
+    object-position: right;
+    width: 50%;
+    max-width: 500px;
+    min-width: 240px;
+
+    transition: transform $transitionDuration,
+      z-index $transitionDuration;
+
+    @include mediaMaxSize {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      max-width: unset;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+
+    @include fontParams(64px, 64px);
+    letter-spacing: $letterSpacingTitle;
+    white-space: nowrap;
+    @extend %turqoiseBorderWhiteText;
+
+    @include mediaMaxSize($mobileSize) {
+      @include fontParams(36px,36px);
+      padding-top: 24px;
+    }
+
+    &--blue {
+      color: $c-turquoise;
+    }
+  }
+
+  &__text-wrapper {
+    position: absolute;
+    top: 244px;
+    left: 300px;
+
+    @include mediaMaxSize($notebookSize) {
+      left: 200px;
+    }
+
+    @include mediaMaxSize($tabletBreakpoint) {
+      left: 160px;
+    }
+
+    @include mediaMaxSize($mobileBreakpoint) {
+      left: 104px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      position: unset;
+    }
+  }
+
+  &__price {
+    @include fontParams(26px, 32px);
+    color: $c-darkGray;
+  }
+
+  &__text {
+    @include fontParams(14px);
+    color: $c-darkGrayLight;
+  }
+
+  &__button {
+    position: absolute;
+    top: 360px;
+    left: 25%;
+
+    @include mediaMaxSize($mobileBreakpoint) {
+      left: 0;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      position: unset;
+      left: unset;
+    }
+  }
+
+  &__verticle {
+    &-text {
+      position: absolute;
+      bottom: 8px;
+      left: $paddingDeskNote;
+
+      max-height: max-content;
+      height: 100%;
+
+      writing-mode: vertical-lr;
+      @include fontParams(12px);
+      color: $c-turquoise;
+
+      @include mediaMaxSize {
+        left: $paddingTablet;
+      }
+
+      @include mediaMaxSize($mobileBreakpoint) {
+        left: unset;
+        right: 24px;
+      }
+
+      cursor: pointer;
+      @include hoverState(color, $c-darkGray);
+    }
+
+    &-arrow {
+      padding-top: 8px;
+    }
+  }
+}

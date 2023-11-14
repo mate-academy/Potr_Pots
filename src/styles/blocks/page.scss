@@ -1,0 +1,111 @@
+.page {
+  &__header {
+    margin: 0 auto;
+    max-width: $maxWidth;
+    overflow: hidden;
+
+    &--with-menu {
+      overflow: hidden;
+      padding-right: 16px;
+    }
+  }
+
+  &__main {
+    margin: 0 auto;
+    max-width: $maxWidth;
+    overflow: hidden;
+  }
+
+  &__article,
+  &__potr-size,
+  &__benefits,
+  &__questions {
+    padding: 0 $paddingDeskNote;
+
+    @include mediaMaxSize {
+      padding: 0 $paddingTablet;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      padding: 0 $paddingMobile;
+    }
+  }
+
+  &__article {
+    margin-top: $padMargSectionSeperationDesktop;
+
+    @include mediaMaxSize {
+      margin-top: 104px;
+    }
+
+    &--first {
+      @include mediaMaxSize {
+        margin-top: 64px;
+      }
+    }
+  }
+
+  &__pots-section {
+    margin-top: 80px;
+
+    @include mediaMaxSize {
+      margin-top: 96px;
+    }
+  }
+
+  &__potr-size {
+    margin-top: 120px;
+
+    @include mediaMaxSize {
+      margin-top: 110px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 76px;
+    }
+  }
+
+  &__benefits {
+    @extend %minMaxWidth;
+
+    padding-left: 0;
+    margin-top: 96px;
+
+    @include mediaMaxSize {
+      margin-top: 120px;
+      padding: 0 $paddingTablet;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 96px;
+      padding: 0 $paddingMobile;
+    }
+  }
+
+  &__questions {
+    @extend %minMaxWidth;
+
+    @include mediaMaxSize {
+      margin-top: 160px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 184px;
+    }
+  }
+
+  &__footer {
+    margin: 0 auto;
+    @extend %minMaxWidth;
+
+    padding: 72px $paddingDeskNote 64px;
+
+    @include mediaMaxSize {
+      padding: 24px $paddingTablet 64px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      padding: 88px $paddingMobile 48px;
+    }
+  }
+}

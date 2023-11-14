@@ -1,0 +1,52 @@
+.numbered-title {
+  &__title {
+    position: relative;
+    display: inline-block;
+    max-width: 448px;
+
+    @include fontParams(36px);
+    letter-spacing: $letterSpacingTitle;
+
+    &-slash {
+      position: relative;
+      top: 8px;
+    }
+  }
+
+  &__number {
+    position: relative;
+    padding-left: 16px;
+    @include fontParams(36px);
+    min-width: 40px;
+
+    &-slash {
+      position: relative;
+      left: -8px;
+      top: 8px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    align-self: center;
+  }
+
+  &__category {
+    @extend %singleLinesOnTitles;
+  }
+
+  &__text {
+    max-width: 370px;
+    margin-top: 8px;
+
+    @include fontParams(16px);
+    color: $c-darkGrayLight;
+
+    @include  mediaMaxSize {
+      max-width: 340px;
+    }
+    @include mediaMaxSize($mobileSize) {
+      max-width: unset;
+    }
+  }
+}

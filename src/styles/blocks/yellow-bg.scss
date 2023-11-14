@@ -1,0 +1,29 @@
+.yellow-bg {
+  $root: "&";
+
+  height: 480px;
+  overflow: hidden;
+  // it's always in the background, its needed when we position
+  z-index: -99;
+
+  &__inside {
+    width: 1440px;
+    height: 480px;
+
+    background-color: $c-lightYellow;
+
+    transform: skewY(167deg);
+    transform-origin: bottom left;
+
+    &--large {
+      height: 600px;
+      transform: skewY(173deg);
+    }
+  }
+
+  &--large {
+    #{$root} {
+      height: 600px;
+    }
+  }
+}

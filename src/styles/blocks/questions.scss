@@ -1,0 +1,153 @@
+.questions {
+  position: relative;
+  min-height: 560px;
+
+  &__yellow-bg {
+    @extend %minMaxWidth;
+    position: absolute;
+    top: -$marginTopML;
+    right: 9vw;
+    overflow: hidden;
+
+    @include mediaMaxContentWidth {
+      right: 135px;
+    }
+
+    @include mediaMaxSize {
+      right: 20px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      right: -50%;
+    }
+  }
+
+  &__stamp {
+    position: absolute;
+    top: -146px;
+    right: 5%;
+
+    overflow-y: visible;
+    @include iconSize(224px, 224px);
+
+    background-image: url("../images/questions-stamp.svg");
+
+    @include mediaMaxContentWidth {
+      right: 72px;
+    }
+
+    @include mediaMaxSize {
+      right: 0;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      top: -176px;
+    }
+  }
+
+  &__title {
+    margin-top: $marginTopML;
+
+    @include mediaMaxSize($mobileSize) {
+      max-width: 300px;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    column-gap: 20%;
+
+    @include mediaMaxSize($mobileSize) {
+      flex-direction: column;
+    }
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    min-width: 370px;
+    width: 35%;
+
+    @include mediaMaxSize {
+      min-width: 340px;
+    }
+
+    @include mediaMaxSize($mobileSize) {
+      min-width: unset;
+      width: 100%;
+      align-self: center;
+    }
+  }
+
+  &__subtitle {
+    @include fontParams(16px);
+  }
+
+  &__message-title {
+    margin-top: 24px;
+    @include fontParams(24px);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__form-item {
+    margin-top: 20px;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+    @include fontParams(16px);
+    color: $c-lightGray;
+    background-color: $c-lightYellow;
+
+    &::placeholder {
+      color: $c-darkGrayLight;
+    }
+
+    &:active,
+    &:focus {
+      background-color: $c-lightYellow;
+      outline-color: $c-lightGray;
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+    justify-self: center;
+    align-self: center;
+
+    cursor: pointer;
+  }
+
+  &__contact-info {
+    align-self: flex-end;
+    max-width: 270px;
+
+    @include mediaMaxSize($mobileSize) {
+      margin-top: 90px;
+      align-self: center;
+      max-width: 320px;
+    }
+  }
+
+  &__contact-title {
+    margin-top: 24px;
+    @include fontParams(24px);
+    opacity: 0.4;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__contact-link {
+    margin-top: 4px;
+    @include fontParams(16px);
+    color: #000;
+
+    @include hoverState(color, $c-turquoise);
+  }
+}
