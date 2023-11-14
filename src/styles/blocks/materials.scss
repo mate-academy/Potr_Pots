@@ -1,0 +1,103 @@
+.materials {
+  background-image: url("/images/materials/background.png");
+  background-repeat: no-repeat;
+  background-position: center 130px;
+  background-size: 100% 50%;
+  height: 100vh;
+  position: relative;
+  margin-bottom: 76px;
+
+  @include forTablet {
+    background-position: center 200px;
+    height: 100vh;
+    background-size: 100% 100%;
+  }
+
+  @include forDesktop {
+    background-position: center 200px;
+    height: 100vh;
+    margin-top: 350px;
+    background-size: 100% 100%;
+  }
+
+  &__title {
+    margin: 0 22px 120px $mobileMargin;
+    @include fontParams(58px, 58px, 400, 0.15em);
+    color: $turquiseFont;
+
+    @include forTablet {
+      @include fontParams(80px, 80px, 400, 0.12em);
+      margin-left: 34px;
+    }
+
+    @include forDesktop {
+      @include fontParams(139px, 139px, 400, 0.12em);
+      margin-left: 135px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include forTablet {
+      display: block;
+      position: absolute;
+      width: 40%;
+      right: 0;
+      top: 0;
+      margin-right: 34px;
+      margin-top: 122px;
+    }
+
+    @include forDesktop {
+      display: block;
+      position: absolute;
+      width: 30%;
+      right: 0;
+      margin-right: 135px;
+    }
+  }
+
+  &__p-title {
+    @include fontParams(20px, 150%, 700, normal);
+    font-family: "Proxima Nova", sans-serif;
+    color: $gray2Font;
+    margin-bottom: 14px;
+  }
+
+  &__p-text {
+    @include fontParams(16px, 150%, 400, normal);
+    font-family: "Proxima Nova", sans-serif;
+    color: $gray2Font;
+  }
+
+  &__highlited {
+    font-weight: 700;
+  }
+
+  &__button-section {
+    display: none;
+  }
+
+  &__slider {
+    position: absolute;
+    top: 60%;
+    height: 30vh;
+    margin: 9px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #f8f8f8;
+    @include fontParams(16px, 150%, normal, normal);
+    font-family: "Proxima Nova", sans-serif;
+
+    @include forTablet {
+      display: none;
+    }
+    @include forDesktop {
+      display: none;
+    }
+  }
+
+  &__pot-1 {
+    padding: 28px 44px 58px 45px;
+  }
+}

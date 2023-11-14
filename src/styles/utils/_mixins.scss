@@ -4,3 +4,22 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin fontParams($size, $height, $weight, $spacing) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  letter-spacing: $spacing;
+}
+
+@mixin forDesktop {
+  @media (min-width: $desktopResolution) {
+    @content;
+  }
+}
+
+@mixin forTablet {
+  @media (min-width: $tabletResolution) {
+    @content;
+  }
+}

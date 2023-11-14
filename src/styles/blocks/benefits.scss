@@ -1,0 +1,156 @@
+.benefits {
+  display: grid;
+  font-family: "Proxima Nova", sans-serif;
+  margin: 0 $mobileMargin 100px;
+
+  @include forDesktop {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    margin: 0;
+  }
+
+  &__wrapper {
+    @include forTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0 56px;
+      gap: 20px;
+    }
+
+    @include forDesktop {
+      display: block;
+    }
+  }
+  &__list {
+    list-style-type: none;
+
+    @include forDesktop {
+      margin: 30px 0;
+    }
+  }
+
+  &__item {
+    @include fontParams(32px, 150%, bold, normal);
+    color: $gray2Font;
+    position: relative;
+    margin-bottom: 40px;
+
+    &:after {
+      content: "";
+      height: 5px;
+      width: 5px;
+      background: $gray2Font;
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      left: -12px;
+      top: 20px;
+    }
+    @include forDesktop {
+      display: inline-block;
+      margin-right: 45px;
+    }
+  }
+
+  &__text {
+    @include fontParams(16px, 150%, 400, normal);
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 15px 101px 13px 62px;
+    margin-bottom: 40px;
+
+    background-color: $yellowButton;
+    color: $darkGrayFont;
+    border: 1px solid transparent;
+
+    font-family: "Proxima Nova", sans-serif;
+    @include fontParams(14px, 20px, 700, normal);
+    text-transform: uppercase;
+
+    transition: border-color $transitionTime,
+      background-color $transitionTime;
+
+    &::after {
+      position: absolute;
+      content: url("/images/header/arrow.svg");
+      transition: transform $transitionTime;
+      transform: translateX(100%);
+    }
+
+    &:hover {
+      background-color: transparent;
+      border-color: $greyFont;
+    }
+
+    &:hover::after {
+      transform: translateX(40px);
+    }
+
+    @include forTablet {
+      margin: 80px 30px 33px 0;
+    }
+
+    @include forDesktop {
+      margin: 0 0 70px;
+      background-color: transparent;
+      border-color: $turquiseFont;
+      color: $darkGrayFont;
+
+      &:hover {
+        background-color: $turquiseFont;
+        color: $whiteFont;
+      }
+
+      &:hover::after {
+        content: url("/images/header/arrow_3.svg");
+      }
+    }
+  }
+
+  &__discount {
+    display: block;
+    @include fontParams(36px, 150%, 400, 0.15em);
+    font-family: "Bebas Neue", cursive;
+    color: $orangeFont;
+    margin-bottom: 13px;
+
+    @include forTablet {
+      @include fontParams(24px, 24px, 400, 0.15em);
+    }
+
+    @include forDesktop {
+      transform: translateX(15%);
+      @include fontParams(36px, 150%, 400, 0.15em);
+      margin-bottom: 5px;
+    }
+  }
+
+  &__half {
+    display: block;
+    @include fontParams(24px, 24px, 400, 0.15em);
+    font-family: "Bebas Neue", cursive;
+    color: $turquiseFont;
+    text-transform: uppercase;
+
+    @include forTablet {
+      @include fontParams(18px, 18px, 400, 0.15em);
+    }
+
+    @include forDesktop {
+      margin-bottom: 155px;
+      transform: translateX(15%);
+      @include fontParams(24px, 24px, 400, 0.15em);
+    }
+  }
+
+  &__gallery {
+    display: none;
+    height: 100vh;
+
+    @include forDesktop {
+      display: flex;
+    }
+  }
+}

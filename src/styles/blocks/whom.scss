@@ -1,0 +1,172 @@
+.whom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin: 0 auto;
+
+  @include forTablet {
+    max-width: 1800px;
+  }
+
+  @include forDesktop {
+    display: flex;
+    max-width: 1800px;
+    margin: 0 135px 150px;
+  }
+
+  &__wrapper {
+    margin: 0 30px;
+  }
+
+  &__title {
+    @include fontParams(36px, 150%, 400, 0.15em);
+
+    margin-bottom: 26px;
+
+    color: #000;
+  }
+
+  &__number-title {
+    @include fontParams(36px, 54px, 400, 0.15em);
+    margin-bottom: 28px;
+    color: #000;
+    transform: translate(20px);
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #333;
+      width: 1px;
+      height: 45px;
+      transform: rotate(22deg) translateX(-10px);
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include forDesktop {
+      display: block;
+      @include fontParams (16px, 150%, 400, normal);
+      font-family: "Proxima Nova", sans-serif;
+      color: #333;
+
+      &::before {
+        position: absolute;
+        content: "*";
+        @include fontParams(24px, 24px, 400, 0.15em);
+        color: #000;
+        transform: translateX(-30px) translateY(5px);
+      }
+    }
+  }
+
+  &__block-1 {
+    display: inline;
+
+    @include forTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 80px;
+      gap: 100px;
+    }
+
+    @include forDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 80px;
+      gap: 100px;
+    }
+  }
+
+  &__p-text {
+    @include fontParams(16px, 150%, 400, normal);
+    font-family: "Proxima Nova", sans-serif;
+    color: #4f4f4f;
+    margin-bottom: 70px;
+  }
+
+  &__bot {
+    display: block;
+    @include forDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__img-1,
+  &__img-2,
+  &__img-3 {
+    display: none;
+
+    @include forTablet {
+      display: block;
+    }
+    @include forDesktop {
+      display: block;
+    }
+  }
+
+  &__photo-2 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 102px;
+
+    @include forTablet {
+      order: 1;
+    }
+  }
+
+  &__photo-3 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 102px;
+  }
+
+  &__block-3 {
+    @include forTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 80px;
+      gap: 100px;
+    }
+    @include forDesktop {
+      display: block;
+      margin-left: 200px;
+    }
+  }
+
+  &__block-2 {
+    @include forTablet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 80px;
+      gap: 100px;
+    }
+
+    @include forDesktop {
+      display: block;
+    }
+  }
+
+  &__img-1 {
+    transition: transform $transitionTime;
+    &:hover {
+      transform: translateX(100px) scale(1.1);
+    }
+  }
+
+  &__img-2 {
+    transition: transform $transitionTime;
+    &:hover {
+      transform: translateX(20px) scale(1.1);
+    }
+  }
+
+  &__img-3 {
+    transition: transform $transitionTime;
+    &:hover {
+      transform: translateX(-100px) scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.burger-nav {
+  width: 75vw;
+  height: 100vh;
+  background-color: $turquiseFont;
+
+  &__list {
+    list-style: none;
+    margin: 138px 30px 250px 81px;
+  }
+
+  &__link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 6px 0;
+    margin: 2px 32px 2px 0;
+
+    font-family: "Proxima Nova", sans-serif;
+    @include fontParams(16px, 150%, 200, normal);
+
+    color: #f8f8f8;
+    transition: transform $transitionTime;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__close {
+    position: absolute;
+
+    @include fontParams(12px, 150%, 400, normal);
+    color: #fff;
+    font-family: "Proxima Nova", sans-serif;
+    text-transform: uppercase;
+
+    right: 0;
+    transform: translateX(-10px) translateY(-100px) rotate(270deg);
+
+    &::before {
+      content: "X";
+      margin-right: 10px;
+    }
+
+  }
+}

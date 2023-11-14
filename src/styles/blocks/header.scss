@@ -1,0 +1,288 @@
+.header {
+
+  width: 100%;
+
+  @include forDesktop {
+    background-image: url("/images/header/background.png");
+    background-repeat: no-repeat;
+    background-size: 70% 70%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px $mobileMargin 16px;
+  }
+
+  &__nav {
+    display: none;
+    @include forDesktop {
+      display: block;
+    }
+  }
+
+  &__logo {
+    @include fontParams(36px, 100%, 400, 0.06em);
+    color: $greyFont;
+    margin-top: 9px;
+  }
+
+  &__burger {
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+
+    @include forDesktop {
+      display: none;
+    }
+  }
+
+  &__burger-button {
+    margin: 8px;
+    height: 32px;
+    width: 32px;
+
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-image: url("/images/header/menu_icon.svg");
+    cursor: pointer;
+  }
+
+  &__top {
+    justify-content: space-between;
+    margin: 0;
+    @include forDesktop {
+      display: flex;
+      margin: 21px 135px 85px 166px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 100%;
+
+    @include forTablet {
+      width: 300px;
+    }
+    @include forDesktop {
+      width: 500px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  &__buy {
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+    @include forTablet {
+      margin: 0;
+    }
+    @include forDesktop {
+      margin: 0;
+    }
+  }
+
+  &__buy-wrapper {
+    margin: 25px $mobileMargin 102px;
+
+    @include forTablet {
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+    @include forDesktop {
+      margin-left: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 21px;
+    @include fontParams(36px, 36px, 400, 0.15em);
+    color: $turquiseFont;
+    text-transform: uppercase;
+
+    @include forTablet {
+      @include fontParams(64px, 64px, 400, 0.15em);
+    }
+
+    @include forDesktop {
+      @include fontParams(64px, 64px, 400, 0.15em);
+    }
+  }
+
+  &__empty {
+    color: transparent;
+    -webkit-text-stroke: 0.68px $turquiseFont;
+  }
+
+  &__price {
+    margin-bottom: 1px;
+    font-family: "Proxima Nova", sans-serif;
+    @include fontParams (26px, 32px, 700, normal);
+
+    @include forTablet {
+      text-align: right;
+    }
+    @include forDesktop {
+      text-align: right;
+    }
+
+  }
+
+  &__description {
+    margin-bottom: 20px;
+    font-family: "Proxima Nova", sans-serif;
+    @include fontParams (14px, 150%, 700, normal);
+
+    &::after {
+      position: absolute;
+      bottom: 50px;
+      right: -100px;
+      content: "More about  POTR POTS" url("/images/header/arrow_2.svg");
+      color: $turquiseFont;
+      @include fontParams(12px, 150%, 400, normal);
+      transform: rotate(90deg);
+
+      @include forTablet {
+        display: none;
+      }
+
+      @include forDesktop {
+        top: 200px;
+        right: 600px;
+        width: max-content;
+      }
+    }
+
+    @include forTablet {
+      text-align: right;
+    }
+
+    @include forDesktop {
+      text-align: right;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__button {
+    padding: 15px 101px 13px 62px;
+    width: 238px;
+    background-color: $yellowButton;
+
+    border: 1px solid transparent;
+    color: #121212;
+    font-family: "Proxima Nova", sans-serif;
+    @include fontParams(14px, 20px, 700, normal);
+
+    text-transform: uppercase;
+
+    transition: border-color $transitionTime,
+      background-color $transitionTime;
+
+    &::after {
+      position: absolute;
+      content: url("/images/header/arrow.svg");
+      transition: transform $transitionTime;
+      transform: translateX(100%);
+    }
+
+    &:hover {
+      background-color: transparent;
+      border-color: $greyFont;
+
+    }
+
+    &:hover::after {
+      transform: translateX(40px);
+    }
+
+    @include forDesktop {
+      margin: 49px 0 0 100px;
+      background-color: transparent;
+      border-color: $turquiseFont;
+      color: $darkGrayFont;
+
+      &:hover {
+        background-color: $turquiseFont;
+        color: $whiteFont;
+      }
+
+      &:hover::after {
+        content: url("/images/header/arrow_3.svg");
+      }
+    }
+  }
+
+  &__basket {
+    display: none;
+    height: 48px;
+    width: 48px;
+
+    @include forDesktop {
+      display: inline-block;
+    }
+  }
+
+  &__basket-button {
+    margin: 8px 10px 9px;
+    height: 30px;
+    width: 30px;
+
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-image: url("/images/header/basket.svg");
+    cursor: pointer;
+    transition: transform $transitionTime;
+
+    &:hover {
+      transform: scale(2) rotate(5deg);
+    }
+  }
+
+  &__down {
+    display: block;
+
+    @include forTablet {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 56px 33px 115px;
+    }
+
+    @include forDesktop {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      margin: 0 134px 150px 266px;
+    }
+  }
+
+  &__burger-menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: max-content;
+    transform: translateX(75vw);
+    transition: transform 1s;
+
+    @include forDesktop {
+      display: none;
+    }
+  }
+}
