@@ -1,0 +1,189 @@
+.circle {
+  width: 51px;
+  height: 51px;
+  border-radius: 100%;
+  background-color: $red-color;
+  display: none;
+  position: absolute;
+  z-index: 0;
+  background-image: url(../images/icons/plus.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &:hover {
+    background-image: url(../images/icons/minus.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &--1 {
+    display: none;
+
+    @include onTablet {
+      bottom: 16%;
+      left: 11%;
+
+      &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.35);
+        transition: all $effectDuration;
+
+        &::after {
+          content: url(../images/phrases/text1.svg);
+          bottom: 25%;
+          top: -190px;
+          left: -120px;
+          position: absolute;
+          z-index: 5;
+          padding: 35px;
+          width: 213px;
+          height: fit-content;
+          backdrop-filter: blur(17px);
+          background-color: rgba(0, 0, 0, 0.35);
+          line-height: 150%;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &--2 {
+    display: none;
+
+    @include onTablet {
+      bottom: 34%;
+      left: 30%;
+
+      &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.35);
+        transition: all $effectDuration;
+
+        &::after {
+          content: url(../images/phrases/text2.svg);
+          bottom: 25%;
+          top: -190px;
+          left: -130px;
+          position: absolute;
+          z-index: 5;
+          padding: 35px;
+          width: 213px;
+          height: fit-content;
+          backdrop-filter: blur(17px);
+          background-color: rgba(0, 0, 0, 0.35);
+          line-height: 150%;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &--3 {
+    display: none;
+
+    @include onTablet {
+      bottom: 12%;
+      left: 45%;
+
+      &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.35);
+        transition: all $effectDuration;
+
+        &::after {
+          content: url(../images/phrases/text3.svg);
+          bottom: 25%;
+          top: -235px;
+          left: -120px;
+          position: absolute;
+          z-index: 5;
+          padding: 35px;
+          width: 213px;
+          height: fit-content;
+          backdrop-filter: blur(17px);
+          background-color: rgba(0, 0, 0, 0.35);
+          line-height: 150%;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &--4 {
+    display: none;
+
+    @include onTablet {
+      bottom: 22%;
+      right: 30%;
+
+      &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.35);
+        transition: all $effectDuration;
+
+        &::after {
+          content: url(../images/phrases/text4.svg);
+          bottom: 25%;
+          top: -230px;
+          left: -190px;
+          position: absolute;
+          z-index: 5;
+          padding: 35px;
+          width: 213px;
+          height: fit-content;
+          backdrop-filter: blur(17px);
+          background-color: rgba(0, 0, 0, 0.35);
+          line-height: 150%;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &--5 {
+    display: none;
+
+    @include onTablet {
+      bottom: 47%;
+      right: 22%;
+
+      &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.35);
+        transition: all $effectDuration;
+
+        &::after {
+          content: url(../images/phrases/text5.svg);
+          top: -260px;
+          left: -120px;
+          position: absolute;
+          z-index: 5;
+          padding: 35px;
+          width: 213px;
+          height: fit-content;
+          backdrop-filter: blur(17px);
+          background-color: rgba(0, 0, 0, 0.35);
+          line-height: 150%;
+          color: white;
+        }
+      }
+    }
+  }
+
+  @include onTablet {
+    display: block;
+  }
+
+  @include onDesktop {
+    cursor: pointer;
+  }
+
+  &--active {
+    background-color: rgba(0, 0, 0, 0.35);
+
+    &::before {
+      transition: all $effectDuration;
+      height: 0;
+    }
+  }
+}

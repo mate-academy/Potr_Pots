@@ -2,6 +2,67 @@
 @import "fonts";
 @import "typography";
 
+@import "utils/extends";
+@import "utils/mixins";
+@import "utils/vars";
+@import "utils/keyframes.scss";
+
+@import "blocks/benefits.scss";
+@import "blocks/button.scss";
+@import "blocks/circle.scss";
+@import "blocks/dropdown.scss";
+@import "blocks/features-card.scss";
+@import "blocks/features.scss";
+@import "blocks/footer.scss";
+@import "blocks/form.scss";
+@import "blocks/forwhom-card.scss";
+@import "blocks/forwhom.scss";
+@import "blocks/header.scss";
+@import "blocks/infocard.scss";
+@import "blocks/materials.scss";
+@import "blocks/menu.scss";
+@import "blocks/nav.scss";
+@import "blocks/page.scss";
+@import "blocks/potrsize.scss";
+@import "blocks/potrteam.scss";
+@import "blocks/questions.scss";
+@import "blocks/slider.scss";
+@import "blocks/topbar.scss";
+
 body {
-  background: $c-gray;
+  background: $grey-light-color;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 100%;
+  padding-inline: 30px;
+  position: relative;
+
+  @include onTablet {
+    width: 700px;
+    padding-inline: 0;
+    margin: 0 auto;
+  }
+
+  @include onDesktop {
+    width: 1170px;
+    padding-inline: 0;
+    margin: 0 auto;
+  }
+}
+
+.main {
+  margin-top: 110px;
+  display: grid;
+  row-gap: 110px;
+
+  @include onDesktop {
+    margin-top: 192px;
+  }
 }
