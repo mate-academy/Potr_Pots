@@ -1,0 +1,85 @@
+.header {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: $color-white;
+
+  @include onTablet {
+    background: linear-gradient(
+      to left,
+      $color-white 20%,
+      $color-yellow-light 20%
+    );
+  }
+
+  @include onDesktop {
+    background: linear-gradient(
+      to left,
+      $color-white 30%,
+      $color-yellow-light 20%
+    );
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $header-s;
+
+    @include onTablet {
+      height: $header-m;
+    }
+  }
+
+  &__logo {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+    color: inherit;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  .nav {
+    &__list {
+      display: flex;
+      gap: 60px;
+    }
+
+    &__link {
+      color: $color-gray-medium;
+      padding-block: 20px;
+    }
+  }
+
+  &__basket {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: relative;
+      @include square($icon-size);
+      background: url(../images/icons/bag-icon.svg) center / contain no-repeat;
+    }
+  }
+
+  &__menu-icon {
+    display: block;
+    @include square($icon-size);
+    background: url(../images/icons/menu-icon.svg) center / contain no-repeat;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
