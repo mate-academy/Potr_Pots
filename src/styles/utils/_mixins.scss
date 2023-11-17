@@ -11,6 +11,12 @@
   }
 }
 
+@mixin onDesktop {
+  @media (min-width: $Desktop-min-width) {
+    @content;
+  }
+}
+
 @mixin onSmallDesktop {
   @media (min-width: $smallDesktop-min-width) {
     @content;
@@ -26,6 +32,11 @@
   @include onTablet {
     --columns: 6;
     column-gap: 20px;
+  }
+
+  @include onDesktop() {
+    --columns: 12 ;
+    column-gap: 30px;
   }
 
   @include onSmallDesktop() {

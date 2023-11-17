@@ -14,6 +14,11 @@
       width: 284px;
     }
 
+    @include onDesktop {
+      height: 450px;
+      width: 450px;
+    }
+
     @include onSmallDesktop {
       height: 500px;
       width: 500px;
@@ -23,7 +28,7 @@
       height: 417px;
       width: 300px;
 
-      @include onSmallDesktop {
+      @include onDesktop {
         display: none;
       }
     }
@@ -32,7 +37,7 @@
       height: 405px;
       width: 284px;
 
-      @include onSmallDesktop {
+      @include onDesktop {
         height: 670px;
         width: 470px;
         padding-bottom: 45px;
@@ -42,7 +47,7 @@
     &--fore {
       display: none;
 
-      @include onSmallDesktop {
+      @include onDesktop {
         display: block;
         height: 417px;
         width: 300px;
@@ -94,6 +99,10 @@
         opacity: 1;
       }
 
+      @include onDesktop {
+        right: 105px;
+      }
+
       @include onSmallDesktop {
         right: 100px;
       }
@@ -116,6 +125,11 @@
 
           @include onTablet {
             opacity: 1;
+          }
+
+
+          @include onDesktop {
+            right: 85px;
           }
 
           @include onSmallDesktop {
@@ -144,6 +158,10 @@
             opacity: 1;
           }
 
+          @include onDesktop {
+            right: 120px;
+          }
+
           @include onSmallDesktop {
             right: 120px;
           }
@@ -166,12 +184,16 @@
     display: none;
     padding-bottom: 25px;
 
-    @include onSmallDesktop {
+    @include onDesktop {
       padding-bottom: 40px;
       transform: translateX(-40px);
     }
 
     &--one {
+      @include onDesktop {
+        transform: translateX(40px);
+      }
+
       @include onSmallDesktop {
         transform: translateX(60px);
       }
@@ -180,7 +202,7 @@
     &--two {
       justify-content: end;
 
-      @include onSmallDesktop {
+      @include onDesktop {
         justify-content: start;
       }
     }
@@ -207,6 +229,10 @@
       align-items: start;
       gap: 20px;
 
+      @include onDesktop {
+        gap: 50px;
+      }
+
       @include onSmallDesktop {
         gap: 70px;
       }
@@ -215,7 +241,7 @@
     &--two {
       flex-direction: column;
 
-      @include onSmallDesktop {
+      @include onDesktop {
         gap: 30px;
       }
     }
@@ -226,7 +252,7 @@
       width: 340px;
     }
 
-    @include onSmallDesktop {
+    @include onDesktop {
       width: 370px;
     }
   }
@@ -235,7 +261,7 @@
     @include onTablet {
       transform: translateY(-30px);
     }
-    @include onSmallDesktop {
+    @include onDesktop {
       transform: translate(0);
     }
   }

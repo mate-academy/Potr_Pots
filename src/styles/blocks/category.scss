@@ -3,7 +3,7 @@
     padding-bottom: 110px;
   }
 
-  @include onSmallDesktop {
+  @include onDesktop {
     padding-bottom: 150px;
   }
 
@@ -12,7 +12,7 @@
       @include pageGrid;
     }
 
-    @include onSmallDesktop {
+    @include onDesktop {
       padding-top: 280px;
     }
 
@@ -35,8 +35,12 @@
       grid-column: 1 / 4;
     }
 
-    @include onSmallDesktop {
+    @include onDesktop {
       gap: 40px;
+      grid-column: 7 / -1;
+    }
+
+    @include onSmallDesktop {
       grid-column: 6 /-1;
     }
   }
@@ -66,7 +70,7 @@
       border: 1px solid $forth-text-color;
     }
 
-    @include onSmallDesktop {
+    @include onDesktop {
       display: none;
     }
 
@@ -84,7 +88,7 @@
     &--two {
       display: none;
 
-      @include onSmallDesktop {
+      @include onDesktop {
         display: block;
       }
     }
@@ -101,9 +105,13 @@
       transform: translateY(70px);
     }
 
-    @include onSmallDesktop {
-      grid-column: 7 /12;
+    @include onDesktop {
+      grid-column: 8 / 13;
       transform: translateY(0);
+    }
+
+     @include onSmallDesktop {
+      grid-column: 7 /12;
     }
   }
 
@@ -135,7 +143,7 @@
       width: 240px;
     }
 
-    @include onSmallDesktop {
+    @include onDesktop {
       font-size: 24px;
       line-height: 24px;
       letter-spacing: 3.8px;
@@ -146,7 +154,7 @@
   &__img {
     display: none;
 
-    @include onSmallDesktop {
+    @include onDesktop {
       display: block;
       position: absolute;
       top: 80px;
