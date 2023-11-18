@@ -1,0 +1,37 @@
+.button {
+
+  @include transitionTime;
+
+  &__primary {
+    border: none;
+    color: $color-white;
+    text-align: center;
+    display: block;
+    background-color: $color-turquise;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    padding-block: 13px;
+    height: 48px;
+  
+    &::after {
+      content: "";
+      padding-right: 54px;
+      width: 27px;
+      background-image: url(../images/icons/Arrow-white.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 27px;
+    }
+  
+    &:hover {
+      background-color: $color-turquise-light;
+    }
+  }
+
+  &__primary2 {
+    @include buttonPrimary2;
+  }
+}

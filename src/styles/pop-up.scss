@@ -1,0 +1,155 @@
+.pop-up {
+  display: none;
+  transition: 0.6s;
+
+  @include onTablet {
+    display: block;
+  }
+
+  &__tooltip {
+    position: absolute;
+    text-align: start;
+    pointer-events: none;
+    padding: 35px;
+    color: $color-white;
+    width: 230px;
+    background: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    transition: 0.6s;
+    z-index: 99;
+
+    &--1 {
+      bottom: 81px;
+      left: -46px;
+
+      @include onDesktop {
+        bottom: 81px;
+        left: -117px;
+      }
+    }
+
+    &--2 {
+      bottom: 81px;
+      left: -117px;
+
+      @include onDesktop {
+        bottom: 61px;
+        left: -290px;
+      }
+    }
+
+    &--3 {
+      bottom: 81px;
+      left: -117px;
+
+      @include onDesktop {
+        bottom: -80px;
+        left: -320px;
+      }
+    }
+
+    &--4 {
+      bottom: 81px;
+      left: -117px;
+
+      @include onDesktop {
+        bottom: 81px;
+        left: -117px;
+      }
+    }
+
+    &--5 {
+      top: 70px;
+      left: -117px;
+
+      @include onDesktop {
+        top: 70px;
+        left: -117px;
+      }
+    }
+  }
+
+  &__element {
+    position: absolute;
+
+    &:hover .pop-up__tooltip {
+      opacity: 1;
+    }
+
+    &--1 {
+      bottom: 18%;
+      left: 11%;
+
+      @include onDesktop {
+        bottom: 15%;
+        left: 18%;
+      }
+    }
+
+    &--2 {
+      bottom: 37%;
+      left: 32%;
+
+      @include onDesktop {
+        bottom: 38%;
+        left: 37%;
+      }
+    }
+
+    &--3 {
+      bottom: 13%;
+      left: 44%;
+
+      @include onDesktop {
+        bottom: 10%;
+        left: 48%;
+      }
+    }
+
+    &--4 {
+      bottom: 23%;
+      left: 54%;
+
+      @include onDesktop {
+        bottom: 25%;
+        left: 58%;
+      }
+    }
+
+    &--5 {
+      bottom: 55%;
+      left: 72%;
+
+      @include onDesktop {
+        bottom: 35%;
+        left: 77%;
+      }
+    }
+  }
+
+  &__icon {
+    width: 51px;
+    height: 51px;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.6s;
+
+    &::after {
+      content: "";
+      background-image: url(../images/materials/pop-up.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      padding-left: 100%;
+      padding-bottom: 50%;
+      transition: 0.6s;
+    }
+
+    &:hover {
+
+      &::after {
+        content: "";
+        background-image: url(../images/materials/pop-up-hover.png);
+      }
+    }
+  }
+}

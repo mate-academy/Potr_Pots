@@ -1,0 +1,97 @@
+.team {
+  background-image: url(../images/YelowRectangle.png);
+  background-repeat: no-repeat;
+  background-size: 150%;
+  background-position: 70% 90%;
+  padding-bottom: 169px;
+  position: relative;
+  overflow: hidden;
+
+  @include onTablet {
+    background-size: 75%;
+    background-position: -150% 40%;
+  }
+
+  &__container {
+    position: relative;
+
+    @include onTablet {
+      padding-top: 150px;
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-top: 25px;
+    }
+  }
+
+  &__title {
+    @include contentPaddingInline;
+    padding-bottom: 25px;
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+    z-index: 0;
+  }
+
+  &__text {
+    @include contentPaddingInline;
+
+    font-size: 16px;
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+    line-height: 150%;
+
+    @include onTablet {
+      padding-right: calc(50% + 34px);
+      position: absolute;
+      top: 220px;
+    }
+
+    @include onDesktop {
+      left: 75px;
+    }
+  }
+
+  &__block {
+    @include onTablet {
+      width: calc(50% - 34px);
+      padding-left: 50%;
+    }
+
+    @include onDesktop {
+      width: calc(60% - 235px);
+      padding-left: 50%;
+    }
+  }
+
+  &__name {
+    display: none;
+    font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+    font-size: 288px;
+    color: transparent;
+    letter-spacing: 34.04px;
+    -webkit-text-stroke: 1px $color-turquise;
+    line-height: 220px;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      
+    }
+
+    &--martin {
+      left: -15px;
+      top: 0;
+
+      @include onDesktop {
+        left: 74px;
+      }
+    }
+
+    &--andy {
+      right: -34px;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+.features {
+  @include contentPaddingInline;
+  padding-bottom: 110px;
+
+  &__title {
+    @include blueTitle;
+    padding-bottom: 22px;
+
+    &--transparent {
+      color: transparent;
+    }
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 70px;
+    }
+  }
+
+  &__container {
+    @include pageGrid;
+    row-gap: 70px;
+  }
+
+  &__image {
+    object-fit: contain;
+    width: 100%;
+
+    @include hoverScale;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 16px;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+
+    @include onTablet {
+      align-items: start;
+    }
+
+    @include onDesktop {
+      align-items: center;
+    }
+
+    &--1 {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 3 / 5;
+      }
+
+      @include onDesktop {
+        grid-column: 1 / 5;
+      }
+    }
+
+    &--2 {
+      grid-column: 1 / -1;
+      
+      @include onTablet {
+        grid-column: 5 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 5 / 9;
+      }
+    }
+
+    &--3 {
+      grid-column: 1 / -1;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+        grid-row: 1 / -1;
+      }
+
+      @include onDesktop {
+        grid-column: 9 / -1;
+      }
+    }
+  }
+
+}

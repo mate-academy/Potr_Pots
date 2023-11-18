@@ -1,0 +1,88 @@
+.menu {
+  height: 100vh;
+  padding: 0;
+  background-color: $color-turquise;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+
+  @include onDesktop {
+    height: auto;
+    background-color: transparent;
+    z-index: 0;
+  }
+
+  &__list {
+    width: max-content;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+
+    @include onDesktop {
+      flex-direction: row;
+      gap: 60px;
+    }
+  }
+
+  &__item {
+    @include hoverScale;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-grey-light;
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    &--backet {
+      position: relative;
+
+      @include onDesktop {
+        display: none;
+      }
+
+      &::after {
+        content: "0";
+        line-height: 14px;
+        text-align: center;
+        position: absolute;
+        font-size: 9px;
+        left: 61px;
+        font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+        background-color: $color-red;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+      }
+    }
+
+    @include onDesktop {
+      color: $color-grey-2;
+    }
+  }
+
+  &__close {
+    position: fixed;
+    bottom: 42px;
+    right: 0;
+    font-size: 12px;
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--content {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      text-decoration: none;
+      color: $color-grey-light;
+    }
+  }
+}

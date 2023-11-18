@@ -1,0 +1,233 @@
+.for-whom {
+  @include contentPaddingInline;
+  font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  line-height: 150%;
+  letter-spacing: 5.58px;
+  position: relative;
+
+  &__title {
+    color: $color-grey-1;
+
+    grid-column: 1 / -1;
+  }
+
+  &__grid {
+    @include pageGrid;
+    row-gap: 20px;
+  }
+
+  &__grid-flex {
+    @include pageGrid;
+    row-gap: 20px;
+
+    @include onDesktop {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include hoverScale;
+
+    @include onTablet {
+      display: block;
+      object-fit: cover;
+    }
+
+    &--1 {
+      width: 100%;
+      padding-right: 80px;
+    }
+
+    &--2 {
+      @include onDesktop {
+        padding-block: 85px;
+      }
+    }
+
+    &--3 {
+      width: 90%;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include onDesktop {
+      justify-content: space-around;
+    }
+
+    &--left {
+      @include leftPosition;
+
+      @include onDesktop {
+        grid-column: 1 / 7;
+      }
+    }
+
+    &--right {
+      @include rightPosition;
+
+      @include onDesktop {
+        grid-column: 7 / -1;
+      }
+    }
+
+    &--2text {
+      @include leftPosition;
+
+      @include onDesktop {
+        grid-column: 2 / 6;
+        grid-row: 2 / -1;
+        justify-content: flex-start;
+        row-gap: 24px;
+      }
+    }
+
+    &--2image {
+      @include rightPosition;
+
+      @include onDesktop {
+        grid-column: 2 / 5;
+        grid-row: 1 / 2;
+      }
+    }
+
+    &--3 {
+      @include rightPosition;
+
+      @include onDesktop {
+        grid-column: 2 / -1;
+        grid-row: 2 / 2;
+      }
+    }
+
+    &--3image {
+      @include leftPosition;
+
+      @include onDesktop {
+        grid-column: 2 / -1;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+
+  &__comment {
+    font-family: Monrope Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    letter-spacing: normal;
+    line-height: 150%;
+    color: $color-grey-2;
+    
+    &::before {
+      content: "";
+      background-image: url("../images/ForWhom/star.svg");
+      padding-left: 30px;
+      background-repeat: no-repeat;
+    }
+
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--1 {
+      @include onTablet {
+        transform: translateX(-30px);
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        padding-left: 70%;
+      }
+
+      @include onDesktop {
+        padding-left: 0;
+        transform: translateY(-40px);
+      }
+    }
+  }
+
+  &__number {
+    grid-column: 1 / -1;
+
+    &::before {
+      content: "";
+      padding-left: 19px;
+      padding-top: 8px;
+      background-image: url("../images/icons/NumberBefore.png");
+      background-repeat: no-repeat;
+    }
+
+    &--1 {
+      @include onTablet {
+        position: absolute;
+        left: -50px;
+      }
+
+      @include onDesktop {
+        left: -70px;
+      }
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+
+    &--1 {
+      @include onTablet {
+        grid-column: 4 / -1;
+      }
+    }
+  }
+
+  &__info {
+    grid-column: 1 / -1;
+
+    font-family: Monrope Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    letter-spacing: normal;
+    line-height: 150%;
+    color: $color-grey-2;
+  }
+
+  &__side-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 2.64px;
+    color: $color-grey-3;
+
+    transform: rotate(90deg);
+    transform-origin: top right;
+
+    position: absolute;
+    top: 50px;
+    right: 14px;
+
+    &--line {
+      width: 65px;
+      height: 1px;
+      background-color: $color-grey-3;
+    }
+
+    @include onDesktop {
+      transform: rotate(-90deg);
+      top: auto;
+      bottom: 320px;
+      right: auto;
+      left: 14px;
+    }
+  }
+}

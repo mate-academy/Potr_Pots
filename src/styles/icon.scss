@@ -1,0 +1,36 @@
+.icon {
+  
+
+  &__logo {
+    width: 134px;
+
+    @include hoverScale;
+  }
+
+  &__menu {
+    width: 32px;
+    height: 32px;
+
+    @include hoverScale;
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__backet {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__cross {
+    transition: all 0.5s;
+
+    &:hover {
+      transform: rotate(360deg);
+    }
+  }
+}

@@ -4,3 +4,143 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --column: 2;
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--column), 1fr);
+
+  @include onTablet() {
+    --column: 6;
+    column-gap: 24px;
+  }
+
+  @include onDesktop() {
+    --column: 12;
+  }
+}
+
+@mixin contentPaddingInline {
+  padding-inline: 30px;
+
+  @include onDesktop() {
+    padding-inline: 134px;
+  }
+}
+
+@mixin rightPosition {
+  grid-column: 1 / - 1;
+  position: relative;
+
+  @include onTablet {
+    grid-column: 4 / -1;
+    
+    grid-row: 1 / -1;
+  }
+}
+
+@mixin leftPosition {
+  grid-column: 1 / - 1;
+  display: flex;
+  justify-content: space-between;
+
+  @include onTablet {
+    grid-column: 1 / 4;
+    grid-row: 1 / -1;
+  }
+}
+
+@mixin buttonPrimary2 {
+  color: $color-back;
+  text-align: center;
+  display: block;
+  background-color: $color-yellow;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  padding-block: 13px;
+
+  &::after {
+    content: "";
+    padding-right: 54px;
+    width: 27px;
+    background-image: url(../images/icons/ArrowBlack.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 27px;
+  }
+
+  &:hover {
+    background-color: $color-yellow-light;
+  }
+}
+
+@mixin buttonSecondary {
+  box-sizing: border-box;
+  border: 1px solid $color-turquise;
+  color: $color-back;
+  text-align: center;
+  display: block;
+  background-color: transparent;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  padding-block: 13px;
+  height: 48px;
+
+  &::after {
+    content: "";
+    padding-right: 54px;
+    width: 27px;
+    background-image: url(../images/icons/ArrowBlack.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 27px;
+  }
+
+  &:hover {
+    background-color: $color-turquise;
+    color: $color-white;
+
+    &::after {
+      background-image: url(../images/icons/Arrow-white.svg);
+    }
+  }
+}
+
+@mixin blueTitle {
+  font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+  font-size: 58px;
+  color: $color-turquise;
+  letter-spacing: 8.99px;
+  -webkit-text-stroke: 1px $color-turquise;
+}
+
+@mixin transitionTime {
+  transition: 0.6s;
+}
+
+@mixin hoverScale {
+  @include transitionTime();
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
