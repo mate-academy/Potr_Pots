@@ -5,7 +5,7 @@ const points = document.querySelectorAll('.point');
 let position;
 
 track.addEventListener('scroll', function() {
-  position = track.scrollLeft / (track.scrollWidth / 5);
+  position = Math.floor(track.scrollLeft / (track.scrollWidth / 5));
 
   if (Number.isInteger(position)) {
     points[position].classList.add('active');
