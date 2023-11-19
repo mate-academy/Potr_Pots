@@ -1,0 +1,71 @@
+.decor {
+  position: absolute;
+  height: max-content;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 3px;
+  color: #828282;
+  writing-mode: vertical-lr;
+
+  &::before {
+    content: "";
+    height: 65px;
+    width: 1px;
+
+    background-color: #828282;
+
+    transition: margin $transition-duration;
+  }
+
+  &--tablet-enable {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &--desktop-enable {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &--rotate {
+    transform: rotate(180deg);
+  }
+
+  &--bottom {
+    bottom: 0;
+  }
+
+  &--right {
+    right: -25px;
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+
+  &--left {
+    left: -25px;
+
+    @include onDesktop {
+      left: 0;
+    }
+  }
+}

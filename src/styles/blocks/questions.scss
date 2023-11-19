@@ -1,0 +1,99 @@
+.questions {
+  position: relative;
+  padding-top: 45px;
+
+  @include onTablet {
+    padding-top: 16px;
+  }
+
+  @include onDesktop {
+    padding-top: 38px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 118%;
+    width: 100%;
+
+    background-image: url("../../src/images/contacts_bg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+    @include onDesktop {
+      width: 90%;
+    }
+  }
+
+  &__stamp {
+    position: absolute;
+    top: -66px;
+    right: -50px;
+    height: 160px;
+    width: 160px;
+
+    background-image: url("../../src/images/stamp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      top: -102px;
+      right: -52px;
+    }
+
+    @include onDesktop {
+      top: -80px;
+      right: 5%;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    @extend %text16;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 56px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    align-self: center;
+
+    @include onTablet {
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      gap: 25px;
+    }
+  }
+
+  &__contact {
+    &-title {
+      margin-bottom: 5px;
+
+      @extend %text24;
+      letter-spacing: normal;
+      color: rgba(0, 0, 0, 0.39);
+    }
+
+    &-link {
+      @extend %text16;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+
+      @include hover (text-decoration-color, #000);
+    }
+  }
+}

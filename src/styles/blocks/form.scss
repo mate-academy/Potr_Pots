@@ -1,0 +1,63 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border-bottom: 1px solid $c-turquoise;
+  -webkit-text-fill-color: $c-turquoise;
+  -webkit-box-shadow: 0 0 0 1000px $c-yellow inset;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include onTablet {
+    gap: 40px;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__input {
+    // height: 30px;
+    width: 100%;
+    padding-bottom: 4px;
+    padding-left: 6px;
+
+    @extend %text16;
+    color: $c-turquoise;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+    resize: none;
+    overflow: hidden;
+
+    &::placeholder {
+      color: $c-gray2;
+    }
+
+    &:focus {
+      border-color: $c-turquoise;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include onDesktop {
+      width: 238px;
+    }
+  }
+}

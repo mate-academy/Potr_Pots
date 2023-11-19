@@ -1,0 +1,117 @@
+.bullets {
+  &__content {
+    position: absolute;
+    z-index: 2;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+
+    pointer-events: none;
+
+    @extend %text16;
+    color: $c-gray-light;
+
+    & p {
+      padding: 35px;
+      width: 284px;
+    }
+
+    transition: opacity $transition-duration;
+  }
+
+  &__bullet {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background-color: $c-red;
+    cursor: pointer;
+
+    transition: all $transition-duration;
+
+    &::after {
+      content: "+";
+
+      color: $c-gray-light;
+    }
+
+    &--1 {
+      bottom: 17%;
+      left: 11%;
+
+      & .bullets__content {
+        transform: translate(44px, -134px);
+
+        @include onDesktop {
+          transform: translate(0, -134px);
+        }
+      }
+    }
+
+    &--2 {
+      bottom: 40%;
+      left: 30%;
+
+      & .bullets__content {
+        transform: translate(0, -128px);
+
+        @include onDesktop {
+          transform: translate(-140px, -128px);
+        }
+      }
+    }
+
+    &--3 {
+      bottom: 13%;
+      left: 44%;
+
+      & .bullets__content {
+        transform: translate(0, -155px);
+
+        @include onDesktop {
+          transform: translate(-185px, 0);
+        }
+      }
+    }
+
+    &--4 {
+      bottom: 24%;
+      right: 39%;
+
+      & .bullets__content {
+        transform: translate(0, -150px);
+
+        @include onDesktop {
+          transform: translate(20px, -170px);
+        }
+      }
+    }
+
+    &--5 {
+      right: 21.5%;
+      bottom: 56%;
+
+      & .bullets__content {
+        transform: translate(0, 154px);
+      }
+    }
+
+    &:hover {
+      &::after {
+        content: "-";
+      }
+
+      background-color: rgba(36, 35, 35, 0.75);
+
+      & .bullets__content {
+        opacity: 1;
+      }
+    }
+  }
+}

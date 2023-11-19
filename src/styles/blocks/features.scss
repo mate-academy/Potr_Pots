@@ -1,0 +1,72 @@
+.features {
+  &__title {
+    margin-bottom: 22px;
+
+    @extend %h1;
+    line-height: 100%;
+    letter-spacing: 8px;
+    color: $c-turquoise;
+
+    & span {
+      color: transparent;
+      -webkit-text-stroke: 1px #03839e;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 65px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    &-3 {
+      order: -1;
+
+      @include onDesktop {
+        order: 0;
+      }
+    }
+
+    @include hover(scale, 1.05);
+  }
+
+  &__picture {
+    height: 260px;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 35px;
+    }
+
+    @include onTablet {
+      height: 224px;
+    }
+
+    @include onDesktop {
+      height: 370px;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    text-align: center;
+    color: $c-gray1;
+  }
+
+  &__text {
+    @extend %text16;
+    color: $c-gray2;
+    text-align: center;
+  }
+}

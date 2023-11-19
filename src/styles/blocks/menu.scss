@@ -1,0 +1,110 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100vh;
+  background-color: $c-turquoise;
+  z-index: 3;
+
+  transform: translateX(100%);
+  transition: transform $transition-duration;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 140px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+    width: max-content;
+  }
+
+  &__link {
+    position: relative;
+    @extend %text16;
+    color: $c-gray-light;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 1px;
+      margin-top: 6px;
+
+      background-color: $c-gray-light;
+
+      transition: width $transition-duration;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    right: -15px;
+    height: 14px;
+    width: 14px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 10px;
+    color: $c-gray-light;
+    text-align: center;
+    line-height: 14px;
+
+    background-color: $c-red;
+    border-radius: 50%;
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 150px;
+    right: 5%;
+
+    display: flex;
+    align-items: center;
+    padding-bottom: 30px;
+
+    @extend %text12;
+    color: $c-gray-light;
+    writing-mode: sideways-lr;
+
+    background-image: url("../../src/images/icons/close.svg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+
+    transition: all $transition-duration;
+
+    &::before {
+      content: "";
+      height: 44px;
+      width: 1px;
+      margin-top: 5px;
+
+      background-color: $c-gray-light;
+
+      transition: margin $transition-duration;
+    }
+
+    &:hover {
+      bottom: 145px;
+      padding-bottom: 35px;
+
+      &::before {
+        margin-top: 15px;
+      }
+    }
+  }
+}

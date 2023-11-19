@@ -1,0 +1,53 @@
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  text-align: center;
+
+  @include onTablet {
+    gap: 32px;
+  }
+
+  @include onDesktop {
+    gap: 74px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 85px;
+
+    @include onTablet {
+      gap: 80px;
+    }
+
+    @include onDesktop {
+      gap: 70px;
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 20px;
+    width: 20px;
+
+    background-size: contain;
+
+    @include hover(scale, 1.2);
+
+    @include onDesktop {
+      height: 30px;
+      width: 30px;
+    }
+
+    &--twitter {
+      background-image: url("../../src/images/icons/twitter.svg");
+    }
+    &--instagram {
+      background-image: url("../../src/images/icons/instagram.png");
+    }
+    &--facebook {
+      background-image: url("../../src/images/icons/facebook.svg");
+    }
+  }
+}

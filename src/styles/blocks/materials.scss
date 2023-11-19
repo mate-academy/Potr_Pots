@@ -1,0 +1,129 @@
+.materials {
+  position: relative;
+  display: block;
+  mix-blend-mode: darken;
+
+  &__decor {
+    top: 205px;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__title {
+    display: inline-block;
+    margin-bottom: 120px;
+
+    @extend %h1;
+    color: $c-turquoise;
+    line-height: 110%;
+
+    @include onTablet {
+      margin-bottom: 75px;
+
+      font-size: 80px;
+      letter-spacing: 10px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+
+      font-size: 138px;
+      letter-spacing: 17px;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      bottom: -120px;
+      right: 0;
+
+      display: block;
+      width: 340px;
+    }
+
+    @include onDesktop {
+      bottom: -30px;
+      width: 470px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    color: $c-gray2;
+  }
+
+  &__text {
+    @extend %text16;
+    color: $c-gray2;
+
+    & span {
+      font-weight: 700;
+
+      @include onDesktop {
+        font-weight: 400;
+      }
+    }
+
+    @include onTablet {
+      position: relative;
+      z-index: -2;
+    }
+
+    @include onDesktop {
+      z-index: 0;
+    }
+  }
+
+  &__picture {
+    position: absolute;
+    top: 100px;
+    z-index: -1;
+
+    height: 240px;
+    width: 100%;
+
+    background-image: url("../../src/images/materials__bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      position: relative;
+      top: 0;
+      height: 576px;
+    }
+
+    @include onDesktop {
+      top: -160px;
+      height: 1080px;
+      margin-bottom: -160px;
+    }
+  }
+
+  &__bullets {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__slider {
+    margin: 0 -20px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+}

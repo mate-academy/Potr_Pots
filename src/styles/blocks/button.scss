@@ -1,0 +1,71 @@
+@import "../utils";
+
+.button {
+  width: 238px;
+  padding: 14px 0;
+
+  @extend %button;
+  border: none;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: relative;
+    top: 1px;
+    left: 10px;
+    height: 10px;
+    width: 27px;
+
+    display: inline-block;
+
+    background-image: url("../../src/images/icons/arrow_right.svg");
+    background-repeat: no-repeat;
+    transition: left $transition-duration;
+  }
+
+  &:hover {
+    &::after {
+      left: 20px;
+    }
+  }
+
+  &__primary {
+    background-color: $c-turquoise;
+    color: $c-white;
+
+    &::after {
+      background-image: url("../../src/images/icons/arrow_white.svg");
+    }
+
+    @include hover (background-color, $c-turquoise-light);
+  }
+
+  &__primary2 {
+    background-color: $c-yellow;
+
+    @include hover (background-color, $c-yellow-light);
+  }
+
+  &__secondary {
+    background-color: inherit;
+    border: 1px solid $c-turquoise;
+
+    transition: all $transition-duration;
+
+    &:hover {
+      background-color: $c-turquoise;
+      color: $c-white;
+
+      &::after {
+        background-image: url("../../src/images/icons/arrow_white.svg");
+      }
+    }
+  }
+
+  &__secondary2 {
+    border: 1px solid $c-gray1;
+
+    @include hover (background-color, $c-white);
+    @include hover (background-color, $c-white);
+  }
+}

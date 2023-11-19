@@ -1,0 +1,68 @@
+.frames {
+  display: none;
+
+  @include onDesktop {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    width: 634px;
+    float: left;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 214px;
+    padding: 16px 16px 24px;
+
+    font-family: "Proxima Nova", sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    color: #828282;
+
+    background-color: #fff;
+
+    transition: all $transition-duration;
+
+    &--1 {
+      rotate: -16deg;
+    }
+
+    &--2 {
+      rotate: -29deg;
+    }
+
+    &--3 {
+      transform: translateX(-65px);
+      z-index: 1;
+    }
+
+    &--4 {
+      rotate: -16deg;
+      transform: translate(-48px, -3px);
+    }
+
+    &--5 {
+      rotate: -16deg;
+      transform: translateY(-30px);
+    }
+
+    &--6 {
+      rotate: -30deg;
+      transform: translateX(30px);
+    }
+
+    &:hover {
+      rotate: 0deg;
+      cursor: pointer;
+      scale: 1.2;
+      z-index: 2;
+      box-shadow: 0 0 8px 2px $c-gray;
+    }
+  }
+
+  &__img {
+    margin-bottom: 6px;
+  }
+}
