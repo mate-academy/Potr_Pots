@@ -110,3 +110,11 @@ menuLinks.forEach(function(menuLink) {
 menuBurgerBtn.addEventListener('click', removeLockClass);
 
 menuLogo.addEventListener('click', removeLockClass);
+
+// form
+
+document.querySelector('.footer__form').addEventListener('submit',
+  function(event) {
+    event.preventDefault();
+    document.querySelector('.footer__form').reset();
+  });
