@@ -1,0 +1,102 @@
+.button {
+  box-sizing: border-box;
+  @include flex($content: center, $items: center, $gap: 10px);
+
+  @include shape(100%, 48px);
+
+  @include text($font-main, 14px, 21px);
+  color: $black;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    @include shape(25px, 8px);
+  }
+
+  &--primary {
+    color: white;
+    background-color: $blue;
+
+    &::after {
+      @include image(Arrow_white, contain, icon)
+    }
+
+    &:hover {
+      background-color: scaleColor(20%, $blue);
+    }
+  }
+  
+  &--primary-2 {
+    background-color: $yellow;
+
+    &::after {
+      @include image(Arrow_black, contain, icon);
+    }
+
+    &:hover {
+      background-color: scaleColor(20%, $yellow);
+    }
+  }
+
+  &--secondary {
+    border: 1px solid $blue;
+
+    &::after {
+      @include image(Arrow_black, contain, icon);
+    }
+
+    &:hover {
+      color: white;
+      background-color: $blue;
+
+      &::after {
+        @include image(Arrow_white, contain, icon);
+      }
+    }
+  }
+
+  &--secondary-2 {
+    border: 1px solid $gray-dark;
+
+    &::after {
+      @include image(Arrow_gray, contain, icon);
+    }
+  }
+
+  &--secondary-3 {
+    color: $gray-light;
+    border: 1px solid white;
+
+    &::after {
+      @include image(Arrow_white, contain, icon);
+    }
+  }
+
+  &--side-header {
+    @include shape(max-content, min-content);
+    text-transform: none;
+    @include text($font-main, 12px, 18px);
+    color: $blue;
+    
+    &::after {
+      @include image(Arrow_blue, cover, icon);
+    }
+  }
+
+  &--side-page {
+    @include shape(fit-content);
+    padding: 5px;
+    
+    @include text($font-secondary, 12px);
+    letter-spacing: 0.22em;
+    color: $gray-secondary;
+
+    &::after {
+      @include shape(65px, 0.1px);
+      border-bottom: 1px solid $gray-secondary;
+      order: -1;
+    }
+  }
+}

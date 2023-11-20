@@ -1,0 +1,23 @@
+.buttons-list {
+  display: flex;
+  gap: 10px;
+
+  &__item {
+    box-sizing: border-box;
+    @include shape(10px);
+
+    background-color: $gray-light;
+    border: 1px solid $gray-light;
+
+    transform: rotate(45deg);
+
+    &--active {
+      background-color: $gray-dark;
+    }
+  }
+
+  &__button {
+    @include shape(100%);
+    display: flex;
+  }
+}

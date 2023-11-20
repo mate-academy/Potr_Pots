@@ -1,0 +1,55 @@
+.form {
+  &__title {
+    display: block;
+    margin-bottom: 25px;
+
+    @include h3($font-main);
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid scaleColor(70%);
+
+    &:nth-last-child(2) {
+      margin-bottom: 30px;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:valid {
+      color: $blue;
+      border-bottom-color: $blue;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      font-family: inherit;
+      -webkit-text-fill-color: $blue;
+    }
+
+    &:invalid {
+      color: $red;
+      border-bottom-color: $red;
+    }
+
+    &:focus {
+      color: $page-main-color;
+      border-bottom-color: $blue;
+    }
+  }
+}

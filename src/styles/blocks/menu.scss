@@ -1,0 +1,177 @@
+.menu {
+  box-sizing: border-box;
+  @include flex(column, space-between);
+
+  @include shape(70vw, 100svh);
+  padding: 40px 30px;
+
+  background-color: $blue;
+
+  @include onTablet {
+    width: 60vw;
+    padding: 50px 40px;
+  }
+
+  overflow-y: auto;
+
+  @include onDesktop {
+    @include shape(fit-content);
+    padding: 0;
+
+    background-color: transparent;
+  }
+
+  &__list {
+    width: fit-content;
+    margin: 20vh auto 0;
+
+    @include onDesktop {
+      display: flex;
+      margin: 0;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+
+      @include onDesktop {
+        margin-bottom: 0;
+      }
+    }
+
+    &:nth-child(n + 2) {
+
+      @include onDesktop {
+        margin-right: 60px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &:first-child {
+      position: relative;
+
+      @include onDesktop {
+        order: 5;
+        margin-left: 260px;
+        color: transparent;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          z-index: -1;
+          display: block;
+
+          @include shape(30px);
+
+          @include image(basket, contain, icon);
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      @include hover {
+        @include onDesktop {
+          & :first-child {
+            color: transparent;
+          }
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      @include onDesktop {
+        order: 1;
+      }
+    }
+
+    &:nth-child(3) {
+      @include onDesktop {
+        order: 3;
+      }
+    }
+
+    &:nth-child(4) {
+      @include onDesktop {
+        order: 2;
+      }
+    }
+
+    &:nth-child(5) {
+      order: 4;
+    }
+  }
+
+  &__basket-counter {
+    box-sizing: border-box;
+    display: inline-block;
+
+    @include shape(14px, 14px, 50%);
+    margin-left: 5px;
+    padding: 1px 0 0 1.5px;
+
+    @include text($font-secondary, 9px, 14px);
+    text-align: center;
+    color: $gray-light;
+
+    background-color: $red;
+
+    @include onTablet {
+      padding: 1px 0.5px 0 1px;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $gray-light;
+
+    @include onDesktop {
+      color: inherit;
+      padding: 20px 0;
+    }
+
+    @include hover {
+      color: $blue;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    align-self: flex-end;
+    transform: rotate(180deg);
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      @include shape(11px, 48px);
+      margin-top: 30px;
+
+      @include image(close_after, contain, icon);
+    }
+
+    &::after {
+      content: "close";
+      position: absolute;
+      color: $gray-light;
+      top: 50%;
+      left: 50%;
+
+      @include text($font-main, 12px, 18px);
+      text-transform: uppercase;
+
+      transform: translate(-50%, 90px) rotate(90deg);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

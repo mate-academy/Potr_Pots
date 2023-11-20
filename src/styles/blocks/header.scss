@@ -1,0 +1,201 @@
+.header {
+  &__top {
+    @include flex($content: space-between, $items: center);
+    @extend %container;
+
+    margin-bottom: 10px;
+    padding-top: 15px;
+
+    @include onTablet {
+      margin-bottom: 50px;
+      padding-top: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+      padding-top: 0;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+
+    transform: translateX(100vw);
+
+    transition: transform $duration;
+
+    &:target {
+      transform: translateX(30vw);
+
+      @include onTablet {
+        transform: translateX(40vw);
+      }
+    }
+
+    @include onDesktop {
+      position: initial;
+      transform: translateX(0);
+    }
+  }
+
+  &__container {
+    @extend %container-tablet;
+    @include grid($tab-rows: (3, auto));
+
+    @include onTablet {
+      position: relative;
+    }
+  }
+
+  &__background-container {
+    @include onTablet {
+      position: absolute;
+      top: -100%;
+      right: 20.5%;
+      bottom: 20%;
+      left: -50%;
+      z-index: -1;
+
+      @include page-bg(77deg);
+    }
+
+    @include onDesktop {
+      right: 25.2%;
+      bottom: 10%;
+      @include page-bg(75deg);
+    }
+  }
+
+  &__content {
+    @extend %container-mobile;
+
+    @include onTablet {
+      display: contents;
+    }
+  }
+
+  &__icon {
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__photo-container {
+    z-index: -1;
+    
+    @include photo-container(400px);
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      grid-row: 1 / -1;
+      grid-column: 4 / -1;
+      justify-self: end;
+
+      @include photo-container(306px, 90%);
+      aspect-ratio: 1 / 1;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      @include photo-container(500px, 88%);
+    }
+  }
+
+  &__img {
+    @include photo(contain);
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include text($font-secondary, 36px, 43px);
+    color: $blue;
+
+    &--stroke {
+      @include stroke;
+    }
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+
+      @include text($font-secondary, 64px);
+    }
+
+    @include onDesktop {
+      grid-column: 2 / 7;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__proposal {
+    margin-bottom: 20px;
+
+    @include onTablet {
+      grid-row: 2;
+      grid-column: 3 / 5;
+      transform: translateY(-40%);
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 7;
+      transform: translate(0);
+    }
+  }
+
+  &__proposal-price {
+    @include h3($font-main);
+    color: $gray-dark;
+
+    @include onDesktop {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__proposal-description {
+    @include text($font-main, 14px, 21px);
+  }
+
+  &__button {
+
+    @include onTablet {
+      grid-row: 3;
+      grid-column: 2 / 5;
+      width: 240px;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / 7;
+      width: 100%;
+    }
+  }
+
+  &__side-button {
+    position: absolute;
+    right: 5px;
+    transform: rotate(90deg);
+    transform-origin: 100% 0%;
+
+    @include onTablet {
+      left: 40px;
+      bottom: 0;
+      transform: rotate(90deg) translateX(-85%);
+      transform-origin: 0% 100%;
+    }
+
+    @include onDesktop {
+      left: 50px;
+    }
+
+    @include hover {
+      transform: scale(1.1) rotate(90deg) translateX(-85%);
+    }
+  }
+}

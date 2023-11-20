@@ -1,6 +1,186 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onDesktop {
+  @media(min-width: 1280px) {
+    @content;
   }
+}
+
+@mixin onTablet {
+  @media(min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin onMobile {
+  @media(max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin text($font,
+  $size,
+  $line: $size,
+  $weight: false) {
+
+  font-size: $size;
+  line-height: $line;
+
+  @if $font == $font-secondary {
+    font-family: $font;
+    letter-spacing: 0.1em;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+}
+
+@mixin h2($font: $font-secondary) {
+  @include text($font, 36px, 54px);
+
+  @if $font == $font-main {
+    font-weight: 700;
+  }
+}
+
+@mixin h3($font) {
+  @if $font ==$font-main {
+    @include text($font, 24px, 36px);
+  }
+
+  @else {
+    @include text($font, 24px);
+  }
+}
+
+@mixin image($name, $size, $type, $position: center) {
+  @if $type =="icon" {
+    background-image: url(../images/icons/#{$name}.svg);
+  }
+
+  @else {
+    background-image: url(../images/photos/#{$name}.png);
+  }
+
+  background-size: $size;
+  background-position: $position;
+  background-repeat: no-repeat;
+}
+
+@mixin shape($width,
+  $height: $width,
+  $radius: false
+) {
+    width: $width;
+    height: $height;
+
+    @if $radius {
+      border-radius: $radius;
+    }
+}
+
+@mixin page-bg($deg) {
+  background: conic-gradient(from $deg at 0% 100%, transparent 0%, $yellow-light 100%);
+}
+
+@mixin flex($direction: row,
+  $content: false,
+  $items: false,
+  $gap: false,
+  $wrap: false) {
+  display: flex;
+
+  @if $direction !=row {
+    flex-direction: $direction;
+  }
+
+  @if $content {
+    justify-content: $content;
+  }
+
+  @if $items {
+    align-items: $items;
+  }
+
+  @if $gap {
+    gap: $gap;
+  }
+
+  @if $wrap {
+    flex-wrap: wrap;
+  }
+}
+
+@mixin grid(
+  $tab-rows: false,
+  $desk-rows: false,
+  $tab: true,
+  $tab-cols: (6, 1fr),
+  $desk: true,
+  $desk-cols: (12, 1fr)
+) {
+
+  display: block;
+
+  @if $tab {
+    @include onTablet {
+      display: grid;
+  
+      @if $tab-rows {
+        grid-template-rows: repeat($tab-rows);
+      }
+  
+      grid-template-columns: repeat($tab-cols);
+      gap: 0 20px;
+    }
+  }
+
+  @if $desk {
+    @include onDesktop {
+      display: grid;
+  
+      @if $desk-rows {
+        grid-template-rows: repeat($desk-rows);
+      }
+  
+      grid-template-columns: repeat($desk-cols);
+      gap: 0 30px;
+    }
+  }
+}
+
+@mixin photo-container($max-height, $width: 100%) {
+  position: relative;
+  box-sizing: border-box;
+  width: $width;
+  max-height: $max-height;
+
+  overflow: hidden;
+
+  &::after {
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+  }
+}
+
+@mixin photo($fit, $pos: center) {
+  position: absolute;
+  @include shape(100%);
+  object-fit: $fit;
+  object-position: $pos;
+}
+
+@mixin hover {
+  @include onDesktop {
+    transition: all $duration;
+
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin stroke($border: 0.6px) {
+  color: transparent;
+  -webkit-text-stroke: $border $blue;
 }
