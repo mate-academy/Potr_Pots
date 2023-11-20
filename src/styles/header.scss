@@ -15,10 +15,11 @@
   }
 
   &__background {
+    display: inline-block;
+    z-index: 1;
     width: 100%;
 
     @include onTablet {
-      z-index: -1;
       width: 45%;
       position: absolute;
       top: 121px;
@@ -33,6 +34,7 @@
 
   &__container {
     height: fit-content;
+    z-index: 2;
     @include contentPaddingInline;
 
     @include onTablet {
@@ -41,6 +43,7 @@
   }
 
   &__title {
+    z-index: 99;
     padding-top: 25px;
     color: $color-turquise;
 

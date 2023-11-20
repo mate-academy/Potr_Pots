@@ -34,7 +34,6 @@
 
       @include hoverScale;
     }
-
   }
 
   &__link {
@@ -50,6 +49,18 @@
 
     &:visited {
       color: $color-back;
+    }
+
+    &--secondary {
+      @extend %h3;
+      color: $color-back;
+      display: inline-block;
+      
+      text-transform: uppercase;
+      text-decoration: none;
+
+      @include hoverScale;
+      
     }
   }
 
@@ -86,6 +97,14 @@
     @include onDesktop {
       grid-column: 11 / -1;
       padding-left: 0;
+    }
+  }
+
+  &__copyright {
+    display: block;
+
+    @include onTablet {
+      display: none;
     }
   }
 }
