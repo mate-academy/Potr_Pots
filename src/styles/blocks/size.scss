@@ -1,0 +1,147 @@
+.size {
+  margin-bottom: 110px;
+
+  &--mobile {
+    @include onDesktopSmall {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onDesktopSmall {
+      display: block;
+    }
+  }
+
+  &-title {
+    color: $c-black;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0 0 20px;
+
+    @include onDesktopSmall {
+      margin-bottom: 70px;
+    }
+  }
+
+  &-text {
+
+    &--primary {
+      color: $c-black;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 2.79px;
+      margin-top: 0;
+    }
+
+    &--secondary {
+      color: $c-gray-middle;
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      margin: 0 0 30px;
+    }
+
+    &--star {
+      margin-right: 4px;
+    }
+  }
+
+  &-img {
+    width: 100%;
+    height: 300px;
+    background-image: url("../images/scheme.svg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @include onTablet {
+      width: 416px;
+      height: 337px;
+      flex-shrink: 0;
+      background-image: url("../images/scheme-tablet.svg");
+    }
+
+    @include onDesktopSmall {
+      width: 528px;
+      height: 427px;
+      flex-shrink: 0;
+    }
+
+    &--mobile {
+      display: block;
+      margin-bottom: 30px;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__description {
+    &-text {
+      width: 246px;
+
+      &--secondary {
+        @include onTablet {
+          display: none;
+        }
+      }
+
+      &--first {
+        width: 246px;
+      }
+
+      @include onDesktopSmall {
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 1px;
+          height: 257px;
+          background-color: #d8d8d8;
+          position: absolute;
+          left: -20px;
+        }
+      }
+    }
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      @include onDesktopSmall {
+        position: relative;
+      }
+    }
+
+    &-bottom {
+      display: none;
+
+      @include onDesktopSmall {
+        display: flex;
+        width: 550px;
+        position: absolute;
+        bottom: 0%;
+      }
+    }
+  }
+}

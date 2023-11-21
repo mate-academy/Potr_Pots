@@ -1,0 +1,167 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  overflow: visible;
+  position: relative;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 30px;
+  }
+
+  @include onDesktopSmall {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+  }
+
+  &--2 {
+    align-items: center;
+  }
+
+  &--desktop {
+
+    display: inline-block;
+
+    @include onTablet {
+      display: grid;
+    }
+
+    @include onDesktopSmall {
+      display: grid;
+    }
+
+    &--2 {
+      align-items: center;
+    }
+
+    &--footer {
+      align-items: flex-start;
+      display: none;
+
+      @include onTablet {
+        display: grid;
+      }
+
+      @include onDesktopSmall {
+        display: flex;
+        justify-content: space-between;
+
+      }
+
+    }
+  }
+
+  &__item--tablet {
+
+    @for $start from 1 through 6 {
+      @for $end from $start through 6 {
+        &--#{$start}-#{$end} {
+          grid-column: #{$start} / #{$end + 1};
+        }
+      }
+    }
+  }
+
+  &__item--desktop {
+
+    @include onDesktopSmall {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--#{$start}-#{$end} {
+            grid-column: #{$start} / #{$end + 1};
+          }
+        }
+      }
+    }
+  }
+
+  &__item--numeration {
+    @include onTablet {
+      position: absolute;
+      left: 50%;
+    }
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 20px;
+  position: relative;
+  overflow: visible;
+
+  grid-auto-rows: max-content;
+  height: 50vw;
+
+  @include onDesktopSmall {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+  }
+
+}
+
+.item {
+  font-size: 18px;
+  position: relative;
+}
+
+.item1 {
+  grid-column: 1 / span 5;
+
+  z-index: 1;
+
+  @include onDesktopSmall {
+    grid-column: 2 / span 5;
+  }
+}
+
+.item2 {
+  grid-column: 4 / span 3;
+
+  position: absolute;
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+
+  @include onDesktopSmall {
+    grid-column: 8 / span 5;
+  }
+
+}
+
+.item3 {
+  grid-column: 3 / span 2;
+  position: absolute;
+  bottom: 0%;
+
+  @include onDesktopSmall {
+    grid-column: 6 / span 2;
+    bottom: 50%;
+  }
+}
+
+.item4 {
+  grid-column: 2 / span 2;
+  position: absolute;
+  display: flex;
+  bottom: -15%;
+
+  @include onDesktopSmall {
+    grid-column: 5 / span 2;
+    bottom: 33%;
+  }
+}
+
+.item5 {
+  grid-column: 1 / 1;
+  position: absolute;
+  bottom: -15%;
+
+  @include onDesktopSmall {
+    bottom: 33%;
+  }
+}

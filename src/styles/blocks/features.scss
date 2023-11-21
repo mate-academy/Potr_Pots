@@ -1,0 +1,92 @@
+.features {
+  font-family: "Bebas Neue", sans-serif;
+
+  @include onDesktopSmall {
+    margin-top: 1450px;
+  }
+
+  &__title {
+    font-family: inherit;
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: 8.99px;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-text-stroke: 1px $c-turquoise;
+    color: transparent;
+
+    &--blue {
+      color: $c-turquoise;
+    }
+
+    @include onTablet {
+      text-align: left;
+    }
+  }
+
+  &__card {
+
+    margin-bottom: 68px;
+
+    &-img {
+      height: 260px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 38px;
+
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      @include onTablet {
+        height: 223px;
+      }
+
+      @include onDesktopSmall {
+        height: 368px;
+      }
+
+      &--1 {
+        background-image: url("../images/features1.png");
+      }
+
+      &--2 {
+        background-image: url("../images/features2.png");
+      }
+
+      &--3 {
+        background-image: url("../images/features3.png");
+      }
+    }
+
+    &-title {
+      color: $c-gray-dark;
+      text-align: center;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 3.72px;
+      text-transform: uppercase;
+    }
+
+    &-description {
+      color: $c-gray-middle;
+      text-align: center;
+      font-family: "Manrope", sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+
+      @include onTablet {
+        text-align: left;
+      }
+
+      @include onDesktopSmall {
+        text-align: center;
+      }
+    }
+  }
+}
