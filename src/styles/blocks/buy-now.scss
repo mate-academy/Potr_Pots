@@ -1,5 +1,5 @@
 .buy-now {
-  @include onDesktop {
+  @include on-desktop {
     display: flex;
   }
 
@@ -8,12 +8,12 @@
     flex-direction: column;
     gap: 50px;
 
-    @include onTablet {
+    @include on-tablet {
       flex-direction: row;
       gap: 20px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       flex-direction: column;
       gap: 60px;
     }
@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
 
-    @include onTablet {
+    @include on-tablet {
       justify-content: center;
     }
   }
@@ -33,9 +33,8 @@
     flex-direction: column;
     gap: 40px;
 
-    @include onDesktop {
-      flex-direction: row;
-      flex-wrap: wrap;
+    @include on-desktop {
+      flex-flow: row wrap;
     }
   }
 
@@ -44,6 +43,7 @@
     margin-bottom: 5px;
 
     @extend %text32;
+
     color: $c-gray1;
 
     &::before {
@@ -59,25 +59,26 @@
       background-color: $c-gray2;
     }
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 36px;
     }
   }
 
   &__text {
     @extend %text16;
+
     color: #828282;
   }
 
   &__button {
     margin-bottom: 40px;
 
-    @include onDesktop {
+    @include on-desktop {
       margin-bottom: 70px;
     }
 
     &-1 {
-      @include onTablet {
+      @include on-tablet {
         display: none;
       }
     }
@@ -85,7 +86,7 @@
     &-2 {
       display: none;
 
-      @include onTablet {
+      @include on-tablet {
         display: block;
       }
     }
@@ -95,13 +96,14 @@
     margin-bottom: 10px;
 
     @extend %h2;
+
     color: $c-red;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 24px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       font-size: 36px;
       margin-left: 100px;
     }
@@ -109,14 +111,15 @@
 
   &__announcement {
     @extend %h3;
+
     color: $c-turquoise;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 18px;
       width: 240px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       width: fit-content;
       margin-left: 100px;
 

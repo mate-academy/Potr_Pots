@@ -30,7 +30,9 @@
 
   &__link {
     position: relative;
+
     @extend %text16;
+
     color: $c-gray-light;
 
     &::after {
@@ -75,35 +77,45 @@
 
     display: flex;
     align-items: center;
-    padding-bottom: 30px;
 
     @extend %text12;
+
     color: $c-gray-light;
-    writing-mode: sideways-lr;
-
-    background-image: url("../../src/images/icons/close.svg");
-    background-position: center bottom;
-    background-repeat: no-repeat;
-
-    transition: all $transition-duration;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
 
     &::before {
       content: "";
+      display: block;
       height: 44px;
       width: 1px;
-      margin-top: 5px;
+      margin-bottom: 12px;
 
       background-color: $c-gray-light;
 
-      transition: margin $transition-duration;
+      transition: margin 0.3s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 115px;
+      height: 12px;
+      width: 12px;
+
+      background-image: url("../../src/images/icons/close.svg");
+      background-position: center top;
+      background-repeat: no-repeat;
+      transition: bottom $transition-duration;
     }
 
     &:hover {
-      bottom: 145px;
-      padding-bottom: 35px;
-
       &::before {
-        margin-top: 15px;
+        margin-bottom: 22px;
+      }
+
+      &::after {
+        bottom: 135px;
       }
     }
   }

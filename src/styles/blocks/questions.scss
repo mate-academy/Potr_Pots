@@ -2,11 +2,11 @@
   position: relative;
   padding-top: 45px;
 
-  @include onTablet {
+  @include on-tablet {
     padding-top: 16px;
   }
 
-  @include onDesktop {
+  @include on-desktop {
     padding-top: 38px;
   }
 
@@ -23,7 +23,7 @@
     background-repeat: no-repeat;
     z-index: -1;
 
-    @include onDesktop {
+    @include on-desktop {
       width: 90%;
     }
   }
@@ -39,12 +39,12 @@
     background-size: contain;
     background-repeat: no-repeat;
 
-    @include onTablet {
+    @include on-tablet {
       top: -102px;
       right: -52px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       top: -80px;
       right: 5%;
     }
@@ -52,9 +52,10 @@
 
   &__text {
     margin-bottom: 40px;
+
     @extend %text16;
 
-    @include onTablet {
+    @include on-tablet {
       margin-bottom: 30px;
     }
   }
@@ -70,11 +71,11 @@
 
     align-self: center;
 
-    @include onTablet {
+    @include on-tablet {
       gap: 20px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       gap: 25px;
     }
   }
@@ -84,12 +85,14 @@
       margin-bottom: 5px;
 
       @extend %text24;
+
       letter-spacing: normal;
       color: rgba(0, 0, 0, 0.39);
     }
 
     &-link {
       @extend %text16;
+
       text-decoration: underline;
       text-decoration-color: transparent;
 

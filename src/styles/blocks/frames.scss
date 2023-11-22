@@ -1,7 +1,7 @@
 .frames {
   display: none;
 
-  @include onDesktop {
+  @include on-desktop {
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
@@ -26,11 +26,11 @@
     transition: all $transition-duration;
 
     &--1 {
-      rotate: -16deg;
+      transform: rotate(-16deg);
     }
 
     &--2 {
-      rotate: -29deg;
+      transform: rotate(-29deg);
     }
 
     &--3 {
@@ -39,26 +39,23 @@
     }
 
     &--4 {
-      rotate: -16deg;
-      transform: translate(-48px, -3px);
+      transform: translate(-48px, -3px) rotate(-16deg);
     }
 
     &--5 {
-      rotate: -16deg;
-      transform: translateY(-30px);
+      transform: translateY(-30px) rotate(-16deg);
     }
 
     &--6 {
-      rotate: -30deg;
-      transform: translateX(30px);
+      transform: translateX(30px) rotate(-30deg);
     }
 
     &:hover {
-      rotate: 0deg;
-      cursor: pointer;
+      box-shadow: 0 0 8px 2px $c-gray;
+      transform: rotate(0);
       scale: 1.2;
       z-index: 2;
-      box-shadow: 0 0 8px 2px $c-gray;
+      cursor: pointer;
     }
   }
 

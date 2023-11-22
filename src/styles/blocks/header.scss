@@ -1,7 +1,7 @@
 .header {
   margin-bottom: 110px;
 
-  @include onTablet {
+  @include on-tablet {
     margin-bottom: 135px;
 
     &::before {
@@ -18,7 +18,7 @@
     }
   }
 
-  @include onDesktop {
+  @include on-desktop {
     margin-bottom: 150px;
 
     &::before {
@@ -39,11 +39,11 @@
     justify-content: space-between;
     align-items: center;
 
-    @include onTablet {
+    @include on-tablet {
       margin: 30px 34px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       margin: 20px 0;
     }
   }
@@ -51,7 +51,7 @@
   &__nav {
     display: none;
 
-    @include onDesktop {
+    @include on-desktop {
       display: block;
     }
   }
@@ -64,7 +64,9 @@
 
   &__link {
     display: block;
+
     @extend %text16;
+
     color: $c-gray2;
 
     &::after {
@@ -89,32 +91,25 @@
   &__cart {
     display: none;
 
-    @include onDesktop {
+    @include on-desktop {
       display: block;
-      height: 48px;
-      width: 48px;
-      padding: 10px;
+      height: 30px;
+      width: 30px;
 
-      outline: none;
-      background-color: inherit;
-      border: none;
-      cursor: pointer;
-
-      background-image: url("../../src/images/icons/cart-bag.png");
+      background-image: url("../../src/images/icons/cart-bag.svg");
+      background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
-
-      @include hover(transform, scale(1.2));
     }
   }
 
   &__icon {
     height: 32px;
     width: 32px;
-    background-image: url("../../src/images/icons/menu_icon.png");
+    background-image: url("../../src/images/icons/menu_icon.svg");
     background-size: cover;
 
-    @include onDesktop {
+    @include on-desktop {
       display: none;
     }
   }
@@ -122,7 +117,7 @@
   &__main {
     position: relative;
 
-    @include onTablet {
+    @include on-tablet {
       display: grid;
       grid-column-gap: 20px;
       grid-template-columns: repeat($tablet-cols, 1fr);
@@ -130,7 +125,7 @@
       padding-top: 20px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-template-columns: repeat($desktop-cols, 1fr);
       column-gap: 30px;
       margin: 0;
@@ -145,7 +140,7 @@
     background-size: cover;
     background-position: center;
 
-    @include onTablet {
+    @include on-tablet {
       width: 306px;
       height: 306px;
 
@@ -157,7 +152,7 @@
       @include hover(border-radius, 10%);
     }
 
-    @include onDesktop {
+    @include on-desktop {
       width: 500px;
       height: 500px;
       margin: 0;
@@ -170,7 +165,7 @@
     margin: 0 30px 30px;
     color: $c-turquoise;
 
-    @include onTablet {
+    @include on-tablet {
       @include title;
 
       width: 460px;
@@ -181,7 +176,7 @@
       z-index: 1;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 2 / 5;
     }
 
@@ -194,7 +189,7 @@
   &__price-wrapper {
     margin: 0 30px 20px;
 
-    @include onTablet {
+    @include on-tablet {
       margin: 0;
 
       grid-row: 1;
@@ -203,14 +198,14 @@
       z-index: 1;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-column: 5 / 7;
       transform: translateY(-142px);
     }
   }
 
   &__price {
-    font-family: "Manrope-Bold", sans-serif;
+    font-family: Manrope-Bold, sans-serif;
     font-size: 26px;
     font-weight: 700;
     line-height: 150%;
@@ -220,7 +215,7 @@
   &__text {
     max-width: 140px;
 
-    font-family: "Manrope", sans-serif;
+    font-family: Manrope, sans-serif;
     font-size: 14px;
     line-height: 150%; /* 48px */
     color: $c-gray2;
@@ -233,14 +228,14 @@
     transform: translateX(-50%);
     z-index: 2;
 
-    @include onTablet {
+    @include on-tablet {
       position: static;
       transform: translateX(0);
       margin-top: 50px;
       grid-column: 2 / 5;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       grid-row: 1;
       align-self: end;
       grid-column: 4 / 6;
@@ -258,6 +253,7 @@
     align-items: center;
 
     @extend %text12;
+
     color: $c-turquoise;
 
     &::after {
@@ -280,13 +276,13 @@
       }
     }
 
-    @include onTablet {
+    @include on-tablet {
       right: 100%;
       bottom: -18%;
       left: 5px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       bottom: 0;
     }
   }

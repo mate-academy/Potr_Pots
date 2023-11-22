@@ -4,11 +4,11 @@
   &__title {
     margin-bottom: 20px;
 
-    @include onTablet {
+    @include on-tablet {
       margin-bottom: 30px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       margin-bottom: 66px;
     }
   }
@@ -17,21 +17,22 @@
     margin-bottom: 30px;
 
     @extend %text16;
+
     color: $c-gray2;
 
-    @include onTablet {
+    @include on-tablet {
       max-width: 580px;
       margin-bottom: 38px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       display: none;
     }
 
     &-desktop {
       display: none;
 
-      @include onDesktop {
+      @include on-desktop {
         display: block;
         width: 254px;
         margin: 0;
@@ -43,14 +44,14 @@
     display: flex;
     flex-direction: column;
 
-    @include onTablet {
+    @include on-tablet {
       flex-direction: row-reverse;
       justify-content: start;
       gap: 36px;
       margin-bottom: 20px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       justify-content: space-between;
     }
   }
@@ -58,7 +59,7 @@
   &__picture {
     margin: 0 -30px 30px;
 
-    @include onTablet {
+    @include on-tablet {
       margin: 0;
     }
   }
@@ -71,12 +72,12 @@
   &__content {
     margin-bottom: 15px;
 
-    @include onTablet {
+    @include on-tablet {
       max-width: 276px;
       margin-bottom: 0;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       padding-left: 30px;
       height: fit-content;
       border-left: 1px solid #d8d8d8;
@@ -86,17 +87,18 @@
       &:not(:last-child) {
         margin-bottom: 40px;
 
-        @include onTablet {
+        @include on-tablet {
           margin-bottom: 50px;
         }
       }
 
-      @include onDesktop {
+      @include on-desktop {
         margin-bottom: 40px;
       }
 
       & p {
         @extend %text16;
+
         color: $c-gray2;
       }
     }
@@ -110,6 +112,7 @@
     position: relative;
 
     @extend %text16;
+
     color: $c-gray2;
 
     &::before {
@@ -118,7 +121,7 @@
       left: -10px;
     }
 
-    @include onDesktop {
+    @include on-desktop {
       position: absolute;
       bottom: 50px;
       width: 546px;
