@@ -1,0 +1,106 @@
+.btn {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  width: 260px;
+  height: 48px;
+  background-color: #ffe339;
+  border: 1px solid #ffe339;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  padding-left: 73px;
+  line-height: 48px;
+  transition: all 0.5s ease;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 161px;
+    background-image: url(./../images/img-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 28px;
+    height: 100%;
+    transition: all 0.5s ease;
+  }
+
+  &:hover {
+    @include onDesktop {
+      opacity: 0.7;
+    }
+  }
+
+  &-form {
+    display: block;
+    width: 260px;
+    margin: 30px auto 56px;
+    background-color: $main-title-color;
+    color: $text-color;
+    text-align: left;
+    transition: opacity 0.5s ease;
+
+    &::after {
+      background-image: url(./../images/img-arrow-white.svg);
+
+      @include onTablet {
+        width: 23px;
+        left: 135px;
+      }
+
+      @include onDesktop {
+        width: 25px;
+        left: 147px;
+      }
+    }
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+      line-height: 48px;
+      margin-left: 0;
+      grid-row: 4;
+      width: 238px;
+      margin-top: 40px;
+      margin-bottom: 0;
+      padding: 0 61px;
+      text-align: left;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 4;
+      width: 238px;
+      padding: 0 67px;
+    }
+  }
+
+  &__list {
+    @include onTablet {
+      background-color: inherit;
+      border: 1px solid $main-title-color;
+
+      grid-column: 4 / span 3;
+      grid-row: 1;
+      align-self: end;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / span 3;
+      grid-row: 4;
+      transition: all 0.5s ease;
+
+      &:hover {
+        opacity: 1;
+        background-color: $main-title-color;
+        color: #fff;
+      }
+
+      &:hover::after {
+        background-image: url(./../images/img-arrow-white.svg);
+      }
+    }
+  }
+}

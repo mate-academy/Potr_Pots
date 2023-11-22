@@ -1,0 +1,72 @@
+.main-title {
+
+  &__wrapper {
+    @include contentPadingInline;
+
+    @include onTablet {
+      padding: 0;
+      position: relative;
+      margin-right: auto;
+    }
+
+    @include onDesktop {
+      grid-column: 2/ span 5;
+      grid-row: 1;
+      display: flex;
+      flex-direction: column;
+      left: 0;
+    }
+  }
+
+  &__title {
+
+    width: auto;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    text-transform: capitalize;
+    color: transparent;
+    -webkit-text-stroke: 1px $main-title-color;
+
+    &--loc {
+      padding-block: 25px 30px;
+      margin: 0 auto;
+
+      @include onTablet {
+        padding-block: 0;
+        width: 460px;
+        font-size: 64px;
+        line-height: 64px;
+      }
+
+      @include onDesktop {
+        flex: 1;
+        width: 100%;
+        padding: 0;
+      }
+    }
+
+    &--features {
+      padding: 0;
+      font-size: 58px;
+      line-height: 70px;
+      letter-spacing: 0.13em;
+      margin-bottom: 25px;
+
+      @include onTablet {
+        grid-row: 1;
+        grid-column: span 6;
+        width: auto;
+        margin-bottom: 52px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 74px;
+      }
+    }
+
+    &-span {
+      color: $main-title-color;
+    }
+  }
+}

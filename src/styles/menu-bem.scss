@@ -1,0 +1,96 @@
+.menu {
+  @include contentPadingInline;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  box-sizing: border-box;
+  transition: all 0.5s;
+  transform: translateX(-100%);
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &-page {
+    background-color: $main-title-color;
+    height: 100%;
+    color: $text-color;
+  }
+
+}
+
+.nav {
+  margin-left: 81px;
+
+  &__item {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    margin-bottom: 15px;
+    transition: all 0.5s ease;
+
+    &-link {
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: -8px;
+        background-color: $main-title-color;
+
+        transform: scale(0);
+        transition: transform 0.5s ease;
+      }
+
+      &:hover::after {
+        transform: scale(1);
+      }
+    }
+
+    &__item:last-child {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      &:hover {
+        color: $main-title-color;
+      }
+    }
+  }
+
+  &--loc {
+    margin-top: 138px;
+  }
+
+  &--top-bar {
+    display: none;
+    margin-left: 0;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__list-top-bar {
+    display: flex;
+  }
+
+  &__item-top-bar {
+    margin-right: 60px;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
