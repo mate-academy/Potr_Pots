@@ -1,0 +1,146 @@
+.header__nav {
+
+  &--menu {
+    &-item.menu-only {
+      display: none;
+    }
+
+    &-close {
+      display: none;
+      text-decoration: none;
+      position: absolute;
+      transform: translateX(40px) rotate(-90deg);
+      bottom: 14%;
+      right: 8%;
+
+      &-content {
+        display: flex;
+        align-items: center;
+
+        &-icon {
+          margin-right: 18px;
+        }
+
+        &-text {
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          transition: letter-spacing 0.3s;
+
+          color: $grey-light-color;
+          @extend %manrope-font;
+          font-size: 12px;
+          line-height: 400%;
+          text-transform: uppercase;
+
+          &::before {
+            content: "";
+            width: 44px;
+            height: 1px;
+            background-color: $grey-light-color;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      &:hover &-content {
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  @include onTablet {
+    &-container {
+      display: block;
+      position: fixed;
+      z-index: 4;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: $turquoise-color;
+      width: 72%;
+      transform: translateX(100%);
+      pointer-events: none;
+      transition: transform 0.3s;
+
+      &:target {
+        transform: translate(0);
+        pointer-events: all;
+      }
+    }
+
+    &--menu {
+      &-close {
+        display: flex;
+      }
+
+      &-content {
+        display: flex;
+        margin-top: 25vh;
+        margin-left: 25vw;
+      }
+
+      &-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      &-item {
+        transition: letter-spacing 0.3s;
+
+        &.menu-only {
+          display: inline;
+        }
+
+        &:hover {
+          letter-spacing: 3px;
+
+          &.header__nav-item::after {
+            width: 0;
+          }
+        }
+      }
+
+      &-link {
+        display: inline;
+        position: relative;
+        font-size: 24px;
+        line-height: 200%;
+
+        @include onMobile {
+          font-size: 16px;
+          line-height: 300%;
+        }
+
+        &:link,
+        &:visited {
+          color: $grey-light-color;
+        }
+
+        &.menu-only::after {
+          position: absolute;
+          content: "0";
+          font-size: 12px;
+          width: 20px;
+          height: 20px;
+          top: 0;
+          right: -25px;
+          border-radius: 50%;
+          background-color: $red-color;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include onMobile {
+            font-size: 10px;
+            top: -5px;
+            right: -20px;
+            width: 17px;
+            height: 17px;
+          }
+        }
+      }
+    }
+  }
+}

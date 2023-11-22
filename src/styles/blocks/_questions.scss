@@ -1,0 +1,298 @@
+.questions {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 38px;
+  gap: 130px;
+
+  background-image: url(./../images/background-yellow-wide.svg);
+  background-repeat: no-repeat;
+  background-position: top right 135px;
+
+  @include onTablet {
+    padding-top: 117px;
+    overflow: hidden;
+    background-position-x: 0;
+    background-position-y: 100px;
+  }
+
+  @include onMobile {
+    padding-top: 145px;
+    gap: 100px;
+    background-position: top 110px left 60%;
+    background-size: cover;
+  }
+
+  &-container {
+    @include grid;
+    @include contentPaddingInline;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 160px;
+    height: 160px;
+    background-image: url(./../images/questions-circle-icon.png);
+    right: 60px;
+    top: -100px;
+
+    @include onTablet {
+      right: -50px;
+      top: 0;
+    }
+
+    @include onMobile {
+      top: 35px;
+    }
+  }
+
+  &__form {
+    grid-column: 1/5;
+
+    @include onTablet {
+      grid-column: 1/4;
+    }
+
+    @include onMobile {
+      grid-column: 1/-1;
+      grid-row: 1;
+    }
+
+    &-title {
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 5.58px;
+      text-transform: uppercase;
+      margin: 0;
+
+      @include onTablet {
+        white-space: nowrap;
+      }
+
+      @include onMobile {
+        white-space: wrap;
+      }
+    }
+
+    &-label {
+      @extend %manrope-font;
+      font-size: 16px;
+    }
+
+    &-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding-top: 30px;
+
+      &-label {
+        padding-bottom: 20px;
+        @extend %manrope-font;
+        font-size: 24px;
+        line-height: 150%;
+      }
+
+      &-field-message {
+        resize: none;
+        overflow-y: hidden;
+      }
+
+      &.validated input,
+      &.validated textarea {
+        border-color: $turquoise-color;
+
+        &::placeholder {
+          color: $turquoise-color;
+        }
+      }
+
+      &-button {
+        padding-inline: 66px;
+        &-container {
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+
+  &__credentials {
+    padding-top: 42px;
+    grid-column: 7/10;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    @include onTablet {
+      grid-column: 5/-1;
+    }
+
+    @include onMobile {
+      grid-row: 2;
+      grid-column: 1/-1;
+
+      padding-top: 56px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &-title {
+      color: rgba(0, 0, 0, 0.39);
+      @extend %manrope-font;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 150%;
+      margin: 0;
+    }
+
+    &-data {
+      @extend %manrope-font;
+      font-size: 16px;
+      text-decoration: none;
+
+      &:link,
+      &:visited {
+        color: #000;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__bottom {
+    margin-block: 54px 64px;
+    @include contentPaddingInline;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      margin-bottom: 117px;
+    }
+
+    @include onMobile {
+      margin: 0;
+      margin-bottom: 30px;
+      flex-direction: column;
+    }
+
+    &-address {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include onMobile {
+        display: none;
+      }
+
+      &-title {
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 3.72px;
+        text-transform: uppercase;
+      }
+
+      &-content {
+        @extend %manrope-font;
+        text-decoration: none;
+
+        &:link,
+        &:visited {
+          color: #000;
+        }
+      }
+    }
+
+    &-socials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 74px;
+
+      @include onTablet {
+        gap: 32px;
+      }
+
+      &-icons {
+        display: flex;
+        gap: 70px;
+
+        &-link {
+          display: flex;
+          @include button_press_scale;
+          @include hover(transform, scale(0.95));
+        }
+      }
+
+      &-logo {
+        position: relative;
+
+        font-size: 36px;
+        text-decoration: none;
+        line-height: 150%;
+        letter-spacing: 5.58px;
+        text-transform: uppercase;
+        @include button_press_scale;
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 5px;
+          left: 50%;
+          transform: translateX(-53%);
+          background-color: black;
+          transition: width 0.3s;
+        }
+
+        &:link {
+          color: #000;
+        }
+
+        &:hover::before {
+          width: 97%;
+        }
+
+        &:active {
+          color: #000;
+        }
+
+        &:visited {
+          color: #000;
+        }
+      }
+    }
+
+    &-about {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      @include onMobile {
+        align-items: center;
+      }
+
+      &-title {
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 3.72px;
+        text-transform: uppercase;
+
+        @include onMobile {
+          display: none;
+        }
+      }
+
+      &-content {
+        @extend %manrope-font;
+      }
+    }
+  }
+}
