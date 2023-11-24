@@ -1,0 +1,268 @@
+.for-whom {
+  position: relative;
+
+  &__catalog {
+    @include onTablet {
+      & > [class*="card"] {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @include onDesktop {
+      & :nth-child(1) {
+        grid-column: 1 / -2;
+      }
+      & :nth-child(2) {
+        grid-column: 2 / 5;
+      }
+
+      & :nth-child(3) {
+        grid-column: 8 / -1;
+
+        [class$="benefit"] {
+          grid-column: 1;
+        }
+      }
+    }
+  }
+
+  &__card {
+    display: grid;
+    align-items: center;
+
+    @include onTablet {
+      margin: 0;
+
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+
+      & > [class$="image"] {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      & > [class$="content"] {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      @include onDesktop {
+        column-gap: 100px;
+
+        &:nth-child(n + 2) {
+          grid-template-columns: 1fr;
+
+          > [class$="content"] {
+            grid-column: 1;
+            grid-row: 2;
+          }
+        }
+      }
+
+      &--reverse {
+        @include onTablet {
+          grid-template-columns: 1.4fr 1fr;
+          column-gap: 57px;
+
+          & > [class$="image"] {
+            grid-column: 2;
+          }
+
+          & > [class$="content"] {
+            grid-column: 1;
+          }
+        }
+
+        @include onDesktop {
+          grid-template-columns: 1fr;
+
+          & > [class$="image"] {
+            grid-column: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(3, max-content);
+      column-gap: 20px;
+
+      & > [class$="subtitle"] {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      & > [class$="details"] {
+        grid-column: 2;
+        grid-row: 3;
+      }
+
+      & > [class$="benefit"] {
+        grid-column: 2;
+      }
+    }
+
+    @include onDesktop {
+      column-gap: 70px;
+    }
+
+    &--reverse {
+      grid-template-rows: repeat(4, max-content);
+
+      @include onTablet {
+        & > [class$="subtitle"] {
+          grid-column: 1 / -1;
+          grid-row: 3;
+        }
+
+        & > [class$="details"] {
+          grid-column: 1 / -1;
+          grid-row: 4;
+        }
+      }
+
+      @include onDesktop {
+        & > [class$="benefit"] {
+          grid-column: 1;
+        }
+      }
+    }
+  }
+
+  &__title,
+  &__subtitle,
+  &__number {
+    @extend %title;
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__subtitle {
+    color: $color-black;
+    margin-bottom: 20px;
+
+    &::after {
+      @extend %slash;
+      background-color: transparent;
+      margin-bottom: -10px;
+    }
+
+    @include onTablet {
+      margin-bottom: 10px;
+
+      &::after {
+        background-color: $color-black;
+      }
+    }
+  }
+
+  &__benefit {
+    display: none;
+    position: relative;
+
+    @include onTablet {
+      display: flex;
+      margin-bottom: 25px;
+      margin-left: auto;
+
+      &::before {
+        content: "*";
+        color: $color-black;
+        font-size: 24px;
+        line-height: 29px;
+
+        position: absolute;
+        left: -20px;
+        top: -3px;
+      }
+
+      @include onDesktop {
+        margin-left: initial;
+
+        &::before {
+          left: -30px;
+          top: 2px;
+        }
+      }
+    }
+  }
+
+  &__number {
+    display: block;
+    margin-block: 0 30px;
+
+    &::before {
+      @extend %slash;
+    }
+
+    @include onTablet {
+      margin: 0;
+      grid-row: 2;
+    }
+
+    @include onDesktop {
+      margin-bottom: 27px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 100%;
+    }
+
+    @include onDesktop {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__logo {
+    font-family: "Bebas Neue", sans-serif;
+    color: $color-gray-light-2;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    transform: rotate(90deg);
+    position: absolute;
+    right: -80px;
+    bottom: 50px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 65px;
+      height: 1px;
+      background-color: $color-gray-light-2;
+    }
+
+    @include onTablet {
+      bottom: initial;
+      top: -20px;
+    }
+
+    @include onDesktop {
+      top: 20px;
+      right: -68px;
+    }
+  }
+}
