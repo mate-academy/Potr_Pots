@@ -1,5 +1,10 @@
 .for-whom {
   padding: 60px 0 75px;
+  position: relative;
+
+  &__relative {
+    position: relative;
+  }
 
   &__title {
     @extend %h2;
@@ -279,6 +284,79 @@
       transform: rotate(22deg);
       flex-shrink: 0;
       background: var(--gray-1, #333);
+    }
+  }
+
+  &__up {
+    position: absolute;
+    display: none;
+    align-items: center;
+    text-decoration: none;
+    @extend %s5;
+    color: $blue;
+    transform: rotate(90deg);
+    top: 0;
+    right: -65px;
+    width: max-content;
+    transition: all 0.3s;
+
+    &::before {
+      display: block;
+      content: "";
+      background-color: $blue;
+      width: 65px;
+      height: 1px;
+      margin-right: 25px;
+    }
+
+    @include onTablet {
+      display: flex;
+      grid-column: 1/2;
+      grid-row: 2/5;
+    }
+
+    &:hover,
+    &:target,
+    &:focus {
+      transform: rotate(90deg) translateX(5%);
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    display: none;
+    align-items: center;
+    text-decoration: none;
+    @extend %s5;
+    color: $blue;
+    transform: rotate(90deg);
+    bottom: 0;
+    left: -65px;
+    width: max-content;
+    transition: all 0.3s;
+
+    &::after {
+      display: block;
+      content: "";
+      background-color: $blue;
+      width: 65px;
+      height: 1px;
+      margin-left: 25px;
+    }
+
+    @include onTablet {
+      grid-column: 1/2;
+      grid-row: 2/5;
+    }
+
+    @include onDesktop {
+      display: flex;
+    }
+
+    &:hover,
+    &:target,
+    &:focus {
+      transform: rotate(90deg) translateX(5%);
     }
   }
 }
