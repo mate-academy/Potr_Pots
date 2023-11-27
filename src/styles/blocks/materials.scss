@@ -1,0 +1,265 @@
+.materials {
+  position: relative;
+
+  &__background {
+    position: relative;
+    background-size: 100%;
+    transform: translateX(-50%) translateY(-80px);
+    left: 50%;
+
+    @extend %background-images-settings;
+    background-image: linear-gradient(180deg,
+    $background-color 0%,
+    rgba(255, 255, 255, 0) 30.93%),
+      url(../images/png/materials.png);
+    width: 100vw;
+    height: 241px;
+  
+    @include tablet {
+      height: 577px;
+      margin-top: -30px;
+    }
+  
+    @include desktop {
+      height: 1081px;
+      max-width: 1440px;
+      margin-top: -100px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    letter-spacing: 0.15em;
+    color: $big-headers-color;
+    z-index: 2;
+    position: relative;
+
+    @include tablet {
+      font-size: 80px;
+    }
+
+    @include desktop {
+      font-size: 138px;
+    }
+  }
+
+  &__main-text {
+    display: none;
+    @extend %p2;
+    font-size: 16px;
+    color: $main-text-color;
+    z-index: 2;
+
+    &--subtitle {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+
+      @include tablet {
+        margin-top: 50px;
+      }
+
+      @include desktop {
+        margin-bottom: 15px;
+      }
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__button {
+    display: none;
+    @include tablet {
+      width: 51px;
+      height: 51px;
+      background: $error-color;
+      content: "+";
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &::after {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      content: "+";
+      color: #e0e0e0;
+    }
+
+    &--active {
+      background: rgba(0,0,0,0.4);
+
+      &::after {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: "-";
+        color: #e0e0e0;
+      }
+    }
+  }
+
+  &__card {
+    display: none;
+    @extend %p2;
+    position: absolute;
+    width: 213px;
+    background: rgba(0, 0, 0, 0.41);
+    backdrop-filter: blur(17px);
+    padding: 35px;
+    font-size: 16px;
+    color: white;
+    text-align: start;
+    z-index: 3;
+
+    &--active {
+      display: block;
+    }
+
+    &--1 {
+      bottom: 70px;
+      right: -200px;
+
+      @include desktop {
+        bottom: 70px;
+        right: -150px;
+      }
+    }
+
+    &--2 {
+      bottom: 80px;
+      right: -110px;
+
+      @include desktop {
+        bottom: 80px;
+        right: 50px;
+      }
+    }
+
+    &--3 {
+      bottom: 80px;
+      right: -120px;
+
+      @include desktop {
+        bottom: -80px;
+        right: 60px;
+      }
+    }
+
+    &--4 {
+      bottom: 80px;
+      right: -120px;
+      
+      @include desktop {
+        bottom: 80px;
+        right: -160px;
+      }
+    }
+
+    &--5 {
+      top: 75px;
+      right: -70px;
+
+      @include desktop {
+        top: 70px;
+        right: -150px;
+      }
+    }
+  }
+
+  &__pop-up {
+    display: none;
+    position: relative;
+
+    @include tablet {
+      display: inline-block;
+    }
+
+    
+    &--1 {
+      top: 80%;
+      right: -10%;
+
+      @include desktop {
+        right: -15%;
+      }
+    }
+
+    &--2 {
+      top: 50%;
+      right: -25%;
+
+      @include desktop {
+        top: 60%;
+        right: -35%;
+      }
+    }
+
+    &--3 {
+      top: 82%;
+      right: -35%;
+
+      @include desktop {
+        top: 80%;
+        right: -40%;
+      }
+    }
+
+    &--4 {
+      top: 70%;
+      right: -38%;
+
+      @include desktop {
+        top: 65%;
+        right: -45%;
+      }
+    }
+
+    &--5 {
+      top: 38%;
+      right: -48%;
+
+      @include desktop {
+        right: -65%;
+      }
+    }
+  }
+
+  &__label {
+    transform-origin: top right;
+    transform: rotate(90deg);
+
+    &--top {
+      display: none;
+
+      @include tablet {
+        display: block;
+        top: 16%;
+        right: 10px;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+
+    &--bottom {
+      @include tablet {
+        display: block;
+        top: 36%;
+        left: -40px;
+        z-index: 2;
+      }
+
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+}

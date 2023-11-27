@@ -1,0 +1,96 @@
+.page {
+  font-family: "Bebas Neue", "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+  scroll-behavior: smooth;
+  min-width: 320px;
+  background-color: $background-color;
+
+  &__body {
+    margin: 0;
+
+    &--no-scroll {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+
+    right: 0;
+    transform: translateX(100%);
+    transition: transform 300ms;
+  
+    &:target {
+      transform: translateX(0%);
+    }
+  }
+
+  &__section {
+    margin-bottom: 110px;
+
+    @include tablet {
+      margin-bottom: 130px;
+    }
+
+    @include desktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__team {
+    margin-bottom: 168px;
+
+    @include tablet {
+      margin-bottom: 113px;
+    }
+
+    @include desktop {
+      margin-bottom: 240px;
+    }
+  }
+  &__materials {
+    margin-bottom: 210px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+  &__gallery {
+    margin-bottom: 110px;
+
+    @include tablet {
+      margin-bottom: 103px;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 102px;
+
+    @include tablet {
+      margin-bottom: 113px;
+    }
+
+    @include desktop {
+      margin-bottom: 184;
+    }
+  }
+
+  &__footer {
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 117px;
+    }
+
+    @include desktop {
+      margin-bottom: 64px;
+    }
+  }
+}

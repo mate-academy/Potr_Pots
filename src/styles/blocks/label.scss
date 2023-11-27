@@ -1,0 +1,52 @@
+.label {
+  @extend %h2;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.22em;
+  position: absolute;
+  color: $sides-color;
+
+  &--top {
+    bottom: 0;
+    right: 0;
+    transform-origin: bottom right;
+    transform: rotate(90deg);
+
+    @include tablet {
+      transform-origin: top right;
+      transform: rotate(90deg);
+      top: 0;
+      right: -20px;
+    }
+
+    @include desktop {
+      transform-origin: top right;
+      transform: rotate(90deg);
+      top: 150px;
+      right: 10px;
+    }
+  }
+
+  &--bottom {
+    display: none;
+
+    @include desktop {
+      display: block;
+      transform-origin: bottom left;
+      transform: rotate(-90deg);
+      bottom: 76px;
+      left: 10px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    transform: translate(-115%, -8px);
+    display: block;
+    height: 1px;
+    width: 65px;
+    background-color: $sides-color;
+  }
+}

@@ -1,0 +1,228 @@
+.gallery {
+  position: relative;
+
+  &__cards {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -30px;
+      width: 500px;
+      grid-row: 1 / 6;
+    }
+  }
+
+  &__card-container {
+    padding: 20px 20px 15px;
+    background-color: white;
+    width: min-content;
+    color: $sides-color;
+    font-size: 9px;
+    transition: transform 300ms;
+
+    &--1 {
+      transform: matrix(0.97, -0.26, 0.26, 0.97, -30.5, -28);
+    }
+    &--2 {
+      transform: matrix(0.88, -0.48, 0.48, 0.88, -11, -83);
+    }
+    &--3 {
+      transform: matrix(1, 0, 0, 1, -78, 0);
+      z-index: 1;
+    }
+    &--4 {
+      transform: matrix(0.97, -0.26, 0.26, 0.97, -85.5, -85);
+    }
+    &--5 {
+      transform: matrix(0.96, -0.27, 0.27, 0.96, 4.4, -42.5);
+    }
+    &--6 {
+      transform: matrix(0.86, -0.51, 0.51, 0.86, 15.5, -83);
+    }
+
+    &:hover {
+      transform: scale(1.5);
+      z-index: 2;
+    }
+  }
+
+  &__card-image {
+    @extend %background-images-settings;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5px;
+
+    &--1 {
+      background-image: url(../images/png/gallery1.png);
+    }
+    &--2 {
+      background-image: url(../images/png/gallery2.png);
+    }
+    &--3 {
+      background-image: url(../images/png/gallery3.png);
+    }
+    &--4 {
+      background-image: url(../images/png/gallery4.png);
+    }
+    &--5 {
+
+      background-image: url(../images/png/gallery5.png);
+    }
+    &--6 {
+      background-image: url(../images/png/gallery6.png);
+    }
+  }
+
+  &__main-text {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    grid-row: 1 / 5;
+
+    &--first-row {
+      @include tablet {
+        margin-bottom: 30px;
+      }
+      @include desktop {
+        white-space: nowrap;
+        display: flex;
+        gap: 44px;
+        flex-wrap: nowrap;
+        margin-bottom: 40px;
+        height: 83px;
+      }
+    }
+
+    &--second-row {
+      @include desktop {
+        height: 83px;
+        margin-bottom: 60px;
+      }
+    }
+
+    @include desktop {
+      grid-row: 2;
+    }
+  }
+  
+  &__main-container {
+    position: relative;
+    color: $sides-color;
+    @extend %p2;
+    font-size: 16px;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 50px;
+    }
+
+    @include tablet {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @include desktop {
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 60px;
+      }
+    }
+    &::before {
+      position: absolute;
+      top: 20px;
+      left: -18px;
+      display: block;
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: $main-text-color;
+      transform: rotateZ(45deg);
+
+      @include tablet {
+        top: 23px;
+      }
+    }
+  }
+
+  &__main-title {
+    color: $headers-color;
+    @extend %p1;
+  }
+
+  &__main-button {
+    margin: 0 auto 40px;
+    @include tablet {
+      background-color: transparent;
+      border: 1px solid $big-headers-color;
+      grid-row: 2;
+      margin: 0 0 35px;
+
+      &:hover,
+      &:active {
+        background-color: $big-headers-color;
+        color: #fff;
+      }
+    }
+
+    @include desktop {
+      margin-bottom: 70px;
+      grid-row: 3;
+    }
+  }
+
+  &__main-extra {
+    font-family: "Bebas Neue", sans-serif;
+    grid-row: 3;
+    
+
+    @include desktop {
+      grid-row: 4;
+    }
+
+    &--discount {
+      font-size: 36px;
+      color: #eb5757;
+      margin-bottom: 5px;
+      line-height: 150%;
+
+      @include tablet {
+        font-size: 24px;
+      }
+
+      @include desktop {
+        font-size: 36px;
+      }
+    }
+    &--text {
+      font-size: 24px;
+      color: $big-headers-color;
+  
+      @include tablet {
+        font-size: 18px;
+      }
+  
+      @include desktop {
+        font-size: 18px;
+      }
+    }
+  }
+  &__label {
+    transform-origin: top right;
+    transform: rotate(90deg);
+    display: none;
+
+    @include tablet {
+      display: block;
+      top: 137px;
+      right: 10px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+}

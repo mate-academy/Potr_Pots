@@ -1,0 +1,101 @@
+.contacts {
+  position: relative;
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    background-image: url(../images/svg/Rectangle_contacts_mobile.svg);
+    @extend %background-images-settings;
+    background-position: bottom;
+    height: 1002px;
+    width: 100vw;
+    left: 0;
+
+    
+    @include tablet {
+      background-image: url(../images/svg/Rectangle_contacts.svg);
+      height: 552px;
+      width: 100%;
+    }
+    @include desktop {
+      height: 567px;
+      left: -10%;
+    }
+  }
+
+  &__circle {
+    display: block;
+    position: absolute;
+    @extend %background-images-settings;
+    right: 0%;
+    top: -70px;
+    height: 167px;
+    width: 134px;
+    background-image: url(../images/png/circle_logo_mobile.png);
+    z-index: 2;
+
+    @include tablet {
+      right: 1%;
+      top: -110px;
+    }
+
+    @include desktop {
+      background-image: url(../images/png/circle_logo.png);
+      height: 164px;
+      width: 165px;
+      right: 5%;
+      top: -95px;
+    }
+  }
+
+  &__title {
+    padding-top: 38px;
+    @extend %h2;
+    letter-spacing: 3px;
+  }
+
+  &__top-paragraph {
+    @extend %p2;
+    font-size: 16px;
+    padding-bottom: 40px;
+
+    @include tablet {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__contacts {
+    grid-row: 1;
+    padding-top: 80px;
+  }
+
+  &__contact {
+    margin-bottom: 34px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__paragraph {
+    color: rgba(0, 0, 0, 0.39);
+    @extend %p2;
+    margin-bottom: 5px;
+  }
+
+  &__link {
+    @extend %p2;
+    font-size: 16px;
+    text-transform: none;
+    text-decoration: none;
+    color: $subtitles-color;
+
+    &:hover {
+      color: $big-headers-color;
+    }
+  }
+}

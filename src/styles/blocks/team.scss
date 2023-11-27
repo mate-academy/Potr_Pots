@@ -1,0 +1,147 @@
+.team {
+  box-sizing: border-box;
+  
+  &__container {
+    position: relative;
+  }
+
+  &__title {
+    @extend %h1;
+    line-height: 69.6px;
+    letter-spacing: 8.99px;
+    color: $headers-color;
+    margin-bottom: 25px;
+    
+    @include tablet {
+      margin-bottom: 177px;
+    }
+    @include desktop {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__name {
+    display: none;
+    @extend %h1;
+
+    @include tablet {
+      position: absolute;
+      display: inline-block;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: transparent;
+      -webkit-text-stroke: 1px $big-headers-color;
+      z-index: 1;
+    }
+    &--top {
+      @media (max-width: 720px) {
+        font-size: 200px;
+      }
+      transform: translateX(-9%) translateY(-170px);
+      font-size: 232px;
+      line-height: 278px;
+
+      @include desktop {
+        transform: translateX(-40px) translateY(-120px);
+        font-size: 288px;
+        line-height: 346px;
+      }
+    }
+
+    &--bottom {
+      text-align: right;
+      bottom: -100px;
+      right: 10px;
+      font-size: 220px;
+      line-height: 100%;
+      margin-right: -0.15em;
+
+      @include desktop {
+        bottom: -270px;
+        right: -10%;
+        font-size: 288px;
+        line-height: 100%;
+        margin-right: 0.15em;
+      }
+    }
+  }
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    transform: translateY(80px) translateX(-30px);
+    width: 102vw;
+    height: 320px;
+    background-image: url(../images/svg/rectangle_team.svg);
+    @extend %background-images-settings;
+    
+
+    @include tablet {
+      background-position: center;
+      transform: translate(-160px, -140px);
+      width: 435px;
+    }
+
+    @include desktop {
+      transform: translate(-160px, -230px);
+      width: 470px;
+    }
+  }
+
+  &__main {
+    @include tablet {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      gap: 47px;
+    }
+
+    @include desktop {
+      justify-content: flex-end;
+      align-items: flex-end;
+      gap: 57px;
+    }
+
+    &--text {
+      font-family: "Manrope", sans-serif;
+      width: 100%;
+  
+      @include tablet {
+        margin-top: 50px;
+        width: 310px;
+      }
+
+      @include desktop {
+        width: 336px;
+      }
+
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--img {
+      background-image: url(../images/png/team.png);
+      @extend %background-images-settings;
+      @extend %hover-images;
+      height: 240px;
+      width: auto;
+      margin: 0 -20px 25px;
+      margin-bottom: 30px;
+  
+      @include tablet {
+        margin-left: 0;
+        margin-right: 0;
+        height: 255px;
+        width: 50%;
+        margin-bottom: 0;
+      }
+  
+      @include desktop {
+        height: 508px;
+        width: 677px;
+      }
+    }
+  }
+}

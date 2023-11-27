@@ -1,0 +1,67 @@
+.icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  @extend %background-images-settings;
+  @extend %hover-images;
+  
+  &__menu {
+    background-image: url(../images/svg/menu_icon.svg);
+    background-size: contain;
+  }
+
+  &__basket {
+    display: none;
+    background-image: url(../images/svg/shopping_bag.svg);
+    width: 30px;
+    height: 30px;
+
+    @include desktop {
+      display: block;
+    }
+
+    &:hover {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &__logo {
+    background-image: url(../images/svg/logo.svg);
+    width: 134px;
+    height: 43px;
+    background-size: contain;
+  }
+
+  &__cross {
+    background-image: url(../images/svg/cross.svg);
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+
+    @include tablet {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__instagram,
+  &__facebook,
+  &__twitter {
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__instagram {
+    background-image: url(../images/svg/instagram.svg);
+  }
+
+  &__twitter {
+    background-image: url(../images/svg/twitter.svg);
+  }
+
+  &__facebook {
+    background-image: url(../images/svg/facebook.svg);
+    margin-right: 14px;
+  }
+}

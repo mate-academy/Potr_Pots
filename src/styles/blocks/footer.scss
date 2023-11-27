@@ -1,0 +1,114 @@
+.footer {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include tablet {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__adress {
+    display: none;
+    text-decoration: none;
+    color: #000;
+
+    @include tablet {
+      display: inline-block;
+      width: 170px;
+    }
+
+    &--title {
+      @extend %h2;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 3.72px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    &--paragraph {
+      @extend %p2;
+      font-size: 16px;
+
+      &:hover {
+        color: $big-headers-color;
+      }
+    }
+  }
+  
+  &__links {
+    width: 100vw;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    justify-content: center;
+    gap: 85px;
+
+    @include tablet {
+      gap: 80px;
+    }
+
+    @include desktop {
+      gap: 70px;
+    }
+  }
+
+  &__potrpots {
+    display: block;
+    text-align: center;
+    margin-top: 32px;
+    text-decoration: none;
+    @extend %h2;
+    color: $subtitles-color;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    @include tablet {
+      margin-top: 74px;
+    }
+
+    &:hover {
+      color: $big-headers-color;
+    }
+  }
+
+  &__about {
+    display: block;
+    margin: 0 auto;
+    @include tablet {
+      margin: 0;
+    }
+    
+    &--text {
+      @extend %p2;
+      font-size: 16px;
+    }
+
+    &--title {
+      display: none;
+      @extend %h1;
+      font-size: 24px;
+      letter-spacing: 3.72px;
+      color: $subtitles-color;
+      text-decoration: none;
+  
+      @include tablet {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    
+      &:hover {
+        color: $big-headers-color;
+      }
+    }
+  }
+}

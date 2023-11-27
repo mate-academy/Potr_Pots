@@ -1,0 +1,92 @@
+.features {
+  &__title {
+    @extend %h2;
+    color: transparent;
+    -webkit-text-stroke: 1px $big-headers-color;
+    margin-bottom: 23px;
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: 52px;
+      text-align: start;
+    }
+
+    @include desktop {
+      margin-bottom: 71px;
+    }
+
+    &--colored {
+      color: $big-headers-color;
+    }
+  }
+  
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @include desktop {
+      gap: 30px;
+    }
+  }
+
+  &__section {
+    margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include tablet {
+      width: calc(100% / 3);
+      margin-bottom: 0;
+    }
+  }
+
+  &__img {
+    @extend %background-images-settings;
+    width: 100%;
+    height: 260px;
+    margin-bottom: 37px;
+    @extend %hover-images;
+
+    @include tablet {
+      height: 220px;
+      margin-bottom: 20px;
+    }
+
+    @include desktop {
+      height: 386px;
+    }
+
+    &--1 {
+      background-image: url(../images/png/features_1.png);
+    }
+    &--2 {
+      background-image: url(../images/png/features_2.png);
+    }
+    &--3 {
+      background-image: url(../images/png/features_3.png);
+    }
+  }
+
+  &__section-title {
+    margin-bottom: 20px;
+    text-align: center;
+    @extend %h2;
+    font-size: 24px;
+    color: $headers-color;
+  }
+
+  &__paragraph {
+    @extend %p2;
+    text-align: center;
+    font-size: 16px;
+    color: $main-text-color;
+  }
+}
