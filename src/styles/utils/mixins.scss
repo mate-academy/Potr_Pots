@@ -1,0 +1,33 @@
+@mixin onTablet {
+  @media (min-width: 680px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin contentPaddingInline {
+  margin: 0 auto;
+  max-width: 1170px;
+  padding-inline: 30px;
+
+  @include onTablet {
+    padding-inline: 34px;
+  }
+
+  @include onDesktop {
+    padding: 0;
+  }
+}
+
+@mixin transformElement {
+  cursor: pointer;
+  transition: all .9s;
+  &:hover {
+    transform: scale(0.9);
+  }
+}

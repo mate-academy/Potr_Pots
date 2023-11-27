@@ -1,0 +1,55 @@
+.header {
+  position: relative;
+
+  @include onTablet {
+    background-image: url(../images/pictures/Rectangle.png);
+    background-repeat: no-repeat;
+    background-size: 80% 70%;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+    padding: 15px 0 0;
+    width: 100%;
+    gap: 78px;
+
+    @include onTablet {
+      padding: 31px 0;
+      gap: 518px;
+    }
+
+    @include onDesktop {
+      padding: 21px 0;
+      gap: 266px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    gap: 214px;
+  }
+
+  &__menu {
+    display: block;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    display: block;
+    position: absolute;
+  }
+}
