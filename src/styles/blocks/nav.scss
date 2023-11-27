@@ -1,0 +1,71 @@
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  align-items: center;
+
+  color: $color-text-primary;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+
+  &__item {
+    padding-inline: 30px;
+    cursor: pointer;
+    width: max-content;
+    color: $color-text-primary;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 2px;
+      width: 0;
+      margin-top: 4px;
+      background-color: $color-title-third;
+      transition: width $transition-duration;
+    }
+
+    @include hover(color, $color-title-third);
+
+    &:hover::after {
+      width: 70%;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    &--menu {
+      padding: 0;
+      color: $color-text-secondary;
+      @include hover(color, $color-btn-primary2);
+
+      &::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 0;
+        margin-top: 4px;
+        background-color: $color-btn-primary2;
+        transition: width $transition-duration;
+      }
+    }
+  }
+
+  @include onTablet {
+    display: none;
+
+    &--menu {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+      width: 120px;
+    }
+  }
+}

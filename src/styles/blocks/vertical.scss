@@ -1,0 +1,84 @@
+.vertical {
+  color: $color-text-primary;
+  font-size: 12px;
+  letter-spacing: 2.64px;
+  position: absolute;
+
+  transform: rotate(90deg);
+  transform-origin: right;
+
+  @include onTablet {
+    right: -12px;
+    top: 40px;
+  }
+
+  @include onMobile {
+    right: -15px;
+    top: 94%;
+  }
+
+  &::before {
+    content: "";
+    height: 1px;
+    background-color: $color-text-primary;
+    width: 50px;
+    display: block;
+    position: relative;
+    top: 7px;
+    left: -60px;
+  }
+
+  &--left {
+    top: 88%;
+    right: 100%;
+    width: max-content;
+    transform: rotate(-90deg);
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--materials {
+    display: none;
+
+    @include onTablet {
+      right: 12px;
+      display: block;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &--materials-left {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      left: -48px;
+      right: initial;
+      top: 180px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &--offer {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      right: 22px;
+      top: 263px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+}

@@ -1,0 +1,165 @@
+.team {
+  overflow-x: hidden;
+
+  --img-width: 677px;
+  --img-height: 508px;
+
+  @include onTablet {
+    --img-width: 340px;
+    --img-height: 255px;
+  }
+
+  @include onMobile {
+    overflow: initial;
+  }
+
+  &__bg {
+    width: 435px;
+    height: 310px;
+    position: absolute;
+    top: 196px;
+    left: 0;
+
+    @include onTablet {
+      left: -182px;
+    }
+
+    @include onMobile {
+      width: 100%;
+      top: initial;
+      left: 0;
+      right: 0;
+      bottom: 110px;
+    }
+  }
+
+  &__title {
+    color: $color-title-secondary;
+    font-size: 58px;
+    letter-spacing: 8.99px;
+    margin-bottom: 145px;
+
+    @include onTablet {
+      margin-bottom: 177px;
+    }
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__content {
+    @include grid;
+    align-items: end;
+
+    @include onTablet {
+      align-items: start;
+    }
+  }
+
+  &__textbox {
+    grid-column: 1/5;
+    width: 336px;
+
+    @include onTablet {
+      grid-column: 1/4;
+      width: 313px;
+      padding-top: 56px;
+    }
+
+    @include onMobile {
+      width: 100%;
+      padding-top: 25px;
+    }
+  }
+
+  &__imgbox {
+    grid-column: -1/-9;
+    width: var(--img-width);
+    height: var(--img-height);
+    overflow: hidden;
+
+    @include onTablet {
+      grid-column: -1/-4;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__imgbox-mob {
+    display: none;
+
+    @include onMobile {
+      display: block;
+    }
+  }
+
+  &__img {
+    width: var(--img-width);
+    height: var(--img-height);
+    display: block;
+
+    @include hover(transform, scale($transform-scale));
+  }
+
+  &__img-mob {
+    width: 100%;
+    display: block;
+  }
+
+  &__text {
+    @include font-text;
+    z-index: 1;
+    position: relative;
+  }
+
+  &__member-wr {
+    display: flex;
+    justify-content: flex-end;
+
+    @include onTablet {
+      position: relative;
+      top: -75px;
+      height: 170px;
+    }
+  }
+
+  &__member {
+    font-size: 288px;
+    letter-spacing: 44.64px;
+    color: transparent;
+    -webkit-text-stroke: 1px $color-title-third;
+    z-index: 1;
+
+    position: absolute;
+    top: 90px;
+    left: -60px;
+
+    @include onTablet {
+      font-size: 230px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    &--bottom {
+      display: block;
+      position: relative;
+      top: -52px;
+      right: -40px;
+      left: initial;
+
+      @include onTablet {
+        font-size: 219px;
+        letter-spacing: 27px;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+  }
+}

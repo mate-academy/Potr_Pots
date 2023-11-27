@@ -1,0 +1,71 @@
+.page {
+  font-family: "Bebas Neue", "Manrope", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: 1440px;
+    background-color: $color-text-secondary;
+  }
+
+  &__header {
+    margin-bottom: 150px;
+    position: relative;
+
+    @include onTablet {
+      margin-bottom: 109px;
+    }
+  }
+
+  &__features {
+    margin-bottom: 50px;
+
+    @include onMobile {
+      margin-bottom: 0;
+    }
+  }
+
+  &__team {
+    margin-bottom: 35px;
+    position: relative;
+
+    @include onTablet {
+      margin-bottom: 63px;
+    }
+  }
+
+  &__materials {
+    margin-bottom: 100px;
+    position: relative;
+
+    @include onTablet {
+      margin-bottom: 110px;
+    }
+
+    @include onMobile {
+      margin-bottom: 300px;
+    }
+  }
+
+  &__size {
+    margin-bottom: 286px;
+    position: relative;
+
+    @include onTablet {
+      margin-bottom: 105px;
+    }
+  }
+
+  &__offer {
+    position: relative;
+  }
+
+  @include scrollBar;
+}
