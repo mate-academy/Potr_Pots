@@ -1,0 +1,31 @@
+.more {
+  &__link {
+    @include transformElement;
+    display: block;
+    position: relative;
+    font-family: "Manrope", sans-serif;
+    text-decoration: none;
+
+    font-size: 12px;
+    line-height: 150%;
+    color: $colorBlue;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 44px;
+      width: 8px;
+      top: 0;
+      right: -13px;
+
+      transform-origin: top;
+      transform: translateY(9px) rotate(-90deg);
+
+      background-image: url(../images/icons/arrow-blue.svg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+}

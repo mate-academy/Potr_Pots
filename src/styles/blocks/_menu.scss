@@ -1,0 +1,72 @@
+.menu {
+  width: 240px;
+  height: 100vh;
+  z-index: 1;
+  background-color: $colorBlue;
+
+  &__list {
+    display: grid;
+    list-style: none;
+    row-gap: 15px;
+
+    padding-top: 138px;
+    padding-left: 81px;
+  }
+
+  &__link {
+    position: relative;
+    color: $colorWhite;
+
+    &--basket::after{
+      content: "0";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      font-family: "Bebas Nueu", sans-serif;
+
+      border-radius: 50%;
+      top: 0;
+      left: 61px;
+      background-color: $colorRed;
+
+      font-size: 9px;
+      line-height: 11px;
+      width: 14px;
+      height: 14px;
+      color: $colorWhite;
+    }
+  }
+
+  &__close {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: left;
+
+    right: -76px;
+    bottom: 42px;
+  }
+
+  &__close--line {
+    display: block;
+    width: 44px;
+    height: 1px;
+    background-color: $colorWhite;
+    margin-left: 18px;
+
+  }
+
+  &__close--text {
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+    color: $colorWhite;
+    text-transform: uppercase;
+    margin-left: 5px;
+  }
+  @include onDesktop {
+    display: none;
+  }
+}

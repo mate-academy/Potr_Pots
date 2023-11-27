@@ -1,0 +1,197 @@
+.header {
+  opacity: 0;
+
+  @include onTablet {
+    opacity: 1;
+    background-image: url(../images/icons/RectangleTablet.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/icons/RectangleDesctop.svg);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+    height: 68px;
+
+
+
+    @include onTablet {
+      height: 101px;
+      margin-bottom: 20px;
+    }
+
+    @include onDesktop {
+      height: 83px;
+      margin-bottom: 57px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    gap: 214px;
+  }
+
+  &__menu {
+    display: block;
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    &--wrapper {
+      width: 100vw;
+      position: relative;
+      left: -50vw;
+      margin-left: 50%;
+      right: -50vw;
+      margin-right: 50%;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__main--content {
+    @include onTablet {
+      @include pageGrid;
+      background-image: url(../images/pictures/picture1.png);
+      background-size: 306px 306px;
+      background-position: right top;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/pictures/picture1.png);
+      min-height: 500px;
+      background-size: 500px 500px;
+      background-position: right bottom;
+    }
+  }
+
+  &__details {
+    position: relative;
+
+    @include onTablet {
+      grid-column: 1/5;
+    }
+
+    @include onDesktop {
+      grid-column: 2/7;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: normal;
+    text-transform: uppercase;
+    letter-spacing: 5.58px;
+    font-weight: 400;
+    color: transparent;
+    -webkit-text-stroke: 1px $colorBlue;
+
+    @include onTablet {
+      margin: 0;
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9.92px;
+    }
+
+    &--filled {
+      color: $colorBlue;
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    max-width: 140px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+      position: relative;
+      left: 240px;
+      top: -20px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+      top: 20px;
+      left: 300px;
+    }
+
+    &--value {
+      font-family: "Manrope", sans-serif;
+      color: $colorDarkGray;
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    &--text {
+      font-family: "Manrope", sans-serif;
+      margin: 0;
+      padding: 1px 0 0;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  &__button {
+    @include onTablet {
+      position: relative;
+      left: 120px;
+    }
+
+    @include onDesktop {
+      left: 200px;
+    }
+  }
+
+  &__more {
+    display: flex;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+
+    right: -7px;
+    bottom: 0;
+
+    width: 185px;
+    height: 18px;
+
+    @include onTablet {
+      transform-origin: left bottom;
+      bottom: 128px;
+      left: 0;
+      right: auto;
+    }
+
+    @include onDesktop {
+      left: 0;
+      bottom: 193px;
+    }
+  }
+}

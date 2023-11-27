@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.page {
+  scroll-behavior: smooth;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  color: $colorGrayMainText;
+
+  &__body {
+    padding: 0;
+    border: 0;
+    font: inherit;
+  }
+
+  &__header {
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: tarslateY(-25%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    animation: slideDown 2s forwards;
+  }
+
+  &__menu {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    transition: all .3s;
+    transform: translateX(100%);
+    z-index: 3;
+
+    &:target {
+      opacity: 1;
+      transform: translate(0);
+    }
+
+
+  }
+}

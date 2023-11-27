@@ -1,0 +1,135 @@
+.team {
+  background-position: bottom center;
+  background-image: url(../images/icons/Rectangle__team--mobile.svg);
+  background-repeat: no-repeat;
+  padding-bottom: 58px;
+
+  @include onTablet {
+    background-position: top 170px left;
+    background-image: url(../images/icons/Rectangle__team--tablet.svg);
+  }
+
+  @include onDesktop {
+    background-position: top  185px left;
+    background-image: url(../images/icons/Rectangle__team--desktop.svg);
+  }
+
+
+  &__content {
+    @include onTablet {
+      position: relative;
+      min-height: 688px;
+    }
+
+    @include onDesktop {
+      min-height: 947px;
+    }
+
+  }
+
+  &__title {
+    margin: 0 0 25px;
+    color: #333;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 9px;
+
+    @include onTablet {
+      margin: 0 0 177px;
+    }
+
+    @include onDesktop {
+      margin: 0 0 143px;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 0 30px;
+    width: 320px;
+    transform: translateX(-30px);
+
+    @include onTablet {
+      margin: 0;
+      width: 340px;
+      transform: none;
+      float: right;
+    }
+
+    @include onDesktop {
+      width: 677px;
+      margin-right: 100px;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      max-width: 319px;
+      padding-top: 53px;
+    }
+
+    @include onDesktop {
+      min-width: 336px;
+      padding-top: 230px;
+    }
+  }
+
+  &__people {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 220px;
+      font-weight: 400;
+      line-height: 264px;
+      letter-spacing: 34px;
+      -webkit-text-stroke: 1px $colorBlue;
+      -webkit-text-fill-color: transparent;
+
+      @include onDesktop {
+        font-size: 288px;
+        line-height: 346px;
+      }
+
+    }
+
+    &--martin {
+      @include onTablet {
+        top: 87px;
+        left: -44px;
+        width: 719px;
+        height: 231px;
+      }
+
+      @include onDesktop {
+        top: 97px;
+        left: -61px;
+        width: 893px;
+        height: 346px;
+      }
+    }
+
+    &--andy {
+      @include onTablet {
+        bottom: 0;
+        right: -34px;
+        width: 459px;
+        height: 220px;
+      }
+
+      @include onDesktop {
+        bottom: -66px;
+        right: -135px;
+        width: 598px;
+        height: 346px;
+      }
+    }
+  }
+}

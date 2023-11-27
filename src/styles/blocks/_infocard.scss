@@ -1,0 +1,74 @@
+.infocard {
+  display: none;
+  position: absolute;
+  z-index: 5;
+
+  padding: 35px 35px;
+  width: 283px;
+  background: rgba(0, 0, 0, .45);
+  backdrop-filter: blur(17px);
+  color: $colorWhite;
+  line-height: 150%;
+
+  @include onDesktop {
+    
+    padding: 35px 45px;
+  }
+
+  &--1 {
+    left: 37px;
+    bottom: 174px;
+
+    @include onDesktop {
+      left: 131px;
+      bottom: 237px;
+    }
+  }
+
+  &--2 {
+    left: 115px;
+    bottom: 302px;
+
+    @include onDesktop {
+      left: 283px;
+      bottom: 471px;
+    }
+  }
+
+  &--3 {
+    left: 225px;
+    bottom: 143px;
+
+    @include onDesktop {
+      left: 390px;
+      bottom: 19px;
+    }
+  }
+
+  &--4 {
+    right: 208px;
+    bottom: 205px;
+
+    @include onDesktop {
+      right: 420px;
+      bottom: 365px;
+    }
+  }
+
+  &--5 {
+    right: 36px;
+    bottom: 73px;
+
+    @include onDesktop {
+      right: 152px;
+      bottom: 130px;
+    }
+  }
+
+  &--active {
+    display: none;
+    @include onTablet {
+      display: block;
+    }
+  }
+}

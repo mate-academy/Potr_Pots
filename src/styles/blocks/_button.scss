@@ -1,0 +1,46 @@
+.button {
+  display: flex;
+  justify-content: space-between;
+
+  border: 1px solid $colorYellow;
+  background-color: $colorYellow;
+  width: 260px;
+  height: 48px;
+
+
+  position: relative;
+  color: #121212;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  padding: 13px 71px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all .3s;
+  @include transformElement;
+
+
+  &--arrow {
+    background-image: url(../images/icons/arrow2.svg);
+    background-repeat: no-repeat;
+    background-position: 160px;
+  }
+
+  &:hover {
+    background-color: $colorYellowLight;
+    border-color: $colorYellowLight;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+
+    display: block;
+    width: 27px;
+    height: 8px;
+    right: 72px;
+    top: 50%;
+  }
+}

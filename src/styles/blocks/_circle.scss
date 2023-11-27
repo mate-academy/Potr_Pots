@@ -1,0 +1,89 @@
+.circle {
+  display: none;
+  position: absolute;
+
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  background-color: $colorRed;
+  z-index: 0;
+
+  &--1 {
+    bottom: 103px;
+    left: 83px;
+
+    @include onDesktop {
+      bottom: 156px;
+      left: 254px;
+    }
+  }
+
+  &--2 {
+    bottom: 231px;
+    left: 231px;
+
+    @include onDesktop {
+      bottom: 400px;
+      left: 547px;
+    }
+  }
+
+
+  &--3 {
+    bottom: 72px;
+    left: 338px;
+
+    @include onDesktop {
+      bottom: 105px;
+      left: 684px;
+    }
+  }
+
+  &--4 {
+    bottom: 135px;
+    right: 300px;
+
+    @include onDesktop {
+      bottom: 271px;
+      right: 554px;
+    }
+  }
+
+
+  &--5 {
+    bottom: 319px;
+    right: 162px;
+
+    @include onDesktop {
+      bottom: 374px;
+      right: 278px;
+    }
+  }
+
+  @include onTablet {
+    display: block;
+  }
+
+  @include onDesktop {
+    cursor: pointer;
+  }
+
+  &::before {
+    @include plusElement;
+  }
+
+  &::after {
+    @include plusElement;
+    width: 11px;
+    height: 1px;
+  }
+
+  &--active {
+    background-color: $colorGrayMainText;
+
+    &::before {
+      transition: all 0.3s;
+      height: 0;
+    }
+  }
+}
