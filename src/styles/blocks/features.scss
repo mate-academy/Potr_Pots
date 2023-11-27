@@ -1,0 +1,64 @@
+.features {
+  &__title {
+    @include sectionTitleStyle(58px, 70px);
+
+    margin-bottom: 22px;
+
+    color: $turquoise;
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__stroke {
+    color: transparent;
+    -webkit-text-stroke: 1px $turquoise;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    margin-bottom: 38px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include featuresElementsGridPositions($gridRowStart: 1);
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $gray1;
+
+    @include featuresElementsGridPositions($gridRowStart: 2);
+  }
+
+  &__text {
+    margin-bottom: 68px;
+
+    text-align: center;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include featuresElementsGridPositions($gridRowStart: 3);
+
+    &--last {
+      margin-bottom: 0;
+    }
+  }
+}

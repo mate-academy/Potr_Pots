@@ -1,6 +1,56 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin featuresElementsGridPositions($gridRowStart) {
+  @for $index from 0 through 2 {
+    &:nth-of-type(#{$index + 1}) {
+      @include onTablet {
+        grid-column: #{1 + 2 * $index} / #{3 + 2 * $index};
+        grid-row: #{$gridRowStart} / #{$gridRowStart + 1};
+      }
+
+      @include onDesktop {
+        grid-column: #{1 + 4 * $index} / #{5 + 4 * $index};
+      }
+    }
+  }
+}
+
+@mixin sectionTitleStyle($fontSize, $lineHeight) {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+@mixin vertcalLinkStyle {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  width: max-content;
+
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.22em;
+  color: #828282;
+  text-transform: uppercase;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 65px;
+    height: 1px;
+
+    background-color: #828282;
   }
 }

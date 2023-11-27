@@ -1,0 +1,70 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  width: 100%;
+  height: 48px;
+  max-width: 260px;
+
+  font-weight: 600;
+  font-size: 14px;
+  color: #121212;
+  text-transform: uppercase;
+
+  background-color: #ffe339;
+  cursor: pointer;
+  border: none;
+
+  transition: opacity $duration;
+
+  @include onTablet {
+    max-width: none;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 10px;
+
+    background-image: url(../images/icons/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    transition: background-image $duration;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &--benefits {
+    @include onTablet {
+      background-color: transparent;
+      border: 1px solid $turquoise;
+
+      transition: color $duration, background-color $duration;
+
+      &:hover {
+        color: #fff;
+        background-color: $turquoise;
+
+        &::after {
+          background-image: url(../images/icons/arrow-white.svg);
+        }
+      }
+    }
+  }
+
+  &--message {
+    max-width: 260px;
+
+    color: #fff;
+    background-color: $turquoise;
+
+    &::after {
+      background-image: url(../images/icons/arrow-white.svg);
+    }
+  }
+}

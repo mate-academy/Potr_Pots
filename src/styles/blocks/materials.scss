@@ -1,0 +1,240 @@
+.materials {
+  position: relative;
+
+  margin-bottom: 110px;
+
+  &__top-container {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: -70px;
+
+    @include onTablet {
+      margin-bottom: 70px;
+    }
+
+    @include onDesktop {
+      margin-bottom: -170px;
+    }
+  }
+
+  &__title {
+    @include sectionTitleStyle(58px, 70px);
+
+    color: $turquoise;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 139px;
+      line-height: 167px;
+    }
+  }
+
+  &__info {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: 134px;
+      left: 51%;
+      z-index: 1;
+
+      display: block;
+      width: 45%;
+    }
+
+    @include onDesktop {
+      top: 174px;
+      left: 58%;
+      transform: translateY(0);
+
+      width: 33%;
+    }
+  }
+
+  &__info-title {
+    margin-bottom: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+  }
+
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  &__button {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+
+      display: block;
+      width: 50px;
+      height: 50px;
+
+      border-radius: 50%;
+      background-color: $red;
+      cursor: pointer;
+
+      transition: opacity $duration;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      content: "";
+      width: 11px;
+      height: 1px;
+
+      background-color: #fff;
+
+      transition: background-color $duration;
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotateZ(90deg);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &--1 {
+      top: 36%;
+      left: 72%;
+    }
+
+    &--2 {
+      left: 54%;
+      bottom: 23%;
+    }
+
+    &--3 {
+      left: 44%;
+      bottom: 12%;
+    }
+
+    &--4 {
+      left: 30%;
+      bottom: 40%;
+    }
+
+    &--5 {
+      left: 11%;
+      bottom: 18%;
+    }
+
+    &--active {
+      background-color: rgba(36, 35, 35, 0.75);
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__slider {
+    margin: -50px 10px 0;
+
+    @include onTablet {
+      width: 0;
+      margin: 0;
+    }
+  }
+
+  &__slide {
+    @include onTablet {
+      position: absolute;
+
+      display: none;
+      max-width: 300px;
+    }
+
+    &--1 {
+      @include onTablet {
+        top: 36%;
+        left: 72%;
+        transform: translate(-42%, 70px);
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        left: 54%;
+        bottom: 23%;
+        transform: translate(-33%, -70px);
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        left: 44%;
+        bottom: 12%;
+        transform: translate(-38%, -70px);
+      }
+    }
+
+    &--4 {
+      @include onTablet {
+        left: 30%;
+        bottom: 40%;
+        transform: translate(-39%, -70px);
+      }
+    }
+
+    &--5 {
+      @include onTablet {
+        left: 11%;
+        bottom: 18%;
+        transform: translate(-15%, -70px);
+      }
+    }
+
+    &--show {
+      display: block;
+    }
+  }
+
+  &__vertical-link {
+    @include vertcalLinkStyle;
+
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: 0;
+      left: calc(100% - 6px);
+
+      transform-origin: left top;
+      transform: rotateZ(90deg);
+
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &--2 {
+      top: 200px;
+      left: 6px;
+
+      transform: rotateZ(90deg) translateY(-100%);
+    }
+  }
+}

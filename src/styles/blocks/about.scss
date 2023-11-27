@@ -1,0 +1,104 @@
+.about {
+  position: relative;
+
+  padding-bottom: 58px;
+  margin-bottom: 110px;
+
+  background-image: url(../images/rectangle.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 200% 35%;
+
+  @include onTablet {
+    padding-bottom: 0;
+    margin-bottom: 25%;
+
+    background-image: url(../images/rectangle.png);
+    background-position: top 170% right -130%;
+    background-size: 150% 80%;
+  }
+
+  @include onDesktop {
+    margin-bottom: 240px;
+
+    background-position: top 140% right -140%;
+  }
+
+  &__title {
+    @include sectionTitleStyle(58px, 70px);
+
+    margin-bottom: 25px;
+
+    color: $gray1;
+
+    @include onTablet {
+      margin-bottom: 178px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: calc(100% + 30px * 2);
+    margin: 0 -30px 30px;
+
+    @include onTablet {
+      grid-column: 4 / -1;
+
+      width: 100%;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -2;
+      margin: 0;
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 1 / 2;
+      align-self: end;
+
+      width: 92%;
+      margin-bottom: -72px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      margin-bottom: 0;
+    }
+  }
+
+  &__name {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: 27%;
+      left: 0;
+
+      display: block;
+      height: 30%;
+    }
+
+    @include onDesktop {
+      top: 23%;
+      left: 5%;
+
+      height: 27%;
+    }
+
+    &--andy {
+      @include onTablet {
+        top: 101%;
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}

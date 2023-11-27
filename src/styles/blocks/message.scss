@@ -1,0 +1,196 @@
+.message {
+  position: relative;
+
+  padding: 45px 0 100px;
+
+  color: #000;
+
+  background-image: url(../images/rectangle.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 500% 100%;
+
+  @include onTablet {
+    padding: 18px 0 118px;
+
+    background-size: 200% 100%;
+  }
+
+  @include onDesktop {
+    padding: 38px 0 184px;
+
+    background-size: 400% 200%;
+    background-position: top 0 right -3%;
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    overflow: hidden;
+
+    @include onTablet {
+      top: -100px;
+    }
+
+    @include onDesktop {
+      left: 85%;
+    }
+  }
+
+  &__image {
+    position: relative;
+    right: -50px;
+
+    display: block;
+
+    @include onDesktop {
+      right: 0;
+    }
+  }
+
+  &__title {
+    @include sectionTitleStyle(36px, 150%);
+  }
+
+  &__undertitle {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 25px;
+
+    font-size: 24px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+
+      margin-bottom: 40px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__form {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__field {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px 6px;
+    margin-bottom: 20px;
+
+    font-family: inherit;
+    font-size: inherit;
+
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+
+    transition: border-bottom-color $duration;
+
+    &--textarea {
+      margin-bottom: 30px;
+
+      resize: none;
+
+      @include onTablet {
+        margin-bottom: 40px;
+      }
+
+      scrollbar-width: thin;
+      scrollbar-color: $turquoise transparent;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+        border-radius: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $turquoise;
+        border-radius: 4px;
+        border: none;
+      }
+    }
+
+    &:focus {
+      border-bottom-color: $turquoise;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      color: $red;
+
+      border-bottom-color: $red;
+    }
+
+    &:not(:focus):not(:placeholder-shown):valid {
+      color: $turquoise;
+
+      border-bottom-color: $turquoise;
+    }
+  }
+
+  &__contacts {
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__contact {
+    &:not(:last-child) {
+      margin-bottom: 34px;
+
+      @include onTablet {
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &__contact-title {
+    margin-bottom: 5px;
+
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__contact-link {
+    transition: color $duration;
+
+    &:hover {
+      color: $turquoise;
+    }
+  }
+}
