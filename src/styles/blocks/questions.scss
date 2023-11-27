@@ -1,0 +1,98 @@
+.questions {
+  padding-top: 45px;
+  position: relative;
+  background-image: url(../images/mobile/questions-bg-mobile.png);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    padding-top: 17px;
+    padding-bottom: 120px;
+    background-image: url(../images/tablet/questions-bg-tablet.png);
+    background-position: center;
+  }
+
+  @include onDesktop {
+    padding-top: 38px;
+    padding-bottom: 100px;
+    background-image: url(../images/desktop/questions-bg-desktop.png);
+    background-position: bottom right 135px;
+  }
+
+  &__content {
+    @include onTablet {
+      @include pageGrid;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    @extend %title-main;
+
+    @include onTablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    color: $color-black;
+
+    @include onDesktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__contacts {
+    margin-bottom: 102px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__socials {
+    padding-bottom: 31px;
+  }
+
+  &__circle {
+    width: 149px;
+    height: 170px;
+    position: absolute;
+    top: -73px;
+    right: 0;
+
+    background-image: url(../images/mobile/circle-mobile.png);
+    @include backgroundCenter;
+
+    @include onTablet {
+      width: 134px;
+      height: 167px;
+      top: -107px;
+      background-image: url(../images/tablet/circle-tablet.png);
+    }
+
+    @include onDesktop {
+      width: 161px;
+      height: 164px;
+      top: -95px;
+      right: 61px;
+      background-image: url(../images/desktop/circle-desktop.png);
+    }
+  }
+}

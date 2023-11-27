@@ -1,0 +1,163 @@
+.benefits {
+
+  @include onDesktop {
+    background-image: url(../images/desktop/benefits-bg-desktop.png);
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    position: relative;
+    @include onTablet {
+      @include pageGrid;
+      align-items: center;
+    }
+
+    @include onDesktop {
+      height: 828px;
+      align-items: normal;
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 50px;
+    display: grid;
+    row-gap: 40px;
+
+    @include onTablet {
+      margin: 0;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      margin-bottom: 60px;
+      grid-column: 6 / -1;
+      align-self: flex-end;
+
+      grid-template-columns: repeat(2, auto);
+      column-gap: 22px;
+      row-gap: 40px;
+    }
+  }
+
+  &__buy {
+    @include onTablet {
+      grid-column: span 3;
+    }
+    @include onDesktop {
+      grid-column: 6 / -1;
+    }
+  }
+
+  &__benefit {
+    display: grid;
+    row-gap: 5px;
+
+    @include onTablet {
+      padding-left: 24px;
+    }
+
+    @include onDesktop {
+      max-height: 83px;
+      &:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    color: $color-grey-dark;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-image: url(../images/icons/icon-benefits.svg);
+      @include backgroundCenter;
+    }
+
+    @include onTablet {
+      font-size: 36px;
+    }
+  }
+
+  &__text {
+    color: #828282;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__discount {
+    position: relative;
+    display: grid;
+    row-gap: 10px;
+    transform-origin: center;
+
+    @include onTablet {
+      max-width: 240px;
+      row-gap: 5px;
+    }
+
+    @include onDesktop {
+      max-width: none;
+      padding-left: 100px;
+    }
+  }
+
+  &__discount-text {
+    @extend %title-main;
+    color: $color-red;
+
+    @include onTablet {
+      height: 27px;
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      line-height: 100%;
+    }
+
+    @include onDesktop {
+      height: 51px;
+      font-size: 36px;
+    }
+
+    &--turquoise {
+      font-size: 24px;
+      line-height: 100%;
+      color: $color-turquoise;
+
+      @include onTablet {
+        height: 47px;
+        font-size: 18px;
+      }
+
+      @include onDesktop {
+        height: 50px;
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__side {
+    position: absolute;
+    right: -10px;
+    top: 185px;
+    transform-origin: right bottom;
+    transform: rotate(90deg);
+  }
+}

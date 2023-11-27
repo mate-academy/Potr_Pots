@@ -1,0 +1,119 @@
+.size {
+  position: relative;
+
+  &__title {
+    margin-bottom: 20px;
+    @extend %title-main;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 66px;
+    }
+  }
+
+  &__wrapper {
+    @include onDesktop {
+      @include pageGrid;
+      row-gap: 70px;
+    }
+  }
+
+  &__title-text {
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 38px;
+      padding-right: 120px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      padding-right: 16px;
+      border-right: 1px solid #d8d8d8;
+      grid-area: 1 / 1 / 2 / 4;
+    }
+  }
+
+  &__subtitle {
+    height: 18px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+    color: $color-black;
+  }
+
+  &__text {
+    position: relative;
+
+    &--with--star {
+      @include onTablet {
+        clear: right;
+      }
+
+      @include onDesktop {
+        margin-left: 10px;
+        grid-area: 2 / 1 / 3 / 7;
+      }
+    }
+
+    &--with--star::before {
+      content: "*";
+      position: absolute;
+      left: -10px;
+      top: 0;
+      width: 7px;
+      height: 20px;
+    }
+  }
+
+  &__sizes {
+    margin-bottom: 15px;
+    display: grid;
+    row-gap: 40px;
+
+    @include onTablet {
+      max-width: 246px;
+      row-gap: 50px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      grid-area: 1 / 4 / 2 / 7;
+      row-gap: 40px;
+    }
+  }
+
+  &__size {
+    display: grid;
+    row-gap: 10px;
+  }
+
+  &__image {
+    margin-bottom: 30px;
+    display: block;
+    width: 320px;
+    height: 259px;
+    transform: translateX(-30px);
+
+    @include onTablet {
+      margin-bottom: 20px;
+      width: 416px;
+      height: 337px;
+      float: right;
+      transform: none;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      width: 528px;
+      height: 427px;
+      grid-area: 1 / 7 / 3 / -1;
+      justify-self: end;
+    }
+  }
+}

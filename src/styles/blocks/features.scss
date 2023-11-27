@@ -1,0 +1,29 @@
+.features {
+  &__title {
+    margin-bottom: 22px;
+    @extend %title-large;
+    -webkit-text-stroke: 1px $color-turquoise;
+    -webkit-text-fill-color: $color-turquoise;
+
+    &--outline {
+      -webkit-text-fill-color: transparent;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    row-gap: 70px;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+}
