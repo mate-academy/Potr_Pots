@@ -1,0 +1,60 @@
+.circle {
+  width: 51px;
+  height: 51px;
+  border-radius: 100%;
+  background-color: $red-color;
+  display: none;
+  position: absolute;
+  z-index: 0;
+
+  &--1 {
+    bottom: 16%;
+    left: 11%;
+  }
+
+  &--2 {
+    bottom: 34%;
+    left: 30%;
+  }
+
+  &--3 {
+    bottom: 12%;
+    left: 45%;
+  }
+
+  &--4 {
+    bottom: 22%;
+    right: 39%;
+  }
+
+  &--5 {
+    bottom: 47%;
+    right: 22%;
+  }
+
+  &::before {
+    @include plus-line;
+  }
+
+  &::after {
+    @include plus-line;
+    width: 11px;
+    height: 1px;
+  }
+
+  @include onTablet {
+    display: block;
+  }
+
+  @include onDesktop {
+    cursor: pointer;
+  }
+
+  &--active {
+    background-color: rgba(36, 35, 35, 0.75);
+    &::before {
+      transition: all $effectDuration;
+      height: 0;
+    }
+  }
+}

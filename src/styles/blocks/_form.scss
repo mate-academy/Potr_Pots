@@ -1,0 +1,55 @@
+.form {
+  display: grid;
+  row-gap: 15px;
+  padding-top: 20px;
+
+  @include onTablet {
+    padding-top: 40px;
+  }
+
+  &__item {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 5px 6px;
+    color: $turquoise-color;
+    font-family: Manrope, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    background: transparent;
+    width: 100%;
+
+    &::placeholder {
+      color: $grey-2;
+      line-height: 150%;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 30px #ffec7a inset !important;
+    }
+
+    &:focus {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $turquoise-color;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid $red-color;
+      color: $red-color;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+  }
+
+  &__button {
+    margin-top: 15px;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+  }
+}

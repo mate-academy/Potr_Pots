@@ -1,0 +1,45 @@
+.for-whom {
+  &__title {
+    color: $grey-1;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    font-weight: normal;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+  }
+
+  &__cards {
+    margin-top: 25px;
+    display: grid;
+    grid-template: repeat(3, auto) / 100%;
+    row-gap: 70px;
+
+    @include onTablet {
+      row-gap: 110px;
+    }
+
+    @include onDesktop {
+      grid-template: repeat(2, auto) / repeat(2, 50%);
+      margin-top: 34px;
+      row-gap: 80px;
+    }
+  }
+
+  &__mark {
+    @include mark;
+    bottom: 69px;
+    right: -50px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: block;
+      right: auto;
+      left: -60px;
+      transform: rotate(-90deg);
+    }
+  }
+}

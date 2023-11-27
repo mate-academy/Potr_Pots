@@ -1,0 +1,35 @@
+.menu {
+  padding: 128px 0 0;
+  height: 100vh;
+  width: 231px;
+
+  &__close {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    transform: rotate(-90deg) translate(100%);
+    transform-origin: right bottom;
+    display: flex;
+    gap: 67px;
+
+    &--text {
+      position: relative;
+      color: $grey-light-color;
+      font-size: 12px;
+      line-height: 150%;
+      text-transform: uppercase;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: calc(100% + 5px);
+        content: "";
+        width: 44px;
+        height: 1px;
+        background: $grey-light-color;
+      }
+    }
+  }
+}

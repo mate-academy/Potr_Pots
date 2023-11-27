@@ -1,0 +1,131 @@
+.potr-team {
+  position: relative;
+  overflow: hidden;
+  min-height: 685px;
+  background: url("../images/potr-team-bg-rectangle.png") center bottom/contain no-repeat;
+
+  @include onTablet {
+    background-position: left 54%;
+    background-size: 34%;
+    min-height: 685px;
+  }
+
+  @include onDesktop {
+    background-image: url("../images/potr-team-bg-rectangle-desktop.png");
+    background-position: left 46%;
+    background-size: 30.5%;
+  }
+
+  &__martin,
+  &__andy {
+    display: none;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 232px;
+    letter-spacing: 36px;
+    -webkit-text-stroke: 2px $turquoise-color;
+    color: transparent;
+    z-index: 2;
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      letter-spacing: 44.64px;
+      @include hover(color, $turquoise-color);
+    }
+  }
+
+  &__martin {
+    top: 80px;
+    left: -43px;
+
+    @include onDesktop {
+      top: 87px;
+      left: 78px;
+    }
+  }
+
+  &__andy {
+    font-size: 219.6px;
+    letter-spacing: 34px;
+    top: 459px;
+    right: -32px;
+
+    @include onDesktop {
+      font-size: 288px;
+      letter-spacing: 44.64px;
+      top: 658px;
+      right: -40px;
+    }
+  }
+
+  &__title {
+    color: $grey-1;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 58px;
+    letter-spacing: 8.99px;
+  }
+
+  &__img--mobile {
+    width: 100%;
+    margin-top: 25px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__img--desktop {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 340px;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: span 7;
+      width: 677px;
+      @include hover(transform, rotate(0.01turn));
+    }
+  }
+
+  &__wrapper {
+    @include onTablet {
+      @include pageGrid;
+
+      margin-top: 177px;
+    }
+
+    @include onDesktop {
+      margin-top: 143px;
+      margin-bottom: 226px;
+    }
+  }
+
+  &__text {
+    margin-top: 30px;
+    margin-bottom: 58px;
+    color: $grey-2;
+    font-family: Manrope, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    grid-column: span 3;
+
+    @include onTablet {
+      margin-top: 53px;
+      max-width: 318px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      margin-top: 230px;
+      max-width: 336px;
+      grid-column: span 4;
+    }
+  }
+}

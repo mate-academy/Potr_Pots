@@ -1,0 +1,122 @@
+.footer {
+  padding-bottom: 30px;
+
+  @include onTablet {
+    padding-bottom: 117px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 64px;
+  }
+
+  &__container {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 60px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      max-width: 170px;
+    }
+
+  }
+
+  &__title {
+    color: #000;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+  }
+
+  &__adrress {
+    display: block;
+    margin-top: 10px;
+    color: #000;
+    line-height: 150%;
+    text-decoration: none;
+  }
+
+  &__links {
+    text-align: center;
+
+    @include onDesktop {
+      display: grid;
+      row-gap: 30px;
+    }
+
+    @include onDesktop {
+      row-gap: 64px;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-top: -65px;
+    z-index: 100;
+
+    @include onTablet {
+      margin-top: -10px;
+      gap: 60px;
+    }
+
+    @include onDesktop {
+      gap: 50px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 10px;
+
+    @include onDesktop {
+      @include hover(transform, scale(1.2));
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__logo {
+    color: #000;
+    font-family: Bebas Neue, Helvetica, sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    margin-top: 30px;
+
+    @include onDesktop {
+      @include hover(color, $turquoise-color);
+    }
+  }
+
+  &__copy {
+    &--mobile {
+      color: #000;
+      line-height: 150%;
+
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+}
