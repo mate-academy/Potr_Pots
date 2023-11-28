@@ -1,0 +1,64 @@
+.features {
+  &__title {
+    @extend %title-blue;
+    font-size: 58px;
+    line-height: 69px;
+
+    margin-bottom: 25px;
+
+    &--blue {
+      color: $color-blue;
+    }
+
+    @include onTablet {
+      margin-bottom: 52px;
+    }
+  }
+
+  &__catalog {
+    align-items: start;
+
+    @include onTablet {
+      @for $i from 1 through 3 {
+        :nth-child(#{$i}) {
+          grid-column-start: calc(#{$i} + (#{$i} - 1));
+          grid-column-end: calc(1 + (2 * #{$i}));
+        }
+      }
+    }
+
+    @include onDesktop {
+      @for $i from 1 through 3 {
+        :nth-child(#{$i}) {
+          grid-column-start: calc(#{$i} + (4 * #{$i}) - (#{$i} - 1) - 4);
+          grid-column-end: calc(#{$i} + (4 * #{$i}) - (#{$i} - 1));
+        }
+      }
+    }
+  }
+
+  &__card {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  &__image {
+    margin-bottom: 35px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__subtitle {
+    @extend %title-black;
+    text-align: inherit;
+    font-size: 24px;
+    line-height: 24px;
+
+    margin-bottom: 20px;
+  }
+}
