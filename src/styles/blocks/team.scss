@@ -1,0 +1,129 @@
+.team {
+  position: relative;
+  overflow: hidden;
+  background: url(../images/Rectangle.png) 0 600px / 100% 40% no-repeat;
+
+  @include onTablet {
+    background-position: -100px 150px;
+    background-size: 41% 65%;
+  }
+
+  @include onDesktop {
+    background-position: -350px 250px;
+    background-size: 55% 65%;
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+
+    @include onTablet {
+      display: grid;
+      column-gap: 47px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, auto);
+    }
+
+    @include onDesktop {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 2fr;
+
+      grid-column: 1 / -2;
+    }
+
+    &::before,
+    &::after {
+      @extend %title-blue;
+      display: none;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+      }
+    }
+
+    &::before {
+      content: "Martin";
+      font-size: 232px;
+      line-height: 278px;
+
+      left: -5%;
+      top: 10%;
+
+      @include onDesktop {
+        left: 2%;
+
+        font-size: 288px;
+        line-height: 346px;
+      }
+    }
+
+    &::after {
+      content: "Andy";
+      bottom: -5%;
+      right: -3%;
+
+      font-size: 219px;
+      line-height: 263px;
+
+      @include onDesktop {
+        bottom: -10%;
+
+        font-size: 288px;
+        line-height: 346px;
+      }
+    }
+  }
+
+  &__title {
+    @extend %title-black;
+    font-size: 58px;
+    line-height: 70px;
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 177px;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      margin-bottom: 140px;
+    }
+  }
+
+  &__image {
+    margin-left: -$container-padding-s;
+    width: 100vw;
+
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin: 0;
+      width: 100%;
+
+      grid-column: 2 / -1;
+      grid-row: 1 / 5;
+    }
+
+    @include onDesktop {
+      grid-row: 1 / -1;
+    }
+  }
+
+  &__story {
+    color: $color-gray-medium;
+    width: 100%;
+
+    & :first-child {
+      margin-bottom: 30px;
+    }
+
+    @include onTablet {
+      grid-row: 2 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 1;
+    }
+  }
+}
