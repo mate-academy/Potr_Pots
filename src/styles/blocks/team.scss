@@ -1,0 +1,143 @@
+.team {
+  margin-bottom: 172px;
+  background-image: url(/images/rectangle.png);
+  background-repeat: no-repeat;
+  background-position: -550px 550px;
+
+  @include forTablet {
+    background-image: url(/images/rectangle.png);
+    background-repeat: no-repeat;
+    background-position: -830px 200px;
+  }
+
+  @include forDesktop {
+    background-image: url(/images/rectangle.png);
+    background-repeat: no-repeat;
+    // background-size: cover;
+    background-position: -550px 150px;
+  }
+
+  &__title {
+    margin: 0 30px 60px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    line-height: 58px;
+    letter-spacing: 0.15em;
+    color: $c-grey1;
+
+    @include forTablet {
+      margin-bottom: 140px;
+    }
+
+  }
+
+  &__image {
+    width: 100%;
+    min-width: 240px;
+    max-width: 677px;
+
+    @include forTablet {
+      width: 40%;
+      transform: translateX(-30%);
+    }
+
+    @include forDesktop {
+      width: 60%;
+      transform: translateX(-6%);
+    }
+  }
+
+  &__container {
+    margin-bottom: 64px;
+
+    position: relative;
+
+    @include forTablet {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      align-items: center;
+
+      @include forDesktop {
+        justify-content: space-evenly;
+      }
+    }
+  }
+
+  &__text {
+    padding: 36px 0 0;
+    margin-right: 30px;
+    margin-left: 30px;
+    max-width: 336px;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-grey2;
+
+    @include forTablet {
+      max-width: 336px;
+      &::before {
+        content: "Martin";
+        position: absolute;
+        top: -80px;
+        left: -40px;
+
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 231px;
+        line-height: 100%;
+        letter-spacing: 0.15em;
+
+        color: transparent;
+        -webkit-text-stroke: 1px $c-turquoise;
+
+        @include forDesktop {
+          font-size: 288px;
+
+          top: -130px;
+          left: 0;
+        }
+      }
+
+      &::after {
+        content: "Andy";
+        position: absolute;
+        bottom: -90px;
+        right: 0;
+        display: inline-block;
+        // overflow: hidden;
+
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 220px;
+        line-height: 220px;
+        letter-spacing: 0.1em;
+
+        color: transparent;
+        -webkit-text-stroke: 1px $c-turquoise;
+
+        @include forDesktop {
+          font-size: 288px;
+          bottom: -200px;
+          right: 20px;
+
+        }
+      }
+    }
+
+    @include forTablet {
+      padding: 60px 0 0;
+      max-width: 220px;
+    }
+  }
+}
+
+.team__paragraph {
+  @include forDesktop {
+    margin-top: -30px;
+    margin-left: -60px;
+  }
+}
+
+.team__paragraph-2 {
+  @include forDesktop {
+    margin-top: 0;
+  }
+}

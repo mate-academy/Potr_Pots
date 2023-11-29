@@ -1,0 +1,69 @@
+.menu {
+  background-color: $c-turquoise;
+  height: 100vh;
+  width: 70%;
+  font-family: "Proxima Nova", Arial, sans-serif;
+  color: $c-gray-light;
+
+  @include forTablet {
+    width: 40%;
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    text-align: center;
+
+    &:last-child {
+      margin-bottom: 0;
+      position: fixed;
+      bottom: 40px;
+      right: 30px;
+      display: inline-block;
+      width: 12px;
+      color: #fff;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 40px;
+        left: 80%;
+        width: 1px;
+        height: 44px;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: $c-gray-light;
+
+  }
+
+}
+
+.menu__close {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  transform: rotate(90deg) translateY(80%) translateX(750%);
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  line-height: 150%;
+  height: 18px;
+}

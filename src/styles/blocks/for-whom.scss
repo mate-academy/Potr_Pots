@@ -1,0 +1,240 @@
+.for-whom {
+  position: relative;
+  padding: 102px 30px 112px;
+
+  @include forTablet {
+    padding: 112px 34px 128px;
+  }
+
+  @include forDesktop {
+    padding: 150px 120px;
+  }
+
+  &__image {
+    display: none;
+    height: 100%;
+    max-width: 500px;
+
+    @include forTablet {
+      display: block;
+      height: 40%;
+      width: 50%;
+    }
+
+    @include forDesktop {
+      height: 35%;
+      width: 60%;
+    }
+  }
+
+  .one {
+    display: flex;
+    // align-items: flex-start;
+  }
+
+  .two {
+    @include forTablet {
+      margin: 0 30px;
+    }
+
+    @include forDesktop {
+      margin: 0 30px 0 102px;
+    }
+
+  }
+
+  &__number {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    // letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #000;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      // margin-right: 30px;
+      background-color: #333;
+      height: 46px;
+      width: 1px;
+      transform: rotate(22deg);
+    }
+
+    @include forTablet {
+      margin-top: 24px;
+    }
+    @include forDesktop {
+      margin-top: 40px;
+      margin-bottom: 28px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 28px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #333;
+
+    @include forTablet {
+      margin-bottom: 12px;
+    }
+
+    @include forDesktop {
+      margin-bottom: 28px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 70px;
+    font-size: 16px;
+    line-height: 150%;
+    color: #4f4f4f;
+
+  }
+}
+
+.for-whom__text-last {
+  margin-bottom: 0;
+}
+
+.one-o {
+  @include forDesktop {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+}
+
+.one-t {
+  @include forTablet {
+    margin-top: 120px;
+  }
+  @include forDesktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.whom__container {
+  @include forDesktop {
+    display: flex;
+  }
+}
+
+.for-whom__disc {
+  display: none;
+
+  @include forTablet {
+    display: block;
+
+    margin-top: 0;
+    &::before {
+      content: "";
+      display: inline-block;
+      background-image: url(/images/star.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 10px;
+      height: 10px;
+      margin-right: 30px;
+    }
+  }
+  @include forDesktop {
+    margin-top: 40px;
+  }
+}
+
+.for-whome__image-3 {
+  @include forDesktop {
+    height: 70%;
+    width: 70%;
+    // margin-top: 80px;
+  }
+}
+
+.for-whom__disc-b {
+  font-family: "Proxima Nova", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  @include forDesktop {
+    margin-top: -120px;
+  }
+}
+
+.for-whom__title-sub {
+  color: #000;
+  &::after {
+    content: "";
+    display: inline-block;
+    // margin-right: 30px;
+    background-color: #333;
+    height: 46px;
+    width: 1px;
+    transform: rotate(22deg);
+  }
+}
+
+.for-whom__title-main {
+  color: #333;
+}
+
+.for-whom__number-one {
+
+  margin: 24px 0 16px;
+  @include forTablet {
+    display: inline-block;
+  }
+  @include forTablet {
+    display: block;
+  }
+
+}
+
+.for-whom-sideArrow {
+  position: absolute;
+  display: inline-block;
+  font-family: "Bebas Neue", sans-serif;
+  right: 50px;
+  bottom: 550px;
+  transform: rotate(90deg) translateY(-330%) translateX(-100%);
+  text-decoration: none;
+  color: #828282;
+  font-size: 10px;
+  line-height: 12px;
+  height: 18px;
+  letter-spacing: 2px;
+
+  @include forTablet {
+    transform: rotate(90deg) translateY(-330%) translateX(-300%);
+  }
+
+  @include forDesktop {
+    bottom: 1800px;
+    right: 100px;
+  }
+
+  &::before {
+    position: absolute;
+    right: -10px;
+    bottom: 15px;
+    content: "";
+    display: inline-block;
+    background-color: #828282;
+    transform: translateY(300%) translateX(-110%);
+    width: 65px;
+    height: 1px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
