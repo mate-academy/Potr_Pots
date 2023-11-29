@@ -1,0 +1,96 @@
+.features {
+  &__header {
+    margin-bottom: 25px;
+    color: $turquoise;
+    font-family: Bebas Neue, sans-serif;
+    font-size: 58px;
+    letter-spacing: 8px;
+    -webkit-text-stroke: 1px $turquoise;
+    -webkit-text-fill-color: transparent;
+
+    &--full {
+      -webkit-text-fill-color: $turquoise;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    row-gap: 70px;
+
+    @include onTablet {
+      grid-template-columns: repeat(6,1fr);
+      column-gap: 20px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12,1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__part {
+    @include onTablet {
+      grid-column: span 2;
+
+      &:nth-child(3) {
+        order: -1;
+      }
+    }
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__link {
+    width: 260px;
+    height: 260px;
+  }
+
+  &__image {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 38px;
+    object-fit: cover;
+
+    @include onTablet {
+      width: 220px;
+      height: 220px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+      height: 370px;
+      object-fit: cover;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    color: $first-gray;
+    text-align: center;
+    font-size: 24px;
+    line-height: 24px; /* 100% */
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+  }
+
+  &__description {
+    color: $second-gray;
+    text-align: center;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%; /* 24px */
+  }
+
+  &__text {
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+}

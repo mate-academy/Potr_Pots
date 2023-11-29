@@ -1,5 +1,68 @@
 .nav {
+  display: flex;
+  padding-top: 50px;
+  justify-content: center;
+
+  &__top {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 15px;
+    list-style: none;
+    font-size: 16px;
+    line-height: 150%; /* 24px */
+  }
+
+  &__list-top {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 60px;
+    list-style: none;
+
+    color: $second-gray;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%; /* 24px */
+  }
+
   &__link {
     text-decoration: none;
+    color: inherit;
+  }
+
+  &__link-top {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__basket {
+    position: relative;
+
+    &-circle {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: $red;
+      bottom: 12px;
+      left: 61px;
+     
+      &::after {
+        content: "0";
+        position: absolute;
+        top: 2px;
+        left: 5px;
+        font-family: Bebas Neue, sans-serif;
+        font-size: 9px;
+        line-height: normal;
+      }
+    }
   }
 }

@@ -1,9 +1,51 @@
 .header {
+  margin-bottom: 110px;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    background-image: url(../images/background/background-rectangle-tablet.svg);
+  }
+
+  @include onDesktop {
+    background-image: url(../images/background/background-rectangle-desktop.svg);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__info {
+    @include onTablet {
+      background-image: url(../images/header-bg.png);
+      background-size: 306px;
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/header-bg.png);
+      background-size: 500px;
+      min-height: 500px;
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+    }
+  }
+
   &__menu {
     display: flex;
     padding-top: 15px;
     margin-bottom: 10px;
     justify-content: space-between;
+
+    @include onTablet {
+      padding-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-top: 20px;
+      margin-bottom: 76px;
+    }
   }
 
   &__logo-link {
@@ -13,47 +55,108 @@
   }
 
   &__photo {
+    display: flex;
+    justify-content: flex-end;
     margin-bottom: 25px;
-    position: relative;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
+
   }
 
   &__img {
+    display: block;
     width: 100%;
+    height: 100%;
+
+    @include onTablet {
+      display: none;
+      // max-width: 306px;
+      // max-height: 306px;
+
+      // padding-right: 34px;
+
+    }
+
+    // @include onDesktop {
+    //   max-width: 500px;
+    //   max-height: 500px;
+    // }
   }
 
   &__title {
-    display: inline;
+    display: block;
+    width: 260px;
+    margin-bottom: 30px;
     letter-spacing: 5.58px;
     text-transform: uppercase;
     -webkit-text-stroke: 1px $turquoise;
     -webkit-text-fill-color: transparent;
 
-    &--empty {
-      -webkit-text-stroke: 1px $turquoise;
-      -webkit-text-fill-color: transparent;
-    }
-
     &--full {
       -webkit-text-fill-color: $turquoise;
     }
+
+    @include onTablet {
+      width: 460px;
+      margin: 0;
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9.92px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      margin-left: 100px;
+      margin-bottom: 20px;
+    }
   }
 
-}
+  &__offer {
+    margin-bottom: 20px;
+    font-family: Manrope, sans-serif;
+    color: $second-gray;
 
-.combi {
-  display: flex;
-}
+    @include onTablet {
+      position: relative;
+      margin-bottom: 30px;
+      top: -20px;
+      left: 240px;
+    }
 
-.number {
-  font-size: 36px;
+    @include onDesktop {
+      position: relative;
+      top: auto;
+      left: 400px;
 
-  &::before {
-    content: "";
-    width: 1px;
-    height: 47px;
-    transform: rotate(22deg);
-    background-color: #333;
+    }
   }
+
+  &__price {
+    margin-bottom: 1px;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  &__description {
+    width: 139px;
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &__more {
+    position: absolute;
+    height: 132px;
+    // writing-mode:vertical-rl;
+    // text-orientation: mixed;
+    bottom: 46px;
+    right: 24px;
+
+    @include onTablet {
+      right: auto;
+      bottom: 6px;
+    }
+
+    @include onDesktop {
+      bottom: 62px;
+    }
+  }
+
 }

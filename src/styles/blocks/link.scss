@@ -1,3 +1,29 @@
 .link {
-  
+  text-decoration: none;
+
+  &__more {
+    position: relative;
+    height: 132px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: $turquoise;
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      color: $turquoise;
+      background-image: url(../images/icons/icon-arrow-side.svg);
+      top: 141px;
+      right: 5px; /* 18px should to be */
+      width: 8px;
+      height: 44px;
+    }
+  }
+
+  &__left {
+    display: none;
+  }
 }

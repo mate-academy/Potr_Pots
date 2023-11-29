@@ -1,0 +1,134 @@
+.team {
+  // position: relative;
+  background-image: url(../images/team/background-team-mobile.svg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 58px;
+
+  @include onTablet {
+    background-image: url(../images/team/background-team-tablet.svg);
+    background-position: top 170px left;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/team/background-team-desktop.svg);
+    background-position: top 185px left;
+  }
+
+  &__wrapper {
+    position: relative;
+
+    @include onTablet {
+      min-height: 688px;
+    }
+
+    @include onDesktop {
+      min-height: 947px;
+    }
+  }
+
+  &__title {
+    color: $first-gray;
+    font-size: 58px;
+    letter-spacing: 9px;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 177px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__owners {
+    display: none;
+    position: absolute;
+    -webkit-text-stroke: 1px $turquoise;
+    -webkit-text-fill-color: transparent;
+
+    @include onTablet {
+      font-size: 231px;
+      letter-spacing: 36px;
+      display: block;
+
+      &--martin {
+        width: 719px;
+        height: 231px;
+        top: 87px;
+        left: -78px;
+      }
+
+      &--andy {
+        width: 459px;
+        height: 219px;
+        top: 465px;
+        right: -34px;
+        font-size: 219px;
+        letter-spacing: 34px;
+      }
+    }
+
+    @include onDesktop {
+      font-size: 288px;
+      letter-spacing: 44.64px;
+
+      &--martin {
+        width: 893px;
+        height: 346px;
+        top: 97px;
+        left: -61px;
+      }
+
+      &--andy {
+        width: 598px;
+        height: 346px;
+        top: 667px;
+        right: -131px;
+      }
+    }
+  }
+
+  &__photo {
+    display: block;
+    width: 320px;
+    transform: translate(-30px);
+    margin-bottom: 30px;
+    // width: 100vh;
+    // margin-left: calc(50% - 50vw);
+
+    @include onTablet {
+      width: 340px;
+      float: right;
+      transform: none;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      width: 677px;
+      margin-right: 100px;
+    }
+  }
+
+  &__text {
+    color: $second-gray;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%; /* 24px */
+
+    @include onTablet {
+      width: 319px;
+      height: 328px;
+      padding-top: 53px;
+    }
+
+    @include onDesktop {
+      width: 336px;
+      height: auto;
+      padding-top: 230px;
+    }
+  }
+}

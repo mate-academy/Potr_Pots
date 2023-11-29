@@ -1,0 +1,64 @@
+.materials {
+  position: relative;
+  background-image: url(../images/materials-and-features/background-image-mobile.png);
+  background-position: top 130px center;
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    background-image: url(../images/materials-and-features/background-image-tablet.png);
+    background-position: bottom;
+
+  }
+
+  @include onDesktop {
+    background-image: url(../images/materials-and-features/background-image-desktop.png);
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__title {
+    color: $turquoise;
+    font-size: 58px;
+    letter-spacing: 9px;
+    margin-bottom: 120px;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: 9.6px;
+    }
+
+    @include onDesktop {
+      font-size: 138.805px;
+      letter-spacing: 16.657px;
+    }
+  }
+
+  &__side {
+    display: none;
+    position: absolute;
+
+    @include onTablet {
+      display: block;
+
+      &--left {
+        top: 204px;
+        left: -17px;
+        transform-origin: left;
+        transform: rotate(90deg);
+      }
+  
+      &--right {
+        top: 144px;
+        right: -10px;
+        transform: rotate(90deg);
+        transform-origin: right;
+      }
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

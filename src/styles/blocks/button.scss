@@ -1,6 +1,5 @@
 .button {
   display: flex;
-  position: relative;
   align-items: center;
   width: 260px;
   height: 48px;
@@ -11,21 +10,41 @@
   line-height: 150%;
   text-transform: uppercase;
   text-decoration: none;
-  background-color: $yellow;
-  color: $black-button;
 
-  &::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 27px;
-    height: 8px;
-    right: 72px;
-    color: #000;
-    background-image: url(../images/icons/icon-arrow.svg);
-    background-size: cover;
-    background-position: 50%;
-    background-repeat: no-repeat;
+  &__top {
+    position: relative;
+    background-color: $yellow;
+    color: $black-button;
+
+    @include onTablet {
+      width: 240px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 27px;
+      height: 8px;
+      right: 72px;
+      color: #000;
+      background-image: url(../images/icons/icon-arrow.svg);
+      background-size: cover;
+      background-position: 50%;
+      background-repeat: no-repeat;
+    }
+
+    @include onTablet {
+      margin-left: 120px;
+    }
+
+    @include onDesktop {
+      margin-left: 300px;
+    }
   }
 
   

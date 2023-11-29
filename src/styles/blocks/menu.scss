@@ -1,6 +1,40 @@
 .menu {
-  width: 231px;
+  width: 72%;
   height: 100vh;
   z-index: 1;
   background-color: #03839e;
+  color: $c-gray;
+  font-family: Manrope, sans-serif;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  transition: all 0.3s;
+  opacity: 0;
+  transform: translateX(-100%);
+  pointer-events: none;
+
+  &:target {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &__close {
+    position: absolute;
+    transform: rotate(90deg);
+
+    &--line {
+      display: block;
+      width: 44px;
+      height: 1px;
+      background-color: $c-gray;
+    }
+  
+    &--text {
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+  }
 }
