@@ -1,0 +1,319 @@
+.materials {
+  position: relative;
+  margin-bottom: 110px;
+
+  @include on-Tablet {
+    margin-bottom: 400px;
+  }
+
+  @include on-Desktop-Small {
+    margin-bottom: 900px;
+  }
+
+  &__info {
+    width: 303px;
+    height: 237px;
+    flex-shrink: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(17px);
+    padding: 35px;
+    color: $c-white-2;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 2;
+    opacity: 1;
+    transition: background-color 0.3s ease-in-out;
+
+    &--active {
+      display: none;
+
+      @include on-Tablet {
+        display: block;
+      }
+    }
+
+    &--none {
+      display: none;
+    }
+
+    &--0 {
+      width: 303px;
+      height: 237px;
+      top: 410px;
+      right: 7%;
+
+      @include on-Desktop-Small {
+        top: 610px;
+        right: 17%;
+
+      }
+    }
+
+    &--1 {
+      width: 283px;
+      height: 214px;
+      top: 330px;
+      right: 25%;
+
+      @include on-Desktop-Small {
+        top: 650px;
+        right: 33%;
+      }
+    }
+
+    &--2 {
+      width: 283px;
+      height: 214px;
+      top: 530px;
+      right: 60%;
+
+      @include on-Desktop-Small {
+        top: 770px;
+        right: 43%;
+      }
+    }
+
+    &--3 {
+      width: 283px;
+      height: 166px;
+
+      top: 280px;
+      right: 53%;
+
+      @include on-Desktop-Small {
+        top: 550px;
+        right: 55%;
+      }
+    }
+
+    &--4 {
+      width: 283px;
+      height: 166px;
+      top: 420px;
+      left: 2%;
+
+      @include on-Desktop-Small {
+        top: 750px;
+      }
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+
+    width: 51px;
+    height: 51px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    color: #e0e0e0;
+    font-size: 25px;
+    font-weight: 400;
+    font-family: Manrope, sans-serif;
+
+    display: none;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    @include on-Tablet {
+      display: block;
+    }
+
+    &--grey {
+      background-color: $c-gray-middle;
+    }
+
+    &--red {
+      background-color: $c-red;
+    }
+
+    &--1 {
+      top: 160px;
+      left: 70%;
+
+      @include on-Desktop-Small {
+        top: 360px;
+      }
+    }
+
+    &--2 {
+      top: 320px;
+      left: 55%;
+
+      @include on-Desktop-Small {
+        top: 650px;
+      }
+    }
+
+    &--3 {
+      top: 320px;
+      left: 42%;
+
+      @include on-Desktop-Small {
+        top: 720px;
+        left: 45%;
+      }
+    }
+
+    &--4 {
+      top: 120px;
+      left: 25%;
+
+      @include on-Desktop-Small {
+        top: 390px;
+        left: 32%;
+      }
+    }
+
+    &--5 {
+      top: 200px;
+      left: 5%;
+
+      @include on-Desktop-Small {
+        top: 580px;
+        left: 12%;
+      }
+    }
+  }
+
+  &-title {
+    color: $c-turquoise;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: 8.99px;
+  }
+
+  &__top {
+    position: relative;
+    z-index: 3;
+
+    @include on-Tablet {
+      margin-bottom: 30px;
+    }
+
+    &__info {
+      display: none;
+      width: 340px;
+      position: absolute;
+      top: 80px;
+      right: 0%;
+
+      @include on-Tablet {
+        display: block;
+      }
+
+      &-text {
+        color: $c-gray-middle;
+        font-family: Manrope, sans-serif;
+        line-height: 150%;
+
+        &--main {
+          font-size: 20px;
+          font-weight: 700;
+
+        }
+
+        &--secondary {
+          font-size: 16px;
+          font-weight: 400;
+        }
+
+        &--strong {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  &-background {
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    background-image: url("../images/materials_bg.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+
+    @include on-Tablet {
+      min-height: 576.75px;
+      height: auto;
+      top: 180px;
+    }
+
+    @include on-Desktop-Small {
+      height: 1076.75px;
+      background-position: bottom;
+    }
+  }
+
+  &__description {
+    &-container {
+      margin-top: 140px;
+      padding: 28px 44px 0;
+      height: 254px;
+      flex-shrink: 0;
+      background: rgba(0, 0, 0, 0.45);
+      box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+      backdrop-filter: blur(17px);
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    &-text {
+      color: $c-white-2;
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      line-height: 150%;
+      display: block;
+      margin: 0;
+    }
+
+    &__button {
+
+      &-container {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 38px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &-item {
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      &-img {
+        background-image: url("../images/Rectangle.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 20px;
+
+        &:active,
+        &:focus {
+          background-image: url("../images/Rectangle_focus.svg");
+        }
+      }
+    }
+  }
+}
+
+.br {
+  display: none;
+
+  @include on-Tablet {
+    display: block;
+  }
+}

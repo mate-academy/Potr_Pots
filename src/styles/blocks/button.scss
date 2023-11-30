@@ -1,0 +1,95 @@
+.button {
+  width: 260px;
+  height: 48px;
+  text-decoration: none;
+  cursor: pointer;
+
+  &__container {
+    background-color: $c-yellow;
+    padding: 13px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--yellow {
+      background-color: $c-yellow;
+
+      &:hover {
+        background-color: $c-turquoise;
+      }
+    }
+
+    &--buy {
+      @include on-Tablet {
+        background-color: transparent;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: $c-turquoise;
+        }
+      }
+    }
+  }
+
+  &__text {
+    color: #121212;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    text-transform: uppercase;
+    padding-right: 14px;
+  }
+
+  &--buy {
+    display: block;
+    width: 238px;
+    margin: 0 auto 40px;
+    box-sizing: border-box;
+
+    @include on-Tablet {
+      margin: 0 0 35px;
+      border: 1px solid $c-turquoise;
+    }
+  }
+
+  &--submit {
+    margin: 0 auto;
+    display: block;
+    width: 260px;
+    height: 48px;
+    background-color: $c-turquoise;
+    box-sizing: border-box;
+    border: none;
+
+    @include on-Tablet {
+      margin: 0;
+    }
+
+    &:hover {
+      border: 1px solid #03809e66;
+      background: #03809e66;
+    }
+  }
+
+  &-link {
+    color: $c-white;
+    font-family: Manrope, sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+  }
+
+  &-arrow {
+    margin-left: 20px;
+  }
+}
+
+.button--buy:hover .button__text--buy,
+.button--buy:hover .arrow path {
+  fill: $c-white;
+  color: $c-white;
+}

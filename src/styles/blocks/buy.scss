@@ -1,0 +1,284 @@
+.buy {
+  position: relative;
+  margin-bottom: 110px;
+
+  @include on-Desktop-Small {
+    margin-bottom: 410px;
+  }
+
+  &--mobile {
+    @include on-Desktop-Small {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include on-Desktop-Small {
+      display: block;
+    }
+  }
+
+  &__text {
+    font-family: Manrope, sans-serif;
+    margin: 0 0 40px;
+
+    @include on-Desktop-Small {
+      display: inline-block;
+    }
+
+    &-container {
+      display: flex;
+      align-items: center;
+    }
+
+    &-symbol {
+      margin-left: 8px;
+    }
+
+    &--main {
+      color: $c-gray-dark;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 150%;
+      margin: 0 8px;
+    }
+
+    &--secondary {
+      margin: 0;
+      color: $c-gray;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      padding-left: 30px;
+    }
+  }
+
+  &__discount {
+    font-family: "Bebas Neue", sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+
+    &-price {
+      color: $c-red;
+      font-size: 36px;
+      line-height: 150%;
+      letter-spacing: 5.58px;
+      margin-bottom: 10px;
+    }
+
+    &-description {
+      color: $c-turquoise;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 3.72px;
+    }
+  }
+
+  &__side {
+    &-container {
+      position: absolute;
+      transform: rotate(90deg);
+
+      top: 38%;
+      right: -40px;
+
+      @include on-Desktop-Small {
+        display: none;
+      }
+    }
+
+    &-text {
+      color: $c-gray;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 2.64px;
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 65px;
+        height: 1px;
+        flex-shrink: 0;
+        background-color: $c-gray;
+        position: absolute;
+        bottom: 50%;
+        left: -75px;
+      }
+    }
+  }
+
+  &__image {
+
+    &-cards {
+      position: relative;
+      display: flex;
+    }
+
+    &-card {
+      width: 214.3px;
+      height: 240.12px;
+      flex-shrink: 0;
+      position: absolute;
+      cursor: pointer;
+
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      &--2 {
+        left: 170px;
+        top: -40px;
+      }
+
+      &--3 {
+        top: 240px;
+        left: -10px;
+      }
+
+      &--4 {
+        top: 150px;
+        left: 170px;
+      }
+
+      &--5 {
+        top: 430px;
+        z-index: -1;
+        left: 60px;
+      }
+
+      &--6 {
+        top: 350px;
+        left: 200px;
+      }
+
+    }
+
+    &-bg {
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      width: 220.3px;
+      height: 240.12px;
+      flex-shrink: 0;
+      padding: 15px;
+      position: relative;
+      box-sizing: border-box;
+
+      &--1 {
+        background-image: url("../images/whiteBG.svg");
+      }
+
+      &--2 {
+        background-image: url("../images/whiteBG2.svg");
+      }
+
+      &--3 {
+        background-image: url("../images/whiteBG3.svg");
+      }
+
+      &--4 {
+        background-image: url("../images/whiteBG4.svg");
+      }
+
+      &--5 {
+        background-image: url("../images/whiteBG5.svg");
+      }
+
+      &--6 {
+        background-image: url("../images/whiteBG6.svg");
+      }
+
+    }
+
+    &-img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      width: 182.55px;
+      height: 182.64px;
+      flex-shrink: 0;
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      box-sizing: border-box;
+
+      &--1 {
+        background-image: url("../images/buy1.png");
+      }
+
+      &--2 {
+        background-image: url("../images/buy2.png");
+      }
+
+      &--3 {
+        background-image: url("../images/buy3.png");
+      }
+
+      &--4 {
+        background-image: url("../images/buy4.png");
+      }
+
+      &--5 {
+        background-image: url("../images/buy5.png");
+      }
+
+      &--6 {
+        background-image: url("../images/buy6.png");
+
+      }
+    }
+
+    &-text {
+      position: absolute;
+      margin: 0;
+      color: $c-gray;
+      font-family: Manrope, sans-serif;
+      font-size: 8.74px;
+      font-weight: 400;
+      line-height: 131.5%;
+
+      &--1 {
+        bottom: -15px;
+        left: 43px;
+        transform: rotate(-14deg);
+      }
+
+      &--2 {
+        transform: rotate(-28deg);
+        bottom: 2px;
+        left: 65px;
+      }
+
+      &--3 {
+        bottom: -20px;
+      }
+
+      &--4 {
+        bottom: -10px;
+        transform: rotate(-14deg);
+        left: 43px;
+      }
+
+      &--5 {
+        transform: rotate(-15deg);
+
+        bottom: -10px;
+        left: 43px;
+      }
+
+      &--6 {
+        bottom: 10px;
+        transform: rotate(-30deg);
+        left: 70px;
+
+      }
+    }
+  }
+}

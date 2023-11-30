@@ -1,0 +1,137 @@
+.contact {
+  position: relative;
+  margin-bottom: -80px;
+  z-index: 1;
+
+  &-stamp {
+    position: absolute;
+    right: 0%;
+    top: -80px;
+
+    &--mobile {
+      @include on-Desktop-Small {
+        display: none;
+      }
+    }
+
+    &--desktop {
+      display: none;
+
+      @include on-Desktop-Small {
+        display: block;
+        right: 65px;
+      }
+    }
+  }
+
+  &-background {
+    width: 100%;
+    height: 1003px;
+
+    background-image: url("../images/contactBG.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    z-index: -1;
+
+    @include on-Tablet {
+      height: 620px;
+    }
+
+    @include on-Desktop-Small {
+      width: 90vw;
+      height: 720px;
+    }
+  }
+
+  &-title {
+    color: $c-black;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    padding-top: 45px;
+    margin: 0;
+  }
+
+  &-info {
+    color: $c-black;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0 0 40px;
+  }
+
+  &__form {
+    margin-bottom: 56px;
+
+    &-title {
+      color: $c-black;
+      font-family: Manrope, sans-serif;
+      font-size: 24px;
+      line-height: 150%;
+      margin-bottom: 25px;
+
+      @include on-Tablet {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-field {
+      width: 100%;
+      color: $c-gray-middle;
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      text-transform: capitalize;
+      background-color: transparent;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 1px solid #0000004d;
+      outline: none;
+
+      &:hover,
+      &:active {
+        border-bottom: 1px solid $c-turquoise;
+      }
+
+      margin-bottom: 15px;
+
+      &:last-of-type {
+        margin-bottom: 30px;
+
+        @include on-Tablet {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    &-container {
+      margin-bottom: 34px;
+    }
+
+    &-text {
+      font-family: Manrope, sans-serif;
+      line-height: 150%;
+      margin: 0;
+
+      &--main {
+        color: rgba(0, 0, 0, 0.39);
+        font-size: 24px;
+        font-weight: 400;
+      }
+
+      &--secondary {
+        color: $c-black;
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 400;
+      }
+    }
+  }
+}
