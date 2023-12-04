@@ -87,29 +87,24 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-const headerBurgerBtn = document.querySelector('.header__menu-btn');
-const pageBody = document.querySelector('.page__body');
-const menuLinks = document.querySelectorAll('.menu__link');
-const menuBurgerBtn = document.querySelector('.menu__burger-btn');
-const menuLogo = document.querySelector('.menu__logo');
+const modal = document.querySelector('.menu');
+const btnOpen = document.querySelector('.header__menu-btn');
+const closeModalBtns = document.querySelectorAll(
+  '.menu__closed, .menu__bg, .menu__link');
 
-function addLockClass() {
-  pageBody.classList.add('lock');
-}
+btnOpen.addEventListener('click', showModal);
 
-function removeLockClass() {
-  pageBody.classList.remove('lock');
-}
-
-headerBurgerBtn.addEventListener('click', addLockClass);
-
-menuLinks.forEach(function(menuLink) {
-  menuLink.addEventListener('click', removeLockClass);
+closeModalBtns.forEach((btn) => {
+  btn.addEventListener('click', hideModal);
 });
 
-menuBurgerBtn.addEventListener('click', removeLockClass);
+function showModal() {
+  modal.classList.add('show');
+}
 
-menuLogo.addEventListener('click', removeLockClass);
+function hideModal() {
+  modal.classList.remove('show');
+}
 
 // form
 
