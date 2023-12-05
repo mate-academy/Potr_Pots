@@ -1,0 +1,173 @@
+.features {
+  &__conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    color: $turquoise-c;
+    margin-bottom: 22px;
+
+    &--trans {
+      color: transparent;
+      -webkit-text-stroke: 0.7px $turquoise-c;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 68px;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: start;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @include onTablet {
+      align-items: start;
+    }
+
+    @include onDesktop {
+      align-items: center;
+    }
+
+    &--3 {
+      @include onTablet {
+        order: -1;
+      }
+
+      @include onDesktop {
+        order: 0;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    margin-bottom: 38px;
+    max-width: 100%;
+    transition: $transition-time;
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__card-title {
+    color: #333;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    color: #4f4f4f;
+    text-align: center;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include onTablet {
+      text-align: start;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+  &__vertical {
+    display: none;
+    font-family: "Bebas Neue", sans-serif;
+    writing-mode: vertical-lr;
+    position: absolute;
+    right: 3px;
+    bottom: -180vh;
+    width: max-content;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2.64px;
+    color: $grey-c;
+    transition: $transition-time;
+
+    &:hover {
+      opacity: 0.7;
+      transform: scale(105%);
+    }
+
+    &--left {
+      @include onTablet {
+        display: block;
+        z-index: 4;
+        left: 0;
+        bottom: -454vh;
+      }
+
+      @include onDesktop {
+        bottom: -250vh;
+        left: 130px;
+        transform: rotate(180deg);
+        transition: $transition-time;
+
+        &:hover {
+          opacity: 0.7;
+          transform: scale(105%) rotate(180deg);
+        }
+      }
+    }
+
+    &--right {
+      @include onTablet {
+        display: block;
+        bottom: -430vh;
+        z-index: 4;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--feat {
+      @include onTablet {
+        display: block;
+        bottom: -700vh;
+        z-index: 4;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &::before {
+      display: inline-block;
+      content: "";
+      background-color: $grey-c;
+      width: 1px;
+      height: 66px;
+      margin: 10px;
+    }
+  }
+}
