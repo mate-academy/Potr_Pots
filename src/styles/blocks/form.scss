@@ -1,0 +1,111 @@
+.form {
+  padding-block: 40px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include onTablet {
+    padding-block: 30px 0;
+    gap: 40px;
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__tittle {
+    margin: 0;
+    color: $main-text-color;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__label {
+    display: block;
+  }
+
+  &__input {
+    width: 100%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-bottom: 6px;
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    &::placeholder {
+      font-family: "Manrope", sans-serif;
+      color: $five-text-color;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $forth-text-color;
+    }
+
+    &--text {
+      font-family: "Manrope", sans-serif;
+      padding-bottom: 0;
+      resize: none;
+
+      &::placeholder {
+        color: $five-text-color;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%;
+      }
+    }
+  }
+
+  &__button {
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background-color: $forth-text-color;
+    border: 1px solid  transparent;
+    width: 260px;
+    padding-block: 14px;
+    padding-left: 80px;
+    text-decoration: none;
+    font-family: "Manrope", sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    background-image: url(../images/hedaer/Arrow-3.svg);
+    background-repeat: no-repeat;
+    background-position: 68%;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 1) ;
+      color: $six-text-color;
+      background-image: url(../images/hedaer/Arrow.svg);
+      border: 1px solid rgba(18, 18, 18, 1);
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $main-text-color;
+  transition: background-color 5000s ease-in-out 0s;
+}

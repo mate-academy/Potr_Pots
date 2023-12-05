@@ -1,0 +1,366 @@
+.materials {
+  overflow: hidden;
+
+  @include onTablet {
+    padding-bottom: 110px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 0;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__wrap {
+    @include onTablet {
+      position: relative;
+    }
+  }
+
+  &__decor {
+    @include onTablet {
+      position: absolute;
+      top: -180px;
+      right: -80px;
+    }
+  }
+
+  &__decor-two {
+    @include onTablet {
+      position: absolute;
+      top: 0;
+      left: -85px;
+    }
+  }
+
+  &__tittle {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    color: $forth-text-color;
+    line-height: normal;
+    font-weight: 400;
+    letter-spacing: 8.99px;
+    padding-bottom: 120px;
+
+    @include onTablet {
+      font-size: 80px;
+      letter-spacing: 9.6px;
+      padding-bottom: 80px;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      letter-spacing: 17px;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__tittle-two {
+    color: $five-text-color;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+    padding-bottom: 2px;
+
+    @include onDesktop {
+      padding-bottom: 15px;
+    }
+  }
+
+  &__subtittles {
+    font-size: 16px;
+    line-height: 150%;
+    color: $five-text-color;
+    font-weight: 400;
+
+    &--bold {
+      font-weight: 700;
+    }
+  }
+
+  &__info {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 340px;
+      position: absolute;
+      right: 0;
+      top: 150px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+      top: 170px;
+      z-index: 2;
+    }
+  }
+
+  &__items {
+    @include onTablet {
+      width: 700px;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    @include onDesktop {
+      width: 1060px;
+    }
+
+    @include onSmallDesktop {
+      width: 1170px;
+    }
+  }
+
+  &__block {
+    width: 302px;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+
+    @include onTablet {
+      display: none;
+      position: absolute;
+      bottom: 0;
+    }
+
+    &--two {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+        box-shadow: 0;
+        position: absolute;
+        right: 0;
+        bottom: 70px;
+        z-index: 2;
+      }
+
+      @include onDesktop {
+        bottom: 130px;
+      }
+    }
+
+    &--hide {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &--hover {
+      bottom: 0;
+      left: -80px;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.4s ease-in-out;
+
+      &-two {
+        left: -120px;
+      }
+
+      &-three {
+        bottom: -210px;
+        left: -120px;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.4s ease-in-out;
+      }
+    }
+  }
+
+  &__text {
+    color: $main-bg-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    padding-inline: 45px;
+    padding-block: 28px 10px;
+
+    @include onTablet {
+      padding-block: 35px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--dot {
+      width: 7px;
+      height: 7px;
+      background-color: $main-bg-color;
+      transform: rotate(-45deg);
+
+      &-active {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: 1px solid $main-bg-color;
+      }
+    }
+  }
+
+  &__bg {
+    background-image: url(../images/materials/photo-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    height: 240px;
+    width: 100%;
+    position: absolute;
+    top: 140px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__two {
+    display: none;
+
+    @include onTablet {
+      background-image: url(../images/materials/photo-2.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: block;
+      height: 577px;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/materials/photo-3.jpg);
+      height: 1083px;
+      position: relative;
+      top: -220px;
+      z-index: 1;
+    }
+  }
+
+  &__link {
+    display: none;
+
+    @include onTablet {
+      background-image: url(../images/materials/plus.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      display: block;
+      height: 51px;
+      width: 51px;
+      background-color: rgba(235, 87, 87, 1);
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      transition: 0.4s ease-in-out;
+
+      &:hover {
+        background-image: url(../images/materials/minus.svg);
+        background-color: rgba(36, 35, 35, 0.75);
+      }
+    }
+  }
+
+  &__tooltip {
+    position: absolute;
+    bottom: 100px;
+    left: 50px;
+
+    @include onDesktop {
+      left: 144px;
+      bottom: 155px;
+    }
+
+    @include onSmallDesktop {
+      left: 120px;
+      bottom: 155px;
+    }
+
+    &--one {
+      left: 197px;
+      bottom: 230px;
+
+      @include onDesktop {
+        left: 437px;
+        bottom: 400px;
+      }
+
+      @include onSmallDesktop {
+        left: 412px;
+        bottom: 400px;
+      }
+    }
+
+    &--two {
+      left: 304px;
+      bottom: 70px;
+
+      @include onDesktop {
+        left: 574px;
+        bottom: 105px
+      }
+
+      @include onSmallDesktop {
+        left: 550px;
+        bottom: 105px;
+      }
+    }
+
+    &--three {
+      left: 380px;
+      bottom: 135px;
+      z-index: 1;
+
+      @include onDesktop {
+        left: 725px;
+        bottom: 270px;
+      }
+
+      @include onSmallDesktop {
+        left: 700px;
+        bottom: 270px;
+      }
+    }
+
+    &--fore {
+      left: 520px;
+      bottom: 318px;
+
+      @include onDesktop {
+        left: 1000px;
+        bottom: 372px;
+      }
+
+      @include onSmallDesktop {
+        left: 976px;
+        bottom: 372px;
+      }
+    }
+  }
+}
+
+.materials__link:hover .materials__block--hover {
+  bottom: 130%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.materials__link--one:hover .materials__block--hover-three {
+  bottom: -250px;
+  visibility: visible;
+  opacity: 1;
+}

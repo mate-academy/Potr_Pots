@@ -1,0 +1,39 @@
+.contacts {
+  &__item {
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    @include onTablet {
+      padding-bottom: 0;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 0;
+      gap: 25px;
+    }
+  }
+
+  &__tittle {
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 5px;
+  }
+
+  &__subtittle {
+    text-decoration: none;
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      color: $forth-text-color;
+    }
+  }
+}

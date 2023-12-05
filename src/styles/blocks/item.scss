@@ -1,0 +1,67 @@
+.item {
+  &__img {
+    margin: 0 auto;
+    display: block;
+    width: 260px;
+    height: 260px;
+    padding-bottom: 40px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    @include onTablet {
+      width: 220px;
+      height: 220px;
+      padding-bottom: 30px;
+    }
+
+    @include onDesktop {
+      height: 300px;
+      width: 300px;
+    }
+
+    @include onSmallDesktop{
+      width: 370px;
+      height: 370px;
+    }
+  }
+
+  &__tittle {
+    font-family: "Bebas Neue", sans-serif;
+    color: $second-text-color;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+  &__subtittle {
+    color: $five-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+}

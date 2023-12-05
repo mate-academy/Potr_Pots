@@ -1,0 +1,51 @@
+.features {
+  @include onTablet {
+    padding-bottom: 130px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 175px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__item {
+    grid-column: span 2;
+
+    @include onDesktop {
+      grid-column: span 4;
+    }
+  }
+
+  &__tittle {
+    font-family: "Bebas Neue", sans-serif;
+    color: $forth-text-color;
+    font-size: 55px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+    -webkit-text-stroke: 1px $forth-text-color;
+    padding-bottom: 20px;
+
+    &--two {
+      -webkit-text-stroke: 1px $forth-text-color;
+      color: transparent;
+    }
+
+    @include onTablet {
+      padding-bottom: 50px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 70px;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.footer {
+  &__content {
+    padding-block: 10px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include onTablet {
+      padding-block: 113px 120px;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+
+    @include onDesktop {
+      padding-block: 60px 120px;
+    }
+  }
+
+  &__logo {
+    text-decoration: none;
+    display: block;
+    color: $main-text-color;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      color: $forth-text-color;
+    }
+  }
+
+  &__copyright {
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--two {
+      display: none;
+
+      @include onTablet {
+        display: block;
+      }
+    }
+  }
+
+  &__middle {
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__icon {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      padding-bottom: 32px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 70px;
+    }
+  }
+
+  &__first {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 170px;
+    }
+  }
+
+  &__last {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      width: 128px;
+    }
+  }
+
+  &__tittle {
+    color: $main-text-color;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    padding-bottom: 10px;
+  }
+
+  &__subtittle {
+    color: $main-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-decoration: none;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      color: $forth-text-color;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $main-text-color;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    padding-bottom: 10px;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      color: $forth-text-color;
+    }
+  }
+}

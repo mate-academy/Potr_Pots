@@ -1,0 +1,164 @@
+.category {
+  @include onTablet {
+    padding-bottom: 110px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 150px;
+  }
+
+  &__staff {
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      padding-top: 280px;
+    }
+
+    position: relative;
+  }
+
+  &__decor {
+    position: absolute;
+    top: 50px;
+    right: -80px;
+  }
+
+  &__part {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 30px;
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      gap: 40px;
+      grid-column: 7 / -1;
+    }
+
+    @include onSmallDesktop {
+      grid-column: 6 /-1;
+    }
+  }
+
+  &__button {
+    display: block;
+    align-items: center;
+    gap: 9px;
+    background-color: $main-item-color;
+    width: 171px;
+    padding-block: 14px;
+    padding-left: 67px;
+    text-decoration: none;
+    text-align: justify;
+    color: $six-text-color;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    background-image: url(../images/hedaer/Arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 68%;
+    transition: 0.4s ease-in-out;
+
+    @include onTablet {
+      background-color: transparent;
+      border: 1px solid $forth-text-color;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:hover {
+      opacity: 0.7;
+
+      @include onTablet {
+        opacity: 1;
+        background-color: $forth-text-color;
+        color: $main-bg-color;
+        background-image: url(../images/hedaer/Arrow-3.svg);
+      }
+    }
+
+    &--two {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+      }
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include onTablet {
+      gap: 35px;
+      grid-column: 4 / 7;
+      transform: translateY(70px);
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 13;
+      transform: translateY(0);
+    }
+
+     @include onSmallDesktop {
+      grid-column: 7 /12;
+    }
+  }
+
+  &__discount {
+    color: #eb5757;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 10px;
+
+    @include onTablet {
+      padding-bottom: 5px;
+    }
+  }
+
+  &__text {
+    color: $forth-text-color;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+
+    @include onTablet {
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 2.8px;
+      width: 240px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 3.8px;
+      width: 100%;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      top: 80px;
+      left: -140px;
+    }
+  }
+}

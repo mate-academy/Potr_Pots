@@ -1,0 +1,183 @@
+.header {
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+  }
+
+  &__bg {
+    background-image: url(../images/hedaer/Frame.png);
+    background-repeat: no-repeat;
+    display: none;
+    height: 466px;
+    width: 1035px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include onTablet {
+      display: block;
+
+    }
+
+    @include onDesktop {
+      background-image: url(../images/hedaer/Rectangle.png);
+    }
+  }
+
+  &__top {
+    padding-inline: 30px;
+    padding-block: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+
+    @include onTablet {
+      padding-block: 30px 50px;
+      margin: 0 auto;
+      padding-inline: 0;
+      width: 700px;
+      margin: 0 auto;
+    }
+
+    @include onDesktop {
+      padding-block: 20px 80px;
+      width: 1060px;
+    }
+
+    @include onSmallDesktop {
+      padding-inline: 135px;
+      width: 1170px;
+    }
+  }
+
+  &__logo {
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    color: $second-text-color;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.16px;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      color: $forth-text-color;
+    }
+  }
+
+  &__menu {
+    background-image: url(../images/hedaer/menu_icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 32px;
+    width: 32px;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+
+  &__bag {
+    display: none;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    @include onDesktop {
+      display: block;
+      background-image: url(../images/hedaer/bag.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__bottom {
+    @include onTablet {
+      @include pageGrid;
+      position: relative;
+      margin: 0 auto;
+      width: 700px;
+    }
+
+    @include onDesktop {
+      width: 1060px;
+    }
+
+    @include onSmallDesktop {
+      width: 1170px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    position: absolute;
+    right: -70px;
+    bottom: 95px;
+    transform: rotate(90deg);
+
+    @include onTablet {
+      display: none;
+    }
+
+    &--text {
+      color: $forth-text-color;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 150%;
+      transition: 0.4s ease-in-out;
+    }
+
+    &--arrow {
+      background-image: url(../images/hedaer/Arrow-2.svg);
+      background-position: 90%;
+      background-repeat: no-repeat;
+      display: block;
+      height: 10px;
+      width: 40px;
+    }
+
+    &--wrap {
+      transition: transform 0.4s ease-in-out;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &:hover {
+        transform: scale(1.07);
+      }
+    }
+  }
+
+  &__links {
+    display: none;
+    text-decoration: none;
+    position: absolute;
+    bottom: 87px;
+    left: -85px;
+    transform: rotate(90deg);
+    z-index: 4;
+
+    @include onTablet {
+      display: flex;
+    }
+  }
+}

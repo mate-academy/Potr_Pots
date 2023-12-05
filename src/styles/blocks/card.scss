@@ -1,0 +1,268 @@
+.card {
+  &__img {
+    display: none;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.08);
+    }
+
+    @include onTablet {
+      display: block;
+      height: 284px;
+      width: 284px;
+    }
+
+    @include onDesktop {
+      height: 450px;
+      width: 450px;
+    }
+
+    @include onSmallDesktop {
+      height: 500px;
+      width: 500px;
+    }
+
+    &--two {
+      height: 417px;
+      width: 300px;
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+
+    &--three {
+      height: 405px;
+      width: 284px;
+
+      @include onDesktop {
+        height: 670px;
+        width: 470px;
+        padding-bottom: 45px;
+      }
+    }
+
+    &--fore {
+      display: none;
+
+      @include onDesktop {
+        display: block;
+        height: 417px;
+        width: 300px;
+        padding-bottom: 45px;
+      }
+    }
+  }
+
+  &__item {
+    font-family: "Bebas Neue", sans-serif;
+    color: $main-text-color;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 180%;
+    letter-spacing: 5.58px;
+  }
+
+  &__wrap {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__line {
+    display: block;
+    background-color: $six-text-color;
+    width: 1px;
+    height: 46px;
+    transform: rotate(22deg);
+  }
+
+  &__tittle {
+    display: inline-block;
+    color: $main-text-color;
+    padding-bottom: 20px;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-color: $second-text-color;
+      height: 46px;
+      width: 1px;
+      transform: rotate(22deg);
+      position: absolute;
+      bottom: 25px;
+      right: 220px;
+      opacity: 0;
+
+      @include onTablet {
+        opacity: 1;
+      }
+
+      @include onDesktop {
+        right: 105px;
+      }
+
+      @include onSmallDesktop {
+        right: 100px;
+      }
+    }
+
+    &--two {
+      @include onTablet {
+        position: relative;
+
+        &::after {
+          content: "";
+          background-color: $second-text-color;
+          height: 46px;
+          width: 1px;
+          transform: rotate(22deg);
+          position: absolute;
+          bottom: 25px;
+          right: 80px;
+          opacity: 0;
+
+          @include onTablet {
+            opacity: 1;
+          }
+
+
+          @include onDesktop {
+            right: 85px;
+          }
+
+          @include onSmallDesktop {
+            right: 110px;
+          }
+        }
+      }
+    }
+
+    &--three {
+      @include onTablet {
+        position: relative;
+
+        &::after {
+          content: "";
+          background-color: $second-text-color;
+          height: 46px;
+          width: 1px;
+          transform: rotate(22deg);
+          position: absolute;
+          bottom: 25px;
+          right: 215px;
+          opacity: 0;
+
+          @include onTablet {
+            opacity: 1;
+          }
+
+          @include onDesktop {
+            right: 120px;
+          }
+
+          @include onSmallDesktop {
+            right: 120px;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__subtittle {
+    color: $five-text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__block {
+    align-items: center;
+    gap: 30px;
+    display: none;
+    padding-bottom: 25px;
+
+    @include onDesktop {
+      padding-bottom: 40px;
+      transform: translateX(-40px);
+    }
+
+    &--one {
+      @include onDesktop {
+        transform: translateX(40px);
+      }
+
+      @include onSmallDesktop {
+        transform: translateX(60px);
+      }
+    }
+
+    &--two {
+      justify-content: end;
+
+      @include onDesktop {
+        justify-content: start;
+      }
+    }
+
+    &--three {
+      justify-content: start;
+    }
+
+    @include onTablet {
+      display: flex;
+    }
+
+    &--text {
+      color: $second-text-color;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  &__content {
+    @include onTablet {
+      display: flex;
+      align-items: start;
+      gap: 20px;
+
+      @include onDesktop {
+        gap: 50px;
+      }
+
+      @include onSmallDesktop {
+        gap: 70px;
+      }
+    }
+
+    &--two {
+      flex-direction: column;
+
+      @include onDesktop {
+        gap: 30px;
+      }
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      width: 340px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__items {
+    @include onTablet {
+      transform: translateY(-30px);
+    }
+    @include onDesktop {
+      transform: translate(0);
+    }
+  }
+}
