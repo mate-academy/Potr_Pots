@@ -1,0 +1,156 @@
+.team {
+  padding-bottom: 110px;
+  overflow: hidden;
+  background-image: url(../images/yell-desk.png);
+  background-repeat: no-repeat;
+  background-position: right 0 top 600px;
+  background-size: 180%;
+
+  @include onTablet {
+    background-size: 135%;
+    background-position: right 80vw top 150px;
+  }
+
+  @include onDesktop {
+    padding-bottom: 226px;
+    background-size: 60%;
+    background-position: right 70vw top 184px;
+  }
+
+  &__title {
+    font-size: 58px;
+    color: #333;
+
+    @include onTablet {
+      margin-bottom: 176px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 144px;
+    }
+  }
+
+  &__content {
+    font-family: "Bebas Neue", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    width: 100%;
+
+    @include onTablet {
+      display: grid;
+      box-sizing: border-box;
+
+      grid-template-columns: repeat(var(--columns), 1fr);
+
+      --columns: 6;
+
+      column-gap: 20px;
+      row-gap: 110px;
+      max-width: 1440px;
+    }
+
+    @include onDesktop {
+      --columns: 12;
+
+      column-gap: 30px;
+      row-gap: 80px;
+    }
+
+    &::before {
+      margin: 0;
+      padding: 0;
+      content: "Martin";
+      font-size: 232px;
+      letter-spacing: 36px;
+      text-transform: uppercase;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $turquoise-c;
+      color: #0000;
+      display: none;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+        top: -172px;
+        left: -76px;
+      }
+
+      @include onDesktop {
+        font-size: 288px;
+        letter-spacing: 44.64px;
+        top: -124px;
+        left: -60px;
+      }
+    }
+
+    &::after {
+      margin: 0;
+      padding: 0;
+      content: "Andy";
+      font-size: 232px;
+      letter-spacing: 36px;
+      text-transform: uppercase;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $turquoise-c;
+      color: #0000;
+      display: none;
+
+      @include onTablet {
+        display: block;
+        position: absolute;
+        bottom: -160px;
+        right: -70px;
+      }
+
+      @include onDesktop {
+        font-size: 288px;
+        letter-spacing: 44.64px;
+        bottom: -248px;
+        right: -180px;
+      }
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    object-position: center center;
+    width: calc(100% + 2 * 30px);
+    margin-left: -30px;
+
+    @include onTablet {
+      width: 100%;
+      margin: 0;
+      grid-column: 4 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -2;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    color: #4f4f4f;
+    font-family: Manrope, Arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include onTablet {
+      padding: 52px 50px 0 0;
+      grid-column: 1 / 4;
+      grid-row: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      justify-content: end;
+      padding: 190px 70px 16px 0;
+    }
+  }
+}

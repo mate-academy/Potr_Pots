@@ -1,0 +1,269 @@
+.materials {
+  position: relative;
+
+  &__bg {
+    object-fit: cover;
+    object-position: center center;
+    padding-top: 70px;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+
+    @include onTablet {
+      width: calc(100% + 2 * 34px);
+      margin: 0 -34px;
+      padding-top: 250px;
+    }
+
+    @include onDesktop {
+      width: calc(100% + 2 * 134px);
+      margin: 0 -134px;
+      padding-top: 160px;
+    }
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 580px;
+
+    @include onTablet {
+      height: 100%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    color: $turquoise-c;
+
+    @include onTablet {
+      font-size: 80px;
+    }
+
+    @include onDesktop {
+      margin: 0;
+      font-size: 138px;
+    }
+  }
+
+  &__intro {
+    position: absolute;
+    display: none;
+    color: #4f4f4f;
+    font-family: Manrope, Arial, sans-serif;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+      width: 40%;
+      margin-top: 150px;
+    }
+
+    @include onDesktop {
+      margin-top: 170px;
+    }
+
+    &-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      &--bold {
+        font-family: Manrope, Arial, sans-serif;
+        font-weight: 700;
+
+        @include onDesktop {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  &__slider {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__slide {
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+    padding: 28px 44px 58px;
+    transition: all 10ms ease;
+    width: 90%;
+    height: 254px;
+    box-sizing: border-box;
+    color: $light-grey-c;
+    font-family: Manrope, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    display: none;
+    bottom: 0;
+    position: absolute;
+
+    @include onTablet {
+      width: 300px;
+      padding: 34px 44px;
+      height: max-content;
+      display: none;
+      z-index: 3;
+    }
+
+    &--1 {
+      @include onTablet {
+        left: calc(76% - 130px);
+        top: 68%;
+      }
+    }
+
+    &--2 {
+      @include onTablet {
+        left: calc(58% - 130px);
+        bottom: 26%;
+      }
+    }
+
+    &--3 {
+      @include onTablet {
+        left: calc(44% - 130px);
+        bottom: 16%;
+      }
+
+      @include onDesktop {
+        left: calc(20% - 80px);
+        bottom: 2%;
+      }
+    }
+
+    &--4 {
+      @include onTablet {
+        left: calc(30% - 130px);
+        bottom: 36%;
+      }
+    }
+
+    &--5 {
+      @include onTablet {
+        left: 0;
+        bottom: 18%;
+      }
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 38px;
+    background-color: $light-grey-c;
+    border: 1px solid $light-grey-c;
+    z-index: 2;
+    position: absolute;
+    box-sizing: border-box;
+    transition: $transition-time;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @include onTablet {
+      background-image: url(../images/label.svg);
+      height: 50px;
+      width: 50px;
+      border: none;
+      border-radius: 50%;
+      transition: $transition-time;
+      &.active {
+        background-image: url(../images/labelact.svg);
+      }
+
+      &:hover {
+        opacity: 0.7;
+        transform: scale(105%);
+      }
+    }
+
+    &--1 {
+      transform: translate(-450%) rotate(45deg);
+
+      @include onTablet {
+        transform: none;
+        left: 76%;
+        bottom: 34%;
+      }
+    }
+
+    &--2 {
+      transform: translate(-250%) rotate(45deg);
+
+      @include onTablet {
+        transform: none;
+        left: 56%;
+        bottom: 18%;
+      }
+    }
+
+    &--3 {
+      transform: translate(-50%) rotate(45deg);
+
+      @include onTablet {
+        transform: none;
+        left: 42%;
+        bottom: 8%;
+      }
+    }
+
+    &--4 {
+      transform: translate(150%) rotate(45deg);
+
+      @include onTablet {
+        transform: none;
+        left: 30%;
+        bottom: 28%;
+      }
+    }
+
+    &--5 {
+      transform: translate(350%) rotate(45deg);
+
+      @include onTablet {
+        transform: none;
+        left: 6%;
+        bottom: 10%;
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+
+    @for $slideNumber from 1 through 5 {
+      &--#{$slideNumber}:checked~.materials__slide--#{$slideNumber} {
+        display: block;
+      }
+
+      &--#{$slideNumber}:checked~.materials__label--#{$slideNumber} {
+        background-color: $grey-c;
+        opacity: 0.7;
+      }
+    }
+  }
+}

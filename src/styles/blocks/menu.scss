@@ -1,0 +1,94 @@
+.menu {
+  z-index: 1;
+  overflow-y: auto;
+  transform: translateX(100%);
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: $turquoise-c;
+  height: 100vh;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: $transition-time;
+  transition-timing-function: ease-in;
+  &:target {
+    transform: translateX(0);
+  }
+  &__item {
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+  &__link {
+    color: $light-grey-c;
+    background-image: linear-gradient($light-grey-c, $light-grey-c);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: $transition-time;
+
+    &:hover {
+      border-color: $light-grey-c;
+      background-size: 100% 1px;
+    }
+
+    &--basket {
+      position: relative;
+
+      &::after {
+        content: "0";
+        position: absolute;
+        font-size: 10px;
+        width: 14px;
+        height: 14px;
+        top: -4px;
+        right: -20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $red-c;
+        border-radius: 50%;
+        font-family: "Bebas Neue", sans-serif;
+      }
+    }
+  }
+  &__close {
+    color: $light-grey-c;
+    position: absolute;
+    right: -90px;
+    bottom: 42px;
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
+    transform-origin: left bottom;
+    transform: rotateZ(-90deg);
+    text-transform: uppercase;
+    transition: $transition-time;
+
+    &:hover {
+      opacity: 0.7;
+      transform: scale(105%) rotateZ(-90deg);
+    }
+
+    &-icon {
+      background-image: url(../images/close.svg);
+      width: 12px;
+      height: 12px;
+    }
+
+    &-line {
+      display: block;
+      width: 44px;
+      height: 1px;
+      content: "";
+      background-color: $light-grey-c;
+    }
+  }
+
+  @include onDesktop {
+    display: none;
+  }
+}
