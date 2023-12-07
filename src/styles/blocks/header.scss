@@ -59,6 +59,12 @@
       font-weight: 400;
       letter-spacing: 2.16px;
       text-transform: uppercase;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $c-gray-middle;
+      }
+
     }
 
     &__list {
@@ -84,6 +90,32 @@
         font-weight: 400;
         line-height: 150%;
         text-decoration: none;
+
+        position: relative;
+
+        &::after {
+            content: "";
+              display: block;
+              position: absolute;
+              right: 0;
+              bottom: -3px;
+              width: 0;
+              height: 2px;
+              background-color: $c-yellow;
+              transition: width 0.5s;
+        }
+
+        &:hover::after {
+          content: "";
+            width: 100%;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            height: 2px;
+            background-color: $c-turquoise;
+            transition: width 0.5s;
+        }
       }
     }
 
@@ -138,6 +170,12 @@
         writing-mode: vertical-rl;
         transform: rotate(-360deg);
         padding-bottom: 5px;
+        transition: all 0.3s;
+
+        &:hover {
+          color: $c-red;
+        }
+
       }
     }
 
@@ -209,5 +247,9 @@
         }
       }
     }
+  }
+
+  &-link {
+    text-decoration: none;
   }
 }

@@ -66,19 +66,25 @@ for (let i = 0; i < arrayButtons.length; i++) {
   });
 }
 
-const form = document.querySelector('.contact__form');
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('.contact__form');
+  const inputs = document.querySelectorAll('.contact__form-field');
 
-const inputs = document.querySelectorAll('.contact__form-field');
+  function handler(event) {
+    event.preventDefault();
 
-function handler(event) {
-  event.preventDefault();
+    inputs.forEach(input => {
+      input.value = '';
+    });
 
-  inputs.forEach(input => {
-    input.value = '';
-  });
-}
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
 
-form.addEventListener('submit', handler);
+  form.addEventListener('submit', handler);
+});
 
 function handleHashChange() {
   if (window.location.hash === '#menu') {
