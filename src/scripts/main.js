@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const modal = document.querySelector('.menu');
 const modalBG = document.querySelector('.menu__bg, .menu__relative');
 const btnOpen = document.querySelector('.header__menu-btn');
+const body = document.querySelector('.page__body');
 const closeModalBtns = document.querySelectorAll(
   '.menu__closed, .menu__bg, .menu__link');
 
@@ -102,11 +103,13 @@ closeModalBtns.forEach((btn) => {
 function showModal() {
   modal.classList.add('show');
   modalBG.classList.add('show');
+  body.classList.add('lock');
 }
 
 function hideModal() {
   modal.classList.remove('show');
   modalBG.classList.remove('show');
+  body.classList.remove('lock');
 }
 
 // form
