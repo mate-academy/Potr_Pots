@@ -1,0 +1,57 @@
+.slider {
+  position: relative;
+  bottom: 150px;
+  height: max-content;
+  padding-bottom: 80px;
+  margin-inline: 9px;
+  background-color: rgba(0, 0, 0, 0.45);
+
+  @include onTablet {
+    display: none;
+  }
+  
+  &__track {
+    display: flex;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    flex: none;
+  }
+}
+
+.slide {
+  box-sizing: border-box;
+  width: 100%;
+  height: max-content;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+
+  font-size: 16px;
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+  line-height: 150%;
+  text-align: left;
+  color: $color-grey-light;
+  padding-inline: 45px;
+  padding-top: 25px;
+}
+
+.points {
+  position: absolute;
+  width: 100%;
+  bottom: 37px;
+  display: flex;
+  margin: 15px auto;
+  justify-content: center;
+  gap: 10px;
+}
+
+.point {
+  height: 7px;
+  width: 7px;
+  background-color: $color-white;
+  border: 1px solid $color-grey-light;
+  transform: rotate(45deg);
+}
+
+.active {
+  background-color: $color-grey-1;
+}
