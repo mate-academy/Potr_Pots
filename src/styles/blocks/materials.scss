@@ -1,0 +1,120 @@
+.materials {
+  &__title {
+    position: relative;
+    margin: 0;
+    font-family: $_bebas;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $colorTurquoise;
+    z-index: 1;
+
+    @include onTabletAndDesktop {
+      font-size: 9vw;
+      line-height: 1.2em;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 138px;
+      line-height: 167px;
+    }
+  }
+
+  &__image-box {
+    margin-top: -80px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      margin-top: -150px;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+
+    @media (min-width: 1440px) {
+      margin-left: -135px;
+      width: 1440px;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onTabletAndDesktop {
+      display: block;
+      position: absolute;
+      width: 50%;
+      top: 12vw;
+      right: 34px;
+      z-index: 1;
+    }
+
+    @include onDesktop {
+      width: 40%;
+      top: 170px;
+      right: 55px;
+    }
+  }
+
+  &__sub-title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 150%;
+    color: $colorTextGrey;
+  }
+
+  &__description {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorTextGrey;
+  }
+
+  &__feature {
+    margin-top: -50px;
+    padding: 28px 40px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorGreyLight;
+    background-color: rgba(0, 0, 0, 0.45);
+    mix-blend-mode: normal;
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    @include onTabletAndDesktop {
+      display: none;
+    }
+  }
+
+  &__side-text-right {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 8px;
+    }
+  }
+
+  &__side-text-left {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      top: 200px;
+      left: 8px;
+    }
+  }
+}

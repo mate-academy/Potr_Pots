@@ -1,0 +1,120 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    font-family: $_manrope;
+    color: $colorTextGrey;
+    background-color: $colorGreyLight;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__header {
+    margin: 0 auto 110px;
+    max-width: 1440px;
+
+    @include onTabletAndDesktop {
+      background-image: url(../images/rectangle-yellow.png);
+      background-repeat: no-repeat;
+      background-position: top 0 right 154px;
+    }
+
+    @media (min-width: 1180px) {
+      background-position: top 0 left 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(101%);
+    transition: transform $smoothTime;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__for-whom {
+    margin-bottom: 110px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__features {
+    margin-bottom: 110px;
+
+    @include onTablet {
+      margin-bottom: 130px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 150px;
+    }
+  }
+
+  &__team {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding-bottom: 168px;
+
+    background-image: url(../images/rectangle-yellow.png);
+    background-repeat: no-repeat;
+    background-position: top 550px right 0;
+
+    @include onTabletAndDesktop {
+      padding-bottom: 40px;
+      background-position: top 170px right 514px;
+    }
+
+    @include onDesktop {
+      background-position: top 180px right 1005px;
+    }
+  }
+
+  &__materials {
+    margin-bottom: 110px;
+  }
+
+  &__potr-size {
+    margin-bottom: 110px;
+  }
+
+  &__benefits {
+    margin-bottom: 110px;
+
+    @include onDesktop {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__questions {
+    margin-bottom: 100px;
+
+    @include onTabletAndDesktop {
+      margin-bottom: 110px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 180px;
+    }
+  }
+
+  &__footer {
+    margin-bottom: 30px;
+  }
+}

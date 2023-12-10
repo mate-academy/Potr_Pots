@@ -1,0 +1,67 @@
+.vertical {
+  &__link {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    writing-mode: vertical-rl;
+    text-decoration: none;
+
+    &--arrow {
+      color: $colorTurquoise;
+
+      &::after {
+        display: inline-block;
+        content: "";
+        background-image: url(../images/arrow-vertical.svg);
+        width: 8px;
+        height: 45px;
+      }
+    }
+
+    &--close {
+      text-transform: uppercase;
+      color: $colorGreyLight;
+
+      &::after {
+        display: inline-block;
+        content: "";
+        height: 44px;
+        padding-left: 1px;
+        background-color: $colorGreyLight;
+      }
+    }
+
+    &--cross {
+      display: inline-block;
+      background-image: url(../images/cross.svg);
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    font-family: $_bebas;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    color: $colorVerticalText;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+
+    &::before {
+      display: inline-block;
+      margin-bottom: 10px;
+      content: "";
+      height: 65px;
+      padding-left: 1px;
+      background-color: $colorVerticalText;
+    }
+
+    &--left {
+      transform: rotate(180deg);
+    }
+  }
+}

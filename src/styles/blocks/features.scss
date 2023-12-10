@@ -1,0 +1,94 @@
+.features {
+  &__title {
+    margin: 0 0 23px;
+    font-family: $_bebas;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px $colorTurquoise;
+
+    &--full {
+      color: $colorTurquoise;
+    }
+
+    @include onTablet {
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__content {
+    @include onTabletAndDesktop {
+      display: flex;
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+    width: calc(100vw - 60px);
+    max-width: 400px;
+
+    @include onTablet {
+      width: calc((100vw - 68px - 60px) / 3);
+    }
+
+    @include onDesktop {
+      width: calc((1280px - 110px - 60px) / 3);
+    }
+
+    &--num-1 {
+      &:hover {
+        content: url(../images/features1.gif);
+      }
+    }
+
+    &--num-2 {
+      &:hover {
+        content: url(../images/features2.gif);
+      }
+    }
+
+    &--num-3 {
+      &:hover {
+        content: url(../images/features3.gif);
+      }
+    }
+  }
+
+  &__item-title {
+    font-family: $_bebas;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-transform: uppercase;
+    color: $colorTextBlack;
+  }
+
+  &__description {
+    margin: 0 auto;
+    max-width: 500px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $colorTextGrey;
+  }
+}

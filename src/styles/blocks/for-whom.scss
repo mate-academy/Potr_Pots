@@ -1,0 +1,47 @@
+.for-whom {
+  &__title {
+    margin: 0 0 26px;
+    font-family: $_bebas;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $colorTextBlack;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__side-text-right {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+
+    @include onTablet {
+      top: -100px;
+      right: 8;
+    }
+
+    @include onDesktop {
+      top: 0;
+      right: 55px;
+    }
+  }
+
+  &__side-text-left {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 55px;
+    }
+  }
+}

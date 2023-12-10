@@ -1,0 +1,200 @@
+.questions {
+  position: relative;
+
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 1020px;
+    background-image: url(../images/rectangle-yellow.png);
+    background-size: auto 1020px;
+    z-index: -10;
+
+    @include onTabletAndDesktop {
+      height: 550px;
+      background-size: 300% 550px;
+      background-position: top left;
+    }
+
+    @include onDesktop {
+      right: 135px;
+    }
+  }
+
+  &__stamp {
+    display: block;
+    position: absolute;
+    top: -105px;
+    right: 0;
+    width: 110px;
+    height: 164px;
+    background-image: url(../images/stamp.png);
+    transition: transform $smoothTime;
+    z-index: 10;
+
+    @include onDesktop {
+      right: 60px;
+      width: 164px;
+      
+      &:hover {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__flex {
+    @include onTabletAndDesktop {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  &__top {
+    @include onTablet {
+      width: 350px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+  }
+
+  &__contacts {
+    @include onTablet {
+      width: 205px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding-top: 45px;
+    font-family: $_bebas;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+  }
+
+  &__message-title {
+    margin: 0 0 25px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #000;
+
+    @include onTabletAndDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    height: 25px;
+    margin-bottom: 20px;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: $colorYellowLight;
+    outline: none;
+    resize: none;
+
+    font-family: $_manrope;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorTurquoise;
+
+    &--textarea {
+      margin-bottom: 40px;
+    }
+
+    &:focus {
+      border-bottom: 1px solid $colorTurquoise;
+    }
+
+    &:invalid {
+      color: #eb5757;
+      border-bottom: 1px solid #eb5757;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: inset 0 0 0 50px $colorYellowLight !important;
+      -webkit-text-fill-color: $colorTurquoise !important;
+      color: $colorTurquoise !important;
+    }
+
+    &:not(:placeholder-shown):valid {
+      color: $colorTurquoise;
+      border-bottom: 1px solid $colorTurquoise;
+    }
+
+    &::placeholder {
+      font-family: $_manrope;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $colorTextGrey;
+    }
+
+    // &:-webkit-autofill {
+    //   -webkit-box-shadow: inset 0 0 0 50px $colorYellowLight !important;
+    //   -webkit-text-fill-color: $colorTurquoise !important;
+    //   color: $colorTurquoise !important;
+    // }
+  }
+
+  &__button {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      width: 220px;
+    }
+
+    @include onDesktop {
+      width: 240px;
+    }
+  }
+
+  &__contacts-item {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__contacts-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+  &__contacts-link {
+    display: inline-block;
+    padding: 5px 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color $smoothTime;
+
+    &:hover {
+      border-color: $colorTextGrey;
+    }
+  }
+}

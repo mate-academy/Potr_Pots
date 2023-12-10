@@ -1,0 +1,61 @@
+.button {
+  display: block;
+  height: 48px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 48px;
+  text-align: center;
+  color: $colorTextBlack;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: $colorYellow;
+  transition: background-color $smoothTime, transform $smoothTime;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $colorYellowLight;
+    transform: scale(103%);
+  }
+
+  @include onTablet {
+    width: 240px;
+  }
+
+  @include onDesktop {
+    width: 270px;
+  }
+
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 30px;
+    height: 8px;
+    margin-left: 15px;
+    background-image: url(../images/arrow-horizontal.svg);
+  }
+  
+  &--message {
+    width: 100%;
+    padding: 0;
+    font-family: $_manrope;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: $colorTurquoise;
+    border: 1px solid $colorTurquoise;
+    transition: background-color $smoothTime, transform $smoothTime;
+
+    &::after {
+      background-image: url(../images/arrow-horizontal-white.svg);
+    }
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.7);
+      border: 1px solid rgba(3, 128, 158, 0.7);
+      transform: scale(103%);
+    }
+  }
+}
