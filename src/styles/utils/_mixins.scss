@@ -1,6 +1,51 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
-  &:hover {
-    #{$_property}: $_toValue;
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
   }
 }
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  justify-content: center;
+
+  @include onTablet {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @include onDesktop {
+    grid-template-columns: repeat(12, 70px);
+    column-gap: 30px;
+  }
+}
+
+@mixin paddingInline {
+  padding-inline: 30px;
+
+  @include onTablet {
+    padding-inline: 34px;
+  }
+
+  @include onDesktop {
+    padding-inline: 135px;
+  }
+}
+
+// @mixin paddingBlock {
+//   padding-block: 50px;
+
+//   @include onTablet {
+//     padding-block: 70px;
+//   }
+
+//   @include onDesktop {
+//     padding-block: 160px;
+//   }
+// }

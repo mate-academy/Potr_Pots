@@ -1,0 +1,29 @@
+.top-bar {
+  padding-block: 10px;
+  grid-column: 1 / 3;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @include paddingInline;
+
+  @include onTablet {
+    grid-column: 1 / 7;
+    padding-top: 30px;
+    padding-inline: 0;
+  }
+
+  @include onDesktop {
+    grid-column: 1 / 13;
+  }
+
+  &__menu {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+    }
+  }
+}

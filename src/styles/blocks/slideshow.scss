@@ -1,0 +1,71 @@
+.slideshow {
+  display: flex;
+  justify-content: center;
+  grid-column: 1 / 3;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: -46px;
+
+  @include onTablet {
+    display: none;
+  }
+
+  &__fade {
+    display: none;
+    width: 302px;
+    height: 254px;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    animation-name: fade;
+    animation-duration: 1.5s;
+    position: relative;
+
+    @keyframes fade {
+      from {
+        opacity: 0.4;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    &-text {
+      padding: 28px 45px 58px;
+      color: #f8f8f8;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 15%;
+    right: 0;
+    left: 0;
+
+    &-dot {
+      cursor: pointer;
+      width: 6px;
+      height: 6px;
+      display: block;
+      border: 1px solid #f8f8f8;
+      background-color: #f8f8f8;
+      transform: rotate(45deg);
+      transition: background-color 0.3s ease-in;
+
+      &:hover {
+        background-color: $color-grey;
+      }
+    }
+  }
+}
+
+.active {
+  background-color: $color-grey;
+}
