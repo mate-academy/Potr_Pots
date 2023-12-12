@@ -1,10 +1,10 @@
-@mixin on-tablet {
+@mixin onTablet {
   @media (min-width: $tablet-min-width) {
     @content;
   }
 }
 
-@mixin on-desktop {
+@mixin onDesktop {
   @media (min-width: $desktop-min-width) {
     @content;
   }
@@ -16,92 +16,36 @@
   column-gap: 20px;
   justify-content: center;
 
-  @include on-tablet {
+  @include onTablet {
     grid-template-columns: repeat(6, 1fr);
   }
 
-  @include on-desktop {
+  @include onDesktop {
     grid-template-columns: repeat(12, 70px);
     column-gap: 30px;
   }
 }
 
-@mixin padding-inline {
+@mixin paddingInline {
   padding-inline: 30px;
 
-  @include on-tablet {
+  @include onTablet {
     padding-inline: 34px;
   }
 
-  @include on-desktop {
+  @include onDesktop {
     padding-inline: 135px;
   }
 }
 
-@mixin on-desktop {
-  @media (min-width: $desktop-min-width) {
-    @content;
-  }
-}
+// @mixin paddingBlock {
+//   padding-block: 50px;
 
-@mixin grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
-  justify-content: center;
+//   @include onTablet {
+//     padding-block: 70px;
+//   }
 
-  @include on-tablet {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  @include on-desktop {
-    grid-template-columns: repeat(12, 70px);
-    column-gap: 30px;
-  }
-}
-
-@mixin padding-inline {
-  padding-inline: 30px;
-
-  @include on-tablet {
-    padding-inline: 34px;
-  }
-
-  @include on-desktop {
-    padding-inline: 135px;
-  }
-}
-
-@mixin on-desktop {
-  @media (min-width: $desktop-min-width) {
-    @content;
-  }
-}
-
-@mixin grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20px;
-  justify-content: center;
-
-  @include on-tablet {
-    grid-template-columns: repeat(6, 1fr);
-  }
-
-  @include on-desktop {
-    grid-template-columns: repeat(12, 70px);
-    column-gap: 30px;
-  }
-}
-
-@mixin padding-inline {
-  padding-inline: 30px;
-
-  @include on-tablet {
-    padding-inline: 34px;
-  }
-
-  @include on-desktop {
-    padding-inline: 135px;
-  }
-}
+//   @include onDesktop {
+//     padding-block: 160px;
+//   }
+// }
