@@ -1,0 +1,63 @@
+.icon {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease-in;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+
+  &--logo {
+    width: 135px;
+    height: 30px;
+    background-size: auto;
+    background-image: url(../images/icon/icon-logo.svg);
+  }
+
+  &--menu {
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/icon/icon-menu.svg);
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--close {
+    width: 12px;
+    height: 12px;
+    background-image: url(../images/icon/icon-close.svg);
+  }
+
+  &--twitter {
+    background-image: url(../images/icon/icon-twitter.svg);
+  }
+
+  &--instagram {
+    background-image: url(../images/icon/icon-instagram.svg);
+  }
+
+  &--facebook {
+    background-image: url(../images/icon/icon-facebook.svg);
+  }
+
+  &--twitter,
+  &--instagram,
+  &--facebook {
+    width: 20px;
+    height: 20px;
+  }
+
+  &--bag {
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icon/icon-bag.svg);
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+}
