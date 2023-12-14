@@ -1,0 +1,40 @@
+.swiper {
+  height: 35vh;
+  width: 100%;
+
+  @include onTablet {
+    display: none;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 16px;
+  background-color: #747474;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide__text {
+  color: $color-gray-light;
+  text-align: left;
+  padding-inline: 45px;
+  padding-bottom: 20px;
+}
+
+.swiper-pagination-bullet {
+  @include square(7px);
+  color: transparent;
+  border-radius: 0;
+  transform: rotate(45deg);
+  background-color: $color-gray-light;
+  border: 1px solid $color-gray-light;
+  opacity: 1;
+  transition: background-color 0.6s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $color-gray-dark;
+}

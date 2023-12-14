@@ -1,0 +1,238 @@
+.materials {
+  background: url(../images/photos/slidebar-photo.png) center / contain no-repeat;
+
+  background-image: linear-gradient(
+    180deg,
+    $color-gray-light 0%,
+    $color-background-gradient 30.93%
+  ),
+    url(../images/photos/slidebar-photo.png);
+
+  @include onTablet {
+    background-size: 100%;
+    background-position: bottom;
+  }
+
+  &__intro {
+    gap: 0;
+  }
+
+  &__title {
+    @extend %title-blue;
+    font-size: 58px;
+    line-height: 70px;
+
+    &--blue {
+      color: $color-blue;
+    }
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+
+      grid-column: 1 / 6;
+    }
+
+    @include onDesktop {
+      font-size: 139px;
+      line-height: 166px;
+      grid-column: 1 / 11;
+    }
+  }
+
+  &__subtitle {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+
+      color: $color-gray-medium;
+      text-shadow: 1px 1px 1px $color-gray-light;
+      margin-top: -40px;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+      margin-top: -190px;
+    }
+  }
+
+  &__content {
+    position: relative;
+
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+
+    height: 90vh;
+
+    @include onTablet {
+      height: initial;
+      grid-template-rows: initial;
+    }
+  }
+
+  &__details {
+    position: relative;
+
+    @include onTablet {
+      height: 580px;
+    }
+
+    @include onDesktop {
+      height: 900px;
+    }
+  }
+
+  &__bullet {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      align-self: center;
+    }
+
+    @include square(52px);
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: url(../images/icons/modal-open.svg) center / contain no-repeat;
+
+    cursor: pointer;
+
+    transition: background-image $transition;
+
+    &--active {
+      background: url(../images/icons/modal-close.svg) center / contain no-repeat;
+      position: relative;
+    }
+
+    &:nth-child(1) {
+      justify-self: right;
+      margin-bottom: -250px;
+
+      & > [class$="text"] {
+        left: -50px;
+        top: -180px;
+      }
+
+      @include onDesktop {
+        grid-column: 2;
+        margin-bottom: -500px;
+      }
+    }
+
+    &:nth-child(2) {
+      justify-self: right;
+      margin-top: -150px;
+
+      & > [class$="text"] {
+        left: -100px;
+        top: -180px;
+      }
+
+      @include onDesktop {
+        grid-column: 5;
+        margin-top: initial;
+        margin-bottom: -150px;
+      }
+    }
+
+    &:nth-child(3) {
+      justify-self: right;
+      margin-bottom: -250px;
+
+      & > [class$="text"] {
+        left: -100px;
+        top: -210px;
+      }
+
+      @include onDesktop {
+        margin-bottom: -650px;
+      }
+    }
+
+    &:nth-child(4) {
+      justify-self: center;
+      margin-bottom: -90px;
+
+      & > [class$="text"] {
+        left: -100px;
+        top: -210px;
+      }
+
+      @include onDesktop {
+        justify-self: left;
+        grid-column: 8;
+        margin-bottom: -300px;
+      }
+    }
+
+    &:nth-child(5) {
+      justify-self: right;
+      margin-top: -300px;
+
+      & > [class$="text"] {
+        left: -100px;
+        top: 70px;
+
+        width: 303px;
+      }
+
+      @include onDesktop {
+        grid-column: 11;
+        margin-bottom: -150px;
+      }
+    }
+  }
+
+  &__text {
+    position: absolute;
+    opacity: 0;
+
+    background-color: $color-background-blur;
+    backdrop-filter: blur(20px);
+
+    color: $color-gray-light;
+
+    padding: 35px;
+    width: 283px;
+  }
+
+  &__bullet--active > &__text {
+    opacity: 1;
+    transition: opacity $transition;
+  }
+
+  &__logo {
+    display: none;
+
+    position: absolute;
+    right: -45px;
+    top: 70px;
+
+    &--reverse {
+      right: initial;
+      left: -45px;
+      top: 300px;
+    }
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}
