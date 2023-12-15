@@ -1,0 +1,91 @@
+.questions {
+  @include pageGrid;
+  row-gap: 56px;
+  padding-top: 44px;
+  @include onTablet {
+    padding-top: 16px;
+  }
+  @include onDesktop {
+    padding-top: 36px;
+  }
+
+  &__message-block {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__title {
+    color: $colorTitles3;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+  }
+
+  &__intro {
+    color: $colorTitles3;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__message {
+    width: 100%;
+    @include onTablet {
+      width: 75%;
+    }
+    @include onDesktop {
+      width: 100%;
+    }
+  }
+
+  &__contacts-block {
+    font-family: "Manrope", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    grid-column: 1 / -1;
+    @include onTablet {
+      grid-column: 5 / -1;
+    }
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__comment {
+    margin-bottom: 4px;
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 24px;
+    line-height: 150%;
+  }
+
+  &__link {
+    color: $colorTitles3;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    margin-bottom: 36px;
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+    @include onDesktop {
+      margin-bottom: 24px;
+    }
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.39);
+    }
+  }
+}

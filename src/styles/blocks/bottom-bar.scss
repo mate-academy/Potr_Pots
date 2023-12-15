@@ -1,0 +1,138 @@
+.bottom-bar {
+  padding-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include onTablet {
+    padding-bottom: 116px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+  @include onDesktop {
+    padding-bottom: 64px;
+  }
+
+  &__address {
+    display: none;
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      gap: 4px;
+    }
+  }
+
+  &__address-title {
+    color: $colorTitles3;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+  }
+
+  &__address-description {
+    color: $colorTitles3;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 40px;
+    @include onTablet {
+      gap: 32px;
+    }
+    @include onDesktop {
+      gap: 74px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__social {
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 20px;
+    width: 20px;
+    @include hover;
+    @include onDesktop {
+      height: 30px;
+      width: 30px;
+    }
+
+    &--item-twit {
+      background-image: url(../images/socials/twitter-logo.svg);
+    }
+    &--item-inst {
+      background-image: url(../images/socials/instagram-logo.svg);
+    }
+    &--item-fb {
+      background-image: url(../images/socials/facebook-logo.svg);
+    }
+  }
+
+  &__logo {
+    color: $colorTitles3;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include hover;
+  }
+
+  &__about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+    @include onTablet {
+      align-items: start;
+    }
+  }
+
+  &__about-us-title {
+    display: none;
+    @include onTablet {
+      display: block;
+      color: $colorTitles3;
+      font-size: 24px;
+      line-height: 100%;
+      letter-spacing: 3.72px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__about-us-copyright {
+    color: $colorTitles3;
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
