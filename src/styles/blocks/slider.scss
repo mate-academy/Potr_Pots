@@ -9,6 +9,12 @@
 
   overflow: hidden;
 
+  @include onTablet {
+    visibility: hidden;
+    position: static;
+    -webkit-backdrop-filter: none;
+  }
+
   &__slides {
     display: flex;
     // overflow: hidden;
@@ -32,6 +38,10 @@
     padding-top: 28px;
     padding-left: 45px;
     padding-right: 44px;
+
+    @include onTablet {
+      padding: 35px;
+    }
   }
 
   &__navigation {
@@ -43,22 +53,130 @@
   }
 
   &__label {
-    width: 6px;
-    height: 6px;
-    margin-right: 7px;
+    position: absolute;
+    bottom: 37px;
+    width: 7px;
+    height: 7px;
+    // margin-right: 7px;
     transform: rotate(45deg);
     background-color: $c-gray;
-    border: 1px solid $c-gray;
+    border: 1px solid rgba(0, 0, 0, 0.45);;
     cursor: pointer;
 
-    &:last-child {
-      margin-right: 0;
+    // &:last-child {
+    //   margin-right: 0;
+    // }
+
+    &:active,
+    &:focus {
+      background-color: gray;
+      border: 1px solid white;
+
+      @include onTablet {
+        background-image: url(../images/materials-and-features/slider-minus.svg);
+        border: none
+      }
+    }
+
+    &--1 {
+      left: 116px;
+    }
+
+    &--2 {
+      left: 133px;
+    }
+
+    &--3 {
+      left: 150px;
+    }
+
+    &--4 {
+      left: 167px;
+    }
+
+    &--5 {
+      left: 184px;
+    }
+
+    @include onTablet {
+      position: absolute;
+      visibility: visible;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transform: none;
+      background-image: url(../images/materials-and-features/slider-plus.svg);
+      border: none;
+
+      &:hover {
+        background-image: url(../images/materials-and-features/slider-minus.svg);
+        .slider {
+          visibility: visible;
+        }
+        // display: block;
+        &--1:hover ~ .slider__slide--1,
+        &--2:hover ~ .slider__slide--2, 
+        &--3:hover ~ .slider__slide--3,
+        &--4:hover ~ .slider__slide--4,
+        &--5:hover ~ .slider__slide--5 {
+          display: block;
+        }
+      }
+
+      &--1 {
+        left: 555px;
+        bottom: 319px;
+
+        @include onTablet {
+          &:hover {
+            .slider {
+              visibility: visible;
+            }
+          }
+        }
+      }
+
+      &--2 {
+        left: 418px;
+        bottom: 135px;
+      }
+
+      &--3 {
+        left: 338px;
+        bottom: 72px;
+      }
+
+      &--4 {
+        left: 231px;
+        bottom: 231px;
+      }
+
+      &--5 {
+        left: 83px;
+        bottom: 103px;
+      }
+
+      // &::before {
+      //   content: '+';
+      //   width: 11px;
+      //   height: 11px;
+      //   line-height: 1;
+      // }
+    }
+  }
+
+  &__sign {
+    display: none;
+
+    @include onTablet {
+      display: block;
     }
   }
 
   &__input {
     visibility: hidden;
     position: absolute;
+    
 
     // @for $slideNumber from 1 through 5 {
     //   &--#{$slideNumber}:checked~.slider__slide--#{$slideNumber} {
@@ -75,25 +193,39 @@
     //       background-color: $black;
     //     }
       // }
+      @for $slideNumber from 1 through 5 {
+        &--#{$slideNumber}:checked ~ .slider__label--#{$slideNumber} {
+        background-color: gray;
+        border: 1px solid white;
+        // opacity: 0.7;
+
+        @include onTablet {
+          border: none;
+          // background-image: url(../images/materials-and-features/slider-minus.svg);
+        }
+      }
+    }
+
+
     }
 
     #slide-1:checked ~ .s1 {
       margin-left: 0;
-   }
-   
-   #slide-2:checked ~ .s1 {
-      margin-left: -20%;
-   }
-   
-   #slide-3:checked ~ .s1 {
-      margin-left: -40%;
-   }
-   
-   #slide-4:checked ~ .s1 {
-      margin-left: -60%;
-   }
+    }
+    
+    #slide-2:checked ~ .s1 {
+        margin-left: -20%;
+    }
+    
+    #slide-3:checked ~ .s1 {
+        margin-left: -40%;
+    }
+    
+    #slide-4:checked ~ .s1 {
+        margin-left: -60%;
+    }
 
-   #slide-5:checked ~ .s1 {
-    margin-left: -80%;
- }
+    #slide-5:checked ~ .s1 {
+      margin-left: -80%;
+    }
 }

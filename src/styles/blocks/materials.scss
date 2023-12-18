@@ -5,8 +5,9 @@
   background-repeat: no-repeat;
 
   @include onTablet {
+    height: 835px;
     background-image: url(../images/materials-and-features/background-image-tablet.png);
-    background-position: bottom;
+    background-position: top 258px center;
 
   }
 
@@ -25,6 +26,7 @@
     margin-bottom: 120px;
 
     @include onTablet {
+      margin-bottom: 0;
       font-size: 80px;
       letter-spacing: 9.6px;
     }
@@ -59,6 +61,37 @@
 
     @include onDesktop {
       display: none;
+    }
+  }
+
+  &__info {
+    display: none;
+    color: $second-gray;
+    font-family: Manrope, sans-serif;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      width: 340px;
+      bottom: -181px;
+      right: 0;
+    }
+  }
+
+  &__info-title {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__info-text {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__bold {
+    @include onTablet {
+      font-weight: 700;
     }
   }
 }
