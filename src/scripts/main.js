@@ -27,6 +27,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.materials__toggle-button');
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', function() {
+      toggleText(index + 1);
+    });
+  });
+});
+
 function toggleText(buttonNumber) {
   const textElement = document.querySelector(`.materials__toggle-text--${buttonNumber}`);
   const buttonElement = document.querySelector(`.materials__toggle-button--${buttonNumber}`);
@@ -43,18 +53,15 @@ function toggleText(buttonNumber) {
   }
 }
 
-toggleText(1);
-
 function hideAllText() {
-  const textElements = document.querySelectorAll('.hiddenText');
+  const textElements = document.querySelectorAll('.materials__toggle-text');
+  const buttons = document.querySelectorAll('.materials__toggle-button');
 
-  textElements.forEach(element => {
+  textElements.forEach((element) => {
     element.classList.remove('visible');
   });
 
-  const buttons = document.querySelectorAll('.materials__toggle-button');
-
-  buttons.forEach(button => {
+  buttons.forEach((button) => {
     button.classList.remove('materials__toggle-button--active');
   });
 }
