@@ -1,5 +1,4 @@
 .intro {
-  position: relative;
   overflow: hidden;
 
   @include onTablet {
@@ -65,6 +64,7 @@
     }
 
     @include onDesktop {
+      align-self: start;
       position: static;
       grid-column: 2 / 5;
     }
@@ -126,40 +126,26 @@
 
   &__learn-more {
     font-size: 12px;
-    line-height: 18px;
     color: $color-blue;
+
     display: flex;
     align-items: center;
-    gap: 20px;
-
-    transform: rotate(90deg);
-    position: absolute;
-    right: -70px;
-    bottom: 75px;
-
-    @include onTablet {
-      transform-origin: top;
-      grid-column: 1;
-      width: max-content;
-
-      position: absolute;
-      right: initial;
-      left: $left-align-m;
-      bottom: 0;
-    }
-
-    @include onDesktop {
-      bottom: 100px;
-      left: $left-align-l;
-    }
+    justify-content: center;
+    gap: 10px;
 
     &::after {
       content: "";
       display: block;
-      height: 44px;
-      width: 25px;
+      height: 8px;
+      width: 44px;
+
       background: url(../images/icons/arrow-long-icon.svg) center / contain no-repeat;
-      transform: rotate(-90deg);
+    }
+
+    @include rightBottomAlign;
+
+    @include onTablet {
+      @include leftBottomAlign;
     }
   }
 }

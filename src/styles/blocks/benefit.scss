@@ -1,0 +1,191 @@
+.benefit {
+  &__content {
+    position: relative;
+
+    @include onTablet {
+      grid-template-rows: repeat(2, auto);
+
+      & > [class$="list"] {
+        grid-column: 1 / 4;
+        grid-row: 1 / -1;
+      }
+
+      & > [class$="buy"] {
+        grid-column: 4 / -2;
+        grid-row: 1;
+        align-self: end;
+      }
+
+      & > [class$="promo"] {
+        grid-column: 4 / -2;
+        grid-row: 2;
+      }
+    }
+
+    @include onDesktop {
+      grid-template-rows: repeat(3, auto);
+
+      & > [class$="album"] {
+        grid-column: 1 / 6;
+        grid-row: 1 / -1;
+        align-self: start;
+      }
+
+      & > [class$="list"] {
+        grid-column: 7 / -1;
+        grid-row: 1;
+      }
+
+      & > [class$="buy"] {
+        grid-column: 7 / 10;
+        grid-row: 2;
+        align-self: start;
+      }
+
+      & > [class$="promo"] {
+        grid-column: 8 / -1;
+        grid-row: 3;
+        align-self: start;
+      }
+    }
+  }
+
+  &__album {
+    display: none;
+
+    @include onDesktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__photocard {
+    width: 214px;
+    height: 240px;
+    padding: 15px;
+    background-color: $color-white;
+    cursor: pointer;
+
+    transition: transform $transition;
+
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) > [class$="photo"] {
+        background: url(../images/photos/benefits/benefit-#{$i}.jpg) center / cover no-repeat;
+      }
+    }
+
+    &:nth-child(1) {
+      transform: rotate(-15deg) translateX(25px);
+    }
+
+    &:nth-child(2) {
+      transform: rotate(-29deg) translateY(-40px) translateX(25px);
+    }
+
+    &:nth-child(3) {
+      transform: translateY(20px);
+      z-index: 1;
+    }
+
+    &:nth-child(4) {
+      transform: rotate(-15deg) translateY(-40px);
+    }
+
+    &:nth-child(5) {
+      transform: rotate(-16deg) translateX(85px);
+    }
+
+    &:nth-child(6) {
+      transform: rotate(-30deg) translateX(85px);
+    }
+
+    &:hover {
+      transform: rotate(0deg) translate(0) scale(1.2);
+      z-index: 2;
+      box-shadow: 10px 5px 5px $color-background-blur;
+    }
+  }
+
+  &__photo {
+    @include square(182px);
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    @extend %secondary-text;
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 40px;
+
+    margin-bottom: 50px;
+
+    @include onTablet {
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      grid-template-columns: 1.7fr 2fr;
+      column-gap: 20px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      @include square(14px);
+      background: url(../images/icons/bullet-rhombus.svg) center / contain no-repeat;
+
+      margin: 0 0 3px -15px;
+    }
+
+    @include onTablet {
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    @include onDesktop {
+      font-size: 32px;
+    }
+  }
+
+  &__description {
+    color: $color-gray-light-2;
+  }
+
+  &__buy {
+    margin-bottom: 40px;
+
+    &--blue {
+      display: none;
+
+      @include onTablet {
+        display: flex;
+      }
+    }
+
+    &--yellow {
+      @include onTablet {
+        display: none;
+      }
+    }
+  }
+
+  &__logo {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+
+      @include rightTopAlign;
+      top: 100px;
+    }
+  }
+}

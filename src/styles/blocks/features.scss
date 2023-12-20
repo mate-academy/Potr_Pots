@@ -17,6 +17,7 @@
 
   &__catalog {
     align-items: start;
+    row-gap: 70px;
 
     @include onTablet {
       @for $i from 1 through 3 {
@@ -28,6 +29,8 @@
     }
 
     @include onDesktop {
+      row-gap: 80px;
+      
       @for $i from 1 through 3 {
         :nth-child(#{$i}) {
           grid-column-start: calc(#{$i} + (4 * #{$i}) - (#{$i} - 1) - 4);

@@ -1,4 +1,6 @@
 .button {
+  height: 48px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,9 +11,6 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 21px;
-
-  @include hover(opacity, 0.7);
-  @include active(opacity, 1);
 
   &::after {
     content: "";
@@ -24,5 +23,35 @@
   &--yellow {
     background-color: $color-yellow;
     color: $color-black;
+
+    @include hover(opacity, 0.7);
+    @include active(opacity, 1);
+  }
+
+  &--blue {
+    background-color: $color-blue;
+    color: $color-white;
+
+    @include hover(opacity, 0.7);
+    @include active(opacity, 1);
+  }
+
+  &--blue-second {
+    color: $color-black;
+    border: 1px solid $color-blue;
+
+    &:hover {
+      color: $color-white;
+      &::after {
+        filter: invert(10);
+      }
+    }
+    @include hover(background-color, $color-blue);
+  }
+
+  &--bw-second {
+    color: $color-black;
+    border: 1px solid $color-gray-dark;
+    @include hover(background-color, $color-white);
   }
 }

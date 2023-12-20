@@ -1,6 +1,7 @@
 .for-whom {
   &__catalog {
     position: relative;
+    row-gap: 70px;
 
     @include onTablet {
       & > [class*="card"] {
@@ -9,6 +10,8 @@
     }
 
     @include onDesktop {
+      row-gap: 80px;
+
       & :nth-child(1) {
         grid-column: 1 / -2;
       }
@@ -236,20 +239,15 @@
   }
 
   &__logo {
-    position: absolute;
-    right: -80px;
-    bottom: 50px;
-
-    display: flex;
+    @include rightBottomAlign;
 
     @include onTablet {
-      bottom: initial;
-      top: -150px;
+      @include rightTopAlign;
+      top: -100px;
     }
 
     @include onDesktop {
-      top: -30px;
-      right: -68px;
+      top: 0;
     }
 
     &--reverse {
@@ -258,10 +256,7 @@
       @include onDesktop {
         display: flex;
 
-        top: initial;
-        bottom: 50px;
-        right: initial;
-        left: $left-align-l;
+        @include leftBottomAlign;
       }
     }
   }
