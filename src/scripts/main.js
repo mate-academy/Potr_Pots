@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 'use strict';
 
@@ -45,6 +43,8 @@ function toggleText(buttonNumber) {
   }
 }
 
+toggleText(1);
+
 function hideAllText() {
   const textElements = document.querySelectorAll('.hiddenText');
 
@@ -60,8 +60,6 @@ function hideAllText() {
 }
 
 window.addEventListener('hashchange', () => {
-  console.log(window.location.hash);
-
   if (window.location.hash === '#burger-menu') {
     document.body.classList.add('page__body--with-menu');
   } else {
