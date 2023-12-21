@@ -1,5 +1,7 @@
 .button {
-  height: 48px;
+  height: $button-height;
+
+  position: relative;
 
   display: flex;
   justify-content: center;
@@ -12,12 +14,14 @@
   font-weight: 600;
   line-height: 21px;
 
+  cursor: pointer;
+
   &::after {
     content: "";
     display: block;
     width: 30px;
     height: 10px;
-    background: url(../images/icons/arrow-icon.svg) center / contain no-repeat;
+    background: url(../images/icons/arrow-black-icon.svg) center / contain no-repeat;
   }
 
   &--yellow {
@@ -32,6 +36,10 @@
     background-color: $color-blue;
     color: $color-white;
 
+    &::after {
+      background-image: url(../images/icons/arrow-white-icon.svg);
+    }
+
     @include hover(opacity, 0.7);
     @include active(opacity, 1);
   }
@@ -43,7 +51,7 @@
     &:hover {
       color: $color-white;
       &::after {
-        filter: invert(10);
+        background-image: url(../images/icons/arrow-white-icon.svg);
       }
     }
     @include hover(background-color, $color-blue);

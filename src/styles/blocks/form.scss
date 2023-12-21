@@ -1,0 +1,67 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__input {
+    background-color: $color-yellow-light;
+    border: none;
+    border-bottom: 1px solid $color-background-blur;
+    outline: none;
+    padding: 5px;
+    resize: none;
+
+    transition: border $transition;
+
+    &::placeholder {
+      color: $color-gray-medium;
+
+      transition: color $transition;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $color-black;
+      &::placeholder {
+        color: $color-black;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $color-blue;
+      margin-bottom: -0.5px;
+    }
+
+    &:valid {
+      color: $color-blue;
+    }
+
+    &:invalid {
+      color: $color-red;
+      border-bottom: 1px solid $color-red;
+    }
+  }
+
+  &__button {
+    margin-block: 10px 30px;
+
+    &::after {
+      position: absolute;
+      margin-right: -125px;
+      margin-top: 2px;
+    }
+
+    & > input {
+      width: 100%;
+      border: none;
+    }
+
+    @include onTablet {
+      width: 225px;
+    }
+
+    @include onDesktop {
+      width: 240px;
+    }
+  }
+}

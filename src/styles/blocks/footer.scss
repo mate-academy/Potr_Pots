@@ -1,0 +1,111 @@
+.footer {
+  &__content {
+    margin-inline: 20px;
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: 1fr 1.5fr 1fr;
+      column-gap: 80px;
+
+      & > [class$="address"] {
+        grid-column: 1;
+      }
+
+      & > [class$="social"] {
+        grid-column: 2;
+      }
+
+      & > [class$="logo"] {
+        grid-column: 2;
+      }
+
+      & > [class$="extra"] {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: right;
+      }
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 80px;
+
+      & > [class$="address"] {
+        grid-column: 1;
+      }
+
+      & > [class$="social"] {
+        grid-column: 3;
+      }
+
+      & > [class$="logo"] {
+        grid-column: 3;
+      }
+
+      & > [class$="extra"] {
+        grid-column: 5;
+        grid-row: 1;
+        justify-self: right;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 24px;
+    @extend %title-black;
+  }
+
+  &__address {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    @include onTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__icon {
+    @include square($icon-small-size);
+    background: center / contain no-repeat;
+    padding: 10px;
+
+    &--twitter {
+      background-image: url(../images/icons/social/twitter-icon.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/social/instagram-icon.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/social/fb-icon.svg);
+    }
+  }
+
+  &__logo {
+    justify-self: center;
+    margin-bottom: 10px;
+  }
+
+  &__extra {
+    color: $color-black;
+    justify-self: center;
+  }
+
+  &__about {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}
