@@ -2,3 +2,39 @@
   font-family: "Roboto", sans-serif;
   font-weight: 400;
 }
+
+%for-whom-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 54px;
+  letter-spacing: 0.15em;
+  color: $color-gray-1;
+}
+
+%slash-before {
+  content: "";
+  position: relative;
+  top: 5px;
+  display: inline-block;
+  width: 1px;
+  height: 46.29px;
+  margin-right: 10px;
+  background-color: $color-gray-1;
+  transform: rotate(22deg);
+}
+
+%slash-after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 1px;
+  height: 46.29px;
+  margin-left: 10px;
+  background-color: $color-gray-1;
+  transform: rotate(22deg);
+
+  @include onMobile {
+    display: none;
+  }
+}

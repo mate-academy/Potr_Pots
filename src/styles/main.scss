@@ -1,7 +1,787 @@
-@import "utils";
-@import "fonts";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/extends";
 @import "typography";
 
-body {
-  background: $c-gray;
+.container {
+  position: relative;
+  margin: 0 $container-margin-mob;
+
+  @include onTablet {
+    margin: 0 $container-margin-tablet;
+  }
+
+  @include onDesktop {
+    max-width: $max-width-container-desktop;
+    margin: 0 auto;
+  }
+}
+
+.page {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+
+  scroll-behavior: smooth;
+
+  &__body {
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__paragraf {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: $color-gray-2;
+  }
+
+  &__yellow-tringle {
+    display: none;
+
+    @include onTabletAndDesktop {
+      position: relative;
+      display: flex;
+    }
+
+    @include onTablet {
+      width: 1050px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+    }
+
+    &--cover {
+      @include onTabletAndDesktop {
+        position: absolute;
+        z-index: -1;
+
+        display: flex;
+        justify-content: end;
+
+        overflow: hidden;
+        width: 72%;
+      }
+
+      @include onDesktop {
+        top: -1%;
+        left: 0;
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    overflow: hidden;
+    transition: height $time-transition;
+
+    &:target {
+      overflow: auto;
+      height: 100vh;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  z-index: 2;
+  height: 0;
+  width: 70%;
+  background-color: $color-blue;
+
+  &__list {
+    width: max-content;
+    list-style-type: none;
+
+    &--cover {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 100%;
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    transition: transform $time-transition;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__link {
+    display: flex;
+    width: max-content;
+    color: $color-dark-white;
+
+    @include onTablet {
+      font-size: 24px;
+      line-height: 29px;
+    }
+
+    &--with-buble {
+      &::after {
+        content: "0";
+        position: relative;
+        top: -5px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 23px;
+        height: 23px;
+        border-radius: 50%;
+        margin-left: 5px;
+
+        font-family: "Bebas Neue", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        background-color: $color-red;
+
+        @include onMobile {
+          width: 18px;
+          height: 18px;
+          font-size: 12px;
+        }
+
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+
+    &--text {
+      display: flex;
+      align-items: center;
+
+      font-size: 18px;
+      line-height: 21px;
+      color: $color-dark-white;
+      text-transform: uppercase;
+
+      writing-mode: vertical-lr;
+      text-orientation: sideways;
+      transform: rotate(180deg);
+
+      @include onMobile {
+        font-size: 12px;
+        line-height: 18px;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        height: 54px;
+        width: 1px;
+        margin: 10px 0;
+        background-color: $color-dark-white;
+
+        @include onMobile {
+          height: 44px;
+          margin: 7px 0;
+        }
+      }
+    }
+
+    &--img {
+      object-fit: cover;
+      transition: transform $time-transition;
+
+      &--cover {
+        display: flex;
+        width: 21px;
+        height: 21px;
+
+        @include onMobile {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    &:hover &--img {
+      transform: scale(1.5);
+    }
+  }
+}
+
+.icon {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: $icon-width;
+  width: $icon-width;
+  transition: transform $time-transition, background-image $time-transition;
+
+  &__menu {
+    background-image: url(../images/icons/menu_icon.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      background-image: url(../images/icons/menu-icon-blue.svg);
+    }
+  }
+
+  &__basket {
+    display: none;
+    background-image: url(../images/icons/icon-basket-white.svg);
+
+    @include onDesktop {
+      display: inline;
+    }
+
+    &:hover {
+      background-image: url(../images/icons/icon-basket-blue.svg);
+    }
+  }
+}
+
+.button {
+  &__primary-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 48px;
+    width: 100%;
+    background-color: $color-yellow;
+    transition: opacity $time-transition;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.header {
+  position: relative;
+  margin-bottom: 110px;
+
+  @include onDesktop {
+    margin-bottom: 150px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      padding-top: $padding-top-nav-tabAndDesk;
+      margin-bottom: $margin-bot-nav-tablet;
+    }
+
+    @include onDesktop {
+      padding-top: $padding-top-nav-tabAndDesk;
+      margin-bottom: $margin-bot-nav-desktop;
+    }
+
+    &--list {
+      display: flex;
+      justify-content: space-between;
+      width: 40%;
+      list-style: none;
+
+      @include onMobileAndTablet {
+        display: none;
+      }
+    }
+
+    &--item {
+      color: $color-gray-2;
+
+      &:hover {
+        color: #03839e;
+      }
+    }
+  }
+
+  &__img {
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+
+    @include onTabletAndDesktop {
+      position: absolute;
+      z-index: -1;
+    }
+
+    @include onTablet {
+      right: 5%;
+      width: 40%;
+      max-width: 450px;
+    }
+
+    @include onDesktop {
+      max-width: 500px;
+    }
+
+    &--cover {
+      display: flex;
+      justify-content: center;
+
+      @include onTablet {
+        position: relative;
+        justify-content: end;
+        // right: 5%;
+
+        // width: 40%;
+        width: 100%;
+      }
+
+      @include onDesktop {
+        justify-content: end;
+        width: $max-width-container-desktop;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__block {
+    max-width: $max-width-section-tablet;
+    margin: 0 auto;
+
+    @include onTabletAndDesktop {
+      position: relative;
+      margin: 0 auto;
+      max-width: 450px;
+    }
+  }
+
+  &__h1 {
+    position: relative;
+    margin: 25px 0 30px;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $color-blue;
+    -webkit-text-stroke: 0.67px $color-blue;
+
+    @include onTabletAndDesktop {
+      width: 460px;
+      font-size: 64px;
+      line-height: 64px;
+      -webkit-text-stroke-width: 1px;
+    }
+
+    @include onTablet {
+      right: 28%;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      right: 55%;
+      margin: 0 0 20px;
+    }
+
+    &_white {
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__price {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    margin-bottom: 20px;
+
+    @include onTabletAndDesktop {
+      margin-bottom: 50px;
+    }
+
+    @include onTablet {
+      left: 27%;
+    }
+
+    @include onDesktop {
+      left: 10%;
+    }
+
+    &-digits {
+      font-weight: 700;
+      font-size: 26px;
+      line-height: 36px;
+      color: $color-gray-1;
+    }
+
+    &-text {
+      width: 140px;
+    }
+  }
+
+  &__buttom {
+    position: relative;
+    max-width: 260px;
+    margin: 0 auto;
+
+    @include onTabletAndDesktop {
+      width: 240px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      left: -10%;
+    }
+  }
+
+  &__turn-aside-text {
+    position: absolute;
+    bottom: 0;
+    right: -20px;
+
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-blue;
+
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    @include onTabletAndDesktop {
+      right: inherit;
+      transform: translateY(40%);
+    }
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 50px;
+      margin-top: 10px;
+
+      background-image: url(../images/icons/Arrow.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.for-whom {
+  position: relative;
+
+  @include onMobile {
+    max-width: $max-width-section-tablet;
+    margin: 0 auto;
+  }
+
+  @include onTablet {
+    max-width: $max-width-container-desktop;
+    margin: 0 auto;
+  }
+
+  &__main-title {
+    @extend %for-whom-title;
+    margin-bottom: 25px;
+
+    @include onTablet {
+      margin-bottom: 18px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 34px;
+    }
+  }
+
+  &__block {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--photo {
+      position: relative;
+      width: $for-whom-width-img;
+      object-fit: contain;
+
+      @include onMobile {
+        display: none;
+      }
+
+      @include onTablet {
+        max-height: 500px;
+      }
+    }
+  }
+
+  &__first-block {
+    &--photo {
+      @include onTablet {
+        top: 20px;
+      }
+    }
+  }
+
+  &__block--cover {
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__second-block {
+    @include onDesktop {
+      align-items: start;
+      justify-content: center;
+      flex-direction: column-reverse;
+      gap: 45px;
+      width: 43%;
+      margin-left: 10%;
+    }
+
+    &--photo {
+      @include onDesktop {
+        width: fit-content;
+      }
+    }
+  }
+
+  &__third-block {
+    @include onDesktop {
+      flex-direction: column;
+      gap: 35px;
+      width: 40%;
+    }
+
+    &--photo {
+      @include onDesktop {
+        width: 100%;
+      }
+    }
+  }
+
+  &__text-block {
+    &--title {
+      @extend %for-whom-title;
+
+      &::after {
+        @extend %slash-after;
+      }
+    }
+
+    &--text {
+      margin-top: 20px;
+    }
+  }
+
+  &__first-text-block {
+    position: relative;
+
+    @include onTablet {
+      left: $for-whom-move-left-tablet;
+      width: $for-whom-width-text-tablet;
+    }
+
+    @include onDesktop {
+      left: 20%; ///// 100% - 43 - 5 - 2
+      width: 35%;
+    }
+
+    &--status {
+      position: relative;
+      margin-bottom: 25px;
+
+      @include onMobile {
+        display: none;
+      }
+
+      &::before {
+        content: "*";
+        position: absolute;
+        left: -7%;
+        margin-right: 10px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+
+        @include onDesktop {
+          left: -10%;
+        }
+      }
+    }
+
+    &--number {
+      @extend %for-whom-title;
+      padding-left: 10px;
+
+      @include onTablet {
+        position: absolute;
+        left: -16%;
+      }
+
+      @include onDesktop {
+        position: absolute;
+        left: -25%;
+      }
+
+      &::before {
+        @extend %slash-before;
+      }
+    }
+  }
+
+  &__second-text-block {
+    position: relative;
+
+    @include onTablet {
+      width: $for-whom-width-text-tablet;
+      margin-right: $for-whom-move-left-tablet;
+    }
+
+    @include onDesktop {
+      width: 75%;
+    }
+
+    &--status {
+      position: relative;
+      display: flex;
+      justify-content: end;
+      margin-bottom: 25px;
+
+      @include onMobile {
+        display: none;
+      }
+
+      @include onDesktop {
+        justify-content: start;
+      }
+
+      &::before {
+        content: "*";
+        position: relative;
+        margin-right: 10px;
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+
+        @include onDesktop {
+          position: absolute;
+          left: -10%;
+        }
+      }
+    }
+
+    &--number {
+      @extend %for-whom-title;
+      padding-left: 10px;
+
+      @include onTabletAndDesktop {
+        position: relative;
+      }
+
+      &::before {
+        @extend %slash-before;
+      }
+    }
+  }
+
+  &__third-text-block {
+    position: relative;
+
+    @include onTablet {
+      left: $for-whom-move-left-tablet;
+      width: $for-whom-width-text-tablet;
+    }
+
+    &--status {
+      @extend .for-whom__first-text-block--status;
+    }
+
+    &--number {
+      @extend %for-whom-title;
+      padding-left: 10px;
+
+      @include onTablet {
+        position: absolute;
+        left: -16%;
+      }
+
+      @include onDesktop {
+        position: absolute;
+        // left: -25%;
+      }
+
+      &::before {
+        @extend %slash-before;
+      }
+    }
+
+    &--content {
+      @include onDesktop {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__turn-aside-text {
+    position: absolute;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    color: $color-gray-3;
+
+    height: max-content;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    @include onMobile {
+      bottom: 0;
+      right: -20px;
+    }
+
+    @include onTablet {
+      bottom: 100%;
+      right: 0;
+    }
+
+    @include onDesktop {
+      bottom: 0;
+      transform: rotate(180deg);
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1px;
+      height: 65px;
+      background-color: $color-gray-3;
+      margin-bottom: 10px;
+    }
+  }
 }
