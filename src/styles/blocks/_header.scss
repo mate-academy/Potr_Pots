@@ -1,0 +1,192 @@
+.header {
+  position: relative;
+  background-image: url(../images/header__image.png);
+  background-position: 0 68px;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include on-tablet {
+    background-position: top 111px right $tablet-padding-inline;
+    background-repeat: no-repeat;
+    background-size: 306px 306px;
+  }
+
+  @include on-desctop {
+    background-position: top 140px right $desctop-padding-inline;
+    background-size: 500px 500px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0 10px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      padding-bottom: 49px;
+    }
+
+    @include on-desctop {
+      padding-bottom: 76px;
+    }
+  }
+
+  &__list {
+    display: none;
+    list-style: none;
+    gap: 60px;
+    margin: 12px 0 0;
+    padding: 0;
+
+
+    @include on-desctop {
+      display: flex;
+
+    }
+  }
+
+  &__link {
+    color: $gray-2;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-decoration: none;
+
+    @include hover(text-shadow, 1px 1px 5px $gray-2);
+    @include hover(letter-spacing, 1.5);
+  }
+
+  &__link-logo {
+    display: flex;
+    height: 43px;
+    color: $gray-1;
+    font-size: 36px;
+    letter-spacing: 2.16px;
+    text-decoration: none;
+
+    @include on-desctop {
+      margin-top: 6px;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    padding-bottom: calc(100% + $mobile-padding-inline * 2);
+    margin-bottom: 25px;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    font-size: 36px;
+    color: $turquoise;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      grid-column: 1 / 5;
+      grid-row: 2 / 3;
+
+      margin-bottom: 10px;
+
+      font-size: 64px;
+      letter-spacing: 9.92px;
+    }
+
+    @include on-desctop {
+      grid-column: 2 / 7;
+      margin-bottom: 20px;
+      line-height: 100%;
+    }
+  }
+
+  &__cost {
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-column: 3 / 5;
+      transform: translateY($header-cost-shift);
+      margin-bottom: 40px + $header-cost-shift;
+    }
+
+    @include on-desctop {
+      transform: translateY(0);
+      padding-bottom: 50px;
+      grid-column: 5 / 7;
+    }
+  }
+
+  &__price {
+    margin: 0 0 1px;
+    color: $gray-1;
+    font-family: Manrope, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  &__description {
+    margin: 0;
+    color: $gray-2;
+    font-family: Manrope , sans-serif;
+    font-size: 14px;
+    line-height: 150%;
+  }
+
+  &__button {
+    @include on-tablet {
+      grid-column: 2 / 4;
+    }
+
+    @include on-desctop {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    height: max-content;
+    margin-right: 5px;
+
+    color: $turquoise;
+    font-family: Manrope , sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+
+    @include hover(text-shadow, 1px 1px 2px $turquoise);
+
+    &::after {
+      content: '';
+      display: block;
+      height: 44px;
+      width: 9px;
+      margin-top: 9px;
+      background-image: url(../images/icons/arrow-more.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      fill: $turquoise;
+    }
+
+    @include on-tablet {
+      position: relative;
+      grid-column: 1 / 2;
+      grid-row: 3 / 6;
+      justify-self: start;
+    }
+
+    @include on-tablet {
+      margin-top: 30px;
+    }
+  }
+}
