@@ -1,0 +1,112 @@
+.team {
+  position: relative;
+
+  &__title {
+    margin: 0;
+    @extend %Bebas;
+    color: $price-title-color;
+    font-size: 58px;
+    letter-spacing: 8.99px;
+
+    @include onTablet {
+      grid-column: 1 / 7;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 8;
+    }
+
+    &-img {
+      position: absolute;
+      @extend %Bebas;
+      color: transparent;
+      -webkit-text-stroke: 1.5px $title-color;
+      font-size: 231.88px;
+      font-weight: 400;
+      letter-spacing: 35.94px;
+      left: -45px;
+      top: -110px;
+
+      @include onPhone {
+        display: none;
+      }
+
+      @include onDesktop {
+        top: -130px;
+        left: 100px;
+        font-size: 288px;
+      }
+
+      &-second {
+        position: absolute;
+        @extend %Bebas;
+        color: transparent;
+        -webkit-text-stroke: 1.5px $title-color;
+        font-size: 231.88px;
+        font-weight: 400;
+        letter-spacing: 35.94px;
+        right: 0;
+        top: 300px;
+
+        @include onPhone {
+          display: none;
+        }
+
+        @include onDesktop {
+          right: 0;
+          top: 510px;
+        }
+      }
+    }
+  }
+
+  &-img {
+    width: 100%;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      margin-top: 177px;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 12;
+    }
+  }
+
+  &-back {
+    position: absolute;
+    left: 0;
+    top: 542px;
+    z-index: -1;
+
+    @include onTablet {
+      top: 235px;
+      left: -60px;
+    }
+
+    @include onDesktop {
+      left: 0;
+      top: 195px;
+    }
+  }
+
+  &__paragraph {
+    @extend %Manrope400;
+    color: $paragraph-color;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onTablet {
+      grid-row: 2;
+      grid-column: 1 / 4;
+      margin-top: 230px;
+    }
+
+    @include onDesktop {
+      width: 336px;
+      grid-row: 2;
+      grid-column: 1 / 5;
+      margin-top: 373px;
+    }
+  }
+}

@@ -1,0 +1,332 @@
+.materials {
+  margin-top: 168px;
+  display: block;
+  position: relative;
+
+  @include onTablet {
+    margin-top: 148px;
+  }
+
+  &-picture {
+    display: block;
+  }
+
+  &-back {
+    display: block;
+    position: relative;
+    top: -130px;
+    width: 100%;
+    z-index: -1;
+
+    @include onTablet {
+      width: 100%;
+      top: -135px;
+    }
+
+    @include onDesktop {
+      top: -290px;
+    }
+  }
+
+  &__title {
+    @extend %Bebas;
+    color: $title-color;
+    font-size: 58px;
+    letter-spacing: 8.99px;
+
+    @include onTablet {
+      font-size: 80px;
+      grid-column: 1 / 7;
+      grid-row: 1;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      font-size: 138.81px;
+      grid-column: 1 / 13;
+    }
+  }
+
+  &__subtitle {
+    @extend %Manrope700;
+    color: $paragraph-color;
+    font-size: 20px;
+    line-height: 150%;
+
+    &-container {
+      position: relative;
+
+      @include onPhone {
+        display: none;
+      }
+
+      @include onTablet {
+        grid-column: 4 / 7;
+        grid-row: 1;
+        margin-top: 140px;
+      }
+
+      @include onDesktop {
+        grid-column: 8 / 13;
+        margin-top: 280px;
+      }
+    }
+  }
+
+  &__paragraph {
+    @extend %Manrope400;
+    color: $paragraph-color;
+    font-size: 16px;
+    line-height: 150%;
+    width: 100%;
+
+    &_bold {
+      @extend %Manrope700;
+    }
+  }
+
+  &__plus {
+    width: 51px;
+    height: 51px;
+    background-color: $additional-element-color;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+
+    &::before {
+      content: "+";
+      position: relative;
+      top: 0;
+      left: 0;
+      font-size: 23px;
+      color: $menu-item-color;
+      z-index: 0;
+    }
+
+    &-container {
+      position: absolute;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 30px;
+      justify-items: center;
+      align-items: center;
+      height: 346px;
+
+      @include onPhone {
+        display: none;
+      }
+
+      @include onDesktop {
+        height: 1001px;
+        top: 150px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+
+    &-first {
+      grid-column: 1 / 2;
+      grid-row: 4 / 6;
+      margin-left: 70px;
+
+      @include onDesktop {
+        grid-column: 3 / 4;
+        grid-row: 11 / 12;
+      }
+    }
+
+    &-second {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+
+      @include onDesktop {
+        grid-column: 5 / 6;
+        grid-row: 9 / 10;
+      }
+    }
+
+    &-third {
+      grid-column: 3 / 4;
+      grid-row: 5 / 6;
+
+      @include onDesktop {
+        grid-column: 6 / 8;
+        grid-row: 12 / 13;
+      }
+    }
+
+    &-fourth {
+      grid-column: 3 / 5;
+      grid-row: 4 / 5;
+
+      @include onDesktop {
+        grid-column: 8 / 9;
+        grid-row: 10 / 11;
+      }
+    }
+
+    &-fifth {
+      grid-column: 4 / 6;
+      grid-row: 2 / 3;
+
+      @include onDesktop {
+        grid-column: 10 / 11;
+        grid-row: 9 / 10;
+      }
+    }
+  }
+
+  &__check {
+    display: none;
+  }
+
+  &__message {
+    padding: 35px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(20px);
+    color: $menu-item-color;
+    position: absolute;
+    z-index: 3;
+    display: none;
+
+    &-first {
+      @include onTablet {
+        bottom: 65px;
+        left: -25px;
+      }
+
+      @include onDesktop {
+        bottom: 75px;
+        left: -120px;
+      }
+    }
+
+    &-second {
+      @include onTablet {
+        bottom: 65px;
+        left: -110px;
+      }
+
+      @include onDesktop {
+        bottom: 65px;
+        left: -260px;
+      }
+    }
+
+    &-third {
+      @include onTablet {
+        bottom: 57px;
+        left: -100px;
+      }
+
+      @include onDesktop {
+        left: -290px;
+        bottom: -70px;
+      }
+    }
+
+    &-fourth {
+      @include onTablet {
+        bottom: 65px;
+        left: -100px;
+      }
+
+      @include onDesktop {
+        bottom: 80px;
+      }
+    }
+
+    &-fifth {
+      @include onTablet {
+        right: -100px;
+        top: 60px;
+      }
+
+      @include onDesktop {
+        right: -110px;
+      }
+    }
+
+    &-paragraph {
+      margin: 0;
+      @extend %Manrope400;
+      width: 213px;
+      color: $menu-item-color;
+      font-size: 16px;
+      line-height: 150%;
+      transition: all 0.3s;
+    }
+  }
+
+  &__check:checked + &__plus + &__message {
+    display: block;
+    z-index: 5;
+    transition: all 0.3s;
+  }
+
+  &__check:checked + &__plus {
+    opacity: 0.65;
+    background-color: $modal-window-color;
+    transform: rotate(360deg);
+    transition: all 0.3s;
+
+    &::before {
+      content: "-";
+    }
+  }
+}
+
+.swiper {
+  box-sizing: border-box;
+  margin: 0 48px;
+  padding-top: 28px;
+  height: 302px;
+
+  @include onTablet {
+    display: none;
+  }
+
+  &-container {
+    position: relative;
+    top: -180px;
+    margin: 0 10px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(17px);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &-slide {
+
+    &-text {
+      margin: 0;
+      @extend %Manrope400;
+      width: 100%;
+      color: $menu-item-color;
+      font-size: 16px;
+      line-height: 150%;
+      max-width: 100%;
+    }
+  }
+
+  &-pagination-bullet {
+    box-sizing: border-box;
+    border-radius: 0;
+    transform: rotate(45deg);
+    opacity: 1;
+    background-color: $menu-item-color;
+
+    &-active {
+      background-color: $bullet-color;
+      border: 2px solid $menu-item-color;
+    }
+  }
+}

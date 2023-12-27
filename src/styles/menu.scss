@@ -1,0 +1,99 @@
+.menu {
+  background-color: $title-color;
+  position: absolute;
+  z-index: 3;
+  height: 100vh;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-top: 138px;
+
+    &-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    margin: 0;
+    @extend %Manrope400;
+    color: $menu-item-color;
+    font-size: 16px;
+    line-height: 150%;
+    width: max-content;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom: 1px solid $button-text-color;
+
+    }
+
+    &_first {
+      position: relative;
+
+      &::after {
+        content: "0";
+        top: 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        left: 55px;
+        bottom: 24px;
+        color: $menu-item-color;
+        @extend %Bebas;
+        font-size: 9px;
+        background-color: $additional-element-color;
+      }
+    }
+  }
+
+  &__title {
+    @extend %Manrope400;
+    color: $menu-item-color;
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: uppercase;
+    transform: rotate(270deg);
+    position: relative;
+    right: 14.5px;
+    bottom: 70px;
+
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      top: -9.5px;
+      right: 49px;
+      width: 44px;
+      height: 1px;
+      background-color: $menu-item-color;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &-top {
+    position: absolute;
+    bottom: 42px;
+    right: 0;
+  }
+
+  &__close {
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
