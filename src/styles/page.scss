@@ -1,0 +1,190 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+    background: $menu-item-color;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    margin: 0;
+    @extend %Bebas;
+    color: $footer-text;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+  }
+
+  &__paragraph {
+    &-decoration {
+      margin: 0;
+      color: $description-color;
+      @extend %Bebas;
+      font-size: 12px;
+      letter-spacing: 2.64px;
+      transform: rotate(90deg);
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        width: 65px;
+        right: 72px;
+        top: 7px;
+        background-color: $description-color;
+      }
+
+      &_whom {
+        @include onPhone {
+          position: absolute;
+          right: -50px;
+          bottom: 25px;
+        }
+
+        @include onTablet {
+          display: none;
+        }
+      }
+
+      &_left {
+        @include onPhone {
+          display: none;
+        }
+
+        @include onTablet {
+          position: absolute;
+          top: 315px;
+          left: -13px;
+        }
+
+        @include onDesktop {
+          display: none;
+        }
+      }
+
+      &_right {
+        @include onPhone {
+          display: none;
+        }
+
+        @include onTablet {
+          position: absolute;
+          top: 115px;
+          right: 0;
+        }
+
+        @include onDesktop {
+          display: none;
+        }
+      }
+
+      &-features {
+        position: absolute;
+        bottom: 220px;
+        right: -50px;
+
+        @include onPhone {
+          display: none;
+        }
+
+        @include onTablet {
+          display: block;
+        }
+
+        @include onDesktop {
+          display: none;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 1px;
+          width: 65px;
+          right: 134px;
+          top: 7px;
+          background-color: $description-color;
+        }
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 73%;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+
+    &:target {
+      transform: translateX(0);
+    }
+  }
+
+  &__button {
+    @extend %Manrope600;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    width: 238px;
+    height: 48px;
+    background-color: $button-color;
+    text-transform: uppercase;
+    color: $button-color-text;
+    font-size: 14px;
+    line-height: 150%;
+    border: none;
+
+    @include onTablet {
+      width: 240px;
+    }
+
+    @include onDesktop {
+      left: 340px;
+      bottom: 150px;
+      width: 270px;
+    }
+  }
+
+  &__grid {
+
+    @include onTablet {
+      @include Grid;
+    }
+  }
+
+  &-container {
+    margin: 0 auto;
+    max-width: 1170px;
+    padding: 0 30px;
+
+    @include onTablet {
+      padding: 0 34px;
+    }
+
+    @include onDesktop {
+      padding: 0 135px;
+    }
+  }
+
+  &-hover {
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &_big {
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.3);
+      }
+    }
+  }
+}

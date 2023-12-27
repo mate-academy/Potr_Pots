@@ -1,0 +1,258 @@
+.assembly {
+  position: relative;
+
+  &-container {
+    position: relative;
+    margin-top: 110px;
+
+    @include onDesktop {
+      margin-top: 286px;
+    }
+  }
+
+  &__main-container {
+
+    @include onTablet {
+      display: grid;
+      row-gap: 30px;
+      grid-column: 1 / 4;
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 13;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 256px);
+      column-gap: 44px;
+      margin-left: 24px;
+    }
+  }
+
+  &-img {
+    position: absolute;
+    right: 0;
+
+    @include onPhone {
+      bottom: -200px;
+    }
+
+    @include onTablet {
+      width: 134px;
+    }
+
+    @include onDesktop {
+      width: 164px;
+      bottom: -235px;
+      right: 215px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    @extend %Manrope700;
+    color: $price-title-color;
+    font-size: 32px;
+    line-height: 150%;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+
+    @include onDesktop {
+      width: max-content;
+    }
+
+    &::before {
+      content: url(../images/section/subject.svg);
+      position: absolute;
+      left: -20px;
+      bottom: 4px;
+    }
+
+    &-second {
+      &::before {
+        content: url(../images/section/subject.svg);
+        position: absolute;
+        left: -20px;
+        bottom: 4px;
+
+        @include onPhone {
+          bottom: 53px;
+        }
+      }
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+    @extend %Manrope400;
+    color: $paragraph-color;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onlyOnTablet {
+      width: 300px;
+    }
+
+    @include onDesktop {
+      width: max-content;
+    }
+
+    &-container {
+      @include onDesktop {
+        width: 256px;
+      }
+
+      &-first {
+        grid-row: 1;
+      }
+
+      &-second {
+
+        @include onTablet {
+          grid-row: 3;
+        }
+
+        @include onDesktop {
+          grid-row: 1;
+        }
+      }
+
+      &-third {
+
+        @include onTablet {
+          grid-row: 2;
+        }
+      }
+    }
+  }
+
+  &-back {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      position: absolute;
+      top: -270px;
+      z-index: 0;
+    }
+  }
+
+  &__discount {
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    @extend %Bebas;
+    color: $additional-element-color;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 24px;
+      margin-bottom: 5px;
+      margin-top: 35px;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+
+    &-container {
+      grid-column: 4 / 7;
+
+      @include onDesktop {
+        grid-column: 6 / 12;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__offer {
+    margin: 0;
+    @extend %Bebas;
+    color: $title-color;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      font-size: 18px;
+      width: 240px;
+      line-height: 18px;
+      letter-spacing: 2.79px;
+    }
+
+    @include onDesktop {
+      width: max-content;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 3.72px;
+    }
+
+    &-container {
+
+      @include onTablet {
+        margin: 0;
+      }
+
+      @include onDesktop {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__button {
+    @extend %Manrope600;
+    position: relative;
+    display: flex;
+    gap: 24px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    width: 238px;
+    height: 48px;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: $button-color-text;
+    font-size: 14px;
+    line-height: 150%;
+    border: 1px solid $title-color;
+    transition: all 0.3s;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      margin-top: 101px;
+      width: 238px;
+    }
+
+    @include onDesktop {
+      width: 238px;
+      margin-top: 60px;
+    }
+
+    &:hover {
+      background-color: $title-color;
+      color: $button-text-color;
+    }
+
+    &::after {
+      display: block;
+      position: relative;
+      content: url(../images/header/arrow.svg);
+      width: 40px;
+      height: 10px;
+      bottom: 6px;
+      right: 9px;
+    }
+
+    &:hover::after {
+      content: url(../images/header/arrow-white.svg);
+    }
+  }
+}

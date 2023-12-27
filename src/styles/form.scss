@@ -1,0 +1,93 @@
+.form {
+
+  @include onTablet {
+    grid-column: 1 / 4;
+  }
+
+  &-field {
+    background-color: transparent;
+    @extend %Manrope400;
+    color: $paragraph-color;
+    border: none;
+    border-bottom: 1px solid $button-color-text;
+    font-size: 16px;
+    line-height: 150%;
+    margin-bottom: 20px;
+    width: 100%;
+    outline: none;
+    padding-bottom: 4px;
+
+    &:focus {
+      border-bottom: 1px solid $title-color;
+    }
+
+    &:invalid:focus {
+      border-bottom: 1px solid $additional-element-color;
+      color: $additional-element-color;
+    }
+
+    &:valid:focus {
+      border-bottom: 1px solid $title-color;
+      color: $title-color;
+    }
+
+    &-message {
+      margin: 0;
+      height: 26px;
+      resize: none;
+    }
+  }
+
+  &__button {
+    @extend %Manrope600;
+    cursor: pointer;
+    border: none;
+    background: $title-color;
+    width: 260px;
+    height: 48px;
+    color: $button-text-color;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+    padding-right: 30px;
+    transition: all 0.3s;
+
+    @include onPhone {
+      margin-top: 30px;
+      margin-bottom: 56px;
+    }
+
+    @include onTablet {
+      width: 100%;
+      grid-column: 1 / 3;
+    }
+
+    &::after {
+      content: url(../images/footer/arrow.svg);
+      position: relative;
+      left: 30px;
+    }
+
+    &:hover {
+      background-color: $button-color-hover-form;
+    }
+
+    &_first {
+      @include onTablet {
+        display: none;
+      }
+    }
+
+    &_second {
+      margin-top: 40px;
+
+      @include onPhone {
+        display: none;
+      }
+
+      @include onDesktop {
+        width: 238px;
+      }
+    }
+  }
+}

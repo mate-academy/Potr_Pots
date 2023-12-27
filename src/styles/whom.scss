@@ -1,0 +1,298 @@
+.whom {
+  padding-top: 110px;
+
+  &__title {
+    margin: 0;
+    margin-bottom: 25px;
+    @extend %Bebas;
+    color: $price-title-color;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__flex-container {
+    position: relative;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+    }
+
+    @include onDesktop {
+      gap: 200px;
+    }
+
+    &-second {
+      @include onTablet {
+        margin-top: 110px;
+        flex-direction: row-reverse;
+      }
+
+      @include onDesktop {
+        margin-top: 185px;
+        flex-direction: column;
+        gap: 25px;
+      }
+    }
+
+    &-third {
+      @include onTablet {
+        margin-top: 122px;
+        gap: 72px;
+      }
+
+      @include onDesktop {
+        flex-direction: column;
+        margin-top: 80px;
+        gap: 45px;
+      }
+    }
+  }
+
+  &-img {
+    min-width: 284px;
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &-container {
+    position: relative;
+
+    &_first {
+      @include onTablet {
+        top: -25px;
+      }
+
+      @include onDesktop {
+        margin-top: 124px;
+      }
+    }
+
+    &_second {
+      @include onTablet {
+        top: 30px;
+      }
+    }
+  }
+
+  &__number {
+    @include onPhone {
+      margin-top: 70px;
+      margin-bottom: 30px;
+    }
+
+    &-first {
+      @include onPhone {
+        margin-top: 0;
+      }
+
+      @include onTablet {
+        position: absolute;
+        left: -47px;
+      }
+
+      @include onDesktop {
+        left: -98px;
+      }
+    }
+
+    &-second {
+      @include onTablet {
+        margin-bottom: 22px;
+      }
+
+      @include onDesktop {
+        margin-bottom: 27px;
+      }
+    }
+
+    &-third {
+      @include onTablet {
+        position: absolute;
+        left: -54px;
+      }
+
+      @include onDesktop {
+        position: relative;
+        left: 0;
+        top: 50px;
+      }
+    }
+  }
+
+  &__subject {
+    margin: 0;
+    margin-bottom: 25px;
+    @extend %Manrope400;
+    color: $price-title-color;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onPhone {
+      display: none;
+    }
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -20px;
+      @extend %Bebas;
+      color: $footer-text;
+      font-size: 24px;
+      letter-spacing: 3.72px;
+    }
+
+    &-second {
+      display: flex;
+      justify-content: end;
+      margin-bottom: 27px;
+
+      @include onPhone {
+        display: none;
+      }
+
+      &::before {
+        content: "*";
+        position: relative;
+        left: -6px;
+        @extend %Bebas;
+        color: $footer-text;
+        font-size: 24px;
+        letter-spacing: 3.72px;
+
+        @include onDesktop {
+          position: absolute;
+          left: -45px;
+          top: 4px;
+        }
+      }
+
+      @include onDesktop {
+        justify-content: start;
+        margin-bottom: 40px;
+      }
+    }
+
+    &-third {
+      margin-bottom: 17px;
+
+      @include onPhone {
+        display: none;
+      }
+
+      @include onDesktop {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 20px;
+    @extend %Bebas;
+    color: $footer-text;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    @include onTablet {
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      width: 470px;
+    }
+
+    &::after {
+      content: url(../images/section/whom/line.svg);
+      position: absolute;
+
+      @include onPhone {
+        display: none;
+      }
+    }
+
+    &-first {
+      @include onlyOnTablet {
+        width: 340px;
+      }
+    }
+
+    &-second {
+      @include onDesktop {
+        width: 400px;
+      }
+    }
+
+    &-third {
+      @include onDesktop {
+        height: 216px;
+        width: 400px;
+        margin-left: 100px;
+      }
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+    @extend %Manrope400;
+    color: $paragraph-color;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onTablet {
+      width: 340px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+    }
+
+    &-third {
+      @include onDesktop {
+        margin-left: 100px;
+      }
+    }
+
+    &-decoration {
+      margin: 0;
+      color: $description-color;
+      @extend %Bebas;
+      font-size: 12px;
+      letter-spacing: 2.64px;
+      position: absolute;
+
+      @include onTablet {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 1px;
+        background-color: $description-color;
+      }
+
+      &-left {
+        @include onPhone {
+          display: none;
+        }
+
+        @include onTablet {
+          display: block;
+        }
+      }
+    }
+  }
+}

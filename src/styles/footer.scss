@@ -1,0 +1,231 @@
+.footer {
+  position: relative;
+  padding-top: 45px;
+  margin-top: 110px;
+  padding-bottom: 30px;
+
+  @include onTablet {
+    padding-top: 17px;
+    padding-bottom: 117px;
+  }
+
+  @include onDesktop {
+    padding-top: 42px;
+    padding-bottom: 64px;
+    margin: 0;
+    margin-top: 152px;
+  }
+
+  &__title {
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+
+    @include onTablet {
+      margin: 0;
+      margin-top: 32px;
+    }
+
+    @include onDesktop {
+      margin-top: 74px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    @extend %Manrope400;
+    color: $footer-text;
+    font-size: 24px;
+    line-height: 150%;
+
+    @include onDesktop {
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &-back {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: -1;
+
+    @include onPhone {
+      width: 100%;
+    }
+
+    @include onTablet {
+      width: 100%;
+    }
+
+    @include onDesktop {
+      width: 1390px;
+      height: 637px;
+      left: 0;
+    }
+
+    &-container {
+      @include onPhone {
+        margin: 0 -30px;
+      }
+
+      @include onTablet {
+        margin: 0 -34px;
+      }
+
+      @include onDesktop {
+        margin: 0 -220px;
+      }
+    }
+  }
+
+  &__paragraph {
+    margin: 0;
+    @extend %Manrope400;
+    color: $footer-text;
+    font-size: 16px;
+    line-height: 150%;
+
+    &-adrress {
+      width: 170px;
+
+      @include onPhone {
+        display: none;
+      }
+    }
+  }
+
+  &__subject {
+    margin: 0;
+    @extend %Manrope400;
+    color: $footer-text;
+    font-size: 24px;
+    line-height: 150%;
+  }
+
+  &__link {
+    cursor: pointer;
+    text-decoration: none;
+    color: $footer-text;
+
+    &:hover {
+      color: $price-title-color;
+    }
+
+    &-text {
+      margin: 0;
+      @extend %Manrope400;
+      color: $footer-text;
+      font-size: 16px;
+      line-height: 150%;
+      margin-bottom: 34px;
+
+      @include onTablet {
+        width: 205px;
+      }
+
+      @include onDesktop {
+        width: 270px;
+      }
+    }
+  }
+
+  &-img {
+    &-container {
+      display: flex;
+      justify-content: center;
+      gap: 85px;
+      margin-top: 102px;
+
+      @include onTablet {
+        margin: 0;
+        margin-top: 113px;
+      }
+
+      @include onDesktop {
+        gap: 70px;
+        margin-top: 184px;
+      }
+    }
+  }
+
+  &__subjects-container {
+    @include onTablet {
+      position: relative;
+      right: 0;
+      top: 71px;
+    }
+
+    @include onDesktop {
+      top: 45px;
+    }
+  }
+
+  &__copyright {
+    margin: 0;
+    @extend %Manrope400;
+    color: $footer-text;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include onPhone {
+      text-align: center;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: end;
+    }
+  }
+
+  &__about {
+    margin: 0;
+    @extend %Bebas;
+    color: $footer-text;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: flex;
+      justify-content: end;
+      margin-top: 113px;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-right: 30px;
+      margin-top: 184px;
+    }
+  }
+
+  &__adrress {
+    margin: 0;
+    @extend %Bebas;
+    color: $footer-text;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      margin-top: 113px;
+      margin-bottom: 10px;
+    }
+
+    @include onDesktop {
+      margin-top: 184px;
+    }
+  }
+}
