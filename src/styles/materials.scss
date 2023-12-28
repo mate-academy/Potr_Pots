@@ -295,6 +295,13 @@
     display: none;
   }
 
+  &__main-container {
+    @include onPhone {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
   &-container {
     position: relative;
     top: -180px;
@@ -302,6 +309,11 @@
     background: rgba(0,0,0,0.4);
     backdrop-filter: blur(17px);
     box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+
+    @include onPhone {
+      min-width: 280px;
+      max-width: 360px;
+    }
   }
 
   &-slide {

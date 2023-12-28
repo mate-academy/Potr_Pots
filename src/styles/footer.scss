@@ -54,14 +54,16 @@
 
     @include onPhone {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     @include onTablet {
       width: 100%;
+      height: auto;
     }
 
     @include onDesktop {
-      width: 1390px;
       height: 637px;
       left: 0;
     }
@@ -110,9 +112,7 @@
     text-decoration: none;
     color: $footer-text;
 
-    &:hover {
-      color: $price-title-color;
-    }
+    @include hover(color, $description-color);
 
     &-text {
       margin: 0;

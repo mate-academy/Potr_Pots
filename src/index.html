@@ -28,6 +28,11 @@
     },
   })
   </script>
+  <script
+    type="text/javascript"
+    src="scripts/main.js"
+    defer
+  ></script>
   <body class="page__body">
     <header class="header" id="header">
       <picture>
@@ -123,7 +128,11 @@
           >
         </a>
         <div class="header__title-container">
-          <h1 class="header__title-additional">More about POTR POTS</h1>
+          <h1 class="header__title-additional">
+            <a href="#about-us" class="header__link header__link-additional">
+              More about POTR POTS
+            </a>
+          </h1>
         </div>
         <div class="header__title-container_grey">
           <h1 class="header__title-grey">potr pots</h1>
@@ -174,13 +183,15 @@
         </ul>
       </div>
       <div class="menu-top">
-        <h1 class="menu__title">Close</h1>
-        <a href="#header" class="menu__link">
-          <img
-           src="images/header/cross.svg"
-           class="menu-img menu__close"
-           alt="image"
-          >
+        <a href="#header" class="menu__link menu__link__closer">
+          <div class="menu__title-container">
+            <h1 class="menu__title">Close</h1>
+            <img
+             src="images/header/cross.svg"
+             class="menu-img menu__closer"
+             alt="image"
+            >
+          </div>
         </a>
       </div>
     </nav>
@@ -389,18 +400,21 @@
          alt="image"
         >
       </picture>
-      <div class="swiper-container">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"><p class="swiper-slide-text">We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.</p></div>
-            <div class="swiper-slide"><p class="swiper-slide-text">Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.</p></div>
-            <div class="swiper-slide"><p class="swiper-slide-text">Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.</p></div>
-            <div class="swiper-slide"><p class="swiper-slide-text">POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.</p></div>
-            <div class="swiper-slide"><p class="swiper-slide-text">POTR Pots are constructed using recycled polypropylene which can be fully recycled.</p></div>
+      <div class="swiper__main-container">
+        <div class="swiper-container">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><p class="swiper-slide-text">We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.</p></div>
+              <div class="swiper-slide"><p class="swiper-slide-text">Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.</p></div>
+              <div class="swiper-slide"><p class="swiper-slide-text">Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.</p></div>
+              <div class="swiper-slide"><p class="swiper-slide-text">POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.</p></div>
+              <div class="swiper-slide"><p class="swiper-slide-text">POTR Pots are constructed using recycled polypropylene which can be fully recycled.</p></div>
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
-          <div class="swiper-pagination"></div>
         </div>
       </div>
+      
     </section>
     <section class="page__section plant">
       <div class="page-container page__grid">
@@ -488,7 +502,10 @@
             <h1 class="page__title footer__main-title">have any questions?</h1>
             <p class="footer__paragraph">Here few ways to get in touch with us:</p>
             <h2 class="footer__subtitle">Message us</h2>
-            <form class="form">
+            <form
+              method="get"
+              class="form"
+            >
               <input
                 class="form-field"
                 type="text"
@@ -500,7 +517,13 @@
                 placeholder="Email"
               >
               <textarea class="form-field form-field-message" placeholder="Message"></textarea>
-              <button class="form__button form__button_first">Submit</button>
+              <button
+                href="#"
+                type="submit"
+                class="form__button form__button_first"
+              >
+                Submit
+              </button>
             </form>
           </div>
           <div class="grid__item grid__item--tablet-5-6 grid__item--desktop-7-10">
@@ -512,7 +535,7 @@
                   class="footer__link"
                   target="_blank"
                 >
-                  <p class="footer__link-text">(270) 555-0117</p>
+                  <p class="footer__link-text footer__link">(270) 555-0117</p>
                 </a>
               </div>
               <div class="footer__subject-container">
@@ -522,7 +545,7 @@
                   class="footer__link"
                   target="_blank"
                 >
-                  <p class="footer__link-text">potrpots@gmail.com</p>
+                  <p class="footer__link-text footer__link">potrpots@gmail.com</p>
                 </a>
               </div>
               <div class="footer__subject-container">
@@ -532,7 +555,7 @@
                   class="footer__link"
                   target="_blank"
                 >
-                  <p class="footer__link-text">United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD</p>
+                  <p class="footer__link-text footer__link">United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD</p>
                 </a>
               </div>
             </div>
@@ -544,7 +567,13 @@
         <div class="grid grid--desktop" id="footer">
           <div class="grid__item grid__item--tablet-1-2 grid__item--desktop-1-2">
             <h1 class="footer__adrress">Adrress</h1>
-            <p class="footer__paragraph footer__paragraph-adrress">United Kingdom<br> 99 Staple Hill Road, Bristol, BS16 5AD</p>
+            <a
+              href="https://maps.app.goo.gl/QPWBrwjm81Dx7uwS8"
+              class="footer__link"
+              target="_blank"
+            >
+              <p class="footer__paragraph footer__paragraph-adrress">United Kingdom<br> 99 Staple Hill Road, Bristol, BS16 5AD</p>
+            </a>
           </div>
           <div class="grid__item grid__item--tablet-3-4 grid__item--desktop-5-8">
             <div class="footer-img-container">
@@ -579,7 +608,19 @@
                 >
               </a>
             </div>
-            <h1 class="page__title footer__title">Potrpots</h1>
+            <a
+              href="#"
+              class="footer__link page-hover_big">
+              <h1
+                class="
+                  page__title
+                  footer__title
+                  page-hover_grey
+                "
+                >
+                Potrpots
+              </h1>
+            </a>
           </div>
           <div class="grid__item grid__item--tablet-5-6 grid__item--desktop-11-12">
             <h1 class="footer__about">
@@ -592,6 +633,5 @@
         </div>
       </div>
     </footer>
-    <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
