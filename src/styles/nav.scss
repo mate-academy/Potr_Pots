@@ -14,5 +14,22 @@
     font-family: Manrope, sans-serif;
     font-weight: 400;
     line-height: 24px;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: -8px;
+      height: 1px;
+      background-color: $white-menu-leter-color;
+      transition: transform 0.3s;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
   }
 }

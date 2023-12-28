@@ -1,0 +1,178 @@
+.modern__article {
+  @include page-grid;
+
+  @include on-desktop {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.modern__star-phrase {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    gap: 10px;
+    grid-column: 3 / 5;
+    margin-bottom: 25px;
+  }
+
+  @include on-desktop {
+    grid-column: 2 / 2;
+    margin-bottom: 40px;
+    height: 24px;
+    gap: 36px;
+    transform: translateX(-46px);
+  }
+}
+
+.modern__star {
+  color: $balack-color;
+  font-size: 24px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 3.72px;
+}
+
+.modern__phrase {
+  color: $section-gray-color;
+  font-size: 16px;
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.for-whom__images-2 {
+  display: none;
+
+  @include on-tablet {
+    grid-column: 4 / -1;
+    display: flex;
+    background-image: url(../images/for-whom/flower-2.png);
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    width: 300px;
+    height: 417px;
+    right: 34px;
+    transform: translateY(-29px);
+  }
+
+  @include on-desktop {
+    position: relative;
+    grid-column: 2 / 5;
+    margin-bottom: 45px;
+    right: 0;
+    transform: translateY(0);
+  }
+}
+
+.modern__wraper {
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: 1 / 4;
+  }
+
+  @include on-desktop {
+    grid-column: 2 / 6;
+  }
+}
+
+.modern__sign-number {
+  transform: translateY(-5px);
+}
+
+.modern__sign-front {
+  position: absolute;
+  border-left: 1px solid $section-gray-color;
+  transform: rotate(22deg);
+  transform-origin: bottom left;
+  height: 46px;
+}
+
+.modern__number {
+  color: $section-gray-color;
+  font-size: 36px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 5.58px;
+  margin-left: 18px;
+  width: 15px;
+  transform: translateY(12px);
+  margin-bottom: 30px;
+
+  @include on-tablet {
+    margin-bottom: 22px;
+    width: 23px;
+  }
+
+  @include on-desktop {
+    width: 15px;
+  }
+}
+
+.modern__sign-moto {
+  @include on-tablet {
+    display: block;
+    margin-bottom: 10px;
+    width: 340px;
+    height: 108px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 10px;
+    width: 400px;
+    height: 108px;
+  }
+}
+
+.modern__moto {
+  color: $balack-color;
+  font-size: 36px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 54px;
+  letter-spacing: 5.58px;
+  margin-bottom: 20px;
+
+  @include on-tablet {
+    display: inline;
+  }
+}
+
+.modern__sign-last {
+  display: none;
+
+  @include on-tablet {
+    display: inline;
+    position: absolute;
+    border-left: 1px solid $section-gray-color;
+    transform: rotate(22deg);
+    transform-origin: bottom left;
+    height: 46px;
+  }
+}
+
+.modern__description {
+  color: $description-gray-color;
+  font-size: 16px;
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 71px;
+
+  @include on-tablet {
+    width: 340px;
+    height: 72px;
+    margin-bottom: 185px;
+  }
+
+  @include on-desktop {
+    grid-column: 2 / 6;
+    margin-bottom: 0;
+    width: 370px;
+    height: 76px;
+  }
+}
