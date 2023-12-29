@@ -6,6 +6,7 @@
 .questions__background {
   position: absolute;
   z-index: -2;
+  object-fit: cover;
   background-repeat: no-repeat;
   height: 1003px;
 
@@ -21,7 +22,8 @@
 
 .questions__stamp {
   position: absolute;
-  z-index: -2;
+  z-index: -1;
+  object-fit: cover;
   background-repeat: no-repeat;
   height: 170px;
   width: 170px;
@@ -135,10 +137,20 @@
   }
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: $description-gray-color;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .submit__button {
   display: flex;
   flex-direction: column;
   margin-bottom: 56px;
+
+  @include hover(transform, scale(1.2));
 
   @include on-tablet {
     margin-bottom: 184px;
@@ -169,7 +181,7 @@
   background-image: url(../images/logo/arrow-white.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 29px;
+  width: 32px;
   height: 8px;
   transform: translate(158px, -27px);
   cursor: pointer;

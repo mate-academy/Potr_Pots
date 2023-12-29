@@ -80,7 +80,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.materials__features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  width: 302px;
+  height: 254px;
   position: relative;
+  grid-column: 1 / -1;
   transform: translateY(-120px);
 
   @include on-tablet {
@@ -88,25 +98,8 @@
   }
 }
 
-.materials__features {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.45);
-  width: 302px;
-  height: 254px;
-}
-
-.features--1 {
-  display: none;
-}
-
-.features--1:target {
-  display: flex;
-}
-
 .materials__description {
+  display: none;
   margin-top: 28px;
   width: 213px;
   height: 168px;
@@ -115,6 +108,10 @@
   font-family: Manrope, sans-serif;
   font-weight: 400;
   line-height: 24px;
+}
+
+.materials__description.active {
+  display: flex;
 }
 
 .materials-buttons {
@@ -141,152 +138,133 @@
   }
 }
 
-.materials__card {
+.button__card__description-1 {
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.45);
 
   @include on-tablet {
-    display: flex;
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 35px 45px;
+    width: 213px;
+    height: 168px;
+    z-index: 1;
+    right: 5%;
+    transform: translateY(-520px);
   }
-}
-
-.materials__card__description {
-  color: $white-menu-leter-color;
-  font-size: 16px;
-  font-family: Manrope, sans-serif;
-  font-weight: 400;
-  line-height: 24px;
-}
-
-.materials__card--1 {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  right: 5%;
-  width: 213px;
-  height: 168px;
-  padding: 35px 45px;
-  transform: translateY(-520px);
-
+  
   @include on-desktop {
     right: 11%;
     transform: translateY(-655px);
   }
 }
 
-.materials__card--1:target {
-  display: none;
-  
-  @include on-tablet {
-    display: block;
-  }
-}
-
-.materials__card--2 {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  right: 22%;
-  transform: translateY(-630px);
-  width: 213px;
-  height: 144px;
-  padding: 35px;
-
-  @include on-desktop {
-    right: 29%;
-    transform: translateY(-865px);
-  }
-}
-
-.materials__card--2:target {
+.button__card__description-2 {
   display: none;
 
   @include on-tablet {
-    display: block;
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    right: 22%;
+    transform: translateY(-630px);
+    width: 213px;
+    height: 144px;
+    padding: 35px;
+
+    @include on-desktop {
+      right: 29%;
+      transform: translateY(-865px);
+    }
   }
 }
 
-.materials__card--3 {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  left: 29%;
-  transform: translateY(-568px);
-  width: 213px;
-  height: 144px;
-  padding: 35px;
-
-  @include on-desktop {
-    left: 27%;
-    transform: translateY(-515px);
-  }
-}
-
-.materials__card--3:target {
-  display: none;
-
-  @include on-tablet {
-    display: block;
-  }
-}
-
-.materials__card--4 {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  left: 15%;
-  transform: translateY(-680px);
-  width: 213px;
-  height: 96px;
-  padding: 35px;
-
-  @include on-desktop {
-    left: 20%;
-    transform: translateY(-920px);
-  }
-}
-
-.materials__card--4:target {
+.button__card__description-3 {
   display: none;
 
   @include on-tablet {
-    display: block;
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    padding: 35px;
+    left: 29%;
+    transform: translateY(-568px);
+    width: 213px;
+    height: 144px;
+
+    @include on-desktop {
+      left: 27%;
+      transform: translateY(-515px);
+    }
   }
 }
 
-.materials__card--5 {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  left: 5%;
-  transform: translateY(-550px);
-  width: 213px;
-  height: 96px;
-  padding: 35px;
-
-  @include on-desktop {
-    left: 9%;
-    transform: translateY(-690px);
-  }
-}
-
-.materials__card--5:target {
-  display: none;
-
-  @include on-tablet {
-    display: block;
-  }
-}
-
-.materials__card-buttons {
+.button__card__description-4 {
   display: none;
 
   @include on-tablet {
-    display: flex;
-    position: relative;
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    padding: 35px;
+    left: 15%;
+    transform: translateY(-680px);
+    width: 213px;
+    height: 96px;
+
+    @include on-desktop {
+      left: 20%;
+      transform: translateY(-920px);
+    }
+  }
+}
+
+.button__card__description-5 {
+  display: none;
+
+  @include on-tablet {
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    padding: 35px;
+    left: 5%;
+    transform: translateY(-550px);
+    width: 213px;
+    height: 96px;
+
+    @include on-desktop {
+      left: 9%;
+      transform: translateY(-690px);
+    }
   }
 }
 
@@ -294,70 +272,123 @@
   background-image: url(../images/logo/red-plus.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 51px;
-  height: 51px;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
 
   &:hover {
     background-image: url(../images/logo/minus-hover.svg);
   }
-
-  &:focus {
-    background-image: url(../images/logo/minus-hover.svg);
-  }
 }
 
-.button--one {
-  position: absolute;
-  left: 72%;
-  transform: translateY(-1140%);
+.button__card--one {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 72%;
+    transform: translateY(-1140%);
+  }
 
   @include on-desktop {
     left: 78%;
     transform: translateY(-1390%);
   }
+
+  &:hover {
+    + .button__card__description-1 {
+      display: flex;
+    }
+  }
 }
 
-.button--two {
-  position: absolute;
-  left: 54%;
-  transform: translateY(-780%);
+
+.button__card--two {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 54%;
+    transform: translateY(-780%);
+  }
 
   @include on-desktop {
     left: 58%;
     transform: translateY(-1220%);
   }
+
+  &:hover {
+    + .button__card__description-2 {
+      display: flex;
+    }
+  }
 }
 
-.button--three {
-  position: absolute;
-  left: 44%;
-  transform: translateY(-650%);
+.button__card--three {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 44%;
+    transform: translateY(-650%);
+  }
 
   @include on-desktop {
     left: 48%;
     transform: translateY(-870%);
   }
+
+  &:hover {
+    + .button__card__description-3 {
+      display: flex;
+    }
+  }
 }
 
-.button--four {
-  position: absolute;
-  left: 30%;
-  transform: translateY(-970%);
+.button__card--four {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 30%;
+    transform: translateY(-970%);
+  }
 
   @include on-desktop {
     left: 38%;
     transform: translateY(-1450%);
   }
+
+  &:hover {
+    + .button__card__description-4 {
+      display: flex;
+    }
+  }
 }
 
-.button--five {
-  position: absolute;
-  left: 11%;
-  transform: translateY(-710%);
+.button__card--five {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 11%;
+    transform: translateY(-710%);
+  }
 
   @include on-desktop {
     left: 18%;
     transform: translateY(-950%);
+  }
+
+  &:hover {
+    + .button__card__description-5 {
+      display: flex;
+    }
   }
 }
 
