@@ -1,12 +1,9 @@
 'use strict';
 
-const form = document.querySelector('.form');
-const inputs = document.querySelectorAll('.form-field');
+const form = document.querySelector('form');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  inputs.forEach(input => {
-    input.value = '';
-  });
+  event.target.reset();
 });
