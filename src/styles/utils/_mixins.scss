@@ -1,6 +1,101 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transititon-duration;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin on-phone {
+  @media(max-width : 639px) {
+    @content;
+  }
+}
+
+@mixin on-tablet {
+  @media(min-width : 640px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media(min-width : 1280px) {
+    @content;
+  }
+}
+
+@mixin page-grid {
+  display: grid;
+
+  $column: 12;
+
+  grid-template-columns: repeat(#{$column}, minmax(60px, 150px));
+  column-gap: 30px;
+
+  @media (max-width: 1199px) {
+    $column: 6;
+
+    column-gap: 20px;
+    grid-template-columns: repeat(#{$column}, 1fr);
+  }
+
+  @media (max-width: 639px) {
+    $column: 2;
+
+    column-gap: 20px;
+    grid-template-columns: repeat(#{$column}, 1fr);
+  }
+}
+
+@mixin secondary-text1 {
+  color: #000;
+  font-family: Manrope, sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+@mixin secondary-text2 {
+  color: #000;
+  font-family: Manrope, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+@mixin secondary-text3 {
+  color: #000;
+  font-family: Manrope, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin secondary-text4 {
+  color: #000;
+  font-family: Manrope, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+@mixin secondary-text5 {
+  color: #000;
+  font-family: Manrope, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+@mixin secondary-text6 {
+  color: #000;
+  font-family: Manrope, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
 }
