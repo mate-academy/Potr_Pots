@@ -1,0 +1,236 @@
+.benefits__container {
+  @include content-padding-inline;
+  @include page-grid;
+}
+
+.benefits__point {
+  display: flex;
+  gap: 8px;
+  transform: translateX(-22px);
+
+  @include on-desktop {
+    transform: translateX(0);
+  }
+}
+
+.benefits__polaroid {
+  display: none;
+
+  @include on-desktop {
+    display: inline;
+    position: absolute;
+    transform: translate(-100px, -27px);
+    z-index: -1;
+    width: 633px;
+    height: 828px;
+  }
+}
+
+.benefits__point__diamond {
+  background-image: url(../images/logo/black-diamond.svg);
+  background-position: cover;
+  background-repeat: no-repeat;
+  height: 14px;
+  width: 14px;
+  transform: translateY(18px);
+}
+
+.benefits__point__title {
+  color: $section-gray-color;
+  font-size: 32px;
+  font-family: Manrope, sans-serif;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 5px;
+
+  @include on-tablet {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 54px;
+  }
+}
+
+.benefits__point__description {
+  color: $side-title-color;
+  font-size: 16px;
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+
+  @include on-desktop {
+    transform: translateX(24px);
+  }
+}
+
+.benefits__items {
+  display: grid;
+  row-gap: 40px;
+  grid-column: 1 / -1;
+  margin-bottom: 50px;
+
+  @include on-tablet {
+    grid-column: 1 / 4;
+    row-gap: 30px;
+    margin-bottom: 103px;
+  }
+
+  @include on-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    row-gap: 40px;
+    grid-column: 6 / -1;
+    margin-top: 179px;
+    margin-bottom: 60px;
+  }
+}
+
+.benefits__button-discount {
+  @include on-tablet {
+    grid-column: 4 / -1;
+  }
+
+  @include on-desktop {
+    grid-column: 6 / -1;
+  }
+}
+
+.benefits__button__wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  height: 48px;
+
+  @include hover(transform, scale(1.2));
+
+  @include on-tablet {
+    margin-top: 101px;
+    margin-bottom: 35px;
+  }
+
+  @include on-desktop {
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+}
+
+.benefits__button {
+  display: flex;
+  align-items: center;
+  width: 175px;
+  padding: 15px 0 13px 65px;
+  color: $buy-now-black;
+  font-size: 14px;
+  font-family: Manrope, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 21px;
+  text-decoration: none;
+  border: 0 solid $yellow-buttom-color;
+  background: $yellow-buttom-color;
+
+  @include on-tablet {
+    width: 171px;
+    padding: 14px 0 14px 67px;
+    border: 1px solid $menu-blue-color;
+    background: none;
+  }
+}
+
+.benefits__button__arrow {
+  display: flex;
+  background-image: url(../images/logo/button-arrow.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 9px;
+  transform: translateX(-92px);
+}
+
+.discount {
+  grid-column: 1 / -1;
+  margin-bottom: 110px;
+
+  @include on-tablet {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 197px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 152px;
+    transform: translateX(100px);
+  }
+}
+
+.discount__off {
+  color: $red-buttom-circle;
+  font-size: 36px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 54px;
+  letter-spacing: 5.58px;
+  margin-bottom: 10px;
+
+  @include on-tablet {
+    margin-bottom: 5px;
+  }
+}
+
+.discount__description {
+  color: $menu-blue-color;
+  font-size: 24px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 24px;
+  letter-spacing: 3.72px;
+
+  @include on-tablet {
+    width: 240px;
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  @include on-desktop {
+    width: 570px;
+  }
+}
+
+.benefits__side {
+  display: none;
+
+  @include on-tablet {
+    position: absolute;
+    display: flex;
+    transform: rotate(90deg);
+    gap: 15px;
+    transform-origin: 38px 98px;
+    margin-top: 0;
+    right: 0;
+  }
+
+  @include on-desktop {
+    display: none;
+  }
+}
+
+.benefits__side__title {
+  color: $side-title-color;
+  font-size: 12px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2.64px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 136px;
+  height: 14px;
+}
+
+.benefits__side__line {
+  transform: rotate(90deg);
+  transform-origin: 0 6px;
+  border-left: 1px solid $side-title-color;
+  height: 65px;
+}

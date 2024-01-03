@@ -1,0 +1,452 @@
+.materials__container {
+  @include content-padding-inline;
+  @include page-grid;
+}
+
+.materials__title {
+  color: $ingredient-color;
+  font-size: 58px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 8.99px;
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    height: 231px;
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: 9.60px;
+  }
+
+  @include on-desktop {
+    font-size: 138.81px;
+    height: 289px;
+    font-weight: 400;
+    letter-spacing: 16.66px;
+  }
+}
+
+.materials__note {
+  display: none;
+
+  @include on-tablet {
+    display: block;
+    grid-column: 4 / -1;
+    transform: translateY(-90px);
+  }
+
+  @include on-desktop {
+    grid-column: 8 / -1;
+  }
+}
+
+.materials__note__title {
+  color: $description-gray-color;
+  font-size: 20px;
+  font-family: Manrope, sans-serif;
+  font-weight: 700;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+
+.materials__note__description {
+  color: $description-gray-color;
+  font-size: 16px;
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.materials-shot__photo {
+  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: translateY(-69px);
+
+  @include on-tablet {
+    position: relative;
+    transform: translateY(-205px);
+  }
+
+  @include on-desktop {
+    position: relative;
+    transform: translateY(-280px);
+  }
+}
+
+.features__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.materials__features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  width: 302px;
+  height: 254px;
+  position: relative;
+  grid-column: 1 / -1;
+  transform: translateY(-120px);
+
+  @include on-tablet {
+    display: none;
+  }
+}
+
+.materials__description {
+  display: none;
+  margin-top: 28px;
+  width: 213px;
+  height: 168px;
+  color: $white-menu-leter-color;
+  font-size: 16px;
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.materials__description.active {
+  display: flex;
+}
+
+.materials-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 11px;
+  width: 80px;
+  gap: 6px;
+}
+
+.button__features {
+  background-image: url(../images/logo/button-normal.svg);
+  width: 12px;
+  height: 10px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  &:hover {
+    background-image: url(../images/logo/button-hover-footer.svg);
+  }
+
+  &:focus {
+    background-image: url(../images/logo/button-hover-footer.svg);
+  }
+}
+
+.button__card__description-1 {
+  display: none;
+
+  @include on-tablet {
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 35px 45px;
+    width: 213px;
+    height: 168px;
+    z-index: 1;
+    right: 5%;
+    transform: translateY(-520px);
+  }
+
+  @include on-desktop {
+    right: 11%;
+    transform: translateY(-655px);
+  }
+}
+
+.button__card__description-2 {
+  display: none;
+
+  @include on-tablet {
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    right: 22%;
+    transform: translateY(-630px);
+    width: 213px;
+    height: 144px;
+    padding: 35px;
+
+    @include on-desktop {
+      right: 29%;
+      transform: translateY(-865px);
+    }
+  }
+}
+
+.button__card__description-3 {
+  display: none;
+
+  @include on-tablet {
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    padding: 35px;
+    left: 29%;
+    transform: translateY(-568px);
+    width: 213px;
+    height: 144px;
+
+    @include on-desktop {
+      left: 27%;
+      transform: translateY(-515px);
+    }
+  }
+}
+
+.button__card__description-4 {
+  display: none;
+
+  @include on-tablet {
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    padding: 35px;
+    left: 15%;
+    transform: translateY(-680px);
+    width: 213px;
+    height: 96px;
+
+    @include on-desktop {
+      left: 20%;
+      transform: translateY(-920px);
+    }
+  }
+}
+
+.button__card__description-5 {
+  display: none;
+
+  @include on-tablet {
+    display: none;
+    position: absolute;
+    color: $white-menu-leter-color;
+    font-size: 16px;
+    font-family: Manrope, sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+    padding: 35px;
+    left: 5%;
+    transform: translateY(-550px);
+    width: 213px;
+    height: 96px;
+
+    @include on-desktop {
+      left: 9%;
+      transform: translateY(-690px);
+    }
+  }
+}
+
+.button__card {
+  background-image: url(../images/logo/red-plus.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 52px;
+  height: 52px;
+  cursor: pointer;
+
+  &:hover {
+    background-image: url(../images/logo/minus-hover.svg);
+  }
+
+  &:focus {
+    background-image: url(../images/logo/minus-hover.svg);
+  }
+}
+
+.button__card--one {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 72%;
+    transform: translateY(-1140%);
+  }
+
+  @include on-desktop {
+    left: 78%;
+    transform: translateY(-1390%);
+  }
+
+  &:focus {
+    + .button__card__description-1 {
+      display: flex;
+    }
+  }
+}
+
+
+.button__card--two {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 54%;
+    transform: translateY(-780%);
+  }
+
+  @include on-desktop {
+    left: 58%;
+    transform: translateY(-1220%);
+  }
+
+  &:focus {
+    + .button__card__description-2 {
+      display: flex;
+    }
+  }
+}
+
+.button__card--three {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 44%;
+    transform: translateY(-650%);
+  }
+
+  @include on-desktop {
+    left: 48%;
+    transform: translateY(-870%);
+  }
+
+  &:focus {
+    + .button__card__description-3 {
+      display: flex;
+    }
+  }
+}
+
+.button__card--four {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 30%;
+    transform: translateY(-970%);
+  }
+
+  @include on-desktop {
+    left: 38%;
+    transform: translateY(-1450%);
+  }
+
+  &:focus {
+    + .button__card__description-4 {
+      display: flex;
+    }
+  }
+}
+
+.button__card--five {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    position: absolute;
+    left: 11%;
+    transform: translateY(-710%);
+  }
+
+  @include on-desktop {
+    left: 18%;
+    transform: translateY(-950%);
+  }
+
+  &:focus {
+    + .button__card__description-5 {
+      display: flex;
+    }
+  }
+}
+
+.materials__side {
+  display: none;
+
+  @include on-tablet {
+    position: absolute;
+    display: flex;
+    transform: rotate(90deg);
+    gap: 15px;
+    transform-origin: 0 70px;
+    margin-top: 0;
+    right: 0;
+  }
+
+  @include on-desktop {
+    display: none;
+  }
+}
+
+.materials__side__title {
+  color: $side-title-color;
+  font-size: 12px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2.64px;
+  text-decoration: none;
+  width: 69px;
+  height: 14px;
+}
+
+.materials__side__line {
+  transform: rotate(90deg);
+  transform-origin: 0 6px;
+  border-left: 1px solid $side-title-color;
+  height: 65px;
+}
+
+.materials__side--right {
+  display: none;
+
+  @include on-tablet {
+    position: absolute;
+    display: flex;
+    transform: rotate(90deg);
+    gap: 15px;
+    transform-origin: 110px -90px;
+    margin-top: 0;
+    left: 0;
+  }
+
+  @include on-desktop {
+    display: none;
+  }
+}
