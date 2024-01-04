@@ -4,49 +4,10 @@
 
     @include onTablet {
       grid-template-rows: repeat(2, auto);
-
-      & > [class$="list"] {
-        grid-column: 1 / 4;
-        grid-row: 1 / -1;
-      }
-
-      & > [class$="buy"] {
-        grid-column: 4 / -2;
-        grid-row: 1;
-        align-self: end;
-      }
-
-      & > [class$="promo"] {
-        grid-column: 4 / -2;
-        grid-row: 2;
-      }
     }
 
     @include onDesktop {
       grid-template-rows: repeat(3, auto);
-
-      & > [class$="album"] {
-        grid-column: 1 / 6;
-        grid-row: 1 / -1;
-        align-self: start;
-      }
-
-      & > [class$="list"] {
-        grid-column: 7 / -1;
-        grid-row: 1;
-      }
-
-      & > [class$="buy"] {
-        grid-column: 7 / 10;
-        grid-row: 2;
-        align-self: start;
-      }
-
-      & > [class$="promo"] {
-        grid-column: 8 / -1;
-        grid-row: 3;
-        align-self: start;
-      }
     }
   }
 
@@ -56,6 +17,10 @@
     @include onDesktop {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+
+      grid-column: 1 / 6;
+      grid-row: 1 / -1;
+      align-self: start;
     }
   }
 
@@ -123,12 +88,18 @@
 
     @include onTablet {
       margin-bottom: 0;
+
+      grid-column: 1 / 4;
+      grid-row: 1 / -1;
     }
 
     @include onDesktop {
       grid-template-columns: 1.7fr 2fr;
       column-gap: 20px;
       margin-bottom: 60px;
+
+      grid-column: 7 / -1;
+      grid-row: 1;
     }
   }
 
@@ -163,6 +134,18 @@
   &__buy {
     margin-bottom: 40px;
 
+    @include onTablet {
+      grid-column: 4 / -2;
+      grid-row: 1;
+      align-self: end;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+      grid-row: 2;
+      align-self: start;
+    }
+
     &--blue {
       display: none;
 
@@ -175,6 +158,19 @@
       @include onTablet {
         display: none;
       }
+    }
+  }
+
+  &__promo {
+    @include onTablet {
+      grid-column: 4 / -2;
+      grid-row: 2;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+      grid-row: 3;
+      align-self: start;
     }
   }
 
