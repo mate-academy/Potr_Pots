@@ -1,0 +1,167 @@
+.header {
+  margin-bottom: 100px;
+  position: relative;
+
+  @include on-tablet {
+    background-image: url(../images/Rectangle-yellow.svg);
+    background-position: -550px top;
+    background-repeat: no-repeat;
+
+    @include on-desktop {
+      background-position: left top;
+    }
+  }
+
+  &__wrapper {
+      display: grid;
+      grid-template-areas: "content";
+
+    @include on-tablet {
+      @include content-padding-inline;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 20px;
+
+
+    @include on-tablet {
+      padding: 0;
+      max-width: 65%;
+      grid-area: content;
+    }
+  }
+
+  &__img {
+    margin-bottom: 30px;
+    height: auto;
+    width: 100%;
+
+    @include on-tablet {
+      justify-self: flex-end;
+      margin: 0;
+      max-width: 45%;
+      grid-area: content;
+    }
+
+    @include on-desktop {
+      max-width: 40%;
+      justify-self: flex-end;
+      grid-area: content;
+    }
+
+  }
+
+  &__title {
+    font-family: $font-bebas;
+    font-size: 30px;
+    line-height: 43px;
+    letter-spacing: 0.04em;
+    text-align: left;
+    color: $main-font-color;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    font-stretch: condensed;
+
+    @include on-tablet {
+      font-size: 48px;
+      line-height: 48px;
+      width: 440px;
+      margin-bottom: auto;
+    }
+
+    @include on-tablet-wide {
+      padding: 70px 70px 70px 100px;
+    }
+
+    @include on-desktop {
+      font-size: 54px;
+      line-height: 64px;
+      padding: 0;
+      padding-left: 100px;
+      width: 540px;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      max-width: 80%;
+    }
+
+    @include on-desktop {
+      align-items: flex-end;
+      max-width: 60%;
+      padding-left: 150px;
+    }
+  }
+
+  &__side-link {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 18px;
+    transform: rotateZ(90deg);
+    bottom: 92px;
+    right: -75px;
+
+    color: $main-font-color;
+    font-family: $font-manrope;
+    font-size: 12px;
+    line-height: 18px;
+    cursor: pointer;
+
+    &::after {
+      content: url(../images/Arrow-turquoise.svg);
+      display: block;
+      transform: rotateZ(-90deg);
+    }
+
+    @include on-tablet {
+      bottom: 50px;
+      left: -40px;
+      right: initial;
+    }
+
+    @include on-desktop {
+      left: 55px;
+    }
+  }
+
+  &__special-offer {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      align-self: flex-end;
+      margin-bottom: 50px;
+    }
+
+    @include on-desktop {
+      padding-right: 30px;
+    }
+  }
+
+  &__price {
+    font-family: $font-manrope;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: left;
+    color: $additional-gray1-color;
+    margin-bottom: 5px;
+  }
+
+  &__description {
+    font-family: $font-manrope;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: $additional-gray2-color;
+  }
+}
