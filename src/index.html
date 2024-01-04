@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
 
-  <body class="page">
-    <header class="header">
+  <body class="page" id="page">
+    <header class="header" id="header">
       <div class="container">
         <div class="header__top">
           <a href="#" class="header__logo">POTR POTS</a>
@@ -43,15 +43,15 @@
           </nav>
 
           <a href="#basket" class="header__basket">
-            <span class="quantity">0</span>
+            <span class="basket-counter basket-counter--icon">0</span>
           </a>
 
-          <a href="#menu" class="header__menu-icon"></a>
+          <div class="header__menu-icon" id="openMenu"></div>
         </div>
       </div>
     </header>
 
-    <section class="intro section">
+    <section class="intro section" id="intro">
       <img
         src="./images/photos/cactus.png"
         alt="small pot"
@@ -77,10 +77,10 @@
             Get the second order in half price
           </p>
 
-          <a href="#basket-trigger" class="intro__buy button button--yellow">Buy now</a>
+          <a href="#basket" class="intro__buy button button--yellow">Buy now</a>
         </article>
 
-        <a href="#about" class="intro__learn-more vertical-text">
+        <a href="#for-whom" class="intro__learn-more">
           More about  POTR POTS
         </a>
       </div>
@@ -91,8 +91,8 @@
         <nav class="menu__nav">
           <ul class="menu__list">
             <li class="menu__item menu__item--basket">
-              <a href="#cart" class="menu__link">Basket</a>
-              <span class="quantity">0</span>
+              <a href="#basket" class="menu__link">Basket</a>
+              <span class="basket-counter">0</span>
             </li>
 
             <li class="menu__item">
@@ -112,11 +112,11 @@
             </li>
 
             <li class="menu__item">
-              <a href="#" class="menu__close">
+              <div id="closeMenu" class="menu__close">
                 <div class="menu__close-icon"></div>
                 <div class="menu__close-span"></div>
                 <div class="menu__close-link">Close</div>
-              </a>
+              </div>
             </li>
           </ul>
         </nav>
@@ -124,8 +124,79 @@
       </div>
     </aside>
 
-    <main class="main">
-      <section class="section for-whom">
+    <aside class="basket page__basket" id="basket">
+      <div class="container basket__content">
+        <div class="basket__top">
+          <h2 class="basket__title">
+            <span>Shopping</span>
+            <span class="basket__title--blue">Cart</span>
+          </h2>
+          <a href="#view" class="basket__close"></a>
+        </div>
+
+        <section class="basket__products">
+          <div class="basket__fields basket__grid">
+            <span>Product</span>
+            <span>Quantity</span>
+            <span>Cost</span>
+          </div>
+
+          <div class="product basket__grid" id="smallPot">
+            <img
+              src="./images/photos/potr pot__small.png"
+              alt="Small POTR Pot"
+              class="product__image"
+            >
+
+            <span class="product__name"></span>
+
+            <div class="product__quantity">
+              <div class="product__bullet product__bullet--minus">-</div>
+
+              <div class="product__number">0</div>
+
+              <div class="product__bullet product__bullet--plus">+</div>
+            </div>
+
+            <span class="product__cost">0 $</span>
+          </div>
+
+          <div class="product basket__grid" id="largePot">
+            <img
+              src="./images/photos/potr pot__big.png"
+              alt="Small POTR Pot"
+              class="product__image"
+            >
+
+            <span class="product__name"></span>
+
+            <div class="product__quantity">
+              <div class="product__bullet product__bullet--minus">-</div>
+
+              <div class="product__number">0</div>
+
+              <div class="product__bullet product__bullet--plus">+</div>
+            </div>
+
+            <span class="product__cost">0 $</span>
+          </div>
+
+          <div class="basket__cost basket__grid">
+            <span>Total cost</span>
+            <span id="cost">0 $</span>
+          </div>
+        </section>
+
+        <a
+          href="#contact"
+          class="button button--disabled"
+          id="basketSubmit"
+        >SUBMIT</a>
+      </div>
+    </aside>
+
+    <main class="main" id="main">
+      <section class="section for-whom" id="for-whom">
         <div class="container">
           <h2 class="for-whom__title">For whom?</h2>
 
@@ -190,18 +261,18 @@
               >
             </article>
 
-            <span class="logo vertical-text for-whom__logo">
+            <span class="logo for-whom__logo">
               potr pots
             </span>
 
-            <span class="logo vertical-text vertical-text--reverse for-whom__logo for-whom__logo--reverse">
+            <span class="logo for-whom__logo for-whom__logo--reverse">
               potr pots
             </span>
           </div>
         </div>
       </section>
 
-      <section class="section features">
+      <section class="section features" id="features">
         <div class="container">
           <h2 class="features__title">
             <span class="features__title--blue">POTR&nbsp;Pots </span><span>Features</span>
@@ -253,7 +324,7 @@
         </div>
       </section>
 
-      <section class="section team">
+      <section class="section team" id="about">
         <div class="container">
           <h2 class="team__title">Meet the POTR team! </h2>
 
@@ -280,7 +351,7 @@
         </div>
       </section>
 
-      <section class="section materials">
+      <section class="section materials" id="materials">
         <div class="container materials__content">
           <div class="materials__intro grid">
             <h2 class="materials__title materials__title--blue">
@@ -367,11 +438,11 @@
             </div>
           </div>
 
-          <span class="logo materials__logo vertical-text">
+          <span class="logo materials__logo">
             potr pots
           </span>
 
-          <span class="logo materials__logo materials__logo--reverse vertical-text">
+          <span class="logo materials__logo materials__logo--reverse">
             potr pots
           </span>
         </div>
@@ -487,9 +558,9 @@
             </article>
           </div>
 
-          <a href="#basket-trigger" class="benefit__buy benefit__buy--yellow button button--yellow">Buy now</a>
+          <a href="#basket" class="benefit__buy benefit__buy--yellow button button--yellow">Buy now</a>
 
-          <a href="#basket-trigger" class=" benefit__buy--blue button button--blue-second benefit__buy">Buy now</a>
+          <a href="#basket" class=" benefit__buy--blue button button--blue-second benefit__buy">Buy now</a>
 
           <article class="benefit__promo promo">
             <h3 class="promo__discount">
@@ -501,13 +572,13 @@
             </p>
           </article>
 
-          <span class="logo vertical-text benefit__logo">
+          <span class="logo benefit__logo">
             POTR Pots Features
           </span>
         </div>
       </section>
 
-      <section class="section feedback">
+      <section class="section feedback" id="contact">
         <div class="container feedback__content grid">
           <h2 class="feedback__title">have any questions?</h2>
 
@@ -569,39 +640,67 @@
             <article class="contacts__card">
               <h2 class="contacts__title">Our phone</h2>
 
-              <a href="tel:(270) 555-0117" class="contacts__details">(270) 555-0117</a>
+              <a
+                href="tel:(270) 555-0117"
+                class="contacts__details"
+                target="_blank"
+              >(270) 555-0117</a>
             </article>
 
             <article class="contacts__card">
               <h2 class="contacts__title">Our email</h2>
 
-              <a href="mailto:potrpots@gmail.com" class="contacts__details">potrpots@gmail.com</a>
+              <a
+                href="mailto:potrpots@gmail.com"
+                class="contacts__details"
+                target="_blank"
+              >potrpots@gmail.com</a>
             </article>
 
             <article class="contacts__card">
               <h2 class="contacts__title">Our office</h2>
 
-              <a href="https://maps.app.goo.gl/JkVNaXNzEFypRuZh8" class="contacts__details">United Kingdom  99 Staple Hill Road, Bristol, BS16 5AD</a>
+              <a
+                href="https://maps.app.goo.gl/JkVNaXNzEFypRuZh8"
+                class="contacts__details"
+                target="_blank"
+              >United Kingdom  99 Staple Hill Road, Bristol, BS16 5AD</a>
             </article>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="container footer__content">
         <article class="footer__address">
           <h3 class="footer__title">Address</h3>
 
-          <a href="https://maps.app.goo.gl/JkVNaXNzEFypRuZh8" class="contacts__details">United Kingdom  99 Staple Hill Road, Bristol, BS16 5AD</a>
+          <a
+            href="https://maps.app.goo.gl/JkVNaXNzEFypRuZh8"
+            class="contacts__details"
+            target="_blank"
+          >United Kingdom  99 Staple Hill Road, Bristol, BS16 5AD</a>
         </article>
 
         <div class="footer__social">
-          <a href="https://twitter.com/" class="footer__icon footer__icon--twitter"></a>
+          <a
+            href="https://twitter.com/potterypots"
+            class="footer__icon footer__icon--twitter"
+            target="_blank"
+          ></a>
 
-          <a href="https://twitter.com/" class="footer__icon footer__icon--instagram"></a>
+          <a
+            href="https://www.instagram.com/potr.co/"
+            class="footer__icon footer__icon--instagram"
+            target="_blank"
+          ></a>
 
-          <a href="https://twitter.com/" class="footer__icon footer__icon--facebook"></a>
+          <a
+            href="https://www.facebook.com/potrpots/"
+            class="footer__icon footer__icon--facebook"
+            target="_blank"
+          ></a>
         </div>
 
         <a href="#" class="footer__logo">
@@ -609,7 +708,7 @@
         </a>
 
         <div class="footer__extra">
-          <h3 class="footer__title footer__about">aBOUT uS</h3>
+          <a href="#about" class="footer__title footer__about">aBOUT uS</a>
 
           <p class="footer__rights">
             Copyright © 2019
@@ -623,5 +722,9 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Main JS -->
-  <script type="text/javascript" src="./scripts/main.js"></script>
+  <script
+    type="text/javascript"
+    src="./scripts/main.js"
+    async>
+  </script>
 </html>

@@ -9,11 +9,6 @@
 
   transition: left 0.3s;
 
-  &:target {
-    right: 0;
-    left: 30%;
-  }
-
   &__content {
     height: 100vh;
     display: flex;
@@ -39,6 +34,17 @@
     color: $color-gray-light;
     padding-block: 5px;
 
+    transition: color $transition;
+
+    @extend %animated-underline;
+    &::after {
+      background-color: $color-gray-light;
+    }
+
+    &:active {
+      color: $color-yellow;
+    }
+
     &--basket {
       position: relative;
     }
@@ -53,6 +59,8 @@
     position: absolute;
     bottom: 70px;
     right: 0;
+
+    cursor: pointer;
 
     &-link {
       color: $color-gray-light;
@@ -71,6 +79,12 @@
     &-icon {
       @include square(14px);
       background: url(../images/icons/close-icon.svg) center / cover no-repeat;
+
+      transition: transform $transition;
+    }
+
+    &:hover &-icon {
+      transform: rotate(180deg);
     }
   }
 }

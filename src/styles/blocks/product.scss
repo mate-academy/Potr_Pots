@@ -1,0 +1,55 @@
+.product {
+  &__image {
+    width: 100%;
+    justify-self: center;
+    cursor: pointer;
+
+    transition: transform $transition, opacity $transition;
+
+    &:hover {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 1;
+      transform: scale(5) translateX(40%);
+      z-index: 2;
+    }
+
+    @include onTablet {
+      &:active {
+        transform: scale(2) translateX(40%);
+      }
+    }
+
+    @include onDesktop {
+      width: 150px;
+    }
+  }
+
+  &__quantity {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__bullet {
+    cursor: pointer;
+    border-radius: 50%;
+    @include square(20px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    justify-self: center;
+
+    &--plus {
+      background-color: $color-red;
+    }
+
+    &--minus {
+      background-color: $color-gray;
+    }
+  }
+}

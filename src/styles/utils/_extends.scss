@@ -14,6 +14,16 @@
   text-align: left;
 }
 
+%title-light {
+  font-family: Bebas Neue, sans-serif;
+  letter-spacing: 0.15em;
+  text-align: left;
+
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $color-gray-light;
+}
+
 %secondary-text {
   font-family: Proxima Nova, sans-serif;
   font-size: 9px;
@@ -29,4 +39,42 @@
   background-color: $color-gray-dark;
   transform: rotate(22deg);
   margin-right: 10px;
+}
+
+%vertical-text {
+  line-height: 18px;
+
+  transform: rotate(90deg);
+  transform-origin: top;
+}
+
+%vertical-text-reverse {
+  line-height: 18px;
+
+  transform: rotate(-90deg);
+  transform-origin: bottom;
+}
+
+%animated-underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    background-color: $color-blue;
+    transition: transform $transition;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  &:active::after {
+    background-color: $color-blue;
+  }
 }

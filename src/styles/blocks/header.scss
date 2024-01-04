@@ -40,6 +40,12 @@
     line-height: 43px;
     letter-spacing: 0.06em;
     color: inherit;
+
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__nav {
@@ -59,24 +65,44 @@
     &__link {
       color: $color-gray-medium;
       padding-block: 20px;
+      @extend %animated-underline;
+
+      &:active,
+      &:target {
+        color: $color-blue;
+      }
     }
   }
 
   &__basket {
+    position: relative;
     display: none;
+
+    transition: transform $transition;
 
     @include onDesktop {
       display: block;
       position: relative;
       @include square($icon-size);
-      background: url(../images/icons/bag-icon.svg) center / contain no-repeat;
+      background: url(../images/icons/bag-icon.svg) top / contain no-repeat;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 
   &__menu-icon {
-    display: block;
     @include square($icon-size);
     background: url(../images/icons/menu-icon.svg) center / contain no-repeat;
+
+    cursor: pointer;
+
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     @include onDesktop {
       display: none;

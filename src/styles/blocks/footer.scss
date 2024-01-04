@@ -27,6 +27,7 @@
     }
 
     @include onDesktop {
+      margin-inline: auto;
       grid-template-columns: repeat(5, 1fr);
       column-gap: 80px;
 
@@ -59,6 +60,14 @@
   &__address {
     display: none;
 
+    & > a {
+      transition: $transition;
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+
     @include onTablet {
       display: block;
     }
@@ -78,6 +87,12 @@
     background: center / contain no-repeat;
     padding: 10px;
 
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+
     &--twitter {
       background-image: url(../images/icons/social/twitter-icon.svg);
     }
@@ -94,6 +109,12 @@
   &__logo {
     justify-self: center;
     margin-bottom: 10px;
+
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   &__extra {
@@ -106,6 +127,12 @@
 
     @include onTablet {
       display: block;
+
+      transition: color $transition;
+
+      &:hover {
+        color: $color-blue;
+      }
     }
   }
 }

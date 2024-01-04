@@ -199,6 +199,7 @@
   &__text {
     position: absolute;
     opacity: 0;
+    pointer-events: none;
 
     background-color: $color-background-blur;
     backdrop-filter: blur(20px);
@@ -210,11 +211,13 @@
   }
 
   &__bullet--active > &__text {
+    pointer-events: all;
     opacity: 1;
     transition: opacity $transition;
   }
 
   &__logo {
+    @extend %vertical-text;
     display: none;
     @include rightTopAlign;
     right: -50px;

@@ -1,6 +1,12 @@
 .section {
+  padding-top: $header-s;
+
+  @include onTablet {
+    padding-top: $header-m;
+  }
+
   &:not(:last-child) {
-    margin-bottom: 110px;
+    margin-bottom: calc(110px - #{$header-s});
 
     &.team {
       margin-bottom: 0;
