@@ -1,0 +1,81 @@
+.port-pots {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  align-self: start;
+  height: max-content;
+  writing-mode: vertical-rl;
+
+
+  color: $gray-3;
+  font-size: 12px;
+  letter-spacing: 2.64px;
+
+
+
+
+  &::before {
+    content: '';
+    display: block;
+    height: 65px;
+    width: 1px;
+    margin-bottom: 10px;
+    background-color: $gray-3;
+  }
+
+  &--for-whom-1 {
+    bottom: 0;
+    right: 5px;
+
+    @include on-tablet {
+      top: 0;
+      transform: translateY(-100%);
+    }
+
+    @include on-desctop {
+      position: relative;
+      grid-column: -2 / -1;
+      grid-row: 1 / 3;
+      justify-self: end;
+      transform: translateY(0);
+    }
+  }
+
+  &--for-whom-2 {
+    display: none;
+
+    @include on-desctop {
+      display: flex;
+      grid-column: 1 / 2;
+      grid-row: 5 / 6;
+      place-self: start end;
+    }
+  }
+
+  &--materials-1 {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      right: 0;
+    }
+
+    @include on-desctop {
+      display: none;
+    }
+  }
+
+  &--materials-2 {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      top: 204px;
+      z-index: 2;
+    }
+
+    @include on-desctop {
+      display: none;
+    }
+  }
+}

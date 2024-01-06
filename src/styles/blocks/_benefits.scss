@@ -1,0 +1,165 @@
+.benefits {
+  &__img {
+    display: none;
+
+    @include on-desctop {
+      position: relative;
+      display: block;
+      grid-column: 1 / 8;
+      grid-row: 1 / 4;
+      right: 135px;
+    }
+  }
+
+  &__art-container {
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-desctop {
+      grid-column: 6 / -1;
+      grid-row: 1 / 2;
+      margin-top: 186px;
+      display: flex;
+      gap: 40px 20px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-gap: 5px;
+    margin-bottom: 40px;
+
+    &:last-of-type {
+      margin-bottom: 50px;
+
+      @include on-desctop {
+        margin-bottom: 0;
+      }
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-bottom: 30px;
+    }
+
+    @include on-desctop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    position: relative;
+    right: 22px;
+    display: flex;
+    align-items: start;
+    margin: 0;
+    color: $gray-1;
+    font-family: Manrope, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 150%;
+
+    @include on-tablet {
+      font-size: 36px;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      margin-right: 8px;
+      width: 14px;
+      height: 48px;
+      background-image: url(../images/icons/rectangle.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__text {
+    color: $gray-3;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__buy {
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row: 1 / 4;
+      margin-top: 101px;
+    }
+
+    @include on-desctop {
+      grid-column: 6 / -1;
+      grid-row: 2 / 3;
+      margin-top: 0;
+    }
+  }
+
+  &__button {
+    margin-bottom: 40px;
+    width: 238px;
+
+    // &::after {
+    //   background-image: url(../images/icons/arrow-white.svg);
+    // }
+
+    @include on-tablet {
+      margin-bottom: 30px;
+      border: 1px solid $turquoise;
+      background-color: transparent;
+
+      @include hover (background-color, $turquoise);
+      @include hover (color, #fff);
+
+      &:hover.benefits__button::after {
+       background-image: url(../images/icons/arrow-white.svg);
+      }
+    }
+
+    @include on-desctop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__sale {
+    margin: 0 0 10px;
+    color: $red;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      margin-bottom: 5px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include on-desctop {
+      margin-left: 100px;
+    }
+  }
+
+  &__second-order {
+    margin: 0;
+    color: $turquoise;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 2.79px;
+    }
+
+    @include on-desctop {
+      margin-left: 100px;
+    }
+  }
+}
