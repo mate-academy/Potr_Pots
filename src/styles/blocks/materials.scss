@@ -4,6 +4,7 @@
     display: grid;
     grid-template-areas: "content";
     grid-template-rows: repeat(6, auto);
+    position: relative;
   }
 
   &__head {
@@ -67,7 +68,6 @@
     align-self: flex-end;
     grid-area: content;
     grid-row: 2 / 4;
-    display: flex;
     align-items: center;
 
     @include page-grid;
@@ -85,6 +85,7 @@
   }
 
   &__item {
+    position: absolute;
     display: none;
     width: 51px;
     height: 51px;
@@ -96,7 +97,7 @@
     background-size: 30%, 3%;
     transition: $effect-duration;
     justify-self: center;
-    position: relative;
+    align-self: center;
 
     @include on-tablet {
       display: block;
@@ -113,35 +114,26 @@
       box-sizing: border-box;
     }
 
-    &:hover ~ .slider__slide {
-      height: 250px;
-      width: 300px;
-      display: block;
-      background-color: black;
-    }
+
 
     &--position-1 {
-      @include on-tablet {
-        grid-column: 1;
-        grid-row: 5;
-        align-self: center;
-      }
+      right: 25%;
 
-      @include on-desktop {
-        grid-column: 3;
+      &:hover ~ .slider > .slider__slide--1 {
+        display: initial;
+        right: 10%;
+        bottom: 20%;
+        background-color: black;
+        position: absolute;
+
+        @include on-desktop {
+          bottom: 35%;
+        }
       }
     }
 
     &--position-2 {
-      @include on-tablet {
-        grid-column: 2;
-        grid-row: 3;
-        align-self: center;
-      }
-
-      @include on-desktop {
-        grid-column: 5;
-      }
+      left: 30%;
     }
 
     &--position-3 {

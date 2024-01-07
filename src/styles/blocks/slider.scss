@@ -9,15 +9,17 @@
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px);
   min-width: 300px;
+  scroll-behavior: smooth;
 
   overflow: hidden;
 
-  // @include on-tablet {
-  //   display: none;
-  //  }
+  @include on-tablet {
+    width: 300px;
+    // display: none;
+    position: absolute;
+   }
 
   &__wrap {
-    height: 100%;
     display: flex;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -42,10 +44,6 @@
     margin-right: 50px;
     transform: scale(1);
     transition: transform 0.5s;
-  }
-
-  &__input {
-    display: none;
   }
 
   &__links {
