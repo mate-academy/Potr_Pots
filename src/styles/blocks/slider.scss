@@ -1,26 +1,33 @@
 .slider {
+  position: relative;
   height: 250px;
   margin-inline: 10px;
   grid-area: content;
   grid-row: 3 / 6;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px);
-  height: 100%;
-  display: flex;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  min-width: 300px;
 
-  @include on-tablet {
-    display: none;
-   }
+  overflow: hidden;
 
-  &::-webkit-scrollbar {
-    display: none;
+  // @include on-tablet {
+  //   display: none;
+  //  }
+
+  &__wrap {
+    height: 100%;
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__slide {
@@ -30,5 +37,40 @@
     box-sizing: border-box;
     padding: 20px 35px 40px;
     scroll-snap-align: start;
+    transform-origin: center center;
+    margin-right: 50px;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.5s;
+
+    &--1:target ~ .slider__link {
+      background-color: $additional-gray1-color
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__links {
+    position: absolute;
+    display: flex;
+    gap: 12px;
+    bottom: 25px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    background-color: $additional-gray1-color;
+    border: 2px solid $grey-light;
+    transform: rotate(45deg);
   }
 }
