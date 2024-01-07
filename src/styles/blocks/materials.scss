@@ -96,8 +96,7 @@
     border-radius: 50%;
     background-size: 30%, 3%;
     transition: $effect-duration;
-    justify-self: center;
-    align-self: center;
+    place-self: center center;
 
     @include on-tablet {
       display: block;
@@ -114,62 +113,110 @@
       box-sizing: border-box;
     }
 
-
-
     &--position-1 {
       right: 25%;
 
-      &:hover ~ .slider > .slider__slide--1 {
+      &:hover ~ .slider {
+        right: 25%;
+        bottom: 35%;
         display: initial;
-        right: 10%;
-        bottom: 20%;
-        background-color: black;
-        position: absolute;
+      }
 
-        @include on-desktop {
-          bottom: 35%;
-        }
+      &:hover ~ .slider > .slider__wrap .slider__slide--2,
+      &:hover ~ .slider > .slider__wrap .slider__slide--3,
+      &:hover ~ .slider > .slider__wrap .slider__slide--4,
+      &:hover ~ .slider > .slider__wrap .slider__slide--5 {
+        display: none;
       }
     }
 
     &--position-2 {
       left: 30%;
+
+      &:hover ~ .slider {
+        left: 25%;
+        bottom: 35%;
+        display: initial;
+      }
+
+      &:hover ~ .slider > .slider__wrap .slider__slide--1,
+      &:hover ~ .slider > .slider__wrap .slider__slide--3,
+      &:hover ~ .slider > .slider__wrap .slider__slide--4,
+      &:hover ~ .slider > .slider__wrap .slider__slide--5 {
+        display: none;
+      }
     }
 
     &--position-3 {
-      @include on-tablet {
-        grid-column: 3;
-        grid-row: 5;
-        place-self: center flex-end;
-      }
+      bottom: 10%;
+      right: 10%;
 
       @include on-desktop {
-        grid-column: 7;
-        justify-self: initial;
+        bottom: 10%;
+        right: 10%;
+      }
+
+      &:hover ~ .slider {
+        right: 0;
+        bottom: 35%;
+        display: initial;
+
+        @include on-desktop {
+          right: 10%;
+          bottom: 25%;
+        }
+      }
+
+      &:hover ~ .slider > .slider__wrap .slider__slide--1,
+      &:hover ~ .slider > .slider__wrap .slider__slide--2,
+      &:hover ~ .slider > .slider__wrap .slider__slide--4,
+      &:hover ~ .slider > .slider__wrap .slider__slide--5 {
+        display: none;
       }
     }
 
     &--position-4 {
-      @include on-tablet {
-        grid-column: 5;
-        grid-row: 3;
-        align-self: center;
+      bottom: 10%;
+
+      &:hover ~ .slider {
+        left: 30%;
+        bottom: 35%;
+        display: initial;
+
+        @include on-desktop {
+          left: 40%;
+          bottom: 25%;
+        }
       }
 
-      @include on-desktop {
-        grid-column: 9;
+      &:hover ~ .slider > .slider__wrap .slider__slide--1,
+      &:hover ~ .slider > .slider__wrap .slider__slide--2,
+      &:hover ~ .slider > .slider__wrap .slider__slide--3,
+      &:hover ~ .slider > .slider__wrap .slider__slide--5 {
+        display: none;
       }
     }
 
     &--position-5 {
-      @include on-tablet {
-        grid-column: 6;
-        grid-row: 5;
-        align-self: center;
+      bottom: 10%;
+      left: 10%;
+
+      &:hover ~ .slider {
+        left: 0;
+        bottom: 35%;
+        display: initial;
+
+        @include on-desktop {
+          left: 10%;
+          bottom: 25%;
+        }
       }
 
-      @include on-desktop {
-        grid-column: 11;
+      &:hover ~ .slider > .slider__wrap .slider__slide--1,
+      &:hover ~ .slider > .slider__wrap .slider__slide--2,
+      &:hover ~ .slider > .slider__wrap .slider__slide--3,
+      &:hover ~ .slider > .slider__wrap .slider__slide--4 {
+        display: none;
       }
     }
   }

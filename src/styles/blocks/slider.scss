@@ -10,13 +10,13 @@
   -webkit-backdrop-filter: blur(10px);
   min-width: 300px;
   scroll-behavior: smooth;
-
   overflow: hidden;
 
   @include on-tablet {
     width: 300px;
-    // display: none;
     position: absolute;
+    height: 200px;
+    display: none;
    }
 
   &__wrap {
@@ -44,6 +44,12 @@
     margin-right: 50px;
     transform: scale(1);
     transition: transform 0.5s;
+    display: flex;
+
+    @include on-tablet {
+      align-items: center;
+      padding: 25px;
+    }
   }
 
   &__links {
