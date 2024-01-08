@@ -24,9 +24,29 @@
     font-size: 16px;
     line-height: 24px;
     text-align: left;
+    position: relative;
+    padding-block: 8px;
 
     &--color {
       color: $additional-gray2-color;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $additional-gray2-color;
+
+      transition: transform $effect-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
     }
   }
 
