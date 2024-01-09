@@ -1,0 +1,135 @@
+.potr-size {
+
+  &__wrap {
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      grid-template-rows: repeat(1, 1fr);
+
+      @include content-padding-inline;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    @include on-tablet {
+
+      @include content-padding-inline;
+
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      grid-row: 1;
+      grid-column: 4 / span 12;
+    }
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 4 / span 12;
+      padding-inline: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 35px;
+
+    @include on-tablet {
+      width: 60%;
+    }
+
+    @include on-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 54px;
+
+    @include on-desktop {
+      padding-bottom: 30px;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    @include content-padding-inline;
+
+    @include on-tablet {
+      padding-left: 0;
+    }
+
+    @include on-desktop {
+      padding-right: 80px;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 75%;
+        height: 1px;
+        background: $grey-medium-light;
+        transform: rotate(90deg);
+        left: -43%;
+        top: 31%;
+      }
+    }
+  }
+
+  &__paragraph {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+  }
+
+  &__subtitle {
+    font-family: $font-bebas;
+    font-size: 18px;
+    line-height: 18px;
+    color: $black-color;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+
+    @include content-padding-inline;
+
+    @include on-desktop {
+      grid-row: 1;
+      grid-column: 1 / span 3;
+      padding-inline: 0;
+    }
+
+    &--before {
+      margin: 0;
+      position: relative;
+
+      @include on-desktop {
+        grid-row: 1;
+        grid-column: 1 / span 7;
+        align-self: flex-end;
+      }
+
+      &::before {
+        content: '*';
+        position: absolute;
+        left: 15px;
+
+        @include on-desktop {
+          left: -10px;
+        }
+      }
+    }
+  }
+}
