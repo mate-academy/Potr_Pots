@@ -1,0 +1,101 @@
+.benefits {
+  @include content-padding-inline;
+
+  &__photos {
+    display: none;
+
+    @include on-desktop {
+      display: initial;
+    }
+  }
+
+  // &__description {
+  //
+  // }
+
+  &__advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__subtitle {
+    font-family: $font-manrope;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: left;
+    color: $additional-gray1-color;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background-color: $additional-gray2-color;
+      transform: rotate(45deg);
+      top: 20px;
+      left: -15px;
+    }
+
+    @include on-tablet {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+
+  &__discount {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  &__sale {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__off {
+    font-family: $font-bebas;
+    font-size: 36px;
+    line-height: 54px;
+    text-align: left;
+    color: $button-red-color;
+    text-transform: uppercase;
+    font-stretch: condensed;
+
+    @include on-tablet {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include on-desktop {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+
+  &__slogan {
+    font-family: $font-bebas;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: left;
+    color: $main-font-color;
+    text-transform: uppercase;
+    font-stretch: condensed;
+
+    @include on-tablet {
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    @include on-desktop {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+}
