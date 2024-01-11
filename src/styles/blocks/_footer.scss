@@ -1,0 +1,134 @@
+.footer {
+  padding-bottom: 30px;
+
+  @include on-tablet {
+    padding-bottom: 64px
+  }
+;
+
+  @include on-desctop {
+    margin-bottom: 117px;
+  }
+
+  &__center {
+    @include on-tablet {
+      grid-column: 3 / 5;
+      }
+
+    @include on-desctop {
+      grid-column: 5 / 9;
+
+    }
+  }
+
+  &__icons {
+    display: flex;
+    gap: 85px;
+    margin: 0 auto;
+    width: min-content;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 32px;
+      gap: 80px;
+    }
+
+    @include on-desctop {
+      gap: 70px;
+      margin-bottom: 74px;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include on-desctop {
+      width: 30px;
+      height: 30px;
+    }
+
+    &--twitter {
+      background-image: url(../images/icons/twitter.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/instagram.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/facebook.svg);
+    }
+  }
+
+  &__logo {
+    margin: 0;
+    color: $black-1;
+    text-align: center;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+  }
+
+  &__copyright {
+    margin: 0;
+    color: $black-1;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__left {
+    grid-column: 1 / 3;
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__right {
+    grid-column: -3 / -1;
+    justify-self: end;
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  &__large {
+    margin: 0;
+    color: $black-1;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__text {
+    max-width: 170px;
+    margin: 0;
+    color: $black-1;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+  }
+}

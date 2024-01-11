@@ -1,0 +1,253 @@
+.for-whom {
+  position: relative;
+
+  &__dop {
+    display: none;
+    position: absolute;
+    margin: 0;
+    color: $gray-1;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    transform: translateX(-$tablet-grid-gap);
+
+    @include on-tablet {
+      // display: grid;
+    }
+
+    &::before {
+      content: '*';
+      display: inline-block;
+      width: $star-width;
+      margin-right: $tablet-grid-gap;
+      color: $black-1;
+      font-size: 24px;
+      letter-spacing: 3.72px;
+    }
+
+    @include on-tablet {
+      display: block;
+    }
+
+    &--first {
+      @include on-tablet {
+        transform: translateY(-25px) translateY(-50%) translateX(-$tablet-grid-gap) translateX(-$star-width);
+      }
+
+      @include on-desctop {
+        transform: translateY(-40px) translateY(-50%) translateX(-$tablet-grid-gap) translateX(-$star-width);
+      }
+    }
+
+    &--second{
+      @include on-tablet {
+        right: 0;
+        transform: translateY(-28px) translateY(-50%);
+      }
+
+      @include on-desctop {
+        left: 0;
+        transform: translateY(-28px) translateY(-50%) translateX(-$tablet-grid-gap) translateX(-$star-width);
+      }
+
+
+    }
+
+    &--third {
+      @include on-tablet {
+        transform: translateY(-17px) translateY(-100%) translateX(-$tablet-grid-gap) translateX(-$star-width);
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 25px;
+    color: $gray-1;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+
+      margin-bottom: 42px;
+    }
+  }
+
+  &__photo {
+    // width: min-content;
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    &--first {
+      @include on-tablet {
+        width: 284px;
+
+        grid-column: span 3;
+        grid-row: 2 / 3;
+
+        margin-bottom: 110px;
+      }
+
+      @include on-desctop {
+        grid-column: 1 / 8;
+        width: 500px;
+        margin-bottom: 80px;
+
+      }
+    }
+
+    &--second{
+      @include on-tablet {
+        grid-column: 4 / -1;
+        grid-row: 3 / 4;
+        justify-self: end;
+
+        margin-bottom: 122px;
+      }
+
+      @include on-desctop {
+        grid-column: 2 / 5;
+        grid-row: 3 / 4;
+        justify-self: start;
+        margin-top: 105px;
+        margin-bottom: 109px;
+      }
+    }
+
+    &--third {
+      @include on-tablet {
+        width: 284px;
+
+        grid-column: 1 / 4;
+        grid-row: 5 / 6;
+      }
+
+      @include on-desctop {
+        width: 470px;
+        margin-bottom: 109px;
+
+        grid-column: 8 / -1;
+        grid-row: 3 / 5;
+      }
+    }
+  }
+
+  &__art {
+    position: relative;
+    margin-bottom: 70px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--first {
+      @include on-tablet {
+        grid-column: 4 / -1;
+        grid-row: 2 / 3;
+
+        margin-top: 26px;
+      }
+
+      @include on-desctop {
+        grid-column: 8 / -1;
+        margin-top: 184px;
+
+      }
+    }
+
+    &--second{
+      @include on-tablet {
+        grid-column: 1 / 4;
+        grid-row: 3 / 4;
+
+        margin-top: 81px;
+      }
+
+      @include on-desctop {
+        grid-column: 2 / 6;
+        grid-row: 4 / 6;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    &--third {
+      @include on-tablet {
+        grid-column: 4 / -1;
+        grid-row: 5 / 6;
+
+        margin-top: 29px;
+      }
+
+      @include on-desctop {
+        grid-column: 8 / -1;
+        grid-row: 5 / 6;
+
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 20px;
+    color: $black-1;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    &--number {
+      display: flex;
+      height: 46px;
+      margin: 0 0 30px 9px;
+      line-height: 180%;
+
+      @include on-tablet {
+        margin-bottom: 22px;
+      }
+
+      @include on-desctop {
+        margin-bottom: 27px;
+      }
+
+      &::before{
+        content: '';
+        display: block;
+        height: 100%;
+        width: 1px;
+        margin-right: 9px;
+        background-color: $gray-1;
+        transform: rotate(22deg);
+      }
+
+      &--left {
+        @include on-tablet {
+          position: absolute;
+          margin: 0;
+          transform: translateX(-$tablet-grid-gap) translateX(-100%);
+        }
+
+        @include on-desctop {
+          transform: translateX(-200%);
+        }
+      }
+    }
+
+
+  }
+
+  &__text {
+    margin: 0;
+    color: $gray-2;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
+}
