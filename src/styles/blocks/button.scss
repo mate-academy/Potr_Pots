@@ -34,4 +34,34 @@
         opacity: 70%;
       }
   }
+
+  &__secondary {
+    display: flex;
+    background-color: $yellow-button-color;
+    align-self: flex-start;
+
+    &::after{
+      content: url(../images/Arrow-black.svg);
+      margin-left: 10px;
+    }
+
+    &:hover {
+      opacity: 70%;
+    }
+
+    @include on-tablet {
+      display: flex;
+      background-color: transparent;
+      border: 2px solid $main-font-color;
+
+      &:hover {
+        background-color: $main-font-color;
+        color: $grey-light;
+
+        &::after {
+          content: url(../images/Arrow-white.svg);
+        }
+      }
+    }
+  }
 }
