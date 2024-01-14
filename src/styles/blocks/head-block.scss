@@ -92,7 +92,7 @@
     }
   }
 
-  &__vertical-text {
+  &__vertical-text-left {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -116,6 +116,33 @@
     &::after {
       content: url(../images/head-block/arrow-blue.svg);
       padding-top: 10px;
+    }
+  }
+
+  &__vertical-text-right {
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      color:#828282;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 12px;
+      line-height: normal;
+      letter-spacing: 2.64px;
+      writing-mode: vertical-lr;
+      transform: translate(150%, 50%);
+
+      &::before {
+        content: "";
+        width: 1px;//LEARN
+        height: 65px;//LEARN
+        background-color: #828282;
+      }
     }
   }
 }
