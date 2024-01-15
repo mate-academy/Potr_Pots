@@ -1,0 +1,58 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 30px;
+
+  &__input {
+    font-family: $font-manrope;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $black-color;
+    transition: $effect-duration;
+    outline: none;
+
+    &--textarea {
+      resize: none;
+    }
+
+    &::placeholder {
+      color: $black-color;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: left;
+      opacity: 40%;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main-font-color;
+
+      &::placeholder {
+        opacity: 100%;
+      }
+    }
+
+    &:focus {
+      color: $main-font-color;
+      border-bottom: 1px solid $main-font-color;
+
+      &::placeholder {
+        color: $main-font-color;
+      }
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px $yellow-light inset;
+      transition: background-color $effect-duration;
+    }
+    &:-webkit-autofill:hover {
+      -webkit-text-fill-color: $black-color;
+    }
+
+    &:-webkit-autofill:active,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: $main-font-color;
+    }
+  }
+}
