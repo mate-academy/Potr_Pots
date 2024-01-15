@@ -1,3 +1,64 @@
-.filler {
-  padding: 0;
+.header {
+  display: grid;
+  height: 500px;
+
+  @include mobile {
+    grid-column: 1 / span 2;
+  }
+
+  @include tablet {
+    grid-column: 1 / span 6;
+  }
+
+  @include desktop {
+    grid-column: 1 / span 12;
+  }
+
+  @include design {
+    grid-column: 1 / span 12;
+  }
+
+  border: red 5px solid;
+
+  &__1 {
+    @include mobile {
+      grid-column: 1 / span 1;
+    }
+
+    @include tablet {
+      grid-column: 1 / span 3;
+    }
+
+    @include desktop {
+      grid-column: 1 / span 6;
+    }
+
+    @include design {
+      grid-column: 1 / span 6;
+    }
+
+    background-color:  yellow;
+
+  }
+
+  &__2 {
+    @include mobile {
+      grid-column: 2 / span 1;
+    }
+
+    @include tablet {
+      grid-column: 4 / span 3;
+    }
+
+    @include desktop {
+      grid-column: 7 / span 6;
+    }
+
+    @include design {
+      grid-column: 7 / span 6;
+    }
+
+    background-color: blue;
+
+  }
 }
