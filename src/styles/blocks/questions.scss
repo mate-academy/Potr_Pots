@@ -1,9 +1,10 @@
 .questions {
   background-image: url(../images/Rectangle-yellow--questions.svg);
-  background-position: left top;
+  background-position: -135px top;
   background-repeat: no-repeat;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
   position: relative;
+  background-size: cover;
 
   // &::before {
   //   content: url(../images/round__icon.svg);
@@ -15,10 +16,11 @@
   //     top: -15%;
   //     right: 5%;
   //   }
-  //}
+  // }
 
   &__title {
     margin-bottom: 25px;
+    padding-top: 40px;
 
     @include on-tablet {
       margin-bottom: 35px;
@@ -69,5 +71,35 @@
 
   &__link {
     position: relative;
+
+    &--phone {
+      max-width: 110px;
+    }
+
+    &--email {
+      max-width: 155px;
+    }
+
+    &--address {
+      max-width: 270px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $black-color;
+
+      transition: transform $effect-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
   }
 }
