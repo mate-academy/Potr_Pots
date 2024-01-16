@@ -1,5 +1,73 @@
 .header {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  &__nav {
+    width: 100%;
+    display: flex;
+    place-content: space-between;
+    box-sizing: border-box;
+    border: 1px blue solid;
+
+    &__logo {
+      width: 134px;
+
+    }
+
+    &__burger {
+      @include mobile {
+        width: 32px;
+        height: 32px;
+      }
+    }
+}
+
+  @include mobile {
+    background-color: $grey-light;
+    padding: 9px 15px;
+
+    &__title {
+      @include font-title-small;
+
+      box-sizing: border-box;
+      padding-top: 0;
+      position: relative;
+
+
+      &--transparent {
+        color: transparent;
+        position: relative;
+        -webkit-text-stroke: $turquoise 1px;
+
+      }
+    }
+  }
+
+  @include tablet {
+    padding: 29px 42px 0 34px;
+    background-image: url('./images/shape.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+    background-position: -154px 0;
+
+    &__title {
+      @include font-title-large;
+
+      box-sizing: border-box;
+      padding-top: 49px;
+      position: relative;
+
+
+      &--transparent {
+        color: transparent;
+        position: relative;
+        -webkit-text-stroke: $turquoise 1px;
+
+      }
+    }
+ }
 
   @include mobile {
     grid-column: 1 / span 2;
@@ -16,31 +84,5 @@
   @include design {
     grid-column: 1 / span 12;
   }
-
-  &__logo {
-    width: 134px;
-
-  }
-
-  &__burger {
-    @include mobile {
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  &__nav {
-    width: 100%;
-    display: flex;
-    place-content: space-between;
-    box-sizing: border-box;
-
-  @include mobile {
-    background-color: $grey-light;
-    padding: 9px 15px;
-  }
-
-}
-
 
 }
