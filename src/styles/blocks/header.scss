@@ -13,11 +13,16 @@
     display: flex;
     place-content: space-between;
     box-sizing: border-box;
-    border: 1px red solid;
+
 
     @include mobile {
       padding: 15px 38px 10px 30px;
     }
+
+    @include tablet {
+      padding: 29px 0;
+    }
+
 
     &__logo {
       width: 134px;
@@ -44,7 +49,7 @@
         display: none;
       }
 
-      border: black 1px solid;
+      border: $menu-color 1px solid;
     }
 
 
@@ -53,8 +58,8 @@
 &__nav-list {
 display: flex;
 gap: 60px;
-padding-left: 260px;
-background-color: yellow;
+padding-left: 150px;
+
 
 @media (max-width: 1259px) {
   display: none;
@@ -63,7 +68,6 @@ background-color: yellow;
 }
 
 &__nav-item {
-background-color: aqua;
 display: flex;
 align-items: flex-start;
 
@@ -81,7 +85,7 @@ display: block;
   transition: transform 0.5s ease-in-out;
   content: "";
   display: block;
-  border-bottom: 1px solid $primary;
+  border-bottom: 1px solid $menu-color;
   position: relative;
   left: 0;
   right: 0;
@@ -106,14 +110,16 @@ display: block;
     width: 306px;
     height: 306px;
     position: absolute;
-    top: 130px;
+    top: 121px;
     right: calc((100vw - 768px) / 2 + 34px);
-
   }
 
   @include desktop {
     width: 500px;
     height: 500px;
+    position: absolute;
+    top: 140px;
+    right: calc((100vw - 1440px) / 2 + 135px);
   }
 
   @include design {
@@ -127,29 +133,56 @@ display: block;
     background-color: $grey-light;
 
     &__title-box {
-      border: 1px solid blue;
+      box-sizing: border-box;
       padding: 25px 30px 30px;
-      box-sizing: border-box;
     }
-    &__title {
-      @include font-title-small;
 
+  }
+
+  @include tablet {
+    background-color: $grey-light;
+
+    &__title-box {
       box-sizing: border-box;
+      padding: 0;
+      display: flex;
+      align-items: flex-start;
+      padding-top: 20px;
+    }
+
+  }
+
+  @include desktop {
+    background-color: $grey-light;
+
+    &__title-box {
+      box-sizing: border-box;
+      padding: 0;
+      display: flex;
+      align-items: flex-start;
+      padding-top: 40px;
+      padding-left: 100px;
+       }
+
+  }
+
+  &__title {
+    @include font-title-small;
+
+    box-sizing: border-box;
+    position: relative;
+
+
+
+    &--transparent {
+      color: transparent;
       position: relative;
+      -webkit-text-stroke: $turquoise 1px;
 
-
-
-      &--transparent {
-        color: transparent;
-        position: relative;
-        -webkit-text-stroke: $turquoise 1px;
-
-      }
     }
   }
 
   @include tablet {
-    padding: 29px 0 0;
     background-color: transparent;
 
 
@@ -157,7 +190,7 @@ display: block;
       @include font-title-large;
 
       box-sizing: border-box;
-      padding-top: 49px;
+
       position: relative;
 
       &--transparent {
