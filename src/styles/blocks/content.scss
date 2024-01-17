@@ -1,0 +1,53 @@
+
+.content {
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+
+  @include grid-mobile;
+  @include grid-tablet;
+  @include grid-desktop;
+  @include grid-design;
+
+  @include tablet {
+    background-image: url('./images/shape.png');
+   background-repeat: no-repeat;
+   background-size: 1121px 467px;
+
+   flex-shrink: 0;
+   background-position: -500px -80px;
+
+
+
+ }
+
+  &__graphic-link {
+    @media (min-width: 1260px) {
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+
+
+    &:hover {
+      transition: 0.3s ease-in-out;
+      transform: scale(1.1);
+        }
+
+  }
+}
+
+&__hide-on-large-screen {
+  @media (min-width: 1260px) {
+    @include visually-hidden;
+  }
+
+}
+
+&__hide-on-small-screen {
+  @media (max-width: 1259px) {
+    @include visually-hidden;
+  }
+
+}
+
+
+}

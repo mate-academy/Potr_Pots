@@ -5,7 +5,6 @@
   width: 100%;
 
 
-
   &__nav {
     width: 100%;
     display: flex;
@@ -13,9 +12,9 @@
     box-sizing: border-box;
     border: 1px blue solid;
 
-  /*   @include mobile {
-      padding: 9px 15px;
-    } */
+    @include mobile {
+      padding: 15px 38px 10px 30px;
+    }
 
     &__logo {
       width: 134px;
@@ -23,10 +22,15 @@
     }
 
     &__burger {
+      @media (min-width: 1260px) {
+        display: none;
+      }
+
       @include mobile {
         width: 32px;
         height: 32px;
       }
+
     }
 }
  &__image {
@@ -59,12 +63,17 @@
   @include mobile {
     background-color: $grey-light;
 
+    &__title-box {
+      border: 1px solid blue;
+      padding: 25px 30px 30px;
+      box-sizing: border-box;
+    }
     &__title {
       @include font-title-small;
 
       box-sizing: border-box;
-      padding-top: 0;
       position: relative;
+
 
 
       &--transparent {
