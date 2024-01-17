@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  width: 100%;
+
+
 
   &__nav {
     width: 100%;
@@ -9,6 +12,10 @@
     place-content: space-between;
     box-sizing: border-box;
     border: 1px blue solid;
+
+    @include mobile {
+      padding: 9px 15px;
+    }
 
     &__logo {
       width: 134px;
@@ -22,10 +29,35 @@
       }
     }
 }
+ &__image {
+  @include mobile {
+    position: 280px;
+    width: 100%
+  }
+
+  @include tablet {
+    width: 306px;
+    height: 306px;
+    position: absolute;
+    top: 121px;
+    right: calc((100vw - 768px) / 2 + 34px);
+
+  }
+
+  @include desktop {
+    width: 500px;
+    height: 500px;
+  }
+
+  @include design {
+    width: 500px;
+    height: 500px;
+  }
+
+ }
 
   @include mobile {
     background-color: $grey-light;
-    padding: 9px 15px;
 
     &__title {
       @include font-title-small;
@@ -45,12 +77,9 @@
   }
 
   @include tablet {
-    padding: 29px 42px 0 34px;
-    background-image: url('./images/shape.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    flex-shrink: 0;
-    background-position: -154px 0;
+    padding: 29px 0 0;
+    background-color: transparent;
+
 
     &__title {
       @include font-title-large;
@@ -58,7 +87,6 @@
       box-sizing: border-box;
       padding-top: 49px;
       position: relative;
-
 
       &--transparent {
         color: transparent;
