@@ -43,8 +43,22 @@
 }
 
 &__hide-on-small-screen {
-  @media (max-width: 1259px) {
+  @media (min-width: 1260px) {
     @include visually-hidden;
+  }
+
+}
+
+&__dont-display-on-small-screen {
+  @media (max-width: 1259px) {
+    display: none;
+  }
+
+}
+
+&__dont-display-on-large-screen {
+  @media (min-width: 1260px) {
+    display: none;
   }
 
 }
