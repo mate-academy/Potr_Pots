@@ -9,7 +9,7 @@
   @include grid-desktop;
   @include grid-design;
 
-  @include tablet {
+/*   @include tablet {
     background-image: url('./images/shape.png');
    background-repeat: no-repeat;
 
@@ -28,6 +28,25 @@ background-position: -400px -20px;
  flex-shrink: 0;
 
 background-position: 0 0;
+
+} */
+
+&__bcg {
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  @include tablet {
+  position: absolute;
+  right: calc((100vw - 768px) / 2 + 120px);
+  }
+
+  @include desktop {
+    position: absolute;
+ right: calc((100vw - 1260px) / 2 + 315px);
+    top: 0;
+    }
+
 
 }
 
