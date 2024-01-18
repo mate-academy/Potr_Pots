@@ -1,0 +1,258 @@
+.half-price-section {
+  margin: 0 auto;
+  position: relative;
+
+  @include onMobile {
+    margin: 0 30px ;
+    padding-bottom: 37px;
+  }
+
+  @include onTablet {
+    justify-content: center;
+    row-gap: 15px;
+
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: 20% 8% 18% 10% 26%;
+    grid-template-areas: "easy ."
+      ". buy-container"
+      "self buy-container"
+      "self half-prise"
+      "flat half-prise";
+  }
+
+  @include onDesktop {
+    max-width: 1305px;
+    row-gap: 30px;
+    padding-bottom: 0;
+    grid-template-columns: 50% 23% 27%;
+    grid-template-rows: 18% 12% 13% 10% 26% 3%;
+    grid-template-areas: "saction-img . ."
+      "saction-img easy flat"
+      "saction-img self self"
+      "saction-img buy-container buy-container"
+      "saction-img half-prise half-prise"
+      "saction-img . .";
+  }
+
+  .saction-img {
+    display: none;
+    grid-area: saction-img;
+
+    .img {
+      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.4));
+      transition: all 0.5s;
+      transform: translateX(-15px);
+    }
+
+    .img:hover {
+      transform: scale(1.08);
+    }
+
+    @include onDesktop {
+      display: inline-block;
+    }
+  }
+
+  .title {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    padding-bottom: 5px;
+  }
+
+  span::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    background-color: black;
+    color: black;
+    position: absolute;
+    top: 20px;
+    left: -18px;
+    transform: rotate(45deg);
+  }
+
+  .easy,
+  .flat,
+  .buy-container {
+
+    @include onMobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  .easy {
+    grid-area: easy;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  .flat {
+    grid-area: flat;
+  }
+
+  .self {
+    grid-area: self;
+
+    @include onMobile {
+      margin-bottom: 65px;
+    }
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  .buy-container {
+    grid-area: buy-container;
+    display: flex;
+
+    @include onTablet {
+      width: 240px;
+      margin-left: 20px;
+    }
+
+    @include onDesktop {
+      margin-left: -18px;
+    }
+
+    .button {
+      width: 260px;
+      height: 49px;
+    }
+
+    .buy {
+      display: flex;
+      justify-content: center;
+      line-height: 48px;
+      text-decoration: none;
+      color: black;
+      font-weight: 600;
+      transition: all 0.5s;
+      background-color: #ffe339;
+
+      @include onMobile {
+        &::after {
+          content: url(/images/hand.svg);
+          padding-left: 20px;
+          margin-top: -2px;
+        }
+
+        &:hover {
+          transition: all 0.5s;
+          background: rgba(255, 236, 122, 1);
+        }
+      }
+
+      @include onTablet {
+        background-color: transparent;
+        border: 1px solid rgba(3, 131, 158, 1);
+
+        &::after {
+          content: url(/images/hand.svg);
+          padding-left: 21px;
+          margin-top: -2px;
+          width: 48px;
+        }
+
+        &:hover {
+          background: rgba(3, 131, 158, 1);
+          color: white;
+
+          &::after {
+            content: url(/images/Arrow222.svg);
+          }
+        }
+      }
+    }
+  }
+
+  .half-prise {
+    grid-area: half-prise;
+
+    @include onTablet {
+      width: 240px;
+      margin-left: 20px;
+    }
+
+    @include onDesktop {
+      transform: translateX(57px);
+      width: 400px;
+    }
+
+    .off {
+      font-size: 36px;
+      line-height: 54px;
+      letter-spacing: 0.2em;
+      color: rgba(235, 87, 87, 1);
+
+      @include onTablet {
+        font-size: 24px;
+        line-height: 24px;
+        padding-bottom: 5px;
+      }
+    }
+
+    .get {
+      font-size: 24px;
+      letter-spacing: 0.15em;
+      color: rgba(3, 131, 158, 1);
+
+      @include onTablet {
+        font-size: 18px;
+        line-height: 18px;
+        max-width: 240px;
+      }
+
+      @include onDesktop {
+        max-width: 400px;
+      }
+    }
+  }
+
+  .for-side-text {
+    position: absolute;
+    transform: rotate(90deg);
+
+    @include onTablet {
+      right: -40px;
+      top: 140px;
+    }
+
+    .side-box {
+      @include onTablet {
+        display: flex;
+        width: 125px;
+
+        .side-text {
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.22em;
+          color: #828282;
+
+          &::before {
+            content: " ";
+            left: -75px;
+            top: 5px;
+            position: absolute;
+            width: 65px;
+            height: 1px;
+            background-color: #828282;
+          }
+        }
+      }
+
+      @include onMobile {
+        display: none;
+      }
+
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+}

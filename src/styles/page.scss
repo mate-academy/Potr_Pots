@@ -1,0 +1,73 @@
+.page {
+  background-color: #fff;
+  font-family: "Manrope", sans-serif;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+
+  .bebas-neue-stules {
+    font-family: "Bebas Neue", sans-serif;
+    transition: 0.4s;
+    letter-spacing: 0.13em;
+    font-weight: bold;
+    color: rgba(3, 131, 158, 1);
+    font-size: 58px;
+
+    .text__decoration {
+      -webkit-text-stroke: 0.7px #03839e;
+      color: transparent;
+      font-weight: normal;
+    }
+  }
+
+  .body {
+    overflow-x: hidden;
+
+    h1 {
+      font-family: "Bebas Neue", sans-serif;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    b {
+      font-weight: bold;
+    }
+
+    .bg-image {
+      display: none;
+      position: absolute;
+      width: 100%;
+      z-index: -3;
+
+      @include onTablet {
+        display: inline;
+      }
+
+      &_width {
+        @include onTablet {
+          width: 80%;
+        }
+
+        @include onDesktop {
+          width: 71%;
+        }
+      }
+    }
+  }
+
+  .body-container {
+    max-width: 1170px;
+    margin: 0 auto;
+
+    @include onTablet {
+      padding-right: 35px;
+      padding-left: 35px;
+    }
+
+    @include onDesktop {
+      padding-right: 135px;
+      padding-left: 135px;
+    }
+  }
+}

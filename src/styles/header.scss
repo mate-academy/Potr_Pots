@@ -1,0 +1,132 @@
+.header {
+
+  @media (max-width: 767px) {
+    padding: 15px 30px 10px;
+  }
+
+  @include onTablet {
+    padding: 29px 0 49px;
+  }
+
+  @include onDesktop {
+    padding: 20px 0 77px;
+  }
+
+  .header-link {
+    text-decoration: none;
+    align-items: center;
+
+    .header__title {
+      display: inline;
+      text-align: center;
+      font-size: 36px;
+      letter-spacing: 0.16rem;
+      text-decoration: none;
+      transition: all 0.5s;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      color: rgba(51, 51, 51, 1);
+    }
+
+    .header__title:hover {
+      border-top: 2px solid black;
+      border-bottom: 2px solid black;
+    }
+  }
+
+  .header-link:hover {
+    transition: border-color 0.5s;
+  }
+
+  &__menu-opener {
+    height: 32px;
+    width: 32px;
+    margin-bottom: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    background-image: url(/images/menu_icon.svg);
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  .header-big-menu-opener {
+    display: none;
+    height: 30px;
+    width: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include onDesktop {
+      display: block;
+
+      background-image: url(/images/icons8-сумка-для-покупок-100.svg);
+      background-repeat: no-repeat;
+      margin-bottom: 0;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    height: 100vh;
+    transition: transform 0.3s;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateX(100%);
+
+    &:target {
+      transform: translateX(31%);
+    }
+  }
+
+  &__big-menu {
+    display: none;
+    box-sizing: border-box;
+
+    @include onDesktop {
+      display: flex;
+      list-style: none;
+      gap: 60px;
+
+      &__item {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+      }
+
+      &__link {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+
+        h2 {
+          box-sizing: border-box;
+          transition: all 0.5s;
+          border-top: 1px solid transparent;
+          line-height: 24px;
+          padding-bottom: 6px;
+        }
+
+        h2:hover {
+          border-top: 1px solid #03839e;
+          box-sizing: border-box;
+          color: #03839e;
+        }
+      }
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

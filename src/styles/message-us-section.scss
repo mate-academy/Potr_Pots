@@ -1,0 +1,208 @@
+.message-us-section {
+  margin: 0 auto;
+  max-width: 1440px;
+  display: flex;
+  position: relative;
+
+  @include onDesktop {
+    justify-content: space-around;
+    margin-bottom: 54px;
+  }
+
+  .bg-rectangle {
+
+    height: 1000px;
+    width: 100%;
+    overflow-x: clip;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url(../images/Rectangle2.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 80px;
+
+    @include onTablet {
+      height: 535px;
+    }
+
+    @include onDesktop {
+      height: 560px;
+      width: 91%;
+    }
+  }
+
+  .stamp-img {
+    position: absolute;
+    z-index: -1;
+    max-width: 1325px;
+    width: 100%;
+
+    .img-box {
+      display: flex;
+      justify-content: flex-end;
+      overflow-x: hidden;
+
+      .img {
+        transform: translate(30%);
+
+        @include onDesktop {
+          transform: translate(0);
+        }
+      }
+    }
+  }
+
+  .questions-info-box {
+    padding-top: 120px;
+
+    @include onMobile {
+      padding-left: 30px;
+    }
+
+    @include onTablet {
+      display: flex;
+      padding-left: 35px;
+    }
+
+    @include onDesktop {
+      width: 100%;
+      padding-left: 0;
+      max-width: 1170px;
+      gap: 15px;
+    }
+
+    .questions-container {
+      margin-right: 30px;
+
+      @include onTablet {
+        max-width: 371px;
+        margin-right: 142px;
+      }
+
+      @include onDesktop {
+        margin-right: 230px;
+      }
+
+      .title {
+        font-size: 36px;
+        line-height: 54px;
+        letter-spacing: 0.15em;
+      }
+
+      .here-few {
+        padding-bottom: 40px;
+      }
+
+      .message-us {
+        font-size: 24px;
+        line-height: 36px;
+        text-align: left;
+        padding-bottom: 25px;
+        box-sizing: border-box;
+
+        .textarea {
+          padding: 4px 2px 4px 2px;
+        }
+
+        .form-input {
+          font-family: "Manrope", sans-serif;
+          font-size: 16px;
+          line-height: 150%;
+          color: #4f4f4f;
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid rgba(0,0,0,0.3);
+          resize: none;
+          margin-bottom: 25px;
+        }
+
+        .form-input:hover,
+        .form-input:focus,
+        .form-input:active {
+          outline: none;
+          border-bottom: 1px solid rgba(117, 93, 182, 0.3);
+        }
+
+        .form-input:invalid {
+          color: rgba(235, 87, 87, 1);
+        }
+
+        .form-button {
+          position: relative;
+          margin-bottom: 56px;
+          font-family: "Manrope", sans-serif;
+          font-size: 14px;
+          line-height: 48px;
+          text-transform: uppercase;
+          color: #fff;
+          border: 1px solid transparent;
+          background-color: #03839e;
+          cursor: pointer;
+          transition: all 0.5s;
+        }
+
+        .button {
+          display: block;
+          line-height: 48px;
+          width: 260px;
+          text-align: center;
+          text-transform: uppercase;
+          transition: background-color 0.5s;
+        }
+
+        .form-button:after {
+          content: "";
+          position: relative;
+          top: 1px;
+          display: inline-block;
+          width: 25px;
+          height: 10px;
+          margin-left: 20px;
+          background-image: url(/images/Arrow.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+
+        .form-button:hover {
+          background-color: rgba(3, 131, 158, 0.5);
+        }
+      }
+    }
+
+    .info-container {
+      padding-bottom: 20px;
+
+      @include onTablet {
+        padding-top: 88px;
+        max-width: 270px;
+      }
+
+      .contact {
+        margin-bottom: 34px;
+
+        .contact-link {
+          line-height: 150%;
+          color: #000;
+          border-bottom: 1px solid transparent;
+          transition: all 0.5s;
+          text-decoration: none;
+        }
+
+        .contact-link:hover {
+          color: #03839e;
+          border-bottom: 1px solid #03839e;;
+        }
+
+        .contact-type {
+          line-height: 150%;
+          padding-bottom: 5px;
+          font-size: 24px;
+          color: rgba(0,0,0,0.4);
+        }
+      }
+    }
+  }
+}
