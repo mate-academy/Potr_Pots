@@ -81,23 +81,28 @@ align-items: flex-start;
 text-decoration: none;
 display: block;
 
-@media (min-width: 1260px) {
+
   &::after {
     transform: scale(0);
     transition: transform 0.5s ease-in-out;
     content: "";
     display: block;
-    border-bottom: 1px solid $menu-color;
+    border-bottom: 1px solid $grey-light;
     position: relative;
     left: 0;
     right: 0;
     top: 5px;
+
+@media (min-width: 1260px) {
+  border-bottom: 1px solid $menu-color;
+}
+
     }
 
   &:hover::after {
     transform: scale(1);
     }
-}
+
 
 
 }
@@ -233,6 +238,8 @@ justify-content: center;
 
   &__close-cross {
     display: flex;
+
+    @include cross-animation;
 
     box-sizing: border-box;
 padding: 3px;
