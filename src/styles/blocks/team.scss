@@ -1,0 +1,112 @@
+.team {
+  padding-bottom: 58px;
+  background: url(../images/team/rectangle-mob.png) no-repeat;
+  background-position: bottom;
+  background-size: contain;//learn
+
+  &::before {
+    @include tablet {
+      content: "Martin";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      color: transparent;
+      -webkit-text-stroke: 1px $blue-color;
+      font-family: $second-font;
+      font-size: 232px;
+      line-height: normal;
+      letter-spacing: 36px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__title {
+    margin-block: 0 25px;
+    color: $gray-color;
+    font-family: $second-font;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+
+    @include tablet {
+      margin-bottom: 177px;
+    }
+  }
+
+  &__content {
+    @include tablet {
+      @include grid;
+    }
+  }
+
+  &__photo-wrapper {
+    margin: 0 -30px 30px;//LEARN
+
+    @include tablet {
+      margin: 0;
+      grid-column: span 3;
+      align-self: start;
+      order: 1;
+      // transform: translateY(-53px);
+    }
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    // width: calc(100% + 60px);
+    // margin-left: -30px;//LEARN
+  }
+
+  &__text-wrapper {
+    @include tablet {
+      grid-column: span 3;
+      align-self: end;
+      padding: 53px 21px 0 0;
+    }
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__text:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  /*&__name {
+    display: none;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+
+      color: transparent;
+      -webkit-text-stroke: 1px $blue-color;
+      font-family: $second-font;
+      font-size: 232px;
+      line-height: normal;
+      letter-spacing: 36px;
+      text-transform: uppercase;
+    }
+
+    &--2 {
+      @include tablet {
+        top: auto;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        font-size: 220px;
+        letter-spacing: 34px;
+      }
+    }
+  }*/
+}

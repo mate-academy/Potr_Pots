@@ -1,4 +1,12 @@
 .nav {
+  &--header {
+    display: none;
+
+    @include desktop {
+      display: block;
+    }
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -8,6 +16,20 @@
     margin-inline: auto;
     padding-left: 30px;
     list-style: none;
+    color: $gray-light-color;
+
+    &--header {
+      flex-direction: row;
+      column-gap: 60px;
+      color: $text-color;
+      padding: 0;
+    }
+  }
+
+  &__item:first-child {
+    @include desktop {
+      display: none;
+    }
   }
 
   &__item:first-child::after {
@@ -18,7 +40,7 @@
     padding: 1px 5px;
     box-sizing: border-box;
     color: $gray-light-color;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: $second-font;
     font-size: 9.166px;
     font-weight: 400;
     line-height: normal;
@@ -29,8 +51,20 @@
     transform: translate(25%, -50%);
   }
 
+  &__item:nth-child(4) {
+    @include desktop {
+      order: -1;
+    }
+  }
+
+  &__item:nth-child(2) {
+    @include desktop {
+      order: -2;
+    }
+  }
+
   &__link {
-    color:$gray-light-color;
+    color: inherit;
     text-decoration: none;
   }
 }
