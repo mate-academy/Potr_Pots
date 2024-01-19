@@ -1,10 +1,11 @@
 .for-whom {
 
-  &__img {
+  &__link {
     display: none;
+    transition: $effect-duration;
 
     @include on-tablet {
-      display: initial;
+      display: flex;
       grid-column: span 3;
       width: 95%;
     }
@@ -25,6 +26,16 @@
         margin-bottom: 25px;
       }
     }
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
 
   &__wrapper {
