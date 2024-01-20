@@ -6,7 +6,27 @@
 z-index: 1;
 
 
+&__price {
+  @include font-price;
 
+  box-sizing: border-box;
+
+  @include desktop {
+  padding-top: 20px;
+  padding-left: 400px;
+  }
+}
+
+&__info {
+@include font-info;
+
+@include desktop {
+display: flex;
+width: 140px;
+flex-wrap: wrap;
+  padding-left: 400px;
+  }
+}
 
   &__nav {
     width: 100%;
@@ -249,12 +269,24 @@ justify-content: center;
   }
 
 &__close-box {
-  display: flex;
+  @media (max-width: 1259px) {
+display: flex;
+align-items: flex-end;
+justify-content: flex-end;
+box-sizing: border-box;
+border: blue 1px solid;
+padding-bottom: 43px;
+padding-right: 10px;
 
-  flex-direction: column;
-  align-items: flex-start;
-padding-top: 90px;
-padding-left: 100px;
+bottom: 43px;
+width: calc(100vw - 120px);
+height: calc(100vw - 240px);
+
+
+
+  }
+
+
 
 
 }
