@@ -123,6 +123,7 @@
     font-size: 12px;
     line-height: 16px;
     cursor: pointer;
+    transition: $effect-duration;
 
     &::after {
       content: url(../images/Arrow-turquoise.svg);
@@ -138,6 +139,10 @@
 
     @include on-desktop {
       left: 55px;
+
+      &:hover {
+        transform: rotateZ(90deg) scale(1.1) translateX(-15px);
+      }
     }
   }
 
