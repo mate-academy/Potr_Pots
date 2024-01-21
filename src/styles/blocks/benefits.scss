@@ -1,5 +1,23 @@
 .benefits {
   @include content-padding-inline;
+  
+  position: relative;
+
+  &__side-element {
+    position: absolute;
+    display: none;
+    top: 120px;
+    right: -70px;
+
+
+    @include on-tablet {
+      display: flex;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
 
   &__wrap {
     @include on-desktop {

@@ -179,17 +179,31 @@
 
   &__side-element {
     position: absolute;
-    bottom: 100px;
-    right: -65px;
 
-    @include on-tablet {
-      top: -40px;
-      right: -55px;
+    &--right {
+      bottom: 100px;
+      right: -60px;
+
+      @include on-tablet {
+        top: -40px;
+        right: -55px;
+      }
+
+      @include on-desktop {
+        top: 0;
+        right: -50px;
+      }
     }
 
-    @include on-desktop {
-      top: 0;
-      right: -50px;
+    &--left {
+      display: none;
+      bottom: 150px;
+      left: -50px;
+      transform: rotateZ(-90deg);
+
+      @include on-desktop {
+        display: flex;
+      }
     }
   }
 }

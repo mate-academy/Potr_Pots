@@ -221,4 +221,28 @@
       }
     }
   }
+
+  &__side-element {
+    position: absolute;
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+
+    &--right {
+      top: 5px;
+      right: -35px;
+    }
+
+    &--left {
+      top: 220px;
+      left: -35px;
+      transform: rotate(-90deg);
+    }
+  }
 }
