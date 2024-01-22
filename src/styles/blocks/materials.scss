@@ -1,0 +1,364 @@
+.materials {
+  position: relative;
+  background: url(../images/materials.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 160px;
+
+  @include on-tablet {
+    background: none;
+  }
+
+  &__title {
+    position: relative;
+    color: $turquoise;
+    font-size: 58px;
+    letter-spacing: 8.99px;
+    margin: -30px 0 120px;
+    z-index: 1;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all ease-in-out 1s;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      grid-row: 1 / 3;
+      height: 231px;
+      font-size: 80px;
+      margin-bottom: 27px;
+      bottom: -40px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -1;
+      font-size: 138.81px;
+      letter-spacing: 16.66px;
+      bottom: -5px;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    margin: 0;
+    color: $gray-2;
+    font-family: Manrope, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 150%;
+
+    @include on-tablet {
+      display: block;
+      margin: 141px 0 10px;
+      grid-column: 4 / -1;
+      grid-row: 1/ 2;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / -1;
+      margin: 167px 0 -1px;
+    }
+  }
+
+  &__description {
+    display: none;
+    color: $gray-2;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include on-tablet {
+      display: block;
+      height: 77px;
+      grid-column: 4 / -1;
+      grid-row: 2/ 5;
+      overflow-y: visible;
+      z-index: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__bold {
+    font-weight: 700;
+  }
+
+  &__slider {
+    position: relative;
+    margin-inline: 9px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__slider-line {
+    position: relative;
+    width: 500%;
+    display: flex;
+    left: 0;
+
+    transition: left ease 0.3s;
+
+    @include on-tablet {
+      width: 100%;
+      background-image: url(../images/materials.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__item {
+    box-sizing: border-box;
+    flex: 0 0 20%;
+    padding: 28px 45px 58px;
+    background: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+
+    color: $grey-light;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    z-index: 1;
+  }
+
+  &__buttons {
+    position: absolute;
+    display: flex;
+    gap: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 37px;
+    z-index: 1;
+
+
+  }
+
+  &__button {
+    display: block;
+    padding: 0;
+    width: 7px;
+    height: 7px;
+    transform: rotate(-45deg);
+    background: $grey-light;
+    border: 1px solid $grey-light;
+
+    @include hover (transform, rotate(-45deg) scale(1.2));
+
+    &--active {
+      border: 1px solid $grey-light;
+      background-color: $gray-1;
+    }
+  }
+
+  &__drop {
+    position: relative;
+    overflow-y: hidden;
+  }
+
+  &__img {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__cros {
+    @include on-tablet {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include on-desktop {
+      top: -120px;
+    }
+
+  }
+
+  &__cros-item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: min-content;
+
+    @include on-desktop {
+      gap: 0;
+    }
+
+    &--revers {
+      flex-direction: column-reverse;
+    }
+
+    &--desctop-row {
+      @include on-desktop {
+        flex-direction: row;
+        align-items: end;
+      }
+
+    }
+
+    &--position-1 {
+      top: 35.9%;
+      right: 4.7%;
+
+      @include on-tablet {
+        top: 40.2%;
+        right: 1.7%;
+      }
+
+      @include on-desktop {
+        top: 72.8%;
+        right: 10.6%;
+      }
+    }
+
+    &--position-2 {
+      top: 30.4%;
+      right: 27.9%;
+
+      @include on-tablet {
+        top: 33.2%;
+        right: 10.7%;
+      }
+
+      @include on-desktop {
+        top: 55.2%;
+        right: 28.7%;
+      }
+    }
+
+    &--position-3 {
+      top: 41.5%;
+      left: 29.3%;
+
+      @include on-tablet {
+        top: 30.2%;
+        right: 12.7%;
+      }
+
+      @include on-desktop {
+        top: 88.8%;
+        left: 26.1%;;
+      }
+    }
+
+    &--position-4 {
+      top: 20%;
+      left: 17%;
+
+      @include on-desktop {
+        top: 46%;
+        left: 13.9%;;
+      }
+    }
+
+    &--position-5 {
+      top: 17.9%;
+      left: 5.8%;
+
+      @include on-desktop {
+        top: 72.4%;
+        left: 8.5%;;
+      }
+    }
+  }
+
+  &__cros-text {
+    box-sizing: border-box;
+    display: block;
+    width: 283px;
+    padding: 35px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(17px);
+    color: $grey-light;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform, opacity, 0.3s;
+
+    &--revers {
+      transform: translateY(-100%);
+    }
+
+    &--active {
+      opacity: 1;
+      transform: translateY(0);
+      z-index: 2;
+    }
+  }
+
+  &__cros-button{
+    @include on-tablet {
+      display: block;
+      background-color: transparent;
+      background-image: url(../images/icons/button.svg);
+      height: 51px;
+      width: 51px;
+      padding: 0;
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+      transition: background-image, 0.3s;
+    }
+
+    &--b1 {
+      margin-left: 126px;
+
+      @include on-desktop {
+        margin: 0 auto 6px;
+      }
+    }
+
+
+    &--b2 {
+      margin-left: 135px;
+
+      @include on-desktop {
+        margin: 42px 0 0 98px;
+      }
+    }
+
+
+    &--b3 {
+      margin-left: 113px;
+
+      @include on-desktop {
+        margin: 0 0 86px 11px;
+      }
+    }
+
+
+    &--b4 {
+      margin-left: 116px;
+
+      @include on-desktop {
+        margin: 20px 0 0 264px;
+      }
+    }
+
+
+    &--b5 {
+      margin-left: 46px;
+
+      @include on-desktop {
+        margin: 30px 0 0 123px;
+      }
+    }
+
+    &--active {
+      background-image: url(../images/icons/button-active.svg);
+    }
+  }
+}
