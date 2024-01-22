@@ -12,7 +12,7 @@
 
 @mixin button-primary2 {
   display: flex;
-  width: 238px;
+
   height: 48px;
   box-sizing: border-box;
   padding-left: 70px;
@@ -27,6 +27,15 @@
   background-repeat: no-repeat;
   background-size: auto;
   background-position: 161px;
+
+  @media (max-width: 767px) {
+    width: 260px;
+  }
+
+  @media (min-width: 768px) {
+    width: 238px;
+  }
+
 }
 
 @mixin button-secondary {
@@ -65,14 +74,23 @@
 }
 
 @mixin button-primary2-hover {
-  width: 238px;
   height: 48px;
   flex-shrink: 0;
   opacity: 0.7;
   background-color: $yellow;
   color: $grey-dark;
   border: 1px solid $yellow;
+
   animation: arrow-animation 1.5s ease-in-out infinite;
+
+  @media (max-width: 767px) {
+    width: 260px;
+  }
+
+  @media (min-width: 768px) {
+    width: 238px;
+  }
+
 }
 
 @mixin button-secondary-hover {
