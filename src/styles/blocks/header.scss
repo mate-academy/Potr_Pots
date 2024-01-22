@@ -8,20 +8,37 @@ z-index: 1;
 &__move-down {
   position: absolute;
   display: flex;
-top: 520px;
-left: -22px;
-justify-content: flex-start;
 
+justify-content: flex-start;
 width: 230px;
 transform: rotate(90deg);
   background-image: url('././icons/arrow-down.png');
   background-repeat: no-repeat;
   background-size: auto;
-  background-position: 170px center;
+  background-position: 140px center;
+
+  @include mobile {
+    top: 645px;
+    left: calc((100vw - 320px) / 2 + 180px);
+    }
+
+  @include tablet {
+  top: 520px;
+  left: calc((100vw - 768px) / 2 - 85px);
+  }
+
+  @include desktop {
+    top: 546px;
+    left: calc((100vw - 1440px) / 2 + 20px);
+    }
 }
 
 &__down-link {
   box-sizing: border-box;
+
+  @include font-s5;
+
+color: $turquoise;
 
 
 }
