@@ -1,17 +1,24 @@
 .forwhom {
   @include grid-desktop;
-
+background-color: aqua;
   grid-column: 1 / span 12;
-  background-color: aqua;
+
 
   &__first-row-box {
     display: flex;
-    background-color: blueviolet;
+
+    box-sizing: border-box;
+    padding-left: 138px;
+    background-color: yellow;
+
   }
 
   &__second-row-box {
     display: flex;
-    background-color: yellowgreen;
+    box-sizing: border-box;
+
+    padding-left: 100px;
+    background-color: orange;
   }
 
   &__h2 {
@@ -40,8 +47,20 @@ flex-wrap: wrap;
   &__image {
 
     &--1 {
+
+      @include tablet {
+
+        width: 284px;
+        height: 284px;
+
+        }
+
+      @include desktop {
+
       width: 500px;
       height: 500px;
+
+      }
     }
   }
 
@@ -54,35 +73,65 @@ flex-wrap: wrap;
 }
 
   &__star {
+
+background-image: url('././icons/star.png');
+background-repeat: no-repeat;
+background-size: auto;
+background-position: 0 117px;
+
 width: 11px;
 height: 33px;
-background-color: red;;
+
+
+box-sizing: border-box;
+
+padding-bottom: 40px;
+padding-right: 30px;
+
+padding-top: 120px;
   }
 
   &__keyword {
+    box-sizing: border-box;
+padding-top: 110px;
 @include font-s3;
+
 
   }
 
   &__slash-number {
 width: 33px;
 height: 46px;
-background-color: blue;
+
+box-sizing: border-box;
+padding-right: 68px;
+
+background-image: url('././icons/slash1.png');
+background-repeat: no-repeat;
+background-size: auto;
+background-position: left;
   }
 
   &__slash {
     width: 33px;
     height: 46px;
-    background-color: yellow;
+
     display: inline-block;
+
+    background-image: url('././icons/slash.png');
+background-repeat: no-repeat;
+background-size: auto;
+background-position: left;
   }
 
   &__text {
 @include font-s3;
 
-width: 370px;
+width: 480px;
 display: flex;
-flex-wrap: wrap;
+
+box-sizing: border-box;
+padding-left: 168px;
   }
 
 }
