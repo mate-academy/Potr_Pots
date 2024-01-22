@@ -1,0 +1,155 @@
+.team {
+  position: relative;
+  padding-bottom: 58px;
+  background-image: url(../images/team-bg-phone.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+
+  @include on-tablet {
+    padding-bottom: 0;
+    background-image: url(../images/rectangle.svg);
+    background-position: top 190px right 1000px;
+  }
+
+  &__title {
+    margin: 0 0 25px;
+    color: $gray-1;
+    font-size: 58px;
+    letter-spacing: 8.99px;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: all ease-in-out 1s;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      margin-bottom: 0;
+    }
+  }
+
+  &__imagbox {
+    position: relative;
+    grid-column: span 7;
+  }
+
+  &__photo {
+    position: relative;
+    display: none;
+    margin-bottom: 30px;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.5s ease;
+    }
+
+
+    &--mobile {
+      display: block;
+      width: 100%;
+
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    @include on-tablet {
+      display: block;
+      width: 340px;
+      height: 255px;
+      grid-column: span 3;
+      margin-top: -267px;
+      top: -40px;
+      left: 290px;
+    }
+
+    @include on-desktop {
+      display: block;
+      width: 677px;
+      height: 507px;
+      grid-column: span 7;
+      margin-top: 143px;
+      top: -5px;
+      left: 90px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    color: $gray-2;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+
+    @include on-tablet {
+      font-size: 14px;
+      grid-column: span 2;
+      margin-top: 250px;
+      line-height: 100%;
+    }
+
+    @include on-desktop {
+      line-height: 150% ;
+      grid-column: span 3;
+      margin-top: 373px;
+
+    }
+  }
+
+  &__name {
+    display: none;
+    position: absolute;
+    margin: 0;
+    max-width: 50%;
+
+    &--martin {
+      height: 231px;
+      top: 0;
+      left: -38px;
+      font-size: 231.88px;
+      letter-spacing: 35.94px;
+      z-index: 5;
+
+      @include on-tablet {
+        display: block;
+        margin-bottom: 160px;
+        left: -30px;
+      }
+
+      @include on-desktop {
+        top: 15px;
+        left: -20px;
+        font-size: 288px;
+        letter-spacing: 44.64px;
+      }
+    }
+
+    &--andy {
+      width: 459px;
+      height: 220px;
+      bottom: -175px;
+      right: 0;
+      font-size: 219.59px;
+      letter-spacing: 34.04px;
+      line-height: 220px;
+      text-align: right;
+
+      @include on-desktop {
+        font-size: 288px;
+        letter-spacing: 34.04px;
+        margin-bottom: -65px;
+        right: 30px;
+      }
+    }
+
+    @include on-tablet {
+      display: block;
+      bottom: -130px;
+      right: 120px;
+
+    }
+  }
+}

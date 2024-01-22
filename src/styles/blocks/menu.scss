@@ -1,0 +1,105 @@
+.menu {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 0;
+  padding: 138px 58px 0 0;
+  background-color: $turquoise;
+  z-index: 2;
+  transform: translateX(221px);
+
+  transition: transform, 0.3s;
+
+  &--active {
+    transform: translateX(0);
+    width: 361px;
+  }
+
+  &__list {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    left: 40px;
+
+  }
+
+  &__item {
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__link{
+    color: $grey-light;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+
+    &--basket {
+      display: flex;
+      &::after {
+        content: '0';
+        display: block;
+        width: 14px;
+        height: 14px;
+        margin-left: 5px;
+        border-radius: 50%;
+        background-color: $red;
+        color: $grey-light;
+        text-align: center;
+        font-size: 9px;
+        line-height: normal;
+        letter-spacing: 1.42px;
+      }
+    }
+  }
+
+  &__close{
+    position: absolute;
+    bottom: 43px;
+    right: 33px;
+    display: flex;
+    flex-direction: column-reverse;
+    text-decoration: none;
+    align-items: center;
+  }
+
+  &__cros {
+    display: flex;
+    height: 18px;
+    width: 18px;
+    margin-top: 18px;
+    background-image: url(../images/icons/cros.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__close-text {
+    display: flex;
+    align-items: center;
+    color: $grey-light;
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    &::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 44px;
+      margin-bottom: 4px;
+      background-color: $grey-light;
+    }
+  }
+}
