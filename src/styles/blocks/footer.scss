@@ -1,0 +1,126 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+
+  @include on-tablet {
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 100px;
+  }
+
+  &__address {
+    display: none;
+    max-width: 140px;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    width: 230px;
+    margin-bottom: 10px;
+  }
+
+  &__social-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__social-link {
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: $effect-duration;
+
+    @include on-tablet {
+      width: 25px;
+      height: 25px;
+    }
+
+    @include on-desktop {
+      width: 30px;
+      height: 30px;
+    }
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+    &--twit {
+      background-image: url(../images/twitter__logo.svg);
+    }
+
+    &--insta {
+      background-image: url(../images/insta__logo.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/facebook__logo.svg);
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    font-family: $font-bebas;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    font-stretch: condensed;
+    color: $black-color;
+    text-transform: uppercase;
+
+    @include on-tablet {
+      display: initial;
+    }
+  }
+
+  &__logo {
+    align-self: center;
+    transition: $effect-duration;
+
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__link {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $black-color;
+
+      transition: transform $effect-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

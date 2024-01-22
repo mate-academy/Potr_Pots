@@ -1,0 +1,253 @@
+.benefits {
+  @include content-padding-inline;
+
+  position: relative;
+
+  &__side-element {
+    position: absolute;
+    display: none;
+    top: 100px;
+    right: -70px;
+
+
+    @include on-tablet {
+      display: flex;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__wrap {
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__photo-cards {
+    display: none;
+    width: 500px;
+    height: 830px;
+    grid-column: 1 / span 4;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      position: relative;
+    }
+  }
+
+  &__photo-card {
+    position: absolute;
+    width: 215px;
+    height: 230px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: white;
+    transition: $effect-duration;
+
+    &:hover {
+      -webkit-box-shadow: 0 0 5px 0 rgba(79,79,79,1);
+      -moz-box-shadow: 0 0 5px 0 rgba(79,79,79,1);
+      box-shadow: 0 0 5px 0 rgba(79,79,79,1);
+      transform: scale(130%);
+      z-index: 2;
+    }
+
+    &--position-1 {
+      top: 5%;
+      left: -20px;
+      transform: rotate(-25deg);
+    }
+
+    &--position-2 {
+      top: 35%;
+      left: -10%;
+      z-index: 1;
+    }
+
+    &--position-3 {
+      bottom: 15%;
+      left: 5%;
+      transform: rotate(-25deg);
+      z-index: 0;
+    }
+
+    &--position-4 {
+      top: -3%;
+      right: 20%;
+      transform: rotate(-35deg);
+    }
+
+    &--position-5 {
+      top: 25%;
+      right: 20%;
+      transform: rotate(-25deg);
+    }
+
+    &--position-6 {
+      bottom: 20%;
+      right: 0;
+      transform: rotate(-30deg);
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+
+    &--origami {
+      background-image: url(../images/benefits__photo--origami.png);
+    }
+
+    &--cord {
+      background-image: url(../images/benefits__photo--cord.png);
+    }
+
+    &--cord2 {
+      background-image: url(../images/benefits__photo--cord2.png);
+    }
+
+    &--century {
+      background-image: url(../images/benefits__photo--century.png);
+    }
+
+    &--compliments {
+      background-image: url(../images/benefits__photo--compliments.png);
+    }
+
+    &--ready {
+      background-image: url(../images/benefits__photo--ready.png);
+    }
+  }
+
+  &__description {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include on-desktop {
+      grid-column: 6 / span 12;
+      grid-template-rows: 90%;
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+    grid-column: 1 / span 3;
+
+    @include on-desktop {
+      grid-column: 1 / span 6;
+      grid-row: 1;
+    }
+  }
+
+  &__advantages-wrap {
+    @include on-desktop {
+      display: flex;
+      gap: 40px;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-manrope;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: left;
+    color: $additional-gray1-color;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background-color: $additional-gray2-color;
+      transform: rotate(45deg);
+      top: 20px;
+      left: -15px;
+    }
+
+    @include on-tablet {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+
+  &__discount {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    grid-column: 4 / span 6;
+    align-self: center;
+
+    @include on-desktop {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+    }
+  }
+
+  &__sale {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    @include on-desktop {
+      align-self: center;
+    }
+  }
+
+  &__off {
+    font-family: $font-bebas;
+    font-size: 36px;
+    line-height: 54px;
+    text-align: left;
+    color: $button-red-color;
+    text-transform: uppercase;
+    font-stretch: extra-condensed;
+    letter-spacing: 1px;
+
+    @include on-tablet {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include on-desktop {
+      font-size: 36px;
+      line-height: 54px;
+    }
+  }
+
+  &__slogan {
+    font-family: $font-bebas;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: left;
+    color: $main-font-color;
+    text-transform: uppercase;
+    font-stretch: extra-condensed;
+    letter-spacing: 1px;
+
+    @include on-tablet {
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    @include on-desktop {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+}

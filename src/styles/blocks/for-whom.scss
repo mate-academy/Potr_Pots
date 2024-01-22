@@ -1,0 +1,213 @@
+.for-whom {
+  position: relative;
+
+  &__link {
+    display: none;
+    transition: $effect-duration;
+
+    @include on-tablet {
+      display: flex;
+      grid-column: span 3;
+      width: 95%;
+    }
+
+    &--right {
+      @include on-tablet {
+        grid-column: 4 / span 6;
+      }
+    }
+
+    @include on-desktop {
+      grid-column: 1 / span 6;
+      max-width: 85%;
+    }
+
+    &--bottom {
+      @include on-desktop {
+        margin-bottom: 25px;
+      }
+    }
+
+    &:hover {
+      transform: scale(105%);
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__desktop-wrapper {
+    @include on-desktop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 150px;
+      padding-left: 100px
+    }
+  }
+
+  &__item {
+    @include on-tablet {
+      @include page-grid;
+
+      margin-bottom: 80px;
+    }
+
+    &--flex {
+      @include on-desktop {
+        display: flex;
+        flex-direction: column;
+        max-block-size: 30%;
+      }
+      }
+    }
+
+    &--size {
+      @include on-desktop {
+      max-width: 70%;
+    }
+  }
+
+  &__title-wrap {
+    @include on-tablet {
+      display: flex;
+      gap: 30px
+    }
+  }
+
+  &__passage {
+    text-align: left;
+    margin-bottom: 60px;
+
+    @include on-tablet {
+      grid-column: span 3;
+      align-self: center;
+    }
+
+    &--left {
+      grid-column: 1 / span 3;
+      grid-row: 1;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / span 10;
+    }
+  }
+
+  &__title-bottom {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  &__secondary-element {
+    display: none;
+    font-family: $font-manrope;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 30px;
+    color: $additional-gray1-color;
+
+    @include on-tablet {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-start;
+    }
+
+    &--right {
+      @include on-tablet {
+        justify-content: flex-end;
+      }
+
+      @include on-desktop {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $font-bebas;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    color: $black-color;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    font-stretch: condensed;
+
+    &--color {
+      color: $additional-gray1-color;
+    }
+
+    &--line {
+      position: relative;
+
+      &::before {
+        content: url(../images/Rectangle-black.svg);
+        height: 1px;
+        width: 47px;
+
+        @include on-tablet {
+          position: absolute;
+          left: -15px
+        }
+      }
+    }
+
+    &--after {
+      &::after {
+        content: url(../images/Rectangle-black.svg);
+        display: none;
+        top: 10px;
+        position: relative;
+
+        @include on-tablet {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &__side-element {
+    position: absolute;
+
+    &--right {
+      bottom: 120px;
+      right: -67px;
+
+      @include on-tablet {
+        top: 40px;
+        right: -70px;
+      }
+
+      @include on-desktop {
+        right: -60px;
+      }
+    }
+
+    &--left {
+      display: none;
+      bottom: 150px;
+      left: -50px;
+      transform: rotateZ(-90deg);
+
+      @include on-desktop {
+        display: flex;
+      }
+    }
+  }
+}

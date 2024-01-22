@@ -1,0 +1,107 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 150px 0;
+    margin: 0;
+  }
+
+  &__item {
+    padding: 10px 0;
+
+    &--after-element {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 10%;
+        right:-50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: '0';
+        border-radius: 50%;
+        width: 15px;
+        height: 15px;
+        background-color: $button-red-color;
+        color: $grey-light;
+        font-family: $font-bebas;
+        font-size: 9px;
+        line-height: 11px;
+      }
+    }
+  }
+
+  &__link {
+    color: $grey-light;
+    font-family: $font-manrope;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    position: relative;
+    padding-block: 8px;
+
+    &--color {
+      color: $additional-gray2-color;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $additional-gray2-color;
+
+      transition: transform $effect-duration;
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__close-button {
+    display: flex;
+    position: absolute;
+    transform: rotateZ(90deg);
+    justify-content: space-between;
+    align-items: center;
+    right: -50px;
+    bottom: 10px;
+    white-space: nowrap;
+    gap: 30px;
+    height: 18px;
+  }
+
+  &__close-link {
+    font-family: $font-manrope;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+    color: $grey-light;
+    text-transform: uppercase;
+    transform: rotateZ(180deg);
+  }
+
+  &__line {
+    transform: rotateZ(90deg);
+  }
+
+  &__icon {
+    background-image: url(./../images/close-cross.svg);
+    height: 13px;
+    width: 13px;
+  }
+}

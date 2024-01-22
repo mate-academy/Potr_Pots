@@ -1,0 +1,247 @@
+.materials{
+
+  &__container{
+    display: grid;
+    grid-template-areas: "content";
+    grid-template-rows: repeat(6, auto);
+    position: relative;
+  }
+
+  &__head {
+    align-self: flex-start;
+    grid-area: content;
+    z-index: 1;
+
+    @include page-grid;
+
+    grid-row: 1 / span 2;
+
+    @include on-tablet {
+      grid-template-rows: 35%;
+      grid-row: 1 / span 2;
+      height: 80%;
+    }
+
+    @include on-desktop {
+      grid-row: 1 / span 3;
+    }
+  }
+
+  &__title {
+    font-stretch: condensed;
+
+    @include on-tablet {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 80px;
+      max-width: 440px;
+      grid-column: 1 / span 6;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / span 12;
+        font-size: 95px;
+        line-height: 130px;
+        letter-spacing: 0.12em;
+        max-width: initial;
+      }
+  }
+
+  &__description {
+    display: none;
+
+    @include on-tablet {
+      display: initial;
+      grid-column: 4 / span 6;
+    }
+
+    @include on-desktop {
+      grid-column: 10 / span 12;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    background-image: url(../images/materials-block-background.png);
+    background-size: cover;
+    min-height: 240px;
+    align-self: flex-end;
+    grid-area: content;
+    grid-row: 2 / 4;
+    align-items: center;
+
+    @include page-grid;
+
+    @include on-tablet {
+      min-height: 570px;
+      grid-row: 2 / 6;
+      grid-template-rows: repeat(6, 1fr);
+    }
+
+    @include on-desktop {
+      min-height: 1080px;
+      grid-row: 2 / 6;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    display: none;
+    width: 51px;
+    height: 51px;
+    background: $button-red-color;
+    background-image: url(../images/Rectangle-material.svg), url(../images/Rectangle-material-vertical.svg);
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    border-radius: 50%;
+    background-size: 30%, 3%;
+    transition: $effect-duration;
+    place-self: center center;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.41) url(../images/Rectangle-material.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 30%;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px) !important;
+      -webkit-backdrop-filter: blur(10px);
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    &--position-1 {
+      right: 25%;
+
+      &:hover ~ .slider {
+        right: 25%;
+        bottom: 35%;
+        display: initial;
+      }
+
+      &:hover ~ .slider > .slider__wrap .slider__slide--2,
+      &:hover ~ .slider > .slider__wrap .slider__slide--3,
+      &:hover ~ .slider > .slider__wrap .slider__slide--4,
+      &:hover ~ .slider > .slider__wrap .slider__slide--5 {
+        display: none;
+      }
+    }
+
+    &--position-2 {
+      left: 30%;
+
+      &:hover ~ .slider {
+        left: 25%;
+        bottom: 35%;
+        display: initial;
+      }
+
+      &:hover ~ .slider > .slider__wrap .slider__slide--1,
+      &:hover ~ .slider > .slider__wrap .slider__slide--3,
+      &:hover ~ .slider > .slider__wrap .slider__slide--4,
+      &:hover ~ .slider > .slider__wrap .slider__slide--5 {
+        display: none;
+      }
+    }
+
+    &--position-3 {
+      bottom: 10%;
+      right: 10%;
+
+      @include on-desktop {
+        bottom: 10%;
+        right: 10%;
+      }
+
+      &:hover ~ .slider {
+        right: 0;
+        bottom: 35%;
+        display: initial;
+
+        @include on-desktop {
+          right: 10%;
+          bottom: 25%;
+        }
+      }
+
+      &:hover ~ .slider > .slider__wrap .slider__slide--1,
+      &:hover ~ .slider > .slider__wrap .slider__slide--2,
+      &:hover ~ .slider > .slider__wrap .slider__slide--4,
+      &:hover ~ .slider > .slider__wrap .slider__slide--5 {
+        display: none;
+      }
+    }
+
+    &--position-4 {
+      bottom: 10%;
+
+      &:hover ~ .slider {
+        left: 30%;
+        bottom: 35%;
+        display: initial;
+
+        @include on-desktop {
+          left: 40%;
+          bottom: 25%;
+        }
+      }
+
+      &:hover ~ .slider > .slider__wrap .slider__slide--1,
+      &:hover ~ .slider > .slider__wrap .slider__slide--2,
+      &:hover ~ .slider > .slider__wrap .slider__slide--3,
+      &:hover ~ .slider > .slider__wrap .slider__slide--5 {
+        display: none;
+      }
+    }
+
+    &--position-5 {
+      bottom: 10%;
+      left: 10%;
+
+      &:hover ~ .slider {
+        left: 0;
+        bottom: 35%;
+        display: initial;
+
+        @include on-desktop {
+          left: 10%;
+          bottom: 25%;
+        }
+      }
+
+      &:hover ~ .slider > .slider__wrap .slider__slide--1,
+      &:hover ~ .slider > .slider__wrap .slider__slide--2,
+      &:hover ~ .slider > .slider__wrap .slider__slide--3,
+      &:hover ~ .slider > .slider__wrap .slider__slide--4 {
+        display: none;
+      }
+    }
+  }
+
+  &__side-element {
+    position: absolute;
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+
+    &--right {
+      right: -40px;
+    }
+
+    &--left {
+      top: 33%;
+      left: -40px;
+      transform: rotate(-90deg);
+    }
+  }
+}

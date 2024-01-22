@@ -1,0 +1,30 @@
+.icon {
+  display: block;
+
+  &--menu {
+    background-image: url(./../images/menu_icon.svg);
+    height: 32px;
+    width: 32px;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--basket {
+    display: none;
+    background-image: url(../images/basket.svg);
+    background-repeat: no-repeat;
+    height: 48px;
+    width: 48px;
+    transition: $effect-duration;
+
+    @include on-desktop {
+      display: block;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

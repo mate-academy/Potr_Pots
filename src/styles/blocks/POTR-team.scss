@@ -1,0 +1,106 @@
+.potr-team {
+  @include on-desktop {
+    margin-bottom:200px;
+  }
+
+  &__wrapper {
+    background-image: url(../images/Rectangle-yellow-team.svg);
+    background-position: 0 180px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-bottom: 120px;
+    position: relative;
+
+    @include on-tablet {
+      background-position: -200px top;
+      background-size: initial;
+      display: grid;
+      grid-template-areas: "content";
+
+      @include content-padding-inline;
+    }
+
+    @include on-desktop {
+      background-position: left top;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    float: right;
+    margin-bottom: 30px;
+    grid-area: content;
+    transition: $effect-duration;
+
+    @include on-tablet {
+      max-width: 50%;
+      justify-self: flex-end;
+      padding-block: 75px
+    }
+
+    @include on-desktop {
+      padding-block: 75px 0;
+      padding-right: 100px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    padding-inline: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-area: content;
+
+    @include on-tablet {
+      padding-inline: 0;
+      max-width: 45%;
+      max-block-size: 40%;
+      align-self: center;
+    }
+
+    @include on-desktop {
+      align-self: flex-end;
+      max-width: 40%;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    display: none;
+    font-size: 180px;
+    line-height: 200px;
+    text-align: left;
+    border: 1px;
+    text-transform: uppercase;
+    font-stretch: condensed;
+
+    @include on-tablet {
+      display: initial;
+    }
+
+    @include on-desktop {
+      font-size: 280px;
+      line-height: 345px;
+    }
+
+    &--top {
+      top: -70px;
+      left: -70px;
+
+      @include on-desktop {
+        top: -100px;
+        left: 30px;
+      }
+    }
+
+    &--bottom {
+      bottom: 0;
+      right: 0;
+
+      @include on-desktop {
+        bottom: -190px;
+      }
+    }
+  }
+}

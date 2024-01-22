@@ -1,0 +1,51 @@
+.page {
+  scroll-behavior: smooth;
+  margin: 0;
+
+  &::-webkit-scrollbar {
+    width: 15px;
+    background: rgba(179, 179, 179, 1.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 236, 122, 0.87);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__body {
+    margin: 0;
+    min-width: 320px;
+    background: $background-color;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: all $effect-duration;
+    transform: translateX(100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+      width: 60%;
+      left: 40%;
+    }
+  }
+}
