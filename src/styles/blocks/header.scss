@@ -15,21 +15,30 @@ transform: rotate(90deg);
   background-image: url('././icons/arrow-down.png');
   background-repeat: no-repeat;
   background-size: auto;
+
   background-position: 140px center;
+  transition: transform 0.5s ease-in-out;
+
+  &:hover {
+    animation: arrow-down-animation 1.5s infinite ease-in-out;
+  }
 
   @include mobile {
     top: 645px;
     left: calc((100vw - 320px) / 2 + 180px);
+
     }
 
   @include tablet {
   top: 520px;
   left: calc((100vw - 768px) / 2 - 85px);
+
   }
 
   @include desktop {
     top: 546px;
     left: calc((100vw - 1440px) / 2 + 20px);
+
     }
 }
 
