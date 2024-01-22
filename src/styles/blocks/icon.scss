@@ -1,0 +1,32 @@
+.icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: ease .5s;
+
+
+  @include on-desktop {
+    width: 48px;
+    height: 48px;
+  }
+
+  &--menu {
+    background-image: url(../images/icons/menu_icon.svg);
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--bag {
+    display: none;
+    background-image: url(../images/icons/bag.svg);
+
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+}
