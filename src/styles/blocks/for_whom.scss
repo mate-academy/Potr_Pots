@@ -1,15 +1,35 @@
 .forwhom {
-  @include grid-desktop;
+
+
+  @include tablet {
+    @include grid-tablet;
+    background-color: aqua;
+      grid-column: 1 / span 6;
+         }
+
+     @include desktop {
+      @include grid-desktop;
 background-color: aqua;
   grid-column: 1 / span 12;
-
+     }
 
   &__first-row-box {
     display: flex;
 
     box-sizing: border-box;
-    padding-left: 138px;
-    background-color: yellow;
+
+
+    @include tablet {
+      padding-left: 90px;
+      background-color: yellow;
+
+ }
+
+     @include desktop {
+          padding-left: 138px;
+           background-color: yellow;
+     }
+
 
   }
 
@@ -17,8 +37,22 @@ background-color: aqua;
     display: flex;
     box-sizing: border-box;
 
-    padding-left: 100px;
-    background-color: orange;
+
+    @include tablet {
+      padding-left: 50px;
+      display: flex;
+      flex-wrap: nowrap;
+      background-color: orange;
+      width: 400px;
+       }
+
+    @include desktop {
+   padding-left: 100px;
+   background-color: orange;
+   width: 550px;
+    }
+
+
   }
 
   &__h2 {
@@ -33,30 +67,36 @@ grid-column: 1 / span 3;
   &__h3 {
     @include font-h2;
 
-width: 470px;
+
 display: inline-block;
 flex-wrap: wrap;
   }
 
   &__img-box {
     display: grid;
+
+    @include tablet {
+      grid-column: 1 / span 2;
+
+      }
+
+    @include desktop {
     grid-column: 1 / span 5;
+    width: 470px;
+    }
 
   }
 
   &__image {
 
     &--1 {
-
       @include tablet {
-
         width: 284px;
         height: 284px;
 
         }
 
       @include desktop {
-
       width: 500px;
       height: 500px;
 
@@ -67,13 +107,18 @@ flex-wrap: wrap;
 &__article-box {
 
   &--1 {
-  display: grid;
-  grid-column: 6 / span 7;
+    display: grid;
+    @include tablet {
+       grid-column: 4 / span 3;
+        }
+
+    @include desktop {
+   grid-column: 6 / span 7;
+    }
   }
 }
 
   &__star {
-
 background-image: url('././icons/star.png');
 background-repeat: no-repeat;
 background-size: auto;
@@ -88,12 +133,14 @@ box-sizing: border-box;
 padding-bottom: 40px;
 padding-right: 30px;
 
+
 padding-top: 120px;
   }
 
   &__keyword {
     box-sizing: border-box;
 padding-top: 110px;
+
 @include font-s3;
 
 
@@ -127,11 +174,22 @@ background-position: left;
   &__text {
 @include font-s3;
 
-width: 480px;
+
 display: flex;
 
 box-sizing: border-box;
+
+@include tablet {
+display: flex;
+
+width: 460px;
+padding-left: 120px;
+}
+
+  @include desktop {
 padding-left: 168px;
+width: 540;
+  }
   }
 
 }
