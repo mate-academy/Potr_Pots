@@ -1,0 +1,140 @@
+.potrTeam {
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $color-title-secondary;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, auto);
+      grid-column-gap: 20px;
+    }
+
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: 30px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      z-index: -1;
+      position: absolute;
+      left: -20px;
+      top: 350px;
+      border-top: 15vh solid $color-bg;
+      border-bottom: 10vh solid transparent;
+      border-left: 100vw solid $color-bg;
+
+      @include on-tablet {
+        left: -34px;
+        top: 170px;
+        border-top: 23vh solid $color-bg;
+        border-bottom: 8vh solid transparent;
+        border-left: 35vw solid $color-bg;
+      }
+
+      @include on-desktop {
+        border-top: 35vh solid $color-bg;
+        border-bottom: 20vh solid transparent;
+        border-left: 32vw solid $color-bg;
+        top: 135px;
+        left: -135px;
+      }
+    }
+  }
+
+  &__img {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    object-fit: contain;
+    object-position: center center;
+
+    @include on-tablet {
+      @include hover(transform, scale(1.1));
+
+      width: 100%;
+      margin-left: 0;
+      grid-area: 2 / 4 / 4 / 7;
+    }
+
+    @include on-desktop {
+      grid-area: 2 / 5 / 4 / 12;
+    }
+  }
+
+  &__text {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $color-text-primary;
+    z-index: 3;
+
+    @include on-tablet {
+      grid-area: 2 / 1 / 5 / 4;
+      align-self: center;
+    }
+
+    @include on-desktop {
+      grid-area: 2 / 1 / 5 / 5;
+    }
+  }
+
+  &__member {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.15em;
+    z-index: 3;
+    color: transparent;
+    -webkit-text-stroke: $color-title-third 1px;
+    display: none;
+
+    @include on-tablet {
+      font-size: 232px;
+      line-height: 278px;
+      display: inline;
+    }
+
+    @include on-desktop {
+      font-size: 288px;
+      line-height: 240px;
+    }
+
+    &--2 {
+      @include on-tablet {
+        grid-area: 4 / 4 / 5 / 7;
+        place-self: flex-start;
+        justify-self: flex-end;
+        margin-right: -50px;
+      }
+
+      @include on-desktop {
+        grid-area: 4 / 5 / 5 / 13;
+      }
+    }
+
+    &--1 {
+      @include on-tablet {
+        grid-area: 1 / 1 / 3 / 6;
+        margin-left: -50px;
+      }
+
+      @include on-desktop {
+        grid-area: 1 / 1 / 3 / 12;
+      }
+    }
+  }
+}

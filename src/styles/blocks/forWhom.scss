@@ -1,0 +1,218 @@
+.for-whom {
+  position: relative;
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+  }
+
+  &__cards {
+    display: flex;
+    flex-flow: column;
+    margin-top: 25px;
+    gap: 70px;
+    position: relative;
+
+    @include on-desktop {
+      flex-flow: wrap;
+      gap: 160px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+
+    @include on-tablet {
+      gap: 15px;
+    }
+
+    @include on-desktop {
+      gap: 100px;
+    }
+  }
+
+  &__card--two {
+    flex-direction: row-reverse;
+
+    @include on-tablet {
+      gap: 50px;
+    }
+
+    @include on-desktop {
+      flex-direction: column;
+    }
+  }
+
+  &__card--three {
+    @include on-tablet {
+      gap: 50px;
+    }
+
+    @include on-desktop {
+      flex-direction: column;
+    }
+  }
+
+  &__card-info {
+    @include on-desktop {
+      margin-top: 40px;
+    }
+  }
+
+  &__card-info--one {
+    @include on-tablet {
+      display: flex;
+      gap: 20px;
+      align-items: baseline;
+    }
+
+    @include on-desktop {
+      gap: 70px;
+    }
+  }
+
+  &__card-info--two {
+    @include on-desktop {
+      width: 25vw;
+    }
+  }
+
+  &__card-info--three {
+    @include on-tablet {
+      display: flex;
+      gap: 20px;
+      align-items: baseline;
+    }
+
+    @include on-desktop {
+      max-width: 33vw;
+      gap: 70px;
+    }
+  }
+
+  &__card-photo {
+    display: none;
+    width: 37vw;
+    cursor: pointer;
+
+    @include on-tablet {
+      display: inline;
+
+      @include hover(transform, scale(1.1));
+    }
+  }
+
+  &__card-photo--two {
+    @include on-tablet {
+      width: 40vw;
+    }
+
+    @include on-desktop {
+      width: 21vw;
+    }
+  }
+
+  &__card-photo--three {
+    @include on-desktop {
+      width: 33vw;
+    }
+  }
+
+  &__card-pre {
+    display: none;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 40px;
+
+    @include on-tablet {
+      display: flex;
+    }
+  }
+
+  &__card-pre--two {
+    @include on-tablet {
+      justify-content: flex-end;
+    }
+
+    @include on-desktop {
+      justify-content: flex-start;
+      margin-left: -10px;
+    }
+  }
+
+  &__card-pre--three {
+    @include on-desktop {
+      margin-left: -10px;
+    }
+  }
+
+  &__card-text {
+    margin-top: 30px;
+  }
+
+  &__card-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    position: relative;
+  }
+
+  &__card-paragraph {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 20px;
+  }
+
+  &__vertical {
+    display: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    writing-mode: vertical-lr;
+    position: absolute;
+    width: max-content;
+    font-size: 12px;
+    letter-spacing: 2.64px;
+    color: $color-text-primary;
+    top: -20px;
+    right: 0;
+
+    @include hover(transform, scale(1.1));
+
+    &::before {
+      @include on-tablet {
+        display: inline-block;
+        content: "";
+        background-color: #828282;
+        width: 1px;
+        height: 66px;
+        margin: 10px;
+      }
+    }
+
+    @include on-tablet {
+      display: inline;
+    }
+
+    &--left {
+      display: none;
+      bottom: -20px;
+      left: 0;
+      transform: rotate(180deg);
+
+      @include on-desktop {
+        display: inline;
+      }
+    }
+  }
+}

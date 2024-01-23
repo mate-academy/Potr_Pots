@@ -1,0 +1,284 @@
+.header {
+  font-family: inherit;
+  padding: 30px 0;
+  z-index: 2;
+  position: relative;
+
+  &::after {
+    display: block;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 25vh solid $color-bg;
+    border-left: 72vw solid $color-bg;
+    border-bottom: 15vh solid transparent;
+    position: absolute;
+
+    @include on-tablet {
+      content: '';
+    }
+
+    @include on-desktop {
+      border-bottom-width: 35vh;
+    }
+  }
+
+  &__content {
+    margin: 0 20px;
+
+    @include on-tablet {
+      margin: 0 23px;
+    }
+
+    @include on-desktop {
+      margin: 0 135px;
+    }
+  }
+
+  &__basket {
+    display: none;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-desktop {
+      display: inline;
+    }
+  }
+
+  &__nav {
+    z-index: 2;
+    display: none;
+
+    @include on-desktop {
+      display: inline;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    position: relative;
+    margin-top: 10px;
+    z-index: 2;
+
+    @include on-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, auto);
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      margin-top: 90px;
+    }
+  }
+
+  &__img-container {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    grid-area: 1 / 1 / 1 / 3;
+
+    @include on-tablet {
+      justify-self: flex-end;
+      grid-area: 1 / 4 / 3 / 7;
+    }
+
+    @include on-desktop {
+      grid-area: 1 / 7 / 4 / 13;
+    }
+  }
+
+  &__img {
+    z-index: 2;
+    position: relative;
+    object-fit: contain;
+    min-height: 230px;
+    min-width: 230px;
+    width: calc(100% + 40px);;
+    height: 100%;
+    margin-left: -20px;
+    cursor: pointer;
+
+    @include on-tablet {
+      margin-left: 0;
+      width: 100%;
+
+      @include hover(transform, scale(1.1));
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    z-index: 3;
+    color: transparent;
+    -webkit-text-stroke: $color-title-third 1px;
+    grid-area: 2 / 1 / 3 / 3;
+
+    @include on-tablet {
+      grid-area: 1 / 1 / 1 / 7;
+      min-width: max-content;
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include on-desktop {
+      justify-self: center;
+    }
+
+    &--fill {
+      color: $color-title-third;
+    }
+  }
+
+
+  &__buy-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    gap: 10px;
+    width: 240px;
+    height: 40px;
+    background-color: $color-btn-primary2;
+    border: none;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    margin-top: 19px;
+    cursor: pointer;
+    grid-area: 4 / 1 / 5 / 2;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 30px;
+      height: 10px;
+      background-image: url(../icons/Arrow_2.png);
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+
+    @include on-tablet {
+      grid-area: 3 / 2 / 4 / 4;
+    }
+
+    @include on-desktop {
+      max-width: 270px;
+      grid-area: 3 / 5 / 4 / 6;
+    }
+
+    @include hover(opacity, 0.7);
+  }
+
+  &__buy-btn-icon {
+    margin-left: 10px;
+  }
+
+  &__info {
+    max-width: 140px;
+    margin-top: 6px;
+    grid-area: 3 / 1 / 4 / 2;
+
+    @include on-tablet {
+      justify-self: center;
+      grid-area: 2 / 2 / 3 / 4;
+    }
+
+    @include on-desktop {
+      justify-self: flex-end;
+      grid-area: 2 / 5 / 3 / 6;
+    }
+  }
+
+  &__info-price {
+    font-family: inherit;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  &__info-text {
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 5px;
+  }
+
+  &__scroll-down {
+    text-decoration: none;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 9px;
+    cursor: pointer;
+    grid-area: 3 / 2 / 5 / 3;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      justify-self: start;
+      grid-area: 2 / 1 / 4 / 2;
+    }
+  }
+
+  &__scroll-down-text {
+    writing-mode: vertical-lr;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-title-third;
+  }
+
+  &__scroll-down-icon {
+    width: fit-content;
+  }
+
+  &__btn {
+    background-image: url(../icons/burger_menu.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    width: $icon-small;
+    height: $icon-small;
+    transition: background-image $animation-time;
+
+    @include on-tablet {
+      width: $icon-big;
+      height: $icon-big;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  background-image: url(../icons/potrpots_logo.png);
+  display: inline-block;
+  height: 30px;
+  width: 134px;
+  z-index: 2;
+  background-repeat: no-repeat;
+
+  @include hover(opacity, 0.7);
+}
