@@ -1,0 +1,59 @@
+.features {
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: transparent;
+    -webkit-text-stroke: $color-title-third 1px;
+
+    &--fill {
+      color: $color-title-third;
+    }
+  }
+
+  &__cards {
+    margin-top: 25px;
+    display: flex;
+    gap: 70px;
+    flex-direction: column;
+    justify-content: center;
+
+    @include on-tablet {
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  &__card-img {
+    max-width: 100%;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__card-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $color-title-secondary;
+    margin-top: 30px;
+  }
+
+  &__card-text {
+    margin-top: 20px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-text-primary;
+  }
+}
