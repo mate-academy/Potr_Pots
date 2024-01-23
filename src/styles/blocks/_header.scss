@@ -1,0 +1,237 @@
+.header {
+  @include tablet {
+    grid-column: 1 / -1;
+  }
+
+  @include desktop {
+    margin-bottom: 150px;
+  }
+
+  &__decor {
+    display: none;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 85%;
+      z-index: -2;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    @include tablet {
+      grid-column: 1 / -1;
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__cart {
+    display: none;
+
+    @include desktop {
+      display: block;
+      width: 25px;
+    }
+  }
+
+  &__cart-icon {
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.06);
+    }
+  }
+
+  &__menu-icon {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__side {
+    font-size: 12px;
+    color: $turquoise;
+    padding: 5px;
+    transform: rotate(90deg) translate(-140px, -80px);
+    transition: all 0.9s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--right {
+      position: absolute;
+      top: 730px;
+      right: 20px;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &--left {
+      display: none;
+      position: absolute;
+      left: -114px;
+      top: 590px;
+
+      @include tablet {
+        display: block;
+      }
+
+      @include desktop {
+        left: -100px;
+        top: 700px;
+      }
+    }
+
+    &-link {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: $turquoise;
+    }
+
+    &-arrow {
+      display: block;
+      position: absolute;
+      right: -35px;
+      top: -15px;
+      padding: 10px;
+      transform: rotate(-90deg);
+      transition: all 0.3s;
+    }
+  }
+
+  &__title {
+    color: $turquoise;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 5.58px;
+    line-height: 50px;
+    text-transform: uppercase;
+    max-width: 30ch;
+    margin-bottom: 30px;
+
+    @include tablet {
+      grid-column: 1 / span 5;
+      grid-row: 2;
+      width: 100%;
+      max-width: 25ch;
+      margin-bottom: 0;
+    }
+
+    @include desktop {
+      grid-column: 2 / span 5;
+    }
+  }
+
+  &__img-container {
+    width: 100%;
+    height: 320px;
+    margin-bottom: 25px;
+
+    @include tablet {
+      grid-column: 3 / -1;
+      grid-row: 2;
+      width: 80%;
+      max-width: 400px;
+      max-height: 270px;
+      justify-self: end;
+    }
+
+    @include desktop {
+      margin-bottom: 0;
+      grid-column: 7 / -1;
+      grid-row: 2 / span 2;
+      width: 100%;
+      height: 420px;
+      max-height: 420px;
+    }
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 320px;
+    object-fit: cover;
+
+    @include tablet {
+      position: initial;
+      z-index: -1;
+    }
+
+    @include desktop {
+      max-height: 500px;
+    }
+  }
+
+  &__price {
+    width: max-content;
+
+    @include tablet {
+      grid-column: 3 / span 2;
+      grid-row: 3;
+      transform: translate(-18%, -50%);
+    }
+
+    @include desktop {
+      grid-column: 6;
+      transform: translate(-50%, -15%);
+    }
+
+    &-num {
+      color: #333;
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    &-txt {
+      color: $dark-grey;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 150%;
+      max-width: 18ch;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__button {
+    @include tablet {
+      grid-column: 1 / span 3;
+      grid-row: 3;
+      align-self: end;
+      justify-self: end;
+    }
+
+    @include desktop {
+      grid-column: 3 / span 3;
+      grid-row: 3;
+      padding: 0 50px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.header__side:hover .header__side-link {
+  cursor: pointer;
+}
+
+.header__side:hover .header__side-arrow {
+  margin-right: -20px;
+}

@@ -1,7 +1,173 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "../styles/blocks/header";
+@import "../styles/blocks/menu";
+@import "../styles/blocks/for-whom";
+@import "../styles/blocks/features";
+@import "../styles/blocks/team";
+@import "../styles/blocks/materials";
+@import "../styles/blocks/size";
+@import "../styles/blocks/benefits";
+@import "../styles/blocks/contacts";
+@import "../styles/blocks/footer";
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  background: $c-gray;
+  box-sizing: border-box;
+  background-color: $background-main;
+  color: $dark-grey;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  overflow-x: hidden;
+}
+
+.page {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.container {
+  &--contacts {
+    width: 100%;
+    height: 1000px;
+    background-image: url(../images/rectangle_footer.png);
+    background-position: center;
+    background-size: cover;
+
+    @include tablet {
+      height: 500px;
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      width: 95%;
+    }
+  }
+}
+
+.grid {
+  width: 90%;
+  padding-top: 10px;
+  margin: 0 auto 120px;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: min-content;
+    grid-column-gap: 20px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(3, max-content);
+    grid-column-gap: 30px;
+  }
+
+  &--contacts {
+    margin-bottom: 0;
+
+    @include tablet {
+      margin-bottom: 120px;
+    }
+  }
+
+  &--footer {
+    margin-bottom: 50px;
+
+    @include tablet {
+      margin-bottom: 120px;
+    }
+  }
+}
+
+.button {
+  display: block;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: $yellow;
+  width: 230px;
+  height: 48px;
+  padding: 15px 20px;
+  transition: all 0.4s;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    background-color: rgba(255, 228, 56, 0.7);
+  }
+
+  &--secondary {
+    background-color: $background-main;
+    outline: 1px solid $turquoise;
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $turquoise;
+    }
+  }
+
+  &__content {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 55%;
+  }
+
+  &__txt {
+    color: #121212;
+    font-family: "Proxima Nova", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+  }
+
+  &__arrow {
+    width: 30px;
+    background-image: url("../images/arrow_btn.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.button:hover .button__arrow--secondary {
+  background-image: url("../images/arrow_btn_white.svg");
+  transition: all 0.4s;
+}
+
+.button:hover .button__txt--secondary {
+  color: white;
+  transition: all 0.4s;
+}
+
+.span-color {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: $turquoise;
+}
+
+.span-name {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: lid black;
+  -webkit-text-stroke-color: $turquoise;
 }

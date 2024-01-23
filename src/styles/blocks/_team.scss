@@ -1,0 +1,180 @@
+.team {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../images/rectangle_small.png);
+  background-repeat: no-repeat;
+  background-size: 100% 35%;
+  background-position: bottom;
+  margin-bottom: 100px;
+
+  @include tablet {
+    background-position: 0 170px;
+    background-size: 226px 250px;
+  }
+
+  &__container-overflow {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__title {
+    color: $dark;
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    line-height: 150%;
+    margin-bottom: 25px;
+
+    @include tablet {
+      grid-column: 1 / -1;
+      grid-row: 1;
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: 900px) {
+      margin-bottom: 90px;
+    }
+
+    @include desktop {
+      font-size: 58px;
+    }
+  }
+
+  &__image-container {
+    height: 240px;
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 0;
+      grid-column: 4 / -1;
+      grid-row: 2 / span 3;
+      width: 100%;
+      height: 250px;
+      justify-self: end;
+      align-self: center;
+    }
+
+    @include desktop {
+      height: 500px;
+      grid-column: 5 / -2;
+      grid-row: 2 / span 2;
+    }
+  }
+
+  &__image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 240px;
+    position: absolute;
+    right: 0;
+    left: 0;
+
+    @include tablet {
+      position: initial;
+      height: 100%;
+    }
+
+    @include desktop {
+      height: 100%;
+    }
+  }
+
+  &__name {
+    display: none;
+    font-stretch: condensed;
+
+    @include tablet {
+      display: block;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 180px;
+      font-weight: 400;
+      letter-spacing: 20px;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 700px) {
+      font-size: 23vw;
+    }
+
+    @include desktop {
+      font-size: 22vw;
+      letter-spacing: 30px;
+    }
+
+    &--top {
+      @include tablet {
+        height: 100px;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        transform: translate(-84px, 60px);
+        margin-bottom: 50px;
+      }
+
+      @media (min-width: 700px) {
+        transform: translate(-84px, 48px);
+      }
+
+      @media (min-width: 800px) {
+        transform: translate(-84px, 30px);
+      }
+
+      @include desktop {
+        transform: translate(0, 30px);
+      }
+    }
+
+    &--bottom {
+      @include tablet {
+        grid-column: 3 / -1;
+        grid-row: 4;
+        width: 90%;
+        height: 100px;
+        justify-self: end;
+        align-self: end;
+        letter-spacing: 0;
+        font-size: 162px;
+        transform: translateY(34px);
+      }
+
+      @media (min-width: 700px) {
+        font-size: 23vw;
+      }
+
+      @media (min-width: 800px) {
+        transform: translateY(80px);
+      }
+
+      @include desktop {
+        grid-column: 6 / -2;
+        font-size: 22vw;
+        height: 150px;
+        transform: translate(20px, 94px);
+      }
+    }
+  }
+
+  &__info {
+    max-width: 400px;
+    margin: 0 auto;
+
+    @include tablet {
+      grid-column: 1 / span 3;
+      grid-row: 4;
+      justify-self: start;
+      max-width: 248px;
+      margin: 0;
+    }
+
+    @media (min-width: 800px) {
+      max-width: 320px;
+    }
+
+    @include desktop {
+      grid-column: 1 / span 5;
+      grid-row: 3;
+      align-self: end;
+    }
+  }
+}
