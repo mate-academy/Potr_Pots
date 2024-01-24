@@ -1,0 +1,124 @@
+.materials {
+  &__content {
+    @include onMobile {
+      padding-top: 110px;
+    }
+  }
+
+  &__title {
+    position: relative;
+    width: 81vw;
+    padding-left: 34px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 96px;
+    letter-spacing: 9px;
+    color: $green;
+    z-index: 10;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onMobile {
+      letter-spacing: 9px;
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 70px;
+    }
+
+    @include onTablet {
+      &:before {
+        position: absolute;
+        content: url(../images/line1.svg) " potr pots";
+        bottom: -145px;
+        left: -32px;
+        width: 70px;
+        writing-mode: vertical-lr;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: $gray4;
+        word-spacing: 3px;
+      }
+
+      &:after {
+        position: absolute;
+        content: url(../images/line1.svg) " potr pots";
+        bottom: 59px;
+        right: -103px;
+        width: 70px;
+        writing-mode: vertical-lr;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: $gray4;
+        word-spacing: 3px;
+      }
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: -50px;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+
+    @include Tablet-Mobile {
+      margin-top: 0;
+    }
+  }
+
+  &__subtitle {
+    width: 46vw;
+    margin-bottom: 10px;
+    padding-right: 23px;
+    font-family: "Manrope", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    color: $gray2;
+  }
+
+  &__text {
+    width: 46vw;
+    padding-right: 23px;
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $gray2;
+
+    & span {
+      font-weight: 700;
+    }
+  }
+
+  &__background {
+    display: none;
+    justify-content: center;
+    position: relative;
+    margin-top: -78px;
+    margin-bottom: -53px;
+    z-index: 1;
+
+    @include onMobile {
+      display: flex;
+    }
+  }
+  & img {
+    display: flex;
+    margin: 0 auto;
+    object-fit: cover;
+    align-content: center;
+  }
+}

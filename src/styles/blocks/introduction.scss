@@ -1,0 +1,303 @@
+.introduction {
+  &__content {
+    padding-top: 77px;
+
+    @include onTablet {
+      padding-top: 51px;
+    }
+
+    @include onMobile {
+      padding-top: 10px;
+    }
+  }
+
+  &__title {
+    display: inline;
+    position: relative;
+    z-index: 10;
+    font-size: 64px;
+    line-height: 64px;
+    color: transparent;
+    -webkit-text-stroke: 1px $green;
+    letter-spacing: 10px;
+
+    &:before {
+      position: absolute;
+      content: "More about POTR POTS";
+      color: $green;
+      font-family: "Manrope", sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0;
+      rotate: 90deg;
+
+      @include onTablet {
+        top: 304px;
+        left: -59px;
+      }
+
+      @include onDesktop {
+        top: 365px;
+        left: -160px;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: url(../images/Arrow.svg);
+
+      @include onTablet {
+        top: 401px;
+      }
+
+      @include onDesktop {
+        top: 460px;
+        left: -101px;
+      }
+    }
+
+    &:hover:after {
+      translate: 0 130px;
+      transition: 0.4s ease-out;
+    }
+
+    @include onMobile {
+      margin-bottom: 25px;
+      padding-top: 10px;
+      font-size: 36px;
+      line-height: 43px;
+      letter-spacing: 5px;
+
+      &:before {
+        position: absolute;
+        content: "More about POTR POTS";
+        top: 202px;
+        right: -77px;
+        color: $green;
+        font-family: "Manrope", sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0;
+        rotate: 90deg;
+      }
+
+      &:after {
+        position: absolute;
+        content: url(../images/Arrow.svg);
+        top: 300px;
+        right: -15px;
+      }
+    }
+  }
+
+  &__stroke {
+    font-size: 64px;
+
+    @include onMobile {
+      font-size: 36px;
+    }
+  }
+
+  &__regular {
+    color: $green;
+  }
+
+  &__title-mix {
+    display: flex;
+  }
+
+  &__details {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    @include onDesktop {
+      align-items: self-start;
+    }
+  }
+
+  &__details-legend {
+    align-self: flex-end;
+    margin-bottom: 15px;
+    margin-right: -27px;
+    color: $green;
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+
+    @include onTablet {
+      align-self: self-end;
+      margin-top: -24px;
+    }
+
+    @include onDesktop {
+      align-self: self-end;
+    }
+  }
+
+  &__details-arrow {
+    align-self: flex-end;
+    margin-right: -21px;
+
+    @include onTablet {
+      align-self: self-start;
+      padding-left: 4px;
+    }
+
+    @include onDesktop {
+      align-self: self-start;
+      padding-left: 4px;
+    }
+  }
+
+  &__price {
+    position: relative;
+    z-index: 10;
+    font-family: "Manrope", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+
+    @include onTablet {
+      margin-top: 236px;
+    }
+
+    @include onDesktop {
+      margin-top: 30px;
+    }
+
+    @include onMobile {
+      margin-top: 25px;
+    }
+  }
+
+  &__offer {
+    position: relative;
+    z-index: 10;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 0;
+    margin-top: 50px;
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+    background-color: $yellow1;
+    border: none;
+    cursor: pointer;
+
+    @include onDesktop {
+      margin-left: 40px;
+      margin-top: 173px;
+    }
+
+    @include onMobile {
+      margin-top: 0;
+    }
+  }
+
+  &__button:hover {
+    background-color: $yellow2;
+  }
+
+  &__legend {
+    margin-right: 20px;
+    padding: 13px 0 13px 65px;
+  }
+
+  &__arrow {
+    padding-right: 78px;
+
+    @include onMobile {
+      padding-right: 70px;
+    }
+    @include onTablet {
+      padding-right: 44px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    flex-shrink: 0;
+    background-image: url(../images/photos/kaktus-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+    @include onMobile {
+      position: relative;
+
+      margin-bottom: 25px;
+    }
+
+    @include onTablet {
+      width: 100%;
+      height: 100%;
+
+      margin-left: 30px;
+      background-image: url(../images/photos/kaktus-tablet.jpg);
+      background-size: contain;
+      z-index: 1;
+
+      &:after {
+        position: absolute;
+        content: url(../images/line1.svg) " potr pots";
+        bottom: -213px;
+        right: -57px;
+        width: 70px;
+        writing-mode: vertical-lr;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: $gray4;
+        word-spacing: 3px;
+      }
+    }
+
+    @include onDesktop {
+      position: relative;
+      width: 500px;
+      height: 500px;
+      margin-left: -30px;
+      background-image: url(../images/photos/kaktus-desktop.jpg);
+      z-index: 1;
+
+      &:after {
+        position: absolute;
+        content: url(../images/line1.svg) " potr pots";
+        bottom: -239px;
+        right: -56px;
+        width: 70px;
+        writing-mode: vertical-lr;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: $gray4;
+        word-spacing: 3px;
+      }
+    }
+  }
+}
