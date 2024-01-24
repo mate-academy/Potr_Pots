@@ -2,16 +2,72 @@
  /*  display: grid; */
 
 &__inline {
-  display: inline;
+  display: inline-block;
+  background-color: purple;
+  box-sizing: border-box;
+
+    background-repeat: no-repeat;
+  background-size: auto;
+
+
+  &--1 {
+    background-image: url('./icons/1.svg');
+
+    @include mobile {
+      padding-top: 70px;
+    }
+
+    @include tablet {
+    padding-left: 68px;
+    padding-top: 5px;
+    }
+    @include desktop {
+      padding-left: 100px;
+      padding-top: 5px;
+      }
+
+
+    }
+
+  &--2 {
+    background-image: url('./icons/2.svg');
+    padding-top: 15px;
+
+    }
+
+  &--3 {
+  background-image: url('./icons/3.svg');
+
+  @include mobile {
+    padding-top: 70px;
+  }
+  @include tablet {
+  padding-left: 68px;
+  padding-top: 5px;
+  }
+
+  @include desktop {
+    padding-left: 100px;
+    padding-top: 5px;
+    }
+  }
+
  &--slash {
+background-color: aqua;
   @media (max-width: 767px) {
     display: none;
+
+
 
   }
  }
 
 }
 
+&__block {
+  display: block;
+  background-color: red;
+}
 
 
 &__star {
@@ -19,12 +75,31 @@
   padding-right: 30px;
 }
 
-
+/*
 &__number {
-  display: inline-block;
+  display: flex;
   padding-right: 30px;
-}
+  background-color: burlywood;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: top;
 
+  &--1 {
+    background-image: url('./icons/1.png');
+    }
+
+  &--2 {
+    background-image: url('./icons/2.png');
+
+
+    }
+
+  &--3 {
+  background-image: url('./icons/3.png');
+  }
+
+}
+ */
 &__h2 {
   display: flex;
 
@@ -303,17 +378,19 @@ background-color: aqua;
 &__title {
   @include font-h2;
 
+
 display: flex;
-flex-wrap: wrap;
+/* flex-wrap: wrap; */
 
 
 
 @include mobile {
-  width: 260px
+  width: 260px;
+
 }
 
 @include tablet {
-  width: 340px
+  width: 340px;
 }
 
 @include desktop{
@@ -323,10 +400,13 @@ width: 470px;
 
   &--2 {
     width: 350px;
+
+
   }
 
   &--3 {
     width: 390px;
+    flex-direction: row;
   }
 }
 }
