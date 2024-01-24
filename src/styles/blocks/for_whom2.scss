@@ -11,22 +11,22 @@
     @include grid-mobile;
 
 display: grid;
+gap: 0;
 grid-template-columns: auto auto;
-gap: 20px;
 grid-template-rows: auto auto auto auto;
 
     }
 
   @include tablet {
     display: grid;
+    gap: 0;
     grid-template-columns: auto auto;
-    gap: 20px;
-    grid-template-rows: auto auto auto auto;
+     grid-template-rows: auto auto auto auto;
     }
 
   @include desktop {
+    gap: 0;
   grid-template-columns: auto auto;
-  gap: 50px;
   grid-template-rows: auto auto auto auto auto;
   }
 
@@ -92,6 +92,8 @@ grid-template-rows: auto auto auto auto;
 
   &__image-box-1 {
     background-color: yellow;
+    display: flex;
+    justify-items: baseline;
 
     @include tablet{
       grid-column: 1 / 2;
@@ -106,6 +108,8 @@ grid-template-rows: auto auto auto auto;
 
  &__image-box-2 {
   background-color: orange;
+  display: flex;
+    justify-content: center;
 
   @include tablet{
     grid-column: 2 / 3;
@@ -120,7 +124,8 @@ grid-row: 3 / 4;
 
   &__image-box-3 {
     background-color: red;
-
+    display: flex;
+    justify-content: center;
     @include tablet{
       grid-column: 1 / 2;
  grid-row: 4 / 5;
@@ -169,6 +174,58 @@ height: 500px;
   height: 670px;
   }
 }
+
+&__keyword {
+  @include font-s3;
+}
+
+&__title {
+  @include font-h2;
+
+display: flex;
+flex-wrap: wrap;
+
+
+
+@include mobile {
+  width: 260px
+}
+@include tablet {
+  width: 340px
+}
+
+@include desktop{
+  &--1 {
+width: 470px;
+  }
+
+  &--2 {
+    width: 350px;
+  }
+
+  &--3 {
+    width: 390px;
+  }
+}
+}
+
+&__text {
+  @include font-s3;
+display: flex;
+flex-wrap: wrap;
+
+@include mobile {
+  width: 260px
+}
+@include tablet {
+  width: 340px
+}
+
+@include desktop{
+  width: 380px;
+}
+}
+
   }
 
 
