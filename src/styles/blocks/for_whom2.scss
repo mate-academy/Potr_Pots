@@ -11,6 +11,7 @@
   background-size: auto;
 
 
+
   &--1 {
     background-image: url('./icons/1.svg');
 
@@ -21,6 +22,20 @@
     @include tablet {
     padding-left: 68px;
     padding-top: 5px;
+
+
+
+
+
+    &::after {
+      content: " ";
+      display: inline-block;
+      width: 19px;
+  height: 40px;
+
+      background-image: url('./icons/slash.svg');
+      background-repeat: no-repeat;
+    }
 
     }
 
@@ -34,8 +49,27 @@
 
   &--2 {
     background-image: url('./icons/2.svg');
-    padding-top: 15px;
+    padding-top: 65px;
 
+
+
+    @include tablet {
+      &::after {
+        content: " ";
+        display: inline-block;
+        width: 19px;
+    height: 40px;
+
+        background-image: url('./icons/slash.svg');
+        background-repeat: no-repeat;
+      }
+
+      @include desktop {
+        padding-left: 40px;
+        background-position: 45px 0;
+
+      }
+    }
 
     }
 
@@ -49,6 +83,16 @@
   @include tablet {
   padding-left: 68px;
   padding-top: 5px;
+  &::after {
+    content: " ";
+    display: inline-block;
+    width: 19px;
+height: 40px;
+
+    background-image: url('./icons/slash.svg');
+    background-repeat: no-repeat;
+  }
+
   }
 
   @include desktop {
@@ -77,8 +121,13 @@
 
 
 &__star {
-  display: inline-block;
-  padding-right: 30px;
+  display: block;
+  padding-right: 40px;
+  background-image: url('./icons/star.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 10px center;
+
 }
 
 
@@ -168,13 +217,14 @@ box-sizing: border-box;
       grid-column: 1 / 2;
  grid-row: 3 / 4;
  padding: 0;
+ width: 340px;
     }
 
     @include desktop {
     grid-column: 1 / 2;
  grid-row: 4 / 6;
 
- padding-left: 110px;
+ padding-left: 60px;
  padding-top: 45px;
     }
   }
@@ -316,6 +366,7 @@ height: 500px;
   @include font-s3;
 
 display: flex;
+
 /* background-color: aqua; */
 
 
@@ -324,22 +375,21 @@ display: flex;
   display: none;
 }
   &--1{
-
     @include tablet {
-
-      padding-left: 45px;
+      padding-left: 30px;
         }
+
     @include desktop {
   padding-bottom: 40px;
   padding-left: 55px;
     }
 
   }
-  &--2{
+  &--2 {
     @include tablet {
       justify-content: flex-end;
       padding-top: 139px;
-      width: 300px;
+      width: 340px;
     }
 
     @include desktop {
@@ -397,7 +447,7 @@ width: 470px;
   }
 
   &--2 {
-    width: 350px;
+    width: 450px;
 
 
   }
@@ -405,6 +455,7 @@ width: 470px;
   &--3 {
     width: 530px;
     flex-direction: row;
+
   }
 }
 }
@@ -433,10 +484,10 @@ flex-wrap: wrap;
 }
 
 &--1 {
-
   @include tablet {
     padding-left: 70px;
       }
+
   @include desktop {
 padding-left: 100px;
   }
@@ -444,6 +495,9 @@ padding-left: 100px;
 
 &--2 {
   padding-left: 0;
+  @include desktop {
+    padding-left: 40px;
+  }
 }
 
 &--3 {
