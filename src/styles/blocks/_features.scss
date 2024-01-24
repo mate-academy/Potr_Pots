@@ -41,9 +41,14 @@
     max-width: 340px;
     aspect-ratio: 1 / 1;
     margin-bottom: 38px;
+    transition: transform 0.3s;
 
     @include tablet {
       max-width: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.02);
     }
   }
 
@@ -79,5 +84,7 @@
 }
 
 .feat-card + .feat-card {
-  margin-left: 20px;
+  @include tablet {
+    margin-left: 20px;
+  }
 }
