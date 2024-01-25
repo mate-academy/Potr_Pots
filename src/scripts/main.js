@@ -5,7 +5,7 @@ const openButton = document.querySelector('.menu__open-btn');
 const nav = document.querySelector('.menu');
 const link1 = document.querySelector('.menu__nav-link');
 const link2 = document.querySelector('.menu__nav-link--2');
-const link3 = document.querySelector('.menu__nav-link--2');
+const link3 = document.querySelector('.menu__nav-link--3');
 const link4 = document.querySelector('.menu__nav-link--4');
 const link5 = document.querySelector('.menu__nav-link--5');
 
@@ -45,7 +45,7 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-document.addEventListener('submit', function(event) {
+document.addEventListener('submit', function (event) {
   event.preventDefault();
   event.target.reset();
 });
