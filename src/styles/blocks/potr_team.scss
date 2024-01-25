@@ -1,3 +1,110 @@
-.filler {
-  padding: 0;
+.potr-team {
+display: flex;
+
+
+
+  flex-direction: column;
+
+/* background-image: url('./images/shape.png');
+background-repeat: no-repeat;
+ */
+
+
+  &__h2 {
+z-index: 2;
+display: flex;
+@include mobile {
+  @include font-h2;
+}
+
+
+@include tablet {
+@include font-h1;
+}
+
+@include desktop {
+  padding-bottom: 143px;
+}
+  }
+
+&__names {
+  -webkit-text-stroke: 1px $turquoise;
+  color: transparent;
+  font-family: $font-h;
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 44.64px;
+  position: absolute;
+  z-index: 3;
+
+  &--marty{
+    top: 3445px;
+    left: 50px;
+  }
+  &--andy{
+    top: 4010px;
+    left: 860px;
+  }
+@include tablet {
+  font-size: 231px;
+}
+
+@include desktop {
+font-size: 288px;
+}
+}
+
+&__p {
+  display: block;
+  padding-bottom: 20px;
+}
+
+&__text {
+display: flex;
+flex-wrap: wrap;
+@include font-s3;
+z-index: 2;
+
+
+@include desktop {
+  width: 336px;
+  padding: 230px 25px 0;
+
+}
+}
+
+&__box {
+display: flex;
+
+@include mobile {
+  flex-direction: column;
+
+}
+@include tablet {
+  flex-direction: row;
+}
+}
+
+
+&__image {
+display: block;
+z-index: 2;
+@include mobile {
+  width: 320px;
+  height: 240px;
+}
+
+@include tablet {
+  height: 255px;
+  width: 340px;
+}
+
+@include desktop {
+  height: 508px;
+  width: 677px;
+}
+
+}
 }
