@@ -3,6 +3,31 @@
 const closeButton = document.querySelector('.menu__close-btn');
 const openButton = document.querySelector('.menu__open-btn');
 const nav = document.querySelector('.menu');
+const link1 = document.querySelector('.menu__nav-link');
+const link2 = document.querySelector('.menu__nav-link--2');
+const link3 = document.querySelector('.menu__nav-link--2');
+const link4 = document.querySelector('.menu__nav-link--4');
+const link5 = document.querySelector('.menu__nav-link--5');
+
+link1.addEventListener('click', () => {
+  nav.classList.add('menu-close');
+});
+
+link2.addEventListener('click', () => {
+  nav.classList.add('menu-close');
+});
+
+link3.addEventListener('click', () => {
+  nav.classList.add('menu-close');
+});
+
+link4.addEventListener('click', () => {
+  nav.classList.add('menu-close');
+});
+
+link5.addEventListener('click', () => {
+  nav.classList.add('menu-close');
+});
 
 closeButton.addEventListener('click', () => {
   nav.classList.add('menu-close');
