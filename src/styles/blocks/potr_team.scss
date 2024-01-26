@@ -1,5 +1,6 @@
 .potr-team {
 display: flex;
+background-color: $grey-light;
 
 
 
@@ -16,11 +17,16 @@ display: flex;
 
 @include mobile {
   @include font-h2;
+  padding: 0 30px;
+  width: 180px;
 }
 
 
 @include tablet {
 @include font-h1;
+padding-bottom: 230px;
+padding: 0;
+width: 590px;
 }
 
 @include desktop {
@@ -41,12 +47,31 @@ display: flex;
   z-index: 3;
 
   &--marty{
+    @include tablet {
+      top: 3010px;
+      left: -5px;
+
+      }
+    @include desktop {
     top: 3445px;
     left: 30px;
+    }
   }
   &--andy{
-    top: 4010px;
-    right: 0;
+
+    @include tablet {
+      top: 3405px;
+      right: calc((100vw - 768px) / 2);
+
+
+
+
+      }
+    @include desktop {
+    top  : 4010px;
+    right: calc((100vw - 1268px) / 2 + 20px)
+    }
+
   }
 
 @include tablet {
@@ -71,6 +96,12 @@ flex-wrap: wrap;
 
 z-index: 2;
 
+@include mobile {
+  padding: 30px;
+  width: 313px;
+}
+
+
 
 @include desktop {
   width: 336px;
@@ -82,13 +113,15 @@ z-index: 2;
 &__box {
 display: flex;
 
+box-sizing: border-box;
 @include mobile {
-  flex-direction: column;
+  flex-direction: column-reverse;
 
 }
 
 @include tablet {
   flex-direction: row;
+  padding-right: 34px;
 }
 }
 

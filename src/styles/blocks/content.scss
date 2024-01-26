@@ -10,32 +10,77 @@
   @include grid-desktop;
   @include grid-design;
 
+  &__section {
+
+    &:not(:last-of-type) {
+
+      @include mobile {
+        padding-bottom: 110px;
+      }
+
+      @include mobile {
+        padding-bottom: 130px;
+      }
+
+      @include desktop {
+      padding-bottom: 150px;
+      }
+
+    }
+  }
+
+
 &__space {
   height: 150px;
 }
 
 &__bcg {
-  @media (max-width: 767px) {
+  /* @media (max-width: 767px) {
     display: none;
-  }
+  } */
 
-  @include tablet {
-  position: absolute;
-  right: calc((100vw - 768px) / 2 + 120px);
-  }
 
-  @include desktop {
-    position: absolute;
 
-/*  right: calc((100vw - 1260px) / 2 + 315px); */
-left: 0;
-    top: 0;
+
+    &--1 {
+      @include mobile {
+      display: none;
+      }
+      @include tablet {
+        display: block;
+        position: absolute;
+        right: calc((100vw - 768px) / 2 + 120px);
+        }
+
+        @include desktop {
+          position: absolute;
+
+      /*  right: calc((100vw - 1260px) / 2 + 315px); */
+      left: 0;
+          top: 0;
+          }
     }
-
     &--2 {
+
+      @include mobile {
+
+        right: calc((100vh - 320px) / 2);
+        top: 4415px;
+        z-index: 1;
+        position: absolute;
+        }
+
+        @include tablet {
+          left: -725px;
+          top: 3090;
+          z-index: 1;
+          }
+
+    @include desktop {
     left: -645px;
     top: 3545px;
     z-index: 1;
+    }
     }
 
 }
