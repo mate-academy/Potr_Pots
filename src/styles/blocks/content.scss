@@ -3,7 +3,8 @@
   min-width: 320px;
   display: grid;
   justify-content: center;
-  background-color: #fff;
+  background-color: $grey-light;
+overflow-x: hidden;
 
   @include grid-mobile;
   @include grid-tablet;
@@ -13,7 +14,6 @@
   &__section {
 
     &:not(:last-of-type) {
-
       @include mobile {
         padding-bottom: 110px;
       }
@@ -46,6 +46,7 @@
       @include mobile {
       display: none;
       }
+
       @include tablet {
         display: block;
         position: absolute;
@@ -61,18 +62,16 @@
           }
     }
     &--2 {
-
       @include mobile {
-
-        right: calc((100vh - 320px) / 2);
+        right: calc((100vw - 320px) / 2);
         top: 4415px;
         z-index: 1;
         position: absolute;
         }
 
         @include tablet {
-          left: -725px;
-          top: 3090;
+          left: -785px;
+          top: 3070;
           z-index: 1;
           }
 
