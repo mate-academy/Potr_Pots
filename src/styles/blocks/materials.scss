@@ -2,19 +2,24 @@
 transform: translate(0);
 
 
+
+@include mobile {
+  padding: 0 30px;
+}
 @include tablet {
   height: 900px;
-  border: solid 1px red;
+
+  padding: 0;
   }
 
 @include desktop {
 height: 1150px;
-border: solid 1px blue;
+
 }
 
 &__slider {
 @media (max-width: 767px) {
-  border: solid red 1px;
+
 padding-top: 120px;
 display: flex;
 justify-items: center;
@@ -32,10 +37,24 @@ overflow: hidden;
   height: auto;
   box-sizing: border-box;
   padding: 35px;
-  display: inline-block;
+
+
+justify-content: center;
+justify-items: center;
+place-items: center;
 z-index: 1;
 
 position: relative;
+
+@include mobile {
+  display: flex;
+  flex-direction: column;
+justify-content: space-between;
+  }
+
+@include tablet {
+display: inline-block;
+}
 
   &--1 {
     @include mobile {
@@ -114,7 +133,14 @@ position: relative;
   &__h2 {
 @include font-title-large;
 
-
+@include mobile {
+  font-size: 58px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: normal;
+ letter-spacing: 9px;
+ padding:0;
+   }
 @include tablet {
  width: 532px;
  font-size: 80px;
