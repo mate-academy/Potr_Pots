@@ -1,9 +1,51 @@
 .materials {
 border: solid 1px red;
 transform: translate(0);
-height: 1150px;
- overflow: hidden;
+overflow: hidden;
 
+@include tablet {
+  height: 1030px;
+  }
+
+@include desktop {
+height: 1150px;
+}
+
+
+ &__card {
+  background: rgba(0, 0, 0, 0.41);
+  backdrop-filter: blur(17px);
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  padding: 35px;
+  display: inline-block;
+
+
+
+  &--1 {
+
+
+    transform: translateX(30px) translateY(210px);
+  }
+
+  &--2 {
+    transform: translateX(150px) translateY(-180px);
+  }
+
+  &--3 {
+    transform: translateX(260px) translateY(-45px);
+  }
+
+  &--4 {
+    transform: translateX(590px) translateY(-590px);
+  }
+
+  &--5 {
+    transform: translateX(830) translateY(-650px);
+  }
+
+}
 
   &__h2 {
 @include font-title-large;
@@ -33,8 +75,14 @@ letter-spacing: 16.66px;
 box-sizing: border-box;
 display: block;
 place-self: flex-end;
-transform: translateX(650px) translateY(-170px);
 
+@include tablet {
+  transform: translateX(370px) translateY(-50px);
+  }
+
+@include desktop {
+transform: translateX(650px) translateY(-170px);
+}
 
   }
 
@@ -115,39 +163,6 @@ transform: translateX(650px) translateY(-170px);
 
   }
 
-
-  &__card {
-    background: rgba(0, 0, 0, 0.41);
-    backdrop-filter: blur(17px);
-    width: auto;
-    height: auto;
-    box-sizing: border-box;
-    padding: 35px;
-    display: inline-block;
-
-
-
-    &--1 {
-      transform: translateX(30px) translateY(210px);
-    }
-
-    &--2 {
-      transform: translateX(150px) translateY(-180px);
-    }
-
-    &--3 {
-      transform: translateX(260px) translateY(-45px);
-    }
-
-    &--4 {
-      transform: translateX(590px) translateY(-590px);
-    }
-
-    &--5 {
-      transform: translateX(830) translateY(-650px);
-    }
-
-  }
 
   &__p {
 @include font-s3;
