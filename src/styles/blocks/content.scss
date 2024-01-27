@@ -4,7 +4,7 @@
   display: grid;
   justify-content: center;
   background-color: $grey-light;
-overflow-x: hidden;
+
 
   @include grid-mobile;
   @include grid-tablet;
@@ -65,7 +65,7 @@ overflow-x: hidden;
       @include mobile {
         right: calc((100vw - 320px) / 2);
         top: 4415px;
-        z-index: 1;
+        z-index: 0;
         position: absolute;
         }
 
@@ -140,6 +140,10 @@ overflow-x: hidden;
 left: 0;
 z-index: 0;
 width: 100%;
+
+@include mobile {
+  top: 4930px;
+  }
 
 @include tablet {
   top: 4000px;

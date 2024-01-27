@@ -1,15 +1,25 @@
 .materials {
-
 transform: translate(0);
 overflow: hidden;
 
 @include tablet {
-  height: 1030px;
+  height: 900px;
+  border: solid 1px red;
   }
 
 @include desktop {
 height: 1150px;
+border: solid 1px blue;
 }
+
+/* &__slider {
+@media (max-width: 767px) {
+  background-color: aqua;
+display: flex;
+position: relative;
+}
+} */
+
 
 &__card {
   background: rgba(0, 0, 0, 0.41);
@@ -25,43 +35,67 @@ position: relative;
 
   &--1 {
 
-    @include tablet {
-      transform: translateX(0) translateY(180px);
+    @include mobile {
+      transform: translateX(0) translateY(0);
     }
+    @include tablet {
+      transform: translateX(0) translateY(130px);
+
+    }
+
     @include desktop {
     transform: translateX(30px) translateY(210px);
   }
   }
 
   &--2 {
-
-    @include tablet {
-      transform: translateX(80px) translateY(-120px);
+    @include mobile {
+      transform: translateX(0) translateY(0);
     }
+    @include tablet {
+      transform: translateX(100px) translateY(-180px);
+
+    }
+
     @include desktop {
     transform: translateX(150px) translateY(-180px);
   }
 }
   &--3 {
-    @include tablet {
-      transform: translateX(180px) translateY(-220px);
+    @include mobile {
+      transform: translateX(0) translateY(0);
     }
+    @include tablet {
+      transform: translateX(180px) translateY(-320px);
+
+    }
+
     @include desktop {
     transform: translateX(260px) translateY(-85px);
   }
   }
   &--4 {
-    @include tablet {
-      transform: translateX(240px) translateY(-530px);
+    @include mobile {
+      transform: translateX(0) translateY(0);
     }
+    @include tablet {
+      transform: translateX(260px) translateY(-620px);
+
+    }
+
     @include desktop {
     transform: translateX(590px) translateY(-590px);
   }
   }
   &--5 {
-    @include tablet {
-      transform: translateX(430px) translateY(-730px);
+    @include mobile {
+      transform: translateX(0) translateY(0);
     }
+    @include tablet {
+      transform: translateX(400px) translateY(-760px);
+
+    }
+
     @include desktop {
     transform: translateX(830) translateY(-650px);
   }
@@ -169,32 +203,33 @@ transform: translateX(650px) translateY(-170px);
 
 
     &--1 {
-
       @include tablet {
-        transform: translateX(0) translateY(410px);
+        transform: translateX(50px) translateY(350px);
 
       }
+
       @include desktop {
       transform: translateX(140px) translateY(430px);
     }
   }
 
     &--2 {
-
       @include tablet {
-        transform: translateX(180px) translateY(120px);
+        transform: translateX(200px) translateY(50px);
 
       }
+
       @include desktop {
       transform: translateX(420px) translateY(50px);
     }
   }
 
     &--3 {
-
       @include tablet {
-        transform: translateX(300px) translateY(70px);
+        transform: translateX(300px) translateY(-40px);
+
               }
+
       @include desktop {
       transform: translateX(560px) translateY(90px);
     }
@@ -204,11 +239,11 @@ transform: translateX(650px) translateY(-170px);
 
 
     &--4 {
-
       @include tablet {
-        transform: translateX(370px) translateY(-280px);
+        transform: translateX(370px) translateY(-360px);
 
       }
+
       @include desktop {
       transform: translateX(700px) translateY(-320px);
     }
@@ -216,11 +251,11 @@ transform: translateX(650px) translateY(-170px);
 
 
     &--5 {
-
       @include tablet {
-        transform: translateX(580px) translateY(-750px);
+        transform: translateX(520px) translateY(-770px);
 
       }
+
       @include desktop {
       transform: translateX(950px) translateY(-660px);
     }
