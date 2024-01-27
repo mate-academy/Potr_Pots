@@ -7,7 +7,7 @@ window.addEventListener('hashchange', () => {
   }
 }); */
 
-function submitForm() {
+/* function submitForm() {
   const form = document.getElementById('form');
 
   form.reset();
@@ -16,4 +16,4 @@ function submitForm() {
 document.addEventListener('DOMContentLoaded', function() {
   submitForm();
 });
-
+ */
