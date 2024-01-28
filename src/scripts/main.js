@@ -7,6 +7,38 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+let initialTouchX;
+
+document.getElementById('slider').addEventListener('touchstart', (e) => {
+  initialTouchX = e.touches[0].clientX;
+});
+
+document.getElementById('slider').addEventListener('touchmove', (e) => {
+  const currentTouchX = e.touches[0].clientX;
+
+  const slider = document.getElementById('slider');
+  const scrollLeft = slider.scrollLeft;
+
+  // Jeśli palce przesuwają się w lewo i scrollLeft wynosi 0, przewiń w lewo
+  if (currentTouchX > initialTouchX && scrollLeft === 0) {
+    e.preventDefault();
+    slider.scrollLeft = 1;
+  }
+
+  // Jeśli palce przesuwają się w prawo i osiągnięto prawe ograniczenie, przewiń w prawo
+  if (currentTouchX < initialTouchX && scrollLeft + slider.clientWidth === slider.scrollWidth) {
+    e.preventDefault();
+    slider.scrollLeft = scrollLeft - 1;
+  }
+});
+
+
+
+
+
+
+
+
 /* function submitForm() {
   const form = document.getElementById('form');
 
