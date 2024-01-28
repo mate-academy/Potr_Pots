@@ -1,10 +1,10 @@
 .materials {
 transform: translate(0);
-
+border: solid 1px red;
 
 
 @include mobile {
-  padding: 0 30px;
+
 }
 
 @include tablet {
@@ -20,12 +20,18 @@ height: 1150px;
 
 &__slider {
 @media (max-width: 767px) {
+
 padding-top: 120px;
 display: flex;
-justify-items: center;
-position: fixed;
-width: 280px;
+
+
+border: solid red 1px;
+width: 285px;
+
+
 overflow: hidden;
+box-sizing: border-box;
+scroll-behavior: smooth;
 }
 }
 
@@ -39,7 +45,6 @@ overflow: hidden;
   padding: 35px;
 
 
-
 z-index: 1;
 
 position: relative;
@@ -48,6 +53,8 @@ position: relative;
   display: flex;
   flex-direction: column;
 justify-content: space-between;
+align-items: center;
+
   }
 
 @include tablet {
@@ -137,7 +144,7 @@ display: inline-block;
  font-weight: 400;
  line-height: normal;
  letter-spacing: 9px;
- padding:0;
+ padding:0 30px;
    }
 
 @include tablet {
@@ -147,6 +154,7 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 letter-spacing: 9.6px;
+padding: 0;
   }
 
 @include desktop {
