@@ -1,15 +1,17 @@
 .materials {
 transform: translate(0);
-border: solid 1px red;
+
 
 
 @include mobile {
-
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 @include tablet {
-  height: 900px;
-
+  height: 920px;
+ display: block;
   padding: 0;
   }
 
@@ -20,13 +22,12 @@ height: 1150px;
 
 &__slider {
 @media (max-width: 767px) {
-
 padding-top: 120px;
 display: flex;
 
 
-border: solid red 1px;
-width: 285px;
+
+width: 302px;
 
 
 overflow: hidden;
@@ -42,7 +43,7 @@ scroll-behavior: smooth;
   width: auto;
   height: auto;
   box-sizing: border-box;
-  padding: 35px;
+
 
 
 z-index: 1;
@@ -54,11 +55,15 @@ position: relative;
   flex-direction: column;
 justify-content: space-between;
 align-items: center;
+padding: 28px 45px;
+height: 254px;
 
   }
 
 @include tablet {
 display: inline-block;
+padding: 35px;
+height: auto;
 }
 
   &--1 {
