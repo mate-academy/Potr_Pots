@@ -1,4 +1,5 @@
- 'use strict';
+'use strict';
+
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#slide-menu') {
     document.body.classList.add('body__lock');
@@ -7,7 +8,7 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-let initialTouchX;
+/* let initialTouchX;
 
 document.getElementById('slider').addEventListener('touchstart', (e) => {
   initialTouchX = e.touches[0].clientX;
@@ -25,19 +26,12 @@ document.getElementById('slider').addEventListener('touchmove', (e) => {
     slider.scrollLeft = 1;
   }
 
-  // Jeśli palce przesuwają się w prawo i osiągnięto prawe ograniczenie, przewiń w prawo
-  if (currentTouchX < initialTouchX && scrollLeft + slider.clientWidth === slider.scrollWidth) {
+  if (currentTouchX < initialTouchX && scrollLeft
+    + slider.clientWidth === slider.scrollWidth) {
     e.preventDefault();
     slider.scrollLeft = scrollLeft - 1;
   }
-});
-
-
-
-
-
-
-
+}); */
 
 /* function submitForm() {
   const form = document.getElementById('form');
