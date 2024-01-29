@@ -1,6 +1,6 @@
 .materials {
 transform: translate(0);
-
+border: solid 1px red;
 
 
 @include mobile {
@@ -140,6 +140,7 @@ height: auto;
   &__h2 {
 @include font-title-large;
 
+
 @include mobile {
   font-size: 58px;
  font-style: normal;
@@ -157,6 +158,7 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: 9.6px;
 padding: 0;
+display: inline;
   }
 
 @include desktop {
@@ -172,15 +174,25 @@ letter-spacing: 16.66px;
 
   &__box-eco {
 box-sizing: border-box;
-display: block;
-place-self: flex-end;
 
+line-height: 300px;
+
+@include mobile {
+  display: none;
+}
 @include tablet {
-  transform: translateX(370px) translateY(-50px);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  transform: translateX(355px) translateY(-40px);
+
   }
 
 @include desktop {
-transform: translateX(650px) translateY(-170px);
+  padding: 0;
+  width: 500px;
+  transform: translateX(690px) translateY(-170px);
 }
 
   }
@@ -194,22 +206,30 @@ transform: translateX(650px) translateY(-170px);
     font-style: normal;
     font-weight: 700;
     line-height: 150%; /* 30px */
+    display: block;
+
+
   }
 
   &__eco-text {
     color: $menu-color;
     font-family: $font-s;
+    display: block;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%; /* 24px */
 
+
 @include tablet {
-    width: 340px
+    width: 340px;
+
+
 }
 
 @include desktop {
   width: 470px;
+
 }
   }
 
