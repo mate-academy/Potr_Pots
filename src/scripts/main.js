@@ -8,6 +8,44 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  var circle = document.querySelector('.materials__circle--1');
+  var card = document.querySelector('.materials__card--1');
+
+  circle.addEventListener('click', function() {
+    // Usuń klasę .materials__card--clicked, jeśli jest obecna
+    if (card.classList.contains('materials__card--clicked')) {
+      card.classList.remove('materials__card--clicked');
+    } else {
+      // Dodaj klasę .materials__card--clicked, jeśli nie jest obecna
+      card.classList.add('materials__card--clicked');
+    }
+  });
+});
+
+/* document.addEventListener('DOMContentLoaded', function() {
+  var circles = document.querySelectorAll('.materials__circle');
+
+  circles.forEach(function(circle) {
+    circle.addEventListener('click', function() {
+      var card = this.nextElementSibling;
+      var currentOpacity = parseFloat(getComputedStyle(card).opacity);
+
+      // Toggle pomiędzy 0 i 1
+      card.style.opacity = currentOpacity === 0 ? '1' : '0';
+    });
+
+    circle.addEventListener('mouseout', function() {
+      var card = this.nextElementSibling;
+
+      // Po zabraniu myszki ustaw opacity na 0
+      card.style.opacity = '0';
+    });
+  });
+}); */
+
+
+
 /* let initialTouchX;
 
 document.getElementById('slider').addEventListener('touchstart', (e) => {
