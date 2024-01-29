@@ -8,20 +8,7 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  var circle = document.querySelector('.materials__circle--1');
-  var card = document.querySelector('.materials__card--1');
 
-  circle.addEventListener('click', function() {
-    // Usuń klasę .materials__card--clicked, jeśli jest obecna
-    if (card.classList.contains('materials__card--clicked')) {
-      card.classList.remove('materials__card--clicked');
-    } else {
-      // Dodaj klasę .materials__card--clicked, jeśli nie jest obecna
-      card.classList.add('materials__card--clicked');
-    }
-  });
-});
 
 /* document.addEventListener('DOMContentLoaded', function() {
   var circles = document.querySelectorAll('.materials__circle');

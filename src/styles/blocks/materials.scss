@@ -40,14 +40,24 @@ scroll-behavior: smooth;
   width: auto;
   height: auto;
   box-sizing: border-box;
+
+transition: 0.3s ease-in-out;
+
+@include mobile {
+  z-index: 2;
+  opacity: 1;
+}
+
+@include tablet {
 z-index: 0;
 opacity: 0;
+}
 
-/* &--clicked {
+&--clicked {
   opacity: 1;
   z-index: 2;
 
-} */
+}
 /* &--not-clicked {
   opacity: 0;
   z-index: 0;
@@ -272,12 +282,14 @@ line-height: 300px;
     position: relative;
 display: block;
 z-index: 1;
+cursor: pointer;
 
-
-/* &--clicked {
+ &--clicked {
   background-image: url('./icons/circle-black.svg');
 
 }
+
+/*
 &--not-clicked {
   background-image: url('./icons/circle-red.svg');
 }
@@ -311,8 +323,8 @@ background-image: url('./icons/circle-black.svg');
     &--1 {
       @include tablet {
         transform: translateX(50px) translateY(350px);
-cursor: pointer;
-border: solid 5px red;
+
+
       }
 
       @include desktop {
@@ -382,7 +394,8 @@ width: 213px;
 
 }
 
-.materials__card--clicked {
+/* .materials__card--clicked {
   opacity: 1;
   z-index: 2;
 }
+ */
