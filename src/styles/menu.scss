@@ -1,0 +1,130 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 15;
+
+  display: block;
+  width: 72%;
+  height: 100vh;
+
+  pointer-events: none;
+  opacity: 0;
+
+  background-color: $turqoiuse;
+  transition: opacity 0.3s ease-in-out;
+
+  &:target {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  &__list {
+    position: relative;
+    top: 140px;
+    left: 50%;
+
+    transform: translate(-50%, 0);
+
+    display: flex;
+    max-width: fit-content;
+    flex-direction: column;
+    gap: 15px;
+    list-style-type: none;
+  }
+
+  &__item {
+    max-width: fit-content;
+  }
+
+  &__link {
+    display: block;
+    width: fit-content;
+    text-align: center;
+
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    text-transform: none;
+    text-decoration: none;
+    color: $light-gray;
+
+    &--basket {
+      &::after {
+        content: "0";
+
+        position: absolute;
+        top: 0;
+        right: 25%;
+
+        transform: translateX(50%);
+
+        display: block;
+        width: 14px;
+        height: 14px;
+        padding: 1px 4.3px;
+        border-radius: 50%;
+        box-sizing: border-box;
+
+        background-color: $red;
+
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 12px;
+        letter-spacing: 0.155em;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 12px;
+    bottom: 42px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center
+  }
+
+  &__close-item {
+    display: block;
+    width: 12px;
+    height: 12px;
+
+    @include background('../images/PC/Icons/Close.svg');
+  }
+
+  &__title {
+
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $light-gray;
+    text-transform: uppercase;
+
+    transform: rotate(-90deg);
+  }
+
+  &__line {
+    display: block;
+
+    width: 44px;
+    height: 1px;
+
+    background-color: $light-gray;
+    transform: rotate(-90deg);
+  }
+
+  &__pointer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 40px;
+  }
+}
+

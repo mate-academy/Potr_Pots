@@ -4,3 +4,77 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin background ($url) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+@mixin set-size($width, $height) {
+  width: 100%;
+
+  padding-bottom: calc(($height / $width) * 100 * 1%);
+}
+
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin getCoords($item) {
+  @include on-tablet {
+    @if $item == 1 {
+      top: 85%;
+      left: 11%;
+      transform: translateY(-100%);
+    }
+    @else if $item == 2 {
+      top: 50%;
+      left: 30%;
+    }
+    @else if $item == 3 {
+      top: 80%;
+      left: 44%;
+    }
+    @else if $item == 4 {
+      top: 68%;
+      left: 54%;
+    }
+    @else if $item == 5 {
+      top: 36%;
+      left: 72%;
+    }
+  }
+
+  @include on-desktop {
+    @if $item == 1 {
+      top: 80%;
+      left: 17.6%;
+    }
+    @else if $item == 2 {
+      top: 58%;
+      left: 38%;
+    }
+    @else if $item == 3 {
+      top: 85%;
+      left: 47.5%;
+    }
+    @else if $item == 4 {
+      top: 70%;
+      left: 58%;
+    }
+    @else if $item == 5 {
+      top: 60%;
+      left: 77%;
+    }
+  }
+}
