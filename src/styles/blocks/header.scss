@@ -123,13 +123,13 @@ flex-wrap: wrap;
     place-content: space-between;
     box-sizing: border-box;
 
+background-repeat: no-repeat;
 
 
- /*    border: 1px red solid;
-    left: 0;
+left: 0;
     position: fixed;
     background-color: $grey-light;
-    z-index: 1000; */
+    z-index: 1000;
 
 
 
@@ -138,9 +138,14 @@ flex-wrap: wrap;
     }
 
     @include tablet {
-      padding: 29px 0;
+      padding: 29px calc((100vw - 768px) / 2 + 25px);
+      background-image: url('./images/shape.png');
+      background-position: calc((100vw - 768px) / 2 - 404px) 0;
     }
-
+@include desktop {
+  background-position: 0 0;
+  padding: 29px calc((100vw - 1260px) / 2 + 37px);
+}
 
     &__logo {
       width: 134px;

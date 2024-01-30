@@ -8,8 +8,6 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-
-
 /* document.addEventListener('DOMContentLoaded', function() {
   var circles = document.querySelectorAll('.materials__circle');
 
@@ -30,8 +28,6 @@ window.addEventListener('hashchange', () => {
     });
   });
 }); */
-
-
 
 /* let initialTouchX;
 
