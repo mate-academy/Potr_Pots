@@ -1,6 +1,6 @@
 .features {
   display: flex;
-
+border: red solid 1px;
   background-color: $grey-light;
 
   @include mobile {
@@ -16,6 +16,7 @@
 
 @include desktop {
   gap: 30px;
+  padding: 0 calc((100vw - 1260px) / 2 + 35px);
 }
 
 &__h2 {
@@ -43,7 +44,9 @@ padding-left: 30px;
     padding-left: 0;
 
   }
-
+@include desktop {
+  padding-left: calc((100vw - 1260px) / 2 + 35px);
+}
   &--stroke {
     -webkit-text-stroke: $turquoise 1px;
     color: transparent;
