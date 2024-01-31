@@ -7,6 +7,7 @@ flex-direction: column;
   &__grid {
     display: grid;
     border: red solid 1px;
+    box-sizing: border-box;
     width: 100%;
     gap: 15px;
 
@@ -53,7 +54,9 @@ color: $menu-color;
 }
  &__intro {
   @include font-s3;
+
   color: $menu-color;
+
   @include mobile {
     grid-area: 1 / 1 / 2 / 2;
   }
@@ -71,11 +74,13 @@ color: $menu-color;
  &__strong  {
   padding-bottom: 10px;
   box-sizing: border-box;
+
   @include font-h4;
  }
  &__img-box {
 display: flex;
-background-color: red;
+
+box-sizing: border-box;
 justify-items: flex-end;
 
 @include mobile {
@@ -132,6 +137,7 @@ flex-direction: column;
     content:"*";
 
     @include font-s3;
+
   color: $menu-color;
   }
 
