@@ -551,6 +551,21 @@ body {
     }
   }
 
+  &__whom-title-slash {
+    display: none;
+    @include on-tablet {
+      position: relative;
+      transform: translate(-30%, 20%);
+
+      display: inline-block;
+
+
+      height: 46px;
+      width: 36px;
+      @include background('../images/Mobile/Icons/first-end.svg');
+    }
+  }
+
   &__whom-text {
     @include on-tablet {
       position: relative;
@@ -1039,6 +1054,16 @@ body {
   &__mf-plus {
     display: none;
 
+    &--active {
+      z-index: 20;
+
+      @include background('../images/Tablet/Plus-active.svg');
+
+      & :first-child {
+        display: block;
+      }
+    }
+
     @include on-tablet {
       position: absolute;
       top: 0;
@@ -1056,16 +1081,6 @@ body {
       @for $number from 1 to 6 {
         &--#{$number} {
           @include get-coords($number);
-        }
-      }
-
-      &--active {
-        z-index: 20;
-
-        @include background('../images/Tablet/Plus-active.svg');
-
-        & :first-child {
-          display: block;
         }
       }
     }
@@ -1461,7 +1476,7 @@ body {
       content: "";
       position: absolute;
       top: 25px;
-      left: -20px;
+      left: -30px;
 
       display: block;
       width: 5px;
