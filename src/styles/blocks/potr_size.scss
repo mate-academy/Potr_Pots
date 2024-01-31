@@ -1,3 +1,56 @@
-.filler {
-  padding: 0;
+.size {
+display: flex;
+flex-direction: column;
+
+
+  &__grid {
+    display: grid;
+    width: 100%;
+    gap: 15px;
+  }
+&__h2 {
+@include font-h2;
+}
+
+&__p {
+  display: block;
+  @include font-s3;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+ &__intro {
+  @include font-s3;
+ }
+
+
+ &__strong  {
+  padding-bottom: 10px;
+  box-sizing: border-box;
+ }
+ &__img-box {
+display: block;
+ }
+ &__image {
+
+  @include mobile {
+  width: 320px;
+  }
+
+  @include tablet {
+    width: 416px;
+    }
+    @include desktop {
+      width: 528px;
+      }
+ }
+
+ &__options {
+  @include font-s3;
+display: flex;
+flex-direction: column;
+ }
+
+ &__star {
+  @include font-s3;
+ }
 }
