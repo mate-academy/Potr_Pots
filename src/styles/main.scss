@@ -8,7 +8,7 @@
 body {
   background: #fff;
 
-  &:has(#menu:target) {
+  &:has(.menu:target) {
     overflow: hidden;
   }
 
@@ -20,7 +20,8 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Bebas Neue, sans-serif;
+  font-family: "Bebas Neue", sans-serif;
+  scroll-behavior: smooth;
 }
 
 
@@ -42,7 +43,7 @@ body {
       }
 
       &--team {
-        padding: 130px 0 130px;
+        padding: 130px 0;
       }
 
       &--material {
@@ -127,11 +128,11 @@ body {
 
     padding-bottom: 25px;
     max-width: 100%;
-    font-family: Bebas Neue, sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 36px;
     font-weight: 400;
     line-height: 54px;
-    letter-spacing: 0.135em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
 
     color: $dark-grey;
@@ -203,7 +204,7 @@ body {
       font-size: 58px;
       font-weight: 400;
       line-height: 70px;
-      letter-spacing: 0.155em;
+      letter-spacing: 0.15em;
     }
 
     &--up {
@@ -415,6 +416,8 @@ body {
     top: 100%;
     transform: translateY(-100%);
 
+    overflow: hidden;
+
     &--first {
       @include set-size(284, 284);
     }
@@ -436,6 +439,12 @@ body {
     display: block;
     width: 100%;
     height: 100%;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
 
     &--first {
       @include background('../images/Tablet/Client1.svg');
@@ -524,11 +533,11 @@ body {
     display: block;
     padding-top: 30px;
 
-    font-family: Bebas Neue, sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 36px;
     font-weight: 400;
     line-height: 54px;
-    letter-spacing: 0.155em;
+    letter-spacing: 0.15em;
 
     @include on-tablet {
       min-width: 340px;
@@ -660,6 +669,8 @@ body {
   &__feature-image {
     position: relative;
 
+    overflow: hidden;
+
     @include set-size(260, 260);
   }
 
@@ -671,6 +682,12 @@ body {
     display: block;
     width: 100%;
     height: 100%;
+
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2)
+    }
 
     &--first {
       @include background('../images/Mobile/feature2.svg');
@@ -692,7 +709,7 @@ body {
     font-size: 24px;
     font-weight: 400;
     line-height: 24px;
-    letter-spacing: 0.155em;
+    letter-spacing: 0.15em;
     text-align: center;
     color: $dark-grey;
 
@@ -719,7 +736,6 @@ body {
       align-items: center;
       grid-template-columns: repeat(6, 1fr);
       column-gap: 20px;
-      // transform: translateY(-170px);
     }
 
     @include on-desktop {
@@ -741,7 +757,6 @@ body {
   }
 
   &__team-image-wrapper {
-
     @include on-tablet {
       grid-column: 4 / -1;
       grid-row: 1;
@@ -922,6 +937,7 @@ body {
 
     @include on-desktop {
       @include background('../images/PC/Team-back.svg');
+
       background-position: left center;
     }
   }
@@ -1039,12 +1055,13 @@ body {
 
       @for $number from 1 to 6 {
         &--#{$number} {
-          @include getCoords($number);
+          @include get-coords($number);
         }
       }
 
       &--active {
         z-index: 20;
+
         @include background('../images/Tablet/Plus-active.svg');
 
         & :first-child {
@@ -1056,7 +1073,7 @@ body {
     @include on-desktop {
       @for $number from 1 to 6 {
         &--#{$number} {
-          @include getCoords($number);
+          @include get-coords($number);
         }
       }
     }
@@ -1154,7 +1171,6 @@ body {
 
   &__mf-wrapper {
     display: block;
-    // padding-top: 95px;
   }
 
   &__mf-image {
@@ -1163,6 +1179,7 @@ body {
     z-index: 1;
 
     display: block;
+
     @include set-size(320, 240);
 
     @include on-tablet {
@@ -1182,6 +1199,7 @@ body {
     pointer-events: none;
 
     @include background('../images/Mobile/Material.svg');
+
     background-position: center;
   }
 
@@ -1202,7 +1220,7 @@ body {
     display: block;
     padding: 30px 45px 35px;
     margin-inline: 10px;
-    box-shadow: 0px 3px 2px 0px #00000026;
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.26);
 
     background-color: rgba(0, 0, 0, 0.55);
   }
@@ -1308,7 +1326,7 @@ body {
     font-size: 18px;
     font-weight: 400;
     line-height: 18px;
-    letter-spacing: 0.155em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
   }
 
@@ -1424,9 +1442,6 @@ body {
 
     @include on-desktop {
       position: relative;
-      // bottom: 100%;
-      // bottom: calc(100% - 60px);
-      // transform: translateY(100%);
 
       grid-column: 6 / -1;
       grid-row: 2;
@@ -1479,7 +1494,6 @@ body {
     }
 
     @include on-desktop {
-      padding-top: 0;
       padding: 85px 0 0 100px;
     }
   }
@@ -1488,7 +1502,7 @@ body {
     font-size: 36px;
     font-weight: 400;
     line-height: 54px;
-    letter-spacing: 0.155em;
+    letter-spacing: 0.15em;
     color: $red;
 
     text-transform: uppercase;
@@ -1506,7 +1520,7 @@ body {
     font-size: 24px;
     font-weight: 400;
     line-height: 24px;
-    letter-spacing: 0.155em;
+    letter-spacing: 0.15em;
     color: $turqoiuse;
 
     text-transform: uppercase;
@@ -1645,7 +1659,7 @@ body {
     line-height: 36px;
 
     @include on-tablet {
-      padding: 40px 0 40px;
+      padding: 40px 0;
     }
   }
 
@@ -1761,6 +1775,7 @@ body {
     padding-inline: 30px;
 
     @include background('../images/Mobile/Yellow-form.svg');
+
     background-size: cover;
     background-position: bottom center;
 
@@ -1771,6 +1786,7 @@ body {
       padding-bottom: 110px;
 
       @include background('../images/Tablet/Yellow-background.svg');
+
       background-size: cover;
       background-position: top center;
     }
@@ -1783,6 +1799,7 @@ body {
       padding-bottom: 130px;
 
       @include background('../images/PC/Yellow-form.svg');
+
       background-size: cover;
       background-position: top left;
     }
@@ -1814,6 +1831,7 @@ body {
     @include on-desktop {
       top: 40px;
       right: 60px;
+
       @include background('../images/PC/Form-circle.svg');
     }
   }
