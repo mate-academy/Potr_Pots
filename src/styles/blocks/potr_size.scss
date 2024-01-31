@@ -3,35 +3,94 @@ display: flex;
 flex-direction: column;
 
 
+
   &__grid {
     display: grid;
+    border: red solid 1px;
     width: 100%;
     gap: 15px;
+
+    @include mobile {
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto auto;
+    }
+
+    @include tablet {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto auto;
+    }
+
+    @include desktop{
+      grid-template-columns: auto auto auto;
+      grid-template-rows: auto auto;
+    }
   }
 &__h2 {
 @include font-h2;
+
+@include mobile {
+  padding-bottom: 30px;
+  }
+
+@include tablet {
+padding-bottom: 38px;
+}
+
+@include desktop {
+  padding-bottom: 66px;
+  }
+
 }
 
 &__p {
   display: block;
+
   @include font-s3;
+
+color: $menu-color;
   box-sizing: border-box;
   padding-bottom: 10px;
 }
  &__intro {
   @include font-s3;
+  color: $menu-color;
+  @include mobile {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  @include tablet {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  @include desktop {
+    grid-area: 1 / 1 / 2 / 2;
+  }
  }
 
 
  &__strong  {
   padding-bottom: 10px;
   box-sizing: border-box;
+  @include font-h4;
  }
  &__img-box {
-display: block;
+display: flex;
+background-color: red;
+justify-items: flex-end;
+
+@include mobile {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+@include tablet {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+@include desktop {
+  grid-area: 1 / 3 / 3 / 4;
+}
  }
  &__image {
-
   @include mobile {
   width: 320px;
   }
@@ -39,6 +98,7 @@ display: block;
   @include tablet {
     width: 416px;
     }
+
     @include desktop {
       width: 528px;
       }
@@ -46,11 +106,45 @@ display: block;
 
  &__options {
   @include font-s3;
+
 display: flex;
 flex-direction: column;
+
+@include mobile {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+@include tablet {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+@include desktop {
+  grid-area: 1 / 2 / 2 / 3;
+}
  }
 
  &__star {
   @include font-s3;
+  &::before {
+    position: absolute;
+    display: block;
+    left: 20px;
+    content:"*";
+
+    @include font-s3;
+  color: $menu-color;
+  }
+
+  @include mobile {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+
+  @include tablet {
+    grid-area: 3 / 1 / 4 / 3;
+  }
+
+  @include desktop {
+    grid-area: 2 / 1 / 3 / 3;
+  }
  }
 }
