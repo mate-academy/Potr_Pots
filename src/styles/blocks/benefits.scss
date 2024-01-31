@@ -3,6 +3,10 @@
 box-sizing: border-box;
   padding: 0 calc((100vw - 1260px) / 2 + 20px);
 
+  &__content {
+box-sizing: border-box;
+
+  }
 
   &__1 {
     display: flex;
@@ -17,6 +21,13 @@ padding-top: 170px;
    padding: 80px 0;
   }
 &__photos {
+
+position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 850px;
+
   @include mobile {
     display: none
   }
@@ -24,6 +35,74 @@ padding-top: 170px;
   @include tablet {
     display: block;
   }
+
+
+
+}
+
+&__photo {
+  position: absolute;
+  background-color: white;
+padding: 16px 16px 16px 16px;
+
+&:nth-child(1) {
+  left: 35px;
+  top: 40px;
+  transform: rotate(-15deg);
+  z-index: 1;
+}
+
+&:nth-child(2){
+   left: 235px;
+  top: 0;
+  transform: rotate(-30deg);
+  z-index: 2;
+}
+
+&:nth-child(3){
+  left: 35px;
+ top: 300px;
+ z-index: 3;
+
+}
+
+&:nth-child(4){
+  left: 230px;
+ top: 220px;
+ transform: rotate(-15deg);
+ z-index: 2;
+
+}
+
+&:nth-child(5){
+  left: 100px;
+ top: 510px;
+ transform: rotate(-15deg);
+ z-index: 1;
+
+}
+
+&:nth-child(6){
+  left: 330px;
+ top: 480px;
+ transform: rotate(-30deg);
+ z-index: 1;
+
+}
+}
+
+&__photo-desc {
+  display: flex;
+
+  width: 180px;
+  flex-wrap: wrap;
+  color: $grey-dark2;
+font-family: $font-s;
+font-size: 9px;
+font-style: normal;
+font-weight: 400;
+line-height: 131.5%; /* 11.495px */
+padding-top: 6px;
 }
 
 &__title {
