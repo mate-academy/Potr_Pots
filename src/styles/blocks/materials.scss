@@ -2,9 +2,10 @@
 transform: translate(0);
 background-image: url('./images/bcg.jpg');
 background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
+background-position: bottom;
 
+
+box-sizing: border-box;
 
 @include mobile {
 display: flex;
@@ -19,8 +20,15 @@ align-items: center;
   }
 
 @include desktop {
-height: 1150px;
+min-height: 1250px;
+background-size: auto;
+padding-left: calc((100vw - 1260px) / 2 + 35px);
 
+}
+
+@media (min-width: 1439px) {
+  background-size: cover;
+  min-height: 1400px;
 }
 
 &__slider {
@@ -200,12 +208,14 @@ display: inline;
   }
 
 @include desktop {
-width: 1000px;
+width: 1050px;
 font-size: 138.81px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
 letter-spacing: 16.66px;
+
+
 
 }
   }
@@ -231,7 +241,7 @@ line-height: 300px;
 @include desktop {
   padding: 0;
   width: 500px;
-  transform: translateX(690px) translateY(-170px);
+  transform: translateX(710px) translateY(-170px);
 }
 
   }
