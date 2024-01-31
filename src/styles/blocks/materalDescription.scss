@@ -1,0 +1,101 @@
+.materialDescription {
+  &__item {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include phone {
+      display: none;
+    }
+
+    &--1 {
+      left: 100px;
+      bottom: 50px;
+
+      @include tablet {
+        left: 0;
+        bottom: -50px;
+      }
+    }
+
+    &--2 {
+      left: 300px;
+      bottom: 400px;
+
+      @include tablet {
+        left: 150px;
+        bottom: 150px;
+      }
+    }
+
+    &--3 {
+      left: 550px;
+      bottom: -150px;
+
+      @include tablet {
+        left: 300px;
+        bottom: -150px;
+      }
+    }
+
+    &--4 {
+      right: 400px;
+      bottom: 200px;
+
+      @include tablet {
+        right: 200px;
+        bottom: 0;
+      }
+    }
+
+    &--5 {
+      right: 100px;
+      bottom: 150px;
+
+      @include tablet {
+        right: 50px;
+        bottom: 150px;
+      }
+    }
+  }
+
+  &__text {
+    visibility: hidden;
+    width: 213px;
+    height: 168px;
+    color: #f8f8f8;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 40px 30px ;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(4px);
+    filter: drop-shadow(0 0 16px rgb(35, 33, 34, 24));
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  
+  input {
+    display: none;
+  }
+
+  input:checked ~ .materialDescription__text {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.41);
+    z-index: 1;
+  }
+  input:checked + .circle {
+    background-color: rgba(0, 0, 0, 0.41);
+  }
+
+  input:checked ~ .circle .circle__vertical-line {
+    transform: rotate(90deg);
+  }
+
+  &__circle {
+    margin-bottom: 6px;
+  }
+}

@@ -1,0 +1,45 @@
+.carousel {
+  box-sizing: border-box;
+  position: relative;
+  min-width: 302px;
+
+  &__slides {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    overscroll-behavior: auto;
+    scroll-snap-type: x mandatory;
+    transition: all 0.6s;
+  }
+
+  &__item {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 302px;
+    height: 246px;
+    transform-origin: center center;
+    transition: transform 0.5s;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.45);
+    outline: 4px solid rgba(0, 0, 0, 0.45);
+  }
+
+  &__indicators {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 4px;
+  }
+
+  &__text {
+    width: fit-content;
+    padding: 24px;
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #f8f8f8;
+  }
+}

@@ -1,0 +1,87 @@
+.materials {
+  position: relative;
+  height: 1220px;
+  background-image: url("../images/background-pots.png");
+  background-repeat: no-repeat;
+  background-size: cover ;
+  background-position: center 150px ;
+
+  @include phone {
+    background-size: contain;
+    height: fit-content;
+  }
+  @include tablet {
+    height: 776px;
+    background-size: contain;
+  }
+
+  &__header-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 120px;
+  }
+
+  &__header {
+    margin: 0;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 96px;
+    letter-spacing: 0.12em;
+    color: #03839e;
+    margin-block-start: 0;
+    margin-block-end: 0;
+
+    @include desktop {
+      font-size: 140px;
+      line-height: 170px;
+      letter-spacing: 0.12em;
+    }
+    @include tablet {
+      translate: 0 -80%;
+    }
+
+    @include phone {
+      font-size: 58px;
+      line-height: 70px;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  &__description {
+    align-self: flex-end;
+    flex-grow: 0;
+    width: 45%;
+    translate: 0 -30%;
+    text-align: start;
+
+    @include desktop {
+      width: 41%;
+      translate: 0 -55%;
+    }
+
+    @include tablet {
+      width: 53%;
+      translate: 0 -75%;
+    }
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  &__carousel {
+    @include desktop {
+      display: none;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    @include phone {
+      position: relative;
+      padding-left: 9px;
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.team {
+  position: relative;
+
+  &__header {
+    margin-bottom: 140px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: #333;
+
+    @include phone {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__martin {
+    position: absolute;
+    translate: 0 -50px;
+    transition: all 0.3s ;
+
+    @include tablet {
+      translate: -130px -130px;
+      transform: scale(0.7);
+    }
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  &__andy {
+    position: absolute;
+    right: 0;
+
+    @include phone {
+      display: none;
+    }
+
+    @include tablet {
+      translate: 100px -150px;
+      transform: scale(0.7);
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 50px;
+    align-items: end;
+    flex-direction: row;
+
+    @include phone {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__text {
+    flex: 1 1 ;
+    min-width: 300px;
+
+    @include phone {
+      order: 1;
+      min-width: 100%;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center;
+    min-width: 10px;
+    transition: all 0.3s;
+
+    @include tablet {
+      padding-bottom: 150px;
+    }
+
+    @include phone {
+      max-width: 100%;
+    }
+  }
+}

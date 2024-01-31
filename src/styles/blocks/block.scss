@@ -1,0 +1,67 @@
+.block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+  transition: all 0.3s linear;
+
+  @include desktop {
+    gap: 200px;
+    &--collumn {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: fit-content;
+
+      &:last-child {
+        align-items: end;
+      }
+    }
+    &--2 {
+      padding-top: 80px;
+      padding-left: 80px;
+    }
+  }
+
+  &__image {
+    margin-bottom: 50px;
+    object-fit: contain;
+    object-position: center;
+    min-width: 200px;
+    max-width: 300px;
+    height: 100%;
+    flex: 1;
+    transition: all 0.3s linear;
+
+    &--2 {
+      max-height: 417px;
+      order: 2;
+    }
+
+    @include desktop {
+      max-width: 500px;
+      &--2 {
+        block-size: fit-content;
+        order: 0;
+        width: 300px;
+      }
+    }
+
+    @include phone {
+      display: none;
+    }
+  }
+
+  &__subtitle {
+    color: #333;
+  }
+
+  &__text {
+    @include desktop {
+      max-width: 370px;
+    }
+    @include tablet {
+      max-width: 370px;
+    }
+  }
+}

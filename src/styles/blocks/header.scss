@@ -1,0 +1,154 @@
+.header {
+  @include phone {
+    background-image: url(../images/hero.png);
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    background-position: center top 68px;
+    background-repeat: no-repeat;
+  }
+
+  &__decoration {
+    display: flex;
+    gap: 16px;
+    position: absolute;
+    top: 480px;
+    cursor: pointer;
+
+    transform-origin: top left;
+    transform: translate(20px) rotate(90deg);
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: #03839e;
+    mix-blend-mode: multiply;
+    transition: all 0.3s linear;
+
+    @include phone {
+      top: 600px;
+      right: 8px;
+      transform: translate(99%) rotate(90deg);
+    }
+
+    &:hover {
+      gap: 36px;
+    }
+  }
+
+  &__content {
+    margin: 0 auto 110px;
+    padding: 15px 30px;
+
+    max-width: 1170px;
+
+    background-image: url(../images/hero.png);
+    background-size: 300px;
+    background-position: right 40px top 140px;
+    background-repeat: no-repeat;
+    transition: all 0.3s linear;
+
+    @include desktop {
+      padding: 20px 40px;
+      background-size: 500px;
+    }
+    
+    @include phone {
+      background-image: none;
+    }
+  }
+
+  &__nav {
+    padding-bottom: 80px;
+
+    @include phone {
+      padding-bottom: 360px;
+    }
+  }
+
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch ;
+    padding-left: 0;
+
+    @include desktop {
+      padding-left: 80px ;
+      max-width: 470px;
+    }
+
+    @include tablet {
+      padding-left: 0 ;
+      max-width: 470px;
+    }
+
+    @include phone {
+      background-color: #f8f8f8cc;
+      outline: 18px solid #f8f8f8cc;
+    }
+
+    @media (max-width: 340px) {
+      outline: none;
+    }
+  }
+
+  &__text {
+    margin: 0 0 46px;
+    font-family: "Bebas Neue", sans-serif;
+    color: #03839e;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    &--outline {
+      color: #03839e00;
+      -webkit-text-stroke: 1px #03839e;
+    }
+
+    @include phone {
+      font-size: 36px;
+      line-height: 43px;
+    }
+  }
+
+  &__action {
+    align-self: flex-end;
+    padding-right: 80px;
+
+    @include phone {
+      align-self: flex-start;
+    }
+  }
+
+  &__price {
+    margin: 0 0 6px;
+
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  &__slogan {
+    margin: 0 0 24px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+  }
+  
+  &__button {
+    margin-right: 30px;
+    align-self: flex-end;
+
+    @include desktop {
+      margin-right: 30px;
+    }
+
+    @include phone {
+      align-self: center;
+      margin-right: 0;
+    }
+  }
+}

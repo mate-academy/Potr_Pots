@@ -1,0 +1,260 @@
+.bag {
+  width: 100%;
+  height: 100%;
+  background-color: #00000073;
+  z-index: 10;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__container {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    margin: 80px auto;
+    width: 300px;
+    background-color: white;
+    padding: 20px 16px;
+
+    @include desktop {
+      width: 830px;
+      padding: 20px 30px;
+
+    }
+    @include tablet {
+      width: 725px;
+      padding: 20px 30px;
+    }
+  }
+  
+  &__header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    @include phone {
+      align-items: normal;
+      flex-direction: column-reverse;
+      margin-top: 70px;
+    }
+  }
+
+  &__close-button {
+    cursor: pointer;
+    width: 66px;
+    height: 66px;
+
+    &:hover {
+      filter: drop-shadow(0 2px 4px rgb(35, 33, 34, 0.4));
+    }
+
+    @include phone {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__image {
+    @include phone {
+      display: none;
+    }
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 155px;
+    @include phone {
+      width: fit-content;
+    }
+  }
+  &__quantity-info {
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  &__total-text {
+    font-size: 20px;
+  }
+  &__item-text {
+    min-width: 120px;
+    line-height: 54px;
+  }
+
+  &__cercle {
+    margin: 10px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    line-height: 34px;
+    text-align: center;
+    flex-shrink: -1;
+  }
+
+  &__button {
+    position: absolute;
+    top: 30px;
+    left: 70px;
+    height: 48px;
+    width: 240px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: #121212;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid red;
+      background: #fff;
+      color: red;
+    }
+
+    @include phone {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+table {
+  border-spacing: 0;
+}
+
+tbody > *td {
+  box-sizing: border-box;
+  padding: 25px 20px 25px 0;
+  border-bottom: 1px solid #e0e0e0;
+  width: fit-content;
+
+  @include desktop {
+    padding-right: 20px;
+  }
+  @include phone {
+    border-bottom: 20px;
+    padding-right: 10px;
+  }
+}
+
+tbody > * > :last-child,
+thead > * > :last-child {
+  display: auto;
+  @include tablet {
+    display: none;
+  }
+  @include phone {
+    display: none;
+  }
+}
+
+th {
+  box-sizing: border-box;
+  padding: 10px 30px 10px 0;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  min-width: 85px;
+
+  @include phone {
+    border-bottom: none;
+    min-width: 132px;
+  }
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  text-align: center;
+  @include tablet {
+    padding-right: 40px;
+  }
+  @include desktop {
+    padding-right: 70px;
+  }
+  @include phone {
+    padding-right: 0;
+  }
+}
+
+tfoot > *td {
+  padding-top: 30px;
+}
+
+tfoot {
+  position: relative;
+}
+
+@media (max-width:767px) {
+  tr {
+    display: block;
+    width: 100%;
+    &::after {
+      content: "";
+      display: block;
+      margin-top: 10px;
+      height: 1px;
+      width: 100%;
+      background-color: #e0e0e0;
+    }
+  }
+  th:nth-child(4),
+  th:nth-child(5) {
+    display: none;
+  }
+
+  tbody td:nth-child(4),
+  tbody td:nth-child(5) {
+    display: block;
+    text-align: right;
+
+    &::before {
+      content: attr(data-title);
+      display: inline-block;
+      text-align: left;
+      padding-right: 20px;
+      width: 140px;
+    }
+  }
+
+  tfoot td:nth-child(5) {
+    display: block;
+    text-align: right;
+    width: fit-content;
+
+    &::before {
+      content: attr(data-title);
+      display: inline-block;
+      text-align: left;
+      width: 140px;
+    }
+  }
+
+  tfoot td:nth-child(1),
+  tfoot td:nth-child(2),
+  tfoot td:nth-child(3),
+  tfoot td:nth-child(4) {
+    display: none;
+  }
+
+  tfoot tr {
+    &::after {
+      display: none;
+    }
+  }
+
+  .bag__quantity-text {
+    display: none;
+  }
+}

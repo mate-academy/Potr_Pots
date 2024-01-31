@@ -1,0 +1,125 @@
+.questions {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 130%;
+    width: 100%;
+    z-index: -1;
+    background-image: url(../images/Rectangle.png);
+    background-position: left 0 top 0;
+    background-repeat: no-repeat;
+    background-size: cover ;
+
+    @include desktop {
+      right: 130px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 140px;
+
+    @include phone {
+      display: block;
+    }
+  }
+
+  &__header {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #000;
+    margin-top: 40px;
+    margin-bottom: 0;
+
+    @include tablet {
+      min-width: 350px;
+    }
+
+    &__sign {
+      color: $main-text-color;
+    }
+  }
+
+  &__line {
+    display: flex;
+    min-width: 240px;
+    flex-grow: 2;
+    align-items: center;
+    border-bottom: 1px solid #0003;
+    margin-bottom: 30px;
+
+    :focus {
+      outline: none;
+    }
+  }
+
+  &__subheader {
+    font-size: 24px;
+    color: #000;
+  }
+
+  &__client {
+    margin-bottom: 86px;
+  }
+
+  &__button {
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 52px;
+    background: #ffec7a;
+
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-bottom: 1px dashed #333;
+
+    font-family: "Manrope", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333;
+  }
+
+  &__text {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    margin-bottom: 4px;
+    padding-left: 6px;
+  }
+
+  &__foarm {
+    min-height: 24px;
+    border: none;
+    width: 100%;
+    background-color: #ffec7a;
+  }
+
+  &__image {
+    position: absolute;
+    right: -50px;
+    top: -100px;
+
+    @include desktop {
+      right: 100px;
+    }
+  }
+}
+
+input::placeholder {
+  font-family: "Manrope", sans-serif;
+  color: #4f4f4f;
+  font-size: 16px;
+}
