@@ -408,7 +408,7 @@ width: 213px;
 
 &__squares {
 display: flex;
-gap: 5px;
+gap: 8px;
 
 
 
@@ -416,14 +416,19 @@ gap: 5px;
 }
 
 &__square {
-  width: 16px;
-  height: 12px;
+  width: 9px;
+  height: 9px;
+  display: block;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+
 &--white {
-  background-image: url('././icons/slider-white.png');
+  background: $grey-light;
 }
 
 &--black {
-  background-image: url('././icons/slider-black.png');
+  background: $black2;
+  border: 1px solid $grey-light;
 }
 
 @include tablet {
