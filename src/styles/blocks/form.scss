@@ -28,18 +28,21 @@ border: none;
     @include font-s3;
 
     border-bottom: 1px solid $grey;
+    transition: 0.5s ease-in-out;
 
 
 
-    &:focus {
+    &:focus, -webkit-autofill, -webkit-autofill:hover, -webkit-autofill:focus {
       border: none;
       border-bottom: 1px solid $turquoise;
+      background-color: transparent;
+      transition: 0.5s ease-in-out;
     }
 
-    &:-webkit-autofill {
+  /*   &:-webkit-autofill, -webkit-autofill:hover, -webkit-autofill:focus {
 border: none;
       background: transparent;
-    }
+    } */
 
     &:valid {
       color: $turquoise;
@@ -70,8 +73,11 @@ border: none;
     border-bottom: 1px solid $grey;
 
     @include font-s3;
-    &:focus {
+    &:focus, -webkit-autofill, -webkit-autofill:hover, -webkit-autofill:focus {
+      border: none;
       border-bottom: 1px solid $turquoise;
+      background-color: transparent;
+      transition: 0.5s ease-in-out;
     }
 
     &:valid {

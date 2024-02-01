@@ -1,7 +1,19 @@
 .forwhom {
 background-color: $grey-light;
-
+position: relative;
 box-sizing: border-box;
+
+&:after {
+  position: absolute;
+  display: block;
+  content: " ";
+  width: 14px;
+  height: 144px;
+  background-image: url('././icons/potr-right.svg');
+  right: calc($desktop-mb + 35px);
+
+  top: -65px;
+}
 
 @include desktop {
 padding-left: calc((100vw - 1260px) / 2 + 100px);

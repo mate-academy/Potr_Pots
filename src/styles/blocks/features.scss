@@ -1,7 +1,18 @@
 .features {
   display: flex;
-
+position: relative;
   background-color: $grey-light;
+  &:before {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 14px;
+    height: 144px;
+    background-image: url('././icons/potr-left.svg');
+   left: calc($desktop-mb + 35px);
+
+    top: -300px;
+  }
 
   @include mobile {
     flex-direction: column;
