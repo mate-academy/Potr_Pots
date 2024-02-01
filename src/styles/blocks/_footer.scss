@@ -1,0 +1,105 @@
+.footer {
+  &__content {
+    @include container-inline;
+
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    padding-block: 0 30px;
+    margin-top: -51px;
+
+    @include on-tablet {
+      justify-content: space-between;
+      padding-block: 0 117px;
+      margin-top: -4px;
+    }
+
+    @include on-desktop {
+      padding-block: 74px 64px;
+      margin-top: -20px;
+    }
+  }
+
+  &__adress,
+  &__about-us {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__sub-title {
+    @extend %h3;
+
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    @extend %s3;
+
+    color: $c-black;
+  }
+
+  &__adress-link {
+    @include hover(color, $c-gray-whitish);
+  }
+
+  &__main-text {
+    display: block;
+    text-align: center;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__logos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include on-desktop {
+      height: 158px;
+    }
+  }
+
+  &__apps-logos {
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      width: 100%;
+    }
+
+    @include on-desktop {
+      width: 230px;
+    }
+  }
+
+  &__apps-logo {
+    height: 20px;
+    width: 20px;
+
+    @include hover(transform, scale(1.2));
+
+    @include on-desktop {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  &__main-logo {
+    @extend %h2;
+    @include hover(transform, scale(1.1));
+    
+    text-align: center;
+  }
+  &__main-logo-link {
+    color: $c-black;
+  }
+}
