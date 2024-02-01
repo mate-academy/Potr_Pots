@@ -1,0 +1,106 @@
+.footer {
+  margin-inline: 45px;
+  padding-bottom: 30px;
+
+  @include on-tablet {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 110px;
+  }
+
+  @include on-desktop {
+    margin-inline: 135px;
+    padding-bottom: 70px;
+  }
+
+  &__adrres-block {
+    display: none;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 140px;
+    }
+  }
+
+  &__adrres-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+  }
+
+  &__adrres-text {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__social-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    @include on-desktop {
+      gap: 70px;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    gap: 70px;
+  }
+
+  &__social-network {
+    @include hover(opacity, 0.7);
+  }
+
+  &__social-icon {
+    width: 20px;
+    height: 20px;
+
+    @include on-desktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__logo {
+    @include hover(opacity, 0.7);
+  }
+
+  &__about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include on-tablet {
+      align-items: start;
+    }
+  }
+
+  &__about-us-link {
+    display: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    color: #000;
+
+    @include hover(opacity, 0.7);
+
+    @include on-tablet {
+      display: inline;
+    }
+  }
+
+  &__about-us-copyright {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 10px;
+  }
+}
