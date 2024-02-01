@@ -16,3 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+function submitForm() {
+  const form = document.getElementById('form');
+
+  form.reset();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  submitForm();
+});
