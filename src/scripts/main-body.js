@@ -26,3 +26,23 @@ function submitForm() {
 document.addEventListener('DOMContentLoaded', function() {
   submitForm();
 });
+
+
+let sharedBasketElement = document.getElementById('sharedBasket');
+let displayElement = document.querySelectorAll('.basket__products');
+
+let sharedBasket = 0;
+
+function changeQuantity(value) {
+  sharedBasket += value;
+
+  // Quantity should not go below 0
+  sharedBasket = Math.max(sharedBasket, 0);
+
+  // Update both displays
+  sharedBasketElement.innerText = sharedBasket;
+
+  displayElement.forEach(element => {
+    element.innerText = sharedBasket;
+  });
+}
