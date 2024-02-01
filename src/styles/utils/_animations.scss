@@ -56,10 +56,26 @@
 }
 
 @mixin picking {
-  transform: rotate(15deg) scale(1.5);
-
   transition: transform 0.5s ease-in-out;
 
+  &:hover {
+  transform: rotate(0deg) scale(1.5);
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+  z-index: 9;
+  }
 
+}
+
+@mixin zooming {
+  transition: transform 0.5s ease-in-out;
+
+  &:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+
+
+  }
 
 }

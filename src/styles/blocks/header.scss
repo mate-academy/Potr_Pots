@@ -134,7 +134,7 @@ background-repeat: no-repeat;
 left: 0;
     position: fixed;
     background-color: $grey-light;
-    z-index: 1000;
+    z-index: 8;
 
 
 
@@ -239,9 +239,11 @@ display: block;
 
 
  &__image {
+  @include zooming;
   @include mobile {
 padding-top: 60px;
     width: 100%;
+
   }
 
   @include tablet {
@@ -258,6 +260,7 @@ padding-top: 60px;
     position: absolute;
     top: 50px;
     right: calc((100vw - 1440px) / 2 + 135px);
+
   }
 
   @include design {
