@@ -1,0 +1,27 @@
+.button {
+  @extend %s4;
+
+  position: relative;
+  box-sizing: border-box;
+  height: 48px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $c-black;
+  display: flex;
+  align-items: center;
+
+
+  ::after {
+    content: '';
+    position: absolute;
+    right: 65px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 25px;
+    height: 8px;
+    background-image: url(../images/mobile/icons/button-arrow.svg);
+    background-size: 25px 8px;
+    background-repeat: no-repeat;
+  }
+}
