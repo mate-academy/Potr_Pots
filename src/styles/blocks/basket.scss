@@ -2,18 +2,65 @@
   background-color: white;
 display: flex;
 padding: 35px;
-border: solid 1px red;
+
 
 &__product-box {
   padding: 30px;
-  border: solid 1px $menu-color;
+  border: solid 1px $grey-dark2;
   display: flex;
 
   @include font-s2;
 
   flex-direction: column;
+  gap: 50px;
 }
 
+&__product-A {
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+  border: solid 1px $grey-light;
+}
+&__product-B {
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+  border: solid 1px $grey-light;
+}
+&__product-total {
+  display: flex;
+  justify-items: space-between;
+  border: solid 1px red;
+}
 
+&__plus {
+  @include font-s4;
+  color: white;
+  background-color: $red;
+  border: 0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+@include icon-animation;
+&:hover {
+  cursor: pointer;
+}
+}
+
+&__minus {
+  @include font-s4;
+  color: white;
+  background-color: $grey;
+  border: 0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+@include icon-animation;
+
+&:hover {
+  cursor: pointer;
+
+}
+}
 
 }
