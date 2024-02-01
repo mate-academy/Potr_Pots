@@ -1,13 +1,27 @@
 @mixin button-primary {
   display: flex;
-  width: 238px;
+
   height: 48px;
-  justify-content: center;
+
   align-items: center;
   flex-shrink: 0;
   background-color: $turquoise;
   color: $white;
-  border: 1px solid $turquoise;
+  border: 0;
+padding-left: 50px;
+
+  background-image: url('././icons/arrow-white.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 161px;
+
+  @media (max-width: 767px) {
+    width: 260px;
+  }
+
+  @media (min-width: 768px) {
+    width: 238px;
+  }
 }
 
 @mixin button-primary2 {
@@ -23,7 +37,7 @@
   border: 1px solid $yellow;
 
   justify-content: flex-start;
-  background-image: url('././icons/arrow-black.png');
+  background-image: url('././icons/arrow-black.svg');
   background-repeat: no-repeat;
   background-size: auto;
   background-position: 161px;
@@ -80,12 +94,26 @@ box-sizing: border-box;
   display: flex;
   width: 238px;
   height: 48px;
-  justify-content: center;
+cursor: pointer;
   align-items: center;
   flex-shrink: 0;
-  border: 1px solid rgba(3, 128, 158, 0.40);
+border: 0;
   background: rgba(3, 128, 158, 0.40);
   color: $white;
+  animation: arrow-animation 1.5s ease-in-out infinite;
+  justify-content: flex-start;
+  background-image: url('././icons/arrow-white.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: 161px;
+
+  @media (max-width: 767px) {
+    width: 260px;
+  }
+
+  @media (min-width: 768px) {
+    width: 238px;
+  }
 }
 
 @mixin button-primary2-hover {
