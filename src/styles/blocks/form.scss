@@ -17,15 +17,16 @@
 
   &__input {
     width: 100%;
-    height: 48px;
+    height: 30px;
 border: none;
     background: transparent;
     color: $menu-color;
-    padding: 14px 16px;
+
     box-sizing: border-box;
     outline: none;
 
     @include font-s3;
+
     border-bottom: 1px solid $grey;
 
 
@@ -40,40 +41,37 @@ border: none;
       background: transparent;
     }
 
+    &:valid {
+      color: $turquoise;
+      border-bottom: $turquoise solid 1px;
+    }
+
     &:required:not(:placeholder-shown):invalid {
 border: none;
       color: $red;
      border-bottom: 1px solid $red;
     }
 
-    &:valid {
-      color: $turquoise;
-      border-bottom: $turquoise solid 1px;
-    }
+
   }
 
   &__textarea {
     width: 100%;
 
-    padding: 14px 16px;
-    box-sizing: border-box;
-    height: auto;
+
+    height: 30px;
     background: transparent;
     color: $menu-color;
 border: none;
     resize: none;
     overflow-y: hidden;
-    min-height: 88px;
+
+
     border-bottom: 1px solid $grey;
+
     @include font-s3;
     &:focus {
       border-bottom: 1px solid $turquoise;
-    }
-
-    &:required:not(:placeholder-shown):invalid {
-      border-bottom: 1px solid $red;
-      color: $red;
-
     }
 
     &:valid {
@@ -83,6 +81,14 @@ border: none;
 
     outline: none;
   }
+
+    &:required:not(:placeholder-shown):invalid {
+      border-bottom: 1px solid $red;
+      color: $red;
+
+    }
+
+
 
   &__label {
     &:not(:focus) {
