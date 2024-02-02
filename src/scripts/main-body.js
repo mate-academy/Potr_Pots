@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
   submitForm();
 });
 
-//////////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////
 
- const sharedBasketElementA = document.getElementById('sharedBasketA');
+const sharedBasketElementA = document.getElementById('sharedBasketA');
 const displayElementA = document.querySelectorAll('.basket__productsA');
 const sharedBasketElementAV = document.getElementById('sharedBasketAV');
 const displayElementAV = document.querySelectorAll('.basket__productsAV');
@@ -51,15 +51,44 @@ function changeQuantityA(value) {
 
   displayElementA.forEach(element => {
     element.innerText = sharedBasketA;
-  })
+  });
 
   displayElementAV.forEach(element => {
     element.innerText = sharedBasketAV;
   });
 }
 
-//////////////////////////
+/// ///////////////////////
 
+const sharedBasketElementB = document.getElementById('sharedBasketB');
+const displayElementB = document.querySelectorAll('.basket__productsB');
+const sharedBasketElementBV = document.getElementById('sharedBasketBV');
+const displayElementBV = document.querySelectorAll('.basket__productsBV');
 
+let sharedBasketB = 0;
+let sharedBasketBV = 0;
 
+function changeQuantityB(value) {
+  sharedBasketB += value;
+  sharedBasketBV += value * 4.5;
 
+  // Quantity should not go below 0
+  sharedBasketB = Math.max(sharedBasketB, 0);
+  sharedBasketBV = Math.max(sharedBasketBV, 0);
+
+  // Update both displays
+  sharedBasketElementB.innerText = sharedBasketB;
+  sharedBasketElementBV.innerText = sharedBasketBV;
+
+  displayElementB.forEach(element => {
+    element.innerText = sharedBasketB;
+  });
+
+  displayElementBV.forEach(element => {
+    element.innerText = sharedBasketBV;
+  });
+}
+
+/// ///////////////////////
+changeQuantityB(0);
+changeQuantityA(0);
