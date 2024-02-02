@@ -67,13 +67,13 @@ function changeQuantityA(value) {
   });
 
   displayElementAV.forEach(element => {
-    element.innerText = sharedBasketAV;
+    element.innerText = `$ ` + sharedBasketAV;
   });
 
   const sharedBasketT = sharedBasketA + sharedBasketB;
   const sharedBasketTV = sharedBasketAV + sharedBasketBV;
 
-    sharedBasketElementT.innerText = sharedBasketT;
+  sharedBasketElementT.innerText = sharedBasketT;
   sharedBasketElementTV.innerText = sharedBasketTV;
 
   displayElementT.forEach(element => {
@@ -81,13 +81,11 @@ function changeQuantityA(value) {
   });
 
   displayElementTV.forEach(element => {
-    element.innerText = sharedBasketTV;
+    element.innerText = `$ ` + sharedBasketTV;
   });
 }
 
 /// ///////////////////////
-
-
 
 function changeQuantityB(value) {
   sharedBasketB += value;
@@ -106,16 +104,12 @@ function changeQuantityB(value) {
   });
 
   displayElementBV.forEach(element => {
-    element.innerText = sharedBasketBV;
+    element.innerText = `$ ` + sharedBasketBV;
   });
 
   const sharedBasketT = sharedBasketA + sharedBasketB;
 
-
-
   const sharedBasketTV = sharedBasketAV + sharedBasketBV;
-
-
 
   sharedBasketElementT.innerText = sharedBasketT;
   sharedBasketElementTV.innerText = sharedBasketTV;
@@ -125,12 +119,9 @@ function changeQuantityB(value) {
   });
 
   displayElementTV.forEach(element => {
-    element.innerText = sharedBasketTV;
+    element.innerText = `$` + sharedBasketTV;
   });
 }
 
-
 changeQuantityB(0);
 changeQuantityA(0);
-
-

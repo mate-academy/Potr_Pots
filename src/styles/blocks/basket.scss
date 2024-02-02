@@ -1,37 +1,78 @@
 .basket {
-  background-color: white;
-display: flex;
 padding: 35px;
+flex-direction: column;
 
 
+&__product-total {
+display: flex;
+
+
+flex-direction: column;
+
+}
+&__h2 {
+  @include font-h3;
+
+}
+
+&__item {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+&__field {
+  overflow: hidden;
+  display: flex;
+
+place-content: center;
+  width: 60px;
+
+}
+
+&__name {
+  @include font-s3;
+}
 &__product-box {
   padding: 30px;
-  border: solid 1px $grey-dark2;
+box-sizing: border-box;
   display: flex;
-
-  @include font-s2;
-
   flex-direction: column;
-  gap: 50px;
+  align-items: center;
+
+  @include font-s3;
+
+
+  gap: 30px;
+
 }
 
-&__product-A {
-  display: flex;
-  column-gap: 30px;
-  align-items: center;
-  border: solid 1px $grey-light;
+&__img {
+  display: block;
 }
-&__product-B {
+
+&__product {
   display: flex;
-  column-gap: 30px;
-  align-items: center;
-  border: solid 1px $grey-light;
+
+  gap: 50px 10px;
+
+
+  border: solid 1px $grey;
+  box-sizing: border-box;
+  padding: 15px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include desktop {
+    flex-direction: row;
+   justify-items: flex-end;
+  }
 }
-&__product-total {
-  display: flex;
-  justify-items: space-between;
-  border: solid 1px red;
-}
+
+
 
 &__plus {
   @include font-s4;
