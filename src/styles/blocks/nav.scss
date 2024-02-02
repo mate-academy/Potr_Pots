@@ -1,0 +1,86 @@
+.nav {
+  padding: 20px 0;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  &__logo {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: 2.16px;
+    color: $gray-1;
+
+    transition: all .3s;
+
+    &:hover, &:active {
+      transform: scale(1.1);
+      color: $blue;
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: $gray-1;
+      bottom: -3px;
+
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+
+    &:hover, &:active {
+      color: $gray-1;
+
+      &::before {
+        transform: scaleX(80%);
+      }
+    }
+  }
+
+  &__link {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $gray-2;
+    padding: 10px;
+  }
+
+  &__shop {
+    display: none;
+
+    @include desktop {
+      display: block;
+      transition: all .3s;
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu-icon {
+    @include desktop {
+      display: none;
+    }
+  }
+}
