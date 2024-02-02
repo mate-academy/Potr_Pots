@@ -8,6 +8,14 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#basket') {
+    document.body.classList.add('body__lock');
+  } else {
+    document.body.classList.remove('body__lock');
+  }
+});
+
 /* document.addEventListener('DOMContentLoaded', function() {
   var circles = document.querySelectorAll('.materials__circle');
 
