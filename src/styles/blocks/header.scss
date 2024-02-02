@@ -427,17 +427,16 @@ right: calc(25vw + 20px);
   width: 8px;
 }
 &__product-number {
-  @media(max-width: 1259px) {
   display: flex;
   background-color: $red;
   box-sizing: border-box;
   border-radius: 50%;
  padding-top: 2px;
  padding-left: 2px;
-  width: 14px;
-  height: 14px;
-justify-content: center;
-
+  width: 15px;
+  height: 15px;
+place-content: center;
+position: absolute;
 
 
   color: $grey-light;
@@ -449,6 +448,18 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: 1.42px;
 
-  }
+@include mobile {
+  left: 140px;
+
 }
+
+@include desktop {
+  left: calc($desktop-mb + 1163px);
+
+
+}
+
+}
+
+
 }
