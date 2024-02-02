@@ -34,8 +34,21 @@ const displayElementA = document.querySelectorAll('.basket__productsA');
 const sharedBasketElementAV = document.getElementById('sharedBasketAV');
 const displayElementAV = document.querySelectorAll('.basket__productsAV');
 
+const sharedBasketElementB = document.getElementById('sharedBasketB');
+const displayElementB = document.querySelectorAll('.basket__productsB');
+const sharedBasketElementBV = document.getElementById('sharedBasketBV');
+const displayElementBV = document.querySelectorAll('.basket__productsBV');
+
+const sharedBasketElementT = document.getElementById('sharedBasketTotal');
+const displayElementT = document.querySelectorAll('.basket__total');
+const sharedBasketElementTV = document.getElementById('sharedBasketTotalV');
+const displayElementTV = document.querySelectorAll('.basket__totalV');
+
 let sharedBasketA = 0;
 let sharedBasketAV = 0;
+
+let sharedBasketB = 0;
+let sharedBasketBV = 0;
 
 function changeQuantityA(value) {
   sharedBasketA += value;
@@ -56,17 +69,25 @@ function changeQuantityA(value) {
   displayElementAV.forEach(element => {
     element.innerText = sharedBasketAV;
   });
+
+  const sharedBasketT = sharedBasketA + sharedBasketB;
+  const sharedBasketTV = sharedBasketAV + sharedBasketBV;
+
+    sharedBasketElementT.innerText = sharedBasketT;
+  sharedBasketElementTV.innerText = sharedBasketTV;
+
+  displayElementT.forEach(element => {
+    element.innerText = sharedBasketT;
+  });
+
+  displayElementTV.forEach(element => {
+    element.innerText = sharedBasketTV;
+  });
 }
 
 /// ///////////////////////
 
-const sharedBasketElementB = document.getElementById('sharedBasketB');
-const displayElementB = document.querySelectorAll('.basket__productsB');
-const sharedBasketElementBV = document.getElementById('sharedBasketBV');
-const displayElementBV = document.querySelectorAll('.basket__productsBV');
 
-let sharedBasketB = 0;
-let sharedBasketBV = 0;
 
 function changeQuantityB(value) {
   sharedBasketB += value;
@@ -87,8 +108,29 @@ function changeQuantityB(value) {
   displayElementBV.forEach(element => {
     element.innerText = sharedBasketBV;
   });
+
+  const sharedBasketT = sharedBasketA + sharedBasketB;
+
+
+
+  const sharedBasketTV = sharedBasketAV + sharedBasketBV;
+
+
+
+  sharedBasketElementT.innerText = sharedBasketT;
+  sharedBasketElementTV.innerText = sharedBasketTV;
+
+  displayElementT.forEach(element => {
+    element.innerText = sharedBasketT;
+  });
+
+  displayElementTV.forEach(element => {
+    element.innerText = sharedBasketTV;
+  });
 }
 
-/// ///////////////////////
+
 changeQuantityB(0);
 changeQuantityA(0);
+
+
