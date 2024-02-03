@@ -2,18 +2,19 @@
 background-color: white;
 
 
-overflow-x: hidden;
+
 position: fixed;
 top: 0;
 left: 0;
 
 height: 100vh;
 min-height: 100vh;
+width: 95vw;
   transform: translateY(-100%);
-  transition: transform 0.6s ease-in-out;
+  transition: transform 0.4s ease-in-out;
   z-index: 100;
 
-  overflow-y: auto;
+  overflow: auto;
 
   &:target {
     transform: translateY(0);
@@ -24,17 +25,16 @@ min-height: 100vh;
 
 
 
-padding: 0 35px 100px 35px;
+padding: 0 35px 100px;
 flex-direction: column;
 
 
 
 
 &__close {
-
   position: absolute;
 top: 5px;
-right: 30px;
+right: 50px;
   &:hover {
     @include cross-animation;
   }
@@ -51,6 +51,7 @@ flex-direction: column;
 }
 &__h2 {
   @include font-h3;
+
   padding: 20px 0;
 
 }
@@ -74,7 +75,6 @@ place-content: center;
   @include font-s3;
 }
 &__product-box {
-
 box-sizing: border-box;
   display: flex;
   flex-direction: column;
