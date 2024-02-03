@@ -3,8 +3,11 @@ display: flex;
 flex-direction: column;
 
 
+@include tablet {
+  padding: 0 calc($tablet-mb + 25px);
+}
 @include desktop {
-  padding: 0 calc((100vw - 1260px) / 2 + 35px);
+  padding: 0 calc($desktop-mb + 35px);
 }
 
 
@@ -23,6 +26,7 @@ flex-direction: column;
     @include tablet {
       grid-template-columns: auto auto;
       grid-template-rows: auto auto auto;
+      gap: 10px;
     }
 
     @include desktop{
@@ -88,7 +92,7 @@ position: relative;
 display: flex;
 
 box-sizing: border-box;
-justify-items: flex-end;
+justify-content: flex-end;
 
 @include mobile {
   grid-area: 2 / 1 / 3 / 2;
@@ -125,6 +129,7 @@ position: relative;
 display: flex;
 flex-direction: column;
 transform: translate(0);
+
 
 @include mobile {
   grid-area: 3 / 1 / 4 / 2;
@@ -163,9 +168,11 @@ transform: translate(0);
 
     color: $menu-color;
 
-
+    @include tablet {
+      left: calc($tablet-mb + 10px)
+    }
   @include desktop {
-    left: calc((100vw - 1260px) / 2 + 20px)
+    left: calc($desktop-mb + 20px)
   }
   }
 
