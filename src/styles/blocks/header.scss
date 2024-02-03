@@ -6,6 +6,7 @@
 
 z-index: 4;
 overflow-x: hidden;
+position: relative;
 
 
 
@@ -38,14 +39,14 @@ transform: rotate(90deg);
   }
 
   @include mobile {
-    top: 645px;
-    left: calc((100vw - 320px) / 2 + 180px);
+bottom: 210px;
+right: -100px;
 
     }
 
   @include tablet {
-  top: 520px;
-  left: calc((100vw - 768px) / 2 - 85px);
+    inset: 520px auto auto calc((100vw - 768px) / 2 - 85px);
+
 
   }
 
@@ -72,12 +73,13 @@ box-sizing: border-box;
 
   @include mobile {
     padding-top: 20px;
-    padding-left: 30px;
+    justify-content: center;
     }
 
   @include tablet {
     padding-top: 50px;
     padding-left: calc($tablet-mb + 120px);
+    justify-content: flex-start;
     }
 
   @include desktop {
@@ -285,6 +287,7 @@ padding-top: 60px;
     &__title-box {
       box-sizing: border-box;
       padding: 25px 30px 30px;
+
     }
 
   }
@@ -473,4 +476,14 @@ letter-spacing: 1.42px;
 }
 
 
+}
+
+.hide {
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: inline;
+  }
 }
