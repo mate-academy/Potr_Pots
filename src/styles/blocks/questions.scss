@@ -3,13 +3,23 @@
   background-image: url('././images/shape2.png');
   background-repeat: no-repeat;
 position: relative;
-background-size: contain;
-background-position: -50px 0;
 
-column-gap: 200px;
 
+
+
+
+@include tablet {
+  padding: 30px calc($tablet-mb + 25px) 130px;
+  column-gap: 90px;
+  background-position: left 0;
+  }
+
+@include desktop {
 padding: 30px calc($desktop-mb + 35px) 130px;
-
+background-position: -50px 0;
+column-gap: 200px;
+background-size: contain;
+}
 
 &__stamp {
   position: absolute;
@@ -17,12 +27,26 @@ padding: 30px calc($desktop-mb + 35px) 130px;
 
   top: -90px;
 
+
+  background-repeat: no-repeat;
+
+
+
+
+
   @include tablet {
-    left: 300px;
+    right: 0;
+    background-image: url('././images/stamp2.png');
+    width: 118px;
+    height: 162px;
   }
 
 @include desktop {
   left: 1050px;
+  background-image: url('././images/stamp.png');
+  width: 162px;
+  height: 162px;
+
 }
 }
   &__h2 {

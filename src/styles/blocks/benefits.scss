@@ -2,12 +2,28 @@
   display: flex;
 box-sizing: border-box;
   padding: 0 calc((100vw - 1260px) / 2 + 20px);
+position: relative;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 14px;
+    height: 144px;
+    background-image: url('././icons/potr-right.svg');
+
+    @include tablet {
+      right: calc($tablet-mb + 25px);
+      top: 0;
+      }
 
 
-
+    @include desktop {
+    display: none;
+    }
+  }
 
   @include tablet {
-
       flex-direction: row;
 
 
@@ -214,11 +230,13 @@ background: $menu-color;
   @include desktop {
   padding: 70px 120px 0;
   }
+
   color: $red;
 }
 
 &__half-price {
   @include font-h3;
+
   color: $turquoise;
 
 
