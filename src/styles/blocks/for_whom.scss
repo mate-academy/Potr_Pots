@@ -5,13 +5,18 @@ box-sizing: border-box;
 
 &::after {
   position: absolute;
-  display: block;
+
   content: " ";
   width: 14px;
   height: 144px;
   background-image: url('././icons/potr-right.svg');
 
+  @include mobile {
+    display: none;
+  }
+
   @include tablet {
+    display: block;
     right: calc($tablet-mb + 25px);
     top: -65px;
     }
@@ -181,7 +186,7 @@ height: 40px;
 }
 
   @include mobile {
-    @include grid-mobile;
+    /* @include grid-mobile; */
 
 display: grid;
 gap: 0;
@@ -478,7 +483,7 @@ display: flex;
 display: flex;
 
 @include mobile {
-  width: 260px;
+  width: auto;
 
 }
 
@@ -514,7 +519,7 @@ flex-wrap: wrap;
 
 
 @include mobile {
-  width: 260px;
+  width: auto;
 
 }
 
