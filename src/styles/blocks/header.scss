@@ -6,10 +6,18 @@
 
 z-index: 4;
 overflow-x: hidden;
-background-image: url('./images/shape.png');
-background-repeat: no-repeat;
-background-position: left -50px;
 
+
+
+@include tablet {
+  background-image: url('./images/shape.png');
+background-repeat: no-repeat;
+  background-position: calc($tablet-mb - 404px) 0;
+  }
+
+@include desktop {
+background-position: left -50px;
+}
 
 &__move-down {
   position: absolute;
@@ -69,12 +77,12 @@ box-sizing: border-box;
 
   @include tablet {
     padding-top: 50px;
-    padding-left: 120px;
+    padding-left: calc($tablet-mb + 120px);
     }
 
   @include desktop {
   padding-top: 50px;
-  padding-left: calc((100vw - 1260px) / 2 + 330px);
+  padding-left: calc($desktop-mb + 330px);
   }
 }
 
@@ -91,12 +99,12 @@ box-sizing: border-box;
 
   @include tablet {
     padding-top: 0;
-    padding-left: 240px;
+    padding-left: calc($tablet-mb + 240px);
     }
 
   @include desktop {
   padding-top: 20px;
-  padding-left: calc((100vw - 1260px) / 2 + 400px);
+  padding-left: calc($desktop-mb + 400px);
   }
 
 }
@@ -112,7 +120,7 @@ flex-wrap: wrap;
   }
 
 @include tablet {
-    padding-left: 240px;
+  padding-left: calc($tablet-mb + 240px);
     }
 
 @include desktop {
@@ -251,7 +259,7 @@ padding-top: 60px;
     width: 306px;
     height: 306px;
     position: absolute;
-    top: 121px;
+    top: 60px;
     right: calc((100vw - 768px) / 2 + 34px);
   }
 
@@ -284,12 +292,15 @@ padding-top: 60px;
   @include tablet {
     background-color: $grey-light;
 
+
     &__title-box {
       box-sizing: border-box;
       padding: 0;
       display: flex;
       align-items: flex-start;
       padding-top: 20px;
+
+      padding-left: calc($tablet-mb + 25px);
     }
 
   }
