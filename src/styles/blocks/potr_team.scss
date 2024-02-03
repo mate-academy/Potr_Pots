@@ -14,11 +14,11 @@ background-repeat: no-repeat;
 }
 
 @include tablet {
-  background-position: -850px 160px;
+  background-position: calc($tablet-mb - 790px) 170px;
 }
 
   @include desktop {
-    background-position: calc((100vw - 1260px) / 2 - 750px) 200px;
+    background-position: calc($desktop-mb - 750px) 200px;
   }
 
 
@@ -43,6 +43,7 @@ padding-left: 0;
 
 
 width: 590px;
+padding-left: calc($tablet-mb + 25px);
 }
 
 @include desktop {
@@ -77,18 +78,19 @@ width: 590px;
 
   &--marty{
     @include tablet {
-      right: calc((100vw - 768px) + 40px);
+      top: 80px;
+left: calc((100vw - 768px) / 2 - 55px);
 
       }
 
     @include desktop {
-top: 100px;
+top: 60px;
 left: calc((100vw - 1260px) / 2 + 25px);
     }
   }
   &--andy{
     @include tablet {
-top: 650px;
+top: 500px;
       right: 0;
 
 
@@ -98,6 +100,7 @@ top: 650px;
 
     @include desktop {
     right: 0;
+    top: 600px;
 
     }
 
@@ -151,7 +154,7 @@ box-sizing: border-box;
 
 @include tablet {
   flex-direction: row;
-
+  padding-left: calc((100vw - 760px) / 2 + 25px)
 }
 
 @include desktop {

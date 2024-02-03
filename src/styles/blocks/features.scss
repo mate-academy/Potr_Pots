@@ -2,16 +2,21 @@
   display: flex;
 position: relative;
   background-color: $grey-light;
+
+
   &::before {
+
+    @include desktop {
     position: absolute;
     display: block;
     content: " ";
     width: 14px;
     height: 144px;
-    background-image: url('././icons/potr-left.svg');
+    background-image: url('././icons/potr-right.svg');
    left: calc($desktop-mb + 35px);
 
     top: -300px;
+    }
   }
 
   @include mobile {
@@ -22,7 +27,7 @@ position: relative;
   @include tablet {
     flex-direction: row;
     gap: 15px;
-    padding: 0;
+    padding: 0 calc($tablet-mb + 25px);
   }
 
 @include desktop {
@@ -52,7 +57,7 @@ padding-left: 30px;
 
   @include tablet {
     flex-direction: row;
-    padding-left: 0;
+    padding-left: calc($tablet-mb + 25px);
 
   }
 

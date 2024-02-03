@@ -14,16 +14,44 @@ align-items: center;
 }
 
 @include tablet {
-  height: 920px;
+  height: 880px;
  display: block;
   padding: 0;
+  background-size: contain;
+  padding-left: calc($tablet-mb + 25px);
+
+
+  /* &::before {
+
+    @include tablet {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 14px;
+    height: 144px;
+    background-image: url('././icons/potr-right.svg');
+   left: calc($tablet-mb - 30px);
+
+    top: 200px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  } */
+
+  }
+
+  @media (min-width: 950px) {
+    background-size: contain;
+height: 1000px;
   }
 
 @include desktop {
 min-height: 1350px;
 
 background-size: auto;
-padding-left: calc((100vw - 1260px) / 2 + 35px);
+padding-left: calc($desktop-mb + 35px);
 
 }
 
@@ -102,7 +130,7 @@ height: auto;
     }
 
     @include tablet {
-      transform: translateX(0) translateY(130px);
+      transform: translateX(0) translateY(-65px);
 
 
     }
@@ -120,7 +148,7 @@ height: auto;
     }
 
     @include tablet {
-      transform: translateX(100px) translateY(-180px);
+      transform: translateX(100px) translateY(-420px);
 
 
     }
@@ -137,7 +165,7 @@ height: auto;
     }
 
     @include tablet {
-      transform: translateX(180px) translateY(-320px);
+      transform: translateX(180px) translateY(-500px);
 
 
     }
@@ -154,7 +182,7 @@ height: auto;
     }
 
     @include tablet {
-      transform: translateX(260px) translateY(-620px);
+      transform: translateX(260px) translateY(-820px);
 
 
     }
@@ -171,7 +199,7 @@ height: auto;
     }
 
     @include tablet {
-      transform: translateX(400px) translateY(-760px);
+      transform: translateX(400px) translateY(-940px);
 
 
     }
@@ -186,6 +214,7 @@ height: auto;
 
   &__h2 {
 @include font-title-large;
+
 
 box-sizing: border-box;
 
@@ -206,7 +235,13 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: 9.6px;
 padding: 0;
-display: inline;
+display: block;
+position: relative;
+
+
+
+
+
   }
 
 @include desktop {
@@ -235,8 +270,8 @@ line-height: 300px;
   padding: 0;
   display: flex;
   flex-direction: column;
-  width: 340px;
-  transform: translateX(355px) translateY(-40px);
+  width: 10vw;
+  transform: translateX(355px) translateY(-100px);
 
   }
 
@@ -259,6 +294,7 @@ line-height: 300px;
     line-height: 150%; /* 30px */
     display: block;
 
+    width: 330px;
 
   }
 
@@ -305,41 +341,12 @@ cursor: pointer;
 
 }
 
-/*
-&--not-clicked {
-  background-image: url('./icons/circle-red.svg');
-}
- */
-
-/*  @include tablet {
-  & + .materials__card {
-    opacity: 0;
-    transition: 0.3s ease-in-out;
-  }
-
-
-&:hover {
-cursor: crosshair;
-background-image: url('./icons/circle-black.svg');
-& + .materials__card {
-  opacity: 1;
-  z-index: 2;
-}
-}
-
-} */
-
-
-
-
-
-
 
 
 
     &--1 {
       @include tablet {
-        transform: translateX(50px) translateY(350px);
+        transform: translateX(50px) translateY(150px);
 
 
       }
@@ -351,7 +358,7 @@ background-image: url('./icons/circle-black.svg');
 
     &--2 {
       @include tablet {
-        transform: translateX(200px) translateY(50px);
+        transform: translateX(200px) translateY(-180px);
 
       }
 
@@ -362,7 +369,7 @@ background-image: url('./icons/circle-black.svg');
 
     &--3 {
       @include tablet {
-        transform: translateX(300px) translateY(-40px);
+        transform: translateX(300px) translateY(-200px);
 
               }
 
@@ -376,7 +383,7 @@ background-image: url('./icons/circle-black.svg');
 
     &--4 {
       @include tablet {
-        transform: translateX(370px) translateY(-360px);
+        transform: translateX(370px) translateY(-560px);
 
       }
 
@@ -388,7 +395,7 @@ background-image: url('./icons/circle-black.svg');
 
     &--5 {
       @include tablet {
-        transform: translateX(520px) translateY(-770px);
+        transform: translateX(520px) translateY(-970px);
 
       }
 
@@ -439,11 +446,7 @@ gap: 8px;
 
 }
 
-/* .materials__card--clicked {
-  opacity: 1;
-  z-index: 2;
-}
- */
+
 .squares {
   border: solid;
 }
