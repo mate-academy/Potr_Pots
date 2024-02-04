@@ -1,0 +1,117 @@
+.offer {
+  margin: 30px;
+  position: relative;
+
+  @include for-tablet() {
+    margin: 36px;
+  }
+
+  @include for-desktop() {
+    width: 270px;
+    margin: 20px 435px;
+  }
+
+  &__title {
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #333;
+    display: block;
+
+    @include for-tablet() {
+      position: absolute;
+      top: -43px;
+      left: 32%;
+    }
+
+    @include for-desktop() {
+      margin-left: 90px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__paragraph {
+    width: 140px;
+    color: var(--gray-2, #4f4f4f);
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-top: 1px;
+    margin-bottom: 20px;
+
+    @include for-tablet() {
+      margin-left: 205px;
+      margin-bottom: 50px;
+    }
+
+    @include for-desktop() {
+      margin-bottom: 50px;
+      margin-left: 90px;
+    }
+  }
+
+  &__button {
+    position: relative;
+    width: 100%;
+    background: #ffe339;
+    border: 1px solid #ffe339;
+    height: 48px;
+    color: #121212;
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    @include for-tablet() {
+      margin-left: 154px;
+      width: 240px;
+    }
+
+    &--image {
+      padding-left: 24px;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    transform: rotate(90deg);
+    right: -85px;
+    top: 19px;
+
+    @include for-tablet() {
+      top: 46px;
+      left: -58px;
+      right: unset;
+    }
+
+    @include for-desktop() {
+      left: -360px;
+      top: unset;
+      right: unset;
+    }
+
+    &--text {
+      color: #03839e;
+      font-family: Manrope, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; /* 18px */
+    }
+
+    &--image {
+      transform: rotate(-90deg);
+      margin-left: 28px;
+      position: absolute;
+      top: -13px;
+      left: 128px;
+    }
+  }
+}

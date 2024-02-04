@@ -1,0 +1,34 @@
+.header {
+  @include for-tablet() {
+    grid-column: span 7;
+    background-image: url(../images/tablet-nav-background.svg);
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 19px;
+  }
+
+  @include for-desktop() {
+    grid-column: span 13;
+    background-image: url(../images/desktop-nav-background.png);
+    background-repeat: no-repeat;
+    position: relative;
+    padding-top: 19px;
+  }
+
+  &__image {
+    @include for-tablet() {
+      width: 306px;
+      height: 306px;
+      position: absolute;
+      right: 36px;
+    }
+
+    @include for-desktop() {
+      width: 500px;
+      height: 500px;
+      position: absolute;
+      right: 135px;
+      top: 140px;
+    }
+  }
+}

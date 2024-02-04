@@ -1,0 +1,85 @@
+.for-whom {
+  &__article {
+    @include for-tablet() {
+      display: flex;
+      gap: 76px;
+    }
+
+    @include for-desktop() {
+      display: flex;
+      align-items: center;
+      gap: 200px;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 70px;
+
+      @include for-tablet() {
+        margin-top: 110px;
+      }
+    }
+
+    &--2 {
+      @include for-desktop() {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &:first-of-type {
+        @include for-desktop() {
+          margin-top: 185px;
+          gap: 45px;
+          flex-direction: column-reverse;
+          align-items: flex-start;
+          justify-content: left;
+          width: 370px;
+        }
+      }
+
+      &:last-of-type {
+        @include for-desktop() {
+          width: 470px;
+          gap: 45px;
+          align-items: end;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    @include for-desktop() {
+      display: flex;
+      gap: 230px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include for-tablet() {
+      display: block;
+    }
+
+    &--1 {
+      @include for-desktop() {
+        display: block;
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    &--2 {
+      @include for-desktop() {
+        display: block;
+        width: 300px;
+      }
+    }
+
+    &--3 {
+      @include for-desktop() {
+        display: block;
+        width: 470px;
+      }
+    }
+  }
+}

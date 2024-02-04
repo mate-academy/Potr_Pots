@@ -1,0 +1,312 @@
+.article {
+  position: relative;
+
+  &:not(:first-of-type) {
+    margin-top: 70px;
+
+    @include for-tablet() {
+      margin-top: 0;
+    }
+
+    @include for-desktop() {
+      margin-top: 0;
+    }
+  }
+
+  &__desktop {
+    @include for-desktop() {
+      width: 370px;
+    }
+  }
+
+  &__title {
+    color: #000;
+    font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 180%; /* 64.8px */
+    letter-spacing: 5.58px;
+    display: flex;
+    gap: 9px;
+
+    @include for-tablet() {
+      position: absolute;
+      left: -17%;
+    }
+
+    @include for-desktop() {
+      position: absolute;
+      left: -20%;
+    }
+
+    &--2 {
+      @include for-tablet() {
+        position: unset;
+        left: unset;
+        padding-top: 50px;
+      }
+
+      @include for-desktop() {
+        position: unset;
+        padding-top: 40px;
+      }
+    }
+
+    &--slash {
+      display: inline-block;
+      width: 1px;
+      height: 47px;
+      transform: rotate(22deg);
+      background-color: #000;
+      margin-left: 9px;
+    }
+
+    &--slash-hidden {
+      display: none;
+
+      @include for-tablet() {
+        display: block;
+        position: absolute;
+        bottom: 7px;
+        left: 117px;
+      }
+
+      @include for-desktop() {
+        display: inline-block;
+        position: absolute;
+      }
+    }
+  }
+
+  &__secondary-title {
+    color: #000;
+    font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 54px */
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    @include for-tablet() {
+      position: relative;
+    }
+  }
+
+  &__tertiary-title {
+    color: #333;
+    text-align: center;
+    font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 100% */
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  &__paragraph {
+    color: #4f4f4f;
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    margin-top: 12px;
+
+    @include for-tablet() {
+      position: relative;
+    }
+
+    @include for-desktop() {
+      width: 370px;
+    }
+
+    &--middle {
+      text-align: center;
+    }
+
+    &--full {
+      margin-right: 30px;
+      margin-left: 30px;
+
+      @include for-desktop() {
+        position: absolute;
+        margin-left: 0;
+        top: 15px;
+        left: 135px;
+        width: 237px;
+        height: 257px;
+        padding-right: 16px;
+        border-right: 1px solid #d8d8d8;
+      }
+    }
+
+    &--offer {
+      color: #03839e;
+      font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px; /* 100% */
+      letter-spacing: 3.72px;
+      text-transform: uppercase;
+
+      @include for-desktop() {
+        margin-left: 100px;
+      }
+    }
+
+    &--hidden {
+      display: none;
+      color: #333;
+
+      @include for-tablet() {
+        display: block;
+        margin: 0 0 25px;
+      }
+
+      @include for-desktop() {
+        display: block;
+        margin-bottom: 40px;
+      }
+    }
+
+    &--hidden-2 {
+      display: none;
+      color: #333;
+
+      @include for-tablet() {
+        display: block;
+        position: absolute;
+        right: 0;
+      }
+
+      @include for-desktop() {
+        display: block;
+      }
+    }
+
+    &--hidden-star {
+      @include for-tablet() {
+        position: absolute;
+        font-size: 24px;
+        left: -17px;
+        top: 2px;
+      }
+
+      @include for-desktop() {
+        position: absolute;
+        font-size: 24px;
+        left: -30px;
+        top: 15px;
+      }
+    }
+  }
+
+  &__image {
+    margin-top: 24px;
+    margin-bottom: 37px;
+  }
+
+  &__button {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  &__more {
+    display: flex;
+    align-items: center;
+    transform: rotate(90deg);
+    position: absolute;
+    right: -85px;
+    bottom: 60px;
+
+    @include for-tablet() {
+      display: none;
+    }
+
+    &--features {
+      display: none;
+
+      @include for-tablet() {
+        display: flex;
+        bottom: 0;
+        top: 100px;
+        right: -120px;
+        height: 0;
+      }
+    }
+
+    &--materials1 {
+      display: none;
+
+      @include for-tablet() {
+        display: flex;
+        bottom: 0;
+        top: 25px;
+        right: -60px;
+        height: 0;
+      }
+    }
+
+    &--materials2 {
+      display: none;
+
+      @include for-tablet() {
+        display: flex;
+        top: 230px;
+        left: -60px;
+        right: unset;
+        height: 0;
+      }
+    }
+
+    &--header {
+      display: none;
+
+      @include for-tablet() {
+        display: flex;
+        bottom: -60px;
+        top: unset;
+        right: -60px;
+        height: 0;
+      }
+    }
+
+    &--line {
+      height: 1px;
+      width: 65px;
+      background: #828282;
+      margin-right: 9px;
+    }
+
+    &--text {
+      color: var(--gray-3, #828282);
+      font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 2.64px;
+    }
+  }
+
+  &__wrapper {
+    @include for-tablet() {
+      margin-top: 38px;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    @include for-desktop() {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0 120px;
+      gap: 72px;
+    }
+  }
+}

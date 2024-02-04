@@ -1,0 +1,30 @@
+.icons {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 32px;
+
+  @include for-tablet() {
+    display: none;
+  }
+
+  @include for-desktop() {
+    display: none;
+  }
+
+  &__tablet {
+    display: none;
+
+    @include for-tablet() {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+    }
+
+    @include for-desktop() {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      padding-bottom: 75px;
+    }
+  }
+}

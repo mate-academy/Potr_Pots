@@ -1,0 +1,49 @@
+.main {
+  width: 320px;
+
+  @include for-tablet() {
+    width: 768px;
+  }
+
+  @include for-desktop() {
+    width: 1440px;
+  }
+
+  &__title {
+    letter-spacing: 5.58px;
+    margin: 25px 30px;
+    color: #03839e;
+    font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @include for-tablet() {
+      position: relative;
+      color: #03839e;
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9.92px;
+      text-transform: uppercase;
+      width: 460px;
+      margin: 25px 36px;
+    }
+
+    @include for-desktop() {
+      position: relative;
+      color: #03839e;
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 9.92px;
+      text-transform: uppercase;
+      width: 460px;
+      margin: 77px 234px 0;
+    }
+
+    &--border {
+      color: transparent;
+      -webkit-text-stroke: 1px #03839e;
+    }
+  }
+}

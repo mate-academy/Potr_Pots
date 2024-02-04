@@ -1,0 +1,68 @@
+.contact {
+  background: url(../images/yellow-background-big.svg);
+  padding: 45px 30px 0;
+  position: relative;
+  background-repeat: no-repeat;
+
+  @include for-tablet() {
+    display: grid;
+    grid-template-columns: 349px 205px;
+    gap: 0 140px;
+    background: url(../images/contact-background-big.svg);
+    background-repeat: no-repeat;
+    padding: 17px 34px 60px;
+  }
+
+  @include for-desktop() {
+    display: grid;
+    grid-template-columns: 365px 270px;
+    gap: 0 256px;
+    padding-left: 221px;
+    padding-bottom: 110px;
+    background: url(../images/yellow-background-desktop.png);
+    background-repeat: no-repeat;
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    top: -70px;
+
+    @include for-desktop() {
+      display: none;
+    }
+
+    &--full {
+      display: none;
+
+      @include for-desktop() {
+        display: block;
+        position: absolute;
+        right: 55px;
+        top: -75px;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__paragraph {
+    color: #000;
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+  }
+
+  &__box {
+    margin-top: 56px;
+    margin-bottom: 100px;
+
+    @include for-desktop() {
+      margin-top: 0;
+    }
+  }
+}

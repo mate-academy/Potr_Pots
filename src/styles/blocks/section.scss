@@ -1,0 +1,67 @@
+.section {
+  margin: 110px 30px;
+  position: relative;
+
+  @include for-tablet() {
+    margin: 110px 36px;
+  }
+
+  @include for-desktop() {
+    margin: 150px 135px;
+  }
+
+  &__title {
+    font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 54px */
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
+
+  &__secondary-title {
+    color: #03839e  ;
+    font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8px;
+  }
+
+  &__tertiary-title {
+    color: #333;
+    font-family: Bebas Neue, Arial, Helvetica, sans-serif;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+  }
+
+  &__full {
+    margin: 0;
+  }
+
+  &__background {
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__wrapper {
+    @include for-tablet() {
+      grid-template-columns: repeat(3, 220px);
+      display: grid;
+      gap: 20px;
+    }
+
+    @include for-desktop() {
+      grid-template-columns: repeat(3, 370px);
+      display: grid;
+      gap: 30px;
+      margin-top: 70px;
+    }
+  }
+}

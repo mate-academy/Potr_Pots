@@ -1,7 +1,52 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "./utils/reset.scss";
+@import "./utils/mixins";
+
+@import "./blocks/header.scss";
+@import "./blocks/navigation.scss";
+@import "./blocks/menu.scss";
+@import "./blocks/basket.scss";
+@import "./blocks/title.scss";
+@import "./blocks/main.scss";
+@import "./blocks/offer.scss";
+@import "./blocks/section.scss";
+@import "./blocks/article.scss";
+@import "./blocks/team.scss";
+@import "./blocks/materials.scss";
+@import "./blocks/slides.scss";
+@import "./blocks/sizes.scss";
+@import "./blocks/contact.scss";
+@import "./blocks/form.scss";
+@import "./blocks/box.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/icons.scss";
+@import "./blocks/for-whom.scss";
+@import "./blocks/feature.scss";
+@import "./blocks/additional-info.scss";
+@import "./blocks/frames.scss";
+@import "./blocks/modal.scss";
+@import "./blocks/table.scss";
+@import "./blocks/popup.scss";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  margin: 0 auto;
+  width: 320px;
+  background-color: #f8f8f8;
+
+  @include for-tablet() {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    gap: 20px;
+    width: 768px;
+  }
+
+  @include for-desktop() {
+    display: grid;
+    grid-template-columns: repeat(12, 70px);
+    gap: 30px;
+    width: 1440px;
+  }
 }
