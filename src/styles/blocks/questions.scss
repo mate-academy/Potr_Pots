@@ -1,19 +1,40 @@
 .contact {
   display: flex;
-  background-image: url('././images/shape2.png');
+
   background-repeat: no-repeat;
 position: relative;
+
+&__address-box {
+  @include mobile {
+    padding-top: 30px;
+  }
+  @include tablet {
+    padding-top: 0;
+  }
+}
 
 
 @media (max-width: 319px) {
   display: none;
 }
 
+  @include mobile {
+    flex-direction: column;
+    background-position: left 0;
+    box-sizing: border-box;
+    padding: 30px;
+    background-size: cover;
+    background-image: url('././images/shape.png');
+  }
+
 
 @include tablet {
   padding: 30px calc($tablet-mb + 25px) 130px;
   column-gap: 90px;
   background-position: left 0;
+  flex-direction: row;
+  background-size: auto;
+  background-image: url('././images/shape2.png');
   }
 
 @include desktop {
@@ -33,7 +54,12 @@ background-size: contain;
   background-repeat: no-repeat;
 
 
-
+  @include mobile {
+    right: 0;
+    background-image: url('././images/stamp2.png');
+    width: 118px;
+    height: 162px;
+  }
 
 
   @include tablet {
