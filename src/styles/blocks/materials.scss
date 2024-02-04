@@ -2,17 +2,25 @@
 transform: translate(0);
 background-image: url('./images/bcg.jpg');
 background-repeat: no-repeat;
-background-position: bottom;
+
 
 @media (max-width: 319px) {
   display: none;
 }
+
 box-sizing: border-box;
 
 @include mobile {
 display: flex;
 flex-direction: column;
 align-items: center;
+background-size: contain;
+background-position: center 210px;
+}
+
+@media (min-width: 680px) {
+  background-size: cover;
+  background-position: center bottom;
 }
 
 @include tablet {
@@ -21,6 +29,7 @@ align-items: center;
   padding: 0;
   background-size: contain;
   padding-left: calc($tablet-mb + 25px);
+  background-position: bottom;
 
 
   /* &::before {

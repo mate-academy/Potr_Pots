@@ -9,13 +9,18 @@ left: 0;
 
 height: 100vh;
 min-height: 100vh;
-width: 95vw;
+
   transform: translateY(-100%);
   transition: transform 0.4s ease-in-out;
   z-index: 100;
 
   overflow: auto;
-
+@include mobile {
+  width: 80vw;
+}
+  @include tablet {
+    width: 95vw;
+  }
   &:target {
     transform: translateY(0);
   }
