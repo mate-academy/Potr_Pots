@@ -118,4 +118,5 @@ function changeQuantityB(value) {
 
 changeQuantityB(0);
 changeQuantityA(0);
+
  */
