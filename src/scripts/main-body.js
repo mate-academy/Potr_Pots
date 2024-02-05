@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/* document.addEventListener('DOMContentLoaded', function() {
   const circles = document.querySelectorAll('.materials__circle');
 
   circles.forEach(function(circle) {
@@ -118,3 +118,4 @@ function changeQuantityB(value) {
 
 changeQuantityB(0);
 changeQuantityA(0);
+ */
