@@ -126,6 +126,7 @@ function changeQuantityB(value) {
   });
 }
 
+
 changeQuantityB(1);
 changeQuantityA(1);
 changeQuantityB(-1);
