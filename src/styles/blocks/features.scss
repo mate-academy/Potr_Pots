@@ -3,9 +3,7 @@
   position: relative;
   background-color: $grey-light;
 
-  @media (max-width: 319px) {
-    display: none;
-  }
+  @include alert-on;
 
   &::before {
     @include desktop {
@@ -15,7 +13,7 @@
       width: 14px;
       height: 144px;
       background-image: url('././icons/potr-right.svg');
-      left: calc($desktop-mb + 35px);
+      left: calc($desktop-mb + $desktop-padding);
       top: -300px;
     }
   }
@@ -28,12 +26,12 @@
   @include tablet {
     flex-direction: row;
     gap: 15px;
-    padding: 0 calc($tablet-mb + 25px);
+    padding: 0 calc($tablet-mb + $tablet-padding);
   }
 
   @include desktop {
     gap: 30px;
-    padding: 0 calc((100vw - 1260px) / 2 + 35px);
+    padding: 0 calc($desktop-mb + $desktop-padding);
   }
 
   &__h2 {
@@ -46,22 +44,20 @@
     line-height: normal;
     letter-spacing: 8.99px;
 
-    @media (max-width: 319px) {
-      display: none;
-    }
+  @include alert-on;
 
     @include mobile {
       flex-direction: column;
-      padding-left: 30px;
+      padding-left: $mobile-padding;
     }
 
     @include tablet {
       flex-direction: row;
-      padding-left: calc($tablet-mb + 25px);
+      padding-left: calc($tablet-mb + $tablet-padding);
     }
 
     @include desktop {
-      padding-left: calc((100vw - 1260px) / 2 + 35px);
+      padding-left: calc($desktop-mb + $desktop-padding);
     }
 
     &--stroke {

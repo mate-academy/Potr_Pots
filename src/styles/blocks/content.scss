@@ -13,9 +13,7 @@
   background-color: $grey-light;
 
   &__marker {
-    @media (max-width: 319px) {
-      display: none;
-    }
+    @include alert-on;
 
     @include mobile {
       padding: 30px;
@@ -70,49 +68,9 @@
     height: 150px;
   }
 
-  &__bcg {
-    &--1 {
-      @include mobile {
-        display: none;
-      }
-
-      @include tablet {
-        display: block;
-        position: absolute;
-        right: calc((100vw - 768px) / 2 + 120px);
-      }
-
-      @include desktop {
-        position: absolute;
-        left: 0;
-        top: 0;
-      }
-    }
-
-    &--2 {
-      @include mobile {
-        right: calc((100vw - 320px) / 2);
-        top: 4415px;
-        z-index: 0;
-        position: absolute;
-      }
-
-      @include tablet {
-        left: -785px;
-        top: 3070;
-        z-index: 1;
-      }
-
-      @include desktop {
-        left: -645px;
-        top: 3545px;
-        z-index: 1;
-      }
-    }
-  }
 
   &__graphic-link {
-    @media (min-width: 1260px) {
+    @include desktop {
       background-color: transparent;
       transition: 0.3s ease-in-out;
 
@@ -123,17 +81,6 @@
     }
   }
 
-  &__hide-on-large-screen {
-    @media (min-width: 1260px) {
-      @include visually-hidden;
-    }
-  }
-
-  &__hide-on-small-screen {
-    @media (min-width: 1260px) {
-      @include visually-hidden;
-    }
-  }
 
   &__dont-display-on-small-screen {
     @media (max-width: 1259px) {
@@ -142,7 +89,7 @@
   }
 
   &__dont-display-on-large-screen {
-    @media (min-width: 1260px) {
+    @include desktop {
       display: none;
     }
   }

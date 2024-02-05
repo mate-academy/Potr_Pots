@@ -3,9 +3,7 @@
   background-image: url('./images/bcg.jpg');
   background-repeat: no-repeat;
 
-  @media (max-width: 319px) {
-    display: none;
-  }
+  @include alert-on;
 
   box-sizing: border-box;
 
@@ -27,7 +25,7 @@
     display: block;
     padding: 0;
     background-size: contain;
-    padding-left: calc($tablet-mb + 25px);
+    padding-left: calc($tablet-mb + $tablet-padding);
     background-position: bottom;
   }
 
@@ -39,7 +37,7 @@
   @include desktop {
     min-height: 1350px;
     background-size: auto;
-    padding-left: calc($desktop-mb + 35px);
+    padding-left: calc($desktop-mb + $desktop-padding);
   }
 
   @media (min-width: 1439px) {

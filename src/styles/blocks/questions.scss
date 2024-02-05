@@ -5,7 +5,7 @@
 
   &__address-box {
     @include mobile {
-      padding-top: 30px;
+      padding-top: $mobile-padding;
     }
 
     @include tablet {
@@ -14,22 +14,20 @@
   }
 
 
-  @media (max-width: 319px) {
-    display: none;
-  }
+  @include alert-on;
 
   @include mobile {
     flex-direction: column;
     background-position: left 0;
     box-sizing: border-box;
-    padding: 30px;
+    padding: $mobile-padding;
     background-size: cover;
     background-image: url('././images/shape.png');
   }
 
 
   @include tablet {
-      padding: 30px calc($tablet-mb + 25px) 130px;
+      padding: 30px calc($tablet-mb + $tablet-padding) 130px;
       column-gap: 90px;
       background-position: left 0;
       flex-direction: row;
@@ -38,7 +36,7 @@
   }
 
   @include desktop {
-    padding: 30px calc($desktop-mb + 35px) 130px;
+    padding: 30px calc($desktop-mb + $desktop-padding) 130px;
     background-position: -50px 0;
     column-gap: 200px;
     background-size: contain;

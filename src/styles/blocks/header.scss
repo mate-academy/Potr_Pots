@@ -7,9 +7,7 @@
   overflow-x: hidden;
   position: relative;
 
-  @media (max-width: 319px) {
-    display: none;
-  }
+ @include alert-on;
 
   @include tablet {
     background-image: url('./images/shape.png');
@@ -43,12 +41,12 @@
     }
 
     @include tablet {
-      inset: 520px auto auto calc((100vw - 768px) / 2 - 85px);
+      inset: 520px auto auto calc($tablet-mb - 85px);
     }
 
     @include desktop {
       top: 546px;
-      left: calc((100vw - 1440px) / 2 + 20px);
+      left: calc($desktop-mb - 75px);
     }
   }
 
@@ -89,7 +87,7 @@
 
     @include mobile {
       padding-top: 0;
-      padding-left: 30px;
+      padding-left: $mobile-padding;
     }
 
     @include tablet {
@@ -118,7 +116,7 @@
     }
 
     @include desktop {
-      padding-left: calc((100vw - 1260px) / 2 + 400px);
+      padding-left: calc($desktop-mb + 400px);
     }
   }
 
@@ -138,14 +136,14 @@
     }
 
     @include tablet {
-      padding: 29px calc((100vw - 768px) / 2 + 25px);
+      padding: 29px calc($tablet-mb + $tablet-padding);
       background-image: url('./images/shape.png');
       background-position: calc((100vw - 768px) / 2 - 404px) 0;
     }
 
     @include desktop {
       background-position: 0 0;
-      padding: 29px calc((100vw - 1260px) / 2 + 37px);
+      padding: 29px calc($desktop-mb + $desktop-padding);
     }
 
     &__logo {
@@ -233,7 +231,7 @@
       height: 306px;
       position: absolute;
       top: 60px;
-      right: calc((100vw - 768px) / 2 + 34px);
+      right: calc($tablet-mb + $tablet-padding);
     }
 
     @include desktop {
@@ -241,7 +239,7 @@
       height: 500px;
       position: absolute;
       top: 50px;
-      right: calc((100vw - 1440px) / 2 + 135px);
+      right: calc($desktop-mb + $desktop-padding);
     }
 
     @include design {
@@ -268,7 +266,7 @@
       display: flex;
       align-items: flex-start;
       padding-top: 20px;
-      padding-left: calc($tablet-mb + 25px);
+      padding-left: calc($tablet-mb + $tablet-padding);
     }
   }
 
@@ -281,7 +279,7 @@
       display: flex;
       align-items: flex-start;
       padding-top: 10px;
-      padding-left: calc((100vw - 1260px) / 2 + 130px);
+      padding-left: calc($desktop-mb + 130px);
     }
   }
 
@@ -312,6 +310,7 @@
         position: relative;
         -webkit-text-stroke: $turquoise 1px;
       }
+
       padding: 100px 0 0;
     }
   }

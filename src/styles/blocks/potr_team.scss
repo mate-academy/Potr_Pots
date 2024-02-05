@@ -1,7 +1,5 @@
 .potr-team {
-  @media (max-width: 319px) {
-    display: none;
-  }
+  @include alert-on;
 
   display: flex;
   flex-direction: column;
@@ -28,7 +26,7 @@
   @include mobile {
     @include font-h2;
 
-    padding: 0 30px;
+    padding: 0 $mobile-padding;
   }
 
   @include tablet {
@@ -36,12 +34,12 @@
 
     padding-bottom: 177px;
     width: 590px;
-    padding-left: calc($tablet-mb + 25px);
+    padding-left: calc($tablet-mb + $tablet-padding);
   }
 
   @include desktop {
     padding-bottom: 143px;
-    padding-left: calc((100vw - 1260px) / 2 + 35px);
+    padding-left: calc($desktop-mb + $desktop-padding);
   }
   }
 
@@ -71,12 +69,12 @@
     &--marty {
       @include tablet {
         top: 80px;
-        left: calc((100vw - 768px) / 2 - 55px);
+        left: calc($tablet-mb - 55px);
       }
 
       @include desktop {
         top: 60px;
-        left: calc((100vw - 1260px) / 2 + 25px);
+        left: calc($desktop-mb + 25px);
       }
     }
 
@@ -107,7 +105,7 @@
     z-index: 2;
 
     @include mobile {
-      padding: 30px;
+      padding: $mobile-padding;
     }
 
     @include tablet {
@@ -134,12 +132,12 @@
 
     @include tablet {
       flex-direction: row;
-      padding-left: calc((100vw - 760px) / 2 + 25px)
+      padding-left: calc($tablet-mb + $tablet-padding)
     }
 
     @include desktop {
       padding-bottom: 70px;
-      padding-left: calc((100vw - 1260px) / 2 + 35px)
+      padding-left: calc($desktop-mb + $desktop-padding)
     }
   }
 

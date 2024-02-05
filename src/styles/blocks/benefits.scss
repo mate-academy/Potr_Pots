@@ -1,11 +1,9 @@
 .benefits {
-  @media (max-width: 319px) {
-  display: none;
-  }
+  @include alert-on;
 
   display: flex;
   box-sizing: border-box;
-  padding: 0 calc((100vw - 1260px) / 2 + 20px);
+  padding: 0 calc($desktop-mb + 20px);
   position: relative;
 
   &::after {
@@ -60,8 +58,8 @@
 
     @include mobile {
       flex-direction: column;
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: $mobile-padding;
+      padding-right: $mobile-padding;
     }
 
     @include tablet {
@@ -114,7 +112,7 @@
 
     &__photo {
     position: absolute;
-    background-color: white;
+    background-color: $white;
     padding: 16px;
 
     &:nth-child(1) {
