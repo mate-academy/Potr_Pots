@@ -1,21 +1,13 @@
 @mixin slide-menu {
   position: fixed;
-
   display: flex;
   flex-direction: column;
-
-box-sizing: border-box;
-height: 100vh;
-overflow-x: hidden;
-
-
-
-
-padding-left: 84px;
-padding-top: 138px;
-row-gap: 15px;
-text-decoration: none;
-
+  box-sizing: border-box;
+  height: 100vh;
+  padding-left: 84px;
+  padding-top: 138px;
+  row-gap: 15px;
+  text-decoration: none;
   top: 0;
   left: 0;
   right: 0;
@@ -24,12 +16,10 @@ text-decoration: none;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   z-index: 1;
-
-  overflow-y: auto;
+  overflow: hidden auto;
 
   &:target {
     transform: translateX(25%);
   }
-
 }
 

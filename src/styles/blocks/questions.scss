@@ -1,23 +1,22 @@
 .contact {
   display: flex;
-
   background-repeat: no-repeat;
-position: relative;
+  position: relative;
 
-&__address-box {
-  @include mobile {
-    padding-top: 30px;
+  &__address-box {
+    @include mobile {
+      padding-top: 30px;
+    }
+
+    @include tablet {
+      padding-top: 0;
+    }
   }
 
-  @include tablet {
-    padding-top: 0;
+
+  @media (max-width: 319px) {
+    display: none;
   }
-}
-
-
-@media (max-width: 319px) {
-  display: none;
-}
 
   @include mobile {
     flex-direction: column;
@@ -29,55 +28,51 @@ position: relative;
   }
 
 
-@include tablet {
-  padding: 30px calc($tablet-mb + 25px) 130px;
-  column-gap: 90px;
-  background-position: left 0;
-  flex-direction: row;
-  background-size: auto;
-  background-image: url('././images/shape2.png');
-  }
-
-@include desktop {
-padding: 30px calc($desktop-mb + 35px) 130px;
-background-position: -50px 0;
-column-gap: 200px;
-background-size: contain;
-}
-
-&__stamp {
-  position: absolute;
-  display: block;
-
-  top: -90px;
-
-
-  background-repeat: no-repeat;
-
-
-  @include mobile {
-    right: 0;
-    background-image: url('././images/stamp2.png');
-    width: 118px;
-    height: 162px;
-  }
-
-
   @include tablet {
-    right: 0;
-    background-image: url('././images/stamp2.png');
-    width: 118px;
-    height: 162px;
+      padding: 30px calc($tablet-mb + 25px) 130px;
+      column-gap: 90px;
+      background-position: left 0;
+      flex-direction: row;
+      background-size: auto;
+      background-image: url('././images/shape2.png');
   }
 
-@include desktop {
-  left: 1050px;
-  background-image: url('././images/stamp.png');
-  width: 162px;
-  height: 162px;
+  @include desktop {
+    padding: 30px calc($desktop-mb + 35px) 130px;
+    background-position: -50px 0;
+    column-gap: 200px;
+    background-size: contain;
+  }
 
-}
-}
+  &__stamp {
+    position: absolute;
+    display: block;
+    top: -90px;
+    background-repeat: no-repeat;
+
+
+    @include mobile {
+      right: 0;
+      background-image: url('././images/stamp2.png');
+      width: 118px;
+      height: 162px;
+    }
+
+    @include tablet {
+      right: 0;
+      background-image: url('././images/stamp2.png');
+      width: 118px;
+      height: 162px;
+    }
+
+    @include desktop {
+      left: 1050px;
+      background-image: url('././images/stamp.png');
+      width: 162px;
+      height: 162px;
+    }
+  }
+
   &__h2 {
     @include font-h2;
   }

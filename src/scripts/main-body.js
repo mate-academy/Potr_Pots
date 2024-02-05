@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   const circles = document.querySelectorAll('.materials__circle');
 
@@ -26,8 +25,6 @@ function submitForm() {
 document.addEventListener('DOMContentLoaded', function() {
   submitForm();
 });
-
-/// /////////////////////////////
 
 const sharedBasketElementA = document.getElementById('sharedBasketA');
 const displayElementA = document.querySelectorAll('.basket__productsA');
@@ -85,17 +82,13 @@ function changeQuantityA(value) {
   });
 }
 
-/// ///////////////////////
-
 function changeQuantityB(value) {
   sharedBasketB += value;
   sharedBasketBV += value * 4.5;
 
-  // Quantity should not go below 0
   sharedBasketB = Math.max(sharedBasketB, 0);
   sharedBasketBV = Math.max(sharedBasketBV, 0);
 
-  // Update both displays
   sharedBasketElementB.innerText = sharedBasketB;
   sharedBasketElementBV.innerText = sharedBasketBV;
 

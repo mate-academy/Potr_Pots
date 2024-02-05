@@ -1,158 +1,127 @@
-.basket {
-background-color: white;
+  .basket {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    min-height: 100vh;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 100;
+    overflow: auto;
+    padding: 0 35px 100px;
+    flex-direction: column;
 
-
-
-position: fixed;
-top: 0;
-left: 0;
-
-height: 100vh;
-min-height: 100vh;
-
-  transform: translateY(-100%);
-  transition: transform 0.4s ease-in-out;
-  z-index: 100;
-
-  overflow: auto;
-
-@include mobile {
-  width: 80vw;
-}
+  @include mobile {
+    width: 80vw;
+  }
 
   @include tablet {
     width: 95vw;
   }
+
   &:target {
     transform: translateY(0);
   }
 
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 50px;
 
-
-
-
-
-padding: 0 35px 100px;
-flex-direction: column;
-
-
-
-
-&__close {
-  position: absolute;
-top: 5px;
-right: 50px;
-  &:hover {
-    @include cross-animation;
+    &:hover {
+      @include cross-animation;
+    }
   }
-}
 
+  &__product-total {
+    display: flex;
+    flex-direction: column;
+  }
 
+  &__h2 {
+    @include font-h3;
 
-&__product-total {
-display: flex;
+    padding: 20px 0;
+  }
 
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
 
-flex-direction: column;
+  &__field {
+    overflow: hidden;
+    display: flex;
+    place-content: center;
+    width: 60px;
+  }
 
-}
-&__h2 {
-  @include font-h3;
+  &__name {
+    @include font-s3;
+  }
 
-  padding: 20px 0;
+  &__product-box {
+    @include font-s3;
 
-}
-
-&__item {
-  display: flex;
-  justify-content: space-between;
-
-}
-
-&__field {
-  overflow: hidden;
-  display: flex;
-
-place-content: center;
-  width: 60px;
-
-}
-
-&__name {
-  @include font-s3;
-}
-&__product-box {
-box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @include font-s3;
-
-
-  gap: 30px;
-
-}
-
-&__img {
-  display: block;
-}
-
-&__product {
-  display: flex;
-
-  gap: 10px 10px;
-
-
-  border: solid 1px $grey;
-  box-sizing: border-box;
-  padding: 15px;
-
-  @include mobile {
+    box-sizing: border-box;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
 
-  @include tablet {
-    flex-direction: row;
-   justify-items: flex-end;
+  &__img {
+    display: block;
   }
-}
 
+  &__product {
+    display: flex;
+    gap: 10px 10px;
+    border: solid 1px $grey;
+    box-sizing: border-box;
+    padding: 15px;
 
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
 
-&__plus {
-  @include font-s4;
+    @include tablet {
+      flex-direction: row;
+      justify-items: flex-end;
+    }
+  }
 
-  color: white;
-  background-color: $red;
-  border: 0;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  &__plus {
+    @include font-s4;
+    @include icon-animation;
 
-@include icon-animation;
-&:hover {
-  cursor: pointer;
-}
-}
+    color: white;
+    background-color: $red;
+    border: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
 
-&__minus {
-  @include font-s4;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 
-  color: white;
-  background-color: $grey;
-  border: 0;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+    &__minus {
+    @include font-s4;
+    @include icon-animation;
 
-@include icon-animation;
+    color: white;
+    background-color: $grey;
+    border: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
 
-&:hover {
-  cursor: pointer;
-
-}
-}
-
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

@@ -1,300 +1,235 @@
 .materials {
-transform: translate(0);
-background-image: url('./images/bcg.jpg');
-background-repeat: no-repeat;
+  transform: translate(0);
+  background-image: url('./images/bcg.jpg');
+  background-repeat: no-repeat;
 
+  @media (max-width: 319px) {
+    display: none;
+  }
 
-@media (max-width: 319px) {
-  display: none;
-}
+  box-sizing: border-box;
 
-box-sizing: border-box;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: contain;
+    background-position: center 210px;
+  }
 
-@include mobile {
-display: flex;
-flex-direction: column;
-align-items: center;
-background-size: contain;
-background-position: center 210px;
-}
+  @media (min-width: 680px) {
+    background-size: cover;
+    background-position: center bottom;
+  }
 
-@media (min-width: 680px) {
-  background-size: cover;
-  background-position: center bottom;
-}
-
-@include tablet {
-  height: 880px;
- display: block;
-  padding: 0;
-  background-size: contain;
-  padding-left: calc($tablet-mb + 25px);
-  background-position: bottom;
-
-
-  /* &::before {
-
-    @include tablet {
-    position: absolute;
+  @include tablet {
+    height: 880px;
     display: block;
-    content: " ";
-    width: 14px;
-    height: 144px;
-    background-image: url('././icons/potr-right.svg');
-   left: calc($tablet-mb - 30px);
-
-    top: 200px;
-    }
-
-    @include desktop {
-      display: none;
-    }
-  } */
-
+    padding: 0;
+    background-size: contain;
+    padding-left: calc($tablet-mb + 25px);
+    background-position: bottom;
   }
 
   @media (min-width: 950px) {
     background-size: contain;
-height: 1000px;
+    height: 1000px;
   }
 
-@include desktop {
-min-height: 1350px;
-
-background-size: auto;
-padding-left: calc($desktop-mb + 35px);
-
-}
-
-@media (min-width: 1439px) {
-  background-size: cover;
-  min-height: 1400px;
-}
-
-&__slider {
-@media (max-width: 767px) {
-padding-top: 120px;
-display: flex;
-
-/* -webkit-overflow-scrolling: touch; */
-width: 302px;
-overflow: hidden;
-box-sizing: border-box;
-scroll-behavior: smooth;
-}
-}
-
-
-&__card {
-  background: rgba(0, 0, 0, 0.41);
-  backdrop-filter: blur(17px);
-  width: auto;
-  height: auto;
-  box-sizing: border-box;
-
-transition: 0.3s ease-in-out;
-
-@include mobile {
-  z-index: 2;
-  opacity: 1;
-}
-
-@include tablet {
-z-index: 0;
-opacity: 0;
-}
-
-&--clicked {
-  opacity: 1;
-  z-index: 2;
-
-}
-
-/* &--not-clicked {
-  opacity: 0;
-  z-index: 0;
-} */
-
-
-position: relative;
-
-@include mobile {
-  display: flex;
-  flex-direction: column;
-justify-content: space-between;
-align-items: center;
-padding: 28px 45px;
-height: 254px;
-
+  @include desktop {
+    min-height: 1350px;
+    background-size: auto;
+    padding-left: calc($desktop-mb + 35px);
   }
 
-@include tablet {
-display: inline-block;
-padding: 35px;
-height: auto;
-}
+  @media (min-width: 1439px) {
+    background-size: cover;
+    min-height: 1400px;
+  }
 
-  &--1 {
+  &__slider {
+    @media (max-width: 767px) {
+      padding-top: 120px;
+      display: flex;
+      width: 302px;
+      overflow: hidden;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+  }
+
+
+  &__card {
+    background: rgba(0, 0, 0, 0.41);
+    backdrop-filter: blur(17px);
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+    transition: 0.3s ease-in-out;
+
     @include mobile {
-      transform: translateX(0) translateY(0);
-
+      z-index: 2;
+      opacity: 1;
     }
 
     @include tablet {
-      transform: translateX(0) translateY(-65px);
-
-
+      z-index: 0;
+      opacity: 0;
     }
 
-    @include desktop {
-    transform: translateX(30px) translateY(210px);
+    &--clicked {
+      opacity: 1;
+      z-index: 2;
+    }
 
-  }
-  }
+    position: relative;
 
-  &--2 {
     @include mobile {
-      transform: translateX(0) translateY(0);
-
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 45px;
+      height: 254px;
     }
 
     @include tablet {
-      transform: translateX(100px) translateY(-420px);
-
-
+      display: inline-block;
+      padding: 35px;
+      height: auto;
     }
 
-    @include desktop {
-    transform: translateX(150px) translateY(-180px);
+    &--1 {
+      @include mobile {
+        transform: translateX(0) translateY(0);
+      }
 
-  }
-}
-  &--3 {
-    @include mobile {
-      transform: translateX(0) translateY(0);
+      @include tablet {
+        transform: translateX(0) translateY(-65px);
+      }
 
+      @include desktop {
+        transform: translateX(30px) translateY(210px);
+      }
     }
 
-    @include tablet {
-      transform: translateX(180px) translateY(-500px);
+    &--2 {
+      @include mobile {
+        transform: translateX(0) translateY(0);
+      }
 
+      @include tablet {
+        transform: translateX(100px) translateY(-420px);
+      }
 
+      @include desktop {
+        transform: translateX(150px) translateY(-180px);
+      }
     }
 
-    @include desktop {
-    transform: translateX(260px) translateY(-85px);
+    &--3 {
+      @include mobile {
+        transform: translateX(0) translateY(0);
+      }
 
-  }
-  }
-  &--4 {
-    @include mobile {
-      transform: translateX(0) translateY(0);
+      @include tablet {
+        transform: translateX(180px) translateY(-500px);
+      }
 
+      @include desktop {
+        transform: translateX(260px) translateY(-85px);
+      }
     }
 
-    @include tablet {
-      transform: translateX(260px) translateY(-820px);
+    &--4 {
+      @include mobile {
+        transform: translateX(0) translateY(0);
+      }
 
+      @include tablet {
+        transform: translateX(260px) translateY(-820px);
+      }
 
+      @include desktop {
+        transform: translateX(590px) translateY(-590px);
+      }
     }
 
-    @include desktop {
-    transform: translateX(590px) translateY(-590px);
+    &--5 {
+      @include mobile {
+        transform: translateX(0) translateY(0);
+      }
 
-  }
-  }
-  &--5 {
-    @include mobile {
-      transform: translateX(0) translateY(0);
+      @include tablet {
+        transform: translateX(400px) translateY(-940px);
+      }
 
+      @include desktop {
+        transform: translateX(830) translateY(-650px);
+      }
     }
-
-    @include tablet {
-      transform: translateX(400px) translateY(-940px);
-
-
-    }
-
-    @include desktop {
-    transform: translateX(830) translateY(-650px);
-
   }
-  }
-}
-
 
   &__h2 {
-@include font-title-large;
+    @include font-title-large;
 
+    box-sizing: border-box;
 
-box-sizing: border-box;
+    @include mobile {
+      font-size: 58px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 9px;
+      padding: 0 0 0 30px;
+    }
 
-@include mobile {
-  font-size: 58px;
- font-style: normal;
- font-weight: 400;
- line-height: normal;
- letter-spacing: 9px;
- padding: 0 0 0 30px;
-   }
+    @include tablet {
+      width: 532px;
+      font-size: 80px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 9.6px;
+      padding: 0;
+      display: block;
+      position: relative;
+    }
 
-@include tablet {
- width: 532px;
- font-size: 80px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 9.6px;
-padding: 0;
-display: block;
-position: relative;
-
-
-
-
-
-  }
-
-@include desktop {
-  display: block;
-font-size: 138.81px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 16.66px;
-width: 900px;
-padding-top: 60px;
-
-}
+    @include desktop {
+      display: block;
+      font-size: 138.81px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 16.66px;
+      width: 900px;
+      padding-top: 60px;
+    }
   }
 
   &__box-eco {
-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 300px;
 
-line-height: 300px;
+    @include mobile {
+      display: none;
+    }
 
-@include mobile {
-  display: none;
-}
+    @include tablet {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      width: 10vw;
+      transform: translateX(355px) translateY(-100px);
+    }
 
-@include tablet {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  width: 10vw;
-  transform: translateX(355px) translateY(-100px);
-
+    @include desktop {
+      padding: 0;
+      width: 500px;
+      transform: translateX(710px) translateY(-170px);
+    }
   }
-
-@include desktop {
-  padding: 0;
-  width: 500px;
-  transform: translateX(710px) translateY(-170px);
-}
-
-  }
-
-
 
   &__h3 {
     color: $menu-color;
@@ -302,11 +237,9 @@ line-height: 300px;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 150%; /* 30px */
+    line-height: 150%;
     display: block;
-
     width: 330px;
-
   }
 
   &__eco-text {
@@ -316,24 +249,20 @@ line-height: 300px;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 24px */
+    line-height: 150%;
 
+    @include tablet {
+      width: 340px;
+    }
 
-@include tablet {
-    width: 340px;
-
-
-}
-
-@include desktop {
-  width: 470px;
-
-}
+    @include desktop {
+      width: 470px;
+    }
   }
 
-&__a {
- transition: 1s ease-in-out;
-}
+  &__a {
+    transition: 1s ease-in-out;
+  }
 
   &__circle {
     background-image: url('./icons/circle-red.svg');
@@ -343,121 +272,95 @@ line-height: 300px;
     border-radius: 50%;
     transition: 0.3s ease-in-out;
     position: relative;
-display: block;
-z-index: 1;
-cursor: pointer;
+    display: block;
+    z-index: 1;
+    cursor: pointer;
 
- &--clicked {
-  background-image: url('./icons/circle-black.svg');
-
-}
-
-
-
+    &--clicked {
+      background-image: url('./icons/circle-black.svg');
+    }
 
     &--1 {
       @include tablet {
         transform: translateX(50px) translateY(150px);
-
-
       }
 
       @include desktop {
-      transform: translateX(140px) translateY(430px);
+        transform: translateX(140px) translateY(430px);
+      }
     }
-  }
 
     &--2 {
       @include tablet {
         transform: translateX(200px) translateY(-180px);
-
       }
 
       @include desktop {
-      transform: translateX(420px) translateY(50px);
+        transform: translateX(420px) translateY(50px);
+      }
     }
-  }
 
     &--3 {
       @include tablet {
         transform: translateX(300px) translateY(-200px);
-
-              }
+      }
 
       @include desktop {
-      transform: translateX(560px) translateY(90px);
+        transform: translateX(560px) translateY(90px);
+      }
     }
-  }
-
-
-
 
     &--4 {
       @include tablet {
         transform: translateX(370px) translateY(-560px);
-
       }
 
       @include desktop {
-      transform: translateX(700px) translateY(-320px);
+        transform: translateX(700px) translateY(-320px);
+      }
     }
-  }
-
 
     &--5 {
       @include tablet {
         transform: translateX(520px) translateY(-970px);
-
       }
 
       @include desktop {
-      transform: translateX(950px) translateY(-660px);
+        transform: translateX(950px) translateY(-660px);
+      }
     }
   }
-  }
-
 
   &__p {
-@include font-s3;
+    @include font-s3;
 
-color: $grey-light;
-
-width: 213px;
+    color: $grey-light;
+    width: 213px;
   }
 
-&__squares {
-display: flex;
-gap: 8px;
+  &__squares {
+    display: flex;
+    gap: 8px;
+  }
 
+  &__square {
+    width: 9px;
+    height: 9px;
+    display: block;
+    transform: rotate(45deg);
+    box-sizing: border-box;
 
+    &--white {
+      background: $grey-light;
+    }
 
+    &--black {
+      background: $black2;
+      border: 1px solid $grey-light;
+    }
 
-}
-
-&__square {
-  width: 9px;
-  height: 9px;
-  display: block;
-  transform: rotate(45deg);
-  box-sizing: border-box;
-
-&--white {
-  background: $grey-light;
-}
-
-&--black {
-  background: $black2;
-  border: 1px solid $grey-light;
-}
-
-@include tablet {
-  display: none;
-}
-}
-
-}
-
-
-.squares {
-  border: solid;
+    @include tablet {
+      display: none;
+    }
+  }
 }

@@ -3,64 +3,52 @@
     display: none;
   }
 
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  background-image: url('./images/shape.png');
+  background-repeat: no-repeat;
 
-transform: translateX(0);
+  @include mobile {
+    background-position: calc($mobile-mb - 620px) 480px;
+  }
 
- background-image: url('./images/shape.png');
-background-repeat: no-repeat;
-
-
-
-@include mobile {
-  background-position: calc($mobile-mb - 620px) 480px;
-}
-
-@include tablet {
-  background-position: calc($tablet-mb - 790px) 170px;
-}
+  @include tablet {
+    background-position: calc($tablet-mb - 790px) 170px;
+  }
 
   @include desktop {
     background-position: calc($desktop-mb - 750px) 200px;
   }
 
-
-
-
   &__h2 {
-z-index: 2;
-display: flex;
+  z-index: 2;
+  display: flex;
 
-@include mobile {
-  @include font-h2;
+  @include mobile {
+    @include font-h2;
 
-  padding: 0 30px;
-
-}
-
-@include tablet {
-@include font-h1;
-
-padding-bottom: 177px;
-
-
-
-width: 590px;
-padding-left: calc($tablet-mb + 25px);
-}
-
-@include desktop {
-  padding-bottom: 143px;
-  padding-left: calc((100vw - 1260px) / 2 + 35px);
-}
+    padding: 0 30px;
   }
 
-&__names {
+  @include tablet {
+    @include font-h1;
+
+    padding-bottom: 177px;
+    width: 590px;
+    padding-left: calc($tablet-mb + 25px);
+  }
+
+  @include desktop {
+    padding-bottom: 143px;
+    padding-left: calc((100vw - 1260px) / 2 + 35px);
+  }
+  }
+
+  &__names {
   -webkit-text-stroke: 1px $turquoise;
   color: transparent;
   font-family: $font-h;
-
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -68,126 +56,112 @@ padding-left: calc($tablet-mb + 25px);
   position: absolute;
   z-index: 3;
 
-  @include tablet {
-    font-size: 231.88px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 35.94px;
-  }
-
-  @include desktop {
-  font-size: 288px;
-  }
-
-  &--marty{
     @include tablet {
-      top: 80px;
-left: calc((100vw - 768px) / 2 - 55px);
-
-      }
-
-    @include desktop {
-top: 60px;
-left: calc((100vw - 1260px) / 2 + 25px);
-    }
-  }
-  &--andy{
-    @include tablet {
-top: 500px;
-      right: 0;
-
-
-
-
-      }
-
-    @include desktop {
-    right: 0;
-    top: 600px;
-
+      font-size: 231.88px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 35.94px;
     }
 
+    @include desktop {
+      font-size: 288px;
+    }
+
+    &--marty {
+      @include tablet {
+        top: 80px;
+        left: calc((100vw - 768px) / 2 - 55px);
+      }
+
+      @include desktop {
+        top: 60px;
+        left: calc((100vw - 1260px) / 2 + 25px);
+      }
+    }
+
+    &--andy {
+      @include tablet {
+        top: 500px;
+        right: 0;
+      }
+
+      @include desktop {
+        right: 0;
+        top: 600px;
+      }
+    }
   }
 
+  &__p {
+    display: block;
+    padding-bottom: 20px;
+  }
 
-}
+  &__text {
+    display: flex;
+    flex-wrap: wrap;
 
-&__p {
-  display: block;
-  padding-bottom: 20px;
-}
+    @include font-s3;
 
-&__text {
-display: flex;
-flex-wrap: wrap;
+    z-index: 2;
 
-@include font-s3;
+    @include mobile {
+      padding: 30px;
+    }
 
-z-index: 2;
-
-@include mobile {
-  padding: 30px;
-
-}
-
-@include tablet {
-  padding-top: 50px;
-padding-left: 0;
-
-  width: 330px;
-}
+    @include tablet {
+      padding-top: 50px;
+      padding-left: 0;
+      width: 330px;
+    }
 
 
-@include desktop {
-  width: 336px;
-  padding: 230px 60px 0 0;
+    @include desktop {
+      width: 336px;
+      padding: 230px 60px 0 0;
+    }
+  }
 
-}
-}
+  &__box {
+    display: flex;
 
-&__box {
-display: flex;
+    box-sizing: border-box;
 
-box-sizing: border-box;
+    @include mobile {
+      flex-direction: column-reverse;
+    }
 
-@include mobile {
-  flex-direction: column-reverse;
+    @include tablet {
+      flex-direction: row;
+      padding-left: calc((100vw - 760px) / 2 + 25px)
+    }
 
-}
+    @include desktop {
+      padding-bottom: 70px;
+      padding-left: calc((100vw - 1260px) / 2 + 35px)
+    }
+  }
 
-@include tablet {
-  flex-direction: row;
-  padding-left: calc((100vw - 760px) / 2 + 25px)
-}
+  &__image {
+    display: block;
+    z-index: 2;
 
-@include desktop {
-  padding-bottom: 70px;
-  padding-left: calc((100vw - 1260px) / 2 + 35px)
-}
-}
+    @include zooming;
 
+    @include mobile {
+      width: 100%;
+      height: auto;
+    }
 
-&__image {
-display: block;
-z-index: 2;
+    @include tablet {
+      height: 255px;
+      width: 340px;
+    }
 
-@include zooming;
-
-@include mobile {
-  width: 100%;
-  height: auto;
-}
-
-@include tablet {
-  height: 255px;
-  width: 340px;
-}
-
-@include desktop {
-  height: 508px;
-  width: 677px;
-}
-
-}
+    @include desktop {
+      height: 508px;
+      width: 677px;
+    }
+  }
 }

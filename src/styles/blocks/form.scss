@@ -15,14 +15,12 @@ textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
   border: 1px solid transparent;
-border-bottom: 1px solid $turquoise;
--webkit-text-fill-color: $turquoise;
-color: $turquoise;
+  border-bottom: 1px solid $turquoise;
+  -webkit-text-fill-color: $turquoise;
+  color: $turquoise;
   -webkit-box-shadow: 0 0 0 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
 }
-
-
 
 .form {
   box-sizing: border-box;
@@ -31,15 +29,12 @@ color: $turquoise;
     padding-bottom: 16px;
   }
 
-
-
   &__input {
     width: 100%;
     height: 30px;
-border: none;
+    border: none;
     background: transparent;
     color: $menu-color;
-
     box-sizing: border-box;
     outline: none;
 
@@ -48,8 +43,6 @@ border: none;
     border-bottom: 1px solid $grey;
     transition: 0.5s ease-in-out;
 
-
-
     &:focus {
       border: none;
       border-bottom: 1px solid $turquoise;
@@ -57,46 +50,26 @@ border: none;
       transition: 0.5s ease-in-out;
     }
 
- /*  &:-webkit-autofill:hover,
-  &:-webkit-autofill:focus, &:-webkit-autofill {
-  border: none;
-  border-bottom: 1px solid $turquoise;
-  background-color: transparent;
-  transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
-} */
-
-
-  /*   &:-webkit-autofill, -webkit-autofill:hover, -webkit-autofill:focus {
-border: none;
-      background: transparent;
-    } */
-
     &:valid {
       color: $turquoise;
       border-bottom: $turquoise solid 1px;
     }
 
     &:required:not(:placeholder-shown):invalid {
-border: none;
+      border: none;
       color: $red;
-     border-bottom: 1px solid $red;
+      border-bottom: 1px solid $red;
     }
-
-
   }
 
   &__textarea {
     width: 100%;
-
-
     height: 30px;
     background: transparent;
     color: $menu-color;
-border: none;
+    border: none;
     resize: none;
     overflow-y: hidden;
-
-
     border-bottom: 1px solid $grey;
 
     @include font-s3;
@@ -108,8 +81,6 @@ border: none;
       transition: 0.5s ease-in-out;
     }
 
-
-
     &:valid {
       color: $turquoise;
       border-bottom: $turquoise solid 1px;
@@ -118,13 +89,10 @@ border: none;
     outline: none;
   }
 
-    &:required:not(:placeholder-shown):invalid {
-      border-bottom: 1px solid $red;
-      color: $red;
-
-    }
-
-
+  &:required:not(:placeholder-shown):invalid {
+  border-bottom: 1px solid $red;
+  color: $red;
+  }
 
   &__label {
     &:not(:focus) {
@@ -135,5 +103,4 @@ border: none;
       @include visually-hidden;
     }
   }
-
 }
