@@ -8,7 +8,6 @@ window.addEventListener('hashchange', () => {
   }
 });
 
-
 document.addEventListener('DOMContentLoaded', function() {
   const circles = document.querySelectorAll('.materials__circle');
 
@@ -129,3 +128,4 @@ function changeQuantityB(value) {
 
 changeQuantityB(0);
 changeQuantityA(0);
+
