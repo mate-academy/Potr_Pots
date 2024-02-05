@@ -1,0 +1,33 @@
+.layout {
+  display: none;
+
+  &--mobile {
+    display: block;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &--tablet {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+
+    &--only {
+      @include onDesktop {
+        display: none;
+      }
+    }
+  }
+
+  &--desktop {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+}

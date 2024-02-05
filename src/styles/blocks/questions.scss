@@ -1,0 +1,99 @@
+.questions {
+  position: relative;
+  // height: 1002px;
+  background-image: url(../images/questions/background-questions-mobile.svg);
+  background-repeat: no-repeat;
+
+  @include onTablet {
+    background-image: url(../images/questions/background-questions-tablet.svg);
+    background-position: top left;
+  }
+
+  @include onDesktop {
+    background-image: url(../images/questions/background-questions-desktop.svg);
+    background-position: top left -1px;
+  }
+
+   &__grid {
+    display: grid;
+
+    @include onTablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+      padding-bottom: 113px;
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+      padding-bottom: 184px;
+    }
+   }
+
+  &__contacts {
+    padding-bottom: 110px;
+
+    @include onTablet {
+      align-self: start;
+      padding-bottom: 0;
+      grid-column: 5/-1;
+    }
+
+    @include onDesktop {
+      grid-area: 1/7/2/13;
+    }
+  }
+
+  &__title {
+    line-height: 150%; /* 54px */
+    letter-spacing: 5.58px;
+    
+    @include onDesktop {
+      padding-top: 38px;
+    }
+  }
+
+  &__communication {
+    margin-bottom: 40px;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%; /* 24px */
+  }
+
+  &__wrapper {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      grid-column: 1/4;
+    }
+
+    @include onDesktop {
+      grid-area: 1/1/2/5;
+    }
+  }
+
+  &__stamp {
+    position: absolute;
+    top: -73px;
+    right: 1px;
+    width: 161px;
+    height: 164px;
+    background-image: url(../images/questions/stamp-desktop.png);
+
+    @include onTablet {
+      top: -107px;
+      right: 0;
+    }
+
+    @include onDesktop {
+      top: -95px;
+      right: 61px;
+    }
+  }
+
+  &__socials {
+    padding-inline: 16px;
+    margin-bottom: 40px;
+  }
+}

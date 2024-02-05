@@ -1,80 +1,185 @@
 .slider {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 302px;
   height: 254px;
   margin-inline: auto;
-  background: rgba(0, 0, 0, 0.45);
-  box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
   -webkit-backdrop-filter: blur(17px);
 
-  overflow: hidden;
-
   @include onTablet {
-    visibility: hidden;
     position: static;
     -webkit-backdrop-filter: none;
   }
 
   &__slides {
     display: flex;
-    // overflow: hidden;
-
-    width: 500%;
+    width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: row;
   }
 
   &__slide {
-    // flex: 0 0 100%;
-    width: 20%;
-  }
-  
-  &__inner {
-    width: 100%;
-    height: 100%;
+    padding: 28px 44px 0 45px;
     color: $c-gray;
     font-family: Manrope, sans-serif;
     font-size: 16px;
     line-height: 150%; /* 24px */
-    padding-top: 28px;
-    padding-left: 45px;
-    padding-right: 44px;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    transition: all 10ms ease;
+    display: none;
 
     @include onTablet {
+      width: 100%;
+      max-width: 283px;
       padding: 35px;
-    }
-  }
+      height: max-content;
+      display: block;
+      position: absolute;
+      visibility: hidden;
+      // transform: translate(-50%);
+      z-index: 3;
+      -webkit-backdrop-filter: blur(17px);
 
-  &__navigation {
-    display: flex;
-    position: absolute;
-    bottom: 37px;
-    left: 50%;
-    transform: translateX(-50%);
+      &--1 {
+        left: 429px;
+        top: 525px;
+        padding: 35px 45px 34px;
+        max-width: 303px;
+      }
+
+      &--2 {
+        left: 317px;
+        top: 415px;
+      }
+
+      &--3 {
+        left: 225px;
+        top: 478px;
+      }
+
+      &--4 {
+        left: 115px;
+        top: 367px;
+      }
+
+      &--5 {
+        left: 37px;
+        top: 495px;
+      }
+    }
+
+    @include onDesktop {
+      &--1 {
+        left: 985px;
+        top: 875px;
+      }
+
+      &--2 {
+        left: 737px;
+        top: 663px;
+      }
+
+      &--3 {
+        left: 390px;
+        top: 1009px;
+      }
+
+      &--4 {
+        left: 283px;
+        top: 605px;
+      }
+
+      &--5 {
+        left: 131px;
+        top: 839px;
+      }
+    }
+
+    // &--1 {
+    //   @include onTablet {
+    //     top: calc(54% + 54px);
+    //     left: calc(72% + 25px);
+    //   }
+    //   @include onDesktop {
+    //     top: calc(67% + 80px);
+    //     left: calc(77% + 25px);
+    //   }
+    // }
+
+    // &--2 {
+    //   @include onTablet {
+    //     bottom: calc(18% + 54px);
+    //     left: calc(55% + 25px);
+    //   }
+    //   @include onDesktop {
+    //     bottom: calc(18% + 80px);
+    //     left: calc(58% + 25px);
+    //   }
+    // }
+
+    // &--3 {
+    //   @include onTablet {
+    //     bottom: calc(10% + 54px);
+    //     left: calc(45% + 25px);
+    //   }
+    //   @include onDesktop {
+    //     bottom: 20px;
+    //     left: calc(48% - 80px);
+    //     transform: translateX(-100%);
+    //   }
+    // }
+
+    // &--4 {
+    //   @include onTablet {
+    //     bottom: calc(29% + 54px);
+    //     left: calc(30% + 25px);
+    //   }
+    //   @include onDesktop {
+    //     bottom: calc(29% + 80px);
+    //     left: calc(38% + 25px);
+    //     transform: translateX(-100%);
+    //   }
+    // }
+
+    // &--5 {
+    //   @include onTablet {
+    //     transform: none;
+    //     bottom: calc(13% + 54px);
+    //     left: 30px;
+    //   }
+    //   @include onDesktop {
+    //     transform: translate(-50%);
+    //     bottom: calc(13% + 80px);
+    //     left: calc(18% + 25px);
+    //   }
+    // }
   }
 
   &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     position: absolute;
     bottom: 37px;
-    width: 7px;
-    height: 7px;
-    // margin-right: 7px;
+    width: 9px;
+    height: 9px;
     transform: rotate(45deg);
     background-color: $c-gray;
     border: 1px solid rgba(0, 0, 0, 0.45);;
     cursor: pointer;
 
-    // &:last-child {
-    //   margin-right: 0;
-    // }
-
     &:active,
     &:focus {
-      background-color: gray;
-      border: 1px solid white;
+      background-color:  rgba(0, 0, 0, 0.30);
+      border: 1px solid $c-gray;
 
       @include onTablet {
         background-image: url(../images/materials-and-features/slider-minus.svg);
-        border: none
+        border: none;
       }
     }
 
@@ -99,7 +204,6 @@
     }
 
     @include onTablet {
-      position: absolute;
       visibility: visible;
       width: 50px;
       height: 50px;
@@ -109,31 +213,12 @@
       border: none;
 
       &:hover {
-        background-image: url(../images/materials-and-features/slider-minus.svg);
-        .slider {
-          visibility: visible;
-        }
-        // display: block;
-        &--1:hover ~ .slider__slide--1,
-        &--2:hover ~ .slider__slide--2, 
-        &--3:hover ~ .slider__slide--3,
-        &--4:hover ~ .slider__slide--4,
-        &--5:hover ~ .slider__slide--5 {
-          display: block;
-        }
+        // background-image: url(../images/materials-and-features/slider-minus.svg);
       }
 
       &--1 {
         left: 555px;
         bottom: 319px;
-
-        @include onTablet {
-          &:hover {
-            .slider {
-              visibility: visible;
-            }
-          }
-        }
       }
 
       &--2 {
@@ -155,77 +240,53 @@
         left: 83px;
         bottom: 103px;
       }
-
-      // &::before {
-      //   content: '+';
-      //   width: 11px;
-      //   height: 11px;
-      //   line-height: 1;
-      // }
     }
-  }
 
-  &__sign {
-    display: none;
+    @include onDesktop {
+      &--1 {
+        left: 1111px;
+        bottom: 373px;
+      }
 
-    @include onTablet {
-      display: block;
-    }
-  }
+      &--2 {
+        left: 835px;
+        bottom: 272px;
+      }
 
-  &__input {
-    visibility: hidden;
-    position: absolute;
-    
+      &--3 {
+        left: 684px;
+        bottom: 105px;
+      }
 
-    // @for $slideNumber from 1 through 5 {
-    //   &--#{$slideNumber}:checked~.slider__slide--#{$slideNumber} {
-    //     display: block;
-    //   }
-    // }
+      &--4 {
+        left: 547px;
+        bottom: 400px;
+      }
 
-    // &:checked {
-    //   ~ .slider__slide {
-    //       display: block;
-    //     }
-
-    //   ~ .slider__navigation .slider__label {
-    //       background-color: $black;
-    //     }
-      // }
-      @for $slideNumber from 1 through 5 {
-        &--#{$slideNumber}:checked ~ .slider__label--#{$slideNumber} {
-        background-color: gray;
-        border: 1px solid white;
-        // opacity: 0.7;
-
-        @include onTablet {
-          border: none;
-          // background-image: url(../images/materials-and-features/slider-minus.svg);
-        }
+      &--5 {
+        left: 254px;
+        bottom: 156px;
       }
     }
+  }
 
-
-    }
-
-    #slide-1:checked ~ .s1 {
-      margin-left: 0;
-    }
-    
-    #slide-2:checked ~ .s1 {
-        margin-left: -20%;
-    }
-    
-    #slide-3:checked ~ .s1 {
-        margin-left: -40%;
-    }
-    
-    #slide-4:checked ~ .s1 {
-        margin-left: -60%;
-    }
-
-    #slide-5:checked ~ .s1 {
-      margin-left: -80%;
+    &__input {
+      display: none;
+      @for $slideNumber from 1 through 5 {
+        &--#{$slideNumber}:checked ~ .slider__slide--#{$slideNumber} {
+          display: block;
+          @include onTablet {
+            visibility: visible;
+          }
+        }
+        &--#{$slideNumber}:checked ~ .slider__label--#{$slideNumber} {
+          background: rgba(0, 0, 0, 0.30);
+          border: 1px solid $c-gray;
+          @include onTablet {
+            border: none;
+            background-image: url(../images/materials-and-features/slider-minus.svg);
+          }
+        }
+      }
     }
 }

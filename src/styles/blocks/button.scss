@@ -1,51 +1,56 @@
 .button {
   display: flex;
+  position: relative;
   align-items: center;
-  width: 260px;
+  // width: 260px;
   height: 48px;
-  padding: 14px 72px;
+  // padding: 14px 72px;
   font-family: Manrope, sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 150%;
   text-transform: uppercase;
   text-decoration: none;
+  transition: all .3s;
 
-  &__top {
-    position: relative;
-    background-color: $yellow;
-    color: $black-button;
-
-    @include onTablet {
-      width: 240px;
-    }
-
-    @include onDesktop {
-      width: 270px;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 27px;
-      height: 8px;
-      right: 72px;
-      color: #000;
-      background-image: url(../images/icons/icon-arrow.svg);
-      background-size: cover;
-      background-position: 50%;
-      background-repeat: no-repeat;
-    }
-
-    @include onTablet {
-      margin-left: 120px;
-    }
-
-    @include onDesktop {
-      margin-left: 300px;
-    }
+  &:hover {
+    transform: scale(1.2);
   }
 
-  
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 27px;
+    height: 8px;
+    right: 72px;
+    background-image: url(../images/icons/icon-arrow.svg);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+
+    &:first-of-type {
+      right: 67px;
+    }
+
+    &:last-of-type {
+      background-image: url(../images/icons/icon-arrow-white.svg);
+    }
+
+    @include onTablet {
+      right: 67px;
+
+      &:nth-of-type(2) {
+        right: 66px;
+      }
+    }
+
+    @include onDesktop {
+      right: 66px;
+      
+      &:first-of-type {
+        right: 75px;
+      }
+    }
+  }
 }

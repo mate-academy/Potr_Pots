@@ -1,6 +1,11 @@
 .icon {
   display: block;
   background-size: cover;
+  transition: all .3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   &__menu {
     width: 32px;
@@ -19,13 +24,30 @@
   }
 
   &__basket {
-    display: none;
-    
+    width: 48px;
+    height: 48px;
+    background-image: url(../images/icons/icon-basket.svg);
+  }
+
+  &__socials {
+    width: 20px;
+    height: 20px;
+
+    &--twitter {
+      background-image: url(../images/icons/icon-twitter.svg);
+    }
+
+    &--insta {
+      background-image: url(../images/icons/icon-instagram.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/icon-facebook.svg);
+    }
+
     @include onDesktop {
-      display: block;
-      width: 48px;
-      height: 48px;
-      background-image: url(../images/icons/icon-basket.svg);
+      width: 30px;
+      height: 30px;
     }
   }
 }

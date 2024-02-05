@@ -1,0 +1,71 @@
+.form {
+  &__field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__field {
+    color: $second-gray;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%; /* 24px */
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #000;
+    font-weight: 400;
+    font-style: normal;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__input {
+    padding: 0 0 4px 6px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    color: $second-gray;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+ 
+    &--textarea {
+      resize: none;
+      height: 29px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    width: 260px;
+    padding-left: 73px;
+    color: #fff;
+    background-color: $turquoise;
+    border: 1px solid $turquoise;
+
+    &:hover {
+      transform: none;
+      background-color: #039e99;
+    }
+
+    &::after {
+      background-image: url(../images/icons/icon-arrow-white.svg);
+    }
+
+    @include onTablet {
+      width: 219px;
+      padding-left: 62px;
+    }
+
+    @include onDesktop {
+      width: 238px;
+      padding-left: 67px;
+    }
+  }
+}

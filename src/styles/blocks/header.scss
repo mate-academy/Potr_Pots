@@ -3,10 +3,12 @@
   background-repeat: no-repeat;
 
   @include onTablet {
+    margin-bottom: 109px;
     background-image: url(../images/background/background-rectangle-tablet.svg);
   }
 
   @include onDesktop {
+    margin-bottom: 150px;
     background-image: url(../images/background/background-rectangle-desktop.svg);
   }
 
@@ -125,7 +127,6 @@
       position: relative;
       top: auto;
       left: 400px;
-
     }
   }
 
@@ -139,6 +140,27 @@
     width: 139px;
     font-size: 14px;
     line-height: 150%;
+  }
+
+  &__button {
+    width: 260px;
+    padding-inline: 72px;
+    background-color: $yellow;
+    color: $black-button;
+
+    &:hover {
+      background-color: #ffc800;
+    }
+
+    @include onTablet {
+      width: 240px;
+      margin-left: 120px;
+    }
+
+    @include onDesktop {
+      width: 270px;
+      margin-left: 300px;
+    }
   }
 
   &__more {

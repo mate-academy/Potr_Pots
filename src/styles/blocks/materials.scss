@@ -1,5 +1,6 @@
 .materials {
   position: relative;
+  margin-bottom: 110px;
   background-image: url(../images/materials-and-features/background-image-mobile.png);
   background-position: top 130px center;
   background-repeat: no-repeat;
@@ -12,7 +13,10 @@
   }
 
   @include onDesktop {
+    height: 1242px;
+    margin-bottom: 107px;
     background-image: url(../images/materials-and-features/background-image-desktop.png);
+    background-position: top 160px center;
   }
 
   &__content {
@@ -23,10 +27,15 @@
     color: $turquoise;
     font-size: 58px;
     letter-spacing: 9px;
+    padding-inline: 30px;
     margin-bottom: 120px;
+    max-width: 320px;
+    margin-inline: auto;
 
     @include onTablet {
+      max-width: none;
       margin-bottom: 0;
+      padding-inline: 0;
       font-size: 80px;
       letter-spacing: 9.6px;
     }
@@ -65,16 +74,19 @@
   }
 
   &__info {
-    display: none;
     color: $second-gray;
     font-family: Manrope, sans-serif;
 
     @include onTablet {
-      display: block;
       position: absolute;
       width: 340px;
       bottom: -181px;
       right: 0;
+    }
+
+    @include onDesktop {
+      top: 167px;
+      width: 470px;
     }
   }
 

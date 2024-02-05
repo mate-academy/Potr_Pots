@@ -1,0 +1,62 @@
+.animated {
+  &--section {
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(20%) translateX(-20%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    animation: slideDown 2s forwards;
+  }
+
+  &--team-bg {
+    @keyframes fade-in-out {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @include onTablet {
+      animation: fade-in-out 4s ease-in-out;
+    }
+  }
+
+  &--discount {
+    @keyframes rotate {
+      0% {
+        transform: scale(1) rotate(0);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(2.5) rotate(370deg);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+      }
+    }
+
+    animation: rotate 2.5s ease 0.5s forwards;
+    opacity: 0;
+  }
+
+  &--stamp {
+    @keyframes rotateStamp {
+      from {
+        transform: rotate(0deg); 
+      }
+      to {
+        transform: rotate(360deg); 
+      }
+    }
+
+    animation: rotateStamp 15s linear infinite;
+  }
+}

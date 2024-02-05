@@ -1,4 +1,14 @@
 .for-whom {
+  margin-bottom: 110px;
+
+  @include onTablet{
+     margin-bottom: 130px;
+  }
+
+  @include onDesktop{
+    margin-bottom: 150px;
+  }
+
   &__title {
     margin-bottom: 25px;
     color: $first-gray;
@@ -60,7 +70,6 @@
   }
 
   &__picture {
-    display: none;
     height: auto;
     
     &--1 {
@@ -73,15 +82,10 @@
 
     &--3 {
       margin-right: 20px;
-      padding-top: 13px;
-    }
-
-    @include onTablet {
-      display: block;
+      padding-top: 12px;
     }
 
     @include onDesktop {
-      display: block;
       &--1 {
         margin-right: 100px;
         max-height: 500px;
@@ -175,26 +179,6 @@
     }
   }
 
-  // &__number {
-  //   position: absolute;
-  //   display: inline-block;
-  //   // margin-bottom: 30px;
-  //   font-size: 36px;
-  //   line-height: 36px;
-  //   margin-left: 14px;
-  
-  //   &::before {
-  //     content: "";
-  //     position: absolute;
-  //     bottom: 7px;
-  //     left: -5px;
-  //     width: 1px;
-  //     height: 47px;
-  //     transform: rotate(22deg);
-  //     background-color: #333;
-  //   }
-  // }
-
   &__info {
     @include onTablet {
       max-width: 340px;
@@ -218,7 +202,6 @@
   }
 
   &__description {
-    // margin-bottom: 88px;
     color: $second-gray;
     font-family: Manrope, sans-serif;
     font-size: 16px;
