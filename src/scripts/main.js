@@ -126,6 +126,6 @@ function changeQuantityB(value) {
   });
 }
 
-changeQuantityB(0);
-changeQuantityA(0);
+/* changeQuantityB(0);
+changeQuantityA(0); */
 
