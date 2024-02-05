@@ -8,8 +8,6 @@ I took on the demanding task of coding the **frontend** for the POTR pots landin
 
 **SASS Animations:** I elevated user engagement by integrating subtle animations using SASS, introducing interactive elements like smoothly sliding menu or materials section. This segment necessitates user interaction to unveil content, complemented by Polaroid photos that elegantly rotate and zoom upon mouse hover. Additionally, I implemented buttons with gently animated backgrounds to further enhance the user experience.
 
-**JavaScript: Adding Products to Cart:** Additionally, I've implemented a robust functionality for adding products to the cart. The total number of products and the order value are dynamically calculated.
-
 **Form Validation:** Ensured a seamless user experience with a validated input form at the bottom, fields are styled also for autofill functionality.
 
 **Smart Link Actions:** Integrated links in the address section to initiate relevant actions, such as making a call, sending an email, or displaying the location in Google Maps.
