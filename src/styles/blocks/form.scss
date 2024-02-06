@@ -3,17 +3,14 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-
-    @include onTablet {
-      margin-bottom: 40px;
-    }
-  }
-
-  &__field {
     color: $second-gray;
     font-family: Manrope, sans-serif;
     font-size: 16px;
     line-height: 150%; /* 24px */
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
   }
 
   &__title {
@@ -33,12 +30,35 @@
     margin-bottom: 20px;
     background-color: transparent;
     color: $second-gray;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
  
     &--textarea {
       resize: none;
       height: 29px;
       margin-bottom: 0;
+    }
+
+    &:-webkit-autofill {
+      font: inherit;
+      -webkit-text-fill-color: $second-gray;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $turquoise;
+      background-color: lighten($yellow, 25%);
+    }
+
+    &:not(:focus):not(:placeholder-shown):valid {
+      border-color: $turquoise;
+      color: $turquoise;
+    }
+
+    &:not(:focus):not(:placeholder-shown):invalid {
+      border-color: $red;
+      color: $red;
     }
   }
 
