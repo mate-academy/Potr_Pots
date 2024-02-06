@@ -2,7 +2,7 @@
   display: block;
   text-decoration: none;
   font-family: Manrope, sans-serif;
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
     transform: scale(1.2);
@@ -26,6 +26,18 @@
       right: 5px; /* 18px should to be */
       width: 8px;
       height: 44px;
+    }
+
+    &:hover {
+      transform: translateY(110px);
+
+      @include onTablet {
+        transform: translateY(62px);
+      }
+
+      @include onDesktop {
+        transform: translateY(158px);
+      }
     }
   }
 
