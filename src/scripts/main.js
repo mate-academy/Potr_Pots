@@ -35,3 +35,15 @@ function submitForm() {
 document.addEventListener('DOMContentLoaded', function() {
   submitForm();
 });
+
+var swiper = new Swiper('.swiper-container', {
+  autoplay: {
+    delay: 5000,
+  },
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  // Add more options as needed
+});
