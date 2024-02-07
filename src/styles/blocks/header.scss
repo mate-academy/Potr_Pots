@@ -1,3 +1,130 @@
 .header {
-  display: block;
+  &__container {
+    position: relative;
+  }
+
+  &__content {
+    @include tablet {
+      margin-top: 50px;
+    }
+
+    @include desktop {
+      margin-top: 90px;
+    }
+  }
+
+  &__background {
+    background: url("../images/header.png") no-repeat center;
+    background-size: cover;
+    padding-top: calc(100% + 60px);
+    margin: 0 -30px;
+
+    margin-bottom: 25px;
+
+    @include tablet {
+      padding-top: 0;
+      margin: 0;
+
+      grid-area: 1/4/3/9;
+    }
+
+    @include desktop {
+      margin-left: -30px;
+
+      grid-area: 1/8/4/13;
+    }
+  }
+
+  &__title {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 36px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $blue;
+
+    margin-bottom: 30px;
+
+    & span {
+      color: transparent;
+      -webkit-text-stroke: 1px $blue;
+    }
+
+    @include tablet {
+      font-size: 64px;
+
+      grid-area: 1/1/1/5;
+    }
+
+    @include desktop {
+      grid-area: 1/2/1/7;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+
+    @include tablet {
+      margin-bottom: 0;
+
+      grid-area: 2/3/3/4;
+    }
+
+    @include desktop {
+      grid-area: 2/5/3/7;
+    }
+  }
+
+  &__price {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 26px;
+    color: $gray-1;
+  }
+
+  &__order {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $gray-2;
+
+    max-width: 139px;
+  }
+
+  &__button {
+    @include tablet {
+      margin-top: 50px;
+
+      grid-area: 3/2/4/4;
+    }
+
+    @include desktop {
+      margin: 50px 0 42px;
+      grid-area: 3/4/4/7;
+    }
+  }
+
+  &__more {
+    position: absolute;
+    bottom: 0;
+    right: -80px;
+    transform: rotate(90deg) translateX(-50%);
+    width: max-content;
+
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 12px;
+    color: $blue;
+
+    @include tablet {
+      left: -50px;
+      bottom: 0;
+      transform: rotate(90deg) translateX(-20%);
+    }
+
+    @include desktop {
+      transform: rotate(90deg) translateX(-50%);
+    }
+  }
 }

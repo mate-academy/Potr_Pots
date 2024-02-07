@@ -1,0 +1,64 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 48px;
+
+  font-family: $font-family;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 48px;
+  text-transform: uppercase;
+
+  transition: all .3s;
+  overflow: hidden;
+
+  &__arrow {
+    transition: transform .3s;
+  }
+
+  &:hover, &:active {
+    .button__arrow {
+      transform: translateX(20px);
+    }
+  }
+
+  &--1 {
+    background-color: rgb(3, 131, 158);
+    color: rgb(255, 255, 255);
+
+    & .button__arrow path {
+      fill: rgb(248, 248, 248);
+    }
+
+    &:hover, &:active {
+      background-color: rgba(3, 128, 158, 0.7);
+    }
+  }
+
+  &--2 {
+    background-color: rgb(255, 227, 57);
+
+    &:hover, &:active {
+      background-color: rgb(255, 236, 122);
+      color: rgb(18, 18, 18);
+    }
+  }
+
+  &--3 {
+    background-color: transparent;
+    border: 1px solid rgb(3, 131, 158);
+
+    &:hover, &:active {
+      background-color: rgb(3, 131, 158);
+      color: rgb(255, 255, 255);
+
+      .button__arrow path {
+        fill: rgb(248, 248, 248);
+      }
+    }
+  }
+
+
+}
