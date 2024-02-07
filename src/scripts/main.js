@@ -1,6 +1,5 @@
 'use strict';
 
-
 /* global Swiper */
 
 // eslint-disable-next-line no-unused-vars
@@ -50,10 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
   submitForm();
 });
 
-
 // reset swiper
-function handleResize() {
+/* function handleResize() {
   window.location.reload();
 }
 
-window.addEventListener('resize', handleResize);
+window.addEventListener('resize', handleResize); */
+
+
+

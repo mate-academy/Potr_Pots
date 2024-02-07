@@ -1,8 +1,7 @@
 .materials {
   transform: translate(0);
-/*   background-image: url('./images/bcg.jpg');
-  background-repeat: no-repeat; */
-  border: solid 1px red;
+  background-image: url('./images/bcg.jpg');
+  background-repeat: no-repeat;
 
 
   @include alert-on;
@@ -14,8 +13,8 @@
     flex-direction: column;
     align-items: center;
     background-size: contain;
-    background-position: center 210px;
-    height: 700px;
+    background-position: center 25vh;
+
   }
 
   @media (min-width: 680px) {
@@ -32,10 +31,16 @@
     background-position: bottom;
   }
 
-  @media (min-width: 950px) {
+  @media (min-width: 940px) {
     background-size: contain;
     height: 1000px;
   }
+
+  @media (min-width: 1100px) {
+    background-size: contain;
+    height: 1100px;
+  }
+
 
   @include desktop {
     min-height: 1350px;
@@ -44,7 +49,7 @@
   }
 
   @media (min-width: 1439px) {
-    background-size: cover;
+    background-size: contain;
     min-height: 1400px;
   }
 
@@ -280,57 +285,70 @@
     z-index: 1;
     cursor: pointer;
 
+    @include tablet {
+    left: $tablet-mb;
+    }
+
+    @include desktop {
+      left: $desktop-mb;
+    }
+
     &--clicked {
       background-image: url('./icons/circle-black.svg');
     }
 
     &--1 {
       @include tablet {
-        transform: translateX(50px) translateY(150px);
+        transform: translateX(90px) translateY(290px);
+
       }
 
       @include desktop {
-        transform: translateX(140px) translateY(430px);
+        transform: translateX(170px) translateY(560px);
       }
     }
 
     &--2 {
       @include tablet {
-        transform: translateX(200px) translateY(-180px);
+        transform: translateX(225px) translateY(180px);
+
       }
 
       @include desktop {
-        transform: translateX(420px) translateY(50px);
+        transform: translateX(450px) translateY(300px);
       }
     }
 
     &--3 {
       @include tablet {
-        transform: translateX(300px) translateY(-200px);
+        transform: translateX(340px) translateY(330px);
+
       }
 
       @include desktop {
-        transform: translateX(560px) translateY(90px);
+        transform: translateX(590px) translateY(590px);
       }
     }
 
     &--4 {
       @include tablet {
-        transform: translateX(370px) translateY(-560px);
+        transform: translateX(400px) translateY(250px);
+
       }
 
       @include desktop {
-        transform: translateX(700px) translateY(-320px);
+        transform: translateX(740px) translateY(440px);
       }
     }
 
     &--5 {
       @include tablet {
-        transform: translateX(520px) translateY(-970px);
+        transform: translateX(540px) translateY(50px);
+
       }
 
       @include desktop {
-        transform: translateX(950px) translateY(-660px);
+        transform: translateX(1015px) translateY(300px);
       }
     }
   }
@@ -347,7 +365,9 @@
     }
 
     @include tablet {
-      width: 213px;
+      width: 209px;
+      padding-bottom: 0;
+      display: inline-block !important;
     }
   }
 
