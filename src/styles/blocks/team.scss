@@ -1,0 +1,103 @@
+.team {
+  position: relative;
+  margin-bottom: 168px;
+
+  @include on-tablet {
+    &__content-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15%;
+    }
+  }
+
+  @include on-desktop {
+    &__content-wrapper {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas:
+        "text text text text . . image image image image image .";
+      align-items: center;
+      gap: 0;
+    }
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+  }
+
+  &__image {
+    margin-inline: -30px;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin: 0;
+      transform: scale(1.4);
+    }
+
+    @include on-desktop {
+      grid-area: image;
+    }
+  }
+
+  &__member-name {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 232px;
+      line-height: 232px;
+      letter-spacing: 0.15em;
+      -webkit-text-stroke: 1px #03839e;
+
+      &-1 {
+        text-align: left;
+      }
+
+      &-2 {
+        text-align: right;
+      }
+    }
+
+    @include on-desktop {
+      font-size: 288px;
+      line-height: 345px;
+    }
+  }
+
+  &__description {
+    position: relative;
+    order: -1;
+
+    @include on-desktop {
+      grid-area: text;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100px;
+      left: -30px;
+      right: -30px;
+      height: 400px;
+      z-index: -1;
+      background-color: $main-bg-color;
+      clip-path: polygon(0 0, 100% 0, 100% 40%, 0% 70%);
+
+      @include on-tablet {
+        top: -200px;
+        right: 50px;
+      }
+
+      @include on-desktop {
+        top: -200px;
+        right: 0;
+        left: -100%;
+        height: 600px;
+      }
+    }
+  }
+}
