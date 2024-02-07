@@ -1,5 +1,17 @@
 'use strict';
 
+
+/* global Swiper */
+
+// eslint-disable-next-line no-unused-vars
+const swiper = new Swiper('.swiper-container', {
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
+
 window.addEventListener('hashchange', () => {
   if (window.location.hash === '#slide-menu') {
     document.body.classList.add('body__lock');
@@ -8,6 +20,7 @@ window.addEventListener('hashchange', () => {
   }
 });
 
+// assign class when button clicked
 document.addEventListener('DOMContentLoaded', function() {
   const circles = document.querySelectorAll('.materials__circle');
 
@@ -15,17 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const card = circle.nextElementSibling;
 
     circle.addEventListener('click', function() {
-      if (card.classList.contains('materials__card--clicked')) {
-        card.classList.remove('materials__card--clicked');
+      if (card.classList.contains('clicked')) {
+        card.classList.remove('clicked');
         circle.classList.remove('materials__circle--clicked');
       } else {
-        card.classList.add('materials__card--clicked');
+        card.classList.add('clicked');
         circle.classList.add('materials__circle--clicked');
       }
     });
   });
 });
 
+// clear form
 function submitForm() {
   const form = document.getElementById('form');
 
@@ -36,14 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
   submitForm();
 });
 
-var swiper = new Swiper('.swiper-container', {
-  autoplay: {
-    delay: 5000,
-  },
 
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  // Add more options as needed
-});
+// reset swiper
+function handleResize() {
+  window.location.reload();
+}
+
+window.addEventListener('resize', handleResize);

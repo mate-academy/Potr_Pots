@@ -1,7 +1,9 @@
 .materials {
   transform: translate(0);
-  background-image: url('./images/bcg.jpg');
-  background-repeat: no-repeat;
+/*   background-image: url('./images/bcg.jpg');
+  background-repeat: no-repeat; */
+  border: solid 1px red;
+
 
   @include alert-on;
 
@@ -13,6 +15,7 @@
     align-items: center;
     background-size: contain;
     background-position: center 210px;
+    height: 700px;
   }
 
   @media (min-width: 680px) {
@@ -56,28 +59,31 @@
     }
   }
 
-
+/*
   &__card {
+
+
     background: rgba(0, 0, 0, 0.41);
     backdrop-filter: blur(17px);
-    width: auto;
-    height: auto;
     box-sizing: border-box;
     transition: 0.3s ease-in-out;
 
-    @include mobile {
+@include mobile {
       z-index: 2;
       opacity: 1;
+
     }
 
     @include tablet {
-      z-index: 0;
-      opacity: 0;
+      z-index: 0 !important;
+      opacity: 0 !important;
+      width: auto !important;
+    height: auto !important;
     }
 
     &--clicked {
-      opacity: 1;
-      z-index: 2;
+      opacity: 1 !important;
+      z-index: 2 !important;
     }
 
     position: relative;
@@ -103,7 +109,7 @@
       }
 
       @include tablet {
-        transform: translateX(0) translateY(-65px);
+        transform: translateX(0) translateY(-65px) !important;
       }
 
       @include desktop {
@@ -166,7 +172,7 @@
         transform: translateX(830) translateY(-650px);
       }
     }
-  }
+  } */
 
   &__h2 {
     @include font-title-large;
@@ -269,7 +275,7 @@
     height: 51px;
     border-radius: 50%;
     transition: 0.3s ease-in-out;
-    position: relative;
+    position: absolute;
     display: block;
     z-index: 1;
     cursor: pointer;
@@ -333,7 +339,16 @@
     @include font-s3;
 
     color: $grey-light;
-    width: 213px;
+
+
+    @include mobile {
+      padding-bottom: 35px;
+      width: 100%;
+    }
+
+    @include tablet {
+      width: 213px;
+    }
   }
 
   &__squares {
