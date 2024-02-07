@@ -1,0 +1,223 @@
+.slider {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 302px;
+  height: 254px;
+  margin-inline: auto;
+
+  &__slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+  }
+
+  &__slide {
+    padding: 28px 44px 0 45px;
+    color: $color-grey-light;
+    font-size: 16px;
+    line-height: 150%;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    transition: all 10ms ease;
+    display: none;
+
+    @media (min-width:640px) {
+      width: 100%;
+      max-width: 283px;
+      padding: 35px;
+      height: max-content;
+      display: block;
+      position: absolute;
+      visibility: hidden;
+      z-index: 3;
+      transform: translate(-50%);
+
+      &--1 {
+        left: 30px;
+        bottom: 100px;
+        padding: 35px 45px 34px;
+        max-width: 303px;
+      }
+
+      &--2 {
+        left: 70px;
+        bottom: 175px;
+      }
+
+      &--3 {
+        left: 125px;
+        bottom: 50px;
+      }
+
+      &--4 {
+        left: 220px;
+        bottom: 150px;
+      }
+
+      &--5 {
+        left: 295px;
+        bottom: 250px;
+      }
+    }
+
+    @media (min-width:1280px) {
+      &--1 {
+        left: -170px;
+        bottom: 200px;
+      }
+
+      &--2 {
+        left: 60px;
+        bottom: 425px;
+      }
+
+      &--3 {
+        left: 140px;
+        bottom: 95px;
+      }
+
+      &--4 {
+        left: 280px;
+        bottom: 250px;
+      }
+
+      &--5 {
+        left: 520px;
+        bottom: 350px;
+      }
+    }
+  }
+
+  &__label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    bottom: 37px;
+    width: 9px;
+    height: 9px;
+    transform: rotate(45deg);
+    background-color: $color-grey-light;
+    border: 1px solid rgba(0, 0, 0, 0.45);;
+    cursor: pointer;
+
+    &:active,
+    &:focus {
+      background-color:  rgba(0, 0, 0, 0.30);
+      border: 1px solid $color-grey-light;
+
+      @media (min-width:640px) {
+        border: none;
+        background-image: url(/images/materials/materials-minus.svg);
+      }
+    }
+
+    &--1 {
+      left: 116px;
+    }
+
+    &--2 {
+      left: 133px;
+    }
+
+    &--3 {
+      left: 150px;
+    }
+
+    &--4 {
+      left: 167px;
+    }
+
+    &--5 {
+      left: 184px;
+    }
+
+    @media (min-width:640px) {
+      visibility: visible;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transform: none;
+      border: none;
+      background-image: url(/images/materials/materials-plus.svg);
+
+      &--1 {
+        left: -95px;
+        bottom: 300px;
+      }
+
+      &--2 {
+        left: 32px;
+        bottom: 350px;
+      }
+
+      &--3 {
+        left: 100px;
+        bottom: 250px;
+      }
+
+      &--4 {
+        left: 200px;
+        bottom: 300px;
+      }
+
+      &--5 {
+        left: 350px;
+        bottom: 400px;
+      }
+    }
+
+    @media (min-width:1280px) {
+      &--1 {
+        left: -200px;
+        bottom: 400px;
+      }
+
+      &--2 {
+        left: 32px;
+        bottom: 600px;
+      }
+
+      &--3 {
+        left: 100px;
+        bottom: 300px;
+      }
+
+      &--4 {
+        left: 250px;
+        bottom: 400px;
+      }
+
+      &--5 {
+        left: 500px;
+        bottom: 500px;
+      }
+    }
+  }
+
+    &__input {
+      display: none;
+
+      @for $slideNumber from 1 through 5 {
+        &--#{$slideNumber}:checked ~ .slider__slide--#{$slideNumber} {
+          display: block;
+
+          @media (min-width:640px) {
+            visibility: visible;
+          }
+        }
+        &--#{$slideNumber}:checked ~ .slider__label--#{$slideNumber} {
+          background: rgba(0, 0, 0, 0.30);
+          background-image: url(/images/materials/materials-minus.svg);
+          border: 1px solid $color-grey-light;
+
+          @media (min-width:640px) {
+            border: none;
+          }
+        }
+      }
+    }
+}

@@ -1,6 +1,4 @@
 .materials {
-  position: relative;
-
   @media (min-width:1280px) {
     margin-top: 300px;
   }
@@ -66,7 +64,6 @@
   }
 
   &__content {
-    position: relative;
     z-index: -1;
 
     &-line {
@@ -108,89 +105,6 @@
         }
       }
     }
-
-    &-plus {
-      display: none;
-
-      @media (min-width:640px) {
-        display: block;
-        position: absolute;
-      }
-
-      &-1 {
-        @media (min-width:640px) {
-          bottom: 20%;
-          left: 15%;
-        }
-
-        @media (min-width:1280px) {
-          bottom: 150px;
-          left: 200px;
-        }
-      }
-
-      &-2 {
-        @media (min-width:640px) {
-          left: 25%;
-          bottom: 30%;
-        }
-
-        @media (min-width:1280px) {
-          bottom: 350px;
-          left: 500px;
-        }
-      }
-
-      &-3 {
-        @media (min-width:640px) {
-          left: 42%;
-          bottom: 10%;
-        }
-
-        @media (min-width:1280px) {
-          bottom: 100px;
-          left: 600px;
-        }
-      }
-
-      &-4 {
-        @media (min-width:640px) {
-          left: 50%;
-          bottom: 30%;
-        }
-
-        @media (min-width:1280px) {
-          bottom: 250px;
-          left: 740px;
-        }
-      }
-    }
-
-    &-minus {
-      display: none;
-
-      @media (min-width:640px) {
-        display: block;
-        position: absolute;
-        max-width: 300px;
-        top: 35%;
-        right: 0%;
-        text-align: center;
-      }
-
-      @media (min-width:1280px) {
-        right: 110px;
-        top: 620px;
-      }
-
-      &-text {
-        padding: 35px 45px;
-        background-color: rgba(0, 0, 0, 0.45);
-        box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
-        backdrop-filter: blur(17px);
-        color: $color-white;
-      }
-    }
   }
 
   &-line {
@@ -198,55 +112,8 @@
   }
 
   &__image {
-    height: 250px;
     width: 100%;
-    z-index: -1;
+    margin-bottom: -70px;
     transition: $animation-content;
-
-    &:hover {
-      transform: $transform-content;
-    }
-
-    @media (min-width:640px) {
-      height: 500px;
-      top: 0;
-    }
-
-    @media (min-width:800px) {
-      height: 700px;
-    }
-
-    @media (min-width:1280px) {
-      height: 1000px;
-    }
-  }
-
-  &__box {
-    position: absolute;
-    top: 115px;
-    padding: 30px 40px;
-    background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(17px);
-    margin-inline: 10px;
-    transition: $animation-content;
-
-    &:hover {
-      transform: $transform-content;
-    }
-
-    @media (min-width:640px) {
-      display: none;
-    }
-
-    &-text {
-      color: $color-white;
-      font-weight: 400;
-      line-height: 150%;
-    }
-
-    &-image {
-      text-align: center;
-    }
   }
 }
