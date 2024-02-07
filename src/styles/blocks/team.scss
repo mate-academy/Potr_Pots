@@ -4,9 +4,8 @@
 
   @include on-tablet {
     &__content-wrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15%;
+      display: flex;
+      justify-content: space-between;
     }
   }
 
@@ -15,7 +14,7 @@
       display: grid;
       grid-template-columns: repeat(12, 1fr);
       grid-template-areas:
-        "text text text text . . image image image image image .";
+        "text text text text . image image image image image image image";
       align-items: center;
       gap: 0;
     }
@@ -34,7 +33,7 @@
 
     @include on-tablet {
       margin: 0;
-      transform: scale(1.4);
+      min-width: 50%;
     }
 
     @include on-desktop {
@@ -71,6 +70,11 @@
   &__description {
     position: relative;
     order: -1;
+
+    @include on-tablet {
+      max-width: 400px;
+      padding-right: 20px;
+    }
 
     @include on-desktop {
       grid-area: text;
