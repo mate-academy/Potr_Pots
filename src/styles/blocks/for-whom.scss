@@ -1,0 +1,133 @@
+.for-whom {
+  margin-bottom: 40px;
+
+  @include on-tablet {
+    margin-bottom: 135px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 150px;
+  }
+
+  &__title,
+  &__item-name {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-align: left;
+    color: $accent-text-color;
+  }
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    @include on-tablet {
+      display: grid;
+      gap: 100px 20px;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "img-first img-first img-first text-first text-first text-first"
+        "text-second text-second text-second img-second img-second img-second"
+        "img-third img-third img-third text-third text-third text-third";
+    }
+
+    @include on-desktop {
+      gap: 20px 20px;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas:
+        "img-first img-first img-first img-first img-first . . text-first text-first text-first text-first ."
+        ". img-second img-second img-second img-second . . img-third img-third img-third img-third img-third"
+        ". text-second text-second text-second text-second . . . text-third text-third text-third text-third";
+      align-items: center;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+
+      &--first {
+        grid-area: img-first;
+      }
+
+      &--second {
+        grid-area: img-second;
+      }
+
+      &--third {
+        grid-area: img-third;
+      }
+    }
+  }
+
+  &__item {
+    margin-bottom: 70px;
+    list-style-position: inside;
+    grid-area: text;
+
+    @include on-tablet {
+      &--first,
+      &--third {
+        list-style-position: outside;
+        padding-left: 20px;
+        margin-left: 20px;
+
+        @include on-desktop {
+          padding-left: 40px;
+        }
+      }
+    }
+
+    &--first {
+      grid-area: text-first;
+      &::marker {
+        content: url("../images/icons/icon-1.svg");
+      }
+    }
+    &--second {
+      grid-area: text-second;
+      &::marker {
+        content: url("../images/icons/icon-2.svg");
+      }
+    }
+    &--third {
+      grid-area: text-third;
+      &::marker {
+        content: url("../images/icons/icon-3.svg");
+      }
+    }
+
+    &-name {
+      font-family: "Bebas Neue", sans-serif;
+      color: $main-text-color;
+      margin-bottom: 20px;
+      padding-top: 30px;
+
+      @include on-tablet {
+        &--decor {
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -10px;
+            width: 1px;
+            height: 46px;
+            background-color: $accent-text-color;
+            transform: rotate(20deg);
+          }
+        }
+      }
+    }
+
+    &-description {
+      color: $secondary-text-color;
+    }
+  }
+}

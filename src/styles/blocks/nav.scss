@@ -2,6 +2,7 @@
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +12,7 @@
   opacity: 0;
   transform: translateX(-100%);
 
-  @media (min-width: 1440px) {
+  @include on-desktop {
     position: relative;
     width: 100%;
     height: auto;
@@ -65,16 +66,15 @@
     gap: 15px;
     list-style: none;
 
-    @media (min-width: 1440px) {
+    @include on-desktop {
       flex-direction: row;
       width: 100%;
       gap: 60px;
     }
-
   }
 
   &__item {
-    @media (min-width: 1440px) {
+    @include on-desktop {
       order: 0;
 
       &:nth-child(2) {
@@ -92,19 +92,23 @@
     text-decoration: none;
     color: $light-text-color;
 
-    @media (min-width: 1440px) {
+    @include on-tablet {
+      font-size: 32px;
+    }
+
+    @include on-desktop {
       color: $secondary-text-color;
     }
 
     &--icon {
       display: none;
 
-      @media (min-width: 1440px) {
+      @include on-desktop {
         display: block;
       }
     }
 
-    @media (min-width: 1440px) {
+    @include on-desktop {
       &--text {
         display: none;
       }
