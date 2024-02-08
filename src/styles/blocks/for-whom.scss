@@ -118,37 +118,6 @@
   }
 
   @include tablet {
-    &__block {
-      display: flex;
-      gap: 15px;
-
-      @include desktop {
-        gap: 100px;
-        align-items: center;
-      }
-
-      &:nth-child(2n + 2) {
-        &__image {
-          order: 2;
-        }
-
-        &__note {
-          display: flex;
-          justify-content: flex-end;
-        }
-      }
-    }
-
-    &__text {
-      display: flex;
-      gap: 20px;
-    }
-
-    &__number {
-      margin-top: 35px;
-    }
-
-
     &__image {
       background-size: cover;
       background-repeat: no-repeat;
@@ -162,6 +131,38 @@
       &__image--#{$i} {
         background-image: url("../images/for-whom-#{$i}.png");
       }
+    }
+    
+    &__block {
+      display: flex;
+      gap: 15px;
+
+      @include desktop {
+        gap: 100px;
+        align-items: center;
+      }
+
+      &:nth-child(2n + 2) {
+        .for-whom {
+          &__image {
+            order: 2;
+          }
+
+          &__note {
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+
+    &__text {
+      display: flex;
+      gap: 20px;
+    }
+
+    &__number {
+      margin-top: 35px;
     }
   }
 }
