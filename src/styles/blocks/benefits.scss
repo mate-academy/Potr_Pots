@@ -1,0 +1,117 @@
+.benefits {
+  margin-bottom: 110px;
+
+  @include on-desktop {
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__content-wrapper {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
+    list-style: auto;
+
+    @include on-tablet {
+      grid-row: span 2;
+      grid-column: span 1;
+    }
+
+    @include on-desktop {
+      flex-flow: row wrap;
+      grid-row: span 1;
+      grid-column: span 1;
+    }
+  }
+
+  &__item {
+    &::marker {
+      content: "◆";
+    }
+    &-title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 48px;
+      color: $accent-text-color;
+    }
+  }
+
+  .button {
+    margin-bottom: 50px;
+
+    &--mixed {
+      @include primary-button;
+
+      @include on-tablet {
+        @include secondary-button;
+      }
+    }
+
+    @include on-tablet {
+      margin-bottom: 35px;
+      align-self: end;
+      grid-row: span 1;
+      grid-column: span 1;
+    }
+
+    @include on-desktop {
+      margin-bottom: 35px;
+      align-self: start;
+      grid-row: span 1;
+      grid-column: span 1;
+      max-width: 238px;
+    }
+  }
+
+  &__info {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $main-accent-color;
+
+    @include on-tablet {
+      grid-row: span 1;
+      grid-column: span 1;
+    }
+    
+    @include on-desktop {
+      align-self: center;
+      grid-row: span 1;
+      grid-column: span 1;
+      padding-left: 100px;
+    }
+
+    &-sale {
+      font-size: 36px;
+      line-height: 54px;
+      color: $main-red;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      max-width: 633px;
+      margin-left: -70px;
+    }
+  }
+}
