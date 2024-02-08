@@ -1,0 +1,141 @@
+  .footer {
+    @include alert-on;
+
+  display: flex;
+
+  &__address {
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  @include tablet {
+    padding: 0 calc($tablet-mb + $tablet-padding);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  @include desktop {
+    padding: 80px calc($desktop-mb + $desktop-padding);
+  }
+
+  &__h2 {
+    @include font-h4;
+
+    padding-bottom: 5px;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__cr {
+    @include font-s3;
+
+    display: flex;
+    justify-content: center;
+
+  }
+
+  &__logo-box {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+
+  &__logo {
+    @include icon-animation;
+  }
+
+  &__sm {
+    display: flex;
+    gap: 70px;
+
+    justify-content: space-between;
+    padding: 0 50px;
+  }
+
+  &__twit {
+  background-image: url('././icons/twitter.svg');
+  background-repeat: no-repeat;
+
+    @include mobile {
+      @include small-icon-size;
+
+      background-size: contain;
+     }
+
+    @include tablet {
+      @include small-icon-size;
+    }
+
+    @include desktop {
+      @include large-icon-size;
+    }
+
+    @include icon-animation;
+  }
+
+    &__insta {
+    background-image: url('././icons/instagram.svg');
+
+    @include mobile {
+      @include small-icon-size;
+
+      background-size: contain;
+    }
+
+    @include tablet {
+      @include small-icon-size;
+    }
+
+    @include desktop {
+      @include large-icon-size;
+    }
+
+    background-repeat: no-repeat;
+
+    @include icon-animation;
+  }
+
+  &__fb {
+    background-image: url('././icons/facebook.svg');
+
+    @include mobile {
+      @include small-icon-size;
+
+      background-size: contain;
+    }
+
+    @include tablet {
+      @include small-icon-size;
+    }
+
+    @include desktop {
+      @include large-icon-size;
+    }
+
+    background-repeat: no-repeat;
+
+    @include icon-animation;
+
+
+  }
+}

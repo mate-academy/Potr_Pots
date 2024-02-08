@@ -1,0 +1,106 @@
+@mixin visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  border: 1px solid transparent;
+  border-bottom: 1px solid $turquoise;
+  -webkit-text-fill-color: $turquoise;
+  color: $turquoise;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form {
+  box-sizing: border-box;
+
+  &__item {
+    padding-bottom: 16px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: $menu-color;
+    box-sizing: border-box;
+    outline: none;
+
+    @include font-s3;
+
+    border-bottom: 1px solid $grey;
+    transition: 0.5s ease-in-out;
+
+    &:focus {
+      border: none;
+      border-bottom: 1px solid $turquoise;
+      background-color: transparent;
+      transition: 0.5s ease-in-out;
+    }
+
+    &:valid {
+      color: $turquoise;
+      border-bottom: $turquoise solid 1px;
+    }
+
+    &:required:not(:placeholder-shown):invalid {
+      border: none;
+      color: $red;
+      border-bottom: 1px solid $red;
+    }
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    color: $menu-color;
+    border: none;
+    resize: none;
+    overflow-y: hidden;
+    border-bottom: 1px solid $grey;
+
+    @include font-s3;
+
+    &:focus {
+      border: none;
+      border-bottom: 1px solid $turquoise;
+      background-color: transparent;
+      transition: 0.5s ease-in-out;
+    }
+
+    &:valid {
+      color: $turquoise;
+      border-bottom: $turquoise solid 1px;
+    }
+
+    outline: none;
+  }
+
+  &:required:not(:placeholder-shown):invalid {
+  border-bottom: 1px solid $red;
+  color: $red;
+  }
+
+  &__label {
+    &:not(:focus) {
+      @include visually-hidden;
+    }
+
+    &:not(:active) {
+      @include visually-hidden;
+    }
+  }
+}

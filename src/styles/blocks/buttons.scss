@@ -1,0 +1,77 @@
+.button {
+  display: flex;
+  place-items: center;
+
+  &--primary {
+  @include button-primary;
+  @include font-button;
+
+  transition: 0.5s ease-in-out;
+
+    &:hover {
+    @include button-primary-hover;
+
+    transition: 0.5s ease-in-out;
+    }
+  }
+
+
+  &--primary2 {
+  @include button-primary2;
+  @include font-button;
+
+  transition: 0.5s ease-in-out;
+
+    &:hover {
+    @include button-primary2-hover;
+
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    }
+  }
+
+  &--secondary {
+  @include button-secondary;
+  @include font-button;
+
+  transition: 0.5s ease-in-out;
+
+    &:hover {
+    @include button-secondary-hover;
+
+    transition: 0.5s ease-in-out;
+    }
+  }
+
+  &--double {
+
+    @include mobile {
+
+      @include button-primary2;
+      @include font-button;
+
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+      @include button-primary2-hover;
+
+      transition: 0.5s ease-in-out;
+      }
+    }
+
+    @include tablet {
+      @include button-secondary;
+      @include font-button;
+
+      transition: 0.5s ease-in-out;
+      background-color: transparent;
+
+        &:hover {
+        @include button-secondary-hover;
+
+        transition: 0.5s ease-in-out;
+        }
+    }
+  }
+
+}

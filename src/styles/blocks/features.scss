@@ -1,0 +1,144 @@
+.features {
+  display: flex;
+  position: relative;
+  background-color: $grey-light;
+
+  @include alert-on;
+
+  &::before {
+    @include desktop {
+      position: absolute;
+      display: block;
+      content: " ";
+      width: 14px;
+      height: 144px;
+      background-image: url('././icons/potr-right.svg');
+      left: calc($desktop-mb + $desktop-padding);
+      top: -300px;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+    padding: 0 30px;
+  }
+
+  @include tablet {
+    flex-direction: row;
+    gap: 15px;
+    padding: 0 calc($tablet-mb + $tablet-padding);
+  }
+
+  @include desktop {
+    gap: 30px;
+    padding: 0 calc($desktop-mb + $desktop-padding);
+  }
+
+  &__h2 {
+    display: flex;
+    color: $turquoise;
+    font-family: $font-h;
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+
+  @include alert-on;
+
+    @include mobile {
+      flex-direction: column;
+      padding-left: $mobile-padding;
+    }
+
+    @include tablet {
+      flex-direction: row;
+      padding-left: calc($tablet-mb + $tablet-padding);
+    }
+
+    @include desktop {
+      padding-left: calc($desktop-mb + $desktop-padding);
+    }
+
+    &--stroke {
+      -webkit-text-stroke: $turquoise 1px;
+      color: transparent;
+      display: inline-block;
+
+      @include mobile {
+        padding: 0;
+      }
+
+      @include tablet {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      align-items: center;
+      text-align: center;
+    }
+
+    @include tablet {
+      align-items: flex-start
+    }
+
+    @include desktop {
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  &__image {
+    @include zooming;
+
+    @include mobile {
+      width: 260px;
+      height: 260px;
+      padding-bottom: 37px;
+    }
+
+    @include tablet {
+      width: 223px;
+      height: 223px;
+      padding-bottom: 31px;
+    }
+
+    @include desktop {
+      width: 370px;
+      height: 370px;
+      padding-bottom: 21px;
+    }
+  }
+
+  &__title {
+    @include font-h3;
+
+    display: flex;
+    padding-bottom: 21px;
+  }
+
+  &__text {
+    @include font-s3;
+
+    @include mobile {
+      padding-bottom: 40px;
+      max-width: 260px;
+    }
+
+    @include tablet {
+      text-align: left;
+      padding-bottom: 0;
+      max-width: 100%;
+    }
+
+    @include desktop {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,169 @@
+.potr-team {
+  @include alert-on;
+
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  background-image: url('./images/shape.png');
+  background-repeat: no-repeat;
+
+  @include mobile {
+    background-position: calc($mobile-mb - 620px) 460px;
+  }
+
+  @include tablet {
+    background-position: calc($tablet-mb - 790px) 170px;
+  }
+
+  @include desktop {
+    background-position: calc($desktop-mb - 750px) 200px;
+  }
+
+  &__h2 {
+  z-index: 2;
+  display: flex;
+
+  @include mobile {
+    @include font-h2;
+
+    padding: 0 $mobile-padding;
+  }
+
+  @include tablet {
+    @include font-h1;
+
+    padding-bottom: 177px;
+    width: 590px;
+    padding-left: calc($tablet-mb + $tablet-padding);
+  }
+
+  @include desktop {
+    padding-bottom: 143px;
+    padding-left: calc($desktop-mb + $desktop-padding);
+  }
+  }
+
+  &__names {
+  -webkit-text-stroke: 1px $turquoise;
+  color: transparent;
+  font-family: $font-h;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 44.64px;
+  position: absolute;
+  z-index: 3;
+
+    @include tablet {
+      font-size: 210px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 35px;
+    }
+
+    @include desktop {
+      font-size: 288px;
+      letter-spacing: 35px;
+    }
+
+    &--marty {
+      @include tablet {
+        top: 90px;
+        left: calc($tablet-mb - 35px);
+      }
+
+      @include desktop {
+        top: 60px;
+        left: calc($desktop-mb + 25px);
+      }
+    }
+
+    &--andy {
+      @include tablet {
+        top: 460px;
+        right: 0;
+        overflow: hidden;
+
+      }
+
+      @include desktop {
+        left:  auto;
+        right: 0;
+        top: 655px;
+      }
+    }
+  }
+
+  &__p {
+    display: block;
+    padding-bottom: 20px;
+  }
+
+  &__text {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include font-s3;
+
+    z-index: 2;
+
+    @include mobile {
+      padding: $mobile-padding;
+    }
+
+    @include tablet {
+      padding-top: 50px;
+      padding-left: 0;
+      width: 330px;
+    }
+
+
+    @include desktop {
+      width: 336px;
+      padding: 230px 60px 0 0;
+    }
+  }
+
+  &__box {
+    display: flex;
+
+    box-sizing: border-box;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+
+    @include tablet {
+      flex-direction: row;
+      padding-left: calc($tablet-mb + $tablet-padding)
+    }
+
+    @include desktop {
+      padding-bottom: 70px;
+      padding-left: calc($desktop-mb + $desktop-padding)
+    }
+  }
+
+  &__image {
+    display: block;
+    z-index: 2;
+
+    @include zooming;
+
+    @include mobile {
+      width: 100%;
+      height: auto;
+    }
+
+    @include tablet {
+      height: 255px;
+      width: 340px;
+    }
+
+    @include desktop {
+      height: 508px;
+      width: 677px;
+    }
+  }
+}

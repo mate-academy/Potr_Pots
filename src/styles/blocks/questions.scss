@@ -1,0 +1,88 @@
+.contact {
+  display: flex;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__address-box {
+    @include mobile {
+      padding-top: $mobile-padding;
+    }
+
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+
+
+  @include alert-on;
+
+  @include mobile {
+    flex-direction: column;
+    background-position: left 0;
+    box-sizing: border-box;
+    padding: $mobile-padding;
+    background-size: cover;
+    background-image: url('././images/shape.png');
+  }
+
+
+  @include tablet {
+      padding: 30px calc($tablet-mb + $tablet-padding) 130px;
+      column-gap: 90px;
+      background-position: left 0;
+      flex-direction: row;
+      background-size: auto;
+      background-image: url('././images/shape2.png');
+  }
+
+  @include desktop {
+    padding: 30px calc($desktop-mb + $desktop-padding) 130px;
+    background-position: calc($desktop-mb - 50px) 0;
+    column-gap: 200px;
+    background-size: contain;
+  }
+
+  &__stamp {
+    position: absolute;
+    display: block;
+    top: -90px;
+    background-repeat: no-repeat;
+
+
+    @include mobile {
+      right: 0;
+      background-image: url('././images/stamp2.png');
+      width: 118px;
+      height: 162px;
+    }
+
+    @include tablet {
+      right: 0;
+      background-image: url('././images/stamp2.png');
+      width: 118px;
+      height: 162px;
+    }
+
+    @include desktop {
+      left: calc($desktop-mb + 1050px);
+      background-image: url('././images/stamp.png');
+      width: 162px;
+      height: 162px;
+
+    }
+  }
+
+  &__h2 {
+    @include font-h2;
+  }
+
+  &__text {
+    @include font-s3;
+  }
+
+  &__cta {
+    @include font-s2;
+
+    padding: 30px 0;
+  }
+}

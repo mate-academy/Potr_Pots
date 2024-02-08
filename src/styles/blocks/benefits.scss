@@ -1,0 +1,251 @@
+.benefits {
+  @include alert-on;
+
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 calc($desktop-mb + 20px);
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: " ";
+    width: 14px;
+    height: 144px;
+    background-image: url('././icons/potr-right.svg');
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      right: calc($tablet-mb + 25px);
+      top: 0;
+      display: block;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  @include desktop {
+    flex-direction: row;
+  }
+
+  &__content {
+    box-sizing: border-box;
+    display: flex;
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    @include desktop {
+      flex-direction: column;
+    }
+  }
+
+    &__1 {
+    display: flex;
+
+    @include mobile {
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 30px;
+      padding-left: $mobile-padding;
+      padding-right: $mobile-padding;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      padding-right: 0;
+      gap: 20px;
+      padding-left: calc($tablet-mb + 45px);
+    }
+
+
+    @include desktop {
+      flex-direction: row;
+      padding-top: 170px;
+      padding-left: 0;
+      width: 650px;
+      flex-wrap: wrap;
+      gap: 20px 40px;
+    }
+  }
+
+  &__2 {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+      padding: 40px 30px 0;
+    }
+
+    @include tablet {
+      padding: 70px 0 0 30px;
+    }
+
+    @include desktop {
+      padding: 80px 0;
+    }
+  }
+
+  &__photos {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+
+    @include mobile {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+
+    &__photo {
+      position: absolute;
+      background-color: $white;
+      padding: 16px;
+
+      &:nth-child(1) {
+        left: 35px;
+        top: 40px;
+        transform: rotate(-15deg);
+        z-index: 0;
+
+        @include picking;
+      }
+
+      &:nth-child(2){
+        left: 235px;
+        top: 0;
+        transform: rotate(-30deg);
+        z-index: 0;
+
+        @include picking;
+      }
+
+      &:nth-child(3){
+        left: 35px;
+        top: 300px;
+        z-index: 1;
+
+        @include picking;
+      }
+
+      &:nth-child(4){
+        left: 230px;
+        top: 220px;
+        transform: rotate(-15deg);
+
+        @include picking;
+      }
+
+      &:nth-child(5){
+        left: 100px;
+        top: 510px;
+        transform: rotate(-15deg);
+
+        @include picking;
+      }
+
+      &:nth-child(6){
+        left: 330px;
+        top: 480px;
+        transform: rotate(-30deg);
+
+        @include picking;
+      }
+    }
+
+  &__photo-desc {
+    display: flex;
+    width: 180px;
+    flex-wrap: wrap;
+    color: $grey-dark2;
+    font-family: $font-s;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 131.5%;
+    padding-top: 6px;
+  }
+
+  &__title {
+    @include font-s1;
+
+    padding-bottom: 8px;
+    color: $black2;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: $menu-color;
+      width: 6px;
+      height: 6px;
+      left: -19px;
+      top: 24px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__text {
+    @include font-s3;
+
+    color: $grey-dark2;
+  }
+
+  &__discount {
+    @include font-h2;
+
+    @include mobile {
+      padding-top: 30px;
+    }
+
+    @include tablet {
+      padding-top: 30px;
+    }
+
+    @include desktop {
+      padding: 70px 120px 0;
+    }
+
+    color: $red;
+  }
+
+  &__half-price {
+    @include font-h3;
+    display: flex;
+    flex-wrap: wrap;
+    color: $turquoise;
+
+    @include tablet {
+      max-width: 290px;
+    }
+
+    @include desktop {
+      padding: 5px 120px;
+      max-width: 100%;
+
+
+    }
+  }
+
+  &__button-box {
+  display: flex;
+  box-sizing: border-box;
+  }
+}

@@ -1,0 +1,133 @@
+  .swiper-container {
+  height: auto;
+
+  @include mobile {
+    position: relative;
+    width: 90%;
+    overflow: hidden;
+  }
+
+  @include tablet {
+    left: 0;
+    position: absolute;
+    overflow: visible;
+    width: 98%;
+  }
+
+  .swiper-wrapper {
+    box-sizing: border-box;
+  }
+
+  .swiper-slide {
+    background: rgba(0, 0, 0, 0.41);
+    backdrop-filter: blur(17px);
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+    transition: 0.3s ease-in-out;
+
+    @include mobile {
+      padding: 35px;
+    }
+
+    @include tablet {
+      z-index: 0;
+      opacity: 0;
+      box-sizing: border-box;
+      width: 283px !important;
+      display: inline;
+      position: absolute;
+      left: $tablet-mb;
+
+      &--1 {
+        transform: translateX(40px) translateY(100px) !important;
+        height: 166px  !important;
+      }
+
+      &--2 {
+        transform: translateX(90px) translateY(-10px) !important;
+        height: 166px  !important;
+      }
+
+      &--3 {
+        transform: translateX(210px) translateY(90px) !important;
+        height: 214px !important;
+      }
+
+      &--4 {
+        transform: translateX(320px) translateY(15px) !important;
+        height: 214px !important;
+      }
+
+      &--5 {
+        transform: translateX(410px) translateY(120px) !important;
+        height: 237px !important;
+      }
+    }
+
+    @include desktop {
+    left: $desktop-mb;
+
+    &--1 {
+      transform: translateX(60px) translateY(370px) !important;
+      height: 166px  !important;
+    }
+
+    &--2 {
+      transform: translateX(180px) translateY(110px) !important;
+      height: 166px  !important;
+    }
+
+    &--3 {
+      transform: translateX(290px) translateY(500px) !important;
+      height: 214px !important;
+    }
+
+    &--4 {
+      transform: translateX(630px) translateY(190px) !important;
+      height: 214px !important;
+    }
+
+      &--5 {
+        transform: translateX(900px) translateY(365px) !important;
+        height: 237px !important;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    display: block;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    z-index: 2;
+    padding-bottom: 35px;
+
+    @include tablet {
+    display: none;
+    }
+  }
+
+
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 12px;
+    background-image: url('././icons/slider-white.png');
+    opacity: 1;
+    bottom: 0;
+    background-color: transparent;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 10px;
+    height: 12px;
+    background-image: url('././icons/slider-black.png');
+    bottom: 0;
+  }
+}
+
+.clicked {
+  opacity: 1 !important;
+  z-index: 2 !important;
+}

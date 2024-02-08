@@ -1,0 +1,61 @@
+.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @include mobile {
+    padding-top: 48px;
+  }
+
+  @include tablet {
+    padding-top: 80px;
+  }
+
+  @include desktop {
+    padding-left: 87px;
+    padding-top: 0;
+  }
+
+  &__section {
+    @include font-s2;
+
+    color: $card-bcg;
+    opacity: 0.4;
+  }
+
+    &__info {
+    @include font-s3;
+
+    padding-bottom: 24px;
+
+      &--link {
+      transition: 0.3s ease-in-out;
+
+      &:link {
+        text-decoration: none;
+        color: $card-bcg;
+        cursor: pointer;
+      }
+
+      &:visited {
+        text-decoration: none;
+        color: $card-bcg;
+        cursor: pointer;
+      }
+
+      &:hover {
+        color:$turquoise;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      &:active {
+        color:$turquoise;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+

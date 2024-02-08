@@ -1,0 +1,78 @@
+@mixin icon-animation {
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+  }
+}
+
+
+@mixin photo-animation {
+  @media (min-width: 1260px) {
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    }
+  }
+}
+
+@mixin cross-animation {
+  transform: rotate(0);
+  transition: transform 0.5s ease-in-out;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+}
+
+
+@keyframes arrow-animation {
+  0% {
+    background-position: 161px center;
+  }
+  50% {
+    background-position: 175px center;
+  }
+  100% {
+    background-position: 161px center;
+  }
+}
+
+@keyframes arrow-down-animation {
+  0% {
+    background-position: 140px center;
+  }
+  50% {
+    background-position: 150px center;
+  }
+  100% {
+    background-position: 140px center;
+  }
+}
+
+@mixin picking {
+  transition: transform 1s ease-in-out;
+
+  &:hover {
+    transform: rotate(0deg) scale(1.5);
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+    z-index: 9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin zooming {
+  @media (min-width: 768px) {
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+}
