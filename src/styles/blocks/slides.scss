@@ -6,6 +6,10 @@
   height: 254px;
   margin-inline: auto;
 
+  @media (min-width:768px) {
+    width: 100%;
+  }
+
   &__slides {
     display: flex;
     width: 100%;
@@ -18,12 +22,13 @@
     color: $color-grey-light;
     font-size: 16px;
     line-height: 150%;
+    backdrop-filter: blur(17px);
     background-color: rgba(0, 0, 0, 0.45);
     box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
     transition: all 10ms ease;
     display: none;
 
-    @media (min-width:640px) {
+    @media (min-width:768px) {
       width: 100%;
       max-width: 283px;
       padding: 35px;
@@ -35,57 +40,79 @@
       transform: translate(-50%);
 
       &--1 {
-        left: 262px;
-        bottom: 205px;
+        left: 67%;
+        bottom: 307px;
         padding: 35px 45px 34px;
         max-width: 303px;
       }
 
       &--2 {
-        left: 220px;
-        bottom: 355px;
+        left: 65%;
+        bottom: 346px;
       }
 
       &--3 {
-        left: 125px;
-        bottom: 305px;
+        left: 50%;
+        bottom: 50px;
       }
 
       &--4 {
-        left: 65px;
-        bottom: 405px;
+        left: 35%;
+        bottom: 455px;
       }
 
       &--5 {
-        left: 30px;
-        bottom: 355px;
+        left: 25%;
+        bottom: 155px;
       }
     }
 
     @media (min-width:1280px) {
       &--1 {
-        left: -170px;
-        bottom: 200px;
+        left: 83%;
+        bottom: 300px;
       }
 
       &--2 {
-        left: 60px;
-        bottom: 425px;
+        left: 62%;
+        bottom: 495px;
       }
 
       &--3 {
-        left: 140px;
-        bottom: 95px;
+        left: 35%;
+        bottom: 220px;
       }
 
       &--4 {
-        left: 280px;
-        bottom: 250px;
+        left: 18%;
+        bottom: 660px;
       }
 
       &--5 {
-        left: 520px;
-        bottom: 350px;
+        left: 20%;
+        bottom:  418px;
+      }
+    }
+
+    @media (min-width:1440px) {
+      &--1 {
+        bottom: 300px;
+      }
+
+      &--2 {
+        bottom: 500px;
+      }
+
+      &--3 {
+        left: 37%;
+      }
+
+      &--4 {
+        left: 20%;
+      }
+
+      &--5 {
+        left: 19%;
       }
     }
   }
@@ -109,7 +136,7 @@
       background-color:  rgba(0, 0, 0, 0.30);
       border: 1px solid $color-grey-light;
 
-      @media (min-width:640px) {
+      @media (min-width:768px) {
         border: none;
         background-image: url(/images/materials/materials-minus.svg);
       }
@@ -135,7 +162,7 @@
       left: 184px;
     }
 
-    @media (min-width:640px) {
+    @media (min-width:768px) {
       visibility: visible;
       width: 50px;
       height: 50px;
@@ -145,56 +172,68 @@
       background-image: url(/images/materials/materials-plus.svg);
 
       &--1 {
-        left: 247px;
-        bottom: 400px;
+        left: 75%;
+        bottom: 500px;
 
       }
 
       &--2 {
-        left: 200px;
-        bottom: 300px;
+        left: 60%;
+        bottom: 290px;
       }
 
       &--3 {
-        left: 100px;
-        bottom: 250px;
+        left: 45%;
+        bottom: 260px;
       }
 
       &--4 {
-        left: 32px;
-        bottom: 350px;
+        left: 30%;
+        bottom: 400px;
       }
 
       &--5 {
-        left: -95px;
+        left: 10%;
         bottom: 300px;
       }
     }
 
     @media (min-width:1280px) {
       &--1 {
-        left: -200px;
-        bottom: 400px;
+        left: 82%;
+        bottom: 500px;
       }
 
       &--2 {
-        left: 32px;
-        bottom: 600px;
+        bottom: 435px;
       }
 
       &--3 {
-        left: 100px;
+        left: 50%;
         bottom: 300px;
       }
 
       &--4 {
-        left: 250px;
-        bottom: 400px;
+        bottom: 600px;
       }
 
       &--5 {
-        left: 500px;
+        left: 17%;
+        bottom: 360px;
+      }
+    }
+
+    @media (min-width:1440px) {
+      &--1 {
         bottom: 500px;
+      }
+
+      &--3 {
+        bottom: 300px;
+      }
+
+      &--4 {
+        bottom: 600px;
       }
     }
   }
@@ -206,18 +245,14 @@
         &--#{$slideNumber}:checked ~ .slider__slide--#{$slideNumber} {
           display: block;
 
-          @media (min-width:640px) {
+          @media (min-width:768px) {
             visibility: visible;
           }
         }
+
         &--#{$slideNumber}:checked ~ .slider__label--#{$slideNumber} {
           background: rgba(0, 0, 0, 0.30);
           background-image: url(/images/materials/materials-minus.svg);
-          border: 1px solid $color-grey-light;
-
-          @media (min-width:640px) {
-            border: none;
-          }
         }
       }
     }
