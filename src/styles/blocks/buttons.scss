@@ -42,4 +42,36 @@
     transition: 0.5s ease-in-out;
     }
   }
+
+  &--double {
+
+    @include mobile {
+
+      @include button-primary2;
+      @include font-button;
+
+      transition: 0.5s ease-in-out;
+
+      &:hover {
+      @include button-primary2-hover;
+
+      transition: 0.5s ease-in-out;
+      }
+    }
+
+    @include tablet {
+      @include button-secondary;
+      @include font-button;
+
+      transition: 0.5s ease-in-out;
+      background-color: transparent;
+
+        &:hover {
+        @include button-secondary-hover;
+
+        transition: 0.5s ease-in-out;
+        }
+    }
+  }
+
 }

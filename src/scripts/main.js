@@ -50,11 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // reset swiper
-/* function handleResize() {
+function handleResize() {
   window.location.reload();
 }
 
-window.addEventListener('resize', handleResize); */
-
-
-
+window.addEventListener('resize', handleResize);

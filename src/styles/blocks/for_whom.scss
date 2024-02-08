@@ -149,7 +149,7 @@
     @include font-h2;
 
     @include mobile {
-      padding: 0 $mobile-padding;
+      padding: 0 $mobile-padding 40px;
     }
 
     @include tablet {
@@ -459,16 +459,22 @@
     }
 
     @include tablet {
-      width: 340px
-    }
+      width: 340px;
+     }
 
     @include desktop{
       width: 380px;
     }
 
     &--1 {
+
+      @include mobile {
+        padding-bottom: 70px;
+      }
+
       @include tablet {
         padding-left: 70px;
+        padding-bottom: 0;
       }
 
       @include desktop {
@@ -478,6 +484,14 @@
 
     &--2 {
       padding-left: 0;
+
+      @include mobile {
+        padding-bottom: 70px;
+      }
+
+      @include tablet {
+        padding-bottom: 0;
+      }
 
       @include desktop {
         padding-left: 40px;

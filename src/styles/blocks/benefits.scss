@@ -57,7 +57,9 @@
     display: flex;
 
     @include mobile {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
+      column-gap: 30px;
       padding-left: $mobile-padding;
       padding-right: $mobile-padding;
     }
@@ -71,8 +73,10 @@
 
 
     @include desktop {
+      flex-direction: row;
       padding-top: 170px;
       padding-left: 0;
+      width: 650px;
       flex-wrap: wrap;
       gap: 20px 40px;
     }
@@ -87,7 +91,7 @@
     }
 
     @include tablet {
-      padding: 90px 0 0 30px;
+      padding: 70px 0 0 30px;
     }
 
     @include desktop {
@@ -99,7 +103,7 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  width: 800px;
+  width: 600px;
 
     @include mobile {
       display: none;
@@ -111,60 +115,60 @@
   }
 
     &__photo {
-    position: absolute;
-    background-color: $white;
-    padding: 16px;
+      position: absolute;
+      background-color: $white;
+      padding: 16px;
 
-    &:nth-child(1) {
-      left: 35px;
-      top: 40px;
-      transform: rotate(-15deg);
-      z-index: 0;
+      &:nth-child(1) {
+        left: 35px;
+        top: 40px;
+        transform: rotate(-15deg);
+        z-index: 0;
 
-      @include picking;
+        @include picking;
+      }
+
+      &:nth-child(2){
+        left: 235px;
+        top: 0;
+        transform: rotate(-30deg);
+        z-index: 0;
+
+        @include picking;
+      }
+
+      &:nth-child(3){
+        left: 35px;
+        top: 300px;
+        z-index: 1;
+
+        @include picking;
+      }
+
+      &:nth-child(4){
+        left: 230px;
+        top: 220px;
+        transform: rotate(-15deg);
+
+        @include picking;
+      }
+
+      &:nth-child(5){
+        left: 100px;
+        top: 510px;
+        transform: rotate(-15deg);
+
+        @include picking;
+      }
+
+      &:nth-child(6){
+        left: 330px;
+        top: 480px;
+        transform: rotate(-30deg);
+
+        @include picking;
+      }
     }
-
-    &:nth-child(2){
-      left: 235px;
-      top: 0;
-      transform: rotate(-30deg);
-      z-index: 0;
-
-      @include picking;
-    }
-
-    &:nth-child(3){
-      left: 35px;
-      top: 300px;
-      z-index: 1;
-
-      @include picking;
-    }
-
-    &:nth-child(4){
-      left: 230px;
-      top: 220px;
-      transform: rotate(-15deg);
-
-      @include picking;
-    }
-
-    &:nth-child(5){
-      left: 100px;
-      top: 510px;
-      transform: rotate(-15deg);
-
-      @include picking;
-    }
-
-    &:nth-child(6){
-      left: 330px;
-      top: 480px;
-      transform: rotate(-30deg);
-
-      @include picking;
-    }
-  }
 
   &__photo-desc {
     display: flex;
@@ -190,10 +194,10 @@
       content: "";
       position: absolute;
       background: $menu-color;
-      width: 9px;
-      height: 9px;
-      left: -20px;
-      top: 20px;
+      width: 6px;
+      height: 6px;
+      left: -19px;
+      top: 24px;
       transform: rotate(45deg);
     }
   }
@@ -224,11 +228,19 @@
 
   &__half-price {
     @include font-h3;
-
+    display: flex;
+    flex-wrap: wrap;
     color: $turquoise;
+
+    @include tablet {
+      max-width: 290px;
+    }
 
     @include desktop {
       padding: 5px 120px;
+      max-width: 100%;
+
+
     }
   }
 
