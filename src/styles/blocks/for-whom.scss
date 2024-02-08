@@ -1,0 +1,167 @@
+.for-whom {
+  margin: 110px 0;
+
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include tablet {
+      gap: 110px;
+    }
+
+    @include desktop {
+      gap: 80px;
+    }
+  }
+
+  &__title {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $gray-1;
+
+    margin-bottom: 25px;
+  }
+
+  &__number {
+    position: relative;
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 180%;
+    letter-spacing: 0.15em;
+    color: $black;
+
+    margin-left: 18px;
+    margin-bottom: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -8px;
+      height: 46px;
+      width: 1px;
+      background-color: $black;
+
+      transform: rotate(22deg);
+    }
+  }
+
+  &__note {
+    display: none;
+    position: relative;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $gray-1;
+
+    margin-bottom: 17px;
+
+    @include tablet {
+      display: inline-block;
+
+      & span {
+        position: relative;
+      }
+
+      & span::before {
+        content: "*";
+        position: absolute;
+        font-family: $second-family;
+        font-size: 24px;
+
+        left: -20px;
+      }
+    }
+  }
+
+  &__name {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $black;
+
+    margin-bottom: 20px;
+
+    @include tablet {
+      & span {
+        position: relative;
+      }
+
+      & span::after {
+        content: "";
+        position: absolute;
+        right: -8px;
+        height: 46px;
+        width: 1px;
+        background-color: $black;
+
+        transform: rotate(22deg);
+      }
+    }
+  }
+
+  &__description {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $gray-2;
+  }
+
+  @include tablet {
+    &__block {
+      display: flex;
+      gap: 15px;
+
+      @include desktop {
+        gap: 100px;
+        align-items: center;
+      }
+
+      &:nth-child(2n + 2) {
+        &__image {
+          order: 2;
+        }
+
+        &__note {
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    &__text {
+      display: flex;
+      gap: 20px;
+    }
+
+    &__number {
+      margin-top: 35px;
+    }
+
+
+    &__image {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding-bottom: 42%;
+
+      flex: 0 0 42%;
+    }
+
+    @for $i from 1 to 4 {
+      &__image--#{$i} {
+        background-image: url("../images/for-whom-#{$i}.png");
+      }
+    }
+  }
+}
