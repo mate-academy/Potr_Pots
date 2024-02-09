@@ -107,21 +107,29 @@
   }
 
   &__top {
-    position: fixed;
-    right: 50px;
-    bottom: 50px;
-    display: flex;
-    flex-direction: column-reverse;
-    padding: 15px;
-    color: $blue-color;
-    text-decoration: none;
-    background-color: #FFEC7A;
-    border-radius: 50%;
+    display: none;
 
-    &::after {
-      content: url(../images/head-block/arrow-blue.svg);
-      padding-top: 10px;
-      transform: rotate(180deg);
+    @include desktop {
+      position: fixed;
+      right: 50px;
+      bottom: 50px;
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 15px;
+      color: $blue-color;
+      text-decoration: none;
+      background-color: rgba(255, 236, 122, 0.5);
+      border-radius: 50%;
+
+      @include hover {
+        transform: translateY(-10%);
+      }
+
+      &::after {
+        content: url(../images/head-block/arrow-blue.svg);
+        padding-top: 10px;
+        transform: rotate(180deg);
+      }
     }
   }
 }
