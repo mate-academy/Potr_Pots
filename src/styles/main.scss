@@ -1,7 +1,56 @@
 @import "utils";
 @import "fonts";
 @import "typography";
+@import "./blocks/header";
+@import "./blocks/whom";
+@import "./blocks/features";
+@import "./blocks/team";
+@import "./blocks/materials";
+@import "./blocks/size";
+@import "./blocks/benefits";
+@import "./blocks/questions";
+@import "./blocks/footer";
+@import "./blocks/menu";
+@import "./blocks/slides";
 
-body {
-  background: $c-gray;
+.page {
+  scroll-behavior: smooth;
+  font-family: Manrope, "Bebas Neue", sans-serif;
+
+  &-body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: $color-grey-light;
+    max-width: 2000px;
+
+    &:has(.menu:target) {
+      overflow: hidden;
+    }
+  }
+}
+
+a, img, button {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, ul {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  margin-block: 110px;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: #03839E;
+  -webkit-box-shadow: 0 0 0 1000px #FFEC7A inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
