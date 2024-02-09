@@ -1,0 +1,38 @@
+.swiper.my-swiper {
+  width: 302px;
+  height: 254px;
+  margin-top: -60px;//learn
+
+  @include materialsCardStyles;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.my-swiper .swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 3px;
+}
+
+.my-swiper .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  opacity: 1;
+  background: $gray-light-color;
+  border-radius: 0;
+  border: 1px solid transparent;
+  transform: translateY(-30px) rotate(45deg);
+  transition: all 0.5s;
+}
+
+.my-swiper .swiper-pagination-bullet:hover {
+  transform: translateY(-28px);
+}
+
+.my-swiper .swiper-pagination-bullet-active {
+  background: #0000004D;
+  border-color: $gray-light-color;
+}

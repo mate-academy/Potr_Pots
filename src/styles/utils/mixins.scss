@@ -20,7 +20,7 @@
     --columns: 6;
   }
 
-  @include desktop() {
+  @include desktop {
     --columns: 12;
     column-gap: 30px;
   }
@@ -32,4 +32,13 @@
   &:hover {
     @content;
   }
+}
+
+@mixin materialsCardStyles {
+  padding: 28px 44px 58px;
+  box-sizing: border-box;
+  color: $gray-light-color;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(17px);
 }

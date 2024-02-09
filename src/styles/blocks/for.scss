@@ -25,6 +25,7 @@
 
   &__items {
     @include grid;
+
     row-gap: 70px;
 
     @include tablet {
@@ -90,6 +91,11 @@
       width: 42.7%;
     }
 
+    @include hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
     &--2 {
       @include tablet {
         width: 43%;
@@ -150,7 +156,7 @@
       @include tablet {
         content: "*";//lEARN
         margin-right: 10px;
-        color: #000;
+        color: $black-color;
         font-size: 24px;
         line-height: normal;
       }
@@ -182,10 +188,9 @@
 
   &__number {
     display: flex;
-    column-gap: 10px;
-    row-gap: 30px;
+    gap: 30px 10px;
     padding-left: 8px;
-    color: #000;
+    color: $black-color;
     font-family: $second-font;
     font-size: 36px;
     line-height: 1.8;
@@ -213,7 +218,7 @@
   &__subtitle {
     position: relative;
     margin-block: 0;
-    color: #000;
+    color: $black-color;
     font-family: $second-font;
     font-size: 36px;
     font-weight: 400;
@@ -248,43 +253,25 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    display: flex;
-    align-items: center;
-    column-gap: 10px;
     margin-right: 7px;
-    color:#828282;
-    font-family: $second-font;
-    font-size: 12px;
-    line-height: normal;
-    letter-spacing: 2.64px;
-    writing-mode: vertical-lr;
 
     @include tablet {
       top: -105px;
+      margin-right: 10px;
     }
 
     @include desktop {
       top: 0;
       margin: 0;
     }
+  }
 
-    &::before {
-      content: "";
-      width: 1px;//LEARN
-      height: 65px;//LEARN
-      background-color: #828282;
-    }
+  &__vertical-text-2 {
+    display: none;
 
-    &--2 {
-      display: none;
-
-      @include desktop {
-        display: flex;
-        top: auto;
-        right: auto;
-        left: 0;
-        transform: rotate(180deg);//learn
-      }
+    @include desktop {
+      display: flex;
+      transform: rotate(180deg);//learn
     }
   }
 }

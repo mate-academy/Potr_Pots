@@ -3,6 +3,9 @@
   justify-content: center;
   align-items: center;
   column-gap: 24px;
+  width: 100%;
+  font-family: inherit;
+  line-height: inherit;
   padding-block: 13px;
   box-sizing: border-box;
   color: #121212;
@@ -13,7 +16,54 @@
   background: #FFE339;
   border: 1px solid #FFE339;
 
+  @include hover {
+    color: rgba(18, 18, 18, 0.7);
+    background: rgba(255, 227, 57, 0.7);
+    border-color: rgba(255, 227, 57, 0.7);
+  }
+
   &::after {
-    content: url(../images/head-block/arrow-black.svg);
+    content: "";
+    height: 8px;
+    width: 25px;
+    background-image: url(../images/head-block/arrow-black.svg);//learn
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  &--blue {
+    color: #fff;
+    background: $blue-color;
+    border-color: $blue-color;
+
+    @include hover {
+      color: rgba(255, 255, 255, 0.7);
+      background: rgba(3, 128, 158, 0.7);
+      border-color: rgba(3, 128, 158, 0.7);
+    }
+
+    &::after {
+      background-image: url(../images/icons/arrow-white.svg);
+    }
+  }
+
+  &--benefits {
+    max-width: 238px;
+
+    @include tablet {
+      background: transparent;
+      border-color: $blue-color;
+
+      @include hover {
+        color: #fff;
+        background: $blue-color;
+        border-color: $blue-color;
+      }
+
+      &:hover::after {
+        background-image: url(../images/icons/arrow-white.svg);
+      }
+    }
   }
 }

@@ -49,6 +49,11 @@
     margin: 0 -30px 25px;
     aspect-ratio: 1 / 1;
 
+    @include hover {
+      transform: scale(0.9);
+      cursor: pointer;
+    }
+
     @include tablet {
       position: absolute;
       grid-column: -1 / -4;
@@ -157,6 +162,7 @@
     writing-mode: vertical-lr;//LEARN
     color: $blue-color;
     font-size: 12px;
+    text-decoration: none;
     // transform: rotate(90deg);
     // transform-origin: top right;
 
@@ -168,6 +174,13 @@
       // transform: translateY(47px);
       // left: 0;
       // margin-block: 34px 0;
+    }
+
+    animation: moveArrow 2s infinite alternate;
+
+    @keyframes moveArrow {
+      0% {transform: translateY(0);}
+      100% {transform: translateY(10%);}
     }
 
     &::after {

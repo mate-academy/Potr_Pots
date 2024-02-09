@@ -3,23 +3,20 @@
   background: url(../images/team/rectangle-mob.png) no-repeat;
   background-position: bottom;
   background-size: contain;//learn
+  overflow: hidden;//learn
 
-  &::before {
-    @include tablet {
-      content: "Martin";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
+  @include tablet {
+    padding-bottom: 110px;
+    background: url(../images/team/rectangle-tab.png) no-repeat;
+    background-size: 33.5% 69%;
+    background-position: left 83%;//learn
+  }
 
-      color: transparent;
-      -webkit-text-stroke: 1px $blue-color;
-      font-family: $second-font;
-      font-size: 232px;
-      line-height: normal;
-      letter-spacing: 36px;
-      text-transform: uppercase;
-    }
+  @include desktop {
+    padding-bottom: 226px;
+    background: url(../images/team/rectangle-desk.png) no-repeat;
+    background-size: 31% 32%;
+    background-position: left 29%;//learn
   }
 
   &__title {
@@ -34,6 +31,10 @@
     @include tablet {
       margin-bottom: 177px;
     }
+
+    @include desktop {
+      margin-bottom: 143px;
+    }
   }
 
   &__content {
@@ -45,12 +46,21 @@
   &__photo-wrapper {
     margin: 0 -30px 30px;//LEARN
 
+    @include hover {
+      transform: scale(0.9);
+      cursor: pointer;
+    }
+
     @include tablet {
       margin: 0;
       grid-column: span 3;
       align-self: start;
       order: 1;
       // transform: translateY(-53px);
+    }
+
+    @include desktop {
+      grid-column: -2 / -9;
     }
   }
 
@@ -69,6 +79,11 @@
       align-self: end;
       padding: 53px 21px 0 0;
     }
+
+    @include desktop {
+      grid-column: span 4;
+      padding-bottom: 14px;
+    }
   }
 
   &__text {
@@ -79,15 +94,14 @@
     margin-bottom: 25px;
   }
 
-  /*&__name {
+  &__name {
     display: none;
 
     @include tablet {
       display: block;
       position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 5;
+      top: 80px;
+      left: -42px;
 
       color: transparent;
       -webkit-text-stroke: 1px $blue-color;
@@ -98,15 +112,27 @@
       text-transform: uppercase;
     }
 
+    @include desktop {
+      left: 83px;
+      font-size: 288px;
+      letter-spacing: 45px;
+    }
+
     &--2 {
       @include tablet {
         top: auto;
         left: auto;
-        right: 0;
-        bottom: 0;
+        right: -32px;
+        bottom: -64px;
         font-size: 220px;
         letter-spacing: 34px;
       }
+
+      @include desktop {
+        bottom: -83px;
+        font-size: 288px;
+        letter-spacing: 45px;
+      }
     }
-  }*/
+  }
 }
