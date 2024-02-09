@@ -1,0 +1,54 @@
+.burger {
+  position: relative;
+  width: 32px;
+  overflow: hidden;
+
+  &__link {
+    position: relative;
+    display: block;
+    height: 29px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #333;
+      content: "";
+      transition: 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55) left;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      top: 12px;
+    }
+
+  }
+
+  &__text {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    height: 5px;
+    background-color: #333;
+    top: 24px;
+
+    &::before {
+      content: "MENU";
+      position: absolute;
+      top: 5px;
+      right: 0;
+      left: 0;
+      color: #333;
+      font-size: 12px;
+      font-weight: bold;
+      font-family: $font-bebas-neue;
+      text-align: center;
+    }
+  }
+}
