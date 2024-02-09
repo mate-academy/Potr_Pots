@@ -1,0 +1,135 @@
+.footer {
+  padding-bottom: 30px;
+  color: $black-color;
+
+  @include tablet {
+    padding-bottom: 118px;
+  }
+
+  @include desktop {
+    padding-bottom: 64px;
+  }
+
+  &__content {
+    text-align: center;
+
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__adrress {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__title {
+    display: none;
+
+    @include tablet {
+      display: block;
+      margin-bottom: 10px;
+      color: inherit;
+      font-family: $second-font;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: 0.15em;
+      text-align: left;
+      text-decoration: none;
+    }
+
+    @include hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__adrress-link {
+    display: block;
+    color: inherit;
+    text-align: left;
+    text-decoration: none;
+
+    @include hover {
+      color: $blue-color;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: center;
+    column-gap: 85px;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 32px;
+      column-gap: 80px;
+    }
+
+    @include desktop {
+      margin-bottom: 74px;
+      column-gap: 70px;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    //learn
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+
+    @include desktop {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include hover {
+      transform: scale(1.2);
+    }
+
+    &--twit {
+      background-image: url(../images/footer/icon-twit.svg);//learn
+    }
+
+    &--insta {
+      background-image: url(../images/footer/icon-insta.svg);
+    }
+
+    &--face {
+      background-image: url(../images/footer/icon-face.svg);
+    }
+  }
+
+  &__top {
+    display: none;
+
+    @include desktop {
+      position: fixed;
+      right: 50px;
+      bottom: 50px;
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 15px;
+      color: $blue-color;
+      text-decoration: none;
+      background-color: rgba(255, 236, 122, 0.5);
+      border-radius: 50%;
+
+      @include hover {
+        transform: translateY(-10%);
+      }
+
+      &::after {
+        content: url(../images/head-block/arrow-blue.svg);
+        padding-top: 10px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

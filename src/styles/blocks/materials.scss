@@ -1,0 +1,277 @@
+.materials {
+  &__text-wrapper {
+    @include tablet {
+      @include grid;
+    }
+  }
+
+  &__title {
+    margin: 0 -14.18px 0 0;
+    color: $blue-color;
+    -webkit-text-stroke: 1px $blue-color;
+    font-family: $second-font;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.99px;
+
+    @include tablet {
+      grid-column: span 5;
+      margin: 0;
+      font-size: 80px;
+      letter-spacing: 9.6px;
+    }
+
+    @include desktop {
+      grid-column: span 9;
+      font-size: 138px;
+      letter-spacing: 16px;
+    }
+  }
+
+  &__description {
+    display: none;
+
+    @include tablet {
+      display: block;
+      grid-column: -1 / -4;
+      margin-top: -56px;
+    }
+
+    @include desktop {
+      grid-column: -1 / -6;
+      margin-top: -175px;
+    }
+  }
+
+  &__subtitle {
+    margin-block: 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+
+    @include desktop {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    margin-block: 0;
+  }
+
+  &__marked-text {
+    font-weight: 700;
+
+    @include desktop {
+      font-weight: 400;
+    }
+  }
+
+  &__photo-wrapper {
+    position: relative;
+    margin-inline: -30px;
+
+    @include tablet {
+      margin-inline: -34px;
+    }
+
+    @include desktop {
+      margin-inline: -135px;
+    }
+  }
+
+  &__photo {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: -82px;//learn
+    object-fit: contain;
+    object-position: center;
+    z-index: -1;
+
+    @include tablet {
+      margin-top: -118px;
+    }
+
+    @include desktop {
+      margin-top: -180px;
+    }
+  }
+
+  &__popups-wrapper {
+    display: none;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__popups-item {
+    position: absolute;
+    display: flex;//learn
+    flex-direction: column-reverse;//learn
+    align-items: center;
+    gap: 20px 10px;
+
+    &--1 {
+      top: 36%;
+      right: 6%;
+      flex-direction: column;
+
+      @include desktop {
+        top: 63%;
+        right: 11%;
+      }
+    }
+
+    &--2 {
+      top: 30%;
+      right: 24%;
+
+      @include desktop {
+        top: 49%;
+        right: 30%;
+      }
+    }
+
+    &--3 {
+      top: 39%;
+      right: 34%;
+
+      @include desktop {
+        top: 80%;
+        right: 49%;
+        flex-direction: row-reverse;
+      }
+    }
+
+    &--4 {
+      top: 19%;
+      right: 48%;
+
+      @include desktop {
+        top: 45%;
+        right: 61%;
+        align-items: end;
+      }
+    }
+
+    &--5 {
+      top: 42%;
+      right: 58%;
+      align-items: start;
+
+      @include desktop {
+        top: 65%;
+        right: 71%;
+        align-items: center;
+      }
+    }
+  }
+
+  &__popup-btn {
+    position: relative;
+    z-index: 1;
+    width: 51px;
+    height: 51px;
+    background: #EB5757;
+    border-radius: 50%;
+    transition: all $transition-duration;
+
+    @include hover {
+      transform: scale(1.2) rotate(360deg);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      display: block;
+      width: 11px;
+      height: 1px;
+      background: #E0E0E0;
+      transform: translate(50%, -50%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      display: block;
+      width: 1px;
+      height: 11px;
+      background: #E0E0E0;
+      transform: translate(50%, -50%);
+      opacity: 1;
+      transition: all $transition-duration;
+    }
+
+    &--active {
+      background: #242323BF;
+
+      &::after {
+        opacity: 0;
+      }
+    }
+
+    &--4 {
+      transform: translateX(70%);
+    }
+
+    &--5 {
+      margin-left: 45px;
+
+      @include desktop {
+        margin: 0;
+      }
+    }
+  }
+
+  &__popup {
+    @include materialsCardStyles;
+
+    display: block;
+    max-width: 283px;
+    padding: 35px;
+    opacity: 0;
+    transition: all $transition-duration;
+
+    &--active {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  &__vertical-text {
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      margin-right: 10px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__vertical-text-2 {
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      top: 215px;
+      left: 0;
+      display: flex;
+      margin-left: 10px;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,142 @@
+.size {
+  &__content {
+    @include tablet {
+      @include grid;
+    }
+  }
+
+  &__title {
+    margin-block: 0 20px;
+    color: $black-color;
+    font-family: $second-font;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    @include tablet {
+      grid-column: 1 / -1;
+      margin-bottom: 30px;
+    }
+
+    @include desktop {
+      margin-bottom: 69px;
+    }
+  }
+
+  &__description {
+    margin-block: 0 30px;
+
+    @include tablet {
+      grid-column: 1 / -2;
+      margin-bottom: 38px;
+    }
+
+    @include desktop {
+      grid-column: span 3;
+      margin: 0 16px 0 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      grid-column: 1 / -1;
+      flex-direction: row-reverse;
+      column-gap: 36px;
+      margin-bottom: 20px;
+    }
+
+    @include desktop {
+      grid-column: 4 / -1;
+      column-gap: 96px;
+      margin: 0;
+    }
+  }
+
+  &__photo-wrapper {
+    @include hover {
+      transform: scale(0.9);
+      cursor: pointer;
+    }
+
+    @include tablet {
+      flex: 0 0 60%;//learn
+    }
+  }
+
+  &__photo {
+    display: block;//learn
+    width: calc(100% + 60px);
+    margin: 0 0 30px -30px;
+
+    @include tablet {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    margin-bottom: 15px;
+
+    @include tablet {
+      margin: 0;
+    }
+
+    @include desktop {
+      margin-left: -30px;
+      margin-bottom: 158px;
+      padding-left: 30px;
+      border-left: 1px solid #D8D8D8;
+    }
+  }
+
+  &__option {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: $black-color;
+    font-family: $second-font;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 2.79px;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__remark {
+    position: relative;
+
+    @include tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include desktop {
+      grid-column: span 6;
+      margin-top: -100px;
+      padding-left: 10px;
+    }
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -10px;
+
+      @include desktop {
+        left: 0;
+      }
+    }
+  }
+}

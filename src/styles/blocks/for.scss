@@ -1,0 +1,277 @@
+.for {
+  &__content {
+    @include desktop {
+      position: relative;
+    }
+  }
+
+  &__title {
+    margin-block: 0 25px;
+    color: $gray-color;
+    font-family: $second-font;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    @include tablet {
+      margin-block: 0 42px;
+    }
+
+    @include desktop {
+      margin-block: 0 34px;
+    }
+  }
+
+  &__items {
+    @include grid;
+
+    row-gap: 70px;
+
+    @include tablet {
+      row-gap: 110px;
+    }
+
+    @include desktop {
+      row-gap: 80px;
+    }
+  }
+
+  &__item {
+    grid-column: 1 / -1;
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      column-gap: 15px;
+    }
+
+    @include desktop {
+      column-gap: 100px;
+    }
+
+    &--2 {
+      @include tablet {
+        column-gap: 57px;
+      }
+
+      @include desktop {
+        grid-column: 2 / 6;
+        flex-direction: column;
+        row-gap: 110px;
+        align-self: center;
+      }
+    }
+
+    &--3 {
+      @include tablet {
+        column-gap: 20px;
+      }
+
+      @include desktop {
+        grid-column: -1 / -6;
+        flex-direction: column;
+        row-gap: 110px;
+      }
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: 40%;
+      object-fit: contain;
+      object-position: center;
+      // aspect-ratio: 1 / 2;//LEARN
+    }
+
+    @include desktop {
+      width: 42.7%;
+    }
+
+    @include hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    &--2 {
+      @include tablet {
+        width: 43%;
+      }
+
+      @include desktop {
+        order: -1;
+        width: 81%;
+        align-self: self-start;
+      }
+    }
+
+    &--3 {
+      @include desktop {
+        width: 100%;
+      }
+    }
+  }
+
+  &__info {
+    @include tablet {
+      position: relative;
+      display: flex;
+      column-gap: 20px;
+    }
+
+    @include desktop {
+      column-gap: 57px;
+    }
+
+    &--2 {
+      @include tablet {
+        flex-direction: column;
+        row-gap: 22px;
+      }
+    }
+  }
+
+  &__label {
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      top: -40px;
+      left: 38px;
+      // transform: translate(65px, -20px);//ASK
+      // transform: translate(110%, -100%);
+      display: block;
+      color: $gray-color;
+    }
+
+    @include desktop {
+      top: -64px;
+      left: 56px;
+    }
+
+    &::before {
+      @include tablet {
+        content: "*";//lEARN
+        margin-right: 10px;
+        color: $black-color;
+        font-size: 24px;
+        line-height: normal;
+      }
+
+      @include desktop {
+        display: inline-block;
+        margin-right: 30px;
+        transform: translateY(25%);
+      }
+    }
+
+    &--2 {
+      @include tablet {
+        left: auto;
+        right: 0;
+      }
+
+      @include desktop {
+        left: -40px;
+      }
+    }
+
+    &--3 {
+      @include desktop {
+        left: -40px;
+      }
+    }
+  }
+
+  &__number {
+    display: flex;
+    gap: 30px 10px;
+    padding-left: 8px;
+    color: $black-color;
+    font-family: $second-font;
+    font-size: 36px;
+    line-height: 1.8;
+    letter-spacing: 5.58px;
+
+    &::before {
+      content: "";
+      height: 46px;
+      width: 1px;
+      transform: rotate(22deg);
+      background: $gray-color;
+    }
+  }
+
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include tablet {
+      row-gap: 10px;
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    margin-block: 0;
+    color: $black-color;
+    font-family: $second-font;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+
+    &::after {
+      display: none;
+
+      @include tablet {
+        content: "";
+        position: absolute;
+        display: inline;
+        width: 1px;
+        height: 46px;
+        margin-left: 7px;
+        transform: rotate(22deg);
+        background: $gray-color;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+
+    @include desktop {
+      max-width: 370px;
+    }
+  }
+
+  &__vertical-text {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 7px;
+
+    @include tablet {
+      top: -105px;
+      margin-right: 10px;
+    }
+
+    @include desktop {
+      top: 0;
+      margin: 0;
+    }
+  }
+
+  &__vertical-text-2 {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      transform: rotate(180deg);//learn
+    }
+  }
+}

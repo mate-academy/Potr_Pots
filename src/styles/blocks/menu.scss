@@ -1,0 +1,57 @@
+.menu {
+  height: 100vh;
+  width: 72vw;
+  padding-top: 138px;
+  box-sizing: border-box;
+  background: $blue-color;
+
+  &__content {
+    // position: relative;
+    // padding-block: 138px 250px;
+  }
+
+  &__nav {
+    // margin-bottom: 90px;
+  }
+
+  &__close-wrapper {
+    position: fixed;
+    bottom: 43px;
+    right: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 18px;
+    width: max-content;
+    margin-left: auto;
+  }
+
+  &__close-text {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    color: $gray-light-color;
+    font-size: 12px;
+    text-transform: uppercase;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 1px;
+      height: 44px;
+      background: $gray-light-color;
+    }
+  }
+
+  &__close-button {
+    width: 12px;
+    height: 12px;
+    background: url(../images/icons/menu-close.svg);
+
+    @include hover {
+      transform: scale(1.2) rotate(360deg);
+    }
+  }
+}
