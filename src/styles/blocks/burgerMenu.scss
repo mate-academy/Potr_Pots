@@ -1,0 +1,113 @@
+.burger-menu {
+  box-sizing: border-box;
+  background-color: $color-title-third;
+  padding: 130px 30px 0 80px;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 5;
+
+  @include on-tablet {
+    padding-top: 140px;
+  }
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &__content {
+    max-width: 1020px;
+    margin: 0 auto;
+  }
+
+  &__bottom {
+    display: grid;
+  }
+
+  &__close {
+    justify-self: flex-end;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    gap: 70px;
+
+    @include hover(transform, scale(1.1));
+  }
+
+  &__close-text {
+    writing-mode: vertical-lr;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-text-secondary;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+    position: relative;
+
+    &::before {
+      content: '';
+      height: 1px;
+      width: 44px;
+      background-color: $color-text-secondary;
+      display: inline-block;
+      transform: rotate(90deg);
+      position: absolute;
+      left: -13px;
+      bottom: 65px;
+    }
+  }
+
+  &__list {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__list-item {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    width: max-content;
+    margin-bottom: 8px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid transparent;
+    transition: border $animation-time;
+    position: relative;
+
+    &:hover {
+      border-color: $color-text-secondary;
+    }
+  }
+
+  &__link {
+    color: $color-text-secondary;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &__link-count {
+    position: absolute;
+    left: 120%;
+    bottom: 50%;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 9px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 11px;
+    letter-spacing: 0.15em;
+    text-align: center;
+
+    color: $color-text-secondary;
+    border-radius: 50%;
+    background-color: rgba(235, 87, 87, 1);
+  }
+}
