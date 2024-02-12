@@ -8,15 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
     <title>POTR POST</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    >
     <link rel="stylesheet" href="./styles/main.scss">
-    <script src="scripts/main.js" defer></script>
+    <script
+      type="module"
+      src="scripts/main.js"
+      defer
+    ></script>
   </head>
   <body>
     <div class="background-top"></div>
 
     <header class="content-grid">
       <div class="header">
-        <div class="header__logo"><img src="./images/icons/logo.svg" alt="POTR POST"></div>
+        <div class="header__logo">
+          <img src="./images/icons/logo.svg" alt="POTR POST">
+        </div>
 
         <nav class="nav">
           <ul class="nav__list">
@@ -196,7 +206,72 @@
         </div>
       </section>
 
-      <section class="materials" id="materials"></section>
+      <section class="materials" id="materials">
+        <div class="content-grid">
+          <h2 class="materials__title colored-text">Materials and Features</h2>
+          <div class="materials__details">
+            <p class="materials__details-title">Environmentally friendly</p>
+            <p>All materials used in our pots are made from 100% recycled materials and are 100% recyclable at the end of life (should you ever choose to get rid of your POTR!). All materials have been sourced from within Europe to reduce our carbon footprint when transporting the raw materials, and all manufacturing is carried out in the UK.</p>
+          </div>
+        </div>
+
+        <div class="materials__image">
+          <picture>
+            <source media="(min-width:1260px)" srcset="./images/section4-desk.jpg">
+            <source media="(min-width:768px)" srcset="./images/section4-tab.jpg">
+            <img
+              src="./images/section4-mob.jpg"
+              alt="cactus"
+              class="materials__image-img"
+            >
+          </picture>
+        </div>
+
+        <div class="content-grid">
+          <div class="swiper materials__mob">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.</div>
+              <div class="swiper-slide">Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.</div>
+              <div class="swiper-slide">Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.</div>
+              <div class="swiper-slide">POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.</div>
+              <div class="swiper-slide">POTR Pots are constructed using recycled polypropylene which can be fully recycled.</div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="materials__tab">
+            <div class="materials__tab-info materials__tab-info--1">
+              <p class="materials__tab-info-text">
+                We have chosen Bobbiny recycled cotton cord to use as our draw string and wicking cord. Not only is it 100% recycled, it looks great and works really well at wicking water.
+              </p>
+            </div>
+
+            <div class="materials__tab-info materials__tab-info--2">
+              <p class="materials__tab-info-text">
+                Shipped flat packed so they can be slipped through your letterbox, POTR Pots have the smallest carbon footprint possible during transit.
+              </p>
+            </div>
+
+            <div class="materials__tab-info materials__tab-info--3">
+              <p class="materials__tab-info-text">
+                Once assembled the cotton cord doubles as the watering system, allowing your plants to self-regulate their water intake using tried and tested wicking technology.
+              </p>
+            </div>
+
+            <div class="materials__tab-info materials__tab-info--4">
+              <p class="materials__tab-info-text">
+                POTR pots are flat pack, origami planters designed to self-water your plants, made from recycled materials.
+              </p>
+            </div>
+
+            <div class="materials__tab-info materials__tab-info--5">
+              <p class="materials__tab-info-text">
+                POTR Pots are constructed using recycled polypropylene which can be fully recycled.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="size content-grid" id="size">
         <h2 class="size__title">Which size POTR for my house plant ?</h2>
@@ -270,83 +345,116 @@
         </div>
       </section>
 
-      <section class="questions content-grid" id="questions">
-        <h2 class="questions__title">have any questions?</h2>
-        <p class="questions__details">Here few ways to get in touch with us:</p>
-        <div class="questions__form-wrapper">
-          <p class="questions__form-title">Message us</p>
-          <form
-            class="questions__form"
-            action="#"
-            onsubmit="this.reset(); return false;"
-            >
-            <input
-              class="questions__input"
-              type="text"
-              placeholder="Name"
-            >
+      <section class=" content-grid" id="questions">
+        <div class="questions">
+          <div class="questions__top">
+            <h2 class="questions__title">have any questions?</h2>
+            <p class="questions__details">Here few ways to get in touch with us:</p>
+            <div class="questions__form-wrapper">
+              <p class="questions__form-title">Message us</p>
+              <form
+                class="questions__form"
+                action="#"
+                onsubmit="this.reset(); return false;"
+                >
+                <input
+                  class="questions__input"
+                  type="text"
+                  placeholder="Name"
+                >
 
-            <input
-              class="questions__input"
-              type="email"
-              placeholder="Email"
-            >
+                <input
+                  class="questions__input"
+                  type="email"
+                  placeholder="Email"
+                >
 
-            <textarea
-              class="questions__input questions__input--textarea"
-              name="message"
-              placeholder="Message"
-              cols="30"
-              rows="2"
-            ></textarea>
+                <textarea
+                  class="questions__input questions__input--textarea"
+                  name="message"
+                  placeholder="Message"
+                  cols="30"
+                  rows="2"
+                ></textarea>
 
-            <button class="button button--form">Send <span class="button--arrow"></span></button>
-          </form>
+                <button class="button button--form">Send <span class="button--arrow"></span></button>
+              </form>
+            </div>
+          </div>
+
+          <address class="questions__address">
+            <div>
+              <p class="questions__address-title">Our phone</p>
+
+              <a class="questions__address-link" href="tel:+123455555555">
+                <span>(270) 555-0117</span>
+              </a>
+            </div>
+
+            <div>
+              <p class="questions__address-title">Our email</p>
+
+              <a class="questions__address-link" href="mailto:potrpots@gmail.com">
+                <span>potrpots@gmail.com</span>
+              </a>
+            </div>
+
+            <div>
+              <p class="questions__address-title">Our office</p>
+
+              <a
+                class="questions__address-link"
+                href="https://www.google.com/maps/place/99+Staple+Hill+Rd,+Bristol+BS16+5AD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0+%D0%91%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D1%96%D1%8F/data=!4m2!3m1!1s0x48718fe6a41edcc5:0x1d95fb4b9dab9646?sa=X&ved=2ahUKEwju5M3c_ZuEAxVvhv0HHb13BnIQ8gF6BAgPEAA"
+                target="_blank"
+              >
+                United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD
+              </a>
+            </div>
+          </address>
         </div>
-
-        <address class="questions__address">
-          <div>
-            <p class="questions__address-title">Our phone</p>
-
-            <a class="questions__address-link" href="tel:+123455555555">
-              <span>(270) 555-0117</span>
-            </a>
-          </div>
-
-          <div>
-            <p class="questions__address-title">Our email</p>
-
-            <a class="questions__address-link" href="mailto:potrpots@gmail.com">
-              <span>potrpots@gmail.com</span>
-            </a>
-          </div>
-
-          <div>
-            <p class="questions__address-title">Our office</p>
-
-            <a
-              class="questions__address-link"
-              href="https://www.google.com/maps/place/99+Staple+Hill+Rd,+Bristol+BS16+5AD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0+%D0%91%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D1%96%D1%8F/data=!4m2!3m1!1s0x48718fe6a41edcc5:0x1d95fb4b9dab9646?sa=X&ved=2ahUKEwju5M3c_ZuEAxVvhv0HHb13BnIQ8gF6BAgPEAA"
-              target="_blank"
-            >
-              United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD
-            </a>
-          </div>
-        </address>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="footer__top">
-        <address></address>
+    <footer class="content-grid">
+      <div class="footer">
+        <address class="footer__address">
+          <h3 class="footer__address-title">Address</h3>
 
-        <div class="sosial-meadia"></div>
+          <a
+            class="questions__address-link"
+            href="https://www.google.com/maps/place/99+Staple+Hill+Rd,+Bristol+BS16+5AD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0+%D0%91%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D1%96%D1%8F/data=!4m2!3m1!1s0x48718fe6a41edcc5:0x1d95fb4b9dab9646?sa=X&ved=2ahUKEwju5M3c_ZuEAxVvhv0HHb13BnIQ8gF6BAgPEAA"
+            target="_blank"
+          >
+            United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD
+          </a>
+        </address>
 
-        <div class="about-us"></div>
+        <div class="footer__center">
+          <ul class="footer__social-list">
+            <li class="footer__social-item">
+              <a class="footer__social-link footer__social-link--twitter" href="#"></a>
+            </li>
+
+            <li class="footer__social-item">
+              <a class="footer__social-link footer__social-link--insta" href="#"></a>
+            </li>
+
+            <li class="footer__social-item">
+              <a class="footer__social-link footer__social-link--facebook" href="#"></a>
+            </li>
+          </ul>
+
+          <div class="footer__logo">
+            <img src="./images/icons/logo.svg" alt="POTR POST">
+          </div>
+        </div>
+
+        <div class="footer__about-us">
+          <h3 class="footer__about-us-title">About us</h3>
+
+          <p>Copyright © 2019</p>
+        </div>
       </div>
-
-      <div class="footer__bottom">
-        <div class="logo"></div>
       </div>
     </footer>
   </body>

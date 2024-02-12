@@ -5,13 +5,35 @@
   &::before {
     content: "";
     z-index: -1;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
     background-color: #ffec7a;
-    height: 1000px;
+    height: 120%;
     position: absolute;
     top: -30px;
-    left: -30px;
+    left: -100%;
     right: -30px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(110px, -110px);
+    width: 162px;
+    height: 164px;
+    background-image: url('../images/icons/footer.svg');
+  }
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    align-items: center;
+
+    &__top {
+      grid-column: span 3;
+    }
   }
 
   &__title {
@@ -72,6 +94,10 @@
     flex-direction: column;
     gap: 34px;
     font-style: normal;
+
+    @include on-tablet {
+      grid-column: 5 / span 2
+    }
 
     &-title {
       font-size: 24px;
