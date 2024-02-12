@@ -1,0 +1,126 @@
+.team {
+  margin: 110px 0;
+
+  background-image: url("../images/svg/bg-rectangle.svg");
+  background-position: bottom left;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+
+  @include tablet {
+    background-position: center left;
+  }
+
+  @include desktop {
+    background-position: 0 200px;
+  }
+
+  &__title {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 58px;
+    letter-spacing: 0.15em;
+    color: $gray-1;
+
+    margin-bottom: 25px;
+  }
+
+  &__block {
+    position: relative;
+    padding-bottom: 58px;
+
+    @include tablet {
+      display: flex;
+      gap: 30px;
+      padding-bottom: 0;
+      padding-top: 200px;
+    }
+
+    @include desktop {
+      padding-top: 373px;
+    }
+  }
+
+  &__image {
+    margin: 0 -30px;
+    background: url("../images/team.png") center no-repeat;
+    background-size: cover;
+    padding-bottom: 90%;
+
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin: 0;
+      padding-bottom: 50%;
+      order: 2;
+      flex: 1 1 auto;
+      background-size: contain;
+      background-position: top right;
+
+      position: relative;
+      top: -53px;
+    }
+
+    @include desktop {
+      margin-right: 100px;
+
+      position: relative;
+      top: -230px;
+    }
+  }
+
+  &__description {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $gray-1;
+
+    @include tablet {
+      font-family: $third-family;
+      flex: 0 0 47%;
+      max-width: 336px;
+    }
+  }
+
+  &__name {
+    display: none;
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 231px;
+    letter-spacing: 0.15em;
+    color: transparent;
+    -webkit-text-stroke: 1px $blue;
+
+    z-index: 2;
+
+    @include tablet {
+      display: block;
+      position: absolute;
+    }
+
+    &--martin {
+      top: -2%;
+      left: -12%;
+    }
+
+    &--andy {
+      bottom: -11%;
+      right: -10%;
+    }
+
+    @include desktop {
+      &--martin {
+        font-size: 288px;
+
+        top: 3%;
+        left: -5%;
+      }
+
+      &--andy {
+        bottom: 4%;
+        right: -8%;
+      }
+    }
+  }
+}

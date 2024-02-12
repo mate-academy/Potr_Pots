@@ -125,6 +125,14 @@
       padding-bottom: 42%;
 
       flex: 0 0 42%;
+
+      transition: all .3s;
+
+      &:hover {
+        border-radius: 10px;
+        transform: scale(1.1);
+        box-shadow: 10px 10px 15px rgba($blue, 0.8);
+      }
     }
 
     @for $i from 1 to 4 {
@@ -132,7 +140,7 @@
         background-image: url("../images/for-whom-#{$i}.png");
       }
     }
-    
+
     &__block {
       display: flex;
       gap: 15px;
@@ -146,6 +154,10 @@
         .for-whom {
           &__image {
             order: 2;
+
+            &:hover {
+              box-shadow: -10px 10px 15px rgba($blue, 0.8);
+            }
           }
 
           &__note {

@@ -1,0 +1,83 @@
+.features {
+  &__title {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 58px;
+    letter-spacing: 0.15em;
+    color: $blue;
+
+    margin-bottom: 25px;
+
+    @include tablet {
+      margin-bottom: 52px;
+    }
+
+    @include desktop {
+      margin-bottom: 74px;
+    }
+
+    & span {
+      color: transparent;
+      -webkit-text-stroke: 1px $blue;
+    }
+  }
+
+  &__bloks {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @include desktop {
+      gap: 29px;
+    }
+  }
+
+  &__block-image {
+    padding-bottom: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    margin-bottom: 35px;
+
+    @for $i from 1 to 4 {
+      &--#{$i} {
+        background-image: url("../images/feature-#{$i}.png");
+      }
+    }
+  }
+
+  &__block-name {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 24px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    color: $gray-1;
+
+    margin-bottom: 20px;
+  }
+
+  &__block-description {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: $gray-2;
+
+    @include tablet {
+      text-align: left;
+    }
+
+    @include desktop {
+      text-align: center;
+    }
+  }
+}
