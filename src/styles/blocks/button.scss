@@ -20,7 +20,7 @@
   }
 
   &:hover {
-    opacity: .8;
+    opacity: .7;
   }
 
   &--main {
@@ -42,6 +42,15 @@
 
     @include on-desktop {
       max-width: 238px;
+    }
+  }
+
+  &--mixed {
+    @include primary-button;
+
+    @include on-tablet {
+      @include secondary-button;
+      @include hover(background-color, $main-accent-color);
     }
   }
 

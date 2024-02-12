@@ -11,7 +11,7 @@
       grid-template-areas:
         "title title title title . ."
         ". . price price . ."
-        ". button button . . ."
+        ". button button . . .";
     }
   }
 
@@ -21,7 +21,7 @@
       grid-template-areas:
         ". title title title title title . . . . . ."
         ". . . . price price . . . . . ."
-        ". . . button button button . . . . . ."
+        ". . . button button button . . . . . .";
     }
   }
 
@@ -31,7 +31,7 @@
     @include on-tablet {
       grid-area: title;
       font-size: 64px;
-      line-height: .8;
+      line-height: 0.8;
       letter-spacing: 10px;
     }
   }
@@ -61,6 +61,8 @@
     margin-bottom: 25px;
     margin-inline: -30px;
 
+    @include hover(transform, scale(1.05));
+
     @include on-tablet {
       order: 0;
       margin-bottom: 0;
@@ -80,6 +82,39 @@
   &__button {
     @include on-tablet {
       grid-area: button;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 134px;
+    right: -100px;
+    transform: rotate(90deg);
+
+    @include hover(opacity, 0.7);
+
+    @include on-tablet {
+      transform-origin: left;
+      bottom: 134px;
+      right: auto;
+      left: 0;
+    }
+
+    &-link {
+      color: $main-accent-color;
+      text-decoration: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -40px;
+      width: 8px;
+      height: 45px;
+      background-image: url("../images/icons/scroll-arrow.svg");
+      transform: rotate(-90deg) translateY(-50%);
+      transform-origin: top;
     }
   }
 }

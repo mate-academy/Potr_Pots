@@ -1,4 +1,5 @@
 'use strict';
+
 import Swiper from 'swiper';
 import { Pagination } from 'swiper/modules';
 
@@ -8,24 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const menu = document.querySelector('.nav');
   const materialsTab = document.querySelector('.materials__tab');
 
-  menuButton.addEventListener('click', function() {
-    menu.classList.add('is-open');
-  });
+  const openMenu = () => menu.classList.add('is-open');
+  const closeMenu = () => menu.classList.remove('is-open');
 
-  closeButton.addEventListener('click', function() {
-    menu.classList.remove('is-open');
-  });
-
-  menu.addEventListener('click', function() {
-    menu.classList.remove('is-open');
-  });
+  menuButton.addEventListener('click', openMenu);
+  closeButton.addEventListener('click', closeMenu);
+  menu.addEventListener('click', closeMenu);
 
   const closeOpenTab = (container) => {
     const currentOpen = container.querySelector('.is-open');
 
     if (currentOpen) {
       currentOpen.classList.remove('is-open');
-    };
+    }
   };
 
   materialsTab.addEventListener('click', function(event) {
@@ -42,15 +38,14 @@ document.addEventListener('DOMContentLoaded', function() {
       closeOpenTab(materialsTab);
     }
   });
+
+  const swiper = new Swiper('.materials__mob', {
+    modules: [Pagination],
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  });
+
+  swiper.init();
 });
-
-const swiper = new Swiper('.materials__mob', {
-  modules: [Pagination],
-  loop: true,
-
-  pagination: {
-    el: '.swiper-pagination',
-  },
-});
-
-swiper();
