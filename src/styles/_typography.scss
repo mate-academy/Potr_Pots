@@ -1,3 +1,31 @@
-h1 {
-  @extend %h1;
+h1, h2, h3 {
+  @extend %title;
 }
+
+body {
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.colored-text {
+  color: $main-accent-color;
+}
+
+.hollow-text {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  color: transparent;
+  -webkit-text-stroke: .1px $main-accent-color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  font-size: 36px;
+  line-height: 43px;
+  letter-spacing: 5px;
+}
+

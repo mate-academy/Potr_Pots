@@ -1,0 +1,122 @@
+.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 80%;
+  background-color: $main-accent-color;
+  opacity: 0;
+  transform: translateX(100%);
+
+  @include on-desktop {
+    position: relative;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transform: translate(0);
+    background-color: transparent;
+    justify-content: space-between;
+  }
+
+  &__close-button {
+    position: absolute;
+    bottom: 43px;
+    right: 33px;
+    background-image: url('../images/icons/close-button.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    width: 12px;
+    height: 12px;
+
+    @include hover(transform, scale(1.2));
+
+    &::before {
+      content: "close";
+      position: absolute;
+      top: -90px;
+      left: 50%;
+      text-transform: uppercase;
+      color: $light-text-color;
+      transform: rotate(-90deg) translateX(-50%);
+      transform-origin: left;
+      white-space: nowrap;
+    }
+
+    &::after{
+      content: "";
+      position: absolute;
+      top: -55px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 44px;
+      width: 1px;
+      background-color: $light-text-color;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    list-style: none;
+
+    @include on-desktop {
+      flex-direction: row;
+      width: 100%;
+      gap: 60px;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale(1.2));
+    
+    @include on-desktop {
+      order: 0;
+
+      &:nth-child(2) {
+        margin-left: auto;
+      }
+
+      &--basket {
+        order: 1;
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $light-text-color;
+
+    @include on-desktop {
+      color: $secondary-text-color;
+    }
+
+    &--icon {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+
+    @include on-desktop {
+      &--text {
+        display: none;
+      }
+    }
+  }
+
+  &.is-open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

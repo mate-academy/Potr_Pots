@@ -1,0 +1,25 @@
+.feature {
+  text-align: center;
+
+  @include hover(transform, scale(1.05));
+
+  &__image {
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    font-size: 24px;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+
+  &--3 {
+    @include on-tablet {
+      order: -1;
+    }
+
+    @include on-desktop {
+      order: 3;
+    }
+  }
+}

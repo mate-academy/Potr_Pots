@@ -1,0 +1,133 @@
+.questions {
+  position: relative;
+  margin-bottom: 102px;
+
+  &::before {
+    content: "";
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+    background-color: #ffec7a;
+    height: 120%;
+    position: absolute;
+    top: -30px;
+    left: -100%;
+    right: -30px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(110px, -110px);
+    width: 162px;
+    height: 164px;
+    background-image: url('../images/icons/footer.svg');
+  }
+
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    align-items: center;
+
+    &__top {
+      grid-column: span 3;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: $accent-text-color;
+  }
+
+  &__details {
+    margin-bottom: 40px;
+  }
+
+  &__form-wrapper {
+    margin-bottom: 56px;
+  }
+
+  &__form-title {
+    font-size: 24px;
+    line-height: 36px;
+    color: $accent-text-color;
+    margin-bottom: 25px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 4px 6px;
+    margin-bottom: 20px;
+    background-color: transparent;
+
+    font-family: Manrope, sans-serif;
+
+    border: none;
+    border-bottom: 1px solid #d8d8d8;
+
+    transition: all .3;
+
+    &--textarea {
+      resize: none;
+    }
+
+    &::placeholder {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $secondary-text-color;
+    }
+
+    &:hover {
+      border-bottom: 1px solid $main-accent-color;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $main-accent-color;
+    }
+
+    &:invalid {
+      color: #eb5757;
+      border-bottom: 1px solid #eb5757;
+    }
+
+    &:required {
+      border-bottom: 1px solid #d8d8d8;
+    }
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    font-style: normal;
+
+    @include on-tablet {
+      grid-column: 5 / span 2
+    }
+
+    &-title {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 36px;
+      color: $secondary-text-color;
+    }
+
+    &-link {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: $accent-text-color;
+      text-decoration: none;
+      cursor: pointer;
+
+      @include hover(color, $main-accent-color);
+    }
+  }
+}

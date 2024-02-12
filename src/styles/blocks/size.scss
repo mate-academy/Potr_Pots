@@ -1,0 +1,84 @@
+.size {
+  margin-bottom: 110px;
+
+  @include on-tablet {
+    &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      grid-template-areas:
+      "desc desc desc desc desc desc"
+      "option option image image image image"
+      "details details details details details details";
+    }
+  }
+
+  @include on-desktop {
+    &__wrapper {
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+      grid-template-areas:
+      "desc desc desc option option option . image image image image image"
+      "details details details details details details . image image image image image";
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: $main-text-color;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    grid-area: desc;
+  }
+
+  &__image {
+    margin-inline: -30px;
+    margin-bottom: 30px;
+    grid-area: image;
+
+    @include on-tablet {
+      margin: 0;
+    }
+  }
+
+  &__options {
+    position: relative;
+    grid-area: option;
+
+    @include on-desktop {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -20px;
+        width: 1px;
+        height: 257px;
+        background-color: #D8D8D8;
+      }
+
+    }
+
+    &-title {
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 0.15em;
+    }
+  }
+
+  &__large {
+    margin-bottom: 40px;
+  }
+
+  &__small {
+    margin-bottom: 15px;
+  }
+
+  &__details {
+    grid-area: details;
+  }
+}

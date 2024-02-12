@@ -1,0 +1,120 @@
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 110px;
+
+  @include on-tablet {
+    &__text {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas:
+        "title title title title . ."
+        ". . price price . ."
+        ". button button . . .";
+    }
+  }
+
+  @include on-desktop {
+    &__text {
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-areas:
+        ". title title title title title . . . . . ."
+        ". . . . price price . . . . . ."
+        ". . . button button button . . . . . .";
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-area: title;
+      font-size: 64px;
+      line-height: 0.8;
+      letter-spacing: 10px;
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+
+    @include on-tablet {
+      grid-area: price;
+    }
+
+    &-amount {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 36px;
+      color: $accent-text-color;
+    }
+
+    &-cta {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+
+  &__image {
+    order: -1;
+    margin-bottom: 25px;
+    margin-inline: -30px;
+
+    @include hover(transform, scale(1.05));
+
+    @include on-tablet {
+      order: 0;
+      margin-bottom: 0;
+      margin-inline: 0;
+      width: 40%;
+      min-width: 306px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    @include on-desktop {
+      max-width: 500px;
+    }
+  }
+
+  &__button {
+    @include on-tablet {
+      grid-area: button;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 134px;
+    right: -100px;
+    transform: rotate(90deg);
+
+    @include hover(opacity, 0.7);
+
+    @include on-tablet {
+      transform-origin: left;
+      bottom: 134px;
+      right: auto;
+      left: 0;
+    }
+
+    &-link {
+      color: $main-accent-color;
+      text-decoration: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -40px;
+      width: 8px;
+      height: 45px;
+      background-image: url("../images/icons/scroll-arrow.svg");
+      transform: rotate(-90deg) translateY(-50%);
+      transform-origin: top;
+    }
+  }
+}

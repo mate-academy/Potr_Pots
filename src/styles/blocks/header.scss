@@ -1,0 +1,29 @@
+.header {
+  position: relative;
+  padding-block: 15px;
+  display: flex;
+  place-content: center space-between;
+
+  @include on-tablet {
+    padding-block: 29px;
+  }
+
+  &__logo {
+    align-self: center;
+    transform: scale(1);
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__open-button {
+    background-image: url('../images/icons/menu.svg');
+    width: 48px;
+    height: 48px;
+    
+    @include hover(transform, scale(1.2));
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+}

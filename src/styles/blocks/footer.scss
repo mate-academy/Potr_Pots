@@ -1,0 +1,89 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+
+  @include on-tablet {
+    flex-direction: row;
+    gap: 70px;
+    margin-bottom: 110px;
+  }
+
+  &__address {
+    display: none;
+    font-style: normal;
+    max-width: 170px;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+
+  &__about-us {
+    text-align: center;
+
+    @include on-tablet {
+      text-align: left;
+    }
+
+    &-title {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__address-title,
+  &__about-us-title {
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $accent-text-color;
+    margin-bottom: 10px;
+  }
+
+  &__center {
+    width: 220px;
+  }
+
+  &__logo {
+    width: 172px;
+    height: 54px;
+    margin: 0 auto;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__social-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__social-link {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include hover(transform, scale(1.2));
+
+    &--twitter {
+      background-image: url("../images/icons/twitter-icon.svg");
+    }
+
+    &--insta {
+      background-image: url("../images/icons/insta-icon.svg");
+    }
+
+    &--facebook {
+      background-image: url("../images/icons/facebook-icon.svg");
+    }
+  }
+}

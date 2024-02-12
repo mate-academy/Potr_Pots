@@ -4,3 +4,28 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin primary-button {
+  background-color: $secondary-button-color;
+}
+
+@mixin secondary-button {
+  background-color: transparent;
+  border: 1px solid $main-accent-color;
+}
+
+@mixin form-button {
+  background-color: $main-accent-color;
+}
