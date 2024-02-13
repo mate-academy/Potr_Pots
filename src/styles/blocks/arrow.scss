@@ -1,0 +1,68 @@
+$arrow-color: black;
+$arrow-thickness: 1px;
+$arrow-length: 25px;
+$long-arrow-length: 44px;
+$arrowhead-size: 5px;
+
+@function set-arrowhead($length, $arrow-head-length) {
+  @return calc($length - $arrow-head-length);
+}
+
+@mixin arrowhead-line {
+  content: "";
+  display: block;
+
+  height: $arrow-thickness;
+  width: $arrowhead-size;
+
+  background-color: $arrow-color;
+  border-radius: 1px;
+}
+
+@mixin arrowhead($length) {
+  &::before {
+    @include arrowhead-line;
+
+    transform-origin: right;
+    transform: translate(
+      set-arrowhead($length, $arrowhead-size),
+      calc(-0.25 * $arrow-thickness)
+    ) rotate(-45deg);
+  }
+
+  &::after {
+    @include arrowhead-line;
+
+    transform-origin: right;
+    transform: translate(
+      set-arrowhead($length, $arrowhead-size),
+      calc(0.25 * $arrow-thickness - $arrow-thickness)
+    ) rotate(45deg);
+  }
+}
+
+.arrow {
+  height: $arrow-thickness;
+  width: $arrow-length;
+  background-color: $arrow-color;
+
+  @include arrowhead($arrow-length);
+
+  &--long {
+    width: $long-arrow-length;
+
+    @include arrowhead($long-arrow-length);
+  }
+
+  &--main-accent {
+    background-color: $main-accent;
+
+    &::before{
+      background-color: $main-accent;
+    }
+
+    &::after {
+      background-color: $main-accent;
+    }
+  }
+}

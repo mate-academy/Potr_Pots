@@ -1,0 +1,21 @@
+.about-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  text-decoration: none;
+  text-wrap: nowrap;
+  color: $main-accent;
+
+  @include for-foldable-width {
+    display: none;
+  }
+
+  &__arrow {
+    transition: transform $transition-duration;
+  }
+
+  &:hover &__arrow{
+      transform: translateX(10px);
+  }
+}

@@ -1,0 +1,36 @@
+$cross-size: 16px;
+$cross-thickness: 1px;
+
+@mixin cross-line {
+  content: "";
+  display: block;
+
+  height: $cross-thickness;
+  width: $cross-size;
+
+  background-color: $light-grey-text-color;
+}
+
+@function set-cross($size, $thickness) {
+  @return ($size - $thickness) / 2;
+}
+
+.cross {
+  @include square($cross-size);
+
+  &::before {
+    @include cross-line;
+
+    transform:
+      translateY(set-cross($cross-size, $cross-thickness))
+      rotate(-45deg);
+  }
+
+  &::after {
+    @include cross-line;
+
+    transform:
+      translateY(set-cross($cross-size, $cross-thickness) - $cross-thickness)
+      rotate(45deg);
+  }
+}
