@@ -1,0 +1,129 @@
+@import "utils";
+
+.questions {
+  background-image: url(../images/team/Rectangle.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+  &__container {
+    padding: 0 30px;
+
+    @include column-flex;
+
+    gap: 40px;
+    position: relative;
+  }
+
+  &__circle {
+    background-image: url(../images/questions/circle.svg);
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 150px;
+    height: 170px;
+    right: -35px;
+    top: -65px;
+  }
+
+  &__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: left;
+  }
+
+   &__info {
+    padding-top: 45px;
+   }
+
+   &__main {
+    @include column-flex;
+
+    gap: 55px;
+   }
+
+   &__form {
+    color: rgb(0, 0, 0);
+    font-family: Manrope, sans-serif;
+    line-height: 150%;
+
+    @include column-flex;
+
+    gap: 25px;
+   }
+
+   &__legend {
+    font-size: 24px;
+    margin-bottom: 20px;
+   }
+
+   &__row {
+    font-size: 16px;
+   }
+
+   &__input {
+    background-color: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    outline: none;
+    width: 100%;
+   }
+
+   &__button {
+    align-items: center;
+    color: $c-gray;
+    background-color: rgb(3, 131, 158);
+    margin-top: 20px;
+    border: 1px solid rgb(3, 131, 158);
+
+    &:hover {
+      color: black;
+    }
+   }
+
+   &__contacts {
+    font-family: Manrope, sans-serif;
+
+    @include column-flex;
+
+    gap: 35px;
+    max-width: 270px;
+   }
+
+   &__contact-title {
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 24px;
+    line-height: 150%;
+   }
+
+   &__location-adress,
+   &__phone-number,
+   &__email-adress {
+    line-height: 150%;
+
+    &::after {
+      background-color: black;
+      width: 100%;
+      height: 1px;
+    }
+   }
+
+   &__item {
+    width: fit-content;
+    position: relative;
+    transition: $main-transition;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+   }
+}
+

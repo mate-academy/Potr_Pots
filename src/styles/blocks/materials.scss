@@ -1,0 +1,136 @@
+@import "utils";
+
+
+.materials {
+   position: relative;
+  &__wrapper {
+    background-image: url(../images/materials/bg.svg);
+    min-height: 240px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: -1px 0 $c-gray, 0 1px$c-gray, 1px 0 $c-gray, 0 -1px $c-gray;
+    position: relative;
+  }
+
+  &__title {
+    color: $blue;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 58px;
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: 6px;
+    text-align: left;
+    padding: 0 30px;
+    position: absolute;
+    top: -140px;
+  }
+
+  &__content {
+    display: none;
+  }
+
+  &__slider {
+    position: absolute !important;
+    bottom: -200px;
+    right: 2%;
+    left: 2%;
+  }
+
+  &__item {
+    position: absolute;
+    max-width: 283px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    &--1 {
+      right: 20%;
+    }
+
+    &--2 {
+      right: 40%;
+      bottom: 25%;
+    }
+
+    &--3 {
+      right: 50%;
+      bottom: 12%;
+    }
+
+    &--4 {
+      right: 63%;
+      bottom: 40%;
+    }
+
+    &--5 {
+      right: 83%;
+      bottom: 18%;
+    }
+  }
+
+  &__circle {
+    position: relative;
+    width: 51px;
+    height: 51px;
+    background-color: $red;
+    border-radius: 50%;
+    display: block;
+    cursor: pointer;
+    transition: $main-transition;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      content: '+';
+      position: absolute;
+      color: $white;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+
+  &__text {
+    color: rgb(248, 248, 248);
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 35px 45px;
+  }
+
+  &__text-content {
+    position: absolute;
+    max-height: 237px;
+    width: 283px;
+    background-color: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(34px);
+    z-index: 1;
+    display: none;
+
+    &--1 {
+      bottom: -260px;
+    }
+
+    &--2 {
+      bottom: 175%;
+    }
+    &--3 {
+      right: -200%;
+      bottom: 170%;
+    }
+    &--4 {
+      right: -230%;
+      bottom: 150%;
+    }
+    &--5 {
+      right: -450%;
+      bottom: 210%;
+    }
+  }
+
+}
+

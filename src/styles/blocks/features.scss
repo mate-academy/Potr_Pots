@@ -1,0 +1,81 @@
+@import "utils";
+
+
+.features {
+  padding: 0 30px;
+
+  &__container,
+  &__content,
+  &__block,
+  &__text {
+    @include column-flex;
+  }
+
+
+  &__container {
+    gap: 23px;
+  }
+
+  &__content {
+    gap: 70px;
+  }
+
+  &__block {
+    gap: 37px;
+  }
+
+  &__text {
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  &__logo-title {
+    color: rgb(3, 131, 158);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 65px;
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: 5px;
+    text-align: left;
+
+    & span {
+      color: $c-gray;
+      text-shadow: -1px 0 $blue, 0 1px $blue, 1px 0 $blue, 0 -1px $blue;
+
+    }
+  }
+
+  &__picture {
+    height: 260px;
+    background-position: center;
+    background-size: cover;
+
+    &--1 {
+      background-image: url(../images/features/1.svg);
+    }
+    &--2 {
+      background-image: url(../images/features/2.svg);
+    }
+    &--3 {
+      background-image: url(../images/features/3.svg);
+    }
+  }
+
+  &__title {
+    color: $black;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+  &__subtitle {
+    color: rgb(79, 79, 79);
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    max-width: 220px;
+  }
+}

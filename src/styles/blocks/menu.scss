@@ -1,0 +1,112 @@
+@import "utils";
+
+.menu {
+  height: 100vh;
+  background-color: $blue;
+  opacity: 0;
+  pointer-events: none;
+  width: 72vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  color: $c-gray;
+  font-family: Manrope, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  z-index: 2;
+
+
+  &__quantity {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    display: flex;
+    height: 16px;
+    align-items: center;
+    font-size: 9px;
+    width: 16px;
+    padding: 2px 5px;
+    border-radius: 50%;
+    background-color: rgb(235, 87, 87);
+    top: 0;
+    right: -25px;
+  }
+
+  &__item {
+    transition: $main-transition;
+
+    &--basket {
+      position: relative;
+    }
+
+    &::after {
+      background-color: $c-gray;
+      width: 100%;
+      height: 1px;
+    }
+
+    &:hover {
+      transform: $scale-transform;
+    }
+  }
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__navigation {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    grid-template-columns: repeat(1, 0.5fr);
+  }
+
+  &__list {
+    @include column-flex;
+
+    gap: 15px;
+  }
+
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__icon {
+    display: flex;
+    gap: 67px;
+    writing-mode: vertical-lr;
+    transform: rotate(-180deg);
+    align-items: baseline;
+    transition: $main-transition;
+
+    &::after {
+      background-color: $c-gray;
+      width: 1px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.05) rotate(180deg);
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 44px;
+      background-color: $c-gray;
+      top: 30px;
+      left: 9px;
+      }
+  }
+}
