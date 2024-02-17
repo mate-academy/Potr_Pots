@@ -261,16 +261,13 @@
     transform: rotate(45deg);
     background: $c-white-grey-light;
 
-    @include transiton-default(all);
+    background-color: rgb(235, 87, 87);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 
-    &::after{
-      content: '';
-      display: none;
-      margin: 1px;
-      width: 5px;
-      height: 5px;
-      background: rgba(0, 0, 0, 0.3);
-    }
+    @include transiton-default(all);
 
     @include on-tablet {
       position: absolute;
@@ -310,37 +307,8 @@
         grid-column: 1 / 2;
       }
 
-      &::before,
-      &::after {
-        @include transiton-default(all);
-
-        position: absolute;
-        display: block;
-        background: #e0e0e0;
-      }
-
-      &::before{
-        content: '';
-        top: 25px;
-        left: 20px;
-        width: 11px;
-        height: 1px;
-      }
-
-      &::after{
-        top: 19px;
-        left: 24px;
-        width: 1px;
-        height: 11px;
-      }
-
       &:hover {
         transform: scale(1.1);
-
-        &::before,
-        &::after {
-          transform: scale(1.1);
-        }
       }
     }
 
@@ -377,4 +345,3 @@
     }
   }
 }
-
