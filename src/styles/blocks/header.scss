@@ -1,0 +1,111 @@
+@import "utils";
+
+.header {
+  font-family: Manrope, serif;
+  position: relative;
+
+  &__top-bar {
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+    padding: 0 30px;
+  }
+
+  &__logo {
+    background-image: url(../images/Logo.svg);
+    width: 135px;
+    height: 43px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: $main-transition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__icon {
+    transition: $main-transition;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__navigation,
+  &__cart {
+    display: none;
+  }
+
+  &__cart {
+    background-image: url(../images/cart-logo.svg);
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    cursor: pointer;
+    transition: $main-transition;
+
+    &:hover {
+      transform: scale(1.05)
+    }
+  }
+
+  &__main {
+    @include column-flex;
+
+    gap: 25px;
+  }
+
+  &__title-logo {
+    padding: 0 30px;
+    gap: 30px;
+
+    @include column-flex;
+  }
+
+  &__picture {
+    max-width: 320px;
+    align-self: center;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__title {
+    background-image: url(../images/POTR.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 172px;
+  }
+
+  &__subtitle {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__more-about {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    writing-mode: vertical-lr;
+    align-items: baseline;
+    bottom: 0;
+    right: 0;
+    color: $blue;
+    transition: $main-transition;
+
+    &::after {
+      background-color: $blue;
+      width: 1px;
+      height: 100%;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

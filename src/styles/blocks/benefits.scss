@@ -1,0 +1,97 @@
+@import "utils";
+
+
+.benefits {
+
+  &__main,
+  &__content,
+  &__buy,
+  &__discount,
+  &__item {
+    @include column-flex;
+  }
+
+  &__item {
+    gap: 5px;
+  }
+
+  &__main {
+    gap: 50px;
+    padding: 0 30px;
+  }
+
+  &__content,
+  &__buy {
+    gap: 40px;
+  }
+
+  &__content {
+    font-family: Manrope, sans-serif;
+  }
+
+  &__title {
+    color: $black;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 150%;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      background-color: $grey;
+      transform: rotate(45deg);
+      left: -18px;
+      top: 20px;
+    }
+  }
+
+  &__text {
+    color: rgb(130, 130, 130);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__button {
+    font-family: Manrope, sans-serif;
+    border: 1px solid $yellow;
+    background-color: $yellow;
+  }
+
+  &__discount {
+    font-family: 'Bebas Neue', sans-serif;
+    text-transform: uppercase;
+    gap: 10px;
+  }
+
+  &__discount-title {
+    color: rgb(235, 87, 87);
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 6px;
+  }
+
+  &__discount-text {
+    color: rgb(3, 131, 158);
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 4px;
+  }
+
+  &__pictures {
+    position: relative;
+    display: none;
+  }
+
+  &__image {
+    &--1 {
+      position: absolute;
+      top: 31%;
+      left: 170px;
+    }
+  }
+}

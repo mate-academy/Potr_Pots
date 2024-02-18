@@ -1,0 +1,79 @@
+@import "utils";
+
+
+.potr-size {
+  &__container,
+  &__content,
+  &__size,
+  &__size-info,
+  &__main {
+    @include column-flex;
+  }
+
+  &__container {
+    gap: 20px;
+  }
+
+  &__content,
+  &__main {
+    gap: 30px;
+  }
+
+  &__size {
+    gap: 40px;
+  }
+
+  &__size-info {
+    gap: 15px;
+  }
+
+  &__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  }
+
+  &__title,
+  &__text,
+  &__size {
+    padding: 0 30px;
+  }
+
+  &__text {
+    max-width: 260px;
+  }
+
+  &__text,
+  &__size-text,
+  &__add-content {
+    color: $grey;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &__add-content {
+    position: relative;
+    &::before  {
+      content: '*';
+      width: 7px;
+      height: 7px;
+      color: $grey;
+      position: absolute;
+      left: -10px;
+    }
+  }
+
+  &__size-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 6px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

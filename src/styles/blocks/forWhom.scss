@@ -1,0 +1,135 @@
+@import "utils";
+
+.for-whom {
+  position: relative;
+
+  &__container {
+    padding: 0 30px;
+
+    @include column-flex;
+
+    gap: 25px;
+    position: relative;
+  }
+
+  &__text {
+    @include column-flex;
+
+    gap: 20px;
+    max-width: 340px;
+  }
+
+  &__title {
+    color: $black;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    @include column-flex;
+  }
+
+  &__number {
+    &--margin {
+      margin-top: 45px
+    }
+  }
+
+  &__blocks,
+  &__two-blocks {
+    @include column-flex;
+
+    gap: 70px;
+  }
+
+  &__block {
+    @include column-flex;
+
+    gap: 20px;
+    justify-content: space-between
+
+  }
+
+  &__content {
+    @include column-flex;
+
+    gap: 20px;
+    position: relative;
+    justify-content: center;
+
+  }
+
+  &__subtitle {
+    color: $grey;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__picture {
+    display: none;
+
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__add {
+    display: none;
+    color: $black;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    text-transform: none;
+    margin-bottom: 20px;
+
+    &--second {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__icon {
+    writing-mode: vertical-lr;
+
+    &--bottom {
+      display: none;
+    }
+  }
+
+  &__adv {
+    position: absolute;
+    color: rgb(130, 130, 130);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 6px;
+
+    &--top {
+      top: 92%;
+      right: 5px;
+    }
+    &--bottom {
+      bottom: 5%;
+      left: 0;
+      transform: rotate(-180deg);
+    }
+
+    &::before {
+      content: '';
+      width: .79px;
+      height: 65px;
+      display: block;
+      background-color: rgb(130, 130, 130);
+      position: absolute;
+      top: -70px;
+      right: 6px;
+    }
+  }
+}
