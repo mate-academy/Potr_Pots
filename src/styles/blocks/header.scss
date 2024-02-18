@@ -48,9 +48,7 @@ $header-trapezoid-longer-base-size: 466px;
 
   &__image {
     &-wrapper {
-      position: relative;
       justify-self: end;
-      z-index: -1;
       margin-bottom: 25px;
 
       grid-column: 7 / 13;
@@ -63,23 +61,14 @@ $header-trapezoid-longer-base-size: 466px;
       @include for-mobile {
         justify-self: center;
 
-        width: 100vw;
-        padding-top: 100vw;
-
         grid-column: 1 / 3;
       }
     }
 
-    position: absolute;
-    right: 100%;
-    object-fit: cover;
+    display: block;
 
     @include for-mobile {
-      top: 0;
-      right: 0;
-
-      width: 100%;
-      height: 100%;
+      width: var(--cw);
     }
   }
 
@@ -110,7 +99,7 @@ $header-trapezoid-longer-base-size: 466px;
     }
   }
 
-  &__info {
+  &__discount-info {
     margin-bottom: 50px;
 
     grid-column: 5 / 7;
