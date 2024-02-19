@@ -94,3 +94,31 @@
     @extend %s3;
   }
 }
+
+.potr-team {
+  &__title {
+    @extend %h1;
+  }
+
+  &__description {
+    @extend %s3;
+  }
+
+  &__name {
+    @extend %name;
+
+    @include for-tablet {
+      &--name {
+        &--martin {
+          font-size: 232px;
+          line-height: 278px;
+        }
+
+        &--andy {
+          font-size: 220px;
+          line-height: 264px;
+        }
+      }
+    }
+  }
+}
