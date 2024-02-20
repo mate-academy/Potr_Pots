@@ -1,11 +1,15 @@
 .block {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  gap: 100px;
+  align-items: top;
+  justify-content: space-around;
+  width: 100%;
+  gap: 85px;
   transition: all 0.3s linear;
 
   @include desktop {
+    align-items: center;
+    justify-content: space-between;
     &--collumn {
       display: flex;
       flex-direction: column;
@@ -16,7 +20,11 @@
         align-items: end;
       }
     }
+    &--1 {
+      width: 91.5%;
+    }
     &--2 {
+      justify-content: flex-start;
       padding-top: 80px;
       padding-left: 80px;
     }
@@ -26,7 +34,7 @@
     margin-bottom: 50px;
     object-fit: contain;
     object-position: center;
-    min-width: 200px;
+    min-width: 284px;
     max-width: 300px;
     height: 100%;
     flex: 1;
@@ -53,6 +61,13 @@
 
   &__subtitle {
     color: #333;
+    margin-top: 0;
+
+    &--2 {
+      @include tablet {
+        text-align: end;
+      }
+    }
 
     @include phone {
       display: none;
@@ -64,7 +79,8 @@
       max-width: 370px;
     }
     @include tablet {
-      max-width: 370px;
+      flex-shrink: 0;
+      max-width: 340px;
     }
   }
 }
