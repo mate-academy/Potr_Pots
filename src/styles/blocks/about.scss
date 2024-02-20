@@ -5,17 +5,70 @@
   justify-content: space-between;
   align-items: center;
 
+  &__container {
+    position: relative;
+  }
+
   &__blocks {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__block {
     margin-bottom: 80px;
   }
+
+  &__decoration {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #828282;
+    font-size: 14px;
+    position: absolute;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      position: relative;
+      bottom: 2px;
+      left: -10px;
+      background-color: rgb(130, 130, 130);
+      width: 65px;
+      height: 1px;
+    }
+    &--1 {
+      right: -34px;
+      transform: translate( 0, 70px) rotate(90deg);
   
+      @include phone {
+        display: none;
+      }
+      @include tablet {
+        right: -40px;
+      }
+    }
+    &--2 {
+      left: 0;
+      bottom: -100px;
+      transform: translate( -20px, -175px) rotate(-90deg);
+
+      @include phone {
+        transform: translate( -20px, -175px) rotate(90deg);
+        left: auto;
+        right: -80px;
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
   &__block-title {
     margin-bottom: 34px;
     flex-grow: 1;

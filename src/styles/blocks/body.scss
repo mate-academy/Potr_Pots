@@ -7,7 +7,16 @@ a {
   background-size: auto ;
   background-position: left -1200px top 0;
   background-repeat: no-repeat;
-  
+  min-width: 320px;
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &:has(.page__bag:target) {
+    overflow: hidden;
+  }
+
   @include tablet {
     background-image: url(../images/Rectangle.png);
     background-position: left -450px top 0;
@@ -24,4 +33,19 @@ a {
   font-size: 16px;
   line-height: 150%;
   color: #4f4f4f;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

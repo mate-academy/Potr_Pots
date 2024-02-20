@@ -12,52 +12,12 @@
     overflow-x: hidden;
   }
 
-  &__decoration {
-    position: absolute;
-    right: 0;
-    transform: translate( 0, 70px) rotate(90deg);
-    color: rgb(130, 130, 130);
-
-    &::before {
-      content: "";
-      display: inline-block;
-      position: relative;
-      bottom: 2px;
-      left: -10px;
-      background-color: rgb(130, 130, 130);
-      width: 65px;
-      height: 1px;
-    }
-
-    @include phone {
-      display: none;
-    }
-
-    &--bottom {
-      right: auto;
-      left: 0;
-      transform: translate( -20px, -175px) rotate(-90deg);
-
-      @include tablet {
-        display: none;
-      }
-
-      @include phone {
-        display: none;
-      }
-    }
-  }
-
   &__menu {
     position: fixed;
     top: 0;
     right: 0;
     transform: translateX(100%);
     transition: transform 0.3s;
-
-    &:target + .page__body {
-      overflow-y: hidden;
-    }
 
     &:target {
       transform: translateX(0);
@@ -105,6 +65,22 @@
 
   &__section {
     margin-bottom: 200px;
+    overflow-y: visible;
+    height: fit-content;
+
+    &.advantages {
+      margin-bottom: 0;
+      @include desktop {
+        height: 900px;
+      }
+    }
+    &.questions {
+      padding-bottom: 220px;
+      margin-bottom: 0;
+      @include phone {
+        padding-bottom: 0;
+      }
+    }
 
     @include phone {
       margin-bottom: 110px;

@@ -1,26 +1,30 @@
 .questions {
   position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    height: 130%;
-    width: 100%;
-    z-index: -1;
-    background-image: url(../images/Rectangle.png);
-    background-position: left 0 top 0;
-    background-repeat: no-repeat;
-    background-size: cover ;
+  background-image: url(../images/questions-background.svg);
+  background-position: left 0 top 120px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: visible;
+  overflow-x: hidden;
 
-    @include desktop {
-      right: 130px;
-    }
+  @include desktop {
+    background-size: 120%;
+    background-position: right 130px top 120px left -130px;
+  }
+  @include tablet {
+    background-size: 160%;
+    background-position: right 20px top 120px left -130px;
   }
 
   &__container {
+    padding-top: 120px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 140px;
+    gap: 230px;
+
+    @include tablet {
+      gap: 140px;
+    }
 
     @include phone {
       display: block;
@@ -67,7 +71,7 @@
   }
 
   &__client {
-    margin-bottom: 86px;
+    height: 300px;
   }
 
   &__button {
@@ -80,7 +84,7 @@
     align-items: center;
     height: 48px;
     width: 52px;
-    background: #ffec7a;
+    background: none;
 
     box-sizing: border-box;
     border: 1px solid transparent;
@@ -108,18 +112,43 @@
 
   &__foarm {
     min-height: 24px;
+    overflow: visible;
+    resize: vertical;
     border: none;
     width: 100%;
-    background-color: #ffec7a;
+    background-color: transparent;
+    // appearance: none;
+  }
+
+  &__textarea {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    margin-bottom: 4px;
+    padding-left: 6px;
+    height: 24px;
+
+    &:focus {
+      height: 80px;
+    }
+
+    &::placeholder {
+      font-family: "Manrope", sans-serif;
+      color: #4f4f4f;
+      font-size: 16px;
+    }
   }
 
   &__image {
     position: absolute;
-    right: -50px;
-    top: -100px;
+    right: -100px;
+    top: 0;
+
+    @include tablet {
+      right: -40px;
+    }
 
     @include desktop {
-      right: 100px;
+      right: 0;
     }
   }
 }
