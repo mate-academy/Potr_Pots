@@ -37,6 +37,10 @@
     }
   }
 
+  &__block {
+    flex: 1 1 33.3%;
+  }
+
   &__block-image {
     padding-bottom: 100%;
     background-position: center;
@@ -45,23 +49,40 @@
 
     margin-bottom: 35px;
 
+    transition: all .3s;
+
     @for $i from 1 to 4 {
       &--#{$i} {
         background-image: url("../images/feature-#{$i}.png");
       }
     }
+
+    &:hover {
+      border-radius: 10px;
+      transform: scale(1.05);
+      box-shadow: 10px 10px 15px rgba($blue, 0.8);
+    }
   }
 
   &__block-name {
+    display: block;
+    text-align: center;
     font-family: $second-family;
     font-weight: 400;
     font-size: 24px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    text-align: center;
     color: $gray-1;
+    cursor: pointer;
 
     margin-bottom: 20px;
+
+    transition: all .3s;
+
+    &:hover {
+      transform: scale(1.05);
+      color: black;
+    }
   }
 
   &__block-description {
