@@ -2,15 +2,6 @@
   height: fit-content;
   margin-bottom: 160px;
 
-  @include phone {
-    background-image: url(../images/hero.png);
-    background-size: contain;
-    width: 100%;
-    background-position: center top 68px;
-    background-repeat: no-repeat;
-    margin-bottom: 110px;
-  }
-
   &__decoration {
     display: flex;
     gap: 16px;
@@ -29,7 +20,7 @@
     transition: all 0.3s linear;
 
     @include phone {
-      top: 600px;
+      top: 186px;
       right: 8px;
       transform: translate(99%) rotate(90deg);
     }
@@ -39,32 +30,45 @@
     }
   }
 
-  &__content {
-    margin: 0 auto;
+  &__nav {
     padding: 15px 30px;
+  }
+
+  &__content {
+    position: relative;
+    margin: 0 auto;
+    padding: 50px 30px;
     max-width: 1170px;
 
     background-image: url(../images/hero.png);
     background-size: 300px;
-    background-position: right 40px top 140px;
+    background-position: right 40px top 40px;
     background-repeat: no-repeat;
     transition: all 0.3s linear;
 
     @include desktop {
-      padding: 20px 40px;
+      padding: 80px 40px;
       background-size: 500px;
+      background-position: right 40px top 80px;
+
     }
 
     @include phone {
+      padding-top: 24px;
       background-image: none;
     }
   }
 
-  &__nav {
-    padding-bottom: 80px;
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 
-    @include phone {
-      padding-bottom: 360px;
+    @include tablet {
+      display: none;
+    }
+    @include desktop {
+      display: none;
     }
   }
 
@@ -110,7 +114,8 @@
     }
 
     @include phone {
-      font-size: 36px;
+      margin: 0 0 30px;
+      font-size: 30px;
       line-height: 43px;
     }
   }

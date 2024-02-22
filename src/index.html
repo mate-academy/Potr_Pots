@@ -16,48 +16,51 @@
   </head>
   <body class="page__body body">
     <header class="header">
-      <div class="header__content">
+      <div class="header__nav nav">
+        <a href="#" class="nav__logo logo">
+          <img 
+            src="./images/icons/logo.svg" 
+            alt="Logo"
+          >
+        </a>
 
-        <div class="header__nav nav">
-          <a href="#" class="nav__logo logo">
-            <img 
-              src="./images/icons/logo.svg" 
-              alt="Logo"
-            >
-          </a>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#features" class="nav__link link">
+              Features
+            </a>
+          </li>
 
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#features" class="nav__link link">
-                Features
-              </a>
-            </li>
+          <li class="nav__item">
+            <a href="#about-us" class="nav__link link">
+              About us
+            </a>
+          </li>
 
-            <li class="nav__item">
-              <a href="#about-us" class="nav__link link">
-                About us
-              </a>
-            </li>
+          <li class="nav__item">
+            <a href="#materials" class="nav__link link">
+              Materials
+            </a>
+          </li>
 
-            <li class="nav__item">
-              <a href="#materials" class="nav__link link">
-                Materials
-              </a>
-            </li>
+          <li class="nav__item">
+            <a href="#message-us" class="nav__link link">
+              Message us
+            </a>
+          </li>
+        </ul>
 
-            <li class="nav__item">
-              <a href="#message-us" class="nav__link link">
-                Message us
-              </a>
-            </li>
-          </ul>
-
-          <div class="nav__icon">
-            <a href="#menu" class=" icon icon--menu"></a>
-            <a href="#bag" class=" icon icon--bag"></a>
-          </div>
+        <div class="nav__icon">
+          <a href="#menu" class=" icon icon--menu"></a>
+          <a href="#bag" class=" icon icon--bag"></a>
         </div>
-
+      </div>
+      <img 
+        class="header__image"
+        src="images/hero.png"
+        alt="pot-image"
+      >
+      <div class="header__content">
         <div class="header__decoration">
           More about  POTR POTS
           <a href="#for-whom">
@@ -907,12 +910,17 @@
               <h4 class="questions__subheader">
                 Message us
               </h4>
-              <form action="#" class="questions__client">
+              <form 
+                action="#"
+                class="questions__client"
+                id="myForm"
+              >
                 <lable class="questions__line">
                   <input class="questions__text questions__foarm"
                           type="text"
                           name="name"
                           placeholder="Name"
+                          required
                   >
                 </lable>
                 <lable class="questions__line">
@@ -920,18 +928,31 @@
                           type="text"
                           name="Email"
                           placeholder="Email"
+                          required
                   >
                 </lable>
-                <label for="#message" class="questions__line">
+                <label for="message" class="questions__line">
                   <textarea
+                    id="message"
                     type="text"
                     class="questions__foarm questions__textarea"
                     placeholder="Message"
+                    required
                  ></textarea>
                 </label>
-                <button class="questions__button"type="submit">Submit
+                <button 
+                  class="questions__button" 
+                  type="button" 
+                  onclick="clearForm()"
+                >Submit
                 </button>
               </form>
+
+              <script>
+                function clearForm() {
+                  document.getElementById('myForm').reset();
+                }
+              </script>
             </div>
 
             <div class="questions__contacts contacts">
