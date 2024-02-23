@@ -1,0 +1,191 @@
+.advantages {
+  margin-bottom: 110px;
+
+  &__content {
+    position: relative;
+  }
+
+  &__frame {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      flex-wrap: wrap;
+
+      grid-area: 1/1/7/6;
+      background-image: url("../images/advantages-01.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: left center;
+      height: 828px;
+      margin: 0 -100px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include only-tablet {
+      grid-area: 1/1/6/4;
+      gap: 30px;
+    }
+
+    @include desktop {
+      grid-area: 2/6/3/13;
+
+      flex-flow: wrap;
+      flex-direction: row;
+
+      margin-bottom: 60px;
+    }
+  }
+
+  &__item-name {
+    position: relative;
+    display: inline-block;
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 150%;
+    color: $gray-1;
+
+    transition: all .3s;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 7px;
+      height: 7px;
+      position: absolute;
+      background-color: $gray-2;
+
+      left: -15px;
+      top: 50%;
+
+      transition: all .3s;
+
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    @keyframes rotate {
+      100% {
+        transform: translateY(-50%) rotate(315deg);
+      }
+    }
+
+    &:hover, &:focus {
+      color: $black;
+      transform: scale(1.01);
+
+      &::before {
+        background-color: $black;
+        animation: rotate 1s infinite linear;
+      }
+    }
+
+    @include tablet {
+      font-size: 36px;
+    }
+  }
+
+  &__item-description {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgb(130, 130, 130);
+  }
+
+  &__button {
+    margin: 50px 0 40px;
+
+    @include tablet {
+      margin: 0 35px;
+      grid-area: 2/4/3/6;
+      align-self: flex-end;
+    }
+
+    @include desktop {
+      grid-area: 3/6/4/9;
+
+      margin: 0 35px 70px 0;
+    }
+  }
+
+  &__sale {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgb(235, 87, 87);
+
+    margin-bottom: 10px;
+
+    @include only-tablet {
+      margin-bottom: 10px;
+      font-size: 24px;
+
+      grid-area: 3/4/4/6;
+      align-self: flex-end;
+    }
+
+    @include desktop {
+      grid-area: 4/7/5/9;
+    }
+  }
+
+  &__sale-description {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: $blue;
+
+    @include only-tablet {
+      font-size: 18px;
+
+      grid-area: 4/4/5/6;
+    }
+
+    @include desktop {
+      grid-area: 5/7/6/12;
+    }
+  }
+
+  &__feature {
+    display: none;
+
+    @include only-tablet {
+      display: block;
+      position: absolute;
+      font-family: $second-family;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      color: rgb(130, 130, 130);
+
+      transform-origin: top right;
+      transform: rotate(90deg) translateY(-100%) translateX(130%);
+      right: -10px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 65px;
+        height: 1px;
+        background-color: rgb(130, 130, 130);
+        left: -10px;
+        top: 50%;
+
+        transform: translateX(-100%) translateY(-100%);
+      }
+    }
+  }
+}

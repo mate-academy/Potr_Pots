@@ -63,9 +63,18 @@
 
   &__image {
     width: 100%;
+
+    transition: all .3s;
+
+    &:hover {
+      border-radius: 10px;
+      transform: scale(1.05);
+      box-shadow: 10px 10px 15px rgba($blue, 0.8);
+    }
   }
 
   &__name {
+    display: inline-block;
     font-family: $second-family;
     font-weight: 400;
     font-size: 18px;
@@ -74,6 +83,14 @@
     color: $black;
 
     margin-bottom: 10px;
+
+    transition: all .3s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+      color: $gray-1;
+    }
   }
 
   &__value {
