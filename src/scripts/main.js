@@ -3,14 +3,22 @@ import Flickity from 'flickity';
 
 // disable scrolling when the menu is open
 window.onhashchange = (e) => {
-  const menu = e.newURL.includes('#menu')
-    ? document.body.classList.add('page-overflow')
-    : document.body.classList.remove('page-overflow');
+  const menu = e.newURL.includes('#menu');
+
+  if (menu) {
+    document.body.classList.add('overflow');
+    document.documentElement.classList.add('overflow');
+  } else {
+    document.body.classList.remove('overflow');
+    document.documentElement.classList.remove('overflow');
+  }
 
   return menu;
 };
 
-// slider
+// ? document.body.classList.add('page-overflow')
+//     : document.body.classList.remove('page-overflow');
+
 const elem = document.querySelector('.main-carousel');
 
 const flkty = new Flickity(elem, {
