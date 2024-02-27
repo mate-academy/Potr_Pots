@@ -1,6 +1,11 @@
 .header {
   &__title {
     @extend %title;
+
+    @include for-mobile {
+      font-size: 36px;
+      line-height: 43px;
+    }
   }
 
   &__price {
@@ -121,4 +126,50 @@
       }
     }
   }
+}
+
+.materials {
+  &__title {
+    @extend %h1;
+
+    @include for-foldable-width {
+      font-size: 56px;
+    }
+
+    @include for-tablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include for-desktop {
+      font-size: 139px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__window {
+    @extend %s3;
+  }
+}
+
+.recycling {
+  &__title {
+    @extend %recycling-title;
+  }
+
+  &__description {
+    @extend %s3;
+
+    &--highlight {
+      @include for-tablet {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.slide__window {
+  @extend %s3;
 }

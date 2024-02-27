@@ -1,0 +1,27 @@
+.circle-button {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include circle(51px);
+  @include hover(background-color, $main-accent);
+
+  padding: 0;
+  border: none;
+
+  transition: all $transition-duration;
+
+  @include for-mobile {
+    display: none;
+  }
+
+  &--active {
+    background-color: #242323BF;
+  }
+
+  &--active &__sign::after{
+    display: none;
+  }
+}

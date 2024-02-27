@@ -1,0 +1,53 @@
+.slide {
+  display: flex;
+  justify-content: center;
+
+  position: relative;
+
+  &__window {
+    box-sizing: border-box;
+    width: 302px;
+    height: $window-height;
+
+    @include for-foldable-width {
+      width: 100vw;
+      height: 300px;
+    }
+
+    padding: 28px 44.5px 0;
+    margin-bottom: 5px;
+
+    background-color: #00000073;
+    backdrop-filter: $window-blur;
+    box-shadow: 0 3px 2px 0 #00000026;
+    color: $light-grey;
+  }
+
+  &__nav {
+    display: flex;
+    column-gap: 7px;
+
+    position: absolute;
+    bottom: 37px;
+    z-index: 1;
+  }
+
+  &__button {
+    @include square(7px);
+
+    box-sizing: border-box;
+    border: 1px solid $light-grey;
+
+    background-color: $light-grey;
+
+    transform: rotate(45deg);
+
+    @include hover(transform, rotate(0));
+  }
+
+  @for $n from 1 through 5 {
+    &:nth-child(#{$n}) &__button:nth-child(#{$n}){
+      background-color: #0000004D;
+    }
+  }
+}

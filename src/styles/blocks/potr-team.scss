@@ -104,11 +104,13 @@ $desktop-potr-team-trapezoid-longer-base-size: 310px;
   }
 
   &__description {
-    margin-bottom: 58px;
-
     color: $medium-grey-text-color;
 
-    grid-column: 1 / 3;
+    @include for-mobile {
+      margin-bottom: 58px;
+
+      grid-column: 1 / 3;
+    }
 
     @include for-tablet {
       padding-top: 53px;
@@ -155,9 +157,9 @@ $desktop-potr-team-trapezoid-longer-base-size: 310px;
       top: 247px;
 
       &:last-child {
-        top: 817px;
         left: auto;
         right: -45px;
+        top: 817px;
       }
     }
   }
