@@ -1,6 +1,190 @@
 .header {
+  position: relative;
+  padding: 15px 30px 110px;
+  overflow: hidden;
+
+  @include on-tablet {
+    min-width: 640px;
+    padding: 30px 34px 109px;
+
+    --columns-numbr: 6;
+    --row-numbr: 4;
+    --columns-gap: 20px;
+
+    @include grid-columns-row;
+  }
+
+  @include on-desktop {
+    padding: 20px 135px 150px;
+
+    --columns-numbr: 12;
+    --row-numbr: 4;
+    --columns-gap: 30px;
+
+  }
+
   &__photo {
     width: 100vw;
-    margin: 22px 0;
+    margin: 0 -30px 25px;
+
+    @include on-tablet {
+      width: 90%;
+      height: auto;
+      margin: 0;
+      justify-self: end;
+      grid-column: 4 / -1;
+      grid-row: 2 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / 13;
+      grid-row: 2 / 5;
+
+      --min-width: 400;
+      --max-width: 500;
+      --min-height: 400;
+      --max-height: 500;
+      --min-vp: 1280;
+      --max-vp: 1440;
+
+      @include size-adaptation;
+    }
+
+    @include on-large-desktop {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  &__title {
+    font-family: $font-bebas-neue;
+    color: $text-color-turquoise;
+    margin-bottom: 30px;
+    line-height: 1.2em;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+
+    --min-font: 36;
+    --max-font: 64;
+    --min-width-vp: 320px;
+    --min-vp: 320;
+    --max-vp: 768;
+
+    @include responsive-font;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+      grid-row: 2 / 3;
+      line-height: 1em;
+      letter-spacing: .16em;
+      margin-bottom: 0;
+    }
+
+    @include on-tablet-vp-768 {
+      font-size: 64px;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 8;
+    }
+
+    &_transparent {
+      color: transparent;
+      font-weight: 400;
+      -webkit-text-stroke-width: .7px;
+      -webkit-text-stroke-color: $text-color-turquoise;
+    }
+  }
+
+  &__promotion {
+    font-family: $font-manrope;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: $text-color-grey;
+
+    &_price {
+      display: block;
+      margin-bottom: 11px;
+      font-size: 26px;
+      font-weight: 700;
+      color: $title-color-dark-grey;
+
+      @include on-tablet {
+        margin-bottom: 0;
+      }
+
+      @include on-desktop {
+        margin-bottom: 5px;
+      }
+    }
+
+    @include on-tablet{
+      grid-column: 2 / 4;
+      grid-row: 3 / 4;
+      margin-top: -20px;
+      margin-right: -2.5em;
+      margin-bottom: 50px;
+      justify-self: end;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 7;
+      grid-row: 3 / 4;
+      justify-self: baseline;
+      margin: 10px 0 50px;
+    }
+  }
+
+  &__more-about {
+    font-family: $font-manrope;
+    font-size: 12px;
+    color: $text-color-turquoise;
+    position: absolute;
+    transform: rotate(90deg);
+    bottom: 220px;
+    right: -52px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 50px;
+      background: url(../images/icons/arrow-vertical.svg) no-repeat;
+      transform: rotate(270deg);
+      left: 161px;
+      bottom: -15.5px;
+    }
+
+    @include on-tablet {
+      left: -30px;
+      bottom: 165px;
+      width: 140px;
+    }
+
+    @include on-desktop {
+      left: 71px;
+      bottom: 220px;
+    }
+  }
+
+  @include on-tablet {
+
+    &__decor {
+      position: absolute;
+      width: 80%;
+      height: 75%;
+      clip-path: polygon(50% 0%, 100% 0, 100% 36%, 0 67%, 0 0);
+      background-color: $background-color;
+      z-index: -1;
+    }
+  }
+
+  @include on-desktop {
+
+    &__decor {
+      width: 72%;
+      height: 58%;
+      clip-path: polygon(50% 0%, 100% 0, 100% 36%, 0 100%, 0 0);
+    }
   }
 }
