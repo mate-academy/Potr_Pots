@@ -1,0 +1,160 @@
+.button {
+  position: relative;
+  width: 260px;
+  height: 48px;
+  background-color: $button-color-yellow;
+  border: none;
+  text-align: left;
+  transition: 0.5s;
+  cursor: pointer;
+
+  &__header {
+    @include on-tablet {
+      width: 240px;
+      grid-row: 4 / 5;
+      grid-column: 2 / 5;
+    }
+
+    @include on-desktop {
+      grid-column: 4 / 7;
+      width: 270px;
+    }
+  }
+
+  &__link {
+    margin-left: 72px;
+    font-family: $font-manrope;
+    font-size: 14px;
+    font-weight: 600;
+    color: #121212;
+    text-transform: uppercase;
+    transition: 0.5s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 28px;
+      height: 10px;
+      background: url(../images/icons/arrow.svg) no-repeat;
+      left: 166px;
+      bottom: 18px;
+      transition: 0.5s;
+    }
+
+    @include on-tablet {
+      &_header {
+        margin-left: 67px;
+
+        &::after {
+          content: "";
+          left: 148px;
+        }
+      }
+
+      &_section-whichsize {
+        margin-left: 67px;
+
+        &::after {
+          content: "";
+          left: 148px;
+        }
+      }
+    }
+
+    @include on-desktop {
+
+      &_header {
+        margin-left: 76px;
+
+        &::after {
+          content: "";
+          left: 166.76px;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    background-color: $button-color-yellow-hover;
+  }
+
+  &:hover .button__link_section-whichsize {
+    color: #fff;
+
+    &::after {
+      content: "";
+      width: 29px;
+      background: url(../images/icons/arrow-wite.svg) no-repeat;
+    }
+  }
+
+  &__section-whichsize {
+    @include on-tablet {
+      grid-column: 4 / 7;
+      grid-row: 6 / 7;
+      width: 238px;
+      margin-top: 206px;
+      border: 1px solid $button-color-turquoise;
+      background-color: #fff;
+      justify-self: end;
+
+      &:hover {
+        background-color: $button-white-turquoise-hover;
+      }
+
+      @include on-desktop {
+        margin-top: 60px;
+        grid-column: 6 / 9;
+        grid-row: 5 / 6;
+      }
+    }
+
+    @include on-tablet-vp-768 {
+      justify-self: baseline;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-manrope;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+    color: $text-color-white;
+    text-transform: uppercase;
+    background-color: $button-color-turquoise;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 28px;
+      height: 8px;
+      background: url(../images/icons/arrow-wite.svg);
+      margin-left: 40px;
+    }
+
+    @include on-tablet {
+      width: 219px;
+
+      &::after {
+        content: "";
+        margin-left: 20px;
+      }
+    }
+    &:hover {
+      background-color: $button-color-turquoise-hover;
+    }
+
+    @include on-desktop {
+      width: 238px;
+
+      &::after {
+        content: "";
+        margin-left: 30px;
+      }
+    }
+  }
+}

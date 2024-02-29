@@ -1,0 +1,86 @@
+.fields-decoration {
+  display: none;
+  position: absolute;
+  color: $text-color-light-grey;
+  transform: rotate(90deg);
+
+  @include typography-size-12px;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: -77px;
+    width: 65px;
+    height: 1px;
+    background-color: $text-color-light-grey;
+    margin-bottom: 2px;
+  }
+
+  &__section-forfhom {
+    @include on-desktop {
+      display: block;
+      transform: rotate(270deg);
+      left: -30px;
+      bottom: 104px;
+    }
+
+    &_up {
+      display: block;
+      top: 1392px;
+      right: -54px;
+
+      @include on-tablet {
+        top: -35px;
+      }
+
+      @include on-desktop {
+        top: 105px;
+        right: -30px;
+      }
+    }
+  }
+
+  &__section-materials {
+    @include on-tablet {
+      display: inline-block;
+      &_left-side {
+        top: 271px;
+        left: -21px;
+      }
+
+      &_right-side {
+        top: 91px;
+        right: -21px;
+      }
+    }
+
+    @include on-tablet-vp-768 {
+      &_left-side {
+        top: 311px;
+      }
+
+      &_right-side {
+        top: 105px;
+      }
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  @include on-tablet {
+
+    &__section-whichsize {
+      display: inline-block;
+      bottom: 145px;
+      right: -55px;
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+  }
+}

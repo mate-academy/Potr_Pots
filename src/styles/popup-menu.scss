@@ -1,0 +1,125 @@
+.popup-menu {
+  position: fixed;
+  width: 231px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 138px 0 0 51px;
+  background-color: #03839E;
+  transition: all 0.5s;
+  transform: translateX(100%);
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+
+  @include on-desktop {
+    display: none;
+  }
+
+  &:target {
+    transform: translateX(0);
+    pointer-events: all;
+  }
+
+  &__item {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: $text-color-white;
+    z-index: 1;
+    border-radius: 5px;
+    border: 1px solid $button-color-turquoise;
+    transition: 0.5s;
+
+    @include typography-size-16px;
+
+    line-height: 30px;
+
+    &:hover {
+      text-shadow: 0 0 10px #71b7f0;
+      border: 1px solid #444;
+      box-shadow: 0 0 0 #444, 1px 1px 3px #1b5d6a, inset 3px 3px 3px #2899b1, inset -3px -3px 5px #0d6274;
+    }
+
+    &:active {
+      box-shadow: 1px 1px 0 #1b5d6a, inset 1px 1px 2px #464646, inset 2px 2px 4px #32a1b7, inset -2px -2px 3px #0d6274, inset -1px -1px 0 0 #0d6274;
+    }
+
+    &_counter {
+
+      &::before {
+        content: "0";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        top: 4px;
+        right: 9px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-red;
+        font-family: $font-bebas-neue;
+        font-size: 9.17px;
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    width: 146px;
+    height: 30px;
+    right: -29px;
+    padding: 6px 0 0 93px;
+    bottom: 100px;
+    border-radius: 5px;
+    font-family: $font-manrope;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $text-color-white;
+    transform: rotate(270deg);
+    border: 1px solid $button-color-turquoise;
+
+    &:hover {
+      border: 1px solid #444;
+      box-shadow: 0 0 0 #444, 1px 1px 3px #1b5d6a, inset -3px 3px 3px #2899b1, inset 2px -4px 5px #0d6274;
+    }
+
+    &:active {
+      box-shadow: 1px 1px 0 #1b5d6a, inset 1px 1px 2px #464646, inset 2px -2px 4px #32a1b7, inset -2px 2px 3px #0d6274, inset -1px -1px 0 0 #0d6274;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 140px;
+      height: 30px;
+      background: url(../images/icons/close-button.svg) no-repeat;
+      background-position-y: 11px;
+      background-position-x: 11px;
+      bottom: 0.5px;
+      left: 1px;
+      border-radius: 5px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 44px;
+      background-color: $text-color-white;
+      bottom: -8.5px;
+      left: 63px;
+      transform: rotate(270deg);
+    }
+
+    &:target {
+      transform: translateX(100);
+      pointer-events: all;
+    }
+  }
+}
