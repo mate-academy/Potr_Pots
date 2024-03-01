@@ -1,0 +1,105 @@
+.section-materials {
+  position: relative;
+  margin-top: 110px;
+  padding-top: 80px;
+
+  @include on-tablet {
+    margin-top: 0;
+    padding-top: 150px;
+  }
+
+  @include on-desktop {
+    padding-top: 0;
+    margin-top: -10px;
+  }
+
+  &__title {
+    position: absolute;
+    width: 80%;
+    font-weight: 600;
+    color: $text-color-turquoise;
+    padding: 0 30px;
+    background-color: transparent;
+    top: 0;
+
+    @include typography-size-58px;
+
+    @include on-tablet-vp-768 {
+      font-size: 80px;
+      line-height: 1.3em;
+      margin-bottom: -20px;
+      width: 580px;
+    }
+
+    @include on-desktop {
+      font-size: 138.81px;
+      line-height: 1.2em;
+      font-weight: 400;
+      padding: 0 135px;
+      width: 1170px;
+      margin-top: 20px;
+    }
+  }
+
+  &__subtait-wrap {
+    display: none;
+
+    @include on-tablet {
+      position: absolute;
+      display: block;
+      width: 440px;
+      right: 0;
+      top: 96px;
+    }
+
+    @include on-tablet-vp-768 {
+      width: 51%;
+      right: 0;
+      top: 150px;
+    }
+
+    @include on-desktop {
+      width: 32%;
+      margin: 40px 135px 0 0;
+    }
+
+    @include on-large-desktop {
+      width: 474px;
+    }
+  }
+
+  &__subtait {
+    @include on-tablet {
+      font-family: $font-manrope;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 10px 130px;
+    }
+
+    @include on-tablet-vp-768 {
+      margin: 0 0 10px;
+    }
+
+    &_text {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+        margin-right: 34px;
+
+        @include typography-size-16px;
+      }
+    }
+
+    &_text-selection {
+      font-weight: bold;
+    }
+  }
+
+  &__photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}

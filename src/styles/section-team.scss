@@ -1,0 +1,216 @@
+.section-team {
+  position: relative;
+  overflow: hidden;
+
+  @include on-tablet {
+    padding: 0 34px;
+
+    --columns-numbr: 6;
+    --columns-row: 5;
+    --columns-gap: 20px;
+
+    @include grid-columns-row;
+  }
+
+  @include on-desktop {
+    padding: 0 135px;
+
+    --columns-numbr: 12;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: $title-color-dark-grey;
+    margin: 0 30px 25px;
+
+    @include typography-size-58px;
+
+    @include on-tablet {
+      grid-column: 1 / 7;
+      margin: 0 0 10px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 8;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__name {
+    display: none;
+    position: relative;
+    animation: stroke 15s infinite alternate;
+    width: 110%;
+    font-family: $font-bebas-neue;
+    font-weight: 400;
+    letter-spacing: .15em;
+
+    --min-vp: 640;
+    --max-vp: 768;
+
+    @include responsive-font;
+
+    @include on-large-desktop {
+      font-size: 288px;
+    }
+
+    &_martin {
+      @include on-tablet {
+        display: block;
+        height: 260px;
+        grid-column: 1 / 7;
+        grid-row: 2 / 4;
+        z-index: 2;
+        left: -88px;
+
+        --min-font: 200;
+        --max-font: 232;
+      }
+
+      @include on-tablet-vp-768 {
+        --min-font: 232;
+        --max-font: 288;
+        --min-vp: 768;
+        --max-vp: 1440;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 10;
+        grid-row: 2 / 4;
+        left: -75px;
+      }
+    }
+
+    &_andy {
+      @include on-tablet {
+        display: block;
+        height: 204px;
+        grid-column: 3 / 7;
+        grid-row: 4 / 5;
+        margin-top: calc(65px + 60 * (100vw - 640px) / 128);
+        margin-left: 34px;
+        overflow: visible;
+
+        --min-font: 180;
+        --max-font: 220;
+      }
+
+      @include on-tablet-vp-768 {
+        --min-font: 220;
+        --max-font: 288;
+        --min-vp: 768;
+        --max-vp: 1440;
+      }
+
+      @include on-desktop {
+        grid-column: 8 / 13;
+        grid-row: 4 / 5;
+        margin-top: calc(262px + 74 * (100vw - 1280px) / 160);
+        margin-left: 68px;
+      }
+
+      @include on-large-desktop {
+        margin-top: 323px;
+        height: 224px;
+      }
+    }
+  }
+
+  &__photo {
+    width: 100%;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row: 3 / 5;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 12;
+      grid-row: 2 / 5;
+      margin-top: 86px;
+    }
+  }
+
+  &__text {
+    color: $text-color-grey;
+    margin: 0 30px 58px;
+
+    @include typography-size-16px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      grid-row: 3 / 5;
+      margin: 60px 30px 0 0;
+      margin-top: calc(70px + 15 * (100vw - 640px) / 128);
+
+      --min-font: 12;
+      --max-font: 14;
+      --min-vp: 640;
+      --max-vp: 768;
+
+      @include responsive-font;
+    }
+
+    @include on-tablet-vp-768 {
+      font-size: 16px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+      grid-row: 3 / 5;
+      margin-top: calc(152px + 28 * (100vw - 1280px) / 160);
+    }
+
+    @include on-large-desktop {
+      margin-top: 180px;
+    }
+  }
+
+  &__rectangle {
+    position: absolute;
+    width: 100%;
+    height: 292px;
+    background-color: $background-color;
+    bottom: 4px;
+    clip-path: polygon(0 0, 100% 0%, 100% 69%, 0% 100%);
+    z-index: -1;
+
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+      grid-row: 2 / 4;
+      left: -34px;
+      top: 85px;
+
+      --min-width: 255;
+      --max-width: 494;
+      --min-height: 235;
+      --max-height: 315;
+      --min-vp: 768;
+      --max-vp: 1280;
+
+      @include size-adaptation;
+    }
+
+    @include on-desktop {
+      left: -135px;
+      top: 59px;
+      
+      --min-width: 373;
+      --max-width: 435;
+      --min-height: 260;
+      --max-height: 285;
+      --min-vp: 1280;
+      --max-vp: 1440;
+    }
+
+    @include on-large-desktop {
+      width: 435px;
+      height: 285px;
+    }
+  }
+}

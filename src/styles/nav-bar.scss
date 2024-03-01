@@ -1,0 +1,91 @@
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  margin-bottom: 22px;
+
+  @include on-tablet {
+    grid-column: 1 / 7;
+    grid-row: 1 / 2;
+    margin-bottom: 50px;
+  }
+
+  @include on-desktop {
+    grid-column: 1 / 13;
+    grid-row: 1 / 2;
+    margin-bottom: 77px;
+  }
+
+  &__logo {
+    width: 147.25px;
+    height: 27px;
+    background: url(../images/logo/potrpots.svg) no-repeat;
+    text-decoration: none;
+  }
+
+  &__menu {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+    }
+  }
+
+  &__item {
+    display: block;
+    color: $text-color-grey;
+    padding: 1px 5px;
+    margin-right: 50px;
+    text-align: center;
+    position: relative;
+
+    @include typography-size-16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: $button-color-turquoise;
+      opacity: 0;
+      transition: all .3s;
+    }
+
+    &::before {
+      top: 0;
+      transform: translateY(10px);
+    }
+
+    &::after {
+      bottom: 0;
+      transform: translateY(-10px);
+      content: "";
+      height: 2px;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__basket {
+    display: none;
+
+    @include on-desktop {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-image: url(../images/icons/basket.svg);
+      background-position: center;
+    }
+  }
+}

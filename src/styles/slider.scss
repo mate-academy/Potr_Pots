@@ -1,0 +1,271 @@
+.slider {
+  @include disable-slider {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    bottom: 0;
+    width: 302px;
+    height: 254px;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+
+    &__container {
+      position: absolute;
+      bottom: -207px;
+      display: flex;
+      justify-content: center;
+      padding: 0 9px;
+      width: 100%;
+    }
+
+    &__text {
+      position: absolute;
+      top: 28px;
+      left: 45px;
+      right: 45px;
+      color: $text-color-white;
+
+      @include typography-size-16px;
+    }
+
+    &__label {
+      position: relative;
+      display: inline;
+      width: 7px;
+      height: 7px;
+      border: 1px solid $text-color-white;
+      background-color: $text-color-white;
+      top: 207px;
+      margin-right: 14px;
+      transform: rotate(45deg);
+      transition: .3s;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    &__input {
+      display: none;
+
+      &:checked + .slider__label {
+        background-color: rgba(0, 0, 0, 0.30);
+      }
+
+      &:not(:checked) + .slider__label + .slider__text {
+        transform: translateX(-150%);
+        opacity: 0;
+        transition: 1s;
+      }
+
+      &:checked + .slider__label + .slider__text ~ .slider__text {
+        transform: translateX(150%);
+        opacity: 0;
+        transition: 1s;
+      }
+    }
+  }
+
+  @include on-tablet {
+    position: absolute;
+
+    &__container {
+      position: relative;
+    }
+
+    &__input {
+      display: none;
+    }
+
+    &__text {
+      position: absolute;
+      width: 283px;
+      height: auto;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.50);
+      padding: 35px;
+      backdrop-filter: blur(8px);
+      animation: swirl-out-bck 0.6s ease-in both;
+      transition: 1s;
+      z-index: 2;
+
+      --min-vp: 768;
+      --max-vp: 1280;
+
+      @include location-adaptation;
+      @include typography-size-16px;
+
+      &_one {
+        --min-left: 442;
+        --max-left: 816;
+        --min-bottom: 325;
+        --max-bottom: 563;
+
+        @include on-large-desktop {
+          left: 992px;
+          bottom: 378px;
+        }
+      }
+
+      &_two {
+        --min-left: 315;
+        --max-left: 613;
+        --min-bottom: 457;
+        --max-bottom: 578;
+
+        @include on-large-desktop {
+          left: 725px;
+          bottom: 632px;
+        }
+      }
+
+      &_three {
+        --min-left: 219;
+        --max-left: 476;
+        --min-bottom: 396;
+        --max-bottom: 477;
+
+        @include on-large-desktop {
+          left: 380px;
+          bottom: 285px;
+        }
+      }
+
+      &_four {
+        --min-left: 117;
+        --max-left: 289;
+        --min-bottom: 558;
+        --max-bottom: 750;
+
+        @include on-large-desktop {
+          left: 273px;
+          bottom: 722px;
+        }
+      }
+
+      &_five {
+        --min-left: 37;
+        --max-left: 58;
+        --min-bottom: 424;
+        --max-bottom: 527;
+
+        @include on-large-desktop {
+          left: 120px;
+          bottom: 486px;
+        }
+      }
+    }
+
+    &__label {
+      position: relative;
+      display: block;
+      width: 51px;
+      height: 51px;
+      border-radius: 50px;
+      background-color: $color-red;
+      transition: .5s;
+
+      --min-vp: 768;
+      --max-vp: 1280;
+
+      @include location-adaptation;
+
+      &:hover + .slider__text {
+        animation: scale-up-center .2s cubic-bezier(0.55, 0.85, 0.68, 0.53) both;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 11px;
+        height: 1px;
+        top: 25px;
+        left: 20px;
+        background-color: $text-color-white;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 11px;
+        height: 1px;
+        top: 25px;
+        left: 20px;
+        background-color: $text-color-white;
+        transform: rotate(90deg);
+        transition: .5s;
+      }
+
+      &:hover,
+      &:hover::after {
+        background-color: rgba(0, 0, 0, 0.30);
+        backdrop-filter: blur(5px);
+        transform: rotate(0deg);
+      }
+
+      &_button-1 {
+        --min-left: 556;
+        --max-left: 929;
+        --min-bottom: 369;
+        --max-bottom: 608;
+
+        @include on-large-desktop {
+          left: 1109px;
+          bottom: 423px;
+        }
+      }
+
+      &_button-2 {
+        --min-left: 415;
+        --max-left: 702;
+        --min-bottom: 235;
+        --max-bottom: 353;
+
+        @include on-large-desktop {
+          left: 831px;
+          bottom: 386px;
+        }
+      }
+
+      &_button-3 {
+        --min-left: 335;
+        --max-left: 598;
+        --min-bottom: 224;
+        --max-bottom: 303;
+
+        @include on-large-desktop {
+          left: 680px;
+          bottom: 258px;
+        }
+      }
+
+      &_button-4 {
+        --min-left: 230;
+        --max-left: 410;
+        --min-bottom: 433;
+        --max-bottom: 619;
+
+        @include on-large-desktop {
+          left: 543px;
+          bottom: 598px;
+        }
+      }
+
+      &_button-5 {
+        --min-left: 82;
+        --max-left: 156;
+        --min-bottom: 352;
+        --max-bottom: 455;
+
+        @include on-large-desktop {
+          left: 250px;
+          bottom: 411px;
+        }
+      }
+    }
+  }
+}
