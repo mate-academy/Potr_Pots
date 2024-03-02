@@ -1,0 +1,107 @@
+.menu {
+  position: absolute;
+  width: 231px;
+  height: 100vh;
+  background-color: $color-turquoise;
+}
+
+.nav {
+  position: relative;
+  margin-top: 138px;
+  margin-left: 51px;
+
+  &__list {
+    display: inline;
+    list-style-type: none;
+    align-items: center;
+  }
+
+  &__item {
+    &:first-child {
+      position: relative;
+
+      &::after {
+        @extend %title-style-1;
+
+        content: "0";
+        right: 40px;
+        position: absolute;
+        background-color: rgba(235, 87, 87, 1);
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        font-size: 9.17px;
+        line-height: 15px;
+        color: $menu-text-color;
+        background-image: url(../images/menu-ellipse.svg);
+      }
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 15px;
+    }
+  }
+
+  &__link {
+    @extend %text;
+
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    color: $menu-text-color;
+    text-decoration: none;
+  }
+}
+
+.close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  position: absolute;
+  right: -20px;
+  bottom: 90px;
+  text-decoration: none;
+  transform: rotate(-90deg);
+
+  &__text {
+    @extend %text;
+
+    position: relative;
+    left: 0;
+    font-size: 12px;
+    line-height: 18px;
+    color: $color-grey-light;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -14px;
+      right: 55px;
+      width: 22px;
+      height: 44px;
+      transform: rotate(90deg);
+      background-image: url(../images/close-line.svg);
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+  }
+
+  &__cross {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    background-image: url(../images/close-cross-1.svg);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background-image: url(../images/close-cross-2.svg);
+    }
+  }
+}
