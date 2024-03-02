@@ -69,15 +69,21 @@
         color: $gray;
       }
 
+      &::after {
+        position: absolute;
+        content: '';
+        height: 1px;
+        width: 0;
+        background-color: $gray;
+        bottom: 0;
+        left: 0;
+
+        transition: width .3s;
+      }
+
       &:hover {
         &::after {
-          position: absolute;
-          content: '';
-          height: 2px;
           width: 100%;
-          background-color: $gray;
-          bottom: 0;
-          left: 0;
         }
       }
     }
@@ -108,11 +114,13 @@
     display: block;
     margin-left: auto;
     height: 320px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     top: 68px;
 
     @include on-tablet {
       position: static;
+      transform: translateX(0);
     }
 
     @include on-desktop {

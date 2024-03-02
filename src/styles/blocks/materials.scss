@@ -13,6 +13,7 @@
 
   @include on-desktop {
     height: 1385px;
+    background-size: 1440px auto;
   }
 
   &__title {
@@ -127,8 +128,9 @@
   }
 
   .slick-dots {
-    left: 0;
     bottom: 27px;
+    left: 50%;
+    transform: translateX(-50%);
 
     li button {
       transform: rotate(45deg);
@@ -145,6 +147,7 @@
     }
 
     li.slick-active button::before {
+      content: '';
       width: 7px;
       height: 7px;
       background-color: #000;
@@ -327,7 +330,6 @@
     position: absolute;
 
     font-family: "Bebas Neue", sans-serif;
-    ;
     font-size: 12px;
     font-weight: 400;
     line-height: 14px;
