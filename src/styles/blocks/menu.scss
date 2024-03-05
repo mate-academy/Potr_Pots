@@ -1,14 +1,18 @@
 .menu {
-  position: absolute;
   width: 231px;
   height: 100vh;
+  overflow: auto; /* to scroll the menu if needed */
   background-color: $color-turquoise;
+
+  &__content {
+    position: relative;
+    height: 100vh;
+  }
 }
 
 .nav {
-  position: relative;
-  margin-top: 138px;
-  margin-left: 51px;
+  padding-top: 138px;
+  padding-left: 51px;
 
   &__list {
     display: inline;
@@ -24,14 +28,16 @@
         @extend %title-style-1;
 
         content: "0";
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         right: 40px;
         position: absolute;
-        background-color: rgba(235, 87, 87, 1);
-        border-radius: 50%;
         width: 14px;
         height: 14px;
         font-size: 9.17px;
         line-height: 15px;
+        letter-spacing: 1px;
         color: $menu-text-color;
         background-image: url(../images/menu-ellipse.svg);
       }
@@ -55,12 +61,12 @@
 
 .close {
   display: flex;
+  position: absolute;
   justify-content: space-between;
   align-items: center;
-  gap: 60px;
-  position: absolute;
+  gap: 70px;
+  bottom: 100px;
   right: -20px;
-  bottom: 90px;
   text-decoration: none;
   transform: rotate(-90deg);
 

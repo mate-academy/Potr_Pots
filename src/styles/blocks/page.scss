@@ -3,6 +3,20 @@
   scroll-behavior: smooth;
   transition: scroll-behavior 0.3s;
 
+  &__body {
+    @include on-tablet {
+      background-image: url(../images/bg-rectangle.png);
+      background-repeat: no-repeat;
+      background-size: auto 468px;
+    }
+
+    @include on-desktop {
+      background-image: url(../images/bg-rectangle.png);
+      background-repeat: no-repeat;
+      background-size: 1035px auto;
+    }
+  }
+
   &__header {
     margin-bottom: 110px;
   }
@@ -32,6 +46,16 @@
 
 .container {
   padding-inline: 30px;
+
+  @include content-padding-inline;
+
+  &__wrapper {
+    position: relative;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
 }
 
 %title-style-1 {
@@ -67,7 +91,6 @@
 
 .text {
   @extend %text;
-
 }
 
 .button {
