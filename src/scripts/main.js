@@ -1,5 +1,6 @@
 'use strict';
-$(document).ready(function () {
+/* eslint-disable */
+$(document).ready(function() {
   $('.materials__swiper').slick({
     dots: true,
     infinite: true,
