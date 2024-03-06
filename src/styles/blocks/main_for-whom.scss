@@ -1,0 +1,59 @@
+.for-whom {
+  &__wrapper {
+    gap: 70px;
+    position: relative;
+
+    @include page-grid;
+  }
+
+  &__title {
+    line-height: 54px;
+    padding-bottom: 20px;
+  }
+
+  &__subtitle {
+    display: none;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include on-tablet {
+      display: inline;
+    }
+
+    @include on-desktop {
+      display: inline;
+    }
+  }
+
+  &__counter {
+    line-height: 64.8px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 40px;
+      background-image: url(../images/main-slash-line.svg);
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-tablet {
+      display: inline;
+    }
+
+    @include on-desktop {
+      display: inline;
+    }
+  }
+
+  &__potr-pots {
+    position: absolute;
+    bottom: 40px;
+    right: -10px;
+    transform: rotate(90deg);
+  }
+}
