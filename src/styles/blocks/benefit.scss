@@ -1,0 +1,38 @@
+$point-size: 7px;
+$point-gap: 10px;
+
+.benefit {
+  &__title {
+    position: relative;
+
+    margin-bottom: 5px;
+
+    color: $big-grey-text-color;
+  }
+
+  &__point {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: calc(50% - $point-size / 2);
+
+    @include for-mobile {
+      right: calc(100% + 10px);
+    }
+
+    @include square($point-size);
+
+    background-color: $medium-grey-text-color;
+
+    transform: rotate(45deg);
+  }
+
+  @include for-mobile {
+    &:nth-of-type(2) &__point {
+      top: calc(25% - $point-size / 2);
+    }
+  }
+
+  &__description {
+    color: $small-grey-text-color;
+  }
+}

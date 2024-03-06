@@ -29,6 +29,18 @@
   background-color: $red;
 }
 
+@mixin set-arrow-color($color) {
+  background-color: $color;
+
+  &::before{
+    background-color: $color;
+  }
+
+  &::after {
+    background-color: $color;
+  }
+}
+
 
 @mixin for-desktop {
   @media (min-width: 1440px) {

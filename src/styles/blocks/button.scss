@@ -7,17 +7,32 @@ $primary2-button-color: #FFE339;
   gap: 15px;
 
   box-sizing: border-box;
-  width: 100%;
   height: $button-height;
-
-  @include for-tablet {
-    width: calc(100% + $grid-gap-size);
-  }
 
   text-decoration: none;
   color: #121212;
 
   transition: all $transition-duration;
+
+  &__arrow {
+    @include set-arrow-color(black);
+  }
+
+  &--device {
+    &--not-mobile {
+      @include for-mobile {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include for-mobile {
+        display: flex;
+      }
+    }
+  }
 
   &--primary {
     &2 {
@@ -28,5 +43,18 @@ $primary2-button-color: #FFE339;
         opacity: 70%;
       }
     }
+  }
+
+  &--secondary {
+    border: 1px solid $main-accent;
+
+    &:hover {
+      background-color: $main-accent;
+      color: white;
+    }
+  }
+
+  &--secondary:hover &__arrow {
+    @include set-arrow-color(white);
   }
 }
