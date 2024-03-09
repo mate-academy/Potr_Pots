@@ -4,3 +4,36 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin hover-underline($_color) {
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background-color: $_color;
+
+    transition: transform 0.3s;
+    transform: scale(0);
+    transform-origin: left;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+  }
+}
+
