@@ -4,15 +4,16 @@ $primary2-button-color: #FFE339;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 17px;
 
   box-sizing: border-box;
-  height: $button-height;
+  height: 48px;
 
   text-decoration: none;
   color: #121212;
 
   transition: all $transition-duration;
+  cursor: pointer;
 
   &__arrow {
     @include set-arrow-color(black);
@@ -35,14 +36,27 @@ $primary2-button-color: #FFE339;
   }
 
   &--primary {
+    border: 1px solid $main-accent;
+    background-color: $main-accent;
+    color: white;
+
+    &:hover {
+      border-color: transparent;
+      background-color: #03839EB2;
+    }
+
     &2 {
-      background-color: $primary2-button-color;
       border: 1px solid $primary2-button-color;
+      background-color: $primary2-button-color;
 
       &:hover {
         opacity: 70%;
       }
     }
+  }
+
+  &--primary &__arrow {
+    @include set-arrow-color(white);
   }
 
   &--secondary {

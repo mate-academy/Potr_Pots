@@ -48,3 +48,12 @@ circleButtons.forEach((circleButton) => {
     }
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const textarea = document.getElementById('text');
+  const wrapper = textarea.parentNode;
+
+  textarea.addEventListener('input', function () {
+    wrapper.dataset.replicatedValue = textarea.value;
+  });
+});

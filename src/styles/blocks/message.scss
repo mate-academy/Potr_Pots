@@ -1,0 +1,183 @@
+$mobile-message-item-span: 2;
+$tablet-message-item-span: 3;
+$desktop-message-item-span: 4;
+$input-height: 29px;
+$textarea-grid-padding: 40px;
+$mobile-textarea-grid-padding: 30px;
+$message-item-margin: 20px;
+
+@function text-area-max-width($span, $box-size, $gap-size) {
+  @return $span * $box-size + ($span - 1) * $gap-size;
+}
+
+@mixin input-colors {
+  background-color: #0000;
+
+  color: $medium-grey-text-color;
+
+  &::placeholder {
+    color: $medium-grey-text-color;
+  }
+
+  &:focus {
+    border-color: $main-accent;
+  }
+
+  &:not(:placeholder-shown){
+    &:valid {
+      border-color: $main-accent;
+      color: $main-accent;
+    }
+
+    &:invalid {
+      border-color: $red;
+      color: $red;
+    }
+  }
+}
+
+@mixin input-size {
+  box-sizing: border-box;
+  width: 100%;
+  height: $input-height;
+
+  padding: 0 0 4px 6px;
+
+  border: none;
+  border-bottom: 1px solid #0000004D;
+  outline: none;
+}
+
+.message {
+  display: grid;
+  grid-template-columns: subgrid;
+
+  grid-template-rows:
+    auto
+    auto
+    auto
+    calc($textarea-grid-padding + $input-height)
+    auto;
+
+  @include for-mobile {
+    grid-template-rows:
+      auto
+      auto
+      auto
+      ($mobile-textarea-grid-padding + $input-height)
+      auto;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    color: black;
+
+    grid-column: span 2;
+
+    @include for-mobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__item {
+    margin-bottom: $message-item-margin;
+
+    grid-column: span $mobile-message-item-span;
+
+    @include for-tablet {
+      grid-column: span $tablet-message-item-span;
+    }
+
+    @include for-desktop {
+      grid-column: span $desktop-message-item-span;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    &:not(:focus, :active) {
+      @include visually-hidden;
+    }
+  }
+
+  &__input {
+    @include input-size;
+    @include input-colors;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 1000px $medium-grey-text-color inset;
+      -webkit-text-fill-color: $light-grey;
+      border-width: 3px;
+    }
+  }
+
+  &__textarea {
+    &-wrapper {
+      display: grid;
+
+      &::after {
+        content: attr(data-replicated-value) " ";
+        white-space: pre-wrap;
+        visibility: hidden;
+      }
+    }
+
+    resize: none;
+    overflow: hidden;
+
+    @include input-colors;
+
+    &, &-wrapper::after {
+      @include input-size;
+
+      height: auto;
+      max-height: $textarea-grid-padding + $input-height - $message-item-margin;
+
+      max-width: text-area-max-width(
+        $mobile-message-item-span,
+        $mobile-grid-box-size,
+        $grid-gap-size
+      );
+
+      overflow-wrap: break-word;
+
+      grid-area: 1 / 1 / 2 / 2;
+
+      @include for-mobile {
+        max-height: $mobile-textarea-grid-padding + $input-height - $message-item-margin;
+      }
+
+      @include for-tablet {
+        max-width: text-area-max-width(
+          $tablet-message-item-span,
+          $tablet-grid-box-size,
+          $grid-gap-size
+        );
+      }
+
+      @include for-desktop {
+        max-width: text-area-max-width(
+          $desktop-message-item-span,
+          $desktop-grid-box-size,
+          $desktop-grid-gap-size
+        );
+      }
+    }
+  }
+
+  &__button {
+    grid-column: span 2;
+
+    @include for-desktop {
+      width: calc(100% - 32px);
+
+      grid-column: span 3;
+    }
+  }
+}

@@ -149,6 +149,8 @@ $header-trapezoid-longer-base-size: 466px;
 
   &__about-link {
     &-wrapper {
+      pointer-events: none;
+
       position: relative;
 
       grid-column: 1 / 2;
@@ -156,9 +158,11 @@ $header-trapezoid-longer-base-size: 466px;
 
       @include for-mobile {
         grid-column: 2 / 3;
-        grid-row: 4 / 5;
+        grid-row: 5 / 6;
       }
     }
+
+    pointer-events: auto;
 
     position: absolute;
     bottom: calc(100% - 30px);
@@ -171,8 +175,8 @@ $header-trapezoid-longer-base-size: 466px;
     }
 
     @include for-mobile {
-      right: 0;
-      bottom: -$button-height;
+      right: -7px;
+      bottom: 0;
 
       transform-origin: bottom right;
     }

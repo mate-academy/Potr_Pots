@@ -2,7 +2,6 @@ $arrow-thickness: 1px;
 $arrow-length: 25px;
 $long-arrow-length: 44px;
 $arrowhead-size: 5px;
-$arrow-color-transition: background-color $transition-duration;
 
 @function set-arrowhead($length, $arrow-head-length) {
   @return calc($length - $arrow-head-length);
@@ -17,7 +16,7 @@ $arrow-color-transition: background-color $transition-duration;
 
   border-radius: 1px;
 
-  transition: $arrow-color-transition;
+  transition: background-color $transition-duration;
 }
 
 @mixin arrowhead($length) {
@@ -46,7 +45,7 @@ $arrow-color-transition: background-color $transition-duration;
   height: $arrow-thickness;
   width: $arrow-length;
 
-  transition: $arrow-color-transition;
+  transition: all $transition-duration;
 
   @include arrowhead($arrow-length);
 
