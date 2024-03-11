@@ -1,0 +1,32 @@
+$slash-height: 46px;
+
+.slash {
+  display: inline-block;
+
+  width: 18px;
+  height: $slash-height;
+
+  &--lowered {
+    height: 37px;
+  }
+
+  &--device--not-mobile {
+    @include for-mobile {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+
+    width: 1px;
+    height: $slash-height;
+
+    background-color: $big-grey-text-color;
+
+    transform-origin: right bottom;
+    transform: rotate(22deg);
+  }
+}

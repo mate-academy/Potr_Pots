@@ -1,3 +1,271 @@
-h1 {
+.header {
+  &__title {
+    @extend %title;
+
+    @include for-mobile {
+      font-size: 36px;
+      line-height: 43px;
+    }
+  }
+
+  &__price {
+    @extend %price;
+  }
+
+  &__discount {
+    @extend %discount;
+  }
+}
+
+.navigation {
+  &__logo-link {
+    @extend %h2;
+
+    line-height: 43px;
+    letter-spacing: 0.06em;
+  }
+
+  &__link {
+  @extend %s3;
+  }
+}
+
+.button {
+  @extend %button;
+}
+
+.about-link {
+  @extend %s5;
+}
+
+.menu {
+  &__link {
+    @extend %s3;
+  }
+
+  &__close-link {
+    @extend %s5;
+  }
+}
+
+.products-in-basket {
+  @extend %products-in-basket;
+}
+
+.for-whom__title {
+  @extend %h2;
+}
+
+.target {
+  &__short-info {
+    @extend %s3;
+  }
+
+  &__star {
+    @extend %h3;
+
+    letter-spacing: 0;
+  }
+
+  &__item-number {
+    @extend %h2;
+
+    line-height: 25px;
+  }
+
+  &__title {
+    @extend %h2;
+  }
+
+  &__description {
+    @extend %s3;
+  }
+}
+
+.aside-potr-pots {
+  @extend %aside-potr-pots;
+}
+
+.features__title {
   @extend %h1;
+}
+
+.feature {
+  &__title {
+    @extend %h3;
+  }
+
+  &__description {
+    @extend %s3;
+  }
+}
+
+.potr-team {
+  &__title {
+    @extend %h1;
+  }
+
+  &__description {
+    @extend %s3;
+  }
+
+  &__name {
+    @extend %name;
+
+    @include for-tablet {
+      &--name {
+        &--martin {
+          font-size: 232px;
+          line-height: 278px;
+        }
+
+        &--andy {
+          font-size: 220px;
+          line-height: 264px;
+        }
+      }
+    }
+  }
+}
+
+.materials {
+  &__title {
+    @extend %h1;
+
+    @include for-foldable-width {
+      font-size: 56px;
+    }
+
+    @include for-tablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include for-desktop {
+      font-size: 139px;
+      line-height: 167px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__window {
+    @extend %s3;
+  }
+}
+
+.recycling {
+  &__title {
+    @extend %recycling-title;
+  }
+
+  &__description {
+    @extend %s3;
+
+    &--highlight {
+      @include for-tablet {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.slide__window {
+  @extend %s3;
+}
+
+.potr-size {
+  &__title {
+    @extend %h2;
+  }
+
+  &__description {
+    @extend %s3;
+  }
+
+  &__note {
+    @extend %s3;
+  }
+}
+
+.size {
+  &__title {
+    @extend %h4;
+  }
+
+  &__description {
+    @extend %s3;
+  }
+}
+
+.benefits {
+  &__percentage {
+    @extend %h2;
+
+    @include for-tablet {
+      font-size: 24px;
+      line-height: 24px;
+    }
+  }
+
+  &__discount {
+    @extend %h3;
+
+    @include for-tablet {
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+}
+
+.photo__caption {
+  @extend %photo-caption;
+}
+
+.benefit {
+  &__title {
+    @extend %s1;
+  }
+
+  &__description {
+    @extend %s3;
+  }
+}
+
+.questions {
+  &__title {
+    @extend %h2;
+  }
+
+  &__description {
+    @extend %s3;
+  }
+}
+
+.message {
+  &__title {
+    @extend %s2;
+  }
+
+  &__input {
+    @extend %s3;
+  }
+
+  &__textarea {
+    &-wrapper::after {
+      @extend %s3;
+    }
+
+    @extend %s3;
+  }
+}
+
+.address {
+  &__label {
+    @extend %s2;
+  }
+
+  &__content {
+    @extend %s3;
+  }
 }

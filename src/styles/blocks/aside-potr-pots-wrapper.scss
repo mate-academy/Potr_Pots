@@ -1,0 +1,78 @@
+.aside-potr-pots-wrapper {
+  position: relative;
+  display: none;
+
+  &--device{
+    &--desktop{
+      @include for-desktop {
+        display: block;
+      }
+    }
+
+    &--tablet{
+      @include for-tablet {
+        display: block;
+      }
+    }
+
+    &--mobile{
+      @include for-mobile {
+        display: block;
+      }
+
+      @include for-foldable-width {
+        display: none;
+      }
+    }
+  }
+
+  &__aside-potr-pots {
+    position: absolute;
+    left: 100%;
+    bottom: 100%;
+
+    transform-origin: bottom left;
+    transform: rotate(90deg);
+  }
+
+  &--position--down &__aside-potr-pots {
+    left: auto;
+    right: 0;
+    bottom: 0;
+
+    transform-origin: bottom right;
+  }
+
+  &--position--inside &__aside-potr-pots {
+    bottom: auto;
+    left: 100%;
+
+    transform-origin: top left;
+  }
+
+  &--position--shifted &__aside-potr-pots {
+    left: auto;
+    right: 0;
+    bottom: calc(100% - 15px);
+
+    transform-origin: bottom right;
+  }
+
+  &--position--down-left-inside-rotated &__aside-potr-pots {
+    bottom: auto;
+    top: 100%;
+    left: auto;
+
+    transform-origin: top left;
+    transform: rotate(-90deg);
+  }
+
+  &--position--left-shifted &__aside-potr-pots {
+    bottom: auto;
+    top: -54px;
+    left: auto;
+
+    transform-origin: top left;
+    transform: rotate(90deg);
+  }
+}

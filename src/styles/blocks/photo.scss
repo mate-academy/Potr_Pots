@@ -1,0 +1,40 @@
+$photo-image-width: 183px;
+$small-photo-image-width: 161px;
+
+.photo {
+  box-sizing: border-box;
+  height: 240px;
+
+  padding: 16px 16px 0;
+
+  background-color: white;
+
+  &__image {
+    display: block;
+
+    @include square($photo-image-width);
+
+    margin-bottom: 6px;
+
+    object-fit: cover;
+  }
+
+  &__caption {
+    width: $photo-image-width;
+
+    color: $small-grey-text-color;
+  }
+
+  &--size--small {
+    height: 212px;
+    padding: 14px 14px 0;
+  }
+
+  &--size--small &__image{
+    @include square($small-photo-image-width);
+  }
+
+  &--size--small &__caption {
+    width: $small-photo-image-width;
+  }
+}

@@ -1,0 +1,30 @@
+$photos-layout: 1 297px 387px -15deg,
+  2 81px 477px -29deg,
+  3 127px 199px -15deg,
+  4 0 2px -30deg,
+  5 247px -80px -16deg,
+  6 368px 81px 0;
+
+.photos {
+  position: relative;
+
+  &__photo {
+    position: absolute;
+
+    transform-origin: bottom right;
+
+    @each
+    $nth-photo,
+    $photo-right,
+    $photo-bottom,
+    $photo-rotation
+    in $photos-layout {
+      &:nth-of-type(#{$nth-photo}){
+        right: $photo-right;
+        bottom: $photo-bottom;
+
+        transform: rotate($photo-rotation);
+      }
+    }
+  }
+}

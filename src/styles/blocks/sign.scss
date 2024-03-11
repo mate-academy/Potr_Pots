@@ -1,0 +1,30 @@
+$sign-size: 11px;
+$sign-thickness: 1px;
+$sign-color: #E0E0E0;
+
+@function set-line() {
+  @return ($sign-size - $sign-thickness) / 2;
+}
+
+.sign {
+  display: inline-block;
+  position: relative;
+
+  height: $sign-thickness;
+  width: $sign-size;
+
+  background-color: $sign-color;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: - set-line();
+    right: set-line();
+
+    height: $sign-size;
+    width: $sign-thickness;
+
+    background-color: $sign-color;
+  }
+}

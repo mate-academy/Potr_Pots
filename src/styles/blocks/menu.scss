@@ -1,0 +1,118 @@
+@function menu-width($amount-of-boxes, $box-size, $gap-size){
+  @return calc(
+    $box-size * 1.5 + $gap-size + grid-margin-size(
+      $amount-of-boxes,
+      $box-size,
+      $gap-size
+    )
+  );
+}
+
+@function menu-padding($box-size, $gap-size) {
+  @return calc($box-size / 2 + $gap-size);
+}
+
+.menu {
+  display: grid;
+  justify-content: left;
+  grid-template-columns: $mobile-grid-box-size;
+  grid-template-rows: 3fr min-content 2fr 118px 1fr;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  box-sizing: border-box;
+
+  width: menu-width(
+    $amount-of-mobile-grid-boxes,
+    $mobile-grid-box-size,
+    $grid-gap-size
+  );
+
+  height: 100vh;
+  padding-left: menu-padding($mobile-grid-box-size, $grid-gap-size);
+  background-color: $main-accent;
+
+  transform: translateX(101%);
+  transition: transform $transition-duration ease-in-out;
+
+  &:target {
+    transform: translateX(0);
+  }
+
+  @include for-foldable-height {
+    grid-template-rows: 1fr;
+  }
+
+  @include for-tablet {
+    grid-template-columns: $tablet-grid-box-size;
+
+    width: menu-width(
+      $amount-of-tablet-grid-boxes,
+      $tablet-grid-box-size,
+      $grid-gap-size
+    );
+
+    padding-left: menu-padding($tablet-grid-box-size, $grid-gap-size);
+  }
+
+  @include for-desktop {
+    display: none;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    list-style: none;
+
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+
+    @include for-foldable-height {
+      justify-content: flex-start;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    gap: 8px;
+
+    text-decoration: none;
+    color:  $light-grey;
+
+    @include hover(transform, $hover-transform-scale);
+  }
+
+  &__close-link{
+    &-wrapper {
+      position: relative;
+
+      grid-row: 4 / 5;
+      grid-column: 1 / 2;
+
+      @include for-foldable-height {
+        grid-row: 1 / 2;
+      }
+    }
+
+    position: absolute;
+    right: 0;
+    bottom: 100%;
+
+    transform-origin: bottom right;
+    transform: rotate(-90deg);
+
+    @include hover(transform, rotate(-90deg) $hover-transform-scale);
+
+    @include for-foldable-height {
+      bottom: 0;
+      right: auto;
+      left: 100%;
+      transform-origin: bottom left;
+    }
+  }
+}

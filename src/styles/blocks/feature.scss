@@ -1,0 +1,46 @@
+.feature {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    &-wrapper {
+      position: relative;
+
+      padding-top: 100%;
+      margin-bottom: 30px;
+
+      @include for-mobile {
+        margin-bottom: 35px;
+      }
+    }
+
+    display: block;
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    color: $big-grey-text-color;
+    text-align: center;
+
+    @include for-tablet {
+      text-align: start;
+    }
+  }
+
+  &__description {
+    color: $medium-grey-text-color;
+    text-align: center;
+
+    @include for-tablet {
+      text-align: start;
+    }
+  }
+}

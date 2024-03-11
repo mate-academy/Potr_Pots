@@ -1,0 +1,74 @@
+$primary2-button-color: #FFE339;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+
+  box-sizing: border-box;
+  height: 48px;
+
+  text-decoration: none;
+  color: #121212;
+
+  transition: all $transition-duration;
+  cursor: pointer;
+
+  &__arrow {
+    @include set-arrow-color(black);
+  }
+
+  &--device {
+    &--not-mobile {
+      @include for-mobile {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include for-mobile {
+        display: flex;
+      }
+    }
+  }
+
+  &--primary {
+    border: 1px solid $main-accent;
+    background-color: $main-accent;
+    color: white;
+
+    &:hover {
+      border-color: transparent;
+      background-color: #03839EB2;
+    }
+
+    &2 {
+      border: 1px solid $primary2-button-color;
+      background-color: $primary2-button-color;
+
+      &:hover {
+        opacity: 70%;
+      }
+    }
+  }
+
+  &--primary &__arrow {
+    @include set-arrow-color(white);
+  }
+
+  &--secondary {
+    border: 1px solid $main-accent;
+
+    &:hover {
+      background-color: $main-accent;
+      color: white;
+    }
+  }
+
+  &--secondary:hover &__arrow {
+    @include set-arrow-color(white);
+  }
+}

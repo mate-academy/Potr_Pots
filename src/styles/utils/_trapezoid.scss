@@ -1,0 +1,63 @@
+$trapezoid-color: #FFEC7A;
+
+@function trapezoid-height(
+  $amount-of-all-boxes,
+  $box-size,
+  $gap-size,
+  $amount-of-box-lengths,
+  $additional-gap-lengths,
+  $additional-margin-lengths
+) {
+  @return calc(
+    grid-margin-size(
+      $amount-of-all-boxes,
+      $box-size,
+      $gap-size
+    ) * (1 + $additional-margin-lengths) + $box-size * $amount-of-box-lengths + $gap-size * ($amount-of-box-lengths - 1 + $additional-gap-lengths)
+  );
+}
+
+@mixin trapezoid(
+  $longer-base-length,
+  $shorter-base-length,
+  $amount-of-grid-box-lengths,
+  $additional-grid-gap-lengths,
+  $additional-grid-margin-lengths
+  ) {
+  border-bottom:
+    calc($longer-base-length - $shorter-base-length)
+    solid
+    transparent;
+  height: $shorter-base-length;
+
+  border-left: trapezoid-height(
+    $amount-of-mobile-grid-boxes,
+    $mobile-grid-box-size,
+    $grid-gap-size,
+    $amount-of-grid-box-lengths,
+    $additional-grid-gap-lengths,
+    $additional-grid-margin-lengths
+  ) solid $trapezoid-color;
+
+  @include for-tablet {
+    border-left: trapezoid-height(
+      $amount-of-tablet-grid-boxes,
+      $tablet-grid-box-size,
+      $grid-gap-size,
+      $amount-of-grid-box-lengths,
+      $additional-grid-gap-lengths,
+      $additional-grid-margin-lengths
+    ) solid $trapezoid-color;
+  }
+
+  @include for-desktop {
+    border-left: trapezoid-height(
+      $amount-of-desktop-grid-boxes,
+      $desktop-grid-box-size,
+      $desktop-grid-gap-size,
+      $amount-of-grid-box-lengths,
+      $additional-grid-gap-lengths,
+      $additional-grid-margin-lengths
+    ) solid $trapezoid-color;
+  }
+}

@@ -1,0 +1,24 @@
+.slider {
+  display: none;
+
+  @include for-mobile{
+    display: flex;
+    z-index: 1;
+    width: var(--cw);
+
+    overflow: scroll hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__slide {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+  }
+}

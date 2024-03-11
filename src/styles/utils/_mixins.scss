@@ -1,6 +1,100 @@
-@mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+@mixin hover($property, $toValue) {
+  transition: #{$property} $transition-duration;
+
   &:hover {
-    #{$_property}: $_toValue;
+    #{$property}: $toValue;
+  }
+}
+
+@mixin visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: $red;
+}
+
+@mixin set-arrow-color($color) {
+  background-color: $color;
+
+  &::before{
+    background-color: $color;
+  }
+
+  &::after {
+    background-color: $color;
+  }
+}
+
+
+@mixin for-desktop {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: 768px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin for-mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin for-foldable-width {
+  @media (max-width: 319px){
+    @content;
+  }
+}
+
+@mixin for-foldable-height {
+  @media (max-height: 319px){
+    @content;
+  }
+}
+
+
+@mixin grid {
+  display: grid;
+  justify-content: center;
+
+  grid-template-columns: repeat(
+    $amount-of-mobile-grid-boxes,
+    $mobile-grid-box-size
+  );
+  gap: 0 $grid-gap-size;
+
+  @include for-tablet {
+    grid-template-columns: repeat(
+      $amount-of-tablet-grid-boxes,
+      $tablet-grid-box-size
+    );
+  }
+
+  @include for-desktop {
+    grid-template-columns: repeat(
+      $amount-of-desktop-grid-boxes,
+      $desktop-grid-box-size
+    );
+    column-gap: $desktop-grid-gap-size;
   }
 }

@@ -1,19 +1,891 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POTR POTS</title>
+    <link rel="stylesheet" href="./styles/main.scss">
+
     <link
-      rel="stylesheet"
-      href="./styles/main.scss"
-    />
+      rel="shortcut icon"
+      href="./images/favicon.ico"
+      type="image/x-icon"
+    >
   </head>
+
   <body>
-    <h1>Hello Mate Academy</h1>
-    <script src="scripts/main.js"></script>
+    <header class="header" id="home">
+      <div class="trapezoid header__trapezoid"></div>
+
+      <nav class="navigation header__navigation">
+        <a class="logo-link navigation__logo-link" href="#home">POTR POTS</a>
+
+        <ul class="navigation__links">
+          <li class="navigation__item">
+            <a class="navigation__link" href="#features">Features</a>
+          </li>
+
+          <li class="navigation__item">
+            <a class="navigation__link" href="#potr-team">About us</a>
+          </li>
+
+          <li class="navigation__item">
+            <a class="navigation__link" href="#materials">Materials</a>
+          </li>
+
+          <li class="navigation__item">
+            <a class="navigation__link" href="#questions">Message us</a>
+          </li>
+        </ul>
+
+        <a class="basket-link navigation__basket-link" href="#questions">
+          <span class="basket-link__label">Buy</span>
+        </a>
+
+        <a class="menu-link navigation__menu-link" href="#menu">
+          <span class="menu-link__label">Open menu</span>
+        </a>
+      </nav>
+
+      <picture class="header__image-wrapper">
+        <source
+          media="(min-width: 1440px)"
+          srcset="./images/header-img-desktop.jpg"
+        >
+
+        <source
+          media="(min-width: 768px) and (max-width: 1439px)"
+          srcset="./images/header-img-tablet.jpg"
+        >
+
+        <img
+          class="header__image"
+          src="./images/header-img-mobile.jpg"
+          alt="Cactus in pot"
+        >
+      </picture>
+
+      <h1 class="header__title">
+        POTR ~ Eco,
+        self-<span class="header__title header__title--highlight">watering, origami</span>
+        plant <span class="header__title header__title--highlight">pots</span>
+      </h1>
+
+      <div class="header__discount-info">
+        <p class="header__price">$ 7,50</p>
+
+        <p class="header__discount">
+          Get the second order
+          <br>
+          in half price
+        </p>
+      </div>
+
+      <a class="button button--primary2 header__button" href="#questions">
+        Buy now
+        <span class="arrow button__arrow"></span>
+      </a>
+
+      <aside class="header__about-link-wrapper">
+        <a class="about-link header__about-link" href="#for-whom">
+          More about&nbsp;&nbsp;POTR POTS
+          <span class="arrow arrow--long about-link__arrow"></span>
+        </a>
+      </aside>
+    </header>
+
+    <nav class="menu" id="menu">
+      <ul class="menu__links">
+        <li class="menu__item">
+          <a class="menu__link" href="#questions">
+            Basket
+            <p class="products-in-basket">0</p>
+          </a>
+        </li>
+
+        <li class="menu__item">
+          <a class="menu__link" href="#features">Features</a>
+        </li>
+
+        <li class="menu__item">
+          <a class="menu__link" href="#potr-team">About us</a>
+        </li>
+
+        <li class="menu__item">
+          <a class="menu__link" href="#materials">Materials</a>
+        </li>
+
+        <li class="menu__item">
+          <a class="menu__link" href="#questions">Message us</a>
+        </li>
+      </ul>
+
+      <div class="menu__close-link-wrapper">
+        <a
+          class="close-link menu__close-link"
+          id="close"
+          href="#close"
+        >
+          <span class="cross close-link__cross"></span>
+          <span class="line line--light-grey"></span>
+          Close
+        </a>
+      </div>
+    </nav>
+
+    <main class="main">
+      <section class="for-whom" id="for-whom">
+        <h2 class="for-whom__title">For whom?</h2>
+
+        <article class="target for-whom__target">
+          <picture class="target__image-wrapper">
+            <source
+              media="(min-width: 768px) and (max-width: 1439px)"
+              srcset="./images/robust-img-tablet.jpg"
+            >
+
+            <img
+              class="target__image"
+              src="./images/robust-img-desktop.jpg"
+              alt="plant in pot"
+            >
+          </picture>
+
+          <p class="target__short-info">
+            <span class="target__star">*</span>
+            Robust
+          </p>
+
+          <p class="target__item-number">
+            <span class="slash"></span>1
+          </p>
+
+          <h3 class="target__title">
+            For those who value durable
+            things<span class="slash slash--lowered slash--device--not-mobile"></span>
+          </h3>
+
+          <p class="target__description">
+            Don’t worry if you happen to knock your POTR on the floor,
+            unlike a traditional ceramic pot it will take the fall in its stride.
+          </p>
+        </article>
+
+        <article class="target for-whom__target">
+          <picture class="target__image-wrapper">
+            <img
+              class="target__image"
+              src="./images/beautiful-img.jpg"
+              alt="plant in pot"
+            >
+          </picture>
+
+          <p class="target__short-info">
+            <span class="target__star">*</span>
+            Beautiful
+          </p>
+
+          <p class="target__item-number">
+            <span class="slash"></span>2
+          </p>
+
+          <h3 class="target__title">
+            For those who love modern
+            design<span class="slash slash--lowered slash--device--not-mobile"></span>
+          </h3>
+
+          <p class="target__description">
+            We strived to achieve something that would look beautiful in your home
+            while being incredibly functional and intuitive to use.
+          </p>
+        </article>
+
+        <article class="target for-whom__target">
+          <picture class="target__image-wrapper">
+            <source
+              media="(min-width: 768px) and (max-width: 1439px)"
+              srcset="./images/saves-time-img-tablet.jpg"
+            >
+
+            <img
+              class="target__image"
+              src="./images/saves-time-img-desktop.jpg"
+              alt="pot with clock in the background"
+            >
+          </picture>
+
+          <p class="target__short-info">
+            <span class="target__star">*</span>
+            Saves time
+          </p>
+
+          <p class="target__item-number">
+            <span class="slash"></span>3
+          </p>
+
+          <h3 class="target__title">
+            For those who don't have enough time to regular water indoor
+            plants<span class="slash slash--lowered slash--device--not-mobile"></span>
+          </h3>
+
+          <p class="target__description">
+            Water is drawn up through the cotton by the plant using tried
+            and tested wicking technology.
+            It’s particularly useful if you aren’t able to
+            water them yourself on a regular basis!
+          </p>
+        </article>
+
+        <aside class="
+          aside-potr-pots-wrapper
+          aside-potr-pots-wrapper--device--mobile
+          aside-potr-pots-wrapper--position--down
+          for-whom__aside-potr-pots-wrapper
+        ">
+          <p class="aside-potr-pots aside-potr-pots-wrapper__aside-potr-pots">
+            <span class="line line--long"></span>potr pots
+          </p>
+        </aside>
+
+        <aside class="
+          aside-potr-pots-wrapper
+          aside-potr-pots-wrapper--device--tablet
+          aside-potr-pots-wrapper--position--shifted
+          for-whom__aside-potr-pots-wrapper
+        ">
+          <p class="aside-potr-pots aside-potr-pots-wrapper__aside-potr-pots">
+            <span class="line line--long"></span>potr pots
+          </p>
+        </aside>
+
+        <aside class="
+          aside-potr-pots-wrapper
+          aside-potr-pots-wrapper--device--desktop
+          aside-potr-pots-wrapper--position--inside
+          for-whom__aside-potr-pots-wrapper
+        ">
+          <p class="aside-potr-pots aside-potr-pots-wrapper__aside-potr-pots">
+            <span class="line line--long"></span>potr pots
+          </p>
+        </aside>
+
+        <aside class="
+          aside-potr-pots-wrapper
+          aside-potr-pots-wrapper--device--desktop
+          aside-potr-pots-wrapper--position--down-left-inside-rotated
+          for-whom__aside-potr-pots-wrapper
+        ">
+          <p class="aside-potr-pots aside-potr-pots-wrapper__aside-potr-pots">
+            <span class="line line--long"></span>potr pots
+          </p>
+        </aside>
+      </section>
+
+      <section class="features" id="features">
+        <h2 class="features__title">
+          <span class="features__title features__title--highlight">POTR Pots</span>
+          Features
+        </h2>
+
+        <article class="feature features__feature">
+          <picture class="feature__image-wrapper">
+            <source
+              media="(min-width: 1440px)"
+              srcset="./images/flat-pack-postage-img-desktop.jpg"
+            >
+
+            <source
+              media="(min-width: 768px) and (max-width: 1439px)"
+              srcset="./images/flat-pack-postage-img-tablet.jpg"
+            >
+
+            <img
+              class="feature__image"
+              src="./images/flat-pack-postage-img-mobile.jpg"
+              alt="flat packed pot"
+            >
+          </picture>
+
+          <h3 class="feature__title">Flat pack postage</h3>
+
+          <p class="feature__description">
+            The pots will be shipped flat packed
+            so they can be slipped through your letter box
+          </p>
+        </article>
+
+        <article class="feature features__feature">
+          <picture class="feature__image-wrapper">
+            <source
+              media="(min-width: 1440px)"
+              srcset="./images/easy-assembly-img-desktop.jpg"
+            >
+
+            <source
+              media="(min-width: 768px) and (max-width: 1439px)"
+              srcset="./images/easy-assembly-img-tablet.jpg"
+            >
+
+            <img
+              class="feature__image"
+              src="./images/easy-assembly-img-mobile.jpg"
+              alt="easily assembled pot"
+            >
+          </picture>
+
+          <h3 class="feature__title">Easy assembly</h3>
+
+          <p class="feature__description">
+            POTR Pots are super easy (and super satisfying)
+            to assemble using the quick draw cotton cord
+          </p>
+        </article>
+
+        <article class="feature features__feature">
+          <picture class="feature__image-wrapper">
+            <source
+              media="(min-width: 1440px)"
+              srcset="./images/self-watering-img-desktop.jpg"
+            >
+
+            <source
+              media="(min-width: 768px) and (max-width: 1439px)"
+              srcset="./images/self-watering-img-tablet.jpg"
+            >
+
+            <img
+              class="feature__image"
+              src="./images/self-watering-img-mobile.jpg"
+              alt="empty pot"
+            >
+          </picture>
+
+          <h3 class="feature__title">Self-watering</h3>
+
+          <p class="feature__description">
+            Simply add water into the pot — if your plant is thirsty it will automatically
+            start drinking the water through the cotton cord. Magic!
+          </p>
+        </article>
+      </section>
+
+      <section class="potr-team" id="potr-team">
+        <div class="trapezoid potr-team__trapezoid"></div>
+
+        <h2 class="potr-team__title">Meet the POTR team!</h2>
+
+        <picture class="potr-team__image-wrapper">
+          <source
+            media="(min-width: 1440px)"
+            srcset="./images/potr-team-desktop.jpg"
+          >
+
+          <source
+            media="(min-width: 768px) and (max-width: 1439px)"
+            srcset="./images/potr-team-tablet.jpg"
+          >
+
+          <img
+            class="potr-team__image"
+            src="./images/potr-team-mobile.jpg"
+            alt="POTR team"
+          >
+        </picture>
+
+        <p class="potr-team__description">
+          Andy and Martin are experienced product designers with a love
+          of plants and the environment. They have over ten years combined
+          industry experience in bringing products to market at some
+          of the worlds largest consumer product companies.
+          <br>
+          <br>
+          Having studied Product Design Engineering together at the Glasgow School of Art,
+          they have a long history of working as a team
+          <br>
+          on a variety of design projects.
+        </p>
+
+        <p class="potr-team__name potr-team__name--name--martin">Martin</p>
+        <p class="potr-team__name potr-team__name--name--andy">Andy</p>
+      </section>
+
+      <section class="materials" id="materials">
+        <h2 class="materials__title">Materials and Features</h2>
+
+        <div class="recycling materials__recycling">
+          <h3 class="recycling__title">Environmentally friendly</h3>
+
+          <p class="recycling__description">
+            All materials used in our pots are made from
+
+            <span class="recycling__description recycling__description--highlight">
+              100% recycled materials
+            </span>
+
+            and are
+
+            <span class="recycling__description recycling__description--highlight">
+              100% recyclable at the end of life
+            </span>
+
+            (should you ever choose to get rid of your POTR!).
+            All materials have been sourced from within Europe to reduce our
+            carbon footprint when transporting the raw materials, and all manufacturing
+            is carried out in the UK.
+          </p>
+        </div>
+
+        <gradient class="materials__gradient">
+          <button
+            class="circle-button materials__circle-button"
+            id="circle-button-1"
+            type="button"
+          >
+            <span class="sign circle-button__sign"></span>
+          </button>
+
+          <article class="materials__window" id="window-1">
+            We have chosen Bobbiny recycled cotton cord to use as our
+            draw string and wicking cord. Not only is it 100% recycled,
+            it looks great and works really well at wicking water.
+          </article>
+
+          <button
+            class="circle-button materials__circle-button"
+            id="circle-button-2"
+            type="button"
+          >
+            <span class="sign circle-button__sign"></span>
+          </button>
+
+          <article class="materials__window" id="window-2">
+            Shipped flat packed so they can be slipped through your letterbox,
+            POTR Pots have the smallest carbon footprint possible during transit.
+          </article>
+
+          <button
+            class="circle-button materials__circle-button"
+            id="circle-button-3"
+            type="button"
+          >
+            <span class="sign circle-button__sign"></span>
+          </button>
+
+          <article class="materials__window" id="window-3">
+            Once assembled the cotton cord doubles as the watering system,
+            allowing your plants to self-regulate their water intake
+            using tried and tested wicking technology.
+          </article>
+
+          <button
+            class="circle-button materials__circle-button"
+            id="circle-button-4"
+            type="button"
+          >
+            <span class="sign circle-button__sign"></span>
+          </button>
+
+          <article class="materials__window" id="window-4">
+            POTR pots are flat pack, origami planters designed to self-water your plants,
+            made from recycled materials.
+          </article>
+
+          <button
+            class="circle-button materials__circle-button"
+            id="circle-button-5"
+            type="button"
+          >
+            <span class="sign circle-button__sign"></span>
+          </button>
+
+          <article class="materials__window" id="window-5">
+            POTR Pots are constructed using recycled polypropylene
+            which can be fully recycled.
+          </article>
+        </gradient>
+
+        <section class="slider materials__slider">
+          <article class="slide slider__slide" id="slide-1">
+            <p class="slide__window">
+              We have chosen Bobbiny recycled cotton cord to use as our draw string and
+              wicking cord. Not only is it 100% recycled,
+              it looks great and works really well at wicking water.
+            </p>
+
+            <nav class="slide__nav">
+              <a class="slide__button" href="#slide-1"></a>
+              <a class="slide__button" href="#slide-2"></a>
+              <a class="slide__button" href="#slide-3"></a>
+              <a class="slide__button" href="#slide-4"></a>
+              <a class="slide__button" href="#slide-5"></a>
+            </nav>
+          </article>
+
+          <article class="slide slider__slide" id="slide-2">
+            <p class="slide__window">
+              Shipped flat packed so they can be slipped through your letterbox,
+              POTR Pots have the smallest carbon footprint possible during transit.
+            </p>
+
+            <nav class="slide__nav">
+              <a class="slide__button" href="#slide-1"></a>
+              <a class="slide__button" href="#slide-2"></a>
+              <a class="slide__button" href="#slide-3"></a>
+              <a class="slide__button" href="#slide-4"></a>
+              <a class="slide__button" href="#slide-5"></a>
+            </nav>
+          </article>
+
+          <article class="slide slider__slide" id="slide-3">
+            <p class="slide__window">
+              Once assembled the cotton cord doubles as the watering system,
+              allowing your plants to self-regulate their water intake using tried
+              and tested wicking technology.
+            </p>
+
+            <nav class="slide__nav">
+              <a class="slide__button" href="#slide-1"></a>
+              <a class="slide__button" href="#slide-2"></a>
+              <a class="slide__button" href="#slide-3"></a>
+              <a class="slide__button" href="#slide-4"></a>
+              <a class="slide__button" href="#slide-5"></a>
+            </nav>
+          </article>
+
+          <article class="slide slider__slide" id="slide-4">
+            <p class="slide__window">
+              POTR pots are flat pack, origami planters designed to self-water your plants,
+              made from recycled materials.
+            </p>
+
+            <nav class="slide__nav">
+              <a class="slide__button" href="#slide-1"></a>
+              <a class="slide__button" href="#slide-2"></a>
+              <a class="slide__button" href="#slide-3"></a>
+              <a class="slide__button" href="#slide-4"></a>
+              <a class="slide__button" href="#slide-5"></a>
+            </nav>
+          </article>
+
+          <article class="slide slider__slide" id="slide-5">
+            <p class="slide__window">
+              POTR Pots are constructed using recycled polypropylene
+              which can be fully recycled.
+            </p>
+
+            <nav class="slide__nav">
+              <a class="slide__button" href="#slide-1"></a>
+              <a class="slide__button" href="#slide-2"></a>
+              <a class="slide__button" href="#slide-3"></a>
+              <a class="slide__button" href="#slide-4"></a>
+              <a class="slide__button" href="#slide-5"></a>
+            </nav>
+          </article>
+        </section>
+
+        <aside class="
+          aside-potr-pots-wrapper
+          aside-potr-pots-wrapper--device--tablet
+          materials__aside-potr-pots-wrapper
+        ">
+          <p class="aside-potr-pots aside-potr-pots-wrapper__aside-potr-pots">
+            <span class="line line--long"></span>potr pots
+          </p>
+        </aside>
+
+        <aside class="
+          aside-potr-pots-wrapper
+          aside-potr-pots-wrapper--device--tablet
+          aside-potr-pots-wrapper--position--left-shifted
+          materials__aside-potr-pots-wrapper
+        ">
+          <p class="aside-potr-pots aside-potr-pots-wrapper__aside-potr-pots">
+            <span class="line line--long"></span>potr pots
+          </p>
+        </aside>
+      </section>
+
+      <section class="potr-size">
+        <h2 class="potr-size__title">Which size POTR for my house plant ?</h2>
+
+        <p class="potr-size__description">
+          Pre potted plants come in fairly standard sized pots,
+          and can be classified into one of two categories
+        </p>
+
+        <picture class="potr-size__image-wrapper">
+          <source
+            media="(min-width: 1440px)"
+            srcset="./images/sizes-desktop.jpg"
+          >
+
+          <source
+            media="(min-width: 768px) and (max-width: 1439px)"
+            srcset="./images/sizes-tablet.jpg"
+          >
+
+          <img
+            class="potr-size__image"
+            src="./images/sizes-mobile.jpg"
+            alt="POTR pots sizes"
+          >
+        </picture>
+
+        <article class="size potr-size__size">
+          <h3 class="size__title">large</h3>
+
+          <p class="size__description">
+            Large POTR Pot = 14cm diameter
+            <br>
+            (1.5 litre) house plant pot or less
+          </p>
+        </article>
+
+        <article class="size potr-size__size">
+          <h3 class="size__title">Small</h3>
+
+          <p class="size__description">
+            Small POTR Pot = 10cm diameter
+            <br>
+            (0.49 litre) house plant pot or
+            <br>
+            less
+          </p>
+        </article>
+
+        <p class="potr-size__note">
+          <span class="potr-size__star">*</span>
+          POTR Pots have a little bit of give around the top rim so can fit
+          slightly larger sizes than the recommended sizes stated above if necessary.
+        </p>
+
+        <div class="potr-size__separating-line"></div>
+      </section>
+
+      <section class="benefits">
+        <section class="photos benefits__photos">
+          <article class="photo photos__photo">
+            <img
+              class="photo__image"
+              src="./images/origami-img.jpg"
+              alt="origami"
+            >
+
+            <p class="photo__caption">Origami experiments</p>
+          </article>
+
+          <article class="photo photo--size--small photos__photo">
+            <img
+              class="photo__image"
+              src="./images/21st-century-pot-img.jpg"
+              alt="cactus in pot"
+            >
+
+            <p class="photo__caption">A plant pot for the 21st century.</p>
+          </article>
+
+          <article class="photo photos__photo">
+            <img
+              class="photo__image"
+              src="./images/house-hold-objects-img.jpg"
+              alt="cactus in pot among other house hold objects"
+            >
+
+            <p class="photo__caption">POTR Pots compliment other house hold objects.</p>
+          </article>
+
+          <article class="photo photos__photo">
+            <img
+              class="photo__image"
+              src="./images/ready-to-go-img.jpg"
+              alt="plant in pot"
+            >
+
+            <p class="photo__caption">POTR pots ready to go!</p>
+          </article>
+
+          <article class="photo photos__photo">
+            <img
+              class="photo__image"
+              src="./images/cotton-colours.jpg"
+              alt="Bobbiny cotton cords in many colours"
+            >
+
+            <p class="photo__caption">Bobbiny cotton cord colour options</p>
+          </article>
+
+          <article class="photo photos__photo">
+            <img
+              class="photo__image"
+              src="./images/watering-cottons-img.jpg"
+              alt="Bobbiny cotton cords in many colours watering plant"
+            >
+
+            <p class="photo__caption">Bobbiny cotton cord colour options</p>
+          </article>
+        </section>
+
+        <article class="benefit benefits__benefit">
+          <h2 class="benefit__title">
+            <span class="benefit__point"></span>
+            Easy assembly
+          </h2>
+
+          <p class="benefit__description">Pull the draw string to assemble!</p>
+        </article>
+
+        <article class="benefit benefits__benefit">
+          <h2 class="benefit__title">
+            <span class="benefit__point"></span>
+            Flat pack postage
+          </h2>
+
+          <p class="benefit__description">POTR pots arrive flat packed in an envelope!</p>
+        </article>
+
+        <article class="benefit benefits__benefit">
+          <h2 class="benefit__title">
+            <span class="benefit__point"></span>
+            Self-watering
+          </h2>
+
+          <p class="benefit__description">
+            Add water to POTR and watch your plant drink!
+          </p>
+        </article>
+
+        <a
+          class="button button--secondary button--device--not-mobile benefits__button"
+          href="#questions"
+        >
+          Buy now
+          <span class="arrow button__arrow"></span>
+        </a>
+
+        <a
+          class="button button--primary2 button--device--mobile benefits__button"
+          href="#questions"
+        >
+          Buy now
+          <span class="arrow button__arrow"></span>
+        </a>
+
+        <div class="benefits__discount-info">
+          <p class="benefits__percentage">50% off</p>
+          <p class="benefits__discount">Get the second order in half price</p>
+        </div>
+
+        <aside class="
+          aside-potr-pots-wrapper
+          aside-potr-pots-wrapper--device--tablet
+          benefits__aside-potr-pots-wrapper
+        ">
+          <p class="aside-potr-pots aside-potr-pots-wrapper__aside-potr-pots">
+            <span class="line line--long"></span>POTR Pots Features
+          </p>
+        </aside>
+      </section>
+
+      <section class="questions" id="questions">
+        <picture class="questions__image-wrapper">
+          <source
+            media="(min-width: 1440px)"
+            srcset="./images/stamp-desktop.png"
+          >
+
+          <source
+            media="(min-width: 768px) and (max-width: 1439px)"
+            srcset="./images/stamp-tablet.png"
+          >
+
+          <img
+            class="questions__image"
+            src="./images/stamp-mobile.png"
+            alt="Environmentally friendly self-watering origami plant pots stamp"
+          >
+        </picture>
+
+        <div class="trapezoid questions__trapezoid"></div>
+        <h2 class="questions__title">have any questions?</h2>
+        <p class="questions__description">Here few ways to get in touch with us:</p>
+
+        <form class="message questions__message" id="message">
+          <h3 class="message__title">Message us</h3>
+
+          <div class="message__item">
+            <label class="message__label" for="name">Name</label>
+
+            <input
+              class="message__input"
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Name"
+              pattern="[A-Za-z\- ]+"
+              required
+            >
+          </div>
+
+          <div class="message__item">
+            <label class="message__label" for="email">Email</label>
+
+            <input
+              class="message__input"
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}"
+              required
+            >
+          </div>
+
+          <div class="message__item">
+            <label class="message__label" for="text">Text</label>
+
+            <div class="message__textarea-wrapper">
+              <textarea
+                class="message__textarea"
+                id="text"
+                name="text"
+                placeholder="Message"
+                rows="1"
+                required
+              ></textarea>
+            </div>
+          </div>
+
+          <button class="button button--primary message__button">
+            Submit
+            <span class="arrow button__arrow"></span>
+          </button>
+        </form>
+
+        <address class="address questions__address">
+          <h3 class="address__label">Our phone</h3>
+
+          <a
+            class="address__content address__content--link"
+            href="tel:(270) 555-0117"
+          >
+            (270) 555-0117
+          </a>
+
+          <h3 class="address__label">Our email</h3>
+          <p class="address__content">potrpots@gmail.com</p>
+          <h3 class="address__label">Our office</h3>
+
+          <a
+            class="address__content address__content--link"
+            href="https://www.google.pl/maps/place/99+Staple+Hill+Rd,+Bristol+BS16+5AD,+Wielka+Brytania/@51.4817943,-2.5186389,21z/data=!4m6!3m5!1s0x48718fe6a41edcc5:0x1d95fb4b9dab9646!8m2!3d51.4818509!4d-2.5185188!16s%2Fg%2F11c3q2n48n?entry=ttu"
+            target="_blank"
+          >
+            United Kingdom  99 Staple Hill Road, Bristol, BS16 5AD
+          </a>
+        </address>
+      </section>
+    </main>
+
+    <script type="text/javascript" src="scripts/main.js"></script>
   </body>
 </html>
