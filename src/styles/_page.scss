@@ -1,0 +1,42 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.page {
+  font-family: Manrope, sans-serif;
+
+  &__body {
+    overflow-x: hidden;
+    min-width: 320px;
+    background: $c-gray;
+
+    &--with-menu {
+      overflow: hidden;
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-100%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}
+
+.page:has(.page__menu:target) {
+  overflow: hidden;
+}
+
+
+

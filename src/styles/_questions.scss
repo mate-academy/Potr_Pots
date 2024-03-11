@@ -1,0 +1,255 @@
+.questions {
+  position: relative;
+
+
+  &__background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 40px;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__background-tabl {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 40px;
+    width: 100%;
+    z-index: -1;
+
+    @include on-desktop {
+      display: none;
+    }
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__background-mob {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 40px;
+    width: 100%;
+    z-index: -1;
+    height: auto;
+
+    @include on-desktop {
+      display: none;
+    }
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+
+    @include on-mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__left {
+    @include content-padding-inline;
+
+    display: flex;
+    flex-direction: column;
+    margin-right: 400px;
+
+    @include on-mobile {
+      align-items: center;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-align: left;
+    margin-top: 70px;
+
+    @include on-mobile {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__mass-us {
+    font-family: Manrope, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    margin-bottom: 40px;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include on-mobile {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    resize: none;
+    font-family: Manrope, sans-serif;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: $main-text-col;
+    background: none;
+    width: 100%;
+    display: inline-flex;
+    align-items: flex-start;
+    border: none;
+    border-bottom: 1px solid #000;
+  }
+
+  &__button {
+    width: 238px;
+    height: 48px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    background-color: $title-blue-col;
+    color: #fff;
+    margin-top: 40px;
+
+    @include hover(transform, scale(1.2));
+
+
+    @include on-mobile {
+      width: 100%;
+      margin-right: 10px;
+    }
+  }
+
+  &__button:hover {
+    opacity: 0.7;
+  }
+
+  &__arrow {
+    margin-left: 10px;
+    color: #fff;
+  }
+
+  &__logo {
+    position: absolute;
+    left: 80%;
+    bottom: 430px;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+ &__logo-mob {
+  position: absolute;
+  top: -40px;
+  right: 0;
+
+  @include on-tablet {
+    position: absolute;
+    top: -40px;
+    right: 0;
+  }
+
+
+  @include on-desktop {
+    display: none;
+  }
+ }
+
+  &__right-wrap {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+
+    @include on-tablet {
+      right: 50px;
+      left: 500px;
+    }
+
+    @include on-mobile {
+      position: static;
+    }
+  }
+
+  &__title-addr {
+    font-family: Manrope, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    color: #00000063;
+    margin-bottom: 5px;
+  }
+
+  &__info {
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+    color: #000;
+  }
+
+  &__info-wr {
+    margin-top: 25px;
+  }
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: $main-text-col;
+  -webkit-box-shadow: 1000px white inset;
+}

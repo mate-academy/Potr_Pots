@@ -1,0 +1,87 @@
+.features {
+  @include content-padding-inline;
+
+  &__title-wrap {
+    margin-top: 150px;
+  }
+
+  &__wrapper {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    @include page-grid;
+
+    @include on-mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title-mob {
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__title-s {
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__sec-left {
+    grid-column: 1 / 5;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+    }
+  }
+
+  &__sec-middle {
+    grid-column: 5 / 9;
+
+    @include on-tablet {
+      grid-column: 3 / 5;
+    }
+  }
+
+  &__sec-right {
+    grid-column: 9 / -1;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-align: center;
+  }
+
+  &__discription {
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 150px;
+
+    @include on-mobile {
+      margin-bottom: 110px;
+    }
+  }
+
+  &__pic {
+    width: 100%;
+  }
+}

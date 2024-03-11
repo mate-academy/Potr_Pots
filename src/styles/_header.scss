@@ -1,0 +1,235 @@
+.header {
+  @include content-padding-inline;
+
+  font-family: 'bebas_neue', sans-serif;
+  margin-top: 20px;
+
+  &__backgr {
+    background-image: url(/images/b-ground/header-rectangle.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__logo {
+    color: $title-gray-col;
+    font-family: "Bebas Neue", sans-serif;
+    text-decoration: none;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.16px;
+    z-index: 1;
+
+    @include hover(transform, scale(1.2));
+  }
+
+  &__top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $main-text-col;
+    font-family: Manrope,sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    position: relative;
+  }
+
+  &__nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 4px;
+    background-color: #03839E;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  &__nav-link:hover::before {
+    width: 100%;
+  }
+
+  &__nav-link:hover {
+    color: black;
+  }
+
+  &__wrapper {
+    margin-top: 90px;
+    position: relative;
+
+    @include page-grid;
+
+    @include on-mobile {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 10px;
+    }
+  }
+
+  &__picture {
+    grid-column: 8 / 13;
+    z-index: 1;
+    grid-row: 1;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__picture-tabl {
+    display: none;
+    width: 100%;
+    height: 100%;
+
+    @include on-tablet {
+      display: grid;
+      grid-column: 4 / -1;
+    }
+  }
+
+  &__title {
+    grid-column: 2 / 7;
+    z-index: 2;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+
+    @include on-mobile {
+      margin-top: 25px;
+      margin-bottom: 55px;
+    }
+  }
+
+  &__propos {
+    position: absolute;
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    grid-column: 5 / 8;
+
+    @include on-tablet {
+      grid-column: 3 / 5;
+      margin-top: 300px;
+      margin-left: -40px;
+    }
+
+    @include on-mobile {
+      position: static;
+      margin-top: 20px;
+    }
+  }
+
+  &__price {
+    color: $title-gray-col;
+    font-family: Manrope, sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__prop {
+    color: $main-text-col;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  &__button {
+    position: absolute;
+    cursor: pointer;
+    color: #121212;
+    background-color: $button-col;
+    border: none;
+    width: 270px;
+    height: 48px;
+    font-size: 14px;
+    font-family: Manrope, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: uppercase;
+    grid-column: 4 / 7;
+    margin-top: 450px;
+    opacity: 1;
+
+    @include hover(transform, scale(1.2));
+
+
+    @include on-tablet {
+      margin-top: 400px;
+      margin-left: -300px;
+    }
+
+    @include on-mobile {
+      width: 100%;
+      height: 48px;
+      margin-top: 30px;
+    }
+  }
+
+  &__button:hover {
+    opacity: 0.7;
+  }
+
+  &__b-arrow {
+    margin-left: 25px;
+  }
+
+  &__left-side {
+    position: absolute;
+    margin-top: 300px;
+    grid-column: 1 / 1;
+
+    @include on-mobile {
+      right: -30px;
+    }
+  }
+
+  &__arrow {
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  &__arrow:hover {
+    @include hover(transform, scale(1.2));
+  }
+}
