@@ -1,25 +1,11 @@
-$header-trapezoid-longer-base-size: 466px;
-
 .header {
   @include grid;
 
   &__trapezoid {
-    @include trapezoid(
-      $header-trapezoid-longer-base-size,
-      calc($header-trapezoid-longer-base-size / 3),
-      9,
-      1,
-      0
-    );
+    @include trapezoid(466px, 163px, 9, 1, 0);
 
     @include for-tablet {
-      @include trapezoid(
-        calc($header-trapezoid-longer-base-size * 2 / 3),
-        calc($header-trapezoid-longer-base-size / 3),
-        5,
-        0,
-        0
-      );
+      @include trapezoid(331px, 164px, 5, 0, 0);
     }
 
     @include for-mobile {

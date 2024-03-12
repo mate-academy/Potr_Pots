@@ -1,7 +1,3 @@
-$mobile-questions-trapezoid-longer-base-size: 1003px;
-$tablet-questions-trapezoid-longer-base-size: 472px;
-$desktop-questions-trapezoid-longer-base-size: 558px;
-
 .questions {
   @include grid;
 
@@ -44,36 +40,18 @@ $desktop-questions-trapezoid-longer-base-size: 558px;
   }
 
   &__trapezoid {
-    @include trapezoid(
-      $desktop-questions-trapezoid-longer-base-size,
-      calc($desktop-questions-trapezoid-longer-base-size * 3 / 4),
-      12,
-      0,
-      0
-    );
+    @include trapezoid(560px, 406px, 12, 0, 0);
 
     top: 152px;
 
     @include for-tablet {
-      @include trapezoid(
-        $tablet-questions-trapezoid-longer-base-size,
-        calc($tablet-questions-trapezoid-longer-base-size * 4 / 5),
-        6,
-        0,
-        1
-      );
+      @include trapezoid(477px, 385px, 6, 0, 1);
 
       top: 103px;
     }
 
     @include for-mobile {
-      @include trapezoid(
-        $mobile-questions-trapezoid-longer-base-size,
-        calc($mobile-questions-trapezoid-longer-base-size * 9 / 10),
-        2,
-        0,
-        1
-      );
+      @include trapezoid(1003px, 916px, 2, 0, 1);
 
       top: 110px;
     }

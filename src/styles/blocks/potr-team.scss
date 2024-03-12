@@ -1,7 +1,3 @@
-$mobile-potr-team-trapezoid-longer-base-size: 293px;
-$tablet-potr-team-trapezoid-longer-base-size: 233px;
-$desktop-potr-team-trapezoid-longer-base-size: 310px;
-
 .potr-team {
   @include grid;
 
@@ -20,36 +16,18 @@ $desktop-potr-team-trapezoid-longer-base-size: 310px;
   }
 
   &__trapezoid {
-    @include trapezoid(
-      $desktop-potr-team-trapezoid-longer-base-size,
-      calc($desktop-potr-team-trapezoid-longer-base-size / 2),
-      3,
-      1,
-      0
-    );
+    @include trapezoid(311px, 164px, 3, 1, 0);
 
     top: 335px;
 
     @include for-tablet {
-      @include trapezoid(
-        $tablet-potr-team-trapezoid-longer-base-size,
-        calc($tablet-potr-team-trapezoid-longer-base-size * 2 / 3),
-        2,
-        0,
-        0
-      );
+      @include trapezoid(233px, 164px, 2, 0, 0);
 
       top: 302px;
     }
 
     @include for-mobile {
-      @include trapezoid(
-        $mobile-potr-team-trapezoid-longer-base-size,
-        calc($mobile-potr-team-trapezoid-longer-base-size * 2 / 3),
-        2,
-        0,
-        1
-      );
+      @include trapezoid(293px, 198px, 2, 0, 1);
 
       top: auto;
       bottom: 0;

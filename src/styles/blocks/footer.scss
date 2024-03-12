@@ -1,0 +1,48 @@
+.footer {
+  @include grid;
+
+  padding-top: 184px;
+  padding-bottom: 64px;
+
+  @include for-tablet {
+    padding-top: 113px;
+    padding-bottom: 117px;
+  }
+
+  @include for-mobile {
+    padding-top: 102px;
+    padding-bottom: 30px;
+  }
+
+  &__end-info {
+    grid-column: 1 / 3;
+
+    &:last-child {
+      justify-self: end;
+
+      grid-column: 11 / 13;
+
+      @include for-tablet {
+        grid-column: 5 / 7;
+      }
+
+      @include for-mobile {
+        justify-self: center;
+
+        grid-column: 1 / 3;
+      }
+    }
+  }
+
+  &__end-navigation {
+    grid-column: 5 / 9;
+
+    @include for-tablet {
+      grid-column: 3 / 5;
+    }
+
+    @include for-mobile {
+      grid-column: 1 / 3;
+    }
+  }
+}

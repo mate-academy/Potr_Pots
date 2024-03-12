@@ -1,0 +1,45 @@
+.social-link {
+  display: block;
+
+  @include square(20px);
+
+  @include for-desktop {
+    @include square(30px);
+  }
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  @include hover(transform, $hover-transform-scale);
+
+  &--platform {
+    &--twitter {
+      background-image: url(../images/twitter.svg);
+
+      @include for-desktop {
+        background-image: url(../images/twitter-desktop.svg);
+      }
+    }
+
+    &--instagram {
+      background-image: url(../images/instagram.png);
+
+      @include for-desktop {
+        background-image: url(../images/instagram-desktop.png);
+      }
+    }
+
+    &--facebook {
+      background-image: url(../images/facebook.svg);
+
+      @include for-desktop {
+        background-image: url(../images/facebook-desktop.svg);
+      }
+    }
+  }
+
+  &__label {
+    @include visually-hidden;
+  }
+}
