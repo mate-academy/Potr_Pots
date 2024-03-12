@@ -1,0 +1,235 @@
+.header {
+  position: relative;
+  height: 756px;
+  padding-top: 20px;
+  margin-bottom: 110px;
+
+  @include on-tablet {
+    height: 640px;
+    background: url('../icons/Rectangle.svg') left no-repeat;
+    background-position: -475px -20px;
+    margin-bottom: 150px;
+  }
+
+  @include on-desktop {
+    background-position: 0 0;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+
+      @include on-tablet {
+        margin-bottom: 50px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 90px;
+      }
+    }
+
+    &-wrap {
+      display: none;
+      align-items: center;
+      gap: 60px;
+
+      @include on-desktop {
+        display: flex;
+      }
+    }
+
+    &__logo {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: #333;
+
+      @include on-desktop {
+        margin-right: 266px;
+      }
+
+      &:visited {
+        color: #333;
+      }
+    }
+
+    &__link {
+      position: relative;
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 10px 0;
+      color: $gray;
+
+      &:visited {
+        color: $gray;
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        height: 1px;
+        width: 0;
+        background-color: $gray;
+        bottom: 0;
+        left: 0;
+
+        transition: width .3s;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &__bag {
+      width: 48px;
+      margin-left: auto;
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+
+    &__menu {
+      width: 36px;
+      display: block;
+      margin-left: auto;
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    height: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 68px;
+
+    @include on-tablet {
+      position: static;
+      transform: translateX(0);
+    }
+
+    @include on-desktop {
+      height: 500px;
+      top: 140px;
+      right: 0;
+    }
+  }
+
+  &__title {
+    padding-top: 340px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: $turquoise;
+    text-align: left;
+    margin-bottom: 20px;
+
+    .transperent {
+      color: transparent;
+      -webkit-text-stroke: 1px $turquoise;
+    }
+
+    @include on-tablet {
+      font-size: 64px;
+      padding: 0;
+    }
+  }
+
+  &__prise {
+    padding-right: 72px;
+    font-family: Manrope, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: $gray;
+    margin-bottom: 5px;
+
+    @include on-tablet {
+      text-align: right;
+    }
+
+    &__descr {
+      width: 140px;
+      font-family: Manrope, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      color: $gray;
+      margin-bottom: 50px;
+
+      @include on-tablet {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__btn {
+    width: 270px;
+    height: 48px;
+    background: $yellow;
+    border: 1px solid $yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+    margin-left: auto;
+    transition: background-color .3s;
+
+    font-family: Manrope, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: $gray;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &__icon {
+      color: $turquoise;
+    }
+  }
+
+  &__vertical {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    writing-mode: vertical-rl;
+    text-align: right;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 10px;
+    right: -2px;
+
+    @include on-tablet {
+      bottom: 0;
+      right: unset;
+    }
+
+    &__text {
+      font-family: Manrope, sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: $turquoise;
+
+      &:visited {
+        color: $turquoise;
+      }
+    }
+  }
+}

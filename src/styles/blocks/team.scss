@@ -1,0 +1,116 @@
+.team {
+  position: relative;
+  background: url("../icons/RectangleSmall.svg") no-repeat;
+  background-position: 0 100%;
+  margin-bottom: 110px;
+
+  @include on-tablet {
+    margin-bottom: 225px;
+    background-position: -135px 50%;
+  }
+
+  @include on-desktop {
+    background-position: 0 50%;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: #333;
+  }
+
+  &__teamate {
+    position: absolute;
+    color: transparent;
+    -webkit-text-stroke: 3px $turquoise;
+
+    font-size: 270px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    line-height: 345px;
+    letter-spacing: 0.15em;
+
+    &-martin {
+      display: none;
+      line-height: 220px;
+      top: 110px;
+
+      @include on-tablet {
+        display: block;
+        left: -45px;
+        font-size: 230px;
+      }
+
+      @include on-desktop {
+        left: 74px;
+        font-size: 270px;
+      }
+    }
+
+    &-andy {
+      width: 460px;
+      line-height: 220px;
+      display: none;
+
+      @include on-tablet {
+        display: block;
+        bottom: -170px;
+        font-size: 220px;
+        right: 35px;
+      }
+
+      @include on-desktop {
+        font-size: 270px;
+        bottom: -230px;
+        right: 150px;
+      }
+    }
+  }
+
+  &__texts {
+    display: flex;
+    flex-direction: column;
+    padding-top: 300px;
+    gap: 20px;
+
+    @include on-tablet {
+      padding-top: 240px;
+    }
+
+    @include on-desktop {
+      padding-top: 370px;
+    }
+
+    &__text {
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $gray;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+
+
+    @include on-tablet {
+      transform: translateX(0);
+      position: static;
+      width: 340px;
+      padding-top: 185px;
+    }
+
+    @include on-desktop {
+      width: 677px;
+      padding-top: 143px;
+    }
+  }
+}

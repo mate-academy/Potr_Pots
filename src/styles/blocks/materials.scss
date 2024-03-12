@@ -1,0 +1,369 @@
+.materials {
+  position: relative;
+  height: 575px;
+  background: url('../images/9.jpg') center no-repeat;
+  background-position: 50% 50%;
+  margin-bottom: 105px;
+  background-size: 100% auto;
+
+  @include on-tablet {
+    background-position: 50% 100%;
+    height: 840px;
+  }
+
+  @include on-desktop {
+    height: 1385px;
+    background-size: 1440px auto;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0.12em;
+    color: $turquoise ;
+    margin-bottom: 120px;
+
+    @include on-tablet {
+      font-size: 80px;
+      line-height: 96px;
+      margin-bottom: 315px;
+    }
+
+    @include on-desktop {
+      font-size: 139px;
+      line-height: 167px;
+    }
+  }
+
+  &__texts {
+    position: absolute;
+    width: 470px;
+    top: 135px;
+    right: 45px;
+
+    @include on-tablet {
+      width: 340px;
+    }
+
+    @include on-desktop {
+      width: 470px;
+      right: 135px;
+      top: 180px;
+    }
+
+    &__title {
+      display: none;
+      font-family: Manrope, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+      color: $gray;
+      margin-bottom: 15px;
+
+      @include on-tablet {
+        display: block;
+      }
+    }
+
+    &__text {
+      display: none;
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $gray;
+
+      @include on-desktop {
+        display: block;
+      }
+
+      &-tablet {
+        display: none;
+        font-family: Manrope, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: $gray;
+
+        @include on-tablet {
+          display: block;
+        }
+
+        @include on-desktop {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__swiper {
+    height: 254px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 300px;
+    position: absolute;
+    padding: 24px 44px 0 45px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+
+    @include on-tablet {
+      display: none;
+    }
+
+    &__item {
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #fff;
+    }
+
+  }
+
+  .slick-dotted.slick-slider {
+    margin-bottom: 0;
+  }
+
+  .slick-dots {
+    bottom: 27px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    li button {
+      transform: rotate(45deg);
+      width: 7px;
+      height: 7px;
+      background: #fff;
+
+      &::before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border: #fff 1px solid;
+      }
+    }
+
+    li.slick-active button::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background-color: #000;
+      opacity: 1;
+    }
+  }
+
+  &__details {
+    display: none;
+    position: relative;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      padding: 300px 0 0;
+    }
+
+    &__text {
+      position: absolute;
+      width: 283px;
+      top: 606px;
+      left: 283px;
+      padding: 35px;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      display: none;
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #F8F8F8;
+      z-index: 5;
+
+      &-1 {
+        left: 0;
+        top: -20px;
+
+        @include on-desktop {
+          left: 0;
+          top: 320px;
+        }
+      }
+
+      &-2 {
+        left: 75px;
+        top: -140px;
+
+        @include on-desktop {
+          left: 150px;
+          top: 120px;
+        }
+      }
+
+      &-3 {
+        left: 180px;
+        top: 0;
+
+        @include on-desktop {
+          left: 240px;
+          top: 470px;
+        }
+      }
+
+      &-4 {
+        left: 270px;
+        top: -100px;
+
+        @include on-desktop {
+          left: 600px;
+          top: 190px;
+        }
+      }
+
+      &-5 {
+        left: 420px;
+        top: 30px;
+
+        @include on-desktop {
+          left: 900px;
+          top: 360px;
+        }
+      }
+
+      &.visible {
+        display: block;
+      }
+    }
+
+    &__btn {
+      width: 51px;
+      height: 51px;
+      background-color: $red;
+      border: none;
+      font-size: 17px;
+      color: #F8F8F8;
+      border-radius: 50px;
+      cursor: pointer;
+      position: absolute;
+
+      &-1 {
+        margin: 170px 0 0 50px;
+
+        @include on-desktop {
+          margin: 220px 0 0 20px;
+        }
+      }
+
+      &-2 {
+        margin: 55px 0 0 75px;
+
+        @include on-desktop {
+          margin: 0 0 0 10px;
+        }
+      }
+
+      &-3 {
+        margin: 220px 0 0 60px;
+
+        @include on-desktop {
+          margin: 250px 0 0 30px;
+        }
+      }
+
+      &-4 {
+        margin: 130px 0 0 20px;
+
+        @include on-desktop {
+          margin: 130px 0 0;
+        }
+      }
+
+      &-5 {
+        margin: -30px 0 0 50px;
+
+        @include on-desktop {
+          margin: 0;
+        }
+      }
+
+      &__horizontal {
+        width: 11px;
+        height: 1px;
+        background-color: #E0E0E0;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &__vertical {
+        width: 1px;
+        height: 11px;
+        background-color: #E0E0E0;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &.visible {
+          display: none;
+        }
+      }
+
+      &.visible {
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+
+  &__vertical {
+    display: none;
+    writing-mode: vertical-rl;
+    text-align: right;
+    white-space: nowrap;
+    position: absolute;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.22em;
+    color: $gray;
+    padding-top: 75px;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+
+    &-right {
+      top: 0;
+      writing-mode: vertical-rl;
+      right: 10px;
+    }
+
+    &-left {
+      top: 200px;
+      left: 10px;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      height: 65px;
+      width: 1px;
+      background: $gray;
+      top: 0;
+      left: 50%;
+    }
+  }
+}

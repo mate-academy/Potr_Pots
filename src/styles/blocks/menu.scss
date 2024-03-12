@@ -1,0 +1,76 @@
+.menu {
+  display: none;
+  position: absolute;
+  right: -100%;
+  width: 70%;
+  height: 100%;
+  background: $turquoise;
+  z-index: 10;
+  padding: 138px 32px 42px 83px;
+  transition: display .3s right .3s;
+
+  &.active {
+    right: 0;
+    display: block;
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    &__link {
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #F8F8F8;
+      padding: 7px 0;
+      &:visited {
+        color: #F8F8F8;
+      }
+    }
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 18px;
+  }
+
+  &__vertical {
+    position: relative;
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #F8F8F8;
+    text-transform: uppercase;
+
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding-top: 60px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 44px;
+      background: #F8F8F8;
+    }
+  }
+
+  &__close {
+    padding-right: 3px;
+  }
+}
