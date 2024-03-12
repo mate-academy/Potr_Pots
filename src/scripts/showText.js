@@ -1,11 +1,11 @@
 'use strict';
 
-function showText(number) {
-  const myText = document.querySelector(`.materials__details__text-${number}`);
-  const myBotton = document.querySelector(`.materials__details__btn-${number}`);
-  const vertical = myBotton.querySelector('.materials__details__btn__vertical');
+const buttons = document.querySelectorAll('.materials__details__btn');
 
-  myText.classList.toggle('visible');
-  myBotton.classList.toggle('visible');
-  vertical.classList.toggle('visible');
-};
+buttons.forEach(function (button, index) {
+  button.addEventListener('click', function () {
+    const text = document.querySelector(`.materials__details__text-${index + 1}`);
+    button.classList.toggle('visible');
+    text.classList.toggle('visible');
+  });
+});
