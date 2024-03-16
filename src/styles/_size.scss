@@ -49,6 +49,12 @@
   &__categories {
     display: flex;
     flex-direction: column;
+
+    @include on-mobile {
+      margin-top: -50px;
+      margin-bottom: 90px;
+      order: 3;
+    }
   }
 
   &__cat-title {
@@ -68,6 +74,10 @@
     text-align: left;
     color: $main-text-col;
     margin-top: 10px;
+
+    @include on-mobile {
+      margin-top: -10px;
+    }
   }
 
   &__cat-descr-top {
@@ -86,6 +96,8 @@
 
     @include on-mobile {
       margin-bottom: 10px;
+      margin-left: 28px;
+      order: 1;
     }
   }
 
@@ -117,6 +129,10 @@
     @include on-tablet {
       margin-top: 0;
     }
+
+    @include on-mobile {
+      margin-left: -30px;
+    }
   }
 
   &__pods {
@@ -126,10 +142,24 @@
     }
 
     @include on-mobile {
+      display: none;
       width: 320px;
       height: 259px;
       margin-top: 30px;
       margin-bottom: 100px;
+    }
+  }
+
+  &__pods-mob {
+    display: none;
+    width: 320px;
+    height: 259px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    order: 2;
+
+    @include on-mobile {
+      display: block;
     }
   }
 }

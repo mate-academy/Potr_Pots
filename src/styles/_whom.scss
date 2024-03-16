@@ -42,6 +42,10 @@
 
   &__left-pu {
     width: 100%;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.2));
+
 
     @include on-tablet {
       width: 284px;
@@ -55,6 +59,10 @@
 
   &__left-pd {
     width: 100%;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.2));
+
 
     @include on-tablet {
       width: 300px;
@@ -79,7 +87,9 @@
     margin-left: 160px;
 
     @include on-tablet {
-      margin-top: -350px;
+      position: relative;
+      left: -100px;
+      margin-top: -300px;
     }
 
     @include on-mobile {
@@ -118,15 +128,19 @@
 
   &__one {
     margin-right: 70px;
-    margin-left: -150px;
+
+    // margin-left: -150px;
 
     @include on-tablet {
       margin-left: -100px;
     }
 
     @include on-mobile {
-      margin-bottom: 30px;
-      margin-left: -190px;
+      position: absolute;
+      margin-right: 0;
+      margin-left: 0;
+      left: 0;
+      top: -120px;
     }
   }
 
@@ -150,6 +164,7 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+    color: #4f4f4f;
   }
 
   &__right-ar {
@@ -200,7 +215,8 @@
     margin-left: -30px;
 
     @include on-tablet {
-      left: -130px;
+      position: relative;
+      left: 150px;
     }
 
     @include on-mobile {
@@ -244,9 +260,14 @@
   &__dur-textr {
     margin-top: 45px;
     margin-left: 130px;
+    white-space: nowrap;
 
     @include on-tablet {
-      display: none;
+      position: relative;
+      top: -200px;
+      left: 80px;
+      
+      // display: none;
     }
 
     @include on-mobile {
@@ -263,7 +284,7 @@
     margin-left: 300px;
 
     @include on-tablet {
-      margin-left: 80px;
+      margin-left: -100px;
       margin-top: 80px;
     }
 
@@ -290,6 +311,10 @@
   &__right-pic {
     width: 470px;
     height: 670px;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.2));
+
 
     @include on-tablet {
       width: 284px;

@@ -1,4 +1,5 @@
 .team {
+  position: relative;
   padding-bottom: 50px;
 
   &__title {
@@ -45,6 +46,24 @@
     }
   }
 
+  &__bcgr-mob {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 550px;
+    z-index: -1;
+
+
+    @include on-desktop {
+      display: none;
+    }
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
   &__martin {
     position: absolute;
     z-index: 1;
@@ -75,6 +94,10 @@
   &__photo {
     width: 100%;
     grid-column: 5 / 12;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.2));
+
 
     @include on-tablet {
       width: 340px;
@@ -88,7 +111,7 @@
   &__andy {
     position: absolute;
     right: 0;
-    margin-top: 650px;
+    margin-top: 700px;
 
     @include on-tablet {
       width: 460px;
@@ -117,32 +140,45 @@
     }
   }
 
+  &__discription2 {
+    @include on-mobile {
+      margin-bottom: 270px;
+    }
+  }
+
   &__title-bot {
     @include content-padding-inline;
 
     position: absolute;
-    margin-top: 210px;
+    margin-top: 110px;
     z-index: 1;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 139px;
+    font-weight: 400;
+    line-height: 167px;
+    letter-spacing: 0.12em;
+    text-align: left;
+    color: #03839E;
 
     @include on-tablet {
       width: 530px;
-      margin-top: 0;
+      margin-top: 30px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 80px;
+      font-weight: 400;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+      text-align: left;
     }
 
     @include on-mobile {
-      display: none;
-    }
-  }
-
-  &__title-bot-mob {
-    @include content-padding-inline;
-
-    @include on-desktop {
-      display: none;
-    }
-
-    @include on-tablet {
-      display: none;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 58px;
+      font-weight: 400;
+      line-height: 70px;
+      letter-spacing: 0.15em;
+      margin-top: -70px;
+      text-align: left;
     }
   }
 
@@ -238,7 +274,7 @@
   }
 
   &__sec-5 > div {
-    transform: translate(-50%);
+    transform: translate(-20%);
     opacity: 0;
   }
 
@@ -264,7 +300,7 @@
 
   &__sec-3 {
     position: absolute;
-    bottom: -10%;
+    bottom: -3%;
     left: 49%;
   }
 
@@ -297,7 +333,7 @@
   &__sec-5 {
     position: absolute;
     bottom: 70px;
-    left: 78%;
+    right: 0;
   }
 
   &__pointon-5 {
@@ -317,6 +353,7 @@
     padding: 35px 45px;
     background-color: #000;
     opacity: 0.4;
+    border-radius: 5px;
   }
 
   &__point-text {
@@ -336,4 +373,8 @@ p {
   line-height: 24px;
   text-align: left;
   color: #4f4f4f;
+}
+
+.romb {
+  font-size: 27px;
 }

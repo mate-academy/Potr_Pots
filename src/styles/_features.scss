@@ -1,9 +1,6 @@
 .features {
   @include content-padding-inline;
 
-  &__title-wrap {
-    margin-top: 150px;
-  }
 
   &__wrapper {
     margin-top: 75px;
@@ -16,23 +13,39 @@
     @include on-mobile {
       display: flex;
       flex-direction: column;
+      margin-top: 0;
     }
   }
 
-  &__title-mob {
+  &__title-text {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    text-align: left;
+    color: transparent;
+    -webkit-text-stroke: 1px #03839E;
+    margin-top: 150px;
+
     @include on-tablet {
-      display: none;
+      margin-top: 130px;
     }
 
-    @include on-desktop {
-      display: none;
+    @include on-mobile {
+      margin-top: 110px;
+      margin-bottom: 35px;
     }
   }
 
-  &__title-s {
-    @include on-mobile {
-      display: none;
-    }
+  &__title-text-begin {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    text-align: left;
+    color: #03839E;
   }
 
   &__sec-left {
@@ -83,5 +96,8 @@
 
   &__pic {
     width: 100%;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.2));
   }
 }
