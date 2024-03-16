@@ -1,0 +1,129 @@
+.potr-team {
+  position: relative;
+  overflow: hidden;
+
+  @include on-tablet {
+    margin-top: 113px;
+    padding-bottom: 230px;
+  }
+
+  @include on-desktop {
+    margin-top: 240px;
+    padding-bottom: 300px;
+  }
+
+  &__wrapper {
+    @include page-grid;
+
+    @include on-tablet {
+      margin-block-start: 177px;
+    }
+
+    @include on-desktop {
+      margin-block-start: 143px;
+    }
+  }
+
+  &__bg-image {
+    @include on-tablet {
+      z-index: -1;
+      position: absolute;
+      width: 1121px;
+      height: 466px;
+      top: 200px;
+      left: -600px;
+      background-image: url(../images/bg-rectangle.png);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @include on-desktop {
+      width: 435px;
+      height: 310px;
+      top: 200px;
+      left: 0;
+    }
+  }
+
+  &__decor-title {
+    display: none;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+
+    @include on-tablet {
+      display: inline;
+      font-size: 231.88px;
+      line-height: 278.26px;
+      letter-spacing: 35.9px;
+      -webkit-text-stroke: 0.81px $color-turquoise;
+    }
+
+    @include on-desktop {
+      font-size: 288px;
+      line-height: 345.6px;
+      letter-spacing: 44.6px;
+      -webkit-text-stroke: 1px $color-turquoise;
+    }
+
+    &--martin {
+      top: 100px;
+
+      @include on-tablet {
+        left: -45px;
+      }
+    }
+
+    &--andy {
+      bottom: 0;
+      right: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 25px;
+    font-size: 58px;
+    line-height: 69.6px;
+    letter-spacing: 9px;
+  }
+
+  &__image {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: 100%;
+      justify-self: right;
+      grid-column: 4 / -1;
+      grid-row: 1 / 2;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      grid-column: 5 / 12;
+    }
+
+    &--mobile {
+      width: 100%;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 30px;
+    align-self: end;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-top: 53px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
+  }
+}
