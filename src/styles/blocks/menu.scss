@@ -1,0 +1,90 @@
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  
+  background-color: $turquoise;
+
+  &__content {
+    position: relative;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  &__close {
+    position: absolute;
+    right: 33px;
+    bottom: 43px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+
+    text-decoration: none;
+
+    &-text {
+      @extend %s5;
+      color: $grey-light;
+      line-height: 18;
+      text-transform: uppercase;
+
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+    }
+
+    &-line {
+      margin-top: 5px;
+      width: 1px;
+    }
+
+    &-cross {
+      margin-top: 18px;
+      width: 12px;
+      height: 12px;
+    }
+  }
+
+  &__list {
+    padding-top: 138px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__item {
+    @extend %s3;
+    line-height: 24px;
+    color: $grey-light;
+    text-decoration: none;
+
+    position: relative;
+
+    &--first {
+      &::after {
+        display: inline-block;
+        content: '0';
+        position: absolute;
+        right: 15px;
+        top: -5px;
+        border-radius: 50%;
+        background-color: $red;
+        width: 14px;
+        height: 14px;
+        @extend %h4;
+        font-size: 9px;
+        line-height: 11px;
+        text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.features {
+  margin-bottom: 110px;
+
+  @include onTablet {
+    margin-bottom: 132px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 150px;
+  }
+
+  &__title {
+    @include containerPadding;
+
+    @extend %h1;
+    line-height: 70px;
+    color: $turquoise;
+
+    margin-bottom: 25px;
+  }
+
+  &__blank-text {
+    color: #fff;
+    -webkit-text-stroke: 0.7px $turquoise;
+  }
+
+  &__main {
+    @include containerPadding;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include onTablet {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    @include onTablet {
+      &--last {
+        order: -1;
+      }
+    }
+
+    @include onDesktop {
+      &--last {
+        order: 2;
+      }
+    }
+  }
+
+  &__photo {
+    width: 260px;
+    margin-bottom: 35px;
+    align-self: center;
+    justify-self: center;
+
+    cursor: pointer;
+    @include hover(transform, scale(1.1));
+
+    @include onTablet {
+      width: 220px;
+      margin-bottom: 30px;
+    }
+
+    @include onDesktop {
+      width: 370px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__block-name {
+    margin-bottom: 20px;
+    @extend %h3;
+    text-align: center;
+
+    $tablet-margin-bottom: 21px;
+    $desktop-margin-bottom: 20px;
+
+    margin-bottom: $desktop-margin-bottom;
+
+    @include onTablet {
+      text-align: left;
+      margin-bottom: $tablet-margin-bottom;
+    }
+
+    @include onDesktop {
+      text-align: center;
+      margin-bottom: $desktop-margin-bottom;
+    }
+  }
+
+  &__block-text {
+    @extend %s3;
+    color: $link-color;
+    text-align: center;
+
+    @include onTablet {
+      text-align: left;
+    }
+
+    @include onDesktop {
+      text-align: center;
+    }
+  }
+
+  &__mobile-text {
+    @include onTablet {
+      display: none;
+    }
+
+    @include onDesktop {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,96 @@
+.footer {
+  @include containerPadding;
+
+  margin-bottom: 30px;
+
+  @include onTablet {
+    margin-bottom: 117px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  @include onDesktop {
+    margin-bottom: 64px;
+  }
+
+  display: block;
+
+  &__icons {
+    padding-inline: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 32px;
+
+      min-width: 220px;
+      padding: 0;
+    }
+
+    @include onDesktop {
+      margin-bottom: 74px;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+
+    @include hover(transform, scale(1.1));
+
+    @include onDesktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #000;
+  }
+
+  &__title {
+    @extend %h2;
+    cursor: pointer;
+    @include hover(transform, scale(1.1));  
+  }
+
+  &__subtitle {
+    @extend %s3;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__paragraph {
+    display: none;
+
+    @include onTablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      gap: 10px;
+    }
+  }
+
+  &__info-title {
+    @extend %h3;
+  }
+
+  &__info-subtitle {
+    @extend %s3;
+  }
+}

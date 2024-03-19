@@ -1,0 +1,308 @@
+.materials {
+  background-image: url(../images/materials-bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top 130px left 0;
+
+  position: relative;
+
+  @include onTablet {
+    background-image: none;
+  }
+
+  margin-bottom: 110px;
+
+  &__sidebar {
+    display: none;
+    
+    @include onTablet {
+      display: block;
+      @include sidebar;
+
+      &--first {
+        transform: translateY(0);
+        top: -20px;
+      }
+
+      &--second {
+        transform: translateY(0);
+        left: 10px;
+        right: auto;
+        top: 152px;
+      }
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+  
+  &__sidetext {
+    @include sidetext;
+  }
+  
+  &__container {
+    @include containerPadding;
+    @include pageGrid;
+
+    @include onDesktop {
+      margin-bottom: -160px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    font-weight: 700;
+    line-height: 70px;
+    color: $turquoise;
+
+    margin-bottom: 120px;
+
+    @include onTablet {
+      margin-bottom: 0;
+      font-size: 80px;
+
+      grid-column: 1 / 6;
+      grid-row: 1 / 3;
+    }
+
+    @include onDesktop {
+      font-size: 139px;
+      line-height: 166px;
+
+      grid-column: 1 / 11;
+      grid-row: 1 / 4;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    @extend %s2;
+    color: $link-color;
+    font-size: 20px;
+
+    @include onTablet {
+      margin-bottom: 10px;
+      display: block;
+      grid-column: 4 / -1;
+      grid-row: 2;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 11;
+      grid-row: 2;
+
+      margin-top: 50px;
+    }
+  }
+
+  &__text {
+    display: none;
+    z-index: 1;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    @include onDesktop {
+      padding-right: $padding-inline-desktop;
+    }
+  }
+
+  &__desktop-text {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+    }
+  }
+
+  &__card {
+    width: 302px;
+    margin-inline: 9px;
+    backdrop-filter: blur(100px);
+    
+  }
+
+  &__swiper {
+    display: flex;
+    max-width: fit-content;
+    width: 95%;
+    height: 254px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+  
+  &__buttons {
+    display: none;
+    margin-top: 40px;
+
+    @include transitionDefault(all);
+
+    @include onTablet {
+      display: grid;
+      @include pageGrid;
+      @include containerPadding;
+      overflow: visible;
+
+      background-image: url(../images/materials-bg-tablet.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+  
+      height: 576px;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/materials-bg-desktop.png);
+      background-size: 100%;
+      background-repeat: no-repeat;
+
+      height: 1081px;
+      margin-top: 0;
+    }
+  }
+
+  &__wrapper {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      position: relative;
+      
+      &--first {
+        grid-column: 1;
+        grid-row: 4;
+
+        justify-self: end;
+      }
+
+      &--second {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      &--third {
+        grid-column: 3;
+        grid-row: 4;
+
+        justify-self: end;
+      }
+
+      &--fourth {
+        grid-column: 4;
+        grid-row: 3;
+      }
+
+      &--fifth {
+        grid-column: 5;
+        grid-row: 1;
+      }
+    }
+    
+    @include onDesktop {
+      &--first {
+        grid-column: 2;
+        grid-row: 4;
+      }
+
+      &--second {
+        grid-column: 5;
+        grid-row: 1;      
+
+        margin-top: 630px;
+      }
+
+      &--third {
+        grid-column: 6;
+        grid-row: 4;      
+      }
+
+      &--fourth {
+        grid-column: 8;
+        grid-row: 3;
+      }
+
+      &--fifth {
+        grid-column: 11;
+        grid-row: 2;
+      }
+    }
+    
+  }
+
+  &__button {
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    background-color: $button-color;
+
+    cursor: pointer;
+
+    position: relative;
+
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 22px;
+    font-weight: 500;
+
+    transition: background-color .3s; //!!!!!!!!!!!!!!!!!!!
+
+    &--first {
+      margin-bottom: 102px;
+    }
+    
+    &--second {
+      margin-top: 37px;
+      margin-left: 100px;
+    }
+
+    &--fourth {
+      margin-top: 45px;
+    }
+
+    &--fifth {
+      margin-top: 207px;
+    }
+
+    &--active {
+      background-color: rgba($color: #242323, $alpha: 0.45);
+      backdrop-filter: blur(10px);
+    }
+
+    @include onDesktop {
+      &--first {
+        margin-bottom: 0px;
+      }
+      
+      &--second {
+        margin-top: 0;
+        margin-left: 0;
+      }
+
+      &--third {
+        margin-bottom: 105px;
+      }
+  
+      &--fourth {
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+  
+      &--fifth {
+        margin-top: 0;
+
+        margin-top: -20px;
+        margin-left: -20px;
+      }  
+    }
+  }
+}

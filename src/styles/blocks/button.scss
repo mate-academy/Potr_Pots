@@ -1,0 +1,71 @@
+.button {
+  @extend %s4;
+  
+  box-sizing: border-box;
+  height: 48px;
+
+  font-weight: 600;
+  text-transform: uppercase;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  cursor: pointer;
+
+  &:after {
+    background-image: url(../images/icons/button-arrow.svg);
+    background-size: 25px 8px;
+    background-repeat: no-repeat;
+    content: '';
+    display: block;
+    width: 25px;
+    height: 8px;
+  }
+
+  &--blue {
+    background-color: $turquoise;
+    color: #fff;
+
+    &:after {
+      background-image: url(../images/icons/button-arrow-white.svg);
+      background-size: 25px 8px;
+      background-repeat: no-repeat;
+      content: '';
+      display: block;
+      width: 25px;
+      height: 8px;
+    }
+
+    @include hover(background-color, rgba($turquoise, 0.7));
+  }
+
+  &--yellow {
+    color: $button-text;
+    background-color: $yellow;
+
+    @include hover(background-color, rgba($yellow, 0.7));
+  }
+
+  &--transparent-blue {
+    color: $button-text;
+
+    &:hover {
+      &:after {
+        background-image: url(../images/icons/button-arrow-white.svg);
+        background-size: 25px 8px;
+        background-repeat: no-repeat;
+        content: '';
+        display: block;
+        width: 25px;
+        height: 8px;
+      }
+
+      color: #fff;
+      background-color: $turquoise;
+
+      @include transitionDefault(all);
+    }
+  }
+}

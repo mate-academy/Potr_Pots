@@ -1,0 +1,138 @@
+.potr-team {
+  margin-bottom: 110px;
+
+  background-image: url('../images/potr-team-bg-mobile.png');
+  background-size: 100%;
+  background-repeat: no-repeat; 
+  background-position: left 0 bottom 0;
+
+  @include onTablet {
+    background-position: 0 170px; 
+    background-size: 254px;
+    margin-bottom: 0;
+  }
+
+  @include onDesktop {
+    background-position: left 0 top 177px;
+    background-size: 435px;
+  }
+
+  &__container {
+    @include containerPadding;
+    position: relative;
+
+    @include onTablet {
+      @include pageGrid;
+      padding-bottom: 113px;
+    }
+
+    @include onDesktop {
+      padding-bottom: 226px;
+    }
+  }
+
+  &__title {  
+    @extend %h1;
+    line-height: 70px;
+    color: $title-main-color;
+
+    margin-bottom: 25px;
+
+    @include onTablet {
+      grid-column: 1 / span 5;
+      grid-row: 1;
+      margin-bottom: 177px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 6;
+      grid-row: 1;
+      margin-bottom: 143px;
+    }
+  }
+
+  &__photo {
+    margin-bottom: 30px;
+    width: calc(100% + 2 * $padding-inline-mobile); /* 100% width + 20px padding on each side */
+    margin-inline: -$padding-inline-mobile;
+
+    cursor: pointer;
+    @include hover(transform, scale(1.1));
+
+    @include onTablet {
+      grid-column: 4 / span 3;
+      grid-row: 3;
+      width: 100%;
+      margin-inline: 0;
+      margin-left: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / 12;
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    @extend %s3;
+    color: $link-color;
+
+    padding-bottom: 58px;
+
+    @include onTablet {
+      grid-column: 1 / span 3;
+      grid-row: 3;
+      margin-top: 53px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / span 4;
+      margin-top: 230px;
+    }
+  }
+
+  &__martin, &__andy {
+    display: none;
+    @extend %h2;
+    text-transform: uppercase;
+    color: $turquoise;
+    z-index: 1;
+    -webkit-text-stroke: 0.8px $turquoise;
+
+    @include onTablet {
+      display: block;
+      position: absolute;
+      font-size: 232px;
+      line-height: 263px;
+      letter-spacing: .15em;
+      
+      top: 87px;
+      left: -44px;
+    }
+
+    @include onDesktop {
+      left: 84px;
+      top: 97px;
+
+      font-size: 288px;
+      line-height: 346px;
+    }
+}
+
+&__andy {
+  overflow: hidden;
+  font-size: 220px;
+  top: auto;
+  left: auto;
+  bottom: 0;
+  right: 0;
+
+  @include onDesktop {
+   bottom: -15px;
+  }
+}
+
+  &__name {
+    color: transparent;
+  }
+}

@@ -1,0 +1,111 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+
+  &-slide {
+    background-color: rgba($color: #000, $alpha: 0.45);
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
+    height: 100%;
+    padding: 28px 44px 58px 45px;
+
+    &--tablet {
+      display: none;
+
+      width: 303px;
+      height: 237px;
+      z-index: 1;
+
+      padding: 35px 45px 34px 45px;
+    }
+
+    &--active {
+      @include onTablet {
+        display: block;
+        position: absolute;
+      }
+    }
+
+    &--first {
+      left: -20px;
+      bottom: 170px;
+    }
+
+    &--second {
+      bottom: 60px;
+    }
+
+    &--third {
+      left: -120px;
+      bottom: 160px;
+    }
+
+    &--fourth {
+      left: -120px;
+      bottom: 60px;  
+    }
+
+    &--fifth {
+      bottom: -250px;
+      left: -120px;
+    }
+
+    @include onDesktop {
+      &--first {
+      left: -120px;
+       bottom: 240px;
+      }
+  
+      &--second {
+        left: -280px;
+        bottom: 120px;
+      }
+  
+      &--third {
+        left: -320px;
+        bottom: 60px;
+      }
+  
+      &--fourth {
+        left: -120px;
+        bottom: 160px;  
+      }
+  
+      &--fifth {
+        bottom: auto;
+        top: 50px;
+      }
+    }
+  }
+
+  &-text {
+    @extend %s3;
+    width: 100%;
+    height: 100%;
+    color: $grey-light;
+  }
+
+  &-pagination {
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+  }
+
+  &-pagination-bullet {
+    box-sizing: border-box;
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+    border-radius: 0;
+    border: 1.5px solid #fff;
+    background: #fff;
+
+    &-active {
+      background: #000;;
+    }
+  }
+}
+
+

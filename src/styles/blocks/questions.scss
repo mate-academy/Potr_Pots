@@ -1,0 +1,180 @@
+.questions {
+  background-image: url('../images/questions-bg-mobile.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right 0 bottom 0;
+
+  @include onDesktop {
+    background-image: url('../images/questions-bg-desktop.png');
+    background-position: bottom -20px right $padding-inline-desktop;
+  }
+  
+
+  &__container {
+    @include containerPadding;
+    
+    margin-bottom: 102px;
+    padding-top: 45px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url('../images/icons/questions-watermark.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+  
+      width: 149px;
+      height: 170px;
+  
+      right: 0;
+      transform: translateY(-75%);
+
+      @include onDesktop {
+        background-image: url('../images/icons/questions-watermark-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        width: 161px;
+        height: 164px;
+        
+        right: $padding-inline-desktop;
+        transform: translateX(50%) translateY(-75%);
+      }
+    }
+
+    @include onTablet {
+      @include pageGrid;
+    }
+  }
+
+  &__top {
+    @include onTablet {
+      grid-column: 1 / 5;
+      grid-row: 1 / 3;
+    }
+  }
+
+  &__main {
+    @include onTablet {
+      grid-column: 1 / 4;
+      grid-row: 3;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__title {
+    @extend %h2;
+
+    color: #000;
+  }
+
+  &__subtitle {
+    @extend %s3;
+
+    color: #000;
+
+    margin-bottom: 40px;
+
+    @include onTablet {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__formname {
+    @extend %s2;
+    margin-bottom: 25px;
+
+    font-weight: 400;
+    color: #000;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+
+    margin-bottom: 56px;
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 20px;
+
+    @extend %s3;
+    color: $link-color;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: 0.3);
+
+    @include transitionDefault(all);
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $turquoise;
+
+      &:invalid {
+        color: $button-color;
+        border-bottom: 1px solid $button-color;
+      }
+      
+      &:valid {
+        color: $turquoise;
+        border-bottom: 1px solid $turquoise;
+      }
+    } 
+  }
+
+  &__textarea {
+    margin-bottom: 30px;
+
+    resize: none;
+    overflow-y: auto;
+  }
+
+  &__button {
+    width: 100%;
+
+    @include onTablet {
+      width: 65%;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    @include onTablet {
+      grid-column: 5 / -1;
+      grid-row: 2 / 4;
+
+      margin-top: -45px;
+      gap: 20px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__link-name {
+    @extend %s2;
+
+    font-weight: 400;
+    color: rgba($color: #000000, $alpha: 0.39);
+
+    margin-bottom: 5px;
+  }
+
+  &__link {
+    @extend %s3;
+
+    color: #000;
+    text-decoration: none;
+  }
+}

@@ -1,6 +1,101 @@
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} $transition-time;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin onTablet{
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin onDesktop{
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include onTablet {
+    --columns: 6;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+    column-gap: 30px;
+  }
+}
+
+@mixin containerPadding {
+  padding-inline: $padding-inline-mobile;
+
+  @include onTablet {
+    padding-inline: $padding-inline-tablet;
+  }
+
+  @include onDesktop {
+    padding-inline: $padding-inline-desktop;
+  }
+}
+
+@mixin transitionDefault($_property) {
+  transition: #{$_property} $transition-time;
+}
+
+@mixin sidebar {
+  position: absolute;
+
+    right: 0;
+    bottom: 0;
+    margin-right: 5px;
+
+    @include onTablet {
+      top: 0;
+      transform: translateY(-100%);
+      bottom: auto;
+    }
+
+    @include onDesktop {
+      transform: translateY(0);
+      right: $padding-inline-desktop;
+      margin-right: 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    &--reverse {
+      display: none;
+
+      @include onDesktop {
+        display: flex;
+        flex-direction: column-reverse;
+        top: auto;
+        right: auto;
+        transform: translateY(-100%);
+        left: $padding-inline-desktop;
+      }
+    }
+}
+
+@mixin sidetext {
+  @extend %s5;
+    color: $sidebar-color;
+    text-transform: uppercase;
+    line-height: 14.4px;
+    writing-mode: vertical-rl;  
+
+    &--reverse {
+      transform: rotate(180deg);
+    }
 }

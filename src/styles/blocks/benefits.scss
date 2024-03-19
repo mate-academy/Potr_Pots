@@ -1,0 +1,180 @@
+.benefits {
+  &__container {
+    @include containerPadding;
+
+    margin-bottom: 110px;
+
+    @include onTablet {
+      @include pageGrid;
+    }
+
+    @include onDesktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 40px;
+
+    grid-column: 1 / 4;
+
+    &--first {
+      grid-row: 1;
+    }
+
+    &--second {
+      grid-row: 6;
+    }
+
+    &--third {
+      grid-row: 2 / 5;
+    }
+
+    @include onTablet {
+      margin-left: 20px;
+      margin-bottom: 30px;
+
+      &--second {
+        margin-bottom: 0;
+      }
+
+      &--third {
+        margin-top: 12px;
+      }
+    }
+
+    @include onDesktop {
+      margin-left: 15px;
+      margin-bottom: 0;
+      margin-top: 160px;
+
+      align-self: end;
+
+      &--first {
+        grid-column: 6 / 9;
+        grid-row: 1;
+      }
+
+      &--second {
+        grid-column: 9 / -1;
+        grid-row: 1;
+      }
+
+      &--third {
+        grid-column: 6 / 11;
+        grid-row: 2;
+
+        align-self: start;
+        margin-top: 30px;
+      }
+    }
+
+  }
+
+  &__list-title {
+    @extend %s1;
+   
+    color: $title-main-color;
+  }
+
+  &__list-subtitle {
+    @extend %s3;
+
+    color: $sidebar-color;
+  }
+
+  &__wrapper {
+    position: relative;
+    margin-bottom: 5px;
+  }
+
+  &__dot {
+    position: absolute;
+    left: -20px;
+    top: 20px;
+  }
+
+  &__button {
+    margin-bottom: 40px;
+    
+    grid-column: 4 / 6;
+    grid-row: 2;
+
+    min-width: 100%;
+    border: none;
+
+    @include onTablet {
+      margin-right: -20px;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 8;
+      grid-row: 3;
+
+      margin-top: 60px;
+      margin-right: -60px;
+
+      color: $button-text;
+      background-color: #fff;
+      border: 1px solid $turquoise;
+    }
+  }
+
+  &__text {
+    grid-column: 4 / -1;
+    grid-row: 3 / 5;
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      grid-row: 4;
+
+      margin-bottom: 152px;
+    }
+  }
+
+  &__sale {
+    @extend %h2;
+
+    color: $button-color;
+    margin-bottom: 10px;
+
+    @include onTablet {
+      margin-top: -15px;
+      font-size: 24px;
+      margin-bottom: 0;
+    }
+
+    @include onDesktop {
+      font-size: 36px;
+    }
+  }
+
+  &__info {
+    @extend %h3;
+
+    color: $turquoise;
+
+    @include onTablet {
+      font-size: 18px;
+    }
+
+    @include onDesktop {
+      font-size: 24px;
+    }
+  }
+
+  &__photo {
+    display: none;
+
+    cursor: pointer;
+    @include hover(transform, scale(1.1));
+
+    @include onDesktop {
+      display: block;
+      grid-column: 1 / 6;
+      grid-row: 1 / 5;
+
+      margin-left: -20%;
+    }
+  }
+}
