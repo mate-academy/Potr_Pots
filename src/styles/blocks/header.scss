@@ -63,10 +63,11 @@
   &__bottom {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
+    column-gap: 7px;
 
     @include on-tablet {
       grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
     }
 
     @include on-desktop {
@@ -103,7 +104,6 @@
 
   &__image {
     width: 100%;
-    object-fit: contain;
   }
 
   &__title {
@@ -114,7 +114,7 @@
     letter-spacing: 0.15em;
     color: transparent;
     -webkit-text-stroke: 1px $turquoise;
-    grid-column: 1 / 2;
+    grid-column: 1 / -1;
 
     @include on-tablet {
       margin: 0;
@@ -169,7 +169,7 @@
 
   &__buy-btn {
     display: flex;
-    width: 260px;
+    width: 250px;
     height: 48px;
     background-color: $yellow;
     color: $secondary-text;
@@ -179,8 +179,13 @@
     font-weight: 600;
     line-height: 21px;
     text-transform: uppercase;
+    transition: all .3s;
 
     grid-column: 1 / 2;
+
+    &:hover {
+      background-color: rgba($color: $yellow, $alpha: .85);
+    }
 
     @include on-tablet {
       width: 240px;
@@ -208,6 +213,8 @@
     align-items: center;
     margin-top: -8px;
 
+    @include hover(transform, scale(1.05));
+
     grid-row: 3 / 5;
     grid-column: 2 / 3;
 
@@ -226,8 +233,6 @@
     writing-mode: vertical-lr;
     color: $turquoise;
     font-size: 12px;
-
-    @include hover(transform, scale(1.05));
   }
 
   &__about-arrow {
