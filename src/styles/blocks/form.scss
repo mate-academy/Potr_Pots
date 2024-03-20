@@ -1,5 +1,4 @@
 .form {
-
   @include on-tablet {
     min-width: 340px;
   }
@@ -12,16 +11,16 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    letter-spacing: 0em;
+    letter-spacing: 0;
   }
 
   &__title {
     margin-block: 40px 25px;
-    font-family: "Manrope", sans-serif;
+    font-family: Manrope, sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 36px;
-    letter-spacing: 0em;
+    letter-spacing: 0;
   }
 
   &__fields {
@@ -38,12 +37,18 @@
     height: 33px;
     color: $gray;
     width: 100%;
-    font-family: "Manrope", sans-serif;
+    font-family: Manrope, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     resize: none;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px transparent;
+      background-color: transparent;
+      transition: background-color 0s 600000s, color 0s 600000s
+    }
 
     &:focus {
       outline: none;
@@ -58,11 +63,11 @@
     height: 48px;
     background-color: $turquoise;
     color: #fff;
-    font-family: "Manrope", sans-serif;
+    font-family: Manrope, sans-serif;
     font-size: 14px;
     font-weight: 600;
     line-height: 21px;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     text-transform: uppercase;
     border: none;
     padding: 0;

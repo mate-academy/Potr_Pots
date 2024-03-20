@@ -77,14 +77,12 @@
   }
 
   &__image-container {
-    margin-inline: -30px;
     grid-column: 1 / -1;
     cursor: pointer;
 
     @include on-tablet {
       display: flex;
       justify-self: flex-end;
-      margin: 0;
       width: 306px;
 
       grid-row: 1 / 2;
@@ -103,7 +101,13 @@
   }
 
   &__image {
-    width: 100%;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+
+    @include on-tablet {
+      margin: 0;
+      width: 100%;
+    }
   }
 
   &__title {
