@@ -1,0 +1,88 @@
+.features {
+  margin-top: 110px;
+
+  @include on-tablet {
+    margin-top: 132px;
+  }
+
+  @include on-tablet {
+    margin-top: 150px;
+  }
+
+  &__title {
+    font-size: 56px;
+    font-family: "Bebas Neue", sans-serif;
+    line-height: 70px;
+    letter-spacing: 0.15;
+    color: transparent;
+    -webkit-text-stroke: 1px $turquoise;
+  }
+
+  &__filled-title {
+    color: $turquoise;
+  }
+
+  &__container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @include on-desktop {
+      gap: 30px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__image {
+    max-width: 100%;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__card-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.15;
+    text-align: center;
+    margin-top: 35px;
+
+    @include on-tablet {
+      text-align: left;
+    }
+
+    @include on-desktop {
+      text-align: center;
+    }
+  }
+
+  &__card-description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: 20px;
+    color: $gray;
+
+    @include on-tablet {
+      text-align: left;
+    }
+
+    @include on-desktop {
+      text-align: center;
+    }
+  }
+}

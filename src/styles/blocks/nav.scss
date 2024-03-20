@@ -1,0 +1,22 @@
+.nav {
+  display: none;
+
+  @include on-desktop {
+    display: inline;
+  }
+
+  &__list {
+    display: flex;
+    gap: 60px;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+
+    position: relative;
+    transition: all 0.3s;
+
+    @include hover-underline($gray);
+  }
+}

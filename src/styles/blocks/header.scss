@@ -1,0 +1,246 @@
+.header {
+  @include on-tablet {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-top: 160px solid $yellow-light;
+      border-left: 80vw solid $yellow-light;
+      border-bottom: 176px solid transparent;
+      z-index: -1;
+    }
+  }
+
+  @include on-desktop {
+    &::before {
+      border-left: 73vw solid $yellow-light;
+      border-bottom: 306px solid transparent;
+    }
+  }
+
+  &__content {
+    padding-block: 15px;
+    margin-inline: 30px;
+
+    @include on-tablet {
+      padding-block: 30px;
+      margin-inline: 34px;
+    }
+
+    @include on-desktop {
+      padding-block: 22px;
+      margin-inline: 130px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+
+    @include on-tablet {
+      margin-bottom: 58px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 43px;
+    letter-spacing: 0.06em;
+    color: $main-text;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 7px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      column-gap: 30px;
+    }
+  }
+
+  &__image-container {
+    grid-column: 1 / -1;
+    cursor: pointer;
+
+    @include on-tablet {
+      display: flex;
+      justify-self: flex-end;
+      width: 306px;
+
+      grid-row: 1 / 2;
+      grid-column: 4 / -1;
+
+      @include hover(transform, scale(1.05));
+    }
+
+    @include on-desktop {
+      justify-content: flex-end;
+      width: 100%;
+      grid-row: 1 / 4;
+      grid-column: 7 / -1;
+      max-width: 501px;
+    }
+  }
+
+  &__image {
+    width: calc(100% + 60px);
+    margin-left: -30px;
+
+    @include on-tablet {
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    margin-top: 25px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    color: transparent;
+    -webkit-text-stroke: 1px $turquoise;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin: 0;
+      font-size: 64px;
+      line-height: 64px;
+
+      grid-row: 1 / 2;
+      grid-column: 1 / 6;
+    }
+
+    @include on-desktop {
+      height: fit-content;
+      grid-column: 2 / 8;
+    }
+  }
+
+  &__title-filled {
+    color: $turquoise;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    margin-block: 30px 20px;
+    grid-column: 1 / 2;
+    max-width: 140px;
+
+    @include on-tablet {
+      margin: 0;
+      margin-top: -60px;
+      grid-column: 3 / 5;
+    }
+
+    @include on-desktop {
+      margin: 0;
+      grid-column: 5 / 7;
+    }
+
+    &-price {
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 35.5px;
+      color: $main-text;
+    }
+
+    &-text {
+      font-size: 14px;
+      line-height: 21px;
+      color: $gray;
+    }
+  }
+
+  &__buy-btn {
+    display: flex;
+    width: 250px;
+    height: 48px;
+    background-color: $yellow;
+    color: $secondary-text;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    text-transform: uppercase;
+    transition: all .3s;
+
+    grid-column: 1 / 2;
+
+    &:hover {
+      background-color: rgba($color: $yellow, $alpha: .85);
+    }
+
+    @include on-tablet {
+      width: 240px;
+      margin-top: 50px;
+      grid-row: 3 / 4;
+      grid-column: 2 / 5;
+    }
+
+    @include on-desktop {
+      width: 270px;
+      grid-row: 3 / 4;
+      grid-column: 4 / 7;
+    }
+
+    &::after {
+      content: url('../images/arrow-right.svg');
+      margin-left: 24px;
+    }
+  }
+
+  &__about-link {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    align-items: center;
+    margin-top: -8px;
+    justify-self: flex-end;
+
+    @include hover(transform, scale(1.05));
+
+    grid-row: 3 / 5;
+    grid-column: 2 / 3;
+
+    @include on-tablet {
+      margin-top: -40px;
+      grid-column: 1 / 2;
+      justify-self: start;
+    }
+
+    @include on-desktop {
+      margin-top: -45px;
+    }
+   }
+
+  &__about-text {
+    writing-mode: vertical-lr;
+    color: $turquoise;
+    font-size: 12px;
+  }
+
+  &__about-arrow {
+    height: 44px;
+  }
+}
