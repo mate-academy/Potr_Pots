@@ -1,0 +1,73 @@
+.feautures {
+
+  &__wrapper {
+  @include content-padding-in-line;
+
+  @include on-tablet {
+    padding-block: 135px 156px;
+  }
+
+  @include on-desktop {
+    padding-block: 150px;
+  }
+  }
+
+  &__total-container {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @include on-desktop {
+      gap: 29px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      width: 220px;
+    }
+
+    @include on-desktop {
+      width: 370px;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    cursor: pointer;
+    transition: transform $effect-duration;
+
+    &:hover {
+    @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: $middle-font;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: $grey-color;
+
+    @include on-tablet {
+      text-align: left;
+    }
+
+    @include on-desktop {
+      text-align: center;
+    }
+  }
+}

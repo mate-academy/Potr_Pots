@@ -1,0 +1,356 @@
+.materials {
+  &__wrapper {
+    position: relative;
+    background-image: url(../images/sections/materials-bg.png);
+    background-repeat: no-repeat;
+    background-size: 320px 240.31px;
+    background-position: top 130px left 0;
+
+    @include on-tablet {
+      padding-bottom: 110.25px;
+      height: 834.75px;
+      background-image: url(../images/sections/materials-bg-big.png);
+      background-size: 768px 576.75px;
+      background-position: top 261.41px left 0;
+    }
+
+    @include on-desktop {
+      height: 1226.41px;
+      background-size: 1440px 1081.41px;
+
+      @include content-padding-in-line;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    @include on-tablet {
+    display: block;
+    position: absolute;
+    top: 144.41px;
+    right: 34px;
+    height: 232px;
+    width: 340px;
+    }
+
+    @include on-desktop {
+    top: 181px;
+    left: 835px;
+    }
+  }
+
+  &__subtittle {
+    margin-block: 0 10px;
+    font-weight: $bold-font;
+    font-size: 20px;
+    line-height: 30px;
+    color: $grey-color;
+  }
+
+  &__preview {
+    font-weight: $middle-font;
+    font-size: 16px;
+    line-height: 24px;
+    color: $grey-color;
+
+    @include on-desktop {
+      width: 470px;
+    }
+  }
+
+  &__preview-added-part {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__text-bold {
+    font-weight: $bold-font;
+  }
+
+  &__pop-up-container {
+    position: relative;
+  }
+
+  &__pop-up-window {
+  display: none;
+
+  @include on-tablet {
+    position: absolute;
+    display: block;
+    width: 51px;
+    height: 51px;
+    background-image: url(../images/icon-logo/component-plus.svg);
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &:hover {
+    background-image: url(../images/icon-logo/сomponent-minus.svg);
+        }
+      }
+    }
+
+  &__left-side-box {
+    display: none;
+
+    @include on-tablet {
+      position: absolute;
+      display: flex;
+      justify-content: end;
+      top: 310px;
+      left: -10px;
+      rotate: 90deg;
+    }
+
+    @include on-desktop {
+      display: none
+    }
+  }
+
+  &__left-side-text {
+    @include side-text-style;
+
+  &::before {
+      @include potr-pots-side-text;
+    }
+  }
+
+  &__rigth-side-box {
+    display: none;
+
+    @include on-tablet {
+      position: absolute;
+      display: flex;
+      justify-content: end;
+      width: 144px;
+      height: 14px;
+      top: 55px;
+      right: -50px;
+      rotate: 90deg;
+    }
+
+    @include on-desktop {
+      display: none
+    }
+  }
+
+  &__rigth-side-text {
+    @include side-text-style;
+
+    &::before {
+    @include potr-pots-side-text;
+    }
+  }
+}
+
+.box--2 {
+  @include on-tablet {
+    margin-right: 36px;
+  }
+}
+
+.size-selection__text {
+  @include on-tablet {
+    width: 246px;
+  }
+}
+
+.description {
+  margin: 0;
+}
+
+.description--1 {
+  width: 303px;
+  height: 237px;
+  top: 290px;
+  left: 120px;
+
+  @include  pop-up-window;
+
+  z-index: 50;
+
+  @include on-desktop {
+    top: 650px;
+    left: 550px;
+  }
+}
+
+.description--2,
+.description--3 {
+  width: $width-of-pop-up;
+  height: 214px;
+  z-index: 50;
+}
+
+.description--5,
+.description--4,
+.description--3,
+.description--2 {
+  margin-top: 9px;
+}
+
+.description--4,
+.description--5 {
+  width: $width-of-pop-up;
+  height: 166px;
+}
+
+.description--2 {
+  top: 157px;
+  left: 40px;
+
+  @include  pop-up-window;
+
+  @include on-desktop {
+    top: 440px;
+    left: 300px;
+  }
+}
+
+.description--3 {
+  top: 220px;
+  left: -50px;
+
+  @include  pop-up-window;
+
+  @include on-desktop {
+    top: 720px;
+    left: -40px;
+  }
+}
+
+.description--4 {
+  top: 129px;
+  left: -150px;
+
+  @include  pop-up-window;
+
+  @include on-desktop {
+    top: 380px;
+    left: -180px;
+  }
+}
+
+.description--5 {
+  top: 237px;
+  left: -250px;
+
+  @include  pop-up-window;
+
+  @include on-desktop {
+    top: 600px;
+    left: -270px;
+  }
+}
+
+.pop-up__descriptions-text {
+  margin: 0;
+  width: 213px;
+  background-color: #00000073;
+  backdrop-filter: blur(10px);
+  z-index: 100;
+
+  @include desription-text-style;
+}
+
+.pop-up__text--1 {
+  box-sizing: border-box;
+  width: inherit;
+  height: inherit;
+  padding: 35px 45px 34px;
+}
+
+.pop-up__text--2,
+.pop-up__text--3,
+.pop-up__text--4,
+.pop-up__text--5 {
+  box-sizing: border-box;
+  width: inherit;
+  height: inherit;
+  padding: 35px;
+}
+
+.window--1,
+.window--2,
+.window--3,
+.window--4,
+.window--5,
+.description--1,
+.description--2,
+.description--3,
+.description--4,
+.description--5 {
+  position: absolute;
+  transition: opacity $effect-duration ease-in-out;
+}
+
+.description--1,
+.description--2,
+.description--3,
+.description--4,
+.description--5 {
+  opacity: 0;
+}
+
+.materials__pop-up-container:hover .description--1,
+.materials__pop-up-container:hover .description--2,
+.materials__pop-up-container:hover .description--3,
+.materials__pop-up-container:hover .description--4,
+.materials__pop-up-container:hover .description--5 {
+  opacity: 1;
+}
+
+.window--1 {
+  top: 207px;
+  left: 555px;
+
+  @include on-desktop {
+    top: 580px;
+    left: 970px;
+  }
+}
+
+.window--2 {
+  top: 391px;
+  left: 417px;
+
+  @include on-desktop {
+    top: 680px;
+    left: 700px;
+  }
+}
+
+.window--3 {
+  top: 454px;
+  left: 338px;
+
+  @include on-desktop {
+    top: 810px;
+    left: 540px;
+  }
+}
+
+.window--4 {
+  top: 310px;
+  left: 231px;
+
+  @include on-desktop {
+    top: 550px;
+    left: 399px;
+  }
+}
+
+.window--5 {
+  top: 423px;
+  left: 83px;
+
+  @include on-desktop {
+    top: 790px;
+    left: 107px;
+  }
+}
+
+

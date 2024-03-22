@@ -1,0 +1,136 @@
+.page__menu {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+
+  &:target {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(50%);
+    z-index: 1;
+
+    @include on-tablet {
+      transform: translateX(230%);
+    }
+  }
+
+  @include on-desktop {
+    position: absolute;
+    overflow: visible;
+    top: 0.10%;
+    left: 42%;
+    opacity: 1;
+    pointer-events: all;
+    transform: none;
+    z-index: 2;
+  }
+}
+
+.menu {
+  padding-bottom: 32px;
+  height: 568px;
+  width: 231px;
+  background-color: $turquoise-color;
+
+  @include on-desktop {
+    background-color: transparent;
+    width: 485px;
+    height: 24px;
+  }
+
+  &__container {
+    height: inherit;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include on-desktop {
+      display: inline;
+    }
+  }
+
+  &__nav {
+    width: 89px;
+  }
+}
+
+.nav {
+  &__list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+
+  @include on-desktop {
+    flex-direction: row;
+    gap: 60.09px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    font-weight: $middle-font;
+    font-size: 16px;
+    line-height: 24px;
+    color: $c-gray;
+    white-space: nowrap;
+
+    @include on-desktop {
+      color: $grey-color;
+    }
+  }
+}
+
+.hover-style::after {
+  @include line-after;
+
+    background-color: $c-gray;
+
+    @include on-desktop {
+      background-color: $grey-color;
+    }
+  }
+
+  .hover-style:hover::after {
+    @include line-hover-after;
+    
+    background-color: $c-gray;
+
+    @include on-desktop {
+      background-color: $grey-color;
+    }
+  }
+
+  .in-basket {
+    display: inline-block;
+    padding-bottom: 10px;
+    width: 14px;
+    height: 14px;
+    left: 20px;
+    background-image: url(../images/icon-logo/icon-count.svg);
+    background-repeat: no-repeat;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  .ivisible-for-desktop {
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+
+

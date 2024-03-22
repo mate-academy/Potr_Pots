@@ -1,7 +1,52 @@
-@import "utils";
-@import "fonts";
-@import "typography";
+@import "utils/mixins";
+@import "utils/vars";
+@import "blocks/header";
+@import "blocks/menu";
+@import "blocks/icon-logo";
+@import "blocks/section-titles";
+@import "blocks/for-whom__section";
+@import "blocks/feautures";
+@import "blocks/potr-team";
+@import "blocks/slider";
+@import "blocks/materials-slider";
+@import "blocks/size-selection";
+@import "blocks/buy-now";
+@import "blocks/footer";
 
-body {
-  background: $c-gray;
+.page {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: $manrope-font-family;
+  font-optical-sizing: auto;
+
+  &__body {
+    position: relative;
+    margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
+    background-color: $c-gray;
+    box-sizing: border-box;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
 }
+
+.main {
+  box-sizing: border-box;
+  padding-block: 110px;
+  display: flex;
+  flex-direction: column;
+  gap: 110px;
+
+  @include on-tablet {
+    gap: 0;
+  }
+
+  @include on-desktop {
+  padding-block: 150px 0;
+  }
+}
+

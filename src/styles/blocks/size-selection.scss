@@ -1,0 +1,142 @@
+.size-selection {
+
+  &__wrapper {
+    @include on-tablet {
+    @include content-padding-in-line;
+  }
+    
+    @include on-desktop {
+      position: relative;
+      height: 427px;
+      margin-top: 66px;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__container {
+  display: flex;
+  flex-direction: column;
+
+  @include on-tablet {
+    flex-direction: row-reverse;
+    }
+
+    @include on-desktop {
+    grid-column: 4/13;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+
+    @include on-tablet {
+      padding-bottom: 20px;
+    }
+
+    @include on-desktop {
+      padding-bottom: 0;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    cursor: pointer;
+
+    transition: transform $effect-duration;
+
+
+    &:hover {
+    @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__content {
+    position: relative;
+    padding-block: 30px 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      padding-block: 0;
+      gap: 50px;
+    }
+
+    @include on-desktop {
+      height: 257px;
+      display: block;
+      margin-inline: 30px 96px;
+    }
+  }
+
+  &__note,
+  &__box,
+  &__preview {
+    font-weight: $middle-font;
+    font-size: 16px;
+    line-height: 24px;
+    color: $grey-color;
+
+    @include content-padding-in-line;
+
+    @include on-tablet {
+      padding-inline: 0;
+    }
+  }
+
+  &__preview {
+    margin-block: 20px 30px;
+
+    @include on-tablet {
+      margin-block: 30px 38px;
+      width: 579px;
+    }
+
+    @include on-desktop {
+      padding: 0;
+      margin-block: 0;
+      margin-right: 16px;
+      width: 253px;
+      grid-column: 1/4;
+    }
+  }
+
+  &__subtittle {
+    margin-block: 0 10px;
+    font-family: $bebas-font-family;
+    font-weight: $middle-font;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 2.8px;
+    color: #000;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__note {
+    @include on-desktop {
+      position: absolute;
+      width: 546px;
+      top: 325px;
+      left: 135px;
+      bottom: 151px;
+    }
+  }
+}
+
+.box {
+  width: 246px;
+}
+
+.box--1 {
+  @include on-desktop {
+    margin-bottom: 40px;
+  }
+}
+
+.upper {
+  text-transform: uppercase;
+}

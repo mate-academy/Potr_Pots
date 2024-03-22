@@ -1,0 +1,116 @@
+.top-bar {
+  padding-block: 15px 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 78px;
+  align-items: center;
+
+  @include on-tablet {
+  justify-content: space-between;
+    }
+
+  @include on-desktop {
+    padding-block: 14.31px 0;
+    height: 43px;
+  }
+
+  &__logo {
+    width: 134px;
+    height: 43px;
+
+    @include on-desktop {
+      width: 134.31px;
+    }
+
+    transition: transform $effect-duration;
+
+    &:hover {
+      @include hover(transform, scale(1.05));
+      }
+  }
+}
+
+.icon--menu {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-image: url(../images/icon-logo/menu-icon.svg);
+  transition: transform $effect-duration;
+
+  @include on-desktop {
+    display: none;
+  }
+
+    &:hover {
+    @include hover(transform, scale(1.09));
+  }
+}
+
+.icon--close {
+  display: block;
+  width: 12.31px;
+  height: 12.02px;
+  background-image: url(../images/icon-logo/menu-icon-close.svg);
+  transition: transform $effect-duration;
+
+  &:hover {
+    @include hover(transform, scale(1.05));
+  }
+}
+
+.icon--bag {
+  display: none;
+  transition: transform $effect-duration;
+
+  @include on-desktop {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: url(../images/icon-logo/icon-bag.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover {
+    @include hover(transform, scale(1.05));
+  }
+}
+
+.menu {
+  &__top-bar {
+  position: absolute;
+  top: 423px;
+  right: 30px;
+  width: 50px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  rotate: 180deg;
+
+  @include on-desktop {
+    display: none;
+    }
+  }
+
+  &__icons-close-line {
+    display: flex;
+    flex-direction: row;
+    width: 44px;
+    height: 1px;
+    background-image: url(../images/icon-logo/menu-close-line.svg);
+    rotate: 90deg;
+  }
+
+  &__close-text {
+    rotate: 90deg;
+    text-transform: uppercase;
+    font-weight: $middle-font;
+    font-size: 12px;
+    line-height: 18px;
+    color: $c-gray;
+  }
+}
+
+
