@@ -1,16 +1,16 @@
 .questions {
-  background-image: url('../images/questions-bg-mobile.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right 0 bottom 0;
-
-  @include onDesktop {
-    background-image: url('../images/questions-bg-desktop.png');
-    background-position: bottom -20px right $padding-inline-desktop;
-  }
-  
 
   &__container {
+    background-image: url('../images/questions-bg-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right 0 bottom 0;
+
+    @include onDesktop {
+      background-image: url('../images/questions-bg-desktop.png');
+      background-position: bottom -20px right $padding-inline-desktop;
+    }
+
     @include containerPadding;
     
     margin-bottom: 102px;
@@ -176,5 +176,25 @@
 
     color: #000;
     text-decoration: none;
+
+    position: relative;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: .7px;
+      position: absolute;
+      left: 0;
+      background-color: #000;
+      transform-origin: left center;
+      transform: scale(0);
+
+      @include transitionDefault(transform);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
   }
 }
