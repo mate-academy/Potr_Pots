@@ -1,11 +1,21 @@
 .header {
   display: flex;
+  flex-direction: column;
 
   &__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / -1;
+    }
   }
 
   &__backround-yelow-color {
@@ -19,19 +29,13 @@
     }
   }
 
-  &__background-image {
-    z-index: 0;
-    display: flex;
-    width: 100%;
-  }
-
   &__title {
+    margin: 0;
     font-family: "Bebas Neue", sans-serif;
     font-size: 36px;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 43.2px;
     letter-spacing: 0.15em;
-    text-align: left;
 
     color: #03839E;
 
@@ -41,7 +45,7 @@
       font-weight: 400;
       line-height: 43.2px;
       letter-spacing: 0.15em;
-      text-align: left;
+      text-align: justify;
 
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke: 0.68px #03839E;
@@ -80,6 +84,12 @@
     border: none;
   }
 }
+
+.background-image {
+    z-index: -1;
+    display: block;
+    width: 100%;
+  }
 
 .buy-content {
 
