@@ -1,95 +1,159 @@
 .potr-team {
   position: relative;
-  width: 100%;
-
+  display: flex;
+  flex-direction: column;
+  
   &__wrapper {
+    box-sizing: border-box;
     position: relative;
     display: flex;
     flex-direction: column;
-    background-image: url(../images/sections/potr-team-img.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: top 40% left 0;
-    z-index: 5;
-
-
-    @include content-padding-in-line;
 
     @include on-tablet {
-      display: block;
-      height: 688px;
-        background:
-          url(../images/sections/martin-img-1.png) no-repeat,
-          url(../images/sections/andy-img-1.png) no-repeat,
-          url(../images/sections/potr-team-img.png) no-repeat;
-
-        background-size: 719px 231px, 459px 209.59px, 340px 255px;
-        background-position: top 80px left -54px, top 455px right 0, top 237px right 34px;
-
-        justify-content: end;
-
+      height: 100%;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      
+      @include content-padding-rigth;
     }
 
     @include on-desktop {
       height: 947px;
-      background-size: 893px 346px, 598px 346px, 677px 507.75px;
-      background-position: top 45px left 67px, top 630px right 0, top 188px left 518px;
+      margin-inline: 0;
+      padding-left: 135px;
     }
   }
 
-  &__picture {
+  &__martin-pic {
+    display: none;
+
+    @include on-tablet {
+      position: absolute;
+      display: block;
+      width: 719px;
+      height: 231px;
+      top: 13%;
+      left: -44px;
+      z-index: 10;
+    }
+
+    @include on-desktop {
+      width: 893px;
+      height: 346px;
+      left: 74px;
+    }
+  }
+
+  &__martin-img {
     width: 100%;
   }
 
-  &__img {
+  &__andy-pic {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      position: absolute;
+      width: 459px;
+      height: 219.59px;
+      top: 69%;
+      right: 0;
+    }
+
+    @include on-desktop {
+      width: 598px;
+      height: 346px;
+      right: 0;
+      top: 69.5%;
+    }
+  }
+
+  &__andy-img {
+    width: 100%;
+  }
+
+  &__bg-pic {
+    width: 100%;
+
+    @include on-tablet {
+    width: 340px;
+    height: 255px;
+    padding-block: 177px 182.59px;
+    }
+
+    @include on-desktop {
+      width: 677px;
+      height: 507.75px;
+    }
+  }
+
+  &__bg-img {
     width: 100%;
   }
 
   &__text {
-    margin-top: 295px;
+    margin: 0 auto;
+    position: relative;
+    width: 260px;
+    padding-block: 30px 58px;
     font-weight: $middle-font;
     font-size: 16px;
     line-height: 24px;
 
+    @include content-padding-in-line;
+
     @include on-tablet {
+      margin: auto 0;
       width: 313px;
-      margin-top: 230px;
+      height: 275px;
+      padding-block: 230px 109.59px;
+      padding-right: 0;
     }
 
     @include on-desktop {
       width: 336px;
       height: 264px;
-      margin-top: 373px;
-      margin-bottom: 240px;
+      padding-block: 373px 240px;
+      padding-inline: 0;
+      margin-inline: 0;
     }
   }
 
+  &__text-1 {
+    margin-top: 0;
+  }
+
+  &__text-2 {
+    margin-bottom: 0;
+  }
+
   &__yellow-bg {
-    position: absolute;
+      position: absolute;
       width: 100%;
-      height: 406px;
-      top: 75%;
+      height: 440px;
+      top: 33%;
       left: 0;
       display: block;
-      background: linear-gradient(155deg,  $light-yellow 53%, $c-gray 40%);
+      background: linear-gradient(165deg,  $light-yellow 53%, $c-gray 47%);
       z-index: -1;
 
       @include on-tablet {
-        width: 260px;
-        height: 413px;
-        top: 26%;
+        width: 73%;
+        height: 55%;
+        top: 18%;
       background: linear-gradient(165deg,  $light-yellow 55%, $c-gray 40%);
       }
 
       @include on-desktop {
-        width: 426px;
-        height: 480px;
-      background: linear-gradient(160deg,  $light-yellow 57%, $c-gray 40%);
-        top: 16%;
+        width: 435px;
+        height: 320px;
+        background: linear-gradient(166deg,  $light-yellow 61%, $c-gray 39%);
+        top: 18%;
+        left: -45%;
       }
   }
 }
 
 .texts-position {
-  margin-top: 0;
+  width: inherit;
 }

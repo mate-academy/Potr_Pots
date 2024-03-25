@@ -6,6 +6,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   background-image: url(../images/header-bg.png);
   background-size: 100%;
   background-repeat: no-repeat;
@@ -102,12 +103,6 @@
     @include on-desktop {
       grid-column: 4/7;
     }
-
-    &:hover {
-    @include hover(transform, scale(1.05));
-
-    opacity:70%;
-    }
   }
 
   &__button-input {
@@ -201,6 +196,13 @@
     top: 4px;
   }
 }
+
+.header__button:hover {
+  @include hover(transform, scale(1.05));
+  
+    background-color: #ffec7A;
+  }
+
 
 .side--big-text {
   text-transform: uppercase;

@@ -1,6 +1,6 @@
 .header__title {
   width: 260px;
-  margin: 0;
+  margin: 0 auto;
   font-family: $bebas-font-family;
   font-weight: $middle-font;
   font-size: 36px;
@@ -9,6 +9,7 @@
   letter-spacing: 5.5px;
 
   @include on-tablet {
+    margin: auto 0;
     width: 441px;
     height: 266px;
     font-size: 64px;
@@ -32,7 +33,9 @@
   }
 
   .for-whom {
-    &__titles {
+    &__titles{
+      margin: 0 auto;
+
       @include on-tablet {
         margin-left: 20px;
         display: flex;
@@ -45,14 +48,18 @@
       flex-direction: column;
     }
 
+    &__main-title {
+      width: 175px;
+      margin-bottom: 34px;
+    }
+
     &__section-title {
-      margin: 0;
       position: relative;
       font-family: $bebas-font-family;
       font-weight: $middle-font;
       font-size: 36px;
       line-height: 54px;
-      letter-spacing: 5.5px;
+      letter-spacing: 5px;
       color: $dark-grey-color;
 
       @include on-tablet {
@@ -68,6 +75,12 @@
         width: 470px;
       }
     }
+
+    &__section-title-1,
+    &__section-title-2,
+    &__section-title-3 {
+      color: $black-color;
+    } 
 
     &__section-title-2 {
       position: $relative-position;
@@ -96,10 +109,6 @@
         margin-top: 109px;
       }
     }
-
-      &__main-title {
-        margin-bottom: 34px;
-      }
   }
 
   .feauters__section-title {
@@ -152,8 +161,8 @@
     @include on-tablet {
     @include line-after-title;
     
-      left: 125px;
-      top: 115px;
+      left: 255px;
+      top: 67px;
 
     @include on-desktop {
     left: 265px;
@@ -176,24 +185,35 @@
 
   .line-after-3::after {
   @include on-tablet {
-    left: 125px;
-    top: 240px;
+    left: 240px;
+    top: 190px;
   }
 
     @include on-desktop {
-      left: 250px;
-      top: 165px;
+      left: 130px;
+      top: 170px;
     }
   }
 
   .potr-team__title {
-    margin: 0;
+    width: 260px;
+    margin: 0 auto;
+    margin-bottom: 25px;
     font-family: $bebas-font-family;
     font-weight: $middle-font;
     font-size: 58px;
     line-height: 69.6px;
     letter-spacing: 8.9px;
     color: $dark-grey-color;
+    
+    @include content-padding-in-line;
+
+    @include on-tablet {
+      margin: auto 0;
+      width: 100%;
+      height: 70px;
+      margin-bottom: 0;
+    }
   }
 
   .materials__tittle {
@@ -225,18 +245,19 @@
   }
 
   .size-selection__tittle {
-    margin: 0;
+    margin: 0 auto;
     font-family: $bebas-font-family;
     width: 260px;
     font-weight: $middle-font;
     font-size: 36px;
     line-height: 54px;
     letter-spacing: 5.5px;
-    color: #000;
+    color: $black-color;
 
     @include content-padding-in-line;
 
     @include on-tablet {
+      margin: auto 0;
       width: 100%;
     }
 
@@ -297,7 +318,7 @@
     font-size: 36px;
     line-height: 54px;
     letter-spacing: 5.5px;
-    color: #000;
+    color: $black-color;
 
     @include on-tablet {
       margin-top: 17px;
