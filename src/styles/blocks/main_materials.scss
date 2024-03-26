@@ -1,0 +1,278 @@
+.materials {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 573px;
+  background-size: 100%;
+  background-image: url(../images/materials-bg-image--desktop.png);
+  background-repeat: no-repeat;
+  background-position-y: 40%;
+
+  @include on-tablet {
+    height: 835px;
+    background-position-y: 100%;
+  }
+
+  @include on-desktop {
+    height: 1243px;
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 69.6px;
+    letter-spacing: 9px;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+      grid-row: 1 / 2;
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 9.6px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 11;
+      grid-row: 1 / 2;
+      font-size: 138.81px;
+      line-height: 166.57px;
+      letter-spacing: 16.6px;
+    }
+  }
+
+  &__wrapper {
+    @include page-grid;
+  }
+
+  &__desc {
+    display: none;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include on-tablet {
+      display: inline;
+      padding-top: 111px;
+      grid-column: 4 / -1;
+      grid-row: 1 / 2;
+    }
+
+    @include on-desktop {
+      padding-top: 170px;
+      grid-column: 8 / -1;
+      grid-row: 1 / 2;
+    }
+
+    &--title {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      padding-bottom: 15px;
+    }
+  }
+
+  &__flip {
+    position: relative;
+    margin-inline: auto;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    &-item {
+      width: 100%;
+      max-width: 300px;
+      display: none;
+      min-height: 254px;
+      padding-inline: 45px;
+      padding-top: 28px;
+
+      font-size: 16px;
+      line-height: 24px;
+      color: $menu-text-color;
+      list-style: none;
+      background: rgba(0, 0, 0, 0.45);
+      box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+
+      @include on-tablet {
+        display: none;
+      }
+
+      &--active {
+        display: block;
+      }
+    }
+
+    &--buttons {
+      position: absolute;
+      display: flex;
+      bottom: 37px;
+      left: 50%;
+      transform: translate(-50%);
+      gap: 7px;
+      flex-direction: row;
+      list-style: none;
+    }
+
+    &-button {
+      width: 7px;
+      height: 7px;
+      background-color: $menu-text-color;
+      transform: rotate(45deg);
+
+      &--active {
+        border: 1px solid $menu-text-color;
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+    }
+  }
+
+  &__card {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    &-item {
+      position: absolute;
+
+      &--1 {
+        bottom: 70px;
+        right: 30px;
+
+        @include on-desktop {
+          bottom: 120px;
+          right: 140px;
+        }
+      }
+
+      &--2 {
+        bottom: 200px;
+        right: 160px;
+
+        @include on-desktop {
+          bottom: 320px;
+          right: 360px;
+        }
+      }
+
+      &--3 {
+        bottom: 140px;
+        left: 220px;
+
+        @include on-desktop {
+          bottom: 30px;
+          left: 350px;
+        }
+      }
+
+      &--4 {
+        bottom: 290px;
+        left: 120px;
+
+        @include on-desktop {
+          bottom: 420px;
+          left: 240px;
+        }
+      }
+
+      &--5 {
+        bottom: 160px;
+        left: 40px;
+
+        @include on-desktop {
+          bottom: 210px;
+          left: 120px;
+        }
+      }
+    }
+
+    &-text {
+      display: none;
+      width: 283px;
+      padding-inline: 35px;
+      padding-block: 35px;
+
+      @extend %text;
+
+      font-size: 16px;
+      line-height: 24px;
+      color: $menu-text-color;
+      list-style: none;
+      background-color: rgba(0, 0, 0, 0.45);
+      box-shadow: 3px 2px rgba(0, 0, 0, 0.15);
+
+      &--active {
+        display: block;
+      }
+    }
+
+    &-button {
+      position: absolute;
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+      background-image: url(../images/icons/materials-button--default.svg);
+
+      &--1 {
+        bottom: 250px;
+        right: 130px;
+
+        @include on-desktop {
+          bottom: 250px;
+          right: 130px;
+        }
+      }
+
+      &--2 {
+        bottom: -70px;
+        right: 140px;
+
+        @include on-desktop {
+          bottom: -100px;
+          right: 140px;
+        }
+      }
+
+      &--3 {
+        bottom: -70px;
+        left: 110px;
+
+        @include on-desktop {
+          bottom: 80px;
+          left: 300px;
+        }
+      }
+
+      &--4 {
+        bottom: -75px;
+        left: 120px;
+
+        @include on-desktop {
+          bottom: -75px;
+          left: 270px;
+        }
+      }
+
+      &--5 {
+        bottom: -70px;
+        left: 50px;
+
+        @include on-desktop {
+          bottom: -90px;
+          left: 110px;
+        }
+      }
+
+      &--active {
+        background-image: url(../images/icons/materials-button--active.svg);
+      }
+    }
+  }
+}
+
+.bolt-text {
+  font-weight: 700;
+}
+

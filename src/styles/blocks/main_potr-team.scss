@@ -1,6 +1,7 @@
 .potr-team {
   position: relative;
   overflow: hidden;
+  padding-bottom: 110px;
 
   @include on-tablet {
     margin-top: 113px;
@@ -25,16 +26,20 @@
   }
 
   &__bg-image {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    bottom: -150px;
+    background-image: url(../images/bg-rectangle.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
     @include on-tablet {
-      z-index: -1;
-      position: absolute;
       width: 1121px;
       height: 466px;
       top: 200px;
       left: -600px;
-      background-image: url(../images/bg-rectangle.png);
-      background-repeat: no-repeat;
-      background-position: center;
     }
 
     @include on-desktop {
