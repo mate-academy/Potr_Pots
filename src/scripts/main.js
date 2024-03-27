@@ -1,26 +1,49 @@
 'use strict';
 
 const page = document.querySelector('.page');
-const buttonActive ='materials__card-button--active';
-const textActive = 'materials__card-text--active';
-const buttons = page.querySelectorAll('.materials__card-button');
-const texts = page.querySelectorAll('.materials__card-text');
 
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', () => {
+// flip in materials
 
-    if (buttons[i].classList.contains(buttonActive)) {
-      buttons[i].classList.remove(buttonActive);
-      texts[i].classList.remove(textActive);
+const itemFlipActive = 'materials__flip-item--active';
+const buttonFlipActive = 'materials__flip-button--active';
+const itemFlip = page.querySelectorAll('.materials__flip-item');
+const buttonFlip = page.querySelectorAll('.materials__flip-button');
+
+for (let i = 0; i < buttonFlip.length; i++) {
+  buttonFlip[i].addEventListener('click', () => {
+
+    if (page.querySelector('.' + itemFlipActive)) {
+      page.querySelector('.' + itemFlipActive).classList.toggle(itemFlipActive);
+      page.querySelector('.' + buttonFlipActive).classList.toggle(buttonFlipActive);
+    }
+
+    itemFlip[i].classList.add(itemFlipActive);
+    buttonFlip[i].classList.add(buttonFlipActive);
+  });
+}
+
+// cards in materials
+
+const buttonCardActive ='materials__card-button--active';
+const textCardActive = 'materials__card-text--active';
+const battonCard = page.querySelectorAll('.materials__card-button');
+const textCard = page.querySelectorAll('.materials__card-text');
+
+for (let i = 0; i < battonCard.length; i++) {
+  battonCard[i].addEventListener('click', () => {
+
+    if (battonCard[i].classList.contains(buttonCardActive)) {
+      battonCard[i].classList.remove(buttonCardActive);
+      textCard[i].classList.remove(textCardActive);
     } else {
 
-      if (page.querySelector('.' + buttonActive)) {
-        page.querySelector('.' + buttonActive).classList.toggle(buttonActive);
-        page.querySelector('.' + textActive).classList.toggle(textActive);
+      if (page.querySelector('.' + buttonCardActive)) {
+        page.querySelector('.' + buttonCardActive).classList.toggle(buttonCardActive);
+        page.querySelector('.' + textCardActive).classList.toggle(textCardActive);
       }
 
-      buttons[i].classList.toggle(buttonActive);
-      texts[i].classList.toggle(textActive);
+      battonCard[i].classList.toggle(buttonCardActive);
+      textCard[i].classList.toggle(textCardActive);
     }
   });
 }
