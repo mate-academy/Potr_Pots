@@ -1,6 +1,7 @@
 .header {
-  display: flex;
   flex-direction: column;
+  z-index: 0;
+  position: relative;
 
   &__content {
     display: flex;
@@ -20,27 +21,32 @@
 
   &__backround-yelow-color {
     @include on-tablet {
-      z-index: -1;
       display: flex;
+      position: absolute;
       box-sizing: border-box;
+      z-index: -1;
       height: 466px;
-      width: 100%;
-      background-image: linear-gradient(165deg, rgba(255, 236, 122, 1)50%, transparent 50%);
+      width: 80%;
+      background-image: linear-gradient(
+        165deg,
+        rgba(255, 236, 122, 1) 50%,
+        transparent 50%
+      );
     }
   }
 
   &__title {
     margin: 0;
-    font-family: "Bebas Neue", sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 36px;
     font-weight: 400;
     line-height: 43.2px;
     letter-spacing: 0.15em;
 
-    color: #03839E;
+    color: #03839e;
 
     &--blue {
-      font-family: "Bebas Neue", sans-serif;
+      font-family: 'Bebas Neue', sans-serif;
       font-size: 36px;
       font-weight: 400;
       line-height: 43.2px;
@@ -48,7 +54,7 @@
       text-align: justify;
 
       -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 0.68px #03839E;
+      -webkit-text-stroke: 0.68px #03839e;
     }
   }
 
@@ -77,22 +83,40 @@
     gap: 24px;
     margin: 0;
 
-
     cursor: pointer;
     width: 100%;
-    background-color: #FFE339;
+    background-color: #ffe339;
     border: none;
   }
 }
 
-.background-image {
-    z-index: -1;
-    display: block;
-    width: 100%;
+.bg-img-container {
+  grid-column: 1 / -1;
+  padding-inline: 0;
+
+  @include on-tablet {
+    grid-column: 1 / -1;
   }
 
-.buy-content {
+  &__bg-link {
+    justify-content: flex-end;
+    display: flex;
+    width: 100%;
+  }
+}
 
+.background-image {
+  display: flex;
+  width: 100%;
+
+  @include on-tablet {
+    height: 306px;
+    width: auto;
+    padding: 34px 0 0;
+  }
+}
+
+.buy-content {
   &__text {
     display: flex;
     flex-direction: column;
@@ -108,6 +132,5 @@
   &__arrow {
     width: 28px;
     height: auto;
-
   }
 }

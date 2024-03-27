@@ -1,10 +1,10 @@
-@mixin on-tablet{
+@mixin on-tablet {
   @media (min-width: $tablet-min-width) {
     @content;
   }
 }
 
-@mixin on-desctop{
+@mixin on-desctop {
   @media (min-width: $desctop-min-width) {
     @content;
   }
@@ -58,5 +58,20 @@
   @include content-padding-inline;
   @include page-grid;
 
-}
+  min-width: 260px;
 
+  @include on-tablet {
+    min-width: 700px;
+  }
+
+  &--bg {
+    padding-inline: 0;
+    margin-inline: 0;
+    display: flex;
+
+    @include on-tablet {
+      @include content-padding-inline;
+      @include page-grid;
+    }
+  }
+}
