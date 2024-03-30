@@ -1,6 +1,6 @@
 .page__menu {
   overflow: auto;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   margin: 0;
@@ -33,8 +33,8 @@
   }
 }
 
+
 .menu {
-  padding-bottom: 32px;
   height: 568px;
   width: 231px;
   background-color: $turquoise-color;
@@ -46,19 +46,22 @@
   }
 
   &__container {
-    height: inherit;
     position: relative;
     display: flex;
-    align-items: center;
     justify-content: center;
 
     @include on-desktop {
       display: inline;
     }
+
+    @media screen and (max-height: 568px) {
+      overflow-y: scroll;
+    }
   }
 
   &__nav {
     width: 89px;
+    padding-top: 138px;
   }
 }
 
