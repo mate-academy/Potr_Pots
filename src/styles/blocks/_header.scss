@@ -35,8 +35,21 @@
     }
   }
 
+  &__bottom {
+    @include on-tablet {
+      @include page-grid;
+
+      position: absolute;
+      z-index: 2;
+      top: 94px;
+      min-width: 700px;
+      max-width: 700px;
+    }
+  }
+
   &__title {
     margin: 0;
+    text-transform: uppercase;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 36px;
     font-weight: 400;
@@ -55,6 +68,17 @@
 
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke: 0.68px #03839e;
+
+      @include on-tablet {
+        font-size: 64px;
+        line-height: 64px;
+      }
+    }
+
+    @include on-tablet {
+      font-size: 64px;
+      line-height: 64px;
+      grid-column: 1 / 6;
     }
   }
 
@@ -65,6 +89,10 @@
     line-height: 35.52px;
     text-align: left;
     margin: 0;
+
+    @include on-tablet {
+      grid-column: 3 / 4;
+    }
   }
 
   &__description {
@@ -74,6 +102,10 @@
     line-height: 21px;
     text-align: left;
     margin: 0;
+
+    @include on-tablet {
+      grid-column: 3 / 5;
+    }
   }
 
   &__buy-button {
@@ -81,12 +113,19 @@
     justify-content: center;
     align-items: center;
     gap: 24px;
-    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    height: 48px;
 
     cursor: pointer;
     width: 100%;
     background-color: #ffe339;
     border: none;
+
+    @include on-tablet {
+      width: 240px;
+      grid-column: 2 / 5;
+    }
   }
 }
 

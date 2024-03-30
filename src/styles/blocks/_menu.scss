@@ -5,6 +5,15 @@
     rgba(3, 131, 158, 1) 71%,
     transparent 50%
   );
+
+  @include on-tablet {
+    background-image: linear-gradient(
+      -90deg,
+      rgba(3, 131, 158, 1) 30%,
+      transparent 31%
+    );
+  }
+
   font-weight: 400;
   z-index: 1;
   overflow: auto;
@@ -12,6 +21,10 @@
   &__content {
     height: 100vh;
     grid-column: 2;
+
+    @include on-tablet {
+      grid-column: 6;
+    }
   }
 
   &__nav {
