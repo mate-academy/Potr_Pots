@@ -1,7 +1,7 @@
 
 ## Tech review
 
-1. Add favicon, [example](http://joxi.ru/brRoByXuBJjwkm)
+1. Use the logo as a favicon
 2. Add a smooth scroll for the whole page (`scroll-behavior: smooth;`)
 3. Logo in the header and footer leads to the home section
 4. The arrow "more about POTR POTS" should move down on hover and lead to `For whom` section
