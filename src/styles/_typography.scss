@@ -2,12 +2,20 @@
   margin: 0;
   margin-bottom: 30px;
   font-family: "Bebas Neue", Arial, sans-serif;
+  font-weight: 400;
   font-size: 35px;
   line-height: 43.2px;
   letter-spacing: 0.15em;
-  -webkit-text-stroke: 0.08px $main-text-color;
-  color: #fff;
+  -webkit-text-stroke: 0.68px $main-text-color;
+  color: transparent;
   text-transform: uppercase;
+
+  @include on-tablet {
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: 9.9px;
+    -webkit-text-stroke: 0.5px $main-text-color;
+  }
 
   &--fill-color {
     color: $main-text-color;
@@ -35,6 +43,13 @@
     margin: 0;
     margin-bottom: 20px;
     font-family: Manrope, sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4F4F4F;
+
+    @include on-tablet {
+      margin-bottom: 0;
+    }
   }
 
   &__link {
@@ -53,7 +68,7 @@
     text-decoration: none;
     color: rgba(51, 51, 51, 1);
     line-height: 43.2px;
-    letter-spacing: 6%;
+    letter-spacing: 2px;
   }
 }
 
@@ -67,6 +82,18 @@
   &__link {
     text-decoration: none;
     color: #F8F8F8;
+    transition: .3s;
+
+    &--desktop {
+      @include on-desktop {
+        color: #4F4F4F;
+
+        &:hover {
+          color: #000;
+          letter-spacing: 1px;
+        }
+      }
+    }
   }
 
   &__item--sell-count {
@@ -109,6 +136,22 @@
   &--fill-color {
     color: #fff;
     -webkit-text-stroke: 1px $main-text-color;
+  }
+
+  &--on-tablet {
+    @include on-tablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 9.6px;
+    }
+  }
+
+  &--on-desktop {
+    @include on-desktop {
+      font-size: 138.8px;
+      line-height: 166.5px;
+      letter-spacing: 16.6px;
+    }
   }
 }
 
@@ -157,14 +200,24 @@
 
   &--center {
     text-align: center;
+
+    @include on-tablet {
+      text-align: start;
+    }
+
+    @include on-desktop {
+      text-align: center;
+    }
   }
 
   &--white {
     color: #F8F8F8;
+    font-weight: 300;
   }
 
   &--margin-bottom {
     margin-bottom: 25px;
+    grid-column: 1/-1;
   }
 
   &--bigger-margin-bottom {
@@ -181,12 +234,61 @@
     font-size: 36px;
     line-height: 64.8px;
     font-family: "Bebas Neue", Arial, sans-serif;
+
+    @include on-desktop {
+      line-height: 54px;
+    }
   }
 
   &__right-text {
     font-family: "Bebas Neue", Arial, sans-serif;
     letter-spacing: 2.64px;
     color: #828282;
+    text-align: right;
+  }
+
+  &__pre-article-text {
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+  }
+}
+
+.potr-team-title {
+  margin: 0;
+  font-family: "Bebas Neue", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 232px;
+  line-height: 278px;
+  letter-spacing: 36px;
+  color: transparent;
+  -webkit-text-stroke: 1.5px $main-text-color;
+
+  &--andy {
+    font-size: 219.6px;
+    line-height: 263.5px;
+    letter-spacing: 34px;
+  }
+
+  @include on-desktop {
+    font-size: 288px;
+    line-height: 345.6px;
+    letter-spacing: 44.6px;
+  }
+}
+
+.materials {
+  &__title {
+    position: relative;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 30px;
+    font-family: Manrope, sans-serif;
+    font-weight: 700;
+    color: #4F4F4F;
+    z-index: 3;
   }
 }
 
@@ -199,6 +301,11 @@
     font-size: 32px;
     line-height: 48px;
     color: #333;
+
+    @include on-tablet {
+      font-size: 36px;
+      line-height: 54px;
+    }
   }
 
   &__promotion-title {
@@ -209,6 +316,18 @@
     font-family: "Bebas Neue", Arial, sans-serif;
     color: #EB5757;
     font-weight: 400;
+
+    @include on-tablet {
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 3.7px;
+    }
+
+    @include on-desktop {
+      letter-spacing: 5.6px;
+      font-size: 36px;
+      line-height: 54px;
+    }
   }
 
   &__promotion-text {
@@ -218,6 +337,18 @@
     line-height: 24px;
     font-family: "Bebas Neue", Arial, sans-serif;
     color: $main-text-color;
+
+    @include on-tablet {
+      font-size: 18px;
+      line-height: 18px;
+      letter-spacing: 2.8px;
+    }
+
+    @include on-desktop {
+      letter-spacing: 3.7px;
+      font-size: 24px;
+      line-height: 24px;
+    }
   }
 }
 
@@ -241,17 +372,21 @@
     }
 
     &-link {
-      color: #000000;
+      color: #000;
       text-decoration: none;
       font-family: Manrope, sans-serif;
       font-size: 16px;
       line-height: 24px;
+
+      @include on-desktop {
+        @include hover(letter-spacing, 1px);
+      }
     }
   }
 }
 
 .footer {
-  &__link {
+  &__title-link {
     font-family: "Bebas Neue", Arial, sans-serif;
     font-size: 36px;
     line-height: 54px;
@@ -259,4 +394,17 @@
     text-decoration: none;
     color: #000;
   }
+
+  &__article-title,
+  &__text,
+  &__right-title,
+  &__right-text {
+
+    @include on-tablet {
+      margin: 0;
+      text-align: left;
+      text-decoration: none;
+    }
+  }
+
 }

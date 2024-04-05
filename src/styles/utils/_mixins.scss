@@ -35,8 +35,16 @@
   }
 }
 
-.container {
-  @include padding-inline;
+@mixin max-width {
+  max-width: 260px;
+
+  @include on-tablet {
+    max-width: 700px;
+  }
+
+  @include on-desktop{
+    max-width: 1170px;
+  }
 }
 
 @mixin page-grid {
@@ -54,5 +62,23 @@
     --colums: 12;
 
     column-gap: 30px;
+  }
+}
+
+.container {
+  @include padding-inline;
+
+  @include on-tablet {
+    &--header {
+    grid-column: 1 / -1;
+    width: 100%;
+    position: relative;
+
+    @include page-grid;
+    }
+
+    &--main {
+      position: relative;
+    }
   }
 }
