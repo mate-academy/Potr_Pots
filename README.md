@@ -1,8 +1,9 @@
 # POTR POTS landing page (HARD)
 
-**⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).** 
+**⚠️ Attention: this is a hard landing page for development. We highly recommend choosing this landing page only if you didn't have a lot of troubles with previous homework tasks and if you sent all homework in time (didn't miss deadlines).**
 
 Implement landing page according to [Figma design](https://www.figma.com/file/50zgLU65Mcd3MisFHMfLfx/POTR-POTS_FE-students?node-id=1760%3A281) - Use BEM and SCSS
+
 - The design 1440px
 - Desktop 1280px
 - Tablet 640px
@@ -18,8 +19,8 @@ Implement landing page according to [Figma design](https://www.figma.com/file/50
 1. Implement `Questions` block
 1. Implement the footer.
 
-
 ## Github flow
+
 1. **Fork** the repo.
 2. **Clone** the forked one. (The project link should have your name but not `mate-academy`)
 3. Run `npm install` (or just `npm i`)
@@ -33,7 +34,7 @@ Implement landing page according to [Figma design](https://www.figma.com/file/50
 11. `git push origin develop` - to send you code for PR
 12. Create a Pull Request (PR) from your branch `develop` to branch `master` of original repo.
 13. Replace `<your_account>` with your Github username in the
-  [DEMO LINK](https://<your_account>.github.io/Potr_Pots/)
+    [DEMO LINK](https://n3di.github.io/Potr_Pots/)
 14. Copy `DEMO LINK` to the PR description
 
 > To update you PR repeat steps 7-11

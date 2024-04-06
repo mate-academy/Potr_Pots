@@ -1,0 +1,53 @@
+@mixin on-tablet {
+  @media (min-width: $on-tablet) {
+    @content;
+  }
+}
+
+@mixin disable-slider {
+  @media (max-width: $disable-slider) {
+    @content;
+  }
+}
+
+@mixin on-tablet-vp-768 {
+  @media (min-width: $on-tablet-vp-768) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $on-desktop) {
+    @content;
+  }
+}
+
+@mixin on-large-desktop {
+  @media (min-width: $on-large-desktop) {
+    @content;
+  }
+}
+
+@mixin rotate-efect {
+  background-size: cover;
+  top: 0;
+  left: 0;
+  transform: rotateX(-90deg) translateZ(10px);
+}
+
+@mixin grid-columns-row {
+  display: grid;
+  grid-template-columns: repeat(var(--columns-numbr), 1fr);
+  grid-template-rows: repeat(var(--row-numbr), auto);
+  column-gap: var(--columns-gap);
+}
+
+@mixin size-adaptation {
+  width: calc(var(--min-width) * 1px + (var(--max-width) - var(--min-width)) * (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp)));
+  height: calc(var(--min-height) * 1px + (var(--max-height) - var(--min-height)) * (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp)));
+}
+
+@mixin location-adaptation {
+  left: calc(var(--min-left) * 1px + (var(--max-left) - var(--min-left)) * (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp)));
+  bottom: calc(var(--min-bottom) * 1px + (var(--max-bottom) - var(--min-bottom)) * (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp))); 
+}
