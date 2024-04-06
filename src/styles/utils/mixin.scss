@@ -43,11 +43,23 @@
 }
 
 @mixin size-adaptation {
-  width: calc(var(--min-width) * 1px + (var(--max-width) - var(--min-width)) * (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp)));
-  height: calc(var(--min-height) * 1px + (var(--max-height) - var(--min-height)) * (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp)));
+  width: calc(
+    var(--min-width) * 1px + (var(--max-width) - var(--min-width)) *
+      (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp))
+  );
+  height: calc(
+    var(--min-height) * 1px + (var(--max-height) - var(--min-height)) *
+      (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp))
+  );
 }
 
 @mixin location-adaptation {
-  left: calc(var(--min-left) * 1px + (var(--max-left) - var(--min-left)) * (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp)));
-  bottom: calc(var(--min-bottom) * 1px + (var(--max-bottom) - var(--min-bottom)) * (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp))); 
+  left: calc(
+    var(--min-left) * 1px + (var(--max-left) - var(--min-left)) *
+      (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp))
+  );
+  bottom: calc(
+    var(--min-bottom) * 1px + (var(--max-bottom) - var(--min-bottom)) *
+      (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp))
+  );
 }

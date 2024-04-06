@@ -17,13 +17,13 @@
 @mixin typography-size-12px {
   font-family: $font-bebas-neue;
   font-size: 12px;
-  letter-spacing: 0.3em;  
+  letter-spacing: 0.3em;
 }
 
 @mixin typography-size-16px {
   font-family: $font-manrope;
   font-size: 16px;
-  line-height: 24px;  
+  line-height: 24px;
 }
 
 @mixin typography-size-24px {
@@ -32,7 +32,7 @@
   font-size: 24px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: .18em;
+  letter-spacing: 0.18em;
 }
 
 @mixin typography-size-36px {
@@ -40,7 +40,7 @@
   font-size: 36px;
   font-weight: 400;
   line-height: 1.5em;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -48,16 +48,20 @@
   font-family: $font-bebas-neue;
   font-size: 58px;
   line-height: 69.6px;
-  letter-spacing: .13em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
-@mixin typography-size-64px {  
+@mixin typography-size-64px {
   font-size: 64px;
-  line-height: 64px;  
-  letter-spacing: .18em;
-  text-transform: uppercase;}
+  line-height: 64px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
 
 @mixin responsive-font {
-  font-size: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp))));
+  font-size: calc(
+    (var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) *
+      ((100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp)))
+  );
 }
