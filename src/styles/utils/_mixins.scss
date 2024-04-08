@@ -19,18 +19,15 @@
 
 @mixin padding-inline {
   padding-inline: 30px;
-  max-width: 260px;
   margin-inline: auto;
 
   @include on-tablet {
     padding-inline: 34px;
-    max-width: 700px;
     margin-inline: auto;
   }
 
   @include on-desktop {
     padding-inline: 135px;
-    max-width: 1170px;
     margin-inline: auto;
   }
 }
@@ -68,11 +65,17 @@
 .container {
   @include padding-inline;
 
+  &--main {
+    display: grid;
+    justify-content: center;
+  }
+
   @include on-tablet {
     &--header {
     grid-column: 1 / -1;
     width: 100%;
     position: relative;
+    box-sizing: border-box;
 
     @include page-grid;
     }
