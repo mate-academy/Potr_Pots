@@ -1,0 +1,84 @@
+.footer {
+  padding-block: 74px;
+
+  @include onTablet {
+    padding-block: 0;
+  }
+
+  @include onMobile {
+    margin-top: 100px;
+    padding-bottom: 25px;
+  }
+
+  &__social {
+    display: flex;
+    gap: 70px;
+    justify-self: center;
+    align-self: center;
+    grid-column: 5 / 8;
+
+    @include onTablet {
+      grid-column: 3 / 5;
+    }
+  }
+
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-adress {
+      grid-column: 1 / 4;
+
+      @include onTablet {
+        grid-column: 1 / 3;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    &-details {
+      grid-column: 11 / 14;
+
+      @include onTablet {
+        grid-column: 5 / 7;
+        justify-self: end;
+      }
+
+      @include onMobile {
+        display: none;
+      }
+    }
+
+    &__title {
+      @extend %h3-font;
+    }
+
+    &__info {
+      @extend %s4-font;
+    }
+  }
+
+  &__logo {
+    @extend %h2-font;
+
+    margin-top: 70px;
+    grid-column: 6 / 7;
+
+    @include onMobile {
+      align-self: center;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include onMobile {
+      display: block;
+      align-self: center;
+    }
+  }
+}
+

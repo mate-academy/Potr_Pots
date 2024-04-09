@@ -1,0 +1,90 @@
+.features {
+  margin-top: 160px;
+  display: flex;
+  flex-direction: column;
+
+  @include inline-padding;
+
+  @include onTablet {
+    margin-top: 100px;
+  }
+
+  &__title {
+    @extend %h1-font;
+
+    text-transform: capitalize;
+    color: $c-turquoise;
+
+    span {
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: $c-turquoise;
+    }
+
+    @include onMobile {
+      letter-spacing: 8px;
+    }
+  }
+
+  &__table {
+    display: flex;
+    gap: 30px;
+    margin-top: 70px;
+    justify-content: center;
+
+    @include onTablet {
+      margin-top: 40px;
+    }
+
+    @media (max-width: 714px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 370px;;
+  }
+
+  &__image {
+    height: 370px;
+    width: 370px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include onTablet {
+      height: 223px;
+      width: 223px;
+    }
+
+    &-first {
+      background-image: url(../images/features_unbox.png);
+    }
+
+    &-second {
+      background-image: url(../images/features_cactus.png);
+    }
+
+    &-third {
+      background-image: url(../images/features_pot.png);
+    }
+  }
+
+  &__name {
+    @extend %h3-font;
+
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  &__overview {
+    @extend %s3-font;
+
+    margin-top: 20px;
+    text-align: center;
+  }
+}

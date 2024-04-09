@@ -1,0 +1,51 @@
+.page__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all .3s;
+  opacity: 0;
+  transform: translateX(-100%);
+  pointer-events: none;
+  width: 100vw;
+  background-color: $c-grey-light;
+  z-index: 1;
+
+  &__close {
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    top: 17px;
+    right: 12px;
+    position: absolute;
+    background-image: url('../images/icons/Icon-Close.svg');
+  }
+}
+
+.page__menu:target {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.menu {
+  height: 100vh;
+  padding-top: 75px;
+  overflow: scroll;
+  width: 100%;
+  grid-column: span 2;
+
+
+  &__nav {
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    &-item {
+      @extend %h3-font;
+    }
+  }
+}

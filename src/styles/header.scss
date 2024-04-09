@@ -1,0 +1,61 @@
+.header {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include inline-padding;
+
+  @include onTablet {
+    padding-top: 23px;
+  }
+
+  @include onMobile {
+    padding-block: 15px;
+  }
+
+  &__logo {
+    @extend %h2-font;
+
+    letter-spacing: 2px;
+    z-index: 2;
+  }
+
+  &__nav {
+
+    @include onTablet {
+      display: none;
+    }
+
+    &-list {
+      display: flex;
+      gap: 60px;
+    }
+
+    &-item {
+      @extend %s3-font;
+    }
+  }
+
+  &__cart {
+    background-image: url('../images/icons/cart.svg');
+    height: 30px;
+    width: 30px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  &__menu {
+    background-image: url('../images/icons/menu_icon.png');
+    height: 30px;
+    width: 30px;
+
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+}

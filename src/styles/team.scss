@@ -1,0 +1,57 @@
+.team {
+  position: relative;
+  margin-top: 155px;
+
+  @include onTablet {
+    margin-top: 135px;
+  }
+
+  &__title {
+    @extend %h1-font;
+
+    grid-column: span 7;
+  }
+
+  &__text {
+    @extend %s3-font;
+
+    grid-column: 1 / 5;
+    margin-top: 373px;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: 220px;
+    }
+
+    @include onMobile {
+      margin-top: 276px;
+    }
+  }
+
+  &__image {
+    background-image: url('../images/team.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 677px;
+    height: 508px;
+    display: inline-block;
+    margin-top: 138px;
+    display: flex;
+    grid-column-end: span 8;
+
+    @include onTablet {
+      grid-column: 4 / 7;
+      width: 340px;
+      height: 255px;
+      margin-top: 175px;
+    }
+
+    @include onMobile {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      top: 40px;
+    }
+  }
+}
