@@ -1688,24 +1688,25 @@
   &__rectangle {
     position: absolute;
     top: 0;
-    left: -30px;
+    left: calc((260px - 640px) / 2);
     height: 100%;
-    width: calc(100% + 60px);
+    width: 100%;
+    padding-inline: calc((640px - 260px) / 2);
 
     z-index: -1;
     background-color: $yellow;
     clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
 
     @include on-tablet {
-      left: -34px;
-      width: calc(100% + 68px);
+      left: calc((700px - 1280px) / 2);
+      padding-inline: calc((1280px - 700px) / 2);
       clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
     }
 
     @include on-desktop {
-      left: 0;
-      width: calc(100% + 135px);
-      margin-left: -135px;
+      left: -135px;
+      padding-inline: 0;
+      padding-inline-start: 135px;
       clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
     }
   }
