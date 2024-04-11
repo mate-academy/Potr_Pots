@@ -11,8 +11,6 @@
     }
 
     @include on-desktop {
-      background-image: url(../images/bg-rectangle.png);
-      background-repeat: no-repeat;
       background-size: 1035px auto;
     }
   }
@@ -36,6 +34,10 @@
       opacity: 1;
       pointer-events: all;
     }
+  }
+
+  &__main {
+    padding-bottom: 102px;
   }
 
   &:has(.page__menu:target) {
@@ -112,16 +114,52 @@
     width: 28px;
     height: 10px;
     margin-left: 25px;
-    background-image: url(../images/arrow-button.svg);
+    background-image: url(../images/arrow-button-black.svg);
     background-repeat: no-repeat;
     background-position: 50%;
   }
-}
 
-.button--primary--2 {
-  background-color: $color-button-1;
-  color: $color-button-text;
-  border: 1px solid $color-button-1;
+  &--primary {
+    background-color: $color-turquoise;
+    color: $color-button-text-1;
+    border: 1px solid $color-turquoise;
+
+    &:hover {
+      background-color: rgba(3, 131, 158, 0.7);
+    }
+
+    &::after {
+      background-image: url(../images/arrow-button-white.svg);
+    }
+
+    &--2 {
+      background-color: $color-button-1;
+      color: $color-button-text;
+      border: 1px solid $color-button-1;
+    }
+  }
+
+  &--secondary {
+    color: $color-button-text;
+    background-color: $color-button-1;
+
+
+    @include on-tablet {
+      background-color: white;
+      border: 1px solid $color-turquoise;
+
+      &:hover {
+        color: white;
+        background-color: $color-turquoise;
+
+        &::after {
+          background-image: url(../images/arrow-button-white.svg);
+        }
+      }
+    }
+
+
+  }
 }
 
 .potr-pots {
