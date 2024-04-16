@@ -1,6 +1,5 @@
 @import 'utils';
 @import 'fonts';
-@import 'typography';
 @import './header';
 @import './head';
 @import './clients';
@@ -8,10 +7,10 @@
 @import './team';
 @import './materials';
 @import './benefits';
-@import './questions.scss';
-@import './footer.scss';
-@import './menu.scss';
-@import './slider.scss';
+@import './questions';
+@import './footer';
+@import './menu';
+@import './slider';
 
 html {
   scroll-behavior: smooth;
@@ -35,11 +34,11 @@ body {
   background-repeat: no-repeat;
   z-index: -1;
 
-  @include onTablet {
+  @include on-tablet {
     width: 80%;
   }
 
-  @include onMobile {
+  @include on-mobile {
     display: none;
   }
 }
@@ -55,14 +54,14 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
 
-  @include onTablet {
+  @include on-tablet {
     width: 290px;
     height: 183px;
     position: absolute;
     top: 158px;
   }
 
-  @include onMobile {
+  @include on-mobile {
     width: 100%;
     height: 27%;
     top: 585px;
@@ -81,7 +80,7 @@ body {
   font-size: 288px;
   letter-spacing: 44.64px;
 
-  @include onTablet {
+  @include on-tablet {
     font-size: 232px;
     letter-spacing: 36px;
   }
@@ -90,7 +89,7 @@ body {
     font-size: 180px;
   }
 
-  @include onMobile {
+  @include on-mobile {
     display: none;
   }
 
@@ -98,7 +97,7 @@ body {
     left: 72px;
     top: 235px;
 
-    @include onTablet {
+    @include on-tablet {
       top: 191px;
       left: -44px;
     }
@@ -108,7 +107,7 @@ body {
     top: 800px;
     right: 0;
 
-    @include onTablet {
+    @include on-tablet {
       top: 563px;
     }
   }
@@ -120,6 +119,7 @@ body {
   justify-content: center;
   display: flex;
   gap: 10px;
+  cursor: pointer;
 
   &__primary {
     background-color: $c-yellow;

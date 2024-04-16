@@ -3,7 +3,7 @@
   position: relative;
   min-height: 738px;
 
-  @include onTablet {
+  @include on-tablet {
     padding-top: 39px;
     min-height: 610px;
   }
@@ -17,14 +17,14 @@
     position: absolute;
     z-index: -1;
 
-    @include onTablet {
+    @include on-tablet {
       width: 100%;
       height: 78%;
       background-size: unset;
       background-position-y: -80px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       background-image: url('../images/mobQuestions.png');
       height: 100%;
     }
@@ -37,11 +37,11 @@
     width: 238px;
     background-size: contain;
     top: 68px;
-    right: 0px;
+    right: 0;
     opacity: .2;
     background-repeat: no-repeat;
 
-    @include onTablet {
+    @include on-tablet {
       width: 160px;
       height: 160px;
       top: -71px;
@@ -52,7 +52,7 @@
   &__info {
     grid-column: 1 / 5;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 4;
     }
   }
@@ -62,7 +62,7 @@
 
     margin-top: 38px;
 
-    @include onTablet {
+    @include on-tablet {
       margin-top: 19px;
       font-size: 34px;
     }
@@ -75,6 +75,7 @@
 
   &__message {
     @extend %s2-font;
+
     margin-top: 30px;
   }
 
@@ -126,7 +127,7 @@
     flex-direction: column;
     gap: 40px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 5 / 7;
     }
 

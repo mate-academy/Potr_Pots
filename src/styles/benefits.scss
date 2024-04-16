@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
 
-  @include onTablet {
+  @include on-tablet {
     margin-top: 544px;
   }
 
@@ -16,7 +16,7 @@
       "photos photos photos photos photos button button button . . . ."
       "photos photos photos photos photos . value value value value value .";
 
-    @include onTablet {
+    @include on-tablet {
       grid-template-areas:
         "title title title title title title"
         "text text text text text ."
@@ -27,7 +27,7 @@
         "advs advs advs . . ."
     }
 
-    @include onMobile {
+    @include on-mobile {
       display: flex;
       flex-direction: column;
     }
@@ -38,11 +38,11 @@
 
     grid-area: title;
 
-    @include onTablet {
+    @include on-tablet {
       letter-spacing: 3px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       letter-spacing: 6px;
       order: 0;
     }
@@ -54,11 +54,11 @@
 
     grid-area: text;
 
-    @include onTablet {
+    @include on-tablet {
       margin-top: 29px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       order: 1;
     }
   }
@@ -71,12 +71,12 @@
 
     grid-area: options;
 
-    @include onTablet {
+    @include on-tablet {
       margin-top: 36px;
       gap: 61px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       order: 3;
     }
   }
@@ -93,10 +93,11 @@
 
   &__footnote {
     @extend %s3-font;
+
     grid-area: footnote;
     margin-top: 10px;
 
-    @include onMobile {
+    @include on-mobile {
       order: 4;
     }
   }
@@ -110,13 +111,13 @@
     background-position: center;
     background-repeat: no-repeat;
 
-    @include onTablet {
+    @include on-tablet {
       width: 416px;
       height: 337px;
       margin-top: 40px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       width: 100vw;
       margin-inline: -30px;
       order: 2;
@@ -131,7 +132,9 @@
     height: 630px;
     background-image: url('../images/benefits.png');
 
-    @include onTablet {
+    @include hover(transform, scale(1.02));
+
+    @include on-tablet {
       display: none;
     }
   }
@@ -149,11 +152,11 @@
     grid-area: advs;
     margin-top: 265px;
 
-    @include onTablet {
+    @include on-tablet {
       margin-top: 110px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       order: 5;
     }
 
@@ -172,11 +175,11 @@
 
     grid-area: button;
 
-    @include onTablet {
+    @include on-tablet {
       margin-top: 214px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       order: 6;
       margin-top: 50px;
     }
@@ -188,11 +191,11 @@
 
     grid-area: value;
 
-    @include onTablet {
+    @include on-tablet {
       margin-top: 35px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       order: 7;
     }
   }
@@ -202,7 +205,7 @@
 
     color: $c-red;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 24px;
     }
   }
@@ -212,7 +215,7 @@
 
     color: $c-turquoise;
 
-    @include onTablet {
+    @include on-tablet {
       font-size: 18px;
     }
   }

@@ -3,11 +3,11 @@
   position: relative;
   display: grid;
 
-  @include onTablet {
+  @include on-tablet {
     padding-top: 45px;
   }
 
-  @include onMobile {
+  @include on-mobile {
     padding-top: 0;
   }
 
@@ -20,12 +20,12 @@
     bottom: 90px;
     left: 60px;
 
-    @include onTablet {
+    @include on-tablet {
       bottom: 25px;
       left: -40px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       bottom: -185px;
       right: -316px;
 
@@ -33,6 +33,7 @@
 
     &-text {
       @extend %s5-font;
+
       color: $c-turquoise;
     }
 
@@ -53,12 +54,12 @@
     -webkit-text-stroke-color: $c-turquoise;
     min-width: 500px;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 1 / 5;
       min-width: 0;
     }
 
-    @include onMobile {
+    @include on-mobile {
       font-size: 36px;
       line-height: normal;
       letter-spacing: 5.58px;
@@ -79,7 +80,9 @@
     grid-column: span 6;
     grid-row: span 3;
 
-    @include onTablet {
+    @include hover(transform, scale(1.02));
+
+    @include on-tablet {
       width: 306px;
       height: 306px;
       top: 45px;
@@ -88,7 +91,7 @@
       z-index: -1;
     }
 
-    @include onMobile {
+    @include on-mobile {
       top: 0;
       right: 0;
       width: 100%;
@@ -100,12 +103,12 @@
   &__price {
     grid-column: 5 / 7;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 3 / 5;
       max-width: 135px;
     }
 
-    @include onMobile {
+    @include on-mobile {
       margin-top: 30px;
     }
   }
@@ -113,18 +116,20 @@
 
   &__value {
     @extend %s2-font;
+
     font-size: 26px;
   }
 
   &__subprice {
     @extend %s4-font;
+
     color: $c-grey;
   }
 
   &__button {
     grid-column: 4 / 7;
 
-    @include onTablet {
+    @include on-tablet {
       grid-column: 2 / 4;
       margin-top: 28px;
     }
