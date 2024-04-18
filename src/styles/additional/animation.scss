@@ -1,0 +1,52 @@
+.animation {
+  @include on-desktop {
+    &-link {
+      transition: all $effect-duration;
+
+      &:hover {
+        color: $c-red;
+      }
+
+      &:active {
+        color: $c-turquoise;
+      }
+    }
+
+    &-img,
+    &-features {
+      transition: all $effect-duration;
+
+      &:hover {
+        transform: scale(1.05);
+        border-radius: 10px;
+
+        box-shadow: 0 6px 18px -2px rgba(0,0,0,0.55);
+      }
+    }
+
+    &-logo,
+    &-bag {
+      @include hover(transform, scale(1.2));
+    }
+
+    &-social {
+      @include hover(transform, scale(1.5));
+    }
+
+    &-frames {
+      transition: all $effect-duration ease;
+
+      &:hover {
+        z-index: 2;
+
+        transform: rotate(0deg);
+        transform: scale(1.2);
+        transform-origin: center;
+
+        box-shadow: 0 6px 18px -2px rgba(0,0,0,0.55);
+      }
+    }
+  }
+}
+
+

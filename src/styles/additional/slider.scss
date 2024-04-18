@@ -1,0 +1,69 @@
+.slider {
+  position: relative;
+  bottom: -200px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  height: 254px;
+  width: 302px;
+  overflow: hidden;
+
+  margin-inline: 9px;
+
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(5px);
+
+  @include on-tablet {
+    display: none;
+  }
+
+  &__block {
+    position: absolute;
+    left: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding-top: 28px;
+
+    transition: left $effect-duration ease-in-out;
+
+    &-text {
+      display: block;
+      width: 302px;
+
+      max-width: 215px;
+
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0;
+      text-align: left;
+
+      color: $c-grey-light;
+      padding-inline: 45px;
+    }
+  }
+
+  &__switcher {
+    position: absolute;
+    bottom: 37px;
+
+    display: flex;
+    gap: 7px;
+
+    transition: all 0.5s ease-in-out;
+
+    &-rhombus {
+      &--active {
+        stroke: $c-grey-light;
+        fill: rgba($color: $c-black, $alpha: 30%);
+      }
+
+    }
+  }
+}

@@ -1,0 +1,217 @@
+.team {
+  position: relative;
+
+  margin-top: 110px;
+
+  @include on-tablet {
+    margin-top: 130px;
+  }
+
+  @include on-desktop {
+    margin-top: 150px;
+
+    background-image: url(../images/header-bg1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: -1000px;
+    background-position-y: 195px;
+  }
+
+  &__wrapper {
+    @include on-tablet {
+      @include page-grid;
+
+      position: relative;
+    }
+  }
+
+  &__title {
+    display: none;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    text-align: left;
+
+    color: $c-grey-dark-1;
+
+    &--mobile {
+      display: block;
+      padding-inline: 30px;
+    }
+
+    @include on-tablet {
+      margin-bottom: 17px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 27px;
+
+      box-sizing: border-box;
+
+      @include content-padding-in-line;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    background-image: url(../images/team/martin-and-andy.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 240px;
+
+    margin-top: 25px;
+
+    &--mobile {
+      margin-top: 25px;
+
+      width: 100%;
+      height: 240px;
+
+      background-image: url(../images/team/martin-and-andy.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    @include on-tablet {
+      &--mobile {
+        display: none;
+      }
+
+      position: absolute;
+      display: block;
+      grid-column: 4 / -1;
+
+      height: 255px;
+
+      top: 150px;
+      z-index: 0;
+
+      margin-top: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 12;
+
+      margin-right: auto;
+      height: 508px;
+
+    }
+  }
+
+  &__name {
+    display: none;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 232px;
+    font-weight: 400;
+    line-height: 278px;
+    letter-spacing: 0.15em;
+    text-align: left;
+
+    -webkit-text-stroke: 2.5px $c-turquoise;
+    color: transparent;
+
+    @include on-tablet {
+      display: inline-block;
+
+      &-martin {
+        grid-column: 1 / -1;
+        position: relative;
+        left: -75px;
+        z-index: 1;
+
+        background-image: url(../images/header-bg1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: -400px;
+        background-position-y: 95px;
+      }
+
+      &-andy {
+        position: absolute;
+        grid-column: 3 / -1;
+
+        right: -34px;
+        bottom: -75px;
+        z-index: 1;
+
+        font-size: 219px;
+        line-height: 260px;
+      }
+    }
+
+    @include on-desktop {
+      font-size: 288px;
+      line-height: 346px;
+
+      &-martin {
+        left: -50px;
+        background-image: none;
+      }
+
+      &-andy {
+        right: -135px;
+        bottom: -340px;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 30px;
+    padding-bottom: 60px;
+
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+
+    color: $c-grey-dark-2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background-image: url(../images/header-bg1.png);
+      background-repeat: no-repeat;
+      background-position-x: -600px;
+      background-position-y: 95px;
+      z-index: -1;
+    }
+
+    @include on-tablet {
+      @include reset;
+
+      grid-column: 1 / 4;
+
+      position: relative;
+      top: -70px;
+      z-index: 1;
+
+      max-width: 315px;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+
+      max-width: 336px;
+
+      top: 10px;
+    }
+  }
+}

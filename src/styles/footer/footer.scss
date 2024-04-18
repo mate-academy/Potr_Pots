@@ -1,0 +1,336 @@
+.footer {
+  position: relative;
+
+  margin-top: 110px;
+  background-image: url(../images/header-bg1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+
+  @include on-tablet {
+    background-image: url(../images/bg-bottom-tablet.png);
+    background-position-y: -170px;
+    margin-top: 100px;
+
+    padding-bottom: 120px;
+  }
+
+  @include on-desktop {
+    margin-top: 165px;
+
+    background-position-x: -135px;
+    background-position-y: -320px;
+  }
+
+  &-cirle {
+    position: absolute;
+    top: -70px;
+    right: 0;
+
+    width: 149px;
+    height: 170px;
+
+    background-image: url(../images/circle.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 50px;
+
+    @include on-tablet {
+      top: -90px;
+    }
+
+    @include on-desktop {
+      top: -90px;
+      right: 60px;
+
+      width: 161px;
+      height: 164px;
+      background-position-x: center;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__title {
+    margin-top: 45px;
+
+    @include on-tablet {
+      margin-top: 17px;
+
+      grid-column: 1 / 5;
+    }
+
+    @include on-tablet {
+      margin-top: 38px;
+    }
+
+    &-text {
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0;
+
+      @include on-tablet {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 40px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-top: 30px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 5;
+    }
+
+    &-title {
+      font-family: Manrope, sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 36px;
+      letter-spacing: 0;
+
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      margin-top: 25px;
+
+      @include on-tablet {
+        margin-top: 40px;
+      }
+
+      &-input {
+        outline: none;
+        border: none;
+        background-color: transparent;
+
+        border-bottom: 1px solid rgba($color: $c-black, $alpha: 0.3);
+        padding: 0;
+        padding: 0 0 4px 6px;
+
+        font-family: Manrope, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+
+        &::placeholder {
+          font-family: Manrope, sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+
+          color: $c-grey-dark-2;
+        }
+
+        &:hover {
+          border-bottom: 1px solid $c-turquoise;
+        }
+
+        &:focus {
+          border-bottom: 1px solid $c-turquoise;
+        }
+
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:not(:placeholder-shown) {
+          -webkit-text-fill-color: $c-turquoise;
+          -webkit-box-shadow: 0 0 0 100px $c-yellow-light inset;
+        }
+      }
+
+      &-email,
+      &-name {
+        &:invalid {
+          color: $c-red;
+        }
+        &:valid {
+          color: $c-turquoise;
+        }
+      }
+
+      &-message {
+        height: 24px;
+        resize: none;
+
+        &::-webkit-scrollbar-track {
+          background: #e40707;
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    margin-top: 56px;
+
+    font-family: Manrope, sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0;
+    color: $c-black;
+
+    @include on-tablet {
+      grid-column: 5 / -1;
+      position: relative;
+      top: -90px;
+      gap: 20px;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / 10;
+    }
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &-name {
+      opacity: 39%;
+    }
+
+    &-link {
+      font-size: 16px;
+      line-height: 24px;
+      text-decoration: none;
+
+      color: $c-black;
+    }
+  }
+
+  &__bottom {
+    margin-top: 100px;
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: self-start;
+    }
+
+    @include on-desktop {
+      margin-top: 184px;
+    }
+
+    &__address {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-name {
+          font-family: "Bebas Neue", sans-serif;
+          font-size: 24px;
+          line-height: 24px;
+          letter-spacing: 0.15em;
+        }
+
+        &-text {
+          font-family: Manrope, sans-serif;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0;
+          text-decoration: none;
+          color: $c-black;
+        }
+      }
+    }
+
+    &__social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 85px;
+
+      padding-bottom: 35px;
+
+      @include on-tablet {
+        gap: 80px;
+      }
+
+      @include on-desktop {
+        gap: 70px;
+      }
+
+      &-link {
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+
+        @include on-desktop {
+          width: 30px;
+          height: 30px;
+        }
+
+        &--x {
+          background-image: url(../images/icons/x.svg);
+        }
+
+        &--fb {
+          background-image: url(../images/icons/meta.svg);
+
+        }
+
+        &--inst {
+          background-image: url(../images/icons/instagram.svg);
+        }
+      }
+    }
+
+    &__copy {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-name {
+          font-family: "Bebas Neue", sans-serif;
+          font-size: 24px;
+          line-height: 24px;
+          letter-spacing: 0.15em;
+
+          text-decoration: none;
+          color: $c-black;
+        }
+
+        &-text {
+          font-family: Manrope, sans-serif;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0;
+
+          text-decoration: none;
+          color: $c-black;
+        }
+      }
+    }
+  }
+}

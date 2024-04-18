@@ -1,0 +1,188 @@
+.potr-size {
+  margin-top: 310px;
+
+  background-image: url(../images/potr-size.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: 300px;
+
+  @include on-tablet {
+    margin-top: 110px;
+    background-image: none;
+  }
+
+  @include on-desktop {
+    margin-top: 100px;
+  }
+
+  &__wrapper {
+    @include on-tablet {
+      @include page-grid;
+
+      position: relative;
+    }
+
+    @include on-desktop {
+      background-image: none;
+    }
+  }
+
+  &__title {
+    @include on-tablet {
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__pre-text {
+    margin-top: 20px;
+    padding-bottom: 290px;
+
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+
+    color: $c-grey-dark-2;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+
+      margin-top: 30px;
+      padding-bottom: 0;
+      max-width: 653px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 4;
+      margin-top: 65px;
+
+      padding-right: 10px;
+
+      border-right: 1px solid $c-grey-border;
+    }
+  }
+
+  &__sizing {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 30px;
+
+    @include on-tablet {
+      grid-column: span 3;
+
+      margin-top: 38px;
+      gap: 50px;
+    }
+
+    @include on-desktop {
+      grid-column: 4 / 7;
+      margin-top: 65px;
+
+      padding-bottom: 39px;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    max-width: 246px;
+
+    &-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 18px;
+      letter-spacing: 0.15em;
+
+      color: $c-black;
+    }
+
+    &-text {
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0;
+
+      color: $c-grey-dark-2;
+
+      &--Manrope {
+        display: none;
+
+        @include on-tablet {
+          display: inline-block;
+        }
+
+        @include on-desktop {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+
+    &-link {
+      display: none;
+
+      @include on-tablet {
+        position: absolute;
+
+        justify-self: flex-end;
+        display: flex;
+
+        grid-column: 3 / -1;
+
+        margin-left: 35px;
+        margin-top: 170px;
+
+        max-height: 355px;
+      }
+
+      @include on-desktop {
+        grid-column: 7 / -1;
+        margin-top: 110px;
+
+        max-height: none;
+      }
+    }
+  }
+
+  &__description {
+    position: relative;
+
+    margin-top: 15px;
+
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+
+    color: $c-grey-dark-2;
+
+    &::before {
+      content: "*";
+      position: absolute;
+      left: -10px;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / -1;
+
+      margin-top: 130px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 7;
+
+      margin-top: 70px;
+      margin-left: 10px;
+    }
+  }
+}

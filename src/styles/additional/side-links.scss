@@ -1,0 +1,162 @@
+.side-link {
+  &__left {
+    display: inline-flex;
+    align-items: start;
+    gap: 25px;
+
+    font-family: Manrope, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+
+    max-height: 20px;
+    text-decoration: none;
+    color: $c-turquoise;
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+
+    &--desktop {
+      display: none;
+    }
+
+    &--320px-1024px {
+      position: absolute;
+      bottom: -68px;
+      right: 25px;
+
+
+      @include on-tablet {
+        right: auto;
+        bottom: 120px;
+        left: -130px;
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    @include on-desktop {
+      &--desktop {
+        position: absolute;
+        bottom: 20px;
+        left: -160px;
+
+        display: inline-flex;
+      }
+    }
+  }
+
+  &__right {
+    display: none;
+
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+
+    color: $c-grey-dark-3;
+    text-decoration: none;
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.64px;
+
+    transform: rotate(90deg);
+
+    &--rectangle {
+      height: 1px;
+      background-color: $c-grey-dark-3;
+      width: 65px;
+    }
+
+    &--mobile {
+      display: flex;
+
+      position: absolute;
+      right: -85px;
+      bottom: 15%;
+
+      @include on-tablet {
+        display: none;
+      }
+    }
+
+    &--320px-1024px {
+      @include on-tablet {
+        display: flex;
+
+        position: absolute;
+        right: -45px;
+        bottom: 70px;
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+
+    @include on-desktop {
+      &--desktop {
+        position: absolute;
+        bottom: -225px;
+        right: -60px;
+        z-index: 2;
+
+        display: inline-flex;
+
+        &-left {
+          display: inline-flex;
+          position: absolute;
+          transform: rotate(-90deg);
+          transform-origin: left top;
+        }
+      }
+    }
+
+    &--tablet {
+      @include on-tablet {
+        &-left {
+          display: flex;
+          position: absolute;
+          left: -55px;
+        }
+
+        &-right {
+          display: flex;
+          position: absolute;
+          right: -55px;
+          top: 65px;
+          z-index: 2;
+        }
+      }
+
+      @include on-desktop {
+        &-left,
+        &-right {
+          display: none;
+        }
+      }
+    }
+
+    &-features {
+      display: none;
+
+      @include on-tablet {
+        position: absolute;
+        display: inline-flex;
+        top: 92px;
+        right: -85px;
+        z-index: 2;
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+  }
+}

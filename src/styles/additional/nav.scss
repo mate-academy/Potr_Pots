@@ -1,0 +1,56 @@
+.nav {
+  display: none;
+
+  &__link {
+    text-decoration: none;
+    color: $c-grey-light;
+
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    &--basket {
+      position: relative;
+
+      &::after {
+        content: "0";
+        position: absolute;
+        top: 0;
+        right: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: $c-red;
+
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 9px;
+        line-height: 11px;
+        letter-spacing: 0.15em;
+      }
+    }
+  }
+
+  @include on-desktop {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+
+    &__link {
+      color: $c-grey-dark-2;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-top: 140px;
+  }
+}
