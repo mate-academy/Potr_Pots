@@ -1,0 +1,51 @@
+.page {
+  scroll-behavior: smooth;
+  background-color: $c-grey-light;
+
+  &::-webkit-scrollbar {
+    height: 9px;
+    width: 9px;
+
+    &-thumb {
+      border-radius: 20px;
+      background-color: $c-turquoise;
+
+      &:active {
+        background-color: #03719e;
+      }
+    }
+
+    &-track {
+      border-radius: 20px;
+      background-color: $c-yellow-light;
+    }
+  }
+
+  &__body {
+    min-width: 320px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: all $effect-duration;
+    transform: translateX(100%);
+    pointer-events: none;
+
+    z-index: 10;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+}
