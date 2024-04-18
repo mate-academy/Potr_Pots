@@ -36,7 +36,7 @@ function smallSliderBrain(rhombusClick) {
     const rhomb = rhombus[key];
 
     if (rhomb.classList.length > 1) {
-      rhomb.classList.remove(rhomb.classList[1]);
+      rhomb.classList.remove('slider__switcher-rhombus--active');
     }
   }
 
