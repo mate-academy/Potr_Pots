@@ -10,15 +10,20 @@
     padding-bottom: 25px;
   }
 
-  &__social {
-    display: flex;
-    gap: 70px;
+  &__middle {
     place-self: center;
     grid-column: 5 / 8;
+    display: flex;
+    flex-direction: column;
 
     @include on-tablet {
       grid-column: 3 / 5;
     }
+  }
+
+  &__social {
+    display: flex;
+    gap: 70px;
   }
 
   &__about {
@@ -64,11 +69,7 @@
     @extend %h2-font;
 
     margin-top: 70px;
-    grid-column: 6 / 7;
-
-    @include on-mobile {
-      align-self: center;
-    }
+    align-self: center;
   }
 
   &__mobile {
@@ -80,4 +81,3 @@
     }
   }
 }
-

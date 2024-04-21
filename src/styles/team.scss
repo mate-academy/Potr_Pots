@@ -15,8 +15,9 @@
   &__text {
     @extend %s3-font;
 
+    grid-row: 2;
     grid-column: 1 / 5;
-    margin-top: 373px;
+    margin-top: 380px;
 
     @include on-tablet {
       grid-column: 1 / 4;
@@ -24,7 +25,7 @@
     }
 
     @include on-mobile {
-      margin-top: 276px;
+      margin-top: calc(100vw)
     }
   }
 
@@ -34,9 +35,10 @@
     background-size: contain;
     width: 677px;
     height: 508px;
-    margin-top: 138px;
+    margin-top: 160px;
     display: flex;
-    grid-column-end: span 8;
+    grid-column: 5 / 12;
+    grid-row: 2;
 
     @include hover(transform, scale(1.02));
 
@@ -52,7 +54,8 @@
       left: 0;
       right: 0;
       width: 100%;
-      top: 40px;
+      height: 100%;
+      top: 30px;
     }
   }
 }
