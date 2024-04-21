@@ -1,7 +1,170 @@
 @import 'utils';
 @import 'fonts';
-@import 'typography';
+@import './header';
+@import './head';
+@import './clients';
+@import './features';
+@import './team';
+@import './materials';
+@import './benefits';
+@import './questions';
+@import './footer';
+@import './menu';
+@import './slider';
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: $c-gray;
+  background: $c-grey-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.figure {
+  background-image: url('../images/headerFigure.png');
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72%;
+  height: 73%;
+  background-repeat: no-repeat;
+  z-index: -1;
+
+  @include on-tablet {
+    width: 80%;
+  }
+
+  @include on-mobile {
+    display: none;
+  }
+}
+
+.bottom-figure {
+  background-image: url('../images/team_figure.png');
+  width: 435px;
+  height: 310px;
+  position: absolute;
+  left: 0;
+  top: 185px;
+  z-index: -2;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include on-tablet {
+    width: 290px;
+    height: 183px;
+    position: absolute;
+    top: 158px;
+  }
+
+  @include on-mobile {
+    width: 100%;
+    height: 27%;
+    top: 585px;
+  }
+}
+
+.name {
+  position: absolute;
+  z-index: 1;
+
+  @extend %h1-font;
+
+  color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $c-turquoise;
+  font-size: 288px;
+  letter-spacing: 44.64px;
+
+  @include on-tablet {
+    font-size: 232px;
+    letter-spacing: 36px;
+  }
+
+  @media (max-width: 714px) {
+    font-size: 180px;
+  }
+
+  @include on-mobile {
+    display: none;
+  }
+
+  &-martin {
+    left: 72px;
+    top: 235px;
+
+    @include on-tablet {
+      top: 191px;
+      left: -44px;
+    }
+  }
+
+  &-andy {
+    top: 800px;
+    right: 0;
+
+    @include on-tablet {
+      top: 563px;
+    }
+  }
+}
+
+.button {
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+
+  &__primary {
+    background-color: $c-yellow;
+
+    &:hover {
+      background-color: $c-yellow-light;
+    }
+  }
+
+  &__primary2 {
+    background-color: $c-turquoise;
+
+    &:hover {
+      opacity: .4;
+    }
+  }
+
+  &__secondary {
+    background-color: transparent;
+    border: 1px $c-turquoise solid;
+
+    &:hover {
+      background-color: $c-turquoise;
+    }
+  }
+
+  &__text {
+    @extend %button-font;
+  }
+
+  &__img {
+    background-image: url('../images/icons/ArrowRight.svg');
+    height: 7px;
+    width: 29px;
+  }
+}
+
+.wrapper {
+  @include inline-padding;
+  @include page-grid;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px $c-yellow-light inset !important;
 }

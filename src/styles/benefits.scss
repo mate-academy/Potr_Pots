@@ -1,0 +1,222 @@
+.benefits {
+  margin-top: 1060px;
+  display: flex;
+  flex-direction: column;
+
+  @include on-tablet {
+    margin-top: 544px;
+  }
+
+  &__grid {
+    grid-template-areas:
+      "title title title title title title title . . . . . "
+      "text text text options options options image image image image image image"
+      "footnote footnote footnote footnote footnote footnote image image image image image image "
+      "photos photos photos photos photos advs advs advs advs advs advs advs"
+      "photos photos photos photos photos button button button . . . ."
+      "photos photos photos photos photos . value value value value value .";
+
+    @include on-tablet {
+      grid-template-areas:
+        "title title title title title title"
+        "text text text text text ."
+        "options options options image image image"
+        "footnote footnote footnote footnote footnote footnote"
+        "advs advs advs button button button "
+        "advs advs advs value value  ."
+        "advs advs advs . . ."
+    }
+
+    @include on-mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    @extend %h2-font;
+
+    grid-area: title;
+
+    @include on-tablet {
+      letter-spacing: 3px;
+    }
+
+    @include on-mobile {
+      letter-spacing: 6px;
+      order: 0;
+    }
+  }
+
+
+  &__text {
+    @extend %s3-font;
+
+    grid-area: text;
+
+    @include on-tablet {
+      margin-top: 29px;
+    }
+
+    @include on-mobile {
+      order: 1;
+    }
+  }
+
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    grid-area: options;
+
+    @include on-tablet {
+      margin-top: 36px;
+      gap: 61px;
+    }
+
+    @include on-mobile {
+      order: 3;
+    }
+  }
+
+  &__option {
+    &__name {
+      @extend %h4-font;
+    }
+
+    &__desc {
+      @extend %s3-font;
+    }
+  }
+
+  &__footnote {
+    @extend %s3-font;
+
+    grid-area: footnote;
+    margin-top: 10px;
+
+    @include on-mobile {
+      order: 4;
+    }
+  }
+
+  &__image {
+    background-image: url('../images/size_image.jpeg');
+    background-size: contain;
+    grid-area: image;
+    width: 528px;
+    height: 427px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include on-tablet {
+      width: 416px;
+      height: 337px;
+      margin-top: 40px;
+    }
+
+    @include on-mobile {
+      width: 100vw;
+      margin-inline: -30px;
+      order: 2;
+    }
+  }
+
+  &__photos {
+    margin-top: 96px;
+    grid-area: photos;
+    background-size: contain;
+    width: 462px;
+    height: 630px;
+    background-image: url('../images/benefits.png');
+
+    @include hover(transform, scale(1.02));
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__profits {
+    grid-column: 6 / 13;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 44px;
+    list-style: initial;
+    align-content: center;
+    grid-area: advs;
+    margin-top: 265px;
+
+    @include on-tablet {
+      margin-top: 110px;
+    }
+
+    @include on-mobile {
+      order: 5;
+    }
+
+    &__name {
+      @extend %s1-font;
+    }
+
+    &__desc {
+      @extend %s3-font;
+    }
+  }
+
+  &__button {
+    margin-top: 60px;
+    width: 238px;
+
+    grid-area: button;
+
+    @include on-tablet {
+      margin-top: 214px;
+    }
+
+    @include on-mobile {
+      order: 6;
+      margin-top: 50px;
+    }
+  }
+
+
+  &__value {
+    margin-top: 73px;
+
+    grid-area: value;
+
+    @include on-tablet {
+      margin-top: 35px;
+    }
+
+    @include on-mobile {
+      order: 7;
+    }
+  }
+
+  &__discount {
+    @extend %h2-font;
+
+    color: $c-red;
+
+    @include on-tablet {
+      font-size: 24px;
+    }
+  }
+
+  &__promo {
+    @extend %h3-font;
+
+    color: $c-turquoise;
+
+    @include on-tablet {
+      font-size: 18px;
+    }
+  }
+}

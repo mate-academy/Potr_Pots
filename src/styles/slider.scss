@@ -1,0 +1,55 @@
+.slider-container {
+  overflow: hidden;
+  display: none;
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  top: 370px;
+
+
+  @include on-mobile {
+    display: block;
+  }
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+  background: #00000073;
+  box-shadow: 0 3px 2px 0 #00000026;
+  backdrop-filter: blur(17px);
+  padding: 28px 45px;
+  height: 270px;
+
+  @extend %s3-font;
+
+  color: $c-grey-light;
+}
+
+.dots-container {
+  text-align: center;
+  position: absolute;
+  bottom: 26px;
+  left: 0;
+  right: 0;
+
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: $c-grey;
+  transform: rotate(45deg);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  border: 1px $c-grey solid;
+  background-color: #333;
+}

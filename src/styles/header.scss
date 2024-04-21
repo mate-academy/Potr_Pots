@@ -1,0 +1,59 @@
+.header {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include inline-padding;
+
+  @include on-tablet {
+    padding-top: 23px;
+  }
+
+  @include on-mobile {
+    padding-block: 15px;
+  }
+
+  &__logo {
+    @extend %h2-font;
+
+    letter-spacing: 2px;
+  }
+
+  &__nav {
+    @include on-tablet {
+      display: none;
+    }
+
+    &-list {
+      display: flex;
+      gap: 60px;
+    }
+
+    &-item {
+      @extend %s3-font;
+    }
+  }
+
+  &__cart {
+    background-image: url('../images/icons/cart.svg');
+    height: 30px;
+    width: 30px;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__menu {
+    background-image: url('../images/icons/menu_icon.png');
+    height: 30px;
+    width: 30px;
+
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+  }
+}

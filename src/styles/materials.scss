@@ -1,0 +1,230 @@
+.materials {
+  margin-top: 226px;
+  position: relative;
+
+
+  @include on-tablet {
+    margin-top: 150px;
+  }
+
+  &__title {
+    @extend %h1-font;
+
+    color: $c-turquoise;
+
+    position: absolute;
+    left: 135px;
+    font-size: 139px;
+    letter-spacing: 16.7px;
+    line-height: 170px;
+
+    @include on-tablet {
+      font-size: 80px;
+      letter-spacing: 9.6px;
+      line-height: normal;
+      left: 30px;
+    }
+
+    @include on-mobile {
+      font-size: 58px;
+      letter-spacing: 8.99px;
+    }
+  }
+
+
+  &__image {
+    background-image: url('../images/materials.png');
+    background-size: cover;
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 165px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include on-tablet {
+      background-size: contain;
+      top: 13px;
+    }
+
+    @include on-mobile {
+      top: -265px;
+    }
+  }
+
+  &__img {
+    margin-left: -135px;
+    width: calc(100% + 270px);
+    min-height: 500px;
+    position: absolute;
+  }
+
+  &__info {
+    grid-column: 8 / 13;
+    display: flex;
+    flex-direction: column;
+    margin-top: 172px;
+    gap: 15px;
+    z-index: 0;
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+    }
+  }
+
+  &__text {
+    @extend %s4-font;
+
+    font-size: 20px;
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__subtext {
+    @extend %s3-font;
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__button {
+    width: 51px;
+    height: 51px;
+    background-image: url('../images/button+.png');
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+
+    @include on-mobile {
+      display: none;
+    }
+
+    &-hide {
+      background-image: url('../images/button-.png');
+    }
+
+    &-1 {
+      top: 88%;
+      left: 18%;
+
+      @include on-tablet {
+        top: 62%;
+        left: 11%;
+      }
+    }
+
+    &-2 {
+      top: 63%;
+      left: 38%;
+
+      @include on-tablet {
+        top: 51%;
+        left: 30%;
+      }
+    }
+
+    &-3 {
+      top: 93%;
+      left: 47%;
+
+      @include on-tablet {
+        top: 65%;
+        left: 44%;
+      }
+    }
+
+    &-4 {
+      top: 76%;
+      left: 58%;
+
+      @include on-tablet {
+        top: 60%;
+        left: 54%;
+      }
+    }
+
+    &-5 {
+      top: 66%;
+      left: 77%;
+
+      @include on-tablet {
+        top: 43%;
+        left: 73%;
+      }
+    }
+  }
+
+  &__dialogue {
+    background: rgba(0, 0, 0, 0.40);
+    backdrop-filter: blur(20px);
+    position: absolute;
+    width: 283px;
+    padding: 35px;
+    opacity: 0;
+    transition: all 0.4ms ease-in;
+    z-index: 1;
+
+    &-text {
+      @extend %s3-font;
+
+      color: $c-grey-light;
+    }
+
+    &-active {
+      opacity: 1;
+    }
+
+    &-1 {
+      top: 70%;
+      left: 10%;
+
+      @include on-tablet {
+        top: 46%;
+        left: 2%;
+      }
+    }
+
+    &-2 {
+      top: 45%;
+      left: 19%;
+
+      @include on-tablet {
+        top: 34%;
+      }
+    }
+
+    &-3 {
+      top: 77%;
+      left: 26%;
+
+      @include on-tablet {
+        top: 45%;
+      }
+    }
+
+    &-4 {
+      top: 52%;
+      left: 50%;
+
+      @include on-tablet {
+        top: 39%;
+        left: 44%;
+      }
+    }
+
+    &-5 {
+      top: 75%;
+      left: 69%;
+
+      @include on-tablet {
+        top: 48%;
+        left: 59%;
+      }
+    }
+  }
+}

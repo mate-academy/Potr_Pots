@@ -1,0 +1,146 @@
+.questions {
+  padding-top: 179px;
+  position: relative;
+  min-height: 738px;
+
+  @include on-tablet {
+    padding-top: 39px;
+    min-height: 610px;
+  }
+
+  &__figure {
+    background-image: url('../images/questionsFigure.png');
+    width: 91%;
+    height: 77%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+
+    @include on-tablet {
+      width: 100%;
+      height: 78%;
+      background-size: unset;
+      background-position-y: -80px;
+    }
+
+    @include on-mobile {
+      background-image: url('../images/mobQuestions.png');
+      background-size: cover;
+      height: 122%;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    }
+  }
+
+  &__circle {
+    position: absolute;
+    background-image: url('../images/questionsCircle.png');
+    height: 238px;
+    width: 238px;
+    background-size: contain;
+    top: 68px;
+    right: 0;
+    opacity: .2;
+    background-repeat: no-repeat;
+
+    @include on-tablet {
+      width: 160px;
+      height: 160px;
+      top: -71px;
+      background-position-x: 39px;
+    }
+  }
+
+  &__info {
+    grid-column: 1 / 5;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+    }
+  }
+
+  &__title {
+    @extend %h2-font;
+
+    margin-top: 38px;
+
+    @include on-tablet {
+      margin-top: 19px;
+      font-size: 34px;
+    }
+  }
+
+  &__ways {
+    @extend %s3-font;
+  }
+
+
+  &__message {
+    @extend %s2-font;
+
+    margin-top: 30px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+
+    &-item {
+      @extend %s3-font;
+
+      background-color: transparent;
+      border-bottom: 1px $c-grey solid;
+
+      outline: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      &-error {
+        border-bottom: 1px $c-red solid;
+      }
+
+      &-success {
+        border-bottom: 1px $c-turquoise solid;
+      }
+    }
+  }
+
+  &__button {
+    width: 240px;
+  }
+
+  &__dialog {
+    position: absolute;
+    bottom: -60px;
+    background-color: transparent;
+    display: none;
+
+    @extend %h3-font;
+  }
+
+  &__contacts {
+    margin-top: 85px;
+    grid-column: 7 / 12;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include on-tablet {
+      grid-column: 5 / 7;
+    }
+
+    &__type {
+      @extend %s2-font;
+
+      color: #00000063;
+    }
+
+    &__text {
+      @extend %s3-font;
+    }
+  }
+}

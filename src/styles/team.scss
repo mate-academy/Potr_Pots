@@ -1,0 +1,61 @@
+.team {
+  position: relative;
+  margin-top: 155px;
+
+  @include on-tablet {
+    margin-top: 135px;
+  }
+
+  &__title {
+    @extend %h1-font;
+
+    grid-column: span 7;
+  }
+
+  &__text {
+    @extend %s3-font;
+
+    grid-row: 2;
+    grid-column: 1 / 5;
+    margin-top: 380px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      margin-top: 220px;
+    }
+
+    @include on-mobile {
+      margin-top: calc(100vw)
+    }
+  }
+
+  &__image {
+    background-image: url('../images/team.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 677px;
+    height: 508px;
+    margin-top: 160px;
+    display: flex;
+    grid-column: 5 / 12;
+    grid-row: 2;
+
+    @include hover(transform, scale(1.02));
+
+    @include on-tablet {
+      grid-column: 4 / 7;
+      width: 340px;
+      height: 255px;
+      margin-top: 175px;
+    }
+
+    @include on-mobile {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      top: 30px;
+    }
+  }
+}

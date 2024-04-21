@@ -3,5 +3,7 @@ module.exports = {
   plugins: [
     "stylelint-scss"
   ],
-  rules: {}
+  rules: {
+    "declaration-block-no-redundant-longhand-properties": null,
+  }
 };

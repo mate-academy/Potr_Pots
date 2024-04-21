@@ -1,0 +1,302 @@
+.clients {
+  margin-top: 150px;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 0 30px;
+  grid-template-areas:
+    "title title title . . . . . . . . ."
+    "pot pot pot pot pot . info info info info info ."
+    ". cactus cactus cactus cactus . . breast breast breast breast breast"
+    ". bottom bottom bottom bottom . . bottom-right bottom-right bottom-right bottom-right bottom-right";
+
+  @include inline-padding;
+
+  @include on-tablet {
+    margin-top: 115px;
+
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0 20px;
+    grid-template-areas:
+      "title title title . . ."
+      "pot pot pot info info info"
+      "cactus cactus cactus bottom bottom bottom"
+      "breast breast bottom-right bottom-right bottom-right bottom-right";
+  }
+
+  @include on-mobile {
+    display: flex;
+    flex-direction: column;
+    margin-top: 93px;
+  }
+
+  &__title {
+    @extend %h2-font;
+
+    grid-area: title;
+  }
+
+
+  &__number {
+    width: 62px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &-one {
+      margin-top: 63px;
+      background-image: url('../images/icons/one.svg');
+
+      @include on-mobile {
+        height: 62px;
+        margin-top: 10px;
+      }
+    }
+
+    &-two {
+      height: 39px;
+      background-image: url('../images/icons/two.svg');
+    }
+
+    &-three {
+      background-image: url('../images/icons/three.svg');
+
+      @include on-mobile {
+        height: 62px;
+      }
+    }
+  }
+
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transform: rotate(90deg);
+    top: 62px;
+    right: 62px;
+    position: absolute;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    &-bottom {
+      top: 1700px;
+      left: 70px;
+      right: auto;
+    }
+
+    &-line {
+      background-color: $c-st-grey;
+      width: 65px;
+      height: 1px;
+    }
+
+    &-title {
+      @extend %h4-font;
+
+      font-size: 12px;
+      color: $c-st-grey;
+    }
+  }
+
+  &__pot {
+    background-image: url('../images/clients_pot.png');
+    height: 500px;
+    width: 500px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 35px;
+    grid-area: pot;
+
+    @include hover(transform, scale(1.02));
+
+    @include on-tablet {
+      width: 284px;
+      height: 284px;
+      background-size: contain;
+      grid-column: 1 / 3;
+    }
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+
+
+  &__info-left {
+    align-items: baseline;
+    gap: 6px;
+    margin-top: 212px;
+    justify-self: end;
+    display: inline-flex;
+  }
+
+  &__info-right {
+    grid-column: 8 / 12;
+    margin-top: 154px;
+  }
+
+
+  &__info {
+    display: flex;
+    gap: 75px;
+    margin-top: 155px;
+    grid-area: info;
+
+    @include on-tablet {
+      grid-column: 3 / 7;
+      gap: 31px;
+      margin-top: 5px;
+    }
+
+    @include on-mobile {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    &__name {
+      @extend %s3-font;
+
+      @include on-mobile {
+        display: none;
+      }
+    }
+
+    &__title {
+      @extend %h2-font;
+
+      margin-top: 40px;
+      display: flex;
+      align-items: self-end;
+    }
+
+    &__subtitle {
+      @extend %s3-font;
+
+      margin-top: 10px;
+    }
+  }
+
+  &__cactus {
+    background-image: url('../images/clients_cactus.png');
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 417px;
+    margin-top: 155px;
+    grid-area: cactus;
+    background-size: contain;
+
+    @include hover(transform, scale(1.02));
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__breast {
+    background-image: url('../images/clients_breast.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 470px;
+    height: 670px;
+    margin-top: 80px;
+    grid-area: breast;
+
+    @include hover(transform, scale(1.02));
+
+    @include on-tablet {
+      width: 284px;
+      height: 405px;
+    }
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__star {
+    @extend %s2-font;
+
+    grid-column: 1;
+    margin-top: 620px;
+
+    &-right {
+      grid-column: 7;
+      justify-self: end;
+      margin-top: 765px;
+    }
+  }
+
+  &__bottom {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    grid-area: bottom;
+    gap: 25px;
+
+    &-right {
+      gap: 50px;
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      grid-area: bottom-right;
+    }
+
+    &__name {
+      @extend %s3-font;
+
+      @include on-mobile {
+        display: none;
+      }
+    }
+
+    &__title {
+      @extend %h2-font;
+
+      margin-top: 27px;
+      min-width: 378px;
+
+      @include on-tablet {
+        min-width: 0;
+      }
+
+      @include on-mobile {
+        margin-top: 0;
+      }
+
+      &-right {
+        margin-top: 0;
+      }
+    }
+
+    &__subtitle {
+      @extend %s5-font;
+
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    &-left {
+      grid-column: 2 / 5;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__container {
+      display: flex;
+      gap: 70px;
+
+      @include on-mobile {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  }
+}
