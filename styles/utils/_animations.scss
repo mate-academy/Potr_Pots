@@ -1,0 +1,44 @@
+@mixin icon-animation {
+  transition: 0.3s ease-in-out;
+
+
+  &:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+      }
+}
+
+
+@mixin photo-animation {
+  @media (min-width: 1260px) {
+    transform: scale(1);
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    }
+  }
+}
+
+@mixin cross-animation {
+    transform: rotate(0);
+    transition: transform 0.5s ease-in-out;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+
+}
+
+@keyframes arrow-animation {
+  0% {
+    background-position: 161px center; /* Initial position */
+  }
+  50% {
+    background-position: 175px center; /* Midway position */
+  }
+  100% {
+    background-position: 161px center; /* Final position */
+  }
+}
