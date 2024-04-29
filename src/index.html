@@ -8,13 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.scss">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../src/images/icons/favicon.svg"
+    >
   </head>
   <body class="page__body">
     <header class="header page__header" id="header">
       <div class="header__content">
         <div class="container">
           <div class="header__top">
-            <a href="#" class="header__top-title title-style-1">
+            <a href="#main" class="title-style-1 header__top-title">
               POTR POTS
             </a>
 
@@ -59,8 +64,14 @@
               <p class="price">$ 7,50</p>
               <p class="text price__text">Get the second order in half price</p>
             </div>
-            <a href="#" class="button header__button button--primary--2">Buy now</a>
-            <a href="#" class="text header__more-about">More about POTR POTS</a>
+            <a href="#" class="
+              button
+              button--primary--2
+              header__button"
+            >
+              Buy now
+            </a>
+            <a href="#for-whom" class="text header__more-about">More about POTR POTS</a>
           </div>
         </div>
       </div>
@@ -96,9 +107,9 @@
       </div>
     </aside>
 
-    <main class="main page__main">
+    <main class="main page__main" id="main">
       <div class="container">
-        <section class="for-whom">
+        <section class="for-whom" id="for-whom">
           <h2 class="title-style-1 for-whom__title">For whom?</h2>
 
           <div class="for-whom__wrapper">
@@ -328,7 +339,7 @@
         </div>
 
         <div class="materials__flip">
-          <ul class="materials__flip--items">
+          <ul class="materials__flip-items">
             <li class="
               text
               materials__flip-item
@@ -531,6 +542,8 @@
               of two categories
             </p>
 
+            <div class="potr-size__line"></div>
+
             <img
               src="../../Potr_Pots/src/images/potr-size-image.png"
               alt="potr-size-image"
@@ -652,6 +665,7 @@
                 action="#"
                 method="post"
                 class="questions__form"
+                onsubmit="this.reset(); return false;"
               >
                 <p class="text questions__form-title">
                   Message us
@@ -683,6 +697,7 @@
                   button
                   button--primary
                   questions__form-button"
+                  type="submit"
                 >
                   Submit
                 </button>
@@ -703,7 +718,7 @@
               <div class="questions__contacts-item">
                 <p class="text questions__contacts-title">Our office</p>
                 <a
-                  href="#"
+                  href="https://www.google.com/maps/place/99+Staple+Hill+Rd,+Bristol+BS16+5AD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/@51.4818542,-2.5210937,17z/data=!3m1!4b1!4m6!3m5!1s0x48718fe6a41edcc5:0x1d95fb4b9dab9646!8m2!3d51.4818509!4d-2.5185188!16s%2Fg%2F11c3q2n48n?entry=ttu"
                   class="text questions__contacts-subtitle"
                   target="_blank"
                 >
@@ -725,18 +740,30 @@
         <div class="footer__wrapper">
           <div class="footer__address">
             <p class="title-style-1 footer__title">address</p>
-            <a href="#" class="text footer__subtitle">
+            <a href="https://www.google.com/maps/place/99+Staple+Hill+Rd,+Bristol+BS16+5AD,+%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B1%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%B8%D1%8F/@51.4818542,-2.5210937,17z/data=!3m1!4b1!4m6!3m5!1s0x48718fe6a41edcc5:0x1d95fb4b9dab9646!8m2!3d51.4818509!4d-2.5185188!16s%2Fg%2F11c3q2n48n?entry=ttu" class="text footer__subtitle">
               United Kingdom 99 Staple Hill Road, Bristol, BS16 5AD
             </a>
 
           </div>
           <div class="footer__center">
             <div class="footer__icons">
-              <a href="#" class="footer__icon footer__icon--twit"></a>
-              <a href="#" class="footer__icon footer__icon--inst"></a>
-              <a href="#" class="footer__icon footer__icon--fb"></a>
+              <a
+                href="https://twitter.com/"
+                class="footer__icon footer__icon--twit"
+                target="_blank"
+              ></a>
+              <a
+                href="https://www.instagram.com/"
+                class="footer__icon footer__icon--inst"
+                target="_blank"
+              ></a>
+              <a
+                href="https://facebook.com/"
+                class="footer__icon footer__icon--fb"
+                target="_blank"
+              ></a>
             </div>
-            <div class="title-style-1 footer__logo">potrpots</div>
+            <a href="#main" class="title-style-1 footer__logo">potrpots</a>
             <div class="
               text
               footer__subtitle

@@ -100,18 +100,28 @@
       background: transparent;
 
       &:not(:last-child) {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+      }
+
+      &::placeholder {
+        color: $color-gray-2;
       }
 
       &:focus {
         border-bottom: 1px solid rgba(3, 131, 158, 1);
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        transition: all 5000s ease-in-out 0s;
       }
     }
 
     &-textarea {
       display: block;
       width: 100%;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
       padding: 0 0 4px 6px;
       font-weight: 400;
       font-size: 16px;
@@ -125,6 +135,12 @@
 
       &:focus {
         border-bottom: 1px solid rgba(3, 131, 158, 1);
+      }
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        transition: all 5000s ease-in-out 0s;
       }
     }
 
@@ -175,6 +191,8 @@
       line-height: 24px;
       color: $main-title-text-color;
       text-decoration: none;
+
+      @include hover(scale, 1.2);
     }
   }
 }

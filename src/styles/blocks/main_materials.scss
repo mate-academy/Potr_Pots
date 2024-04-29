@@ -105,7 +105,7 @@
       }
     }
 
-    &--items {
+    &-items {
       // position: relative;
       // transition-property: left;
       // transition-duration: 0.3s;
@@ -130,11 +130,14 @@
       background-color: $menu-text-color;
       transform: rotate(45deg);
 
+      &:hover {
+        cursor: pointer;
+      }
+
       &--active {
         border: 1px solid $menu-text-color;
         background: rgba(0, 0, 0, 0.3);
       }
-
     }
   }
 
@@ -201,10 +204,12 @@
 
     &-text {
       position: relative;
-      display: none;
       width: 283px;
       padding-inline: 35px;
       padding-block: 35px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s;
 
       @extend %text;
 
@@ -216,8 +221,9 @@
       box-shadow: 3px 2px rgba(0, 0, 0, 0.15);
 
       &--active {
-        display: block;
         z-index: 2;
+        opacity: 1;
+        transition: opacity 0.3s;
       }
     }
 
@@ -227,7 +233,12 @@
       height: 51px;
       border-radius: 50%;
       background-image: url(../images/icons/materials-button--default.svg);
+      transition: background-image 0.3s;
       z-index: 1;
+
+      &:hover {
+        cursor: pointer;
+      }
 
       &--1 {
         bottom: 250px;
@@ -281,6 +292,7 @@
 
       &--active {
         background-image: url(../images/icons/materials-button--active.svg);
+        transition: background-image 0.3s;
       }
     }
   }
