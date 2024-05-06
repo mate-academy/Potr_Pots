@@ -1,0 +1,110 @@
+.point {
+  width: 51px;
+  height: 51px;
+  background-image: url(../images/icons/icon-point.svg);
+  display: none;
+
+  position: absolute;
+
+  transition: background-image .5s ease;
+  cursor: pointer;
+
+  @include on-tablet {
+    display: block;
+  }
+
+  &:hover {
+    background-image: url(../images/icons/icon-point-focus.svg);
+  }
+
+  &__content {
+    min-width: 300px;
+    padding: 35px;
+
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+
+    pointer-events: none;
+    transition: all .5s ease;
+
+    &--count--1 {
+      transform: translateX(-20%) translateY(-120%);
+      opacity: 0;
+    }
+
+    &--count--2 {
+      transform: translateX(-40%) translateY(-120%);
+      opacity: 0;
+    }
+
+    &--count--3 {
+      transform: translateX(-40%) translateY(-110%);
+      opacity: 0;
+    }
+
+    &--count--4 {
+      transform: translateX(-80%) translateY(-110%);
+      opacity: 0;
+    }
+
+    &--count--5 {
+      transform: translateX(-40%) translateY(30%);
+      opacity: 0;
+    }
+  }
+
+  &__text {
+    color: $grey-light;
+  }
+
+  &--count--1 {
+    left: 11%;
+    bottom: 12%;
+    z-index: 2;
+
+    &:hover .point__content--count--1 {
+      opacity: 1;
+    }
+  }
+
+  &--count--2 {
+    left: 32%;
+    bottom: 35%;
+    z-index: 1;
+
+    &:hover .point__content--count--2 {
+      opacity: 1;
+    }
+  }
+
+  &--count--3 {
+    left: 44%;
+    bottom: 5%;
+    z-index: 2;
+
+    &:hover .point__content--count--3 {
+      opacity: 1;
+    }
+  }
+
+  &--count--4 {
+    left: 54%;
+    bottom: 17%;
+    z-index: 1;
+
+    &:hover .point__content--count--4 {
+      opacity: 1;
+    }
+  }
+
+  &--count--5 {
+    left: 72%;
+    bottom: 50%;
+    z-index: 2;
+
+    &:hover .point__content--count--5 {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.features {
+  @include content-padding-in-line;
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 25px;
+
+    @include on-tablet {
+      margin-bottom: 52px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__title span {
+    -webkit-text-stroke: 1px $turquoise;
+    color: transparent;
+  }
+
+  &__content {
+    display: grid;
+    row-gap: 70px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 20px;
+    }
+
+    @include on-desktop {
+      column-gap: 30px;
+    }
+  }
+}

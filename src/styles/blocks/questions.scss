@@ -1,0 +1,96 @@
+.questions {
+  @include content-padding-in-line;
+
+  padding-block: 45px 153px;
+  position: relative;
+  z-index: 2;
+
+  background-image: url(../images/bg-header.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
+
+  @include on-desktop {
+    background-size: 90%;
+  }
+
+  &__top {
+    @include on-tablet {
+      grid-row: 1;
+      grid-column: 1;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 150%;
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    color: #000;
+  }
+
+  &__content {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: 1fr 0.6fr;
+      grid-template-rows: 0.25fr 1fr;
+      justify-content: space-around;
+    }
+  }
+
+
+  &__block-contacts {
+    display: flex;
+    flex-direction: column;
+    row-gap: 34px;
+    max-width: 270px;
+
+    @include on-tablet {
+      grid-column: 2;
+      grid-row: span 2;
+    }
+
+    &--margin {
+      margin-top: 56px;
+
+      @include on-tablet {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__block-contact {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  &__label {
+    color: rgba(0, 0, 0, 0.39);
+    font-size: 24px;
+  }
+
+  &__image {
+    background-image: url(../images/img-circle-mobile.png);
+    background-size: cover;
+    width: 149px;
+    height: 170px;
+
+    @include on-desktop {
+      background-image: url(../images/img-circle.png);
+      width: 161px;
+      height: 164px
+    }
+
+    &--position {
+      position: absolute;
+      z-index: 5;
+      right: 0;
+      top: -75px;
+
+      @include on-desktop {
+        left: 84%;
+      }
+    }
+  }
+}
