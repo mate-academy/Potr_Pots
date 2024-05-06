@@ -1,0 +1,119 @@
+.potr-team {
+  @include content-padding-block;
+  
+  overflow: hidden;
+
+  background-image: url(../images/Rectangle.png);
+  background-position: left 90%;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  @include on-tablet {
+    background-position: -700px 300px;
+    background-size: 1200px;
+    height: 1000px;
+    padding-bottom: 186px;
+  }
+
+  &__content {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+
+      @include content-padding-in-line;
+    }
+
+    @include on-desktop {
+      margin-right: 100px;
+      column-gap: 57px;
+    }
+  }
+
+  &__text-wrapper {
+    @include content-padding-in-line;
+
+    @include on-tablet {
+      padding-inline: 0;
+
+      grid-column: 1;
+      grid-row: 1;
+
+      margin-top: 53px;
+    }
+
+    @include on-desktop {
+      margin-top: 230px;
+    }
+  }
+
+  &__title {
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+
+    @include content-padding-in-line;
+
+    @include on-tablet {
+      margin-bottom: 177px;
+    }
+  }
+
+  &__paragraf {
+    color: $dark-grey;
+  }
+
+  &__image {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      grid-column: 2;
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+
+      display: block;
+      padding-top: 100%;
+    }
+  }
+
+  &__background-text {
+    display: none;
+
+    font-size: 220px;
+    -webkit-text-stroke: 2px #03839E;
+    color: transparent;
+    letter-spacing: 34px;
+
+    position: absolute;
+    z-index: 1;
+
+    @include on-tablet {
+      display: inline;
+    }
+
+    &--position--top {
+      top: 180px;
+      left: -35px;
+    }
+
+    &--position--bottom {
+      bottom: 0;
+      right: -30px;
+
+      @include on-desktop {
+        bottom: -80px;
+      }
+    }
+  }
+}

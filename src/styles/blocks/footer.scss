@@ -1,0 +1,163 @@
+.footer {
+  @include content-padding-in-line;
+  
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__content {
+    display: grid;
+    grid-template-rows: 1fr 1fr 0.1fr;
+    justify-content: center;
+    justify-items: center;
+
+    position: relative;
+    z-index: 5;
+
+    margin-top: -50px;
+
+    @include on-tablet {
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: stretch;
+
+      margin-top: 50px;
+      margin-bottom: 120px;
+    }
+
+    @include on-desktop {
+      grid-template-rows: 1fr 0.25fr;
+      margin-top: 54px;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include on-tablet {
+      row-gap: 5px;
+    }
+
+    @include on-desktop {
+      row-gap: 10px;
+    }
+
+    &--first-block {
+      display: none;
+
+      @include on-tablet {
+        display: flex;
+        justify-self: start;
+
+        max-width: 145px;
+      }
+    }
+
+    &--second-block {
+      grid-row: 3;
+
+      @include on-tablet {
+        grid-row: 1;
+        grid-column: 3;
+
+        justify-self: end;
+      }
+    }
+  }
+
+  &__text {
+    &--label {
+      display: none;
+      font-size: 24px;
+      letter-spacing: 3.72px;
+      line-height: 100%;
+
+      @include on-tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__logo {
+    display: block;
+    background-image: url(../images/img-logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 170px;
+    height: 54px;
+
+    transition: transform $animation-duration;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-desktop {
+      display: block;
+      grid-row: 2;
+      grid-column: 2;
+      justify-self: center;
+    }
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: 85px;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 40px;
+
+    grid-row: 1;
+
+    @include on-tablet {
+      column-gap: 80px;
+      grid-column: 2;
+    }
+
+    @include on-desktop {
+      column-gap: 70px;
+    }
+  }
+
+  &__icon {
+    height: 20px;
+    width: 20px;
+    display: block;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    transition: transform $animation-duration;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include on-desktop {
+      height: 30px;
+      width: 30px;
+    }
+
+    &--twitter {
+      background-image: url(../images/icons/icon-twitter.svg);
+    }
+
+    &--instagram {
+      background-image: url(../images/icons/icon-instagram.svg);
+    }
+
+    &--facebook {
+      background-image: url(../images/icons/icon-facebook.svg);
+    }
+  }
+}
