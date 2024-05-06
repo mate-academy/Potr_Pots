@@ -1,0 +1,126 @@
+.for-whom {
+  position: relative;
+
+  @include content-padding-in-line;
+  @include content-padding-block;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+
+    @include on-tablet {
+      row-gap: 110px;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 0.25fr 1fr;
+      gap: 80px 150px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    color: #333;
+
+    &--margin-bottom {
+      margin-bottom: 25px;
+
+      @include on-tablet {
+        margin-bottom: 18px;
+      }
+
+      @include on-desktop {
+        margin-bottom: 34px;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+    object-fit: cover;
+
+    @include on-tablet {
+      display: block;
+      max-width: 300px;
+    }
+
+    &--square {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-top: 24px;
+
+
+      @include on-tablet {
+        display: block;
+        max-width: 284px;
+      }
+
+
+      @include on-desktop {
+        display: block;
+        max-width: 500px;
+        margin-top: 0;
+      }
+    }
+
+    &--third--element {
+      @include on-desktop {
+        max-width: 470px;
+        height: 670px;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+
+    @include on-desktop {
+      align-items: center;
+      column-gap: 100px;
+    }
+
+    &--first--item {
+      @include on-desktop {
+        grid-row: 1;
+        grid-column: span 2;
+      }
+    }
+
+    &--second--item {
+      flex-direction: row-reverse;
+      align-items: center;
+      column-gap: 59px;
+
+      @include on-desktop {
+        grid-row: 2;
+        grid-column: 1;
+        flex-direction: column;
+        align-items: start;
+
+        row-gap: 45px;
+        margin: 105px 0 0 100px;
+      }
+    }
+
+    &--third--item {
+      @include on-desktop {
+        grid-row: 2;
+        grid-column: 2;
+        flex-direction: column;
+        align-items: start;
+
+        row-gap: 45px;
+      }
+    }
+  }
+
+  &__wrapper-label {
+    display: none;
+  }
+}

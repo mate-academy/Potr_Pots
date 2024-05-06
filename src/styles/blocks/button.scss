@@ -1,0 +1,82 @@
+.button {
+  height: 48px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 24px;
+  cursor: pointer;
+
+  transition: all $animation-duration;
+
+  font-size: 14px;
+  text-transform: uppercase;
+
+  @include on-tablet {
+    max-width: 240px;
+  }
+
+  &--primmary--yellow {
+    background-color: $yellow;
+    border: 1px $yellow solid;
+    color: #121212;
+
+    &:hover {
+      background-color: #F7E36D;
+    }
+  }
+
+  &--margin--header {
+    margin-left: auto;
+    margin-right: 102px;
+  }
+
+  &--benefits {
+    margin-block: 50px 40px;
+    max-width: 238px;
+
+    background-color: $yellow;
+    border: 1px $yellow solid;
+
+    & svg {
+      fill: black;
+    }
+
+    @include on-tablet {
+      align-self: end;
+      background-color: transparent;
+      border: 1px $turquoise solid;
+    }
+
+    @include on-desktop {
+      align-self: start;
+      grid-column: 2;
+      grid-row: 3;
+      margin-block: 60px 70px;
+    }
+
+    &:hover {
+      background-color: $turquoise;
+      color: #fff;
+      border: 1px $turquoise solid;
+    }
+
+    &:hover svg {
+      fill: white;
+    }
+  }
+
+  &--question {
+    max-width: 260px;
+    margin-top: 20px;
+
+    cursor: pointer;
+
+    background-color: $turquoise;
+    color: #fff;
+
+    &:hover {
+      background-color: rgba(3, 128, 158, 0.4);
+    }
+  }
+}
