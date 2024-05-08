@@ -1,0 +1,81 @@
+.team {
+  margin-bottom: 40px;
+  background-image: url(../images/team/figure-team.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% 80%;
+  padding-bottom: 18%;
+
+  // @include on-tablet {
+  //   background-image: none;
+  //   background-image:
+  //     url(../images/team/figure-team.svg),
+  //     url(../images/team/Martin.svg),
+  //     url(../images/team/Andy.svg);
+
+  //     background-position: left 32%, -40% 22%, right 80%;
+  //     background-size: 38%, 90%, 55%;
+  //   }
+
+  // @include on-desktop {
+  //   background-image: none;
+  //   background-image:
+  //     url(../images/team/Rectangle.svg),
+  //     url(../images/team/Martin.svg),
+  //     url(../images/team/Andy.svg);
+
+  //     background-position: -10% 35%, 16% 22%, right 99%;
+  //     background-size: 38%, 70%, 55%;
+  //   }
+
+  &__title {
+    @include content-padding-inline;
+    margin-bottom: 25px;
+    color: $color-for-main-text-black;
+    font-size: 58px;
+    line-height: 70px;
+    font-weight: 400;
+    letter-spacing: 15.5%;
+  }
+
+  &__info {
+
+    @include on-tablet {
+      @include content-padding-inline;
+      @include page-grid;
+    }
+
+    &--image {
+      margin-bottom: 30px;
+      width: 100%;
+
+      @include on-tablet {
+        grid-column: 4 / 7;
+        position: relative;
+        top: 50%;
+      }
+
+      @include on-desktop {
+        grid-column: 5 / 12;
+      }
+    }
+
+    &--text {
+      padding-inline: 30px;
+      color: $color-for-additional-text-grey;
+      font-size: 16px;
+      line-height: 24px;
+
+      @include on-tablet {
+        padding-inline: 0;
+        grid-column: 1 / 4;
+        position: relative;
+        bottom: 20%;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+}

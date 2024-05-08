@@ -1,0 +1,151 @@
+.recommend {
+  margin-bottom: 105px;
+
+  &__container {
+
+    @include on-tablet {
+      @include content-padding-inline;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 36px;
+    padding-inline: 30px;
+    line-height: 54px;
+
+    @include on-tablet {
+      margin-bottom: 40px;
+      padding-inline: 0;
+    }
+
+    @include on-desktop {
+      margin-bottom: 60px;
+    }
+
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 24px;
+    padding-inline: 30px;
+    color: $color-for-additional-text-grey;
+
+    @include on-tablet {
+      width: 75%;
+      padding-inline: 0;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__bottom-text {
+    position: relative;
+    right: 10px;
+    color: $color-for-additional-text-grey;
+    padding-inline: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+
+    @include on-tablet {
+      padding-inline: 0;
+    }
+
+    @include on-desktop {
+      position: unset;
+      display: none;
+    }
+
+    &-1 {
+      display: none;
+      color: $color-for-additional-text-grey;
+
+      @include on-desktop {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        gap: 3px;
+      }
+    }
+  }
+
+  &__general {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    @include on-tablet {
+      flex-direction: row-reverse;
+    }
+
+    &_image {
+      width: 100%;
+    }
+
+    &_info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 40px;
+      padding-inline: 30px;
+
+      @include on-tablet {
+        padding-inline: 0;
+        gap: 50px;
+      }
+
+      &--box {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+
+        @include on-desktop {
+          gap: 0;
+          flex-direction: row;
+        }
+
+        &-toptext {
+          display: none;
+          color: $color-for-additional-text-grey;
+
+          @include on-desktop {
+            display: inline;
+          }
+        }
+
+        &-line {display: none;
+          height: 257px;
+          width: 2px;
+          background-color: #D8D8D8;
+          margin-left: 16px;
+          margin-right: 30px;
+
+          @include on-desktop {
+            display: block;
+          }
+        }
+      }
+
+      &--block {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      &--title {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      &--text {
+        color: $color-for-additional-text-grey;
+      }
+    }
+  }
+}

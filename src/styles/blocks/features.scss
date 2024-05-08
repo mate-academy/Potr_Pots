@@ -1,0 +1,59 @@
+.features {
+  margin-top: 50px;
+  margin-bottom: 120px;
+
+  &__container {
+    @include content-padding-inline;
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    margin-bottom: 25px;
+
+    @include on-tablet {
+      margin-bottom: 56px;
+    }
+  }
+
+  &__card {
+    margin-bottom: 70px;
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      margin-bottom: 0;
+      grid-column: span 2;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+
+    &--image {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    &--title {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 15.5%;
+
+      @include on-tablet {
+        text-align: left;
+      }
+    }
+
+    &--text {
+      color: $color-for-additional-text-grey;
+      font-size: 16px;
+      text-align: center;
+
+      @include on-tablet {
+        text-align: left;
+      }
+    }
+  }
+}
