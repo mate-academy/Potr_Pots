@@ -1,22 +1,52 @@
 .top-bar {
+  margin-bottom: 30px;
   padding-top: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
   @include on-tablet {
+    margin-bottom: 40px;
     padding-top: 30px;
   }
 
-  &__logo {
-
+  @include on-desktop {
+    margin-bottom: 50px;
   }
 
   &__icons {
-    &--burger {
-      @include on-desktop {
-        display: none;
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    @include hover(transform, scale(1.1));
+  }
+
+  &__list {
+    display: none;
+
+    @include on-desktop {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+
+      &--item {
+        color: #000;
+
+        @include hover(transform, scale(1.1));
       }
+    }
+  }
+
+  &__bucket {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      @include hover(transform, scale(1.1));
     }
   }
 }

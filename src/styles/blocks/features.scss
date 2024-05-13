@@ -8,11 +8,26 @@
   }
 
   &__title {
-    grid-column: 1 / -1;
+    @include content-padding-inline;
+    line-height: 58px;
     margin-bottom: 25px;
 
     @include on-tablet {
       margin-bottom: 56px;
+    }
+
+    &-1 {
+      color: #03839E;
+      font-size: 58px;
+      display: inline;
+    }
+
+    &-2 {
+      color: #03839E;
+      font-size: 58px;
+      -webkit-text-stroke-width: 0.1px;
+      -webkit-text-fill-color: transparent;
+      display: inline;
     }
   }
 
@@ -28,6 +43,9 @@
     @include on-desktop {
       grid-column: span 4;
     }
+
+    cursor: pointer;
+    @include hover(transform, scale(1.05));
 
     &--image {
       margin-bottom: 30px;

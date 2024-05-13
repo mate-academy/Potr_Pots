@@ -1,32 +1,25 @@
 .team {
+  position: relative;
   margin-bottom: 40px;
   background-image: url(../images/team/figure-team.svg);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: 100% 80%;
+  background-size: 100% auto;
   padding-bottom: 18%;
 
-  // @include on-tablet {
-  //   background-image: none;
-  //   background-image:
-  //     url(../images/team/figure-team.svg),
-  //     url(../images/team/Martin.svg),
-  //     url(../images/team/Andy.svg);
+  @include on-tablet {
+    background-image: none;
+    background-image: url(../images/team/figure-team.svg);
+    background-size: 40%;
+    background-position: -10% 34%;
+  }
 
-  //     background-position: left 32%, -40% 22%, right 80%;
-  //     background-size: 38%, 90%, 55%;
-  //   }
-
-  // @include on-desktop {
-  //   background-image: none;
-  //   background-image:
-  //     url(../images/team/Rectangle.svg),
-  //     url(../images/team/Martin.svg),
-  //     url(../images/team/Andy.svg);
-
-  //     background-position: -10% 35%, 16% 22%, right 99%;
-  //     background-size: 38%, 70%, 55%;
-  //   }
+  @include on-desktop {
+    background-image: none;
+    background-image: url(../images/team/Rectangle.svg);
+    background-size: 40%;
+    background-position: -10% 34%;
+  }
 
   &__title {
     @include content-padding-inline;
@@ -36,6 +29,54 @@
     line-height: 70px;
     font-weight: 400;
     letter-spacing: 15.5%;
+  }
+
+  &__bc-image {
+
+    &--martin {
+
+      &-img {
+        display: none;
+
+        @include on-tablet {
+          display: unset;
+          position: absolute;
+          width: 90%;
+          top: 18%;
+          right: 14%;
+          z-index: 1;
+        }
+
+        @include on-tablet {
+          width: 65%;
+          top: 18%;
+          left: 6%;
+          z-index: 1;
+        }
+      }
+    }
+
+    &--andy {
+
+      &-img {
+        display: none;
+
+        @include on-tablet {
+          display: unset;
+          position: absolute;
+          width: 52%;
+          left: 47%;
+          top: 63%;
+          z-index: 1;
+        }
+
+        @include on-desktop {
+          width: 53%;
+          left: 47%;
+          top: 76%;
+        }
+      }
+    }
   }
 
   &__info {

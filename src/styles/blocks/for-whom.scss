@@ -3,6 +3,8 @@
   &__container {
     @include content-padding-inline;
     @include page-grid;
+
+    position: relative;
   }
 
 
@@ -203,5 +205,57 @@
       color: $color-for-additional-text-grey;
       line-height: 24px;
     }
+  }
+}
+
+.border-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  display: none;
+
+  &--top {
+    right: 1%;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    @include on-desktop {
+      right: 135px;
+    }
+  }
+
+  &--bottom {
+    display: flex;
+    right: 1%;
+    bottom: 0%;
+
+    @include on-tablet {
+      display: none;
+    }
+
+    @include on-desktop {
+      right: unset;
+      display: flex;
+      left: 135px;
+    }
+  }
+
+  &__txt {
+    color: #828282;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  &__shape {
+    width: 1px;
+    height: 65px;
+    background-color: #828282;
   }
 }

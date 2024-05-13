@@ -12,6 +12,8 @@
   }
 
   &__general {
+    width: 100%;
+
     @include on-desktop {
       display: flex;
       flex-direction: row;
@@ -50,9 +52,11 @@
           position: unset;
         }
 
-        // @include on-desktop {
-        //   display: inline-block; //problem
-        // }
+        @include on-desktop {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
 
         &-card {
           display: flex;
@@ -120,6 +124,8 @@
         gap: 12px;
         color: #121212;
         font-weight: 500;
+
+        @include hover(transform, scale(1.1));
 
         @include on-tablet {
           background-color: transparent;
