@@ -1,348 +1,279 @@
 .materials {
-  background-image: url(../images/mobile/materials-bg.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  background-position: 0 130px;
-
   @include on-tablet {
-    background-image: url(../images/tablet/materials-bg.jpg);
-    background-position: 0 258px;
-  }
-
-  @include on-desktop {
-    background-image: url(../images/desktop/materials-bg.jpg);
-  }
-
-  &__content {
-    position: relative;
-    overflow: hidden;
-
-    @include on-tablet {
-      @include page-grid;
-      @include container-inline;
-
-      position: relative;
-    }
-
-    @include on-desktop {
-      position: static;
-    }
-  }
-
-  &__side-link {
-    display: none;
-
-    @include on-tablet {
-      display: flex;
-
-      &--right {
-        top: 0;
-        right: 10px;
-      }
-
-      &--left {
-        top: 204px;
-        left: 10px;
-      }
-    }
-
-    @include on-desktop {
-      display: none;
-    }
-  }
-
-  &__input {
-    position: absolute;
-    visibility: hidden;
+    display: block;
   }
 
   &__title {
-    @extend %h1;
-    @include container-inline;
-
-    margin-bottom: 120px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 80px;
+    line-height: 96px;
+    letter-spacing: 0.12em;
+    color: $color-title-third;
+    grid-area: 1 / 1 / 3 / 2;
+    width: 150%;
+    z-index: 4;
+    display: none;
 
     @include on-tablet {
-      font-size: 80px;
-      line-height: 96px;
-      letter-spacing: 0.12em;
-      color: $c-turquoise;
-      padding-inline: 0;
-      margin-bottom: 70px;
-      grid-column: 1 / -1;
-      grid-row: 1;
+      display: block;
     }
 
     @include on-desktop {
       font-size: 139px;
       line-height: 167px;
-      margin-bottom: 0;
+      grid-area: 1 / 1 / 4 / 2;
     }
   }
 
-  &__description {
+  &__info {
+    z-index: 0;
+    grid-area: 2 / 2 / 4 / 2;
     display: none;
-    color: $c-gray-light;
 
     @include on-tablet {
       display: block;
-      margin-top: 141px;
-      grid-column: 4 / -1;
-      grid-row: 1 / 3;
     }
 
     @include on-desktop {
-      margin-top: 161px;
-      grid-column: 8 / -1;
-    }
-  }
-
-  &__sub-title {
-    @extend %s2;
-  }
-
-  &__sub-text {
-    @extend %s3;
-
-    strong {
-      font-weight: 700;
-    }
-  }
-
-  &__slides {
-    width: 500%;
-    display: flex;
-
-    @include on-tablet {
-      @include page-grid;
-
-      position: relative;
-      width: 100%;
-      min-height: 577px;
-      grid-column: 1 / -1;
-      grid-row: 2;
-    }
-
-    @include on-desktop {
-      height: 886px;
-    }
-  }
-
-  &__slide {
-    width: 20%;
-
-    @include transiton-default(all);
-
-    @include on-tablet {
-      position: absolute;
+      grid-area: 3 / 2 / 4 / 2;
       z-index: 1;
-      opacity: 0;
-      pointer-events: none;
-      width: 303px;
-      background: rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
-
-      &--1 {
-        top: 267px;
-        left: -85px;
-        grid-column: 5 / 6;
-      }
-
-      &--2 {
-        top: 157px;
-        left: -77px;
-        grid-column: 4 / 5;
-      }
-
-      &--3 {
-        top: 220px;
-        left: -49px;
-        grid-column: 3 / 4;
-      }
-
-      &--4 {
-        top: 109px;
-        left: -29px;
-        grid-column: 2 / 3;
-      }
-
-      &--5 {
-        top: 237px;
-        left: 0;
-        grid-column: 1 / 2;
-      }
     }
+  }
 
-    @include on-desktop {
-      width: 283px;
+  &__info-title {
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    color: $color-text-primary;
+  }
 
-      &--1 {
-        top: 519px;
-        left: -150px;
-        grid-column: 11 / 12;
-      }
+  &__info-text {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-text-primary;
 
-      &--2 {
-        top: 307px;
-        left: -98px;
-        grid-column: 8 / 9;
-      }
+    &--bold {
+      font-weight: 700;
 
-      &--3 {
-        top: 653px;
-        left: -245px;
-        grid-column: 6 / 7;
-      }
-
-      &--4 {
-        top: 249px;
-        left: -252px;
-        grid-column: 5 / 6;
-      }
-
-      &--5 {
-        top: 483px;
-        left: -104px;
-        grid-column: 2 / 3;
+      @include on-desktop {
+        font-weight: 400;
       }
     }
   }
 
-  &__slide-text {
-    @extend %s3;
-    @include transiton-default(all);
-
-    color: $c-white-grey-light;
-    margin-inline: 9px;
-    padding-inline: 45px;
-    padding-block: 28px 58px;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+  &__content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 50px;
+    position: relative;
+    display: none;
 
     @include on-tablet {
-      margin-inline: 0;
-      padding: 35px 45px;
-      width: 100%;
-      height: auto;
-      background: none;
-      backdrop-filter: none;
-      box-shadow: none;
-    }
-
-    @include on-desktop {
-      padding-inline: 35px;
+      display: grid;
     }
   }
 
-  &__navigation {
+  &__img {
+    object-fit: cover;
+    min-height: 500px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    grid-area: 3 / 1 / 5 / 3;
+    z-index: 0;
+
+    @include on-tablet {
+      margin-left: -34px;
+      width: calc(100% + 68px);
+    }
+
+    @include on-desktop {
+      margin-left: -135px;
+      width: calc(100% + 270px);
+    }
+  }
+
+  &__button-container {
+    grid-area: 3 / 1 / 5 / 3;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__toggle-button {
     position: absolute;
-    bottom: 37px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 7px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-image: url(../images/plusButton.png);
+    transition: background-image $animation-time;
 
-    @include on-tablet {
-      @include page-grid;
+    @include hover(transform, scale(1.1));
 
-      position: relative;
-      bottom: 0;
-      grid-column: 1 / -1;
-      height: 100%;
+    &--active {
+      opacity: 0.7;
+      background-image: url(../images/minusButton.png);
+    }
+
+    &--1 {
+      bottom: 15%;
+      left: 12%;
+    }
+
+    &--2 {
+      bottom: 35%;
+      left: 35%;
+    }
+
+    &--3 {
+      bottom: 13%;
+      left: 47%;
+    }
+
+    &--4 {
+      bottom: 27%;
+      left: 60%;
+    }
+
+    &--5 {
+      bottom: 45%;
+      left: 80%;
     }
   }
 
-  &__dot {
-    cursor: pointer;
-    width: 7px;
-    height: 7px;
-    transform: rotate(45deg);
-    background: $c-white-grey-light;
+  &__text-container {
+    position: relative;
+    grid-area: 3 / 1 / 5 / 3;
+  }
 
-    background-color: rgb(235, 87, 87);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
+  &__toggle-text {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, .15);
+    backdrop-filter: blur(17px);
+    padding: 30px 45px;
+    width: 300px;
+    height: min-content;
+    box-sizing: border-box;
+    color: $color-text-secondary;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 150%;
+    opacity: 1;
+    z-index: 4;
 
-    @include transiton-default(all);
+    @include on-desktop {
+      padding: 35px 45px;
+    }
+
+    &--1 {
+      bottom: 25%;
+      left: 5%;
+
+      @include on-desktop {
+        bottom: 23%;
+        left: 2%;
+      }
+    }
+
+    &--2 {
+      bottom: 46%;
+      left: 17%;
+
+      @include on-desktop {
+        bottom: 43%;
+        left: 13%;
+      }
+    }
+
+    &--3 {
+      bottom: 24%;
+      right: 28%;
+
+      @include on-desktop {
+        bottom: 5%;
+        right: 55%;
+      }
+    }
+
+    &--4 {
+      bottom: 38%;
+      left: 50%;
+
+      @include on-desktop {
+        bottom: 34%;
+        left: 50%;
+      }
+    }
+
+    &--5 {
+      top: 58%;
+      right: -34px;
+
+      @include on-desktop {
+        top: 60%;
+        left: 70%;
+      }
+    }
+  }
+
+  &__vertical {
+    display: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    writing-mode: vertical-lr;
+    position: absolute;
+    width: max-content;
+    font-size: 12px;
+    letter-spacing: 2.64px;
+    color: $color-text-primary;
+    top: 0;
+    right: -30px;
+
+    @include hover(transform, scale(1.1));
 
     @include on-tablet {
-      position: absolute;
-      width: 51px;
-      height: 51px;
-      background: $c-red;
-      transform: rotate(0deg);
-      border-radius: 50%;
-
-      &--1 {
-        top: 207px;
-        right: 8px;
-        grid-column: 5 / 6;
-      }
-
-      &--2 {
-        top: 391px;
-        right: 26px;
-        grid-column: 4 / 5;
-      }
-
-      &--3 {
-        top: 454px;
-        left: 64px;
-        grid-column: 3 / 4;
-      }
-
-      &--4 {
-        top: 295px;
-        left: 77px;
-        grid-column: 2 / 3;
-      }
-
-      &--5 {
-        top: 423px;
-        left: 49px;
-        grid-column: 1 / 2;
-      }
-
-      &:hover {
-        transform: scale(1.1);
-      }
+      display: inline-block;
     }
 
     @include on-desktop {
-      &--1 {
-        top: 462px;
-        right: 43px;
-        grid-column: 11 / 12;
+      display: none;
+    }
+
+    &::before {
+      @include on-tablet {
+        display: inline-block;
+        content: "";
+        background-color: #828282;
+        width: 1px;
+        height: 66px;
+        margin: 10px;
+      }
+    }
+
+    &--left {
+      display: none;
+      top: 200px;
+      left: -30px;
+
+      @include on-tablet {
+        display: inline-block;
       }
 
-      &--2 {
-        top: 563px;
-        left: 0;
-        grid-column: 8 / 9;
-      }
-
-      &--3 {
-        top: 730px;
-        left: 49px;
-        grid-column: 6 / 7;
-      }
-
-      &--4 {
-        top: 435px;
-        left: 12px;
-        grid-column: 5 / 6;
-      }
-
-      &--5 {
-        top: 679px;
-        left: 19px;
-        grid-column: 2 / 3;
+      @include on-desktop {
+        display: none;
       }
     }
   }
+}
+
+.hiddenText {
+  display: none;
+}
+
+.visible {
+  display: block;
 }

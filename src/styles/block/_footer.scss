@@ -1,106 +1,106 @@
 .footer {
-  &__content {
-    @include container-inline;
+  margin-inline: 45px;
+  padding-bottom: 30px;
 
-    position: relative;
-    z-index: 1;
+  @include on-tablet {
     display: flex;
-    justify-content: space-around;
-    padding-block: 0 30px;
-    margin-top: -51px;
-
-    @include on-tablet {
-      justify-content: space-between;
-      padding-block: 0 117px;
-      margin-top: -4px;
-    }
-
-    @include on-desktop {
-      padding-block: 74px 64px;
-      margin-top: -20px;
-    }
+    justify-content: space-between;
+    padding-bottom: 110px;
   }
 
-  &__adress,
-  &__about-us {
+  @include on-desktop {
+    margin-inline: 135px;
+    padding-bottom: 70px;
+  }
+
+  &__adrres-block {
     display: none;
 
     @include on-tablet {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 140px;
     }
   }
 
-  &__sub-title {
-    @extend %h3;
-
-    font-weight: 400;
-    margin-bottom: 10px;
+  &__adrres-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
   }
 
-  &__text {
-    @extend %s3;
-
-    color: $c-black;
+  &__adrres-text {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
   }
 
-  &__adress-link {
-    @include hover(color, $c-gray-whitish);
-  }
-
-  &__main-text {
-    display: block;
-    text-align: center;
-
-    @include on-tablet {
-      display: none;
-    }
-  }
-
-  &__logos {
+  &__social-block {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
 
     @include on-desktop {
-      height: 158px;
+      gap: 70px;
     }
   }
 
-  &__apps-logos {
+  &__social-media {
     display: flex;
-    justify-content: space-between;
-    width: 230px;
-    margin-bottom: 40px;
+    gap: 70px;
+  }
+
+  &__social-network {
+    @include hover(opacity, 0.7);
+  }
+
+  &__social-icon {
+    width: 20px;
+    height: 20px;
+
+    @include on-desktop {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__logo {
+    @include hover(opacity, 0.7);
+  }
+
+  &__about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @include on-tablet {
-      width: 100%;
-    }
-
-    @include on-desktop {
-      width: 230px;
+      align-items: start;
     }
   }
 
-  &__apps-logo {
-    height: 20px;
-    width: 20px;
+  &__about-us-link {
+    display: none;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    color: #000;
 
-    @include hover(transform, scale(1.2));
+    @include hover(opacity, 0.7);
 
-    @include on-desktop {
-      height: 30px;
-      width: 30px;
+    @include on-tablet {
+      display: inline;
     }
   }
 
-  &__main-logo {
-    @extend %h2;
-    @include hover(transform, scale(1.1));
-
-    text-align: center;
-  }
-
-  &__main-logo-link {
-    color: $c-black;
+  &__about-us-copyright {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 10px;
   }
 }

@@ -1,142 +1,140 @@
-.potr-team {
-  &__content {
-    background-image: url(../images/mobile/team-bg.png);
-    background-repeat: no-repeat;
-    background-position: left 0 bottom 0;
-    background-size: 100% auto;
-    margin-top: 110px;
-    padding-bottom: 58px;
-
-    @include on-tablet {
-      @include page-grid;
-      @include container-inline;
-
-      position: relative;
-      background-image: url(../images/tablet/team-bg.png);
-      background-position: left 0 top 170px;
-      background-size: ($container-tablet + $template-columns-gap-tablet + $template-columns-width-tablet * 2) auto;
-      margin-top: 130px;
-      padding-bottom: 186px;
-      overflow: hidden;
-    }
-
-    @include on-desktop {
-      background-image: url(../images/desktop/team-bg.png);
-      background-position: left 0 top 185px;
-      background-size: ($container-desktop + $template-columns-gap-desktop * 3 + $template-columns-width-desktop * 3) auto;
-      margin-top: 150px;
-      padding-bottom: 226px;
-    }
-  }
-
+.potrTeam {
   &__title {
-    @extend %h1;
-    @include container-inline;
-
-    grid-column: 1 / -1;
-    color: $c-gray;
-    margin-bottom: 25px;
-
-    @include on-tablet {
-      display: block;
-      padding: 0;
-      margin-bottom: 177px;
-    }
-
-    @include on-desktop {
-      margin-bottom: 143px;
-    }
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $color-title-secondary;
   }
 
-  &__img-box {
-    margin-bottom: 30px;
+  &__content {
+    display: flex;
+    flex-direction: column;
     position: relative;
+    justify-content: center;
 
     @include on-tablet {
-      grid-column: 4 / -1;
-      grid-row: 2 / 3;
-      margin-bottom: 0;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, auto);
+      grid-column-gap: 20px;
     }
 
+
     @include on-desktop {
-      grid-column: 5 / 12;
+      grid-template-columns: repeat(12, 1fr);
+      grid-column-gap: 30px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      z-index: -1;
+      position: absolute;
+      left: -20px;
+      top: 350px;
+      border-top: 15vh solid $color-bg;
+      border-bottom: 10vh solid transparent;
+      border-left: 100vw solid $color-bg;
+
+      @include on-tablet {
+        left: -34px;
+        top: 170px;
+        border-top: 23vh solid $color-bg;
+        border-bottom: 8vh solid transparent;
+        border-left: 35vw solid $color-bg;
+      }
+
+      @include on-desktop {
+        border-top: 35vh solid $color-bg;
+        border-bottom: 20vh solid transparent;
+        border-left: 32vw solid $color-bg;
+        top: 135px;
+        left: -135px;
+      }
     }
   }
 
   &__img {
-    @include hover(transform, scale(1.05));
-
-    cursor: pointer;
-    width: 100%;
-  }
-
-  &__martin,
-  &__andy {
-    position: absolute;
-    display: none;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 232px;
-    font-weight: 400;
-    line-height: 263px;
-    letter-spacing: 0.15em;
-    color: $c-turquoise;
-
-    @include transparent-text(0.8px);
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    object-fit: contain;
+    object-position: center center;
 
     @include on-tablet {
-      display: block;
+      @include hover(transform, scale(1.1));
+
+      width: 100%;
+      margin-left: 0;
+      grid-area: 2 / 4 / 4 / 7;
     }
 
     @include on-desktop {
-      font-size: 288px;
-      line-height: 346px;
-
-      @include transparent-text(1px);
-    }
-  }
-
-  &__martin {
-    @include on-tablet {
-      top: 87px;
-      left: -44px;
-    }
-
-    @include on-desktop {
-      top: 97px;
-      left: 74px;
-    }
-  }
-
-  &__andy {
-    @include on-tablet {
-      top: 100%;
-      right: -34px - $container-tablet;
-      margin-top: -34px;
-    }
-
-    @include on-desktop {
-      right: - $template-columns-width-tablet - 34px - $container-desktop;
+      grid-area: 2 / 5 / 4 / 12;
     }
   }
 
   &__text {
-    @extend %s3;
-    @include container-inline;
-
-    grid-column: 1 / -1;
-    color: $c-gray-light;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $color-text-primary;
+    z-index: 3;
 
     @include on-tablet {
-      margin-top: 53px;
-      grid-column: 1 / 4;
-      grid-row: 2 / 4;
-      display: block;
-      padding: 0;
+      grid-area: 2 / 1 / 5 / 4;
+      align-self: center;
     }
 
     @include on-desktop {
-      margin-top: 230px;
-      grid-column: 1 / 5;
+      grid-area: 2 / 1 / 5 / 5;
+    }
+  }
+
+  &__member {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.15em;
+    z-index: 3;
+    color: transparent;
+    -webkit-text-stroke: $color-title-third 1px;
+    display: none;
+
+    @include on-tablet {
+      font-size: 232px;
+      line-height: 278px;
+      display: inline;
+    }
+
+    @include on-desktop {
+      font-size: 288px;
+      line-height: 240px;
+    }
+
+    &--2 {
+      @include on-tablet {
+        grid-area: 4 / 4 / 5 / 7;
+        place-self: flex-start;
+        justify-self: flex-end;
+        margin-right: -50px;
+      }
+
+      @include on-desktop {
+        grid-area: 4 / 5 / 5 / 13;
+      }
+    }
+
+    &--1 {
+      @include on-tablet {
+        grid-area: 1 / 1 / 3 / 6;
+        margin-left: -50px;
+      }
+
+      @include on-desktop {
+        grid-area: 1 / 1 / 3 / 12;
+      }
     }
   }
 }

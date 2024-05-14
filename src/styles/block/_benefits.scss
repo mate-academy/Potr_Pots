@@ -1,181 +1,201 @@
 .benefits {
+  margin-top: 100px;
+
   &__content {
-    @include page-grid;
-    @include container-inline;
-
-    margin-top: 110px;
-
-    @include on-tablet {
-      position: relative;
-      margin-top: 105px;
-    }
-
-    @include on-desktop {
-      margin-top: 96px;
-    }
-  }
-
-  &__side-link {
-    display: none;
-    gap: 9px;
-
-    &--right {
-      @include on-tablet {
-        display: flex;
-        right: 10px;
-        top: 0;
-      }
-
-      @include on-desktop {
-        display: none;
-      }
-    }
-  }
-
-  &__images {
-    @include hover(transform, scale(1.05));
-
-    cursor: pointer;
-    display: none;
-
-    @include on-desktop {
-      box-sizing: content-box;
-      position: absolute;
-      left: -$container-desktop;
-      width: calc(100% + $container-desktop);
-      display: block;
-      grid-column: 1 / 6;
-      grid-row: 1 / 5;
-    }
-  }
-
-  &__image {
-    width: 100%;
-  }
-
-  &__descriptions {
-    display: grid;
-    gap: 40px;
-    grid-column: 1 / -1;
-    margin-bottom: 50px;
-
-    @include on-tablet {
-      grid-column: 1 / 4;
-      padding-left: 17px;
-      gap: 30px;
-      grid-row: 1 / 4;
-    }
-
-    @include on-desktop {
-      grid-column: 6 / -1;
-      grid-row: 1;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px 37px;
-      margin-block: 190px 60px;
-    }
-  }
-
-  &__description {
-    @include on-tablet {
-      &:nth-of-type(2) {
-        order: 3;
-      }
-    }
-
-    @include on-desktop {
-      &:nth-of-type(2) {
-        order: 0;
-      }
-    }
-  }
-
-  &__title {
-    @extend %s1;
-
+    display: flex;
+    flex-direction: column;
     position: relative;
-    margin-bottom: 5px;
-    color: $c-gray;
 
-    &::before {
-      content: "";
-      position: absolute;
-      left: -17px;
-      top: 19px;
-      display: block;
-      width: 7px;
-      height: 7px;
-      transform: rotate(45deg);
-      background: $c-gray-light;
+    @include on-tablet {
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+    }
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  &__text {
-    @extend %s3;
+  &__img {
+    display: none;
 
-    color: $c-gray-whitish;
+    @include on-desktop {
+      display: inline;
+      grid-area: 1 / 1 / 4 / 3;
+      margin-left: -150px;
+    }
   }
 
-  &__button {
-    grid-column: 1 / -1;
-    width: 238px;
-    gap: 15px;
-    background-color: $c-yellow;
-    margin-bottom: 40px;
-    padding: 14px 67px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 
-    @include hover(opacity, 0.8);
+    @include on-desktop {
+      grid-area: 1 / 2 / 3 / 3;
+      flex-flow: wrap;
+      margin-left: -140px;
+      gap: 35px;
+    }
+  }
+
+  &__buy-block {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+
+    @include on-desktop {
+      grid-area: 2 / 2 / 4 / 3;
+      width: max-content;
+    }
+  }
+
+  &__buy-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    gap: 10px;
+    height: 40px;
+    background-color: $color-btn-primary2;
+    border: none;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 30px;
+      height: 10px;
+      background-image: url(../icons/Arrow\ 2.svg);
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+
+    @include hover(opacity, 0.7);
 
     @include on-tablet {
-      margin-top: 101px;
-      margin-bottom: 35px;
-      grid-column: 4 / -1;
+      width: 240px;
       background-color: transparent;
-      border: 1px solid $c-turquoise;
+      border: 1px solid $color-title-third;
+      transition: all 0.5s;
 
       &:hover {
-        background-color: $c-turquoise;
-        color: $c-white;
+        background-color: $color-title-third;
+        color: #fff;
 
-        ::after {
-          background-image: url(../images/mobile/icons/button-arrow-white.svg);
+        &::after {
+          transition: background-image 0.5s;
+          background-image: url(../icons/Arrow-white.svg);
         }
       }
     }
 
     @include on-desktop {
-      grid-column: 6 / 9;
-      grid-row: 2;
-      margin-block: 0 70px;
+      margin-left: -140px;
     }
   }
 
-  &__sale {
-    grid-column: 1 / -1;
+  &__discount-value {
+    margin-top: 40px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: #eb5757;
+  }
+
+  &__discount-description {
+    margin-top: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $color-title-third;
+  }
+
+  &__vertical {
+    display: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    writing-mode: vertical-lr;
+    position: absolute;
+    width: max-content;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2.64px;
+    color: $color-text-primary;
+    top: 0;
+    right: -30px;
+
+    @include hover(transform, scale(1.1));
 
     @include on-tablet {
-      grid-column: 4 / -1;
+      display: inline-block;
     }
 
     @include on-desktop {
-      grid-column: 7 / -1;
+      display: none;
+    }
+
+    &::before {
+      @include on-tablet {
+        display: inline-block;
+        content: "";
+        background-color: #828282;
+        width: 1px;
+        height: 66px;
+        margin: 10px;
+      }
     }
   }
+}
 
-  &__price {
-    @extend %h2;
+.list-item {
+  margin-left: 15px;
+  width: max-content;
 
-    color: $c-red;
-    margin-bottom: 10px;
+  &__title {
+    font-family: inherit;
+    font-size: 32px;
+    line-height: 48px;
+    color: $color-title-secondary;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      left: -15px;
+      top: 20px;
+      background-color: #000;
+      transform: rotate(45deg);
+    }
 
     @include on-tablet {
-      margin-bottom: 5px;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 54px;
     }
   }
 
-  &__order {
-    @extend %h3;
-
-    color: $c-turquoise;
+  &__description {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 5px;
+    color: #828282;
   }
 }

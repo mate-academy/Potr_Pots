@@ -1,219 +1,215 @@
 .questions {
-  &__content {
-    @include page-grid;
-    @include container-inline;
+  position: relative;
+  margin-top: 150px;
 
-    position: relative;
-    margin-top: 110px;
-    padding-block: 45px 153px;
-    background-image: url(../images/mobile/questions-bg.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  @include on-desktop {
+    margin-top: -70px;
+  }
+
+  &::before {
+    z-index: -1;
+    display: block;
+    top: -50px;
+    left: -20px;
+    width: 0;
+    height: 0;
+    border-top: 120vh solid $color-bg;
+    border-left: 110vw solid $color-bg;
+    border-bottom: 15vh solid transparent;
+    position: absolute;
+    content: '';
 
     @include on-tablet {
-      margin-top: 120px;
-      padding-block: 12px 137px;
-      background-image: url(../images/tablet/questions-bg.png);
+      margin-left: -34px;
+      border-bottom: 8vh solid transparent;
+      border-top: 45vh solid $color-bg;
     }
 
     @include on-desktop {
-      margin-top: 152px;
-      padding-block: 45px 130px;
-      background-image: url(../images/desktop/questions-bg.png);
-      background-position: top 0 right $container-desktop;
+      border-bottom-width: 20vh;
+      margin-left: -135px;
+      border-left: 90vw solid $color-bg;
+      border-top: 60vh solid $color-bg;
+    }
+  }
+
+  &::after {
+    content: url(../icons/cirkle.png);
+    width: 160px;
+    height: 160px;
+    display: block;
+    position: absolute;
+    top: -120px;
+    right: -65px;
+
+    @include on-tablet {
+      right: -80px;
+    }
+
+    @include on-desktop {
+      right: -60px;
+      top: -140px;
     }
   }
 
   &__title {
-    @extend %h2;
-
-    color: $c-black;
-    grid-column: 1 / -1;
-
-    &::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: -73px;
-      display: block;
-      width: 149px;
-      height: 170px;
-      background-image: url(../images/mobile/watermark-img.png);
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-    }
-
-
-    @include on-tablet {
-      grid-column: 1 / 4;
-      grid-row: 1;
-
-      &::after {
-        top: -107px;
-        width: 134px;
-        height: 167px;
-        background-image: url(../images/tablet/watermark-img.png);
-      }
-    }
-
-    @include on-desktop {
-      grid-column: 1 / 5;
-
-      &::after {
-        right: 61px;
-        top: -95px;
-        width: 161px;
-        height: 164px;
-        background-image: url(../images/desktop/watermark-img.png);
-      }
-    }
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
   }
 
-  &__text {
-    @extend %s3;
-
-    color: $c-black;
-    grid-column: 1 / -1;
-    margin-bottom: 40px;
-
-    @include on-tablet {
-      grid-column: 1 / 4;
-      grid-row: 2;
-    }
-
-    @include on-desktop {
-      grid-column: 1 / 5;
-      margin-bottom: 30px;
-    }
-  }
-
-  &__message-us {
-    @extend %s2;
-
-    font-weight: 400;
-    grid-column: 1 / -1;
-    margin-bottom: 25px;
-
-    @include on-tablet {
-      grid-column: 1 / 4;
-      margin-bottom: 30px;
-    }
-
-    @include on-desktop {
-      grid-column: 1 / 5;
-      margin-bottom: 40px;
-    }
-  }
-
-  &__form {
-    grid-column: 1 / -1;
-
+  &__content {
     display: flex;
     flex-direction: column;
 
     @include on-tablet {
-      grid-column: 1 / 4;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
-    @include on-desktop {
-      grid-column: 1 / 5;
+    @include on-tablet {
+      justify-content: flex-start;
+      gap: 230px;
     }
   }
 
-  &__item {
-    @extend %s3;
+  &__contacts-list {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
 
-    box-sizing: border-box;
-    border: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  &__contacts-link {
+    @include hover(opacity, 0.7);
+
+    text-decoration: none;
+  }
+
+  &__contacts-title {
+    font-family: inherit;
+    font-size: 24px;
+    line-height: 36px;
+    color: #00000063;
+  }
+
+  &__contacts-value {
+    margin-top: 5px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &__intro {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__title {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-family: inherit;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  &__field {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #0000004D;
     background-color: transparent;
     width: 100%;
-    padding: 4px 6px;
+    height: 34px;
+    padding: 4px;
+    margin-top: 20px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $color-text-primary;
 
-    @include transiton-default(all);
+    transition: border-color $animation-time;
+
+    &:hover {
+      border-color: #d5d7de;
+    }
 
     &:focus {
+      border-color: $color-title-third;
       outline: none;
-      border-bottom: 1px solid $c-turquoise;
-
-      &:valid {
-        border-bottom: 1px solid $c-turquoise;
-        color: $c-turquoise;
-      }
-
-      &:invalid {
-        border-bottom: 1px solid $c-red;
-        color: $c-red;
-      }
     }
-  }
 
-  &__input {
-    height: 29px;
-    margin-bottom: 20px;
-  }
+    &:focus-visible {
+      outline: none;
+    }
 
-  &__textarea {
-    min-height: 29px;
-    max-height: 90px;
-    margin-bottom: 40px;
-    overflow-y: auto;
-    resize: none;
+    &::placeholder {
+      color: $color-text-primary;
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &:not(:placeholder-shown):valid:focus {
+      color: $color-title-third;
+      border-color: $color-title-third;
+      background-color: transparent;
+    }
+
+    &:not(:placeholder-shown):invalid:focus {
+      color: #eb5757;
+      border-color: #eb5757;
+    }
+
+    &--message {
+      resize: none;
+    }
   }
 
   &__button {
-    cursor: pointer;
-    background-color: $c-turquoise;
-    color: $c-white;
-    width: 238px;
-    padding: 14px 61px;
-    margin-bottom: 56px;
-
-    @include hover(opacity, 0.8);
-
-    ::after {
-      right: 60px;
-      background-image: url(../images/mobile/icons/button-arrow-white.svg);
-    }
-
-    @include on-tablet {
-      margin-bottom: 0;
-    }
-  }
-
-  &__contacts {
-    grid-column: 1 / -1;
+    margin-top: 30px;
     display: flex;
-    flex-direction: column;
-    gap: 34px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 40px;
+    color: $color-text-secondary;
+    background-color: $color-title-third;
+    border: none;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 30px;
+      height: 10px;
+      background-image: url(../icons/Arrow-white.svg);
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+
+    @include hover(opacity, 0.7);
 
     @include on-tablet {
-      gap: 20px;
-      grid-column: 5 / -1;
-      grid-row: 2 / 6;
-    }
-
-    @include on-desktop {
-      grid-column: 7 / 10;
-      grid-row: 1 / 6;
-      margin-top: 42px;
-      gap: 25px;
+      width: 240px;
     }
   }
+}
 
-  &__contact-title {
-    @extend %s2;
-
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.4);
-    margin-bottom: 5px;
-  }
-
-  &__contact-info {
-    @extend %s3;
-
-    color: $c-black;
-
-    @include hover(color, $c-gray-whitish);
-  }
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s;
 }

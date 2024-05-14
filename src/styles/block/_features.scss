@@ -1,105 +1,59 @@
 .features {
-  &__content {
-    @include page-grid;
-    @include container-inline;
-
-    margin-top: 110px;
-
-    @include on-tablet {
-      direction: rtl;
-      margin-top: 130px;
-    }
-
-    @include on-desktop {
-      direction: ltr;
-      margin-top: 150px;
-    }
-  }
-
   &__title {
-    @extend %h1;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: transparent;
+    -webkit-text-stroke: $color-title-third 1px;
 
-    color: $c-turquoise;
-    grid-column: 1 / -1;
-    margin-bottom: 25px;
-
-    @include transparent-text(1px);
-
-    @include on-tablet {
-      text-align: left;
-      margin-bottom: 52px;
-    }
-
-    @include on-desktop {
-      margin-bottom: 74px;
+    &--fill {
+      color: $color-title-third;
     }
   }
 
-  &__item {
-    grid-column: 1 / -1;
-
-    &:not(:last-child) {
-      margin-bottom: 70px;
-    }
+  &__cards {
+    margin-top: 25px;
+    display: flex;
+    gap: 70px;
+    flex-direction: column;
+    justify-content: center;
 
     @include on-tablet {
-      grid-column: span 2;
-      text-align: left;
-
-      &:nth-child(2) {
-        order: 1;
-      }
-
-      &:not(:last-child) {
-        margin-bottom: 0;
-      }
-    }
-
-    @include on-desktop {
-      grid-column: span 4;
-      text-align: center;
-
-      &:nth-child(2) {
-        order: 0;
-      }
+      justify-content: space-between;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
     }
   }
 
-  &__img {
-    @include hover(transform, scale(1.05));
-
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
-    margin-bottom: 37px;
-    cursor: pointer;
-
-    @include on-tablet {
-      margin-bottom: 27px;
-    }
-
-    @include on-desktop {
-      margin-bottom: 17px;
-    }
   }
 
-  &__sub-title {
-    @extend %h3;
+  &__card-img {
+    max-width: 100%;
 
-    color: $c-gray;
-
-    margin-bottom: 20px;
-
-    @include on-tablet {
-      margin-bottom: 27px;
-    }
-
-    @include on-desktop {
-      margin-bottom: 17px;
-    }
+    @include hover(transform, scale(1.1));
   }
 
-  &__text {
-    @extend %s3;
+  &__card-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $color-title-secondary;
+    margin-top: 30px;
+  }
 
-    color: $c-gray-light;
+  &__card-text {
+    margin-top: 20px;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-text-primary;
   }
 }

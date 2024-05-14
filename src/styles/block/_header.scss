@@ -1,228 +1,289 @@
 .header {
-  &__content {
-    font-family: Manrope, sans-serif;
-    font-weight: 400;
-    box-sizing: border-box;
+  font-family: inherit;
+  padding: 30px 0;
+  z-index: 2;
+  position: relative;
+
+  &::after {
+    display: block;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 25vh solid $color-bg;
+    border-left: 72vw solid $color-bg;
+    border-bottom: 15vh solid transparent;
+    position: absolute;
 
     @include on-tablet {
-      background-image: url(../images/tablet/header-bg.png);
-      background-repeat: no-repeat;
-      background-position: top 0 right 158px;
-      background-size: cover;
+      content: '';
     }
 
     @include on-desktop {
-      background-image: url(../images/desktop/header-bg.png);
-      background-position: top 0 right 405px;
+      border-bottom-width: 35vh;
     }
   }
 
-  &__top-bar {
-    @include page-grid;
-    @include container-inline;
-
-    box-sizing: border-box;
-    height: 68px;
-    padding-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    grid-column: 1 / -1;
+  &__content {
+    margin: 0 20px;
 
     @include on-tablet {
-      margin-bottom: 49px;
+      margin: 0 23px;
     }
-  }
 
-  &__logo {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 36px;
-    line-height: 43px;
-    letter-spacing: 0.06em;
-    color: $c-gray;
-    text-transform: uppercase;
-
-    @include hover(transform, scale(1.1));
+    @include on-desktop {
+      margin: 0 135px;
+    }
   }
 
   &__basket {
     display: none;
-    width: 30px;
-    height: 30px;
-    background-image: url(../images/desktop/icons/basket-icon.png);
-    background-repeat: no-repeat;
-    background-size: cover;
 
     @include hover(transform, scale(1.1));
 
     @include on-desktop {
-      display: block;
+      display: inline;
     }
   }
 
-  &__burger-icon {
-    display: block;
-    width: 32px;
-    height: 32px;
-    background-image: url(../images/mobile/icons/burger-icon.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  &__nav {
+    z-index: 2;
+    display: none;
+
+    @include on-desktop {
+      display: inline;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__bottom {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    position: relative;
+    margin-top: 10px;
+    z-index: 2;
+
+    @include on-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(3, auto);
+      margin-top: 50px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+      margin-top: 90px;
+    }
+  }
+
+  &__img-container {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    grid-area: 1 / 1 / 1 / 3;
+
+    @include on-tablet {
+      justify-self: flex-end;
+      grid-area: 1 / 4 / 3 / 7;
+    }
+
+    @include on-desktop {
+      grid-area: 1 / 7 / 4 / 13;
+    }
+  }
+
+  &__img {
+    z-index: 2;
+    position: relative;
+    object-fit: contain;
+    min-height: 230px;
+    min-width: 230px;
+    width: calc(100% + 40px);
+    ;
+    height: 100%;
+    margin-left: -20px;
+    cursor: pointer;
+
+    @include on-tablet {
+      margin-left: 0;
+      width: 100%;
+
+      @include hover(transform, scale(1.1));
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    z-index: 3;
+    color: transparent;
+    -webkit-text-stroke: $color-title-third 1px;
+    grid-area: 2 / 1 / 3 / 3;
+
+    @include on-tablet {
+      grid-area: 1 / 1 / 1 / 7;
+      min-width: max-content;
+      font-size: 64px;
+      line-height: 64px;
+    }
+
+    @include on-desktop {
+      justify-self: center;
+    }
+
+    &--fill {
+      color: $color-title-third;
+    }
+  }
+
+
+  &__buy-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    gap: 10px;
+    width: 240px;
+    height: 40px;
+    background-color: $color-btn-primary2;
+    border: none;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    margin-top: 19px;
+    cursor: pointer;
+    grid-area: 4 / 1 / 5 / 2;
+
+    &::after {
+      display: block;
+      content: "";
+      width: 30px;
+      height: 10px;
+      background-image: url(../icons/Arrow\ 2.svg);
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+
+    @include on-tablet {
+      grid-area: 3 / 2 / 4 / 4;
+    }
+
+    @include on-desktop {
+      max-width: 270px;
+      grid-area: 3 / 5 / 4 / 6;
+    }
+
+    @include hover(opacity, 0.7);
+  }
+
+  &__buy-btn-icon {
+    margin-left: 10px;
+  }
+
+  &__info {
+    max-width: 140px;
+    margin-top: 6px;
+    grid-area: 3 / 1 / 4 / 2;
+
+    @include on-tablet {
+      justify-self: center;
+      grid-area: 2 / 2 / 3 / 4;
+    }
+
+    @include on-desktop {
+      justify-self: flex-end;
+      grid-area: 2 / 5 / 3 / 6;
+    }
+  }
+
+  &__info-price {
+    font-family: inherit;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+  }
+
+  &__info-text {
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 5px;
+  }
+
+  &__scroll-down {
+    text-decoration: none;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 9px;
+    cursor: pointer;
+    grid-area: 3 / 2 / 5 / 3;
 
     @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      justify-self: start;
+      grid-area: 2 / 1 / 4 / 2;
+    }
+  }
+
+  &__scroll-down-text {
+    writing-mode: vertical-lr;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: $color-title-third;
+  }
+
+  &__scroll-down-icon {
+    width: fit-content;
+  }
+
+  &__btn {
+    background-image: url(../icons/Icon-Burger-menu.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    width: $icon-small;
+    height: $icon-small;
+    transition: background-image $animation-time;
+
+    &:hover {
+      background-image: url(../icons/Icon-Burger-menu-hover.svg);
+    }
+
+    @include on-tablet {
+      width: $icon-big;
+      height: $icon-big;
+    }
 
     @include on-desktop {
       display: none;
     }
   }
+}
 
-  &__body {
-    @include on-tablet {
-      @include page-grid;
-      @include container-inline;
-    }
-  }
+.logo {
+  background-image: url(../images/POTR\ POTS.png);
+  display: inline-block;
+  height: 30px;
+  width: 134px;
+  z-index: 2;
+  background-repeat: no-repeat;
 
-  &__main-image {
-    @include hover(transform, scale(1.05));
-
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 25px;
-
-    @include on-tablet {
-      z-index: 1;
-      box-sizing: border-box;
-      margin-bottom: 0;
-      padding-left: 34px;
-      grid-column: 4 / -1;
-      grid-row: 1;
-    }
-
-    @include on-desktop {
-      right: $container-desktop;
-      padding-left: 70px;
-      grid-column: 7 / -1;
-    }
-  }
-
-  &__bottom {
-    position: relative;
-
-    @include page-grid;
-
-    padding-inline: $container-inline;
-    grid-column: 1 / -1;
-
-    @include on-tablet {
-      grid-row: 1;
-      padding-inline: 0;
-    }
-  }
-
-  &__title {
-    @extend %h2;
-
-    grid-column: 1 / -1;
-    color: $c-turquoise;
-    margin-bottom: 30px;
-
-    @include transparent-text(0.7px);
-
-    @include on-tablet {
-      position: relative;
-      z-index: 1;
-      font-size: 64px;
-      line-height: 64px;
-      letter-spacing: 0.15em;
-      grid-column: span 4;
-      margin-bottom: 0;
-    }
-
-    @include on-desktop {
-      grid-column: 2 / 7;
-    }
-  }
-
-  &__product-sale {
-    margin-top: -30px;
-    grid-column: 1 / -1;
-
-    @include on-tablet {
-      grid-column: 3 / 4;
-    }
-
-    @include on-desktop {
-      grid-column: 5 / 7;
-    }
-  }
-
-  &__price {
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 36px;
-    margin-bottom: 1px;
-    color: $c-gray;
-  }
-
-  &__description {
-    @extend %s4;
-
-    grid-column: 1 / -1;
-    color: $c-gray-light;
-    margin-bottom: 20px;
-
-    @include on-tablet {
-      margin-bottom: 50px;
-    }
-  }
-
-  &__button {
-    grid-column: 1 / -1;
-    padding-inline: 67px;
-    max-width: 260px;
-    background-color: $c-yellow;
-
-    @include hover(opacity, 0.8);
-
-    @include on-tablet {
-      width: 240px;
-      grid-column: 2 / 4;
-    }
-
-    @include on-desktop {
-      width: 270px;
-      padding-inline: 76px;
-      grid-column: 4 / 7;
-
-      &::after {
-        right: 74px;
-        width: 28px;
-        background-size: 28px 8px;
-      }
-    }
-  }
-
-  &__side-link {
-    position: absolute;
-    bottom: 0;
-    right: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-    align-items: center;
-    width: 18px;
-
-    @include hover(transform, scale(1.1));
-
-    @include on-tablet {
-      left: 0;
-      bottom: -47px;
-    }
-  }
-
-  &__side-text {
-    @extend %s5;
-
-    color: $c-turquoise;
-    writing-mode: vertical-lr;
-  }
+  @include hover(opacity, 0.7);
 }

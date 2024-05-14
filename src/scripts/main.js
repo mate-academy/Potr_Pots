@@ -1,41 +1,83 @@
+/* eslint-disable no-undef */
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function() {
-  const inputs = document.querySelectorAll('.materials__input');
-  const dots = document.querySelectorAll('.materials__dot');
-  const slides = document.querySelectorAll('.materials__slide-text');
+  const mySwiper = new Swiper('.swiper', {
+    slidesPerView: 1,
+    spaceBetween: 7,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    touch: {
+      enabled: true,
+    },
+    on: {
+      slideChange: function() {
+        const bullets = document.querySelectorAll('.swiper-pagination-bullet');
 
-  let currentIndex = -1;
+        bullets.forEach(function(bullet, bulletIndex) {
+          bullet.classList.toggle(
+            'swiper-pagination-bullet-active',
+            bulletIndex === mySwiper.realIndex,
+          );
+        });
+      },
+    },
+  });
+});
 
-  function updateState(index) {
-    currentIndex = index;
+document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.materials__toggle-button');
 
-    slides.forEach(function(slide, i) {
-      if (i === index) {
-        slide.style.display = 'block';
-      } else {
-        slide.style.display = 'none';
-      }
-    });
-
-    dots.forEach(function(dot, i) {
-      if (i === index) {
-        dot.style.backgroundColor = '';
-        dot.textContent = '-';
-      } else {
-        dot.style.backgroundColor = '#eb5757';
-        dot.textContent = '+';
-      }
-    });
-  }
-
-  inputs.forEach(function(input, index) {
-    input.addEventListener('click', function() {
-      if (currentIndex === index) {
-        updateState(-1);
-      } else {
-        updateState(index);
-      }
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', function() {
+      toggleText(index + 1);
     });
   });
+});
+
+function toggleText(buttonNumber) {
+  const textElement = document.querySelector(`.materials__toggle-text--${buttonNumber}`);
+  const buttonElement = document.querySelector(`.materials__toggle-button--${buttonNumber}`);
+
+  if (textElement && buttonElement) {
+    const isTextVisible = textElement.classList.contains('visible');
+
+    hideAllText();
+
+    if (!isTextVisible) {
+      textElement.classList.add('visible');
+      buttonElement.classList.add('materials__toggle-button--active');
+    }
+  }
+}
+
+function hideAllText() {
+  const textElements = document.querySelectorAll('.materials__toggle-text');
+  const buttons = document.querySelectorAll('.materials__toggle-button');
+
+  textElements.forEach((element) => {
+    element.classList.remove('visible');
+  });
+
+  buttons.forEach((button) => {
+    button.classList.remove('materials__toggle-button--active');
+  });
+}
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash === '#burger-menu') {
+    document.body.classList.add('page__body--with-menu');
+  } else {
+    document.body.classList.remove('page__body--with-menu');
+  }
+});
+
+const form = document.querySelector('.form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  e.target.reset();
 });
