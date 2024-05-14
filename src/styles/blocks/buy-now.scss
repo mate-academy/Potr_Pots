@@ -1,0 +1,141 @@
+.buy-now {
+  margin-bottom: 104px;
+  padding-inline: 30px;
+
+  @include on-tablet() {
+    padding-inline: 44px;
+  }
+
+  @include on-desktop() {
+    padding-inline: 0;
+    padding-inline-end: 44px;
+  }
+
+  &__general {
+    width: 100%;
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &_image {
+      display: none;
+
+      @include on-desktop {
+        display: block;
+      }
+    }
+
+
+    &_information {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      @include on-tablet {
+        flex-direction: row;
+      }
+
+      @include on-desktop {
+        flex-direction: column;
+      }
+
+      &--text {
+        position: relative;
+        right: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @include on-tablet {
+          position: unset;
+        }
+
+        @include on-desktop {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        &-card {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+
+          &-title {
+            font-weight: 700;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            line-height: 54px;
+            color: $color-for-main-text-black;
+            font-size: 32px;
+          }
+
+          &-text {
+            margin-left: 24px;
+            color: #828282;
+          }
+        }
+      }
+
+      &--bottom-info {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+
+        @include on-tablet {
+          margin-top: 130px;
+        }
+
+        @include on-desktop {
+          margin-top: 0;
+        }
+
+        &-text {
+          @include on-desktop {
+            margin-top: 20px;
+            margin-left: 80px;
+          }
+        }
+
+        &--title {
+          margin-bottom: 10px;
+          font-size: 24px;
+          color: #EB5757;
+        }
+
+        &--text {
+          font-size: 24px;
+          line-height: 24px;
+          color: #03839E;
+        }
+      }
+
+      &--button {
+        width: 90%;
+        height: 48px;
+        background-color: #FFE339;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        color: #121212;
+        font-weight: 500;
+
+        @include hover(transform, scale(1.1));
+
+        @include on-tablet {
+          background-color: transparent;
+          border: 1px solid #03839E;
+        }
+
+        @include on-desktop {
+          width: 35%;
+        }
+      }
+    }
+  }
+}

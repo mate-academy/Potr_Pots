@@ -1,0 +1,89 @@
+.footer {
+  padding-bottom: 64px;
+
+  &__wrapper {
+    @include content-padding-inline;
+  }
+
+  &__socials {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: row;
+
+    @include on-tablet {
+      justify-content: space-between;
+    }
+
+
+    &--adress {
+      display: none;
+
+      @include on-tablet {
+        display: block;
+        width: 170px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      &-title {
+        font-size: 24px;
+      }
+
+      &-text {
+        color: #000;
+        transition: 0.3s;
+
+        &:hover {
+          color: grey;
+        }
+      }
+    }
+
+    &--social {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      gap: 70px;
+
+      @include on-tablet {
+        margin: unset;
+      }
+
+      &-scl {
+        @include hover(transform, scale(1.05));
+      }
+    }
+
+    &--about-us {
+      width: 170px;
+      display: none;
+
+      @include on-tablet {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-title {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    text-align: center;
+    margin-bottom: 6px;
+
+    @include hover(transform, scale(1.05));
+  }
+
+  &__info {
+    text-align: center;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+}

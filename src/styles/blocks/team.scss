@@ -1,0 +1,122 @@
+.team {
+  position: relative;
+  margin-bottom: 40px;
+  background-image: url(../images/team/figure-team.svg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% auto;
+  padding-bottom: 18%;
+
+  @include on-tablet {
+    background-image: none;
+    background-image: url(../images/team/figure-team.svg);
+    background-size: 40%;
+    background-position: -10% 34%;
+  }
+
+  @include on-desktop {
+    background-image: none;
+    background-image: url(../images/team/Rectangle.svg);
+    background-size: 40%;
+    background-position: -10% 34%;
+  }
+
+  &__title {
+    @include content-padding-inline;
+    margin-bottom: 25px;
+    color: $color-for-main-text-black;
+    font-size: 58px;
+    line-height: 70px;
+    font-weight: 400;
+    letter-spacing: 15.5%;
+  }
+
+  &__bc-image {
+
+    &--martin {
+
+      &-img {
+        display: none;
+
+        @include on-tablet {
+          display: unset;
+          position: absolute;
+          width: 90%;
+          top: 18%;
+          right: 14%;
+          z-index: 1;
+        }
+
+        @include on-tablet {
+          width: 65%;
+          top: 18%;
+          left: 6%;
+          z-index: 1;
+        }
+      }
+    }
+
+    &--andy {
+
+      &-img {
+        display: none;
+
+        @include on-tablet {
+          display: unset;
+          position: absolute;
+          width: 52%;
+          left: 47%;
+          top: 63%;
+          z-index: 1;
+        }
+
+        @include on-desktop {
+          width: 53%;
+          left: 47%;
+          top: 76%;
+        }
+      }
+    }
+  }
+
+  &__info {
+
+    @include on-tablet {
+      @include content-padding-inline;
+      @include page-grid;
+    }
+
+    &--image {
+      margin-bottom: 30px;
+      width: 100%;
+
+      @include on-tablet {
+        grid-column: 4 / 7;
+        position: relative;
+        top: 50%;
+      }
+
+      @include on-desktop {
+        grid-column: 5 / 12;
+      }
+    }
+
+    &--text {
+      padding-inline: 30px;
+      color: $color-for-additional-text-grey;
+      font-size: 16px;
+      line-height: 24px;
+
+      @include on-tablet {
+        padding-inline: 0;
+        grid-column: 1 / 4;
+        position: relative;
+        bottom: 20%;
+      }
+
+      @include on-desktop {
+        grid-column: 1 / 5;
+      }
+    }
+  }
+}

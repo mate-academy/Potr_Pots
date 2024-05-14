@@ -1,0 +1,64 @@
+.menu {
+  color: #1D1D1D;
+  box-sizing: border-box;
+  height: 100vh;
+  color: $color-for-main-text-white;
+  background-color: $color-blue;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 100;
+  width: 80%;
+  font-weight: 400;
+  font-size: 16px;
+
+  &__buttons {
+    margin-top: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-list {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      list-style-type: none;
+
+      @include on-tablet {
+        gap: 30px;
+      }
+
+      &--item {
+        width: fit-content;
+        color: $color-for-main-text-white;
+
+        @include hover(transform, scale(1.1));
+      }
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 12%;
+    bottom: 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+
+    &--text {
+      width: fit-content;
+      transform: rotate(-90deg);
+    }
+    &--shape {
+      width: 1px;
+      height: 44px;
+      background-color: $color-for-main-text-white;
+    }
+
+    &--close {
+      @include hover(transform, scale(1.1));
+    }
+  }
+}
