@@ -67,7 +67,6 @@
   }
 
   &__button {
-    display:  none;
 
     @include on-tablet {
       position: absolute;
@@ -80,7 +79,7 @@
 
       &:has(> .materials__button--button:hover) {
         .materials__button--text {
-          opacity: .6;
+          visibility: visible;
         }
       }
 
@@ -124,12 +123,13 @@
     }
 
     &--text {
+      visibility: hidden;
       z-index: 100;
       height: auto;
       width: 280px;
       padding: 35px;
       background-color: #000;
-      opacity: 0;
+      opacity: 0.6;
 
       &-txt {
         color: white;
