@@ -1,0 +1,181 @@
+.benefits {
+  &__content {
+    @include page-grid;
+    @include container-inline;
+
+    margin-top: 110px;
+
+    @include on-tablet {
+      position: relative;
+      margin-top: 105px;
+    }
+
+    @include on-desktop {
+      margin-top: 96px;
+    }
+  }
+
+  &__side-link {
+    display: none;
+    gap: 9px;
+
+    &--right {
+      @include on-tablet {
+        display: flex;
+        right: 10px;
+        top: 0;
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__images {
+    @include hover(transform, scale(1.05));
+
+    cursor: pointer;
+    display: none;
+
+    @include on-desktop {
+      box-sizing: content-box;
+      position: absolute;
+      left: -$container-desktop;
+      width: calc(100% + $container-desktop);
+      display: block;
+      grid-column: 1 / 6;
+      grid-row: 1 / 5;
+    }
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__descriptions {
+    display: grid;
+    gap: 40px;
+    grid-column: 1 / -1;
+    margin-bottom: 50px;
+
+    @include on-tablet {
+      grid-column: 1 / 4;
+      padding-left: 17px;
+      gap: 30px;
+      grid-row: 1 / 4;
+    }
+
+    @include on-desktop {
+      grid-column: 6 / -1;
+      grid-row: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px 37px;
+      margin-block: 190px 60px;
+    }
+  }
+
+  &__description {
+    @include on-tablet {
+      &:nth-of-type(2) {
+        order: 3;
+      }
+    }
+
+    @include on-desktop {
+      &:nth-of-type(2) {
+        order: 0;
+      }
+    }
+  }
+
+  &__title {
+    @extend %s1;
+
+    position: relative;
+    margin-bottom: 5px;
+    color: $c-gray;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -17px;
+      top: 19px;
+      display: block;
+      width: 7px;
+      height: 7px;
+      transform: rotate(45deg);
+      background: $c-gray-light;
+    }
+  }
+
+  &__text {
+    @extend %s3;
+
+    color: $c-gray-whitish;
+  }
+
+  &__button {
+    grid-column: 1 / -1;
+    width: 238px;
+    gap: 15px;
+    background-color: $c-yellow;
+    margin-bottom: 40px;
+    padding: 14px 67px;
+
+    @include hover(opacity, 0.8);
+
+    @include on-tablet {
+      margin-top: 101px;
+      margin-bottom: 35px;
+      grid-column: 4 / -1;
+      background-color: transparent;
+      border: 1px solid $c-turquoise;
+
+      &:hover {
+        background-color: $c-turquoise;
+        color: $c-white;
+
+        ::after {
+          background-image: url(../images/mobile/icons/button-arrow-white.svg);
+        }
+      }
+    }
+
+    @include on-desktop {
+      grid-column: 6 / 9;
+      grid-row: 2;
+      margin-block: 0 70px;
+    }
+  }
+
+  &__sale {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+    }
+
+    @include on-desktop {
+      grid-column: 7 / -1;
+    }
+  }
+
+  &__price {
+    @extend %h2;
+
+    color: $c-red;
+    margin-bottom: 10px;
+
+    @include on-tablet {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__order {
+    @extend %h3;
+
+    color: $c-turquoise;
+  }
+}
