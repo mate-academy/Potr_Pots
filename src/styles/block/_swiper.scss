@@ -1,0 +1,67 @@
+.materials-mobile {
+  @include on-tablet {
+    display: none;
+  }
+
+  &__img {
+    object-fit: contain;
+    width: calc(100% + 40px);
+    height: 100%;
+    margin-left: -20px;
+  }
+
+  &__title {
+    margin-bottom: -70px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $color-title-third;
+    z-index: 3;
+    position: relative;
+  }
+}
+
+.swiper {
+  margin-top: -50px;
+}
+
+.swiper-slide {
+  background-color: rgba(0, 0, 0, .45);
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, .15);
+  backdrop-filter: blur(17px);
+  padding: 28px 44px 58px;
+  width: 90%;
+  height: 254px;
+  box-sizing: border-box;
+  color: $color-text-secondary;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 150%;
+  opacity: 1;
+}
+
+.swiper-pagination,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 20;
+}
+
+.swiper-pagination-bullet {
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  bottom: 38px;
+  background-color: $color-text-secondary;
+  border: 1px solid $color-text-secondary;
+  border-radius: 0;
+  opacity: 1;
+  box-sizing: border-box;
+  transition: $animation-time;
+  transform: rotate(45deg);
+
+  &-active {
+    background-color: transparent;
+  }
+}
+
+
