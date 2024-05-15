@@ -1,0 +1,279 @@
+.materials {
+  @include on-tablet {
+    display: block;
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 80px;
+    line-height: 96px;
+    letter-spacing: 0.12em;
+    color: $color-title-third;
+    grid-area: 1 / 1 / 3 / 2;
+    width: 150%;
+    z-index: 4;
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      font-size: 139px;
+      line-height: 167px;
+      grid-area: 1 / 1 / 4 / 2;
+    }
+  }
+
+  &__info {
+    z-index: 0;
+    grid-area: 2 / 2 / 4 / 2;
+    display: none;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      grid-area: 3 / 2 / 4 / 2;
+      z-index: 1;
+    }
+  }
+
+  &__info-title {
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    color: $color-text-primary;
+  }
+
+  &__info-text {
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-text-primary;
+
+    &--bold {
+      font-weight: 700;
+
+      @include on-desktop {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__content {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 50px;
+    position: relative;
+    display: none;
+
+    @include on-tablet {
+      display: grid;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    min-height: 500px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    grid-area: 3 / 1 / 5 / 3;
+    z-index: 0;
+
+    @include on-tablet {
+      margin-left: -34px;
+      width: calc(100% + 68px);
+    }
+
+    @include on-desktop {
+      margin-left: -135px;
+      width: calc(100% + 270px);
+    }
+  }
+
+  &__button-container {
+    grid-area: 3 / 1 / 5 / 3;
+    position: relative;
+    z-index: 3;
+  }
+
+  &__toggle-button {
+    position: absolute;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-image: url(../images/plusButton.png);
+    transition: background-image $animation-time;
+
+    @include hover(transform, scale(1.1));
+
+    &--active {
+      opacity: 0.7;
+      background-image: url(../images/minusButton.png);
+    }
+
+    &--1 {
+      bottom: 15%;
+      left: 12%;
+    }
+
+    &--2 {
+      bottom: 35%;
+      left: 35%;
+    }
+
+    &--3 {
+      bottom: 13%;
+      left: 47%;
+    }
+
+    &--4 {
+      bottom: 27%;
+      left: 60%;
+    }
+
+    &--5 {
+      bottom: 45%;
+      left: 80%;
+    }
+  }
+
+  &__text-container {
+    position: relative;
+    grid-area: 3 / 1 / 5 / 3;
+  }
+
+  &__toggle-text {
+    position: absolute;
+    background-color: rgba(0, 0, 0, .45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, .15);
+    backdrop-filter: blur(17px);
+    padding: 30px 45px;
+    width: 300px;
+    height: min-content;
+    box-sizing: border-box;
+    color: $color-text-secondary;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 150%;
+    opacity: 1;
+    z-index: 4;
+
+    @include on-desktop {
+      padding: 35px 45px;
+    }
+
+    &--1 {
+      bottom: 25%;
+      left: 5%;
+
+      @include on-desktop {
+        bottom: 23%;
+        left: 2%;
+      }
+    }
+
+    &--2 {
+      bottom: 46%;
+      left: 17%;
+
+      @include on-desktop {
+        bottom: 43%;
+        left: 13%;
+      }
+    }
+
+    &--3 {
+      bottom: 24%;
+      right: 28%;
+
+      @include on-desktop {
+        bottom: 5%;
+        right: 55%;
+      }
+    }
+
+    &--4 {
+      bottom: 38%;
+      left: 50%;
+
+      @include on-desktop {
+        bottom: 34%;
+        left: 50%;
+      }
+    }
+
+    &--5 {
+      top: 58%;
+      right: -34px;
+
+      @include on-desktop {
+        top: 60%;
+        left: 70%;
+      }
+    }
+  }
+
+  &__vertical {
+    display: none;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Bebas Neue", sans-serif;
+    writing-mode: vertical-lr;
+    position: absolute;
+    width: max-content;
+    font-size: 12px;
+    letter-spacing: 2.64px;
+    color: $color-text-primary;
+    top: 0;
+    right: -30px;
+
+    @include hover(transform, scale(1.1));
+
+    @include on-tablet {
+      display: inline-block;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+
+    &::before {
+      @include on-tablet {
+        display: inline-block;
+        content: "";
+        background-color: #828282;
+        width: 1px;
+        height: 66px;
+        margin: 10px;
+      }
+    }
+
+    &--left {
+      display: none;
+      top: 200px;
+      left: -30px;
+
+      @include on-tablet {
+        display: inline-block;
+      }
+
+      @include on-desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+.hiddenText {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
