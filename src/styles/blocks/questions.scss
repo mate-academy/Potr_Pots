@@ -1,0 +1,70 @@
+.questions {
+  position: relative;
+  display: flex;
+  color: #000;
+
+  @include content-padding-inline;
+
+  &__signet {
+    position: absolute;
+    width: 112px;
+    overflow: hidden;
+    right: 0;
+    top: -6%;
+
+    @include on-tablet {
+      width: 112px;
+      right: 0;
+      top: -15%;
+    }
+
+    @include on-desktop {
+      width: fit-content;
+      right: 60px;
+      top: -10%;
+    }
+  }
+
+  &__signet img {
+    overflow: hidden;
+  }
+
+  &__background {
+    min-height: 650px;
+    flex: 1 1 auto;
+    background-image: url(../images/questions-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: visible;
+
+    @include on-mobile {
+      background-image: url(../images/questions-background-mobile.png);
+      min-height: 1050px;
+    }
+
+    @include on-tablet {
+      margin-inline: -34px;
+    }
+
+    @include on-desktop {
+      min-height: 600px;
+      margin-inline: 0;
+      margin-left: -135px;
+    }
+  }
+
+  &__form {
+    padding-inline: 30px;
+
+    margin-top: 17px;
+
+    @include on-tablet {
+      padding-inline: 34px;
+    }
+
+    @include on-desktop {
+      padding-right: 0;
+      padding-left: 135px;
+    }
+  }
+}

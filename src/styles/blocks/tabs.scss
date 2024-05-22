@@ -1,0 +1,27 @@
+.tabs {
+  align-self: center;
+  overflow: hidden;
+  display: flex;
+  column-gap: 7px;
+  align-items: center;
+  justify-content: center;
+  height: 10px;
+  width: 70px;
+
+  @include on-tablet {
+    display: none;
+  }
+
+  &__tab {
+    background-color: #f8f8f8;
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+
+    &--active {
+      box-sizing: border-box;
+      border: 1px solid #f8f8f8;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.card {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 11px;
+  box-sizing: border-box;
+  height: 0;
+  width: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+
+  &--1 {
+    @include on-tablet {
+      left: 60vw;
+      bottom: 7%;
+    }
+
+    @include on-desktop {
+      left: 70vw;
+      bottom: 5%;
+    }
+  }
+
+  &--2 {
+    @include on-tablet {
+      left: 35vw;
+      bottom: 25%;
+    }
+
+    @include on-desktop {
+      left: 50vw;
+      bottom: 30%;
+    }
+  }
+
+  &--3 {
+    @include on-tablet {
+      left: 34vw;
+      bottom: 20%;
+    }
+
+    @include on-desktop {
+      left: 25vw;
+      bottom: 5%;
+    }
+  }
+
+  &--4 {
+    @include on-tablet {
+      left: 17vw;
+      bottom: 40%;
+    }
+
+    @include on-desktop {
+      left: 14vw;
+      bottom: 38%;
+    }
+  }
+
+  &--5 {
+    @include on-tablet {
+      left: 7vw;
+      bottom: 20%;
+    }
+
+    @include on-desktop {
+      left: 10vw;
+      bottom: 20%;
+    }
+  }
+
+  &--active {
+    padding: 35px;
+    min-width: 283px;
+    height: fit-content;
+
+    @include on-mobile {
+      margin-inline: auto;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__text {
+    color: #f8f8f8;
+    overflow: hidden;
+  }
+}

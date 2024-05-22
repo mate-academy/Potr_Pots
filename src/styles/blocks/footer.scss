@@ -1,0 +1,98 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+
+  @include on-mobile {
+    padding-inline: 30px;
+  }
+
+  @include on-tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 117px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 64px;
+  }
+
+  @include content-padding-inline;
+
+  &__adrress {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    max-width: 170px;
+
+    @include on-mobile {
+      display: none;
+    }
+
+    &-title {
+      color: #000;
+      font-family: "Bebas Neue";
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 24px; /* 100% */
+      letter-spacing: 3.72px;
+      text-transform: uppercase;
+    }
+
+    &-text {
+      color: #000;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    min-width: 220px;
+    margin-bottom: 40px;
+
+    @include on-mobile {
+      padding-inline: 15px;
+    }
+  }
+
+  &__logo {
+    color: #000;
+    font-family: "Bebas Neue";
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 150%; /* 54px */
+    letter-spacing: 5.58px;
+    text-transform: uppercase;
+    align-self: center;
+
+    @include hover(scale, 1.3);
+  }
+
+  &__last-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include on-mobile {
+      align-self: center;
+    }
+  }
+
+  &__about {
+    color: #000;
+    font-family: "Bebas Neue";
+    font-size: 24px;
+    line-height: 24px; /* 100% */
+    letter-spacing: 3.72px;
+    text-transform: uppercase;
+
+    @include on-mobile {
+      display: none;
+    }
+  }
+}
