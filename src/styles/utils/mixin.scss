@@ -28,6 +28,19 @@
   }
 }
 
+@mixin content-padding-in-line() {
+  padding-inline: 30px;
+
+  @include on-tablet {
+    padding-inline: 34px;
+  }
+
+  @include on-desktop {
+    margin-inline: auto;
+    padding-inline: 135px;
+  }
+}
+
 @mixin rotate-efect {
   background-size: cover;
   top: 0;
@@ -62,4 +75,63 @@
     var(--min-bottom) * 1px + (var(--max-bottom) - var(--min-bottom)) *
       (100vw - var(--min-vp) * 1px) / (var(--max-vp) - var(--min-vp))
   );
+}
+
+@mixin page-grid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+
+  @include on-tablet {
+    --columns: 6;
+  }
+
+  @include on-desktop {
+    --columns: 12;
+
+    column-gap: 30px;
+  }
+}
+
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin side-text-style {
+  position: relative;
+  font-family: $font-bebas-neue;
+  font-weight: $middle-font;
+  font-size: 12px;
+  line-height: 14.4px;
+  color: #828282;
+  letter-spacing: 2.6px;
+}
+
+@mixin potr-pots-side-text {
+  content: "";
+  position: absolute;
+  right: 69px;
+  top: 4px;
+  bottom: 0;
+  width: 65px;
+  height: 1px;
+  padding-right: 10px;
+  background-color: #828282;
+}
+
+@mixin line-after-title() {
+  content: "";
+  position: absolute;
+  display: block;
+  right: 63%;
+  top: 67%;
+  height: 46.29px;
+  width: 1px;
+  background-color: $color-darkgrey;
+  rotate: 22deg;
 }

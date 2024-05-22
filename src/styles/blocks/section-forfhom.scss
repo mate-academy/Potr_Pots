@@ -1,0 +1,413 @@
+.for-whom {
+  @include content-padding-in-line;
+  &__titles {
+    margin: 0 auto;
+
+    @include on-tablet {
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__tittle-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main-title {
+    width: 175px;
+    margin-bottom: 34px;
+  }
+
+  &__section-title {
+    position: relative;
+    font-family: $font-bebas-neue;
+    font-weight: $middle-font;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 5px;
+    color: $color-darkgrey;
+
+    @include on-tablet {
+      width: 340px;
+    }
+  }
+
+  &__section-title-1 {
+    position: relative;
+
+    @include on-desktop {
+      padding-top: 0;
+      width: 470px;
+    }
+  }
+
+  &__section-title-1,
+  &__section-title-2,
+  &__section-title-3 {
+    color: $black-color;
+  }
+
+  &__section-title-2 {
+    position: relative;
+
+    @include on-tablet {
+      grid-column: 1/4;
+      margin-top: 22px;
+    }
+
+    @include on-desktop {
+      margin: 0;
+      margin-top: 27px;
+    }
+  }
+
+  &__section-title-3 {
+    position: relative;
+
+    @include on-tablet {
+      padding-top: 17px;
+    }
+
+    @include on-desktop {
+      padding: 0;
+      width: 370px;
+      margin-top: 109px;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 70px;
+
+    @include on-tablet {
+      gap: 110px;
+    }
+
+    @include on-desktop {
+      gap: 80px;
+    }
+  }
+
+  &__container-1 {
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__input-container-2 {
+    @include on-tablet {
+      display: flex;
+      flex-direction: row;
+    }
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__input-container-1 {
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__input-container-3 {
+    @include on-tablet {
+      @include page-grid;
+    }
+
+    @include on-desktop {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  &__total-container {
+    @include on-desktop {
+      height: 100%;
+      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      column-gap: 24px;
+      grid-auto-flow: row;
+
+      grid-template-areas: ". . container-2 . . . . container-3";
+    }
+  }
+
+  &__container-2 {
+    margin-bottom: 70px;
+
+    @include on-tablet {
+      margin-bottom: 110px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 0;
+      display: block;
+      grid-area: container-2;
+    }
+  }
+
+  &__container-3 {
+    @include on-desktop {
+      display: block;
+      grid-area: container-3;
+    }
+  }
+
+  &__titles-number {
+    position: relative;
+    font-family: $font-bebas-neue;
+    font-weight: $middle-font;
+    width: 33px;
+    font-size: 36px;
+    line-height: 64.8px;
+    letter-spacing: 5.5px;
+    color: $title-color-dark-grey;
+  }
+
+  &__titles-number::before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: -8px;
+    height: 46.29px;
+    width: 1px;
+    background-color: $title-color-dark-grey;
+    rotate: 22deg;
+  }
+
+  &__text {
+    margin: 0;
+    padding-top: 20px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: $middle-font;
+    color: $text-color-grey;
+
+    @include on-desktop {
+      width: 370px;
+    }
+  }
+
+  &__picture {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__img {
+    width: inherit;
+    height: inherit;
+    cursor: pointer;
+    transition: transform $effect-duration;
+
+    &:hover {
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__box {
+    @include on-tablet {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      grid-column: 1/4;
+      justify-content: center;
+    }
+  }
+
+  &__box-1 {
+    @include on-tablet {
+      width: 401px;
+      margin-top: 25px;
+      display: flex;
+      flex-direction: row;
+      grid-column: 4/7;
+      grid-row: 1/2;
+      gap: 20px;
+      align-items: start;
+    }
+
+    @include on-desktop {
+      width: 571px;
+      margin-top: 0;
+      grid-column: 7/13;
+    }
+  }
+
+  &__picture-1 {
+    grid-column: 1/4;
+    margin-right: 15px;
+
+    @include on-desktop {
+      width: 500px;
+      grid-column: 1/6;
+    }
+  }
+
+  &__picture-2 {
+    @include on-tablet {
+      grid-column: 4/7;
+    }
+
+    @include on-desktop {
+      width: 300px;
+      margin-top: 105px;
+    }
+  }
+
+  &__picture-3 {
+    @include on-tablet {
+      grid-column: 1/4;
+    }
+
+    @include on-desktop {
+      width: 470px;
+    }
+  }
+
+  &__robust {
+    top: -50px;
+    left: -25px;
+
+    @include on-desktop {
+      left: -40px;
+      top: -40px;
+    }
+  }
+
+  &__beautiful {
+    @include on-tablet {
+      top: 5%;
+      left: 60%;
+      gap: 4px;
+    }
+
+    @include on-desktop {
+      left: -10%;
+      top: 0;
+      gap: 36px;
+      padding-top: 45px;
+    }
+  }
+
+  &__saves-time {
+    left: 52%;
+
+    @include on-desktop {
+      padding-top: 45px;
+      top: 670px;
+      left: -40px;
+    }
+  }
+
+  &__tittle-group {
+    position: relative;
+  }
+
+  &__left-side-box {
+    position: absolute;
+    bottom: 30px;
+    right: -50px;
+    display: block;
+    rotate: 90deg;
+
+    @include on-desktop {
+      display: block;
+      position: absolute;
+      bottom: 105px;
+      left: -5px;
+    }
+  }
+
+  &__left-side-text {
+    @include side-text-style;
+
+    &::before {
+      @include potr-pots-side-text;
+
+      right: 80px;
+      top: 4px;
+    }
+  }
+}
+
+.titles-number-1 {
+  @include on-tablet {
+    margin-left: 15px;
+  }
+
+  @include on-desktop {
+    margin-top: 0;
+  }
+}
+
+.titles-number-2 {
+  padding: 0;
+
+  @include on-desktop {
+    margin-top: 109px;
+    margin-left: 15px;
+  }
+}
+
+.titles-number-3 {
+  @include on-tablet {
+    margin-left: 20px;
+    margin-top: 17px;
+  }
+
+  @include on-desktop {
+    margin-top: 109px;
+  }
+}
+
+.remark {
+  display: none;
+
+  @include on-tablet {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    font-weight: $middle-font;
+    font-size: 16px;
+    line-height: 24px;
+    color: $title-color-dark-grey;
+  }
+
+  @include on-desktop {
+    position: absolute;
+    gap: 30px;
+    padding-bottom: 40px;
+  }
+}
+
+.box-1 {
+  margin-bottom: 14px;
+}
+
+.box-3 {
+  @include on-desktop {
+    flex-direction: row;
+  }
+}

@@ -3,19 +3,19 @@
 @import "./utils/reset";
 @import "./utils/mixin";
 @import "./utils/animation";
-@import "./header";
-@import "./nav-bar";
-@import "./popup-menu";
-@import "./burger";
-@import "./button";
-@import "./section-forfhom";
-@import "./section-features";
-@import "./section-team";
-@import "./section-materials";
-@import "./slider";
-@import "./fields-decoration";
-@import "./section-whichsize";
-@import "./footer";
+@import "./blocks/header";
+@import "./blocks/nav-bar";
+@import "./blocks/popup-menu";
+@import "./blocks/burger";
+@import "./blocks/button";
+@import "./blocks/section-forfhom";
+@import "./blocks/section-features";
+@import "./blocks/section-team";
+@import "./blocks/section-materials";
+@import "./blocks/slider";
+@import "./blocks/fields-decoration";
+@import "./blocks/section-whichsize";
+@import "./blocks/footer";
 
 .html {
   scroll-behavior: smooth;
@@ -25,5 +25,22 @@
   margin: auto;
   position: relative;
   min-width: 320px;
-  max-width: 1440px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: $font-manrope;
+  font-optical-sizing: auto;
+
+  &__body {
+    position: relative;
+    margin: 0 auto;
+    min-height: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+    background-color: $text-color-white;
+    box-sizing: border-box;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
 }
