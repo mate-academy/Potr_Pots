@@ -68,13 +68,27 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+
+    &::after {
+      content: "";
+      display: block;
+      background-color: #f8f8f8;
+      height: 1px;
+      width: inherit;
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+    
+    &:hover::after {
+      transform: scale(1);
+    }
+
   }
 
   &__basket-contain {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: "Bebas Neue";
     font-size: 10px;
     text-align: center;
     color: #f8f8f8;
