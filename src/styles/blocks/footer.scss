@@ -22,6 +22,7 @@
   &__adrress {
     display: flex;
     flex-direction: column;
+    width: fit-content;
     row-gap: 10px;
     max-width: 170px;
 
@@ -39,6 +40,20 @@
 
     &-text {
       color: #000;
+
+      &::after {
+        content: '';
+        display: block;
+        background-color: #4f4f4f;
+        height: 1px;
+        width: inherit;
+        transition: transform 0.3s;
+        transform: scale(0);
+      }
+  
+      &:hover::after {
+        transform: scale(1);
+      }
     }
   }
 
@@ -56,6 +71,10 @@
     @include on-mobile {
       padding-inline: 15px;
     }
+  }
+
+  &__icon {
+    @include hover(scale, 1.2)
   }
 
   &__logo {

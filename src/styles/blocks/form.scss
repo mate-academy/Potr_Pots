@@ -82,6 +82,8 @@
   }
 
   &__item {
+    width: fit-content;
+
     &-title {
       color: rgba(0, 0, 0, 0.39);
       font-size: 24px;
@@ -90,6 +92,20 @@
 
     &-content {
       color: #000;
+
+      &::after {
+        content: '';
+        display: block;
+        background-color: #4f4f4f;
+        height: 1px;
+        width: inherit;
+        transition: transform 0.3s;
+        transform: scale(0);
+      }
+  
+      &:hover::after {
+        transform: scale(1);
+      }
     }
   }
 }
