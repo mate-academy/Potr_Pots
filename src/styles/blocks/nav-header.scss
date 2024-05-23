@@ -1,0 +1,32 @@
+.nav-header {
+  display: none;
+
+  @include on-desktop {
+    display: flex;
+    column-gap: 60px;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #4f4f4f;
+
+    &::after {
+      content: '';
+      display: block;
+      background-color: #4f4f4f;
+      height: 1px;
+      width: inherit;
+      transition: transform 0.3s;
+      transform: scale(0);
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+}

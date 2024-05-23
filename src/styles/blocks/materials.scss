@@ -1,0 +1,243 @@
+.materials {
+  position: relative;
+
+  &__side-content-right {
+    position: absolute;
+    z-index: 1;
+    right: 5px;
+
+    @include on-mobile {
+      display: none;
+    }
+
+    @include on-tablet {
+      top: 180px;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__side-content-left {
+    position: absolute;
+    z-index: 1;
+    left: -150px;
+
+    @include on-mobile {
+      display: none;
+    }
+
+    @include on-tablet {
+      top: 400px;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__background {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(
+      180deg,
+      #f8f8f8 0%,
+      rgba(255, 255, 255, 0) 30.93%
+    );
+    background-image: url(../images/materials-background-image.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    min-height: 573px;
+
+    @include on-tablet {
+      height: 835px;
+      background-position-y: 100%;
+      background-image: url(../images/materials-background-image-2x.png);
+    }
+
+    @include on-desktop {
+      height: 1243px;
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    @include page-grid;
+    @include content-padding-inline;
+
+    @include on-mobile {
+      padding-inline: 30px;
+    }
+  }
+
+  &__title {
+    color: #03839e;
+    font-size: 58px;
+    font-weight: 400;
+    letter-spacing: 8.99px;
+    grid-column: 1 / -1;
+    line-height: normal;
+
+    @include on-tablet {
+      grid-column: 1 / 6;
+      grid-row: 1 / 2;
+      font-size: 80px;
+      line-height: 96px;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / 13;
+      grid-row: 1 / 2;
+      font-size: 138.81px;
+      letter-spacing: 16.66px;
+      line-height: normal;
+    }
+  }
+
+  &__safety-content {
+    display: none;
+
+    @include on-tablet {
+      position: relative;
+      z-index: -1;
+      padding-top: 145px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+      grid-column: 4 / -1;
+      grid-row: 1 / 2;
+    }
+
+    @include on-desktop {
+      z-index: 0;
+      padding-top: 170px;
+      row-gap: 15px;
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__safety-text {
+    &--bold {
+      font-weight: 700;
+    }
+
+    &--hidden {
+      @include on-tablet {
+        opacity: 0;
+      }
+
+      @include on-desktop {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__swiper {
+    width: 94vw;
+    height: 300px;
+  }
+
+  &__swiper-slide {
+    @include on-tablet {
+      display: none;
+    }
+  }
+
+  &__cards {
+    @include on-mobile {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    position: relative;
+
+    @include on-tablet {
+      height: 38.8vw;
+      margin-bottom: 72px;
+    }
+  }
+
+  &__button {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    background-image: url(../images/materials-button.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 51px;
+    height: 51px;
+
+    @include on-tablet {
+      display: block;
+    }
+
+    &--1 {
+      @include on-tablet {
+        left: 72vw;
+      }
+
+      @include on-desktop {
+        left: 78vw;
+        bottom: 53%;
+      }
+    }
+
+    &--2 {
+      @include on-tablet {
+        left: 54vw;
+        bottom: 25%;
+      }
+
+      @include on-desktop {
+        left: 58vw;
+        bottom: 30%;
+      }
+    }
+
+    &--3 {
+      @include on-tablet {
+        left: 44vw;
+        bottom: 5%;
+      }
+
+      @include on-desktop {
+        left: 48vw;
+        bottom: 10%;
+      }
+    }
+
+    &--4 {
+      @include on-tablet {
+        left: 30vw;
+        bottom: 55%;
+      }
+
+      @include on-desktop {
+        left: 34vw;
+        bottom: 60%;
+      }
+    }
+
+    &--5 {
+      @include on-tablet {
+        left: 11vw;
+        bottom: 10%;
+      }
+
+      @include on-desktop {
+        left: 17.5vw;
+        bottom: 15%;
+      }
+    }
+
+    &--active {
+      background-image: url(../images/materials-button-active.png);
+    }
+  }
+}

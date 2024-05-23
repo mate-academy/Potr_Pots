@@ -21,6 +21,6 @@
 6. Make sure everything looks neat on mobile and without horizontal scrolling
 7. After clicking the menu buttons, the landing page should scroll exactly to the beginning of the desired block (exactly where its section begins)
 8. The user must have the opportunity to write 2-3 lines of text in the message field
-9. The shopping cart button is clickable and leads to the feedback form
+9. The shopping basket button is clickable and leads to the feedback form
 10. It is important that in the email field the user has the opportunity to enter the whole mail and the text is not cut off
 11. All the social icons in the footer should be clickable and open the real social networks of the brand in a new tabb

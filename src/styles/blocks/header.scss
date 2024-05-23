@@ -1,0 +1,205 @@
+.header {
+  @include on-tablet {
+    background-image: url(../images/yellow-quadrangle.png);
+    background-repeat: no-repeat;
+  }
+
+  @include on-desktop {
+    background-image: url(../images/yellow-quadrangle-desktop.png);
+    background-repeat: no-repeat;
+  }
+
+  &__icon--logo {
+    letter-spacing: 0.06em;
+    color: #333;
+
+    @include hover(scale, 1.3);
+  }
+
+  &__icon--menu {
+    display: block;
+    height: 32px;
+    width: 32px;
+    margin: 8px;
+    background: url(../images/icons/icon-menu.png);
+
+    @include hover(background, url(../images/icons/icon-menu-hover.png));
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__icon--basket {
+    display: none;
+    height: 30px;
+    width: 30px;
+    background: url(../images/icons/icon-basket.png);
+    order: 1;
+
+    @include hover(scale, 1.3);
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__content {
+    @include content-padding-inline;
+  }
+
+  &__grid-container {
+    position: relative;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+
+  &__image {
+    position: relative;
+    padding-bottom: 100%;
+
+    @include on-mobile {
+      margin-bottom: 25px;
+    }
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row: 1 / 2;
+    }
+
+    @include on-desktop {
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__image img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__wrapper {
+    @include on-mobile {
+      padding-inline: 30px;
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 7;
+      grid-row: 1 / 2;
+    }
+
+    @include on-desktop {
+      grid-column: 2 / 10;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__title {
+    position: relative;
+    color: #03839e;
+    font-size: 11vw;
+    font-weight: 400;
+    line-height: 1.2em;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    min-width: 260px;
+
+    @include on-tablet {
+      line-height: 64px; /* 100% */
+      height: 266px;
+      font-size: 64px;
+      letter-spacing: 9.92px;
+    }
+
+    @include on-desktop {
+      overflow: none;
+      margin-bottom: 20px;
+    }
+
+    &_transparent {
+      color: transparent;
+      -webkit-text-stroke-width: 0.7px;
+      -webkit-text-stroke-color: #03839e;
+      font-weight: 400;
+
+      @include on-tablet {
+        -webkit-text-stroke-width: 1;
+      }
+    }
+  }
+
+  &__buy-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: fit-content;
+
+    @include on-tablet {
+      margin-left: 32vw;
+    }
+
+    @include on-desktop {
+      margin-left: 20vw;
+    }
+  }
+
+  &__price-content {
+    position: relative;
+
+    @include on-tablet {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__price {
+    color: #333;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  &__sale-text {
+    max-width: 140px;
+    color: #4f4f4f;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+  }
+
+  &__button {
+    position: relative;
+    color: #121212;
+
+    @include on-tablet {
+      margin-left: 16vw;
+    }
+
+    @include on-desktop {
+      margin-left: 13.8vw;
+    }
+  }
+
+  &__side-content {
+    position: absolute;
+    right: 5px;
+
+    @include hover(opacity, 0.5);
+
+    @include on-tablet {
+      margin-top: 45px;
+      left: -125px;
+    }
+
+    @include on-desktop {
+      margin-top: -55px;
+      left: -25px;
+    }
+  }
+}

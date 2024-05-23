@@ -1,0 +1,174 @@
+.potr-team {
+  position: relative;
+  padding-bottom: 58px;
+
+  @include content-padding-inline;
+
+  @include on-tablet {
+    margin-bottom: 20px;
+  }
+
+  @include on-desktop {
+    @include page-grid;
+  }
+
+  &__title {
+    padding-inline: 30px;
+
+    @include on-tablet {
+      padding-inline: 0;
+      margin-bottom: 177px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 143px;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__name-wrapper {
+    width: fit-content;
+    line-height: normal;
+    letter-spacing: 35.94px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #03839e;
+    color: #03839e;
+  }
+
+  &__name-wrapper--top {
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: -42px;
+    min-width: 520px;
+
+    @include on-desktop {
+      top: 120px;
+      left: 70px;
+    }
+  }
+
+  &__name-wrapper--bottom {
+    position: absolute;
+    right: 3px;
+
+    @include on-tablet {
+      bottom: -138px;
+    }
+
+    @include on-desktop {
+      bottom: -160px;
+    }
+  }
+
+  &__background-name {
+    display: none;
+    color: transparent;
+
+    @include on-tablet {
+      display: block;
+      font-size: 210px;
+      overflow: hidden;
+    }
+
+    @include on-desktop {
+      display: block;
+      font-size: 231px;
+    }
+  }
+
+  &__background-name span {
+    letter-spacing: 0;
+  }
+
+  &__content {
+    @include on-tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include on-desktop {
+      grid-column: 1 / -2;
+    }
+  }
+
+  &__image {
+    position: relative;
+    padding-bottom: 75%;
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      padding-bottom: 40%;
+      flex: 0 0 49%;
+      order: 1;
+    }
+
+    @include on-desktop {
+      flex: 0 0 58%;
+    }
+  }
+
+  &__image img {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__background-image {
+    background-image: url(../images/potr-team-background-yellow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    min-height: 300px;
+    position: absolute;
+
+    @include on-mobile {
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    @include on-tablet {
+      background-size: contain;
+      min-width: 30.6vw;
+      margin-inline: -34px;
+      top: 185px;
+      flex: 0 0 37%;
+    }
+
+    @include on-desktop {
+      background-size: cover;
+      min-width: 35vw;
+      overflow: visible;
+      background-image: url(../images/potr-team-background-yellow-desktop.png);
+      margin-inline: -135px;
+      top: 200px;
+      left: 0;
+    }
+  }
+
+  &__text {
+    position: relative;
+    padding-inline: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+
+    @include on-tablet {
+      padding-inline: 0;
+      margin-right: 27px;
+      margin-top: 53px;
+      flex: 0 0 45%;
+    }
+
+    @include on-desktop {
+      margin-top: 230px;
+      margin-right: 37px;
+      flex: 0 0 29%;
+    }
+  }
+}
