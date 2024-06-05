@@ -38,12 +38,10 @@
 }
 
 @mixin content-padding-inline() {
-  max-width: 320px;
   padding-inline: 30px;
   margin-inline: auto;
 
   @include on-tablet {
-    max-width: 768px;
     padding-inline: 34px;
   }
 
@@ -60,20 +58,14 @@
 
   min-width: 260px;
 
-  @include on-tablet {
-    min-width: 700px;
-  }
+  // &--bg {
+  //   padding-inline: 0;
+  //   margin-inline: 0;
+  //   display: flex;
 
-  &--bg {
-    padding-inline: 0;
-    margin-inline: 0;
-    display: flex;
-
-    @include on-tablet {
-      @include content-padding-inline;
-      @include page-grid;
-
-      min-width: 700px;
-    }
-  }
+  //   @include on-tablet {
+  //     @include content-padding-inline;
+  //     @include page-grid;
+  //   }
+  // }
 }
