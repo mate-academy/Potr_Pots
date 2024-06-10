@@ -18,6 +18,9 @@
     display: flex;
     text-transform: uppercase;
     text-decoration: none;
+    position: relative;
+    bottom: 100%;
+    right: -90%;
 
     &::after {
       content: 'close';
@@ -29,6 +32,19 @@
       line-height: 18px;
       color: #f8f8f8;
       letter-spacing: -0.05em;
+      bottom: 600%;
+      transform: rotate(-90deg);
+      position: absolute;
+    }
+
+    &::before {
+      content: '';
+      width: 1px;
+      height: 44px;
+      left: 50%;
+      bottom: 200%;
+      background-color: #f8f8f8;
+      position: absolute;
     }
   }
 }
