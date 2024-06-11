@@ -8,7 +8,7 @@
       position: absolute;
       z-index: -1;
       box-sizing: border-box;
-      height: 65vw;
+      height: 55vw;
       width: 80%;
       background-image: linear-gradient(
         165deg,
@@ -31,15 +31,21 @@
 
     &::after {
       content: 'More about  POTR POTS';
-      font-family: Manrope, sans-serif;
+      font-family: $font-family-small;
       font-size: 12px;
       font-weight: 400;
       line-height: 18px;
-      color: #03839E;
+      color: #03839e;
       position: absolute;
       bottom: 115px;
       right: -80px;
       transform: rotate(90deg);
+
+      @include on-tablet {
+        right: 84%;
+        left: -100px;
+        bottom: 35px;
+      }
     }
 
     &::before {
@@ -47,6 +53,11 @@
       position: absolute;
       bottom: 0;
       right: -20px;
+
+      @include on-tablet {
+        right: 98.5%;
+        bottom: -40px;
+      }
     }
 
     @include on-tablet {
@@ -115,12 +126,11 @@
 }
 
 .article {
-
   &__title {
     grid-column: 1 / -1;
     margin: 0 0 30px;
     text-transform: uppercase;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: $font-family-bold;
     font-size: 36px;
     font-weight: 400;
     line-height: 43.2px;
@@ -129,7 +139,7 @@
     color: #03839e;
 
     &--blue {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: $font-family-bold;
       font-size: 36px;
       font-weight: 400;
       line-height: 43.2px;
@@ -155,36 +165,36 @@
   &__price {
     grid-column: 1 / -1;
     display: grid;
-    font-family: Manrope, sans-serif;
+    font-family: $font-family-small;
     font-size: 26px;
     font-weight: 700;
     line-height: 35.52px;
-    text-align: left;
+
     margin: 0;
     color: $grey-1;
 
     @include on-tablet {
       grid-column: 3 / 4;
       position: relative;
-      bottom: 30px;
+      top: -50px;
     }
   }
 
   &__description {
     grid-column: 1 / -1;
     display: grid;
-    font-family: Manrope, sans-serif;
+    font-family: $font-family-small;
     font-size: 14px;
     font-weight: 400;
     line-height: 21px;
-    text-align: left;
+
     margin: 0 0 20px;
     color: $grey-2;
 
     @include on-tablet {
       grid-column: 3 / 5;
       position: relative;
-      bottom: 30px;
+      top: -50px;
     }
   }
 
@@ -206,6 +216,8 @@
     @include on-tablet {
       width: 240px;
       grid-column: 2 / 5;
+      position: relative;
+      top: -20px;
     }
   }
 }
@@ -214,7 +226,7 @@
   &__text {
     display: flex;
     flex-direction: column;
-    font-family: Manrope, sans-serif;
+    font-family: $font-family-small;
     font-size: 14px;
     font-weight: 600;
     line-height: 48px;
