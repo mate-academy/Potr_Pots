@@ -1,0 +1,310 @@
+@import '../utils/mixins';
+@import '../utils/vars';
+
+
+.questions {
+    position: relative;
+    background-image: url(/src/images/questions/question.svg);
+    background-repeat: no-repeat;
+    height: 1003px;
+
+    @include on-tablet {
+        background-image: url(/src/images/questions/question-bg-tablet.svg);
+        height: 552px;
+    }
+
+    @include on-desktop {
+        background-image: url(/src/images/questions/question-bg-desktop.svg);
+        height: 567px;
+
+    }
+
+    &__wrapper {
+        @include content-padding-inline;
+    }
+
+    &__content {
+        @include on-tablet {
+            @include page-grid;
+        }
+
+        &__question {
+            @include on-tablet {
+                grid-column: 1 / 4;
+            }
+
+            .question {
+
+                &__emblem {
+                    background-image: url(/src/images/questions/emblem.svg);
+                    background-repeat: no-repeat;
+                    width: 149px;
+                    height: 170px;
+                    position: absolute;
+                    right: 0;
+                    top: -73px;
+
+                    @include on-tablet {
+                        background-image: url(/src/images/questions/emblem-tablet.svg);
+                        width: 134px;
+                        height: 167px;
+                        right: 0;
+                        top: -107px;
+                    }
+
+                    @include on-desktop {
+                        background-image: url(/src/images/questions/emblem-desktop.svg);
+                        width: 161px;
+                        height: 164px;
+                        right: 61px;
+                        top: -95px;
+                    }
+                }
+    
+                &__title {
+                    width: 260px;
+                    height: 108px;
+                    color: $black ;
+                    font-family: $Bebas-Neue;
+                    font-size: 36px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%; /* 54px */
+                    letter-spacing: 5.58px;
+                    text-transform: uppercase;
+                    padding-block-start: 45px;
+
+                    @include on-tablet {
+                        padding-block-start: 17px;
+                        width: 349px;
+                        height: 54px;
+                    }
+
+                    @include on-desktop {
+                        margin-top: 38px;
+                    }
+                }
+    
+                &__text {
+                    width: 260px;
+                    height: 48px;
+                    color: $black;
+                    font-family: $Manrope;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+
+                    @include on-tablet {
+                        width: 277px;
+                        height: 24px;
+                    }
+                }
+    
+                &__form {
+                    padding-top: 40px;
+                    padding-bottom: 56px;
+                    display: flex;
+                    flex-direction: column;
+
+                    @include on-tablet {
+                        padding-top: 30px;
+                        padding-bottom: 0;
+
+                    }
+
+                    .form {
+                        &__text {
+                            width: 133px;
+                            height: 36px;
+                            color: $black;
+                            font-family: $Manrope;
+                            font-size: 24px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 150%;
+                            margin-bottom: 25px;
+
+                            @include on-tablet {
+                                margin: 0;
+                            }
+                        }
+
+                        &__blocks {
+                            @include on-tablet {
+                                padding-block: 40px;
+                                  
+                            }
+
+                            .block {
+                                
+                                &__input {
+                                    border: none;
+                                    border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+                                    outline: none;
+                                    background: transparent;
+                                    resize: none;
+                                    padding: 0;
+                                    margin-bottom: 20px;
+                                    width: 100%;
+    
+                                    &:focus {
+                                        border-bottom: 1px solid $turquoise;
+                                        color: $turquoise;
+                                    }
+    
+                                    &:hover {
+                                        color: $turquoise;
+                                    }
+    
+                                    &::placeholder {
+                                        position: absolute;
+                                        left: 6px;
+    
+                                        @include on-tablet {
+                                            left: 5px;
+                                        }
+                                    }
+
+                                    @include on-tablet {
+                                        width: 338px;
+                                    }
+                                }
+
+                                &__textarea {
+                                    margin: 0;
+                                    margin-bottom: 30px;
+                                    width: 260px;
+                                    height: 29px;
+                                    outline: none;
+                                    resize: none;
+                                    overflow: auto;
+                                    border: 0;
+                                    border-bottom: 1px solid rgba(0, 0, 0, 0.30);
+                                    background-color: #ffec7a;
+                                    color: #03839e;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    line-height: 24px;
+    
+                                    @include on-tablet {
+                                        margin: 0;
+                                        width: 338px;
+                                    }
+
+                                    &::placeholder {
+                                        position: absolute;
+                                        left: 6px;
+    
+                                        @include on-tablet {
+                                            left: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &__button {
+                            position: relative;
+                            display: flex;
+                            border: 1px solid $turquoise;
+                            background: $turquoise;
+                            height: 48px;
+
+                            &:hover {
+                                border: $light-turquoise;
+                                background: $light-turquoise;
+                            }
+
+
+                            @include on-tablet {
+                                width: 220px;
+                            }
+
+                            @include on-desktop {
+                                width: 238px;
+                            }
+                            
+                            &__span {
+                                padding-block: 14px;
+                                padding-left: 73.2px;
+                                color: $white;
+                                font-family: $Manrope;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 150%; /* 21px */
+                                text-transform: uppercase;
+
+                                @include on-tablet {
+                                    padding-left: 61.65px;
+                                }
+
+                                @include on-desktop {
+                                    padding-left: 67px;
+                                }
+                            }
+                   
+                            &__arrow {
+                                position: absolute;
+                                width: 27.31px;
+                                top: 22px;
+                                left: 160.6px;
+
+                                @include on-tablet {
+                                    width: 23px;
+                                    top: 23px;
+                                    left: 135.26px;
+                                }
+
+                                @include on-desktop {
+                                    width: 25px;
+                                    left: 147px;
+                                }
+                            } 
+                        }
+                    }  
+                }
+            }
+        }
+
+        &__contacts {
+            @include on-tablet {
+                grid-column: 5 / 7;
+            }
+
+            @include on-desktop {
+                grid-column: 7 / 10;
+            }
+        
+            .contact {
+
+                &__phone {
+                    @include on-tablet {
+                        margin-top: 71px;
+                    }
+
+                    @include on-desktop {
+                        margin-top: 80px;
+                    }
+                }
+
+                &__address {
+                    width: 258px;
+
+                    @include on-tablet {
+                        width: 205px;
+                        position: relative;
+                        top: -9px;
+                    }
+
+                    @include on-desktop {
+                        width: 270px;
+                        
+                
+                    }
+                }
+            }
+        }
+    }    
+}

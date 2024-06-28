@@ -1,0 +1,35 @@
+@import '../utils/mixins';
+@import '../utils/vars';
+
+.icon {
+
+    &--menu {
+        display: block;
+        background-image: url(/src/images/icons/icon-menu.jpg);
+        height: 32px;
+        width: 32px;
+
+        @include on-desktop {
+            display: none;
+        }
+    }
+
+    &--bag {
+        display: none;
+       
+
+        @include on-desktop {
+            display: block;
+            background-image: url(/src/images/icons/icon-bag.svg);
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: $c-gray;
+        }
+    }
+
+
+
+
+}

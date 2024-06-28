@@ -1,0 +1,47 @@
+@import '../utils/vars';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    font-optical-sizing: auto;
+    font-style: normal;
+    scroll-behavior: smooth;
+
+    &:has(.page__menu:target) {
+        overflow: hidden;
+    }
+
+
+
+    &__body {
+        box-sizing: border-box;
+        background-color: $c-gray;
+        margin: 0;
+        min-width: 320px;
+        overflow-x: hidden;
+    }
+
+    &__menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: all $effect-duration;
+        z-index: 2;
+        
+            &:target {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateX(38%);
+
+                @include on-tablet{
+                    transform: translateX(230%);
+                }     
+        }
+    }
+}
