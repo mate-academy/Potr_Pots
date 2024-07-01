@@ -7,10 +7,11 @@
     line-height: 69.6px;
     letter-spacing: 0.15em;
     color: #03839E;
-
+    z-index: 0;
+    position: relative;
   }
 
-  &__bg-img-container {
+ &__bg-img-container {
     margin: 0;
     height: 70vw;
     width: 100vw;
@@ -25,7 +26,6 @@
       grid-column: 4 / 3 span;
       position: relative;
       z-index: 0;
-      height: auto;
       width: 100%;
       transform: none;
       left: 0;
@@ -35,7 +35,7 @@
   }
 
   &__bg-image {
-    display: flex;
+    display: block;
     margin-inline: auto;
     position: absolute;
     height: 100%;
@@ -47,54 +47,37 @@
       position: relative;
     }
   }
-
 }
 
-.swiper-container {
-  width: 100vw;
-  max-width: 600px;
-  height: 200px;
-  margin: 20px auto;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.carousel {
+  display: flex;
+  margin-top: 60%;
+  overflow: hidden;
+
+  @include on-tablet {
+    // position: relative;
+    position: absolute;
+  }
 }
 
-
-
-.swiper-pagination {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+.slick-slide {
+  height: 255px !important;
 }
-
-.swiper-pagination-bullet {
-  background-color: white;
-  opacity: 0.5;
-  border-radius: 50%;
-}
-
-.swiper-pagination-bullet-active {
-  opacity: 1;
-  transform: scale(1.2);
-}
-
-// .wrapper {
-//   position: relative;
-// }
-
 
 .link-button {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+
   @include on-tablet {
     background-image: url(/src/images/swiper-link-default.png);
     display: flex;
-    position: absolute;
     height: 51px;
     width: 51px;
     cursor: pointer;
+    z-index: 2;
 
-    &:active {
+    &:focus {
       background-image: url(/src/images/swiper-link-active.png);
     }
 
@@ -126,17 +109,53 @@
 }
 
 .text-box {
-  display: none;
+  display: block;
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
   color: white;
-  padding: 20px 44px 0;
+  padding: 28px 45px 0;
   font-family: $font-family-small;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
-  max-width: 280px;
+  height: 234px;
+  margin-inline: 10px;
   z-index: 2;
+
+  @include on-tablet {
+    display: none;
+  }
+}
+
+.carousel-indicators {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -180px;
+  z-index: 2;
+
+  @include on-tablet {
+    display: none;
+  }
+}
+
+.indicator {
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  object-fit: cover;
+  background-image: url(/src/images/indecator-default.svg);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.indicator.active {
+  width: 12px;
+  height: 12px;
+  background-image: url(/src/images/indecator-active.svg);
 }
