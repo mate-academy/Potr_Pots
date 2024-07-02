@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
   $('.carousel').slick({
     dots: false,
@@ -15,12 +14,15 @@ $(document).ready(function () {
         },
       },
     ],
+    initialSlide: 0,
   });
 
   $('.carousel').on('afterChange', function (event, slick, currentSlide) {
     $('.indicator').removeClass('active');
     $('.indicator').eq(currentSlide).addClass('active');
   });
+
+  $('.indicator').eq(0).addClass('active');
 });
 
 function slickGoToSlide(slideIndex) {
@@ -33,9 +35,9 @@ function toggleText(index) {
 
   if (textBox.style.display === 'none' || textBox.style.display === '') {
     textBox.style.display = 'block';
-    linkButton.classList.add('visited');
+    linkButton.classList.add('active');
   } else {
     textBox.style.display = 'none';
-    linkButton.classList.remove('visited');
+    linkButton.classList.remove('active');
   }
 }
