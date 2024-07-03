@@ -1,5 +1,5 @@
 .materials {
-  display: grid;
+  margin-bottom: 220%;
 
   &__content {
     @include page-grid;
@@ -103,7 +103,7 @@
   .link-button {
     @include on-tablet {
       display: block;
-      position: absolute;
+      position: relative;
       cursor: pointer;
       width: 51px;
       height: 51px;
@@ -111,7 +111,7 @@
 
       &--1 {
         left: 72%;
-        bottom: 55%;
+        bottom: -40%;
       }
 
       &--2 {
@@ -134,8 +134,7 @@
         bottom: 16%;
       }
 
-
-      &:active:focus {
+      &--active{
         background-image: url(/src/images/swiper-link-active.png);
       }
     }
@@ -143,24 +142,50 @@
 }
 
 .text-box {
-  display: block;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.45);
-  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   padding: 28px 45px 0;
   font-family: $font-family-small;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  text-align: left;
   height: 234px;
   margin-inline: 10px;
-  z-index: 2;
 
   @include on-tablet {
     display: none;
+    width: 213px;
+    height: 100%;
+    padding: 35px 45px;
+    position: relative;
+    margin-inline: 0;
+
+    &--1 {
+      left: 70%;
+      bottom: 35%;
+    }
+
+    &--2 {
+      left: 55%;
+      bottom: 20%;
+    }
+
+    &--3 {
+      left: 44%;
+      bottom: 10%;
+    }
+
+    &--4 {
+      left: 30%;
+      bottom: 40%;
+    }
+
+    &--5 {
+      left: 11%;
+      bottom: 16%;
+    }
   }
 }
 
@@ -177,12 +202,14 @@
 
 .carousel-indicators {
   display: flex;
-  align-items: center;
   position: absolute;
+  justify-content: center;
+  align-items: center;
   left: 50%;
   transform: translateX(-50%);
   bottom: -180px;
   z-index: 2;
+  margin-inline: 10px;
 
   @include on-tablet {
     display: none;

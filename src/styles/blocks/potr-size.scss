@@ -1,0 +1,81 @@
+.potr-size {
+  &__content {
+    @include page-grid;
+  }
+
+  &__section-title {
+    font-family: $font-family-bold;
+    color: $c-black;
+    margin: 0;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+  }
+
+  &__description {
+    grid-column: 1 / -1;
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $grey-2;
+  }
+
+  &__img-container {
+    grid-column: 1 / -1;
+    margin-top: 10%;
+    height: 90vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    overflow: visible;
+
+    @include on-tablet {
+      margin-top: 33%;
+      width: 100%;
+      transform: none;
+      left: 0;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin-inline: auto;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    overflow: visible;
+    object-fit: cover;
+  }
+
+  &__size-details-title {
+    font-family: $font-family-bold;
+    margin: 0;
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+  }
+
+  &__size-details {
+    grid-column: 1 / -1;
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $grey-2;
+    margin: 0;
+    margin-top: 10px;
+  }
+}

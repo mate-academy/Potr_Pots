@@ -35,9 +35,9 @@ function toggleText(index) {
 
   if (textBox.style.display === 'none' || textBox.style.display === '') {
     textBox.style.display = 'block';
-    linkButton.classList.add('active');
+    linkButton.classList.add('link-button--active');
   } else {
     textBox.style.display = 'none';
-    linkButton.classList.remove('active');
+    linkButton.classList.remove('link-button--active');
   }
 }
