@@ -136,18 +136,21 @@
             display: block;
             grid-column: 4 / 7;
             margin-top: -90px;
+            height: 30px;
+            width: 340px;
         }
 
         @include on-desktop {
             grid-column: 8 / 13;
             z-index: 2;
             margin-top: -110px;
+            margin-bottom: 15px;
+            width: 237px;
           
         }
 
 
         .block {
-           
 
             &__paragraph {
                 color: $middle-grey;
@@ -156,26 +159,10 @@
                 line-height: 150%;
 
                
-
                 &--first {
                     margin-bottom: 10px;
                     font-size: 20px;
-                    font-weight: 700;                 
-                }
-
-                &--second {
-                    font-size: 16px;
-                    font-weight: 400;
-
-                }
-                
-                &-span {
-                    font-size: 16px;
                     font-weight: 700;
-    
-                    @include on-desktop {
-                        font-weight: 400;
-                    }
                 }
             } 
         }
@@ -185,32 +172,80 @@
         position: relative;
         
         
-        &-image {
+        &-picture {
             background-image: url(/src/images/materials/materials.svg);
             background-repeat: no-repeat;
             height: 240.31px;
             width: 100%;
             border: none;
-            z-index: 1;
             margin-top: -80px;
+            z-index: 0;
            
 
             @include on-tablet {
                 display: block;
-                margin-top: 0;
+                margin: 0;
                 background-image: url(/src/images/materials/materials-tablet.svg);
                 width: 100%;
                 height: 576.75px;
                 position: absolute;
-                top: -117px;
-                z-index: 1;
+                top: 22px;
             }
 
             @include on-desktop {
                 background-image: url(/src/images/materials/materials-desktop.svg);
                 width: 100%;
                 height: 1081.4px;
-                top: -200px;
+                top: -117px;
+                z-index: 1;
+
+
+            }
+
+            .picture {
+              
+                &__paragraph {
+                    display: none;
+                    color: $middle-grey;
+                    font-family: $Manrope;
+                    font-style: normal;
+                    line-height: 150%;
+                    
+                    &--tablet {
+                        @include on-tablet {
+                            display: block;
+                            position: absolute;
+                            z-index: 1;
+                            width: 340px;
+                            height: 192px;
+                            top: -77px;
+                            left: 394px;
+                        }
+
+                        @include on-desktop {
+                            display: none;
+                        }
+                    }
+
+                    &--desktop {
+                        @include on-desktop {
+                            display: block;
+                            position: absolute;
+                            width: 470px;
+                            top: 51.38px;
+                            left: 835px;
+                        }
+                    }
+
+                    &-span {
+                        font-size: 16px;
+                        font-weight: 700;
+        
+                        @include on-desktop {
+                            font-weight: 400;
+                        }
+                    }
+                }
             }
         }
 

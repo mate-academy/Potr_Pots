@@ -69,28 +69,171 @@
 
         @include on-tablet {
             height: 357px;
+
+            @include page-grid;
+
         }
 
         @include on-desktop {
             height: 828px;
         }
 
-        @include on-tablet {
-            @include page-grid;
-        }
 
-        &__image {
+       
+
+        &-images {
             display: none;
-
-            @include hover(transform, scale(1.05));            
-
+            box-sizing: border-box;
+            width: 633px;
+            height: 828px;
+            margin-left: -135px;
+                 
+            
             @include on-desktop {
                 display: block;
-                background-image: url(/src/images/benefits__images/full_image.svg);
-                width: 633px;
-                height: 828px;
-                position: absolute;
-                margin-left: -135px;                 
+                position: relative;
+                grid-column: 1 / 6; 
+            }
+
+
+            .image {
+                
+                &__block {
+                    position: absolute;
+                    background: #FFF;
+                    box-sizing: border-box;
+
+
+                    @include hover(transform, scale(1.05));
+
+                    &--first {
+                        width: 214.3px;
+                        height: 240.13px;
+                        transform: rotate(-20deg);
+                        top: 88.2px;
+                        left: 86.58px;
+                    }
+
+                    &--second {
+                        width: 189.33px;
+                        height: 212.11px;
+                        transform: rotate(-28.89deg);
+                        top: 41px;
+                        left: 306.86px;
+                    }
+
+                    &--third {
+                        width: 214.29px;
+                        height: 240.14px;
+                        top: 359px;
+                        left: 50px;
+                        z-index: 2;
+                    }
+
+                    &--fourth {
+                        width: 214.3px;
+                        height: 240.13px;
+                        transform: rotate(-15.19deg);
+                        top: 265px;
+                        left: 258px;
+                    }
+
+                    &--fifth {
+                        width: 214.3px;
+                        height: 240.13px;
+                        transform: rotate(-15.19deg);
+                        top: 549.61px;
+                        left: 136.6px;
+                        z-index: 1;
+                    }
+
+                    &--sixth {
+                        width: 214.33px;
+                        height: 240.1px;
+                        transform: rotate(-30.43deg);
+                        top: 493.13px;
+                        left: 355.39px;
+                        z-index: 2;
+                    }
+
+
+
+                    &-photo {
+                        display: block;
+                        margin: auto;
+
+                        &--first {
+                            margin-top: 19.46px;
+                            width: 182.55px;
+                            height: 182.64px;
+                        }
+
+                        &--second {
+                            margin-top: 19.06px;
+                            width: 161.28px;
+                            height: 161.33px;
+                        }
+
+                        &--third {
+                            margin-top: 15.9px;
+                            width: 182.55px;
+                            height: 182.65px;
+                        }
+
+                        &--fourth {
+                            margin-top: 21px;
+                            width: 182.55px;
+                            height: 182.64px;
+                        }
+
+                        &--fifth {
+                            margin-top: 21px;
+                            width: 182.55px;
+                            height: 182.64px;
+                        }
+
+                        &--sixth {
+                            margin-top: 21px;
+                            width: 182.57px;
+                            height: 182.63px;
+                        }
+                    }
+
+                    &-paragraph {
+                        color: $middle-light-grey;
+                        font-family: $Proxima_Nova;
+                        font-size: 8.74px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 131.5%;
+                        margin-top: 6.18px;
+
+                        &--first {
+                            margin-left: 18px;
+                        }
+
+                        &--second {
+                            margin-left: 21.76px;
+                            
+                        }
+
+                        &--third {
+                            margin-left: 15.9px;
+                        }
+
+                        &--fourth {
+                            margin-left: 15.9px;
+                        }
+
+                        &--fifth {
+                            margin-left: 15.9px;
+                        }
+
+                        &--sixth {
+                            margin-left: 15.9px;
+                        }
+                    }  
+                }
             }
         }
 
@@ -144,7 +287,7 @@
                 @include on-desktop {
                     width: 346px;
                     top: 186px;
-                    left: 798px;       
+                    left: 814px;       
                 }
 
                 &__title {
@@ -243,7 +386,7 @@
                         @include on-desktop {
                             position: absolute;
                             top: 452px;
-                            left: 500px;
+                            left: 530px;
                         }
 
                         
@@ -254,6 +397,10 @@
                             font-weight: 600;
                             line-height: 150%; /* 21px */
                             text-transform: uppercase;
+
+                            @include on-tablet {
+                                font-family: $Manrope;
+                            }
                         }
 
                         &__arrow {
