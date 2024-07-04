@@ -1,8 +1,6 @@
 'use strict';
 
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll('.card__item-button');
   const images = document.querySelectorAll('.card__item-text');
