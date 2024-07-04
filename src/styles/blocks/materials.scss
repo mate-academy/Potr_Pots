@@ -1,0 +1,458 @@
+@import '../utils/mixins';
+@import '../utils/vars';
+@import '../blocks/slider';
+
+.materials {
+    @include on-desktop {
+        margin-bottom: 6.97px;
+    }
+
+&__wrapper {
+    position: relative;
+}
+
+    &__box-side {
+        display: none;
+
+        @include on-tablet {
+            position: absolute;
+            display: flex;
+            justify-content: end;
+            width: 144px;
+            height: 14px;
+            transform: rotate(90deg);        
+    
+            &--right {
+                right: -55px;
+                top: 68.41px;
+            }
+    
+            &--left {
+                left: -55px;
+                top: 269px;
+                z-index: 2;
+            }
+    
+    
+            &-text {
+                position: relative;
+                color: $middle-light-grey;
+                font-family: $Bebas-Neue;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 2.64px;
+    
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 79px;
+                    top: 6px;
+                    width: 65px;
+                    height: 1px;
+                    background-color: $middle-light-grey;
+                }
+            }
+        }    
+
+        @include on-desktop {
+            display: none;
+        }
+    }   
+
+
+
+    &__content {
+        position: relative;
+        padding-block: 110px;
+
+        @include on-tablet {
+            padding-block: 0 0;   
+            height: 830px;        
+        }
+
+        @include on-desktop {
+            height: 1242px;
+        }
+    }
+
+
+    &__top {
+        @include on-tablet {
+            @include page-grid;
+            @include content-padding-inline;    
+        }
+    }
+
+    &__title {
+        position: relative;
+        color: $turquoise;
+        -webkit-text-stroke-width: 1;
+        -webkit-text-stroke-color: $turquoise;
+        font-family: $Bebas-Neue;
+        font-size: 58px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 8.99px;
+        padding-inline: 30px 22px;
+        z-index: 2;
+
+
+        @include on-tablet {
+            grid-column: 1 / 6;
+            font-size: 80px;
+            letter-spacing: 9.6px;
+            height: 231px;
+            padding-inline: 0 0;
+        }
+
+        @include on-desktop {
+            display: none;
+           
+        }
+
+        &-desktop {
+            display: none;
+
+            @include on-desktop {
+                display: block;
+                grid-column:  1 / 10;
+                height: 289px;
+                width: 870px;
+                font-size: 138.8px;
+                letter-spacing: 16.7px;
+                z-index: 2;
+            }
+        }
+    }
+    
+
+    &__blocks {
+        display: none;
+
+        @include on-tablet {
+            display: block;
+            grid-column: 4 / 7;
+            margin-top: -90px;
+            height: 30px;
+            width: 340px;
+        }
+
+        @include on-desktop {
+            grid-column: 8 / 13;
+            z-index: 2;
+            margin-top: -110px;
+            margin-bottom: 15px;
+            width: 237px;
+          
+        }
+
+
+        .block {
+
+            &__paragraph {
+                color: $middle-grey;
+                font-family: $Manrope;
+                font-style: normal;
+                line-height: 150%;
+
+               
+                &--first {
+                    margin-bottom: 10px;
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            } 
+        }
+    }
+
+    &__bottom {
+        position: relative;
+        
+        
+        &-picture {
+            background-image: url(/src/images/materials/materials.svg);
+            background-repeat: no-repeat;
+            height: 240.31px;
+            width: 320px;
+            border: none;
+            margin-top: -80px;
+            z-index: 0;
+            background-size: cover;
+
+
+            @include on-tablet {
+                display: block;
+                margin: 0;
+                background-image: url(/src/images/materials/materials-tablet.svg);
+                width: 100%;
+                height: 576.75px;
+                position: absolute;
+                top: 22px;
+            }
+
+            @include on-desktop {
+                background-image: url(/src/images/materials/materials-desktop.svg);
+                min-width: 100%;
+                height: 1081.4px;
+                top: -117px;
+                z-index: 1;
+
+
+            }
+
+            .picture {
+              
+                &__paragraph {
+                    display: none;
+                    color: $middle-grey;
+                    font-family: $Manrope;
+                    font-style: normal;
+                    line-height: 150%;
+                    
+                    &--tablet {
+                        @include on-tablet {
+                            display: block;
+                            position: absolute;
+                            z-index: 1;
+                            width: 340px;
+                            height: 192px;
+                            top: -77px;
+                            left: 394px;
+                        }
+
+                        @include on-desktop {
+                            display: none;
+                        }
+                    }
+
+                    &--desktop {
+                        @include on-desktop {
+                            display: block;
+                            position: absolute;
+                            width: 470px;
+                            top: 51.38px;
+                            left: 835px;
+                        }
+                    }
+
+                    &-span {
+                        font-size: 16px;
+                        font-weight: 700;
+        
+                        @include on-desktop {
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-cards {
+            display: none;
+           
+
+            @include on-tablet {
+                display: block;
+                position: absolute;
+                top: -115px;
+                z-index: 2;
+            }
+
+
+            .card {
+
+                &__item {
+                    box-sizing: border-box;
+
+                    &-text {
+                        display: none;
+                        background:  rgba(0, 0, 0, 0.45);
+                        backdrop-filter: blur(20px);
+                        box-sizing: border-box;
+                        padding: 35px;
+                        position: absolute;
+                        z-index: 2;
+    
+                        &--first {
+                            width: 303px;
+                            height: 237px;
+                            backdrop-filter: blur(17px);
+                            padding: 35px 45px 34px;
+
+                            @include on-tablet {
+                                top: 267px;
+                                left: 429px;
+                            }
+
+                            @include on-desktop {
+                                top: 626px;
+                                left: 985px;
+                            } 
+                        }
+    
+                        &--second {
+                            width: 283px;
+                            height: 214px;
+
+                            @include on-tablet {
+                                top: 157px;
+                                left: 317px;
+                            }
+
+                            @include on-desktop {
+                                top: 416px;
+                                left: 737px;
+                            }
+                            
+                        }
+    
+                        &--third {
+                            width: 285px;
+                            height: 214px;
+
+                            @include on-tablet {
+                                top: 220px;
+                                left: 225px;
+                            }
+
+                            @include on-desktop {
+                                top: 760px;
+                                left: 390px;
+                            }
+                           
+                        }
+    
+                        &--fourth {
+                            width: 283px;
+                            height: 166px;
+
+                            @include on-tablet {
+                                top: 109px;
+                                left: 115px;
+                            }
+
+                            @include on-desktop {
+                                top: 356px;
+                                left: 283px;
+                            }
+                           
+                        }
+    
+                        &--fifth {
+                            width: 283px;
+                            height: 166px;
+
+                            @include on-tablet {
+                                top: 237px;
+                                left: 37px;
+                            }
+
+                            @include on-desktop {
+                                top: 590px;
+                                left: 131px;
+                            }
+                           
+                        }
+
+                        &-paragraph {
+                            color: $c-gray;
+                            font-family: $Manrope;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 150%;
+                            text-align: left;
+                        }
+                    }
+
+    
+                        &-button {
+                            position: absolute;
+                            width: 51px;
+                            height: 51px;
+                            border-radius: 50%;
+                            background-image: url(/src/images/materials/icon-plus-materials.svg);
+                            cursor: pointer;
+                            outline: none;
+                            border: none;
+                            z-index: 1;
+                            transition: $effect-duration;
+
+                            @include on-tablet {
+    
+                                &--first {
+                                    top: 207px;
+                                    left: 555px;
+            
+                                }
+            
+                                &--second {
+                                    top: 391px;
+                                    left: 417px;
+            
+                                }
+                              
+                                &--third {
+                                    top: 454px;
+                                    left: 338px;
+                                }
+            
+                                &--fourth {
+                                    top: 295px;
+                                    left: 231px;
+                                }
+            
+                                &--fifth {
+                                    top: 423px;
+                                    left: 83px;
+                                }
+    
+                                &.gray {
+                                    background-image: url(/src/images/materials/icon-minus.svg);
+                                }                        
+                            }    
+                            
+                            @include on-desktop {
+    
+                                &--first {
+                                    top: 569px;
+                                    left: 1111px;
+            
+                                }
+            
+                                &--second {
+                                    top: 670px;
+                                    left: 835px;
+            
+                                }
+                              
+                                &--third {
+                                    top: 837px;
+                                    left: 684px;
+                                }
+            
+                                &--fourth {
+                                    top: 542px;
+                                    left: 547px;
+                                }
+            
+                                &--fifth {
+                                    top: 786px;
+                                    left: 254px;
+                                }
+                            }
+
+                        }
+
+                }
+               
+            }
+            
+        }
+
+    }  
+}
+

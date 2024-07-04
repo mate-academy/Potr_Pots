@@ -1,0 +1,578 @@
+@import '../utils/mixins';
+@import '../utils/vars';
+
+.for-whom {
+    position: relative;
+    padding-block-start: 110px;
+
+    @include on-tablet {
+        padding-block-start: 62px;
+    }
+
+    @include on-desktop {
+        padding-block-start: 150px;
+        height: 1780px;
+    }
+
+    @include content-padding-inline;
+
+    &__box-side {
+        display: none;
+
+        @include on-desktop {
+            position: absolute;
+            display: flex;
+            justify-content: end;
+            width: 144px;
+            height: 14px;
+            transform: rotate(90deg);        
+    
+        
+            &--left {
+                left: 67.5px;
+                top: 1850px;
+                transform: rotate(270deg);
+            }
+    
+    
+            &-text {
+                position: relative;
+                color: $middle-light-grey;
+                font-family: $Bebas-Neue;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 2.64px;
+    
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 79px;
+                    top: 6px;
+                    width: 65px;
+                    height: 1px;
+                    background-color: $middle-light-grey;
+                }
+            }
+        }
+    }    
+
+ 
+
+    &__title {
+        color: $dark-grey;
+        margin-bottom: 25px;
+
+        @include on-tablet {
+            margin-bottom: 19px;
+        }
+
+        @include on-desktop {
+            margin-bottom: 34px;
+        }
+    }
+
+
+    &__articles {
+        display: grid;
+        row-gap: 70px;
+
+        @include on-tablet {
+            row-gap: 110px;
+        }
+
+        @include on-desktop {
+            row-gap: 0;
+        }
+
+        .article {
+            position: relative;
+        
+            @include page-grid;
+
+            &--first {
+                height: 360px;
+            }
+
+
+            &--second {
+                @include on-tablet {
+                    height: 417px;
+                }
+
+                @include on-desktop {
+                    height: 717px;
+                }
+            }
+
+            &--third {
+                position: relative;
+                height: 550px;
+
+                @include on-tablet {
+                    row-gap: 0;
+                    height: 418px;                 
+                }
+            }
+
+
+            &__characteristic {
+                display: none;
+
+                @include on-tablet {
+                    display: block;
+                }
+
+                &--first {
+                    @include on-tablet {
+                        width: 159px;
+                        grid-column: 4 / 6;
+                    }
+                   
+
+                    @include on-desktop {
+                        width: 70px;
+                        grid-column: 8 / 9;
+                    }
+                }
+
+                &--second {
+                    @include on-tablet {
+                        width: 70px;
+                        grid-column: 3 / 4;
+                    }
+
+                    @include on-desktop {
+                        grid-column: span 2;
+                    }
+                    
+                }
+
+                &--third {
+                    @include on-tablet {
+                        width: 192px;
+                        grid-column: 4 / 6;
+                    }
+
+                    @include on-desktop {
+                        width: 170px;
+                        grid-column: 8 / 10;
+                    }
+
+                   
+                }
+
+                &-paragraph {
+                    position: relative;
+                    color: $dark-grey;
+                    font-family: $Manrope;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+
+
+                    &::before {
+                        position: absolute;
+                        content: "*";
+                        color: $black;
+                        font-family: $Bebas-Neue;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        letter-spacing: 3.72px;
+                    }
+
+                    &--first {
+                        @include on-desktop {
+                            position: absolute;
+                            top: 122px;
+                        }
+                    }
+
+                    &--first::before {
+                        @include on-tablet {
+                            width: 11px;
+                            height: 21px;
+                            left: -20px;
+                        }
+                      
+                        @include on-desktop {
+                            height: 33px;
+                            left: -41px;
+                        }
+                    }
+
+                    &--second {
+                        @include on-tablet {
+                            margin-top: 29px;
+                            margin-bottom: 28px;
+                            margin-left: 25px;
+                        }
+
+                        @include on-desktop {
+                            margin: 0;
+                            margin-top: 810px;
+                            margin-left: 100px;
+                        }
+                            
+                        &::before {
+                            @include on-tablet {
+                                width: 23px;
+                                height: 21px;
+                                text-align: right;
+                                left: -27px;
+                            }
+
+                            @include on-desktop {
+                                width: 11px;
+                                height: 11px;
+                                left: -47px;
+                            }   
+                        }
+                    } 
+                    
+                    &--third {
+                        @include on-desktop {
+                            position: absolute;
+                            top: 248px;
+                        }
+                    }
+                    
+    
+                    &--third::before {
+                        @include on-tablet {
+                            width: 11px;
+                            height: 11px;
+                            left: -30px;
+                        }
+
+                        @include on-desktop {
+                            height: 33px;
+                            left: -41px;
+                        }
+                    }
+                }
+            }
+             
+        
+
+            &__photo {
+                display: none;
+
+                @include hover(transform, scale(1.05));
+
+                   
+                @include on-tablet {
+                    display: block;
+                    background-repeat: no-repeat;
+                }
+                    
+                    &--first {
+                        @include on-tablet {
+                            background-image: url(/src/images/for-whom/image_first_tablet.svg);
+                            height: 284px;
+                            width: 284px;
+                            grid-column: 1 / 4;
+                        }
+
+                        @include on-desktop {
+                            margin-top: 0;
+                            background-image: url(/src/images/for-whom/image_first_desktop.svg);
+                            height: 500px;
+                            width: 500px;
+                            grid-column: 1 / 6;
+                            margin-bottom: 185px;
+                        }
+                        
+                    }
+    
+                    &--second {
+                        @include on-tablet {
+                            background-image: url(/src/images/for-whom/image_second_tablet.svg);
+                            height: 417px;
+                            width: 300px;
+                            position: absolute;
+                            right: 0;
+                            grid-column: 4 / 7;
+                        }
+
+                        @include on-desktop {
+                            background-image: url(/src/images/for-whom/image_second_desktop.svg);
+                            height: 417px;
+                            width: 300px;
+                            grid-column:  2 / 5;
+                            position: absolute;
+                            left: 0;
+                            top: 350px;
+                        }
+                    }
+                     
+    
+                    &--third {
+                        @include on-tablet {
+                            background-image: url(/src/images/for-whom/image_third_tablet.svg);
+                            height: 405px;
+                            width: 284px;
+                            grid-column: 1 / 4;
+                            margin-top: -20px;
+                        }
+
+                        @include on-desktop {
+                            margin-top: 0;
+                            background-image: url(/src/images/for-whom/image_third_desktop.svg);
+                            height: 670px;
+                            width: 470px;
+                            grid-column: 8 / 13;
+                            position: absolute;
+                            top: -460px;
+                        }
+                    }                                    
+            }
+        
+            &__number {
+                display: flex;
+                text-align: center;
+                justify-content: space-between;
+                width: 32.92px;
+                height: 46px;
+                grid-column: 1 / -1;
+                margin-bottom: 30px;
+
+                    
+                @include on-tablet {
+                    position: absolute;
+                    margin-bottom: 0;
+                }
+
+                &--first {
+                    @include on-tablet {
+                        left: 299px;
+                        top: 75px;
+                    }
+
+                    @include on-desktop {
+                        left: 0;
+                        top: 195px;
+                        grid-column: 7 / 8;
+                    }                  
+                }
+
+                &--second {
+                    @include on-tablet {
+                        top: 81px;
+                    }
+
+                    @include on-desktop {
+                        grid-column: 2 / 3;
+                        top: 870px;
+                    }
+                }
+
+                &--third {
+                    @include on-tablet {
+                        width: 36px;
+                        height: 46px;
+                        top: 43px;
+                        left: 304px;
+                    }
+
+                    @include on-desktop {
+                        top: 305px;
+                        left: 0;
+                        grid-column: 8 / 9;
+                    }
+                }
+      
+      
+                &-rectangle {
+                    display: block;
+                    width: 19px;
+                    height: 44px;
+                    background-image: url(/src/images/rectangle.svg); 
+                }
+        
+                &-number {
+                    width: 15px;
+                    height: 46px;
+                    color: $black;
+                    font-family: $Bebas-Neue;
+                    font-size: 36px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 180%; /* 64.8px */
+                    letter-spacing: 5.58px;
+                }
+            }
+                
+                
+            &__text {
+                grid-column: 1 / -1;
+                  
+                @include on-tablet {
+                    position: absolute;
+                }
+
+                &--first {
+                    @include on-tablet {
+                        top: 75px;
+                        grid-column: 4 / 7;
+                    }
+
+                    @include on-desktop {
+                        grid-column: 8 / 12;
+                        top: 185px;
+                    }
+                }
+        
+                &--second {
+                    @include on-tablet {
+                        grid-column: 1 / 4;
+                        position: absolute;
+                        top: 149px;
+                    }
+
+                    @include on-desktop {
+                        grid-column:  2 / 6;
+                        top: 950px;
+                    }
+                }
+
+                &--third {
+                    @include on-tablet {
+                        top: 42px;
+                        grid-column: 4 / 7;
+                    }
+
+
+                    @include on-desktop {
+                        grid-column:  9 / 13;
+                        top: 300px;
+                    }
+                }
+        
+                &-title {
+                    color: $black;
+                    margin-bottom: 20px;
+                    position: relative;
+        
+                    @include on-tablet {
+                        width: 340px;
+                        margin-bottom: 10px;
+                    }
+
+                    &::after {
+                        @include on-tablet {
+                            position: absolute;
+                            content: '';
+                            width: 1px;
+                            height: 46.3px;
+                            transform: rotate(22deg);
+                            background: $dark-grey;  
+                        }
+                    }
+
+                    &--first {
+                        @include on-tablet {
+                            height: 162px;
+                        }
+
+                        @include on-desktop {
+                            width: 470px;
+                            height: 108px;
+                        }
+
+                        &::after {
+                            @include on-tablet {
+                                left: 119px;
+                            }
+
+                            @include on-desktop {
+                                left: 265px;
+                            }
+                        }
+                    }
+
+                    &--second {
+                        @include on-tablet {
+                            height: 108px;
+                        }
+
+                        @include on-desktop {
+                            width: 400px;
+                        }
+
+                        &::after {
+                            @include on-tablet {
+                                left: 260px;
+                            }
+
+                            @include on-desktop {
+                                left: 254px;
+                            }       
+                        }  
+                    }
+
+                    &--third {
+                        @include on-tablet {
+                            height: 270px;
+                        }
+
+                        @include on-desktop {
+                            height: 216px;
+                            width: 374px;
+                        }
+
+                        &::after {
+                            @include on-tablet {
+                                left: 129px;
+                            }
+
+                            @include on-desktop {
+                                left: 126px;
+                            }      
+                        }   
+                    }
+                }
+            
+                &-paragraph {
+                    width: 260px;
+                    height: 98px;
+                    color: $middle-grey;
+                    font-family: $Manrope;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+
+                    @include on-tablet {
+                        width: 340px;
+                    }
+
+                    @include on-desktop {
+                        width: 370px;
+                    }
+
+                    &--first {
+                        height: 76px;
+                    }
+                }
+            } 
+        }
+    }
+}
+   
+
+
+   
+
+
+   
+
+        
+            
+
+
+

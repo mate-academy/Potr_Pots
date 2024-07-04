@@ -1,0 +1,72 @@
+@import '../utils/mixins';
+@import '../utils/vars';
+
+.menu {
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: $turquoise;
+    overflow: auto;
+    width: 232px;
+
+   
+
+    &__ellipse {
+        position: absolute;
+        top: 138px;
+        left: 142px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: $red;
+
+
+        &-text {
+            padding: 2px 5px 1px;
+            color: $c-gray;
+            font-family: $Bebas-Neue;
+            font-size: 9.17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 1.42px;
+        }
+    }
+    
+    &__icons {
+        position: absolute;
+        bottom: 43px;
+        left: 183px;
+        width: 67px;
+        height: 115px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        rotate: 180deg;
+        
+
+        &__icon--close {
+            display: block;
+            width: 12.31px;
+            height: 12.02px;
+
+        }
+
+        &__icon--line {
+            width: 1px;
+            height: 44px;
+            transform: rotate(-180deg);
+            background-image: url(/src/images/icons/icon-rectangle.svg);
+        }
+
+        &__icon--text {
+            color: $c-gray;
+            font-family: $Manrope;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 18px */
+            rotate: 90deg;
+        }
+    }
+}
