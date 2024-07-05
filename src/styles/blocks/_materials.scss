@@ -1,12 +1,14 @@
 .materials {
-  margin-bottom: 220%;
 
   &__content {
     @include page-grid;
+
   }
 
   &__section-title {
+    grid-column: 1 / -1;
     font-family: $font-family-bold;
+    position: absolute;
     font-size: 58px;
     font-weight: 400;
     line-height: 69.6px;
@@ -14,7 +16,6 @@
     color: #03839E;
     z-index: 1;
     margin: 0;
-    position: absolute;
 
     @include on-tablet {
       font-size: 80px;
@@ -61,13 +62,9 @@
   }
 
   &__bg-img-container {
-    margin-top: 40%;
-    height: 70vw;
-    width: 100vw;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     grid-column: 1 / -1;
+    margin-top: 125px;
+    height: 75vw;
     z-index: 0;
 
     @include on-tablet {
@@ -79,13 +76,10 @@
   }
 
   &__bg-image {
-    display: block;
-    margin-inline: auto;
     position: absolute;
-    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
-    min-height: 100%;
-    object-fit: cover;
   }
 }
 
@@ -146,13 +140,12 @@
   align-items: center;
   background: rgba(0, 0, 0, 0.4);
   color: white;
-  padding: 28px 45px 0;
+  padding: 28px 45px 58px;
   font-family: $font-family-small;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  height: 234px;
-  margin-inline: 10px;
+  height: 168px;
 
   @include on-tablet {
     display: none;
@@ -189,27 +182,34 @@
   }
 }
 
+.carousel-wrapper {
+    grid-column: 1 / -1;
+    height: 194px;
+    z-index: 1;
+}
+
 .carousel {
-  display: flex;
-  margin-top: 55%;
-  overflow: hidden;
+  width: 96vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 60px;
 
   @include on-tablet {
     margin-top: 0;
-    height: 100%;
   }
 }
 
 .carousel-indicators {
   display: flex;
-  position: absolute;
   justify-content: center;
   align-items: center;
+  position: absolute;
   left: 50%;
-  transform: translateX(-50%);
-  bottom: -180px;
-  z-index: 2;
-  margin-inline: 10px;
+  transform: translate(-50%);
+  z-index: 1;
+  width: 100%;
+  margin-top: -110px;
 
   @include on-tablet {
     display: none;
