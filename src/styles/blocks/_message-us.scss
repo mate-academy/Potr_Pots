@@ -1,0 +1,101 @@
+.message-us {
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    font-family: $font-family-bold;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: $c-black;
+    margin-bottom: 0;
+  }
+
+  &__descrip {
+    grid-column: 1 / -1;
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-black;
+    margin: 0;
+  }
+
+  &__form {
+    grid-column: 1 / -1;
+  }
+}
+
+.form {
+  &__title {
+    font-family: $font-family-small;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    color: $c-black;
+    margin: 0;
+  }
+
+  &__field {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  &__input {
+    height: 24px; /* Height adjustment for input */
+  }
+
+  &__textarea {
+    max-height: 120px; /* Minimum height for textarea */
+    resize: vertical; /* Allow vertical resizing */
+  }
+
+  &__input,
+  &__textarea {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $grey-2;
+    border: none;
+    border-bottom: 1px solid #0000004D;
+    background-color: transparent;
+    width: 100%;
+    padding: 0;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: $grey-2;
+    }
+
+    &:focus,
+    &:valid {
+      outline: none;
+      border-color: #03839E;
+    }
+  }
+
+
+  &__submit-button {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    place-items: center center;
+    gap: 24px;
+    padding: 0;
+    height: 48px;
+    color: #fff;
+    font-family: $font-family-small;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    background-color: #03839E;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+  }
+}
