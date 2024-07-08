@@ -1,4 +1,5 @@
 .message-us {
+  padding-bottom: 100px;
 
   &__content {
     @include page-grid;
@@ -31,27 +32,31 @@
 }
 
 .form {
+  display: grid;
+  gap: 20px;
+
   &__title {
     font-family: $font-family-small;
     font-size: 24px;
     font-weight: 400;
     line-height: 36px;
     color: $c-black;
-    margin: 0;
+    margin-top: 40px;
   }
 
   &__field {
     position: relative;
-    margin-bottom: 24px;
+    height: 29px;
   }
 
   &__input {
-    height: 24px; /* Height adjustment for input */
+    height: 24px;
   }
 
   &__textarea {
-    max-height: 120px; /* Minimum height for textarea */
-    resize: vertical; /* Allow vertical resizing */
+    max-height: 120px;
+    height: 24px;
+    resize: vertical;
   }
 
   &__input,
@@ -89,13 +94,66 @@
     padding: 0;
     height: 48px;
     color: #fff;
+
+    cursor: pointer;
+    width: 100%;
+    background-color: #03839E;
+    border: none;
+  }
+}
+
+.submit-button {
+  &__text {
     font-family: $font-family-small;
     font-size: 14px;
     font-weight: 600;
     line-height: 21px;
-    background-color: #03839E;
-    cursor: pointer;
-    width: 100%;
-    border: none;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__arrow {
+    width: 28px;
+    height: auto;
+  }
+}
+
+.contact-info {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 34px;
+  margin-top: 56px;
+
+  &__title {
+    font-family: $font-family-small;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    margin: 0;
+    margin-bottom: 5px;
+    color: #00000063;
+  }
+
+  &__link {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &:focus {
+      color: $grey-1;
+    }
+  }
+
+  &__address {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $c-black;
   }
 }

@@ -15,6 +15,44 @@
     @include page-grid;
 
     row-gap: 40px;
+
+    position: relative;
+
+    &::after {
+      content: 'POTR POTS';
+      font-family: $font-family-bold;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.4px;
+      letter-spacing: 0.22em;
+
+      color: $grey-3;
+      position: absolute;
+      bottom: 50px;
+      right: -40px;
+      transform: rotate(90deg);
+
+      @include on-tablet {
+        right: 84%;
+        left: -100px;
+        bottom: 35px;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      background-color: $grey-3;
+      height: 65px;
+      width: 1px;
+      bottom: 95px;
+      right: -11px;
+
+      @include on-tablet {
+        right: 98.5%;
+        bottom: -40px;
+      }
+    }
   }
 }
 
@@ -88,7 +126,7 @@
       order: 1;
 
       --columns: 3;
-      
+
       display: flex;
       flex-direction: column;
       justify-content: center;

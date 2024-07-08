@@ -1,6 +1,7 @@
 .header {
   z-index: 0;
   position: relative;
+  overflow: hidden;
 
   &__backround-yelow-color {
     @include on-tablet {
@@ -49,7 +50,7 @@
     }
 
     &::before {
-      content: url('/src/images/Arrow-blue.png');
+      content: url('/src/images/arrow-blue.png');
       position: absolute;
       bottom: 0;
       right: -20px;
@@ -126,45 +127,35 @@
 }
 
 .article {
-  &__title-img {
+
+  &__title {
     grid-column: 1 / -1;
-    height: 62vw;
-    background-size: cover;
-    background-image: url(/src/images/header-title-2x.png);
-    
-    // margin: 0 0 30px;
-    // text-transform: uppercase;
-    // font-family: $font-family-bold;
-    // font-size: 36px;
-    // font-weight: 400;
-    // line-height: 43.2px;
-    // letter-spacing: 0.15em;
+    font-family: $font-family-bold;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 43.2px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 25px 0;
 
-    // color: #03839e;
+    &__group-1 {
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1.07px #03839e;
 
-    // &--blue {
-    //     font-family: $font-family-bold;
-    //     font-size: 36px;
-    //     font-weight: 400;
-    //     line-height: 43.2px;
-    //     letter-spacing: 0.15em;
-    //     text-align: justify;
+      &--no-spases {
+        word-spacing: -.4ch;
+      }
+    }
 
-    //     -webkit-text-fill-color: transparent;
-    //     -webkit-text-stroke: 1px #03839e;
+    &__group-2 {
+      white-space: nowrap;
 
+      -webkit-text-fill-color: #03839e;
 
-    //   @include on-tablet {
-    //     font-size: 64px;
-    //     line-height: 64px;
-    //   }
-    // }
-
-    // @include on-tablet {
-    //   font-size: 64px;
-    //   line-height: 64px;
-    //   grid-column: 1 / 5;
-    // }
+      &--no-spases {
+        word-spacing: -.4ch;
+      }
+    }
   }
 
   &__price {
