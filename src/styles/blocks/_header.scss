@@ -1,7 +1,7 @@
 .header {
   z-index: 0;
   position: relative;
-  overflow: hidden;
+
 
   &__backround-yelow-color {
     @include on-tablet {
@@ -156,6 +156,14 @@
         word-spacing: -.4ch;
       }
     }
+
+      @include on-tablet {
+      grid-column: 1 / 5;
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: 0.15em;
+      margin: 0;
+    }
   }
 
   &__price {
@@ -196,43 +204,12 @@
 
   &__buy-button {
     grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-    place-items: center center;
-    gap: 24px;
-    padding: 0;
-    height: 48px;
-    color: #121212;
-
-    cursor: pointer;
-    width: 100%;
-    background-color: #ffe339;
-    border: none;
 
     @include on-tablet {
-      width: 240px;
-      grid-column: 2 / 5;
+      width: 110%;
+      grid-column: 2 / 4;
       position: relative;
       top: -20px;
     }
-  }
-}
-
-.buy-button {
-  &__text {
-    display: flex;
-    flex-direction: column;
-    font-family: $font-family-small;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 48px;
-    text-align: center;
-    text-transform: uppercase;
-    margin: 0;
-  }
-
-  &__arrow {
-    width: 28px;
-    height: auto;
   }
 }
