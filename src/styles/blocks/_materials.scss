@@ -1,8 +1,6 @@
 .materials {
-
   &__content {
     @include page-grid;
-
   }
 
   &__section-title {
@@ -12,8 +10,8 @@
     font-size: 58px;
     font-weight: 400;
     line-height: 69.6px;
-    letter-spacing: 0.15em;
-    color: #03839E;
+    letter-spacing: $letter-spacing-main;
+    color: $c-blue;
     z-index: 1;
     margin: 0;
 
@@ -37,7 +35,6 @@
       margin-top: 42%;
       margin-bottom: 10px;
       grid-column: 4 / -1;
-
     }
   }
 
@@ -46,14 +43,14 @@
 
     @include on-tablet {
       display: block;
-      position: relative;
       font-family: $font-family-small;
       font-size: 16px;
       font-weight: 400;
       line-height: 24px;
+      height: 76px;
       margin: 0;
+      z-index: 2;
       grid-column: 4 / -1;
-      z-index: 1;
 
       &--bold {
         font-weight: 700;
@@ -64,23 +61,24 @@
   &__bg-img-container {
     grid-column: 1 / -1;
     margin-top: 125px;
+    position: relative;
     height: 75vw;
     z-index: 0;
 
     @include on-tablet {
-      margin-top: 3%;
       width: 100%;
       transform: none;
+      margin-top: 0;
       left: 0;
     }
   }
 
   &__bg-image {
-    display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+    display: block;
+    
+    @include center-absolute;
+
+    width: 100vw;
   }
 }
 
@@ -106,8 +104,8 @@
       background-image: url(/src/images/swiper-link-default.png);
 
       &--1 {
-        left: 72%;
-        bottom: 40%;
+        left: 70%;
+        bottom: -30%;
       }
 
       &--2 {
@@ -130,7 +128,7 @@
         bottom: 16%;
       }
 
-      &--active{
+      &--active {
         background-image: url(/src/images/swiper-link-active.png);
       }
     }
@@ -158,8 +156,8 @@
     margin-inline: 0;
 
     &--1 {
-      left: 70%;
-      bottom: 35%;
+      left: 50%;
+      bottom: 0;
     }
 
     &--2 {
@@ -185,17 +183,20 @@
 }
 
 .carousel-wrapper {
-    grid-column: 1 / -1;
-    height: 194px;
-    z-index: 1;
+  grid-column: 1 / -1;
+  height: 194px;
+  z-index: 1;
+
+  @include on-tablet {
+    height: 0;
+  }
 }
 
 .carousel {
   width: 96vw;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   bottom: 60px;
+
+  @include center-absolute;
 
   @include on-tablet {
     margin-top: 0;
@@ -206,12 +207,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
   z-index: 1;
   width: 100%;
   margin-top: -110px;
+
+  @include center-absolute;
 
   @include on-tablet {
     display: none;

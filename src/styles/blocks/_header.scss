@@ -35,7 +35,7 @@
       font-size: 12px;
       font-weight: 400;
       line-height: 18px;
-      color: #03839e;
+      color: $c-blue;
       position: absolute;
       bottom: 115px;
       right: -80px;
@@ -84,9 +84,8 @@
   &__bg-image {
     display: flex;
     width: 100vw;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+
+    @include center-absolute;
 
     @include on-tablet {
       height: 100%;
@@ -124,13 +123,13 @@
     font-size: 36px;
     font-weight: 400;
     line-height: 43.2px;
-    letter-spacing: 0.15em;
+    letter-spacing: $letter-spacing-main;
     text-transform: uppercase;
     margin: 25px 0;
 
     &__group-1 {
       -webkit-text-fill-color: transparent;
-      -webkit-text-stroke: 1.07px #03839e;
+      -webkit-text-stroke: 1.07px $c-blue;
 
       &--no-spases {
         word-spacing: -0.4ch;
@@ -140,7 +139,7 @@
     &__group-2 {
       white-space: nowrap;
 
-      -webkit-text-fill-color: #03839e;
+      -webkit-text-fill-color: $c-blue;
 
       &--no-spases {
         word-spacing: -0.4ch;
@@ -150,7 +149,7 @@
     @include on-tablet {
       font-size: 64px;
       line-height: 64px;
-      letter-spacing: 0.15em;
+      letter-spacing: $letter-spacing-main;
       margin: 0;
     }
   }

@@ -10,7 +10,7 @@
     grid-column: 1 / -1;
 
     @include on-tablet {
-    position: relative;
+      position: relative;
 
       &::before {
         content: 'Martin';
@@ -18,12 +18,12 @@
         font-size: 231.88px;
         font-weight: 400;
         line-height: 278.26px;
-        letter-spacing: 0.15em;
+        letter-spacing: $letter-spacing-main;
         position: absolute;
         left: -10%;
 
         -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 1px #03839e;
+        -webkit-text-stroke: 1px $c-blue;
       }
 
       &::after {
@@ -32,13 +32,13 @@
         font-size: 231.88px;
         font-weight: 400;
         line-height: 278.26px;
-        letter-spacing: 0.15em;
+        letter-spacing: $letter-spacing-main;
         bottom: -20%;
         right: -90px;
         position: absolute;
 
         -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 1px #03839e;
+        -webkit-text-stroke: 1px $c-blue;
       }
     }
   }
@@ -48,7 +48,7 @@
     font-size: 58px;
     font-weight: 400;
     line-height: 69.6px;
-    letter-spacing: 0.15em;
+    letter-spacing: $letter-spacing-main;
     grid-column: 1 / -1;
     margin: 0 0 25px;
   }
@@ -71,9 +71,8 @@
   }
 
   &__bg-image {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center-absolute;
+
     width: 100vw;
 
     @include on-tablet {
@@ -97,9 +96,8 @@
   }
 
   &__backround-yelow-color {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    @include center-absolute;
+
     width: 100vw;
     z-index: -1;
     height: 70%;
@@ -120,7 +118,6 @@
       top: 50px;
     }
   }
-
 
   &__text {
     grid-column: 1 / -1;
