@@ -70,12 +70,13 @@
       transform: none;
       margin-top: 0;
       left: 0;
+      height: 0;
     }
   }
 
   &__bg-image {
     display: block;
-    
+
     @include center-absolute;
 
     width: 100vw;
@@ -83,9 +84,8 @@
 }
 
 .link-buttons {
-  position: relative;
-
   @include on-tablet {
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
@@ -95,7 +95,7 @@
 
   .link-button {
     @include on-tablet {
-      display: block;
+      grid-column: 1 / -1;
       position: relative;
       cursor: pointer;
       width: 51px;
@@ -104,34 +104,41 @@
       background-image: url(/src/images/swiper-link-default.png);
 
       &--1 {
-        left: 70%;
-        bottom: -30%;
+        left: 75%;
+        top: 38%;
       }
 
       &--2 {
-        left: 55%;
-        bottom: 20%;
+        left: 47%;
+        top: 68%;
       }
 
       &--3 {
-        left: 44%;
-        bottom: 10%;
+        left: 29%;
+        top: 80%;
       }
 
       &--4 {
-        left: 30%;
-        bottom: 40%;
+        left: 6%;
+        top: 51%;
       }
 
       &--5 {
-        left: 11%;
-        bottom: 16%;
+        left: -23%;
+        top: 74%;
       }
 
       &--active {
         background-image: url(/src/images/swiper-link-active.png);
       }
     }
+  }
+}
+
+.slide {
+  @include on-tablet {
+    height: 75vw;
+    position: absolute;
   }
 }
 
@@ -150,34 +157,33 @@
   @include on-tablet {
     display: none;
     width: 213px;
-    height: 100%;
+    height: auto;
     padding: 35px 45px;
     position: relative;
-    margin-inline: 0;
 
     &--1 {
       left: 50%;
-      bottom: 0;
+      top: 80%;
     }
 
     &--2 {
       left: 55%;
-      bottom: 20%;
+      top: 40%;
     }
 
     &--3 {
       left: 44%;
-      bottom: 10%;
+      top: 40%;
     }
 
     &--4 {
       left: 30%;
-      bottom: 40%;
+      top: 40%;
     }
 
     &--5 {
       left: 11%;
-      bottom: 16%;
+      top: 80%;
     }
   }
 }
@@ -188,7 +194,9 @@
   z-index: 1;
 
   @include on-tablet {
-    height: 0;
+    height: 75vw;
+    position: relative;
+    z-index: 2;
   }
 }
 
@@ -200,6 +208,8 @@
 
   @include on-tablet {
     margin-top: 0;
+    bottom: unset;
+    height: 75vw;
   }
 }
 
