@@ -86,7 +86,7 @@
 .link-buttons {
   @include on-tablet {
     display: flex;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -95,13 +95,13 @@
 
   .link-button {
     @include on-tablet {
-      grid-column: 1 / -1;
-      position: relative;
+      position: absolute;
       cursor: pointer;
-      width: 51px;
-      height: 51px;
-      z-index: 2;
+      width: 6.7vw;
+      height: 6.7vw;
+      z-index: 1;
       background-image: url(/src/images/swiper-link-default.png);
+      background-size: cover;
 
       &--1 {
         left: 75%;
@@ -109,22 +109,22 @@
       }
 
       &--2 {
-        left: 47%;
+        left: 54%;
         top: 68%;
       }
 
       &--3 {
-        left: 29%;
+        left: 43%;
         top: 80%;
       }
 
       &--4 {
-        left: 6%;
+        left: 29%;
         top: 51%;
       }
 
       &--5 {
-        left: -23%;
+        left: 8%;
         top: 74%;
       }
 
@@ -145,45 +145,48 @@
 .text-box {
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
   color: white;
   padding: 28px 45px 58px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
   font-family: $font-family-small;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   height: 168px;
 
+
   @include on-tablet {
     display: none;
-    width: 213px;
+    width: 28vw;
     height: auto;
     padding: 35px 45px;
     position: relative;
+    z-index: 2;
 
     &--1 {
-      left: 50%;
-      top: 80%;
+      left: 135%;
+      top: -52%;
     }
 
     &--2 {
-      left: 55%;
-      top: 40%;
+      left: 98%;
+      top: -66%;
     }
 
     &--3 {
-      left: 44%;
-      top: 40%;
+      left: 64%;
+      top: -60%;
     }
 
     &--4 {
       left: 30%;
-      top: 40%;
+      top: -80%;
     }
 
     &--5 {
-      left: 11%;
-      top: 80%;
+      left: 5%;
+      top: -52%;
     }
   }
 }
@@ -210,6 +213,7 @@
     margin-top: 0;
     bottom: unset;
     height: 75vw;
+    z-index: 3;
   }
 }
 
