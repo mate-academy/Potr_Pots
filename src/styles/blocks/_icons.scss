@@ -9,6 +9,10 @@
   &--menu {
     background-image: url(/src/images/icons/menu_icon--2x.png);
     display: flex;
+
+    @include on-desctop {
+      display: none;
+    }
   }
 
   &--close {
@@ -21,6 +25,10 @@
     position: relative;
     bottom: 100%;
     right: -90%;
+
+    @include on-desctop {
+      display: none;
+    }
 
     &::after {
       content: 'close';
