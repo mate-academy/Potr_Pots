@@ -1,7 +1,22 @@
 .nav {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @include on-tablet {
+    grid-column: 6;
+  }
+
+  @include on-desctop {
+    grid-column: 5 / -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   &__list {
     margin: 0;
-    margin-top: 20vh;
     padding: 0;
     list-style: none;
     display: flex;
@@ -9,18 +24,24 @@
     gap: 15px;
 
     @include on-desctop {
-      margin: 0;
       margin-top: 26px;
-      display: flex;
       flex-direction: row;
       justify-content: center;
       gap: 60px;
-
     }
   }
 
-  &__item--basket {
-    justify-self: flex-end;
+  &__item {
+
+    &--basket{
+      display: flex;
+      margin-top: 20vh;
+
+      @include on-desctop {
+        margin: 0;
+        order: 2;
+      }
+    }
   }
 
   &__link {
@@ -31,15 +52,23 @@
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
+    white-space: nowrap;
 
     @include on-desctop {
       color: $grey-2;
-      white-space: nowrap;
+    }
+
+    &--basket{
+      @include on-desctop {
+        display: none;
+        margin-bottom: 0;
+      }
     }
   }
-
 
   &:hover::after {
     transform: scale(1);
   }
+
+
 }
