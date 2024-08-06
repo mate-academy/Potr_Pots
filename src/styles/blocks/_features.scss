@@ -44,11 +44,20 @@
     order: 2;
   }
 
+  @include on-desctop {
+    grid-column: span 4;
+  }
+
   &--order-1 {
     @include on-tablet {
       order: 1;
     }
+
+    @include on-desctop {
+      order: 2;
+    }
   }
+
   &__photo-link {
     position: relative;
     z-index: 0;
@@ -77,6 +86,10 @@
     @include on-tablet {
       text-align: left;
     }
+
+    @include on-desctop {
+      text-align: center;
+    }
   }
 
   &__description {
@@ -89,6 +102,10 @@
 
     @include on-tablet {
       text-align: left;
+    }
+
+    @include on-desctop {
+      text-align: center;
     }
   }
 }
