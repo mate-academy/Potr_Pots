@@ -18,6 +18,10 @@
 
     position: relative;
 
+    @include on-desctop {
+      row-gap: 80px;
+    }
+
     &::after {
       content: 'POTR POTS';
       font-family: $font-family-bold;
@@ -65,15 +69,36 @@
   }
 
   @include on-desctop {
-    grid-column: span 4;
+    grid-column: 1 / -1;
+  }
+
+  &--desktop {
+
+    &--1 {
+      @include on-desctop {
+        grid-template-rows: 55% 45%;
+      }
+    }
+
+    @include on-desctop {
+      grid-column: 6 span;
+
+      --columns: 6;
+    }
   }
 
   &__photo-link {
     position: relative;
     z-index: 0;
+    height: 41vw;
 
     @include on-tablet {
       grid-column: 1 / 2 span;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 5 span;
+      height: 35vw;
     }
 
     &--reverse {
@@ -82,6 +107,22 @@
         height: 52vw;
         width: 100%;
         order: 2;
+      }
+
+      @include on-desctop {
+        grid-column: 2 / 3 span;
+        height: 37vw;
+      }
+    }
+
+    &--3 {
+      @include on-tablet {
+        height: 54vw;
+      }
+
+      @include on-desctop {
+        grid-column: 2 / -1;
+        height: 47vw;
       }
     }
 
@@ -94,14 +135,36 @@
     @include on-tablet {
       display: flex;
       width: 38vw;
+      bottom: 0;
+      position: absolute;
 
       @include hover(transform, scale(1.2));
     }
+
+    @include on-desctop {
+      width: 35vw;
+      left: 0;
+    }
+
 
     &--reverse {
       @include on-tablet {
         position: absolute;
         right: 0;
+      }
+
+      @include on-desctop {
+        width: 21vw;
+        right: unset;
+        bottom: 0;
+      }
+    }
+
+    &--3 {
+      width: 36vw;
+
+      @include on-desctop {
+        width: 33vw;
       }
     }
   }
@@ -113,9 +176,17 @@
 
       --columns: 4;
 
+      align-self: center;
       column-gap: 20px;
 
       grid-template-columns: repeat(var(--columns), 1fr);
+    }
+
+    @include on-desctop {
+      --columns: 6;
+
+      grid-column: 7 / -1;
+      align-self: center;
     }
 
     &--reverse {
@@ -124,10 +195,65 @@
 
       --columns: 3;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-self: center;
+
+      @include on-desctop {
+        display: grid;
+        
+        --columns: 6;
+
+        grid-column: 6 span;
+
+        order: 2;
+        align-self: self-start;
+      }
     }
+
+    &--3 {
+      @include on-desctop {
+        grid-column: 6 span;
+      }
+    }
+  }
+
+  &__short-notice {
+    display: none;
+
+    @include on-tablet {
+      grid-column: 2 / 1 span;
+      margin: 0 0 20px;
+      display: block;
+      position: relative;
+      font-family: $font-family-small;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+
+      &::before {
+        content: '*';
+        font-family: $font-family-bold;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 28.8px;
+        letter-spacing: 0.15em;
+        text-align: right;
+        position: absolute;
+        left: -18px;
+      }
+    }
+
+    @include on-desctop {
+      grid-column: 3 / 2 span;
+      margin: 20px 0;
+    }
+
+    &--reverse {
+      @include on-tablet {
+        grid-column: 3 / 4;
+        margin-left: 30px;
+      }
+    }
+
   }
 
   &__title-number {
@@ -146,17 +272,22 @@
       grid-column: 1 / 2;
     }
 
+    @include on-desctop {
+      grid-column: 2 / 3;
+      text-align: left;
+    }
+
     &::before {
       content: '';
       width: 1px;
       height: 46px;
       position: absolute;
-      left: -2%;
+      left: -10px;
       background-color: $grey-1;
       transform: rotate(22deg);
 
       @include on-tablet {
-        left: 65%;
+        left: 50px;
       }
     }
 
@@ -167,8 +298,12 @@
         margin-bottom: 0;
 
         &::before {
-          left: -3%;
+          left: -10px;
         }
+      }
+
+      @include on-desctop {
+        grid-column: 2 / 4 span;
       }
     }
   }
@@ -185,7 +320,6 @@
 
     @include on-tablet {
       grid-column: 2 / -1;
-      margin-top: 30px;
 
       &::after {
         content: '';
@@ -198,10 +332,18 @@
       }
     }
 
+    @include on-desctop {
+      grid-column: 3 / -1;
+    }
+
     &--reverse {
       @include on-tablet {
         grid-column: 1 / -1;
         margin: 0;
+      }
+
+      @include on-desctop {
+        grid-column: 2 / 4 span;
       }
     }
   }
@@ -218,9 +360,17 @@
       margin: 0;
     }
 
+    @include on-desctop {
+      grid-column: 3 / -1;
+    }
+
     &--reverse {
       @include on-tablet {
         grid-column: 1 / -1;
+      }
+
+      @include on-desctop {
+        grid-column: 2 / 4 span;
       }
     }
   }
