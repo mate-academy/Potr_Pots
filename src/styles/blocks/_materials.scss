@@ -1,6 +1,8 @@
 .materials {
   &__content {
     @include page-grid;
+
+    position: relative;
   }
 
   &__section-title {
@@ -20,6 +22,11 @@
       line-height: 96px;
       letter-spacing: 0.12em;
     }
+
+    @include on-desctop {
+      font-size: 138.81px;
+      line-height: 166.57px;
+    }
   }
 
   &__environmentally-title {
@@ -35,6 +42,13 @@
       margin-top: 42%;
       margin-bottom: 10px;
       grid-column: 4 / -1;
+    }
+
+    @include on-desctop {
+      margin-top: 140px;
+      position: absolute;
+      grid-column: 8 / -1;
+      z-index: 2;
     }
   }
 
@@ -56,6 +70,13 @@
         font-weight: 700;
       }
     }
+
+    @include on-desctop {
+      grid-column: 8 / -1;
+      position: absolute;
+      z-index: 2;
+      margin-top: 180px;
+    }
   }
 
   &__bg-img-container {
@@ -71,6 +92,10 @@
       margin-top: 0;
       left: 0;
       height: 0;
+    }
+
+    @include on-desctop {
+      margin-top: 120px;
     }
   }
 
@@ -97,8 +122,8 @@
     @include on-tablet {
       position: absolute;
       cursor: pointer;
-      width: 6.7vw;
-      height: 6.7vw;
+      width: 51px;
+      height: 51px;
       z-index: 1;
       background-image: url(/src/images/swiper-link-default.png);
       background-size: cover;
@@ -106,11 +131,21 @@
       &--1 {
         left: 75%;
         top: 38%;
+
+        @include on-desctop {
+          left: 83%;
+          top: 61%;
+        }
       }
 
       &--2 {
         left: 54%;
         top: 68%;
+
+        @include on-desctop {
+          left: 60%;
+          top: 71%;
+        }
       }
 
       &--3 {
@@ -121,11 +156,21 @@
       &--4 {
         left: 29%;
         top: 51%;
+
+        @include on-desctop {
+          left: 35%;
+          top: 61%;
+        }
       }
 
       &--5 {
         left: 8%;
         top: 74%;
+
+        @include on-desctop {
+          left: 10%;
+          top: 80%;
+        }
       }
 
       &--active {
@@ -158,7 +203,7 @@
 
   @include on-tablet {
     display: none;
-    width: 28vw;
+    width: 213px;
     height: auto;
     padding: 35px 45px;
     position: relative;
@@ -167,26 +212,51 @@
     &--1 {
       left: 135%;
       top: -52%;
+
+      @include on-desctop {
+        left: 315%;
+        top: -32%;
+      }
     }
 
     &--2 {
       left: 98%;
-      top: -66%;
+      top: -75%;
+
+      @include on-desctop {
+        left: 228%;
+        top: -52%;
+      }
     }
 
     &--3 {
       left: 64%;
       top: -60%;
+
+      @include on-desctop {
+        left: 98%;
+        top: -27%;
+      }
     }
 
     &--4 {
       left: 30%;
       top: -80%;
+
+      @include on-desctop {
+        left: 65%;
+        top: -57%;
+      }
     }
 
     &--5 {
       left: 5%;
-      top: -52%;
+      top: -56%;
+
+      @include on-desctop {
+        left: 35%;
+        top: -37%;
+      }
     }
   }
 }
