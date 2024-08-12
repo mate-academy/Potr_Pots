@@ -199,7 +199,7 @@
 
       @include on-desctop {
         display: grid;
-        
+
         --columns: 6;
 
         grid-column: 6 span;
@@ -238,7 +238,11 @@
         letter-spacing: 0.15em;
         text-align: right;
         position: absolute;
-        left: -18px;
+        left: -24px;
+
+        @include on-desctop {
+          left: -37px;
+        }
       }
     }
 
@@ -252,8 +256,12 @@
         grid-column: 3 / 4;
         margin-left: 30px;
       }
-    }
 
+      @include on-desctop {
+        grid-column: 2 / 2 span;
+        margin: 20px 0;
+      }
+    }
   }
 
   &__title-number {

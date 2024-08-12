@@ -1,19 +1,40 @@
 .footer {
-  background-image: linear-gradient(
-    165deg,
-    rgba(255, 236, 122, 1) 83%,
-    transparent 50%
-  );
+  position: relative;
+  z-index: 0;
 
-  @include on-tablet {
+  &__backround-yelow-color {
+    display: flex;
+    z-index: -1;
+    width: 100vw;
+    height: 100%;
+
+    @include center-absolute;
+
     background-image: linear-gradient(
-      174deg,
-      rgba(255, 236, 122, 1) 58%,
+      165deg,
+      rgba(255, 236, 122, 1) 83%,
       transparent 50%
     );
-  }
 
-  position: relative;
+    @include on-tablet {
+      background-image: linear-gradient(
+        174deg,
+        rgba(255, 236, 122, 1) 58%,
+        transparent 50%
+      );
+    }
+
+    @include on-desctop {
+      background-image: linear-gradient(
+        174deg,
+        rgba(255, 236, 122, 1) 58%,
+        transparent 50%
+      );
+    width: 91vw;
+      left: 0;
+      transform: translate(0);
+    }
+  }
 
   &::before {
     content: '';
@@ -25,6 +46,12 @@
     top: -70px;
     height: 170px;
     width: 115px;
+
+    @include on-desctop {
+      width: 170px;
+      right: 3%;
+      top: -95px;
+    }
   }
 
   &__content {
@@ -66,6 +93,10 @@
     color: $c-black;
     text-decoration: none;
     width: 67%;
+
+    @include on-desctop {
+      width: 100%;
+    }
   }
 
   &__social-and-logo {
@@ -74,6 +105,10 @@
     @include on-tablet {
       grid-column:  2 span;
       display: block;
+    }
+
+    @include on-desctop {
+      grid-column: 5 / 4 span;
     }
   }
 
@@ -84,6 +119,11 @@
     margin-bottom: 40px;
     justify-content: space-between;
 
+    @include on-desctop {
+      grid-column: 5 / 4 span;
+      justify-content: space-around;
+      margin-inline: 40px;
+    }
   }
 
   &__icon-link {
@@ -108,6 +148,10 @@
     @include on-tablet {
       grid-column:  2 span;
       display: block;
+    }
+
+    @include on-desctop {
+      grid-column: 11 / 2 span;
     }
   }
 
@@ -137,6 +181,12 @@
       letter-spacing: 0.15em;
       text-align: right;
       margin: 0 0 10px;
+    }
+
+    @include on-desctop {
+      grid-column: 11 / 2 span;
+      text-align: center;
+      margin-left: 15px;
     }
   }
 
