@@ -9,13 +9,13 @@ export function burger() {
       const targetItem = e.target;
 
       if (targetItem.closest('.icon-menu')) {
-          document.documentElement.classList.add('menu-open');
+          document.documentElement.classList.add('menu-open', 'stop-scroll');
           hideMenu.classList.remove('hidden');
       }
   }
 
   function closeMenu() {
-      document.documentElement.classList.remove('menu-open');
+      document.documentElement.classList.remove('menu-open', 'stop-scroll');
       hideMenu.classList.add('hidden');
   }
 
