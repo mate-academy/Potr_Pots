@@ -16,6 +16,11 @@
 
   @include on-desctop {
     background-image: none;
+    height: min-content;
+    width: 62vw;
+    position: absolute;
+    left: unset;
+    right: 0;
   }
 
   font-weight: 400;
@@ -24,13 +29,16 @@
 
   &__content {
     @include page-grid;
-    
+    @include content-padding-inline;
+
     grid-column: 1 / -1;
     height: 100vh;
     align-content: space-between;
 
     @include on-desctop {
-      grid-column: 1 / -1;
+      display: block;
+      height: min-content;
+      padding-left: 0;
     }
   }
 
@@ -48,6 +56,10 @@
 
     @include on-tablet {
       grid-column: 6;
+    }
+
+    @include on-desctop {
+      display: none;
     }
   }
 }

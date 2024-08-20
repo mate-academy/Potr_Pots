@@ -5,9 +5,11 @@
   gap: 24px;
   padding: 0;
   height: 48px;
-  cursor: pointer;
   border: none;
   line-height: 21px;
+  cursor: pointer;
+
+  @include hover(transform, scale(1.08));
 
   &__text {
     font-family: $font-family-small;
@@ -27,14 +29,21 @@
   background-color: #ffe339;
   color: #121212;
 
+  @include hover(transform, scale(1.08));
+
   &:hover {
-    background-color: #ffe33966;
+   background-color: #FFEC7A;
   }
 
   &--white {
     @include on-tablet {
       background-color: $c-gray-ligth;
       border: 1px solid $c-blue;
+
+      &:hover {
+        background-color: #03839E;
+        border: 0;
+      }
     }
   }
 }
@@ -43,7 +52,9 @@
   background-color: $c-blue;
   color: #fff;
 
+  @include hover(transform, scale(1.08));
+  
   &:hover {
-    background-color: #03809e66;
+    background-color: #03839E;
   }
 }
