@@ -93,7 +93,8 @@
     grid-column: 1 / -1;
     max-height: 120px;
     height: 24px;
-    resize: vertical;
+    resize: none;
+    border-color: #0000004d;
   }
 
   &__input,
@@ -104,22 +105,28 @@
     line-height: 24px;
     color: $grey-2;
     border: none;
-    border-bottom: 1px solid #0000004d;
     background-color: transparent;
     width: 100%;
     padding: 0;
+    border-bottom: 1px solid #0000004d;
     transition: border-color 0.3s ease;
 
     @include hover(transform, scale(1.04));
 
-    &::placeholder {
-      color: $grey-2;
+    &:invalid {
+      color: #eb5757;
+      border-color: #eb5757;
     }
 
     &:focus,
     &:valid {
       outline: none;
       border-color: $c-blue;
+      color: $c-blue;
+    }
+
+    &:placeholder-shown {
+      border-color: #0000004d;
     }
   }
 
