@@ -207,9 +207,14 @@
     margin: 0;
     margin-bottom: 5px;
     color: #00000063;
+
+    &:hover{
+      transform: none;
+    }
   }
 
   &__link {
+    display: block;
     font-family: $font-family-small;
     font-size: 16px;
     font-weight: 400;
@@ -217,9 +222,9 @@
     color: $c-black;
     text-decoration: none;
 
-    @include hover(transform, scale(1.09));
-
     transition: color 0.3s ease;
+    
+    @include hover(transform, scale(1.09));
 
     &:hover,
     &:focus {
