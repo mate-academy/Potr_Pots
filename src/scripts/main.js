@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  // Активуємо карусель тільки для мобільної версії
   if (window.innerWidth < 768) {
     $('.carousel').slick({
       dots: false,
@@ -31,7 +30,7 @@ function toggleText(index) {
   const linkButton = document.querySelector(`.link-button--${index}`);
 
   if (window.innerWidth < 768) {
-    // Логіка для мобільної версії
+
     if (textBox.style.display === 'none' || textBox.style.display === '') {
       textBox.style.display = 'block';
       linkButton.classList.add('link-button--active');
@@ -40,7 +39,6 @@ function toggleText(index) {
       linkButton.classList.remove('link-button--active');
     }
   } else {
-    // Логіка для планшетної і десктопної версій
     if (textBox.classList.contains('text-box--active')) {
       textBox.style.display = 'none';
       textBox.classList.remove('text-box--active');
