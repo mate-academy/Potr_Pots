@@ -1,0 +1,194 @@
+.benefits {
+  display: block;
+
+  &__content {
+    @include page-grid;
+  }
+
+  &__desk-img-container {
+    display: none;
+
+    @include on-desctop {
+      grid-column: 1 / 5 span;
+
+      display: block;
+      position: relative;
+      height: 58vw;
+    }
+  }
+
+  &__desk-img {
+    position: absolute;
+    right: -30px;
+  }
+}
+
+.article {
+  @include page-grid;
+
+  grid-column: 1 / -1;
+
+  @include on-desctop {
+    grid-column: 6 / 7 span;
+
+    align-self: center;
+
+    --columns: 7;
+  }
+
+  &__benifir-box {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+
+    &--2 {
+      @include page-grid;
+
+      grid-column: 1 / -1;
+
+      @include on-tablet {
+        grid-column: 4 / 3 span;
+        align-self: center;
+
+        --columns: 3;
+      }
+
+      @include on-desctop {
+        grid-column: 1 / 7 span;
+
+        --columns: 7;
+      }
+    }
+
+    @include on-tablet {
+      grid-column: 1 / 3 span;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 7 span;
+
+      flex-flow: wrap;
+      flex-direction: row;
+    }
+  }
+
+  &__benefit {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include on-desctop {
+      order: 2;
+    }
+
+    &--order-2 {
+      order: 2;
+
+      @include on-tablet {
+        order: 1;
+      }
+
+      @include on-desctop {
+        order: 2;
+      }
+    }
+  }
+
+  &__benefit-title {
+    font-family: $font-family-small;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 48px;
+    color: $grey-1;
+    margin: 0;
+    position: relative;
+
+    &::before {
+      content: '';
+      background-image: url(/src/images/rhombus.png);
+      position: absolute;
+      left: -24px;
+      top: 15px;
+      width: 14px;
+      height: 14px;
+    }
+
+    @include on-tablet {
+      margin-left: 24px;
+    }
+
+    @include on-desctop {
+      display: inline-block;
+      width: min-content;
+      white-space: nowrap;
+      justify-content: space-evenly;
+      margin-left: 30px;
+    }
+  }
+
+  &__benefit-br {
+    display: flex;
+    height: 0;
+  }
+
+  &__benefit-descr {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $grey-3;
+    margin: 5px 0 40px;
+
+    @include on-tablet {
+      margin-left: 24px;
+    }
+
+    @include on-desctop {
+      display: inline-block;
+      width: min-content;
+      white-space: nowrap;
+      margin-left: 30px;
+    }
+  }
+
+  &__buy-button {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 1 / 3;
+      background-color: #fff;
+      border: 1px solid $c-blue;
+    }
+
+    @include on-desctop {
+      grid-column: 1 / 3 span;
+      width: 90%;
+      margin-bottom: 70px;
+    }
+  }
+
+  &__half-price {
+    font-family: $font-family-bold;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 54px;
+    height: 54px;
+    letter-spacing: $letter-spacing-main;
+    color: #eb5757;
+    margin: 40px 0 10px;
+    grid-column: 1 / -1;
+
+    &--blue {
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: $letter-spacing-main;
+      color: $c-blue;
+      margin: 0;
+    }
+
+    @include on-desctop {
+      grid-column: 2 / 5 span;
+      align-self: center;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+html,
+body {
+  scroll-behavior: smooth;
+  background: #f8f8f8;
+}
+
+.page {
+  position: relative;
+  min-width: 320px;
+
+  &__body {
+    margin: 0;
+    min-width: 260px;
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateX(200%);
+    pointer-events: none;
+
+    &:target {
+      overflow: visible;
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+
+    @include on-desctop {
+      position: absolute;
+      transform: translateX(0);
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+}

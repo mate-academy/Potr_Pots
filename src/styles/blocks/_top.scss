@@ -1,0 +1,26 @@
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+  position: sticky;
+  z-index: 0;
+
+  @include on-tablet {
+    padding: 29px 0 13px;
+  }
+
+  @include on-desctop {
+    padding: 20px 0 13px;
+  }
+
+  &__logo {
+    display: flex;
+    height: 28px;
+    width: 134px;
+    object-fit: cover;
+    cursor: pointer;
+
+    @include hover(transform, scale(1.09));
+  }
+}

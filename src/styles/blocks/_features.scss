@@ -1,0 +1,111 @@
+.features {
+  &__section-title {
+    margin: 0;
+    font-family: $font-family-bold;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 69.6px;
+    letter-spacing: $letter-spacing-main;
+    text-align: justify;
+
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.07px $c-blue;
+
+    &--blue {
+      margin: 0;
+      text-transform: uppercase;
+      font-family: $font-family-bold;
+      font-size: 58px;
+      font-weight: 400;
+      line-height: 69.6px;
+      letter-spacing: $letter-spacing-main;
+
+      white-space: nowrap;
+
+      -webkit-text-fill-color: $c-blue;
+    }
+  }
+
+  &__products {
+    @include page-grid;
+
+    margin-top: 50px;
+    row-gap: 40px;
+  }
+}
+
+.product-features {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / -1;
+
+  @include on-tablet {
+    grid-column: span 2;
+    order: 2;
+  }
+
+  @include on-desctop {
+    grid-column: span 4;
+  }
+
+  &--order-1 {
+    @include on-tablet {
+      order: 1;
+    }
+
+    @include on-desctop {
+      order: 2;
+    }
+  }
+
+  &__photo-link {
+    position: relative;
+    z-index: 0;
+
+    @include hover(transform, scale(0.95));
+  }
+
+  &__img {
+    width: 100%;
+
+    @include on-tablet {
+      display: flex;
+
+      @include hover(transform, scale(1.09));
+    }
+  }
+
+  &__name {
+    font-family: $font-family-bold;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: $letter-spacing-main;
+    text-align: center;
+
+    @include on-tablet {
+      text-align: left;
+    }
+
+    @include on-desctop {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    font-family: $font-family-small;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    margin: 0;
+
+    @include on-tablet {
+      text-align: left;
+    }
+
+    @include on-desctop {
+      text-align: center;
+    }
+  }
+}

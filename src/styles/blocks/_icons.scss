@@ -1,0 +1,68 @@
+.icon {
+  display: block;
+  align-items: center;
+  background-size: cover;
+
+  height: 32px;
+  width: 32px;
+
+  @include hover(transform, scale(1.2));
+
+  &--menu {
+    background-image: url(/src/images/icons/menu_icon--2x.png);
+    display: flex;
+
+    @include on-desctop {
+      display: none;
+    }
+  }
+
+  &--basket {
+    @include on-desctop {
+      background-image: url(/src/images/icons/icons8-сумка-для-покупок-100--favicon.png);
+      display: flex;
+      margin-top: 22px;
+    }
+  }
+
+  &--close {
+    background-image: url(/src/images/icons/icon--close--2x.png);
+    height: 12px;
+    width: 12px;
+    display: flex;
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    bottom: 100%;
+    right: -90%;
+
+    @include on-desctop {
+      display: none;
+    }
+
+    &::after {
+      content: 'close';
+      width: 100%;
+      left: 0;
+      font-family: $font-family-small;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+      color: #f8f8f8;
+      letter-spacing: -0.05em;
+      bottom: 600%;
+      transform: rotate(-90deg);
+      position: absolute;
+    }
+
+    &::before {
+      content: '';
+      width: 1px;
+      height: 44px;
+      left: 50%;
+      bottom: 200%;
+      background-color: #f8f8f8;
+      position: absolute;
+    }
+  }
+}

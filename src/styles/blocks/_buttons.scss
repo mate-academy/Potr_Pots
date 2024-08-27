@@ -1,0 +1,60 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 0;
+  height: 48px;
+  border: none;
+  line-height: 21px;
+  cursor: pointer;
+  text-decoration: none;
+
+  @include hover(transform, scale(1.08));
+
+  &__text {
+    font-family: $font-family-small;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__arrow {
+    width: 28px;
+    height: auto;
+  }
+}
+
+.buy-button {
+  background-color: #ffe339;
+  color: #121212;
+
+  @include hover(transform, scale(1.08));
+
+  &:hover {
+    background-color: #ffec7a;
+  }
+
+  &--white {
+    @include on-tablet {
+      background-color: $c-gray-ligth;
+      border: 1px solid $c-blue;
+
+      &:hover {
+        background-color: #03839e;
+      }
+    }
+  }
+}
+
+.submit-button {
+  background-color: $c-blue;
+  color: #fff;
+
+  @include hover(transform, scale(1.08));
+
+  &:hover {
+    background-color: #03839e;
+  }
+}
