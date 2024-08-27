@@ -29,7 +29,7 @@ function toggleText(index) {
   const textBox = document.getElementById(`text-${index}`);
   const linkButton = document.querySelector(`.link-button--${index}`);
 
-  if (window.innerWidth < 768) {
+  if (window.innerWidth > 768) {
 
     if (textBox.style.display === 'none' || textBox.style.display === '') {
       textBox.style.display = 'block';
