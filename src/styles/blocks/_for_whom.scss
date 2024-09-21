@@ -1,0 +1,293 @@
+.for-whom {
+  &__container {
+    position: relative;
+  }
+
+  &__body {
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+
+    @include on-tablet {
+      margin-top: 34px;
+      justify-content: space-between;
+      row-gap: 120px;
+      flex-flow: row wrap;
+    }
+
+    @include on-desktop {
+      row-gap: 80px;
+    }
+  }
+
+  &__word {
+    display: none;
+
+    @include on-tablet {
+      position: relative;
+      margin-bottom: 25px;
+      display: block;
+      left: 30px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 40px;
+      left: 0;
+    }
+
+    &--start {
+      @include on-desktop {
+        position: relative;
+        top: 0;
+        left: 65px;
+      }
+    }
+
+    &::before {
+      content: '*';
+      position: absolute;
+      top: 4px;
+      left: -30px;
+      color: $blackColor;
+      font-size: 24px;
+    }
+  }
+
+  &__item {
+    display: flex;
+
+    @include on-tablet {
+      flex: 0 1 100%;
+      column-gap: 20px;
+    }
+
+    @include on-desktop {
+      flex: 0 1 auto;
+    }
+
+    &--wide {
+      flex: 0 1 100%;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      @include on-desktop {
+        gap: 125px;
+      }
+    }
+
+    &--column {
+      @include on-tablet {
+        flex-direction: row;
+      }
+
+      @include on-desktop {
+        flex-direction: column;
+      }
+
+      & .for-whom__word {
+        @include on-desktop {
+          margin-top: 40px;
+        }
+      }
+    }
+
+    &--center {
+      @include on-tablet {
+        flex-direction: row-reverse;
+        display: flex;
+      }
+
+      @include on-desktop {
+        align-items: center;
+        flex-direction: column;
+        padding-top: 105px;
+      }
+    }
+
+    &--end {
+      @include on-tablet {
+        align-items: center;
+      }
+
+      @include on-desktop {
+        align-items: end;
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+    width: fit-content;
+    position: relative;
+
+    &--center {
+      @include on-tablet {
+        justify-content: center;
+      }
+    }
+
+    @include on-tablet {
+      display: flex;
+      flex: 0 1 50%;
+    }
+
+    @include on-desktop {
+      flex: none;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 0%;
+        background-color: #ffeb7a34;
+        transition: height 0.4s ease 0s;
+      }
+
+      &::before {
+        top: 0;
+      }
+
+      &::after {
+        bottom: 0;
+      }
+
+      &:hover::before,
+      &:hover::after {
+        height: 50%;
+      }
+    }
+
+    & > img {
+      @include on-tablet {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    @include on-tablet {
+      flex: 0 1 50%;
+      align-self: center;
+      padding-left: 40px;
+    }
+
+    @include on-desktop {
+      width: 470px;
+      flex: none;
+      padding-left: 0;
+    }
+
+    &--wide {
+      @include on-desktop {
+        width: 500px;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 68px;
+
+    &--column {
+      flex-direction: column;
+    }
+  }
+
+  &__inner {
+    margin: 0 auto;
+    padding-right: 10px;
+
+    &--narrow {
+      @include on-desktop {
+        max-width: 430px;
+      }
+    }
+
+    &--right {
+      @include on-tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @include on-tablet {
+      padding-right: 0;
+    }
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__shell {
+    position: relative;
+
+    @include on-tablet {
+      padding-left: 30px;
+    }
+
+    @include on-desktop {
+      padding-left: 68px;
+    }
+
+    &--top {
+      @include on-tablet {
+        padding-left: 0;
+        padding-top: 68px;
+      }
+
+      @include on-desktop {
+        margin-left: 65px;
+      }
+    }
+  }
+
+  &__number {
+    display: inline-block;
+    position: relative;
+    left: 15px;
+    font-size: 36px;
+    font-family: $minorFont;
+    color: $blackColor;
+
+    @include on-tablet {
+      position: absolute;
+      top: 15px;
+      left: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -18px;
+      left: -10px;
+      transform: rotate(22deg);
+      width: 1px;
+      height: 47px;
+      background-color: $blackColor;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 30px;
+    position: relative;
+
+    @include on-tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__text {
+    max-width: 370px;
+    margin-top: 20px;
+
+    @include on-tablet {
+      margin-top: 10px;
+    }
+  }
+}

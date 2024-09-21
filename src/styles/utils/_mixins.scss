@@ -1,6 +1,157 @@
+@mixin on-tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+  }
+}
+
+@function convert-linter-height($lh, $fz) {
+  @return ($lh / $fz) * 100%;
+}
+
+@mixin blue-title($fz-sm, $fz-lr, $lh-sm, $lh-lr) {
+  font-size: $fz-sm;
+  color: $blueColor;
+  line-height: convert-linter-height($lh-sm, $fz-sm);
+  font-family: $minorFont;
+  letter-spacing: 7px;
+  font-weight: 700;
+
+  @include on-tablet {
+    font-size: $fz-lr;
+    line-height: convert-linter-height($lh-lr, $fz-lr);
+  }
+
+  span {
+    -webkit-text-stroke: 0.7px $blueColor;
+    color: rgba(255, 255, 255, 0);
+    font-weight: normal;
+  }
+}
+
+@mixin title-4 {
+  font-size: 24px;
+  line-height: 24 / 24 * 100%;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: $minorFont;
+}
+
+@mixin title-3 {
+  font-size: 36px;
+  letter-spacing: 0.15em;
+  line-height: 150%;
+  font-weight: 700;
+  color: $blackColor;
+  text-transform: uppercase;
+  font-family: $minorFont;
+}
+
+@mixin button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  height: 48px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 21 / 14 * 100%;
+  transition:
+    background-color 0.3s ease 0s,
+    color 0.3s ease 0s;
+}
+
+@mixin button-yellow {
+  @include button;
+
+  width: 90%;
+  background-color: $yellowWeightColor;
+  opacity: 1;
+  transition: opacity 0.3s ease 0s;
+
+  &::after {
+    content: '';
+    width: 40px;
+    height: 20px;
+    background: url('../images/hero/arrow-btn.svg') center no-repeat;
+    transition: background 0.3s ease;
+  }
+
+  @include on-tablet {
+    width: 270px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin button-trans {
+  background-color: $yellowWeightColor;
+  width: 90%;
+
+  @include button;
+
+  @include on-tablet {
+    border: 1px solid $blueColor;
+    background-color: transparent;
+    width: 238px;
+  }
+
+  &::after {
+    content: '';
+    width: 40px;
+    height: 20px;
+    background: url('../images/benefits/arrow_black.svg') center no-repeat;
+    transition: background 0.3s ease;
+  }
+
+  @include on-tablet {
+    &:hover::after {
+      background: url('../images/benefits/arrow_white.svg') center no-repeat;
+    }
+
+    &:hover {
+      background-color: $blueColor;
+      color: #fff;
+    }
+  }
+}
+
+@mixin button-blue {
+  background-color: $blueColor;
+  color: #fff;
+  width: 100%;
+
+  @include button;
+
+  @include on-tablet {
+    width: 238px;
+  }
+
+  &::after {
+    content: '';
+    width: 40px;
+    height: 20px;
+    background: url('../images/benefits/arrow_white.svg') center no-repeat;
+    transition: background 0.3s ease;
+  }
+
+  &:hover {
+    background-color: #16778f;
   }
 }

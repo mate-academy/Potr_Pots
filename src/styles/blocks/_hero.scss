@@ -1,0 +1,157 @@
+.hero {
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    @include on-desktop {
+      gap: 100px;
+    }
+  }
+
+  &__content {
+    @include on-tablet {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 50%;
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+
+    & > h1 {
+      @include blue-title(36px, 64px, 43px, 64px);
+    }
+
+    @include on-tablet {
+      margin-top: 0;
+      width: 450px;
+    }
+
+    @include on-desktop {
+      position: relative;
+      top: 0;
+      left: 20px;
+      display: flex;
+      align-self: end;
+    }
+  }
+
+  &__info {
+    position: relative;
+    min-height: 225px;
+
+    @include on-tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @include on-desktop {
+      justify-content: end;
+    }
+  }
+
+  &__image {
+    height: 100%;
+
+    @include on-tablet {
+      flex: 0 1 50%;
+      display: flex;
+      justify-content: end;
+    }
+
+    & > img {
+      width: 100%;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    color: $blueColor;
+    font-size: 12px;
+    line-height: 150%;
+    writing-mode: vertical-rl;
+    padding-bottom: 55px;
+
+    @include on-tablet {
+      top: 35px;
+      right: inherit;
+      left: 0;
+    }
+
+    & > img {
+      transition: bottom 0.3s ease 0s;
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      transform: translate(12%);
+    }
+
+    &:hover > img {
+      bottom: -10px;
+    }
+  }
+
+  &__get {
+    margin-top: 30px;
+
+    @include on-tablet {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__price {
+    @include on-tablet {
+      align-self: end;
+    }
+
+    @media (min-width: #{$tablet}) and (max-width: 725px) {
+      margin-top: 20px;
+      align-self: center;
+    }
+
+    @include on-desktop {
+      margin-right: 30px;
+    }
+  }
+
+  &__amount {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35.5 / 26 * 100%;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 21 / 14 * 100%;
+    max-width: 140px;
+
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+  }
+
+  &__button {
+    margin-top: 20px;
+
+    @include on-tablet {
+      margin-top: 50px;
+    }
+  }
+}
