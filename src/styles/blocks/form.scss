@@ -1,0 +1,92 @@
+.form {
+  @include on-tablet {
+    min-width: 340px;
+  }
+
+  @include on-desktop {
+    min-width: 370px;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+
+  &__title {
+    margin-block: 40px 25px;
+    font-family: Manrope, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0;
+  }
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba($color: #000, $alpha: .3);
+    padding: 4px;
+    height: 33px;
+    color: $gray;
+    width: 100%;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+    resize: none;
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px transparent;
+      background-color: transparent;
+      transition: background-color 0s 600000s, color 0s 600000s
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $turquoise;
+      color: $turquoise;
+    }
+  }
+
+  &__btn {
+    margin-top: 30px;
+    width: 100%;
+    height: 48px;
+    background-color: $turquoise;
+    color: #fff;
+    font-family: Manrope, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    border: none;
+    padding: 0;
+    text-align: center;
+    transition: all .3s;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba($color: $turquoise, $alpha: .85);
+    }
+
+    @include on-tablet {
+      width: 65%;
+    }
+
+
+    &::after {
+      content: url('../images/arrow-right-white.svg');
+      margin-left: 24px;
+    }
+  }
+}
