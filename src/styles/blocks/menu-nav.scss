@@ -1,0 +1,61 @@
+.nav {
+  display: flex;
+  align-items: start;
+  height: 100vh;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+  }
+
+  &__item {
+    @include hover(transform, scale(1.2));
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      display: block;
+      height: 1px;
+      width: 100%;
+      background-color: $c-white;
+
+      @include transiton-default(all);
+      transform: scale(0);
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: $c-white;
+  }
+}
+
+.basket {
+  position: relative;
+
+  &::after {
+    content: '0';
+    position: absolute;
+    left: 60px;
+    width: 14px;
+    height: 14px;
+    font-family: $font-bebas;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 14px;
+    background-color:$c-red;
+    color: $c-white;
+    text-align: center;
+    border-radius: 50%;
+  }
+}

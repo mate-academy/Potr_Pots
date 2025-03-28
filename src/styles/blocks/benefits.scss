@@ -1,0 +1,190 @@
+.benefits {
+  position: relative;
+  margin-top: 110px;
+  @include pageGrid;
+
+  @include onDesktop {
+    margin-top: 100px;
+  }
+
+  &__photos {
+    display: none;
+
+    @include onDesktop {
+      position: absolute;
+      top: 0;
+      left: -120px;
+      display: block;
+    }
+  }
+
+  &__list {
+    grid-column: 1 / -1;
+    list-style-type: none;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 10;
+      margin-top: 186px;
+    }
+  }
+
+  &__title:first-child {
+    margin-top: 0;
+  }
+
+  &__title {
+    position: relative;
+    margin-top: 40px;
+
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 700;
+    color: $c-grey;
+
+    @include onTablet {
+      padding-left: 20px;
+      font-size: 36px;
+      line-height: 54px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: -14px;
+      display: block;
+      width: 7px;
+      height: 7px;
+      background: $c-light-grey;
+      transform: rotate(45deg) translateX(-50%);
+
+      @include onTablet {
+        top: 20px;
+        left: 0;
+        transform: rotate(45deg) translateX(50%);
+      }
+    }
+
+    &--2 {
+      @include onDesktop {
+        position: absolute;
+        top: 186px;
+        right: 0;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__description {
+    margin-top: 5px;
+    color: #828282;
+
+    @include onTablet {
+      padding-left: 20px;
+    }
+
+    &--2 {
+      @include onDesktop {
+        position: absolute;
+        top: 245px;
+        right: 12px;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__buy-now-button {
+    @include buy-now-button;
+    grid-column: 1 / -1;
+    margin-top: 50px;
+
+    @include onTablet {
+      grid-column: 4 / 6;
+      margin-top: 85px;
+      max-width: 238px;
+      background-color: transparent;
+      border: 1px solid $c-turquoise;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: $c-turquoise;
+        opacity: 1;
+        color: $c-white;
+
+        &::after {
+          content: url(../images/tablet/Arrow-white.png);
+        }
+      }
+    }
+
+    @include onDesktop {
+      grid-column: 6 / 9;
+      grid-row: 2;
+      width: 238px;
+      margin-top: 60px;
+    }
+  }
+
+  &__discount {
+    grid-column: 1 / -1;
+    margin-top: 40px;
+    font-family: $font-bebas;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    color: #eb5757;
+
+    @include onTablet {
+      grid-column: 4 / 6;
+      margin-top: -170px;
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 9;
+      grid-row: 3;
+      margin-top: 70px;
+    }
+  }
+
+  &__discount-desc {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+    font-family: $font-bebas;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+
+    @include onTablet {
+      grid-column: 4 / 6;
+      grid-row: 2;
+      margin-top: -130px;
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / -1;
+      grid-row: 3;
+      margin-top: 116px;
+    }
+  }
+
+  &__right-side-decor-text {
+    @include onTablet {
+      top: 0;
+      right: -24px;
+      @include hover(transform, scale(1.1));
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+}

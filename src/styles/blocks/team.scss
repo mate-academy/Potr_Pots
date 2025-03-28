@@ -1,0 +1,162 @@
+.team {
+  @include onTablet {
+    position: relative;
+    @include pageGrid;
+    row-gap: 80px;
+  }
+
+  @include onDesktop {
+    row-gap: 55px;
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column-start: span 5;
+    }
+
+    @include onDesktop {
+      grid-row: 1;
+      grid-column-start: span 6;
+    }
+  }
+
+  &__martin {
+    display: none;
+    visibility: hidden;
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+      top: 200px;
+      left: -75px;
+      visibility: visible;
+      margin-top: 17px;
+      font-family: $font-bebas;
+      font-weight: 400;
+      font-size: 232px;
+      line-height: 278px;
+      letter-spacing: 0.15em;
+      @include transparent-title;
+    }
+
+    @include onDesktop {
+      left: -52px;
+      font-size: 288px;
+      line-height: 346px;
+    }
+  }
+
+  &__andy {
+    display: none;
+    visibility: hidden;
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+      visibility: visible;
+      right: -68px;
+      bottom: -158px;
+      font-family: $font-bebas;
+      font-weight: 400;
+      font-size: 219px;
+      line-height: 264px;
+      letter-spacing: 0.15em;
+      @include transparent-title;
+    }
+
+    @include onDesktop {
+      bottom: -216px;
+      right: -156px;
+    }
+  }
+
+  &__picture {
+    @include onTablet {
+      grid-row: 3;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -1;
+    }
+  }
+
+  &__photo {
+    width: calc(100% + 2 * $padding-inline-mobile);
+    margin-top: 25px;
+    margin-left: -$padding-inline-mobile;
+    margin-right: -$padding-inline-mobile;
+
+    @include onTablet {
+      width: 340px;
+      height: 255px;
+      margin: 0;
+    }
+
+    @include onDesktop {
+      width: 677px;
+      height: 507px;
+    }
+  }
+
+  &__about {
+    @include onDesktop {
+      @include pageGrid;
+    }
+  }
+
+  &__description {
+    margin-top: 30px;
+
+    @include onTablet {
+      margin-top: 6px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / -1;
+      margin-top: 186px;
+    }
+  }
+
+  &__about {
+    position: relative;
+
+    @include onTablet {
+      grid-row: 3;
+      grid-column: 1 / 4;
+      margin-top: 53px;
+    }
+  }
+
+  &__rect {
+    position: absolute;
+    top: 100px;
+    z-index: -1;
+    width: calc(100% + 2 * $padding-inline-mobile);
+    height: 294px;
+    margin-left: -$padding-inline-mobile;
+    margin-right: -$padding-inline-mobile;
+    background-image: url(../images/mobile/Rectangle.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include onTablet {
+      background-image: url(../images/tablet/Rectangle.png);
+      top: -120px;
+      left: -154px;
+      height: 380px;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/desktop/Rectangle.png);
+      top: -75px;
+      left: -96px;
+      width: 435px;
+      height: 310px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.potr-pots {
+  &__side-decor {
+    display: none;
+
+    @include onTablet {
+      display: block;
+    }
+  }
+
+  &__side-text {
+    opacity: 0;
+    font-family: $font-bebas;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.4px;
+    color: #828282;
+    text-decoration: none;
+    writing-mode: vertical-lr;
+
+    @include onTablet {
+      position: absolute;
+      opacity: 1;
+    }
+
+    @include onDesktop {
+      position: absolute;
+      opacity: 1;
+    }
+
+    &::before {
+      content: '';
+      position: static;
+      display: inline-block;
+      width: 1px;
+      height: 65px;
+      margin-bottom: 10px;
+      background-color: #828282;
+    }
+  }
+}

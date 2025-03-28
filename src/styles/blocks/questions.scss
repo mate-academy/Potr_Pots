@@ -1,0 +1,208 @@
+.questions {
+  position: relative;
+
+  @include onTablet {
+    margin-top: 103px;
+
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__title {
+    padding-top: 45px;
+    color: #000;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+      margin: 0;
+      padding-top: 17px;
+    }
+
+    @include onDesktop {
+      padding-top: 42px;
+    }
+  }
+
+  &__ways {
+    color: #000;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__rect {
+    position: absolute;
+    left: -$padding-inline-mobile;
+    z-index: -1;
+    display: block;
+
+    height: 1002px;
+    border-bottom: 70px solid transparent;
+    border-left: 100vw solid $c-light-yellow;
+
+    @include onTablet {
+      left: -$padding-inline-tablet;
+      right: -$padding-inline-tablet;
+      height: 490px;
+      border-bottom: 80px solid transparent;
+      border-left: 768px solid $c-light-yellow;
+      box-sizing: border-box;
+    }
+
+    @include onDesktop {
+      left: -$padding-inline-desktop;
+      right: 0;
+      height: 567px;
+      border-bottom: 180px solid transparent;
+      border-left: 1300px solid $c-light-yellow;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 160px;
+      height: 170px;
+
+      background-image: url(../images/desktop/round-decor.png);
+
+      transform: translate(50%, -50%) rotate(0deg);
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+
+      animation: circle 30s linear infinite;
+
+      @keyframes circle {
+        0% {
+          transform: translate(50%, -50%) rotate(0deg);
+        }
+
+        100% {
+          transform: translate(50%, -50%) rotate(360deg);
+        }
+      }
+    }
+  }
+
+  &__form {
+    margin-top: 40px;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      grid-column: 5 / -1;
+      margin-top: -14px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 4px;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    color: $c-light-grey;
+    outline: none;
+
+    &:not(:placeholder-shown):valid:focus {
+      color: $c-light-grey;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      background-color: transparent;
+    }
+
+    &:not(:placeholder-shown):invalid:focus {
+      color: $c-red;
+      border-bottom: 1px solid $c-red;
+    }
+  }
+
+  &__input-message {
+    resize: none;
+  }
+
+  &__submit-button {
+    @include buy-now-button;
+    width: 100%;
+    margin-top: 30px;
+    color: #fff;
+    background-color: $c-turquoise;
+
+    &::after {
+      content: url(../images/mobile/arrow-white.png);
+    }
+
+    @include onTablet {
+      grid-column-start: span 2;
+      width: 220px;
+      margin-top: 40px;
+      @include hover(transform, scale(1.05));
+    }
+  }
+
+  &__point-title:first-of-type {
+    margin-top: 56px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__point-title {
+    margin-top: 34px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    opacity: 0.4;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__details {
+    display: inline-block;
+    margin-top: 5px;
+    color: #000;
+    text-decoration: none;
+
+    @include hover(transform, scale(1.15));
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition:
+    background-color 0s 500000s,
+    color 0s 500000s;
+}

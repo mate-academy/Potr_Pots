@@ -1,0 +1,107 @@
+.sizes {
+  @include onDesktop {
+    position: relative;
+    @include pageGrid;
+    grid-column: 1 / -1;
+  }
+
+  &__title {
+    margin-top: 110px;
+
+    @include onDesktop {
+      grid-column: 1 / 8;
+    }
+  }
+
+  &__description {
+    margin-top: 20px;
+
+    @include onDesktop {
+      grid-column: 1 / 4;
+      grid-row: 2;
+      margin-top: 66px;
+    }
+  }
+
+  &__points {
+    @include onTablet {
+      @include smallGrid;
+      grid-column: 1 / -1;
+    }
+
+    @include onDesktop {
+      grid-row: 2;
+      grid-column-start: span 9;
+    }
+  }
+
+  &__point-title {
+    margin-top: 38px;
+    font-family: $font-bebas;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.15em;
+    color: #000;
+
+    @include onTablet {
+      grid-column: 1 / 2;
+    }
+
+    @include onDesktop {
+      margin-top: 66px;
+    }
+
+    &--small {
+      @include onDesktop {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__text {
+    @include onTablet {
+      grid-column: 1 / 3;
+    }
+
+    @include onDesktop {
+      margin-top: 10px;
+    }
+  }
+
+  &__text-notice {
+    margin-top: 15px;
+
+    @include onTablet {
+      margin-top: 190px;
+    }
+
+    @include onDesktop {
+      grid-row: 3;
+      grid-column: 1 / 7;
+      margin-top: 109px;
+    }
+  }
+
+  &__photo {
+    width: calc(100% + 2 * $padding-inline-mobile);
+    margin-top: 30px;
+    margin-left: -$padding-inline-mobile;
+    margin-right: -$padding-inline-mobile;
+
+    @include onTablet {
+      position: absolute;
+      margin: 38px 0 0;
+      right: $padding-inline-tablet;
+      width: 416px;
+      height: 337px;
+    }
+
+    @include onDesktop {
+      right: 0;
+      top: 166px;
+      width: 528px;
+      height: 427px;
+    }
+  }
+}

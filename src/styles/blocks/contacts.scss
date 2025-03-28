@@ -1,0 +1,177 @@
+.contacts {
+  position: relative;
+
+  @include onTablet {
+    margin-top: 103px;
+    @include pageGrid;
+  }
+
+  @include onDesktop {
+    margin-top: 200px;
+  }
+
+  &__title {
+    padding-top: 45px;
+    color: #000;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin: 0;
+      padding-top: 17px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+      padding-top: 42px;
+    }
+  }
+
+  &__ways {
+    color: #000;
+
+    @include onTablet {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__rect {
+    position: absolute;
+    z-index: -2;
+    background-image: url(../images/mobile/rectangle-contacts.png);
+    background-repeat: no-repeat;
+    width: calc(100% + 2 * $padding-inline-mobile);
+    height: 1000px;
+    margin-left: -$padding-inline-mobile;
+    margin-right: -$padding-inline-mobile;
+
+    @include onTablet {
+      background-image: url(../images/tablet/footer-rect.png);
+      width: calc(100% + 2 * $padding-inline-tablet);
+      height: 552px;
+      margin-left: -$padding-inline-tablet;
+      margin-right: -$padding-inline-tablet;
+    }
+
+    @include onDesktop {
+      background-image: url(../images/desktop/footer-rect.png);
+      width: calc(100% + 2 * $padding-inline-desktop);
+      margin-left: -$padding-inline-desktop;
+      margin-right: -$padding-inline-desktop;
+    }
+  }
+
+  &__round-decor {
+    position: absolute;
+    top: -9%;
+    right: -70%;
+    background-image: url(../images/desktop/round-decor.png);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 170px;
+
+    @include onTablet {
+      top: -28%;
+      right: -88%;
+    }
+
+    @include onDesktop {
+      top: -25%;
+      right: -92%;
+    }
+  }
+
+  &__form {
+    margin-top: 40px;
+    font-size: 24px;
+    line-height: 36px;
+    color: #000;
+
+    @include onTablet {
+      grid-column: 1 / 4;
+      margin-top: 30px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__info {
+    @include onTablet {
+      grid-column: 5 / -1;
+      margin-top: -14px;
+    }
+
+    @include onDesktop {
+      grid-column: 7 / 10;
+    }
+  }
+
+  &__input {
+    margin-top: 20px;
+    padding-bottom: 4px;
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $c-light-grey;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  &__message {
+    width: 100%;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: $c-light-grey;
+    background-color: $c-yellow;
+  }
+
+  &__submit-button {
+    @include buy-now-button;
+    width: 100%;
+    margin-top: 30px;
+    color: #fff;
+    background-color: $c-turquoise;
+
+    &::after {
+      content: url(../images/mobile/arrow-white.png);
+    }
+
+    @include onTablet {
+      grid-column-start: span 2;
+      width: 220px;
+      margin-top: 40px;
+    }
+  }
+
+  &__point-title:first-of-type {
+    margin-top: 56px;
+
+    @include onTablet {
+      margin-top: 0;
+    }
+  }
+
+  &__point-title {
+    margin-top: 34px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 400;
+    opacity: 39%;
+
+    @include onTablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__details {
+    margin-top: 5px;
+    color: #000;
+  }
+}

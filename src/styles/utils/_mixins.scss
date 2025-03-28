@@ -2,5 +2,106 @@
   transition: #{$_property} 0.3s;
   &:hover {
     #{$_property}: $_toValue;
+    cursor: pointer;
+  }
+}
+
+@mixin transiton-default($_property) {
+  transition: #{$_property} 0.3s;
+}
+
+@mixin onTablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin pageGrid {
+  --columns: 2;
+
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(var(--columns),  minmax(0, 1fr));
+
+
+  @include onTablet {
+    --columns: 6;
+  }
+
+  @include onDesktop {
+    --columns: 12;
+    column-gap: 30px;
+  }
+}
+
+@mixin smallGrid {
+  --columns: 5;
+
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: repeat(var(--columns), 1fr);
+}
+
+@mixin contentPaddingInline() {
+  min-width: 320px;
+  padding-inline: $padding-inline-mobile;
+
+  @include onTablet {
+    padding-inline: $padding-inline-tablet;
+    margin-inline: auto;
+  }
+
+  @include onDesktop {
+    padding-inline: $padding-inline-desktop;
+  }
+}
+
+@mixin slash {
+  content: '';
+  position: absolute;
+  transform-origin: 100% 0;
+  display: block;
+  height: 46px;
+  width: 1px;
+  transform: rotate(25deg);
+  background-color: $c-grey;
+}
+
+@mixin transparent-title {
+  -webkit-text-stroke: 0.8px $c-turquoise;
+  color: transparent;
+
+  @include onDesktop {
+    -webkit-text-stroke: 1px $c-turquoise;
+  }
+}
+
+@mixin buy-now-button {
+  box-sizing: border-box;
+  height: 48px;
+  padding: 0;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 600;
+  color: $c-black;
+  text-transform: uppercase;
+  background-color: $c-yellow;
+  border: none;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  &::after {
+    content: url(../images/mobile/button-arrow.png);
+    padding-left: 22px;
   }
 }

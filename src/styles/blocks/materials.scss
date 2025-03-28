@@ -1,0 +1,326 @@
+.materials {
+  position: relative;
+
+  &__description {
+    @include onTablet {
+      margin-top: -50px;
+      @include pageGrid;
+      grid-column: 1 /-1;
+    }
+
+    @include onDesktop {
+      margin-top: -170px;
+    }
+  }
+
+  &__title {
+    font-family: $font-bebas;
+    font-weight: 400;
+    font-size: 58px;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+
+    @include onTablet {
+      font-size: 80px;
+      line-height: 96px;
+      letter-spacing: 0.12em;
+    }
+
+    @include onDesktop {
+      font-size: 138px;
+      line-height: 166px;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+      padding-left: 12px;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / 11;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include onTablet {
+      display: block;
+      grid-column: 4 / -1;
+      margin-top: 10px;
+      padding-left: 12px;
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+      margin-top: 15px;
+    }
+  }
+
+  &__right-side-decor-text {
+    @include onTablet {
+      top: 0;
+      right: -24px;
+      @include hover(transform, scale(1.1));
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__left-side-decor-text {
+    @include onTablet {
+      top: 230px;
+      left: -24px;
+      @include hover(transform, scale(1.1));
+    }
+
+    @include onDesktop {
+      display: none;
+    }
+  }
+
+  &__photo {
+    position: relative;
+    z-index: -1;
+    width: calc(100% + 2 * $padding-inline-mobile);
+    margin-top: -76px;
+    margin-left: -$padding-inline-mobile;
+    margin-right: -$padding-inline-mobile;
+
+    @include onTablet {
+      width: calc(100% + 2 * $padding-inline-tablet);
+      margin-left: -$padding-inline-tablet;
+      margin-right: -$padding-inline-tablet;
+    }
+
+    @include onDesktop {
+      width: calc(100% + 2 * $padding-inline-desktop);
+      margin-left: -$padding-inline-desktop;
+      margin-right: -$padding-inline-desktop;
+      margin-top: -180px;
+    }
+  }
+
+  &__text-slider {
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  .swiper {
+    margin-top: -50px;
+    margin-left: -20px;
+    margin-right: -20px;
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: 254px;
+    padding: 28px 44px 58px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-white;
+    background-color: rgba(0, 0, 0, 0.55);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+    opacity: 1;
+  }
+
+  .swiper-pagination,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 20;
+  }
+
+  .swiper-pagination-bullet {
+    cursor: pointer;
+    bottom: 38px;
+    width: 8px;
+    height: 8px;
+    background-color: $c-white;
+    border: 1px solid $c-white;
+    border-radius: 0;
+    opacity: 1;
+    box-sizing: border-box;
+    @include transiton-default(all);
+    transform: rotate(45deg);
+
+    &-active {
+      background-color: transparent;
+    }
+  }
+
+  &__button-container {
+    z-index: 3;
+  }
+
+  &__toggle-button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/tablet/plusButton.png);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    @include hover(transform, scale(1.1));
+    opacity: 0;
+
+    &--active {
+      background-image: url(../images/tablet/minusButton.png);
+      opacity: 0.8;
+    }
+
+    @include onTablet {
+      opacity: 1;
+    }
+
+    &--1 {
+      bottom: 12%;
+      left: 6%;
+
+      @include onDesktop {
+        bottom: 14%;
+        left: 10%;
+      }
+    }
+
+    &--2 {
+      bottom: 25%;
+      left: 30%;
+
+      @include onDesktop {
+        bottom: 30%;
+        left: 36%;
+      }
+    }
+
+    &--3 {
+      bottom: 8%;
+      left: 44%;
+
+      @include onDesktop {
+        bottom: 10%;
+        left: 46%;
+      }
+    }
+
+    &--4 {
+      bottom: 18%;
+      left: 55%;
+
+      @include onDesktop {
+        bottom: 22%;
+        left: 60%;
+      }
+    }
+
+    &--5 {
+      bottom: 38%;
+      left: 75%;
+
+      @include onDesktop {
+        bottom: 30%;
+        left: 83%;
+      }
+    }
+  }
+
+  &__toggle-text {
+    position: absolute;
+    z-index: 4;
+    width: 300px;
+    height: min-content;
+    padding: 30px 45px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 150%;
+    color: $c-white;
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(17px);
+
+    @include onDesktop {
+      padding: 35px 45px;
+    }
+
+    &--1 {
+      bottom: 20%;
+      left: -4%;
+
+      @include onDesktop {
+        bottom: 20%;
+        left: 0;
+      }
+    }
+
+    &--2 {
+      bottom: 36%;
+      left: 14%;
+
+      @include onDesktop {
+        bottom: 36%;
+        left: 13%;
+      }
+    }
+
+    &--3 {
+      bottom: 16%;
+      right: 30%;
+
+      @include onDesktop {
+        bottom: 5%;
+        right: 55%;
+      }
+    }
+
+    &--4 {
+      bottom: 26%;
+      left: 40%;
+
+      @include onDesktop {
+        bottom: 28%;
+        left: 50%;
+      }
+    }
+
+    &--5 {
+      top: 66%;
+      right: 2%;
+
+      @include onDesktop {
+        top: 72%;
+        left: 72%;
+      }
+    }
+  }
+}
+
+.hiddenText {
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    opacity 0.6s ease 0s,
+    visibility 0.6s ease 0s;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}

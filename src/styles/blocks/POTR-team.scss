@@ -1,0 +1,161 @@
+.POTR-team {
+  @include onTablet {
+    position: relative;
+    @include pageGrid;
+    row-gap: 80px;
+  }
+
+  @include onDesktop {
+    row-gap: 55px;
+  }
+
+  &__title {
+    font-size: 58px;
+    line-height: 70px;
+
+    @include onTablet {
+      grid-row: 1;
+      grid-column-start: span 5;
+    }
+
+    @include onDesktop {
+      grid-row: 1;
+      grid-column-start: span 7;
+    }
+  }
+
+  &__names {
+    display: none;
+    visibility: hidden;
+
+    @include onTablet {
+      position: absolute;
+      display: block;
+      visibility: visible;
+      font-family: $font-bebas;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      @include transparent-title;
+    }
+  }
+
+  &__martin {
+    @include onTablet {
+      left: -75px;
+      top: 200px;
+      margin-top: 17px;
+      font-size: 232px;
+      line-height: 278px;
+    }
+
+    @include onDesktop {
+      left: -52px;
+      font-size: 288px;
+      line-height: 346px;
+    }
+  }
+
+  &__andy {
+    @include onTablet {
+      right: -$padding-inline-tablet;
+      bottom: -168px;
+      font-size: 219px;
+      line-height: 264px;
+    }
+
+    @include onDesktop {
+      bottom: -220px;
+      right: -$padding-inline-desktop;
+    }
+  }
+
+  &__picture {
+    @include onTablet {
+      grid-row: 3;
+      grid-column: span 3;
+    }
+
+    @include onDesktop {
+      grid-column: 5 / -1;
+      align-self: center;
+    }
+  }
+
+  &__photo {
+    width: calc(100% + 2 * $padding-inline-mobile);
+    margin-top: 25px;
+    margin-left: -$padding-inline-mobile;
+    margin-right: -$padding-inline-mobile;
+
+    @include onTablet {
+      width: 340px;
+      height: 255px;
+      margin: 0;
+      @include hover(transform, scale(1.02));
+    }
+
+    @include onDesktop {
+      width: 677px;
+      height: 507px;
+      min-width: 0;
+      max-width: 100%;
+      height: auto;
+      align-self: center;
+    }
+  }
+
+  &__about {
+    position: relative;
+
+    @include onTablet {
+      grid-row: 3;
+      grid-column: 1 / 4;
+      margin-top: 60px;
+    }
+
+    @include onDesktop {
+      grid-column: 1 / 5;
+    }
+  }
+
+  &__description {
+    padding-top: 30px;
+
+    @include onTablet {
+      padding-top: 6px;
+    }
+
+    @include onDesktop {
+      max-width: 100%;
+      min-width: 0;
+      padding-top: 186px;
+    }
+  }
+
+  &__rect {
+    position: absolute;
+    display: block;
+    top: 100px;
+    left: -$padding-inline-mobile;
+    right: -$padding-inline-mobile;
+    z-index: -1;
+    height: 290px;
+    border-left: 100vw solid $c-light-yellow;
+    border-bottom: 80px solid transparent;
+
+    @include onTablet {
+      top: -120px;
+      left: -48px;
+      height: 240px;
+      border-left: 35vw solid $c-light-yellow;
+    }
+
+    @include onDesktop {
+      top: -75px;
+      left: -132px;
+      height: 305px;
+      border-left: 29vw solid $c-light-yellow;
+      border-bottom: 140px solid transparent;
+    }
+  }
+}

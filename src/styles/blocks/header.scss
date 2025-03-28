@@ -1,0 +1,272 @@
+h2 {
+  margin: 0;
+}
+
+.logo {
+  font-family: $font-bebas;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 43px;
+  letter-spacing: 0.06em;
+  color: $c-grey;
+  text-decoration: none;
+  text-align: center;
+
+  @include hover(transform, scale(1.2));
+}
+
+.header {
+  &__body {
+    @include pageGrid;
+    @include contentPaddingInline;
+    position: relative;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  &__nav {
+    opacity: 0;
+
+    @include onDesktop {
+      opacity: 1;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      align-items: end;
+      text-align: end;
+      padding: 0;
+      gap: 60px;
+      list-style: none;
+    }
+  }
+
+  &__item {
+    @include hover(transform, scale(1.2));
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+    color: $c-light-grey;
+  }
+
+  &__basket {
+    display: none;
+
+    @include onDesktop {
+      display: block;
+      @include hover(transform, scale(1.1));
+    }
+  }
+
+  &__rect {
+    display: none;
+
+    @include onTablet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: inline-block;
+      height: 335px;
+      border-left: 85vw solid $c-light-yellow;
+      border-bottom: 180px solid transparent;
+    }
+
+    @include onDesktop {
+      height: 476px;
+      border-left: 71vw solid $c-light-yellow;
+      border-bottom: 270px solid transparent;
+    }
+  }
+
+  &__title {
+    grid-column: 1 / -1;
+    min-width: 260px;
+    font-family: $font-bebas;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.15em;
+    @include transparent-title;
+
+    &--solid {
+      color: $c-turquoise;
+    }
+
+    @include onTablet {
+      grid-row-start: 1;
+      grid-column-start: 1;
+      grid-column-end: span 4;
+      z-index: 1;
+      margin: 0;
+      font-size: 64px;
+      line-height: 64px;
+      box-sizing: border-box;
+    }
+
+    @include onDesktop {
+      grid-row-start: 1;
+      grid-column-start: 2;
+      grid-column-end: 8;
+    }
+  }
+
+  &__image {
+    grid-column: 1 / -1;
+    width: calc(100% + 2 * $padding-inline-mobile);
+    margin-left: -$padding-inline-mobile;
+    margin-right: -$padding-inline-mobile;
+    padding-bottom: 25px;
+
+    @include onTablet {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 306px;
+      height: 306px;
+      margin: 0;
+      padding-bottom: 0;
+
+      @include hover(transform, scale(1.02));
+    }
+
+    @include onDesktop {
+      grid-column: 8 / -1;
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  &__price {
+    margin: 0;
+    padding-top: 30px;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+    color: $c-grey;
+    white-space: nowrap;
+
+    @include onTablet {
+      grid-column: 3;
+      grid-row: 2;
+      z-index: 2;
+      padding-top: 0;
+    }
+
+    @include onDesktop {
+      grid-column: 5;
+      grid-row: 2;
+    }
+  }
+
+  &__text {
+    grid-column: 1 / 2;
+    margin: 0 0 20px;
+    min-width: 0;
+    min-height: 0;
+    font-size: 14px;
+    line-height: 21px;
+    white-space: nowrap;
+
+    @include onTablet {
+      grid-column: 3;
+      display: flex;
+      z-index: 2;
+      margin-bottom: 50px;
+    }
+
+    @include onDesktop {
+      grid-column: 5;
+      grid-row: 3;
+    }
+  }
+
+  &__buy-now-button {
+    grid-column: 1 / -1;
+    @include buy-now-button;
+
+    @include onTablet {
+      grid-column: 2 / 4;
+      grid-row: 4;
+    }
+
+    @include onDesktop {
+      grid-column: 4 / 7;
+      grid-row: 4;
+    }
+  }
+
+  &__side-text {
+    position: absolute;
+    bottom: 94px;
+    right: 5px;
+    max-width: 132px;
+    margin: 0;
+    font-size: 12px;
+    line-height: 18px;
+    color: $c-turquoise;
+    writing-mode: vertical-lr;
+    text-decoration: none;
+
+    @include onTablet {
+      left: 30px;
+      bottom: 10px;
+      @include hover(transform, scale(1.02));
+    }
+
+    @include onDesktop {
+      left: 130px;
+      bottom: 10px;
+    }
+  }
+
+  &__side-arrow {
+    position: absolute;
+    bottom: 38px;
+    right: 7px;
+    background-image: url(../images/mobile/Arrow.png);
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 44px;
+    @include transiton-default(bottom);
+
+    @include onTablet {
+      left: 35px;
+      bottom: -45px;
+
+      &:hover {
+        bottom: -60px;
+      }
+    }
+
+    @include onDesktop {
+      left: 135px;
+      bottom: -45px;
+    }
+  }
+
+  &__right-side-decor-text {
+    @include hover(transform, scale(1.2));
+
+    @include onTablet {
+      bottom: -100px;
+      right: 8px;
+    }
+
+    @include onDesktop {
+      bottom: -305px;
+      right: 118px;
+    }
+  }
+}
