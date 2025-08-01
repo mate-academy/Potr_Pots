@@ -1,0 +1,342 @@
+.materials-mobile {
+  position: relative;
+  margin-top: 110px;
+
+  @include on-tablet {
+    display: none;
+  }
+
+  &__title {
+    margin-inline: 30px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 70px;
+    letter-spacing: 0.15em;
+    color: $turquoise;
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    margin-top: -70px;
+  }
+
+  &__cards {
+    margin-inline: 9px;
+    margin-top: -50px;
+  }
+}
+
+.swiper-slide {
+  padding: 28px 44px 58px 45px;
+  background-color: rgba(0, 0, 0, .45);
+  box-shadow: 0 3px 2px rgba(0,0,0,.15);
+  height: 254px;
+  backdrop-filter: blur(15px);
+
+  &__text {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #F8F8F8;
+
+  }
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  bottom: 30px;
+}
+
+.swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 0;
+  background-color: #F8F8F8;
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  border: 1px solid #F8F8F8;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.materials {
+
+  &__content {
+    display: none;
+
+    @include on-tablet {
+      display: grid;
+      margin-inline: 34px;
+      grid-template-columns: repeat(2, 1fr);
+      position: relative;
+    }
+
+    @include on-desktop {
+      margin-inline: 135px;
+    }
+  }
+
+  &__link {
+    writing-mode: vertical-lr;
+    letter-spacing: 2.64px;
+    color: #828282;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    transition: transform .5s;
+    display: none;
+    position: absolute;
+    top: -10px;
+    right: -20px;
+
+    &--left {
+      left: -24px;
+      top: 210px;
+    }
+
+    &::before {
+      content: "";
+      background-color: #828282;
+      width: 1px;
+      height: 66px;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 80px;
+    font-weight: 400;
+    line-height: 96px;
+    letter-spacing: 0.12em;
+    color: $turquoise;
+    height: 250px;
+
+    grid-column: 1 / 3;
+    grid-row: 1/ 3;
+
+    @include on-desktop {
+      font-size: 138.81px;
+      line-height: 166.57px;
+      letter-spacing: 0.12em;
+      height: 100%;
+      max-width: 900px;
+      grid-column: 1 / 3;
+      grid-row: 1/ 4;
+    }
+  }
+
+  &__feature {
+    width: 340px;
+
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+
+    @include on-desktop {
+      margin-bottom: 60px;
+      margin-left: 120px;
+      width: 470px;
+      grid-row: 3 / 4;
+    }
+  }
+
+  &__sub-title {
+    font-family: Manrope, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    height: 70px;
+    overflow: hidden;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: $gray;
+
+    @include on-desktop {
+      overflow: visible;
+    }
+  }
+
+  &__highlighted {
+    font-weight: 700;
+  }
+
+  &__image {
+    width: calc(100% + 68px);
+    margin-left: -34px;
+    grid-column: 1 / -1;
+    grid-row: 3 / 5;
+    z-index: -1;
+
+    @include on-desktop {
+      width: calc(100% + 270px);
+      margin-left: -135px;
+    }
+  }
+
+  &__buttons {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 3 / 5;
+    z-index: 2;
+  }
+
+  &__button {
+    background-image: url('../images/button-plus.png');
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    position: absolute;
+    border: none;
+    cursor: pointer;
+
+    &--active {
+      background-image: url('../images/button-minus.png');
+    }
+
+    &--1 {
+      bottom: 20%;
+      left: 8%;
+
+      @include on-desktop {
+        bottom: 15%;
+        left: 10%;
+      }
+    }
+
+    &--2 {
+      bottom: 41%;
+      left: 28%;
+
+      @include on-desktop {
+        bottom: 37%;
+        left: 35.5%;
+      }
+    }
+
+    &--3 {
+      bottom: 12%;
+      left: 43%;
+
+      @include on-desktop {
+        bottom: 12%;
+        left: 45%;
+      }
+    }
+
+    &--4 {
+      bottom: 22%;
+      left: 55%;
+
+      @include on-desktop {
+        bottom: 27%;
+        left: 59%;
+      }
+    }
+
+    &--5 {
+      bottom: 55%;
+      left: 75%;
+
+      @include on-desktop {
+        bottom: 34%;
+        left: 83%;
+      }
+    }
+  }
+
+  &__cards {
+    position: relative;
+    grid-column: 1 / -1;
+    grid-row: 3 / 5;
+  }
+
+  &__card {
+    position: absolute;
+    padding: 35px;
+    width: 283px;
+    background-color: rgba(0, 0, 0, .45);
+    box-shadow: 0 3px 2px rgba(0,0,0,.15);
+    backdrop-filter: blur(15px);
+    display: none;
+    z-index: 3;
+
+    &__text {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+      color: #F8F8F8;
+    }
+
+    &--visible {
+      display: block;
+    }
+
+    &--5 {
+      padding-inline: 45px;
+      width: 303px;
+      bottom: 10%;
+      left: 56.5%;
+
+      @include on-desktop {
+        left: 72%;
+      }
+    }
+
+    &--4 {
+      bottom: 34%;
+      left: 40%;
+
+      @include on-desktop {
+        left: 50%;
+      }
+    }
+
+    &--3 {
+      bottom: 25%;
+      left: 28%;
+
+      @include on-desktop {
+        bottom: 5%;
+        left: 19%;
+      }
+    }
+
+    &--2 {
+      bottom: 53%;
+      left: 12%;
+
+      @include on-desktop {
+        bottom: 43%;
+      }
+    }
+
+    &--1 {
+      bottom: 33%;
+      left: 0;
+
+      @include on-desktop {
+        bottom: 23%;
+      }
+    }
+  }
+}

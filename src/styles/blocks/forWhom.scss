@@ -1,0 +1,281 @@
+.for-whom {
+  margin-top: 110px;
+  position: relative;
+
+  @include on-tablet {
+    margin-top: 150px;
+  }
+
+  &__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    margin-top: 25px;
+
+    @include on-tablet {
+      margin-top: 42px;
+    }
+
+    @include on-desktop {
+      margin-top: 34px;
+      gap: 80px 160px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @include on-desktop {
+      gap: 100px;
+
+      &--third {
+        gap: 109px;
+      }
+    }
+
+    &--second {
+      @include on-tablet {
+        flex-direction: row-reverse;
+        gap: 50px;
+        position: relative;
+      }
+
+      @include on-desktop {
+        width: 25vw;
+        flex-direction: column;
+        gap: 100px;
+        margin-left: 80px;
+      }
+    }
+
+    &--third {
+      @include on-tablet {
+        align-items: flex-end;
+      }
+
+      @include on-desktop {
+        width: 35vw;
+        flex-direction: column;
+        justify-self: end;
+      }
+    }
+  }
+
+  &__card-container {
+    display: flex;
+    row-gap: 70px;
+    flex-direction: column;
+
+    @include on-desktop {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      row-gap: 70px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+
+  &__card-about {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include on-tablet {
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @include on-desktop {
+      &--second {
+        flex-direction: column;
+        gap: 27px;
+      }
+
+      &--third {
+        gap: 60px;
+      }
+    }
+  }
+
+  &__adj {
+    display: none;
+
+    &-star {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 21px;
+    }
+
+    @include on-tablet {
+      display: flex;
+      gap: 10px;
+      position: absolute;
+      top: -40px;
+      left: -40px;
+
+      &--second {
+        left: auto;
+        right: 0;
+        top: -70px;
+      }
+
+      &--third {
+        gap: 20px;
+      }
+    }
+
+    @include on-desktop {
+      gap: 30px;
+      top: -55px;
+
+      &--second {
+        left: -30px;
+
+        top: -130px;
+      }
+
+      &--third {
+        top: -65px;
+        left: -100px;
+      }
+    }
+  }
+
+  &__title-about {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 54px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    &::after {
+      content: url('../images/line.svg');
+      position: absolute;
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      width: 37vw;
+
+      @include hover(transform, scale(1.05));
+    }
+
+    @include on-desktop {
+      &--second {
+        width: 20vw;
+      }
+
+      &--third {
+        width: 35vw;
+      }
+    }
+  }
+
+  &__card-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.15em;
+    position: relative;
+    margin-left: 21px;
+
+    @include on-tablet {
+      margin-top: 10px;
+    }
+
+    &::before {
+      content: url('../images/line.svg');
+      position: absolute;
+      left: -15px;
+      top: -11px;
+    }
+
+    @include on-tablet {
+      &::before {
+        content: url('../images/line.svg');
+        position: absolute;
+        right: 16px;
+        top: -11px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+
+    @include on-tablet {
+      gap: 10px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    line-height: 24px;
+    color: $gray;
+  }
+
+  &__link {
+    writing-mode: vertical-lr;
+    letter-spacing: 2.64px;
+    color: #828282;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+    transition: transform .5s;
+    display: none;
+    position: absolute;
+
+    &::before {
+      content: "";
+      background-color: #828282;
+      width: 1px;
+      height: 66px;
+      margin: 10px;
+      display: inline-block;
+    }
+
+    &--right {
+      display: block;
+      bottom: 0px;
+      right: -25px;
+    }
+
+    @include on-tablet {
+      display: block;
+
+      &--right {
+        top: -20px;
+        right: 0;
+      }
+    }
+
+    &--left {
+      display: none;
+    }
+
+    @include on-desktop {
+      &--left {
+        display: block;
+        bottom: -20px;
+        left: 0;
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
