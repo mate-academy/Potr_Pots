@@ -1,0 +1,118 @@
+.potr-team {
+  position: relative;
+
+  &__title {
+    &.title-3 {
+      font-size: 58px;
+      color: $grayColorMinor;
+    }
+  }
+
+  &__body {
+    margin-top: 30px;
+
+    @include on-tablet {
+      position: relative;
+      margin-top: 177px;
+    }
+
+    @include on-desktop {
+      margin-top: 143px;
+    }
+  }
+
+  &__text-decor {
+    display: none;
+
+    @include on-tablet {
+      display: block;
+      position: absolute;
+
+      @include blue-title(238px, 238px, 43px, 64px);
+
+      letter-spacing: 0.13em;
+    }
+
+    @include on-desktop {
+      font-size: 288px;
+    }
+
+    span {
+      -webkit-text-stroke: 1px $blueColor;
+    }
+
+    &--top {
+      @include on-tablet {
+        top: -70px;
+        left: -42px;
+      }
+
+      @include on-desktop {
+        top: 30px;
+        left: -62px;
+      }
+    }
+
+    &--bottom {
+      @include on-tablet {
+        bottom: -40px;
+        right: -60px;
+      }
+
+      @include on-desktop {
+        bottom: -137px;
+        right: -160px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include on-tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 47px;
+      min-height: 330px;
+    }
+
+    @include on-desktop {
+      gap: 57px;
+    }
+  }
+
+  &__paragraphh {
+    margin-top: 30px;
+    flex: 0 1 30%;
+    align-self: end;
+
+    & > p:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    @include on-tablet {
+      margin-top: 0;
+      flex: 0 1 50%;
+    }
+
+    @include on-desktop {
+      margin-bottom: 14px;
+      flex: 0 1 30%;
+    }
+  }
+
+  &__image {
+    @include on-tablet {
+      flex: 0 1 50%;
+    }
+
+    @include on-desktop {
+      flex: 0 1 70%;
+    }
+
+    & > img {
+      max-width: 100%;
+    }
+  }
+}

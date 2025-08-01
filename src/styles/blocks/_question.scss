@@ -1,0 +1,129 @@
+.question {
+  position: relative;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include on-tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__send {
+    @include on-tablet {
+      flex: 0 1 50%;
+    }
+  }
+
+  &__text {
+    color: $blackColor;
+  }
+
+  &__desc {
+    margin-top: 30px;
+    font-size: 24px;
+    color: $blackColor;
+  }
+
+  &__form {
+    margin-top: 36px;
+
+    @include on-tablet {
+      max-width: 340px;
+    }
+
+    @include on-desktop {
+      max-width: 370px;
+    }
+  }
+
+  &__inner {
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+
+  &__field {
+    background-color: transparent;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+    padding: 4px 6px;
+    width: 100%;
+    height: 30px;
+
+    &._correct {
+      color: $blueColor;
+      border-bottom: solid 1px $blueColor;
+    }
+
+    &._error {
+      border-bottom: solid 1px $redColor;
+      color: $redColor;
+    }
+
+    &._error::placeholder {
+      color: $redColor;
+    }
+
+    &:focus {
+      border-bottom: solid 1px $blueColor;
+    }
+
+    &--textarea {
+      resize: none;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+
+    @include button-blue;
+  }
+
+  &__wrapper {
+    @include on-tablet {
+      display: flex;
+      justify-content: end;
+      flex: 0 1 50%;
+    }
+
+    @media (min-width: 850px) and (max-width: #{$desktop}) {
+      justify-content: center;
+    }
+
+    @include on-desktop {
+      justify-content: start;
+    }
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-top: 25px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  &__contact {
+    color: $blackColor;
+    font-style: normal;
+    margin-top: 5px;
+    transition: opacity 0.3s ease 0s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @include on-tablet {
+      max-width: 210px;
+    }
+
+    @include on-desktop {
+      max-width: 300px;
+    }
+  }
+}
