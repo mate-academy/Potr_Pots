@@ -1,0 +1,84 @@
+.scroll-element {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  transform: rotate(90deg);
+
+  position: absolute;
+  z-index: 1;
+  right: -55px;
+  bottom: 170px;
+
+  &__text {
+    font-size: 12px;
+    color: #828282;
+    letter-spacing: 2.64px;
+  }
+
+  &__line {
+    width: 65px;
+    height: 1px;
+    background-color: #828282;
+  }
+
+  &--position--top {
+    @include on-tablet {
+      bottom: auto;
+      top: 0;
+    }
+  }
+
+  &--position--benefits {
+    display: none;
+    bottom: auto;
+    top: 100px;
+    right: -80px;
+
+    @include on-tablet {
+      display: flex;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--position--left--bottom {
+    transform: rotate(-90deg);
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+
+      left: 0;
+      right: auto;
+    }
+  }
+
+  &--position--top-right {
+    display: none;
+    bottom: auto;
+    top: 60px;
+
+    @include on-tablet {
+      display: flex;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &--position--left--top {
+    display: none;
+    inset: 250px auto auto -50px;
+
+    @include on-tablet {
+      display: flex;
+    }
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+}

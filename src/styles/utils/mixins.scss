@@ -1,0 +1,43 @@
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin on-tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin on-desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin content-padding-in-line() {
+  padding-inline: 30px;
+
+  @include on-tablet {
+    padding-inline: 34px;
+  }
+
+  @include on-desktop {
+    padding-inline: 135px;
+  }
+}
+
+@mixin content-padding-block() {
+  padding-block: 110px;
+
+  @include on-tablet {
+    padding-block: 130px;
+  }
+
+  @include on-desktop {
+    padding-block: 150px;
+  }
+}
+

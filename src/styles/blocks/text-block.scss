@@ -1,0 +1,143 @@
+.text-block {
+  @include on-tablet {
+    display: grid;
+    grid-template-columns: minmax(50px, 10%) 1fr;
+    grid-template-rows: 40px 0.2fr 0.2fr;
+    align-content: start;
+  }
+
+  @include on-desktop {
+    grid-template-columns: minmax(70px, 10%) 1fr;
+    grid-template-rows: 70px 0.2fr 0.2fr;
+  }
+
+  &--grid--layout {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 70px 0.2fr 0.2fr 0.2fr;
+      align-content: start;
+    }
+  }
+
+  &__wrapper-label {
+    display: none;
+    grid-column: 1 / 3;
+    grid-row: 1;
+    height: min-content;
+
+    @include on-tablet {
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+    }
+
+    @include on-desktop {
+      display: flex;
+      column-gap: 30px;
+      align-items: center;
+    }
+
+    &--text--position--left {
+      @include on-tablet {
+        margin-left: 40px;
+      }
+    }
+
+    &--text--position--right {
+      @include on-tablet {
+        margin-left: auto;
+      }
+
+      @include on-desktop {
+        margin-left: -46px;
+      }
+    }
+
+    &--third--element {
+      @include on-tablet {
+        margin-left: 40px;
+      }
+
+      @include on-desktop {
+        margin-left: -30px;
+      }
+    }
+  }
+
+  &__star {
+    font-size: 24px;
+  }
+
+  &__label {
+    color: $dark-grey;
+  }
+
+  &__title-wrapper {
+    grid-column: 2;
+    grid-row: 2;
+
+    &--margine--bottom {
+      margin-bottom: 20px;
+
+      @include on-tablet {
+        margin-bottom: 10px;
+      }
+    }
+
+    &--margine--bottom--grid--position {
+      margin-bottom: 20px;
+
+      @include on-tablet {
+        margin-bottom: 10px;
+        grid-column: 1;
+        grid-row: 3;
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    height: fit-content;
+    display: inline;
+  }
+
+  &__desription {
+    color: $dark-grey;
+    grid-column: 2;
+    grid-row: 3;
+    height: min-content;
+
+    &--margine--bottom--grid--position {
+      grid-column: 1;
+      grid-row: 4;
+    }
+  }
+
+  &__pointer {
+    font-size: 36px;
+    line-height: 180%;
+    padding-left: 18px;
+    grid-column: 1;
+    grid-row: 2;
+    height: min-content;
+
+    background-image: url(../images/icons/icon-slash.svg);
+    background-repeat: no-repeat;
+  }
+
+  &__title-img {
+    display: none;
+
+    @include on-tablet {
+      display: inline-block;
+      height: 47px;
+      width: 20px;
+      background-image: url(../images/icons/icon-slash.svg);
+      background-repeat: no-repeat;
+
+      position: relative;
+      top: 10px;
+    }
+  }
+}

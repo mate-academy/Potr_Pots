@@ -1,0 +1,76 @@
+.materials {
+
+  &__content {
+    @include on-tablet {
+      position: relative;
+    }
+  }
+
+  &__title {
+    @include content-padding-in-line;
+
+    margin-bottom: -70px;
+    padding-right: 0;
+
+    @include on-tablet {
+      font-size: 80px;
+      letter-spacing: 9.6px;
+      max-width: 550px;
+      margin-bottom: 0;
+      padding-bottom: 150px;
+    }
+
+    @include on-desktop {
+      font-size: 139px;
+      max-width: 950px;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &__top {
+    display: flex;
+    position: relative;
+  }
+
+  &__description-wrapper {
+    display: none;
+    max-width: 470px;
+    position: absolute;
+    z-index: 5;
+
+    @include on-tablet {
+      display: block;
+      top: 55%;
+      right: 15px;
+    }
+
+    @include on-desktop {
+      right: 135px;
+    }
+  }
+
+  &__discription {
+    color: $dark-grey;
+    display: inline;
+
+    @include on-tablet {
+      max-width: 340px;
+    }
+  }
+
+  &__bottom {
+    background-image: linear-gradient(to bottom, rgba(248, 248, 248, 100) 0%, rgba(255, 255, 255, 0) 31%), url('../images/img-materials-and-features.png');
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+    width: 100%;
+
+    padding-top: 70%;
+
+    @include on-tablet {
+      background-size: cover;
+      position: relative;
+    }
+  }
+}

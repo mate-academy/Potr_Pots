@@ -1,0 +1,232 @@
+.header {
+  position: relative;
+  z-index: 1;
+
+  @include on-tablet {
+    background-image: url(../images/Rectangle.png);
+    background-position: top left;
+    background-size: 80%;
+    background-repeat: no-repeat;
+  }
+
+  @include on-desktop {
+    background-image: url(../images/Rectangle.png);
+    background-position: top left;
+    background-size: 62%;
+    background-repeat: no-repeat;
+  }
+
+  &__top {
+    height: 68px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    @include content-padding-in-line;
+  }
+
+  &__logo {
+    display: block;
+    width: 143px;
+    height: 43px;
+
+    background-image: url(../images/img-logo.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: transform $animation-duration;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__menu {
+    display: block;
+    height: 48px;
+    width: 48px;
+
+    background-image: url(../images/icons/icon-button-menu.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__basket {
+    display: none;
+    height: 48px;
+    width: 48px;
+
+    background-image: url(../images/icons/icon-basket.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: transform $animation-duration;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include on-tablet {
+      @include content-padding-in-line;
+
+      padding-block: 50px;
+
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include on-desktop {
+      padding-top: 75px;
+    }
+  }
+
+  &__wrapper-text {
+    padding-inline: 30px;
+    box-sizing: border-box;
+
+    @include on-tablet {
+      width: 445px;
+      padding-inline: 0;
+      position: relative;
+      left: 68px;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    margin-block: 25px 30px;
+    text-wrap: nowrap;
+
+    @include on-tablet {
+      margin-block: 0;
+    }
+  }
+
+  &__title span {
+    -webkit-text-stroke: 1px $turquoise;
+    color: transparent;
+  }
+
+  &__special-offer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1px;
+
+    @include on-tablet {
+      width: max-content;
+      margin-left: auto;
+      margin-right: 83px;
+    }
+
+    @include on-desktop {
+      row-gap: 5px;
+    }
+
+    &--margin--bottom {
+      margin-bottom: 20px;
+
+      @include on-tablet {
+        margin-top: -20px;
+        margin-bottom: 50px;
+      }
+
+      @include on-desktop {
+        margin-top: 20px;
+      }
+    }
+
+    & span:nth-child(-n + 1) {
+      color: #333;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    & span:nth-last-child(-n + 1) {
+      color: #4F4F4F;
+      font-size: 14px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    background-image: url(../images/img-header-bg.png);
+    background-position: center center;
+    background-size: cover;
+
+    max-height: 100%;
+
+    @include on-tablet {
+      width: 306px;
+      height: 306px;
+      padding-top: 0;
+    }
+
+    @include on-desktop {
+      width: 100%;
+      height: auto;
+      padding-top: 0;
+      max-width: 500px;
+    }
+
+    &::before {
+      content: '';
+
+      display: block;
+      padding-top: 100%;
+    }
+  }
+
+  &__scroll-element {
+    max-width: max-content;
+    display: flex;
+    column-gap: 9px;
+
+    font-size: 12px;
+    color: $turquoise;
+
+    transform: rotate(90deg);
+    position: absolute;
+    bottom: 100px;
+    right: -98px;
+
+    & img {
+      transition: all $animation-duration;
+      transform: translateX(0%);
+      object-fit: contain;
+    }
+
+    &:hover img {
+      transform: translateX(40%);
+    }
+
+    @include on-tablet {
+      right: auto;
+      left: -70px;
+      bottom: 100px;
+    }
+
+    @include on-desktop {
+      right: auto;
+      left: -70px;
+      bottom: 140px;
+    }
+  }
+}

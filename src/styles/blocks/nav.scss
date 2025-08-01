@@ -1,0 +1,100 @@
+.nav {
+  height: 100%;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    @include content-padding-in-line;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &--mobile {
+      display: none;
+
+      @include on-desktop {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0 60px;
+      }
+    }
+  }
+
+  &__item {
+    &--mobile {
+      @include on-desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    color: $grey-light;
+    width: fit-content;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+
+      position: absolute;
+      bottom: -1px;
+
+      height: 1px;
+      width: 100%;
+
+      background-color: $grey-light;
+
+      transform: scale(0);
+      transform-origin: left;
+      transition: transform $animation-duration;
+
+      @include on-desktop {
+        background-color: $dark-grey;
+      }
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+
+    @include on-desktop {
+      color: $dark-grey;
+    }
+  }
+
+  &__basket {
+    color: $grey-light;
+    position: relative;
+
+    &::after {
+      content: '0';
+
+      position: absolute;
+      left: auto;
+      margin-left: 5px;
+
+      padding: 2px 5px 1px;
+      border-radius: 50%;
+      background-color: $red;
+
+      font-size: 9px;
+      line-height: 150%;
+    }
+
+  }
+}

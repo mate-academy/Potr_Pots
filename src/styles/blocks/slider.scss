@@ -1,0 +1,60 @@
+.slider {
+  width: 100%;
+
+  @include on-tablet {
+    display: none;
+  }
+
+  &__wrapper {
+    position: relative;
+    height: 302px;
+
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(34px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-inline: 9px;
+    padding: 28px 45px 58px;
+  }
+
+  &__slide {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__text {
+    color: $grey-light;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+    column-gap: 7px;
+    justify-content: center;
+
+    position: absolute;
+    bottom: 37px;
+    left: auto;
+    right: auto;
+  }
+
+  &__point {
+    width: 7px;
+    height: 7px;
+    transform: rotate(45deg);
+
+    background-color: #F8F8F8;
+
+    &--active {
+      background-color: rgba(0, 0, 0, 0.3);
+      border: #F8F8F8 1px solid;
+    }
+  }
+}

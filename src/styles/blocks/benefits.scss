@@ -1,0 +1,149 @@
+.benefits {
+  @include content-padding-in-line;
+  @include content-padding-block;
+
+  max-width: 100%;
+
+  padding-top: 0 !important;
+  position: relative;
+  z-index: 1;
+
+  @include on-tablet {
+    padding-bottom: 100px;
+  }
+
+  @include on-desktop {
+    padding-left: 0;
+  }
+
+  &__content {
+    @include on-tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+
+      column-gap: 20px;
+    }
+
+    @include on-desktop {
+      column-gap: 0;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 0.5fr 0.2fr 0.25fr 0.25fr;
+    }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+
+    padding-left: 20px;
+    margin-left: -20px;
+
+    background-image: url(../images/icons/icon-point-benefits.svg);
+    background-repeat: no-repeat;
+    background-size: 7px;
+    background-position: 0 23px;
+
+    @include on-tablet {
+      margin-left: 0;
+
+      &--order {
+        order: 3;
+      }
+    }
+
+    @include on-desktop {
+      height: max-content;
+    }
+  }
+
+  &__name {
+    letter-spacing: 0;
+    color: #333;
+    font-size: 32px;
+
+    @include on-tablet {
+      font-size: 36px;
+    }
+  }
+
+  &__paragraf {
+    color: #828282;
+  }
+
+  &__main-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    @include on-tablet {
+      row-gap: 30px;
+      grid-row: span 2;
+    }
+
+    @include on-desktop {
+      align-content: center;
+      flex-flow: row wrap;
+      gap: 40px 20px;
+
+      grid-row: 2;
+      grid-column: 2;
+    }
+  }
+
+  &__special-offer-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include on-tablet {
+      row-gap: 5px;
+      max-width: 240px;
+    }
+
+    @include on-desktop {
+      height: max-content;
+      margin-left: 100px;
+      max-width: none;
+
+      grid-column: 2;
+      grid-row: 4;
+    }
+
+    & p:first-child {
+      color: $red;
+      font-size: 36px;
+      letter-spacing: 5.58px;
+
+      @include on-tablet {
+        font-size: 24px;
+      }
+    }
+
+    & p:last-child {
+      color: $turquoise;
+      font-size: 24px;
+      letter-spacing: 3.72px;
+      line-height: 100%;
+
+      @include on-tablet {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__image-wrapper {
+    display: none;
+
+    @include on-desktop {
+      display: block;
+      grid-row: span 4;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 792px;
+  }
+}
