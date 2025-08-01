@@ -1,0 +1,207 @@
+.page {
+  position: relative;
+  scroll-behavior: smooth;
+  transition: scroll-behavior 0.3s;
+
+  &__body {
+    @include on-tablet {
+      background-image: url(../images/bg-rectangle.png);
+      background-repeat: no-repeat;
+      background-size: auto 468px;
+    }
+
+    @include on-desktop {
+      background-size: 1035px auto;
+    }
+  }
+
+  &__header {
+    margin-bottom: 110px;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    transition: all 0.3s;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+
+    &:target {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__main {
+    margin-bottom: 102px;
+
+    @include on-tablet {
+      margin-bottom: 113px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 184px;
+    }
+  }
+
+  &__footer {
+    margin-bottom: 30px;
+
+    @include on-tablet {
+      margin-bottom: 64px;
+    }
+  }
+
+  &:has(.page__menu:target) {
+    overflow: hidden; /* not to scroll the page */
+  }
+}
+
+.container {
+  padding-inline: 30px;
+
+  @include content-padding-inline;
+
+  &__wrapper {
+    position: relative;
+
+    @include on-tablet {
+      @include page-grid;
+    }
+  }
+}
+
+%title-style-1 {
+  font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43.2px;
+  letter-spacing: 4px;
+  color: $color-gray-1;
+}
+
+.title-style-1 {
+  @extend %title-style-1;
+}
+
+%title-style-2 {
+  @extend %title-style-1;
+
+  color: $color-turquoise;
+}
+
+.title-style-2 {
+  @extend %title-style-2;
+}
+
+%text {
+  font-family: Manrope, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: $color-gray-2;
+}
+
+.text {
+  @extend %text;
+}
+
+.button {
+  @extend %text;
+
+  display: block;
+  font-weight: 600;
+  text-align: center;
+  line-height: 48px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 10px;
+    margin-left: 25px;
+    background-image: url(../images/arrow-button-black.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  &--primary {
+    background-color: $color-turquoise;
+    color: $color-button-text-1;
+    border: 1px solid $color-turquoise;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: rgba(3, 131, 158, 0.7);
+    }
+
+    &::after {
+      background-image: url(../images/arrow-button-white.svg);
+    }
+
+    &--2 {
+      background-color: $color-button-1;
+      color: $color-button-text;
+      border: 1px solid $color-button-1;
+    }
+  }
+
+  &--secondary {
+    color: $color-button-text;
+    background-color: $color-button-1;
+
+
+    @include on-tablet {
+      background-color: white;
+      border: 1px solid $color-turquoise;
+      transition: background-color 0.3s;
+
+      &:hover {
+        color: white;
+        background-color: $color-turquoise;
+
+        &::after {
+          background-image: url(../images/arrow-button-white.svg);
+        }
+      }
+    }
+
+
+  }
+}
+
+.potr-pots {
+  @extend %title-style-1;
+
+  display: inline;
+  font-size: 12px;
+  line-height: 14.4px;
+  color: $color-gray-3;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 70px;
+    top: 5px;
+    left: -80px;
+    background-color: $color-gray-3;
+
+  }
+}
+
+.decoration {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.68px $color-turquoise;
+}
+
