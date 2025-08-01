@@ -1,0 +1,131 @@
+.for-whom__item {
+  grid-template-rows: repeat(7, auto);
+
+  &:nth-of-type(odd) {
+    .for-whom__item-img {
+      padding-right: 56px;
+      grid-row: 1 / 5;
+
+      @include on-desktop {
+        padding-right: 0;
+      }
+    }
+
+    .for-whom__thumbnail {
+      grid-column: 4 / -1;
+      grid-row: 1;
+    }
+
+    .for-whom__numeration {
+      @include on-tablet {
+        grid-column: 3 / 4;
+        grid-row: 2;
+        text-align: right;
+      }
+    }
+
+    .for-whom__description {
+      @include on-tablet {
+        grid-column: 4 / -1;
+        grid-row: 2;
+      }
+    }
+  }
+
+  &:nth-of-type(even) {
+    .for-whom__item-img {
+      padding-left: 37px;
+      grid-row: 1 / 5;
+
+      @include on-desktop {
+        padding-left: 0;
+      }
+    }
+
+    .for-whom__thumbnail {
+      grid-column: 1 / 4;
+      grid-row: 1;
+      justify-content: right;
+      padding-top: 29px;
+
+      @include on-desktop {
+        padding-top: 0;
+        justify-content: left;
+      }
+    }
+
+    .for-whom__numeration {
+      @include on-tablet {
+        grid-column: 1 / 4;
+        grid-row: 2;
+      }
+    }
+
+    .for-whom__description {
+      @include on-tablet {
+        grid-column: 1 / 4;
+        grid-row: 3;
+      }
+    }
+  }
+
+  &:nth-of-type(1) {
+    .for-whom__item-img {
+      @include on-desktop {
+        padding-right: 100px;
+      }
+    }
+
+    .for-whom__thumbnail {
+      @include on-desktop {
+        margin-top: 120px;
+        grid-column: 8 / 12;
+      }
+    }
+
+    .for-whom__numeration {
+      @include on-desktop {
+        grid-column: 7 / 8;
+        text-align: left;
+      }
+    }
+
+    .for-whom__description {
+      @include on-desktop {
+        grid-column: 8 / 12;
+      }
+    }
+  }
+
+  &:nth-of-type(3) {
+    .for-whom__item-img {
+      @include on-desktop {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+    }
+
+    .for-whom__thumbnail {
+      @include on-desktop {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+    }
+
+    .for-whom__numeration {
+      @include on-desktop {
+        grid-column: 1 / 2;
+        text-align: left;
+        grid-row: 3;
+      }
+    }
+
+    .for-whom__description {
+      @include on-desktop {
+        grid-column: 2 / -1;
+        justify-content: left;
+        grid-row: 3;
+      }
+    }
+  }
+}

@@ -1,0 +1,148 @@
+.potr-team {
+  &__content {
+    background-image: url(../images/mobile/team-bg.png);
+    background-repeat: no-repeat;
+    background-position: left 0 bottom 0;
+    background-size: 100% auto;
+    margin-top: 110px;
+    padding-bottom: 58px;
+
+    @include on-tablet {
+      @include page-grid;
+      @include container-inline;
+
+      position: relative;
+      background-image: url(../images/tablet/team-bg.png);
+      background-position: left 0 top 170px;
+      background-size: (
+          $container-tablet + $template-columns-gap-tablet + $template-columns-width-tablet * 2
+        )
+        auto;
+      margin-top: 130px;
+      padding-bottom: 186px;
+      overflow: hidden;
+    }
+
+    @include on-desktop {
+      background-image: url(../images/desktop/team-bg.png);
+      background-position: left 0 top 185px;
+      background-size: (
+          $container-desktop + $template-columns-gap-desktop * 3 + $template-columns-width-desktop * 3
+        )
+        auto;
+      margin-top: 150px;
+      padding-bottom: 226px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+    @include container-inline;
+
+    grid-column: 1 / -1;
+    color: $c-gray;
+    margin-bottom: 25px;
+
+    @include on-tablet {
+      display: block;
+      padding: 0;
+      margin-bottom: 177px;
+    }
+
+    @include on-desktop {
+      margin-bottom: 143px;
+    }
+  }
+
+  &__img-box {
+    margin-bottom: 30px;
+    position: relative;
+
+    @include on-tablet {
+      grid-column: 4 / -1;
+      grid-row: 2 / 3;
+      margin-bottom: 0;
+    }
+
+    @include on-desktop {
+      grid-column: 5 / 12;
+    }
+  }
+
+  &__img {
+    @include hover(transform, scale(1.05));
+
+    cursor: pointer;
+    width: 100%;
+  }
+
+  &__martin,
+  &__andy {
+    position: absolute;
+    display: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 232px;
+    font-weight: 400;
+    line-height: 263px;
+    letter-spacing: 0.15em;
+    color: $c-turquoise;
+
+    @include transparent-text(0.8px);
+
+    @include on-tablet {
+      display: block;
+    }
+
+    @include on-desktop {
+      font-size: 288px;
+      line-height: 346px;
+
+      @include transparent-text(1px);
+    }
+  }
+
+  &__martin {
+    @include on-tablet {
+      top: 87px;
+      left: -44px;
+    }
+
+    @include on-desktop {
+      top: 97px;
+      left: 74px;
+    }
+  }
+
+  &__andy {
+    @include on-tablet {
+      top: 100%;
+      right: -34px - $container-tablet;
+      margin-top: -34px;
+    }
+
+    @include on-desktop {
+      right: -$template-columns-width-tablet - 34px - $container-desktop;
+    }
+  }
+
+  &__text {
+    @extend %s3;
+    @include container-inline;
+
+    grid-column: 1 / -1;
+    color: $c-gray-light;
+
+    @include on-tablet {
+      margin-top: 53px;
+      grid-column: 1 / 4;
+      grid-row: 2 / 4;
+      display: block;
+      padding: 0;
+    }
+
+    @include on-desktop {
+      margin-top: 230px;
+      grid-column: 1 / 5;
+    }
+  }
+}
