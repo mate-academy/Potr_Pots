@@ -1,0 +1,272 @@
+@import '../utils/mixins';
+@import '../utils/vars';
+
+.features {
+    padding-block: 110px;
+
+    @include on-tablet {
+        padding-block: 136px 132px;
+    }
+
+    @include on-desktop {
+        padding-block: 150px;
+    }
+
+    &__wrapper {
+        @include content-padding-inline;
+    }
+
+    &__title {
+        color: $turquoise;
+        font-family: $Bebas-Neue;
+        font-size: 58px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 8.99px;
+        margin-bottom: 22.89px;
+
+        &--transparent {
+            -webkit-text-stroke-width: 1.07px;
+            -webkit-text-stroke-color: $turquoise;
+            color: transparent;
+        }
+
+        @include on-tablet {
+            margin-bottom: 50px;
+        }
+        
+        @include on-desktop {
+            margin-bottom: 71px;
+        }
+    }
+
+    &__articles {
+        @include on-tablet {
+            position: relative;
+            height: 410px;
+
+            @include page-grid;
+
+
+
+            @include on-desktop {
+                height: 515px;
+            }
+        }
+
+
+        &--first {
+            @include on-tablet {
+                grid-column: 3 / 5;
+            }
+
+            @include on-desktop {
+                grid-column: 1 / 5;
+            }
+
+            .article {
+                &__photo {
+                    background-image: url(/src/images/features/image_first.svg);
+                    background-repeat: no-repeat;
+                    height: 260px;
+                    width: 100%;
+                    margin-bottom: 37.11px;
+
+                    @include hover(transform, scale(1.05));
+
+
+                    @include on-tablet {
+                        background-image: url(/src/images/features/image_first_tablet.svg);
+                        height: 222px;
+                        margin-bottom: 31px;
+                    }
+
+                    @include on-desktop {
+                        background-image: url(/src/images/features/image_first_desktop.svg);
+                        height: 386px;
+                        margin-bottom: 17px;
+                    }
+                }
+
+                &__text {
+                    margin-bottom: 67.19px;
+
+                    @include on-tablet {
+                        height: 135px;
+                        margin-bottom: 0;
+
+                    }
+
+                    @include on-desktop {
+                        height: 87px;
+                    }
+
+                    &-title {
+                        margin-bottom: 20px;
+
+                        @include on-tablet {
+                            margin-bottom: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+
+        &--second {
+            @include on-tablet {
+                grid-column: 5 / 7;
+            }
+
+
+            @include on-desktop {
+                grid-column: 5 / 9;
+            }
+
+            .article {
+                &__photo {
+                    background-image: url(/src/images/features/image_second.svg);
+                    background-repeat: no-repeat;
+                    height: 260px;
+                    width: 100%;
+                    margin-bottom: 37.81px;
+
+                    @include hover(transform, scale(1.05));
+
+
+                    @include on-tablet {
+                        background-image: url(/src/images/features/image_second_tablet.svg);               
+                        height: 223px;
+                        margin-bottom: 29px;
+                    }
+
+
+                    @include on-desktop {
+                        background-image: url(/src/images/features/image_second_desktop.svg);
+                        height: 383px;
+                        margin-bottom: 21px;
+                    }
+                }
+
+                &__text {
+                    margin-bottom: 70px;
+
+                    @include on-tablet {
+                        height: 136px;
+                        margin-bottom: 0;
+                    }
+
+                    @include on-desktop {
+                        height: 87px;
+                    }
+
+                    &-title {
+                        margin-bottom: 20px;
+
+                    }
+                }
+            }
+        }
+
+        &--third {
+            @include on-tablet {
+                position: absolute;
+                top:0;
+                grid-column: 1 / 3;
+            }
+
+
+            @include on-desktop {
+                height: 515px;
+                grid-column: 9 / 13;
+            }
+
+            .article {
+                &__photo {
+                    background-image: url(/src/images/features/image_third.svg);
+                    background-repeat: no-repeat;
+                    height: 257px;
+                    width: 100%;
+                    margin-bottom: 37.11px;
+
+                    @include hover(transform, scale(1.05));
+
+
+                    @include on-tablet {
+                        background-image: url(/src/images/features/image_third_tablet.svg);
+                        height: 223px;
+                        margin-bottom: 27px;
+                    }
+
+                    @include on-desktop {
+                        background-image: url(/src/images/features/image_third_desktop.svg);
+                        height: 375px;
+                        margin-bottom: 25px;
+                    }
+                }
+
+                &__text {
+                    @include on-tablet {
+                        height: 160px;
+                    }
+
+                    @include on-desktop {
+                        height: 111px;
+                    }
+
+                    &-title {
+                        margin-bottom: 20px;
+                        
+                        @include on-tablet {
+                            margin-bottom: 21px;
+                        }
+
+                        @include on-desktop {
+                           margin-bottom: 50px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+       
+        
+        .article {
+
+            &__text {
+                width: 260px;
+                text-align: center;
+
+                @include on-tablet {
+                    width: 220px;
+                    text-align: left;
+                }
+
+                @include on-desktop {
+                    width: 370px;
+                    text-align: center;
+                }
+
+                &-title {
+                    color: $dark-grey;
+                    font-family: $Bebas-Neue;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 24px; /* 100% */
+                    letter-spacing: 3.72px;
+                    text-transform: uppercase;
+                    
+                    @include on-desktop {
+                        margin-bottom: 20px;
+                    }
+                }
+            }  
+        }
+    }
+}

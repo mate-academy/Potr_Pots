@@ -1,0 +1,67 @@
+@import '../utils/mixins';
+@import '../utils/vars';
+
+.main {
+    background: $c-gray;
+
+    &__box-side {
+        display: none;
+        display: flex;
+        justify-content: end;
+        transform: rotate(90deg);
+        height: 14px;
+  
+  
+        &-text {
+          position: relative;
+          color: $middle-light-grey;
+          font-family: $Bebas-Neue;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 2.64px;
+  
+            &::before {
+                content: "";
+                position: absolute;
+                left: -79px;
+                top: 7px;              
+                width: 65px;
+                height: 1px;
+                background-color: $middle-light-grey;
+            }
+        }
+  
+        &--left {
+          display: none;
+
+          @include on-tablet {
+            display: none;
+          }
+  
+          @include on-desktop {
+            display: block;
+          }
+  
+        }
+  
+        &--right {
+          position: absolute;
+          top: 2320px;
+          right: -15px;
+  
+  
+          @include on-tablet {
+            display: block;
+            right: -17px;
+            top: 620px;               
+        }      
+        
+        @include on-desktop {
+          top: 895px;
+          right: 109px;
+        }
+      }
+    }    
+}

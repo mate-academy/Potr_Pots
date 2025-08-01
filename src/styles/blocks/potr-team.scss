@@ -1,0 +1,249 @@
+@import '../utils/mixins';
+@import '../utils/vars';
+
+
+.potr-team {
+
+    &__wrapper {
+        @include on-tablet {
+            @include content-padding-inline;
+        }
+
+    }
+
+    &__content {
+        @include on-tablet {
+            padding-block-end: 3.41px;
+            height: 685px;
+            position: relative;
+        }
+
+        @include on-desktop {
+            height: 950px;
+        }
+    }
+
+    &__title {
+        color: $dark-grey;
+        font-family: $Bebas-Neue;
+        font-size: 58px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 8.99px;
+        margin-bottom: 25px;
+        padding-inline: 30px;
+
+
+        @include on-tablet {
+            margin: 0;
+            margin-bottom: 17px;
+            grid-column: 1 / - 1;
+            padding-inline: 0;
+        }
+
+        @include on-desktop {
+            margin-bottom: 27px;
+        }
+    }
+
+    &__description {
+        @include on-tablet {
+            height: 598px;
+
+            @include page-grid;
+        }
+
+
+        &-image {
+            width: 320px;
+            height: 240px;
+            margin-bottom: 30px;
+            background-image: url(/src/images/potr-team/image_potr-team.jpg);
+            background-repeat: no-repeat;
+
+            @include hover(transform, scale(1.05));
+
+
+            @include on-tablet {
+                margin: 0;
+                width: 340px;
+                height: 255px;
+                grid-column: 4 / 7;
+                margin-top: 177px;
+                background-image: url(/src/images/potr-team/image_potr-team_tablet.svg);
+            }
+
+
+
+            @include on-desktop {
+                grid-column: 5 / 13;
+                background-image: url(/src/images/potr-team/image_potr-team_desktop.svg);
+                width: 677px;
+                height: 507.75px;
+                margin-top: 120px;
+                z-index: 1;
+
+            }
+        }
+
+        &-text {
+            width: 94%;
+            height: 336px;
+       
+
+            .text {
+                &__paragraph {
+                    color: $middle-grey;
+                    font-family: $Manrope;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    padding-inline: 30px;
+                    width: 260px;
+
+                          
+                    @include on-tablet {
+                        grid-column: 1 / 4;
+                        z-index: 1;
+                        width: 320px;
+                        height: 275px;
+                        padding-inline: 0;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%;      
+                    }
+
+                    @include on-desktop {
+                        grid-column: 1 / 4;
+                        height: 264px;
+                        width: 320px;
+                    } 
+
+
+                    &--first {
+                        @include on-tablet {
+                            position: absolute;
+                            top: 300px;
+                        }
+
+                        @include on-desktop {
+                            position: absolute;
+                            top: 443px;
+                        }
+                    }
+
+                    &--second {
+                        position: absolute;
+
+                        @include on-tablet {
+                            top: 475px;
+                        }
+
+                        @include on-desktop {
+                            top: 620px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-rectangle {
+            background-image: url(/src/images/potr-team/yellow_rectangle.svg);
+            width: 320px;
+            height: 293px;
+            margin-top: -237px;
+    
+            @include on-tablet {
+                margin: 0;
+                background-image: url(/src/images/potr-team/yellow_rectangle_tablet.svg);
+                width: 254px;
+                height: 467px;
+                position: absolute;
+                left: -34px;
+                margin-top: 85px;
+            }
+
+            @include on-desktop {
+                background-image: url(/src/images/potr-team/yello_rectangle_desktop.svg);
+                width: 435px;
+                height: 310.5px;
+                left: -135px;
+                top: 100px;
+            }
+        }
+    
+        &-name--Martin {
+            display: none;
+    
+            @include on-tablet {
+                display: block;
+                position: absolute;
+                left: -78px;
+                width: 719px;
+                height: 231px;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $turquoise;
+                color: transparent;
+                font-family: $Bebas-Neue;
+                font-size: 231.9px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 35.9px;
+
+                &:hover {
+                    -webkit-text-stroke-width: 2px;
+                }
+            }
+
+            @include on-desktop {
+                -webkit-text-stroke-width: 1;
+                -webkit-text-stroke-color: $turquoise;
+                font-size: 288px;
+                letter-spacing: 44.64px;
+                left: -59px;
+                z-index: 2;
+            }
+        }
+    
+        &-name--Andy {
+            display: none;
+    
+            @include on-tablet {
+                display: block;
+                position: absolute;
+                right: -34px;
+                margin-top: 393px;
+                width: 459px;
+                height: 219.6px;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: $turquoise;
+                color: transparent;
+                font-family: $Bebas-Neue;
+                font-size: 219.6px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 34.04px;
+
+                &:hover {
+                    -webkit-text-stroke-width: 2px;
+                }
+            }
+
+            @include on-desktop {
+                -webkit-text-stroke-width: 1;
+                font-size: 288px;
+                letter-spacing: 44.64px;
+                position: absolute;
+                right: 0;
+                top: 275px;
+                z-index: 2;
+
+            }
+        }
+    }
+}

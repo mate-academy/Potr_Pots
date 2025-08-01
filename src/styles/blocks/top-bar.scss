@@ -1,0 +1,56 @@
+@import '../utils/mixins';
+
+.top-bar {
+    width: 100%;
+    height: 68px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include on-tablet {
+        height: 121px;
+    }
+
+    
+    @include on-desktop {
+        gap: 0;
+    }
+
+
+   
+    &__logo {
+        width: 134px;
+        height: 43px;
+        padding-block: 15px 10px;
+
+        @include hover(transform, scale(1.2));
+
+      
+
+        @include on-tablet {
+            padding-block: 29px 58px;
+        }
+
+        @include on-desktop {
+            padding-block: 0;
+        }
+       
+    }
+
+    &__icons {
+        display: block;
+        width: 32px;
+        height: 32px;
+        padding-block: 12px 22px;
+
+        @include on-tablet {
+            padding-block: 23px 50px;
+        }
+        
+        @include on-desktop {
+            padding-block: 0;
+        }
+    }   
+}
+
+   

@@ -1,0 +1,514 @@
+@import '../utils/mixins';
+@import '../utils/vars';
+
+
+.benefits {
+    position: relative;
+    padding-block: 110px;
+
+    @include on-tablet {
+        padding-top: 0;
+        padding-bottom: 103px;
+    }
+
+    @include on-desktop {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &__rectangle {
+        display: none;
+
+       
+        @include on-tablet {
+            position: absolute;
+            top: 100px;
+            right: -90px;
+            transform: rotate(90deg);
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            gap: 10px;
+            height: 14px;
+            width: 211px;
+        }
+
+        &__figure {
+            position: relative;
+            top: 7px;
+            width: 65px;
+            height: 1px;
+            background: $middle-light-grey;
+        }
+        
+        &__text {
+            width: 136px;
+            height: 14px;
+            color: $middle-light-grey;
+            font-family: $Bebas-Neue;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 2.64px;
+        }
+
+        @include on-desktop {
+            display: none;
+        }
+    }
+
+
+    &__wrapper {
+        @include content-padding-inline;
+    }
+
+    &__content {
+        position: relative;
+
+
+        @include on-tablet {
+            height: 357px;
+
+            @include page-grid;
+
+        }
+
+        @include on-desktop {
+            height: 828px;
+        }
+
+
+       
+
+        &-images {
+            display: none;
+            box-sizing: border-box;
+            width: 633px;
+            height: 828px;
+            margin-left: -135px;
+                 
+            
+            @include on-desktop {
+                display: block;
+                position: relative;
+                grid-column: 1 / 6; 
+            }
+
+
+            .image {
+                
+                &__block {
+                    position: absolute;
+                    background: #FFF;
+                    box-sizing: border-box;
+
+
+                    @include hover(transform, scale(1.05));
+
+                    &--first {
+                        width: 214.3px;
+                        height: 240.13px;
+                        transform: rotate(-20deg);
+                        top: 88.2px;
+                        left: 86.58px;
+                    }
+
+                    &--second {
+                        width: 189.33px;
+                        height: 212.11px;
+                        transform: rotate(-28.89deg);
+                        top: 41px;
+                        left: 306.86px;
+                    }
+
+                    &--third {
+                        width: 214.29px;
+                        height: 240.14px;
+                        top: 359px;
+                        left: 50px;
+                        z-index: 2;
+                    }
+
+                    &--fourth {
+                        width: 214.3px;
+                        height: 240.13px;
+                        transform: rotate(-15.19deg);
+                        top: 265px;
+                        left: 258px;
+                    }
+
+                    &--fifth {
+                        width: 214.3px;
+                        height: 240.13px;
+                        transform: rotate(-15.19deg);
+                        top: 549.61px;
+                        left: 136.6px;
+                        z-index: 1;
+                    }
+
+                    &--sixth {
+                        width: 214.33px;
+                        height: 240.1px;
+                        transform: rotate(-30.43deg);
+                        top: 493.13px;
+                        left: 355.39px;
+                        z-index: 2;
+                    }
+
+
+
+                    &-photo {
+                        display: block;
+                        margin: auto;
+
+                        &--first {
+                            margin-top: 19.46px;
+                            width: 182.55px;
+                            height: 182.64px;
+                        }
+
+                        &--second {
+                            margin-top: 19.06px;
+                            width: 161.28px;
+                            height: 161.33px;
+                        }
+
+                        &--third {
+                            margin-top: 15.9px;
+                            width: 182.55px;
+                            height: 182.65px;
+                        }
+
+                        &--fourth {
+                            margin-top: 21px;
+                            width: 182.55px;
+                            height: 182.64px;
+                        }
+
+                        &--fifth {
+                            margin-top: 21px;
+                            width: 182.55px;
+                            height: 182.64px;
+                        }
+
+                        &--sixth {
+                            margin-top: 21px;
+                            width: 182.57px;
+                            height: 182.63px;
+                        }
+                    }
+
+                    &-paragraph {
+                        color: $middle-light-grey;
+                        font-family: $Proxima_Nova;
+                        font-size: 8.74px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 131.5%;
+                        margin-top: 6.18px;
+
+                        &--first {
+                            margin-left: 18px;
+                        }
+
+                        &--second {
+                            margin-left: 21.76px;
+                            
+                        }
+
+                        &--third {
+                            margin-left: 15.9px;
+                        }
+
+                        &--fourth {
+                            margin-left: 15.9px;
+                        }
+
+                        &--fifth {
+                            margin-left: 15.9px;
+                        }
+
+                        &--sixth {
+                            margin-left: 15.9px;
+                        }
+                    }  
+                }
+            }
+        }
+
+    
+        .box {
+            display: grid;
+            row-gap: 40px;
+            padding-block-end: 50px;
+
+            @include on-tablet {
+                grid-column:  1 / 4;
+                row-gap: 30px;
+                padding-block-end: 0;
+
+            }
+
+            @include on-desktop {
+                row-gap: 0;
+                grid-column: 6 / 13;
+            }
+
+
+            &__first {
+                width: 259px;
+                height: 77px;
+
+                @include on-tablet { 
+                    width: 316px;
+                    height: 83px;
+                }
+
+                @include on-desktop {
+                    width: 280px;
+                    height: 83px;
+                    position: absolute;
+                    top: 186px;
+                }
+            }
+
+            &__second {
+                width: 281px;
+                height: 149px;
+
+                @include on-tablet {
+                    width: 340px;
+                    height: 107px;
+                    position: absolute;
+                    top: 250px;
+                }
+
+                @include on-desktop {
+                    width: 346px;
+                    top: 186px;
+                    left: 814px;       
+                }
+
+                &-title {
+                    width: 260px;
+                    height: 96px;
+
+                    @include on-tablet {
+                        width: 316px;
+                        height: 54px;
+                    }
+
+                    @include on-desktop {
+                        width: 346px;
+                    }
+                }
+            }
+
+            &__third {
+                width: 282px;
+                height: 101px;
+
+                @include on-tablet {
+                    width: 340px;
+                    height: 107px;
+                    position: absolute;
+                    top: 113px;
+                }
+
+                @include on-desktop {
+                    width: 374px;
+                    height: 83px;
+                    position: absolute;
+                    top: 309px;
+                }
+
+                &-title {
+                    height: 54px;
+                }
+            }
+        }
+
+
+        &__purchases {
+            @include on-tablet {
+                grid-column: 4 / 6;
+            }
+
+
+            @include on-desktop {
+                grid-column:  7 / 11;
+            }
+
+
+            .purchase {
+                &__button {
+                    margin-bottom: 40px;
+                
+                    &-inner {
+                        position: relative;
+                        transition: all 0.3s ease-in-out;
+                        box-sizing: border-box;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: $yellow;
+                        border: 1px solid $yellow;
+                        outline: none;
+                        overflow: hidden;
+                        cursor: pointer;
+                        padding: 15px 113px 13px 62px;
+                        color: $black;
+
+
+                        &:hover {
+                            background: $light-yellow;
+                            border: 1px solid $light-yellow;
+                        }
+
+                        @include on-tablet {
+                            position: absolute;
+                            top: 101px;
+                            margin-bottom: 35px;
+                            padding: 14px 100px 14px 67px;
+                            gap: 15px;
+                            font-family: $Manrope;    
+                            border-color: $turquoise;
+                            background: $c-gray;
+
+                            
+                            &:hover {
+                                border-color: $turquoise;
+                                background: $turquoise;
+                                color: $white;
+                            }
+                        }
+
+                        @include on-desktop {
+                            position: absolute;
+                            top: 452px;
+                            left: 530px;
+                        }
+
+                        
+                        &-paragraph {
+                            font-family: $Proxima_Nova;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: 150%; /* 21px */
+                            text-transform: uppercase;
+
+                            @include on-tablet {
+                                font-family: $Manrope;
+                            }
+                        }
+
+                        &-arrow {
+                            position: absolute;
+                            right: 67px;
+                            display: inline-block;       
+                            width: 5px;
+                            height: 5px;
+                            border-top: 1.5px solid;
+                            border-left: 1.5px solid;
+                            transform: rotate(135deg);
+                            
+                            
+                            &::after {
+                                content: "";
+                                display: block;
+                                width: 0;
+                                height: 25px;
+                                transform: rotate(-45deg) translate(9px, 3px);
+                                transform-origin: center;
+                                border: 1px solid;
+                            }
+
+                            @include on-tablet {
+                                right: 66px;
+                            }
+                        }
+                    }
+                }
+
+
+                &__price {
+                   
+                    .price__first {
+                        width: 172px;
+                        height: 51px;
+                        color: $red;
+                        font-family: $Bebas-Neue;
+                        font-size: 36px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 150%; /* 54px */
+                        letter-spacing: 5.58px;
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+
+                        @include on-tablet {
+                            position: absolute;
+                            top: 184px;
+                            margin-bottom: 5px;
+                            width: 157px;
+                            height: 27px;
+                            font-size: 24px;
+                            line-height: 24px;
+                            letter-spacing: 3.72px;
+                        }
+
+                        @include on-desktop {
+                            width: 170px;
+                            height: 51px;
+                            font-size: 36px;
+                            line-height: 150%; /* 54px */
+                            letter-spacing: 5.58px;
+                            top: 570px;
+                            margin-bottom: 5px;    
+                        }
+                    }
+            
+                    .price__second {
+                        display: flex;
+                        width: 260px;
+                        height: 50px;
+                        flex-direction: column;
+                        justify-content: center;
+                        color: $turquoise;
+                        font-family: $Bebas-Neue;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 24px;
+                        letter-spacing: 3.72px;
+                        text-transform: uppercase;
+
+                        @include on-tablet {
+                            position: absolute;
+                            top: 216px;
+                            width: 240px;
+                            height: 47px;
+                            font-size: 18px;
+                            line-height: 18px; 
+                            letter-spacing: 2.79px;                          
+                        }
+
+                        @include on-desktop {
+                            width: 570px;
+                            height: 50px;
+                            top: 626px;
+                            font-size: 24px;
+                            line-height: 24px;
+                            letter-spacing: 3.72px;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}   
+
+
